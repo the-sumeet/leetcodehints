@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the hierarchy of the organization. Each employee has a `manager_id` that links them to their manager. The CEO has a `manager_id` of `null`, which indicates the top level of the hierarchy."
+    },
+    {
+      "content": "To determine the level of each employee in the hierarchy, think about how you can traverse the tree structure starting from the CEO. You might want to use a recursive function or a breadth-first search (BFS) approach."
+    },
+    {
+      "content": "Consider how you can keep track of the current level as you traverse from the CEO down to the employees. You can use a counter that increments as you go deeper into the hierarchy."
+    },
+    {
+      "content": "Next, focus on calculating the team size for each manager. This includes both direct and indirect reports. You will need to count all employees that report to a manager, which may require another traversal of the hierarchy."
+    },
+    {
+      "content": "When calculating the team size, remember to account for employees at all levels under a manager. You might want to maintain a list or a count of all employees that fall under each manager."
+    },
+    {
+      "content": "For the salary budget calculation, you need to sum the salaries of all employees under a manager, including their own. This means you will also need to traverse the hierarchy for this calculation."
+    },
+    {
+      "content": "Make sure to start your salary budget calculation from the bottom of the hierarchy and work your way up. This way, you can ensure that each manager's budget includes the salaries of all their subordinates."
+    },
+    {
+      "content": "As you build your result set, remember to include the `employee_id`, `employee_name`, `level`, `team_size`, and `budget` for each employee. This will be essential for the final output."
+    },
+    {
+      "content": "Pay attention to the ordering of your final result. You need to sort by `level` in ascending order, then by `budget` in descending order, and finally by `employee_name` in ascending order."
+    },
+    {
+      "content": "Consider edge cases, such as when there are employees with no direct reports. Their `team_size` should be `0`, and their `budget` should equal their own salary."
+    },
+    {
+      "content": "Make sure to handle the case where multiple employees might have the same level and budget. The tie-breaking rule states that you should sort by `employee_name` in ascending order."
+    },
+    {
+      "content": "To implement the hierarchy traversal efficiently, consider using a dictionary to map each employee to their direct reports. This can help you quickly find all employees under a given manager."
+    },
+    {
+      "content": "As you implement your solution, ensure that you test with various organizational structures, including deep hierarchies and wide hierarchies, to verify that your level, team size, and budget calculations are accurate."
+    },
+    {
+      "content": "You might find it helpful to create a helper function for calculating the team size and budget recursively. This function can take an employee's ID and return the required values."
+    },
+    {
+      "content": "Finally, once you have all the data calculated, format your output correctly to match the required structure. This includes ensuring that the column names and data types are as specified."
+    }
+  ],
+  "questionNotes": [
+    "The `employee_id` is a unique key for each employee.",
+    "The `manager_id` is null for the CEO.",
+    "Return format must include `employee_id`, `employee_name`, `level`, `team_size`, and `budget`.",
+    "Results must be ordered by level (ascending), budget (descending), and employee_name (ascending)."
+  ]
+}

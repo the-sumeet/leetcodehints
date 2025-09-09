@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array. The array consists of binary digits (0s and 1s) and always ends with a 0. This means the last character is definitely a one-bit character."
+    },
+    {
+      "content": "Consider how the characters are represented: a one-bit character is represented by '0', while two-bit characters are represented by '10' or '11'. This distinction is crucial for decoding the array."
+    },
+    {
+      "content": "As you iterate through the array, keep track of the index. If you encounter a '0', it indicates a one-bit character. If you encounter a '1', you need to check the next bit to determine if it forms a two-bit character."
+    },
+    {
+      "content": "Think about how to handle the last character. Since the array ends with a '0', check how many bits you can decode before reaching the end. This will help you determine if the last character is one-bit."
+    },
+    {
+      "content": "You can use a loop to traverse the array. When you see a '1', skip the next bit (because it forms a two-bit character), and when you see a '0', count it as a one-bit character."
+    },
+    {
+      "content": "Consider edge cases: what if the array has only one element? Remember that it must end with '0', so the only valid input in that case would be [0], which is clearly a one-bit character."
+    },
+    {
+      "content": "If you find a '1' at any index, check the next bit. If the next bit is '0', it means you've decoded a two-bit character. If it's '1', you've also decoded a two-bit character, but you need to ensure you don't go out of bounds."
+    },
+    {
+      "content": "Keep track of the number of bits you've processed. If you reach the end of the array and the last character you processed was a '0', then the last character is a one-bit character."
+    },
+    {
+      "content": "At the end of your loop, check if the last character decoded was a one-bit character. If yes, return true; otherwise, return false."
+    },
+    {
+      "content": "To summarize, iterate through the bits while checking for '1's and '0's, and manage your index carefully to ensure you correctly identify the last character. Pay special attention to the conditions under which you skip bits."
+    }
+  ],
+  "questionNotes": [
+    "The input array always ends with a 0.",
+    "1 <= bits.length <= 1000.",
+    "bits[i] is either 0 or 1.",
+    "The last character must be determined based on how the bits are grouped."
+  ]
+}

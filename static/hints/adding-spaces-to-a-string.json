@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. You have a string `s` and an array `spaces`. The `spaces` array contains indices where you need to insert spaces in the string. Make sure to visualize how the string looks before and after adding spaces."
+    },
+    {
+      "content": "Consider how you will traverse the string `s`. You can think about iterating through the string while checking the indices in the `spaces` array to determine where to add spaces. This can be done using a pointer for the string and another for the spaces array."
+    },
+    {
+      "content": "Remember that the `spaces` array is sorted in strictly increasing order. This means that as you traverse the string, you will only need to check each index in `spaces` once. This can help you avoid unnecessary checks."
+    },
+    {
+      "content": "Think about how to build the new string with spaces. One approach is to use a list to collect characters and then join them at the end. This can be more efficient than concatenating strings directly in a loop."
+    },
+    {
+      "content": "When you insert a space, be careful about the index adjustments. Each time you add a space, the length of the string you are building increases, which can affect subsequent indices in the `spaces` array."
+    },
+    {
+      "content": "Consider edge cases, such as when the `spaces` array contains the first index (0) or the last index (length of the string). Make sure your logic correctly handles these scenarios."
+    },
+    {
+      "content": "You can use a variable to keep track of your current position in the string and another variable to track your current position in the `spaces` array. This will help you know when to insert a space."
+    },
+    {
+      "content": "As you iterate through the string, check if the current index matches any index in the `spaces` array. If it does, insert a space before adding the character to your result list."
+    },
+    {
+      "content": "After building your list of characters with spaces, remember to convert it back to a string. You can use the `join` method in Python to combine the list into a single string."
+    },
+    {
+      "content": "Finally, ensure that your implementation runs efficiently, especially since the constraints allow for a string length and spaces array length of up to 300,000. Aim for a linear time complexity solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 3 * 10^5",
+    "s consists only of lowercase and uppercase English letters.",
+    "1 <= spaces.length <= 3 * 10^5",
+    "0 <= spaces[i] <= s.length - 1",
+    "All values in spaces are strictly increasing."
+  ]
+}

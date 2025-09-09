@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to allocate `k` mailboxes to minimize the total distance from each house to the nearest mailbox. Think about how you would define the distance for each house."
+    },
+    {
+      "content": "Consider the distance metric. The distance from a house at position `h` to a mailbox at position `m` is given by `|h - m|`. This absolute difference will be crucial in calculating the total distance."
+    },
+    {
+      "content": "Notice that the houses are given in an array. Think about how you can utilize sorting or the order of the houses to simplify your calculations. What happens if you sort the `houses` array?"
+    },
+    {
+      "content": "When allocating mailboxes, think about the possible positions you can place them. The mailboxes can only be placed at the locations of the houses. How would you represent potential mailbox positions?"
+    },
+    {
+      "content": "Consider using dynamic programming to solve this problem. You can define a DP table where `dp[i][j]` represents the minimum distance for the first `i` houses with `j` mailboxes allocated."
+    },
+    {
+      "content": "Think about the base cases for your DP table. What should `dp[0][0]` be? What does it represent in the context of the problem?"
+    },
+    {
+      "content": "As you fill in the DP table, you will need to calculate the distances from houses to mailboxes. Consider how you can efficiently compute the total distance for a range of houses when placing a mailbox."
+    },
+    {
+      "content": "You might need a helper function to calculate the total distance from a segment of houses to a single mailbox. This could be done by iterating through the houses and summing the distances."
+    },
+    {
+      "content": "When allocating multiple mailboxes, think about how you can transition from one state in your DP table to another. What decisions do you need to make when adding another mailbox?"
+    },
+    {
+      "content": "Remember to handle the case where `k` is equal to the number of houses. What should your output be in this scenario? Can you think of a quick way to calculate it?"
+    },
+    {
+      "content": "Be mindful of the constraints provided. The maximum number of houses is 100, which allows for an `O(n^2 * k)` solution. How can you optimize your DP transitions to stay within this limit?"
+    },
+    {
+      "content": "Consider edge cases such as having only one house or having all houses at the same position. How would your algorithm handle these scenarios?"
+    },
+    {
+      "content": "As you implement your solution, keep track of the current state of your DP table. Debugging will be easier if you print out the table after each iteration."
+    },
+    {
+      "content": "Finally, think about how you will return the result. The problem asks for the minimum total distance. Ensure your final output matches the expected format."
+    },
+    {
+      "content": "To wrap up, focus on the final DP state you need to return. What does `dp[n][k]` represent in your solution? This will be your answer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= houses.length <= 100",
+    "Constraints: 1 <= houses[i] <= 10^4",
+    "All integers in houses are unique.",
+    "The output should be the minimum total distance, which fits in a 32-bit integer."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of transactions that includes an account ID, a date, a transaction type (Deposit or Withdraw), and an amount. Make sure to parse this data correctly."
+    },
+    {
+      "content": "Consider how you will store the account balances. A dictionary could be a good choice, where the keys are account IDs and the values are the current balances. Initialize this dictionary before processing the transactions."
+    },
+    {
+      "content": "As you iterate through each transaction, check the transaction type. If it's a 'Deposit', you should add the amount to the corresponding account's balance. If it's a 'Withdraw', you should subtract the amount, but ensure the balance does not go negative."
+    },
+    {
+      "content": "Think about how to handle multiple transactions for the same account. You will need to update the balance each time you encounter a transaction for an account. Keep in mind that the order of transactions matters."
+    },
+    {
+      "content": "Pay attention to the date of transactions. Although the problem doesn't specify needing to sort by date, consider if you need to account for transactions that occur on the same day or if they can be processed in the order they are given."
+    },
+    {
+      "content": "Don't forget to validate the inputs. Ensure that the transaction amounts are positive and that the transaction types are valid ('Deposit' or 'Withdraw'). This will help prevent errors during processing."
+    },
+    {
+      "content": "Once you have processed all transactions, you will need to return the final balances. Think about how you want to format this output. Should it be a list, a dictionary, or something else?"
+    },
+    {
+      "content": "Consider edge cases, such as what happens if an account has no transactions at all. Should it still appear in the final output with a balance of zero?"
+    },
+    {
+      "content": "When implementing the logic for withdrawals, ensure that you handle cases where a withdrawal might exceed the current balance. Decide how you want to handle this situation; for example, you might want to ignore such transactions."
+    },
+    {
+      "content": "Finally, think about how to efficiently iterate through the transactions and update the balances. A single pass through the transaction list should be sufficient if you maintain a running total in your balance dictionary."
+    }
+  ],
+  "questionNotes": [
+    "The input consists of a list of transactions with account_id, day, type, and amount.",
+    "Each account can have multiple transactions, and the order of transactions matters.",
+    "Ensure to handle edge cases like negative balances and accounts with no transactions.",
+    "The output should reflect the final balance for each account after processing all transactions."
+  ]
+}

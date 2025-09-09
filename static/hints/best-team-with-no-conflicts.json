@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between age and score. A conflict arises when a younger player has a higher score than an older player. Think about how you can structure your data to avoid these conflicts."
+    },
+    {
+      "content": "Consider sorting the players based on their ages first. This will help you easily manage the conflicts since you can then iterate through the players in age order."
+    },
+    {
+      "content": "When sorting, remember that if two players have the same age, you can choose either or both. This means you should not exclude players based solely on age if they have the same age."
+    },
+    {
+      "content": "After sorting, think about how you can use dynamic programming to keep track of the maximum score you can achieve at each player. You can maintain an array where each index represents the maximum score achievable up to that player."
+    },
+    {
+      "content": "As you iterate through the sorted list, for each player, consider all previous players. If the current player's score is greater than or equal to any previous player's score, you can add this player's score to the maximum score achievable up to that previous player."
+    },
+    {
+      "content": "Make sure to initialize your dynamic programming array correctly. The score of each player alone should be the starting point for their respective index in the DP array."
+    },
+    {
+      "content": "While updating the DP array, remember to keep track of the maximum score found so far. This will be your final answer, which you will return after processing all players."
+    },
+    {
+      "content": "Consider edge cases, such as when all players have the same score or when all players are of different ages. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "Think about the time complexity of your approach. Sorting the players will take O(n log n), and iterating through the players to fill the DP array will take O(n^2) in the worst case. Is this efficient enough given the constraints?"
+    },
+    {
+      "content": "Finally, ensure that you return the maximum score found in the DP array. This will be the highest overall score of all possible basketball teams without conflicts."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= scores.length, ages.length <= 1000",
+    "scores.length == ages.length",
+    "1 <= scores[i] <= 10^6",
+    "1 <= ages[i] <= 1000",
+    "Conflicts arise when a younger player has a strictly higher score than an older player.",
+    "Players of the same age do not have conflicts."
+  ]
+}

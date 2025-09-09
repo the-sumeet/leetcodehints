@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree. Each node has a left and right child, and the depth of the tree starts at 1 for the root. Visualizing the tree can help you see where new nodes will be added."
+    },
+    {
+      "content": "Consider the case where `depth` is 1. In this scenario, you will need to create a new root node with the value `val`, and the original tree should become the left subtree of this new root."
+    },
+    {
+      "content": "If `depth` is greater than 1, you will need to traverse the tree to find the nodes at `depth - 1`. Think about how you can use a breadth-first search (BFS) or depth-first search (DFS) to reach these nodes."
+    },
+    {
+      "content": "When you find a node at `depth - 1`, you need to create two new nodes with the value `val`. Remember that the left child of the current node will become the left child of the new left node, and the right child will become the right child of the new right node."
+    },
+    {
+      "content": "Make sure to handle the case where a node at `depth - 1` might not have a left or right child. You should only attach existing subtrees if they are not null."
+    },
+    {
+      "content": "Think about how you will traverse the tree. You might want to maintain a queue or a stack to help with the traversal process, especially if you are implementing BFS or DFS."
+    },
+    {
+      "content": "As you add the new nodes, ensure that you correctly link them to the existing tree structure. The left child of the new left node should point to the original left child of the current node."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree is very shallow or when `depth` is equal to the current depth of the tree plus one. How will your logic handle these scenarios?"
+    },
+    {
+      "content": "Before finalizing your implementation, write out some test cases to validate your approach. Include cases where the tree is unbalanced or has only one child."
+    },
+    {
+      "content": "Once you have the basic structure in place, review your code to ensure that all nodes are being added correctly and that the tree maintains its properties. You might want to implement a helper function to visualize the tree after modifications."
+    }
+  ],
+  "questionNotes": [
+    "The root node is at depth 1.",
+    "If depth == 1, create a new root with value val.",
+    "At depth depth - 1, create two nodes with value val as left and right children.",
+    "The original left subtree becomes the left child of the new left node.",
+    "The original right subtree becomes the right child of the new right node.",
+    "Constraints: 1 <= number of nodes <= 10^4, 1 <= depth <= tree depth + 1."
+  ]
+}

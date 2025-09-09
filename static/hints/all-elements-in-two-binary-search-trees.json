@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of a Binary Search Tree (BST). Recall that for any node, all values in the left subtree are less than the node's value, and all values in the right subtree are greater. This property will help you in merging the two trees."
+    },
+    {
+      "content": "Consider how you might traverse each tree. In-order traversal of a BST will give you the values in sorted order. Think about how you can implement this traversal to collect values from both trees."
+    },
+    {
+      "content": "You can use a recursive function to perform in-order traversal. As you traverse, store the values in a list. For example: `def inorder(node): if node: inorder(node.left); list.append(node.val); inorder(node.right)`."
+    },
+    {
+      "content": "After collecting values from both trees, you will have two separate lists. Consider how you can merge these two sorted lists into one sorted list. Think about using a two-pointer technique."
+    },
+    {
+      "content": "When merging two sorted lists, maintain two pointers, one for each list. Compare the values at these pointers and append the smaller value to the result list, moving the pointer forward in that list."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when one or both trees are empty. Ensure your function can handle these scenarios gracefully without errors."
+    },
+    {
+      "content": "Remember that the final output must be a single list containing all integers from both trees sorted in ascending order. Make sure to return this list in the specified format."
+    },
+    {
+      "content": "Consider the time complexity of your approach. In-order traversal of both trees will take O(N) time where N is the number of nodes. Merging the two sorted lists will take O(M + N) time, where M and N are the sizes of the two lists."
+    },
+    {
+      "content": "As you implement your solution, keep track of the constraints given in the problem statement, especially the range of node values and the maximum number of nodes."
+    },
+    {
+      "content": "Finally, once you have both lists merged, ensure that you handle any duplicate values correctly. The output should include duplicates as they appear in the trees."
+    }
+  ],
+  "questionNotes": [
+    "The input consists of two binary search trees, root1 and root2.",
+    "The output must be a single sorted list of integers from both trees.",
+    "The number of nodes in each tree is in the range [0, 5000].",
+    "-10^5 <= Node.val <= 10^5.",
+    "The output list should include duplicates if they exist in the trees."
+  ]
+}

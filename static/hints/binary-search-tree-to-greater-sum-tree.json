@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a Binary Search Tree (BST). Each node's left subtree contains values less than the node's value, and the right subtree contains values greater. This property will be crucial for calculating the sum of greater values."
+    },
+    {
+      "content": "Consider how you can traverse the BST in a way that allows you to accumulate the values of nodes. A reverse in-order traversal (right-root-left) will help you access nodes in descending order."
+    },
+    {
+      "content": "As you traverse the tree, maintain a running total of the sum of the values you've encountered so far. This will allow you to update each node's value correctly as you visit it."
+    },
+    {
+      "content": "Remember that the problem requires you to update the node's value to the original value plus the sum of all greater values. So, for each node, you need to add the current running total to its original value."
+    },
+    {
+      "content": "Think about how to handle the case of the smallest node in the tree. Since there are no values greater than it, its new value will simply be its original value plus the sum of all greater values (which is zero at that point)."
+    },
+    {
+      "content": "You will need to keep track of the previous sum while traversing the tree. After visiting a node, update this sum to include the current node's original value before moving to the next node."
+    },
+    {
+      "content": "Make sure to consider edge cases, such as a tree with only one node or a tree that is skewed (all nodes on one side). These cases can simplify the problem and help you verify your solution."
+    },
+    {
+      "content": "When implementing the traversal, you may want to use recursion or an iterative approach with a stack. Both methods can achieve the same result, but recursion is often simpler to implement for tree traversals."
+    },
+    {
+      "content": "As you implement the solution, ensure that you are modifying the tree in place. This means you should not create new nodes but rather update the existing nodes with their new values."
+    },
+    {
+      "content": "Finally, after your traversal and updates are complete, make sure to return the root of the modified tree. This will be the starting point for any further operations or checks you want to perform."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The number of nodes in the tree is in the range [1, 100].",
+    "Node values are unique and range from 0 to 100.",
+    "The output should be the modified tree, not a list or array."
+  ]
+}

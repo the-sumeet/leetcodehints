@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the `groups` and `elements` arrays. Each group size in `groups` must be divisible by an element in `elements` for that element to be assigned to the group."
+    },
+    {
+      "content": "Remember that if multiple elements can be assigned to a group, you need to select the one with the smallest index. This means you should iterate through `elements` in order when checking for divisibility."
+    },
+    {
+      "content": "Consider how to handle cases where no element can be assigned to a group. In such cases, you should return -1 for that group in the `assigned` array."
+    },
+    {
+      "content": "Think about how to structure your loops. You will likely need a loop for `groups` and a nested loop for `elements` to check each group against all elements."
+    },
+    {
+      "content": "When checking if a group can be assigned an element, use the modulus operator. For example, check if `groups[i] % elements[j] == 0`."
+    },
+    {
+      "content": "Pay attention to the constraints provided in the problem. The lengths of `groups` and `elements` can be quite large (up to 100,000), so consider the efficiency of your solution."
+    },
+    {
+      "content": "Consider edge cases such as when all elements are larger than the largest group size or when all group sizes are prime numbers. How will these cases affect your assignments?"
+    },
+    {
+      "content": "Ensure that your final output matches the required format. The `assigned` array should have the same length as `groups`, with each index corresponding to the group index."
+    },
+    {
+      "content": "As you implement your solution, remember to initialize the `assigned` array with -1 values. This way, you can easily update it when you find suitable elements."
+    },
+    {
+      "content": "Finally, think about how you will test your solution. Create various test cases, including edge cases, to ensure your logic works as expected. For example, what happens if `elements` is empty?"
+    }
+  ],
+  "questionNotes": [
+    "1 <= groups.length <= 10^5",
+    "1 <= elements.length <= 10^5",
+    "1 <= groups[i] <= 10^5",
+    "1 <= elements[i] <= 10^5",
+    "Return an array of indices, where each index corresponds to a group.",
+    "If no element can be assigned to a group, return -1 for that group.",
+    "An element can be assigned to multiple groups."
+  ]
+}

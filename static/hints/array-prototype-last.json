@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to extend the Array prototype in JavaScript. You can add methods to built-in objects like arrays using the `Array.prototype` object. This will allow you to define a new method called `last`."
+    },
+    {
+      "content": "Remember that when you define a method on the prototype, it will be available to all instances of that object. This means any array can call your new `last` method after you define it."
+    },
+    {
+      "content": "Consider how to access the last element of an array. You can use the length property of the array to find the last index, which is `array.length - 1`. Keep in mind that arrays are zero-indexed."
+    },
+    {
+      "content": "Think about what to return if the array is empty. You need to handle this case specifically, as trying to access an index on an empty array will lead to `undefined`."
+    },
+    {
+      "content": "You should return -1 when the array has no elements. Make sure to implement a condition that checks if the array length is zero before trying to access the last element."
+    },
+    {
+      "content": "When implementing the method, use the `this` keyword to refer to the array instance on which the method is called. This is crucial for accessing the array's properties."
+    },
+    {
+      "content": "Consider edge cases such as arrays containing `null`, `undefined`, or other falsy values. Your method should still return the correct last element in these cases."
+    },
+    {
+      "content": "Make sure to test your method with various inputs, including arrays with mixed types, empty arrays, and arrays with one element, to ensure it behaves as expected."
+    },
+    {
+      "content": "Here's a partial implementation to get you started: `Array.prototype.last = function() { ... }`. Think about how you can complete this function using the hints provided."
+    },
+    {
+      "content": "Finally, ensure your method is efficient and works within the constraints provided (0 <= arr.length <= 1000). This will help you avoid performance issues with larger arrays."
+    }
+  ],
+  "questionNotes": [
+    "You need to enhance the Array prototype to add a `last()` method.",
+    "Return -1 if the array is empty.",
+    "Arrays are zero-indexed, so the last element can be accessed using `array.length - 1`.",
+    "Handle edge cases like arrays with `null` or `undefined` values correctly."
+  ]
+}

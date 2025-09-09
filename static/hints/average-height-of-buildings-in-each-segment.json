@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. Each sub-array represents a building with three values: the start position, the end position, and the height. Make sure you can extract these values correctly."
+    },
+    {
+      "content": "Think about how to represent the segments of the buildings. You might want to create a structure that can hold the heights at various positions, such as a dictionary or a list indexed by position."
+    },
+    {
+      "content": "Consider how to handle overlapping buildings. When two buildings overlap, you need to account for both heights at the same position. This will affect your height calculations."
+    },
+    {
+      "content": "You may want to create a list of events for when buildings start and stop. For example, when a building starts, you increase the height, and when it stops, you decrease it."
+    },
+    {
+      "content": "Sort the events by position. If two events occur at the same position, prioritize building starts over stops to ensure correct height calculations."
+    },
+    {
+      "content": "As you process each position, keep track of the current heights. You can use a max-heap or a sorted list to efficiently manage the heights of overlapping buildings."
+    },
+    {
+      "content": "Calculate the average height for each segment. A segment is defined as a range between two unique positions where the height remains constant. Keep track of the total height and the number of segments."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when there are no buildings or when all buildings have the same height. What should your output look like in these scenarios?"
+    },
+    {
+      "content": "Make sure to format your output correctly. The result should be a list of average heights corresponding to each segment. Think about how you will structure this output based on the segments you identify."
+    },
+    {
+      "content": "Finally, ensure you handle floating-point division correctly when calculating averages. You may want to round or format the result to a specific number of decimal places."
+    }
+  ],
+  "questionNotes": [
+    "Input is a list of lists, where each inner list has three integers: [start, end, height].",
+    "Buildings can overlap, and you must account for the maximum height at any given position.",
+    "Output should be a list of average heights for each segment defined by the unique positions of building starts and stops.",
+    "Consider edge cases like no buildings or buildings with the same height.",
+    "Ensure correct handling of floating-point arithmetic for average calculations."
+  ]
+}

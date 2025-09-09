@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you can group the data. You need to count the number of times each actor has worked with each director. Consider using a `GROUP BY` clause."
+    },
+    {
+      "content": "Remember that you need to count pairs of (actor_id, director_id). Think about how you can structure your `GROUP BY` to achieve this. You might want to group by both `actor_id` and `director_id`."
+    },
+    {
+      "content": "Once you have the counts, you'll need to filter the results to only include pairs where the count is at least three. This can be done using a `HAVING` clause after your `GROUP BY`."
+    },
+    {
+      "content": "Make sure to select only the `actor_id` and `director_id` in your final output. You can do this in the `SELECT` statement after counting."
+    },
+    {
+      "content": "Consider the data types of the columns. Since `actor_id` and `director_id` are integers, ensure your counting logic is correctly handling these types."
+    },
+    {
+      "content": "Think about how you will handle cases where there are no actors or directors with three collaborations. Your query should still run efficiently in such cases."
+    },
+    {
+      "content": "You might want to test your query with edge cases, such as when all actors have fewer than three collaborations or when there are actors with exactly three collaborations."
+    },
+    {
+      "content": "When writing your SQL, ensure that the `HAVING` clause comes after the `GROUP BY` clause, as SQL requires this order for aggregate functions."
+    },
+    {
+      "content": "Remember that the output can be in any order, so you don't need to include an `ORDER BY` clause unless specified. Focus on getting the correct pairs first."
+    },
+    {
+      "content": "Your final SQL query should look something like this: `SELECT actor_id, director_id FROM ActorDirector GROUP BY actor_id, director_id HAVING COUNT(*) >= 3;` Ensure you test it with the provided sample data."
+    }
+  ],
+  "questionNotes": [
+    "The `timestamp` column is the primary key and is unique for each row.",
+    "The output should only include `actor_id` and `director_id` for pairs with at least three collaborations.",
+    "The result can be returned in any order."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operations you need to support: incrementing and decrementing counts, and retrieving keys with the maximum and minimum counts. Think about how you can efficiently track these counts."
+    },
+    {
+      "content": "Consider using a hash map (dictionary) to store the count of each string. This allows O(1) access to update counts when you increment or decrement."
+    },
+    {
+      "content": "You will also need a way to keep track of the minimum and maximum counts. Think about how you can maintain a reference to these values as counts change."
+    },
+    {
+      "content": "To manage the minimum and maximum efficiently, consider using a doubly linked list. Each node can represent a unique count, and you can link nodes together to maintain order."
+    },
+    {
+      "content": "When a string's count is incremented, you may need to move it from one count node to another in the linked list. Think about how you can update the previous and next nodes accordingly."
+    },
+    {
+      "content": "For decrementing, if a string's count drops to zero, you need to remove it from the data structure entirely. Make sure to handle the removal of the node from both the hash map and the linked list."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when a string is decremented to zero. Ensure that your data structure can handle this gracefully without leaving dangling references."
+    },
+    {
+      "content": "When retrieving the maximum or minimum key, you should return one of the keys associated with those counts. Think about how to efficiently access the keys stored in your data structure."
+    },
+    {
+      "content": "Consider how you will handle ties in counts. If multiple keys have the same maximum or minimum count, you need to define a consistent way to return one of them."
+    },
+    {
+      "content": "Make sure to test your implementation with different sequences of operations. This will help you identify any potential issues with maintaining the data structure's integrity."
+    },
+    {
+      "content": "Pay attention to the constraints given in the problem. You need to ensure that your solution can handle up to 50,000 operations efficiently."
+    },
+    {
+      "content": "Think about the time complexity of each operation. Your goal is to achieve O(1) average time complexity for inc, dec, getMaxKey, and getMinKey."
+    },
+    {
+      "content": "When implementing the linked list, ensure that you have pointers to both the head and tail, as this will simplify adding and removing nodes for min and max counts."
+    },
+    {
+      "content": "As you implement, keep in mind that you will need to maintain the integrity of both the hash map and the linked list simultaneously during increments and decrements."
+    },
+    {
+      "content": "To finalize your design, consider edge cases like calling getMaxKey or getMinKey when no keys exist. Make sure to return an empty string in such cases."
+    }
+  ],
+  "questionNotes": [
+    "Each function must run in O(1) average time complexity.",
+    "If a key's count drops to zero after decrementing, it must be removed from the data structure.",
+    "Return an empty string if no element exists when calling getMaxKey or getMinKey.",
+    "Ties in counts should be handled consistently; return one of the keys with the same count."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of views, where each view contains an article ID, author ID, viewer ID, and view date. Familiarize yourself with how to access these elements within the data structure."
+    },
+    {
+      "content": "Consider how you might group the views by article ID. This will help you aggregate the views for each article. Think about using a dictionary or a similar data structure to collect counts."
+    },
+    {
+      "content": "Remember that you need to account for unique views. A viewer viewing the same article multiple times on different dates should only be counted once per article. How can you track whether a viewer has already been counted for a specific article?"
+    },
+    {
+      "content": "When processing the views, think about using a set to keep track of unique viewer IDs for each article. This ensures that you only count distinct viewers for each article."
+    },
+    {
+      "content": "As you aggregate views, pay attention to the date of the view. You might want to consider whether views on the same day should be treated differently or if they can simply be counted as a single view per viewer."
+    },
+    {
+      "content": "Consider the output format carefully. You may need to return the results sorted by article ID or in a specific order. Make sure you understand how the results should be structured before finalizing your solution."
+    },
+    {
+      "content": "Think about edge cases, such as articles that have no views at all. How will you handle articles that are present in the dataset but have no corresponding viewer entries?"
+    },
+    {
+      "content": "When you start implementing your solution, break it down into smaller functions. For example, one function could handle the aggregation of views while another could format the output."
+    },
+    {
+      "content": "As you finalize your solution, ensure that you are testing it with various input scenarios. Include cases with multiple viewers, multiple views from the same viewer, and articles with no views."
+    },
+    {
+      "content": "Finally, consider how to efficiently store and retrieve your aggregated data. You might want to use a list of tuples or a structured output that matches the required return format. Think about how to convert your aggregated data back into the expected output structure."
+    }
+  ],
+  "questionNotes": [
+    "The input data is structured as a JSON object with headers and rows.",
+    "Each view entry contains four fields: article_id, author_id, viewer_id, and view_date.",
+    "You need to count unique viewers for each article, considering only distinct viewer_id per article.",
+    "The output should be structured in a specific format, so pay attention to the required return structure.",
+    "Handle edge cases, such as articles with no views or multiple views from the same viewer."
+  ]
+}

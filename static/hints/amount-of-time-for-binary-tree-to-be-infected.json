@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node can have up to two children, and you can traverse the tree using methods like Depth-First Search (DFS) or Breadth-First Search (BFS). Consider how you would represent the tree in code."
+    },
+    {
+      "content": "Think about how to identify the starting point of the infection. You need to find the node with the value equal to 'start'. This can be done using a traversal method to search for the node."
+    },
+    {
+      "content": "Once you find the starting node, consider how the infection spreads. Each minute, the infection spreads to adjacent nodes. In a binary tree, adjacent nodes are the parent and the children of the infected node."
+    },
+    {
+      "content": "You may want to use a queue to facilitate the spread of the infection. This way, you can keep track of which nodes are infected at each minute and which nodes will be infected next."
+    },
+    {
+      "content": "As you implement the infection spread, ensure that you mark nodes as infected once they are processed to avoid counting them multiple times. A simple way is to use a set or a boolean array."
+    },
+    {
+      "content": "Consider the case where the tree has only one node. How does this affect your infection logic? Make sure your solution handles this edge case correctly, returning 0 minutes if the start node is the only node."
+    },
+    {
+      "content": "Think about how to count the minutes until the entire tree is infected. You could maintain a counter that increments each time you process a level of infected nodes."
+    },
+    {
+      "content": "When implementing your BFS, remember to add all newly infected nodes to the queue for the next round of infection. This will allow you to simulate the spread of the infection minute by minute."
+    },
+    {
+      "content": "After implementing the BFS, ensure that you return the correct number of minutes. This should be the total number of rounds of infection that occurred before all nodes were infected."
+    },
+    {
+      "content": "Finally, review your code for edge cases such as a tree with only one node or a tree where all nodes are connected in a straight line. Make sure your logic accounts for these scenarios."
+    }
+  ],
+  "questionNotes": [
+    "The number of nodes in the tree is in the range [1, 10^5].",
+    "1 <= Node.val <= 10^5 and each node has a unique value.",
+    "A node with a value of 'start' exists in the tree.",
+    "Return the number of minutes needed for the entire tree to be infected."
+  ]
+}

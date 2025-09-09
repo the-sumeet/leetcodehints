@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the staircase is built. Each row i requires exactly i coins. For example, the first row needs 1 coin, the second row needs 2 coins, and so on."
+    },
+    {
+      "content": "Think about how you can calculate the total number of coins needed for the first k rows. The total number of coins for k rows is the sum of the first k natural numbers, which can be expressed as k * (k + 1) / 2."
+    },
+    {
+      "content": "Consider how you can use a loop to incrementally build the staircase. You can keep a counter for the number of rows and a variable to track the total coins used so far."
+    },
+    {
+      "content": "As you build the staircase row by row, check if you have enough coins left to complete the next row. If not, you should stop and return the number of complete rows built."
+    },
+    {
+      "content": "Think about edge cases, such as when n is very small (like 1 or 2). What would the output be in these cases? How many complete rows can you build?"
+    },
+    {
+      "content": "You might want to consider using a while loop that continues until you can no longer build a complete row. This way, you can check your remaining coins after each row is added."
+    },
+    {
+      "content": "What happens if you reach a point where you cannot complete the next row? Make sure your logic correctly handles this scenario to avoid counting an incomplete row."
+    },
+    {
+      "content": "Consider the constraints of the problem. You are given that 1 <= n <= 2^31 - 1. This means your solution should be efficient and handle large values of n without performance issues."
+    },
+    {
+      "content": "You might also want to think about optimizing your approach. Instead of iterating through each row, can you find a mathematical way to calculate the maximum number of complete rows directly?"
+    },
+    {
+      "content": "A potential approach to optimize is to use binary search to find the largest k such that k * (k + 1) / 2 <= n. This can significantly reduce the number of iterations needed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 2^31 - 1",
+    "The last row may be incomplete, and you should only count complete rows.",
+    "Return the number of complete rows built, not the number of coins left."
+  ]
+}

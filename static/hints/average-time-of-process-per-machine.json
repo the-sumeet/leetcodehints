@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the table. You have a combination of `machine_id`, `process_id`, and `activity_type` as the primary key. This means each entry is unique based on these three columns."
+    },
+    {
+      "content": "Focus on filtering the records based on `activity_type`. You will need to separate the 'start' and 'end' activities for each process. Consider how you can group the records by `machine_id` and `process_id`."
+    },
+    {
+      "content": "Think about how to calculate the time taken for each process. You can do this by subtracting the 'start' timestamp from the 'end' timestamp for each process. What SQL functions can help you achieve this?"
+    },
+    {
+      "content": "Once you have the time taken for each process, you will need to aggregate this data. Specifically, you'll want to calculate the total time for each machine by summing the process times. How would you structure your SQL query to accomplish this?"
+    },
+    {
+      "content": "Don't forget to count the number of processes for each machine. You will need this count to compute the average processing time. Consider using a `COUNT()` function in your SQL query."
+    },
+    {
+      "content": "When calculating the average, remember the formula: average time = total time / number of processes. How can you implement this in your SQL statement? Think about using `AVG()` or calculating it manually."
+    },
+    {
+      "content": "Rounding is important in this problem. You need to round the average processing time to three decimal places. What SQL function can you use to round your results appropriately?"
+    },
+    {
+      "content": "Make sure your final output includes both `machine_id` and the calculated `processing_time`. How will you structure your SELECT statement to include these columns?"
+    },
+    {
+      "content": "Consider edge cases, such as machines that may have varying numbers of processes. Ensure your logic accounts for this when calculating averages. What happens if a machine has only one process?"
+    },
+    {
+      "content": "Finally, ensure that your result set is returned in the correct format. You need to return the table with `machine_id` and `processing_time`. How can you ensure your SQL query adheres to this format?"
+    }
+  ],
+  "questionNotes": [
+    "The primary key is (machine_id, process_id, activity_type), ensuring uniqueness.",
+    "Each (machine_id, process_id) pair has both 'start' and 'end' timestamps.",
+    "The average processing time must be rounded to 3 decimal places.",
+    "Return format must include machine_id and processing_time."
+  ]
+}

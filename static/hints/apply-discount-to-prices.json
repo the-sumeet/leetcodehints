@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by splitting the input sentence into individual words. You can use the `split()` method in Python, which will help you separate the words based on spaces."
+    },
+    {
+      "content": "Next, identify which words represent prices. A price word will start with a dollar sign '$' and be followed by digits. You can use string methods like `startswith()` and `isdigit()` to check this."
+    },
+    {
+      "content": "Remember that a valid price should have at least one digit after the '$'. So, check if the substring that follows '$' contains digits only."
+    },
+    {
+      "content": "Once you identify a price word, convert the price from a string to a float for calculations. You can do this by slicing the string to remove the '$' and then converting the remaining part to a float."
+    },
+    {
+      "content": "To apply the discount, calculate the new price using the formula: `new_price = original_price * (1 - discount / 100)`. Make sure to handle the discount correctly, especially when it is 100%."
+    },
+    {
+      "content": "After calculating the discounted price, format it to two decimal places. In Python, you can use formatted string literals or the `format()` function to ensure the output is in the correct format."
+    },
+    {
+      "content": "Replace the original price word in the list of words with the newly formatted price. This will ensure that your updated sentence contains the new prices."
+    },
+    {
+      "content": "Once all words have been processed, join the list of words back into a single string using the `join()` method. This will give you the final modified sentence."
+    },
+    {
+      "content": "Consider edge cases, such as when the discount is 0% (prices should remain the same) or 100% (all prices should become $0.00). Make sure your logic handles these correctly."
+    },
+    {
+      "content": "Finally, ensure that your function returns the modified sentence as required. Pay attention to the formatting, especially the two decimal places for all prices."
+    }
+  ],
+  "questionNotes": [
+    "A word represents a price if it starts with '$' followed by digits.",
+    "All prices will contain at most 10 digits.",
+    "Output prices must be formatted to exactly two decimal places.",
+    "Discount can range from 0 to 100, affecting how prices are calculated."
+  ]
+}

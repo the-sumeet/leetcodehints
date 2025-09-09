@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a Binary Search Tree (BST). Each node has a value, and for any node, all values in the left subtree are smaller, and all values in the right subtree are larger."
+    },
+    {
+      "content": "Consider how you would implement an iterator for a BST. You need to be able to traverse the tree in both forward and backward directions. Think about how you can keep track of the current position in the tree."
+    },
+    {
+      "content": "You will need to implement methods for `next()` and `prev()`. `next()` should return the next smallest element in the BST, while `prev()` should return the previous element. How can you efficiently find these elements?"
+    },
+    {
+      "content": "Think about using a stack to help with the in-order traversal of the BST. When you call `next()`, you can push the left children of the current node onto the stack to facilitate retrieval of the next smallest element."
+    },
+    {
+      "content": "For the `prev()` method, you might need to consider the right subtree of the current node. If you are going backwards, you should find the largest element in the left subtree or the previous node in the stack."
+    },
+    {
+      "content": "Make sure to implement the `hasNext()` and `hasPrev()` methods. `hasNext()` should check if there are more nodes to visit in the forward direction, while `hasPrev()` checks for nodes in the backward direction."
+    },
+    {
+      "content": "Consider edge cases, such as when the BST is empty. Your iterator should handle this gracefully by returning false for `hasNext()` and `hasPrev()` when there are no elements."
+    },
+    {
+      "content": "Think about how to reset the iterator or handle multiple calls to `next()` and `prev()`. How will you maintain the state of the iterator as you traverse the tree?"
+    },
+    {
+      "content": "When implementing the stack for traversal, remember to pop elements off the stack when moving to the right child after visiting a node. This ensures that you always have the next smallest element ready."
+    },
+    {
+      "content": "Finally, ensure your implementation is efficient. Aim for O(h) time complexity for `next()` and `prev()`, where h is the height of the tree, and O(n) space complexity for the stack in the worst case."
+    }
+  ],
+  "questionNotes": [
+    "The iterator must support both forward and backward traversal.",
+    "The BST can contain duplicate values, but the structure must maintain BST properties.",
+    "The `next()` method should return the next smallest value, while `prev()` should return the previous largest value.",
+    "Edge cases include handling empty trees and ensuring that `hasNext()` and `hasPrev()` return correct boolean values."
+  ]
+}

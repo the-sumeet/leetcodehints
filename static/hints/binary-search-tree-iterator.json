@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the in-order traversal of a BST. In an in-order traversal, you visit the left subtree, then the root, and finally the right subtree. This will help you determine the order in which you need to return the elements."
+    },
+    {
+      "content": "Consider how you can maintain the state of the current position in the in-order traversal. You will need a way to keep track of the next element to return when `next()` is called."
+    },
+    {
+      "content": "Think about how a stack can be used to help with the in-order traversal. You can push nodes onto the stack while traversing the left subtree, which allows you to backtrack to the parent node when needed."
+    },
+    {
+      "content": "In your constructor, initialize the stack and push all the left children of the root onto it. This will set you up to retrieve the smallest element first when `next()` is called."
+    },
+    {
+      "content": "For the `hasNext()` method, check if the stack is not empty. If it is not empty, it means there are still elements to be processed in the in-order traversal."
+    },
+    {
+      "content": "In the `next()` method, pop the top element from the stack. This element is the next in the in-order traversal. After popping, if this node has a right child, push all its left children onto the stack."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the tree has only one node or when all nodes are aligned to the left or right. Your implementation should still function correctly in these scenarios."
+    },
+    {
+      "content": "Consider the time complexity of your operations. The `next()` and `hasNext()` methods should ideally run in average O(1) time. Think about how the stack operations contribute to this complexity."
+    },
+    {
+      "content": "Make sure to test your implementation with various tree structures, including skewed trees and balanced trees, to ensure that your iterator behaves as expected in all cases."
+    },
+    {
+      "content": "You are very close to completing your solution! Just remember that in the `next()` method, after popping an element, you should check if it has a right child and push its left children onto the stack. This ensures that you're always ready for the next smallest element."
+    }
+  ],
+  "questionNotes": [
+    "The number of nodes in the tree is in the range [1, 10^5].",
+    "0 <= Node.val <= 10^6.",
+    "At most 10^5 calls will be made to hasNext and next.",
+    "Ensure that next() calls are always valid, meaning there will be a next number when next() is called."
+  ]
+}

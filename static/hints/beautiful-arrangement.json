@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a beautiful arrangement is. For each position `i`, the number at `perm[i]` must either be divisible by `i` or `i` must be divisible by `perm[i]`. This means you need to check both conditions for every index in your permutation."
+    },
+    {
+      "content": "Consider how many integers you have to work with. You are given `n` integers labeled from 1 to `n`. Think about how these integers can be arranged in different orders (permutations) and how those orders affect the conditions for being a beautiful arrangement."
+    },
+    {
+      "content": "Remember that the constraints specify that `1 <= n <= 15`. This means that while the number of permutations can grow quickly (up to `15!`), it is still manageable to generate all permutations for this range. You might want to use backtracking to explore these permutations."
+    },
+    {
+      "content": "When generating permutations, consider using a recursive function that builds the permutation step-by-step. At each step, you can check if adding the next number maintains the beautiful arrangement conditions."
+    },
+    {
+      "content": "As you build your permutations, keep track of which numbers have been used. This will help you avoid duplicates and ensure that each number appears exactly once in the arrangement."
+    },
+    {
+      "content": "Think about how to implement the checks for the beautiful arrangement conditions efficiently. You can create a helper function that takes the current permutation and checks if it satisfies the conditions for all indices."
+    },
+    {
+      "content": "Consider edge cases, such as when `n = 1`. In this case, there's only one arrangement: `[1]`, which is trivially a beautiful arrangement. Make sure your solution handles this case correctly."
+    },
+    {
+      "content": "You might want to use a counter to keep track of the number of valid beautiful arrangements you find as you explore all permutations. Initialize this counter to zero and increment it whenever you find a valid arrangement."
+    },
+    {
+      "content": "While implementing the backtracking approach, ensure that you backtrack correctly by removing the last added number from the current permutation when you explore a new branch. This will allow you to explore all possible arrangements without interference."
+    },
+    {
+      "content": "Finally, once you have implemented the backtracking and counting logic, test your solution with various values of `n`, especially the edge cases like `n = 1` and `n = 2`, to ensure correctness and efficiency."
+    }
+  ],
+  "questionNotes": [
+    "The problem requires checking two conditions for each index in the permutation.",
+    "You must generate all permutations of numbers 1 to n.",
+    "Constraints specify that 1 <= n <= 15, allowing for a factorial number of permutations.",
+    "The output should be the count of valid beautiful arrangements."
+  ]
+}

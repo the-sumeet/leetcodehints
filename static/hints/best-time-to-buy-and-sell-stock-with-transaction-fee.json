@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to maximize profit from stock transactions while considering a transaction fee for each buy-sell pair. Think about how the fee impacts your decision to buy or sell."
+    },
+    {
+      "content": "Consider how you will track your profit. You can maintain two states: one for when you own a stock and another for when you do not own any stock. This will help you decide when to buy or sell."
+    },
+    {
+      "content": "Define your states clearly. Let’s say `cash` represents the maximum profit you can have when you do not own a stock, and `hold` represents the maximum profit when you own a stock. Start both variables at zero."
+    },
+    {
+      "content": "When iterating through the prices, think about how you can update `cash` and `hold`. If you sell a stock, you add the current price to `hold` and subtract the fee. If you buy a stock, you need to consider the current price and update `hold` accordingly."
+    },
+    {
+      "content": "For each price in the array, you will need to update your `cash` and `hold` values based on whether you choose to sell or buy. Use the following logic: \n- `cash = max(cash, hold + prices[i] - fee)` \n- `hold = max(hold, cash - prices[i])`"
+    },
+    {
+      "content": "Think about edge cases. What happens if the prices array has only one element? Or if the transaction fee is greater than any potential profit from buying and selling? Make sure your solution handles these cases."
+    },
+    {
+      "content": "Remember that you can perform multiple transactions, but each transaction incurs a fee. This means you should only sell when the profit from selling minus the fee is greater than holding onto the stock."
+    },
+    {
+      "content": "Consider the initial values of `cash` and `hold`. If you start with no stocks, `cash` should be 0, while `hold` should be initialized to a very negative number to ensure it doesn't affect the maximum profit calculation."
+    },
+    {
+      "content": "As you implement your solution, keep track of your updates to `cash` and `hold` at each step. This will help you debug and ensure that you are calculating the maximum profit correctly."
+    },
+    {
+      "content": "Finally, after processing all prices, your maximum profit will be in the `cash` variable. Make sure to return this value as the result of your function."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= prices.length <= 5 * 10^4",
+    "1 <= prices[i] < 5 * 10^4",
+    "0 <= fee < 5 * 10^4",
+    "You may complete as many transactions as you like, but you must sell before buying again."
+  ]
+}

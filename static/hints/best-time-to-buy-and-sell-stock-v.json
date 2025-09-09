@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the two types of transactions you can perform: normal transactions (buy then sell) and short selling transactions (sell then buy back). Each transaction must be completed before starting another."
+    },
+    {
+      "content": "Consider how you can represent the maximum profit you can achieve with a certain number of transactions. You might want to use dynamic programming to keep track of profits at each step."
+    },
+    {
+      "content": "Define a 2D array `dp` where `dp[t][d]` represents the maximum profit achievable with `t` transactions by day `d`. Think about how you can fill this table iteratively."
+    },
+    {
+      "content": "Remember that you cannot buy and sell on the same day. This means that for any transaction, you need to ensure that the buying day comes before the selling day."
+    },
+    {
+      "content": "When you are calculating profits for each transaction, consider both normal and short selling transactions. For each day, you will need to decide whether to perform a buy/sell or a sell/buy based on the prices."
+    },
+    {
+      "content": "As you iterate through the days, keep track of the maximum profit for each transaction. You may want to use a variable to store the maximum profit from previous transactions to help with calculations."
+    },
+    {
+      "content": "Pay attention to the constraints: `k` can be at most half the length of the prices array. This means you won't have more transactions than days, which can simplify your logic."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is 0 or when the prices array has only two elements. What should the output be in these cases?"
+    },
+    {
+      "content": "To optimize, think about how to reduce the complexity of calculating profits for each transaction. You might notice that you can avoid recalculating profits by storing intermediate results."
+    },
+    {
+      "content": "Finally, ensure that your solution handles both types of transactions effectively. Your final implementation should return the maximum profit after processing all days with at most `k` transactions."
+    }
+  ],
+  "questionNotes": [
+    "You can perform at most `k` transactions.",
+    "Each transaction must be completed before starting another.",
+    "You cannot buy and sell on the same day.",
+    "Constraints: 2 <= prices.length <= 10^3, 1 <= prices[i] <= 10^9, 1 <= k <= prices.length / 2."
+  ]
+}

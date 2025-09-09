@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to check if you can reorder the array such that for every pair of elements, the second element is double the first. Think about how you might pair elements."
+    },
+    {
+      "content": "Consider the implications of the array's length being even. This means that for every element you select, there must be a corresponding element that can be paired with it. What happens if the number of unique elements is odd?"
+    },
+    {
+      "content": "Look into how you might utilize sorting to help with pairing. If you sort the array, how would that change the way you approach finding pairs of elements?"
+    },
+    {
+      "content": "Think about using a frequency count for the elements in the array. This could help you determine how many times each number appears, which is important when trying to form pairs."
+    },
+    {
+      "content": "Remember that both positive and negative numbers can be present in the array. How does this affect your pairing strategy? For example, how do you handle negative numbers when looking for their doubled counterparts?"
+    },
+    {
+      "content": "Consider using a data structure like a hashmap or a multiset to keep track of the counts of each number. This will allow you to efficiently check if a number's double exists when you are trying to form pairs."
+    },
+    {
+      "content": "After sorting the array, iterate through it and try to find pairs. For each element, check if its double exists in your frequency map. If it does, reduce the count of both the element and its double."
+    },
+    {
+      "content": "Be cautious about elements that can be paired multiple times. For instance, if you have multiple instances of a number, ensure you are correctly accounting for how many pairs you can form."
+    },
+    {
+      "content": "At the end of your pairing process, check if all counts in your frequency map are zero. If they are, it means you successfully formed all required pairs; otherwise, return false."
+    },
+    {
+      "content": "Finally, consider edge cases such as arrays with zeros or large numbers. How do these affect your logic? Ensure your solution handles these cases gracefully."
+    }
+  ],
+  "questionNotes": [
+    "The array length is always even.",
+    "You need to check pairs: arr[2 * i + 1] = 2 * arr[2 * i].",
+    "Constraints: 2 <= arr.length <= 30,000 and -100,000 <= arr[i] <= 100,000.",
+    "Consider both positive and negative numbers when pairing.",
+    "Use a frequency count to manage elements and their pairs effectively."
+  ]
+}

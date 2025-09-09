@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Consider the number of transactions you can perform. You can make at most `k` buy and `k` sell operations. This means you can make at most `k` pairs of transactions."
+    },
+    {
+      "content": "Think about the base cases. What happens if `k` is greater than or equal to half the length of the prices array? In this case, you can complete as many transactions as you want."
+    },
+    {
+      "content": "If `k` is larger than the number of days divided by 2, you can treat this problem like the unlimited transaction case. What would be the maximum profit in that scenario?"
+    },
+    {
+      "content": "To maximize profit, you'll want to track the best days to buy and sell. Consider how you can keep track of your current profit as you iterate through the prices."
+    },
+    {
+      "content": "You might want to use dynamic programming to solve this problem. Think about how you can define your state. What variables will you need to keep track of?"
+    },
+    {
+      "content": "Define a DP table where `dp[t][d]` represents the maximum profit achievable with `t` transactions by day `d`. What dimensions will your table have?"
+    },
+    {
+      "content": "Remember that you can't sell before you buy. This means that for each transaction, you need to consider the best day to buy before selling on a subsequent day."
+    },
+    {
+      "content": "When filling in the DP table, for each transaction, you need to find the best day to buy. This can be done by iterating through previous days to find the maximum profit."
+    },
+    {
+      "content": "As you iterate through each day, you will need to keep track of the maximum profit you can achieve up to that day with the current number of transactions."
+    },
+    {
+      "content": "Think about how to optimize the inner loop where you calculate the maximum profit. You can maintain a variable to store the maximum price difference as you iterate."
+    },
+    {
+      "content": "Consider edge cases where prices might be constant or decreasing. What would your maximum profit be in those scenarios?"
+    },
+    {
+      "content": "Make sure to handle the case where `prices` is empty. What should your function return in that case?"
+    },
+    {
+      "content": "When implementing your solution, ensure that you correctly handle the boundaries of your DP table. What happens if `t` or `d` is out of bounds?"
+    },
+    {
+      "content": "You can summarize the logic of your solution as: for each transaction, calculate the maximum profit for each day based on previous transactions and prices."
+    },
+    {
+      "content": "Finally, remember to return the maximum profit from your DP table after processing all days and transactions. What will be the final return statement?"
+    }
+  ],
+  "questionNotes": [
+    "1 <= k <= 100",
+    "1 <= prices.length <= 1000",
+    "0 <= prices[i] <= 1000",
+    "You may not engage in multiple transactions simultaneously.",
+    "You must sell the stock before you buy again."
+  ]
+}

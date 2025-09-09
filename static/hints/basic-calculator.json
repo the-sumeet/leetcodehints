@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input string. It contains digits, operators ('+', '-'), and parentheses. You will need to parse this string to evaluate the expression correctly."
+    },
+    {
+      "content": "Consider how to handle spaces in the input string. You can ignore them while parsing the expression, but make sure to account for them when reading numbers and operators."
+    },
+    {
+      "content": "Think about how you will represent the current number being processed. You might want to use a variable to accumulate digits until you hit an operator or a parenthesis."
+    },
+    {
+      "content": "When you encounter a digit, you should build the number. For example, if you see '12', you should recognize it as the number 12, not as two separate digits."
+    },
+    {
+      "content": "Operators will affect the current total based on their precedence. '+' and '-' are straightforward, but you need to handle parentheses carefully."
+    },
+    {
+      "content": "To handle parentheses, you might consider using a stack. When you encounter a '(', push the current result and the sign onto the stack, and reset for the new expression inside the parentheses."
+    },
+    {
+      "content": "When you reach a ')', you should pop from the stack to get the previous result and combine it with the current result. Remember to apply the sign that was saved when the '(' was encountered."
+    },
+    {
+      "content": "Keep track of the current sign as you parse through the string. If you see a '+', set the sign to positive; if you see a '-', set it to negative."
+    },
+    {
+      "content": "After parsing the entire string, make sure to account for any remaining number that hasn't been added to the result yet. This could happen if the string ends with a number."
+    },
+    {
+      "content": "Consider edge cases such as a single number without any operators or expressions that only contain parentheses. Ensure your implementation can handle these gracefully."
+    },
+    {
+      "content": "Think about the constraints given in the problem. The expression will always be valid, so you don't need to handle invalid cases. Focus on parsing correctly."
+    },
+    {
+      "content": "You may want to create helper functions to handle the parsing of numbers and the evaluation of expressions. This can help keep your code organized."
+    },
+    {
+      "content": "As you implement the stack logic, remember to manage the current result and the current sign carefully to ensure accurate calculations."
+    },
+    {
+      "content": "Once you have a basic structure in place, test your implementation with the provided examples to ensure it produces the correct results."
+    },
+    {
+      "content": "Finally, optimize your solution if necessary. Although the constraints allow for a straightforward approach, consider how you can improve efficiency if needed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 3 * 10^5",
+    "Input consists of digits, '+', '-', '(', ')', and spaces.",
+    "The expression is guaranteed to be valid.",
+    "'+' is not used as a unary operation; '-' can be used as a unary operation.",
+    "No two consecutive operators will appear in the input."
+  ]
+}

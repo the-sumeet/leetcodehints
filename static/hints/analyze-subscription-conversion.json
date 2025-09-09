@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying users who have both 'free_trial' and 'paid' activities. You can use a `GROUP BY` clause to filter users based on their activity types."
+    },
+    {
+      "content": "Make sure to include only those users who have at least one 'free_trial' and one 'paid' entry. This will help you focus on users who converted."
+    },
+    {
+      "content": "Next, calculate the average daily activity duration for the 'free_trial' period. You can use the `AVG()` function and group by `user_id` for this calculation."
+    },
+    {
+      "content": "Remember to filter the activities to include only those that fall under the 'free_trial' type when calculating the average duration."
+    },
+    {
+      "content": "Similarly, calculate the average daily activity duration for the 'paid' period. Again, use the `AVG()` function and ensure you filter by the 'paid' activity type."
+    },
+    {
+      "content": "When calculating averages, consider rounding the results to two decimal places using the `ROUND()` function. This is crucial for matching the expected output format."
+    },
+    {
+      "content": "After calculating both averages, you will need to join the results back to the original user data. This can be done using a common `user_id`."
+    },
+    {
+      "content": "Make sure to handle cases where a user might have only one type of activity (e.g., only 'free_trial' or only 'paid'). These users should be excluded from the final output."
+    },
+    {
+      "content": "The final output should be ordered by `user_id` in ascending order. Use the `ORDER BY` clause to achieve this."
+    },
+    {
+      "content": "Finally, ensure your result set matches the required format, which includes `user_id`, `trial_avg_duration`, and `paid_avg_duration`. The data types and rounding must align with the specifications."
+    }
+  ],
+  "questionNotes": [
+    "The unique key for the table is (user_id, activity_date, activity_type).",
+    "Activity types are limited to 'free_trial', 'paid', and 'cancelled'.",
+    "Only include users who converted from 'free_trial' to 'paid'.",
+    "Average durations must be rounded to two decimal places.",
+    "The result must be ordered by user_id in ascending order."
+  ]
+}

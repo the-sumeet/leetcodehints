@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input structure. You have two arrays: `ranks` (integers) and `suits` (characters). Each index corresponds to a card, where `ranks[i]` is the rank and `suits[i]` is the suit."
+    },
+    {
+      "content": "Identify the highest-ranking hand you can form. The hierarchy is: 'Flush' > 'Three of a Kind' > 'Pair' > 'High Card'. Your goal is to check for the best hand starting from the top."
+    },
+    {
+      "content": "To check for a 'Flush', see if all elements in the `suits` array are the same. You can use a simple comparison or a set to determine uniqueness."
+    },
+    {
+      "content": "For 'Three of a Kind', count the occurrences of each rank in the `ranks` array. You can use a dictionary or a list to keep track of how many times each rank appears."
+    },
+    {
+      "content": "Similarly, for a 'Pair', you will also need to count occurrences of ranks. If you find exactly two cards of the same rank, you have a 'Pair'."
+    },
+    {
+      "content": "Remember to handle the case where you might have both a 'Three of a Kind' and a 'Pair'. The 'Three of a Kind' takes precedence, so check for that first."
+    },
+    {
+      "content": "While counting ranks, consider using the `collections.Counter` class in Python, which simplifies counting elements in an iterable."
+    },
+    {
+      "content": "After counting, you can determine the best hand by checking the counts in descending order of hand strength: first check for 'Flush', then 'Three of a Kind', followed by 'Pair'."
+    },
+    {
+      "content": "Don't forget to return the result as a string that matches the specified case-sensitivity. Ensure you return the exact strings: 'Flush', 'Three of a Kind', 'Pair', or 'High Card'."
+    },
+    {
+      "content": "Finally, consider edge cases such as all cards being of different ranks and suits. In such cases, the result should be 'High Card'. Make sure your logic correctly identifies these scenarios."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: ranks.length == suits.length == 5",
+    "1 <= ranks[i] <= 13",
+    "'a' <= suits[i] <= 'd'",
+    "No two cards have the same rank and suit.",
+    "Return values are case-sensitive."
+  ]
+}

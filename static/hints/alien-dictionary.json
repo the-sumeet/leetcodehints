@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to determine the order of characters in an alien language based on a given list of words. Each word is a string of characters from this alien language."
+    },
+    {
+      "content": "Consider how to extract the relationships between characters from the provided words. For example, in the words 'wrt' and 'wrf', what can you infer about the order of 't' and 'f'?"
+    },
+    {
+      "content": "Think about how to represent the relationships between characters. A directed graph is a good choice, where each character is a node and a directed edge from one character to another indicates the order."
+    },
+    {
+      "content": "When comparing two words, find the first position where they differ. This will help you establish a directed edge between the characters of the two words."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when one word is a prefix of another. For example, in ['abc', 'ab'], the second word does not provide any new information about character order."
+    },
+    {
+      "content": "You may want to use a dictionary to keep track of the adjacency list for your graph. Each character will map to a list of characters that come after it."
+    },
+    {
+      "content": "Don't forget to track the in-degrees of each character. This will help you later when you need to perform a topological sort to determine the order of characters."
+    },
+    {
+      "content": "After constructing the graph and in-degrees, think about how to perform a topological sort. You can use Kahn's algorithm or Depth First Search (DFS) for this purpose."
+    },
+    {
+      "content": "When implementing the topological sort, be cautious about characters with zero in-degrees. These characters can be added to your result as they have no dependencies."
+    },
+    {
+      "content": "Consider how to handle cycles in the graph. If you detect a cycle during the topological sort, it means the character order cannot be determined."
+    },
+    {
+      "content": "Make sure to return the result as a string. The order of characters you determine should be concatenated into a single string to represent the alien dictionary."
+    },
+    {
+      "content": "Remember to handle cases where the input list is empty or contains only one word. These edge cases can simplify the problem significantly."
+    },
+    {
+      "content": "Think about how to ensure that the characters in the result string are unique and in the correct order. You may need to use a set to track characters that have already been added."
+    },
+    {
+      "content": "When implementing your solution, consider the time complexity. The graph construction and topological sort should ideally be linear with respect to the number of characters and edges."
+    },
+    {
+      "content": "As you finalize your solution, ensure you handle all possible input scenarios, including duplicate characters in the words and varying lengths of words."
+    }
+  ],
+  "questionNotes": [
+    "Input is a list of words, each consisting of lowercase letters.",
+    "The output should be a string representing the order of characters.",
+    "If the order cannot be determined, return an empty string.",
+    "Handle cases where the input list is empty or contains only one word.",
+    "Be cautious of words that are prefixes of others."
+  ]
+}

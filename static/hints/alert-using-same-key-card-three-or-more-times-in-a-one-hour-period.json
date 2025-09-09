@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. You have two lists: `keyName` which contains names of workers, and `keyTime` which contains the corresponding times they used their key-cards. Each entry in these lists is related by index."
+    },
+    {
+      "content": "Consider how to group the times by worker. You can use a dictionary to map each worker's name to a list of their corresponding key-card usage times."
+    },
+    {
+      "content": "Remember that the times are in 'HH:MM' format. You might want to convert these times into a more manageable format, such as the total number of minutes since midnight, to facilitate easy comparisons."
+    },
+    {
+      "content": "Think about how to check for the one-hour window. For each worker, after sorting their usage times, you can iterate through the list and check if there are three usages within any one-hour period."
+    },
+    {
+      "content": "When checking for the one-hour window, you can use a sliding window technique. Keep track of the start of the window and move the end of the window forward while counting the number of accesses."
+    },
+    {
+      "content": "Make sure to handle cases where the worker has fewer than three usages gracefully. You can skip any workers who do not meet this basic requirement."
+    },
+    {
+      "content": "As you identify workers who meet the alert criteria, store their names in a set to ensure uniqueness. This will help you avoid duplicates in your final output."
+    },
+    {
+      "content": "After processing all workers, sort the names alphabetically before returning them. Sorting can be done easily using built-in functions."
+    },
+    {
+      "content": "Pay attention to edge cases, such as workers who use their key-cards exactly three times at the boundary of the one-hour window. Ensure your logic correctly identifies these instances."
+    },
+    {
+      "content": "Finally, remember to return the list of names in the specified format. The output should be a list of unique worker names who triggered the alert, sorted in ascending order."
+    }
+  ],
+  "questionNotes": [
+    "Input lists `keyName` and `keyTime` are of equal length.",
+    "Each `[keyName[i], keyTime[i]]` pair is unique.",
+    "Times are in 24-hour format 'HH:MM'.",
+    "Return a sorted list of unique names who used their key-card 3 or more times in a one-hour period."
+  ]
+}

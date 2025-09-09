@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. Each account is represented as a list where the first element is the name and the subsequent elements are emails. This means you can think of each account as a collection of emails associated with a single name."
+    },
+    {
+      "content": "Consider how you can identify accounts that belong to the same person. Since accounts are merged based on common emails, think about how you can efficiently check for shared emails between different accounts."
+    },
+    {
+      "content": "You might want to use a graph to represent the relationships between emails. Each email can be a node, and an edge can exist between two emails if they belong to the same account. This way, you can traverse the graph to find all connected components."
+    },
+    {
+      "content": "To build the graph, iterate through each account and connect each email to every other email in the same account. You can use a dictionary to map each email to a list of emails it is connected to."
+    },
+    {
+      "content": "Once you have built the graph, you need to find all connected components. You can use Depth-First Search (DFS) or Breadth-First Search (BFS) to explore the graph starting from each unvisited email."
+    },
+    {
+      "content": "Remember to keep track of visited emails to avoid processing the same email multiple times. You can use a set to store visited emails as you traverse the graph."
+    },
+    {
+      "content": "After finding all connected emails for a person, you should sort these emails. The output requires that the emails in each merged account are sorted, so make sure to do this before constructing the final result."
+    },
+    {
+      "content": "Don’t forget to include the name in the final output. Each merged account should start with the name followed by the sorted list of emails."
+    },
+    {
+      "content": "When constructing the final result, ensure that you return a list of lists, where each inner list represents a merged account. The order of the accounts themselves does not matter."
+    },
+    {
+      "content": "As a final step, consider edge cases such as accounts with no emails or accounts with duplicate emails. Make sure your implementation handles these scenarios gracefully."
+    }
+  ],
+  "questionNotes": [
+    "Each account is represented as a list; the first element is the name, and the rest are emails.",
+    "Two accounts belong to the same person if they share at least one email.",
+    "The output format requires the name followed by sorted emails.",
+    "Return accounts in any order; the order of emails must be sorted.",
+    "Constraints: 1 <= accounts.length <= 1000, 2 <= accounts[i].length <= 10."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Cashier class. You'll need to initialize it with the number of customers eligible for a discount, the discount percentage, and the products with their corresponding prices."
+    },
+    {
+      "content": "When implementing the `getBill` method, remember that you need to calculate the subtotal based on the products purchased and their amounts. Use a loop to iterate through the `product` and `amount` arrays to compute this subtotal."
+    },
+    {
+      "content": "Make sure to match the product IDs in the `product` array with the correct prices from the `prices` array. You can use a mapping technique, such as a dictionary, to associate product IDs with their prices for easier access."
+    },
+    {
+      "content": "Don't forget to keep track of how many customers have been served. You can use a simple counter that increments every time `getBill` is called."
+    },
+    {
+      "content": "When calculating the final bill, check if the current customer is the nth customer. If they are, apply the discount to the subtotal. The formula for applying the discount is: `finalBill = subtotal * (100 - discount) / 100`."
+    },
+    {
+      "content": "Consider edge cases where the discount is 0 or 100. If the discount is 0, the final bill should simply be the subtotal. If the discount is 100, the final bill should be 0."
+    },
+    {
+      "content": "Take note of the constraints regarding the uniqueness of products and amounts. Ensure that the `product` array passed to `getBill` contains valid product IDs that exist in the `products` array."
+    },
+    {
+      "content": "Make sure to handle cases where a customer might buy multiple quantities of the same product correctly. This means multiplying the price of the product by the amount purchased for that product."
+    },
+    {
+      "content": "You should also consider how to return the final bill. The output should be a double, and ensure that it meets the precision requirement of being within 10^-5 of the actual value."
+    },
+    {
+      "content": "Finally, implement the logic for the nth customer discount check inside the `getBill` function. You can use the modulo operator to determine if the current customer is eligible for a discount."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^4, 0 <= discount <= 100.",
+    "The products array and prices array are of the same length, and products are unique.",
+    "The product IDs in the `product` array for `getBill` exist in the `products` array.",
+    "The amount array must match the length of the product array in `getBill`.",
+    "The output must be a double, accurate within 10^-5."
+  ]
+}

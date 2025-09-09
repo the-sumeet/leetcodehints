@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to convert a binary number to its decimal equivalent. For example, the binary number `101` corresponds to the decimal number `5`. You can use the formula: `decimal = b[n-1] * 2^(n-1) + b[n-2] * 2^(n-2) + ... + b[0] * 2^0`."
+    },
+    {
+      "content": "Consider how you can build the decimal number incrementally. Instead of recalculating the entire number each time, think about how you can update the current number using the previous value. For example, if you have `x[i-1]`, you can calculate `x[i]` as `x[i-1] * 2 + nums[i]`."
+    },
+    {
+      "content": "Remember that you only need to check if the number is divisible by 5. You can use the modulo operator `%` for this. If `x[i] % 5 == 0`, then the number is divisible by 5."
+    },
+    {
+      "content": "Think about the initial condition. What is the value of `x[0]` when `nums[0]` is `0` or `1`? Make sure to handle the first element correctly in your calculations."
+    },
+    {
+      "content": "As you build the result array, initialize it with the same length as `nums`. Each element of the result should be set to `true` or `false` based on the divisibility check for each prefix number."
+    },
+    {
+      "content": "Consider edge cases, such as when the array consists entirely of zeros. What should your output be in such cases? Think about how binary numbers work."
+    },
+    {
+      "content": "When constructing your result, ensure that you are iterating through the `nums` array correctly, starting from index `0` and going to `nums.length - 1`. Pay attention to how you index your result array."
+    },
+    {
+      "content": "You might want to keep track of the current decimal value as you iterate through the binary array. This will help you avoid recalculating the entire prefix each time."
+    },
+    {
+      "content": "As you compute the decimal value from the binary prefix, remember that the binary representation grows exponentially. This means that even though the length of `nums` can be large, the operations you perform in each step should be efficient."
+    },
+    {
+      "content": "Finally, ensure that you return the result in the correct format. The output should be an array of booleans where each index corresponds to whether the prefix number is divisible by 5."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "nums[i] is either 0 or 1.",
+    "Return an array of booleans.",
+    "Indexing is 0-based."
+  ]
+}

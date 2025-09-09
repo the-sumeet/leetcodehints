@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a 132 pattern. You need to find three indices i, j, and k such that i < j < k and the values at these indices satisfy nums[i] < nums[k] < nums[j]."
+    },
+    {
+      "content": "Consider the constraints of the problem. You are given an array of integers with a length between 1 and 200,000, and each integer can range from -10^9 to 10^9. Think about how this might affect your approach."
+    },
+    {
+      "content": "Think about how you can iterate through the array. A brute force approach would involve checking all combinations of i, j, and k, but this would be inefficient (O(n^3)). Can you think of a more efficient way to check for the pattern?"
+    },
+    {
+      "content": "Focus on the relationship between the three numbers in the pattern. If you can find a way to keep track of potential candidates for nums[i] and nums[k] while iterating through nums[j], it might simplify your search."
+    },
+    {
+      "content": "Consider using a stack to help manage the potential candidates for nums[k]. As you iterate through the array, you can maintain a stack of values that could serve as nums[k] while ensuring they are less than nums[j]."
+    },
+    {
+      "content": "When using a stack, remember that you want to maintain the property that nums[k] is the largest possible value that is still less than nums[j]. Think about how you can pop elements from the stack to maintain this condition."
+    },
+    {
+      "content": "As you iterate through the array from right to left, keep track of the maximum value that could be nums[k]. This will help you determine if you can find a valid nums[i] for the current nums[j]."
+    },
+    {
+      "content": "While iterating, if you find a value that is less than the current maximum (potential nums[k]), check if it is greater than the last value popped from the stack. This will help you verify the 132 pattern."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as arrays with less than three elements. In such cases, you should return false immediately since a 132 pattern cannot exist."
+    },
+    {
+      "content": "Finally, consider the return value. You should return true as soon as you find a valid 132 pattern, and false if you finish iterating without finding one. Think about how you will structure your loop and conditions to achieve this."
+    }
+  ],
+  "questionNotes": [
+    "You need to find indices i, j, k such that i < j < k.",
+    "The values must satisfy nums[i] < nums[k] < nums[j].",
+    "Constraints: 1 <= n <= 200,000; -10^9 <= nums[i] <= 10^9.",
+    "Return true if a 132 pattern exists, otherwise return false."
+  ]
+}

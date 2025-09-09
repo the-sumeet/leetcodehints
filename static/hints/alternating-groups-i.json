@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what constitutes an alternating group. An alternating group consists of three contiguous tiles where the middle tile is different from the two adjacent tiles. For example, in the sequence [0, 1, 0], the middle tile (1) is different from its neighbors (0 and 0)."
+    },
+    {
+      "content": "Since the tiles are arranged in a circle, remember to consider the wrap-around condition. This means that the last tile is adjacent to the first tile. For example, in the array [0, 1, 0], if you check the last tile (index 2) and the first tile (index 0), you need to account for their relationship."
+    },
+    {
+      "content": "To identify alternating groups, you can use a loop to iterate through the tiles. For each tile, check the current tile and its two neighbors (considering the circular nature). You can use modulo operations to handle the wrap-around indexing."
+    },
+    {
+      "content": "When checking for an alternating group, you can use a condition like: if colors[i] != colors[i-1] and colors[i] != colors[i+1]. Make sure to handle the indices carefully, especially for the first and last tiles."
+    },
+    {
+      "content": "Consider edge cases where all tiles are the same color. For example, in the input [1, 1, 1], there will be no alternating groups. Think about how your logic will handle these scenarios."
+    },
+    {
+      "content": "You might want to maintain a count of the alternating groups you find. Initialize a counter before your loop starts and increment it each time you identify a valid alternating group."
+    },
+    {
+      "content": "Remember to check the boundaries of your array when you are accessing neighbors. Use modulo to ensure that you do not go out of bounds, especially when accessing colors[i+1] for the last tile."
+    },
+    {
+      "content": "As you loop through the tiles, consider how you will check the condition for each group. You can create a helper function to encapsulate the logic for determining if a triplet of tiles forms an alternating group."
+    },
+    {
+      "content": "Before finalizing your implementation, think about how to test your function. Create test cases that include various configurations of tiles, such as all red, all blue, and mixed patterns to ensure your solution works in all scenarios."
+    },
+    {
+      "content": "Finally, you can implement your logic in a single pass through the array. As you check each triplet, update your count of alternating groups and return that count at the end of your loop."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= colors.length <= 100",
+    "Each colors[i] can only be 0 (red) or 1 (blue).",
+    "The array represents a circular arrangement of tiles.",
+    "The output should be the total number of alternating groups found."
+  ]
+}

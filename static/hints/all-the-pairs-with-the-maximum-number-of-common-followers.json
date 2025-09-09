@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the structure of the input data. You have a list of relations where each relation is a pair of user_id and follower_id. Each user can have multiple followers."
+    },
+    {
+      "content": "Consider how you would represent the relationships between users and their followers. A dictionary or a hashmap could be useful to map each user to their set of followers."
+    },
+    {
+      "content": "Think about how to find common followers between any two users. You might want to use set intersections to efficiently find common elements between two sets of followers."
+    },
+    {
+      "content": "When iterating through pairs of users, remember to avoid counting pairs more than once. You can achieve this by ensuring that you only consider pairs where the first user_id is less than the second user_id."
+    },
+    {
+      "content": "As you calculate the number of common followers for each pair, keep track of the maximum count found so far. You will need a way to store pairs that have this maximum count."
+    },
+    {
+      "content": "Consider using a nested loop to compare each user with every other user. This will allow you to check all possible pairs for common followers."
+    },
+    {
+      "content": "Handle cases where there are no common followers between users. Ensure your logic accounts for pairs that might have zero common followers and does not include them in your results."
+    },
+    {
+      "content": "Think about how to return the result. You may want to return a list of pairs of user_ids that have the maximum number of common followers, sorted in a specific order."
+    },
+    {
+      "content": "Don't forget about edge cases, such as when there are users with no followers at all or when all users follow the same set of followers. How should your solution handle these scenarios?"
+    },
+    {
+      "content": "Finally, after calculating the maximum number of common followers, ensure you correctly gather and format the pairs of user_ids. You could use a list to store these pairs and return them at the end."
+    }
+  ],
+  "questionNotes": [
+    "Input is a list of pairs, each representing a user and their follower.",
+    "User IDs and follower IDs are unique integers.",
+    "Consider only pairs of user_ids where the first is less than the second to avoid duplicates.",
+    "Return pairs in a specific order, likely sorted by user_id.",
+    "Account for cases with no common followers, ensuring they are not included in the results."
+  ]
+}

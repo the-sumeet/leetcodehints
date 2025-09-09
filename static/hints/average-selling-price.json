@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the two tables: Prices and UnitsSold. Each table has a unique identifier, product_id, which will be crucial for joining the data later."
+    },
+    {
+      "content": "Consider how you can join the Prices and UnitsSold tables. You will need to match the product_id and also ensure that the purchase_date falls within the start_date and end_date range of the Prices table."
+    },
+    {
+      "content": "Think about how to calculate the total revenue generated from each product. This can be done by multiplying the price of the product by the number of units sold during the applicable price periods."
+    },
+    {
+      "content": "As you calculate total revenue, also keep track of the total units sold for each product. You will need both of these values to compute the average selling price."
+    },
+    {
+      "content": "Remember to handle cases where a product has not been sold at all. For those products, the average selling price should be set to 0."
+    },
+    {
+      "content": "When calculating the average selling price, ensure that you round the result to two decimal places. This is important for the final output format."
+    },
+    {
+      "content": "You can use SQL's aggregate functions like SUM() and COUNT() to help with your calculations. For example, you might use SUM() to get total revenue and COUNT() for total units sold."
+    },
+    {
+      "content": "Consider using a Common Table Expression (CTE) or subquery to simplify your calculations. This can help in organizing the total revenue and units sold before calculating the average."
+    },
+    {
+      "content": "Make sure your final output includes the product_id and the calculated average_price. The result should be formatted as specified in the problem statement."
+    },
+    {
+      "content": "Finally, ensure that your query handles all products, including those with no sales, so that they appear in the final result with an average_price of 0."
+    }
+  ],
+  "questionNotes": [
+    "The primary key for Prices is (product_id, start_date, end_date).",
+    "There are no overlapping periods for the same product_id in the Prices table.",
+    "UnitsSold may contain duplicate rows.",
+    "If a product has no sold units, its average_price should be 0.",
+    "The average_price must be rounded to 2 decimal places.",
+    "The result table can be returned in any order."
+  ]
+}

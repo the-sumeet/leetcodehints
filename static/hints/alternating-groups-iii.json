@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of an alternating group. An alternating group consists of contiguous tiles where colors alternate. For example, in the sequence [0, 1, 0], the group is alternating."
+    },
+    {
+      "content": "Remember that the tiles are arranged circularly. This means the last tile is adjacent to the first tile, which can affect the counting of alternating groups."
+    },
+    {
+      "content": "When processing the queries, note that there are two types: counting groups and changing tile colors. Make sure to handle each type correctly based on the query format."
+    },
+    {
+      "content": "For counting the alternating groups, you should iterate through the colors and check for groups of a specific size. Consider how to wrap around from the last tile to the first tile."
+    },
+    {
+      "content": "When counting groups of size `k`, ensure you check both the starting tile and the ending tile of the group to confirm they alternate correctly."
+    },
+    {
+      "content": "To efficiently count groups of a certain size, you may want to preprocess the colors to identify all alternating groups and their sizes."
+    },
+    {
+      "content": "For the update queries, remember to change the color of the specified tile and then re-evaluate the groups affected by this change."
+    },
+    {
+      "content": "Consider edge cases where the entire array consists of the same color. In such cases, there will be no alternating groups regardless of the size queried."
+    },
+    {
+      "content": "When changing a tile's color, think about how this could merge two alternating groups into one or split one group into two. This can affect the overall count."
+    },
+    {
+      "content": "Keep track of the sizes of the alternating groups in a way that allows for quick updates and queries. A dictionary or an array could be useful for this."
+    },
+    {
+      "content": "When counting groups of size `k`, ensure that you handle cases where `k` exceeds the total number of tiles, as there cannot be any groups of that size."
+    },
+    {
+      "content": "For the circular nature of the problem, you might want to duplicate the colors array to simplify the counting logic. This way, you can treat it as a linear array."
+    },
+    {
+      "content": "Make sure to test your solution with various configurations of colors, especially with edge cases like all tiles being the same color or alternating colors."
+    },
+    {
+      "content": "When implementing the counting logic, consider using a sliding window approach to efficiently check for groups of the required size."
+    },
+    {
+      "content": "Before finalizing your solution, ensure you handle all edge cases and that your logic correctly updates the groups after a color change."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 4 <= colors.length <= 50,000.",
+    "Each query type has a specific format: [1, size] for counting and [2, index, color] for updates.",
+    "The colors array is circular, meaning the first and last elements are adjacent.",
+    "For counting queries, ensure the size requested is valid (3 <= size <= colors.length).",
+    "Updates may affect multiple groups, so re-evaluate after any color change."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to convert a positive integer into its binary representation. You can do this using built-in functions in many programming languages, or by repeatedly dividing the number by 2 and keeping track of the remainders."
+    },
+    {
+      "content": "Once you have the binary representation, look closely at the bits. You need to check if every pair of adjacent bits is different. For example, in the binary '101', the pairs are (1,0) and (0,1), both of which are alternating."
+    },
+    {
+      "content": "Think about how you can iterate through the bits of the number. You might want to use bitwise operations to check the current bit and the next bit efficiently."
+    },
+    {
+      "content": "Consider using a loop that examines each bit of the number. You can right shift the number to move to the next bit while checking the current one. This can be done using the bitwise AND operation to isolate the bits."
+    },
+    {
+      "content": "Remember that you can use the modulo operator to compare bits. For example, if you check if `n % 2` gives you the current least significant bit, you can then right shift `n` and check again."
+    },
+    {
+      "content": "Think about edge cases. What happens with the smallest input, which is 1? How does its binary representation look, and does it meet the criteria for alternating bits?"
+    },
+    {
+      "content": "You can also optimize your checks. If you notice two adjacent bits are the same, you can immediately return false without checking the rest of the bits."
+    },
+    {
+      "content": "Consider how you can represent the end of your checks. If you reach the end of the number without finding any adjacent bits that are the same, you should return true."
+    },
+    {
+      "content": "When implementing your solution, remember to handle the input constraints. The number will always be a positive integer, so you don't need to handle negative cases."
+    },
+    {
+      "content": "As a final step, think about how you would structure your function. You might want to define a function that takes an integer as input and returns a boolean indicating whether it has alternating bits."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 2^31 - 1",
+    "Input is always a positive integer.",
+    "Output should be a boolean value (true or false)."
+  ]
+}

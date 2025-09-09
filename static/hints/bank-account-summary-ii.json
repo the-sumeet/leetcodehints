@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the two tables: `Users` and `Transactions`. You need to join these tables to associate users with their transactions based on the `account` field."
+    },
+    {
+      "content": "Remember that the balance for each user is calculated as the sum of all `amount` values in the `Transactions` table for their respective `account`. Think about how you can use SQL aggregation functions to achieve this."
+    },
+    {
+      "content": "To calculate the balance, you will likely need to use the `SUM()` function in SQL. Consider how you can group the transactions by `account` to get the total amount for each user."
+    },
+    {
+      "content": "Don't forget to filter the results! You only want users with a balance greater than 10,000. This can be done using the `HAVING` clause after your aggregation."
+    },
+    {
+      "content": "Make sure to alias your calculated balance in the SQL query so that it can be easily referenced in the final output. Think about how to structure your `SELECT` statement."
+    },
+    {
+      "content": "When joining the tables, ensure that you are using the correct join type. A `JOIN` on `Users` and `Transactions` should be used to include only those users who have transactions."
+    },
+    {
+      "content": "Check for edge cases, such as users with no transactions at all. How will your query handle these users? They should not appear in your final result since they won't have a balance."
+    },
+    {
+      "content": "Consider the data types for your calculations. Since `amount` can be negative, ensure that your summation correctly reflects the balance by accounting for both positive and negative amounts."
+    },
+    {
+      "content": "The output format requires you to return the `name` and the calculated `balance`. Make sure your final `SELECT` statement includes these fields and is formatted correctly."
+    },
+    {
+      "content": "Finally, think about the order of the results. The problem states that the result can be returned in any order, but consider if you want to add an `ORDER BY` clause for clarity in your results."
+    }
+  ],
+  "questionNotes": [
+    "The `account` in `Users` is the primary key, ensuring unique accounts.",
+    "The `trans_id` in `Transactions` is also a primary key, ensuring unique transactions.",
+    "All accounts start with a balance of 0, so you need to sum the transactions to find the current balance.",
+    "You must return only users with a balance greater than 10,000.",
+    "The output should include the user's `name` and their calculated `balance`."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to monitor all nodes in a binary tree using the least number of cameras. Each camera can monitor its parent, itself, and its immediate children."
+    },
+    {
+      "content": "Consider the tree structure. Each node can be seen as a point of monitoring. Think about how you can determine whether a node needs a camera based on its children and parent."
+    },
+    {
+      "content": "Identify the base cases. If the tree is empty (null root), how many cameras do you need? What if there's only one node?"
+    },
+    {
+      "content": "Think about a recursive approach. You could traverse the tree in a post-order fashion (left, right, then node) to decide where to place cameras."
+    },
+    {
+      "content": "Define states for each node during your traversal. For example, you could categorize nodes as needing a camera, being monitored, or not monitored."
+    },
+    {
+      "content": "Consider how you might return values from your recursive function. What information do you need to pass up the tree to make decisions at each node?"
+    },
+    {
+      "content": "As you traverse, decide if a node needs a camera based on its children's states. For instance, if a child needs a camera, the parent does not need one."
+    },
+    {
+      "content": "Use a counter to keep track of the number of cameras needed. Increment this counter whenever you decide to place a camera at a node."
+    },
+    {
+      "content": "Think about edge cases. What happens if a node is a leaf? How does that affect the need for cameras in its parent node?"
+    },
+    {
+      "content": "Make sure to handle the return values correctly. You may want to return multiple values from your recursive function to convey the state of the node."
+    },
+    {
+      "content": "Consider the different states you might need to return: 0 (monitored), 1 (needs camera), and 2 (has camera). How will you use these states in your logic?"
+    },
+    {
+      "content": "When implementing your recursive function, ensure that you check the states of both children before deciding the state of the current node."
+    },
+    {
+      "content": "Remember to account for the root node after the recursion completes. If the root is not monitored, you will need to place a camera there."
+    },
+    {
+      "content": "Think through the time complexity of your approach. How does the recursive traversal affect performance, especially with the constraints given?"
+    },
+    {
+      "content": "Finally, ensure your solution handles all nodes correctly. Test with various tree shapes, including skewed trees and balanced trees, to validate your implementation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The number of nodes in the tree is in the range [1, 1000].",
+    "Node.val == 0, which means the value of nodes is not relevant to the problem.",
+    "The tree can be represented using a list format as shown in the examples.",
+    "Ensure to consider edge cases like single-node trees and trees with only left or right children."
+  ]
+}

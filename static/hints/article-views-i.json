@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `Views` table. You have columns for `article_id`, `author_id`, `viewer_id`, and `view_date`. Focus on the relationships between these columns, particularly which viewers are also authors."
+    },
+    {
+      "content": "Consider what it means for an author to view their own article. You will need to compare the `author_id` and `viewer_id` columns in your query to identify matches."
+    },
+    {
+      "content": "Think about how you can filter the rows in the `Views` table to find instances where the `author_id` is equal to the `viewer_id`. This is the key condition for your solution."
+    },
+    {
+      "content": "Use a SQL `SELECT` statement to retrieve the `author_id` where the condition from the previous hint is met. Remember that you want to avoid duplicates in your results."
+    },
+    {
+      "content": "To eliminate duplicates, consider using the `DISTINCT` keyword in your SQL query. This will ensure that each author is only listed once in your output."
+    },
+    {
+      "content": "Once you have the distinct `author_id`s, you need to format your output correctly. The result should be a table with a single column named `id`."
+    },
+    {
+      "content": "Don't forget to sort your results. Use the `ORDER BY` clause to sort the `id` column in ascending order. This is important for meeting the output requirements."
+    },
+    {
+      "content": "Consider edge cases, such as when no authors have viewed their own articles. Ensure your query handles this gracefully and returns an empty result set if necessary."
+    },
+    {
+      "content": "Think about how you would write the complete SQL query. You will need to combine the filtering, distinct selection, and sorting into a single cohesive statement."
+    },
+    {
+      "content": "Your final SQL query might look something like this: `SELECT DISTINCT author_id AS id FROM Views WHERE author_id = viewer_id ORDER BY id ASC;`. Make sure to test it against various scenarios to confirm its correctness."
+    }
+  ],
+  "questionNotes": [
+    "There is no primary key in the Views table, and it may contain duplicate rows.",
+    "Equal author_id and viewer_id indicate the same person.",
+    "The output must be sorted by id in ascending order.",
+    "Return a single column named 'id' in the result."
+  ]
+}

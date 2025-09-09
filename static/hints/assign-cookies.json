@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input arrays. The first array `g` represents the greed factors of the children, while the second array `s` represents the sizes of the cookies. Each child can only receive one cookie, and a cookie can only be given to one child."
+    },
+    {
+      "content": "Consider sorting both arrays. By sorting, you can more easily match the smallest cookie that satisfies a child's greed. This will help you maximize the number of content children."
+    },
+    {
+      "content": "After sorting, use two pointers: one for the children (`i`) and one for the cookies (`j`). Start both pointers at the beginning of their respective arrays."
+    },
+    {
+      "content": "Iterate through both arrays using the pointers. If the size of the cookie at pointer `j` is greater than or equal to the greed factor of the child at pointer `i`, it means you can satisfy that child. Move both pointers forward in this case."
+    },
+    {
+      "content": "If the cookie at pointer `j` is too small for the child at pointer `i`, move the cookie pointer `j` forward to try the next larger cookie."
+    },
+    {
+      "content": "Keep a count of how many children have been satisfied. Each time you successfully assign a cookie to a child, increment your count."
+    },
+    {
+      "content": "Think about edge cases, such as when there are no cookies available (`s` is empty). In this case, the maximum number of content children should be 0."
+    },
+    {
+      "content": "Consider what happens if all cookies are smaller than the smallest child's greed factor. You should also return 0 in this scenario."
+    },
+    {
+      "content": "Make sure to handle the case where either `g` or `s` is empty effectively. You should check the lengths of both arrays before starting your matching logic."
+    },
+    {
+      "content": "Finally, remember to return the count of satisfied children as your output. Ensure your function signature matches the expected format, and test with various cases to validate your solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= g.length <= 3 * 10^4",
+    "Constraints: 0 <= s.length <= 3 * 10^4",
+    "Constraints: 1 <= g[i], s[j] <= 2^31 - 1",
+    "Each child can only receive one cookie, and each cookie can only be given to one child.",
+    "Return the maximum number of content children."
+  ]
+}

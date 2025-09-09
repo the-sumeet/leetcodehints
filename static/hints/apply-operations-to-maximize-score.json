@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of prime scores. The prime score of an integer is defined as the number of distinct prime factors it has. For example, the prime score of 30 (which factors to 2, 3, and 5) is 3."
+    },
+    {
+      "content": "Consider how to efficiently calculate the prime score for each number in the array. You might want to precompute the prime scores for all integers up to the maximum possible value in the array (100,000) using a sieve-like approach."
+    },
+    {
+      "content": "Remember that you can only apply the operation at most k times. Think about how you will keep track of which subarrays have already been chosen to avoid duplicates."
+    },
+    {
+      "content": "When selecting a subarray, you should choose the element with the highest prime score. If there are ties (multiple elements with the same prime score), you should select the one with the smallest index."
+    },
+    {
+      "content": "To maximize your score, consider the implications of choosing different subarrays. You may want to explore all possible subarrays and their corresponding prime scores."
+    },
+    {
+      "content": "As you explore subarrays, think about how to efficiently store and retrieve the maximum prime score and its corresponding index for each subarray."
+    },
+    {
+      "content": "Since the score can grow large, remember to apply the modulo operation (10^9 + 7) after each multiplication to keep the numbers manageable."
+    },
+    {
+      "content": "Consider edge cases where k is larger than the number of distinct prime scores available in the array. How would your approach change in such scenarios?"
+    },
+    {
+      "content": "You might want to use a priority queue (or a max-heap) to help you efficiently retrieve the maximum prime score element when processing subarrays."
+    },
+    {
+      "content": "Think about the time complexity of your solution. Given the constraints, a naive O(n^3) solution may not be feasible. Can you reduce it to O(n^2) or better?"
+    },
+    {
+      "content": "As you implement your solution, keep track of the score at each step and ensure that you are correctly applying the modulo operation."
+    },
+    {
+      "content": "When iterating over subarrays, ensure that you are not selecting the same subarray multiple times. You can use a set to track the indices of chosen subarrays."
+    },
+    {
+      "content": "Consider how to handle cases where k is 0. What should your function return in this case? It should return 1, since you start with a score of 1."
+    },
+    {
+      "content": "You may need to implement a helper function to calculate the prime score of a number. This function can be called whenever you need to evaluate a number's prime score."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct type. The result should be an integer, specifically the maximum score modulo (10^9 + 7)."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length == n <= 10^5",
+    "1 <= nums[i] <= 10^5",
+    "1 <= k <= min(n * (n + 1) / 2, 10^9)",
+    "Return the maximum score modulo 10^9 + 7.",
+    "The prime score is the number of distinct prime factors.",
+    "In case of ties in prime scores, choose the element with the smallest index."
+  ]
+}

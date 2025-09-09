@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the order of operations in the expression. The operations you need to handle are addition (+), subtraction (-), multiplication (*), and division (/). Remember that multiplication and division have higher precedence than addition and subtraction."
+    },
+    {
+      "content": "Consider how to handle spaces in the input string. You will need to ignore any spaces when parsing the expression. A good approach is to iterate through the string and build the numbers and operators as you go."
+    },
+    {
+      "content": "Think about how to store the numbers and operators as you parse them. You might want to use a stack to keep track of the results of operations as you encounter them. This will help you manage the order of operations correctly."
+    },
+    {
+      "content": "When you encounter a number, you need to determine what operation to apply it with. Keep track of the last operator you saw and apply it to the number you just parsed. For example, if the last operator was '*', you would multiply the current number with the top of the stack."
+    },
+    {
+      "content": "Be careful with integer division. In Python, the division operator (/) does not truncate towards zero by default. Make sure to handle this correctly by using integer division that truncates towards zero, especially for negative results."
+    },
+    {
+      "content": "As you process the string, consider how to handle the end of the string. You may need to apply the last operation after finishing the loop through the string. This ensures that the final number is accounted for."
+    },
+    {
+      "content": "When you finish parsing the expression, you will need to sum all the values in your stack. This will give you the final result of the expression. Remember that addition and subtraction are the last operations to be applied."
+    },
+    {
+      "content": "Think about edge cases, such as when the input string is very short or contains only one number. Ensure your implementation can handle these cases without errors."
+    },
+    {
+      "content": "Make sure to test your implementation with various cases, including those with multiple spaces, different operator combinations, and edge cases like division by zero (though the problem states the input is always valid)."
+    },
+    {
+      "content": "Finally, structure your code so that it clearly separates the parsing logic from the evaluation logic. This will help with readability and debugging. You might want to create helper functions for parsing numbers and evaluating the stack."
+    }
+  ],
+  "questionNotes": [
+    "The expression will always be valid and consists of non-negative integers.",
+    "You are not allowed to use eval() or any built-in expression evaluators.",
+    "Integer division should truncate towards zero.",
+    "All intermediate results will be in the range of [-2^31, 2^31 - 1].",
+    "Spaces can appear anywhere in the expression and should be ignored."
+  ]
+}

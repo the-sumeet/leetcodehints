@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find all combinations of indices (i, j, k, l) such that the sum of elements from the four arrays equals zero. Think about how you can efficiently count these combinations."
+    },
+    {
+      "content": "Consider the constraints: each array has a length of n (1 <= n <= 200), and the values range from -2^28 to 2^28. This means a brute force approach that checks all combinations could lead to a time complexity of O(n^4), which is not feasible for larger n."
+    },
+    {
+      "content": "Instead of checking all combinations directly, think about how you can reduce the problem. One effective approach is to break the problem into two parts: calculate the sums of pairs from the first two arrays and the sums of pairs from the last two arrays."
+    },
+    {
+      "content": "For the first two arrays, you can create a hash map (or dictionary) to store the sums of all pairs from `nums1` and `nums2`. This will allow you to quickly look up how many times a particular sum occurs."
+    },
+    {
+      "content": "When you create the hash map for the sums of `nums1` and `nums2`, remember to iterate through all possible pairs. For example, for each element in `nums1`, loop through all elements in `nums2` to calculate their sums."
+    },
+    {
+      "content": "Now, for the last two arrays, you need to find sums of pairs from `nums3` and `nums4`. For each sum you compute from these pairs, check if the negation of that sum exists in your hash map from the first two arrays. This will help you find valid tuples."
+    },
+    {
+      "content": "As you check for the negation of sums from `nums3` and `nums4`, remember to keep a count of how many times each negated sum appears in the hash map. This will allow you to multiply counts together to get the total number of valid tuples."
+    },
+    {
+      "content": "Consider edge cases, such as when all arrays contain zeros. How will your algorithm handle this? It should still correctly count the combinations that sum to zero."
+    },
+    {
+      "content": "Make sure to handle the case where arrays might contain duplicate values. Your hash map should correctly account for these duplicates when counting sums."
+    },
+    {
+      "content": "Finally, outline your algorithm: 1) Create a hash map for sums of the first two arrays, 2) Iterate through the sums of the last two arrays, and for each sum, check the hash map for its negation and count the valid tuples. This will lead you to the final answer."
+    }
+  ],
+  "questionNotes": [
+    "You need to return the count of tuples (i, j, k, l) where nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0.",
+    "Arrays nums1, nums2, nums3, and nums4 are all of the same length n.",
+    "Constraints: 1 <= n <= 200, -2^28 <= nums1[i], nums2[i], nums3[i], nums4[i] <= 2^28.",
+    "Consider the efficiency of your solution, aiming for better than O(n^4) time complexity.",
+    "Handle duplicates in the arrays correctly when counting sums."
+  ]
+}

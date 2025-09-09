@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Remember that the array is sorted in ascending order. This property is crucial for applying the binary search algorithm effectively."
+    },
+    {
+      "content": "Binary search works by repeatedly dividing the search interval in half. Start with two pointers: one for the beginning of the array and one for the end."
+    },
+    {
+      "content": "Calculate the middle index of the current search interval. You can find it using the formula: `mid = (left + right) // 2`."
+    },
+    {
+      "content": "Compare the value at the middle index with the target. If they are equal, you've found the target and should return the index."
+    },
+    {
+      "content": "If the target is less than the value at the middle index, narrow your search to the left half of the array by adjusting the right pointer: `right = mid - 1`."
+    },
+    {
+      "content": "Conversely, if the target is greater than the value at the middle index, adjust the left pointer to search the right half: `left = mid + 1`."
+    },
+    {
+      "content": "Continue this process until the left pointer exceeds the right pointer. If this happens without finding the target, it means the target is not in the array."
+    },
+    {
+      "content": "Consider edge cases, such as when the array has only one element or when the target is less than the first element or greater than the last element."
+    },
+    {
+      "content": "Make sure to return -1 if the target is not found in the array, as specified in the problem statement."
+    },
+    {
+      "content": "Your final implementation should look something like this: Initialize `left` and `right`, enter a loop that continues while `left <= right`, and implement the logic to adjust `left` and `right` based on comparisons."
+    }
+  ],
+  "questionNotes": [
+    "The input array `nums` is sorted in ascending order.",
+    "You must achieve O(log n) runtime complexity.",
+    "The array contains unique integers.",
+    "Return the index of the target if found, otherwise return -1.",
+    "Constraints: 1 <= nums.length <= 10^4 and -10^4 < nums[i], target < 10^4."
+  ]
+}

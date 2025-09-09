@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what inorder traversal means. In a binary tree, inorder traversal visits the left subtree, then the current node, and finally the right subtree. This means you will need to explore the left child before processing the node itself."
+    },
+    {
+      "content": "Consider how you will represent the binary tree in your code. A common way is to define a `TreeNode` class with properties for the node's value and pointers to the left and right children."
+    },
+    {
+      "content": "Think about the base cases. What should your function return if the tree is empty? Remember that an empty tree should return an empty list."
+    },
+    {
+      "content": "For the recursive approach, you can create a helper function that takes the current node and a list to store the results. Make sure to handle the case where the current node is null."
+    },
+    {
+      "content": "When implementing the recursive solution, remember to append the current node's value to the result list after visiting the left subtree and before visiting the right subtree."
+    },
+    {
+      "content": "Now, let's consider the iterative approach. You can use a stack to help you traverse the tree without recursion. The stack will keep track of nodes that need to be processed."
+    },
+    {
+      "content": "In the iterative solution, start by pushing the root node onto the stack. Then, while there are nodes in the stack, keep pushing the left children of the nodes onto the stack until you reach a null left child."
+    },
+    {
+      "content": "Once you reach a null left child, pop the node from the stack, add its value to the result list, and then push its right child onto the stack. This will ensure you visit nodes in the correct order."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the tree has only one node or when the tree is skewed (all nodes have only left or only right children)."
+    },
+    {
+      "content": "Finally, remember to return the result list after completing the traversal. This list should contain the values of the nodes in the order they were visited."
+    }
+  ],
+  "questionNotes": [
+    "The input is a binary tree represented as a list, where `null` indicates the absence of a node.",
+    "The output should be a list of node values in inorder traversal order.",
+    "Consider edge cases like an empty tree or a tree with only one node.",
+    "The number of nodes in the tree is between 0 and 100, and values are between -100 and 100."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an arithmetic slice is. It requires at least three elements in the subarray, and the difference between consecutive elements must be constant. For example, in the array [1, 2, 3, 4], the slice [1, 2, 3] has a common difference of 1."
+    },
+    {
+      "content": "Consider how you can identify arithmetic slices within the array. You might want to iterate through the array and check for sequences where the difference between consecutive elements remains the same."
+    },
+    {
+      "content": "Think about how to keep track of the number of valid arithmetic slices. You can use a counter to count the number of slices as you find them, but remember that a single slice can contribute to multiple larger slices."
+    },
+    {
+      "content": "When you find a valid arithmetic slice of length 3, it can also be extended to longer slices. For example, if you find [1, 2, 3], you can also count [1, 2, 3, 4] as a valid slice."
+    },
+    {
+      "content": "As you iterate through the array, maintain a variable to track the length of the current arithmetic slice. If the current difference matches the previous difference, increment this length; otherwise, reset it."
+    },
+    {
+      "content": "Remember to only start counting slices when your current length of the arithmetic slice is at least 3. This is crucial because slices with fewer than three elements do not count."
+    },
+    {
+      "content": "Think about how to calculate the number of slices from the length of the current arithmetic slice. If the length is `n`, the number of arithmetic slices you can form is `(n - 2) * (n - 1) / 2`."
+    },
+    {
+      "content": "Pay attention to edge cases, such as arrays with fewer than three elements. In such cases, the result should be zero since you cannot form any arithmetic slices."
+    },
+    {
+      "content": "Consider how to handle arrays where all elements are the same, like [7, 7, 7, 7]. This will create many overlapping arithmetic slices, so ensure your counting logic captures all of them."
+    },
+    {
+      "content": "Finally, implement your logic in a single pass through the array, keeping track of the previous difference and the current length of the arithmetic slice. This will help you efficiently count all valid slices."
+    }
+  ],
+  "questionNotes": [
+    "An arithmetic array must have at least three elements.",
+    "The difference between consecutive elements must be constant.",
+    "A subarray is a contiguous subsequence of the array.",
+    "Constraints: 1 <= nums.length <= 5000, -1000 <= nums[i] <= 1000.",
+    "Return the total count of arithmetic slices, not the slices themselves."
+  ]
+}

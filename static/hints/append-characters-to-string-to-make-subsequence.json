@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence can be formed by deleting some characters from a string without rearranging the remaining characters. For example, in the string 'abcde', 'ace' is a subsequence."
+    },
+    {
+      "content": "Consider the lengths of the two strings, `s` and `t`. If `t` is longer than `s`, you will definitely need to append characters to `s`. Think about how you can align the characters of `t` with those in `s`."
+    },
+    {
+      "content": "You will want to iterate through both strings to see how many characters from `t` can be matched with `s`. Use two pointers: one for `s` and one for `t`. This will help you track how many characters from `t` can be found in `s`."
+    },
+    {
+      "content": "As you iterate, whenever a character in `s` matches the current character in `t`, move the pointer for `t` forward. This way, you can count how many characters from `t` are matched in `s`."
+    },
+    {
+      "content": "Remember that the order of characters in `t` must be preserved. If a character in `t` cannot be matched with the current character in `s`, you should not move the pointer for `t`."
+    },
+    {
+      "content": "Once you finish iterating through `s`, check how many characters from `t` were matched. The number of unmatched characters in `t` will tell you how many you need to append to `s`."
+    },
+    {
+      "content": "Consider edge cases: what happens if `s` is empty or if `t` is empty? Make sure your logic handles these situations correctly."
+    },
+    {
+      "content": "Think about the time complexity of your approach. You should aim for a solution that runs in linear time, O(n + m), where n is the length of `s` and m is the length of `t`."
+    },
+    {
+      "content": "If you find that all characters in `t` can be matched with `s`, then the result is 0. If not, the result will be the total length of `t` minus the number of matched characters."
+    },
+    {
+      "content": "Finally, make sure to return the correct result. The output should be the minimum number of characters that need to be appended to `s` so that `t` becomes a subsequence of `s`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length, t.length <= 10^5",
+    "Both s and t consist only of lowercase English letters.",
+    "Ensure that the order of characters in t is preserved when forming the subsequence."
+  ]
+}

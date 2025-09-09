@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how binary addition works. Just like decimal addition, binary addition involves carrying over when the sum exceeds the base (in this case, 2). For example, adding '1' and '1' results in '0' with a carry of '1'."
+    },
+    {
+      "content": "Consider how you will iterate through the strings. You can start from the rightmost end (least significant bit) and move left. This simulates how you would add numbers on paper."
+    },
+    {
+      "content": "Think about the lengths of the two binary strings. They may not be the same length, so you should handle cases where one string runs out of digits before the other."
+    },
+    {
+      "content": "Remember to keep track of a carry variable. Initialize it to 0, and update it based on the sum of the two bits and the carry from the previous addition."
+    },
+    {
+      "content": "When adding the bits, convert the characters '0' and '1' to integers. You can do this by subtracting the character '0' from the character representing the bit."
+    },
+    {
+      "content": "After calculating the sum of the two bits and the carry, you will need to determine the new bit to add to the result. Use modulo operation to find the result bit and integer division to update the carry."
+    },
+    {
+      "content": "As you construct the result, consider using a list to build the binary sum in reverse order. This way, you can append bits to the list and reverse it at the end for the final result."
+    },
+    {
+      "content": "Don't forget to check if there's a carry left after processing both strings. If there is, you need to add it to the result as well."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when one or both strings are very short (like '0' or '1') or when they are of maximum length (10^4)."
+    },
+    {
+      "content": "Finally, remember to convert your list of bits back into a string before returning the result. You can use the `join` method to concatenate the list into a single string."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= a.length, b.length <= 10^4",
+    "Both strings consist only of '0' or '1' characters.",
+    "No leading zeros except for the string '0'.",
+    "Return the result as a binary string."
+  ]
+}

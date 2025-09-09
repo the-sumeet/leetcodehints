@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the clock is divided. The minute hand completes a full circle (360 degrees) in 60 minutes. This means each minute corresponds to 6 degrees (360/60)."
+    },
+    {
+      "content": "Next, consider the hour hand. The hour hand completes a full circle in 12 hours, which means each hour corresponds to 30 degrees (360/12). However, the hour hand also moves as the minutes pass."
+    },
+    {
+      "content": "Calculate the angle of the minute hand first. If you have the minutes, you can find its angle using: `minute_angle = minutes * 6`."
+    },
+    {
+      "content": "Now, for the hour hand, remember that it also moves as the minutes progress. The formula for the hour hand's angle is: `hour_angle = hour * 30 + (minutes / 60) * 30`."
+    },
+    {
+      "content": "After calculating both angles, find the absolute difference between them: `angle_difference = abs(hour_angle - minute_angle)`."
+    },
+    {
+      "content": "Since the angle between the hands can be more than 180 degrees, you need to find the smaller angle. Use: `smaller_angle = min(angle_difference, 360 - angle_difference)`."
+    },
+    {
+      "content": "Consider edge cases, such as when the hour is 12. Remember that 12 o'clock is equivalent to 0 o'clock in terms of angles."
+    },
+    {
+      "content": "Make sure to handle the case when the time is exactly on the hour or half past the hour, as these might yield specific angles that need to be calculated accurately."
+    },
+    {
+      "content": "Remember to return the result as a floating-point number. Python's float can handle the precision required, but ensure your calculations are precise to meet the 10^-5 accuracy requirement."
+    },
+    {
+      "content": "Finally, put everything together in a function. Your function should take `hour` and `minutes` as inputs and return the smaller angle calculated from the formulas you’ve derived."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= hour <= 12, 0 <= minutes <= 59",
+    "The output must be a floating-point number.",
+    "Answers within 10^-5 of the actual value will be accepted as correct."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. The `colors` array represents a circular arrangement of tiles, where each tile can be either red (0) or blue (1). Make sure to visualize how the first and last elements of the array are adjacent."
+    },
+    {
+      "content": "Consider how to define an 'alternating group'. An alternating group of size `k` consists of `k` contiguous tiles where each tile alternates in color. For example, a valid group could look like [0, 1, 0] or [1, 0, 1]."
+    },
+    {
+      "content": "Remember that since the tiles are in a circle, you need to account for wrapping around the end of the array. This means you should check combinations that include both the end and the start of the array."
+    },
+    {
+      "content": "To check if a group of `k` tiles is alternating, you can loop through the first `k` tiles and compare each tile with the next one. If they are the same, the group is not alternating."
+    },
+    {
+      "content": "Consider using a sliding window approach to check each group of `k` tiles. Start with the first `k` tiles, check if they form an alternating group, then slide the window one tile at a time to check the next group."
+    },
+    {
+      "content": "When sliding the window, remember to wrap around to the beginning of the array when you reach the end. This can be done using modulo operations to access the correct indices in the circular array."
+    },
+    {
+      "content": "Think about how to handle edge cases, such as when `k` equals the length of the `colors` array. In this case, you are checking the entire array for alternating colors."
+    },
+    {
+      "content": "As you implement the sliding window, keep a count of how many valid alternating groups you find. You can initialize a counter and increment it whenever you find a valid group."
+    },
+    {
+      "content": "Make sure to return the count of alternating groups at the end of your function. The output should be a single integer representing the number of valid groups found."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases, including arrays with all tiles of the same color, and the minimum and maximum lengths allowed by the constraints."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= colors.length <= 10^5",
+    "0 <= colors[i] <= 1",
+    "3 <= k <= colors.length",
+    "The first and last tiles are adjacent due to the circular arrangement."
+  ]
+}

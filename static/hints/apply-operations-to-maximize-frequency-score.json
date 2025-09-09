@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the goal: you want to maximize the frequency of the most common element in the array after performing at most `k` operations. Consider what it means for an element to be 'frequent' in the context of the array."
+    },
+    {
+      "content": "Think about how you can change the elements in the array. You can either increase or decrease any element by 1. This means you have the flexibility to adjust numbers in both directions."
+    },
+    {
+      "content": "Consider the case where `k` is 0. What will be the maximum frequency score in that scenario? This will help you understand the baseline frequency you can achieve without any operations."
+    },
+    {
+      "content": "When `k` is greater than 0, think about how you can concentrate the values of the array around a specific number. This could involve increasing smaller numbers or decreasing larger numbers to match a target value."
+    },
+    {
+      "content": "To find the maximum frequency, you might want to consider each unique number in the array as a potential target. For each target, calculate how many operations it would take to convert other numbers to this target."
+    },
+    {
+      "content": "Use a frequency map (or dictionary) to count how many times each number appears in the array. This will help you quickly assess how many operations are needed to convert other numbers to a specific target."
+    },
+    {
+      "content": "When calculating the operations needed to convert numbers to a target, remember that the cost will depend on how far each number is from the target. This can be computed as the sum of absolute differences."
+    },
+    {
+      "content": "Consider sorting the unique numbers in the array. This will allow you to efficiently evaluate the cost of converting elements to each target by traversing the sorted list."
+    },
+    {
+      "content": "As you evaluate each target, keep track of how many operations you have remaining (`k`). If at any point the operations needed exceed `k`, you should stop and consider the frequency achieved so far."
+    },
+    {
+      "content": "Think about edge cases, such as when all elements are the same or when `k` is very large. How would these scenarios affect your approach to maximizing frequency?"
+    },
+    {
+      "content": "You may want to use a two-pointer technique or a sliding window approach to efficiently calculate how many elements can be converted to a target within the allowed operations."
+    },
+    {
+      "content": "Remember to update your maximum frequency score each time you find a valid target that can be achieved within `k` operations. This will help you keep track of the best score found so far."
+    },
+    {
+      "content": "If multiple targets yield the same maximum frequency, ensure that you are correctly handling ties. The problem asks for the maximum score, so focus on the highest frequency regardless of the target value."
+    },
+    {
+      "content": "As you finalize your approach, ensure that your solution is efficient enough to handle the upper limits of the constraints, especially since `k` can be as large as 10^14."
+    },
+    {
+      "content": "Finally, test your solution with various edge cases, including arrays with a single element, very large `k`, and arrays where all elements are the same. This will help confirm that your solution is robust."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5, 1 <= nums[i] <= 10^9, 0 <= k <= 10^14.",
+    "The frequency of an element is defined as the number of occurrences of that element in the array.",
+    "You can increase or decrease any element by 1, and you can perform this operation at most `k` times.",
+    "The output should be the maximum frequency score achievable after the allowed operations."
+  ]
+}

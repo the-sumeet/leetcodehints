@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main components: 'Users' and 'Transactions'. Each user has a unique ID, a name, and a credit balance. Transactions involve a sender and a receiver, along with an amount and a date."
+    },
+    {
+      "content": "Consider how you will represent the data in your code. You might want to use dictionaries or classes for users and transactions to easily access their properties by user ID or transaction ID."
+    },
+    {
+      "content": "Think about how to calculate the net balance for each user. You need to account for both incoming and outgoing transactions. For each transaction, if a user is 'paid_by', subtract the amount from their credit; if they are 'paid_to', add the amount."
+    },
+    {
+      "content": "When processing transactions, ensure that you handle each transaction only once. Keep track of which users are involved in each transaction to update their balances correctly."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when a user has no transactions. Their balance should remain as it is, and you should still include them in the final summary."
+    },
+    {
+      "content": "Consider using a loop to iterate over the transactions and another loop (or a single pass) to update user balances. You might want to create a temporary structure to hold the updated balances before finalizing them."
+    },
+    {
+      "content": "After calculating the balances, think about how to format the output. You need to return a summary that includes each user's ID, name, and their final credit balance."
+    },
+    {
+      "content": "Remember to sort the final output. You might want to sort the users by their credit balance in descending order. If two users have the same balance, you can sort them by user ID or name as a tie-breaker."
+    },
+    {
+      "content": "When implementing the sorting, consider using built-in sorting functions that allow you to specify multiple criteria. This will help you manage the tie-breaking easily."
+    },
+    {
+      "content": "Finally, ensure your function returns the output in the correct format as specified in the problem statement. This may involve converting your final data structure into the required JSON format."
+    }
+  ],
+  "questionNotes": [
+    "Users have unique user_ids; ensure you handle them correctly.",
+    "Transactions involve both a 'paid_by' and 'paid_to', which must be processed to update user credits.",
+    "Handle cases where users have no transactions, ensuring they still appear in the summary.",
+    "The output should be sorted by credit balance, with ties broken by user_id or user_name."
+  ]
+}

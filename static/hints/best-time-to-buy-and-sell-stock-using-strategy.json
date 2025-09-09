@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the initial profit based on the given `prices` and `strategy` arrays. Remember that profit is computed as the sum of `strategy[i] * prices[i]` for all days."
+    },
+    {
+      "content": "Make sure you understand what each value in the `strategy` array signifies: -1 for buying, 0 for holding, and 1 for selling. This will help you visualize how changes in strategy affect profit."
+    },
+    {
+      "content": "Consider how modifying the `strategy` array with the given `k` can affect your profit. Specifically, think about how setting the first half of the selected segment to 0 (hold) and the second half to 1 (sell) can maximize returns."
+    },
+    {
+      "content": "When modifying the `strategy`, remember that you can only select exactly `k` consecutive elements. This means you will need to iterate through the `strategy` array and consider every possible starting index for your modification."
+    },
+    {
+      "content": "To efficiently calculate the profit after each modification, you might want to maintain a running total of the original profit and adjust it based on the changes you make to the `strategy` segment."
+    },
+    {
+      "content": "As you iterate through potential modification segments, keep track of the maximum profit you can achieve. This will involve comparing the profit before and after each modification."
+    },
+    {
+      "content": "Be careful with edge cases where modifying the strategy might not yield a better profit than the original strategy. Ensure your solution can handle scenarios where the best option is to leave the strategy unchanged."
+    },
+    {
+      "content": "When you modify a segment of the strategy, remember to only update the relevant indices and calculate the profit for those indices. You do not need to recalculate profit for the entire array every time."
+    },
+    {
+      "content": "Consider how the length of the `prices` and `strategy` arrays can affect your approach. Since they are guaranteed to be equal and within specified limits, ensure your solution is efficient enough to handle the upper bounds."
+    },
+    {
+      "content": "Finally, implement a loop that goes through all possible starting indices for the modification and calculates the profit after each potential change. Keep track of the maximum profit found throughout these iterations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= prices.length == strategy.length <= 10^5",
+    "1 <= prices[i] <= 10^5",
+    "-1 <= strategy[i] <= 1",
+    "2 <= k <= prices.length, k is even",
+    "Return the maximum possible profit as an integer."
+  ]
+}

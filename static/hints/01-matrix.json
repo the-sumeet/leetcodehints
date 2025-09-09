@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to calculate the distance from each cell in the matrix to the nearest cell that contains a 0. Remember that distance is defined as the number of edges traversed."
+    },
+    {
+      "content": "Consider how to represent the distance in the output matrix. Each cell that contains a 0 should have a distance of 0, while cells that contain 1 will need to be calculated based on their proximity to the nearest 0."
+    },
+    {
+      "content": "Think about how you can efficiently find the nearest 0 for each cell. A naive approach would be to check every cell for every 1, but this would be inefficient for larger matrices. Can you think of a more optimal approach?"
+    },
+    {
+      "content": "A common technique for problems involving distances in grids is to use Breadth-First Search (BFS). You can start BFS from all the 0 cells simultaneously, which allows you to propagate the distance to neighboring cells."
+    },
+    {
+      "content": "Before implementing BFS, prepare a queue to hold the coordinates of the 0 cells. You will also need a matrix to store the distances, initializing it with a high value (like infinity) for cells that are 1."
+    },
+    {
+      "content": "As you perform BFS, update the distance for each cell when you reach it from a neighboring cell. Remember to only update the distance if the new calculated distance is less than the current stored distance."
+    },
+    {
+      "content": "While processing the BFS queue, ensure you handle the boundaries of the matrix correctly. You don't want to access indices that are out of bounds, so check the limits before accessing the matrix."
+    },
+    {
+      "content": "Consider edge cases such as matrices that are very small (1x1) or very large (10,000 cells). Ensure that your solution handles these efficiently without running into performance issues."
+    },
+    {
+      "content": "After implementing the BFS, verify your output against the provided examples. Pay attention to the structure of your output matrix to ensure it matches the expected format."
+    },
+    {
+      "content": "Finally, ensure your code is clean and well-documented. Add comments to explain your logic, especially around the BFS implementation and how distances are updated."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == mat.length, n == mat[i].length, 1 <= m, n <= 10^4, 1 <= m * n <= 10^4.",
+    "mat[i][j] is either 0 or 1, and there is at least one 0 in mat.",
+    "The output should be a matrix of the same dimensions as the input, with distances calculated correctly."
+  ]
+}

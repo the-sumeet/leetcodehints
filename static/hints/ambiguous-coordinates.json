@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input string. The input will always be in the format '(digits)', where 'digits' is a sequence of numbers. Your task is to split this sequence into two parts that represent the x and y coordinates."
+    },
+    {
+      "content": "Consider how you can split the digits into two non-empty parts. The first part will represent the x-coordinate and the second part the y-coordinate. You can iterate through the string to find potential split points."
+    },
+    {
+      "content": "When splitting the digits, remember that both parts must be valid numbers. This means they should not have leading zeros unless the number is exactly '0'. For example, '01' is invalid, but '0' is valid."
+    },
+    {
+      "content": "Think about how to handle decimal points. You can insert a decimal point in either part of the split, but ensure that the resulting number still adheres to the rules about leading zeros and decimal placement."
+    },
+    {
+      "content": "For each valid split of the digits, generate all possible combinations of the two parts with and without decimal points. You might want to use a nested loop to iterate through possible decimal placements."
+    },
+    {
+      "content": "Make sure to check edge cases where the split results in empty strings or invalid numbers. For example, if you try to split '123' at index 0, the first part would be empty, which is not allowed."
+    },
+    {
+      "content": "After generating potential coordinates, format them according to the problem's requirements. Each coordinate should be in the format '(x, y)' with exactly one space after the comma."
+    },
+    {
+      "content": "Consider using a set to collect valid coordinates to avoid duplicates. Since the order of the output does not matter, this will help ensure you only return unique coordinate pairs."
+    },
+    {
+      "content": "Remember the constraints specified in the problem. For instance, the input string length will always be between 4 and 12, and it will always start with '(' and end with ')'. This can simplify some of your checks."
+    },
+    {
+      "content": "Finally, think about how you will return the results. You need to return a list of strings, so make sure your output format matches the required structure. You might want to convert your set of coordinates back into a list before returning."
+    }
+  ],
+  "questionNotes": [
+    "Input format is always '(digits)' where digits are numbers.",
+    "You must split the digits into two non-empty parts for x and y coordinates.",
+    "Leading zeros are not allowed unless the number is exactly '0'.",
+    "Decimal points can be inserted, but must follow the rules of valid numbers.",
+    "Output must be in the format '(x, y)' with one space after the comma.",
+    "Return a list of unique coordinate strings."
+  ]
+}

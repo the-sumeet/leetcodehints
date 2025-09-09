@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input array `rains`. Each element represents either a lake that will fill with rain or a day where you can dry a lake (when the element is 0). This distinction is crucial for your approach."
+    },
+    {
+      "content": "Consider how you will track which lakes are full. You might want to use a set or a dictionary to keep track of lakes that have been filled with water as you iterate through the `rains` array."
+    },
+    {
+      "content": "When you encounter a day with rain (i.e., `rains[i] > 0`), you need to check if that lake is already full. If it is, a flood will occur unless you have dried another lake on a previous day."
+    },
+    {
+      "content": "Think about how to handle the days where `rains[i] == 0`. You have the opportunity to dry a lake. You should have a strategy for which lake to dry based on the current state of full lakes."
+    },
+    {
+      "content": "Keep in mind that if you dry a lake that is already empty, it has no effect. Therefore, you should only dry lakes that are currently full to avoid floods."
+    },
+    {
+      "content": "You may want to maintain a list or array to store your results. Each entry should be -1 for rainy days and the index of the lake you choose to dry on dry days."
+    },
+    {
+      "content": "Consider edge cases such as when there are no rainy days at all or when all days are rainy. How would your solution handle these scenarios?"
+    },
+    {
+      "content": "When drying lakes, you might want to prioritize drying lakes that will cause a flood if it rains again soon. Think about using a priority queue or a similar structure to manage this."
+    },
+    {
+      "content": "Remember that the output must be an array of the same length as `rains`. If you cannot avoid a flood, return an empty array. Make sure your logic accounts for this condition."
+    },
+    {
+      "content": "As you approach a solution, consider how you will implement the drying logic. You might want to keep a counter for how many times each lake has been filled and decide which one to dry based on that."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= rains.length <= 10^5",
+    "0 <= rains[i] <= 10^9",
+    "Return -1 for rainy days, and the index of the lake to dry for dry days.",
+    "If it's impossible to avoid a flood, return an empty array."
+  ]
+}

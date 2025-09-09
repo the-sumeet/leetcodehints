@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem constraints. You can buy and sell stock multiple times, but after selling, you must wait one day before buying again. This cooldown period is crucial in determining your strategy."
+    },
+    {
+      "content": "Consider how you can represent the state of your stock transactions. You might want to think about the different states: holding a stock, not holding a stock, and being in a cooldown period."
+    },
+    {
+      "content": "Think about using dynamic programming to keep track of your profits. You can use an array where each index represents the maximum profit achievable up to that day."
+    },
+    {
+      "content": "Define the states clearly: let `hold[i]` be the maximum profit on day `i` when you are holding a stock, and `sold[i]` when you have sold a stock on that day."
+    },
+    {
+      "content": "Remember the cooldown condition: if you sold on day `i`, you cannot buy on day `i+1`. This means you need to factor in the profit from day `i-1` when calculating profits for day `i`."
+    },
+    {
+      "content": "Your transitions might look like this: `hold[i] = max(hold[i-1], sold[i-2] - prices[i])` and `sold[i] = max(sold[i-1], hold[i-1] + prices[i])`. Make sure to initialize your arrays correctly."
+    },
+    {
+      "content": "Consider the base cases for your dynamic programming arrays. For example, on the first day, if you buy the stock, your profit is negative the price of the stock, and if you sell, your profit is 0 since you haven't sold anything yet."
+    },
+    {
+      "content": "Think about edge cases, such as when the prices array has only one element. What would the maximum profit be in that case? Make sure your implementation handles this gracefully."
+    },
+    {
+      "content": "As you implement your solution, be mindful of the array bounds. Ensure that when you access `i-2`, you are not going out of bounds, especially for the first few days."
+    },
+    {
+      "content": "Finally, after filling out your dynamic programming tables, the result will be the maximum of `sold[n-1]` and `hold[n-1]`, where `n` is the length of the prices array. This gives you the maximum profit achievable considering all transactions."
+    }
+  ],
+  "questionNotes": [
+    "You can complete as many transactions as you like, but after selling, you must wait one day before buying again (cooldown).",
+    "You cannot engage in multiple transactions simultaneously.",
+    "1 <= prices.length <= 5000",
+    "0 <= prices[i] <= 1000",
+    "Consider edge cases like a single price point."
+  ]
+}

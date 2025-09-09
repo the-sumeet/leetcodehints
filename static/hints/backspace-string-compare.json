@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the backspace character '#' affects the strings. Each '#' removes the character before it, so you need to simulate this behavior."
+    },
+    {
+      "content": "Consider how you would process each string individually. You can use a stack or a list to keep track of the characters as you iterate through the string."
+    },
+    {
+      "content": "When you encounter a character, simply add it to your stack. When you encounter a '#', pop the last character from the stack if it exists."
+    },
+    {
+      "content": "Think about what happens when you have consecutive '#' characters. They should not cause any errors; if your stack is empty, just ignore them."
+    },
+    {
+      "content": "After processing both strings, you will need to compare the final results. Ensure that both stacks are equal in terms of content."
+    },
+    {
+      "content": "Remember that the comparison should be done after processing both strings completely. You might want to convert the stacks back to strings for an easy comparison."
+    },
+    {
+      "content": "Consider edge cases, such as when both strings are empty or when one string has only backspaces. What should your function return in these cases?"
+    },
+    {
+      "content": "To optimize your solution, think about how you can achieve O(n) time complexity. Avoid using extra space unnecessarily, especially if you can use pointers instead of creating new strings."
+    },
+    {
+      "content": "You can simulate the backspace behavior using two pointers that traverse the strings from the end to the beginning. This way, you can directly compare characters while backtracking."
+    },
+    {
+      "content": "Implement two pointers for both strings. Move each pointer backwards, skipping characters that are 'backspaced' until you find a valid character or reach the start of the string."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length, t.length <= 200",
+    "Only lowercase letters and '#' characters are present in the strings.",
+    "Return true if the processed strings are equal, otherwise false.",
+    "Handle cases where backspacing leads to empty strings correctly."
+  ]
+}

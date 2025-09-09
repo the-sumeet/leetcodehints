@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a Directed Acyclic Graph (DAG). Remember that in a DAG, there are no cycles, which means you can traverse from one node to another without ever returning to the starting node."
+    },
+    {
+      "content": "Consider how you can represent the graph using an adjacency list. This can be done using a dictionary where each key is a node and its value is a list of nodes it points to."
+    },
+    {
+      "content": "Think about how you can find the ancestors of a node. A node u is an ancestor of node v if there is a path from u to v. You might want to explore Depth-First Search (DFS) or Breadth-First Search (BFS) to traverse the graph."
+    },
+    {
+      "content": "When exploring a node, keep track of the nodes you have visited to avoid processing the same node multiple times. This is crucial in a graph to prevent infinite loops, even though the graph is acyclic."
+    },
+    {
+      "content": "As you find ancestors for each node, remember to store them in a sorted manner. You can use a set to collect ancestors and then convert it to a sorted list before storing it in your answer."
+    },
+    {
+      "content": "Pay attention to the output format. The result should be a list of lists, where each inner list contains the ancestors of the corresponding node, sorted in ascending order."
+    },
+    {
+      "content": "Consider edge cases such as when there are no edges in the graph. In this case, all nodes should have an empty list of ancestors since no node can reach any other node."
+    },
+    {
+      "content": "Make sure to handle nodes that have no ancestors correctly. For example, the first node (node 0) in a disconnected graph should return an empty list as it has no incoming edges."
+    },
+    {
+      "content": "Before implementing your solution, sketch out a small example graph and manually trace the ancestors of each node. This will help solidify your understanding of the relationships between nodes."
+    },
+    {
+      "content": "Now, try implementing a function that uses DFS to explore each node and build the list of ancestors. Remember to initialize your answer list with empty lists for each node."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 1000, 0 <= edges.length <= min(2000, n * (n - 1) / 2)",
+    "Each edge is unique and directed, meaning no duplicate edges exist.",
+    "Return format: A list of lists, where answer[i] contains the sorted ancestors of node i."
+  ]
+}

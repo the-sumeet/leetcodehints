@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main components: 'Candidates' and 'Rounds'. Each candidate has an ID, name, years of experience, and an interview ID. Each round has an interview ID, round ID, and a score."
+    },
+    {
+      "content": "Focus on the 'Rounds' data. Each round is associated with an interview ID and a score. You'll need to determine how scores relate to candidates, so consider how to group or filter the rounds by interview ID."
+    },
+    {
+      "content": "Think about how to identify accepted candidates. You might need to define a threshold score that determines whether a candidate is accepted based on their performance across different rounds."
+    },
+    {
+      "content": "Consider using a data structure to store the scores for each candidate. A dictionary or a map can be helpful, where the key is the candidate's interview ID and the value is a list of scores."
+    },
+    {
+      "content": "What if a candidate has multiple rounds? You need to aggregate the scores for each candidate. Think about how you might calculate an average or maximum score from the rounds associated with each candidate."
+    },
+    {
+      "content": "Don't forget to handle edge cases. For example, what if a candidate has no rounds associated with their interview ID? You should decide how to treat such candidates in your final output."
+    },
+    {
+      "content": "Once you have the scores aggregated for each candidate, apply your acceptance criteria. Define what score qualifies a candidate for acceptance, and filter your candidates based on that."
+    },
+    {
+      "content": "Make sure to return the accepted candidates in the correct format. You might need to include specific fields such as candidate ID and name in your final output list."
+    },
+    {
+      "content": "Think about the order in which candidates should be returned. Should they be sorted by score, name, or some other criteria? Define your sorting logic before finalizing the output."
+    },
+    {
+      "content": "Finally, implement the logic to combine all the steps you've outlined. Start by iterating through the 'Rounds' to build your score map, then filter and sort candidates based on your acceptance criteria before returning the final list."
+    }
+  ],
+  "questionNotes": [
+    "Candidates and Rounds are separate lists but linked by interview_id.",
+    "Scores may need to be aggregated (e.g., average or maximum) for candidates with multiple rounds.",
+    "Define a clear acceptance threshold for scores.",
+    "Handle candidates with no associated rounds appropriately.",
+    "Return format should include candidate_id and name for accepted candidates."
+  ]
+}

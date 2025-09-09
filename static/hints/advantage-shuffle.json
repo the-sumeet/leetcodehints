@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of 'advantage' in this problem. The goal is to maximize the number of indices where elements in `nums1` are greater than those in `nums2`. Think about how you can pair elements from both arrays."
+    },
+    {
+      "content": "Consider sorting both `nums1` and `nums2`. Sorting will help you easily compare the smallest and largest elements of `nums1` against those of `nums2`. This step is crucial for efficiently finding advantageous pairs."
+    },
+    {
+      "content": "Once both arrays are sorted, think about how you can iterate through them to find pairs where `nums1[i] > nums2[j]`. You want to use the smallest possible element from `nums1` that can still be greater than the current element in `nums2`."
+    },
+    {
+      "content": "Use a two-pointer technique: one pointer for `nums1` and another for `nums2`. Start both pointers at the beginning of their respective arrays and move through them based on comparisons between the elements."
+    },
+    {
+      "content": "When you find an element in `nums1` that is greater than the current element in `nums2`, record this pairing and move both pointers forward. If not, just move the pointer for `nums1` to try the next larger element."
+    },
+    {
+      "content": "Think about what to do with elements in `nums1` that cannot be paired advantageously with any elements in `nums2`. You should still include these in your final output, but they will be placed at the end."
+    },
+    {
+      "content": "After processing all elements, you will have a partially filled result array. Make sure to fill in the remaining elements from `nums1` that did not find a match in `nums2`."
+    },
+    {
+      "content": "Consider edge cases, such as when all elements in `nums1` are smaller than those in `nums2` or vice versa. How will your algorithm handle these scenarios? Ensure that your final output is still valid in these cases."
+    },
+    {
+      "content": "Remember that the output can be any permutation of `nums1` that achieves the maximum advantage. This means there might be multiple correct answers, so focus on achieving the correct logic rather than a unique output."
+    },
+    {
+      "content": "Finally, ensure that your implementation correctly returns the result in the expected format. You might want to create a new array to hold the final permutation of `nums1` that maximizes the advantage."
+    }
+  ],
+  "questionNotes": [
+    "Both arrays nums1 and nums2 are of the same length.",
+    "The output can be any permutation of nums1 that maximizes the advantage.",
+    "Constraints: 1 <= nums1.length <= 10^5, 0 <= nums1[i], nums2[i] <= 10^9.",
+    "Pay attention to how to handle cases where elements are equal or when no advantageous pairs can be formed."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirement: for every element `nums[i]`, it should not be equal to the average of its neighbors `(nums[i-1] + nums[i+1]) / 2`. This means that the arrangement of the elements matters significantly."
+    },
+    {
+      "content": "Consider how the average of two numbers can be equal to a third number. For example, if `nums[i-1]` and `nums[i+1]` are both less than `nums[i]`, their average will be less than `nums[i]`. Think about how you can manipulate the order of elements to avoid this situation."
+    },
+    {
+      "content": "Notice that the array contains distinct integers. This uniqueness can help you avoid situations where the average equals an element, as there won't be duplicate values to contend with."
+    },
+    {
+      "content": "A simple approach might be to sort the array first. However, think about how you can rearrange the sorted array to ensure that no element is equal to the average of its neighbors."
+    },
+    {
+      "content": "One possible strategy is to separate the array into two halves: one with the smaller elements and one with the larger elements. By interleaving these two halves, you can create a new arrangement."
+    },
+    {
+      "content": "For example, if you have a sorted array like `[1, 2, 3, 4, 5]`, consider splitting it into two parts: `[1, 2]` and `[3, 4, 5]`. Then, try interleaving them to form a new array."
+    },
+    {
+      "content": "When interleaving, ensure that the elements from the two halves do not create averages that equal the middle elements. For instance, placing `2` between `1` and `3` could work, but be cautious with larger numbers."
+    },
+    {
+      "content": "As you construct the new array, check the conditions for each `i` from `1` to `nums.length - 2`. If you find any `nums[i]` that equals the average of its neighbors, you might need to adjust your interleaving strategy."
+    },
+    {
+      "content": "Consider edge cases where the array has an even number of elements. How will you handle the middle elements? Think about how the interleaving might change based on the length of the array."
+    },
+    {
+      "content": "Finally, once you have a potential arrangement, validate it by checking all the conditions. If you find a valid arrangement, remember that the problem allows for any valid output, so you have flexibility in your approach."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= nums.length <= 10^5",
+    "Elements are distinct integers.",
+    "Return any valid rearrangement that meets the requirements.",
+    "Check conditions for indices 1 to nums.length - 2."
+  ]
+}

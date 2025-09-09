@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how to identify 'single numbers' in the table. A single number is defined as a number that appears only once. Consider how you can count occurrences of each number."
+    },
+    {
+      "content": "You might want to use an aggregation function to count the occurrences of each number. Look into using `GROUP BY` in SQL to group the numbers and then count them."
+    },
+    {
+      "content": "After counting the occurrences, filter the results to only include numbers that appear exactly once. This can be done using a `HAVING` clause in your SQL query."
+    },
+    {
+      "content": "Once you have the single numbers, think about how to find the largest one. You can use the `MAX()` function to get the largest value from your filtered results."
+    },
+    {
+      "content": "Remember to handle the case where there are no single numbers. If your filtered result set is empty, you should return null. Consider using a `CASE` statement or checking for empty results."
+    },
+    {
+      "content": "Make sure your final output is formatted correctly. The result should have a column named 'num' and return null if there are no single numbers."
+    },
+    {
+      "content": "Consider edge cases such as when all numbers are duplicates or when the table is empty. How will your query handle these scenarios?"
+    },
+    {
+      "content": "Think about the efficiency of your query. Using `COUNT()` and `GROUP BY` can be resource-intensive, especially with large datasets. Optimize your query if necessary."
+    },
+    {
+      "content": "You can structure your SQL query to first create a temporary result set of single numbers and then select the maximum from that set. This can help in organizing your logic."
+    },
+    {
+      "content": "Finally, your SQL query might look something like this: `SELECT MAX(num) FROM (SELECT num FROM MyNumbers GROUP BY num HAVING COUNT(num) = 1) AS SingleNumbers`. Ensure you test it with various inputs."
+    }
+  ],
+  "questionNotes": [
+    "The table MyNumbers may contain duplicates.",
+    "A single number appears exactly once in the table.",
+    "If there are no single numbers, return null.",
+    "The output must have a column named 'num'.",
+    "Consider edge cases like all duplicates or an empty table."
+  ]
+}

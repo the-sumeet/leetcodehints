@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous segment of the array. For example, in the array [1, 0, 1], the subarrays are [1], [0], [1], [1, 0], [0, 1], and [1, 0, 1]."
+    },
+    {
+      "content": "Consider how to calculate the sum of elements in a subarray. You can use a nested loop to generate all possible subarrays and calculate their sums, but this approach can be inefficient for larger arrays."
+    },
+    {
+      "content": "Think about how you can keep track of the number of subarrays that sum to a specific value. You might want to maintain a count of how many times each sum has occurred as you iterate through the array."
+    },
+    {
+      "content": "You can use a hashmap (or dictionary) to store the cumulative sums and their frequencies. This will help you quickly determine how many times a certain sum has been encountered."
+    },
+    {
+      "content": "Remember that the sum of a subarray can be derived from cumulative sums. If you have a cumulative sum up to index `i` and you want to find subarrays that sum to `goal`, you can check for `cumulative_sum[i] - goal` in your hashmap."
+    },
+    {
+      "content": "Consider edge cases, such as when the `goal` is 0. In this case, you need to count the number of subarrays that sum to zero, which can occur with sequences of zeros."
+    },
+    {
+      "content": "As you iterate through the array, update your cumulative sum and check how many times the required sum (current cumulative sum - goal) has been seen before. This will help you count valid subarrays efficiently."
+    },
+    {
+      "content": "Keep in mind that you need to handle the case where the cumulative sum itself equals the goal. This means that you should also increment your count when the cumulative sum matches the goal directly."
+    },
+    {
+      "content": "Make sure to initialize your hashmap with the cumulative sum of 0 set to 1. This accounts for subarrays that sum to `goal` starting from the beginning of the array."
+    },
+    {
+      "content": "Finally, implement a loop that traverses through the array, updating the cumulative sum and checking the hashmap for the required sums. Don't forget to return the total count of valid subarrays."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 3 * 10^4",
+    "nums[i] is either 0 or 1.",
+    "0 <= goal <= nums.length",
+    "A subarray is defined as a contiguous part of the array."
+  ]
+}

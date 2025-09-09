@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input graph. Each node has a list of nodes it can reach directly. For example, `graph[0]` might contain `[1, 2]`, meaning from node 0, you can go to node 1 or node 2."
+    },
+    {
+      "content": "Remember that the graph is a Directed Acyclic Graph (DAG). This means there are no cycles, so you won't revisit nodes in a path. This property can simplify your pathfinding approach."
+    },
+    {
+      "content": "Think about how you can explore paths from the source node (0) to the target node (n-1). A common approach is Depth-First Search (DFS), where you explore as far as possible along each branch before backtracking."
+    },
+    {
+      "content": "As you traverse the graph, maintain a list to keep track of the current path. When you reach the target node (n-1), add a copy of the current path to your results."
+    },
+    {
+      "content": "Consider using recursion for your DFS implementation. The base case will be when you reach the target node, and the recursive case will involve visiting each adjacent node from the current node."
+    },
+    {
+      "content": "Don't forget to handle backtracking correctly. After exploring a path, you should remove the last node from the current path before returning to explore other paths."
+    },
+    {
+      "content": "Pay attention to the constraints: the graph can have up to 15 nodes. This means your solution can afford to be less optimized since the number of possible paths will be manageable."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there are no outgoing edges from the source or when the graph is very linear (like a straight line from 0 to n-1)."
+    },
+    {
+      "content": "When returning the result, ensure that you return all paths in the specified format, which is a list of lists. Each inner list should represent a valid path from node 0 to node n-1."
+    },
+    {
+      "content": "Your final implementation should look something like this: define a recursive function that takes the current node and the current path as parameters, and calls itself for each adjacent node until it reaches the target."
+    }
+  ],
+  "questionNotes": [
+    "The graph is represented as a list of lists, where graph[i] contains nodes reachable from node i.",
+    "The graph is guaranteed to be a Directed Acyclic Graph (DAG).",
+    "Node labels range from 0 to n-1, where n is the length of the graph.",
+    "There are no self-loops, and all elements in graph[i] are unique.",
+    "Return format must be a list of lists, where each inner list represents a path from node 0 to node n-1."
+  ]
+}

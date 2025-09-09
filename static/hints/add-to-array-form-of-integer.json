@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to convert the array-form of the integer into a single integer. You can do this by iterating through the array and constructing the number digit by digit."
+    },
+    {
+      "content": "Remember that the array-form represents the digits in left to right order. For example, the array [1, 2, 3] represents the number 123, which can be calculated as 1 * 10^2 + 2 * 10^1 + 3 * 10^0."
+    },
+    {
+      "content": "Consider how you will add the integer `k` to the number you constructed from the array. What happens if `k` is larger than the number represented by the array?"
+    },
+    {
+      "content": "Think about how to handle carrying over digits when the sum of the last digits exceeds 9. You will need to keep track of this carry as you move through the digits."
+    },
+    {
+      "content": "When adding the digits, you need to account for the case where the array-form has fewer digits than the number `k`. How will you manage this discrepancy?"
+    },
+    {
+      "content": "You might want to iterate from the last digit of the array-form to the first, adding `k` and managing the carry. This way, you can directly manipulate the array without needing to convert everything back to an integer."
+    },
+    {
+      "content": "Consider how you will construct the resulting array-form once you have completed the addition. You may need to insert elements at the start of your result array if there is a carry left after processing all digits."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the carry results in an additional digit (e.g., adding 1 to 999 gives 1000). How will you ensure your final array reflects this?"
+    },
+    {
+      "content": "After processing all digits in the array-form and adding `k`, check if there is still a carry left. If so, you will need to add this carry as a new digit at the beginning of your result array."
+    },
+    {
+      "content": "Finally, ensure your function returns the result in the correct format as an array. You might want to return the result directly from a list you constructed during the addition process."
+    }
+  ],
+  "questionNotes": [
+    "The array-form of an integer represents its digits in left to right order.",
+    "Constraints: 1 <= num.length <= 10^4, 0 <= num[i] <= 9, 1 <= k <= 10^4.",
+    "The input array does not contain leading zeros except for the zero itself.",
+    "The output must be in the form of an array representing the digits of the resulting sum."
+  ]
+}

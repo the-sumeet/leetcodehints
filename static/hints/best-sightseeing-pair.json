@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the score formula: `score(i, j) = values[i] + values[j] + i - j`. Notice how the distance `j - i` affects the score negatively. Your goal is to maximize this score."
+    },
+    {
+      "content": "Consider how the indices `i` and `j` relate to each other. Since `i` must be less than `j`, think about how you can iterate through the array while maintaining this condition."
+    },
+    {
+      "content": "As you calculate the score for pairs, note that the formula can be rearranged to focus on maximizing `values[i] + i` and `values[j] - j`. This might help simplify your calculations."
+    },
+    {
+      "content": "Try to keep track of the maximum value of `values[i] + i` as you iterate through the array. This will allow you to compute the score for each `j` efficiently."
+    },
+    {
+      "content": "You can initialize a variable to store the maximum score found so far. As you loop through each `j`, calculate the potential score using the maximum value of `values[i] + i` seen up to that point."
+    },
+    {
+      "content": "Remember to update your maximum value of `values[i] + i` as you go. This ensures that when you reach a new `j`, you always have the best possible `i` to pair with it."
+    },
+    {
+      "content": "Consider edge cases such as the minimum length of the input array. Ensure your solution handles arrays with only two elements correctly."
+    },
+    {
+      "content": "Think about the time complexity of your approach. A naive double loop would be O(n^2), but aim for a more efficient solution, possibly O(n) by using a single pass."
+    },
+    {
+      "content": "When implementing your solution, ensure you are correctly indexing the array and not going out of bounds. Validate your results with various test cases, including edge cases."
+    },
+    {
+      "content": "Finally, remember that the problem requires you to return the maximum score found. Ensure your return statement is correctly placed after you finish iterating through the array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= values.length <= 50,000",
+    "Values range: 1 <= values[i] <= 1000",
+    "Indices must satisfy i < j",
+    "Return the maximum score as an integer"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the direction of the asteroids. Positive values represent asteroids moving to the right, while negative values represent those moving to the left. Think about how they might collide based on their positions."
+    },
+    {
+      "content": "Consider how collisions occur. A collision happens when a positive asteroid meets a negative one. What happens to their sizes? Make sure to think about the absolute values when comparing sizes."
+    },
+    {
+      "content": "When two asteroids collide, the larger one survives. If they are the same size, both explode. You might want to create a strategy to keep track of the surviving asteroids after a collision."
+    },
+    {
+      "content": "Use a stack to simulate the process of asteroid collisions. The stack will help you manage the state of asteroids as you process each one. Think about how you would push and pop elements from this stack."
+    },
+    {
+      "content": "As you iterate through the asteroids, check the top of the stack to determine if a collision is possible. If the top of the stack is positive and the current asteroid is negative, a collision will occur."
+    },
+    {
+      "content": "When a collision occurs, compare the absolute sizes of the two asteroids. If the asteroid from the stack is larger, it remains, and you should not push the current one. If the current one is larger, you pop the stack and continue checking."
+    },
+    {
+      "content": "If both asteroids are of equal size, simply pop the stack and do not push the current asteroid. This ensures that both asteroids are removed from the simulation."
+    },
+    {
+      "content": "Make sure to handle cases where the stack is empty or the top of the stack is negative (indicating that the current asteroid is moving in the same direction). In such cases, just push the current asteroid onto the stack."
+    },
+    {
+      "content": "After processing all asteroids, the stack will contain the remaining asteroids in their original order. You can convert this stack back to an array to return the final state."
+    },
+    {
+      "content": "Remember to consider edge cases, such as when all asteroids are moving in the same direction or when they all collide. How would your solution handle these scenarios?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= asteroids.length <= 10^4",
+    "Each asteroid's size is represented by a non-zero integer between -1000 and 1000.",
+    "Asteroids moving in the same direction will never collide.",
+    "Return the final state of asteroids as an array.",
+    "The order of asteroids in the final array should reflect their original order."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by breaking down the expression into its components. You will need to tokenize the expression based on spaces to handle each chunk or symbol separately."
+    },
+    {
+      "content": "Remember that a chunk can be a number, a variable, or an expression in parentheses. Make sure to account for these different types when parsing the tokens."
+    },
+    {
+      "content": "Consider how to handle parentheses. You might want to use a stack to evaluate expressions within parentheses first before moving on to the rest of the expression."
+    },
+    {
+      "content": "When you encounter a variable, check if it exists in the evaluation map. If it does, replace it with its corresponding integer value from the evalints array."
+    },
+    {
+      "content": "Pay attention to the order of operations: multiplication should be evaluated before addition and subtraction. This will affect how you combine terms."
+    },
+    {
+      "content": "After evaluating the expression, you will need to collect terms based on their coefficients and variables. Use a dictionary to map terms to their coefficients."
+    },
+    {
+      "content": "When constructing terms, ensure that you sort the variables lexicographically within each term. This will help maintain the correct format for the output."
+    },
+    {
+      "content": "Don't forget to handle coefficients of zero. Terms with a coefficient of zero should not be included in the final output list."
+    },
+    {
+      "content": "For terms that contain variables, the leading coefficient should be separated from the variable part by an asterisk. For instance, '3*a*b' should be formatted correctly."
+    },
+    {
+      "content": "Consider how to sort the final list of terms. You need to sort first by the degree of the term (number of variables) and then lexicographically by the variable names."
+    },
+    {
+      "content": "Make sure to handle negative coefficients correctly. For example, '-1*a' should be formatted as '-1*a' rather than '1*-a'."
+    },
+    {
+      "content": "When constructing the output, remember that the output should be a list of strings, each representing a term in the required format."
+    },
+    {
+      "content": "If there are no remaining terms after processing the expression, you should return an empty list. This handles cases where the expression evaluates to zero."
+    },
+    {
+      "content": "As you implement your solution, consider edge cases such as expressions that only contain constants or variables that do not appear in the evalvars."
+    },
+    {
+      "content": "Finally, ensure that your implementation is efficient enough to handle the upper limits of the input constraints, especially with respect to the length of the expression."
+    }
+  ],
+  "questionNotes": [
+    "The expression alternates between chunks and symbols, with spaces separating them.",
+    "A chunk can be a number, variable, or a parenthetical expression.",
+    "Variables are lowercase letters and can be multiple letters long.",
+    "Output must be sorted by degree and then lexicographically by variable names.",
+    "Terms with a coefficient of zero should not be included in the output.",
+    "The leading coefficient of a term should be printed even if it is 1."
+  ]
+}

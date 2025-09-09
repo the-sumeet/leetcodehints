@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the total number of apples you have. This is simply the sum of the `apple` array. Understanding the total quantity will help you determine how much capacity you need from the boxes."
+    },
+    {
+      "content": "Next, compute the total capacity of the boxes by summing up the `capacity` array. This will allow you to check if the total capacity is sufficient to hold all the apples."
+    },
+    {
+      "content": "Remember that apples from the same pack can be distributed into different boxes. This means you don't have to worry about keeping apples from one pack together in one box."
+    },
+    {
+      "content": "Consider sorting the `capacity` array in descending order. This allows you to try filling the largest boxes first, which can help minimize the number of boxes used."
+    },
+    {
+      "content": "As you iterate through the sorted capacities, keep a running total of how many apples you have placed in boxes. Stop once you have placed all the apples."
+    },
+    {
+      "content": "While iterating through the boxes, maintain a counter for the number of boxes used. This will be your final answer once all apples are successfully placed."
+    },
+    {
+      "content": "Think about edge cases where the total number of apples is exactly equal to the total capacity of the boxes. How does this affect the number of boxes you might need?"
+    },
+    {
+      "content": "If you find that you can fill a box to its capacity with apples from multiple packs, ensure you keep track of how many boxes you've used to avoid counting the same box multiple times."
+    },
+    {
+      "content": "Consider using a greedy approach: always fill the box with the largest capacity that can accommodate the current number of apples you have left. This can help minimize the total number of boxes used."
+    },
+    {
+      "content": "Finally, ensure that your solution correctly returns the minimum number of boxes used. This means you should only count boxes that were actually utilized in the redistribution of apples."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == apple.length <= 50",
+    "Constraints: 1 <= m == capacity.length <= 50",
+    "Constraints: 1 <= apple[i], capacity[i] <= 50",
+    "The input is generated such that it's possible to redistribute packs of apples into boxes.",
+    "Return the minimum number of boxes needed to hold all the apples."
+  ]
+}

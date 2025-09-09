@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the data provided. You have a list of employees, each with an `employee_id`, `employee_name`, and a `manager_id`. This means each employee can be linked to a manager using the `manager_id`."
+    },
+    {
+      "content": "Consider how you can represent the relationship between employees and their managers. A common approach is to use a dictionary where the key is the `manager_id` and the value is a list of employees reporting to that manager."
+    },
+    {
+      "content": "Think about how to iterate through the list of employees. You can use a loop to populate your dictionary based on the `manager_id` for each employee. This will help you group employees under their respective managers."
+    },
+    {
+      "content": "Pay attention to the case where an employee is their own manager, as seen in the sample data with 'Boss'. You need to handle this case to avoid creating an infinite loop or incorrect hierarchy."
+    },
+    {
+      "content": "When building your output, remember that you should return a list of employees who report directly to the specified manager. Ensure you filter the employees correctly based on the given `manager_id`."
+    },
+    {
+      "content": "Consider edge cases such as a manager with no employees reporting to them. Your solution should gracefully handle this and return an empty list or a specific message."
+    },
+    {
+      "content": "Think about how you will format the output. You might want to return the employee details in a specific structure, such as a list of dictionaries or a JSON-like format."
+    },
+    {
+      "content": "Make sure to validate the input data. For example, check if the `manager_id` provided exists in the dataset. If it does not, you should handle this case appropriately."
+    },
+    {
+      "content": "As you build your solution, consider the time complexity of your approach. If you are using a nested loop to find employees, it might lead to inefficiencies. Aim for a solution that processes the data in a single pass."
+    },
+    {
+      "content": "Finally, once you have your list of employees reporting to the specified manager, ensure you return it in the required format. You might want to sort the list by employee names or IDs before returning, depending on the requirements."
+    }
+  ],
+  "questionNotes": [
+    "The `manager_id` can be the same as the `employee_id` for some employees.",
+    "Ensure that the returned list is in the correct format as specified in the problem statement.",
+    "Handle cases where a manager has no direct reports by returning an empty list.",
+    "Consider the uniqueness of `employee_id` and `manager_id` in the dataset."
+  ]
+}

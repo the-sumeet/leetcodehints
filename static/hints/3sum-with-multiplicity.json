@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find all unique triplets (i, j, k) such that the sum of their corresponding values in the array equals the target. Remember that the indices must satisfy i < j < k."
+    },
+    {
+      "content": "Consider how you can efficiently count the number of valid triplets. A brute force approach would involve three nested loops, but that could be too slow for larger arrays. Think about how you might reduce the complexity."
+    },
+    {
+      "content": "Since the values in the array are constrained between 0 and 100, you can leverage this to create a frequency array. This will help you count occurrences of each number quickly."
+    },
+    {
+      "content": "When iterating through possible pairs of values from the array, consider using a two-pointer technique to find the third value needed to reach the target. This can help avoid unnecessary checks."
+    },
+    {
+      "content": "Pay attention to how you handle duplicates. If the same number appears multiple times in the array, you need to account for the different combinations that can arise from these duplicates."
+    },
+    {
+      "content": "Think about how to calculate combinations when you have duplicates. For example, if you have 'n' occurrences of a number and you need to choose 'r' of them, the number of ways to do this is given by the combination formula C(n, r)."
+    },
+    {
+      "content": "Consider edge cases, such as when all elements are the same or when the target is less than the minimum possible sum of any three elements in the array. What should your function return in these cases?"
+    },
+    {
+      "content": "Make sure to implement the modulo operation correctly, as the result can be very large. Remember to return the final count modulo 10^9 + 7."
+    },
+    {
+      "content": "As you build your solution, keep track of the counts of each unique triplet. You can use a dictionary or a similar structure to maintain these counts efficiently."
+    },
+    {
+      "content": "Finally, think about how to structure your final counting logic. You will need to iterate through your frequency counts, checking combinations that sum to the target, and ensure you are not double-counting any triplets."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= arr.length <= 3000",
+    "Values: 0 <= arr[i] <= 100",
+    "Target: 0 <= target <= 300",
+    "Return the count modulo 10^9 + 7",
+    "Indices must satisfy i < j < k"
+  ]
+}

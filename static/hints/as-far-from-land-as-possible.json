@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the key elements in the grid. You have land cells represented by 1 and water cells represented by 0. Make sure you understand how to traverse the grid and access individual cells."
+    },
+    {
+      "content": "Consider how you will measure the distance from a water cell to the nearest land cell. Remember that the distance is calculated using the Manhattan distance formula: |x0 - x1| + |y0 - y1|."
+    },
+    {
+      "content": "Think about how to efficiently find the maximum distance for all water cells. A brute force approach would involve checking each water cell against all land cells, but this could be optimized."
+    },
+    {
+      "content": "What data structure could help you efficiently explore the distances from land cells to water cells? Consider using a queue for a breadth-first search (BFS) approach starting from all land cells."
+    },
+    {
+      "content": "When using BFS, you can initialize the queue with all the land cell coordinates. This way, you can propagate the distance to adjacent water cells in all four directions (up, down, left, right)."
+    },
+    {
+      "content": "As you perform BFS, keep track of the maximum distance encountered for water cells. You can update a variable whenever you find a water cell that is further away from any land cell than previously recorded."
+    },
+    {
+      "content": "Before starting the BFS, ensure you handle edge cases: What if there are no land cells or no water cells in the grid? Make sure to return -1 in such cases."
+    },
+    {
+      "content": "When checking neighboring cells during BFS, ensure you stay within the bounds of the grid. Use conditions to check if the indices are valid before accessing the grid."
+    },
+    {
+      "content": "After completing the BFS, if you have found at least one valid water cell, return the maximum distance found. If not, ensure you return -1 as discussed earlier."
+    },
+    {
+      "content": "To summarize your approach: Use BFS starting from all land cells, track distances to water cells, and return the maximum distance found. Ensure to handle edge cases properly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == grid.length, n == grid[i].length, 1 <= n <= 100.",
+    "Values in the grid are either 0 (water) or 1 (land).",
+    "Return -1 if there are no land or water cells.",
+    "Use Manhattan distance for calculating distances.",
+    "Ensure to check for grid boundaries when accessing neighboring cells."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints for the heights of the towers. Each tower's height must be between 1 and its corresponding value in the maxHeights array. This means you need to ensure that heights[i] is always at least 1."
+    },
+    {
+      "content": "Consider the mountain array condition. A mountain array has a peak where heights increase to a maximum and then decrease. Think about how you can identify potential peaks in the array of heights."
+    },
+    {
+      "content": "To maximize the sum of heights while maintaining the mountain structure, you should start by selecting a peak and then adjusting the heights on both sides of the peak accordingly. This will help you maintain the mountain shape."
+    },
+    {
+      "content": "When selecting a peak, remember that the heights to the left must not exceed the peak height and must be non-decreasing. Similarly, the heights to the right must be non-increasing. How will you enforce these conditions?"
+    },
+    {
+      "content": "You might want to think about two passes through the array: one to set the heights going up to the peak and another to set the heights going down from the peak. This will help ensure that both sides of the peak are correctly formed."
+    },
+    {
+      "content": "As you build the heights, ensure that at each index you do not exceed the maxHeights[i]. This means you will need to take the minimum of the calculated height and maxHeights[i] at each step."
+    },
+    {
+      "content": "Consider edge cases such as when maxHeights has only one element. What would the heights array look like in that case? This will help you ensure your solution handles all possible inputs."
+    },
+    {
+      "content": "Think about how to iterate through the array to find the optimal peak. You could loop through each index to consider it as a peak and calculate the corresponding heights for both sides."
+    },
+    {
+      "content": "After you've established the heights for a chosen peak, calculate the sum of the heights. Keep track of the maximum sum encountered across all potential peaks."
+    },
+    {
+      "content": "Finally, ensure that your solution runs efficiently within the given constraints. Aim for a solution that is linear in time complexity, ideally O(n), as the input size can be large."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == maxHeights.length <= 10^5",
+    "Heights must be at least 1 and at most maxHeights[i].",
+    "Heights must form a mountain array with a single peak.",
+    "The return value should be the maximum possible sum of the heights."
+  ]
+}

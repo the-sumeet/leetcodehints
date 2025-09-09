@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to divide the array at each index. For each index `i`, you need to consider two parts: `nums_left` (from index 0 to i-1) and `nums_right` (from index i to n-1)."
+    },
+    {
+      "content": "Think about how to calculate the division score for a given index `i`. The score is defined as the number of 0's in `nums_left` plus the number of 1's in `nums_right`."
+    },
+    {
+      "content": "To efficiently compute the number of 0's in `nums_left`, consider using a running total as you iterate through the array. This will allow you to avoid recalculating counts for every index."
+    },
+    {
+      "content": "Similarly, maintain a count of 1's in `nums_right` as you move through the array. You can initialize this count by counting all 1's in the array first."
+    },
+    {
+      "content": "As you iterate through the array, update your counts for `nums_left` and `nums_right` at each index. This will help you calculate the score dynamically."
+    },
+    {
+      "content": "Keep track of the maximum score you encounter as you calculate scores for each index. You can use a variable to store this maximum value."
+    },
+    {
+      "content": "Use a list to store all indices that achieve the maximum score. If you find a new maximum score, clear the list and add the current index. If the score matches the maximum, append the index to the list."
+    },
+    {
+      "content": "Remember to handle the edge cases where `nums_left` or `nums_right` may be empty. Specifically, when `i` is 0 or `n`, ensure your calculations reflect that."
+    },
+    {
+      "content": "Consider the constraints: the length of `nums` can be up to 100,000, so your solution should ideally run in O(n) time to be efficient."
+    },
+    {
+      "content": "Finally, ensure that your output is a list of unique indices where the maximum score occurs. You may need to convert your list to a set before returning it to ensure uniqueness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 1 <= n <= 100000, nums[i] is either 0 or 1.",
+    "Indices are 0-indexed.",
+    "Return all distinct indices with the highest score, in any order.",
+    "Consider edge cases where the array is all 0's or all 1's."
+  ]
+}

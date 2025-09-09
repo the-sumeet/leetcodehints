@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering your initial position at height 0. The first step is to check if you can reach the first rung from the ground. If the height of the first rung is greater than 'dist', you will need to add rungs."
+    },
+    {
+      "content": "Think about how to calculate the distance between consecutive rungs. For each pair of rungs, you need to determine if the distance exceeds 'dist'. If it does, you'll need to add rungs in between."
+    },
+    {
+      "content": "When checking the distance between rungs, remember to include the distance from the ground to the first rung. This will help you account for any rungs that need to be added before you even start climbing."
+    },
+    {
+      "content": "As you iterate through the rungs, keep track of the number of rungs you need to add. You can calculate the number of additional rungs required by dividing the distance by 'dist' and rounding up."
+    },
+    {
+      "content": "Consider edge cases where the distance between rungs is exactly 'dist'. In such cases, you do not need to add any rungs. Ensure your logic accounts for this to avoid unnecessary additions."
+    },
+    {
+      "content": "When calculating the number of rungs to add, use the formula: `ceil((distance - dist) / dist)`. This will give you the correct number of rungs needed to fill the gap."
+    },
+    {
+      "content": "Make sure to handle the case where the last rung is unreachable from the previous rung. After processing all rungs, check if the last rung can be reached from the last added rung."
+    },
+    {
+      "content": "Remember that the rungs array is strictly increasing. This property can help you optimize your checks, as you only need to compare each rung to the previous one."
+    },
+    {
+      "content": "When implementing your solution, consider using a loop that iterates through the rungs array. For each rung, check the distance from the current position and update your position accordingly."
+    },
+    {
+      "content": "Finally, ensure your function returns the total number of rungs added. This means you should have a counter that increments every time you determine that a new rung is needed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= rungs.length <= 10^5",
+    "1 <= rungs[i] <= 10^9",
+    "1 <= dist <= 10^9",
+    "rungs is strictly increasing.",
+    "Return the minimum number of rungs added, not the new configuration of rungs."
+  ]
+}

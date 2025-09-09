@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. Each customer is represented as an array with two elements: their arrival time and the time needed to prepare their order. Make sure to keep track of these values as you process each customer."
+    },
+    {
+      "content": "Consider how the chef's idle time affects the waiting time of the customers. If a customer arrives while the chef is busy, they will have to wait until the chef is free to start their order."
+    },
+    {
+      "content": "You will need to maintain a variable to track the current time, which starts at 0. As you process each customer, update this current time based on when the chef finishes preparing their order."
+    },
+    {
+      "content": "Remember to calculate the waiting time for each customer. This is typically the time when they finish their order minus their arrival time. How will you store these waiting times?"
+    },
+    {
+      "content": "Pay attention to the order of customers. Since they arrive in non-decreasing order, you can process them sequentially. This means that once you finish one customer's order, you can immediately consider the next one."
+    },
+    {
+      "content": "Handle the case when the chef is idle. If the current time is less than the arrival time of the next customer, the chef should wait until that customer's arrival before starting their order."
+    },
+    {
+      "content": "As you calculate the waiting times, think about how you will compute the average waiting time. You will need to sum all waiting times and divide by the total number of customers."
+    },
+    {
+      "content": "Consider edge cases, such as when all customers arrive at the same time or when there is only one customer. How do these scenarios affect your calculations?"
+    },
+    {
+      "content": "Make sure to format your final output correctly. The average waiting time should be returned as a floating-point number with a precision of at least five decimal places."
+    },
+    {
+      "content": "To get closer to the solution, outline the steps in pseudocode: initialize variables, loop through customers, update current time, calculate waiting time, and finally compute the average waiting time."
+    }
+  ],
+  "questionNotes": [
+    "1 <= customers.length <= 10^5",
+    "1 <= arrival_i, time_i <= 10^4",
+    "arrival_i <= arrival_{i+1} (non-decreasing)",
+    "Return the average waiting time with a precision of 10^-5."
+  ]
+}

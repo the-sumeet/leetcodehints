@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You can make at most two transactions: this means you can buy and sell twice, but you cannot hold more than one stock at a time."
+    },
+    {
+      "content": "Consider how you can break down the problem. You might want to think about the maximum profit you can achieve with one transaction first, then build up to two transactions."
+    },
+    {
+      "content": "For a single transaction, the maximum profit can be calculated by keeping track of the minimum price seen so far and the current price as you iterate through the array."
+    },
+    {
+      "content": "Remember that you need to sell before you can buy again. This means once you complete your first transaction, you need to find the best time to buy again for the second transaction."
+    },
+    {
+      "content": "Think about how you can use dynamic programming to keep track of profits. You might want to maintain a 2D array where one dimension represents the number of transactions and the other represents the days."
+    },
+    {
+      "content": "When using dynamic programming, consider how you can represent the maximum profit at each day with a certain number of transactions. This will help you build up your solution incrementally."
+    },
+    {
+      "content": "You can define a state that represents the maximum profit you can achieve up to day `i` with `j` transactions. This can be expressed as `profit[i][j]`."
+    },
+    {
+      "content": "To fill in your DP table, you need to decide whether to sell on day `i` or not. If you do sell, you need to find the best day to buy before day `i`."
+    },
+    {
+      "content": "To optimize the computation of buying prices, consider maintaining a variable that tracks the maximum profit possible before the current day for the previous transaction."
+    },
+    {
+      "content": "Keep in mind the edge cases. What if the prices array is strictly decreasing? You should ensure your solution returns 0 in such cases."
+    },
+    {
+      "content": "Also, consider the case where the prices array has only one price. Your solution should handle this gracefully and return 0."
+    },
+    {
+      "content": "As you implement your solution, remember to check for constraints. The length of the prices array can be up to 100,000, so your solution needs to be efficient."
+    },
+    {
+      "content": "When calculating profits, ensure you are correctly updating your maximum profit after each transaction. This will be crucial for getting the right answer."
+    },
+    {
+      "content": "You might want to use two loops: one for the number of transactions and another for the days. This will help you explore all possible transaction combinations."
+    },
+    {
+      "content": "Finally, make sure to return the maximum profit after considering both transactions. Your final result should be a single integer representing this profit."
+    }
+  ],
+  "questionNotes": [
+    "You can make at most two transactions.",
+    "You cannot hold multiple stocks at the same time.",
+    "The prices array can have a length between 1 and 100,000.",
+    "Prices can range from 0 to 100,000.",
+    "Return the maximum profit as a single integer."
+  ]
+}

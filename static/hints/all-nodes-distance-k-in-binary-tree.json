@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node has a value, a left child, and a right child. Visualize how you can traverse this tree to find nodes at a specific distance from a target node."
+    },
+    {
+      "content": "Consider how you can identify the target node in the tree. A common approach is to use a depth-first search (DFS) to locate the node with the given value. This will be your starting point for finding nodes at distance k."
+    },
+    {
+      "content": "Once you've found the target node, think about how you can measure distances in the tree. You can traverse downwards to find children nodes, but you also need to account for moving upwards to the parent node. How can you keep track of this?"
+    },
+    {
+      "content": "To handle the upward movement, you might want to create a mapping of each node to its parent. This way, when you reach a node, you can easily access its parent and move upwards in the tree."
+    },
+    {
+      "content": "When you have the target node and its parent mapping, you can perform a breadth-first search (BFS) starting from the target node. This will allow you to explore all nodes at distance k efficiently."
+    },
+    {
+      "content": "Remember to keep track of the distance as you traverse the tree. You can use a queue to manage the nodes you're visiting and their corresponding distances. Make sure to stop once you reach distance k."
+    },
+    {
+      "content": "Consider edge cases, such as when k is greater than the height of the tree. What should your function return in those cases? Think about how to handle when the tree has only one node or when the target is at the leaf level."
+    },
+    {
+      "content": "As you gather nodes at distance k, remember that the problem allows you to return the results in any order. This means you can use a simple list to collect the values without worrying about sorting."
+    },
+    {
+      "content": "After implementing the BFS, make sure to test your function with various inputs, especially edge cases. Check how your function behaves with trees of different shapes and sizes."
+    },
+    {
+      "content": "Finally, when you have all nodes at distance k, return their values as an array. Ensure that your function adheres to the output format specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The number of nodes in the tree is in the range [1, 500].",
+    "0 <= Node.val <= 500 and all Node.val are unique.",
+    "Target is guaranteed to be the value of one of the nodes in the tree.",
+    "0 <= k <= 1000.",
+    "Return format: An array of values of nodes at distance k from the target."
+  ]
+}

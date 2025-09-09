@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a strictly increasing subarray. A subarray is strictly increasing if each element is less than the next one. For example, in the subarray [2, 5, 7], 2 < 5 < 7."
+    },
+    {
+      "content": "Consider the constraints given in the problem. You need to ensure that the length of the array is at least 2 * k, which is crucial for having two adjacent subarrays of length k."
+    },
+    {
+      "content": "Think about how you can iterate through the array to check for strictly increasing subarrays. You might want to use a loop that goes up to 'n - k' to avoid going out of bounds."
+    },
+    {
+      "content": "As you check for the first subarray starting at index 'a', remember that you need to check the next 'k' elements to confirm that they are strictly increasing."
+    },
+    {
+      "content": "Once you find a strictly increasing subarray starting at index 'a', you need to check the next subarray starting at index 'a + k'. Make sure to check both subarrays before returning true."
+    },
+    {
+      "content": "When checking if a subarray is strictly increasing, you can use a simple condition in a loop: for each index 'i' in the subarray, check if nums[i] < nums[i + 1]."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when 'k' is at its minimum value of 2. This means you need to check pairs of elements for strictly increasing conditions."
+    },
+    {
+      "content": "Consider creating a helper function that checks if a given subarray is strictly increasing. This can help keep your code organized and easier to read."
+    },
+    {
+      "content": "Remember to return false if you finish checking all possible pairs of subarrays without finding two adjacent strictly increasing ones. This is important for the correct output."
+    },
+    {
+      "content": "Finally, think about how you will structure your main function. You will likely need a loop to iterate through the array and call your helper function for each valid starting index."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 100",
+    "1 < 2 * k <= nums.length",
+    "-1000 <= nums[i] <= 1000",
+    "Indices are 0-based.",
+    "Return true if two adjacent strictly increasing subarrays of length k exist, otherwise return false."
+  ]
+}
