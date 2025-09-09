@@ -84,6 +84,6 @@
 	{:else if loadError}
 		<p class="text-sm text-destructive">{loadError}</p>
 	{:else}
-		<p class="text-sm text-gray-500">Please navigate to a LeetCode problem page to see the hits.</p>
+		<p class="text-sm text-gray-500">Please navigate to a LeetCode problem page to see the hints.</p>
 	{/if}
 </div>
