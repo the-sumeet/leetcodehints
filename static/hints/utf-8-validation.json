@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of UTF-8 encoding. Each character can be represented by 1 to 4 bytes, and the first byte determines how many bytes the character will use. Make sure you familiarize yourself with the binary patterns for each byte length."
+    },
+    {
+      "content": "For a 1-byte character, the first bit is 0, followed by 7 bits of data. For example, the byte '0x61' (ASCII 'a') is valid since its binary representation is '01100001'. Try to write a function that checks if a byte starts with 0."
+    },
+    {
+      "content": "For multi-byte characters, the first byte starts with a certain number of 1's followed by a 0. For instance, a 2-byte character starts with '110', a 3-byte character starts with '1110', and a 4-byte character starts with '11110'. Make sure to extract the leading bits to determine the number of bytes."
+    },
+    {
+      "content": "After identifying the number of bytes for a character, you need to check the subsequent bytes. All continuation bytes must start with '10'. For example, if you expect a 3-byte character, the next two bytes must start with '10'."
+    },
+    {
+      "content": "Implement a loop that iterates through the array of integers. As you process each byte, keep track of how many additional bytes you expect to see based on the first byte's pattern."
+    },
+    {
+      "content": "When you encounter a byte that indicates a multi-byte character, increment a counter that tracks how many continuation bytes you are expecting. If you reach a byte that does not match the expected pattern, you should return false."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when the input array ends before you have received all expected continuation bytes. Make sure to handle this gracefully and return false in such cases."
+    },
+    {
+      "content": "Remember to only consider the least significant 8 bits of each integer in the input array. You can achieve this using a bitwise AND operation with 0xFF (e.g., `data[i] & 0xFF`)."
+    },
+    {
+      "content": "As you process the data, ensure that you are not accessing out of bounds of the array. Always check if the index is valid before accessing the next byte."
+    },
+    {
+      "content": "Finally, after processing all bytes, if you have successfully matched all expected characters without any mismatches, return true. Make sure to check if you are still expecting any continuation bytes at the end of your loop."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= data.length <= 20,000",
+    "Each element in data is an integer in the range [0, 255]",
+    "Only the least significant 8 bits of each integer are used for the UTF-8 encoding",
+    "Return true if the input represents a valid UTF-8 encoding, otherwise return false."
+  ]
+}

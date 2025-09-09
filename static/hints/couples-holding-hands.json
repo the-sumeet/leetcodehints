@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the array. Each couple is represented by two consecutive integers, e.g., (0, 1), (2, 3), etc. This means that for each couple, the two IDs should ideally be next to each other in the array."
+    },
+    {
+      "content": "Consider how you can identify where each couple currently is in the array. You can create a mapping of each person to their index to make it easier to find where they are sitting."
+    },
+    {
+      "content": "Think about what it means to swap two people. When you swap two people, you are effectively moving them to each other's positions. This can help you visualize how to bring couples together."
+    },
+    {
+      "content": "To minimize the number of swaps, focus on finding pairs that are not adjacent and determine how to bring them together. You may want to keep track of how many swaps you've made."
+    },
+    {
+      "content": "Consider using a greedy approach: always try to bring the nearest partner to the current position of a person. This can help reduce the total number of swaps needed."
+    },
+    {
+      "content": "You might want to implement a loop that iterates through the array and checks if each person is next to their partner. If not, find their partner and swap them into position."
+    },
+    {
+      "content": "Keep in mind that each couple is represented by a unique pair of integers. This uniqueness can help you avoid unnecessary swaps by ensuring you only target the correct pairs."
+    },
+    {
+      "content": "Think about edge cases, such as when all couples are already adjacent. What should your function return in this case? It should return 0 since no swaps are needed."
+    },
+    {
+      "content": "Consider how to efficiently find the index of a partner in the array. A hash map can be useful here, mapping each person to their current index for O(1) lookup."
+    },
+    {
+      "content": "As you implement your solution, remember to update the positions of the people in the array after each swap. This ensures that your subsequent checks are accurate."
+    },
+    {
+      "content": "Try to visualize the swaps you are making. Drawing out the array and marking the swaps can help you keep track of the current state of seating."
+    },
+    {
+      "content": "Think about the worst-case scenario. How many swaps would you need if every couple was seated as far apart as possible? This can help you gauge the efficiency of your approach."
+    },
+    {
+      "content": "You might want to implement a counter to keep track of the number of swaps you perform. This will help you return the correct output at the end of your function."
+    },
+    {
+      "content": "Consider the order of your swaps carefully. If you swap two people, it may affect the positions of others. Make sure to account for this in your logic."
+    },
+    {
+      "content": "As you finalize your approach, think about edge cases where there are only two couples. How does your logic hold up in this simpler scenario?"
+    }
+  ],
+  "questionNotes": [
+    "Each couple is represented by two consecutive integers.",
+    "The array length is always even (2n), and n is at least 1.",
+    "All elements in the array are unique and range from 0 to 2n-1.",
+    "You need to return the minimum number of swaps required."
+  ]
+}

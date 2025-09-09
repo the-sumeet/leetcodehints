@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the microwave interprets the input. The input is normalized to a four-digit format, where the first two digits represent minutes and the last two represent seconds. For example, pushing '9 5 4' becomes '0954', which is 9 minutes and 54 seconds."
+    },
+    {
+      "content": "Consider how to convert the targetSeconds into minutes and seconds. You can do this by using integer division and modulus operations. For instance, if targetSeconds is 600, then minutes = 600 // 60 and seconds = 600 % 60."
+    },
+    {
+      "content": "Think about the cost structure. Moving to a digit costs moveCost, and pushing a digit costs pushCost. You need to track the total cost as you navigate through the digits to set the microwave."
+    },
+    {
+      "content": "Remember that you can only use four digits. This means that if your target time exceeds 99 minutes and 99 seconds, you need to find a way to express it within the constraints of the microwave. How can you represent times like 100 minutes?"
+    },
+    {
+      "content": "When calculating the minimum cost, consider the starting position of your finger (startAt). You will need to factor in the cost of moving from startAt to the first digit you want to push."
+    },
+    {
+      "content": "Explore all possible combinations of digits that can represent the targetSeconds. This includes leading zeroes, so '0076' and '76' are both valid representations of 76 seconds."
+    },
+    {
+      "content": "Use a systematic approach to calculate the total cost for each possible combination of digits. You can create a function that takes the current position, the digit to push, and calculates the cost of moving and pushing."
+    },
+    {
+      "content": "As you calculate costs for different combinations, keep track of the minimum cost found so far. This will help you avoid unnecessary calculations once you find a combination that is already cheaper."
+    },
+    {
+      "content": "Consider edge cases, such as when targetSeconds is less than 60. In this case, you only need to push two digits. How does that affect your movement and pushing costs?"
+    },
+    {
+      "content": "Finally, think about how you can optimize your solution. You might want to use dynamic programming or memoization to store previously calculated costs for certain digit combinations to avoid redundant calculations."
+    }
+  ],
+  "questionNotes": [
+    "The input must be normalized to four digits.",
+    "Target seconds must be converted to minutes and seconds.",
+    "Moving to a digit and pushing a digit both incur costs.",
+    "Only four digits can be used, leading zeros are allowed.",
+    "Consider edge cases where targetSeconds is less than 60."
+  ]
+}

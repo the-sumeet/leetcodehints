@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to extract horizontal substrings from the grid. Remember that if you reach the end of a row, you should continue reading from the beginning of the next row. For example, in a grid like this:\n```\n[['a', 'b'],\n ['c', 'd']]\n```\nThe horizontal substring starting from (0, 0) would be 'ab' and from (1, 0) would be 'cd'."
+    },
+    {
+      "content": "Next, think about how to extract vertical substrings. Similar to horizontal substrings, if you reach the bottom of a column, you should wrap to the top of the next column. For instance, in the same grid:\n```\n[['a', 'b'],\n ['c', 'd']]\n```\nThe vertical substring starting from (0, 0) would be 'ac' and from (0, 1) would be 'bd'."
+    },
+    {
+      "content": "When searching for the pattern in horizontal and vertical substrings, consider using a sliding window technique. This allows you to check each possible starting position for the pattern efficiently. Make sure to check all valid starting positions in both directions."
+    },
+    {
+      "content": "Keep track of the cells that are part of horizontal substrings matching the pattern. You can use a set or a boolean array to mark these cells as you find matches. This will help you later when checking for vertical matches."
+    },
+    {
+      "content": "After identifying cells that are part of horizontal matches, you will need to repeat a similar process for vertical matches. Again, mark the cells that are part of vertical substrings matching the pattern."
+    },
+    {
+      "content": "Once you have both sets of marked cells (from horizontal and vertical matches), the next step is to find the intersection of these two sets. This intersection will give you the cells that are part of both types of substrings."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the pattern is longer than the grid dimensions. In such cases, no matches can occur, and the result should be zero."
+    },
+    {
+      "content": "Consider the constraints provided in the problem. The maximum size of the grid is 1000 x 1000, which means you need to ensure your solution is efficient enough to handle the upper limits without timing out."
+    },
+    {
+      "content": "As you prepare to count the cells that are part of both matches, ensure that you are only counting unique cells. Using a set will help avoid double counting if a cell appears in both horizontal and vertical matches."
+    },
+    {
+      "content": "Finally, return the count of unique cells that are part of both horizontal and vertical substrings matching the pattern. This will be your final result. Make sure to test your solution with various edge cases to ensure correctness."
+    }
+  ],
+  "questionNotes": [
+    "The grid is m x n, where 1 <= m, n <= 1000.",
+    "The total number of cells m * n can be up to 100,000.",
+    "The pattern length can be up to m * n.",
+    "The grid and pattern consist of only lowercase English letters.",
+    "Ensure to handle cases where the pattern is longer than the grid dimensions."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem setup. You have five philosophers seated in a circle, and they need two forks to eat. Each philosopher can only pick up the forks that are adjacent to them."
+    },
+    {
+      "content": "Consider how to represent the state of each fork. You might use an array or a similar structure to keep track of whether each fork is available or currently being held by a philosopher."
+    },
+    {
+      "content": "Think about the order in which philosophers will try to pick up forks. Each philosopher can pick up their left fork first or their right fork first. What happens if everyone picks up one fork first? This could lead to a deadlock."
+    },
+    {
+      "content": "To avoid deadlock, you could implement a strategy where philosophers pick up the forks in a specific order. For example, you might enforce that the philosopher with the lowest ID picks up their left fork first, and others follow a different order."
+    },
+    {
+      "content": "You need to ensure that no philosopher starves. This means that there must be some mechanism to allow philosophers to keep alternating between thinking and eating without getting stuck indefinitely."
+    },
+    {
+      "content": "Consider using a mutex or a semaphore for each fork to manage concurrent access. This will help prevent multiple philosophers from trying to pick up the same fork at the same time."
+    },
+    {
+      "content": "When implementing the `wantsToEat` function, think about how you will manage the state of the forks. You will need to call the appropriate functions to pick up the forks, eat, and then put down the forks in the correct order."
+    },
+    {
+      "content": "Make sure to handle the case where a philosopher is unable to pick up both forks. You may need to implement a retry mechanism or a back-off strategy to allow them to try again later."
+    },
+    {
+      "content": "Pay attention to the output format. Each call to the functions should be logged in the specified format: [philosopher_id, fork_id, operation]. Ensure you are correctly identifying which fork is left or right."
+    },
+    {
+      "content": "Finally, think about edge cases. What happens if there is only one philosopher? Or if all philosophers try to eat at the same time? Ensure your solution can handle these scenarios gracefully."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 60",
+    "Philosopher IDs are numbered from 0 to 4.",
+    "Forks are placed between adjacent philosophers.",
+    "Each philosopher must alternate between thinking and eating.",
+    "A philosopher can only eat if they have both forks.",
+    "The output format for each operation is [philosopher_id, fork_id, operation]."
+  ]
+}

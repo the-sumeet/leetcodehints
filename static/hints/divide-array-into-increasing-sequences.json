@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to divide an array into increasing sequences. This means each subsequence must be strictly increasing."
+    },
+    {
+      "content": "Consider how duplicates in the array affect the increasing nature of the subsequences. For example, in the array [1, 2, 2, 3], the '2's cannot be part of the same increasing subsequence."
+    },
+    {
+      "content": "Think about how to track the current subsequence you are building. You might want to maintain a list or a counter for the last added element to ensure the next element is greater."
+    },
+    {
+      "content": "What happens if you encounter an element that is equal to or less than the last element in your current subsequence? You will need to start a new subsequence."
+    },
+    {
+      "content": "Consider the case where the entire array is made up of the same number, like [2, 2, 2]. How many increasing subsequences can you form in this case?"
+    },
+    {
+      "content": "Think about how you can utilize a greedy approach. You might want to always try to extend the current subsequence as long as possible before starting a new one."
+    },
+    {
+      "content": "You should also consider edge cases, such as an empty array or an array with only one element. What should your function return in these cases?"
+    },
+    {
+      "content": "As you build your subsequences, keep track of how many you have created. This is your ultimate goal: to determine if you can create at least 'k' increasing subsequences."
+    },
+    {
+      "content": "When counting subsequences, remember that they can overlap in terms of elements. For example, in [1, 2, 3, 4], you can have multiple subsequences like [1, 2], [2, 3], etc."
+    },
+    {
+      "content": "Consider using a hash map or a frequency array to count occurrences of each number. This can help you manage duplicates more effectively."
+    },
+    {
+      "content": "You might want to sort the array first, especially if you are dealing with duplicates. Sorting can simplify the process of forming increasing sequences."
+    },
+    {
+      "content": "Think about how you can implement a loop to iterate through the sorted array while checking conditions for forming new subsequences."
+    },
+    {
+      "content": "As you iterate, maintain a count of how many subsequences you've formed so far. If at any point this count meets or exceeds 'k', you can return true."
+    },
+    {
+      "content": "Make sure to handle the case where you run out of elements to form a new subsequence before reaching 'k'. You will need to return false in this scenario."
+    },
+    {
+      "content": "Finally, consider edge cases where 'k' is larger than the number of distinct elements in the array. How does this affect your ability to form subsequences?"
+    }
+  ],
+  "questionNotes": [
+    "The array can contain duplicates, which affects the formation of increasing sequences.",
+    "You need to return true if you can form at least 'k' increasing subsequences.",
+    "Consider edge cases like empty arrays or arrays with all identical elements.",
+    "The subsequences must be strictly increasing, meaning no duplicates within a single subsequence."
+  ]
+}

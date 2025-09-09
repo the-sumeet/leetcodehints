@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a subsequence. A string `pattern` is a subsequence of `source` if you can remove some characters from `source` without rearranging the remaining characters to get `pattern`."
+    },
+    {
+      "content": "Consider the implications of the `targetIndices` array. This array specifies the indices of characters in `source` that can be removed. Make sure to only consider these indices when determining which characters can be removed."
+    },
+    {
+      "content": "Remember that removing a character from `source` should not disrupt the order of characters needed to form `pattern`. This means you need to check if `pattern` remains a subsequence after any removal."
+    },
+    {
+      "content": "A good approach is to simulate the removals. For each index in `targetIndices`, temporarily remove the character at that index and check if `pattern` is still a subsequence of the modified `source`."
+    },
+    {
+      "content": "To check if `pattern` is a subsequence of `source`, you can use a two-pointer technique. One pointer iterates over `source` and the other over `pattern`, advancing the pointer for `pattern` only when a match is found."
+    },
+    {
+      "content": "Consider edge cases, such as when `pattern` is the same as `source`. In such cases, no characters can be removed since `pattern` must remain a subsequence, leading to a maximum of 0 operations."
+    },
+    {
+      "content": "Think about the order of operations. Since `targetIndices` is sorted, you can iterate through it and check each index in order. This can help you keep track of how many valid removals you can make."
+    },
+    {
+      "content": "You may want to keep track of the maximum number of valid removals you can perform. Initialize a counter and update it whenever you successfully find that `pattern` remains a subsequence after a removal."
+    },
+    {
+      "content": "When implementing the check for subsequence, ensure that you handle cases where removing a character might lead to multiple valid configurations of `pattern` in `source`."
+    },
+    {
+      "content": "Finally, remember to return the maximum count of valid removals after checking all indices in `targetIndices`. This will be your final answer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == source.length <= 3000",
+    "1 <= pattern.length <= n",
+    "1 <= targetIndices.length <= n",
+    "targetIndices is sorted in ascending order.",
+    "targetIndices contains distinct elements in the range [0, n - 1].",
+    "source and pattern consist only of lowercase English letters.",
+    "pattern appears as a subsequence in source."
+  ]
+}

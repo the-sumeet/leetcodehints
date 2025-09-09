@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the keyboard layout and how each letter corresponds to a coordinate in the X-Y plane. For example, 'A' is at (0, 0) and 'B' is at (0, 1)."
+    },
+    {
+      "content": "Consider how the distance is calculated between two points. The distance formula given is the Manhattan distance: |x1 - x2| + |y1 - y2|."
+    },
+    {
+      "content": "Think about how to represent the keyboard layout in your code. A dictionary or a 2D array could be useful to map each letter to its coordinates."
+    },
+    {
+      "content": "You have two fingers that can start at any position. This means you can choose the best initial positions for the fingers based on the first few letters of the word."
+    },
+    {
+      "content": "When typing the word, you can alternate between the two fingers. This means you need to track the position of both fingers as you iterate through the letters."
+    },
+    {
+      "content": "Consider using dynamic programming to keep track of the minimum distance for each letter typed, given the positions of both fingers."
+    },
+    {
+      "content": "Define a DP state that represents the minimum distance to type up to the i-th letter with finger1 at position 'f1' and finger2 at position 'f2'."
+    },
+    {
+      "content": "When transitioning from one state to another, calculate the distance for moving either finger to the next letter and update the DP table accordingly."
+    },
+    {
+      "content": "Remember to initialize your DP table properly. The starting positions of the fingers do not count towards the total distance, so you can start from 0."
+    },
+    {
+      "content": "Consider edge cases where the word consists of repeated letters. This could affect how you calculate the distance if both fingers are on the same letter."
+    },
+    {
+      "content": "You may want to explore all combinations of finger positions for the first few letters to find the optimal starting positions."
+    },
+    {
+      "content": "As you fill out your DP table, think about how to efficiently update the minimum distances without redundant calculations."
+    },
+    {
+      "content": "After processing all letters, the answer will be the minimum distance found in your DP table after typing the last letter."
+    },
+    {
+      "content": "Make sure to handle the constraints properly, especially the maximum length of the word, which is 300 characters."
+    },
+    {
+      "content": "Finally, think about how you would return the result. Ensure that your function returns the minimum distance as an integer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= word.length <= 300, word consists of uppercase English letters.",
+    "Initial positions of fingers are free and do not count towards the distance.",
+    "The distance is calculated using Manhattan distance.",
+    "You need to track the positions of both fingers throughout the typing process."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the problem. You have `n` gardens and a list of paths that connect these gardens. Each garden can have one of four types of flowers, and connected gardens must have different types."
+    },
+    {
+      "content": "Consider how you can represent the gardens and paths. A graph representation might be helpful here. Each garden can be a node, and each path can be an edge connecting two nodes."
+    },
+    {
+      "content": "Since each garden has at most 3 paths, think about how this affects the coloring of the graph. With 4 flower types available, you can use a greedy algorithm to assign flower types to each garden."
+    },
+    {
+      "content": "When assigning flower types, ensure that you check the types of flowers already assigned to neighboring gardens. You can maintain an array to keep track of the flower type for each garden."
+    },
+    {
+      "content": "A good starting point is to iterate over each garden. For each garden, determine which flower types are already taken by its connected gardens. This will help you decide which flower type to assign."
+    },
+    {
+      "content": "Remember that flower types are represented as integers from 1 to 4. When checking for available types, you can use a simple set to track which types are already used by adjacent gardens."
+    },
+    {
+      "content": "Think about edge cases, such as when there are no paths at all. In this case, you can simply assign the same flower type to all gardens since there are no restrictions."
+    },
+    {
+      "content": "When implementing your solution, ensure that you handle the indexing correctly. Gardens are labeled from 1 to n, but arrays in most programming languages are zero-indexed."
+    },
+    {
+      "content": "As you implement the solution, consider using a loop to go through each garden and a nested loop to check its neighbors. This will help you efficiently assign flower types."
+    },
+    {
+      "content": "Finally, make sure to return the answer in the correct format. The output should be an array where `answer[i]` corresponds to the flower type for garden `i+1`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^4, 0 <= paths.length <= 2 * 10^4",
+    "Each path connects two different gardens: x_i != y_i.",
+    "Every garden has at most 3 paths coming into or leaving it.",
+    "Return format: an array where answer[i] is the flower type for garden (i+1)."
+  ]
+}

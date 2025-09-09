@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what the median is. For a list of numbers, the median is the middle value when sorted. If the list has an even number of elements, the median is the average of the two middle values."
+    },
+    {
+      "content": "Consider how a sliding window works. You will be looking at a subset of the array of size `k`, and as you move the window to the right, you will include the next element and exclude the first element of the previous window."
+    },
+    {
+      "content": "Think about how to efficiently maintain a sorted list of the current window elements. You could use a data structure that allows for quick insertion and deletion, such as a balanced binary search tree or two heaps."
+    },
+    {
+      "content": "When the window size is odd, the median is simply the middle element. When it is even, you need to calculate the average of the two middle elements. Make sure to handle both cases."
+    },
+    {
+      "content": "Pay attention to the constraints of the problem. The size of the array can be up to 100,000. Your solution should be efficient, ideally better than O(n*k) time complexity."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is 1. In this case, the median of each window will just be the element itself."
+    },
+    {
+      "content": "Think about how to handle negative numbers and duplicates in the array. Ensure your median calculation correctly accounts for these scenarios."
+    },
+    {
+      "content": "You may want to use two heaps to keep track of the lower half and the upper half of the current window. This allows you to efficiently find the median."
+    },
+    {
+      "content": "When using two heaps, the max heap can store the lower half, and the min heap can store the upper half. Make sure to balance the heaps after each insertion and deletion."
+    },
+    {
+      "content": "Remember to convert the output to the required format. The median values should be returned as floating-point numbers with a precision of 5 decimal places."
+    },
+    {
+      "content": "As you slide the window, when you add a new element, you need to decide which heap to add it to. Similarly, when removing an element, check which heap it belongs to."
+    },
+    {
+      "content": "After adding or removing elements from the heaps, you should check if the heaps are balanced. The max heap can have one more element than the min heap at most."
+    },
+    {
+      "content": "When calculating the median from the heaps, if the total number of elements is odd, the median is the root of the max heap. If even, it's the average of the roots of both heaps."
+    },
+    {
+      "content": "Make sure to handle the output correctly. You need to return an array of medians for each window position, so initialize an array to store these values."
+    },
+    {
+      "content": "Finally, think about the overall flow of your algorithm. You will need to iterate through the array, adjusting your heaps for each window, and calculating the median at each step."
+    }
+  ],
+  "questionNotes": [
+    "1 <= k <= nums.length <= 100000",
+    "-2^31 <= nums[i] <= 2^31 - 1",
+    "Return the median values with a precision of 10^-5.",
+    "Consider edge cases like k = 1 or all elements being the same."
+  ]
+}

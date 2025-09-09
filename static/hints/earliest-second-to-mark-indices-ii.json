@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operations you can perform each second. You can decrement any index in `nums`, set a value at a specific index from `changeIndices`, or mark an index if its value is zero."
+    },
+    {
+      "content": "Consider the implications of marking an index. You can only mark an index when its value is exactly zero. Think about how you can achieve this state for all indices."
+    },
+    {
+      "content": "Notice that the `changeIndices` array dictates where you can set values to zero. Pay attention to the order of these indices and how many times each index can be accessed."
+    },
+    {
+      "content": "Think about the relationship between the number of seconds available (`m`) and the total decrements needed to bring all values in `nums` to zero. Can you always achieve this?"
+    },
+    {
+      "content": "If any index in `nums` has a value greater than `m`, it is impossible to mark that index because you won't have enough seconds to decrement it to zero."
+    },
+    {
+      "content": "Create a plan for how to optimally use the `changeIndices` to set values to zero. Prioritize indices in `nums` that require fewer decrements."
+    },
+    {
+      "content": "You may want to keep track of how many times each index in `changeIndices` is referenced. This will help you decide which indices to prioritize for setting to zero."
+    },
+    {
+      "content": "Consider using a priority queue or a greedy approach to manage which indices to decrement or mark at each second, based on their current values."
+    },
+    {
+      "content": "As you iterate through the seconds, maintain a count of how many indices have been marked. This will help you determine when all indices are marked."
+    },
+    {
+      "content": "Remember that you can do nothing in a second if there are no available operations that can help you mark an index. This could affect your strategy."
+    },
+    {
+      "content": "Think about edge cases, such as when `nums` contains all zeros initially. How does this affect your return value?"
+    },
+    {
+      "content": "If you reach the end of `changeIndices` and not all indices in `nums` are marked, you should return -1. Make sure to handle this case explicitly."
+    },
+    {
+      "content": "While implementing, ensure that you are correctly managing the indices since the problem uses 1-based indexing for `changeIndices` but 0-based for `nums`."
+    },
+    {
+      "content": "Consider how you can efficiently check which indices can be marked at each second. You might need to maintain a list of indices that are ready to be marked."
+    },
+    {
+      "content": "Finally, think about how you can combine the operations to minimize the total seconds taken. Can you mark multiple indices in fewer seconds?"
+    }
+  ],
+  "questionNotes": [
+    "1 <= n == nums.length <= 5000",
+    "0 <= nums[i] <= 10^9",
+    "1 <= m == changeIndices.length <= 5000",
+    "1 <= changeIndices[i] <= n",
+    "Return -1 if it is impossible to mark all indices.",
+    "The indices in `changeIndices` are 1-indexed, while `nums` is 0-indexed."
+  ]
+}

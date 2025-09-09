@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the conditions for a day to be considered a good day. You need to check both the days before and after the current day, so think about how you can access those elements in the array."
+    },
+    {
+      "content": "Remember that the input array is 0-indexed. This means that when you check for days before and after a specific day, you need to ensure you don't go out of bounds of the array."
+    },
+    {
+      "content": "Consider the case when `time` is 0. In this scenario, every day is a good day because there are no guards to compare before or after. How would you handle this case in your implementation?"
+    },
+    {
+      "content": "To check if the guards are non-increasing for the days before the current day, you can use a loop to compare each guard count with the previous day. Think about how you would structure this loop."
+    },
+    {
+      "content": "Similarly, for the days after the current day, you need to check if the guard counts are non-decreasing. This is another loop, but the comparison direction will be different."
+    },
+    {
+      "content": "You will need to iterate through the `security` array and check each day that can potentially be a good day. Make sure to only check days that have enough days before and after them based on the `time` parameter."
+    },
+    {
+      "content": "As you check each day, you can store the indices of the good days in a list. Think about how you will return this list at the end of your function."
+    },
+    {
+      "content": "When implementing the checks for non-increasing and non-decreasing sequences, consider edge cases where the security counts might be equal. How will you handle ties?"
+    },
+    {
+      "content": "Make sure to test your solution with edge cases, such as when `security` has the minimum length of 1 or when all elements are the same. What should your function return in these cases?"
+    },
+    {
+      "content": "Finally, structure your function to iterate through the days, checking the required conditions, and collecting the valid indices. Think about how you can efficiently implement this without redundant checks."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= security.length <= 10^5",
+    "0 <= security[i], time <= 10^5",
+    "The array is 0-indexed.",
+    "A day is good if there are at least `time` days before and after it.",
+    "Return a list of indices of good days; order does not matter."
+  ]
+}

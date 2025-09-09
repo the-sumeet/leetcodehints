@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what constitutes a 'key change'. A key change occurs when the current character is different from the last character, ignoring case. For example, 'a' and 'A' are considered the same key."
+    },
+    {
+      "content": "To keep track of the last used key, you can initialize a variable to store the last character processed. This will help you compare it with the current character as you iterate through the string."
+    },
+    {
+      "content": "Remember that the input string can contain both uppercase and lowercase letters. You'll need to compare characters in a case-insensitive manner. Consider using a method that normalizes the case, like converting both characters to lowercase."
+    },
+    {
+      "content": "As you iterate through the string, start from the second character (index 1) and compare it with the character at the previous index (index 0). This way, you can determine if a key change has occurred."
+    },
+    {
+      "content": "Use a counter to keep track of the number of key changes. Initialize this counter to zero before you start iterating through the string."
+    },
+    {
+      "content": "When you find a key change (i.e., the current character is different from the last used key), increment your counter by one. Make sure to update the last used key to the current character after each comparison."
+    },
+    {
+      "content": "Consider edge cases, such as strings with only one character or strings where all characters are the same. What should your function return in these cases?"
+    },
+    {
+      "content": "Think about how to handle strings of varying lengths, especially the minimum length of 1. Ensure your solution can handle the smallest input size without errors."
+    },
+    {
+      "content": "As you finalize your logic, remember to return the counter after you finish iterating through the string. This will give you the total number of key changes."
+    },
+    {
+      "content": "Before you write your final code, sketch out the logic in pseudocode. For example:\n```\nInitialize counter = 0\nFor i from 1 to length of s:\n    If lowercase(s[i]) != lowercase(s[i-1]):\n        Increment counter\nReturn counter\n```"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 100",
+    "The input string consists only of upper case and lower case English letters.",
+    "Key changes are determined by comparing characters in a case-insensitive manner."
+  ]
+}

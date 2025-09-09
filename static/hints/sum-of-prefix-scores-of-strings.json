@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a prefix is. A prefix of a string is any substring that starts from the beginning of that string. For example, for 'abc', the prefixes are 'a', 'ab', and 'abc'."
+    },
+    {
+      "content": "Consider how you can count the number of strings in the array that start with a given prefix. You might want to think about iterating through the list of words for each prefix."
+    },
+    {
+      "content": "Remember that each string contributes to its own score. For example, the string 'ab' counts as a prefix for itself."
+    },
+    {
+      "content": "You need to compute scores for every non-empty prefix of each string in the input array. This means you will have to generate all prefixes for each string."
+    },
+    {
+      "content": "When calculating the score for a prefix, you can use a nested loop: the outer loop iterates through each word, and the inner loop goes through each prefix of that word."
+    },
+    {
+      "content": "Think about how to efficiently check if a string starts with a given prefix. You might want to use a string method or a comparison operation."
+    },
+    {
+      "content": "As you calculate scores for prefixes, keep in mind that the result for each word will be the sum of scores for all its prefixes. You will need to store these sums in an output array."
+    },
+    {
+      "content": "Consider edge cases, such as when all words are the same or when there are very short strings. How will your approach handle these scenarios?"
+    },
+    {
+      "content": "You can optimize your solution by using a Trie data structure. A Trie allows you to efficiently store and retrieve prefixes, which can help in counting scores."
+    },
+    {
+      "content": "If you choose to use a Trie, remember that each node in the Trie can keep track of how many words pass through it. This will help you calculate scores quickly."
+    },
+    {
+      "content": "Think about the time complexity of your approach. If you check every prefix against every word, what will be the total time complexity? Can you improve it?"
+    },
+    {
+      "content": "Make sure to initialize your answer array correctly. It should have the same length as the input array, and all values should start at zero."
+    },
+    {
+      "content": "As you iterate through the prefixes of each word, accumulate the scores in the corresponding index of the answer array. Ensure you are summing correctly."
+    },
+    {
+      "content": "After calculating the scores for all prefixes of each word, review your final answer array. It should contain the total scores for each word in the input list."
+    },
+    {
+      "content": "Before finalizing your function, test it with various inputs to ensure it handles all edge cases and adheres to the constraints given in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= words.length <= 1000",
+    "1 <= words[i].length <= 1000",
+    "Each words[i] consists of lowercase English letters.",
+    "The output should be an array where answer[i] is the sum of scores of every non-empty prefix of words[i]."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how apples are distributed in the garden. Each tree at coordinate (i, j) has |i| + |j| apples. For example, the tree at (1, 1) has 2 apples, and the tree at (0, 0) has 0 apples."
+    },
+    {
+      "content": "Consider the area of the square plot. If the side length of the square is 's', then the square will cover all points (x, y) where |x| <= s/2 and |y| <= s/2. This means the corners of the square will be at (s/2, s/2), (-s/2, s/2), (-s/2, -s/2), and (s/2, -s/2)."
+    },
+    {
+      "content": "Calculate the total number of apples within the square plot. You can find the number of apples at each coordinate and sum them up. Remember, the number of apples at (i, j) is given by |i| + |j|."
+    },
+    {
+      "content": "Notice that the number of apples increases as you increase the side length of the square. This means you can use a binary search approach to efficiently find the minimum side length that meets the apple requirement."
+    },
+    {
+      "content": "When using binary search, define your search range for the side length. A reasonable starting point might be from 0 to a large number like 10^9, but adjust based on your understanding of the problem."
+    },
+    {
+      "content": "In your binary search, for a midpoint 'mid', calculate the total number of apples in a square of side length 'mid'. You can do this by iterating over all integer coordinates (i, j) within the bounds of the square."
+    },
+    {
+      "content": "To optimize the calculation of apples within the square, consider the symmetry of the problem. You only need to calculate apples in one quadrant and then multiply the result appropriately."
+    },
+    {
+      "content": "Keep in mind the perimeter of the square is given by the formula: perimeter = 4 * side length. Once you find the minimum side length that satisfies the apple condition, you can easily compute the perimeter."
+    },
+    {
+      "content": "Think about edge cases, such as when neededApples is very small (like 1) or very large (like 10^15). How does the side length change in these cases, and how does that affect your binary search?"
+    },
+    {
+      "content": "Finally, implement the binary search and ensure that you check if the total apples collected meets or exceeds neededApples. If it does, you may have found a candidate for the minimum side length."
+    }
+  ],
+  "questionNotes": [
+    "The garden is represented as an infinite 2D grid.",
+    "Each tree at (i, j) has |i| + |j| apples.",
+    "You need to return the minimum perimeter of an axis-aligned square plot centered at (0, 0).",
+    "Constraints: 1 <= neededApples <= 10^15."
+  ]
+}

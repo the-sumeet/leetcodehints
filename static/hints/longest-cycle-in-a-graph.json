@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. Each node points to at most one other node, and some nodes might not point anywhere (indicated by -1). This means you can visualize the graph as a collection of chains and cycles."
+    },
+    {
+      "content": "Consider how to traverse the graph. A depth-first search (DFS) or iterative approach might be useful to explore each node and its connections. Remember to keep track of visited nodes to avoid redundant work."
+    },
+    {
+      "content": "When traversing, maintain a record of the path you take. You can use a stack or a list to store the nodes you've visited in the current traversal. This will help you identify cycles."
+    },
+    {
+      "content": "Think about how to detect a cycle. If you revisit a node that is already in your current path, you've found a cycle. The length of the cycle can be calculated based on the position of the first occurrence of that node in your path."
+    },
+    {
+      "content": "Make sure to handle nodes that point to -1 correctly. These nodes do not contribute to cycles, so you can skip them during your traversal."
+    },
+    {
+      "content": "Consider edge cases, such as when the graph has only two nodes or when all nodes point to -1. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "As you traverse, you might want to mark nodes as visited. Use a separate array or set to track which nodes have already been processed to prevent infinite loops."
+    },
+    {
+      "content": "When you find a cycle, calculate its length by comparing the index of the current node in your path with the index of its first occurrence. This will give you the number of nodes in the cycle."
+    },
+    {
+      "content": "After processing all nodes, check if any cycles were found. If none were found, return -1 as specified in the problem statement."
+    },
+    {
+      "content": "Remember that the graph can have multiple cycles. Your goal is to find the longest one, so keep track of the maximum cycle length encountered during your traversal."
+    },
+    {
+      "content": "Think about how to reset your tracking structures after finishing the traversal for one node. You may need to clear your path or visited nodes to start fresh for the next node."
+    },
+    {
+      "content": "Consider using a hash map to store the indices of nodes as you traverse. This can help you quickly determine if you've seen a node before and where it was first encountered."
+    },
+    {
+      "content": "As you implement your solution, test it with various inputs, especially edge cases like a graph with only one cycle or a graph that has no cycles at all."
+    },
+    {
+      "content": "Before finalizing your approach, ensure that you understand the constraints: the graph can have up to 100,000 nodes, so your solution should be efficient, ideally O(n)."
+    },
+    {
+      "content": "Finally, think about how to structure your function. You might want to create a helper function that handles the traversal and cycle detection for each node."
+    }
+  ],
+  "questionNotes": [
+    "The graph is directed and represented by an array where edges[i] indicates the target node from node i.",
+    "If edges[i] == -1, there is no outgoing edge from node i.",
+    "You need to return the length of the longest cycle or -1 if no cycle exists.",
+    "Constraints: 2 <= n <= 100,000; -1 <= edges[i] < n; edges[i] != i."
+  ]
+}

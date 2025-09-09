@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the problem. You have an array of energy values, and you can only jump to every k-th magician. This means that if you start at index i, your next position will be i + k, then i + 2k, and so on."
+    },
+    {
+      "content": "Consider how you can calculate the total energy absorbed from a starting index. You will need to sum the energies at each position you land on until you go out of bounds of the array."
+    },
+    {
+      "content": "Think about how to iterate through the array. You can use a loop to try starting from each magician's index and calculate the total energy gained for each starting point."
+    },
+    {
+      "content": "Remember that the energy can be negative. This means that starting from a magician with negative energy might still lead to a higher total if the subsequent magicians provide enough positive energy."
+    },
+    {
+      "content": "You should keep track of the maximum energy gained as you calculate the energy for each starting index. Initialize a variable to store the maximum energy and update it whenever you find a higher total."
+    },
+    {
+      "content": "Consider edge cases, such as when all energy values are negative. In this case, the best strategy might be to start from the magician with the least negative energy."
+    },
+    {
+      "content": "To implement the jumps, you can use a while loop that continues as long as your current index is within the bounds of the array. Make sure to update your index correctly with each jump."
+    },
+    {
+      "content": "Think about using a helper function that takes the starting index and calculates the total energy for that starting point. This will help keep your code organized and reusable."
+    },
+    {
+      "content": "When you reach the end of the array, ensure that your logic correctly handles the case where you can't make any more jumps. This is where you will stop summing energies."
+    },
+    {
+      "content": "Finally, after iterating through all possible starting points, return the maximum energy found. Make sure to account for cases where the array length is minimal, such as when it only contains one magician."
+    }
+  ],
+  "questionNotes": [
+    "1 <= energy.length <= 10^5",
+    "-1000 <= energy[i] <= 1000",
+    "1 <= k <= energy.length - 1",
+    "You must absorb energy from every magician you land on, regardless of whether it's negative or positive."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a 2D matrix `grid` and a `limits` array which specifies how many elements you can take from each row. Make sure to visualize this with a simple example."
+    },
+    {
+      "content": "Think about how to extract the largest elements from each row of the grid. Sorting each row in descending order can help you quickly access the largest elements."
+    },
+    {
+      "content": "Consider how the `limits` array affects your selection. For each row, you can only take up to `limits[i]` elements. This means you need to keep track of how many elements you've selected from each row."
+    },
+    {
+      "content": "As you gather elements from the rows, keep a running total of the sum. You need to ensure that you do not exceed `k` total elements selected from all rows combined."
+    },
+    {
+      "content": "Think about how to efficiently combine the largest elements from each row. You might want to use a max-heap (or priority queue) to help manage the largest elements you've selected."
+    },
+    {
+      "content": "When iterating through the rows, after sorting, you can take the first `limits[i]` elements from each row. However, you need to be cautious about the overall count of selected elements not exceeding `k`."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is 0 or when all elements in `limits` are 0. In these cases, what should your function return?"
+    },
+    {
+      "content": "As you implement the solution, ensure that you handle cases where the sum of `limits` is less than `k`. You should only sum up to the total number of elements allowed by the `limits`."
+    },
+    {
+      "content": "After gathering the elements, you need to compute the maximum sum. If you have more than `k` elements, you will need to select the largest `k` elements from your collected list."
+    },
+    {
+      "content": "Finally, structure your code to return the maximum sum computed. Ensure that your solution is efficient enough to handle the upper limits of the constraints provided."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == grid.length == limits.length, m == grid[i].length",
+    "1 <= n, m <= 500",
+    "0 <= grid[i][j] <= 10^5",
+    "0 <= limits[i] <= m",
+    "0 <= k <= min(n * m, sum(limits))",
+    "Return the maximum sum of selected elements."
+  ]
+}

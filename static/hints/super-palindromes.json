@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A palindrome reads the same forwards and backwards, like '121' or '484'. Make sure you can identify palindromes in a string."
+    },
+    {
+      "content": "Next, consider how to check if a number is a palindrome. You can convert it to a string and compare it to its reverse. For example, `str(n) == str(n)[::-1]` can be used in Python."
+    },
+    {
+      "content": "Now think about what it means for a number to be a super-palindrome. It must be both a palindrome and the square of another palindrome. This means you will need to generate palindromic numbers first."
+    },
+    {
+      "content": "To generate palindromes, consider constructing them from half their digits. For example, for a 3-digit palindrome, you can take a 2-digit number and mirror it."
+    },
+    {
+      "content": "Remember that the input numbers 'left' and 'right' can be very large (up to 10^18). You need to handle these numbers as strings to avoid overflow issues in languages with fixed integer sizes."
+    },
+    {
+      "content": "When generating palindromic numbers, you can limit the range of numbers you need to consider. For example, if you need to find palindromes whose squares are less than or equal to 10^18, think about the maximum integer whose square is within this limit."
+    },
+    {
+      "content": "Calculate the upper limit for the palindromic roots. Since the square of a number can be at most 10^18, the maximum integer you need to consider is the integer part of sqrt(10^18), which is 10^9."
+    },
+    {
+      "content": "Generate palindromic numbers up to 10^9. You can do this by iterating through numbers and checking if they are palindromes, or by constructing them directly."
+    },
+    {
+      "content": "For each palindromic number you generate, compute its square and check if the result is also a palindrome. Keep a count of how many super-palindromes you find."
+    },
+    {
+      "content": "When checking if the squared value is within the range [left, right], remember to convert 'left' and 'right' from strings to integers for comparison."
+    },
+    {
+      "content": "Pay attention to the fact that 'left' and 'right' are inclusive. Ensure that your checks include both endpoints when counting super-palindromes."
+    },
+    {
+      "content": "Consider edge cases where 'left' and 'right' are very close together. For instance, if both are '1', ensure your logic correctly identifies it as a super-palindrome."
+    },
+    {
+      "content": "While iterating through palindromic numbers, remember to avoid duplicates. Each palindromic square must be unique and counted only once."
+    },
+    {
+      "content": "Make sure to test your implementation with various ranges, including small ranges like [1, 2] and larger ranges like [1, 10^18]. This will help ensure your solution handles all cases."
+    },
+    {
+      "content": "Finally, structure your solution to return the count of super-palindromes found in the specified range. You might want to use a variable to keep track of this count as you iterate."
+    }
+  ],
+  "questionNotes": [
+    "A super-palindrome is a number that is both a palindrome and the square of a palindrome.",
+    "The input 'left' and 'right' can be very large (up to 10^18), so handle them as strings.",
+    "The range [left, right] is inclusive.",
+    "Ensure to check for edge cases, especially when 'left' and 'right' are very close together."
+  ]
+}

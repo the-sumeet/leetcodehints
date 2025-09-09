@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a tree represented by edges and a corresponding values array. Each edge connects two nodes and has a certain length. Make sure you can visualize or represent this tree structure."
+    },
+    {
+      "content": "Remember that a tree is a connected acyclic graph. This means there is exactly one path between any two nodes. This property will be useful when traversing the tree."
+    },
+    {
+      "content": "Consider how you will traverse the tree. Depth-first search (DFS) is a common approach for tree traversal. Think about how you can keep track of the current path and its properties as you explore."
+    },
+    {
+      "content": "As you traverse, you'll need to maintain a record of the values encountered on the current path. Use a data structure like a set to track unique values and a counter for any value that may appear twice."
+    },
+    {
+      "content": "Pay attention to the condition for a special path: all values must be distinct, except for at most one value that can appear twice. Think about how you can efficiently check this condition during your traversal."
+    },
+    {
+      "content": "While traversing, also keep track of the current path length. You will need to compare this length against the longest special path found so far."
+    },
+    {
+      "content": "When you find a longer special path, update your maximum length and reset your count of nodes in that path. If you find another path with the same length, consider how you will update the minimum number of nodes."
+    },
+    {
+      "content": "Consider edge cases, such as when all nodes have the same value or when there are only two nodes. How will your logic handle these scenarios?"
+    },
+    {
+      "content": "Think about how to handle backtracking in your DFS. When you return from a node, you need to remove it from your current path and update your set or counter accordingly."
+    },
+    {
+      "content": "You may want to create a helper function for your DFS that takes parameters for the current node, the current path length, and the set of values seen so far."
+    },
+    {
+      "content": "As you implement your DFS, consider how you will manage the state of your path. You might need to pass copies of your set or use a different approach to avoid modifying the original state."
+    },
+    {
+      "content": "Don't forget to handle the return values properly. Your final result should be an array with two elements: the maximum length of the special path and the minimum number of nodes in such paths."
+    },
+    {
+      "content": "As you approach the end of your implementation, ensure that you are correctly identifying the longest paths and counting nodes accurately. Test your code with the provided examples to validate your logic."
+    },
+    {
+      "content": "Finally, think about the time complexity of your solution. DFS will generally run in O(n) time for trees, but consider how your checks for uniqueness might affect performance."
+    },
+    {
+      "content": "You are close to the solution! Focus on implementing the DFS with the conditions for a special path and ensure you are correctly updating your results as you explore the tree."
+    }
+  ],
+  "questionNotes": [
+    "The tree is undirected and connected, with n nodes (0 to n-1).",
+    "Each edge has a length that contributes to the path length.",
+    "A special path can have at most one value appearing twice.",
+    "Return an array of size 2: [length of longest special path, minimum number of nodes in such paths].",
+    "Constraints: 2 <= n <= 5 * 10^4, 1 <= length_i <= 10^3, 0 <= nums[i] <= 5 * 10^4."
+  ]
+}

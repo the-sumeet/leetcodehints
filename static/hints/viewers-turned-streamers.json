@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of sessions, each with attributes like user_id, session_start, session_end, session_id, and session_type. Familiarize yourself with how to access these attributes."
+    },
+    {
+      "content": "Consider how you can differentiate between 'Viewer' and 'Streamer' sessions. You will need to filter the sessions based on the session_type to identify users who transitioned from viewing to streaming."
+    },
+    {
+      "content": "Think about how you can track the sessions for each user. A dictionary or a similar data structure could be useful to store sessions by user_id. This will help you manage and analyze their session types effectively."
+    },
+    {
+      "content": "Remember that the timestamps are in string format. You may need to convert them to a datetime object to perform any time comparisons or calculations."
+    },
+    {
+      "content": "When filtering for users who became streamers, ensure that you check the order of their sessions. A user must have at least one 'Viewer' session before any 'Streamer' sessions."
+    },
+    {
+      "content": "Consider edge cases, such as users who only have 'Viewer' sessions or only 'Streamer' sessions. You need to ensure your solution handles these scenarios gracefully."
+    },
+    {
+      "content": "After identifying users who transitioned from 'Viewer' to 'Streamer', think about how to collect their unique user_ids. A set can be helpful here to avoid duplicates."
+    },
+    {
+      "content": "You might want to track the first 'Viewer' session and the first 'Streamer' session for each user. This will help you understand the timeline of their transition."
+    },
+    {
+      "content": "Make sure to sort the sessions by user_id and session_start time before processing. This will ensure that you analyze the sessions in the correct order."
+    },
+    {
+      "content": "Consider how you will return the final result. Should it be a list of user_ids, or do you need to return additional information about their sessions?"
+    },
+    {
+      "content": "Think about the performance of your solution. You may need to iterate through the list of sessions multiple times, so consider how to minimize this for larger datasets."
+    },
+    {
+      "content": "As you implement the solution, keep track of the session counts for each user. This can help you debug and ensure you're capturing the correct transitions."
+    },
+    {
+      "content": "When checking for transitions, ensure that you account for the possibility of multiple 'Viewer' sessions before a 'Streamer' session. All previous 'Viewer' sessions should be considered."
+    },
+    {
+      "content": "You might also want to consider how to handle users who have multiple 'Streamer' sessions after their first one. Does this affect your logic for counting or identifying them?"
+    },
+    {
+      "content": "Finally, ensure that your solution is robust against variations in the input data. Test it with different scenarios, such as users with no sessions or only one type of session."
+    }
+  ],
+  "questionNotes": [
+    "The input data consists of a list of sessions with user_id, session_start, session_end, session_id, and session_type.",
+    "You need to identify users who have at least one 'Viewer' session followed by at least one 'Streamer' session.",
+    "Handle edge cases where users may not have both types of sessions.",
+    "Ensure to sort sessions by user_id and session_start for accurate processing.",
+    "Consider the return format: should it be a list of unique user_ids or include more details?"
+  ]
+}

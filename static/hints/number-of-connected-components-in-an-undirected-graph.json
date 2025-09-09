@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. You have a list of edges that connect nodes. Each edge connects two nodes, and the graph is undirected, meaning that if node A is connected to node B, then node B is also connected to node A."
+    },
+    {
+      "content": "Consider how you can represent the graph in code. A common approach is to use an adjacency list or an adjacency matrix. For example, an adjacency list can be implemented as a dictionary where each key is a node and the value is a list of connected nodes."
+    },
+    {
+      "content": "Think about how to explore the graph to find connected components. Depth-first search (DFS) or breadth-first search (BFS) are typical algorithms used for this purpose. You can start from an unvisited node and mark all reachable nodes as visited."
+    },
+    {
+      "content": "When you find a new unvisited node, you can increment a counter for the number of connected components. This counter will help you keep track of how many distinct groups of connected nodes exist in the graph."
+    },
+    {
+      "content": "Remember to handle cases where there are isolated nodes. For example, if you have 5 nodes and no edges, each node is its own connected component. Make sure to account for nodes that do not appear in any edges."
+    },
+    {
+      "content": "Consider edge cases such as when the input list of edges is empty. In this case, the number of connected components should equal the number of nodes since they are all isolated."
+    },
+    {
+      "content": "Think about how to iterate through all nodes. You might want to use a loop that goes through each node from 0 to n-1, checking if it has been visited before starting a DFS or BFS from that node."
+    },
+    {
+      "content": "As you implement your search algorithm, ensure that you mark nodes as visited correctly. You can use a set or a boolean array to keep track of which nodes have already been counted in a connected component."
+    },
+    {
+      "content": "After implementing the search, test your function with various inputs, including edge cases. For instance, try inputs with no edges, fully connected graphs, and disconnected graphs to ensure your solution is robust."
+    },
+    {
+      "content": "Finally, once you have your connected components counted, return the count. Make sure your function signature matches the expected format, which typically includes the number of nodes and the list of edges."
+    }
+  ],
+  "questionNotes": [
+    "The input consists of an integer n (number of nodes) and a list of edges (each edge is a pair of nodes).",
+    "The nodes are indexed from 0 to n-1.",
+    "The output should be the number of connected components in the graph.",
+    "Consider edge cases such as no edges or isolated nodes."
+  ]
+}

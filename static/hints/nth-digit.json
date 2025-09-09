@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the infinite integer sequence is constructed. The sequence begins with single-digit numbers (1 to 9), followed by double-digit numbers (10 to 99), then triple-digit numbers (100 to 999), and so on."
+    },
+    {
+      "content": "Consider how many digits are contributed by each range of numbers. For example, single-digit numbers contribute 9 digits, double-digit numbers contribute 180 digits (90 numbers × 2 digits each), and triple-digit numbers contribute 2700 digits (900 numbers × 3 digits each)."
+    },
+    {
+      "content": "To find the nth digit, you can determine which range of numbers contains the nth digit. Start by subtracting the total number of digits contributed by each range until you find the range that includes n."
+    },
+    {
+      "content": "Remember that the ranges of numbers are defined by their digit lengths. For instance, single-digit numbers (1-9) have a digit length of 1, double-digit numbers (10-99) have a digit length of 2, and so on."
+    },
+    {
+      "content": "Once you identify the correct range, calculate how many numbers are in that range and how many digits they contribute. This will help you pinpoint the exact number that contains the nth digit."
+    },
+    {
+      "content": "After determining the range, find the specific number within that range that corresponds to the nth digit. You can do this by calculating how many full numbers fit into the remaining digit count."
+    },
+    {
+      "content": "When you find the specific number, you may need to convert it to a string to access its individual digits. This is especially important for numbers that have more than one digit."
+    },
+    {
+      "content": "Consider edge cases, such as when n is very close to the boundaries of digit ranges. For example, if n is 9, it should return 9, but if n is 10, it should return 1 (the first digit of 10)."
+    },
+    {
+      "content": "Keep in mind the constraints: n can be as large as 2^31 - 1. Ensure your solution is efficient enough to handle large values of n without iterating through all numbers."
+    },
+    {
+      "content": "Finally, after identifying the number and the specific digit within it, return that digit as the output. Make sure to handle any conversions from numeric types to string types appropriately."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n <= 2^31 - 1",
+    "The sequence is continuous and starts from 1.",
+    "Digits are indexed starting from 1 (not 0).",
+    "The output should be a single digit, which may involve converting numbers to strings."
+  ]
+}

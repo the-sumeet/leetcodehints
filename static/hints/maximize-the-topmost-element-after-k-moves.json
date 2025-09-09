@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the two possible moves: removing the topmost element and adding back an element that was previously removed. Think about how these moves can affect the topmost element of the pile."
+    },
+    {
+      "content": "Consider the number of moves `k` you have. If `k` is less than the number of elements in `nums`, you can always pop elements and potentially add back the largest one. How does this affect your strategy?"
+    },
+    {
+      "content": "Take note of the case where `k` is equal to the length of `nums`. In this scenario, you will remove all elements. Think about what happens if you try to add back an element after all have been removed."
+    },
+    {
+      "content": "If `k` is greater than or equal to the length of `nums`, you will have removed all elements. How can you ensure that the pile is non-empty after exactly `k` moves? Consider the implications of this on your final answer."
+    },
+    {
+      "content": "Think about the maximum element in `nums`. If you want this element to be the topmost after `k` moves, you need to ensure that you can pop enough elements while retaining the ability to add it back. How many elements do you need to pop?"
+    },
+    {
+      "content": "You can only add back an element if you have removed at least one. If `k` is odd and you have popped all elements, you cannot add anything back. What does this mean for your final answer?"
+    },
+    {
+      "content": "Consider the scenario where `k` is less than the total number of elements but greater than zero. You can pop some elements and still have some left. How can you ensure you maximize the topmost element in this case?"
+    },
+    {
+      "content": "Make a plan to iterate through the first `min(k, len(nums))` elements of `nums`. Track the maximum value you can achieve as the topmost element after `k` moves. What conditions will you check while iterating?"
+    },
+    {
+      "content": "As you iterate, maintain a variable to track the maximum value of the topmost element you could potentially have. Ensure you also account for the number of moves left after popping elements."
+    },
+    {
+      "content": "Finally, remember to return -1 if it is impossible to have a non-empty pile after `k` moves. This can happen if all elements are removed and `k` is odd. What checks will you implement to handle this?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5, 0 <= nums[i], k <= 10^9.",
+    "The return value should be -1 if it is not possible to have a non-empty pile after k moves.",
+    "Remember that nums[0] is the topmost element and the array is 0-indexed."
+  ]
+}

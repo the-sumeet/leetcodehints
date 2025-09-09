@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of the bitwise AND operation. Remember that for any two numbers, the result of their AND operation will always be less than or equal to both numbers."
+    },
+    {
+      "content": "Consider how the AND operation behaves with multiple elements. The AND of a subarray can only be equal to the AND of its last element if all previous elements are either equal or contribute to maintaining the required AND value."
+    },
+    {
+      "content": "Think about how to divide the `nums` array into contiguous subarrays. Each subarray must have its AND equal to the corresponding value in `andValues`. This means you need to check the AND condition for each potential subarray."
+    },
+    {
+      "content": "Keep in mind the constraints: `m` must be less than or equal to `n`, and both arrays must have at least one element. This will guide how you approach the division of the `nums` array."
+    },
+    {
+      "content": "Consider edge cases where `andValues` has values that are impossible to achieve with the elements in `nums`. For example, if the AND of the entire `nums` is less than any value in `andValues`, it is impossible to create the required subarrays."
+    },
+    {
+      "content": "To find valid subarrays, you may want to use a two-pointer technique or a sliding window approach to efficiently explore the possible segments of `nums`."
+    },
+    {
+      "content": "As you explore potential subarrays, keep track of the last element of each valid subarray. This will help you calculate the sum of the values as required in the problem."
+    },
+    {
+      "content": "When checking if a subarray meets the AND condition, iterate through the subarray and compute the AND value. If at any point the AND value does not match the required value in `andValues`, you can break early."
+    },
+    {
+      "content": "You will need to maintain a pointer or index to track which value in `andValues` you are currently trying to match with a subarray from `nums`. This will help you ensure that you are forming the correct number of subarrays."
+    },
+    {
+      "content": "Consider using a dynamic programming approach to store the minimum sum of values for valid divisions of `nums` into subarrays up to each index."
+    },
+    {
+      "content": "Remember to handle cases where it is impossible to form the required number of subarrays. If you exhaust all options and cannot match all `andValues`, return -1."
+    },
+    {
+      "content": "As you implement your solution, be careful with the indices. Ensure that you are correctly managing the boundaries of your subarrays and that you are not going out of bounds."
+    },
+    {
+      "content": "After forming valid subarrays, you should sum their last elements to compute the final result. Make sure to keep track of the minimum sum across all valid configurations."
+    },
+    {
+      "content": "Before finalizing your solution, test it against edge cases, such as when `nums` contains repeated elements or when `andValues` contains zeros."
+    },
+    {
+      "content": "Your final implementation should return the minimum sum of the last elements of the valid subarrays, or -1 if no valid configuration exists. Make sure to check your return conditions carefully."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums.length <= 10^4, 1 <= m == andValues.length <= min(n, 10), 1 <= nums[i] < 10^5, 0 <= andValues[j] < 10^5.",
+    "The AND of a single element subarray is the element itself.",
+    "The sum of the values is the sum of the last elements of each valid subarray.",
+    "Return -1 if it's not possible to divide nums into m subarrays satisfying the AND conditions."
+  ]
+}

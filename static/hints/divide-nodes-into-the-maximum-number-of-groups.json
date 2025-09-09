@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. Each node is connected to others through edges, and you need to group them while ensuring that connected nodes are in groups that differ by exactly 1."
+    },
+    {
+      "content": "Consider the implications of the grouping condition: if node A is in group x, then any node B connected to A must be in group x-1 or x+1. This suggests a relationship similar to a bipartite graph."
+    },
+    {
+      "content": "Think about how you can represent the graph. An adjacency list or adjacency matrix can be useful for storing the edges between nodes."
+    },
+    {
+      "content": "Since the graph can be disconnected, you will need to handle each connected component separately. How can you identify all the components in the graph?"
+    },
+    {
+      "content": "Use Depth First Search (DFS) or Breadth First Search (BFS) to explore the graph. As you traverse, you can attempt to assign groups to nodes based on their neighbors."
+    },
+    {
+      "content": "While traversing, maintain a record of the group assigned to each node. If you find a conflict (e.g., two connected nodes assigned to the same group), then grouping is impossible."
+    },
+    {
+      "content": "If you successfully assign groups to a component, calculate the maximum number of groups. Remember that the maximum group number is determined by the depth of your group assignments."
+    },
+    {
+      "content": "Consider the scenario where you have a cycle in the graph. How does this affect your ability to group the nodes? Can you still assign groups without conflicts?"
+    },
+    {
+      "content": "For a bipartite graph, the maximum number of groups you can create is 2. If you can extend this concept to more than two groups, how would you structure your groups?"
+    },
+    {
+      "content": "Take into account edge cases, such as when there are no edges at all. How would you group nodes in such a scenario?"
+    },
+    {
+      "content": "If the graph is fully connected but has an odd cycle, what happens to your grouping strategy? This is a key point to identify when determining if grouping is possible."
+    },
+    {
+      "content": "While implementing your solution, ensure that you handle the return values correctly. If grouping is impossible, you should return -1."
+    },
+    {
+      "content": "After processing all components, sum up the maximum number of groups from each component. This will give you the overall maximum number of groups."
+    },
+    {
+      "content": "Remember to verify your approach against the provided examples. Can you create a test case that challenges your current understanding of the problem?"
+    },
+    {
+      "content": "As a final step, consider edge cases with the maximum constraints. How does your algorithm perform with the upper limits of n and edges?"
+    }
+  ],
+  "questionNotes": [
+    "The graph is undirected and may be disconnected.",
+    "Nodes are labeled from 1 to n, which is important for indexing.",
+    "Each edge is unique, meaning no duplicate edges between the same nodes.",
+    "Return -1 if it's impossible to group the nodes as specified."
+  ]
+}

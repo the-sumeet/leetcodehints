@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to find the center of the array. The center is defined as the middle element of the sorted array. For an array of length n, the center index is (n - 1) / 2."
+    },
+    {
+      "content": "Make sure to sort the array first to determine the center value correctly. Remember that sorting is crucial for finding the middle element accurately."
+    },
+    {
+      "content": "Once you have the center value, you need to calculate the strength of each element in the array. The strength of an element arr[i] is determined by the absolute difference |arr[i] - m|, where m is the center."
+    },
+    {
+      "content": "Remember that if two elements have the same strength, the one with the higher value is considered stronger. You will need to account for this when sorting the elements based on their strength."
+    },
+    {
+      "content": "You can create a list of tuples where each tuple contains the strength of the element and the element itself. This will help you sort them easily based on the defined criteria."
+    },
+    {
+      "content": "When sorting the tuples, use a custom sorting key that first sorts by the strength and then by the element value. This can be done using Python's sorted function with a lambda function."
+    },
+    {
+      "content": "After sorting, you only need to extract the first k elements from your sorted list of tuples. These will be your strongest values."
+    },
+    {
+      "content": "Consider edge cases such as when all elements are the same or when k is equal to the length of the array. Ensure your solution handles these scenarios gracefully."
+    },
+    {
+      "content": "Make sure to return the result in any arbitrary order as specified in the problem statement. You do not need to maintain the original order of the strongest values."
+    },
+    {
+      "content": "Finally, remember to check the constraints provided in the problem, such as the range of values in the array and the maximum length. This will help you optimize your solution."
+    }
+  ],
+  "questionNotes": [
+    "1 <= arr.length <= 10^5",
+    "-10^5 <= arr[i] <= 10^5",
+    "1 <= k <= arr.length",
+    "Return the strongest k values in any arbitrary order.",
+    "The center is found at index (n - 1) / 2 of the sorted array.",
+    "Tie-breaking: If strengths are equal, the larger value is stronger."
+  ]
+}

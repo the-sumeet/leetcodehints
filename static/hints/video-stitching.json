@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to cover the time interval from 0 to `time` using the given clips. Each clip can be represented as a start and end time, and they may overlap."
+    },
+    {
+      "content": "Consider how you can represent the coverage of clips. A clip `[start, end]` covers all time from `start` to `end`, and you need to find the minimum number of clips that can cover the entire range from 0 to `time`."
+    },
+    {
+      "content": "Think about how to sort the clips. Sorting them by their starting time can help in efficiently finding which clips can extend your coverage as you iterate through them."
+    },
+    {
+      "content": "When iterating through the sorted clips, keep track of the farthest point you can reach with the clips you have selected so far. This will help you decide if you need to select a new clip."
+    },
+    {
+      "content": "Use a greedy approach to select clips. Start from the beginning of the time range (0) and always choose the clip that extends your coverage the farthest within the current range."
+    },
+    {
+      "content": "While iterating, if you find a clip that starts after your current coverage ends, it means you cannot cover the time range, and you should return -1."
+    },
+    {
+      "content": "Keep a count of how many clips you have selected. Each time you extend your coverage by selecting a new clip, increment this count."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there are no clips that can start at 0 or when the last clip does not extend to `time`."
+    },
+    {
+      "content": "At the end of your iteration, check if your coverage has reached or exceeded `time`. If it has, return the count of clips used; otherwise, return -1."
+    },
+    {
+      "content": "Remember to consider the constraints given. For instance, the maximum number of clips is 100, and the time range is also limited to 100, which allows for a time complexity of O(n log n) due to sorting."
+    }
+  ],
+  "questionNotes": [
+    "Clips are represented as pairs [start, end] where start <= end.",
+    "You must cover the range [0, time] completely.",
+    "Return -1 if it's impossible to cover the range.",
+    "The number of clips can be up to 100, and the time value can also be up to 100."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the DataFrame. It has three columns: 'name', 'quantity', and 'price'. Your main focus is on the 'quantity' column, which may contain missing values."
+    },
+    {
+      "content": "Identify how missing values are represented in the DataFrame. In Python's pandas library, missing values can be represented as 'None' or 'NaN'. Make sure you can check for these values."
+    },
+    {
+      "content": "Consider how to access and modify a specific column in a DataFrame. You can use the column name to select it and perform operations directly on that column."
+    },
+    {
+      "content": "To fill missing values, pandas provides a method called `fillna()`. This method can be used to replace NaN or None values with a specified value."
+    },
+    {
+      "content": "Think about the specific value you want to use to fill the missing quantities. In this case, you want to use 0 for any missing 'quantity'."
+    },
+    {
+      "content": "Make sure to apply the `fillna()` method to the 'quantity' column specifically. You can do this by chaining the method call after selecting the column."
+    },
+    {
+      "content": "After filling the missing values, ensure that the DataFrame maintains its original structure. The number of rows and columns should remain unchanged."
+    },
+    {
+      "content": "Check the data types of your columns after filling the missing values. The 'quantity' column should still be of type int, so confirm that the fill operation has not altered this."
+    },
+    {
+      "content": "Consider edge cases, such as if all values in the 'quantity' column are missing. Your solution should still handle this gracefully and fill all with 0."
+    },
+    {
+      "content": "Finally, apply the `fillna()` method like this: `df['quantity'] = df['quantity'].fillna(0)`. This will replace all missing values in the 'quantity' column with 0."
+    }
+  ],
+  "questionNotes": [
+    "The 'quantity' column may contain None or NaN values that need to be filled.",
+    "The output DataFrame should retain the same structure as the input.",
+    "Ensure that the data types remain consistent after filling missing values.",
+    "Consider edge cases where all values in 'quantity' may be missing."
+  ]
+}

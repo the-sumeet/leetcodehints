@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement of robots and factories on the X-axis. Each robot can move in either direction, and the goal is to minimize the total distance traveled by all robots to reach factories."
+    },
+    {
+      "content": "Remember that each factory has a limit on how many robots it can repair. This means that you need to track how many robots have been assigned to each factory as you calculate distances."
+    },
+    {
+      "content": "Consider how to calculate the distance a robot travels to a factory. The distance is given by the absolute difference between the robot's position and the factory's position: |robot[i] - factory[j][0]|."
+    },
+    {
+      "content": "Think about the direction each robot should move. A robot at position `x` can either move left (negative direction) or right (positive direction). How does this affect which factory it can reach?"
+    },
+    {
+      "content": "You might want to sort both the robots and factories based on their positions. This can help you efficiently determine which factory a robot can reach first."
+    },
+    {
+      "content": "When assigning robots to factories, consider using a greedy approach. For each robot, check the nearest factory that can still repair robots and calculate the distance."
+    },
+    {
+      "content": "Keep in mind that if a robot passes a factory that has reached its limit, it cannot be repaired there. You need to ensure that you respect the limits of each factory."
+    },
+    {
+      "content": "You can maintain a priority queue or a sorted list of factories as you iterate through the robots. This will help you efficiently find the nearest available factory."
+    },
+    {
+      "content": "Consider edge cases where all robots are clustered around a single factory or when factories are positioned far apart from the robots. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "When calculating the total distance, ensure that you are accumulating the distances correctly. Each time a robot is assigned to a factory, add its distance to the total."
+    },
+    {
+      "content": "Think about how you would implement the limits of each factory. You might want to use an array or a dictionary to keep track of how many robots each factory has repaired."
+    },
+    {
+      "content": "As you implement your solution, consider using a two-pointer technique. One pointer could iterate through the robots, while the other could track the current factory being considered."
+    },
+    {
+      "content": "If you find that a robot cannot reach any more factories due to limits, make sure to handle that case gracefully. You should not run out of factories based on the problem constraints."
+    },
+    {
+      "content": "Test your implementation with various cases, especially edge cases. For instance, what happens if all robots start at the same position as a factory?"
+    },
+    {
+      "content": "Finally, ensure your solution is efficient. Given the constraints, your approach should ideally be O(n log n) due to sorting, followed by a linear scan."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= robot.length, factory.length <= 100",
+    "Each factory has a unique position and a limit on how many robots it can repair.",
+    "All robots and factory positions are unique.",
+    "The input guarantees that all robots can be repaired."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of 'almost equal'. Two strings are almost equal if you can change at most one character in one string to make it identical to the other."
+    },
+    {
+      "content": "Consider the lengths of the strings. The length of the 'pattern' must be less than the length of 's'. This will help you determine valid substrings to check."
+    },
+    {
+      "content": "You will need to iterate through all possible starting indices of substrings in 's' that match the length of 'pattern'. How can you efficiently extract these substrings?"
+    },
+    {
+      "content": "When comparing a substring of 's' with 'pattern', count how many characters differ. If the count is 0 or 1, the substring is almost equal."
+    },
+    {
+      "content": "Think about how to handle the case when no valid index is found. What will be your return value in that case?"
+    },
+    {
+      "content": "Remember to return the smallest starting index. If you find multiple valid indices, you should keep track of the smallest one."
+    },
+    {
+      "content": "Consider edge cases where 'pattern' is just one character long, or where 's' and 'pattern' have no characters in common."
+    },
+    {
+      "content": "You can use a sliding window approach to efficiently compare substrings of 's' with 'pattern'. This way, you avoid unnecessary recomputation."
+    },
+    {
+      "content": "Make sure to handle cases where the length of 's' is just one more than the length of 'pattern'. This is a special case that might be easy to overlook."
+    },
+    {
+      "content": "Think about how you can optimize your character comparison. Instead of checking all characters in a substring every time, can you use a counter or a hash map?"
+    },
+    {
+      "content": "As you iterate through the substrings, be mindful of the character comparisons. You only need to track mismatches; how will you do that?"
+    },
+    {
+      "content": "If you find a substring that is almost equal, store its starting index. How will you compare it with any previously found indices to ensure you return the smallest one?"
+    },
+    {
+      "content": "Consider the time complexity of your approach. The naive solution might be O(n*m), but can you reduce it with a more efficient method?"
+    },
+    {
+      "content": "What will you do if you find multiple substrings that are almost equal? Make sure to return the first one you encounter."
+    },
+    {
+      "content": "Finally, ensure that your function handles the return format correctly. If no valid index is found, you should return -1."
+    }
+  ],
+  "questionNotes": [
+    "1 <= pattern.length < s.length <= 10^5",
+    "s and pattern consist only of lowercase English letters.",
+    "Return the smallest starting index of a substring in s that is almost equal to pattern.",
+    "If no such index exists, return -1."
+  ]
+}

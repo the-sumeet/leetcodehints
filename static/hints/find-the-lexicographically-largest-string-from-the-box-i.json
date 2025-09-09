@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to split the string into `numFriends` parts. Each part must be non-empty, so the minimum length of each part is 1."
+    },
+    {
+      "content": "Consider the total number of characters in the string and how they can be distributed among the friends. For example, if `word = 'abc'` and `numFriends = 2`, valid splits could be 'a' and 'bc', or 'ab' and 'c'."
+    },
+    {
+      "content": "Think about how to generate all unique splits of the string. You can use a recursive approach or backtracking to explore different ways to partition the string into `numFriends` parts."
+    },
+    {
+      "content": "Remember that the order of the splits matters. For instance, splitting 'dbca' into 'd' and 'bca' is different from 'bca' and 'd'. Keep track of the splits you've already used to avoid duplicates."
+    },
+    {
+      "content": "Once you have all the unique splits, you need to compare them lexicographically. This means that you should understand how to compare strings based on their alphabetical order."
+    },
+    {
+      "content": "A good approach to compare strings is to use the built-in comparison operators in your programming language. For example, in Python, you can simply use `if str1 > str2:` to check which string is larger."
+    },
+    {
+      "content": "Consider edge cases, such as when `numFriends` equals the length of the string. In this case, the only possible split is each character as a separate string."
+    },
+    {
+      "content": "Think about how to efficiently store and retrieve the splits. You might want to use a set to keep track of unique splits and a list to store the lexicographically largest string."
+    },
+    {
+      "content": "As you generate splits, keep track of the largest string found so far. You can update this variable whenever you find a new split that is larger than the current largest."
+    },
+    {
+      "content": "Finally, ensure that your function returns the lexicographically largest string after processing all unique splits. This might look something like `return largest_string` at the end of your function."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= word.length <= 5000",
+    "word consists only of lowercase English letters.",
+    "1 <= numFriends <= word.length",
+    "All splits must be unique across rounds.",
+    "Return the lexicographically largest string from the box."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find the lowest price to buy a specific quantity of items, considering both individual prices and special offers."
+    },
+    {
+      "content": "Consider how you can represent the current needs of items. You might want to use a recursive approach where you reduce the needs after applying an offer or buying items individually."
+    },
+    {
+      "content": "Think about the base case for your recursion. If your needs are all zero, you should return a price of zero, as you've satisfied the requirement."
+    },
+    {
+      "content": "When exploring the special offers, remember that you can use them multiple times. This means you should consider each offer in a loop and apply it as long as it doesn't exceed your needs."
+    },
+    {
+      "content": "Make sure to account for cases where using an offer might not be beneficial. For example, if the cost of buying items individually is cheaper than using an offer, you should prefer the cheaper option."
+    },
+    {
+      "content": "Pay attention to the constraints: the maximum number of items (n) is 6, so you can afford to use a recursive approach without hitting performance issues. However, be cautious of the depth of recursion."
+    },
+    {
+      "content": "You might want to memoize results for specific needs to avoid recalculating costs for the same state multiple times. This can significantly improve performance."
+    },
+    {
+      "content": "Consider how to structure your recursive function. It should take the current needs as parameters and return the minimum cost to satisfy those needs."
+    },
+    {
+      "content": "When iterating through the special offers, ensure you check if the offer can be applied without exceeding the current needs. You can do this by comparing each item in the offer with the corresponding needs."
+    },
+    {
+      "content": "Finally, think about how to combine the results from using an offer versus buying items individually. You should return the minimum of these two costs to ensure you're getting the best price."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == price.length == needs.length, 1 <= n <= 6, 0 <= price[i], needs[i] <= 10, 1 <= special.length <= 100.",
+    "Each special offer consists of n + 1 elements, where the last element is the price of the offer.",
+    "You cannot buy more items than you want, even if it results in a lower overall price."
+  ]
+}

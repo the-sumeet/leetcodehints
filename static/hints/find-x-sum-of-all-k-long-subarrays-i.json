@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to extract subarrays from the given array. For a given index `i`, the subarray can be obtained using slicing: `nums[i:i+k]`."
+    },
+    {
+      "content": "Remember that the x-sum is determined by the frequency of elements in the subarray. You will need to count how many times each element appears."
+    },
+    {
+      "content": "Think about how to keep track of the frequencies of elements. A dictionary or a `Counter` from the `collections` module can be particularly useful for this."
+    },
+    {
+      "content": "After counting the occurrences, you need to identify the top `x` most frequent elements. Consider sorting the items based on frequency first, and then by value."
+    },
+    {
+      "content": "When sorting, remember that if two elements have the same frequency, the larger element should come first. You might want to use a custom sort key for this."
+    },
+    {
+      "content": "Once you have the top `x` elements, construct the result array by summing their contributions based on their frequencies in the subarray."
+    },
+    {
+      "content": "Be careful with edge cases where the number of distinct elements in the subarray is less than `x`. In such cases, the x-sum should be the sum of all elements in the subarray."
+    },
+    {
+      "content": "Make sure to handle the output format correctly. You need to return an array of length `n - k + 1`, where each entry corresponds to the x-sum of the respective subarray."
+    },
+    {
+      "content": "Consider using a sliding window approach to efficiently compute the x-sum for each subarray. This way, you can update the frequency counts as you move the window."
+    },
+    {
+      "content": "Finally, implement the logic to calculate the x-sum in a function that iterates through the array, updating counts and calculating sums as needed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums.length <= 50",
+    "1 <= nums[i] <= 50",
+    "1 <= x <= k <= nums.length",
+    "Return an array of length n - k + 1.",
+    "If there are less than x distinct elements, return the sum of the entire subarray."
+  ]
+}

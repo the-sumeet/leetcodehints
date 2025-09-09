@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of logs with each log containing an `account_id`, `ip_address`, `login`, and `logout` time. Make sure you can access these fields easily."
+    },
+    {
+      "content": "Consider how you will track the number of logins per account and per IP address. You might want to use a dictionary or a hashmap to store counts for each account and IP combination."
+    },
+    {
+      "content": "Think about the criteria for banning an account. It might involve a threshold of logins from the same IP address within a certain time frame. Define what that threshold is based on the problem statement."
+    },
+    {
+      "content": "As you process each log entry, keep a count of logins per `account_id` and `ip_address`. You can increment the count each time you encounter a login for the same account and IP."
+    },
+    {
+      "content": "Pay attention to the time format in the logs. You may need to convert the login and logout times into a comparable format, such as a timestamp, to calculate the duration of logins."
+    },
+    {
+      "content": "Consider edge cases, such as accounts that log in from multiple IPs or those that have very few logins. How will you handle these scenarios when determining if an account should be banned?"
+    },
+    {
+      "content": "Once you've counted the logins, you need to determine which accounts exceed the threshold. Create a list to store these banned accounts based on your criteria."
+    },
+    {
+      "content": "Make sure to account for scenarios where multiple accounts might have the same number of logins from the same IP. Decide how you will handle ties in terms of banning accounts."
+    },
+    {
+      "content": "After identifying the banned accounts, think about how you will format your output. You may need to return a list of account IDs that are banned, so ensure your final structure matches the required output format."
+    },
+    {
+      "content": "Finally, implement a function that processes the logs, counts the logins, checks against the threshold, and returns the list of banned accounts. Ensure your function handles all edge cases you've identified."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of logs with fields: account_id, ip_address, login, and logout.",
+    "You need to track logins per account and IP address.",
+    "Define a threshold for banning accounts based on login frequency.",
+    "Consider how to handle multiple accounts logging in from the same IP.",
+    "Output should be a list of banned account IDs."
+  ]
+}

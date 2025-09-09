@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the conditions for an array to be considered beautiful. Remember that the length of the array must be even, and for every even index `i`, `nums[i]` must not equal `nums[i + 1]`."
+    },
+    {
+      "content": "Consider how you can ensure that the array has an even length. If the original array has an odd length, at least one deletion is necessary to make it even."
+    },
+    {
+      "content": "Think about the implications of the condition `nums[i] != nums[i + 1]` for even indices. You need to check pairs of elements, specifically at indices 0, 2, 4, etc."
+    },
+    {
+      "content": "As you iterate through the array, keep track of how many deletions you would need to make the adjacent elements at even indices different. This could involve counting duplicates."
+    },
+    {
+      "content": "When checking pairs, remember that if you find a duplicate at an even index, you will need to delete one of them. However, also consider if the next element is the same."
+    },
+    {
+      "content": "Consider using a loop to traverse the array while maintaining a count of deletions. For each even index, check if the current element is equal to the next one and increment your deletion counter if they are."
+    },
+    {
+      "content": "After processing the even indices, check if the resulting array length is odd. If it is, you will need to add one more deletion to make it beautiful."
+    },
+    {
+      "content": "Think about edge cases, such as arrays with all identical elements or arrays that are already beautiful. How would your logic handle these scenarios?"
+    },
+    {
+      "content": "Remember to consider the constraints of the problem: the length of the array can be up to 100,000. Ensure your solution is efficient, ideally O(n)."
+    },
+    {
+      "content": "Finally, implement your logic to return the total number of deletions required. Make sure to test your function with various inputs to confirm its correctness."
+    }
+  ],
+  "questionNotes": [
+    "The array must have an even length to be beautiful.",
+    "For even indices `i`, `nums[i]` must not equal `nums[i + 1]`.",
+    "An empty array is considered beautiful.",
+    "You can delete any number of elements from `nums`, and elements will shift left.",
+    "Return the minimum number of deletions required."
+  ]
+}

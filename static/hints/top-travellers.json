@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the tables provided. You have a `Users` table with user information and a `Rides` table that tracks distances traveled by each user. Make sure you can identify the relationship between these two tables."
+    },
+    {
+      "content": "Consider how you can aggregate the distances traveled by each user. You might want to use a SQL function like `SUM()` to calculate the total distance for each user based on their `user_id` in the `Rides` table."
+    },
+    {
+      "content": "When aggregating data, remember to use a `GROUP BY` clause to group the rides by `user_id`. This will allow you to sum the distances for each user correctly."
+    },
+    {
+      "content": "Don't forget to join the `Users` table with the `Rides` table. This will help you to get the user names alongside their total distances. Consider using a `LEFT JOIN` to ensure all users are included, even those without rides."
+    },
+    {
+      "content": "Pay attention to users who have not traveled at all. They should appear in the final result with a distance of 0. Ensure your query accounts for this by using the appropriate join type."
+    },
+    {
+      "content": "Once you have the total distances, you need to order your results. First, sort by the `travelled_distance` in descending order and then by the `name` in ascending order for users with the same distance."
+    },
+    {
+      "content": "Make sure to alias your aggregated distance column appropriately so that it matches the required output format. You might use something like `SUM(distance) AS travelled_distance`."
+    },
+    {
+      "content": "As you build your SQL query, remember to select only the columns you need for the final output, which are `name` and `travelled_distance`."
+    },
+    {
+      "content": "Consider edge cases, such as when all users have the same distance or when there are users with no rides. Your ordering logic should handle these scenarios correctly."
+    },
+    {
+      "content": "Finally, put everything together in a single SQL statement. Your final query should include the join, aggregation, ordering, and selection of the necessary columns. Make sure to test your query with the provided sample data."
+    }
+  ],
+  "questionNotes": [
+    "The `Users` table has unique `id` values.",
+    "The `Rides` table may have multiple entries for the same `user_id`.",
+    "Use a `LEFT JOIN` to include users with no rides.",
+    "Return format requires columns `name` and `travelled_distance`.",
+    "Order results by `travelled_distance` DESC and `name` ASC for ties."
+  ]
+}

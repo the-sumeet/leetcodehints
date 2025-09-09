@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the skyline concept. The skyline of a city viewed from a direction is determined by the tallest buildings in each row or column. Make sure to visualize how the buildings affect the skyline from the north, south, east, and west."
+    },
+    {
+      "content": "Consider how you can determine the maximum allowable height for each building without changing the skyline. For each building, you need to find the minimum height allowed by the tallest buildings in its row and column."
+    },
+    {
+      "content": "To find the maximum height for each building, create two arrays: one for the maximum heights in each row and another for the maximum heights in each column. This will help you quickly reference the tallest buildings when calculating the new heights."
+    },
+    {
+      "content": "For an n x n grid, you can iterate through the grid to fill in these two arrays. For example, for the row maximums, you can do something like: \n`for r in range(n): max_row[r] = max(grid[r])`."
+    },
+    {
+      "content": "Once you have the maximum heights for rows and columns, iterate through the grid again. For each building at position (r, c), the new height can be calculated as `min(max_row[r], max_col[c])`."
+    },
+    {
+      "content": "Now, calculate the potential increase in height for each building. This can be done by subtracting the original height from the new height you just calculated. Make sure to only add positive increases to your total."
+    },
+    {
+      "content": "Be cautious of edge cases, such as when the grid is filled with zeros. In this case, increasing any height will change the skyline. Ensure your logic accounts for this by checking the original heights."
+    },
+    {
+      "content": "Consider the constraints given in the problem. The maximum size for the grid is 50x50, and the heights range from 0 to 100. This means your solution should be efficient enough to handle the maximum input size without performance issues."
+    },
+    {
+      "content": "After calculating the total possible increase in height, ensure you return the result in the correct format. The output should be a single integer representing the total height increase."
+    },
+    {
+      "content": "Finally, put together all the pieces. You should have a clear plan: calculate row and column maximums, determine the new heights, compute the increases, and sum them up. Make sure to test your solution with the provided examples."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == grid.length, n == grid[r].length",
+    "2 <= n <= 50",
+    "0 <= grid[r][c] <= 100",
+    "The output should be a single integer representing the maximum total sum of height increases."
+  ]
+}

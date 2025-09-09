@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Person table. Each row has a unique 'id' and an 'email'. Your goal is to keep only one instance of each email while deleting the duplicates."
+    },
+    {
+      "content": "Identify how you can determine which email addresses are duplicates. Consider using a method to group or count the occurrences of each email."
+    },
+    {
+      "content": "Remember that you need to keep the row with the smallest 'id' for each email. Think about how you can compare 'id' values to achieve this."
+    },
+    {
+      "content": "In SQL, you can use a subquery or a common table expression (CTE) to first identify the rows you want to delete. This can help you isolate the duplicates based on your criteria."
+    },
+    {
+      "content": "Consider using the 'GROUP BY' clause to group the emails and the 'MIN()' function to find the smallest 'id' for each email. This will help you identify which rows to keep."
+    },
+    {
+      "content": "When you have identified the duplicates, think about how you can formulate a DELETE statement that removes the unwanted rows while keeping the one with the smallest 'id'."
+    },
+    {
+      "content": "In SQL, you might want to use a DELETE statement that references a subquery or a temporary table that contains the 'id's of the rows you want to delete."
+    },
+    {
+      "content": "Make sure to consider edge cases, such as when all emails are unique or when there are multiple duplicates with the same smallest 'id'. How would your solution handle these cases?"
+    },
+    {
+      "content": "If you're using Pandas, remember that you can use the 'drop_duplicates()' method, but you'll need to specify the 'keep' parameter to retain the row with the smallest 'id'."
+    },
+    {
+      "content": "Finally, ensure that your final result matches the required format. After deletion, the Person table should only contain unique emails with their corresponding smallest 'id's."
+    }
+  ],
+  "questionNotes": [
+    "The 'id' is the primary key and is unique for each row.",
+    "You must write a DELETE statement (for SQL) or modify the DataFrame in place (for Pandas).",
+    "The final order of the Person table does not matter.",
+    "You need to handle edge cases where emails are unique or where there are multiple duplicates."
+  ]
+}

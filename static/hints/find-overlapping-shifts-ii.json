@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of employee shifts, each defined by an employee ID, a start time, and an end time. Consider how you can represent this data in a way that makes it easy to compare shifts."
+    },
+    {
+      "content": "Think about how to determine if two shifts overlap. Two shifts overlap if the start time of one shift is before the end time of the other shift and vice versa. You can express this condition in a simple boolean expression."
+    },
+    {
+      "content": "When comparing shifts, remember to convert the start and end times from strings to a datetime format. This will allow you to perform accurate comparisons. Use a library like `datetime` in Python to handle this conversion."
+    },
+    {
+      "content": "Consider using a nested loop to compare each shift against every other shift. This brute-force approach will help you identify overlapping shifts but may not be the most efficient for larger datasets."
+    },
+    {
+      "content": "As you iterate through the list of shifts, keep track of the shifts that have been compared. You might want to store overlapping shifts in a separate list or set to avoid duplicates."
+    },
+    {
+      "content": "Think about how to group shifts by employee. You could use a dictionary where the keys are employee IDs and the values are lists of shifts for each employee. This will help you isolate shifts for comparison."
+    },
+    {
+      "content": "When checking for overlaps, ensure you are only comparing shifts from the same employee. This will simplify your logic and avoid unnecessary comparisons."
+    },
+    {
+      "content": "Consider edge cases where shifts may start or end at the same time. Decide how you want to handle these cases. Do they count as overlapping, or should they be treated as separate?"
+    },
+    {
+      "content": "Think about the output format. You need to return overlapping shifts in a specific structure. Ensure you understand how to format your results correctly before finalizing your code."
+    },
+    {
+      "content": "As you implement your solution, keep an eye on performance. The naive O(n^2) approach may be too slow for large inputs. Consider sorting the shifts first to improve efficiency."
+    },
+    {
+      "content": "After sorting the shifts, you can iterate through them in a single pass to find overlaps. If the start time of the current shift is less than the end time of the previous shift, you have an overlap."
+    },
+    {
+      "content": "Make sure to handle shifts that span across midnight or multiple days. The datetime library will help you manage these cases, but be mindful of how you define 'overlap' in such scenarios."
+    },
+    {
+      "content": "After identifying overlapping shifts, consider how to present them. You might want to return them as pairs of shifts or as a list of overlapping intervals."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases, such as shifts that don't overlap at all, shifts that are completely contained within others, and shifts that touch at the boundaries."
+    },
+    {
+      "content": "Finally, ensure your code is clean and well-commented. This will make it easier for others (and yourself) to understand your logic when reviewing or debugging."
+    }
+  ],
+  "questionNotes": [
+    "Input data is structured as a list of shifts with employee_id, start_time, and end_time.",
+    "Shifts are represented by datetime strings; convert them for comparison.",
+    "Consider overlaps based on start and end times, including edge cases where times match.",
+    "Output format should clearly represent overlapping shifts, possibly as pairs.",
+    "Performance is key; consider sorting and a single-pass approach to improve efficiency."
+  ]
+}

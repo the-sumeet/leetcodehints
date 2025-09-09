@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous part of an array. For example, in the array [1, 2, 3], the subarrays include [1], [2], [3], [1, 2], [2, 3], and [1, 2, 3]."
+    },
+    {
+      "content": "Think about how you can compare the elements of the two arrays. You need to find segments of both arrays that are the same. Consider how you might iterate through both arrays to check for matches."
+    },
+    {
+      "content": "Consider using a nested loop to compare elements from both arrays. For each starting index in nums1, you can check for matching elements in nums2. This will help you identify potential subarrays."
+    },
+    {
+      "content": "When you find a match, keep track of the length of the matching subarray. You can use a counter that increments each time you find a matching element and resets when there is no match."
+    },
+    {
+      "content": "Think about how to efficiently store the maximum length of the repeated subarray you find. You might want to use a variable to keep track of this maximum length as you iterate through the arrays."
+    },
+    {
+      "content": "Consider edge cases, such as when one or both arrays contain only one element. How would your approach handle arrays of size 1, or when both arrays are identical?"
+    },
+    {
+      "content": "You might want to optimize your solution. Instead of checking every possible starting index in a nested loop, think about using dynamic programming to store results of subproblems."
+    },
+    {
+      "content": "In a dynamic programming approach, you can create a 2D array (or table) where each cell dp[i][j] represents the length of the longest subarray ending at nums1[i-1] and nums2[j-1]."
+    },
+    {
+      "content": "Initialize your dp array with zeros. As you iterate through nums1 and nums2, update the dp array based on whether the current elements match. If they do, set dp[i][j] = dp[i-1][j-1] + 1."
+    },
+    {
+      "content": "Finally, remember to keep track of the maximum value found in the dp array as you fill it in. This maximum value will be your answer, representing the length of the longest repeated subarray."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums1.length, nums2.length <= 1000",
+    "Elements: 0 <= nums1[i], nums2[i] <= 100",
+    "Return format: Return the maximum length of the repeated subarray.",
+    "Subarrays must be contiguous."
+  ]
+}

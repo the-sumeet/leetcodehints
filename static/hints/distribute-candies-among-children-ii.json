@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Consider the problem as finding the number of non-negative integer solutions to the equation `x1 + x2 + x3 = n`, where `x1`, `x2`, and `x3` are the number of candies each child receives."
+    },
+    {
+      "content": "Remember that each child can receive at most `limit` candies. This means you need to consider cases where the number of candies given to a child exceeds this limit."
+    },
+    {
+      "content": "Think about how you can use combinatorial counting to solve this problem. The stars and bars theorem might be useful here, but you need to account for the limit constraint."
+    },
+    {
+      "content": "Try to break the problem down into cases based on the maximum number of candies any child can receive. For example, if one child receives `limit + 1` candies, how would that affect the remaining candies and children?"
+    },
+    {
+      "content": "You might want to calculate the total number of unrestricted distributions first, and then subtract the cases where one or more children exceed the `limit`."
+    },
+    {
+      "content": "Consider using the principle of inclusion-exclusion to account for the cases where one or more children receive more than `limit` candies."
+    },
+    {
+      "content": "When applying inclusion-exclusion, remember to account for all combinations of children that can exceed the limit. For example, if one child exceeds the limit, you need to adjust the total accordingly for each child."
+    },
+    {
+      "content": "You can express the number of ways to distribute candies using combinations. For instance, the number of ways to distribute `k` candies to `m` children is given by the formula `C(k + m - 1, m - 1)`."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when `n` is less than or equal to `3 * limit`. In such cases, all distributions are valid."
+    },
+    {
+      "content": "Finally, implement the logic to calculate the total combinations while ensuring that you correctly apply the limits. You can start by calculating the unrestricted combinations and then subtract the invalid ones."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^6, 1 <= limit <= 10^6",
+    "Ensure that you account for cases where the number of candies exceeds the limit for any child.",
+    "Return the total number of valid distributions, not the distributions themselves."
+  ]
+}

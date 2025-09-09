@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a linked list. Each node contains a value and a reference to the next node. You will need to traverse the list to identify duplicates."
+    },
+    {
+      "content": "Consider how you will identify duplicates. A common approach is to use a data structure that allows for fast lookups, such as a hash set. This will help you keep track of the values you've already seen."
+    },
+    {
+      "content": "Think about how you will handle the linked list while traversing it. You might need to maintain a pointer to the previous node to modify the links when you find a duplicate."
+    },
+    {
+      "content": "Remember to handle edge cases, such as an empty linked list or a list with all unique elements. These cases should not cause errors in your implementation."
+    },
+    {
+      "content": "When you find a duplicate, you need to remove it from the list. This means you should adjust the 'next' pointer of the previous node to skip the current node."
+    },
+    {
+      "content": "As you iterate through the list, make sure to update your data structure (like the hash set) with the current node's value before moving to the next node."
+    },
+    {
+      "content": "Consider the time complexity of your solution. Using a hash set allows you to achieve an average time complexity of O(n), where n is the number of nodes in the list."
+    },
+    {
+      "content": "Think about how you will return the modified linked list. You could return the head of the modified list or print the values in the list after duplicates have been removed."
+    },
+    {
+      "content": "Make sure to test your solution with various cases, including lists with multiple duplicates, lists with no duplicates, and lists with only one element."
+    },
+    {
+      "content": "You are almost there! To finalize your approach, remember to carefully manage pointers when removing duplicates to ensure you don't lose part of the list. Pseudocode might look like this: \n\n```\nwhile current is not None:\n    if current.value in seen:\n        previous.next = current.next\n    else:\n        seen.add(current.value)\n        previous = current\n    current = current.next\n```"
+    }
+  ],
+  "questionNotes": [
+    "The linked list is unsorted, which means duplicates can appear in any order.",
+    "You need to modify the linked list in place without using extra space for another linked list.",
+    "The output should be the modified linked list without duplicates.",
+    "Consider cases where the list is empty or contains only one element."
+  ]
+}

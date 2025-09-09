@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node has at most two children, and the tree can be traversed in various ways (pre-order, in-order, post-order). Familiarize yourself with how to represent a binary tree in code."
+    },
+    {
+      "content": "Consider the definition of the lowest common ancestor (LCA). It is the deepest node that is an ancestor to both nodes p and q. Think about how you can identify ancestors while traversing the tree."
+    },
+    {
+      "content": "When searching for the LCA, you can use a recursive approach. As you traverse the tree, check if the current node is either p or q. If it is, you might have found a potential LCA."
+    },
+    {
+      "content": "Remember that the LCA must be the lowest node that has both p and q as descendants. If you find p or q during your traversal, continue searching in the left and right subtrees to find the other node."
+    },
+    {
+      "content": "Think about what to return when you reach a leaf node (i.e., a node with no children). In such cases, you should return null since there are no descendants to consider."
+    },
+    {
+      "content": "As you implement your recursive function, consider the return values from the left and right subtree calls. If both calls return non-null values, then the current node is the LCA."
+    },
+    {
+      "content": "If only one of the subtree calls returns a non-null value, that means either p or q is found in that subtree. You should propagate that non-null value up the recursion stack."
+    },
+    {
+      "content": "Make sure to handle the case where p and q are the same node. In that case, the LCA is simply the node itself. This is important for cases where p is an ancestor of q."
+    },
+    {
+      "content": "Consider edge cases such as when the tree is skewed (all nodes are either left or right children). The logic for finding the LCA should still hold true in these cases."
+    },
+    {
+      "content": "Finally, structure your function to return the correct node. Ensure that your base case handles both the null checks and the matching of p and q properly, as this will be crucial for the correct identification of the LCA."
+    }
+  ],
+  "questionNotes": [
+    "The binary tree is defined such that each node has a unique value.",
+    "Both nodes p and q will always exist in the tree.",
+    "The number of nodes in the tree is between 2 and 100,000.",
+    "Node values range from -10^9 to 10^9."
+  ]
+}

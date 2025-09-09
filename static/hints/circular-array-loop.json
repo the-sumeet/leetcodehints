@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement rules in the circular array. If nums[i] is positive, you move forward by nums[i] steps, and if it's negative, you move backward by nums[i] steps. Visualize this with a small example to see how the indices connect."
+    },
+    {
+      "content": "Remember that the array is circular. This means that if you go past the last index, you wrap around to the first index, and vice versa. How would you handle index wrapping in your code?"
+    },
+    {
+      "content": "You need to identify cycles in the array. A cycle is defined as a sequence of indices that can repeat, and all elements in that sequence must either be positive or negative. Think about how you can track visited indices."
+    },
+    {
+      "content": "Consider using a 'visited' array or marking indices in some way to avoid revisiting them. This will help you determine if you have entered a cycle or if you are just traversing through the array."
+    },
+    {
+      "content": "When exploring the array, make sure to check the direction of movement. If you encounter a number that moves in the opposite direction than the current sequence, you should break out of that path."
+    },
+    {
+      "content": "As you traverse the array, keep track of the length of the current sequence. If you return to the starting index and the length is greater than 1, you have found a valid cycle."
+    },
+    {
+      "content": "Think about how to implement the traversal efficiently. You may want to use a 'slow' and 'fast' pointer technique to detect cycles, but ensure that you respect the movement rules."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as arrays with only one element or when all elements are the same. How would these cases affect your cycle detection?"
+    },
+    {
+      "content": "Focus on achieving O(n) time complexity and O(1) extra space complexity. This means you should minimize the use of additional data structures. Can you modify the input array itself to mark visited indices?"
+    },
+    {
+      "content": "Before finalizing your approach, consider the return conditions. You should return true if a valid cycle is found and false otherwise. Ensure that your logic correctly captures these scenarios."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 5000",
+    "Values: -1000 <= nums[i] <= 1000, and nums[i] != 0",
+    "Cycle definition: k > 1 and all nums[seq[j]] must be either all positive or all negative.",
+    "Circular behavior: Moving beyond the last index wraps around to the first index."
+  ]
+}

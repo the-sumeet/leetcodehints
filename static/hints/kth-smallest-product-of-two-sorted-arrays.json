@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to find the k-th smallest product of elements from two sorted arrays. Remember that the product can be negative or positive depending on the values in the arrays."
+    },
+    {
+      "content": "Consider how the products are formed. For each element in `nums1`, you will multiply it by every element in `nums2`. This results in a total of `nums1.length * nums2.length` products."
+    },
+    {
+      "content": "Since both arrays are sorted, think about how this property can help you efficiently find the k-th smallest product without generating all possible products."
+    },
+    {
+      "content": "You might want to visualize the products as a matrix where the rows correspond to `nums1` and the columns correspond to `nums2`. The element at position (i, j) in this matrix is `nums1[i] * nums2[j]`."
+    },
+    {
+      "content": "To avoid generating all products, consider using a binary search approach on the possible product values. What is the minimum and maximum possible product you can have?"
+    },
+    {
+      "content": "Identify the range of possible products. The smallest product will be `min(nums1) * min(nums2)` and the largest will be `max(nums1) * max(nums2)`. This will help you set up your binary search."
+    },
+    {
+      "content": "When performing binary search, you need a way to count how many products are less than or equal to a given mid value. Think about how you can efficiently count these products using the sorted property of the arrays."
+    },
+    {
+      "content": "For counting products less than or equal to a mid value, consider iterating through `nums1` and for each element, use binary search on `nums2` to find how many products can be formed that are less than or equal to mid."
+    },
+    {
+      "content": "Make sure to handle negative numbers correctly. The sign of the numbers in both arrays will affect the product, especially when they are multiplied together."
+    },
+    {
+      "content": "Consider edge cases, such as when one or both arrays contain zeros. How will these affect the products and the count of products less than or equal to a certain value?"
+    },
+    {
+      "content": "Remember that k is 1-based, while array indexing in programming is typically 0-based. Ensure you adjust your logic accordingly when you find the k-th smallest product."
+    },
+    {
+      "content": "As you implement the binary search, keep track of the left and right boundaries. The mid value will help you determine if you need to search higher or lower."
+    },
+    {
+      "content": "When counting products, if you find that the count of products less than or equal to mid is less than k, you need to search for larger products. Otherwise, you can search for smaller products."
+    },
+    {
+      "content": "Once you narrow down the search range, the left pointer will converge on the k-th smallest product. Ensure that your binary search logic is correctly implemented to handle all cases."
+    },
+    {
+      "content": "Finally, remember to return the product itself, not the index or any other value. Make sure your return statement is correctly placed after you find the k-th smallest product."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums1.length, nums2.length <= 5 * 10^4",
+    "Value range: -10^5 <= nums1[i], nums2[j] <= 10^5",
+    "1 <= k <= nums1.length * nums2.length",
+    "Both nums1 and nums2 are sorted arrays.",
+    "Return the k-th smallest product (1-based index)."
+  ]
+}

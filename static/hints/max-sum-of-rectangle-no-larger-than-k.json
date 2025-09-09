@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find a rectangle within the given matrix such that the sum of its elements is maximized but does not exceed the integer k."
+    },
+    {
+      "content": "Consider the dimensions of the matrix. It can be as large as 100x100, which means a brute force solution checking all possible rectangles would be inefficient. Think about how to reduce the number of rectangles you need to check."
+    },
+    {
+      "content": "You can represent a rectangle in the matrix using two rows and two columns. This means you can iterate over pairs of rows and then for each pair, calculate the sums for all columns."
+    },
+    {
+      "content": "When you fix two rows, you can create a temporary array that sums the values between these two rows for each column. This will help you reduce the problem to a 1D problem for each pair of rows."
+    },
+    {
+      "content": "Now that you have a 1D array of sums for the selected rows, think about how to efficiently find the maximum sum of a contiguous subarray that does not exceed k."
+    },
+    {
+      "content": "Consider using a data structure like a sorted list or a balanced binary search tree to keep track of the sums you've seen so far. This will help you quickly find the largest sum that is less than or equal to k."
+    },
+    {
+      "content": "As you iterate through the 1D array of sums, for each sum, you can use the data structure to find the largest sum that, when added to the current sum, does not exceed k."
+    },
+    {
+      "content": "Remember to handle negative numbers in the matrix carefully. They can help in reducing the sum but can also lead to larger sums if not managed correctly."
+    },
+    {
+      "content": "Think about edge cases, such as when all numbers are negative or when k is very small. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "Make sure to keep track of the maximum sum found during your iterations. This will be your result at the end."
+    },
+    {
+      "content": "If you find a sum that equals k, you can immediately return k, as it is the best possible outcome."
+    },
+    {
+      "content": "Consider the time complexity of your approach. You want to ensure that it runs efficiently given the constraints of the problem."
+    },
+    {
+      "content": "You might want to implement this in a way that allows you to easily debug and visualize the sums being calculated, especially when testing with different matrices."
+    },
+    {
+      "content": "Before finalizing your solution, review the constraints again. Ensure that your solution adheres to the limits set for m, n, and k."
+    },
+    {
+      "content": "As a final step, think about how you would write test cases for your solution. Consider various matrix configurations and values of k to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == matrix.length, n == matrix[i].length, 1 <= m, n <= 100",
+    "-100 <= matrix[i][j] <= 100",
+    "-10^5 <= k <= 10^5",
+    "There is guaranteed to be at least one rectangle with a sum no larger than k."
+  ]
+}

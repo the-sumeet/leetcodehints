@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the first order for each customer. You can use the `MIN(order_date)` function grouped by `customer_id` to find the earliest order date."
+    },
+    {
+      "content": "Once you have the first order date, you need to join this result back to the original `Delivery` table to get all details of the first orders."
+    },
+    {
+      "content": "Remember to filter the records in your join to only include the first orders for each customer. This will help you focus on the immediate and scheduled orders."
+    },
+    {
+      "content": "To determine if an order is immediate, compare the `order_date` and `customer_pref_delivery_date`. An order is immediate if these two dates are equal."
+    },
+    {
+      "content": "Count the total number of first orders and the number of immediate orders. You can use conditional aggregation to achieve this in a single query."
+    },
+    {
+      "content": "Calculate the percentage of immediate orders using the formula: (number of immediate orders / total first orders) * 100."
+    },
+    {
+      "content": "Make sure to handle cases where there are no first orders, as this could lead to division by zero when calculating the percentage."
+    },
+    {
+      "content": "When you return the result, ensure that the percentage is rounded to two decimal places. You can use the `ROUND()` function for this purpose."
+    },
+    {
+      "content": "Consider using a Common Table Expression (CTE) to organize your query better, especially when dealing with multiple steps like finding first orders and calculating percentages."
+    },
+    {
+      "content": "Finally, format your output to match the required structure, ensuring that the column name is `immediate_percentage` and that it is displayed as a single value."
+    }
+  ],
+  "questionNotes": [
+    "Each customer has precisely one first order.",
+    "An order is immediate if `order_date` equals `customer_pref_delivery_date`.",
+    "Return the percentage rounded to 2 decimal places.",
+    "Handle potential division by zero when calculating the percentage."
+  ]
+}

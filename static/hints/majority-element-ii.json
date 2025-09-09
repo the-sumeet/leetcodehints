@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find elements that appear more than ⌊ n/3 ⌋ times in the array. This means if the array has 9 elements, any element must appear more than 3 times to be included in the result."
+    },
+    {
+      "content": "Consider the constraints of the problem. You have an array size up to 50,000 and integer values ranging from -10^9 to 10^9. Think about how you can efficiently count occurrences without using excessive space."
+    },
+    {
+      "content": "A brute force approach would involve counting each element's occurrences using a nested loop, but this would be inefficient. Instead, think about using a hash map to store counts of each element."
+    },
+    {
+      "content": "Remember that the problem allows for multiple elements to be returned. You need to collect all elements that meet the frequency condition. How will you store these elements?"
+    },
+    {
+      "content": "Consider the follow-up requirement: can you solve this in linear time and O(1) space? This hints at using a more optimal algorithm, possibly the Boyer-Moore Voting Algorithm, which is often used for majority element problems."
+    },
+    {
+      "content": "In the Boyer-Moore Voting Algorithm, you can maintain up to two potential candidates for the majority elements. Think about how you would track their counts as you iterate through the array."
+    },
+    {
+      "content": "As you iterate through the array, maintain a count for your two candidates. If you encounter a new number, you may need to adjust your candidates and their counts based on the current counts."
+    },
+    {
+      "content": "Once you have your two candidates, you will need to verify their actual counts in a second pass through the array. This is crucial to ensure they truly appear more than ⌊ n/3 ⌋ times."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when the array has only one element or when all elements are unique. How will your approach handle these situations?"
+    },
+    {
+      "content": "Finally, remember to return the results in the required format. You should return a list of elements that meet the criteria. Make sure your implementation handles duplicates correctly in the result."
+    }
+  ],
+  "questionNotes": [
+    "You need to find elements that appear more than ⌊ n/3 ⌋ times.",
+    "The array size can be up to 50,000.",
+    "Elements can range from -10^9 to 10^9.",
+    "Multiple elements can be returned.",
+    "Consider using linear time and O(1) space for the solution."
+  ]
+}

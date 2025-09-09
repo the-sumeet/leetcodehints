@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main parts: 'Actions' and 'Removals'. Each part consists of a list of records that you need to process."
+    },
+    {
+      "content": "Focus on the 'Actions' data first. You need to track which posts are reported by users. Each action has a 'post_id' and an 'action' which can be 'report'."
+    },
+    {
+      "content": "When processing the 'Actions', filter out only the records where the action is 'report'. This will give you a list of reported posts."
+    },
+    {
+      "content": "Consider how to handle multiple reports for the same post by the same user. You might want to keep track of unique user-post combinations to avoid counting duplicates."
+    },
+    {
+      "content": "Next, look at the 'Removals' data. This part tells you which posts have been removed and should not be included in your final output."
+    },
+    {
+      "content": "You will need to create a set of post_ids from the 'Removals' section. This will help you efficiently check if a post has been removed when processing the reports."
+    },
+    {
+      "content": "After filtering the reported posts, you will need to count how many unique users reported each post. Use a dictionary to map each post_id to a set of user_ids."
+    },
+    {
+      "content": "Once you have the counts, remember to only include posts that are not in the removals set. This is crucial for ensuring your results are accurate."
+    },
+    {
+      "content": "Consider the output format carefully. You might want to return a list of post_ids sorted by the number of reports in descending order."
+    },
+    {
+      "content": "Finally, think about edge cases: What if no posts were reported? What if all reported posts were removed? Make sure your solution handles these scenarios gracefully."
+    }
+  ],
+  "questionNotes": [
+    "The input consists of two main arrays: 'Actions' and 'Removals'.",
+    "Each action has a unique combination of user_id and post_id.",
+    "You need to count unique users reporting each post.",
+    "Ensure to exclude posts that are in the 'Removals' list.",
+    "Output should be sorted by the number of reports in descending order."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the tables involved in the query: Movies, Users, and MovieRating. Each table has a unique primary key, which will help you join them later."
+    },
+    {
+      "content": "To find the user who rated the greatest number of movies, consider using a `GROUP BY` clause on the `user_id` from the MovieRating table. Count the number of ratings for each user."
+    },
+    {
+      "content": "Remember to join the Users table to get the user names. You can use an `INNER JOIN` between Users and MovieRating on `user_id`."
+    },
+    {
+      "content": "After counting the ratings, use `ORDER BY` to sort the results first by the count of ratings in descending order and then by user name in ascending order to handle ties."
+    },
+    {
+      "content": "For the second part of the problem, focus on filtering the MovieRating records for February 2020. You can use a `WHERE` clause to restrict the `created_at` date."
+    },
+    {
+      "content": "To find the movie with the highest average rating, you will need to `GROUP BY` the `movie_id` and calculate the average rating. Use the `AVG()` function for this."
+    },
+    {
+      "content": "Just like before, join the Movies table to get the movie titles. Make sure to include the title in your select statement."
+    },
+    {
+      "content": "When calculating the average rating, use `ORDER BY` to sort by average rating in descending order. To handle ties, sort by movie title in ascending order."
+    },
+    {
+      "content": "You will need to combine the results of both queries into a single output. Consider using a `UNION` or returning them as separate columns in your final select statement."
+    },
+    {
+      "content": "Finally, ensure that your output format matches the required structure. You should return the results as a single row with two columns: the user's name and the movie title."
+    }
+  ],
+  "questionNotes": [
+    "The primary keys are unique for each table: movie_id for Movies, user_id for Users, and (movie_id, user_id) for MovieRating.",
+    "In case of a tie for the greatest number of ratings, return the lexicographically smaller user name.",
+    "For the movie with the highest average rating in February 2020, return the lexicographically smaller movie title in case of a tie.",
+    "Ensure to filter MovieRating records specifically for February 2020 when calculating the average rating."
+  ]
+}

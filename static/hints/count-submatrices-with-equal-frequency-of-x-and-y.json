@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. You need to iterate through all possible submatrices that include the top-left corner (grid[0][0])."
+    },
+    {
+      "content": "Remember that a submatrix is defined by two pairs of coordinates: the top-left and the bottom-right corners. You can represent a submatrix with coordinates (i1, j1) to (i2, j2)."
+    },
+    {
+      "content": "To count the frequency of 'X' and 'Y' in a submatrix, consider using a nested loop to iterate through all possible bottom-right corners (i2, j2) for each (0, 0) to (i2, j2)."
+    },
+    {
+      "content": "As you iterate through the submatrices, maintain counters for the number of 'X's and 'Y's. You can increment these counts based on the characters you encounter as you expand the submatrix."
+    },
+    {
+      "content": "Don't forget to check the conditions: the submatrix must contain at least one 'X' and have equal counts of 'X' and 'Y'."
+    },
+    {
+      "content": "Consider edge cases where the matrix contains only '.' characters or where there are no 'Y's. These cases should return 0."
+    },
+    {
+      "content": "Think about optimizing the counting of 'X' and 'Y'. Instead of recounting for every submatrix, you might want to maintain a cumulative count of 'X' and 'Y' up to each point in the matrix."
+    },
+    {
+      "content": "You can create a 2D prefix sum array to help with counting. This array can help you quickly calculate the number of 'X's and 'Y's in any submatrix."
+    },
+    {
+      "content": "When checking for equal counts of 'X' and 'Y', you can use a simple condition: if countX == countY and countX > 0, then you've found a valid submatrix."
+    },
+    {
+      "content": "Finally, remember to return the total count of valid submatrices after checking all possible bottom-right corners. Make sure your counting logic is correctly implemented."
+    }
+  ],
+  "questionNotes": [
+    "The submatrices must include grid[0][0].",
+    "Each submatrix must have at least one 'X'.",
+    "Return the count of valid submatrices.",
+    "Constraints: 1 <= grid.length, grid[i].length <= 1000.",
+    "Characters in the grid are either 'X', 'Y', or '.'."
+  ]
+}

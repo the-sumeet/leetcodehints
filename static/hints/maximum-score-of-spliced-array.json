@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the initial sums of both arrays, `sum1` and `sum2`. This will give you a baseline score without any swaps. Remember, the score is defined as `max(sum1, sum2)`."
+    },
+    {
+      "content": "Consider the effect of swapping a subarray from `nums1` with a subarray from `nums2`. Think about how this swap changes the sums of both arrays. Specifically, how does it affect `sum1` and `sum2`?"
+    },
+    {
+      "content": "When you swap a subarray `nums1[left...right]` with `nums2[left...right]`, the new sums can be calculated as: \n`new_sum1 = sum1 - sum(nums1[left...right]) + sum(nums2[left...right])` \n`new_sum2 = sum2 - sum(nums2[left...right]) + sum(nums1[left...right])`."
+    },
+    {
+      "content": "Notice that the change in score due to a swap can be expressed as the difference between the sums of the swapped elements. This means you can focus on the net gain or loss from the swap."
+    },
+    {
+      "content": "To maximize the score, you need to find the optimal `left` and `right` indices. Think about iterating over all possible pairs of indices to evaluate the effect of each possible swap."
+    },
+    {
+      "content": "Keep in mind that if you choose not to swap any subarrays, the score remains `max(sum1, sum2)`. This means your final answer must consider both the original sums and the possible new sums after swaps."
+    },
+    {
+      "content": "As you iterate through possible `left` and `right` indices, maintain a running total of the sums for the current subarray being considered. This will help in efficiently calculating the new sums after a swap."
+    },
+    {
+      "content": "Consider edge cases where the arrays are of length 1. What happens when you can only swap a single element? How does that affect the overall score?"
+    },
+    {
+      "content": "Think about how to efficiently calculate the sums of subarrays. You can use prefix sums to quickly compute the sum of any subarray in constant time."
+    },
+    {
+      "content": "When calculating the new sums after a swap, ensure you handle the case where the swapped subarray might not improve the score. You should only update the maximum score if the new score is higher."
+    },
+    {
+      "content": "Remember to also consider the case where swapping does not yield a better score than the original sum. You might need to keep track of the maximum score found during your iterations."
+    },
+    {
+      "content": "As you implement your solution, pay attention to the constraints provided. Ensure your solution can handle the maximum input sizes efficiently."
+    },
+    {
+      "content": "While iterating through all possible subarrays, consider using nested loops. The outer loop can iterate over `left`, and the inner loop can iterate over `right` from `left` to `n-1`."
+    },
+    {
+      "content": "After implementing the nested loops for `left` and `right`, remember to calculate the new scores and update the maximum score accordingly. This is crucial for finding the optimal solution."
+    },
+    {
+      "content": "Finally, ensure your function returns the maximum score after considering all possible swaps. This should be the last step in your implementation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums1.length == nums2.length, 1 <= n <= 10^5, 1 <= nums1[i], nums2[i] <= 10^4.",
+    "The score is defined as max(sum(nums1), sum(nums2)).",
+    "You can choose to apply the swap operation once or not at all.",
+    "Consider edge cases where arrays have only one element."
+  ]
+}

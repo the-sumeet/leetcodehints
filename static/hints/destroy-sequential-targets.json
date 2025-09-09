@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the machine works. When you seed the machine with a value `nums[i]`, it can destroy targets of the form `nums[i] + c * space` where `c` is any non-negative integer. This means you can destroy all numbers that can be expressed in this way."
+    },
+    {
+      "content": "Consider how many targets can be destroyed for a given seed. For a specific `nums[i]`, the targets destroyed will be those that can be represented as `nums[i] + k * space` for different values of `k`. Think about how to determine which values in `nums` can be reached by this formula."
+    },
+    {
+      "content": "To maximize the number of destroyed targets, you should check each `nums[i]` and count how many targets can be destroyed. Remember that multiple seeds can lead to the same count of destroyed targets."
+    },
+    {
+      "content": "Use a set to keep track of which targets can be destroyed for each seed. This will help avoid counting duplicates and will simplify the counting process."
+    },
+    {
+      "content": "When counting destroyed targets, ensure that you only consider values that are present in the original `nums` array. You can use a loop to check each possible value derived from the seed."
+    },
+    {
+      "content": "Don't forget to handle the case where multiple seeds can destroy the same maximum number of targets. You need to return the minimum seed value among those that achieve this maximum destruction."
+    },
+    {
+      "content": "Think about edge cases, such as when all values in `nums` are the same or when `space` is very large compared to the values in `nums`. How would these cases affect your counting logic?"
+    },
+    {
+      "content": "Consider sorting the `nums` array. This might help in efficiently counting the destroyed targets for each seed, as you can quickly find the range of targets that can be destroyed."
+    },
+    {
+      "content": "As you implement your solution, keep track of the maximum count of destroyed targets and the corresponding seed value. You might want to use a variable to store the best seed found so far."
+    },
+    {
+      "content": "Finally, ensure that your solution runs efficiently given the constraints (up to 100,000 targets). Think about how you can minimize the number of operations needed to count destroyed targets for each seed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5, 1 <= nums[i] <= 10^9, 1 <= space <= 10^9",
+    "The array is 0-indexed.",
+    "You need to return the minimum value of nums[i] that allows for the maximum destruction.",
+    "Consider uniqueness of targets and how to handle ties in maximum destruction."
+  ]
+}

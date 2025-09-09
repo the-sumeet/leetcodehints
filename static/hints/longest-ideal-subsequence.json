@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence can be formed by deleting some characters from the string without changing the order of the remaining characters. For example, from 'abc', you can form 'ab', 'ac', or 'bc'."
+    },
+    {
+      "content": "Consider the absolute difference condition: for any two adjacent characters in the ideal subsequence, the difference in their positions in the alphabet should be less than or equal to k. For example, if k = 2, then 'a' and 'c' can be adjacent, but 'a' and 'd' cannot."
+    },
+    {
+      "content": "Think about how you can iterate through the string to build your ideal subsequence. You might want to maintain a variable to keep track of the length of the longest ideal subsequence found so far."
+    },
+    {
+      "content": "You can use dynamic programming to solve this problem. Consider maintaining an array where each index corresponds to a character in the alphabet, and the value at that index represents the length of the longest ideal subsequence ending with that character."
+    },
+    {
+      "content": "As you iterate through the string, for each character, check which previous characters can form an ideal subsequence with it. You can do this by checking characters that are within the range defined by k."
+    },
+    {
+      "content": "When checking the previous characters, remember that characters are represented by their ASCII values. You can calculate the range of valid previous characters by using the current character's ASCII value minus k and plus k."
+    },
+    {
+      "content": "Make sure to initialize your dynamic programming array correctly. For each character in the string, the minimum length of the ideal subsequence that ends with that character is at least 1 (the character itself)."
+    },
+    {
+      "content": "As you build your DP array, update the maximum length found so far after processing each character. This will help you keep track of the longest ideal subsequence throughout your iterations."
+    },
+    {
+      "content": "Consider edge cases, such as when k is 0. In this case, the longest ideal subsequence can only consist of identical characters since no two different characters can be adjacent."
+    },
+    {
+      "content": "Finally, after processing all characters, return the maximum length found in your DP array as the result. This will give you the length of the longest ideal subsequence."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length <= 10^5",
+    "0 <= k <= 25",
+    "s consists of lowercase English letters.",
+    "The absolute difference in the alphabet order is not cyclic."
+  ]
+}

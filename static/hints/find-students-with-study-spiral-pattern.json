@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the two tables: `students` and `study_sessions`. Each student has a unique `student_id`, and each study session is linked to a student via this ID. Make sure to familiarize yourself with how to join these tables."
+    },
+    {
+      "content": "Consider how to group the study sessions by `student_id`. This will allow you to analyze each student's study behavior individually. You can use SQL's `GROUP BY` clause for this purpose."
+    },
+    {
+      "content": "Focus on the requirement for a 'Study Spiral Pattern'. This means you need to identify sequences of study sessions that involve at least three different subjects. Think about how you can extract distinct subjects for each student."
+    },
+    {
+      "content": "Remember that the pattern must repeat at least twice, which means you need to check for at least six study sessions in total. Use a `HAVING` clause to filter groups that meet this criterion."
+    },
+    {
+      "content": "Pay attention to the consecutive date requirement. You need to ensure that there are no gaps longer than 2 days between study sessions. This may involve calculating the difference between session dates."
+    },
+    {
+      "content": "To check for consecutive dates, consider using a window function to calculate the difference between the current session date and the previous session date for each student."
+    },
+    {
+      "content": "When identifying the cycle length, you will need to determine the number of unique subjects in the identified repeating pattern. Use a distinct count of subjects for this purpose."
+    },
+    {
+      "content": "You should also calculate the total study hours for the identified sessions. This can be done by summing the `hours_studied` for the relevant sessions."
+    },
+    {
+      "content": "Make sure to include only students with a cycle length of at least 3 subjects. This can be enforced using a `HAVING` clause after calculating the cycle length."
+    },
+    {
+      "content": "The final result needs to be ordered by `cycle_length` in descending order and then by `total_study_hours` in descending order. Use the `ORDER BY` clause accordingly."
+    },
+    {
+      "content": "Consider edge cases such as students with fewer than 6 sessions, or those who study only one or two subjects. Ensure your logic accounts for these scenarios."
+    },
+    {
+      "content": "Think about how you will structure your SQL query. You might want to use Common Table Expressions (CTEs) to break down the problem into manageable parts."
+    },
+    {
+      "content": "While writing your query, make sure to join the `students` and `study_sessions` tables correctly. You will need to select relevant columns from both tables for the final output."
+    },
+    {
+      "content": "As you build your query, test it with different subsets of data to ensure it behaves as expected. Pay attention to the output format specified in the problem statement."
+    },
+    {
+      "content": "Finally, ensure that your output includes the columns: `student_id`, `student_name`, `major`, `cycle_length`, and `total_study_hours`. Double-check the data types and formats for each column."
+    }
+  ],
+  "questionNotes": [
+    "Cycle length must be at least 3 subjects.",
+    "At least 6 study sessions are required to confirm the pattern.",
+    "Sessions must be on consecutive dates with no gaps longer than 2 days.",
+    "Return results ordered by cycle_length and total_study_hours in descending order.",
+    "Ensure the output includes specific columns: student_id, student_name, major, cycle_length, total_study_hours."
+  ]
+}

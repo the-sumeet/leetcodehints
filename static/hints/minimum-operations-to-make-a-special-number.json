@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for a number to be special. A number is considered special if it is divisible by 25. This means that the last two digits of the number must form a number that is divisible by 25."
+    },
+    {
+      "content": "Consider the possible endings for a number to be divisible by 25. The valid two-digit endings are '00', '25', '50', and '75'. Focus on how you can form these endings by deleting certain digits from the string."
+    },
+    {
+      "content": "Think about the order of the digits in the string. You can only delete digits, so the order of the remaining digits matters. You need to find the last two digits that can form one of the valid endings."
+    },
+    {
+      "content": "To solve the problem, you can iterate through the string from the end to the beginning. Keep track of the last two digits you can form that match one of the valid endings."
+    },
+    {
+      "content": "When you find a valid pair of digits (for example, '25'), count how many digits you need to delete to keep those two digits in place. This will help you calculate the number of operations required."
+    },
+    {
+      "content": "Remember that the digits you choose to keep must maintain their relative order in the original string. You cannot rearrange the digits, only delete them."
+    },
+    {
+      "content": "Consider edge cases where the string might already be very close to forming a special number. For example, if the string ends with '00', you might need fewer operations."
+    },
+    {
+      "content": "As you iterate through the string, maintain a count of the digits you would need to delete for each valid ending you encounter. Keep track of the minimum number of deletions needed."
+    },
+    {
+      "content": "Don't forget to handle the case where the only valid special number you can form is '0'. If you can form '0', it may require a different number of deletions compared to other endings."
+    },
+    {
+      "content": "Finally, once you have checked all valid endings, return the minimum number of deletions required to form a special number. Make sure to check your logic against the provided examples."
+    }
+  ],
+  "questionNotes": [
+    "The input string 'num' represents a non-negative integer and has a length between 1 and 100.",
+    "The string 'num' does not contain any leading zeros.",
+    "You can only delete digits; rearranging them is not allowed.",
+    "The output should be the minimum number of deletions required to make 'num' special."
+  ]
+}

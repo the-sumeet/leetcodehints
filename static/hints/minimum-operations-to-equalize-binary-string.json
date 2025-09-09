@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by analyzing the binary string `s`. Count the number of '0's in the string, as these are the characters you need to flip to '1'."
+    },
+    {
+      "content": "Consider the value of `k`. It represents the number of indices you can flip in one operation. If `k` is greater than the total number of '0's, you can still only flip the available '0's."
+    },
+    {
+      "content": "If the number of '0's in the string is less than `k`, you cannot perform an operation as required. Think about what this means for the output."
+    },
+    {
+      "content": "If `k` is equal to 1, each flip operation can only change one bit at a time. How many operations would you need if you had `count_0` zeros?"
+    },
+    {
+      "content": "When `k` is greater than 1, you can flip multiple bits at once. Consider how you can strategically choose the indices to minimize the total operations."
+    },
+    {
+      "content": "If the number of '0's is not divisible by `k`, you will have leftover '0's after performing operations. What does this imply about the feasibility of the solution?"
+    },
+    {
+      "content": "Think about the maximum number of '0's you can flip in one operation. If you can flip `k` bits, how does that affect the total number of operations needed?"
+    },
+    {
+      "content": "You can visualize the flipping process as a series of operations that progressively reduce the number of '0's. Keep track of how many '0's remain after each operation."
+    },
+    {
+      "content": "Consider edge cases where `s` is already all '1's. What should your function return in this scenario?"
+    },
+    {
+      "content": "If you have a string with only one '0' and `k` is greater than 1, think about why it's impossible to perform a valid operation."
+    },
+    {
+      "content": "Try to break down the problem into smaller parts. For example, how many full operations can you perform, and what will be left after those?"
+    },
+    {
+      "content": "If you can perform `m` operations, where `m` is the number of complete flips possible, how do you calculate the remaining '0's?"
+    },
+    {
+      "content": "Remember to handle the case where after performing all possible operations, there are still '0's left. What should you return in that case?"
+    },
+    {
+      "content": "As you approach the solution, think about how to implement a loop that continues until all '0's are flipped or until you determine it's impossible."
+    },
+    {
+      "content": "Your final implementation should return the number of operations if successful, or -1 if it's not possible to make all characters '1'. Ensure your return statement handles both cases."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 100000",
+    "s[i] is either '0' or '1'.",
+    "1 <= k <= s.length",
+    "If the number of '0's is less than k, return -1.",
+    "If the string is already all '1's, return 0."
+  ]
+}

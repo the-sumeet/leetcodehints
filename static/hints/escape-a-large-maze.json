@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid layout. The grid is 1 million by 1 million, meaning valid coordinates range from (0, 0) to (999999, 999999). Make sure to keep this in mind when checking for valid moves."
+    },
+    {
+      "content": "Note that you can move in four directions: north, east, south, and west. Think about how you can represent these movements in terms of coordinate changes."
+    },
+    {
+      "content": "Consider how you will handle the blocked squares. You may want to use a set for fast lookups to check if a square is blocked when attempting to move."
+    },
+    {
+      "content": "Remember that both the source and target squares are guaranteed to be unblocked. This simplifies your checks since you don't need to worry about starting or ending on a blocked square."
+    },
+    {
+      "content": "Think about the implications of having blocked squares. If the source is surrounded by blocked squares, it may be impossible to reach the target. Visualize this scenario."
+    },
+    {
+      "content": "Consider edge cases, such as when the blocked list is empty. What does this mean for your ability to reach the target from the source?"
+    },
+    {
+      "content": "If the target is far away from the source, you might need to navigate around blocked squares. Think about how you can explore the grid without going outside the bounds."
+    },
+    {
+      "content": "Implement a breadth-first search (BFS) or depth-first search (DFS) approach to explore possible paths from the source to the target. BFS is particularly useful in unweighted grids."
+    },
+    {
+      "content": "While exploring paths, keep track of visited squares to avoid cycles and unnecessary re-exploration. This will help optimize your search."
+    },
+    {
+      "content": "When checking for potential moves, ensure that you stay within the grid limits and avoid any blocked squares. This is crucial for maintaining valid moves."
+    },
+    {
+      "content": "Consider using a queue for BFS, where you enqueue valid moves and dequeue to explore them. Each move should be checked against the blocked set."
+    },
+    {
+      "content": "As you explore, if you reach the target square, return true immediately. This will save time as you won't need to explore further."
+    },
+    {
+      "content": "Think about the maximum number of blocked squares (200). This is a small number compared to the grid size. How does this affect your approach?"
+    },
+    {
+      "content": "If you exhaust all possible paths without reaching the target, you should return false. Ensure your algorithm handles this case correctly."
+    },
+    {
+      "content": "Finally, consider the performance of your solution. With a grid this large, you need to ensure your approach is efficient in terms of both time and space."
+    }
+  ],
+  "questionNotes": [
+    "Grid size: 1 million by 1 million (0 <= x, y < 10^6)",
+    "Blocked squares can be up to 200, and each is defined by two coordinates.",
+    "Source and target coordinates are guaranteed to be unblocked.",
+    "Return true if the target can be reached, false otherwise.",
+    "Consider edge cases, especially when the blocked list is empty."
+  ]
+}

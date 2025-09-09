@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what constitutes a good subset. A subset is good if the product of its elements can be expressed as a product of distinct prime numbers."
+    },
+    {
+      "content": "Consider the prime factorization of numbers in the array. Since the maximum value is 30, you can list the prime factors for all integers from 1 to 30."
+    },
+    {
+      "content": "Remember that the number 1 is a special case. It does not contribute any prime factors, but it can be included in any subset without affecting the product's primality."
+    },
+    {
+      "content": "Think about how to handle duplicates in `nums`. If a number appears multiple times, it can affect the count of good subsets since we need distinct primes."
+    },
+    {
+      "content": "You might want to create a mapping of each number to its prime factors. This will help you quickly determine the prime composition of any subset."
+    },
+    {
+      "content": "Consider how to efficiently generate subsets. You can use bit manipulation or recursive backtracking to explore all possible subsets of `nums`."
+    },
+    {
+      "content": "When counting good subsets, ensure that you do not double-count subsets that yield the same product of distinct primes."
+    },
+    {
+      "content": "Think about the constraints: `1 <= nums.length <= 10^5` and `1 <= nums[i] <= 30`. This suggests that your solution needs to be efficient, possibly O(n log n) or better."
+    },
+    {
+      "content": "Consider using a set to keep track of the products of distinct primes you encounter. This will help you avoid counting the same product multiple times."
+    },
+    {
+      "content": "When you find a good subset, remember to count it modulo `10^9 + 7` to handle large numbers."
+    },
+    {
+      "content": "You may want to preprocess the input array to count the frequency of each number. This will help in determining how many ways you can form subsets with distinct primes."
+    },
+    {
+      "content": "Think about how to represent the prime factors of numbers as bitmasks. Each bit in an integer can represent whether a specific prime is included in the product."
+    },
+    {
+      "content": "As you explore subsets, keep track of the current product's prime factors using a bitmask. This will allow you to quickly check if a subset is good."
+    },
+    {
+      "content": "Consider edge cases such as when `nums` contains only 1s or when it contains only prime numbers. How do these cases affect the count of good subsets?"
+    },
+    {
+      "content": "Finally, ensure that your final count of good subsets excludes the empty subset, as it does not meet the criteria of having a product."
+    }
+  ],
+  "questionNotes": [
+    "The product of the subset must be a product of distinct primes.",
+    "The number 1 can be included in any subset but does not contribute to the product.",
+    "Subsets are considered different based on the indices of elements chosen, not just the elements themselves.",
+    "Return the count of good subsets modulo 10^9 + 7.",
+    "The maximum value in nums is 30, which limits the prime factors you need to consider."
+  ]
+}

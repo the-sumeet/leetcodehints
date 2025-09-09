@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of the input array. Since the array is sorted in non-decreasing order, any repeating elements will be grouped together. This can help you identify the element that occurs more than 25% of the time more easily."
+    },
+    {
+      "content": "Consider how you can determine the frequency of each element in the array. Since the array is sorted, you can use a single pass to count occurrences of each element until you find one that meets the frequency condition."
+    },
+    {
+      "content": "Remember that an element must occur more than 25% of the time. For an array of length n, this means that the element must appear more than n/4 times. Think about how you can keep track of the counts as you iterate through the array."
+    },
+    {
+      "content": "As you iterate through the array, maintain a count of the current element and compare it to the previous element. If they are the same, increment the count; if not, reset the count to 1. This will allow you to track how many times each element appears."
+    },
+    {
+      "content": "When you find an element whose count exceeds n/4, you can immediately return that element. However, be careful to ensure that you are comparing counts correctly and not missing any elements."
+    },
+    {
+      "content": "Consider edge cases, such as when the array has very few elements. For example, if the array has only one element, that element should be returned since it trivially satisfies the condition."
+    },
+    {
+      "content": "You should also think about the constraints provided in the problem. The array length can be up to 10^4, so your solution needs to be efficient. Aim for a linear time complexity solution if possible."
+    },
+    {
+      "content": "If you encounter a new element while iterating through the array, make sure to check if the count of the previous element exceeds n/4 before resetting the count. This ensures you don't miss the valid candidate."
+    },
+    {
+      "content": "As you implement your solution, consider using a variable to track the last seen element and its count. This will help you manage transitions between different elements in the sorted array."
+    },
+    {
+      "content": "Finally, ensure that your return statement is correctly placed within your loop. You want to return the first element that meets the condition of occurring more than 25% of the time."
+    }
+  ],
+  "questionNotes": [
+    "The input array is sorted in non-decreasing order.",
+    "There is exactly one integer that appears more than 25% of the time.",
+    "The array length is between 1 and 10^4.",
+    "Each element in the array is between 0 and 10^5.",
+    "You need to return the integer that meets the frequency condition."
+  ]
+}

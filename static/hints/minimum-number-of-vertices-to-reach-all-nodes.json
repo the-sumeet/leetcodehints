@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a directed acyclic graph (DAG). In a DAG, there are no cycles, which means that you can traverse the graph without worrying about getting stuck in an infinite loop."
+    },
+    {
+      "content": "Consider the implications of the problem statement: you need to find a set of vertices from which all other vertices can be reached. Think about what it means for a vertex to be 'reachable'."
+    },
+    {
+      "content": "Identify which nodes have no incoming edges. These nodes cannot be reached from any other node, so they must be included in your final result."
+    },
+    {
+      "content": "You can represent the graph using an adjacency list or an edge list. This will help you visualize the connections between nodes and understand how to traverse the graph."
+    },
+    {
+      "content": "As you analyze the edges, keep track of the in-degrees of each vertex. A vertex with an in-degree of zero is a candidate for your result set."
+    },
+    {
+      "content": "Think about how to efficiently determine which vertices have zero in-degrees. You can initialize an array to count the in-degrees of each vertex as you process the edges."
+    },
+    {
+      "content": "Once you have the in-degrees, iterate through your array to collect all vertices with an in-degree of zero. These vertices are essential for reaching all others."
+    },
+    {
+      "content": "Remember that the problem guarantees a unique solution. This means that your approach should yield a single set of vertices, not multiple valid outputs."
+    },
+    {
+      "content": "Consider edge cases, such as when there are only two nodes or when all nodes are connected in a linear fashion. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "Finally, ensure that your implementation correctly returns the vertices in any order. You can use a list to store the results and return it at the end of your function."
+    }
+  ],
+  "questionNotes": [
+    "The graph is a directed acyclic graph (DAG).",
+    "Vertices are numbered from 0 to n-1.",
+    "The input edges are in the format edges[i] = [from_i, to_i].",
+    "You need to find the smallest set of vertices to reach all nodes.",
+    "A unique solution is guaranteed.",
+    "You can return the vertices in any order.",
+    "Constraints: 2 <= n <= 10^5; 1 <= edges.length <= min(10^5, n * (n - 1) / 2)."
+  ]
+}

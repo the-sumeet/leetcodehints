@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A string `s` is a subsequence of string `t` if you can remove some characters from `t` without changing the order of the remaining characters to get `s`. For example, 'abc' is a subsequence of 'aebdc'."
+    },
+    {
+      "content": "Consider the lengths of the two input strings. The shortest common supersequence (SCS) must be at least as long as the longer of the two strings. This gives you a lower bound on the length of your result."
+    },
+    {
+      "content": "Think about how you can build the SCS. You can start by merging the two strings while ensuring that the order of characters is preserved for both strings. This means you need to track which characters have been added from each string."
+    },
+    {
+      "content": "A common approach to finding the SCS is to use dynamic programming. You can create a 2D table where `dp[i][j]` represents the length of the SCS of the first `i` characters of `str1` and the first `j` characters of `str2`."
+    },
+    {
+      "content": "Initialize your DP table. The first row and first column should be filled based on the lengths of the strings. For instance, `dp[i][0]` should equal `i` (length of `str1` up to `i`) and `dp[0][j]` should equal `j` (length of `str2` up to `j`)."
+    },
+    {
+      "content": "When filling the DP table, if the characters at `str1[i-1]` and `str2[j-1]` are the same, you can take the value from `dp[i-1][j-1]` and add 1 to it. This indicates that you can extend the SCS by this matching character."
+    },
+    {
+      "content": "If the characters are different, you need to consider both possibilities: either take the character from `str1` or from `str2`. The value for `dp[i][j]` in this case will be 1 plus the minimum of the two possible lengths: `dp[i-1][j]` and `dp[i][j-1]`."
+    },
+    {
+      "content": "After filling the DP table, the length of the SCS will be found at `dp[str1.length][str2.length]`. However, you need to construct the actual SCS string from this table."
+    },
+    {
+      "content": "To construct the SCS, start from the bottom-right corner of the DP table and work your way back to the top-left. If the characters match, add that character to your result and move diagonally up-left in the table."
+    },
+    {
+      "content": "If the characters do not match, check which direction you came from in the DP table. If you moved from the left, it means you should add the character from `str2`, and if you moved from above, add the character from `str1`."
+    },
+    {
+      "content": "Remember to handle the case where one string is completely traversed before the other. If this happens, you can simply append the remaining characters of the other string to your result."
+    },
+    {
+      "content": "Consider edge cases where both strings are identical. In this case, the SCS is simply one of the strings, as they are already subsequences of each other."
+    },
+    {
+      "content": "Think about the time complexity of your approach. The DP solution has a time complexity of O(m * n), where m and n are the lengths of the two strings. This is efficient given the constraints."
+    },
+    {
+      "content": "Make sure to test your solution with various inputs, including edge cases like strings of length 1, strings with no common characters, and very long strings to ensure it performs well."
+    },
+    {
+      "content": "As a final step, ensure that your function returns the SCS in the correct format. It should be a single string that represents the shortest common supersequence of the two input strings."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= str1.length, str2.length <= 1000.",
+    "Both str1 and str2 consist of lowercase English letters.",
+    "If multiple valid SCS exist, returning any one of them is acceptable."
+  ]
+}

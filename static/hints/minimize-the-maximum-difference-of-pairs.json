@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding that you need to form `p` pairs from the array `nums`. Each pair consists of two indices, and you cannot use the same index more than once. Think about how you can choose pairs while minimizing the maximum difference."
+    },
+    {
+      "content": "Consider sorting the array `nums`. By sorting, you can more easily control the differences between pairs. After sorting, the smallest differences will likely be between adjacent elements."
+    },
+    {
+      "content": "Once the array is sorted, think about how you can create pairs from the sorted array. For example, if you have sorted indices `0, 1, 2, 3`, valid pairs could be `(0, 1)` and `(2, 3)`."
+    },
+    {
+      "content": "When forming pairs, focus on the differences between the elements. The difference for a pair `(i, j)` is calculated as `|sorted_nums[i] - sorted_nums[j]|`. Your goal is to minimize the maximum of these differences."
+    },
+    {
+      "content": "To find the minimum maximum difference, consider using a binary search approach on the possible maximum differences. Define a range for your binary search: the smallest difference can be `0` and the largest can be `max(nums) - min(nums)`."
+    },
+    {
+      "content": "For each candidate maximum difference during your binary search, you need to check if it's possible to form `p` pairs such that no pair has a difference greater than this candidate. Think about how you can iterate through the sorted array to count valid pairs."
+    },
+    {
+      "content": "When checking if you can form `p` pairs, iterate through the sorted array and try to pair elements. If the difference between the current element and the next one is within the candidate maximum difference, count it as a valid pair and skip to the next unpaired element."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when `p` is `0`. In this case, you should return `0` since no pairs are formed and thus the maximum difference is defined to be `0`."
+    },
+    {
+      "content": "As you implement the binary search, ensure that your check for forming pairs correctly counts only valid pairs and respects the uniqueness of indices. This is crucial to avoid overcounting or using the same index in multiple pairs."
+    },
+    {
+      "content": "Finally, ensure that your binary search converges correctly. The condition for your search should be whether you can form `p` pairs with a difference less than or equal to the current candidate maximum difference."
+    }
+  ],
+  "questionNotes": [
+    "You must form exactly `p` pairs from the array.",
+    "No index can be used more than once in any pair.",
+    "Return the minimum maximum difference among all valid pairs.",
+    "Constraints: 1 <= nums.length <= 10^5, 0 <= nums[i] <= 10^9, 0 <= p <= (nums.length)/2.",
+    "The maximum of an empty set is defined to be zero."
+  ]
+}

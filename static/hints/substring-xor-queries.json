@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the decimal value of a substring and the XOR operation. For each query, you need to find a substring whose decimal value, when XORed with `first_i`, equals `second_i`. This means you can derive the required decimal value as `val = first_i ^ second_i`."
+    },
+    {
+      "content": "Consider how to convert substrings of the binary string into their decimal values. You can do this by iterating through the string and calculating the decimal value of each substring as you go. Remember that a binary string can be converted to decimal using the formula: `val = val * 2 + (current_bit)`."
+    },
+    {
+      "content": "Think about how to efficiently check all possible substrings of the binary string `s`. A nested loop can help you generate all substrings, but be cautious of performance, especially since the maximum length of `s` can be 10,000."
+    },
+    {
+      "content": "When generating substrings, keep track of their starting and ending indices. You will need to return these indices in the format `[left_i, right_i]` for each query. Make sure to handle the case where no valid substring is found by returning `[-1, -1]`."
+    },
+    {
+      "content": "Pay attention to the constraints of the problem. The values of `first_i` and `second_i` can go up to 10^9, which means the decimal value you are looking for can also be quite large. Ensure that your approach can handle these large values without overflow."
+    },
+    {
+      "content": "Consider edge cases where the binary string is very short or contains only '0's. For example, if `s` is '0', any query that requires a non-zero decimal value will not have a valid substring."
+    },
+    {
+      "content": "When processing multiple queries, think about how you can optimize your solution. Instead of recalculating the decimal value for each substring for every query, consider precomputing values or using a sliding window approach."
+    },
+    {
+      "content": "Remember that if there are multiple valid substrings for a query, you should return the one with the smallest starting index. This requires you to maintain the order of your checks and possibly store all valid results before selecting the best one."
+    },
+    {
+      "content": "As you implement your solution, be careful with the indexing. The problem uses 0-indexing for the substring endpoints, so ensure that your calculations reflect this correctly."
+    },
+    {
+      "content": "Finally, outline your approach clearly before coding. You might want to create a function that handles the conversion of substrings to decimal values and another that processes the queries. This separation can help in debugging and understanding your code."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^4, 1 <= queries.length <= 10^5.",
+    "The values of first_i and second_i can be between 0 and 10^9.",
+    "Return format: Each answer should be in the form [left_i, right_i] or [-1, -1] if no substring is found.",
+    "If multiple answers exist, return the one with the minimum left_i."
+  ]
+}

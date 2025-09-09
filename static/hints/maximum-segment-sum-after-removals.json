@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the problem. You have an array `nums` and an array `removeQueries`. Each element in `removeQueries` indicates an index in `nums` that will be removed in sequence."
+    },
+    {
+      "content": "Remember that removing an element from `nums` splits it into segments of contiguous positive integers. A segment is defined as a sequence of positive integers that are next to each other."
+    },
+    {
+      "content": "When you remove an element, you need to calculate the maximum segment sum. Make sure you can identify the segments after each removal."
+    },
+    {
+      "content": "To keep track of the segments, consider using a data structure that allows you to dynamically manage the segments as elements are removed. A simple list may not suffice."
+    },
+    {
+      "content": "Think about how to efficiently calculate the maximum segment sum. You may want to maintain a variable that keeps track of the current maximum segment sum as you modify the segments."
+    },
+    {
+      "content": "As you remove elements, you can visualize the segments being formed. For instance, if you remove an element that separates two segments, those segments should merge."
+    },
+    {
+      "content": "Consider edge cases where removing an element may lead to no segments at all. How will you handle this situation in your calculations?"
+    },
+    {
+      "content": "When processing the `removeQueries`, ensure that you are not removing the same index more than once, as stated in the problem constraints."
+    },
+    {
+      "content": "You may want to use a union-find (disjoint-set) data structure to efficiently manage and merge segments as elements are removed. This could help in quickly finding and updating segment sums."
+    },
+    {
+      "content": "As you implement your solution, think about the time complexity. Each removal and segment calculation should ideally be efficient to handle the upper limits of the constraints."
+    },
+    {
+      "content": "After each removal, you need to update the maximum segment sum and store it in the answer array. Ensure that you are correctly indexing into this array."
+    },
+    {
+      "content": "Make sure to initialize your answer array with the correct size and fill it appropriately as you process each removal in `removeQueries`."
+    },
+    {
+      "content": "As you iterate through the `removeQueries`, consider how the removal of an index affects the segments on both sides of that index."
+    },
+    {
+      "content": "For each removal, you may want to check if the left and right segments can be merged into a single segment, and how this impacts the maximum segment sum."
+    },
+    {
+      "content": "Finally, ensure your solution handles all edge cases, such as when the entire array is removed, resulting in a maximum segment sum of zero."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length == removeQueries.length",
+    "1 <= n <= 100000",
+    "1 <= nums[i] <= 10^9",
+    "0 <= removeQueries[i] < n",
+    "All values in removeQueries are unique."
+  ]
+}

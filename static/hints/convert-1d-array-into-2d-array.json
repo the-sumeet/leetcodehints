@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the dimensions of the 2D array you need to create. You are given `m` (number of rows) and `n` (number of columns). The total number of elements required for the 2D array is `m * n`."
+    },
+    {
+      "content": "Before constructing the 2D array, check if the length of the `original` array is equal to `m * n`. If it isn't, you cannot form the desired 2D array, and you should return an empty array."
+    },
+    {
+      "content": "Consider how to fill the 2D array. The first `n` elements of `original` will be the first row of the 2D array, the next `n` elements will be the second row, and so on. Think about how you can use loops to achieve this."
+    },
+    {
+      "content": "When iterating through the `original` array, you can use a loop that runs `m` times (for each row). Inside this loop, you will need to extract the correct slice of `original` for each row."
+    },
+    {
+      "content": "To extract a row from the `original` array, you can use slicing. For the `i`-th row, you would take the elements from index `i * n` to `(i + 1) * n - 1` (inclusive). This will give you the correct elements for that row."
+    },
+    {
+      "content": "Make sure to handle edge cases. For example, if `original` has fewer elements than needed, your initial check will help, but also consider what happens if `m` or `n` are very large."
+    },
+    {
+      "content": "Remember that the indices in the `original` array start from 0. Be careful with your calculations when determining the start and end indices for slicing."
+    },
+    {
+      "content": "Think about how to initialize your 2D array. You can create an empty list and then append each row to it as you construct it from the slices of `original`."
+    },
+    {
+      "content": "As you build the 2D array, ensure that you maintain the correct format. Each row should be a list, and the final output should be a list of these lists."
+    },
+    {
+      "content": "Finally, put all the pieces together. After verifying the length of `original`, use a loop to construct the 2D array by slicing `original` and appending each slice to your result. Make sure to return the constructed array at the end."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= original.length <= 5 * 10^4",
+    "Constraints: 1 <= original[i] <= 10^5",
+    "Constraints: 1 <= m, n <= 4 * 10^4",
+    "Return an empty 2D array if it's impossible to form the desired dimensions.",
+    "Remember to handle 0-indexing when slicing the original array."
+  ]
+}

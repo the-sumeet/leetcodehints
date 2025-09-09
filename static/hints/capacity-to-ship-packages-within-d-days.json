@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You need to ship all packages within a given number of days, and the order of the packages cannot be changed. Think about how the weight capacity of the ship affects the number of days required."
+    },
+    {
+      "content": "Consider the minimum and maximum possible values for the ship's weight capacity. The minimum capacity must be at least the weight of the heaviest package, while the maximum capacity could be the sum of all package weights (if shipped in one day)."
+    },
+    {
+      "content": "To determine if a certain capacity can ship the packages within the given days, you can implement a helper function. This function should iterate through the weights, summing them until adding another package would exceed the current capacity, at which point you would count a day and start a new sum."
+    },
+    {
+      "content": "Think about how you can use binary search to find the least weight capacity. The search space will range from the maximum weight of a single package to the total weight of all packages. This approach can significantly reduce the number of checks you need to perform."
+    },
+    {
+      "content": "When implementing binary search, remember to check the mid-point capacity. If the helper function indicates that the packages can be shipped within the given days, you might be able to lower the capacity; otherwise, you need to increase it."
+    },
+    {
+      "content": "Pay attention to edge cases. For example, if there is only one package, the capacity must equal the weight of that package. Similarly, if the number of days equals the number of packages, the capacity must be at least the weight of the heaviest package."
+    },
+    {
+      "content": "As you implement the helper function, keep track of the current weight being loaded and the number of days used. If you exceed the capacity, reset the current weight and increment the day count."
+    },
+    {
+      "content": "Make sure to handle cases where the total weight is divisible by the number of days. This can influence how you set up your binary search bounds and may lead to different minimum capacities."
+    },
+    {
+      "content": "Consider how to handle multiple packages with the same weight. This may affect your logic when determining whether a certain capacity works, especially if the weights are clustered around certain values."
+    },
+    {
+      "content": "Finally, put together all the pieces. Your binary search will need to call the helper function repeatedly until you narrow down the minimum capacity. Ensure that your function returns the correct capacity as soon as you find it."
+    }
+  ],
+  "questionNotes": [
+    "1 <= days <= weights.length <= 5 * 10^4",
+    "1 <= weights[i] <= 500",
+    "The order of packages cannot be changed.",
+    "Return the least weight capacity of the ship.",
+    "Ensure to handle edge cases like single package or equal days and packages."
+  ]
+}

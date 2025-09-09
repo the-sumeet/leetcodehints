@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to merge piles of stones in groups of exactly `k` and calculate the cost of each merge. Think about how the merging process will affect the number of piles."
+    },
+    {
+      "content": "Consider the implications of the value of `k`. If `k` is greater than the number of piles, merging is impossible. What happens when `n % (k - 1) != 0`?"
+    },
+    {
+      "content": "Think about how to calculate the cost of merging. The cost of merging `k` piles is simply the sum of the stones in those piles. How can you efficiently calculate this sum?"
+    },
+    {
+      "content": "You might want to use a dynamic programming approach. Define a DP table where `dp[i][j]` represents the minimum cost to merge stones from index `i` to `j`."
+    },
+    {
+      "content": "Consider how to fill the DP table. You'll need to decide how to split the range from `i` to `j` into valid groups of size `k`. What are the valid splits?"
+    },
+    {
+      "content": "When merging, after calculating the cost of merging a group, you should also keep track of the total stones left after the merge. How will you store this information?"
+    },
+    {
+      "content": "Think about base cases for your DP solution. For example, what happens when you only have `k` stones? How does that affect your DP initialization?"
+    },
+    {
+      "content": "You will need to iterate through possible merge points. For a given range `i` to `j`, how do you determine the best point to merge?"
+    },
+    {
+      "content": "Remember to handle cases where merges are not possible. If you reach a point where you can't merge anymore, how will you ensure that your function returns -1?"
+    },
+    {
+      "content": "Consider the cumulative sums of the stones array to make sum calculations easier. How can you precompute these sums to avoid recalculating them multiple times?"
+    },
+    {
+      "content": "As you fill in your DP table, think about how to keep track of the minimum cost. What conditions will help you update your DP values effectively?"
+    },
+    {
+      "content": "Make sure to check the conditions for merging. If the number of piles left after merging does not allow for further merges, ensure your code accounts for that."
+    },
+    {
+      "content": "You may want to implement a function to check if merging is possible based on the current number of piles and the value of `k`. How would you structure this check?"
+    },
+    {
+      "content": "When you reach the end of your DP table, how will you extract the final answer? Ensure you are looking at the correct indices in your DP array."
+    },
+    {
+      "content": "Finally, think about edge cases, such as when there's only one pile or when all piles have the same number of stones. How will your solution handle these scenarios?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == stones.length, 1 <= n <= 30, 1 <= stones[i] <= 100, 2 <= k <= 30.",
+    "If it's impossible to merge all piles into one, return -1.",
+    "K must be exactly the number of piles you want to merge at once.",
+    "The cost of merging is the sum of the stones in the merged piles."
+  ]
+}

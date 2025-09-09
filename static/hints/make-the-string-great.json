@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a 'good' string. A good string does not have two adjacent characters where one is the lowercase version and the other is the uppercase version of the same letter. For example, 'aA' and 'bB' are bad pairs."
+    },
+    {
+      "content": "Consider how you can identify bad pairs in the string. You can iterate through the string and check each character against the next one to see if they form a bad pair."
+    },
+    {
+      "content": "Think about how you can remove characters from the string. When you find a bad pair, you can remove both characters. However, after removing them, you should check again if new bad pairs are formed."
+    },
+    {
+      "content": "Using a loop to repeatedly remove bad pairs can lead to complications. Instead, consider using a data structure that allows you to build the resulting string efficiently, like a stack."
+    },
+    {
+      "content": "If you use a stack, you can push characters onto the stack one by one. When you encounter a character that forms a bad pair with the top of the stack, pop the top character off the stack instead of pushing the new character."
+    },
+    {
+      "content": "Remember to handle both lowercase and uppercase letters correctly. You can check if two characters are a bad pair by comparing their ASCII values or by using the `lower()` method in Python."
+    },
+    {
+      "content": "After processing all characters, the stack will contain the characters of the good string. You can then convert the stack back into a string by joining the characters."
+    },
+    {
+      "content": "Consider edge cases such as strings that are already good or strings that consist of only one character. Ensure your solution handles these cases correctly."
+    },
+    {
+      "content": "Keep in mind the constraints of the problem. The length of the string will always be between 1 and 100, which allows you to use straightforward algorithms without performance concerns."
+    },
+    {
+      "content": "Finally, remember that the output should be a single string. If the stack is empty after processing, you should return an empty string as the result."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 100",
+    "s contains only lower and upper case English letters.",
+    "A good string does not have adjacent characters that are the same letter in different cases.",
+    "The answer is guaranteed to be unique under the given constraints.",
+    "An empty string is also considered a good string."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem: you need to calculate how much rainwater can be trapped between the heights of the bars. Visualize the problem with a simple example to grasp how water is held between the heights."
+    },
+    {
+      "content": "Consider the heights as an array. Each index represents a position, and the value at that index represents the height of the bar. For instance, in the sample case, the height array is [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]."
+    },
+    {
+      "content": "Think about how to determine the water trapped above each bar. Water can only be held above a bar if there are taller bars on both its left and right sides."
+    },
+    {
+      "content": "To calculate the water above a specific bar, you need to find the maximum height of the bars to its left and right. This means you will need to traverse the array to find these maximum heights."
+    },
+    {
+      "content": "Consider using two arrays to store the maximum heights from the left and the right. For each index `i`, `left_max[i]` will store the maximum height from index `0` to `i`, and `right_max[i]` will store the maximum height from index `i` to the end."
+    },
+    {
+      "content": "As you fill the `left_max` array, remember to initialize the first element. The maximum height to the left of the first bar is simply its height."
+    },
+    {
+      "content": "For the `right_max` array, initialize the last element similarly. The maximum height to the right of the last bar is its own height."
+    },
+    {
+      "content": "Once you have both `left_max` and `right_max` arrays, you can calculate the water trapped above each bar. For each index `i`, the water trapped is determined by the formula: `water[i] = min(left_max[i], right_max[i]) - height[i]`."
+    },
+    {
+      "content": "Make sure to handle cases where the calculated water might be negative. If `water[i]` is less than 0, it means no water can be trapped above that bar."
+    },
+    {
+      "content": "Think about the time complexity of your approach. If you are using two additional arrays, the space complexity will be O(n). Can you optimize this further?"
+    },
+    {
+      "content": "Consider a two-pointer approach that eliminates the need for additional arrays. You can maintain two pointers, one at the beginning and one at the end of the height array."
+    },
+    {
+      "content": "With the two-pointer technique, move the pointer that points to the shorter bar. This way, you can keep track of the maximum height seen so far from both ends."
+    },
+    {
+      "content": "As you move the pointers, calculate the trapped water based on the current maximum height and the height at the pointer. This approach can simplify your calculations and reduce space complexity."
+    },
+    {
+      "content": "Remember to account for edge cases, such as when the height array is empty or has less than three bars. In these cases, no water can be trapped."
+    },
+    {
+      "content": "Finally, ensure that your final implementation returns the total amount of trapped water as a single integer value. This is the sum of all the water calculated for each bar."
+    }
+  ],
+  "questionNotes": [
+    "The input is an array of heights, where each height represents a bar.",
+    "Water can only be trapped if there are taller bars on both sides of a bar.",
+    "Handle edge cases like empty arrays or arrays with less than three bars.",
+    "The output should be a single integer representing the total trapped water."
+  ]
+}

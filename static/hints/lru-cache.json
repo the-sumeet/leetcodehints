@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic operations of an LRU Cache. It should allow you to retrieve values by key and also store key-value pairs while maintaining a limit on the number of items it can hold."
+    },
+    {
+      "content": "Consider how you will keep track of the order of usage. The least recently used item needs to be easily identifiable for eviction. Think about using a data structure that allows for quick updates and removals."
+    },
+    {
+      "content": "What data structures can you use to achieve O(1) time complexity for both 'get' and 'put' operations? A combination of a hash map and a doubly linked list is a common approach."
+    },
+    {
+      "content": "In your design, the hash map will store keys and their corresponding nodes in the linked list. The linked list will maintain the order of usage, where the head is the most recently used and the tail is the least recently used."
+    },
+    {
+      "content": "Think about the 'get' method. If the key exists, you need to move the corresponding node to the front of the linked list to mark it as recently used. How will you do this efficiently?"
+    },
+    {
+      "content": "For the 'put' method, if the key already exists, update its value and move it to the front. If the key does not exist, you will need to add it. If adding exceeds the capacity, remember to remove the least recently used item first."
+    },
+    {
+      "content": "Consider edge cases, such as what happens when you try to 'get' a key that doesn't exist. Make sure your method returns -1 in this case, as specified in the problem statement."
+    },
+    {
+      "content": "Make sure to handle the capacity constraint carefully. When a new key-value pair is added and the cache is at full capacity, you must evict the least recently used item. How will you identify and remove this item?"
+    },
+    {
+      "content": "When implementing the linked list, remember that you will need to manage pointers for both the head and tail of the list to facilitate easy additions and removals. This will help maintain the order of usage."
+    },
+    {
+      "content": "Finally, implement the methods with careful attention to the operations on your data structures. For example, when you evict an item, ensure that you also remove it from the hash map. Here's a hint for the 'put' method: if the key is not found, after adding the new key, check if the size exceeds capacity, and if so, remove the tail node."
+    }
+  ],
+  "questionNotes": [
+    "Capacity must be a positive integer.",
+    "The keys range from 0 to 10^4, and values range from 0 to 10^5.",
+    "You will handle at most 2 * 10^5 calls to 'get' and 'put'.",
+    "Return -1 for 'get' if the key does not exist.",
+    "Ensure that the 'put' method correctly evicts the least recently used item when the capacity is exceeded."
+  ]
+}

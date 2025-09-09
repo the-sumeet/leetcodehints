@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. Each node points to exactly one other node, forming a directed graph where every node has one outgoing edge."
+    },
+    {
+      "content": "Think about how you would traverse the graph starting from a node. You will need to keep track of the nodes you have already visited to avoid infinite loops."
+    },
+    {
+      "content": "Consider using a set to store visited nodes as you traverse from a starting node. This will help you easily check if you've visited a node before."
+    },
+    {
+      "content": "When starting from a node, you can use a loop to follow the edges until you revisit a node. Keep a count of unique nodes visited during this process."
+    },
+    {
+      "content": "Remember that the graph can contain cycles. If you encounter a node you've already visited, you should stop traversing and record the count."
+    },
+    {
+      "content": "You will need to perform this traversal for each node in the graph. Think about how you can store the results efficiently."
+    },
+    {
+      "content": "Consider initializing an answer array of size n, where n is the number of nodes. Each index will correspond to the starting node's result."
+    },
+    {
+      "content": "As you traverse from each node, update the answer array with the count of unique nodes visited. Be careful to reset your visited set for each new starting node."
+    },
+    {
+      "content": "Think about edge cases, such as when the graph forms a single cycle or when there are multiple cycles. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "You might want to optimize your solution by avoiding redundant calculations. If you find that a node leads to a cycle, you can store the results for all nodes in that cycle."
+    },
+    {
+      "content": "Consider using a depth-first search (DFS) or breadth-first search (BFS) approach to explore the nodes. Which method do you think would be more efficient in this case?"
+    },
+    {
+      "content": "Remember to handle the constraints carefully. The number of nodes can go up to 100,000, so your solution should ideally be linear in complexity."
+    },
+    {
+      "content": "As you implement your solution, pay attention to the indexing of nodes. Ensure that you are correctly accessing the edges array based on the current node."
+    },
+    {
+      "content": "When you reach a node that has already been visited, make sure to count all nodes in the cycle only once. This is crucial for getting the correct count."
+    },
+    {
+      "content": "Finally, ensure that your output format matches the requirements. You need to return an array where each index corresponds to the starting node's unique visit count."
+    }
+  ],
+  "questionNotes": [
+    "The graph is directed with exactly n edges, one for each node.",
+    "Each node points to exactly one other node, forming a directed graph.",
+    "The output array must match the order of nodes from 0 to n-1.",
+    "Consider edge cases such as cycles and multiple paths leading to the same cycle.",
+    "The constraints specify that n can be as large as 100,000, requiring an efficient solution."
+  ]
+}

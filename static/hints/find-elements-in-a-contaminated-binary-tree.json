@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree. The root node has a value of 0, and the values of its children are determined by the parent's value. For example, if a node has a value of x, then its left child will have a value of 2 * x + 1 and the right child will have 2 * x + 2."
+    },
+    {
+      "content": "Since the tree is contaminated, all nodes have a value of -1. You'll need to traverse the tree and recover the original values based on the rules provided. Consider using a depth-first search (DFS) or breadth-first search (BFS) to explore the tree."
+    },
+    {
+      "content": "As you recover the values, think about how you can store these values for quick access later. A set or a hash map can be useful for storing the recovered values, allowing for O(1) average time complexity when checking if a target exists."
+    },
+    {
+      "content": "When implementing the recovery process, ensure that you are correctly assigning values to both left and right children based on their parent's value. This will involve recursive calls or iterative traversal to ensure all nodes are processed."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree is very shallow or very deep. The height of the tree can be up to 20, which means you need to handle a potentially large number of nodes efficiently."
+    },
+    {
+      "content": "In the `find` method, remember that you are checking if a specific target value exists in the recovered tree. This means you should leverage the data structure you chose to store the recovered values."
+    },
+    {
+      "content": "Think about the efficiency of your solution. The constraints allow for up to 10,000 nodes and 10,000 calls to the `find` method. Aim for a solution that can recover the tree in linear time with respect to the number of nodes."
+    },
+    {
+      "content": "You might want to implement the `FindElements` class with a constructor that initializes the recovery process. This constructor should handle the traversal of the tree and populate your data structure with the recovered values."
+    },
+    {
+      "content": "When implementing the `find` method, ensure that it checks the presence of the target value in the data structure you created. This will allow for quick lookups."
+    },
+    {
+      "content": "Finally, ensure that you test your implementation with various tree structures, including edge cases like a single node or a complete binary tree, to verify that your recovery and search functionalities work as expected."
+    }
+  ],
+  "questionNotes": [
+    "The root node's value is always 0.",
+    "For a node with value x, left child = 2 * x + 1, right child = 2 * x + 2.",
+    "All node values are initially -1 due to contamination.",
+    "The height of the binary tree is ≤ 20.",
+    "The total number of nodes is between 1 and 10,000.",
+    "Total calls to find() are between 1 and 10,000.",
+    "Target values for find() are between 0 and 1,000,000."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider the base cases for the problem. You can start from either index 0 or index 1. Think about what the cost would be if you were to take one step or two steps from these starting points."
+    },
+    {
+      "content": "To solve this problem, you can use dynamic programming. Create an array `dp` where `dp[i]` represents the minimum cost to reach step `i`. What would the initial values of `dp[0]` and `dp[1]` be?"
+    },
+    {
+      "content": "Remember that for any step `i`, you can reach it either from step `i-1` or step `i-2`. Therefore, the cost to reach step `i` can be calculated as: `dp[i] = cost[i] + min(dp[i-1], dp[i-2])`."
+    },
+    {
+      "content": "Think about the size of the `cost` array and how it affects the `dp` array. The last step you need to calculate is actually `dp[cost.length]`, which represents reaching the top of the stairs. How would you set this up?"
+    },
+    {
+      "content": "Pay attention to the constraints provided in the problem. The length of the cost array is at least 2. How does this affect your base cases and your loop for filling the `dp` array?"
+    },
+    {
+      "content": "Consider edge cases where the costs are the same or where the costs are in a strictly increasing or decreasing order. How would your algorithm handle these scenarios?"
+    },
+    {
+      "content": "When filling the `dp` array, make sure to iterate through the cost array starting from index 2, since you already defined the costs for the first two steps. What would your loop look like?"
+    },
+    {
+      "content": "After populating the `dp` array, remember that you need to return the minimum cost to reach the top. This is found in `dp[cost.length]`. How will you implement this return statement?"
+    },
+    {
+      "content": "Think about the time and space complexity of your solution. Since you are using a `dp` array of the same length as `cost`, what is the space complexity? Can it be optimized?"
+    },
+    {
+      "content": "To finalize your solution, ensure that your function handles the input and output correctly, returning the minimum cost as specified. What would the function signature look like?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= cost.length <= 1000",
+    "0 <= cost[i] <= 999",
+    "You can start from index 0 or index 1.",
+    "Return the minimum cost to reach the top of the floor."
+  ]
+}

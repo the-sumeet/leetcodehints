@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, determine whether the input string `s` is an email or a phone number. You can do this by checking for the presence of the '@' symbol, which is unique to email addresses."
+    },
+    {
+      "content": "If `s` is an email, split it into the name and domain using the '@' symbol. Remember that the name is everything before '@' and the domain is everything after."
+    },
+    {
+      "content": "For the email masking, convert both the name and domain to lowercase. This is important for ensuring consistency in the output format."
+    },
+    {
+      "content": "Next, focus on masking the name part of the email. If the name has more than two characters, you will need to replace all characters except the first and last with five asterisks '*****'."
+    },
+    {
+      "content": "Consider edge cases for the email name. If the name is only one character, it should remain unchanged, while if it has two characters, only the first and last should be visible."
+    },
+    {
+      "content": "If `s` is a phone number, first remove all non-digit characters. This will help you isolate just the digits for further processing."
+    },
+    {
+      "content": "Count the number of digits in the cleaned phone number. The last 10 digits are the local number, while any preceding digits form the country code."
+    },
+    {
+      "content": "Construct the masked phone number format based on the length of the country code. Use the following patterns: '***-***-XXXX' for 0 digits, '+*-***-***-XXXX' for 1 digit, and so on."
+    },
+    {
+      "content": "When formatting the masked phone number, ensure that you correctly insert the country code and local number into the specified format. Pay attention to the placement of dashes."
+    },
+    {
+      "content": "Finally, remember to return the masked email or phone number as a string. Ensure that your output matches the expected format exactly, including lowercase letters for emails."
+    }
+  ],
+  "questionNotes": [
+    "Input string `s` can be either a valid email or a phone number.",
+    "Email format: must contain exactly one '@' and one '.' in the domain.",
+    "Phone number may contain 10-13 digits, with various separators.",
+    "Masking rules differ based on whether the input is an email or a phone number."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input array `groupSizes`. Each index represents a person, and the value at that index indicates the size of the group that person belongs to. For example, if `groupSizes[0] = 3`, then person 0 must be in a group of size 3."
+    },
+    {
+      "content": "Think about how you can track which people belong to which groups. You might want to create a data structure to hold the groups as you build them. A simple list of lists could work well for this purpose."
+    },
+    {
+      "content": "Consider iterating through the `groupSizes` array. For each person, check the size of their group. You can use a temporary list to collect members of the same group size as you go."
+    },
+    {
+      "content": "As you collect people into groups, remember that once you have collected enough people for a group (equal to the size indicated in `groupSizes`), you should finalize that group and start a new one for the next set of people."
+    },
+    {
+      "content": "Make sure to handle cases where the group size is 1. This means that each person with a group size of 1 will be their own group, and you should add them to the result immediately."
+    },
+    {
+      "content": "When you finalize a group, consider how you will store it in your result. You might want to append the completed group to your main list of groups once it reaches the required size."
+    },
+    {
+      "content": "Think about edge cases, such as when all people have the same group size or when there are many unique group sizes. Your algorithm should still work correctly in these scenarios."
+    },
+    {
+      "content": "You can use a dictionary to map group sizes to lists of people. This will help you efficiently collect all people belonging to the same group size before forming the final groups."
+    },
+    {
+      "content": "After collecting people into groups based on their sizes, ensure that you return the groups in the correct format. The final output should be a list of groups, where each group is a list of person IDs."
+    },
+    {
+      "content": "Consider how you will handle the iteration through `groupSizes`. You can use a loop to go through each index, and based on the group size, decide when to finalize and store each group."
+    }
+  ],
+  "questionNotes": [
+    "Each person is indexed from 0 to n - 1.",
+    "The value at each index in `groupSizes` indicates the required group size for that person.",
+    "Every person must be included in exactly one group.",
+    "The output should be a list of groups, where each group is a list of person IDs.",
+    "There is guaranteed to be at least one valid solution for the input."
+  ]
+}

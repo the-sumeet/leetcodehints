@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to ensure that every number in the `target` array has at least one multiple in the `nums` array. What does it mean for a number to be a multiple?"
+    },
+    {
+      "content": "Consider how you can transform numbers in `nums` to become multiples of numbers in `target`. Remember that you can only increment the numbers in `nums` by 1 in each operation."
+    },
+    {
+      "content": "Think about how you can identify the multiples of each number in `target`. For a number `t` in `target`, what are the possible multiples that can be formed from numbers in `nums`?"
+    },
+    {
+      "content": "When checking if a number `t` has a multiple in `nums`, what condition must be satisfied? Specifically, how can you determine if a number `n` in `nums` can become a multiple of `t`?"
+    },
+    {
+      "content": "To find the minimum increments needed for a number `n` in `nums` to become a multiple of `t`, you can calculate the difference between the next multiple of `t` and `n`. How would you compute that?"
+    },
+    {
+      "content": "Consider using the modulo operation to find the remainder when `n` is divided by `t`. This can help you determine how far `n` is from the next multiple of `t`."
+    },
+    {
+      "content": "If `n % t == 0`, then `n` is already a multiple of `t`, and no increments are needed. How will you handle this case in your solution?"
+    },
+    {
+      "content": "For each number in `target`, you will need to find the minimum increments required across all numbers in `nums`. How will you keep track of the total number of increments needed for all elements in `target`?"
+    },
+    {
+      "content": "Think about iterating through each element in `target` and for each one, iterating through `nums` to find the minimum increments needed. What data structures might help you keep track of the minimum increments?"
+    },
+    {
+      "content": "Consider edge cases such as when `nums` contains very large numbers compared to `target`. How might this affect your calculations for increments?"
+    },
+    {
+      "content": "You might want to sort `nums` first to optimize the search for the closest multiple. How could sorting help you minimize the number of operations?"
+    },
+    {
+      "content": "As you iterate through `target`, ensure that you are not missing any numbers in `nums` that could potentially become a multiple of the current `target` number."
+    },
+    {
+      "content": "Keep in mind that you need to return the total number of operations. How will you accumulate the results from each target number into a final count?"
+    },
+    {
+      "content": "Make sure to test your solution against the provided examples and edge cases. What are the expected outputs for each case, and how do they validate your approach?"
+    },
+    {
+      "content": "Your final solution should efficiently handle the constraints given in the problem. What is the time complexity of your approach, and how does it scale with the input sizes?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 5 * 10^4, 1 <= target.length <= 4, target.length <= nums.length, 1 <= nums[i], target[i] <= 10^4.",
+    "Ensure that each element in target has at least one multiple in nums.",
+    "You can only increment elements in nums by 1 in each operation.",
+    "Return the total minimum number of operations required."
+  ]
+}

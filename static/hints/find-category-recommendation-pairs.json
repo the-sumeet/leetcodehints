@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationships between the two tables, `ProductPurchases` and `ProductInfo`. Each product in `ProductPurchases` is linked to its category in `ProductInfo` through the `product_id`."
+    },
+    {
+      "content": "You need to find unique customers who purchased products from two different categories. Think about how you can group purchases by `user_id` and then by category."
+    },
+    {
+      "content": "Consider using a JOIN operation to combine the two tables. This will allow you to access both the `user_id` and the `category` for each purchase."
+    },
+    {
+      "content": "When you join the tables, you will have a combined dataset with `user_id`, `category`, and `product_id`. Make sure to filter out duplicate purchases by the same user for the same category."
+    },
+    {
+      "content": "Next, you need to create pairs of categories. To ensure you only get pairs where `category1 < category2`, think about how you can generate combinations of categories."
+    },
+    {
+      "content": "You can use a self-join on the categories to create pairs. Ensure that you apply a condition to maintain the order (i.e., `category1 < category2`)."
+    },
+    {
+      "content": "For each category pair, count the unique customers who have purchased from both categories. You might want to use a GROUP BY clause on the user_id for this."
+    },
+    {
+      "content": "Remember to use the HAVING clause to filter out any category pairs that have fewer than 3 unique customers. This is crucial for meeting the problem's requirements."
+    },
+    {
+      "content": "As you prepare your final result, ensure that you select the columns in the correct order: `category1`, `category2`, and `customer_count`."
+    },
+    {
+      "content": "Pay attention to the sorting requirements: first by `customer_count` in descending order, and then by `category1` and `category2` in ascending order."
+    },
+    {
+      "content": "Consider edge cases, such as when there are categories with no purchases or when all customers purchase from the same category. These cases should not produce any output."
+    },
+    {
+      "content": "Make sure to handle the uniqueness of the pairs correctly. If a user buys from both categories, they should only be counted once per pair."
+    },
+    {
+      "content": "Think about how to efficiently store and retrieve the counts of customers for each category pair. A temporary table or a dictionary might be useful."
+    },
+    {
+      "content": "When implementing your query, ensure that you test it with various datasets to validate that it behaves as expected, especially with edge cases."
+    },
+    {
+      "content": "Finally, remember to format your output correctly. The result should be a table with the specified column names and in the order required by the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Each (user_id, product_id) is unique in ProductPurchases.",
+    "product_id is the unique identifier in ProductInfo.",
+    "A category pair is valid if at least 3 customers purchased from both categories.",
+    "Output must be ordered by customer_count DESC, then category1 ASC, then category2 ASC."
+  ]
+}

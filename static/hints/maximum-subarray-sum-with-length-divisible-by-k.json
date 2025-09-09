@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find a subarray whose length is divisible by `k` and has the maximum sum. Think about how you can iterate through the array to find potential subarrays."
+    },
+    {
+      "content": "Consider using a sliding window approach to efficiently calculate the sums of subarrays. Remember, a subarray is a contiguous part of the array, so you will need to maintain a start and end index."
+    },
+    {
+      "content": "As you iterate through the array, keep track of the current sum of the subarray. When the length of the subarray reaches a multiple of `k`, check if the current sum is greater than your previously recorded maximum sum."
+    },
+    {
+      "content": "Think about how to handle the case where the subarray length is less than `k`. You can simply skip checking those lengths until you reach a valid length."
+    },
+    {
+      "content": "When you find a valid subarray, update your maximum sum if the current sum is greater. Make sure to account for negative numbers, which can affect your sum calculations."
+    },
+    {
+      "content": "You might want to maintain a prefix sum array to help calculate the sum of any subarray in constant time. This can simplify your calculations significantly."
+    },
+    {
+      "content": "Remember to consider edge cases, such as when `k` is equal to the length of the array. In such cases, you will only have one subarray to evaluate."
+    },
+    {
+      "content": "If you are using a prefix sum array, the sum of a subarray from index `i` to `j` can be calculated as `prefix[j] - prefix[i-1]`. Make sure to handle the indices correctly."
+    },
+    {
+      "content": "Consider how you can optimize your approach to avoid recalculating sums unnecessarily. Look for patterns or properties that can help you skip certain calculations."
+    },
+    {
+      "content": "As a final step, ensure that your solution handles all constraints effectively. For instance, consider the maximum and minimum possible values in the array and how they might affect your results."
+    }
+  ],
+  "questionNotes": [
+    "1 <= k <= nums.length <= 2 * 10^5",
+    "-10^9 <= nums[i] <= 10^9",
+    "The subarray length must be divisible by k.",
+    "Subarrays must be contiguous.",
+    "Return the maximum sum found."
+  ]
+}

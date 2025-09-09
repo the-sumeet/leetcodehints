@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the roles of the workers and the tasks they perform. Each worker has specific times for crossing the bridge, picking up boxes, and putting them down. Make sure you carefully track these times for each worker."
+    },
+    {
+      "content": "Consider how to represent the state of the system. You might want to maintain a priority queue for workers on both sides of the bridge to manage who can cross next based on their efficiency."
+    },
+    {
+      "content": "Remember that only one worker can use the bridge at a time. This means you need to manage the timing of each worker's actions carefully, especially when they are on the bridge."
+    },
+    {
+      "content": "Pay attention to the efficiency comparison between workers. If two workers have the same total crossing time, the worker with the lower index is prioritized. Make sure to implement this tie-breaking logic."
+    },
+    {
+      "content": "Begin by simulating the process for a small number of boxes and workers. This will help you understand how the workers interact and the timing of their actions."
+    },
+    {
+      "content": "When a worker picks up a box, they should be marked as busy until they have completed all their tasks. Ensure you track when they finish picking up and when they are ready to cross back."
+    },
+    {
+      "content": "Consider edge cases where there are more boxes than workers. How will you manage the workers effectively to ensure all boxes are moved in the least amount of time?"
+    },
+    {
+      "content": "You might want to maintain a 'current time' variable that updates as each worker completes their tasks. This will help you keep track of when the last box reaches the left warehouse."
+    },
+    {
+      "content": "As workers finish their tasks, they should be added back to the appropriate side of the bridge (left or right) based on whether they need to pick up or put down boxes."
+    },
+    {
+      "content": "Think about how to efficiently manage the transition of workers from the right side back to the left side. You need to ensure that the least efficient worker is prioritized."
+    },
+    {
+      "content": "When implementing the logic for crossing the bridge, ensure that you account for the time it takes to cross, pick up, and put down boxes in the correct order."
+    },
+    {
+      "content": "After all boxes have been picked up, no additional workers should be sent from the left side. This will require careful tracking of how many boxes are left to move."
+    },
+    {
+      "content": "You need to return the time at which the last box reaches the left side, not the time when the last worker puts the box down. Keep this in mind when calculating the final time."
+    },
+    {
+      "content": "Consider using a simulation approach where you step through each minute and update the state of the workers and boxes accordingly. This can help visualize the entire process."
+    },
+    {
+      "content": "Finally, ensure that your code handles all edge cases, such as when all workers are busy or when there are no boxes left to move. This will help prevent errors in your solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n, k <= 10^4; time.length == k; time[i].length == 4; 1 <= left_i, pick_i, right_i, put_i <= 1000",
+    "Return the time at which the last box reaches the left side of the bridge.",
+    "Only one worker can use the bridge at a time.",
+    "Prioritize the least efficient worker based on defined criteria when crossing the bridge.",
+    "If enough workers have been dispatched to pick up all boxes, no more workers should be sent from the left side."
+  ]
+}

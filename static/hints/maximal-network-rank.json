@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to represent the cities and roads. You can use an adjacency list or a simple array to keep track of the number of roads connected to each city."
+    },
+    {
+      "content": "Consider how to calculate the network rank for any two cities. The network rank is the sum of the degrees (number of connections) of both cities, but remember to subtract 1 if there is a direct road between them."
+    },
+    {
+      "content": "You need to iterate through all pairs of cities to calculate their network ranks. Think about using a nested loop to go through each unique pair of cities (i, j) where i < j."
+    },
+    {
+      "content": "Make sure to handle the case where there are no roads. If roads is empty, the maximal network rank should be 0 since there are no connections."
+    },
+    {
+      "content": "To efficiently count the number of roads connected to each city, you can use a frequency array where the index represents the city and the value at that index represents the number of roads connected to that city."
+    },
+    {
+      "content": "As you calculate the network rank for each pair, keep track of the maximum rank found so far. You can initialize a variable to store this maximum value and update it whenever you find a higher rank."
+    },
+    {
+      "content": "Remember to avoid counting the same road twice when calculating the network rank. If cities i and j are directly connected, you need to subtract 1 from the total count of connected roads."
+    },
+    {
+      "content": "Consider edge cases such as when there are only two cities connected by a single road. What would the output be in this case?"
+    },
+    {
+      "content": "When implementing your solution, think about the constraints given. The maximum number of cities is 100, and the maximum number of roads can be n * (n - 1) / 2. This means your solution should be efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Finally, ensure that your function returns an integer representing the maximal network rank. You might want to print or log intermediate values for debugging, but the final output should be clean."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 100",
+    "0 <= roads.length <= n * (n - 1) / 2",
+    "Each roads[i] = [ai, bi] represents a bidirectional road between cities ai and bi.",
+    "ai != bi, and each pair of cities has at most one road connecting them.",
+    "Return the maximal network rank as an integer."
+  ]
+}

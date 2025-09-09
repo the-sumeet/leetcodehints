@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirements for a valid triplet. You need to find indices (i, j, k) such that 0 <= i < j < k < nums.length, and the values at these indices must be distinct."
+    },
+    {
+      "content": "Consider how to iterate through the array to find all possible triplets. You might want to use three nested loops to generate all combinations of (i, j, k) while ensuring the index order is maintained."
+    },
+    {
+      "content": "As you iterate through the indices, check if the values at these indices are distinct. You can use a simple condition: nums[i] != nums[j] && nums[i] != nums[k] && nums[j] != nums[k]."
+    },
+    {
+      "content": "Remember to account for the constraints of the problem. The length of the array is at least 3, so you won't have to handle cases where there are fewer than three elements."
+    },
+    {
+      "content": "Think about the efficiency of your solution. A triple nested loop will have a time complexity of O(n^3), which might be acceptable given the constraint (n <= 100), but consider if there's a more optimal approach."
+    },
+    {
+      "content": "Instead of checking all triplets directly, you could first count the occurrences of each number in the array. This way, you can quickly determine how many distinct numbers are available."
+    },
+    {
+      "content": "Once you have the counts of distinct numbers, think about how you can calculate the number of valid triplets. You can use combinations to choose indices from the distinct numbers."
+    },
+    {
+      "content": "If you have 'd' distinct numbers, the number of ways to choose 3 distinct numbers from them is given by the combination formula C(d, 3). This will give you the count of unique triplets."
+    },
+    {
+      "content": "Make sure to handle cases where there are fewer than 3 distinct numbers. If there are less than 3 distinct values in the array, you should immediately return 0 as there can't be any valid triplets."
+    },
+    {
+      "content": "Finally, implement the logic to count the valid triplets based on the distinct values and their counts. Ensure your final return statement correctly outputs the number of valid triplets."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= nums.length <= 100",
+    "Values: 1 <= nums[i] <= 1000",
+    "Indices must satisfy 0 <= i < j < k < nums.length",
+    "Values at indices must be pairwise distinct: nums[i] != nums[j], nums[i] != nums[k], nums[j] != nums[k]",
+    "Return the count of valid triplets"
+  ]
+}

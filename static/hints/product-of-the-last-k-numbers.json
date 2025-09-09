@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how to store the stream of integers. You might want to use a list or an array to keep track of the numbers added to the stream."
+    },
+    {
+      "content": "Consider how you will handle the product calculation. Remember that multiplying by zero will always result in zero, so think about how to manage zeros in your stream."
+    },
+    {
+      "content": "When implementing the `add(int num)` method, you need to append the number to your storage. Make sure to also handle the case where the number is zero."
+    },
+    {
+      "content": "For the `getProduct(int k)` method, you will need to calculate the product of the last k numbers. Think about how you can efficiently access these numbers from your storage."
+    },
+    {
+      "content": "If you choose to use a list, you can access the last k elements using slicing. However, consider the performance implications of this approach, especially with many calls to `getProduct`."
+    },
+    {
+      "content": "To optimize the `getProduct` method to O(1), think about maintaining a running product and a count of zeros in the last k numbers. This will help you quickly determine the product without recalculating it each time."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the last k numbers contain a zero. The product should be zero if any of those numbers is zero."
+    },
+    {
+      "content": "You might want to maintain an additional structure, like a list of products or a prefix product array, to help with quick product retrieval. This can help avoid recalculating products repeatedly."
+    },
+    {
+      "content": "Consider how you will reset or update your product calculations when a zero is added to the stream. You may need to clear or adjust your product tracking accordingly."
+    },
+    {
+      "content": "Finally, think about how you will implement the logic to ensure that your product calculations stay within the bounds of a 32-bit integer, especially when dealing with larger numbers."
+    }
+  ],
+  "questionNotes": [
+    "The `add(int num)` method appends an integer to the stream.",
+    "The `getProduct(int k)` method returns the product of the last k numbers.",
+    "You can assume that the stream will always contain at least k numbers when `getProduct(k)` is called.",
+    "The product of any contiguous sequence of numbers will fit into a single 32-bit integer.",
+    "Consider how to handle zeros in the stream, as they will affect the product."
+  ]
+}

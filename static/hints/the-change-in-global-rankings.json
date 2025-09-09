@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main components: 'TeamPoints' which contains team information, and 'PointsChange' which shows how many points each team has changed."
+    },
+    {
+      "content": "Consider how you can combine the information from both components. Each team has a unique 'team_id' which can be used to match entries in 'TeamPoints' and 'PointsChange'."
+    },
+    {
+      "content": "Think about how to update the points for each team. You will need to add the 'points_change' from 'PointsChange' to the current 'points' in 'TeamPoints'."
+    },
+    {
+      "content": "When updating points, ensure that you handle the case where a team might not have any points change (i.e., points_change is 0). This means you should still include that team in the final output."
+    },
+    {
+      "content": "After updating the points, you will need to sort the teams based on their new points. Remember that if two teams have the same points, you should maintain the order of their original appearance."
+    },
+    {
+      "content": "Consider what data structure would be best for storing the updated teams. A list of dictionaries could work well, where each dictionary holds the team's 'team_id', 'name', and updated 'points'."
+    },
+    {
+      "content": "As you prepare to output the results, think about the required format. You might need to return a list of teams sorted by their updated points, along with their names and IDs."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as if the input data is empty or if all teams have the same points change. Your solution should still work in these scenarios."
+    },
+    {
+      "content": "To implement the sorting, you can use a sorting function that allows you to specify a key. In Python, for example, you could use `sorted(teams, key=lambda x: x['points'], reverse=True)` to sort by points in descending order."
+    },
+    {
+      "content": "Finally, make sure to test your solution with different test cases, including cases where teams have the same points after the change, to ensure that your sorting is stable."
+    }
+  ],
+  "questionNotes": [
+    "Each team is uniquely identified by 'team_id'.",
+    "The points in 'PointsChange' correspond directly to the 'team_id' in 'TeamPoints'.",
+    "If a team's points change is zero, they should still be included in the output.",
+    "Sorting should maintain the original order for teams with the same points.",
+    "Consider edge cases like empty input or all teams having the same points."
+  ]
+}

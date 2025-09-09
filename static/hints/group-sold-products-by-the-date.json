@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a table with two columns: `sell_date` and `product`. Each row represents a product sold on a specific date, and there may be duplicates."
+    },
+    {
+      "content": "To solve the problem, you need to group the data by `sell_date`. Think about how you can aggregate products sold on the same date. You might want to use a SQL `GROUP BY` clause."
+    },
+    {
+      "content": "When grouping by `sell_date`, consider how to handle the `product` names. You will need to collect unique product names for each date. This might involve using a function to eliminate duplicates."
+    },
+    {
+      "content": "After collecting unique products for each date, remember that the problem requires you to sort these product names lexicographically. Think about how you can achieve this in SQL, possibly using an `ORDER BY` clause."
+    },
+    {
+      "content": "You also need to count the number of unique products sold for each date. This can be done using the `COUNT` function in SQL. Make sure to count only distinct products."
+    },
+    {
+      "content": "Consider how to format the output. The result should include the `sell_date`, the count of unique products (`num_sold`), and a comma-separated list of product names. You may need to use string aggregation functions for this."
+    },
+    {
+      "content": "Pay attention to the order of the result set. The final output must be ordered by `sell_date`. This can be achieved with an `ORDER BY` clause at the end of your query."
+    },
+    {
+      "content": "Be mindful of edge cases, such as dates with no products sold or dates with multiple identical products. Ensure your logic correctly handles these scenarios."
+    },
+    {
+      "content": "Remember that the output format requires specific column names: `sell_date`, `num_sold`, and `products`. Ensure your final query aliases these correctly."
+    },
+    {
+      "content": "To summarize, you need to group by `sell_date`, count distinct products, sort product names, and format the output correctly. Start by writing the SQL query structure and fill in the necessary functions step by step."
+    }
+  ],
+  "questionNotes": [
+    "The table may contain duplicates, so ensure you count distinct products.",
+    "The sold product names must be sorted lexicographically and separated by commas.",
+    "The result must be ordered by `sell_date`.",
+    "There are no primary keys in the table, so expect potential duplicates."
+  ]
+}

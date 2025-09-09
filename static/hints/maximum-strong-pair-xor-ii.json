@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a strong pair. A pair (x, y) is strong if |x - y| <= min(x, y). Think about what this means in terms of the values of x and y."
+    },
+    {
+      "content": "Consider how the condition |x - y| <= min(x, y) restricts the possible pairs. For example, if x = 3 and y = 5, check if they form a strong pair."
+    },
+    {
+      "content": "Remember that you can select the same integer twice to form a pair. This means pairs like (x, x) are valid. Think about how this affects the maximum XOR calculation."
+    },
+    {
+      "content": "To find the maximum XOR, consider using nested loops to evaluate all pairs in the array. However, keep in mind the strong pair condition to filter valid pairs."
+    },
+    {
+      "content": "When calculating the XOR, remember that XORing a number with itself results in 0. This means pairs like (x, x) will not contribute to the maximum XOR."
+    },
+    {
+      "content": "Look at the constraints of the problem. With nums.length up to 50,000, a brute-force O(n^2) solution might be too slow. Think about optimizing your approach."
+    },
+    {
+      "content": "Consider sorting the array first. This might help in efficiently checking the strong pair condition, as adjacent numbers will be closer in value."
+    },
+    {
+      "content": "You can use a two-pointer technique after sorting the array to find valid strong pairs. This can reduce the number of checks you need to make."
+    },
+    {
+      "content": "As you iterate through pairs, maintain a variable to track the maximum XOR found so far. Update this variable whenever you find a valid strong pair."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when all numbers are the same. What will the output be in such cases? Consider how many strong pairs can be formed."
+    },
+    {
+      "content": "Think about how the bitwise XOR operation works. It is beneficial to look for pairs that differ in higher-order bits to maximize the XOR value."
+    },
+    {
+      "content": "When checking pairs, ensure you are correctly applying the strong pair condition. A small mistake here can lead to incorrect results."
+    },
+    {
+      "content": "Consider using a set to store already checked pairs to avoid redundant calculations. This can help improve efficiency."
+    },
+    {
+      "content": "If you encounter a pair that satisfies the strong pair condition, calculate the XOR and check if it's greater than your current maximum. If so, update your maximum."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases such as an array with only one element or an array where all elements are the same."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 5 * 10^4",
+    "1 <= nums[i] <= 2^20 - 1",
+    "You can pick the same integer twice to form a pair.",
+    "Return the maximum XOR value out of all possible strong pairs."
+  ]
+}

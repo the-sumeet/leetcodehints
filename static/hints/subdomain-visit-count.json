@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. Each entry in the `cpdomains` array contains a count and a domain. For example, in '9001 discuss.leetcode.com', '9001' is the count of visits to the domain 'discuss.leetcode.com'."
+    },
+    {
+      "content": "Remember that when a subdomain is visited, all its parent domains are also visited. For instance, if 'discuss.leetcode.com' is visited, then both 'leetcode.com' and 'com' are also implicitly visited."
+    },
+    {
+      "content": "To solve the problem, you'll need to split each entry in `cpdomains` into its count and domain part. Consider using string manipulation methods to achieve this."
+    },
+    {
+      "content": "Once you have the count and the domain, think about how to generate all possible subdomains from a given domain. You can do this by splitting the domain by '.' and iteratively constructing the parent domains."
+    },
+    {
+      "content": "Use a data structure to keep track of the visit counts for each subdomain. A dictionary (or hashmap) would be suitable for this purpose, where the key is the subdomain and the value is the total visit count."
+    },
+    {
+      "content": "As you generate subdomains, make sure to add the visit count from the current entry to the corresponding subdomain in your dictionary. This way, you can accumulate counts for shared parent domains."
+    },
+    {
+      "content": "Consider edge cases where a domain might not have any subdomains, or where multiple entries could contribute to the same subdomain count. Your solution should handle these cases gracefully."
+    },
+    {
+      "content": "After processing all entries in `cpdomains`, you'll need to format your output. Each entry should be in the format 'count subdomain'. Think about how to convert your dictionary back into the required output format."
+    },
+    {
+      "content": "Remember that the order of the output does not matter. You can return the results in any order, so focus on correctly accumulating the counts first."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient, especially since the maximum size of `cpdomains` can be 100. Aim for a time complexity that is manageable within this constraint, ideally O(n) where n is the number of entries."
+    }
+  ],
+  "questionNotes": [
+    "Each entry in cpdomains contains a count and a domain, e.g., 'rep d1.d2.d3'.",
+    "When a domain is visited, all its parent domains are also visited.",
+    "Use a dictionary to accumulate visit counts for each subdomain.",
+    "Output format should be 'count subdomain'.",
+    "The order of the output does not matter.",
+    "Constraints: 1 <= cpdomains.length <= 100, 1 <= cpdomains[i].length <= 100."
+  ]
+}

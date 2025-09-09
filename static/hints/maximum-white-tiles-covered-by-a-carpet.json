@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. Each tile is represented by a pair `[l_i, r_i]`, where `l_i` is the left endpoint and `r_i` is the right endpoint of the tile. This means the tile covers all integers from `l_i` to `r_i`, inclusive."
+    },
+    {
+      "content": "Consider how the carpet can be placed. The carpet has a fixed length `carpetLen`. When you place the carpet starting at position `x`, it will cover all tiles in the range `[x, x + carpetLen - 1]`."
+    },
+    {
+      "content": "Think about how to calculate the number of tiles covered by the carpet when placed at a specific starting point. You can iterate through the tiles and check if they intersect with the carpet's range."
+    },
+    {
+      "content": "Since the tiles are non-overlapping, you can sort the tiles based on their left endpoints. This will make it easier to determine which tiles are covered as you move the carpet across the tiles."
+    },
+    {
+      "content": "Try to maintain a running total of how many white tiles are covered as you slide the carpet from left to right. You can use a two-pointer technique or a sliding window approach to efficiently calculate the covered tiles."
+    },
+    {
+      "content": "When calculating the number of covered tiles, pay attention to the edges of the carpet. If the carpet extends beyond the right endpoint of a tile, you need to adjust your count accordingly."
+    },
+    {
+      "content": "Consider edge cases where the carpet length is greater than the total length of all tiles combined. In such cases, the carpet can cover all tiles, and you should return the total count of white tiles."
+    },
+    {
+      "content": "Remember to account for the possibility of overlapping coverage when the carpet is placed at different starting points. You may need to keep track of the maximum coverage found during your iterations."
+    },
+    {
+      "content": "As you implement your solution, think about how to efficiently check the number of tiles covered for each valid starting position of the carpet. You might want to use a prefix sum array or a similar structure to speed up your calculations."
+    },
+    {
+      "content": "Finally, ensure your solution handles large inputs efficiently. Given the constraints, aim for a solution that runs in O(n log n) time due to sorting, followed by a linear scan to calculate coverage."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= tiles.length <= 5 * 10^4",
+    "Each tile is represented as [l_i, r_i] where 1 <= l_i <= r_i <= 10^9.",
+    "The carpet length is given as carpetLen, with 1 <= carpetLen <= 10^9.",
+    "Tiles are guaranteed to be non-overlapping.",
+    "Return the maximum number of white tiles covered by the carpet."
+  ]
+}

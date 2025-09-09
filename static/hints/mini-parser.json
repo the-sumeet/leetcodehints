@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input string. It can either be a single integer or a nested list represented by brackets. Make sure you can differentiate between these two cases."
+    },
+    {
+      "content": "Consider how you will represent the NestedInteger. You might need a class or a struct that can hold either an integer or a list of NestedInteger objects."
+    },
+    {
+      "content": "Think about how to parse the string. You can iterate through the characters of the string and maintain a stack to handle nested lists. This is especially useful for keeping track of the current context as you encounter brackets."
+    },
+    {
+      "content": "When you encounter a '[', it indicates the start of a new NestedInteger list. You should create a new NestedInteger object and push it onto the stack. When you encounter a ']', pop the top object from the stack and add it to the last NestedInteger on the stack."
+    },
+    {
+      "content": "Handle the integers carefully. When you encounter a digit or a negative sign, you need to extract the entire number until you hit a delimiter like ',', '[', or ']'. Make sure to convert it to an integer before adding it to your NestedInteger."
+    },
+    {
+      "content": "Pay attention to commas. They separate elements in the list. You should only create a new NestedInteger for an integer or a nested list when you encounter a comma after processing a complete number or list."
+    },
+    {
+      "content": "Consider edge cases, such as empty lists represented by '[]'. How will your parser handle this? Ensure that your implementation can gracefully handle such scenarios."
+    },
+    {
+      "content": "Think about how you will return the final NestedInteger. Once you have processed the entire string, the stack should ideally contain one final NestedInteger that represents the entire structure."
+    },
+    {
+      "content": "Make sure to test your parser with various inputs, including deeply nested lists and single integers. This will help you ensure that your logic is robust and can handle the maximum constraints."
+    },
+    {
+      "content": "You are close to the solution! Implement the logic to read from the stack and construct the NestedInteger objects as you parse through the string. Remember to handle the transitions between integers and lists carefully."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 5 * 10^4",
+    "s consists of digits, square brackets '[]', negative sign '-', and commas ','.",
+    "s is the serialization of valid NestedInteger.",
+    "All values in the input are in the range [-10^6, 10^6]."
+  ]
+}

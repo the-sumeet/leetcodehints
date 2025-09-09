@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the total sum of the array. Remember, the goal is to find the maximum sum that is divisible by 3."
+    },
+    {
+      "content": "Consider how the remainder of the total sum when divided by 3 (i.e., sum % 3) affects your ability to find a valid sum. There are three possible remainders: 0, 1, and 2."
+    },
+    {
+      "content": "If the total sum is already divisible by 3 (remainder 0), you can directly return this sum as your answer."
+    },
+    {
+      "content": "If the remainder is 1, you may need to remove either one number with a remainder of 1 or two numbers with a remainder of 2 to make the sum divisible by 3."
+    },
+    {
+      "content": "Similarly, if the remainder is 2, consider removing one number with a remainder of 2 or two numbers with a remainder of 1."
+    },
+    {
+      "content": "To implement this, create lists to keep track of the smallest numbers with remainders 1 and 2. This will help you decide which numbers to remove to achieve the maximum sum."
+    },
+    {
+      "content": "Make sure to handle edge cases where removing numbers might lead to an empty selection. For example, if all numbers are removed, the sum should be 0."
+    },
+    {
+      "content": "When checking for the smallest numbers to remove, ensure you only consider valid options. For example, if there are no numbers with a specific remainder, you cannot remove them."
+    },
+    {
+      "content": "After determining which numbers to remove based on the remainders, subtract their values from the total sum to get the maximum sum that is divisible by 3."
+    },
+    {
+      "content": "Finally, ensure your function handles arrays of various lengths and values correctly, including edge cases like arrays with a single element."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 4 * 10^4",
+    "Constraints: 1 <= nums[i] <= 10^4",
+    "Return 0 if no elements can be selected to form a sum divisible by 3."
+  ]
+}

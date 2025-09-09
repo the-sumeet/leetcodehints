@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, understand what a majority element is. It is the element that appears more than ⌊n / 2⌋ times in the array. For example, in the array [3, 2, 3], the number 3 appears twice, which is more than half of the size of the array (1.5)."
+    },
+    {
+      "content": "Consider how you might count occurrences of each element. A naive approach could involve using a hash map to track counts, but think about how you could optimize both time and space complexity."
+    },
+    {
+      "content": "Remember that the problem guarantees the existence of a majority element. This means you don't need to handle cases where no majority element exists, simplifying your logic."
+    },
+    {
+      "content": "Think about the constraints provided: the size of the array can be up to 50,000, and the values can range from -10^9 to 10^9. This means your solution should be efficient in both time and space."
+    },
+    {
+      "content": "Consider using a voting algorithm. The Boyer-Moore Voting Algorithm is a well-known technique that allows you to find the majority element in linear time and constant space. Can you outline how this algorithm works?"
+    },
+    {
+      "content": "In the Boyer-Moore Voting Algorithm, you maintain a candidate for the majority element and a count. As you iterate through the array, you adjust these based on whether the current element matches the candidate."
+    },
+    {
+      "content": "Make sure to handle the counting correctly. When the count reaches zero, you should switch your candidate to the current element. This is crucial for ensuring that you correctly identify the majority element."
+    },
+    {
+      "content": "As you implement the algorithm, consider edge cases like an array with only one element. What should your function return in this case?"
+    },
+    {
+      "content": "After implementing the counting logic, remember to return the candidate as the majority element. Since the problem guarantees that a majority element always exists, you can return it directly."
+    },
+    {
+      "content": "Finally, review your code for any potential off-by-one errors or logic mistakes. Testing with various inputs, especially edge cases, will help ensure your solution is robust."
+    }
+  ],
+  "questionNotes": [
+    "The majority element appears more than ⌊n / 2⌋ times.",
+    "The majority element is guaranteed to exist in the array.",
+    "Constraints: 1 <= n <= 50,000 and -10^9 <= nums[i] <= 10^9.",
+    "Aim for a linear time solution and O(1) space."
+  ]
+}

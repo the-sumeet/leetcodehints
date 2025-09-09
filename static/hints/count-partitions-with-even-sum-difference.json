@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a partition. A partition is an index `i` that splits the array into two parts: the left subarray from indices `[0, i]` and the right subarray from indices `[i + 1, n - 1]`."
+    },
+    {
+      "content": "To determine if the difference between the sums of the two subarrays is even, consider the mathematical properties of even and odd numbers. Remember that an even number minus an even number or an odd number minus an odd number results in an even number."
+    },
+    {
+      "content": "You can calculate the sum of the left subarray and the right subarray for each possible partition index. To do this efficiently, maintain a running total for the left subarray as you iterate through the possible partition indices."
+    },
+    {
+      "content": "Initialize a variable to store the total sum of the array. As you iterate through the array, subtract the left subarray's sum from the total to get the right subarray's sum."
+    },
+    {
+      "content": "Keep track of the sum of the left subarray as you iterate through the indices. For each partition, calculate the right subarray's sum as `total_sum - left_sum`."
+    },
+    {
+      "content": "After calculating both sums for a partition, check if the difference `left_sum - right_sum` is even. You can simplify this check by using the properties of even and odd sums."
+    },
+    {
+      "content": "Consider edge cases where all elements are even or all are odd. What happens to the sum differences in these cases? This can help you verify your logic."
+    },
+    {
+      "content": "Remember that you only need to count partitions where the difference is even. So, maintain a counter to keep track of how many valid partitions you find."
+    },
+    {
+      "content": "As you implement your solution, consider using a loop that goes from index `0` to `n - 2` to ensure you have non-empty subarrays on both sides of the partition."
+    },
+    {
+      "content": "Finally, ensure that your function returns the count of valid partitions. You can return the counter you maintained throughout your iterations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n == nums.length <= 100",
+    "Array elements: 1 <= nums[i] <= 100",
+    "Partitions must split the array into two non-empty subarrays.",
+    "Return the number of partitions where the sum difference is even."
+  ]
+}

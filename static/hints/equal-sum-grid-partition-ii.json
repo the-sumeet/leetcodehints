@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to make a cut (horizontal or vertical) that divides the grid into two sections with equal sums, or equal sums after potentially discounting one cell."
+    },
+    {
+      "content": "Consider the implications of making a cut. Each section must remain connected after the cut. Think about how you would define a connected section in a grid."
+    },
+    {
+      "content": "Calculate the total sum of the grid. This will help you determine if it's even possible for two sections to have equal sums or be made equal by discounting one cell."
+    },
+    {
+      "content": "When making a horizontal cut, you will split the grid into a top part and a bottom part. How would you compute the sums of these two parts efficiently?"
+    },
+    {
+      "content": "For a vertical cut, the grid splits into a left and a right section. Similarly, think about how to compute the sums for these sections."
+    },
+    {
+      "content": "If the sums of the two sections are equal after a cut, you can immediately return true. Implement this check first before considering discounts."
+    },
+    {
+      "content": "If the sums are not equal, think about how you can discount one cell from either section. You need to check if the adjusted sums can become equal."
+    },
+    {
+      "content": "When discounting a cell, ensure that the remaining cells in that section still form a connected component. How will you verify this connectivity?"
+    },
+    {
+      "content": "Consider edge cases where the grid has minimal dimensions, such as a 1x2 or 2x1 grid. How do these cases affect your approach?"
+    },
+    {
+      "content": "Think about how to efficiently iterate through the grid to compute sums for potential cuts. Prefix sums might be a useful technique here."
+    },
+    {
+      "content": "When checking for discounts, you might want to maintain a list of potential candidates for discounting. How will you keep track of these candidates?"
+    },
+    {
+      "content": "Remember that the discounting can only happen on one cell. If you discount a cell, you need to ensure that the rest of the section remains connected. What data structure could help you manage this?"
+    },
+    {
+      "content": "As you implement your solution, consider the time complexity. Given the constraints, how can you ensure your solution runs efficiently for larger grids?"
+    },
+    {
+      "content": "Before finalizing your solution, test it against various edge cases, especially those with minimal and maximal grid sizes. What results do you expect?"
+    },
+    {
+      "content": "Once you have the sums for both sections after a cut, check if you can adjust them by discounting any cell from either section. What conditions must be met for this adjustment to work?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m == grid.length <= 10^5, 1 <= n == grid[i].length <= 10^5, 2 <= m * n <= 10^5, 1 <= grid[i][j] <= 10^5",
+    "Each section formed by the cut must be non-empty and connected.",
+    "You can discount at most one single cell from either section.",
+    "Return true if a valid partition exists, otherwise return false."
+  ]
+}

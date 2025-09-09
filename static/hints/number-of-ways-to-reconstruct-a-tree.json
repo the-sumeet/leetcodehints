@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. A rooted tree has one root node, and every other node is connected to it directly or indirectly. Think about how the pairs represent relationships between nodes."
+    },
+    {
+      "content": "Notice that the pairs are given in the format [x, y] where x < y. This means that x is always a potential ancestor of y. How does this affect the possible tree structures?"
+    },
+    {
+      "content": "Consider how to represent the relationships from the pairs. A directed graph could be a good way to visualize the ancestor-descendant relationships."
+    },
+    {
+      "content": "Count the in-degrees of each node. A node with an in-degree of 0 could potentially be the root of the tree. How many nodes have an in-degree of 0?"
+    },
+    {
+      "content": "If there are more than one node with an in-degree of 0, it is impossible to form a single rooted tree. What would you return in that case?"
+    },
+    {
+      "content": "If you find exactly one node with an in-degree of 0, this node can be your root. Now, think about how to build the tree from the remaining nodes."
+    },
+    {
+      "content": "For each pair in the array, consider how you can determine the possible parent-child relationships. What conditions must hold for a valid tree structure?"
+    },
+    {
+      "content": "Check for cycles in the relationships. If any cycles exist, it would be impossible to form a valid tree. How would you detect cycles in a directed graph?"
+    },
+    {
+      "content": "Think about how to count the number of valid rooted trees. If you can form multiple valid configurations, how will you keep track of the different parent assignments?"
+    },
+    {
+      "content": "Consider using Depth-First Search (DFS) or Breadth-First Search (BFS) to explore the tree structures. What would be the base case for your search?"
+    },
+    {
+      "content": "Pay attention to the constraints: the number of pairs can be up to 100,000. How can you ensure that your solution is efficient enough to handle the upper limits?"
+    },
+    {
+      "content": "Remember that the output should be 0 if there are no valid trees, 1 if there is exactly one, and 2 if there are multiple valid trees. How will you structure your final return statement?"
+    },
+    {
+      "content": "Think about edge cases, such as when the pairs form a straight line or when they create a star-like structure. How would these configurations affect your count of valid trees?"
+    },
+    {
+      "content": "As you build potential trees, consider how to handle nodes that may have multiple parents. What rules will you apply to ensure a valid tree structure?"
+    },
+    {
+      "content": "Finally, consider how to implement your solution. You might need to maintain a count of valid configurations as you explore the tree. What data structures will help you manage this?"
+    }
+  ],
+  "questionNotes": [
+    "The input pairs are unique and represent directed relationships.",
+    "Each pair [x, y] indicates x < y, meaning x is a possible ancestor of y.",
+    "A rooted tree must have exactly one node with an in-degree of 0.",
+    "Return 0 if no valid trees, 1 if exactly one valid tree, and 2 if multiple valid trees."
+  ]
+}

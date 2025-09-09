@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the stability of bricks. A brick is stable if it is connected to the top of the grid or adjacent to another stable brick. Think about how you can determine if a brick is stable after a hit."
+    },
+    {
+      "content": "Consider how to represent the grid and the hits. You might want to create a function that can apply a hit to the grid and check the stability of the bricks afterward."
+    },
+    {
+      "content": "When you apply a hit, remember that it might not always hit a brick. Make sure to handle cases where the hit is on an empty cell (0)."
+    },
+    {
+      "content": "After applying a hit, you need a way to identify which bricks are no longer stable. You can use depth-first search (DFS) or breadth-first search (BFS) to explore the grid."
+    },
+    {
+      "content": "Think about how to efficiently check which bricks are stable after a hit. You might want to maintain a list of stable bricks to help with this."
+    },
+    {
+      "content": "Remember that once a brick falls, it is immediately erased from the grid. This means you'll need to update the grid state after each hit before checking for stability."
+    },
+    {
+      "content": "Consider creating a helper function that checks the stability of a brick based on the current state of the grid. This function can be called after each hit."
+    },
+    {
+      "content": "You should also consider the order of hits. The results depend on the sequence of hits applied, so make sure to process them in the given order."
+    },
+    {
+      "content": "When counting the number of bricks that fall after each hit, ensure you are only counting the bricks that become unstable due to that specific hit."
+    },
+    {
+      "content": "Think about edge cases, such as hitting an already empty cell or hitting a brick that is stable. How should these cases affect the output?"
+    },
+    {
+      "content": "You might want to reverse the order of hits when processing them. Instead of applying them directly, you can first mark the hits and then simulate the state of the grid after all hits."
+    },
+    {
+      "content": "After reversing the hits, you can iterate through the grid to restore the bricks that were hit and then check for stability starting from the top row."
+    },
+    {
+      "content": "Consider using a union-find data structure to manage the stability of bricks efficiently. This can help you quickly union stable bricks and check their connections."
+    },
+    {
+      "content": "When checking for stability, remember to check not just the top connection but also the four adjacent cells. You may want to implement a function that checks all four directions."
+    },
+    {
+      "content": "Finally, ensure your result array is constructed correctly. Each entry should correspond to the number of bricks that fell after each hit, in the same order as the hits were processed."
+    }
+  ],
+  "questionNotes": [
+    "Grid dimensions: m == grid.length, n == grid[i].length",
+    "Grid values: grid[i][j] is 0 or 1",
+    "Hits length: 1 <= hits.length <= 4 * 10^4",
+    "Unique hits: All (x_i, y_i) are unique",
+    "Return format: An array where each result[i] is the number of bricks that fall after the i-th erasure."
+  ]
+}

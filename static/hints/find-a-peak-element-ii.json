@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a peak element is in the context of a 2D grid. A peak element is greater than its adjacent neighbors (up, down, left, right). Make sure to consider the boundaries of the grid."
+    },
+    {
+      "content": "Consider how you might traverse the matrix. A common approach is to use a binary search-like method. Think about how you can reduce the search space in each step."
+    },
+    {
+      "content": "You can focus on a specific row or column during your search. For instance, if you pick a column, you can find the maximum element in that column and check its neighbors to determine if it's a peak."
+    },
+    {
+      "content": "When checking neighbors, remember that the matrix is surrounded by an outer perimeter with -1. This means that if you reach the edge of the matrix, you can safely assume that the out-of-bound neighbors are less than the peak candidate."
+    },
+    {
+      "content": "Think about how to implement the binary search. You can repeatedly select the middle element of a row or column and compare it with its neighbors to decide which direction to search next."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the matrix has only one row or one column. In these cases, the peak can only be the maximum element of that row or column."
+    },
+    {
+      "content": "When you find a maximum in a column, check its neighbors. If the maximum is greater than its neighbors, you've found a peak. If not, move in the direction of the neighbor that is greater."
+    },
+    {
+      "content": "Keep track of the indices of the peak as you narrow down your search. Ensure that your solution adheres to the O(m log(n)) or O(n log(m)) time complexity requirement."
+    },
+    {
+      "content": "Remember that the output format requires you to return the indices of the peak element as a length-2 array. Ensure your final implementation returns the correct format."
+    },
+    {
+      "content": "Consider testing your solution with various matrix sizes, including edge cases like 1x1, 1xN, and Mx1 matrices, to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "A peak element is strictly greater than its adjacent neighbors (up, down, left, right).",
+    "The matrix is surrounded by an outer perimeter with value -1.",
+    "You must find any peak element and return its indices as a length-2 array [i,j].",
+    "The algorithm should run in O(m log(n)) or O(n log(m)) time complexity.",
+    "Constraints: 1 <= m, n <= 500 and 1 <= mat[i][j] <= 10^5."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input structure. You have two arrays: one for messages and one for senders. Each index corresponds to a message and its sender."
+    },
+    {
+      "content": "Consider how to count the words in each message. You can split each message string by spaces to get the individual words. For example, `message.split(' ')` will give you an array of words."
+    },
+    {
+      "content": "Create a way to keep track of the total word count for each sender. A dictionary (or hash map) can be useful here, where the keys are sender names and the values are their corresponding total word counts."
+    },
+    {
+      "content": "As you iterate through the messages, update the word count for each sender. Remember to add the number of words in each message to the count of the corresponding sender."
+    },
+    {
+      "content": "After calculating the total word counts, you need to determine which sender has the highest count. Consider using a loop to compare the counts stored in your dictionary."
+    },
+    {
+      "content": "Don't forget about tie-breaking! If multiple senders have the same word count, you need to return the sender with the lexicographically larger name. You can compare strings directly in Python."
+    },
+    {
+      "content": "When comparing sender names, remember that uppercase letters come before lowercase letters in lexicographical order. This means 'Alice' is greater than 'alice'."
+    },
+    {
+      "content": "Think about edge cases, such as when there's only one message or when all senders have the same word count. How will your logic handle these scenarios?"
+    },
+    {
+      "content": "You may want to keep track of both the maximum word count and the corresponding sender as you iterate through your dictionary. This way, you can easily update both values when you find a new maximum."
+    },
+    {
+      "content": "Finally, ensure your function returns the correct sender name as a string. You should have a clear return statement that outputs the sender with the largest word count, considering all the rules discussed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == messages.length == senders.length",
+    "1 <= n <= 10^4",
+    "1 <= messages[i].length <= 100",
+    "1 <= senders[i].length <= 10",
+    "Messages do not have leading or trailing spaces.",
+    "All words in messages[i] are separated by a single space.",
+    "Senders are unique in terms of names but may have the same word count."
+  ]
+}

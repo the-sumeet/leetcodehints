@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a 'good' subarray. A good subarray contains exactly 'k' different integers. Make sure you can identify what constitutes a different integer in the context of the array."
+    },
+    {
+      "content": "Consider how you can find all possible subarrays of the given array. Remember that a subarray is a contiguous segment of the array. Think about how you would iterate through the array to generate these segments."
+    },
+    {
+      "content": "Think about using a sliding window approach to efficiently count the number of different integers in the current subarray. This can help reduce the time complexity compared to checking every possible subarray."
+    },
+    {
+      "content": "In the sliding window technique, maintain two pointers (left and right) to represent the current subarray. The right pointer expands the window, while the left pointer contracts it when necessary."
+    },
+    {
+      "content": "You will need a way to count the unique integers in the current window. Consider using a hash map (or dictionary) to keep track of the frequency of each integer within the window."
+    },
+    {
+      "content": "As you expand the right pointer, update the count of the integer at that position in your hash map. If the count of unique integers exceeds 'k', move the left pointer to reduce the count."
+    },
+    {
+      "content": "When the count of unique integers is exactly 'k', you have found a good subarray. Think about how you can count all valid subarrays that can be formed from this state."
+    },
+    {
+      "content": "When you find a good subarray, consider how many subarrays can be formed by moving the left pointer while keeping the right pointer fixed. This can help you count multiple good subarrays efficiently."
+    },
+    {
+      "content": "You may also want to consider edge cases, such as when 'k' is greater than the number of unique integers in the array. How should your function behave in such cases?"
+    },
+    {
+      "content": "To optimize your solution, think about how you can avoid recounting subarrays. Perhaps maintain a count of how many times you've seen each unique integer and adjust your counts accordingly."
+    },
+    {
+      "content": "Remember to handle cases where the array has fewer than 'k' unique integers. In such cases, the result should be zero."
+    },
+    {
+      "content": "As you implement your solution, make sure to test it with various input cases, including edge cases like an empty array or an array with all identical elements."
+    },
+    {
+      "content": "Consider the time complexity of your approach. A naive solution that checks all subarrays might be too slow. Aim for a solution that runs in linear time or close to it."
+    },
+    {
+      "content": "You might find it useful to create a helper function that counts the number of subarrays with at most 'k' unique integers. This can simplify your main logic."
+    },
+    {
+      "content": "Finally, think about how you can use the helper function to derive the count of good subarrays with exactly 'k' unique integers. This might involve calculating the difference between counts of at most 'k' and at most 'k-1'."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 2 * 10^4",
+    "Constraints: 1 <= nums[i], k <= nums.length",
+    "A subarray is a contiguous part of an array.",
+    "A good subarray has exactly 'k' different integers."
+  ]
+}

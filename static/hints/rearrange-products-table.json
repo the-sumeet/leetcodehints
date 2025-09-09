@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Products table. Each row contains a product's ID and its prices in three different stores. Your goal is to transform this structure into a more normalized format."
+    },
+    {
+      "content": "Think about how you can represent the relationship between product IDs, stores, and prices. You will need to create a new row for each combination of product ID and store where a price exists."
+    },
+    {
+      "content": "Consider using a method to iterate through each product's prices. You can check each store's price to see if it is not null before adding it to your result set."
+    },
+    {
+      "content": "Remember that SQL provides functions to handle null values. You can use a WHERE clause to filter out any rows where the price is null."
+    },
+    {
+      "content": "You may want to use the UNION ALL operator to combine results from different stores into a single result set. Think about how you can structure your SELECT statements for each store."
+    },
+    {
+      "content": "Make sure to include the product_id in each of your SELECT statements. This will be essential for identifying which product each price belongs to in your final output."
+    },
+    {
+      "content": "Consider how to label the store in your output. You will need to have a column that indicates which store each price corresponds to, such as 'store1', 'store2', or 'store3'."
+    },
+    {
+      "content": "Think about the final format of your result. You need to ensure that the output matches the required structure: (product_id, store, price). Pay attention to the order of columns."
+    },
+    {
+      "content": "Don't forget about edge cases! Consider what should happen if a product has no prices at all. In such cases, that product should not appear in the final result."
+    },
+    {
+      "content": "Now, try to piece everything together. You can start by writing individual SELECT statements for each store and then combine them using UNION ALL. Ensure you handle null prices correctly."
+    }
+  ],
+  "questionNotes": [
+    "product_id is the primary key and must be included in the output.",
+    "Only include rows where the price is not null.",
+    "The output should have the format (product_id, store, price).",
+    "The order of the result does not matter."
+  ]
+}

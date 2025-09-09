@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. Each node can be represented as a vertex, and the edges define the connections between these vertices. Remember that the tree is undirected and rooted at node 0."
+    },
+    {
+      "content": "Familiarize yourself with the concept of subtree inversion. When you invert a node, all values in its subtree are multiplied by -1. Consider how this affects the sum of the tree's values."
+    },
+    {
+      "content": "Identify the importance of the distance constraint on inversions. If you invert a node, you cannot invert its ancestor or descendant nodes unless they are at least 'k' edges apart."
+    },
+    {
+      "content": "Think about how to represent the tree in code. A common approach is to use an adjacency list. For example, if you have edges like [[0,1], [0,2]], you can create a list where node 0 points to nodes 1 and 2."
+    },
+    {
+      "content": "Consider how to traverse the tree to calculate the sum of values. A Depth-First Search (DFS) or Breadth-First Search (BFS) can help you explore each node and its subtree efficiently."
+    },
+    {
+      "content": "When performing the inversion operation, keep track of which nodes have been inverted. You can use a boolean array to mark these nodes and ensure you respect the distance constraint."
+    },
+    {
+      "content": "Explore whether you can use dynamic programming to store intermediate results. For example, you might want to keep track of the maximum sum obtainable from each subtree."
+    },
+    {
+      "content": "Think about the implications of inverting a node on its parent and children. If you invert a node, you may need to adjust the sums of its ancestors and descendants accordingly."
+    },
+    {
+      "content": "Consider edge cases where 'k' is larger than the height of the tree. In such cases, you may only be able to invert the root or not invert any nodes at all."
+    },
+    {
+      "content": "Remember to handle negative values in the nums array. Inverting a negative value will make it positive, which could significantly increase the overall sum."
+    },
+    {
+      "content": "You might want to explore all possible combinations of nodes to invert, but be cautious of the exponential growth of combinations. Think about pruning strategies based on the distance constraint."
+    },
+    {
+      "content": "Consider using memoization to avoid recalculating the maximum sum for the same subtree configurations. This can greatly enhance the efficiency of your solution."
+    },
+    {
+      "content": "As you build your solution, test it with smaller trees first. This will help you validate your approach and ensure that you are correctly implementing the inversion logic."
+    },
+    {
+      "content": "When you think you have a working solution, analyze its time complexity. The constraints allow for up to 50,000 nodes, so ensure your approach is efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Finally, think about how to return the result. You need to return the maximum possible sum after applying the inversion operations, so ensure your final calculation reflects this."
+    }
+  ],
+  "questionNotes": [
+    "The tree is undirected and rooted at node 0.",
+    "You can only invert nodes that are sufficiently far apart, specifically at least 'k' edges apart.",
+    "The input edges represent a valid tree structure.",
+    "The nums array contains values that can be negative, and inverting them will change their sign.",
+    "Constraints: 2 <= n <= 50,000; 1 <= k <= 50."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how changing values in the array affects the sum. When you replace values larger than a certain threshold with that threshold, the overall sum decreases. Think about how this can help you approach the target."
+    },
+    {
+      "content": "Consider the relationship between the target sum and the maximum value in the array. If the target is greater than the sum of the array, what does that imply about your threshold value?"
+    },
+    {
+      "content": "Identify the maximum value in the array. This will help you define the upper limit for your threshold. Any value you choose as a threshold cannot exceed this maximum."
+    },
+    {
+      "content": "When you choose a threshold value, all elements in the array greater than this value will be capped at this threshold. Think about how to calculate the new sum efficiently."
+    },
+    {
+      "content": "To find the best threshold, consider iterating through potential threshold values. You can start from 0 up to the maximum value in the array. For each threshold, compute the sum of the modified array."
+    },
+    {
+      "content": "As you compute the modified sums, keep track of the closest sum to the target. Use a variable to store the minimum absolute difference between the computed sum and the target."
+    },
+    {
+      "content": "In case of a tie (when two threshold values give you the same absolute difference from the target), remember to return the smaller threshold. This is crucial for meeting the problem's requirements."
+    },
+    {
+      "content": "Think about optimizing your approach. Instead of checking every integer up to the maximum value, consider using the unique values from the array itself as potential thresholds. This reduces unnecessary calculations."
+    },
+    {
+      "content": "When calculating the modified sum for a given threshold, you can use a loop to iterate through the array. For each element, check if it exceeds the threshold and adjust the sum accordingly."
+    },
+    {
+      "content": "Finally, ensure your solution handles edge cases, such as when all elements are smaller than the target or when the target is very large. What should your function return in these scenarios?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 10^4, 1 <= arr[i], target <= 10^5.",
+    "The answer is not necessarily a number from arr; it can be any integer.",
+    "In case of a tie in absolute difference, return the minimum threshold.",
+    "The output should be a single integer value."
+  ]
+}

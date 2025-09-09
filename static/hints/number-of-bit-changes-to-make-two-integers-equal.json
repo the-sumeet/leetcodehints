@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the binary representation of both integers. Convert both `n` and `k` to their binary forms. This will help you visualize which bits need to change."
+    },
+    {
+      "content": "Next, identify the bits that are different between `n` and `k`. You can do this by performing a bitwise XOR operation: `n ^ k`. The result will highlight the bits that differ."
+    },
+    {
+      "content": "Count the number of bits that are set to 1 in the result of the XOR operation. This count represents the total bit differences between `n` and `k`."
+    },
+    {
+      "content": "Remember that you can only change bits in `n` that are currently set to 1. Therefore, check if the number of 1s in `k` is greater than the number of 1s in `n`. If it is, return -1 as it's impossible to make `n` equal to `k`."
+    },
+    {
+      "content": "For each bit in `k` that is set to 1, you need a corresponding 1 in `n`. If `n` has fewer 1s than `k`, you cannot achieve equality."
+    },
+    {
+      "content": "Consider edge cases where `n` and `k` are equal. If they are the same, you should immediately return 0, as no changes are needed."
+    },
+    {
+      "content": "Make sure to handle cases where `n` has bits set to 1 that are not needed in `k`. You will need to count how many of these excess 1s can be changed to 0."
+    },
+    {
+      "content": "To summarize the changes needed: you will need to count the number of 1s in `n` that can be turned off and ensure that this count is sufficient to match the 1s in `k`."
+    },
+    {
+      "content": "Think about how you will implement the counting of bits. You can use a loop or a built-in function to count the number of 1s in the binary representation."
+    },
+    {
+      "content": "Finally, after counting the necessary changes, return the total number of changes needed to make `n` equal to `k`. If any conditions for impossibility are met, return -1."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n, k <= 10^6",
+    "You can only change bits in `n` that are currently set to 1.",
+    "Return -1 if it's impossible to make `n` equal to `k`."
+  ]
+}

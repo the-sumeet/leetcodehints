@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `logs` array. Each entry contains an employee's ID and the time they finished their task. You will need to calculate how long each task took based on the leave times."
+    },
+    {
+      "content": "Remember that the first task starts at time 0. For each subsequent task, the start time is the leave time of the previous task. Keep track of the start and end times to calculate the duration of each task."
+    },
+    {
+      "content": "As you iterate through the `logs`, maintain a variable to store the previous leave time. This will help you compute the duration of the current task by subtracting the previous leave time from the current leave time."
+    },
+    {
+      "content": "You will need to store the maximum duration found so far and the corresponding employee ID. If you find a new maximum duration, update both the duration and the employee ID."
+    },
+    {
+      "content": "Be careful with ties! If two employees have the same maximum duration, you should return the employee with the smallest ID. Consider how you will handle this condition in your comparisons."
+    },
+    {
+      "content": "Think about initializing a dictionary or an array to keep track of the total time each employee has worked. This will help you sum up the durations for each employee as you process the logs."
+    },
+    {
+      "content": "Make sure to account for the constraints given in the problem. The number of employees and logs will not exceed 500, and the leave times are unique and sorted, which simplifies your logic."
+    },
+    {
+      "content": "When calculating the duration of each task, remember to handle the case where the task starts immediately after the previous one ends. This is crucial for accurate duration calculation."
+    },
+    {
+      "content": "After processing all logs, you will need to iterate through your stored durations to find the maximum. Ensure that your final check for the maximum duration also considers the smallest ID in case of ties."
+    },
+    {
+      "content": "Finally, once you've identified the employee ID with the longest task duration, make sure to return it correctly as specified in the problem statement. Double-check the return format to avoid any mistakes."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 500, 1 <= logs.length <= 500",
+    "Each logs[i] contains a unique id and unique leaveTime.",
+    "Leave times are sorted in strictly increasing order.",
+    "If there is a tie in task duration, return the smallest employee ID."
+  ]
+}

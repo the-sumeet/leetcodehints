@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. You can represent it using an adjacency list. Each node connects to its children, and you can traverse this structure using Depth-First Search (DFS) or Breadth-First Search (BFS)."
+    },
+    {
+      "content": "Remember that the tree is rooted at node 0. This means that when you traverse from any node to its ancestors, you will always be moving towards node 0. Think about how you can keep track of the path taken."
+    },
+    {
+      "content": "The problem requires checking coprimality between the values of nodes. Recall that two numbers are coprime if their greatest common divisor (GCD) is 1. You can use the built-in GCD function in many programming languages to simplify this check."
+    },
+    {
+      "content": "As you traverse the tree, maintain a list or stack of ancestor values. This will help you check the coprimality condition against each ancestor as you move up the tree."
+    },
+    {
+      "content": "Consider the base case for the root node (node 0). Since it has no ancestors, the answer for this node should be -1. Make sure to handle this case in your implementation."
+    },
+    {
+      "content": "When checking ancestors for a given node, you should start from the immediate parent and move upwards. This way, you can find the closest ancestor that meets the coprimality condition."
+    },
+    {
+      "content": "Think about how to efficiently store and access the values of ancestors. You might want to use a set or a list to keep track of unique ancestor values you've encountered during the traversal."
+    },
+    {
+      "content": "Since the maximum value for nums[i] is 50, consider precomputing the GCD values for all pairs of numbers in this range. This will speed up your coprimality checks during the ancestor traversal."
+    },
+    {
+      "content": "When you find a coprime ancestor, you should immediately record that ancestor as the answer for the current node and stop checking further ancestors. This ensures you get the closest one."
+    },
+    {
+      "content": "Make sure to handle cases where a node has multiple ancestors that could be coprime. You should always return the closest one, so be careful with your traversal order."
+    },
+    {
+      "content": "Consider edge cases, such as when all nodes have the same value. In this case, no node will have a coprime ancestor, and you should return -1 for all nodes except the root."
+    },
+    {
+      "content": "As you implement your function, consider using recursion for the DFS approach. This can help simplify the traversal logic and make it easier to manage the ancestor stack."
+    },
+    {
+      "content": "To ensure that you are checking the correct ancestors, you can pass the current path of ancestor values as a parameter in your recursive DFS function."
+    },
+    {
+      "content": "Remember to initialize your answer array with -1 for all nodes before starting the traversal. This will help you avoid uninitialized values in your final output."
+    },
+    {
+      "content": "Finally, test your solution with edge cases and the provided examples to ensure it behaves as expected. Pay attention to the order of ancestors and the coprimality checks."
+    }
+  ],
+  "questionNotes": [
+    "The tree is a connected, undirected graph with n nodes and n - 1 edges.",
+    "Node values are indexed from 0 to n - 1, and nums[i] represents the value of node i.",
+    "Two values are coprime if gcd(x, y) == 1.",
+    "The output array ans should contain the closest coprime ancestor for each node or -1 if none exists.",
+    "Node 0 is the root and has no ancestors."
+  ]
+}

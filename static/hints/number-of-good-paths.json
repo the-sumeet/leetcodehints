@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. A tree is a connected graph with no cycles, which means there is exactly one path between any two nodes. This property will be crucial for finding good paths."
+    },
+    {
+      "content": "Focus on the definition of a good path. Remember, a good path starts and ends at nodes with the same value, and all intermediate nodes must have values less than or equal to the starting node's value."
+    },
+    {
+      "content": "Consider how to represent the tree using the given edges. You can use an adjacency list to store the connections between nodes. This will help you traverse the tree easily."
+    },
+    {
+      "content": "Think about how to traverse the tree. Depth-first search (DFS) or breadth-first search (BFS) are both suitable methods to explore all paths from a given starting node."
+    },
+    {
+      "content": "When traversing, keep track of the current node's value. If you encounter a node with a value greater than the starting node's value, you should stop exploring that path further."
+    },
+    {
+      "content": "Remember that single nodes count as good paths. This means that for every node, you can initially count it as one good path."
+    },
+    {
+      "content": "You need to consider paths that connect multiple nodes. When you find a valid path, ensure that it starts and ends with nodes of the same value."
+    },
+    {
+      "content": "To avoid counting the same path multiple times, ensure that you only consider paths in one direction, or use a set to track visited paths."
+    },
+    {
+      "content": "Think about how to group nodes by their values. You can create a mapping from each value to the list of nodes that have that value. This will help you efficiently find potential starting and ending nodes for good paths."
+    },
+    {
+      "content": "While exploring paths, maintain a count of how many nodes you encounter that have the same value as the starting node. This will help you calculate the number of good paths that can be formed."
+    },
+    {
+      "content": "Consider edge cases such as when all nodes have the same value or when the tree is very small (like just one node). How do these cases affect your counting of good paths?"
+    },
+    {
+      "content": "When you find a good path, consider the number of ways to choose pairs of nodes that can form good paths. For example, if there are three nodes with the same value, you can form multiple paths among them."
+    },
+    {
+      "content": "As you implement your solution, keep track of the total count of good paths. Remember to include both single-node paths and paths that connect multiple nodes."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases and ensure that it handles the maximum constraints efficiently. Pay attention to the performance of your traversal method."
+    },
+    {
+      "content": "Finally, think about how to structure your final return statement. You should return the total count of good paths you have found throughout your traversal."
+    }
+  ],
+  "questionNotes": [
+    "The tree is defined by n nodes and n-1 edges, ensuring connectivity.",
+    "A good path must start and end with nodes of the same value.",
+    "All intermediate nodes on the path must have values <= the starting node's value.",
+    "Single nodes are considered valid good paths.",
+    "Return the total count of distinct good paths, including single-node paths."
+  ]
+}

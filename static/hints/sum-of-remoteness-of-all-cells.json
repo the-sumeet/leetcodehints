@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of 'remoteness' in the context of the grid. It refers to the sum of distances from each cell to all other cells that are not blocked (i.e., cells with value -1)."
+    },
+    {
+      "content": "Consider how to represent the grid in code. You can use a 2D list (array) to represent the grid and iterate through each cell to calculate its remoteness."
+    },
+    {
+      "content": "When calculating distances, remember that you can use Manhattan distance for cells in a grid. The formula is: `distance = |x1 - x2| + |y1 - y2|` where `(x1, y1)` and `(x2, y2)` are the coordinates of two cells."
+    },
+    {
+      "content": "Think about how to handle cells with value -1. You should skip these cells when calculating the remoteness for other cells, as they are considered blocked."
+    },
+    {
+      "content": "Before diving into the main logic, check if the grid has any valid cells (non -1). If all cells are blocked, the result should be zero since there are no distances to calculate."
+    },
+    {
+      "content": "As you iterate through each cell, maintain a sum that accumulates the remoteness. Make sure to reset this sum for each cell being evaluated."
+    },
+    {
+      "content": "Consider edge cases, such as grids that are entirely blocked or grids with only one cell. How will your solution handle these scenarios?"
+    },
+    {
+      "content": "You might want to create a helper function to calculate the remoteness of a single cell. This function can take the current cell's coordinates and the grid as input."
+    },
+    {
+      "content": "When calculating the remoteness for a cell, use nested loops to iterate through all other cells in the grid. For each valid cell, compute the distance and add it to the remoteness sum for the current cell."
+    },
+    {
+      "content": "Finally, remember to return the total sum of remoteness for all cells after processing the entire grid. Ensure your return type matches the expected output format, which is typically an integer."
+    }
+  ],
+  "questionNotes": [
+    "The grid can contain negative values (-1) which represent blocked cells.",
+    "You need to compute the sum of distances for all non-blocked cells.",
+    "The output should be a single integer representing the total remoteness.",
+    "Consider edge cases like empty grids or grids with only blocked cells."
+  ]
+}

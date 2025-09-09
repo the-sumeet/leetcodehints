@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. You have a number of nodes, edges represented as a list of lists, and three integers: K (the maximum number of hops), the starting node, and the destination node."
+    },
+    {
+      "content": "Think about how you can represent the graph. An adjacency list or a matrix could be useful. Each edge contains a source, destination, and weight, which you will need to consider when calculating paths."
+    },
+    {
+      "content": "Consider the implications of K hops. This means you can take up to K edges to reach the destination. What happens if K is 0? Make sure to handle this edge case."
+    },
+    {
+      "content": "You might want to explore using a graph traversal algorithm. Depth-First Search (DFS) or Breadth-First Search (BFS) could be starting points, but think about how to limit the number of hops."
+    },
+    {
+      "content": "When traversing the graph, keep track of the current node, the number of hops taken, and the total cost to reach that node. This will help you determine if you can continue or if you've reached your destination."
+    },
+    {
+      "content": "What data structure will you use to store the shortest path found so far? A priority queue could be useful to always expand the least costly path first."
+    },
+    {
+      "content": "As you explore paths, ensure you are not revisiting nodes unnecessarily. You may want to maintain a visited set or array that tracks the number of hops taken to reach each node."
+    },
+    {
+      "content": "Think about how you will handle ties in path costs. If two paths to the same node have the same cost, how will you decide which one to keep? You might need to keep track of the number of hops as well."
+    },
+    {
+      "content": "Make sure to check if the destination node is reachable within the given K hops. If not, you should return a specific value, such as -1, to indicate that the destination cannot be reached."
+    },
+    {
+      "content": "Consider edge cases, such as when the graph has no edges or when the starting node is the same as the destination node. What should your function return in these scenarios?"
+    },
+    {
+      "content": "When implementing your algorithm, ensure that you are correctly accumulating the total cost of each path as you explore. You will need to compare these costs to find the shortest path."
+    },
+    {
+      "content": "As you implement your solution, test it with the provided examples to ensure it behaves as expected. Pay close attention to the output format and ensure you return the correct value."
+    },
+    {
+      "content": "If you find that your algorithm is not performing well, consider optimizing it. Are there unnecessary calculations or checks that can be avoided?"
+    },
+    {
+      "content": "Once you have a working solution, think about the time complexity of your approach. Can it handle larger graphs efficiently? If not, what changes could you make?"
+    },
+    {
+      "content": "Finally, ensure that your function is robust and handles all edge cases gracefully. Review your code for any potential bugs or missed scenarios before finalizing."
+    }
+  ],
+  "questionNotes": [
+    "Graph is represented as a list of edges: [[source, destination, weight], ...]",
+    "K is the maximum number of hops allowed.",
+    "Return -1 if the destination cannot be reached within K hops.",
+    "Consider unique paths and costs; handle ties appropriately."
+  ]
+}

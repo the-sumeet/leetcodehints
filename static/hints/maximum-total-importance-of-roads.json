@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the importance of a road. The importance is the sum of the assigned values of the two cities it connects. This means that the higher the values assigned to the cities, the higher the importance of the roads connecting them."
+    },
+    {
+      "content": "Consider how to assign values to the cities. Each city must be assigned a unique integer from 1 to n. Think about how the connections (roads) between cities can affect the total importance based on the values assigned."
+    },
+    {
+      "content": "Notice that the number of roads can vary, and some cities may be more connected than others. A city that connects to many roads may benefit from a higher assigned value to maximize the importance of those roads."
+    },
+    {
+      "content": "To maximize the total importance, you should prioritize assigning higher values to cities that are connected by more roads. You can count the number of roads connected to each city to help guide your assignments."
+    },
+    {
+      "content": "Create a frequency map (or array) to count how many roads each city is a part of. For example, if city 0 is connected to cities 1 and 2, its count would be 2."
+    },
+    {
+      "content": "Once you have the counts of connections for each city, sort the cities based on their connection counts in descending order. This will help you assign the highest values to the most connected cities."
+    },
+    {
+      "content": "After sorting the cities by their connection counts, assign the highest available values (from n down to 1) to the cities in that order. This ensures that the most connected cities receive the highest values."
+    },
+    {
+      "content": "Now, calculate the total importance using the assigned values. Iterate through each road and sum the importance based on the assigned values of the cities it connects."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there are only two cities or when all cities are connected in a linear fashion. These cases can help you verify the correctness of your approach."
+    },
+    {
+      "content": "Finally, ensure your implementation efficiently handles the constraints provided, especially since n and the number of roads can be as large as 50,000. Aim for a solution that runs in linear or near-linear time, considering the counting and sorting steps."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 50,000",
+    "1 <= roads.length <= 50,000",
+    "Each road connects two different cities, and there are no duplicate roads.",
+    "Cities are indexed from 0 to n - 1.",
+    "Each city must be assigned a unique integer value from 1 to n."
+  ]
+}

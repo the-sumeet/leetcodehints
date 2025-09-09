@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of the matrix. Each row is sorted in non-decreasing order, and the first element of each row is greater than the last element of the previous row. This means that the entire matrix can be viewed as a single sorted list."
+    },
+    {
+      "content": "Consider how you can leverage the sorted nature of the matrix. A binary search could be a good approach, but you'll need to think about how to map 2D indices to a 1D index."
+    },
+    {
+      "content": "Recall that in a binary search, you typically start with two pointers: one for the beginning and one for the end of the search space. In this case, you'll have a range defined by the total number of elements in the matrix."
+    },
+    {
+      "content": "When performing the binary search, you can calculate the middle index for the 1D representation of the matrix. Use the formula: `row = mid / n` and `col = mid % n`, where `n` is the number of columns."
+    },
+    {
+      "content": "Think about the conditions for adjusting your search range. If the value at the middle index is less than the target, you should search in the upper half; if it's greater, search in the lower half."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when the matrix is empty. What should your function return in that scenario?"
+    },
+    {
+      "content": "Make sure to check the constraints provided in the problem. For instance, the target value can be as small as -10^4 and as large as 10^4. How does this affect your search?"
+    },
+    {
+      "content": "Remember that the time complexity requirement is O(log(m * n)). This means your solution must be efficient and avoid checking each element individually."
+    },
+    {
+      "content": "As you implement the binary search, ensure that you are correctly updating your pointers based on the comparison between the middle value and the target. This will be crucial for finding the target efficiently."
+    },
+    {
+      "content": "Finally, once you find the target, remember to return `true`. If the search completes without finding the target, return `false`. Think about how you will structure your return statements."
+    }
+  ],
+  "questionNotes": [
+    "Each row is sorted in non-decreasing order.",
+    "The first integer of each row is greater than the last integer of the previous row.",
+    "You must achieve O(log(m * n)) time complexity.",
+    "Constraints: 1 <= m, n <= 100; -10^4 <= matrix[i][j], target <= 10^4."
+  ]
+}

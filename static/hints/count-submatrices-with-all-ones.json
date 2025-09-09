@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary matrix. Each element can either be 0 or 1, which will affect whether a submatrix can be formed. Consider how you can identify the boundaries of submatrices that contain only 1s."
+    },
+    {
+      "content": "Think about how you can iterate through the matrix. A common approach is to use nested loops to select the top-left corner of each potential submatrix. This will help you systematically explore all possible starting points."
+    },
+    {
+      "content": "When you select a top-left corner, you need to determine how far you can extend downwards and to the right while still maintaining all 1s. Consider maintaining a height array that tracks the number of consecutive 1s in each column."
+    },
+    {
+      "content": "As you iterate through each row, update your height array. For each cell in the current row, you can check if it is 1 and increment the height from the previous row, or reset it to 0 if it is 0."
+    },
+    {
+      "content": "Once you have the height array for a row, think about how to count the number of rectangles that can be formed. For each column in the height array, you can calculate the number of rectangles that can be formed using that height."
+    },
+    {
+      "content": "To count the rectangles for a given height, consider how many widths can be formed. If you can extend outwards from the current column, keep track of the minimum height encountered to the left."
+    },
+    {
+      "content": "Use a two-pointer technique or a stack to efficiently calculate the number of rectangles for each height. This will help you avoid a brute-force approach and reduce time complexity."
+    },
+    {
+      "content": "Remember to account for edge cases, such as when the matrix is entirely 0s or when it contains only one row or one column. How will your algorithm handle these cases?"
+    },
+    {
+      "content": "After counting rectangles for all rows, sum them up to get the total count of submatrices with all ones. Make sure to validate your approach with the provided examples."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient enough to handle the maximum constraints of the problem. Aim for a time complexity of O(m * n^2) or better, given the constraints of the problem."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 150",
+    "mat[i][j] is either 0 or 1.",
+    "Output should be the total count of submatrices with all ones.",
+    "Consider edge cases such as empty matrices or matrices with no 1s."
+  ]
+}

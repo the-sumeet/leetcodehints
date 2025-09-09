@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have an array of pairs, where each pair consists of two integers. Remember that the first integer of each pair is always less than the second."
+    },
+    {
+      "content": "Consider how pairs can be chained together. A pair [a, b] can only be followed by a pair [c, d] if b < c. Think about how you can check this condition when processing pairs."
+    },
+    {
+      "content": "Sorting the pairs can help in finding the longest chain. Try sorting the pairs based on the second element of each pair. This way, you can focus on the pairs that can potentially follow one another."
+    },
+    {
+      "content": "Once sorted, you can iterate through the pairs. Keep track of the end of the last added pair in the chain. If the current pair can follow the last pair in the chain, add it to your chain."
+    },
+    {
+      "content": "Think about how to maintain the count of the longest chain. You can use a simple counter that increments each time you successfully add a pair to your chain."
+    },
+    {
+      "content": "Consider edge cases, such as when there is only one pair or when all pairs are disjoint. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "As you iterate through the sorted pairs, update your end marker whenever you add a new pair to the chain. This ensures that you are always comparing the current pair against the last pair in your chain."
+    },
+    {
+      "content": "You might want to use a greedy approach for this problem. After sorting, always choose the next pair that can extend the chain, which is the one with the smallest right value that is still greater than the last pair's right value."
+    },
+    {
+      "content": "Make sure to test your solution with various inputs, including edge cases like overlapping pairs or pairs that are sorted in reverse order. This will help ensure your logic is robust."
+    },
+    {
+      "content": "Finally, think about how you will return the result. You need to return the length of the longest chain, so ensure your counter reflects this correctly by the end of your iteration."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == pairs.length, 1 <= n <= 1000, -1000 <= left_i < right_i <= 1000.",
+    "Each pair is unique and the order of pairs can be rearranged.",
+    "You do not need to use all pairs; you can select any subset to form the longest chain."
+  ]
+}

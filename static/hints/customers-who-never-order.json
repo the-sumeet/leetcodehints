@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the tables provided. The 'Customers' table contains customer information, while the 'Orders' table links customers to their orders through 'customerId'."
+    },
+    {
+      "content": "Identify the key requirement: you need to find customers who have never placed an order. This means you are looking for customers whose IDs do not appear in the 'Orders' table."
+    },
+    {
+      "content": "Consider how you can relate the two tables. A common way to find non-matching records between two tables is to use a LEFT JOIN. Think about how you would structure that query."
+    },
+    {
+      "content": "When using a LEFT JOIN, the result will include all customers, and for those who have not placed any orders, the corresponding order fields will be NULL. This can help you identify customers without orders."
+    },
+    {
+      "content": "After performing the LEFT JOIN, you will need to filter the results. Specifically, you want to select only those records where the order information is NULL, indicating no orders were made."
+    },
+    {
+      "content": "Make sure to select the correct columns in your final output. You only need the 'name' of the customers who never ordered, so structure your SELECT statement accordingly."
+    },
+    {
+      "content": "Think about edge cases: What if all customers have placed orders? What if there are no customers at all? Your query should handle these scenarios gracefully."
+    },
+    {
+      "content": "Ensure that your final output format matches the requirement. You should return a table with a single column named 'Customers' that lists the names of customers without orders."
+    },
+    {
+      "content": "Consider using a subquery to first identify customers with orders and then find those not in that list. This can sometimes be clearer than using JOINs for this type of problem."
+    },
+    {
+      "content": "As a final step, ensure your SQL query is efficient and correctly handles any potential duplicates or NULL values in the 'Orders' table."
+    }
+  ],
+  "questionNotes": [
+    "The 'id' in the Customers table is unique and serves as a primary key.",
+    "The 'customerId' in the Orders table is a foreign key referencing the Customers table.",
+    "You must return a single column named 'Customers' with the names of customers who have never placed an order.",
+    "The result can be returned in any order."
+  ]
+}

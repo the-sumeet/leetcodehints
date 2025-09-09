@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You have a circular route with gas stations, and you need to determine if you can complete a full circuit starting from one of the stations."
+    },
+    {
+      "content": "Consider what it means to have enough gas to travel from one station to the next. For each station, you can calculate the net gas you gain or lose after traveling to the next station: `net[i] = gas[i] - cost[i]`."
+    },
+    {
+      "content": "If at any station your net gas becomes negative, it indicates that starting from any station before this one will also fail. This is a key insight for determining where to start."
+    },
+    {
+      "content": "Think about how you can keep track of the total gas you have and how it changes as you move from station to station. You can maintain a running total of gas and check if it ever goes negative."
+    },
+    {
+      "content": "You need to traverse the stations in a circular manner. Consider using a loop that wraps around, or simply treat the array as circular by using modulo operations."
+    },
+    {
+      "content": "Keep track of two variables: one for the total gas balance and another for the current gas balance. Reset the current balance whenever it goes negative and update your starting index."
+    },
+    {
+      "content": "Remember that if the total gas collected is less than the total cost, it is impossible to complete the circuit. This gives you a quick check before starting the detailed calculations."
+    },
+    {
+      "content": "As you iterate through the stations, if you find a valid starting point, you can return its index. Make sure to handle the case where you might need to reset your starting point if the current balance goes negative."
+    },
+    {
+      "content": "Consider edge cases, such as when all gas values are equal to their respective costs. What would happen in this scenario? Would you still be able to start from any station?"
+    },
+    {
+      "content": "Finally, implement your logic ensuring that you return the starting index if a solution exists, or -1 if it does not. This will be the last step in your function."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == gas.length == cost.length",
+    "1 <= n <= 10^5",
+    "0 <= gas[i], cost[i] <= 10^4",
+    "The input is generated such that the answer is unique.",
+    "You must return the starting index or -1 if no valid starting point exists."
+  ]
+}

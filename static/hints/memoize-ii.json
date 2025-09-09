@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what memoization is. It's a technique used to store the results of expensive function calls and return the cached result when the same inputs occur again."
+    },
+    {
+      "content": "Consider how you will store the cached results. A common approach is to use an object where the keys are a string representation of the function arguments."
+    },
+    {
+      "content": "Remember that the inputs can be of any type, including objects and arrays. You will need a way to uniquely identify these inputs for caching purposes."
+    },
+    {
+      "content": "For primitive types (like numbers or strings), you can use them directly as keys. For objects, you might need to serialize them to a string format."
+    },
+    {
+      "content": "Think about how you will check if an input has been seen before. You can use a simple check to see if the key exists in your cache object."
+    },
+    {
+      "content": "When the function is called with new inputs, you need to call the original function and store the result in your cache for future calls."
+    },
+    {
+      "content": "Consider how to handle the count of function calls. You might want to maintain a separate counter for how many times the original function has been invoked."
+    },
+    {
+      "content": "Make sure to return the correct structure for the output. Each call should return an object containing the value and the number of calls."
+    },
+    {
+      "content": "Take special care with edge cases, such as when the inputs are objects. Remember that different object instances are not considered equal, even if they have the same properties."
+    },
+    {
+      "content": "For the case of empty objects, ensure that you understand how JavaScript treats object equality. Two distinct empty objects are not === to each other."
+    },
+    {
+      "content": "You might want to create a helper function to generate the cache key from the arguments. This function will need to handle different types of inputs appropriately."
+    },
+    {
+      "content": "Think about how you will handle the case where the same inputs are provided multiple times. You should only call the original function once for unique inputs."
+    },
+    {
+      "content": "Consider using JSON.stringify for serializing objects, but be aware of its limitations, such as handling functions or circular references."
+    },
+    {
+      "content": "When implementing the memoization, ensure that you are correctly updating the cache and the call count each time the function is executed."
+    },
+    {
+      "content": "Finally, remember to test your memoized function with various inputs to ensure it behaves as expected, especially with edge cases."
+    }
+  ],
+  "questionNotes": [
+    "Inputs are considered identical if they are === to each other.",
+    "The output should be an array of objects, each containing 'val' and 'calls'.",
+    "Handle different types of inputs, including objects and arrays.",
+    "Ensure that the cache distinguishes between different object instances."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between workers and tasks. Each worker can only complete a task if their strength is greater than or equal to the task's strength requirement."
+    },
+    {
+      "content": "Consider how the magical pills can be used to increase a worker's strength. Each worker can receive at most one pill, which adds a fixed amount to their strength."
+    },
+    {
+      "content": "Think about sorting the tasks and workers arrays. Sorting can help you efficiently match workers to tasks based on their strengths."
+    },
+    {
+      "content": "When sorting, consider sorting tasks in ascending order. This way, you can try to assign the weakest worker who can complete the task."
+    },
+    {
+      "content": "After sorting, iterate through the tasks and for each task, check if there is a worker who can complete it without using a pill."
+    },
+    {
+      "content": "If no worker can complete a task without a pill, check if a worker can complete it with a pill. This involves checking if the worker's strength plus the strength from the pill meets the task's requirement."
+    },
+    {
+      "content": "Keep track of which workers have been assigned to tasks. You can use a boolean array to mark workers as used."
+    },
+    {
+      "content": "When considering the use of pills, think about the optimal workers to give them to. You want to maximize the number of tasks completed, so prioritize weaker workers for the pills."
+    },
+    {
+      "content": "Consider using a greedy approach where you always try to assign the weakest available worker to the current task. This can help maximize the number of tasks completed."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when there are more tasks than workers or when all workers are weaker than the weakest task."
+    },
+    {
+      "content": "Think about the constraints. You have up to 50,000 tasks and workers, so your solution should be efficient, ideally O(n log n) due to sorting."
+    },
+    {
+      "content": "You might want to implement a two-pointer technique after sorting the tasks and workers. One pointer can traverse tasks while the other traverses workers."
+    },
+    {
+      "content": "When implementing the two-pointer strategy, ensure that once a worker is assigned to a task, they cannot be reused for another task."
+    },
+    {
+      "content": "Consider edge cases where the number of pills is zero. In this case, you can only assign tasks to workers based on their original strength."
+    },
+    {
+      "content": "Finally, think about how to return the result. You need to count the maximum number of tasks that can be completed and return that count."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == tasks.length, m == workers.length, 1 <= n, m <= 5 * 10^4",
+    "0 <= pills <= m, 0 <= tasks[i], workers[j], strength <= 10^9",
+    "Each worker can only be assigned to a single task.",
+    "Return the maximum number of tasks that can be completed."
+  ]
+}

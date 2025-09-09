@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree represented by the `parents` array. Each index represents a node, and the value at that index indicates the parent node. For example, if `parents[1] = 2`, then node 1 is a child of node 2."
+    },
+    {
+      "content": "To calculate the score of a node, you need to consider the sizes of the subtrees formed when that node is removed. Make sure you can traverse the tree and count the size of each subtree."
+    },
+    {
+      "content": "You can use a depth-first search (DFS) approach to traverse the tree. As you visit each node, keep track of the size of each subtree. You can maintain a list or array to store the sizes of the children."
+    },
+    {
+      "content": "When calculating the score for a node, remember that the score is the product of the sizes of the resulting subtrees. If a node has multiple children, the product will include the sizes of all subtrees formed by removing each child."
+    },
+    {
+      "content": "Consider edge cases where the tree is very unbalanced or has only two nodes. How would the scores look in those scenarios? Make sure your solution handles such cases correctly."
+    },
+    {
+      "content": "After calculating the scores for all nodes, you need to determine the maximum score. Keep track of the highest score found and count how many nodes have that score."
+    },
+    {
+      "content": "Be careful with the indexing in the `parents` array. Remember that node 0 is the root and has no parent, which is indicated by `-1`. Ensure your traversal logic correctly handles this case."
+    },
+    {
+      "content": "When calculating the size of a subtree, consider using a recursive function. This function can return the size of the subtree rooted at a given node while also updating the scores for the parent node."
+    },
+    {
+      "content": "As you compute the scores, store them in a dictionary or an array indexed by node number. This will make it easier to find the maximum score and count how many nodes have that score."
+    },
+    {
+      "content": "Finally, after determining the maximum score, iterate through your scores to count how many nodes match this maximum. Make sure to return this count as your final result."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5",
+    "The tree is valid, with node indices ranging from 0 to n-1.",
+    "Node 0 is the root, indicated by parents[0] == -1.",
+    "Return the count of nodes with the highest score."
+  ]
+}

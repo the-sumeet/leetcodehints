@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the score of a subarray. The score is calculated as the product of the sum of the elements in the subarray and the length of that subarray. For example, for a subarray [a, b], the score is (a + b) * 2."
+    },
+    {
+      "content": "Consider how to efficiently generate all possible subarrays of the given array. A subarray can be defined by a starting index and an ending index. You can use nested loops to iterate through all pairs of indices."
+    },
+    {
+      "content": "Remember that the score must be strictly less than k. This means you need to check each subarray's score against k and count only those that satisfy this condition."
+    },
+    {
+      "content": "Think about how to calculate the sum of the elements in a subarray. You can maintain a running sum as you iterate through the array, which can help you avoid recalculating the sum from scratch for each subarray."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Generating all subarrays with nested loops leads to O(n^2) time complexity. This might be inefficient for larger arrays, so think about how you can optimize this."
+    },
+    {
+      "content": "You can use a two-pointer technique or a sliding window approach to keep track of the current subarray's sum and length. This can help you efficiently find valid subarrays without recalculating scores repeatedly."
+    },
+    {
+      "content": "As you iterate through the array, keep track of the current sum and length of the subarray. When the score exceeds or equals k, you can break out of the inner loop early to save computation time."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when k is very small or when nums contains only one element. For example, if k is 1, only subarrays with a single element equal to 1 will be valid."
+    },
+    {
+      "content": "Consider the constraints given in the problem. The maximum length of nums is 100,000, and the maximum value of elements is 100,000. Ensure that your solution can handle the upper limits efficiently."
+    },
+    {
+      "content": "When counting valid subarrays, remember to include all possible lengths starting from each index. This means you should count all subarrays that start from the current index and have a score less than k."
+    },
+    {
+      "content": "Think about how to update the count of valid subarrays dynamically as you extend your subarray. You might want to maintain a separate count of valid subarrays found so far."
+    },
+    {
+      "content": "If you're using a sliding window approach, be cautious about the conditions under which you expand or contract the window. Ensure that you only expand when the score is valid and contract when it exceeds k."
+    },
+    {
+      "content": "You might find it helpful to keep track of the cumulative sum of the array. This can allow you to quickly compute the sum of any subarray using the formula: sum(i, j) = cumulative_sum[j] - cumulative_sum[i-1]."
+    },
+    {
+      "content": "As you build your solution, consider testing it with various edge cases, such as arrays with all elements the same, arrays with maximum values, and arrays of minimum length."
+    },
+    {
+      "content": "Finally, ensure your solution returns the correct count of valid subarrays as specified in the problem. The output should be a single integer representing the count."
+    }
+  ],
+  "questionNotes": [
+    "The score of a subarray is defined as (sum of elements) * (length of subarray).",
+    "You need to count only non-empty subarrays.",
+    "The score must be strictly less than k.",
+    "Constraints: 1 <= nums.length <= 10^5, 1 <= nums[i] <= 10^5, 1 <= k <= 10^15."
+  ]
+}

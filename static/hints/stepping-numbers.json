@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a stepping number is. A stepping number is defined as a number where the absolute difference between every two adjacent digits is 1. For example, 123 and 321 are stepping numbers, but 135 is not."
+    },
+    {
+      "content": "Consider how you can generate stepping numbers. You might want to think about a breadth-first search (BFS) approach, where you can explore numbers digit by digit, starting from each digit (0 through 9)."
+    },
+    {
+      "content": "Remember to handle leading zeros. A number like 012 is not valid, so you should avoid starting your stepping number generation with 0, except for the number 0 itself."
+    },
+    {
+      "content": "Think about the range of numbers you need to generate. The problem might specify a range [low, high]. Make sure your generated stepping numbers fall within this range."
+    },
+    {
+      "content": "As you generate stepping numbers, keep track of the valid ones. You might want to store them in a list or a set to avoid duplicates and to sort them later."
+    },
+    {
+      "content": "When generating the next possible stepping numbers, consider the last digit of the current number. If the last digit is `d`, the next digits can be `d-1` or `d+1`, provided they are between 0 and 9."
+    },
+    {
+      "content": "Implement a queue to facilitate the BFS. Start with numbers 1 through 9 (and 0 if needed) and enqueue them for exploration. For each number dequeued, generate the next stepping numbers."
+    },
+    {
+      "content": "Make sure to check the bounds of your generated numbers against the given range [low, high]. You can filter your results after generating all possible stepping numbers."
+    },
+    {
+      "content": "Consider edge cases such as when the `low` and `high` are the same. What if the only stepping number in that range is `low` itself? Ensure your solution handles this correctly."
+    },
+    {
+      "content": "Finally, after generating all stepping numbers within the range, sort them before returning. This will ensure the output is in the correct order as required by the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Stepping numbers are defined by the absolute difference of adjacent digits being 1.",
+    "Leading zeros are not allowed except for the number 0 itself.",
+    "The output must be sorted in ascending order.",
+    "Pay attention to the range [low, high] and ensure all generated numbers fall within this range."
+  ]
+}

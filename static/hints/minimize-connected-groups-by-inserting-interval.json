@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input intervals. They are given as pairs of integers, where each pair represents a start and end point of an interval. For example, the interval [1, 3] covers all numbers from 1 to 3."
+    },
+    {
+      "content": "Consider how connected groups of intervals are defined. Two intervals are connected if they overlap or touch each other. For instance, [1, 3] and [3, 5] would be considered connected."
+    },
+    {
+      "content": "Think about how to merge overlapping intervals. You might want to sort the intervals first based on their start points. This will help you easily identify which intervals can be merged."
+    },
+    {
+      "content": "When merging intervals, keep track of how many distinct groups you end up with. Each time you encounter a new interval that doesn't overlap with the current group, you've found a new group."
+    },
+    {
+      "content": "Consider the case where you need to insert a new interval to minimize the number of connected groups. What properties should this new interval have? It should ideally connect as many existing groups as possible."
+    },
+    {
+      "content": "Think about the optimal position for inserting the new interval. It should ideally be placed at the boundaries of existing groups to maximize connectivity. How would you determine the best start and end points for this new interval?"
+    },
+    {
+      "content": "You might want to iterate over the sorted intervals and check the gaps between them. If a gap exists, consider how inserting an interval in that gap could reduce the number of groups."
+    },
+    {
+      "content": "Edge cases are important: consider scenarios where all intervals are already connected, or where there are no gaps at all. How would your approach change in these cases?"
+    },
+    {
+      "content": "As you finalize your approach, remember to account for the case where inserting an interval might not change the number of groups at all. How will you ensure your solution is efficient?"
+    },
+    {
+      "content": "Finally, implement a function that takes the list of intervals and the desired number of groups, and returns the minimum number of intervals needed to insert. Focus on maintaining clarity in your logic and ensure you handle all edge cases."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of a list of intervals, each represented as a pair of integers.",
+    "Intervals may overlap, and the goal is to minimize the number of connected groups.",
+    "You can insert at most one interval to achieve the desired grouping.",
+    "Consider cases where intervals are already connected or when there are no gaps.",
+    "Return the minimum number of intervals needed to insert, not the intervals themselves."
+  ]
+}

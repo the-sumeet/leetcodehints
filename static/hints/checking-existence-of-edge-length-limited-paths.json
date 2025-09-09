@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. Each edge is represented as a triplet [u, v, dis], indicating a connection between nodes u and v with a distance dis. Make sure you visualize how these edges connect the nodes."
+    },
+    {
+      "content": "Consider how to represent the graph in a way that allows easy traversal. An adjacency list or a union-find structure could be useful for efficiently checking connectivity between nodes."
+    },
+    {
+      "content": "Pay attention to the 'strictly less than' condition in the queries. This means that any edge on the path must have a distance that is less than the specified limit. Think about how this condition affects path selection."
+    },
+    {
+      "content": "Before diving into the queries, think about preprocessing the edges. Sorting the edges by distance can help you efficiently determine which edges can be used for each query."
+    },
+    {
+      "content": "For each query, you need to find if there exists a path between nodes p and q under the given limit. This suggests a need for a search algorithm that can operate under constraints, like DFS or BFS."
+    },
+    {
+      "content": "Consider using a union-find (disjoint set) data structure. This can help you dynamically connect nodes as you process edges that are below the current query limit."
+    },
+    {
+      "content": "When processing the queries, iterate through them in increasing order of their limit. This allows you to build the graph incrementally, adding edges that are valid for the current query."
+    },
+    {
+      "content": "As you process each query, remember to check if nodes p and q are in the same connected component using the union-find structure. If they are, you can return true for that query."
+    },
+    {
+      "content": "Make sure to handle multiple edges between the same nodes correctly. The algorithm should still work regardless of how many edges exist between any two nodes."
+    },
+    {
+      "content": "Think about edge cases, such as when there are no edges or when all edges exceed the limit specified in a query. How should your algorithm handle these situations?"
+    },
+    {
+      "content": "Remember that the constraints allow for up to 100,000 edges and queries. Your solution should be efficient enough to handle the upper limits of these constraints."
+    },
+    {
+      "content": "When returning the results for each query, ensure that the order of results matches the order of the queries provided. This is crucial for the correctness of your output."
+    },
+    {
+      "content": "Consider how to efficiently check if two nodes are connected after processing edges. The union-find structure provides a method to check connectivity in nearly constant time."
+    },
+    {
+      "content": "As you build the graph incrementally, ensure that you only add edges that are valid for the current query limit. This selective addition is key to maintaining the integrity of your checks."
+    },
+    {
+      "content": "Finally, think about edge cases where the limit is very small or very large. Make sure your algorithm handles these extremes without running into performance issues."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 100000, 1 <= edgeList.length, queries.length <= 100000, edgeList[i].length == 3, queries[j].length == 3.",
+    "Note: 0 <= u_i, v_i, p_j, q_j <= n - 1 and u_i != v_i, p_j != q_j.",
+    "Each edge can have multiple instances between the same nodes.",
+    "Return format: A boolean array where each entry corresponds to the result of a query, indicating whether a valid path exists."
+  ]
+}

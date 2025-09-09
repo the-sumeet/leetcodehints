@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the relationship between the time you have to test and the time it takes for a pig to die. You can only test a number of times equal to `minutesToTest / minutesToDie`. This will give you the number of rounds available for testing."
+    },
+    {
+      "content": "Consider how many different outcomes you can have after each round of testing. Each pig can either die or survive, which gives you a binary outcome for each pig."
+    },
+    {
+      "content": "Think about how you can represent the outcomes of the pigs' tests. If you have `p` pigs, the number of unique outcomes after all tests is `2^p`. This means you can distinguish between `2^p` different buckets."
+    },
+    {
+      "content": "Now, relate the number of buckets to the number of outcomes. You need `2^p` to be greater than or equal to the number of buckets. This gives you a starting point to find the minimum number of pigs."
+    },
+    {
+      "content": "Set up the inequality: `2^p >= buckets`. This will help you determine the minimum number of pigs needed based on the number of buckets."
+    },
+    {
+      "content": "Don't forget to factor in the number of rounds you can conduct. You can only conduct `rounds = minutesToTest / minutesToDie` tests, so the equation becomes `2^rounds >= buckets`."
+    },
+    {
+      "content": "Combine the insights from the previous hints. You need to find the smallest `p` such that `2^(minutesToTest / minutesToDie) >= buckets`."
+    },
+    {
+      "content": "Consider edge cases, such as when `buckets` is 1. In this case, you wouldn't need any pigs, since there is no need to test."
+    },
+    {
+      "content": "Think about the scenario where `minutesToDie` equals `minutesToTest`. In this case, you can only test once, so you need to ensure that your number of pigs can cover all buckets in that single test."
+    },
+    {
+      "content": "Use logarithms to simplify your calculations. You can express the inequality as `p >= log2(buckets)`, which might help in determining the minimum number of pigs needed."
+    },
+    {
+      "content": "If you have a non-integer value for `p`, remember to round up since you can't have a fraction of a pig. This means using the ceiling function."
+    },
+    {
+      "content": "Make sure to validate your calculations with the upper limit of buckets (1000). Ensure your logic holds true even at the maximum constraints."
+    },
+    {
+      "content": "Consider the implications of having more pigs than necessary. While it might be tempting to use more pigs for safety, remember that the goal is to minimize the number of pigs."
+    },
+    {
+      "content": "You can implement a simple loop or a mathematical approach to find the smallest `p` that satisfies the conditions derived from the previous hints."
+    },
+    {
+      "content": "Finally, ensure you return the result in the correct format as specified in the problem statement. The output should be a single integer representing the minimum number of pigs."
+    }
+  ],
+  "questionNotes": [
+    "1 <= buckets <= 1000",
+    "1 <= minutesToDie <= minutesToTest <= 100",
+    "You can only test a pig once every `minutesToDie` minutes.",
+    "Each pig can be fed from multiple buckets, and multiple pigs can be fed from a single bucket."
+  ]
+}

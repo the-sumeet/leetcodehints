@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the difference between 'instanceof' and the concept of being an instance of a class. The 'instanceof' operator checks the prototype chain, while your task requires checking if an object can access methods of a class."
+    },
+    {
+      "content": "Consider how JavaScript handles classes and prototypes. When a class is defined, it creates a constructor function that can be used to create instances. Think about how you can check if an object is linked to a class through its prototype."
+    },
+    {
+      "content": "Remember that an object can be an instance of a class even if it is not created using the 'new' keyword. For example, primitive types like numbers and strings can still be associated with their respective wrapper classes."
+    },
+    {
+      "content": "You need to handle cases where either the object or the class is undefined. Make sure to check for these conditions early in your function to avoid runtime errors."
+    },
+    {
+      "content": "When checking if an object is an instance of a class, consider using a loop to traverse the prototype chain. You can use 'Object.getPrototypeOf()' to get the prototype of the object and compare it with the class's prototype."
+    },
+    {
+      "content": "Take into account that the function should return false if the class is not a function or if the object is not an object. This is crucial for ensuring that your function behaves correctly with various input types."
+    },
+    {
+      "content": "Think about how you will handle the case where the class and the object are the same type, such as checking if 'Date' is an instance of 'Date'. This should return false according to the problem statement."
+    },
+    {
+      "content": "Consider edge cases with primitive values. For example, how will your function handle a number like 5 when checking against the Number class? Remember that the 'instanceof' operator won't work here."
+    },
+    {
+      "content": "You may want to create a helper function to check if the input is a valid class. This function can verify that the input is a function and not undefined."
+    },
+    {
+      "content": "Finally, implement the main logic for checking the prototype chain. Start from the object and traverse up the prototype chain, checking if you reach the class's prototype. If you do, return true; otherwise, return false."
+    }
+  ],
+  "questionNotes": [
+    "The function should handle cases where the input value or class is undefined.",
+    "An object is considered an instance of a class if it has access to that class's methods.",
+    "The function should return false if the class is not a function or if the object is not an object."
+  ]
+}

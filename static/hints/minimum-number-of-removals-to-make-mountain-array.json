@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "First, let's clarify what a mountain array is. A mountain array must have at least three elements, and it must have a peak where elements increase to that peak and then decrease afterward."
+    },
+    {
+      "content": "Identify the peak of the mountain array. The peak is an index `i` such that `arr[i]` is greater than its neighbors. This means you need to find a way to ensure that there is an index that satisfies this condition."
+    },
+    {
+      "content": "Start by thinking about how you can transform the array into a mountain shape. You can do this by ensuring that the left side is strictly increasing and the right side is strictly decreasing."
+    },
+    {
+      "content": "Consider using the concept of Longest Increasing Subsequence (LIS) to find the longest increasing part of the array before the peak. This will help you determine how many elements you might need to remove."
+    },
+    {
+      "content": "Similarly, you can find the Longest Decreasing Subsequence (LDS) for the part of the array after the peak. This will give you the longest valid decreasing sequence."
+    },
+    {
+      "content": "To find the peak, iterate through possible peak indices from 1 to `n-2` (where `n` is the length of the array) and calculate the LIS and LDS for each potential peak."
+    },
+    {
+      "content": "Remember that the total number of elements you need to remove is the total length of the array minus the sum of the lengths of the LIS and LDS for the chosen peak, plus one (to account for the peak itself)."
+    },
+    {
+      "content": "Make sure to handle cases where the peak might not be valid. If the peak does not satisfy the mountain condition, you will need to adjust your calculations."
+    },
+    {
+      "content": "Consider edge cases where all elements are the same or where the array is already a mountain array. These cases can help you verify your solution."
+    },
+    {
+      "content": "When implementing LIS and LDS, you can use dynamic programming or binary search methods to optimize the performance, especially since the array length can go up to 1000."
+    },
+    {
+      "content": "Think about the time complexity of your approach. You want to ensure that your solution runs efficiently within the constraints provided."
+    },
+    {
+      "content": "As you implement your solution, keep track of the minimum number of removals needed for each potential peak and update your answer accordingly."
+    },
+    {
+      "content": "After calculating the required removals for each peak, the final answer will be the minimum of these values. Make sure to return this result correctly."
+    },
+    {
+      "content": "Don't forget to test your solution with various test cases, especially edge cases, to ensure robustness."
+    },
+    {
+      "content": "In summary, focus on finding the LIS and LDS around potential peaks, and calculate the number of removals needed to form a valid mountain array."
+    }
+  ],
+  "questionNotes": [
+    "The array must have at least 3 elements.",
+    "A valid peak must be at an index `i` where `0 < i < arr.length - 1`.",
+    "The output should be the minimum number of elements removed.",
+    "Constraints: 3 <= nums.length <= 1000 and 1 <= nums[i] <= 10^9."
+  ]
+}

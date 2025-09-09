@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A palindrome reads the same forwards and backwards, like 'aba' or 'racecar'."
+    },
+    {
+      "content": "Consider the constraints of the problem. The string length is between 3 and 2000, which means you need an efficient approach to check for palindromes."
+    },
+    {
+      "content": "Think about how you can split the string into three parts. You will need to find two split points in the string that divide it into three non-empty substrings."
+    },
+    {
+      "content": "The split points must ensure that each substring is non-empty. If you denote the split points as i and j, then the substrings will be: s[0:i], s[i:j], and s[j:n]."
+    },
+    {
+      "content": "To check if a substring is a palindrome, you can compare the substring with its reverse. For example, to check if s[i:j] is a palindrome, you can use: s[i:j] == s[i:j][::-1]."
+    },
+    {
+      "content": "You need to iterate through possible split points for i and j. Start with i from 1 to n-2 and j from i+1 to n-1 to ensure all parts are non-empty."
+    },
+    {
+      "content": "Before checking for palindromes, make sure that the split points do not lead to any empty substrings. For instance, if i = 1, j must be at least 2."
+    },
+    {
+      "content": "Consider using a helper function to check if a substring is a palindrome. This will help keep your code clean and modular."
+    },
+    {
+      "content": "You can optimize your palindrome checks by precomputing palindromic substrings. Use dynamic programming to store results for substrings you've already checked."
+    },
+    {
+      "content": "When checking palindromic substrings, remember that overlapping checks can be avoided by storing results in a 2D array where dp[i][j] is true if s[i:j] is a palindrome."
+    },
+    {
+      "content": "After identifying palindromic substrings, you can return true as soon as you find the first valid triplet of palindromic substrings."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as strings that are already palindromes or strings with repeated characters, which may affect the number of valid splits."
+    },
+    {
+      "content": "As you implement your solution, consider the time complexity. A naive approach might lead to O(n^3) if you check all substrings repeatedly."
+    },
+    {
+      "content": "To reduce complexity, aim for an O(n^2) solution by leveraging your precomputed palindrome checks and limiting the number of substring checks."
+    },
+    {
+      "content": "Finally, remember to validate your approach with various test cases, including edge cases like strings of length 3, strings with all identical characters, and strings with no valid splits."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= s.length <= 2000",
+    "Return true if the string can be split into three non-empty palindromic substrings.",
+    "Ensure that the split points do not lead to empty substrings."
+  ]
+}

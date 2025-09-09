@@ -1,0 +1,49 @@
+{
+  "hints": [
+    {
+      "content": "Start by reading the contents of the file. You can use built-in functions to read lines from the file. Make sure to split each line into individual fields based on the space character.",
+      "example": "lines = read_file('file.txt')"
+    },
+    {
+      "content": "Once you have the lines, think about how you can organize the data. You will need to create a structure that allows you to access elements by their row and column indices.",
+      "example": "Consider using a list of lists or a 2D array."
+    },
+    {
+      "content": "Remember that you need to transpose the data. Transposing means converting rows into columns and vice versa. Think about how you can iterate through your data structure to achieve this.",
+      "example": "For each column in the original, create a new row in the transposed version."
+    },
+    {
+      "content": "Pay attention to the indexing when transposing. The element at position (i, j) in the original matrix becomes (j, i) in the transposed matrix. Make sure your loops reflect this.",
+      "example": "for i in range(num_rows): for j in range(num_cols): transposed[j][i] = original[i][j]"
+    },
+    {
+      "content": "Consider edge cases where the file might be empty or contain only one row or one column. How would your solution handle these scenarios?",
+      "example": "An empty file should result in an empty output."
+    },
+    {
+      "content": "Think about how to format the output. You need to join the transposed rows into a single string where each field is separated by a space. Ensure that you handle the spacing correctly.",
+      "example": "Use ' '.join(row) to create a single string from a list."
+    },
+    {
+      "content": "After transposing the data and formatting it, you'll need to write the output back to a file or print it. Make sure you understand how to write to a file in your programming language of choice.",
+      "example": "with open('output.txt', 'w') as f: f.write(transposed_output)"
+    },
+    {
+      "content": "Consider the performance of your solution. If the file is very large, how will your approach handle memory usage? Think about whether you need to process the file in chunks.",
+      "example": "You might want to read and process the file line by line."
+    },
+    {
+      "content": "Make sure to test your solution with different types of input files, including those with varying numbers of rows and columns. This will help ensure your solution is robust.",
+      "example": "Try files with only headers, only data, and a mix of both."
+    },
+    {
+      "content": "Finally, implement the transposition logic carefully and ensure you are correctly handling any potential exceptions, such as file not found or read errors. This will make your solution more reliable.",
+      "example": "Use try-except blocks to catch file-related errors."
+    }
+  ],
+  "questionNotes": [
+    "Each row has the same number of columns.",
+    "Fields are separated by a single space character.",
+    "Output format requires fields in transposed order, separated by spaces."
+  ]
+}

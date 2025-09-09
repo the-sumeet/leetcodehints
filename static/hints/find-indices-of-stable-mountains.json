@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for a mountain to be stable. A mountain is stable if the height of the mountain immediately before it is strictly greater than the given threshold."
+    },
+    {
+      "content": "Remember that mountain 0 cannot be stable since there is no mountain before it. So, you'll want to start checking from mountain 1."
+    },
+    {
+      "content": "You will need to iterate through the `height` array starting from index 1. For each mountain at index `i`, check the height of the mountain at index `i-1`."
+    },
+    {
+      "content": "When checking if a mountain is stable, compare `height[i-1]` with the `threshold`. If `height[i-1]` is greater than `threshold`, then mountain `i` is stable."
+    },
+    {
+      "content": "Make sure to collect the indices of all stable mountains in an array. You can initialize an empty list before starting your loop to store these indices."
+    },
+    {
+      "content": "Consider edge cases: What happens if all mountains are below the threshold? Ensure your solution can handle this and returns an empty array if no stable mountains are found."
+    },
+    {
+      "content": "Think about the constraints provided. You know that the length of the `height` array is at least 2 and at most 100. This means your solution can afford to be straightforward without performance concerns."
+    },
+    {
+      "content": "You should also consider the possible values of `threshold`. It ranges from 1 to 100, so ensure your comparisons account for the full range of heights."
+    },
+    {
+      "content": "As you build your solution, remember to return the indices in any order. You don't need to sort them unless the problem specifically states that."
+    },
+    {
+      "content": "Finally, implement your loop to check each mountain from index 1 to the end of the array. Use a simple condition to check if the previous mountain's height exceeds the threshold and add the index to your result array."
+    }
+  ],
+  "questionNotes": [
+    "A mountain is stable if the previous mountain's height is strictly greater than the threshold.",
+    "Mountain 0 is never stable.",
+    "Return the indices of stable mountains in any order.",
+    "Constraints: 2 <= n <= 100; 1 <= height[i] <= 100; 1 <= threshold <= 100."
+  ]
+}

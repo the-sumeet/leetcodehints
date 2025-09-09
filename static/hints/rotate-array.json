@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, consider the effect of rotating the array by `k` steps. What happens to the elements in the array? Can you visualize how the last `k` elements move to the front?"
+    },
+    {
+      "content": "Remember that rotating the array by its length `n` results in the same array. Therefore, if `k` is greater than `n`, you can reduce `k` by taking `k % n`."
+    },
+    {
+      "content": "Think about how you can break the rotation into two parts: the last `k` elements and the first `n-k` elements. How would you rearrange these two parts?"
+    },
+    {
+      "content": "You can use an auxiliary array to help with the rotation. For example, create a new array of the same size and place the last `k` elements in the front and the rest after them."
+    },
+    {
+      "content": "If you want to solve this problem in-place, consider reversing parts of the array. How would you reverse the entire array first, and then reverse the two segments separately?"
+    },
+    {
+      "content": "When reversing the segments, ensure that you are careful with the indices. For instance, when you reverse the first `k` elements, you need to adjust your indices accordingly."
+    },
+    {
+      "content": "Edge cases are important! What if `k` is 0 or equal to the length of the array? How should your solution handle these scenarios?"
+    },
+    {
+      "content": "If you're using the in-place method, remember to maintain the original array structure. You can't use extra space beyond a few variables."
+    },
+    {
+      "content": "Consider how to implement the reversal method step-by-step. First, reverse the entire array, then reverse the first `k` elements, and finally reverse the remaining `n-k` elements."
+    },
+    {
+      "content": "Your final implementation should ensure that all operations are done in O(n) time complexity and O(1) space complexity. Can you outline the steps in pseudocode?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: -2^31 <= nums[i] <= 2^31 - 1",
+    "Constraints: 0 <= k <= 10^5",
+    "Return format: The rotated array should be returned in the same format as the input."
+  ]
+}

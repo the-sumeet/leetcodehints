@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how XOR works. Recall that XOR of two bits is 1 if they are different and 0 if they are the same. This property will be crucial in determining the value of k that maximizes the result."
+    },
+    {
+      "content": "Notice that you need to maximize the expression `nums[0] XOR nums[1] XOR ... XOR nums[n-1] XOR k`. This means the value of k should be chosen based on the XOR of all elements in nums at each step."
+    },
+    {
+      "content": "You can compute the cumulative XOR of the entire array `nums` first. This will help you quickly adjust the result as you remove elements from the end of the array."
+    },
+    {
+      "content": "Remember that k must be less than `2^maximumBit`. This means k can take on values from 0 to `2^maximumBit - 1`. Make sure to keep this range in mind when selecting k."
+    },
+    {
+      "content": "As you process each query, you will be removing the last element of nums. Think about how this affects the cumulative XOR value. You will need to update this value accordingly."
+    },
+    {
+      "content": "Consider how to find the optimal k for each query. Since you want to maximize the XOR, you should try to find a k that, when XORed with the current cumulative XOR, yields the maximum possible value."
+    },
+    {
+      "content": "To maximize the XOR result, consider the binary representation of the cumulative XOR. The highest possible value you can achieve with k is `2^maximumBit - 1`. Think about how this value interacts with the cumulative XOR."
+    },
+    {
+      "content": "When calculating k, you can use the formula: `k = (2^maximumBit - 1) XOR cumulativeXOR`. This will give you the value of k that maximizes the overall XOR given the current state of nums."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when nums has only one element left. In this case, k should still be chosen from the valid range to maximize the XOR with that single element."
+    },
+    {
+      "content": "Finally, remember to return the results in the correct format as an array, where each element corresponds to the answer for each query in the order they are processed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: nums.length == n, 1 <= n <= 10^5, 1 <= maximumBit <= 20, 0 <= nums[i] < 2^maximumBit.",
+    "nums is sorted in ascending order.",
+    "k must be less than 2^maximumBit.",
+    "Return an array of answers for each query in the order they are processed."
+  ]
+}

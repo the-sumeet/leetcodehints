@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. You have a bi-directional graph represented by edges, which means if there's an edge from u to v, you can also traverse from v to u."
+    },
+    {
+      "content": "Consider how you can represent this graph in code. An adjacency list is a common way to represent graphs, especially when you need to traverse them."
+    },
+    {
+      "content": "Think about what a cycle is in the context of a graph. A cycle occurs when you can return to the starting vertex without retracing any edge."
+    },
+    {
+      "content": "To find cycles, you might want to use a graph traversal algorithm. Depth-First Search (DFS) or Breadth-First Search (BFS) are both suitable for this task."
+    },
+    {
+      "content": "When using BFS, keep track of the distance from the starting node. This will help you determine the length of the cycle when you revisit a node."
+    },
+    {
+      "content": "Remember to mark nodes as visited during your traversal to avoid infinite loops. However, you need to handle the case where you revisit a node that is not the immediate parent."
+    },
+    {
+      "content": "Consider how to handle the case of multiple cycles. You need to find the shortest cycle, so keep track of the minimum length found during your traversal."
+    },
+    {
+      "content": "Pay attention to the constraints. The graph can have up to 1000 vertices and edges, so your solution should be efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Think about edge cases where the graph might be disconnected. You need to ensure that you check all components of the graph for cycles."
+    },
+    {
+      "content": "When you find a cycle, remember to calculate its length correctly. The length is the number of edges in the cycle, not the number of vertices."
+    },
+    {
+      "content": "If no cycles are found after checking all vertices, remember to return -1 as specified in the problem statement."
+    },
+    {
+      "content": "Consider how to implement the BFS or DFS. You might want to use a queue for BFS or a stack for DFS, and a set or array to track visited nodes."
+    },
+    {
+      "content": "As you implement your solution, test it with the provided examples to ensure it behaves as expected. This will help you catch any edge cases."
+    },
+    {
+      "content": "Think about how to structure your code. You might want to create a function that handles the BFS/DFS logic separately from the main function that processes the input."
+    },
+    {
+      "content": "Before finalizing your solution, review the requirements again. Ensure your function returns the correct format and handles all edge cases properly."
+    }
+  ],
+  "questionNotes": [
+    "The graph is bi-directional, meaning edges can be traversed in both directions.",
+    "Each vertex is labeled from 0 to n - 1, where n is the number of vertices.",
+    "No vertex has an edge to itself, and each vertex pair is connected by at most one edge.",
+    "Return -1 if no cycle exists; otherwise, return the length of the shortest cycle.",
+    "Constraints: 2 <= n <= 1000, 1 <= edges.length <= 1000."
+  ]
+}

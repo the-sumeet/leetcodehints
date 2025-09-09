@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what subsequences are. A subsequence is derived from another sequence by deleting some elements without changing the order of the remaining elements. For example, from [1, 2, 3], you can form subsequences like [1], [2, 3], or [1, 3]."
+    },
+    {
+      "content": "Focus on the requirement of having at most k elements in the subsequences. This means you need to consider subsequences of sizes ranging from 1 up to k. Think about how you can generate these subsequences efficiently."
+    },
+    {
+      "content": "Consider how many times each element in the array contributes to the minimum and maximum values across the subsequences. Each element can be the minimum or maximum of several subsequences, depending on its position and the other elements."
+    },
+    {
+      "content": "To calculate the contribution of each element, you might want to think about combinatorial mathematics. Specifically, how many ways can you choose other elements to form subsequences of size up to k that include a specific element as either the minimum or maximum?"
+    },
+    {
+      "content": "Remember that the problem requires you to return the result modulo 10^9 + 7. This is important because the sums can grow large, and you need to avoid overflow. Make sure to apply the modulo operation at every step where you perform additions."
+    },
+    {
+      "content": "You can use combinations to determine how many ways you can choose elements from the array. The binomial coefficient C(n, r) gives you the number of ways to choose r elements from n elements. Familiarize yourself with how to compute this efficiently."
+    },
+    {
+      "content": "When calculating contributions for minimums and maximums, consider sorting the array first. This allows you to easily determine which elements can be minimums or maximums in subsequences of various sizes."
+    },
+    {
+      "content": "Think about edge cases, such as when all elements are the same. In this case, every subsequence will have the same minimum and maximum, which might simplify your calculations."
+    },
+    {
+      "content": "To compute the total contribution of each element as a minimum or maximum across all valid subsequences, you can loop through the sorted array and calculate how many subsequences can be formed with each element as the minimum and maximum."
+    },
+    {
+      "content": "Finally, combine the contributions of all elements to get the final result. Remember to keep track of both minimum and maximum contributions separately, and sum them up before applying the modulo."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "0 <= nums[i] <= 10^9",
+    "1 <= k <= min(70, nums.length)",
+    "Return the result modulo 10^9 + 7."
+  ]
+}

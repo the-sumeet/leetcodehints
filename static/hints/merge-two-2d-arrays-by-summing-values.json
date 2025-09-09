@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input arrays. Each array consists of pairs where the first element is an `id` and the second is a `value`. For example, in `nums1 = [[1, 2], [2, 3]]`, the id `1` has a value of `2`."
+    },
+    {
+      "content": "Since both arrays are sorted by `id`, you can leverage this property to merge them efficiently. Think about how you would merge two sorted lists in general."
+    },
+    {
+      "content": "Consider using a dictionary to store the cumulative values of each `id`. This way, you can easily add values when you encounter the same `id` in both arrays."
+    },
+    {
+      "content": "As you iterate through `nums1` and `nums2`, for each `id`, check if it exists in your dictionary. If it does, add the current value to the existing value; if not, create a new entry."
+    },
+    {
+      "content": "Don't forget to handle `ids` that appear in only one of the two arrays. For those, simply add them to your dictionary with their corresponding value."
+    },
+    {
+      "content": "After processing both arrays, you will have a dictionary with `id` as keys and their summed values as values. The next step is to convert this dictionary back into the required 2D array format."
+    },
+    {
+      "content": "To convert the dictionary to a list, you can use a list comprehension. Remember to sort the resulting list by `id` before returning it."
+    },
+    {
+      "content": "Consider edge cases such as when one of the arrays is empty. Your solution should still return the correct output in such scenarios."
+    },
+    {
+      "content": "Make sure to return the result in the specified format: a list of lists, where each inner list contains an `id` and its corresponding summed `value`."
+    },
+    {
+      "content": "Finally, ensure your solution runs efficiently within the provided constraints, particularly since the maximum length of each array is 200. Aim for a time complexity close to O(n) for merging."
+    }
+  ],
+  "questionNotes": [
+    "Both input arrays contain unique ids.",
+    "The arrays are sorted in strictly ascending order by id.",
+    "Return format must be a 2D array sorted by id.",
+    "Each id should only appear once in the result.",
+    "If an id is missing from one array, assume its value is 0."
+  ]
+}

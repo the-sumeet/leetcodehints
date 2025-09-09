@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationships between the Customer and Product tables. Each customer can buy multiple products, and you need to find customers who have purchased every product listed in the Product table."
+    },
+    {
+      "content": "Consider how you can count the number of unique products in the Product table. This will help you determine how many products each customer needs to buy to meet the requirement."
+    },
+    {
+      "content": "Think about how to aggregate the data in the Customer table. You might want to group the records by customer_id and count the distinct product_key values they have purchased."
+    },
+    {
+      "content": "Remember that the Customer table may contain duplicate rows. When counting products for each customer, ensure that you only count unique product purchases."
+    },
+    {
+      "content": "You can use a GROUP BY clause to group the customer purchases. After grouping, use a COUNT function to find out how many unique products each customer has bought."
+    },
+    {
+      "content": "Now, compare the count of unique products each customer bought with the total number of unique products in the Product table. This will help you identify customers who bought all products."
+    },
+    {
+      "content": "To filter out customers who bought all products, you can use a HAVING clause. This allows you to specify that you only want customers whose count of unique products equals the total number of products."
+    },
+    {
+      "content": "Consider edge cases, such as what happens if no customers bought any products or if there are customers who bought none of the products listed. Ensure your query handles these cases gracefully."
+    },
+    {
+      "content": "Make sure to return the customer_id in the result. The output format should only include the customer_id column, so structure your final SELECT statement accordingly."
+    },
+    {
+      "content": "Finally, think about how to write the complete SQL query. You will need to join the Customer table with the Product table, aggregate the data, and apply the necessary filters to get the desired results."
+    }
+  ],
+  "questionNotes": [
+    "The Customer table can contain duplicate rows.",
+    "customer_id is not NULL.",
+    "product_key in the Customer table is a foreign key referencing the Product table.",
+    "product_key in the Product table is a primary key (unique values).",
+    "Return the result in any order."
+  ]
+}

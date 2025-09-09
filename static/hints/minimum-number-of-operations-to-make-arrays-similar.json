@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of 'similar' arrays. Two arrays are similar if they have the same frequency of elements. This means you need to focus on the counts of each number in both arrays."
+    },
+    {
+      "content": "Consider how the operation affects the sum of the arrays. Each operation increases one element by 2 and decreases another by 2, keeping the total sum of the array constant. This means the total sum of both arrays must be equal for them to become similar."
+    },
+    {
+      "content": "To compare the two arrays, you should first sort both `nums` and `target`. This will help you visualize how far off each element in `nums` is from its corresponding element in `target`."
+    },
+    {
+      "content": "After sorting, calculate the differences between corresponding elements in `nums` and `target`. This will give you an idea of how much adjustment is needed for each element."
+    },
+    {
+      "content": "Focus on the positive and negative differences separately. Positive differences indicate how much you need to increase certain elements, while negative differences indicate how much you need to decrease others."
+    },
+    {
+      "content": "You can represent the positive and negative differences as two separate lists. Each positive difference represents an excess that needs to be 'moved' to a negative difference."
+    },
+    {
+      "content": "Calculate the total excess from the positive differences and the total deficit from the negative differences. These two totals should be equal, as each operation transfers 2 units from one index to another."
+    },
+    {
+      "content": "Think about how many operations are needed to balance the excess and deficit. Each operation can move 2 units, so the number of operations required will be half of the total excess (or deficit)."
+    },
+    {
+      "content": "To find the minimum number of operations, you need to sum up the absolute values of the positive differences and divide by 2. This gives you the total number of operations needed."
+    },
+    {
+      "content": "Remember that you can only perform operations between distinct indices. Ensure that your approach respects this constraint when calculating the number of operations."
+    },
+    {
+      "content": "Consider edge cases such as when both arrays are already similar. In this case, the number of operations required would be zero."
+    },
+    {
+      "content": "If the arrays have only one element, they can only be similar if they are equal. Make sure to handle this simple case explicitly."
+    },
+    {
+      "content": "You can also think about the problem in terms of a 'transfer' mechanism, where you transfer excess from one index to another until all indices are balanced."
+    },
+    {
+      "content": "As a final step, ensure that your implementation efficiently handles the constraints provided, especially since the length of the arrays can be quite large (up to 100,000)."
+    },
+    {
+      "content": "Now, try to implement the logic to calculate the positive and negative differences, and then determine the minimum number of operations based on these calculations."
+    }
+  ],
+  "questionNotes": [
+    "Both arrays must be of the same length.",
+    "Each operation modifies two distinct indices.",
+    "The total sum of both arrays must be equal for them to become similar.",
+    "Ensure to handle edge cases where arrays are already similar."
+  ]
+}

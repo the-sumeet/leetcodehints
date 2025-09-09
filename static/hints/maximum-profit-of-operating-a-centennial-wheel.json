@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how customers board the gondolas. Each gondola can take up to 4 customers, and if there are more than 4 waiting, the rest will wait for the next rotation."
+    },
+    {
+      "content": "Keep track of the total number of customers that have boarded after each rotation. You will need to calculate the profit after each rotation based on the number of customers served."
+    },
+    {
+      "content": "Remember that each customer pays a boarding cost. Calculate the total revenue from customers boarding after each rotation, which is the number of customers that boarded multiplied by the boarding cost."
+    },
+    {
+      "content": "Don't forget about the running cost. Each rotation incurs a fixed cost, which you need to subtract from the revenue to determine the profit after each rotation."
+    },
+    {
+      "content": "As you iterate through the customer array, maintain a count of waiting customers. This will help you determine how many customers can board in subsequent rotations."
+    },
+    {
+      "content": "Consider edge cases where the profit might never become positive. If the running cost is too high compared to the boarding cost, you might want to stop rotations early."
+    },
+    {
+      "content": "Think about how you can efficiently track the maximum profit and the number of rotations needed to achieve that profit. You may need to compare profits after each rotation."
+    },
+    {
+      "content": "When calculating profit, ensure you account for all customers that have boarded up to that point and the total running costs incurred. Use a cumulative approach to keep track of these values."
+    },
+    {
+      "content": "If at any point the profit becomes negative, you should consider stopping the rotations. You can return -1 if you never achieve a positive profit."
+    },
+    {
+      "content": "You will need to implement a loop that simulates each rotation, updating the number of waiting customers, calculating profits, and checking if the profit is positive after each rotation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == customers.length, 1 <= n <= 10^5, 0 <= customers[i] <= 50, 1 <= boardingCost, runningCost <= 100.",
+    "Indexing is 0-based; customers[i] represents the number of new customers arriving before the i-th rotation.",
+    "You can stop the wheel at any time, and all subsequent rotations are free for the remaining customers.",
+    "If no scenario yields a positive profit, return -1."
+  ]
+}

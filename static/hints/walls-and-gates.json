@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. Each cell can have one of three values: 2147483647 (representing an empty room), -1 (a wall), or 0 (a gate). This distinction is crucial for your algorithm."
+    },
+    {
+      "content": "Consider how you will traverse the grid. A breadth-first search (BFS) is often suitable for problems that involve finding the shortest path or minimum distance in an unweighted grid."
+    },
+    {
+      "content": "Identify the starting points for your BFS. In this case, the gates (cells with value 0) are your starting points since you want to propagate the distance from these gates to all reachable empty rooms."
+    },
+    {
+      "content": "When performing BFS, keep track of the distance from each gate. You might want to use a queue to manage the cells you need to explore next, along with their current distance."
+    },
+    {
+      "content": "As you process each cell, check its neighbors (up, down, left, right). If a neighbor is an empty room (2147483647), you will need to update its value with the distance from the gate."
+    },
+    {
+      "content": "Remember to mark cells as visited. You can do this by updating the value of the cell to the current distance as you propagate from the gates, effectively marking it as processed."
+    },
+    {
+      "content": "Consider edge cases, such as grids that contain only walls or only gates. Ensure your algorithm can handle these scenarios without errors."
+    },
+    {
+      "content": "Think about the boundaries of the grid. Ensure your BFS does not go out of bounds when checking neighboring cells. You can do this with simple boundary checks."
+    },
+    {
+      "content": "After processing all the gates, ensure that any remaining empty rooms (still marked as 2147483647) are left unchanged, as they are unreachable from any gate."
+    },
+    {
+      "content": "Your BFS should look something like this: Initialize a queue with all gates, then while the queue is not empty, pop an element, check its neighbors, and update distances. Don't forget to enqueue any updated neighbors!"
+    }
+  ],
+  "questionNotes": [
+    "The grid can contain three values: 2147483647 (empty room), -1 (wall), 0 (gate).",
+    "You need to fill each empty room with the distance to the nearest gate.",
+    "Ensure your algorithm handles edge cases like grids with only walls or only gates.",
+    "Use BFS to ensure you find the shortest distance efficiently."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input matrix. Each shop has items sorted in non-increasing order, meaning the first item is always the most expensive, and the last item is the least expensive."
+    },
+    {
+      "content": "Remember that on each day, you can buy one item from any shop, specifically the rightmost item that hasn't been bought yet. This means you need to keep track of which items have been purchased."
+    },
+    {
+      "content": "Consider how the day number affects the price of the items. The price of an item is multiplied by the day number, so buying cheaper items earlier may yield a higher total cost."
+    },
+    {
+      "content": "Think about how you can efficiently keep track of the rightmost available item in each shop. A simple way could be to maintain an index for each shop that starts at the last item and decrements as items are bought."
+    },
+    {
+      "content": "You might want to use a max-heap (priority queue) to always buy the most expensive available item on each day, factoring in the day multiplier. This way, you can maximize the spending."
+    },
+    {
+      "content": "When using a max-heap, remember to push items into the heap with their effective price, which is the item's value multiplied by the current day. This will help you prioritize the most expensive items."
+    },
+    {
+      "content": "As you buy items, ensure you update the index for the corresponding shop so that the next time you buy from that shop, you are buying the next available item."
+    },
+    {
+      "content": "Consider edge cases, such as when there is only one shop or one item. How would your approach change in those scenarios?"
+    },
+    {
+      "content": "Make sure to handle the case where all items are bought. After all items are purchased, your total spending should reflect the sum of all the individual purchases."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Using a max-heap can make the selection of the next item efficient, but ensure that the overall complexity remains manageable given the constraints."
+    },
+    {
+      "content": "As you implement your solution, keep track of the total spending in a variable that you update after each purchase. This will be your final return value."
+    },
+    {
+      "content": "Remember that the indices in the matrix are 0-based. Ensure that your implementation correctly accesses the items using these indices."
+    },
+    {
+      "content": "When calculating the total spending, remember to multiply the value of the item by the current day number. This is crucial to getting the right total."
+    },
+    {
+      "content": "Think about how you can structure your loop to iterate through each day and make the purchase. You will need to ensure that you are pulling from the max-heap correctly for each day."
+    },
+    {
+      "content": "Finally, ensure that your implementation is robust against the maximum constraints of the input size. Test your solution with edge cases to validate its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m == values.length <= 10; 1 <= n == values[i].length <= 10; 1 <= values[i][j] <= 10^6.",
+    "Items are pairwise different across shops.",
+    "Return the maximum total spending after buying all items.",
+    "Indices are 0-based, and items are sorted in non-increasing order."
+  ]
+}

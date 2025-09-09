@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input parameters: `n` is the number of metal types, `k` is the number of machines, and `budget` is the total coins you can spend. Make sure to keep track of how each machine's composition affects the total cost of producing alloys."
+    },
+    {
+      "content": "Remember that the `composition` array indicates how much of each metal type is needed for each machine. For example, `composition[i][j]` tells you how much of metal type `j` is required for machine `i`."
+    },
+    {
+      "content": "Take note of the `stock` array, which represents the initial amount of each metal type you have. This will affect how much you need to purchase to create alloys."
+    },
+    {
+      "content": "The `cost` array specifies how much each unit of metal type costs. You'll need to calculate the total cost based on how many alloys you plan to produce and how much additional metal you need to buy."
+    },
+    {
+      "content": "Consider using a binary search approach to find the maximum number of alloys you can produce with a given machine. This will help efficiently determine the maximum possible alloys without exceeding the budget."
+    },
+    {
+      "content": "For each machine, calculate the total cost of producing a certain number of alloys. The formula for the total cost when producing `x` alloys with machine `i` is: \n\n`total_cost = sum(max(0, composition[i][j] * x - stock[j]) * cost[j] for j in range(n))`."
+    },
+    {
+      "content": "Ensure that you handle cases where you have enough stock of a particular metal type. If `stock[j]` is greater than or equal to `composition[i][j] * x`, you do not need to buy any additional metal of type `j`."
+    },
+    {
+      "content": "When implementing the binary search, set your initial bounds for the number of alloys. A good starting point is from `0` to `budget / min(cost[j] for j in range(n))`, which gives a rough maximum based on the cheapest metal."
+    },
+    {
+      "content": "During the binary search, for each mid-point (number of alloys), check if the total cost calculated exceeds the budget. If it does, adjust your search range accordingly."
+    },
+    {
+      "content": "Finally, remember to iterate over all machines and keep track of the maximum number of alloys that can be produced across all machines. Your final answer should be the maximum found across all machines."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n, k <= 100; 0 <= budget <= 10^8; composition.length == k; composition[i].length == n; 1 <= composition[i][j] <= 100; stock.length == cost.length == n; 0 <= stock[i] <= 10^8; 1 <= cost[i] <= 100.",
+    "Indexing is 1-based for the input arrays.",
+    "All alloys must be created with the same machine.",
+    "Return the maximum number of alloys that can be produced."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "First, consider the constraints of the problem. You have an array of size n + 1, where the integers range from 1 to n. This means there must be at least one duplicate because there are more numbers than available unique slots."
+    },
+    {
+      "content": "Think about how you can utilize the properties of the numbers in the array. Since each number is between 1 and n, you can use the values as indices to track occurrences."
+    },
+    {
+      "content": "Remember that you cannot modify the input array. This means you cannot sort the array or change its contents. Consider how you might track visited indices without altering the array."
+    },
+    {
+      "content": "Consider using a 'tortoise and hare' approach, which is a common strategy for cycle detection. This technique can help you find the duplicate by treating the numbers as pointers to the next index."
+    },
+    {
+      "content": "Start by initializing two pointers: a slow pointer and a fast pointer. The slow pointer moves one step at a time, while the fast pointer moves two steps at a time. Think about how these pointers will interact when a duplicate exists."
+    },
+    {
+      "content": "When the slow and fast pointers meet, this indicates a cycle. To find the entrance to the cycle (the duplicate), reset one pointer to the start of the array and keep the other at the meeting point. Move both pointers one step at a time until they meet again."
+    },
+    {
+      "content": "As you implement this, pay close attention to the conditions for your pointers. Ensure that you handle cases where the array may have multiple duplicates correctly, even though the problem guarantees only one."
+    },
+    {
+      "content": "Think about edge cases, such as the smallest possible array size. What happens when nums = [1, 1]? How does your approach handle this scenario?"
+    },
+    {
+      "content": "Consider the time complexity of your approach. The tortoise and hare method should ideally run in O(n) time. Make sure your implementation adheres to this requirement."
+    },
+    {
+      "content": "Finally, after finding the duplicate, ensure that your function returns the correct value. You should return the duplicate number itself, as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5",
+    "The array length is n + 1.",
+    "Each element is in the range [1, n].",
+    "There is exactly one duplicate number.",
+    "Do not modify the array.",
+    "Use only constant extra space."
+  ]
+}

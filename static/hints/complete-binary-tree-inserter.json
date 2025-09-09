@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a complete binary tree. Each level is filled from left to right, and the last level may not be completely filled. This property is crucial for maintaining the completeness of the tree during insertion."
+    },
+    {
+      "content": "When inserting a new node, think about where the new node should go. It should be added at the next available position in the last level, or if that level is full, it should create a new level."
+    },
+    {
+      "content": "Consider using a queue to help track the nodes of the tree. This can be useful for level-order traversal, allowing you to easily find the next position for insertion."
+    },
+    {
+      "content": "Remember to return the value of the parent node after each insertion. This means you need to keep track of the parent node when you find the position for the new node."
+    },
+    {
+      "content": "When initializing the CBTInserter, you should perform a level-order traversal to populate your queue with the nodes of the tree. This will help you manage the insertion process effectively."
+    },
+    {
+      "content": "Think about how to handle the case when you reach a node that doesn't have both children. This is a key point where you can insert your new node as a child of that node."
+    },
+    {
+      "content": "As you implement the insert method, ensure that you update the queue correctly after each insertion. You might need to add the new node to the queue as well."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as inserting into a tree that only has one node. Make sure your logic works for the smallest and largest trees within the given constraints."
+    },
+    {
+      "content": "When implementing the get_root method, simply return the root node of the tree. Ensure that the structure of the tree remains intact after multiple insertions."
+    },
+    {
+      "content": "Your final implementation should efficiently handle up to 10^4 insertions. Consider the time complexity of your operations and optimize where necessary, especially with the queue management."
+    }
+  ],
+  "questionNotes": [
+    "A complete binary tree is filled from left to right.",
+    "You must return the parent node's value after each insertion.",
+    "The number of nodes will be in the range [1, 1000].",
+    "You can have at most 10^4 calls to insert and get_root.",
+    "Ensure the tree remains complete after each insertion."
+  ]
+}

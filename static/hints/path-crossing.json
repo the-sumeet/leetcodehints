@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to represent your position on the 2D plane. You can use two variables, `x` and `y`, initialized to 0, to keep track of your current coordinates."
+    },
+    {
+      "content": "For each character in the `path` string, determine how it affects your position. For example, moving 'N' increases `y` by 1, 'S' decreases `y` by 1, 'E' increases `x` by 1, and 'W' decreases `x` by 1."
+    },
+    {
+      "content": "Think about how to keep track of all the positions you visit. A set can be useful here, as it allows you to store unique coordinates and check for duplicates efficiently."
+    },
+    {
+      "content": "As you iterate through the `path`, after updating your position based on the current direction, check if the new position already exists in the set of visited positions."
+    },
+    {
+      "content": "If the new position is already in the set, it means you have crossed your path, and you should return `true`. If not, add the new position to the set."
+    },
+    {
+      "content": "Consider edge cases, such as the minimum length of the path (1). With just one move, it's impossible to cross your path. What would your function return in this case?"
+    },
+    {
+      "content": "Think about the maximum length of the path (10,000). Ensure your solution is efficient enough to handle this without running into performance issues."
+    },
+    {
+      "content": "Remember that the coordinates can be negative. For example, moving 'W' from (0, 0) will take you to (-1, 0). Make sure your set can handle negative coordinates."
+    },
+    {
+      "content": "When adding positions to the set, consider how to represent them. You can use a tuple like `(x, y)` to store the coordinates in the set."
+    },
+    {
+      "content": "Finally, if you finish processing the entire path without finding any crossed positions, return `false`. This indicates that there were no revisited locations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= path.length <= 10^4",
+    "path[i] is either 'N', 'S', 'E', or 'W'.",
+    "You start at the origin (0, 0).",
+    "Return true if the path crosses itself at any point, otherwise return false."
+  ]
+}

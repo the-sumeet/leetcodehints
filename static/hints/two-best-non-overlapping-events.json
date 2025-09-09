@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input events. Each event is represented as an array of three integers: [startTime, endTime, value]. Make sure you can access these values correctly."
+    },
+    {
+      "content": "Consider how you can represent the non-overlapping condition. If you attend an event that ends at time `t`, the next event you can attend must start at `t + 1` or later."
+    },
+    {
+      "content": "Think about sorting the events. Sorting them by their end times can help you easily find the next possible event that can be attended after a given event."
+    },
+    {
+      "content": "You need to maximize the sum of the values of the two events you choose. Start by considering how you can keep track of the maximum value when selecting the first event."
+    },
+    {
+      "content": "As you iterate through the sorted events, maintain a variable to track the maximum value of the first event you can attend. This will help when you look for a second event."
+    },
+    {
+      "content": "When considering the second event, ensure that it starts after the first event ends. You can use binary search to efficiently find the first event that starts after the current event ends."
+    },
+    {
+      "content": "Think about edge cases where there are only two events or where all events overlap. What should your function return in these scenarios?"
+    },
+    {
+      "content": "Consider using a loop to iterate through each event as a potential first event, and for each, find the best possible second event that can be attended afterward."
+    },
+    {
+      "content": "You might want to store the maximum sum found so far as you evaluate potential pairs of events. Be careful to update this only when you find a valid pair."
+    },
+    {
+      "content": "Finally, remember to return the maximum sum found. Ensure your function handles cases where only one event can be attended, returning its value if no valid pairs exist."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= events.length <= 10^5",
+    "events[i].length == 3, where each event consists of startTime, endTime, and value.",
+    "1 <= startTime_i <= endTime_i <= 10^9",
+    "1 <= value_i <= 10^6",
+    "Events are 0-indexed.",
+    "You cannot attend two events where one starts at the same time the other ends."
+  ]
+}

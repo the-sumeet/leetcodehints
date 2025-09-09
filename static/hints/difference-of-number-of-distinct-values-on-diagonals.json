@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to identify the diagonals in a 2D grid. A diagonal can be defined as a line of cells that moves from the top-left to the bottom-right. For any cell at position (r, c), the left-above diagonal consists of cells (r-1, c-1), (r-2, c-2), and so on."
+    },
+    {
+      "content": "Consider how to collect the distinct values from the left-above diagonal. You can use a set to keep track of unique values as you traverse this diagonal. Remember to exclude the value of the current cell itself."
+    },
+    {
+      "content": "Next, think about how to calculate the right-below diagonal for the current cell. This diagonal includes cells like (r+1, c+1), (r+2, c+2), etc. Again, use a set to store distinct values, excluding the current cell."
+    },
+    {
+      "content": "When calculating the answer for each cell, you need to compute the absolute difference between the counts of distinct values from the left-above and right-below diagonals. Make sure to handle cases where one of the counts might be zero."
+    },
+    {
+      "content": "Consider edge cases, such as when the grid is of size 1x1. In this case, there are no diagonals to consider, so the answer should be straightforward. Think about how your logic handles such cases."
+    },
+    {
+      "content": "As you iterate through the grid, remember to ensure that you do not go out of bounds when accessing diagonal elements. Use conditions to check if indices are valid before accessing the grid."
+    },
+    {
+      "content": "You might want to implement the logic in two separate loops: one for calculating left-above values and another for right-below values. This separation can help keep your code organized and easier to debug."
+    },
+    {
+      "content": "When implementing the logic, pay attention to the order of operations. First, calculate the distinct values for left-above, then for right-below, and finally compute the absolute difference for the answer."
+    },
+    {
+      "content": "Make sure to initialize your answer matrix with the correct dimensions (m x n) before starting your calculations. This will help you avoid index errors when populating the answer."
+    },
+    {
+      "content": "Finally, remember to return the answer matrix in the correct format. It should be a 2D array with the same dimensions as the input grid, where each cell contains the computed difference."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 50 and 1 <= grid[i][j] <= 50.",
+    "The answer matrix should have the same dimensions as the input grid.",
+    "Distinct values should be counted excluding the current cell.",
+    "Handle edge cases like a 1x1 grid where there are no diagonals."
+  ]
+}

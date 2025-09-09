@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a circular array. In this case, after the last element, you should consider the first element as the next one. This means you will need to handle wrapping around when searching for the next greater element."
+    },
+    {
+      "content": "Consider how you might approach finding the next greater element for a non-circular array first. This could help you build your logic before adapting it to the circular nature of the problem."
+    },
+    {
+      "content": "Think about using a stack to keep track of the indices of elements for which you have not yet found the next greater element. This is a common technique for problems involving 'next greater' relationships."
+    },
+    {
+      "content": "When iterating through the array, remember that you will need to loop through the array twice to account for the circular nature. This means your loop may need to run from 0 to 2 * length of the array."
+    },
+    {
+      "content": "As you process each element, check if the current element is greater than the element at the index stored at the top of the stack. If it is, you can pop from the stack and assign the current element as the next greater element for the popped index."
+    },
+    {
+      "content": "Make sure to handle the case where no greater element exists. For those indices that remain in the stack after processing, you should assign -1 since there is no next greater element."
+    },
+    {
+      "content": "Be cautious of edge cases, such as when all elements are the same or when the array contains only one element. How would your logic handle these cases?"
+    },
+    {
+      "content": "Think about the time complexity of your approach. A naive solution might involve nested loops, but using a stack can help you achieve a more efficient O(n) solution."
+    },
+    {
+      "content": "When implementing your solution, consider initializing a result array with -1s. This way, you have a default value for elements that do not have a next greater element."
+    },
+    {
+      "content": "Finally, implement the logic to traverse the array twice and ensure that you correctly manage the indices for the stack and the result array. Remember to pop from the stack when you find a next greater element and update the result accordingly."
+    }
+  ],
+  "questionNotes": [
+    "The array is circular, meaning after the last element, you should consider the first element as the next one.",
+    "You need to return -1 for elements that do not have a next greater element.",
+    "The output should be an array of the same length as the input.",
+    "Constraints: 1 <= nums.length <= 10^4 and -10^9 <= nums[i] <= 10^9."
+  ]
+}

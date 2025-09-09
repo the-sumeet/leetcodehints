@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the tables involved. You have two tables: 'patients' and 'covid_tests'. Each patient has a unique 'patient_id' and the 'covid_tests' table contains test results linked to these patients."
+    },
+    {
+      "content": "Focus on the criteria for recovery. A patient is considered recovered if they have at least one Positive test followed by at least one Negative test on a later date. This means you'll need to filter tests based on their results and dates."
+    },
+    {
+      "content": "Think about how to identify the first Positive test for each patient. You can use a query to group the test results by 'patient_id' and find the minimum 'test_date' where the result is 'Positive'."
+    },
+    {
+      "content": "After identifying the first Positive test, you need to find the first Negative test that occurs after this Positive test. Consider using a JOIN operation to connect the results of the first Positive test with subsequent Negative tests."
+    },
+    {
+      "content": "Remember to calculate the recovery time in days. This is the difference between the date of the first Negative test and the first Positive test. You can use date functions to compute this difference."
+    },
+    {
+      "content": "Ensure you only include patients who have both positive and negative test results. You might want to use a HAVING clause or a WHERE condition to filter out patients who do not meet this criterion."
+    },
+    {
+      "content": "When forming your final output, make sure to select the necessary columns from both tables: 'patient_id', 'patient_name', 'age', and the calculated 'recovery_time'."
+    },
+    {
+      "content": "Pay attention to the ordering of the results. The output should be ordered by 'recovery_time' in ascending order and then by 'patient_name' in ascending order. This can be done using the ORDER BY clause."
+    },
+    {
+      "content": "Consider edge cases such as patients who only have positive tests or only negative tests. Ensure your query handles these cases properly and excludes such patients from the final result."
+    },
+    {
+      "content": "Finally, combine all your logic into a single SQL query. Start with a CTE or subquery to gather the necessary data, then process it to get the desired output format. Remember to test your query with the provided sample data."
+    }
+  ],
+  "questionNotes": [
+    "Each patient_id in the 'patients' table is unique.",
+    "The result can be Positive, Negative, or Inconclusive in the 'covid_tests' table.",
+    "Only include patients with at least one Positive and one Negative test result.",
+    "Recovery time is calculated as the difference in days between the first Positive and first Negative test.",
+    "The output must be ordered by recovery_time, then by patient_name."
+  ]
+}

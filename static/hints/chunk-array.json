@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to take an array and break it into smaller arrays (chunks) of a specified size. Consider how you would approach this without using any external libraries."
+    },
+    {
+      "content": "Think about how you would iterate through the original array. You might want to use a loop to access each element. How will you keep track of the current position in the array as you create chunks?"
+    },
+    {
+      "content": "Consider what happens when the length of the original array is not divisible by the chunk size. How will you handle the last chunk? It can be smaller than the specified size."
+    },
+    {
+      "content": "You can start by initializing an empty array to hold your chunks. Each time you create a new chunk, you will push it into this array. Make sure to keep track of the index to slice the original array correctly."
+    },
+    {
+      "content": "When you create a chunk, you can use the `slice` method of the array. For example, `arr.slice(startIndex, endIndex)` can help you get the right portion of the array for each chunk."
+    },
+    {
+      "content": "Think about your loop conditions. You need to ensure that you don't go out of bounds of the original array. What condition will you use to stop the loop?"
+    },
+    {
+      "content": "Remember to update your index correctly after creating each chunk. If your chunk size is `size`, and you are currently at index `i`, you should move to `i + size` for the next chunk."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array is empty or when the chunk size is larger than the array itself. How should your function behave in these situations?"
+    },
+    {
+      "content": "You might want to test your function with various inputs, including arrays of different lengths and chunk sizes. What do you expect the output to be for each test case?"
+    },
+    {
+      "content": "As a final step, ensure your function returns the array of chunks correctly. You should return the array you created, which contains all the chunks you formed from the original array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= arr.length <= 10^5",
+    "1 <= size <= arr.length + 1",
+    "The last chunk may contain fewer elements if arr.length is not divisible by size.",
+    "If arr is empty, return an empty array."
+  ]
+}

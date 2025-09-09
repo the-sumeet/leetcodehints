@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the directed graph represented by the `edges` array. Each index in the array corresponds to a node, and the value at that index indicates the node it points to."
+    },
+    {
+      "content": "Consider how to calculate the edge score for each node. The edge score for a node is the sum of the indices of all nodes that point to it. Think about how you can iterate through the `edges` array to gather this information."
+    },
+    {
+      "content": "You can use an additional array to store the edge scores for each node. Initialize this array to zero and then iterate through the `edges` array to update the scores accordingly."
+    },
+    {
+      "content": "As you iterate through the `edges` array, for each node `i`, add `i` to the edge score of the node that `i` points to. This means if `edges[i] = j`, you should do something like `edgeScores[j] += i`."
+    },
+    {
+      "content": "After calculating the edge scores for all nodes, you need to determine which node has the highest score. Keep track of both the highest score and the corresponding node index as you iterate through the scores."
+    },
+    {
+      "content": "Remember to handle tie-breaking correctly. If two nodes have the same edge score, you should return the node with the smaller index. Plan how you will keep track of this while iterating."
+    },
+    {
+      "content": "Consider edge cases such as when all nodes point to the same node or when the graph has the minimum number of nodes (2). How would your approach handle these scenarios?"
+    },
+    {
+      "content": "Make sure to check the constraints given in the problem. You should ensure your solution runs efficiently, especially since `n` can be as large as 100,000."
+    },
+    {
+      "content": "Once you have your edge scores calculated, you can iterate through them to find the maximum score. Use a simple loop to compare each score with the current maximum and update accordingly."
+    },
+    {
+      "content": "Finally, your result should be the index of the node with the highest edge score. Make sure your function returns this index in the correct format as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Each node has exactly one outgoing edge.",
+    "The graph is represented by a 0-indexed integer array.",
+    "Edge scores are the sum of indices of nodes pointing to a given node.",
+    "If multiple nodes have the same edge score, return the smallest index.",
+    "Constraints: 2 <= n <= 100000, 0 <= edges[i] < n, edges[i] != i."
+  ]
+}

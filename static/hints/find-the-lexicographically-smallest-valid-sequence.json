@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of 'almost equal'. Two strings are almost equal if you can change at most one character in the first string to make it identical to the second. Keep this in mind as you think about how to compare characters from `word1` and `word2`."
+    },
+    {
+      "content": "Consider how to construct the sequence of indices. You need to select characters from `word1` such that they can match `word2` with at most one character change. Think about how you can iterate through `word1` while keeping track of the indices."
+    },
+    {
+      "content": "Remember that the indices in the sequence must be sorted in ascending order. This means you should be careful about how you select characters from `word1` to ensure that you are always moving forward in the string."
+    },
+    {
+      "content": "When comparing characters, keep a count of how many characters differ between the selected characters from `word1` and `word2`. You can only allow one mismatch for the sequence to be valid."
+    },
+    {
+      "content": "Think about edge cases, such as when `word1` has fewer unique characters than `word2`. This will help you identify situations where it's impossible to form a valid sequence early on."
+    },
+    {
+      "content": "To ensure you find the lexicographically smallest sequence, you may want to consider using a priority queue or sorting the indices as you build your sequence. This will help you keep track of the smallest options available."
+    },
+    {
+      "content": "As you build the sequence, be sure to validate it against the conditions of being almost equal. If you exceed one mismatch, you should stop adding more indices."
+    },
+    {
+      "content": "You might want to use a two-pointer technique to efficiently traverse both strings. One pointer can iterate through `word1` while the other checks against `word2`."
+    },
+    {
+      "content": "Don't forget to handle the case where no valid sequence exists. If you finish checking and haven't found a valid sequence, return an empty array."
+    },
+    {
+      "content": "Finally, ensure that your output format matches the requirements: return an array of indices. If you find multiple valid sequences, you should return the one that is lexicographically smallest."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= word2.length < word1.length <= 3 * 10^5",
+    "Both strings consist only of lowercase English letters.",
+    "Indices in the output must be sorted in ascending order.",
+    "You can change at most one character in the selected characters from word1 to match word2."
+  ]
+}

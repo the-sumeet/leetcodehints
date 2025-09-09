@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how to retrieve distinct salaries from the Employee table. You can use SQL's `DISTINCT` keyword to help with this. For example, `SELECT DISTINCT salary FROM Employee` will give you unique salary values."
+    },
+    {
+      "content": "Consider how to sort these distinct salaries. You might want to use `ORDER BY salary DESC` to get the highest salaries at the top. This will help you easily access the second highest salary."
+    },
+    {
+      "content": "Remember that you need to find the second highest salary specifically. Think about how you can limit your results after sorting. Using `LIMIT` can be very useful here."
+    },
+    {
+      "content": "What happens if there are fewer than two distinct salaries? You need to handle this case and return `null` if a second highest salary does not exist. Make sure your query accounts for this situation."
+    },
+    {
+      "content": "If you are using SQL, consider using a subquery to first fetch the distinct salaries and then limit the results. For example, a subquery can be used to select the top two distinct salaries."
+    },
+    {
+      "content": "Think about the return format. You need to return the result with a specific column name: `SecondHighestSalary`. Ensure your final output matches this requirement."
+    },
+    {
+      "content": "Consider edge cases such as when all employees have the same salary or when there is only one employee. How will your query behave in these situations?"
+    },
+    {
+      "content": "You might also want to consider using window functions if your SQL dialect supports them. Functions like `ROW_NUMBER()` can help you rank salaries and easily select the second highest."
+    },
+    {
+      "content": "When constructing your final query, make sure to include error handling for cases where the second highest salary does not exist. This can be done with a conditional check in your SQL statement."
+    },
+    {
+      "content": "Finally, your SQL query might look something like this: `SELECT DISTINCT salary FROM Employee ORDER BY salary DESC LIMIT 1 OFFSET 1`. This will help you get the second highest salary directly."
+    }
+  ],
+  "questionNotes": [
+    "The `id` column is unique for each employee.",
+    "You need to return only distinct salaries.",
+    "If there is no second highest salary, return null (None in Pandas).",
+    "The result should be formatted with the column name `SecondHighestSalary`."
+  ]
+}

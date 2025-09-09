@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'special permutation' means in this context. A permutation is special if for every adjacent pair in the permutation, one number is divisible by the other. This means you need to check divisibility conditions for all pairs."
+    },
+    {
+      "content": "Consider the constraints of the problem. You have at most 14 distinct integers. This suggests that a backtracking approach could be feasible since 14! (factorial) is manageable in terms of computation."
+    },
+    {
+      "content": "Think about how to generate permutations of the array. You can use a recursive backtracking method to build permutations step by step, ensuring that at each step you only add a number that maintains the special condition."
+    },
+    {
+      "content": "When generating permutations, keep track of which numbers have already been used. You can use a boolean array or a set to efficiently check if a number is already included in the current permutation."
+    },
+    {
+      "content": "As you build the permutation, check the special condition for the last number added. If the current number does not satisfy the condition with the last number in the permutation, backtrack and try the next number."
+    },
+    {
+      "content": "Remember to handle the modulo operation as specified in the problem. Since the result can be large, ensure that you apply the modulo operation (10^9 + 7) whenever you update your count of special permutations."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array has only two elements. In this case, you can directly check if they are divisible by each other to determine if there's only one valid permutation."
+    },
+    {
+      "content": "To optimize your solution, think about memoization. You can store results of previously computed states (like specific permutations) to avoid redundant calculations in your backtracking approach."
+    },
+    {
+      "content": "When implementing your backtracking function, consider its parameters carefully. You might want to pass the current permutation, the used numbers, and the count of valid permutations found so far."
+    },
+    {
+      "content": "Finally, ensure your function returns the total count of special permutations after exploring all possible configurations. This count should be returned modulo 10^9 + 7."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 14",
+    "Each number in nums is distinct and positive.",
+    "Return the result modulo 10^9 + 7.",
+    "A permutation is special if for all adjacent pairs, one is divisible by the other."
+  ]
+}

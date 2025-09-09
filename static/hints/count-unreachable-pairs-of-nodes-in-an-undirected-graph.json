@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. Each node can be connected to other nodes via edges, forming connected components. Think about how you can identify these connected components."
+    },
+    {
+      "content": "Consider using Depth First Search (DFS) or Breadth First Search (BFS) to explore the graph. This will help you traverse and find all nodes that are reachable from a given starting node."
+    },
+    {
+      "content": "As you explore the graph, keep track of the size of each connected component. You can maintain a list or an array to store the sizes of these components."
+    },
+    {
+      "content": "Remember that pairs of nodes are unreachable if they belong to different connected components. Once you have the sizes of all components, you can calculate the number of unreachable pairs."
+    },
+    {
+      "content": "To calculate the number of unreachable pairs, use the formula: For each component of size 's', the number of unreachable pairs with nodes from this component and all other components is 's * (n - s)'."
+    },
+    {
+      "content": "Iterate through the list of component sizes and apply the formula to accumulate the total number of unreachable pairs. Be careful to avoid double counting."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no edges at all. In this case, every node is its own component, and you can directly calculate the unreachable pairs."
+    },
+    {
+      "content": "Think about the constraints given in the problem. The number of nodes can be quite large (up to 100,000), so ensure your approach is efficient, ideally O(n + e), where e is the number of edges."
+    },
+    {
+      "content": "When implementing your solution, ensure that you handle the input correctly. The edges array should not contain duplicates, and nodes are indexed from 0 to n-1."
+    },
+    {
+      "content": "Finally, once you have the total count of unreachable pairs, return that value. Make sure your return statement matches the expected output format of the problem."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100,000; 0 <= edges.length <= 200,000; edges[i].length == 2; 0 <= a_i, b_i < n; a_i != b_i.",
+    "There are no repeated edges in the input.",
+    "Output should be the total count of unreachable pairs of nodes."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Consider what the problem is asking for: you need to find the maximum length of a contiguous subarray whose sum equals a given value `k`. Focus on how to efficiently calculate the sum of subarrays without recalculating sums repeatedly."
+    },
+    {
+      "content": "Think about how you can keep track of the sums of the subarrays as you iterate through the array. A common approach is to use a variable to maintain the running sum as you traverse the array."
+    },
+    {
+      "content": "As you calculate the running sum, consider how you can determine if any previous subarray sums can help you find the desired sum. You might want to use a data structure that allows for quick lookups of previously seen sums."
+    },
+    {
+      "content": "What data structure could you use to store the sums you've seen so far? A hash map (or dictionary) could be a good choice, where the keys are the sums and the values are the indices at which those sums occur."
+    },
+    {
+      "content": "When you calculate the running sum at each index, check if there is a previous sum that, when subtracted from the current running sum, equals `k`. This will help you identify the start of a valid subarray."
+    },
+    {
+      "content": "Remember to update your hash map with the running sum as you iterate through the array. This will allow you to keep track of the earliest index at which each sum occurs, which is crucial for finding the maximum length."
+    },
+    {
+      "content": "Consider edge cases, such as when the array is empty or when all numbers are negative. How would these cases affect your approach? Make sure your solution handles these scenarios gracefully."
+    },
+    {
+      "content": "Think about how to handle multiple valid subarrays that sum to `k`. You want to ensure that you are tracking the maximum length of any such subarray found during your iterations."
+    },
+    {
+      "content": "As you implement your solution, remember to initialize your hash map with a base case. For instance, you might want to initialize it with the sum `0` at index `-1` to handle cases where a valid subarray starts from the beginning of the array."
+    },
+    {
+      "content": "Finally, as you finalize your solution, ensure that you return the maximum length found. If no valid subarray exists, decide on a return value (e.g., `0`), and ensure your implementation reflects this."
+    }
+  ],
+  "questionNotes": [
+    "You are looking for the maximum length of a contiguous subarray.",
+    "The sum of this subarray must equal the given integer `k`.",
+    "Consider both positive and negative integers in the array.",
+    "The input array can be of any length, including zero.",
+    "If no subarray sums to `k`, return `0`."
+  ]
+}

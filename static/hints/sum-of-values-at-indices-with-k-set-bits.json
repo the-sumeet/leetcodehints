@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to determine the number of set bits in an integer. You can use bit manipulation techniques such as shifting and masking to count the 1s in the binary representation of a number."
+    },
+    {
+      "content": "Remember that the indices of the array `nums` are 0-based. This means the first element is at index 0, the second at index 1, and so on. Ensure your logic accounts for this indexing correctly."
+    },
+    {
+      "content": "You will need to iterate through the indices of the `nums` array. For each index, calculate the number of set bits and check if it equals `k`. Consider using a helper function to encapsulate the logic for counting set bits."
+    },
+    {
+      "content": "When counting set bits, consider using the built-in function `bin(x).count('1')` in Python, which gives you the number of 1s in the binary representation of `x`. This can simplify your implementation."
+    },
+    {
+      "content": "As you iterate through the indices, maintain a running total of the elements in `nums` that meet the criteria of having exactly `k` set bits. Think about how to initialize and update this sum."
+    },
+    {
+      "content": "Consider edge cases such as when `k` is 0. In this case, only the index 0 (which is 0 in binary) has 0 set bits. Make sure your code handles this scenario correctly."
+    },
+    {
+      "content": "Also, think about the maximum value of `k`, which is 10. This means you will only be checking indices up to 1023 (since 2^10 - 1 = 1023) for their binary representation. Ensure your loop does not exceed the length of the `nums` array."
+    },
+    {
+      "content": "Remember that the sum should only include elements from `nums` where the corresponding index has exactly `k` set bits. Be careful to only add these elements to your total sum."
+    },
+    {
+      "content": "You might want to write test cases that cover various values of `k`, including edge cases like `k = 0` and `k` being larger than the number of bits in the maximum index."
+    },
+    {
+      "content": "Finally, your function should return the computed sum. Make sure to test your implementation with the provided examples to validate that it produces the correct output."
+    }
+  ],
+  "questionNotes": [
+    "The input array `nums` is 0-indexed.",
+    "You need to count set bits in the binary representation of indices.",
+    "Return the sum of elements at indices with exactly `k` set bits.",
+    "Constraints: 1 <= nums.length <= 1000, 1 <= nums[i] <= 10^5, 0 <= k <= 10."
+  ]
+}

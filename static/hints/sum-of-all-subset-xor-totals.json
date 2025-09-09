@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subset is. A subset can be formed by including or excluding each element of the array. For an array of length n, there are 2^n subsets."
+    },
+    {
+      "content": "Remember that the XOR operation has specific properties: it is commutative and associative. This means the order in which you apply XOR doesn't matter."
+    },
+    {
+      "content": "Consider how many times each element contributes to the total sum of XORs across all subsets. Each element appears in half of the subsets formed from the array."
+    },
+    {
+      "content": "Think about how to calculate the XOR for a single subset. For example, if you have a subset [a, b], the XOR total is a XOR b. How would you generalize this for all subsets?"
+    },
+    {
+      "content": "You can use a bitwise approach to handle the contribution of each bit position separately. For each bit position, count how many numbers have that bit set."
+    },
+    {
+      "content": "For each bit position, if 'k' numbers have that bit set, then those numbers will contribute to the XOR total in (2^(n-1)) subsets. This is because you can choose to include or exclude the other elements."
+    },
+    {
+      "content": "Consider the case when the array is empty. The XOR total for the empty subset is 0. Ensure your implementation correctly handles this scenario."
+    },
+    {
+      "content": "You might want to iterate through each bit position from 0 to 20 (since nums[i] <= 20). For each bit, calculate how many numbers have that bit set and use that to compute the contribution to the total."
+    },
+    {
+      "content": "As you implement your solution, keep track of the total sum of XORs. You can initialize a variable to accumulate this sum as you calculate contributions from each bit position."
+    },
+    {
+      "content": "Finally, remember to return the total sum after processing all bit positions. Your final result should be an integer representing the sum of all XOR totals for every subset."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 12, 1 <= nums[i] <= 20",
+    "The empty subset has an XOR total of 0.",
+    "Subsets with the same elements should be counted multiple times."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a linked list. Each node has a value and a pointer to the next node. For example, in a list [1, 2, 3], the first node points to the second, and the second points to the third."
+    },
+    {
+      "content": "Consider how rotating a list works. If you rotate a list [1, 2, 3] to the right by 1, it becomes [3, 1, 2]. This means the last node becomes the new head."
+    },
+    {
+      "content": "Think about the value of 'k'. If 'k' is larger than the length of the list, rotating it by 'k' places is equivalent to rotating it by 'k % length'. How would you find the length of the list?"
+    },
+    {
+      "content": "When you traverse the list to find its length, keep track of the last node as well. This will help you connect the end of the list back to the new head after rotation."
+    },
+    {
+      "content": "If the list is empty or has only one node, or if k is 0, the list remains unchanged. Make sure to handle these edge cases first."
+    },
+    {
+      "content": "Once you have the length of the list, calculate the effective rotation. For example, if the length is 5 and k is 7, you only need to rotate by 2 (7 % 5 = 2)."
+    },
+    {
+      "content": "To perform the rotation, you need to find the new tail of the list. The new tail will be at position 'length - k - 1'. How will you find this node?"
+    },
+    {
+      "content": "After identifying the new tail, the new head will be the next node after the new tail. Make sure to update the pointers correctly to complete the rotation."
+    },
+    {
+      "content": "Remember to set the next pointer of the new tail to null to break the cycle and prevent it from pointing back to the new head."
+    },
+    {
+      "content": "Finally, ensure your function returns the new head of the rotated list. You can do this by returning the node you identified as the new head after the rotation."
+    }
+  ],
+  "questionNotes": [
+    "The number of nodes in the list is in the range [0, 500].",
+    "Node values are between -100 and 100.",
+    "k can be as large as 2 * 10^9, so consider using k % length to avoid unnecessary rotations.",
+    "If the list is empty or has only one node, return the head as is."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a substring is. A substring is any contiguous sequence of characters within a string. For example, in the string 'abc', the substrings include 'a', 'ab', 'abc', 'b', 'bc', and 'c'."
+    },
+    {
+      "content": "Consider how you can identify substrings that contain all three characters: 'a', 'b', and 'c'. You might want to think about how to track the counts of each character as you explore different substrings."
+    },
+    {
+      "content": "Think about a sliding window approach. You can use two pointers to represent the current substring's start and end. This way, you can expand and contract the window while checking if all three characters are present."
+    },
+    {
+      "content": "As you expand the right pointer of your window, keep a count of 'a', 'b', and 'c'. When your window contains at least one of each character, you can then start counting valid substrings."
+    },
+    {
+      "content": "When you have a valid window (i.e., it contains all three characters), every substring that starts from the left pointer to the right pointer is valid. This means you can count all substrings starting from the left pointer up to the right pointer."
+    },
+    {
+      "content": "To efficiently count the substrings, after finding a valid window, you can move the left pointer to the right until the window is no longer valid. Each time you move the left pointer, you can continue counting valid substrings."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as strings that are too short to contain all three characters. For example, strings with lengths less than 3 should immediately return 0."
+    },
+    {
+      "content": "Consider the time complexity of your approach. A naive solution that checks all possible substrings would be too slow, especially with the constraint of up to 50,000 characters. Aim for a linear time complexity solution."
+    },
+    {
+      "content": "Remember to account for overlapping substrings. For instance, in 'abcabc', the substrings 'abc', 'abca', 'abcab', and 'abcabc' all overlap, but they should all be counted as valid."
+    },
+    {
+      "content": "You are now close to the solution! Implement the sliding window approach using two pointers, and ensure you track the counts of 'a', 'b', and 'c' correctly. Once you have a valid window, calculate how many substrings can be formed from it."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= s.length <= 5 x 10^4",
+    "s only consists of characters a, b, or c.",
+    "Return the total count of valid substrings containing at least one occurrence of 'a', 'b', and 'c'."
+  ]
+}

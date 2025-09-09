@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you can uniquely identify a long URL. You need to create a mapping between the long URL and a shorter version of it. Consider using a hash function or a simple counter to generate unique identifiers."
+    },
+    {
+      "content": "Remember that the short URL needs to be a valid URL format. You can use a base URL like 'http://tinyurl.com/' and append a unique identifier to it. This way, you can easily reconstruct the original URL later."
+    },
+    {
+      "content": "When encoding, you should store the mapping of the long URL to the short URL. Think about using a dictionary or a hash map where the key is the short URL and the value is the long URL."
+    },
+    {
+      "content": "Consider how you will handle collisions, where two different long URLs might generate the same short URL. You may need to implement a way to ensure each short URL is unique."
+    },
+    {
+      "content": "For decoding, you will need to reverse the mapping. Given a short URL, look up the corresponding long URL in your data structure. Make sure your decode function can handle URLs that were not encoded by your system."
+    },
+    {
+      "content": "Think about the constraints provided in the problem. The length of the URL can be up to 10,000 characters, so ensure your solution can handle large strings efficiently."
+    },
+    {
+      "content": "You may want to implement a method to generate a unique identifier. For example, you could use a base-62 encoding (using characters 0-9, a-z, A-Z) to create a compact representation of an integer."
+    },
+    {
+      "content": "Consider edge cases such as encoding the same long URL multiple times. Your system should return the same short URL for the same long URL consistently."
+    },
+    {
+      "content": "Make sure to test your implementation with various URLs, including those with special characters, to ensure that your encoding and decoding functions are robust."
+    },
+    {
+      "content": "Finally, implement the encode and decode methods. The encode method should return the short URL, while the decode method should return the original long URL. Think about how you will structure your class to hold the mappings."
+    }
+  ],
+  "questionNotes": [
+    "You need to ensure that the short URL is unique for each long URL.",
+    "The short URL should be a valid URL format, starting with a base URL.",
+    "Handle potential collisions in the encoding process.",
+    "The input URL will always be valid and can be up to 10,000 characters long."
+  ]
+}

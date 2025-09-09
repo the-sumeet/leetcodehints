@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by defining the `Bank` class and initializing it with the provided balance array. Remember that the accounts are 1-indexed, so you may need to adjust your indexing when accessing the balance array."
+    },
+    {
+      "content": "For each transaction method (`transfer`, `deposit`, `withdraw`), ensure you validate the account numbers first. You can check if the account number is within the valid range (1 to n)."
+    },
+    {
+      "content": "When checking if a withdrawal or transfer is valid, compare the amount with the balance of the respective account. If the amount is greater than the balance, the transaction should fail."
+    },
+    {
+      "content": "In the `transfer` method, remember that you need to deduct the amount from the first account and add it to the second account only if both accounts are valid and the first account has sufficient funds."
+    },
+    {
+      "content": "For the `deposit` method, simply add the amount to the specified account's balance if the account number is valid. Ensure you return `true` after a successful deposit."
+    },
+    {
+      "content": "Consider edge cases such as attempting to withdraw from an account with insufficient funds, or transferring to an invalid account. Always return `false` in these cases."
+    },
+    {
+      "content": "You should also handle the scenario where an account number is out of bounds (less than 1 or greater than n). This should be checked in every transaction method."
+    },
+    {
+      "content": "Make sure to test your methods with various inputs, including edge cases like withdrawing the entire balance or transferring the maximum allowed amount."
+    },
+    {
+      "content": "As a next step, implement the `withdraw` method. It should first check if the account exists and if the balance is sufficient before deducting the amount."
+    },
+    {
+      "content": "Finally, implement the `transfer` method. Remember, after successfully transferring the money, you need to update both accounts' balances accordingly. Ensure you return `true` if successful and `false` otherwise."
+    }
+  ],
+  "questionNotes": [
+    "The accounts are 1-indexed, meaning account 1 corresponds to balance[0].",
+    "Check that account numbers are within the range 1 to n.",
+    "Ensure the amount for withdrawal or transfer does not exceed the account balance.",
+    "Return true for successful transactions and false for invalid ones.",
+    "The maximum number of function calls is 10^4, so consider efficiency."
+  ]
+}

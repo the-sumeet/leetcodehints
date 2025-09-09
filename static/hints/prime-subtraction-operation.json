@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a strictly increasing array. An array is strictly increasing if each element is greater than the one before it. For example, [1, 2, 3] is strictly increasing, but [1, 2, 2] is not."
+    },
+    {
+      "content": "Consider how the operation allows you to modify the elements of the array. You can choose an index and subtract a prime number that is strictly less than the current number at that index. Think about how this operation can help you adjust the array to be strictly increasing."
+    },
+    {
+      "content": "Identify the prime numbers less than 1000, as this is the maximum value for any element in the array. You can use the Sieve of Eratosthenes to efficiently generate a list of prime numbers below a certain limit."
+    },
+    {
+      "content": "When examining the array, focus on pairs of adjacent elements. If the current element is not less than the next element, consider how you might adjust it using the allowed operation. This will help you determine if the array can be made strictly increasing."
+    },
+    {
+      "content": "Think about edge cases. For example, if the array is already strictly increasing, you can immediately return true without performing any operations. What conditions would allow you to skip operations?"
+    },
+    {
+      "content": "As you iterate through the array, keep track of the last modified value. This will help you ensure that the next value is strictly greater than this modified value after performing any operations."
+    },
+    {
+      "content": "Consider the implications of subtracting the largest possible prime number from an element. If you subtract too much, you may end up with a value that is not greater than the previous element, which could prevent the array from being strictly increasing."
+    },
+    {
+      "content": "Create a helper function to find the largest prime number less than a given number. This will simplify your logic when deciding how much to subtract from each element in the array."
+    },
+    {
+      "content": "As you implement your solution, remember to check each element in the array in sequence. After adjusting an element, verify that it is still possible to make the subsequent elements strictly greater."
+    },
+    {
+      "content": "Finally, think about how you will return the result. You need to return true if it's possible to make the array strictly increasing and false otherwise. Make sure your logic accounts for all elements in the array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "Constraints: 1 <= nums[i] <= 1000",
+    "The array is 0-indexed.",
+    "You can only pick each index once for the operation.",
+    "You must choose a prime number strictly less than nums[i] for subtraction."
+  ]
+}

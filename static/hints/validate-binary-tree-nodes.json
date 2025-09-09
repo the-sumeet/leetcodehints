@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering the properties of a valid binary tree. Each node can have at most one parent. Think about how you can track the number of parents each node has."
+    },
+    {
+      "content": "Remember that if a node has children, it cannot be a child of another node. If a node has a left child or a right child, ensure that it is not referenced as a child elsewhere."
+    },
+    {
+      "content": "Check for duplicate child references. If two nodes are trying to be the left or right child of the same parent, the structure is invalid."
+    },
+    {
+      "content": "Consider the case where a node has no children. How do you represent this in the input arrays? Make sure to handle the -1 values correctly."
+    },
+    {
+      "content": "Think about how you can identify the root of the binary tree. The root should be the only node that does not appear as a child in the leftChild or rightChild arrays."
+    },
+    {
+      "content": "You need to ensure that there is exactly one root node. If you find multiple nodes that could be roots, the structure is invalid."
+    },
+    {
+      "content": "After identifying the root, consider how you can traverse the tree to check for cycles. A valid binary tree should not contain any cycles."
+    },
+    {
+      "content": "Use a set or an array to keep track of visited nodes during your traversal. If you visit a node that you've already seen, it indicates a cycle."
+    },
+    {
+      "content": "Make sure to check the total number of nodes visited during your traversal. For a valid binary tree, this should match the total number of nodes (n)."
+    },
+    {
+      "content": "Finally, combine all your checks: ensure there is one root, no cycles, and that all nodes are accounted for. If all conditions are satisfied, return true."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == leftChild.length == rightChild.length",
+    "1 <= n <= 10^4",
+    "-1 <= leftChild[i], rightChild[i] <= n - 1",
+    "Node indices range from 0 to n - 1.",
+    "A valid binary tree must have exactly one root node."
+  ]
+}

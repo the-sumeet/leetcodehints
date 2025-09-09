@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of the least common multiple (LCM). The LCM of two numbers is the smallest number that is a multiple of both. For example, lcm(2, 3) = 6 and lcm(4, 5) = 20."
+    },
+    {
+      "content": "Remember that two nodes are connected if their LCM is less than or equal to the given threshold. This means you need to check pairs of nodes to see if they are connected."
+    },
+    {
+      "content": "Consider how to represent the graph. You can use an adjacency list or an adjacency matrix. Given the constraints, an adjacency list might be more space-efficient."
+    },
+    {
+      "content": "Think about how to traverse the graph once you've built it. Depth-first search (DFS) or breadth-first search (BFS) are both suitable for finding connected components."
+    },
+    {
+      "content": "You will need to iterate through each pair of nodes in the nums array. For each pair (i, j), calculate the LCM and check if it's less than or equal to the threshold."
+    },
+    {
+      "content": "When calculating the LCM, remember the relationship: lcm(a, b) = (a * b) / gcd(a, b). This can help you avoid overflow issues when dealing with large integers."
+    },
+    {
+      "content": "Think about edge cases. For example, if the threshold is very small, it might lead to many isolated nodes. Conversely, a very large threshold could connect almost all nodes."
+    },
+    {
+      "content": "Since the input array nums contains unique elements, you don't have to worry about duplicate values affecting your calculations or connections."
+    },
+    {
+      "content": "As you implement your graph traversal, keep track of visited nodes to avoid counting the same component multiple times."
+    },
+    {
+      "content": "You can use a simple counter to keep track of the number of connected components you find during your traversal."
+    },
+    {
+      "content": "Consider the time complexity of your approach. With n nodes, a naive O(n^2) solution might be too slow for the upper limit of n = 10^5."
+    },
+    {
+      "content": "If you find that calculating LCM for every pair is too slow, think about optimizing your approach. Perhaps you can group numbers based on their prime factors."
+    },
+    {
+      "content": "You can also consider the properties of LCM and how they relate to the factors of numbers. This can help in reducing the number of checks you need to perform."
+    },
+    {
+      "content": "Before finalizing your code, ensure you test it against edge cases, such as when nums contains only one element or when all elements are larger than the threshold."
+    },
+    {
+      "content": "Finally, when you have your connected components counted, remember to return that count as the output of your function."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9 - All elements of nums are unique.",
+    "1 <= threshold <= 2 * 10^5",
+    "Return the number of connected components."
+  ]
+}

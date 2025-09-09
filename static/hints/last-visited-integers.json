@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to traverse the `nums` array. You will need to maintain two separate lists: one for the seen positive integers and another for the results (ans)."
+    },
+    {
+      "content": "As you iterate through `nums`, check if the current element is a positive integer or -1. If it's a positive integer, you should add it to the 'seen' list."
+    },
+    {
+      "content": "When you encounter -1, you need to keep track of how many consecutive -1s you've seen so far. This will help you determine which element from 'seen' to append to 'ans'."
+    },
+    {
+      "content": "Remember that the first -1 resets the count of consecutive -1s. If you encounter a positive integer between two -1s, the count should start over."
+    },
+    {
+      "content": "If the count of consecutive -1s (let's call it k) is less than or equal to the length of 'seen', append the k-th element from 'seen' to 'ans'."
+    },
+    {
+      "content": "If k is greater than the length of 'seen', append -1 to 'ans'. This accounts for cases where there aren't enough seen integers to match the number of -1s."
+    },
+    {
+      "content": "Make sure to prepend positive integers to 'seen'. This is crucial because you want the most recently seen integer to be at the front of the list."
+    },
+    {
+      "content": "Consider edge cases like when the input starts with -1 or has multiple consecutive -1s at the end. How should your code handle these scenarios?"
+    },
+    {
+      "content": "Think about the constraints: the length of nums is between 1 and 100, and elements are either -1 or between 1 and 100. This means your solution can be efficient with a single pass through the array."
+    },
+    {
+      "content": "Finally, ensure you are returning the 'ans' array correctly. It should contain the results based on the logic you've implemented for handling -1s and the seen integers."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100",
+    "Elements of nums are either -1 or between 1 and 100.",
+    "Return the array ans which contains the last visited integers for each -1."
+  ]
+}

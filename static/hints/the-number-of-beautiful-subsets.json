@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subset is. A subset can be formed by including or excluding each element of the array. For an array of length n, there are 2^n possible subsets, including the empty subset."
+    },
+    {
+      "content": "Remember that the problem specifies non-empty beautiful subsets. This means you will need to exclude the empty subset from your count at the end."
+    },
+    {
+      "content": "Consider the condition for a subset to be beautiful: it should not contain two integers whose absolute difference equals k. Think about how you can check this condition for each subset."
+    },
+    {
+      "content": "You can use a bitmask approach to generate all possible subsets. Each bit in the bitmask can represent whether to include a corresponding element from the array or not."
+    },
+    {
+      "content": "When generating subsets, keep track of the elements you have included. You can use a set to help check if adding a new element would violate the beautiful condition."
+    },
+    {
+      "content": "For each subset generated, check if it is beautiful by ensuring that no two elements in the subset have an absolute difference of k. This can be done by comparing each pair of elements."
+    },
+    {
+      "content": "Since the maximum length of nums is 18, the number of subsets (2^18 = 262144) is manageable for a brute-force solution. However, ensure your checks for beauty are efficient."
+    },
+    {
+      "content": "Think about edge cases, such as when all elements are the same or when k is larger than the maximum element in nums. How would these cases affect the number of beautiful subsets?"
+    },
+    {
+      "content": "You might want to keep a count of beautiful subsets as you generate them. Start with a count of zero and increment it whenever you find a valid beautiful subset."
+    },
+    {
+      "content": "Finally, remember to return the count of beautiful subsets, ensuring you don't include the empty subset. Your final count should reflect only the non-empty subsets that meet the criteria."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 18",
+    "Constraints: 1 <= nums[i], k <= 1000",
+    "Return the number of non-empty beautiful subsets.",
+    "A subset is different if the indices chosen to delete are different."
+  ]
+}

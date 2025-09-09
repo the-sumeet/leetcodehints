@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the total area of all the squares. Remember that the area of a square is given by the formula: area = side_length * side_length. Sum the areas of all the squares to get a total area."
+    },
+    {
+      "content": "Consider how a horizontal line at a certain y-coordinate divides the squares into two regions: above and below the line. You need to find a y-coordinate where the area above the line equals the area below it."
+    },
+    {
+      "content": "Think about the contribution of each square to the area above and below the line. For a square defined by its bottom-left corner (x, y) and side length l, if the line is at y = h, the area above the line can be calculated depending on the position of h relative to y and y + l."
+    },
+    {
+      "content": "You may want to create a function that calculates the area above a given line y = h for all squares. This function should iterate through each square and determine how much area contributes above the line."
+    },
+    {
+      "content": "Take note of the cases where the line is below the bottom of a square or above the top. Make sure to handle these edge cases correctly to avoid counting areas incorrectly."
+    },
+    {
+      "content": "To find the correct y-coordinate, consider using a binary search approach. The search space for y can be between the minimum y-coordinate of the squares and the maximum y-coordinate plus their side lengths."
+    },
+    {
+      "content": "When implementing binary search, calculate the area above the midpoint and compare it to half of the total area. Adjust your search bounds based on whether the area above is greater or less than half the total area."
+    },
+    {
+      "content": "Be careful with floating-point precision. Since the problem allows answers within 10^-5 of the actual answer, ensure your comparisons and calculations account for this precision."
+    },
+    {
+      "content": "Consider the scenario where multiple squares overlap. Remember that overlapping areas should be counted multiple times when calculating the area above and below the line."
+    },
+    {
+      "content": "Finally, ensure your function returns the result formatted to five decimal places, as required by the problem statement. You can use formatting functions available in your programming language to achieve this."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= squares.length <= 5 * 10^4",
+    "Each square is defined by [x, y, l] where 0 <= x, y <= 10^9 and 1 <= l <= 10^9.",
+    "The total area of all squares will not exceed 10^12.",
+    "Ensure to handle overlapping areas correctly, counting them multiple times.",
+    "Return the result formatted to five decimal places."
+  ]
+}

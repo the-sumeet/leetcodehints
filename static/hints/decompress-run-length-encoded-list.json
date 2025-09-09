@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input list. The list is composed of pairs where the first element is the frequency and the second element is the value. For example, in the pair [1, 2], '1' indicates how many times '2' should appear in the output."
+    },
+    {
+      "content": "Remember that the input list has an even length. This means you can safely access pairs using indices without worrying about going out of bounds. You can loop through the list with a step of 2 to access each pair."
+    },
+    {
+      "content": "Consider how you will build the output list. You will need to repeat the value 'val' for 'freq' times for each pair you encounter. Think about how you can use a loop to achieve this."
+    },
+    {
+      "content": "When you extract the frequency and value from the list, make sure to convert them into the right types if necessary. For example, you might want to ensure that 'freq' is treated as an integer when determining how many times to append 'val' to the output."
+    },
+    {
+      "content": "Think about how to append elements to the output list. You can use the `append()` method for individual elements or list concatenation for multiple elements. Consider using a temporary list to hold the repeated values before merging them into the final output."
+    },
+    {
+      "content": "Check how to create a list with repeated elements in Python. You can use list multiplication to create a list of 'val' repeated 'freq' times. For example, `[val] * freq` creates a list with 'val' repeated 'freq' times."
+    },
+    {
+      "content": "As you build the output list, ensure that you are iterating through all pairs in the input list. You can use a loop that runs from 0 to the length of the list divided by 2, since each iteration processes two elements."
+    },
+    {
+      "content": "Consider edge cases, such as the minimum and maximum values for 'freq' and 'val'. For example, if 'freq' is 1, your output should still include the value, and if 'freq' is the maximum allowed, ensure your output can handle that size."
+    },
+    {
+      "content": "After processing all pairs, remember to return the final output list. Make sure your function signature matches the expected return type, which is a list of integers."
+    },
+    {
+      "content": "To get very close to the solution, you can outline your main loop structure. For each index 'i' in the range of half the length of 'nums', extract `freq = nums[2*i]` and `val = nums[2*i + 1]`, then append `[val] * freq` to your output list."
+    }
+  ],
+  "questionNotes": [
+    "The input list 'nums' has an even length, with pairs of elements representing frequency and value.",
+    "Each pair is structured as [freq, val], where 'freq' indicates how many times 'val' should appear in the output.",
+    "Constraints: 2 <= nums.length <= 100, nums.length % 2 == 0, 1 <= nums[i] <= 100."
+  ]
+}

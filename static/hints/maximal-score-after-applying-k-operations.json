@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation you can perform on the array. You can increase your score by selecting an index and adding the value at that index to your score. After that, you replace the value at that index with its ceiling divided by 3."
+    },
+    {
+      "content": "Consider how the operation affects the array. Each time you apply the operation, the value at the selected index decreases. Think about how this will impact your future choices for maximizing the score."
+    },
+    {
+      "content": "Notice that the maximum score you can achieve will depend on the values in `nums` and the number of operations `k`. You should prioritize selecting the largest available value in `nums` during each operation."
+    },
+    {
+      "content": "To efficiently find the maximum value in `nums`, consider using a max-heap (or priority queue). This data structure allows you to quickly retrieve and remove the maximum element, which is crucial for your strategy."
+    },
+    {
+      "content": "After you select the maximum value, remember to update it by applying the ceil division by 3. You can compute this using the formula: `new_value = (current_value + 2) // 3` to handle the ceiling operation."
+    },
+    {
+      "content": "Think about edge cases, such as when all elements in `nums` are the same or when `k` is larger than the number of elements in `nums`. How will this affect your operations?"
+    },
+    {
+      "content": "As you perform operations, keep track of the score you accumulate. You will need to ensure that you perform exactly `k` operations, so plan your choices accordingly."
+    },
+    {
+      "content": "Consider the scenario where `k` is equal to the length of `nums`. What happens if you apply the operation to every element exactly once? This could help you understand a baseline for your score."
+    },
+    {
+      "content": "Make sure to test your solution against edge cases, such as when `nums` contains the minimum or maximum possible values. This will help ensure your solution handles all potential inputs correctly."
+    },
+    {
+      "content": "Finally, implement a loop that runs `k` times, where in each iteration you extract the maximum value from your max-heap, add it to your score, and then update the heap with the new value after applying the operation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length, k <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "You must perform exactly k operations.",
+    "The ceil function is used when updating nums[i].",
+    "The score should be returned as an integer."
+  ]
+}

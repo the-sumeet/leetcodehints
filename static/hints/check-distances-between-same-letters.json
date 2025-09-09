@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the string. Each letter appears exactly twice, so you can use a loop to find the indices of each letter's occurrences. Think about how you can store these indices."
+    },
+    {
+      "content": "Consider using an array or a dictionary to keep track of the indices of each letter. Since you know there are only 26 letters, an array of size 26 could work well to store the indices for each letter."
+    },
+    {
+      "content": "As you loop through the string, when you encounter a letter for the first time, store its index. When you encounter it again, you can calculate the number of letters between the two occurrences."
+    },
+    {
+      "content": "Remember to account for the distance array. The distance for a letter is defined as the number of letters between its two occurrences. So, if a letter appears at indices `i` and `j`, the distance should be `j - i - 1`."
+    },
+    {
+      "content": "Make sure to check if the calculated distance matches the expected distance from the `distance` array. If they do not match for any letter, you can immediately return false."
+    },
+    {
+      "content": "What if a letter does not appear in the string? You can ignore its corresponding value in the distance array. Only check distances for letters that you find in the string."
+    },
+    {
+      "content": "Consider edge cases, such as when the string has the minimum length of 2. Ensure that your logic correctly handles the smallest inputs and that it can still return the correct result."
+    },
+    {
+      "content": "Think about how to efficiently iterate through the string and check the distances. You may want to use a single pass through the string to gather indices, and then another pass through the distance array to validate them."
+    },
+    {
+      "content": "Before returning the final result, ensure that you have checked all letters in the alphabet. If you find any discrepancies in distances, you should return false."
+    },
+    {
+      "content": "Finally, remember to return true only if all letters that appear in the string satisfy their respective distances. Your final check should confirm this condition."
+    }
+  ],
+  "questionNotes": [
+    "Each letter in the string appears exactly twice.",
+    "The length of the distance array is 26, corresponding to each letter of the alphabet.",
+    "The distance for a letter is defined as the number of letters between its two occurrences.",
+    "If a letter does not appear in the string, its distance can be ignored.",
+    "Return true if all letters satisfy their distance conditions; otherwise, return false."
+  ]
+}

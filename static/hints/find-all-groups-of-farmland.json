@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input matrix. Each `1` represents farmland, while `0` represents forested land. Your goal is to identify rectangular groups of `1`s."
+    },
+    {
+      "content": "Consider how you can traverse the matrix. A common approach is to use a nested loop to iterate through each cell in the matrix. When you find a `1`, you will need to determine the boundaries of the group."
+    },
+    {
+      "content": "When you find a `1`, you should check how far down and how far right you can go without hitting a `0`. This will help you identify the bottom-right corner of the rectangle."
+    },
+    {
+      "content": "Remember to mark the cells you have already processed to avoid counting them again. You can do this by changing the `1`s to `0`s after you have recorded the boundaries."
+    },
+    {
+      "content": "Think about the data structure you will use to store the results. You need a 2D array where each entry is a 4-length array representing the top-left and bottom-right corners of each group."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when the matrix is filled with `0`s or when there are multiple groups of farmland that are not adjacent. Ensure your solution handles these cases correctly."
+    },
+    {
+      "content": "Make sure to return the results in a 2D array format. Each group should be represented as `[r1, c1, r2, c2]`, where `(r1, c1)` is the top-left corner and `(r2, c2)` is the bottom-right corner."
+    },
+    {
+      "content": "As you implement your solution, consider how you will determine the dimensions of the matrix. Use `m` for the number of rows and `n` for the number of columns."
+    },
+    {
+      "content": "When you find a `1`, you can initiate a search to find the rectangle's boundaries. Use a loop to extend downwards and another loop to extend rightwards until you hit a `0`."
+    },
+    {
+      "content": "Finally, ensure that your solution efficiently handles the constraints of the problem, especially with a maximum size of 300x300 for the matrix. Aim for a solution that runs in linear time relative to the number of cells."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == land.length, n == land[i].length, 1 <= m, n <= 300.",
+    "Land consists of only 0's and 1's.",
+    "Groups of farmland are rectangular in shape and not adjacent to each other.",
+    "Return format: 2D array containing 4-length arrays for each group."
+  ]
+}

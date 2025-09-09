@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a tree represented by edges, which means there are no cycles and every pair of nodes is connected by exactly one path."
+    },
+    {
+      "content": "Consider how to represent the tree in a way that makes it easy to traverse. An adjacency list is a common choice for tree representation. For example, given edges [[1,2],[2,3],[2,4]], you can create a list like: {1: [2], 2: [1, 3, 4], 3: [2], 4: [2]}."
+    },
+    {
+      "content": "Think about how to define the distance between two nodes. The distance is the number of edges in the path connecting them. This means you need to explore the tree structure to find all pairs of nodes."
+    },
+    {
+      "content": "To find all subtrees, you can start with each node and perform a depth-first search (DFS) or breadth-first search (BFS) to explore all reachable nodes from that starting node."
+    },
+    {
+      "content": "When exploring subtrees, keep track of the maximum distance found between any two nodes within that subtree. This will help you categorize the subtrees based on their maximum distances."
+    },
+    {
+      "content": "Remember to count only unique subtrees. Two subtrees are considered different if they include at least one different node. This means you need to ensure your counting method avoids duplicates."
+    },
+    {
+      "content": "As you explore subtrees, consider the size of each subtree. For example, a subtree with only one node has a maximum distance of 0, while a subtree with two nodes has a maximum distance of 1."
+    },
+    {
+      "content": "You need to return an array of size n-1, where each index corresponds to the number of subtrees with a maximum distance equal to that index (1-indexed). Make sure your counting aligns with this format."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when n = 2. In this case, there is only one edge, and the only possible maximum distance is 1."
+    },
+    {
+      "content": "Consider how to efficiently calculate the maximum distance for each subtree. You may want to maintain a record of distances as you traverse the tree."
+    },
+    {
+      "content": "When counting subtrees, you might want to use a recursive function that returns both the size of the subtree and the maximum distance found within it."
+    },
+    {
+      "content": "Think about how to handle the counting of distances. You can use a dictionary or an array to store counts of subtrees for each maximum distance."
+    },
+    {
+      "content": "As you implement your solution, ensure that you test it against the provided examples to verify correctness. Pay special attention to the expected output format."
+    },
+    {
+      "content": "You may want to create helper functions for clarity, such as one for building the tree and another for counting distances in subtrees."
+    },
+    {
+      "content": "Finally, consider how to optimize your solution. Since n is small (up to 15), a brute-force approach may work, but think about ways to reduce unnecessary calculations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 15; edges.length == n-1; edges[i].length == 2; 1 <= u_i, v_i <= n.",
+    "The cities form a tree, meaning there is a unique path between any two cities.",
+    "Return an array of size n-1 where the d-th element (1-indexed) is the number of subtrees with maximum distance d.",
+    "Two subtrees are different if there is at least one city in one subtree that is not in the other."
+  ]
+}

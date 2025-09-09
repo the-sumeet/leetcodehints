@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for one list to be a subset of another. A list A is a subset of list B if every element in A is also in B. Consider using a set data structure to facilitate this check."
+    },
+    {
+      "content": "Think about how you can compare each person's list of favorite companies with every other person's list. You will need a nested loop to achieve this. The outer loop can iterate through each person, while the inner loop checks against all other lists."
+    },
+    {
+      "content": "Remember to skip comparing a person's list with itself. You only want to check if their list is a subset of any other person's list."
+    },
+    {
+      "content": "When you find that a person's list is a subset of another list, you should mark that person as not qualifying for the result. Consider using a boolean array to keep track of which indices should be excluded."
+    },
+    {
+      "content": "After checking all pairs, you will need to collect the indices of people whose lists are not subsets of any other list. This will involve iterating through your boolean array and collecting the indices marked as valid."
+    },
+    {
+      "content": "Pay attention to the output format. You need to return the indices in increasing order. Since you are collecting them as you go, ensure that you maintain the order of indices."
+    },
+    {
+      "content": "Consider edge cases where there is only one person's list or where all lists are unique and not subsets of each other. How would your solution handle these situations?"
+    },
+    {
+      "content": "Since the constraints allow for up to 100 lists and each list can have up to 500 companies, think about the efficiency of your subset checking. Using sets can help improve performance, especially for larger lists."
+    },
+    {
+      "content": "As you implement the subset checking, remember that the `issubset` method in Python can simplify your code. For example, `set(A).issubset(set(B))` checks if A is a subset of B."
+    },
+    {
+      "content": "Finally, ensure that your solution correctly handles all constraints, including the uniqueness of lists and the requirement to return indices in increasing order. This will help you avoid common pitfalls."
+    }
+  ],
+  "questionNotes": [
+    "1 <= favoriteCompanies.length <= 100",
+    "1 <= favoriteCompanies[i].length <= 500",
+    "1 <= favoriteCompanies[i][j].length <= 20",
+    "All strings in favoriteCompanies[i] are distinct.",
+    "All lists of favorite companies are distinct.",
+    "Return indices in increasing order."
+  ]
+}

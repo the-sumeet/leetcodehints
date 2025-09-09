@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a No-Zero integer is. A No-Zero integer is any positive integer that does not have the digit '0' in its decimal representation. For example, 1, 2, 3, and 11 are No-Zero integers, while 10 and 20 are not."
+    },
+    {
+      "content": "Consider the constraints of the problem. You need to find two No-Zero integers that sum up to a given integer n, where n is guaranteed to be at least 2 and at most 10,000. This means you will always have valid integers to work with."
+    },
+    {
+      "content": "Think about how to generate pairs of integers that sum to n. You could start from 1 and go up to n-1, checking each pair (a, b) where a + b = n. However, you need to ensure both a and b are No-Zero integers."
+    },
+    {
+      "content": "Instead of checking every possible pair, consider a more efficient approach. You can iterate from 1 to n/2 and for each integer a, calculate b as n - a. This reduces the number of iterations significantly."
+    },
+    {
+      "content": "When you calculate b = n - a, you need to check if both a and b are No-Zero integers. You can do this by converting the integers to strings and checking if they contain the character '0'."
+    },
+    {
+      "content": "To check if an integer is a No-Zero integer, you can use a simple function that converts the integer to a string and looks for '0'. For example: `def is_no_zero(num): return '0' not in str(num)`."
+    },
+    {
+      "content": "Remember that there can be multiple valid pairs (a, b). Your solution does not need to be unique, so once you find the first valid pair, you can return it immediately."
+    },
+    {
+      "content": "Think about edge cases. For the smallest input n = 2, the only valid pair is [1, 1]. Ensure your logic handles this case correctly without running into any issues."
+    },
+    {
+      "content": "As you implement your solution, consider the efficiency of your checks. You only need to check up to n/2 for a, which keeps your solution efficient even for the upper limit of n."
+    },
+    {
+      "content": "You are very close to the solution! Start iterating from 1 to n/2, calculate b, and check if both a and b are No-Zero integers. If they are, return [a, b] as your result."
+    }
+  ],
+  "questionNotes": [
+    "A No-Zero integer is a positive integer without the digit '0'.",
+    "The input n is guaranteed to be at least 2 and at most 10,000.",
+    "You need to return a list of two integers [a, b] such that a + b = n.",
+    "There can be multiple valid pairs; any valid pair is acceptable."
+  ]
+}

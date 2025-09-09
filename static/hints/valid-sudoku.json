@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Sudoku board. It is a 9x9 grid divided into nine 3x3 sub-boxes. Each row, column, and sub-box must contain the digits 1-9 without repetition."
+    },
+    {
+      "content": "Consider how you will iterate through the board. You can use nested loops to access each cell in the grid. For example, use an outer loop for rows and an inner loop for columns."
+    },
+    {
+      "content": "Remember that the cells can either contain a digit (1-9) or a dot ('.') representing an empty cell. You only need to validate the filled cells."
+    },
+    {
+      "content": "To track the digits you've seen, consider using sets. You can maintain three sets: one for rows, one for columns, and one for each of the nine 3x3 sub-boxes."
+    },
+    {
+      "content": "When you encounter a digit in a cell, check if it already exists in the corresponding row, column, or sub-box set. If it does, the board is invalid."
+    },
+    {
+      "content": "To determine which sub-box a cell belongs to, you can use integer division. For a cell at (row, col), the sub-box index can be calculated as: (row // 3) * 3 + (col // 3)."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as an empty board (all cells are '.'). This should return true, as it is technically valid."
+    },
+    {
+      "content": "As you validate, remember to add each digit to the respective sets after checking for duplicates. This way, you can keep track of what you've seen so far."
+    },
+    {
+      "content": "After iterating through all cells, if you find no duplicates, the board is valid. You can return true; otherwise, return false."
+    },
+    {
+      "content": "Before finalizing your code, consider testing it with various edge cases, such as boards with only one filled cell, all cells filled correctly, and boards with maximum duplicates."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: board.length == 9, board[i].length == 9, board[i][j] is a digit 1-9 or '.'",
+    "Only filled cells need to be validated.",
+    "A Sudoku board could be valid but not necessarily solvable."
+  ]
+}

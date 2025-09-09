@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the grumpy owner affects customer satisfaction. When the owner is grumpy (grumpy[i] == 1), customers that enter that minute are not satisfied. Conversely, when the owner is not grumpy (grumpy[i] == 0), all entering customers are satisfied."
+    },
+    {
+      "content": "Consider how the technique to remain not grumpy for 'minutes' consecutive minutes can be used strategically. The goal is to maximize the number of satisfied customers by choosing the best segment of minutes to apply this technique."
+    },
+    {
+      "content": "You can break down the problem by calculating the total number of satisfied customers without using the technique. This will give you a baseline to compare against when you apply the technique."
+    },
+    {
+      "content": "Use a sliding window approach to evaluate which segment of 'minutes' consecutive minutes will yield the highest number of additional satisfied customers when the owner is not grumpy."
+    },
+    {
+      "content": "Initialize a variable to keep track of the total satisfied customers without using the technique. Then, iterate through the 'customers' array to sum the satisfied customers for each minute where grumpy[i] is 0."
+    },
+    {
+      "content": "As you use the sliding window, keep track of the additional customers that would be satisfied if you applied the technique to the current window. This can be calculated as the sum of customers for the minutes where grumpy[i] is 1 within that window."
+    },
+    {
+      "content": "Remember to adjust the window as you move through the array. When you slide the window to the right, subtract the customer count from the left end of the window and add the count from the right end."
+    },
+    {
+      "content": "Make sure to handle edge cases where the 'minutes' value is equal to or larger than 'n'. In such cases, you can simply treat the entire array as one segment."
+    },
+    {
+      "content": "After evaluating all possible windows, the maximum number of satisfied customers will be the sum of the baseline satisfied customers and the maximum additional customers from your best window."
+    },
+    {
+      "content": "Finally, ensure that you return the correct result format as specified in the problem statement, which is an integer representing the maximum number of satisfied customers."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == customers.length == grumpy.length",
+    "1 <= minutes <= n <= 2 * 10^4",
+    "0 <= customers[i] <= 1000",
+    "grumpy[i] is either 0 or 1.",
+    "The technique can only be used once for 'minutes' consecutive minutes."
+  ]
+}

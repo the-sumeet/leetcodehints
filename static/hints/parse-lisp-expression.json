@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Lisp-like expressions. They can be integers, let expressions, add expressions, mult expressions, or variables. Each type has a specific format, so familiarize yourself with these formats."
+    },
+    {
+      "content": "Focus on the 'let' expression first. It allows you to assign values to variables. Remember that the assignments are processed sequentially, meaning the order matters."
+    },
+    {
+      "content": "When parsing a 'let' expression, note that it consists of a variable followed by an expression. You will need to evaluate the expression to get the value assigned to the variable."
+    },
+    {
+      "content": "Consider how to handle nested expressions. For example, in '(let x 2 (mult x (let x 3 y 4 (add x y))))', you need to evaluate the inner 'let' before the outer one."
+    },
+    {
+      "content": "The 'add' and 'mult' expressions are straightforward; they take two expressions as arguments and return their sum or product. Make sure to implement these operations correctly."
+    },
+    {
+      "content": "Keep track of variable scopes. When evaluating a variable, you should check the innermost scope first and then move outward. This is crucial for correctly resolving variable values."
+    },
+    {
+      "content": "Use a stack or a recursive approach to manage the parsing of the expressions. Each time you encounter a '(', you can push a new scope onto your stack."
+    },
+    {
+      "content": "When you encounter a closing parenthesis ')', you should evaluate the entire expression that was opened by the last '('. Make sure to pop the scope off the stack and apply any variable assignments."
+    },
+    {
+      "content": "Pay attention to the variable names. They start with a lowercase letter and can include more lowercase letters or digits. However, 'add', 'let', and 'mult' are reserved keywords and cannot be used as variable names."
+    },
+    {
+      "content": "Consider edge cases where variables are reassigned within the same scope. For example, in '(let x 1 x 2 x)', the value of 'x' changes, and you need to ensure you are using the correct value in subsequent expressions."
+    },
+    {
+      "content": "Think about how to handle integer values. They can be positive or negative, so ensure your parsing logic correctly identifies and converts these values."
+    },
+    {
+      "content": "As you parse the expression, you might want to create a helper function to evaluate expressions based on their type (let, add, mult, or integer). This will help keep your code organized."
+    },
+    {
+      "content": "Remember to handle the return value of the entire expression correctly. The final evaluated result should be an integer, so ensure your main function returns this value."
+    },
+    {
+      "content": "Consider using a hash map or dictionary to store variable values within each scope. This will allow you to easily look up variable values when needed."
+    },
+    {
+      "content": "As a final step, think about how to structure your code to handle both the parsing and evaluation in a clean and efficient manner. You may want to separate these concerns into different functions."
+    }
+  ],
+  "questionNotes": [
+    "Expressions can be integers, let expressions, add expressions, mult expressions, or variables.",
+    "The order of variable assignments in 'let' expressions matters.",
+    "Variable names start with a lowercase letter and can include lowercase letters or digits.",
+    "'add', 'let', and 'mult' are reserved keywords and cannot be used as variable names.",
+    "The evaluation of variables follows the innermost scope first principle.",
+    "The final output must be a single integer."
+  ]
+}

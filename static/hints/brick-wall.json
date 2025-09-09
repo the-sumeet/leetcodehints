@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the wall. Each row represents a series of bricks, and the widths of these bricks can vary. Visualize how a vertical line would interact with these rows."
+    },
+    {
+      "content": "Remember that the line can only cross bricks, not edges. This means you need to consider where the edges of each brick are located within each row."
+    },
+    {
+      "content": "Consider how you can represent the positions of the edges of the bricks. You could maintain a running total of widths as you iterate through each row."
+    },
+    {
+      "content": "As you calculate the positions of the edges, think about using a hashmap (or dictionary) to count how many rows have edges at each position. This will help you determine where to draw the line."
+    },
+    {
+      "content": "When you encounter the edges of the bricks, update your hashmap with the count of edges at that position. For example, if you have a brick of width 2, you would add an edge at position 2."
+    },
+    {
+      "content": "After processing all rows, the positions in your hashmap will tell you how many rows can be crossed if you draw a vertical line at that position. The goal is to find the position with the maximum count."
+    },
+    {
+      "content": "To find the minimum number of crossed bricks, subtract the maximum count of edges from the total number of rows. This gives you the least number of bricks crossed."
+    },
+    {
+      "content": "Consider edge cases, such as when there is only one row or when all bricks are of the same width. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "Make sure to account for the constraint that the total width of each row is the same. This will ensure your edge positions are valid across all rows."
+    },
+    {
+      "content": "Finally, implement the logic to iterate through the wall, update the hashmap, and calculate the minimum crossed bricks. Ensure your solution is efficient given the constraints."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^4, 1 <= wall[i].length <= 10^4, 1 <= sum(wall[i].length) <= 2 * 10^4.",
+    "Each row has the same total width, which is crucial for determining valid edge positions.",
+    "The line cannot be drawn just along the vertical edges of the wall.",
+    "Return the minimum number of crossed bricks, not the positions of the edges."
+  ]
+}

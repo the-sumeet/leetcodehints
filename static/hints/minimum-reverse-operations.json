@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the initial setup of the array. You have an array of size `n` initialized to 0's, except for the position `p` which is set to 1. This is your starting point."
+    },
+    {
+      "content": "Remember that the operation allows you to reverse a subarray of size `k`. This means you can change the positions of elements within that subarray, but only if the subarray does not include any banned positions."
+    },
+    {
+      "content": "Consider how to represent the banned positions. You can use a set for quick look-up to check if a position is banned when trying to perform the reverse operation."
+    },
+    {
+      "content": "Think about the implications of the banned positions. If the position `p` is surrounded by banned positions, it might be impossible to move the 1 anywhere else."
+    },
+    {
+      "content": "When calculating the minimum number of operations for each position, consider using a breadth-first search (BFS) approach to explore all reachable positions from `p`."
+    },
+    {
+      "content": "Keep track of the number of operations taken to reach each position. You can use an array initialized to -1 to indicate unreachable positions, and 0 for the starting position."
+    },
+    {
+      "content": "As you perform operations, ensure that you only reverse subarrays that do not contain any banned positions. This is crucial to avoid invalid moves."
+    },
+    {
+      "content": "You might want to prioritize exploring positions that are closer to `p` first. This can help in minimizing the number of operations needed to reach each position."
+    },
+    {
+      "content": "Consider edge cases where `k` is 1. In this case, reversing any subarray does not change the array, and you need to handle this scenario specifically."
+    },
+    {
+      "content": "If `k` is equal to `n`, you can reverse the entire array. This might allow you to move the 1 to the other end of the array, but check if that position is banned first."
+    },
+    {
+      "content": "Make sure to handle cases where the entire array is banned except for the starting position. In such cases, all other positions will be unreachable."
+    },
+    {
+      "content": "As you explore positions, consider using a queue to manage the BFS. Each time you reverse a valid subarray, enqueue the new positions that can be reached."
+    },
+    {
+      "content": "After processing all reachable positions, ensure you return the results in the correct format: an array of size `n` with the minimum operations or -1 for unreachable positions."
+    },
+    {
+      "content": "Remember to check for uniqueness in the banned positions. The problem states that all values in banned are unique, which simplifies some checks."
+    },
+    {
+      "content": "Finally, think about how to efficiently check if a position is banned when performing the BFS. A set or boolean array can help with O(1) checks."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, 0 <= p <= n - 1, 0 <= banned.length <= n - 1, 0 <= banned[i] <= n - 1, 1 <= k <= n",
+    "banned[i] != p for all i, ensuring the starting position is never banned.",
+    "All values in banned are unique.",
+    "Return an array of size n with minimum operations or -1 for unreachable positions."
+  ]
+}

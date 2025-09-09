@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the structure of the time string. The format is 'hh:mm', where 'hh' represents hours (00 to 23) and 'mm' represents minutes (00 to 59). This structure will guide how you handle the '?' characters."
+    },
+    {
+      "content": "Consider the possible values for the hours. If the first character is '?', what digits can it be replaced with? Remember, the first digit of hours can only be '0', '1', or '2'."
+    },
+    {
+      "content": "If the second character of hours is '?', think about the limitations based on the first character. For example, if the first character is '2', the second can only be '0', '1', '2', or '3' to remain a valid hour."
+    },
+    {
+      "content": "Now, look at the minutes. Both characters in 'mm' can be '?', and they can take any digit from '0' to '5' for the first character (to ensure valid minutes) and '0' to '9' for the second character."
+    },
+    {
+      "content": "Break down the problem by counting the valid replacements for each '?' in the hour and minute sections separately. For example, if you have '0?:0?', how many valid hours can you generate?"
+    },
+    {
+      "content": "Remember to multiply the number of valid hour combinations by the number of valid minute combinations. This will give you the total number of valid clock times."
+    },
+    {
+      "content": "Consider edge cases where all characters are '?'. How many combinations can you generate in that scenario? Think about the maximum limits for hours and minutes."
+    },
+    {
+      "content": "If you encounter a case like '1?:3?', analyze the possible values for each '?'. For the first '?', you can have '0' or '1', and for the second '?', you can have '0' to '9'."
+    },
+    {
+      "content": "Make sure to handle each '?' independently, but also pay attention to how the digits interact. For example, '2?' in hours limits the second digit to '0', '1', '2', or '3'."
+    },
+    {
+      "content": "Finally, compile your results. After calculating valid replacements for hours and minutes, sum them up to get the final count of valid times. For example, if there are 3 valid hours and 10 valid minutes, the result would be 3 * 10 = 30."
+    }
+  ],
+  "questionNotes": [
+    "The time string is always in the format 'hh:mm'.",
+    "Hours must be between '00' and '23'.",
+    "Minutes must be between '00' and '59'.",
+    "Each '?' can be replaced by any digit from 0 to 9, but must still result in a valid time."
+  ]
+}

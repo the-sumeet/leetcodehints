@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. Each cell in the grid represents a cost, and you need to find a path from the top-left corner to the bottom-right corner. What are the possible movements you can make?"
+    },
+    {
+      "content": "Consider how the alternating direction requirement affects your movement. You might be able to move right or down, but you can only switch directions after each move. How does this affect your pathfinding strategy?"
+    },
+    {
+      "content": "Think about how you can represent the state of your current position and the last direction you moved in. You might want to use a tuple (x, y, last_direction) to keep track of your position and the last move."
+    },
+    {
+      "content": "You can use a priority queue to explore paths based on their cumulative cost. This will help you efficiently find the minimum cost path. What data structure can you use to implement this?"
+    },
+    {
+      "content": "Don’t forget to handle edge cases, such as a grid with only one cell or a grid where all costs are the same. How would your algorithm behave in these scenarios?"
+    },
+    {
+      "content": "When implementing your algorithm, ensure that you keep track of visited states to avoid cycles. You might want to maintain a set or a 2D array to mark visited cells with their last direction."
+    },
+    {
+      "content": "As you explore paths, remember to update the cost for each cell only if you find a cheaper way to reach it. This is crucial for ensuring that you find the minimum cost path."
+    },
+    {
+      "content": "Consider using dynamic programming to store the minimum costs to reach each cell. You can create a 2D array where each entry corresponds to the minimum cost to reach that cell from the start."
+    },
+    {
+      "content": "Think about how you will return the final result. You need to ensure that your function returns the minimum cost to reach the bottom-right corner of the grid. What format will this return take?"
+    },
+    {
+      "content": "Finally, review your algorithm for edge cases and ensure that it handles all possible scenarios correctly. Are there any paths that could lead to unexpected results based on your current implementation?"
+    }
+  ],
+  "questionNotes": [
+    "The grid is indexed starting from (0, 0) in the top-left corner.",
+    "You can only move right or down, and you must alternate directions after each move.",
+    "Consider the minimum cost path as the sum of the costs of the cells visited.",
+    "If the grid has only one cell, the cost is simply the value of that cell.",
+    "Ensure that you handle grids of varying dimensions (e.g., 1xN, Nx1, NxM)."
+  ]
+}

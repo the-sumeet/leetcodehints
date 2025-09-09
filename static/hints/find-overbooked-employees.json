@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to group the meetings by employee and week. You can extract the week from the meeting date using a function like `WEEK()` in SQL. This will help you aggregate meeting hours per employee per week."
+    },
+    {
+      "content": "Once you group the meetings by employee and week, you'll need to sum the `duration_hours` for each group. This will give you the total hours each employee spent in meetings for that week."
+    },
+    {
+      "content": "Remember that an employee is considered 'meeting-heavy' if they spend more than 20 hours in meetings during a week. You can use a `HAVING` clause to filter out the weeks where the total meeting hours are less than or equal to 20."
+    },
+    {
+      "content": "After filtering, count the number of weeks each employee is meeting-heavy. You can use `COUNT()` and group by `employee_id` to achieve this."
+    },
+    {
+      "content": "Don't forget to join the `employees` table to include employee names and departments in your final output. This will require a `JOIN` clause based on `employee_id`."
+    },
+    {
+      "content": "Ensure that you only include employees who are meeting-heavy for at least 2 weeks. You can do this by adding a `HAVING` clause after counting the weeks."
+    },
+    {
+      "content": "Your final result should be ordered first by the number of meeting-heavy weeks in descending order and then by employee name in ascending order. Use `ORDER BY` to achieve this."
+    },
+    {
+      "content": "Consider edge cases such as employees who have no meetings at all or those who meet the threshold exactly. Make sure your logic correctly handles these situations."
+    },
+    {
+      "content": "When writing your SQL query, pay attention to the data types, especially for `duration_hours`, as it is a decimal. Ensure your calculations handle this correctly."
+    },
+    {
+      "content": "As a final step, structure your SELECT statement to include the required columns: `employee_id`, `employee_name`, `department`, and the count of `meeting_heavy_weeks`. This will form the basis of your output."
+    }
+  ],
+  "questionNotes": [
+    "Employees should only be included if they are meeting-heavy for at least 2 weeks.",
+    "The standard work week is considered to be 40 hours; meeting-heavy is defined as more than 20 hours in meetings.",
+    "The result must be ordered by meeting-heavy weeks (descending) and then by employee name (ascending).",
+    "Ensure to join the employees table to get names and departments.",
+    "Consider edge cases like employees with no meetings or exactly 20 hours."
+  ]
+}

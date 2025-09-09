@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by breaking down the string into individual words. You can use the `split` method in Python to separate the words based on spaces. For example, `s.split(' ')` will give you a list of words."
+    },
+    {
+      "content": "Remember that anagrams of a word are permutations of its letters. To count anagrams, you will need to consider the frequency of each character in each word."
+    },
+    {
+      "content": "For each word, calculate the factorial of the length of the word. This will give you the total number of permutations of that word if all characters were unique."
+    },
+    {
+      "content": "However, if there are repeated characters in a word, you need to divide by the factorial of the counts of each character to avoid overcounting. For example, for the word 'aabb', the number of distinct permutations is `4! / (2! * 2!)`."
+    },
+    {
+      "content": "You will need to compute the factorial and modular inverse of factorials efficiently, especially since the maximum length of the string can be 100,000. Pre-compute these values up to the maximum possible length."
+    },
+    {
+      "content": "Keep in mind that the result should be returned modulo `10^9 + 7`. This is a common requirement to prevent overflow and keep numbers manageable."
+    },
+    {
+      "content": "Consider edge cases, such as strings with only one word or strings where all characters are the same. How would these cases affect the number of anagrams?"
+    },
+    {
+      "content": "When calculating the total number of distinct anagrams for the entire string, you will need to multiply the counts of anagrams for each word together. This is because the anagrams of the entire string are formed by combining the anagrams of each individual word."
+    },
+    {
+      "content": "Make sure to handle the spaces correctly. Spaces should not be included in the calculations of anagrams, and they should only be used to separate words."
+    },
+    {
+      "content": "Use a dictionary or a `Counter` from the `collections` module to easily count the frequency of each character in a word."
+    },
+    {
+      "content": "When calculating the factorial values, remember to take the modulo at each step to prevent overflow and ensure that your results fit within the required range."
+    },
+    {
+      "content": "After calculating the number of anagrams for each word, don't forget to combine them using multiplication. The final result should be the product of the distinct anagrams of each word."
+    },
+    {
+      "content": "Consider how you will handle the modular arithmetic when multiplying the counts of anagrams for multiple words. Make sure to apply the modulo operation at each multiplication step."
+    },
+    {
+      "content": "Before finalizing your solution, test it with a variety of inputs, including edge cases like strings with multiple spaces, single letters, and long strings with repeated characters."
+    },
+    {
+      "content": "Finally, ensure that your function handles the input string correctly and returns the result in the required format. Pay attention to the constraints and make sure your solution is efficient."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length <= 10^5",
+    "s consists of lowercase English letters and spaces ' '.",
+    "There is a single space between consecutive words.",
+    "Return the number of distinct anagrams modulo 10^9 + 7."
+  ]
+}

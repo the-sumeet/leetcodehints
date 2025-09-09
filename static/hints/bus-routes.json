@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. Each bus route is represented as an array of bus stops. For example, routes[0] = [1, 2, 7] means bus 0 travels through stops 1, 2, and 7 in that order."
+    },
+    {
+      "content": "Consider how you can represent the connections between bus stops. Each bus stop can be connected to multiple bus routes, so think about how you can map bus stops to the routes that serve them."
+    },
+    {
+      "content": "A good approach to solve this problem is to use a graph traversal technique. You can think of bus stops as nodes and bus routes as edges connecting those nodes."
+    },
+    {
+      "content": "Before diving into the solution, identify if the source and target are the same. If they are, you can immediately return 0 since no buses are needed."
+    },
+    {
+      "content": "Use a Breadth-First Search (BFS) strategy. BFS is suitable here because you want to find the shortest path (least number of buses) from the source to the target."
+    },
+    {
+      "content": "During BFS, keep track of the buses you have taken. You can maintain a queue to explore each bus stop and the number of buses taken to reach that stop."
+    },
+    {
+      "content": "To optimize your search, use a set to keep track of visited bus stops and another set to track which buses have already been taken. This will prevent cycles and redundant checks."
+    },
+    {
+      "content": "As you explore each bus stop, check which buses can be taken from that stop. You can use a mapping of bus stops to the routes that serve them to facilitate this."
+    },
+    {
+      "content": "When you reach a bus stop, explore all buses that can be taken from there. For each bus, check if it can take you closer to your target."
+    },
+    {
+      "content": "Remember that each bus can take you to multiple stops. When you board a bus, you should explore all stops that the bus can reach."
+    },
+    {
+      "content": "If you reach the target bus stop during your BFS, return the number of buses taken to get there. This will be your answer."
+    },
+    {
+      "content": "Consider edge cases, such as when the source is not connected to any bus routes or when the target bus stop is not reachable from any bus routes."
+    },
+    {
+      "content": "Make sure to handle the constraints carefully. The number of routes and the number of stops can be large, so your solution should be efficient."
+    },
+    {
+      "content": "As a final step, ensure your solution returns -1 if the target is not reachable after exploring all possible routes."
+    },
+    {
+      "content": "To summarize, your BFS will explore bus stops, track buses taken, and check for the target. Make sure to implement the logic for managing visited stops and buses correctly."
+    }
+  ],
+  "questionNotes": [
+    "1 <= routes.length <= 500",
+    "1 <= routes[i].length <= 10^5",
+    "All values of routes[i] are unique.",
+    "sum(routes[i].length) <= 10^5",
+    "0 <= source, target < 10^6"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirements of the RecentCounter class. It needs to keep track of requests and return the number of requests within a specific time frame (3000 milliseconds) when a new request is added."
+    },
+    {
+      "content": "Consider how to store the requests. A list or queue can be useful for maintaining the order of requests as they come in. Think about how you can efficiently add new requests."
+    },
+    {
+      "content": "When a new request is added with the ping method, you need to count how many requests fall within the range [t - 3000, t]. This means you will need to check each request's timestamp."
+    },
+    {
+      "content": "Since the input guarantees that each ping will have a strictly increasing value of t, you can optimize your search for the valid requests by removing old requests that are no longer within the time frame."
+    },
+    {
+      "content": "Think about using a queue data structure. You can enqueue new requests at the back and dequeue old requests from the front when they fall outside the 3000 milliseconds range."
+    },
+    {
+      "content": "As you implement the ping method, remember to return the count of valid requests after you have added the new request and cleaned up any old requests."
+    },
+    {
+      "content": "Consider edge cases, such as the first call to ping when there are no previous requests. Ensure that your implementation correctly handles this and returns 1 for the first request."
+    },
+    {
+      "content": "Make sure to test your implementation with various values of t, especially values that are close together, to ensure that your logic for counting recent requests is correct."
+    },
+    {
+      "content": "You might want to use a while loop to remove requests from the queue that are older than t - 3000. This will help maintain the correct state of your RecentCounter."
+    },
+    {
+      "content": "Finally, your ping method should look something like this: after adding the new request, count the valid requests and return that count. Make sure your logic is clear and efficient."
+    }
+  ],
+  "questionNotes": [
+    "The RecentCounter class must be initialized with zero recent requests.",
+    "The ping method must return the number of requests in the range [t - 3000, t].",
+    "Each call to ping will have a strictly increasing value of t.",
+    "At most 10^4 calls will be made to ping.",
+    "Ensure to handle the first call to ping correctly."
+  ]
+}

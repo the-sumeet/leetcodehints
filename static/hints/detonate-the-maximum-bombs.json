@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. Each bomb is represented as a list of three integers: [x, y, r]. Here, (x, y) is the bomb's position and r is its range. You need to determine how many bombs can be detonated starting from a single bomb."
+    },
+    {
+      "content": "Consider how to determine if one bomb can trigger another. A bomb at (x1, y1) can trigger another at (x2, y2) if the distance between them is less than or equal to the sum of their ranges: distance <= r1 + r2."
+    },
+    {
+      "content": "To calculate the distance between two bombs, use the formula: distance = sqrt((x2 - x1)^2 + (y2 - y1)^2). However, to avoid floating-point operations, you can compare the squares of the distances and ranges instead."
+    },
+    {
+      "content": "Think about how to represent the relationships between bombs. A graph could be a good choice, where each bomb is a node, and an edge exists from bomb A to bomb B if A can trigger B."
+    },
+    {
+      "content": "You can use Depth First Search (DFS) or Breadth First Search (BFS) to explore how many bombs can be detonated starting from any given bomb. Make sure to keep track of visited bombs to avoid counting them multiple times."
+    },
+    {
+      "content": "Remember to iterate through each bomb as a starting point. For each bomb, calculate how many bombs can be detonated and keep track of the maximum count found."
+    },
+    {
+      "content": "Consider edge cases where there is only one bomb or where bombs are positioned far apart such that no bomb can trigger another. These cases should return 1 as the maximum detonated bombs."
+    },
+    {
+      "content": "When implementing your solution, ensure that you handle the input constraints properly. The number of bombs can be up to 100, so your algorithm should be efficient enough to handle this within a reasonable time."
+    },
+    {
+      "content": "As you build your solution, think about how to optimize the search for detonated bombs. You might want to use a list or a set to store which bombs have already been detonated."
+    },
+    {
+      "content": "Finally, ensure that your solution returns the maximum number of bombs that can be detonated starting from any single bomb. You can keep a variable to track this maximum count throughout your iterations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= bombs.length <= 100",
+    "Each bomb is represented as [x, y, r], where x, y, r are integers.",
+    "1 <= x, y, r <= 10^5",
+    "Return the maximum number of bombs that can be detonated starting from one bomb."
+  ]
+}

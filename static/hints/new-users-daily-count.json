@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of user activities, where each activity has a user ID, an activity type, and a date. Focus on how you can extract unique user IDs for each date."
+    },
+    {
+      "content": "Think about how you can group the activities by date. You might want to use a data structure that allows you to store user IDs for each date efficiently, such as a dictionary or a hashmap."
+    },
+    {
+      "content": "Consider how to ensure that you only count users who are logging in for the first time on a specific date. This means you'll need to track which users have logged in on which dates."
+    },
+    {
+      "content": "As you process each activity, check if the activity is a 'login'. If it is, determine if that user has logged in on that date before. You can use a set to keep track of users who have already logged in on that date."
+    },
+    {
+      "content": "Remember to handle multiple activities for the same user on the same date correctly. You should only count the user once per day regardless of how many times they logged in."
+    },
+    {
+      "content": "Think about how to iterate through the list of activities. You may want to sort the activities by date first to make it easier to group them together."
+    },
+    {
+      "content": "After processing the activities, you'll need to compile the counts of new users for each date. Consider how you will format this output, perhaps as a list of dates with their corresponding user counts."
+    },
+    {
+      "content": "Edge cases to consider include: users who only perform non-login activities, users who log in multiple times on the same day, and dates with no user activity at all. Make sure your solution accounts for these scenarios."
+    },
+    {
+      "content": "When returning the final result, think about the format. You may want to return a list of objects, where each object contains a date and the count of new users for that date."
+    },
+    {
+      "content": "Finally, ensure your solution is efficient. Aim for a time complexity that allows you to handle larger datasets without performance issues. Consider how your choice of data structures affects this."
+    }
+  ],
+  "questionNotes": [
+    "Input data consists of user activities with user_id, activity type, and activity_date.",
+    "Focus on counting unique users who log in for the first time on each date.",
+    "Multiple activities by the same user on the same date should only count as one login.",
+    "Consider edge cases like users who do not log in or log in multiple times on the same day."
+  ]
+}

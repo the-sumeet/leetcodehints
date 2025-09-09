@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering how you would increment a number in a standard way. When you add one to the last digit, what happens if that digit is 9?"
+    },
+    {
+      "content": "Think about how carrying works in addition. If you increment a digit and it becomes 10, you need to set that digit to 0 and carry over 1 to the next digit."
+    },
+    {
+      "content": "What if the last digit is not 9? In that case, you can simply increment that digit and return the modified array immediately."
+    },
+    {
+      "content": "Consider how to handle the carry when you reach the beginning of the array. If you carry out of the most significant digit, you'll need to add a new digit at the start of the array."
+    },
+    {
+      "content": "You can loop through the digits array from the last index to the first index. For each digit, check if it is 9 before deciding how to modify it."
+    },
+    {
+      "content": "Remember to check the array bounds while iterating. When you reach the first digit, if you still have a carry, you'll need to add a new digit at index 0."
+    },
+    {
+      "content": "Use a loop to iterate backward through the array. If you encounter a 9, set it to 0 and continue to the next digit. If you find a digit less than 9, just increment it and break out of the loop."
+    },
+    {
+      "content": "After the loop, check if you still have a carry. If so, insert 1 at the beginning of the array. This handles cases like incrementing 999 to 1000."
+    },
+    {
+      "content": "Make sure to return the modified array after processing all the digits. The return format should strictly match the input format, which is an array of integers."
+    },
+    {
+      "content": "Consider edge cases like a single digit 9 or an array with multiple 9s. How would your logic handle these scenarios? Think carefully about the carry propagation."
+    }
+  ],
+  "questionNotes": [
+    "The input is an array of digits, where each digit is between 0 and 9.",
+    "The array does not contain leading zeros.",
+    "You need to return the resulting array after incrementing the integer represented by the digits.",
+    "Constraints: 1 <= digits.length <= 100, 0 <= digits[i] <= 9."
+  ]
+}

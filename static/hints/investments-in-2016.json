@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the two main criteria for selecting policyholders: they must have the same `tiv_2015` value as at least one other policyholder and must be located in a unique city defined by their `(lat, lon)` coordinates."
+    },
+    {
+      "content": "To find policyholders with the same `tiv_2015`, consider using a `GROUP BY` clause. This will help you identify which `tiv_2015` values are shared among multiple policyholders."
+    },
+    {
+      "content": "Once you have the grouped `tiv_2015` values, you can use a `HAVING` clause to filter out those that appear only once. This will help you focus on the relevant policyholders."
+    },
+    {
+      "content": "Next, to ensure that the `(lat, lon)` pairs are unique, you can use a `COUNT` function with a `GROUP BY` clause on those columns. This will help you identify policyholders who are the only ones in their respective cities."
+    },
+    {
+      "content": "Combine the results of the previous steps using a `JOIN` or a `WHERE IN` clause to filter the original table based on the policyholders that meet both criteria."
+    },
+    {
+      "content": "Remember to handle the rounding of `tiv_2016` values. You can use a rounding function in your SQL query to ensure the final output is formatted to two decimal places."
+    },
+    {
+      "content": "When summing up the `tiv_2016` values, ensure that you are only summing values from policyholders who meet both criteria. This may involve another `GROUP BY` or a subquery."
+    },
+    {
+      "content": "Pay attention to the output format. You need to return the sum of `tiv_2016` in a specific format, which is a single column named `tiv_2016`."
+    },
+    {
+      "content": "Consider edge cases where all policyholders may have unique `tiv_2015` values or where all policyholders are located in the same city. Make sure your query can handle these scenarios without errors."
+    },
+    {
+      "content": "Finally, write the SQL query to select the rounded sum of `tiv_2016` values, ensuring all conditions are applied correctly. You should be close to the final query structure now."
+    }
+  ],
+  "questionNotes": [
+    "The `pid` is the primary key and unique for each policyholder.",
+    "Ensure `tiv_2016` is rounded to two decimal places in the output.",
+    "Only include policyholders with shared `tiv_2015` values and unique `(lat, lon)` pairs.",
+    "The output should be a single column named `tiv_2016`."
+  ]
+}

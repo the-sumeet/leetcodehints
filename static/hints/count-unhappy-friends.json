@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a list of preferences for each friend, and a list of pairs indicating who is paired with whom. Make sure you can access both lists easily."
+    },
+    {
+      "content": "Remember that a friend is unhappy if they prefer someone else over their current partner, and that someone else also prefers them back. This mutual preference is key to identifying unhappiness."
+    },
+    {
+      "content": "To check if a friend is unhappy, you need to loop through the pairs first. For each pair, identify the two friends and their preferences. This will help you focus on the relevant friends only."
+    },
+    {
+      "content": "Consider using a mapping from each friend to their preference rankings. This will allow you to quickly check how much one friend prefers another compared to their current partner."
+    },
+    {
+      "content": "When checking preferences, remember that the preferences are given in an ordered list. You can create a dictionary that maps each friend to their index in their preference list for O(1) lookup."
+    },
+    {
+      "content": "For each friend in a pair, check their preferences against the partner of the friend they prefer. If both conditions of mutual preference are satisfied, count that friend as unhappy."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as the smallest input size (n=2). Ensure your solution works correctly for the minimum constraints."
+    },
+    {
+      "content": "You can optimize your checks by breaking early when you find a mutual preference, since you only need to count a friend as unhappy once."
+    },
+    {
+      "content": "As you implement your solution, keep track of the count of unhappy friends. Make sure to return this count at the end of your function."
+    },
+    {
+      "content": "Before finalizing your solution, test it with the provided examples and any additional edge cases you can think of, like when all friends are unhappy or all are happy."
+    }
+  ],
+  "questionNotes": [
+    "n is always even.",
+    "preferences[i] contains unique friends, excluding the friend themselves.",
+    "pairs contain unique pairs of friends, with each friend appearing in exactly one pair.",
+    "Return the total count of unhappy friends."
+  ]
+}

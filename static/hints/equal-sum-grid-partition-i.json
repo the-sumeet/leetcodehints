@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "First, consider the total sum of all elements in the grid. If you want to split the grid into two sections with equal sums, the total sum must be even. Can you calculate the total sum of the grid?"
+    },
+    {
+      "content": "Think about how you can make a horizontal cut. If you cut between two rows, you'll have a top section and a bottom section. How would you calculate the sum of the elements in these two sections?"
+    },
+    {
+      "content": "When making a horizontal cut, remember that each section must be non-empty. This means you can only cut between rows 1 and m-1 (where m is the number of rows). Can you set up a loop to iterate through possible cut positions?"
+    },
+    {
+      "content": "As you consider the sums of the sections after a horizontal cut, keep a running total of the sum of the top section as you iterate through the rows. How can you use this to check if the sum of the bottom section equals the sum of the top section?"
+    },
+    {
+      "content": "Now, let's think about vertical cuts. Similar to horizontal cuts, you will have a left section and a right section. How can you adapt your approach for vertical cuts while ensuring both sections are non-empty?"
+    },
+    {
+      "content": "For vertical cuts, you'll need to calculate the sum of columns instead of rows. Can you create an array to store the cumulative sums of each column to facilitate this?"
+    },
+    {
+      "content": "When checking for equal sums after making a vertical cut, remember to maintain a running total for the left section. How can you compare this with the right section's sum as you iterate through the columns?"
+    },
+    {
+      "content": "Consider edge cases where the grid may have only one row or one column. How would these cases affect your ability to make a cut? What should your function return in these scenarios?"
+    },
+    {
+      "content": "Make sure to account for the constraints given in the problem. For example, how will you handle very large matrices efficiently? Think about the time complexity of your approach."
+    },
+    {
+      "content": "Finally, combine your logic for both horizontal and vertical cuts. If you find a valid partition in either direction, how will you structure your return statement to indicate success?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m == grid.length <= 10^5, 1 <= n == grid[i].length <= 10^5, 2 <= m * n <= 10^5, 1 <= grid[i][j] <= 10^5",
+    "Ensure that the cuts result in non-empty sections.",
+    "The total sum of the grid must be even for a valid partition to exist."
+  ]
+}

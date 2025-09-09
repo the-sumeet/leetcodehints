@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary watch. It has 4 LEDs for hours (0-11) and 6 LEDs for minutes (0-59). Each LED represents a binary digit, so the maximum number of LEDs that can be turned on is 10."
+    },
+    {
+      "content": "Consider how to represent the hours and minutes in binary. For hours, you can use values from 0 to 11 (which can be represented in 4 bits), and for minutes, you can use values from 0 to 59 (which can be represented in 6 bits)."
+    },
+    {
+      "content": "Think about how to generate all possible combinations of turned-on LEDs. You can use a bit manipulation approach or combinations to explore different configurations of the LEDs being on or off."
+    },
+    {
+      "content": "Remember that the total number of LEDs turned on should equal 'turnedOn'. This means you need to iterate through possible hour and minute combinations while keeping track of the total number of LEDs that are on."
+    },
+    {
+      "content": "When you find a valid hour and minute combination, ensure that the hour does not have a leading zero. For example, '01:00' is invalid, but '1:00' is valid."
+    },
+    {
+      "content": "For the minutes, ensure that they are always displayed as two digits. This means that if the minutes are less than 10, you should prefix them with a zero (e.g., '09' instead of '9')."
+    },
+    {
+      "content": "Consider edge cases, such as when 'turnedOn' is 0. What should your output be in this case? Make sure to handle this scenario correctly."
+    },
+    {
+      "content": "You should also think about cases where 'turnedOn' is greater than the maximum number of LEDs available (which is 10). How will you handle these cases?"
+    },
+    {
+      "content": "As you generate times, store them in a list. You can use a set to avoid duplicates if necessary, but in this case, each combination of hour and minute should be unique."
+    },
+    {
+      "content": "Finally, once you have generated all valid times, format them correctly before returning. For example, if you have hours and minutes, combine them into the format 'H:MM'. Ensure to check the conditions discussed previously."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= turnedOn <= 10",
+    "Hours must be between 0 and 11 (inclusive).",
+    "Minutes must be between 0 and 59 (inclusive).",
+    "Output format: 'H:MM', where H is hours and MM is minutes (two digits).",
+    "No leading zeros in hours, but leading zeros are allowed in minutes."
+  ]
+}

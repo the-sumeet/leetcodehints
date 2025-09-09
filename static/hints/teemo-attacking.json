@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the poison effect works. When Teemo attacks at time `t`, Ashe is poisoned from `t` to `t + duration - 1`. Make sure to visualize this with a simple example."
+    },
+    {
+      "content": "Think about how to track the total poisoned time. You might want to maintain a variable that counts the total seconds Ashe is poisoned. Consider how you will update this variable with each attack."
+    },
+    {
+      "content": "Notice that if Teemo attacks again before the previous poison effect ends, the poison duration resets. This means you need to check if the next attack time is less than the end time of the current poison effect."
+    },
+    {
+      "content": "To keep track of the poison intervals, you can calculate the end time of the poison effect for each attack. For an attack at time `t`, the end time is `t + duration - 1`."
+    },
+    {
+      "content": "When processing each attack, compare the current attack time with the end time of the previous poison effect. If the current attack happens after the previous effect ends, you can simply add the full duration."
+    },
+    {
+      "content": "If the current attack happens before the previous effect ends, you will need to calculate how much additional time is added to the total poisoned time. This can be done by determining the overlap."
+    },
+    {
+      "content": "Consider edge cases, such as when all attacks happen at the same time or when the duration is zero. How would these cases affect your calculations?"
+    },
+    {
+      "content": "You can iterate through the `timeSeries` array using a loop. For each attack, decide whether to add the full duration or just the additional time based on the previous attack's end time."
+    },
+    {
+      "content": "Make sure to initialize your total poisoned seconds to zero before starting the loop. Also, keep track of the end time of the last poison effect to compare with each new attack."
+    },
+    {
+      "content": "Finally, remember to return the total number of seconds Ashe is poisoned after processing all attacks. This will be your final output."
+    }
+  ],
+  "questionNotes": [
+    "1 <= timeSeries.length <= 10^4",
+    "0 <= timeSeries[i], duration <= 10^7",
+    "timeSeries is sorted in non-decreasing order.",
+    "The output should be the total number of unique seconds Ashe is poisoned."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. It is an n x n grid where each cell can be empty (0), contain a cherry (1), or have a thorn (-1). Your journey begins at the top-left corner (0, 0) and ends at the bottom-right corner (n-1, n-1)."
+    },
+    {
+      "content": "Consider the movement rules: you can only move right or down when going to the bottom-right corner, and left or up when returning to the top-left corner. This creates two distinct paths that you need to analyze."
+    },
+    {
+      "content": "Think about how you can represent the paths through the grid. You might want to use a depth-first search (DFS) or dynamic programming approach to explore all possible routes while collecting cherries."
+    },
+    {
+      "content": "When you collect cherries from a cell, it becomes empty (0). This means that the second trip back home could potentially collect fewer cherries if you revisit cells. Keep track of the state of the grid as you collect cherries."
+    },
+    {
+      "content": "Before diving into coding, consider edge cases. For instance, what happens if the grid is filled with thorns (-1) except for the start and end points? How would you handle this situation?"
+    },
+    {
+      "content": "You need to check if there is a valid path from (0, 0) to (n-1, n-1) before attempting to collect cherries. If there’s no valid path, the maximum number of cherries collected will be zero."
+    },
+    {
+      "content": "As you explore the grid, maintain a count of cherries collected and ensure you are not revisiting cells unnecessarily. Use a visited set or boolean array to track your path."
+    },
+    {
+      "content": "When implementing your solution, think about how to handle the grid after the first trip. You may want to create a copy of the grid or modify it in a way that reflects the cherries collected."
+    },
+    {
+      "content": "Consider using a recursive function with memoization to optimize your search for the maximum cherries collected. This could help avoid recalculating results for the same grid states."
+    },
+    {
+      "content": "During the return trip, you should also check for valid paths. Make sure to account for any cells that have turned to empty (0) after the first trip."
+    },
+    {
+      "content": "Think about the overall complexity of your solution. Since the grid can be as large as 50x50, ensure that your approach is efficient enough to handle the maximum input size."
+    },
+    {
+      "content": "You may want to explore dynamic programming as a potential solution. Consider how you can build a DP table that tracks the maximum cherries collected at each step of the journey."
+    },
+    {
+      "content": "When implementing the DP approach, you can define states based on the current position and the number of cherries collected. This will help you optimize the path taken."
+    },
+    {
+      "content": "Remember to handle the case where you cannot reach the bottom-right corner. If your path is blocked, ensure your function returns 0 immediately."
+    },
+    {
+      "content": "As a final step before coding, sketch out the logic for both the forward and return trips. Write pseudo-code to clarify how you will manage the state of the grid and the cherry count."
+    }
+  ],
+  "questionNotes": [
+    "The grid is n x n (1 <= n <= 50).",
+    "Cells can contain -1 (thorn), 0 (empty), or 1 (cherry).",
+    "Start at (0, 0) and end at (n-1, n-1).",
+    "You can only move right or down on the way to the end and left or up on the way back.",
+    "If no valid path exists, return 0."
+  ]
+}

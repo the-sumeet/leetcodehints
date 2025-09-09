@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of placing rooks on the chessboard. Rooks can attack any piece in the same row or column, so you need to ensure that no two rooks share the same row or column."
+    },
+    {
+      "content": "Consider the size of the board. Since you need to place three rooks, ensure that both dimensions of the board (m and n) are at least 3. This allows for enough space to place the rooks without them attacking each other."
+    },
+    {
+      "content": "Think about how you can represent the positions of the rooks. You will need to keep track of the rows and columns that have already been used for placing a rook."
+    },
+    {
+      "content": "A brute-force approach could involve checking every combination of three cells on the board. However, this would be inefficient. Instead, consider a more strategic way to select the cells."
+    },
+    {
+      "content": "One way to optimize your search is to iterate through all possible combinations of three distinct rows and three distinct columns. This will help you narrow down the potential placements for the rooks."
+    },
+    {
+      "content": "When you select a combination of three rows and three columns, you can calculate the maximum possible sum from the selected cells. Make sure to check that the selected cells do not attack each other."
+    },
+    {
+      "content": "Remember to handle the case where the values in the cells can be negative. This means that you should not only look for maximum sums but also consider how negative values can affect your total."
+    },
+    {
+      "content": "You might want to create a helper function to calculate the sum of values for a given combination of rows and columns. This will make your main logic cleaner and easier to understand."
+    },
+    {
+      "content": "As you iterate through combinations, keep track of the maximum sum found so far. This will help you efficiently find the best placement of the rooks."
+    },
+    {
+      "content": "Consider edge cases where all values are negative or where the board has a mix of high and low values. These cases can significantly affect your approach to finding the maximum sum."
+    },
+    {
+      "content": "You can use combinations from Python's itertools library to generate the row and column indices efficiently. This will save you from manually implementing combination logic."
+    },
+    {
+      "content": "After generating combinations of rows and columns, ensure that you validate the sums by checking that the selected cells correspond to the actual positions on the board."
+    },
+    {
+      "content": "If two rooks are placed in the same row or column, the sum will be invalid. Make sure to implement checks to prevent this situation when calculating the sum."
+    },
+    {
+      "content": "Once you have a working approach, test your solution with various board configurations to ensure it handles all edge cases and returns the correct maximum sum."
+    },
+    {
+      "content": "Finally, remember to return the maximum sum found after evaluating all valid combinations of rook placements. Your final function should return this value."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= m == board.length <= 100, 3 <= n == board[i].length <= 100",
+    "Values in the board can range from -10^9 to 10^9.",
+    "Ensure that rooks do not attack each other by not placing them in the same row or column.",
+    "Return the maximum sum of the cell values where the rooks are placed."
+  ]
+}

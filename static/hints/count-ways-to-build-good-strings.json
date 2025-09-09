@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to construct a string based on the given `zero` and `one` values. You can append '0' up to `zero` times and '1' up to `one` times. Think about how these additions can affect the length of the string."
+    },
+    {
+      "content": "Consider how to keep track of the lengths of the strings you can create. You need to ensure that the lengths fall within the range defined by `low` and `high`. What data structure could help you manage these lengths efficiently?"
+    },
+    {
+      "content": "Think about the base cases for your string lengths. For example, if you start with an empty string, what are the valid lengths you can reach immediately after one or two operations?"
+    },
+    {
+      "content": "You might want to use dynamic programming to keep track of the number of ways to create strings of each possible length. Define an array `dp` where `dp[i]` represents the number of good strings of length `i`."
+    },
+    {
+      "content": "Initialize your `dp` array properly. You can start with `dp[0] = 1`, representing the empty string. How will you fill in the rest of the `dp` array based on the values of `zero` and `one`?"
+    },
+    {
+      "content": "As you fill in the `dp` array, remember to consider the modulo operation since the result can be large. Use `10^9 + 7` to keep your numbers manageable."
+    },
+    {
+      "content": "When updating the `dp` array, ensure you're adding the counts from the previous lengths that can be reached by appending '0's and '1's. Specifically, `dp[i]` should accumulate values from `dp[i - zero]` and `dp[i - one]`."
+    },
+    {
+      "content": "After populating the `dp` array, focus on the final step: summing up the counts from `dp[low]` to `dp[high]`. This will give you the total number of good strings within the specified length range."
+    },
+    {
+      "content": "Consider edge cases where `low` equals `high`. How does this affect your summation? You should still ensure that your logic handles this scenario correctly."
+    },
+    {
+      "content": "Finally, ensure you return the result as specified in the problem statement. What format should your output take? Make sure it's the count modulo `10^9 + 7`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= low <= high <= 100000",
+    "1 <= zero, one <= low",
+    "Return the number of different good strings modulo 10^9 + 7."
+  ]
+}

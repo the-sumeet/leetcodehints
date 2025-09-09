@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic mechanics of the problem. You have a boat that can carry at most `k` individuals at a time, and each individual has a specific time it takes them to cross the river. Make sure you can calculate the crossing time for a group based on the maximum time of its members."
+    },
+    {
+      "content": "Remember that the crossing time is affected by the stage multiplier. The time taken by a group is `max(time[i]) * mul[current_stage]`. Be clear on how to find the maximum time when forming groups."
+    },
+    {
+      "content": "Consider how the boat returns after dropping off individuals. One person must return to bring the boat back, and this return time is also influenced by the current stage multiplier."
+    },
+    {
+      "content": "Take note of how the stage advances after each crossing and return trip. The current stage updates based on the floor of the time taken, modulo `m`. This can affect the multipliers for subsequent trips."
+    },
+    {
+      "content": "Think about edge cases. For instance, if `k` is 1, only one person can cross at a time, which means someone will always have to return. This could lead to scenarios where it's impossible to transport all individuals."
+    },
+    {
+      "content": "If you find that `n > k` and `k == 1`, you can immediately return -1 since it's impossible to transport everyone. This is a quick check that can save computation time."
+    },
+    {
+      "content": "When forming groups, consider all possible combinations of individuals that can fit in the boat. You might want to use combinations from libraries or implement a recursive function to explore these groupings."
+    },
+    {
+      "content": "Keep track of the total time spent as you simulate the trips. You’ll need to accumulate the crossing times and return times for each group until all individuals are transported."
+    },
+    {
+      "content": "Implement a recursive approach or a backtracking algorithm to explore different strategies for sending groups across the river. This will help you find the minimum time required."
+    },
+    {
+      "content": "When selecting individuals to send, always ensure that you are considering the maximum time of the group. This will affect the total crossing time significantly."
+    },
+    {
+      "content": "Make sure to handle the return of the boat correctly. After every crossing, you need to calculate the return time for the selected individual and update the stage accordingly."
+    },
+    {
+      "content": "Consider memoization to optimize your recursive solution. Since the same state (combination of individuals and current stage) may be reached multiple times, storing results can reduce computation."
+    },
+    {
+      "content": "Ensure that you are correctly managing the state of the individuals who have crossed and those who are still at the base camp. This will be crucial for accurately calculating the next steps."
+    },
+    {
+      "content": "As you implement your solution, regularly test it with the provided examples to ensure your logic holds. Pay close attention to how the stage changes after each crossing and return."
+    },
+    {
+      "content": "Finally, think about how to handle floating-point precision when calculating times. Ensure that your final output matches the required format, rounding if necessary."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == time.length <= 12, 1 <= k <= 5, 1 <= m <= 5, 1 <= time[i] <= 100, m == mul.length, 0.5 <= mul[i] <= 2.0",
+    "If k == 1 and n > 1, return -1 immediately.",
+    "The output should be a floating-point number, formatted to five decimal places."
+  ]
+}

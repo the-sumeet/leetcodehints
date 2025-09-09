@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the rules for moving between positions in the array. You can only move to a position with a higher index, which means you must always move forward in the array."
+    },
+    {
+      "content": "Consider how the score is calculated. You gain points equal to the value at the position you visit, but you also need to account for the penalty incurred when moving between positions with different parities."
+    },
+    {
+      "content": "Think about the implications of parity. If `nums[i]` and `nums[j]` have different parities, you lose `x` points. This means that your strategy should consider not just maximizing the sum of visited values, but also minimizing penalties."
+    },
+    {
+      "content": "Try to visualize the score calculation process. For example, if you visit positions 0, 2, and 4, calculate the score step by step, including any penalties for moving between positions with different parities."
+    },
+    {
+      "content": "Consider using a dynamic programming approach. You can maintain a running total of the maximum score possible at each position, updating it based on previous positions while considering the penalty for differing parities."
+    },
+    {
+      "content": "Remember to initialize your score with the value at `nums[0]`. This is your starting score, and you will build upon it as you visit other positions."
+    },
+    {
+      "content": "When iterating through the array, for each position `j`, look back at all previous positions `i` where `i < j`. Calculate the potential new score if you move to `j` from `i`, factoring in the penalty if necessary."
+    },
+    {
+      "content": "Make sure to handle cases where all numbers have the same parity. In such cases, you can visit all positions without incurring any penalties, which simplifies your score calculation."
+    },
+    {
+      "content": "Think about edge cases, such as when `x` is larger than the values in the array. If moving to a position incurs a penalty greater than the score gained, it may be better to skip that position."
+    },
+    {
+      "content": "As a final step, ensure you are returning the maximum score found after considering all possible paths through the array. You might want to keep track of the best score seen so far as you iterate."
+    }
+  ],
+  "questionNotes": [
+    "You start at position 0 and can only move to positions with higher indices.",
+    "Initial score is nums[0].",
+    "You lose x points if the parities of nums[i] and nums[j] differ.",
+    "The array can have up to 100,000 elements, so consider the efficiency of your solution.",
+    "All integers in nums are positive and can be as large as 1,000,000."
+  ]
+}

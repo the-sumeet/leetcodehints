@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between courses and their prerequisites. Each prerequisite pair [a, b] means that course a must be completed before course b. Think of this as a directed edge in a graph from a to b."
+    },
+    {
+      "content": "Consider how to represent this relationship. A common approach is to use an adjacency list or a matrix to store the prerequisites. For example, if you have prerequisites = [[1, 0]], you can represent this as an edge from 1 to 0."
+    },
+    {
+      "content": "Think about how you can determine if one course is a prerequisite of another. You could perform a depth-first search (DFS) or breadth-first search (BFS) starting from the course in question to see if you can reach the other course."
+    },
+    {
+      "content": "Remember that the problem states that prerequisites can be indirect. This means if course A is a prerequisite of course B, and course B is a prerequisite of course C, then course A is also a prerequisite of course C."
+    },
+    {
+      "content": "Consider the constraints given in the problem. You have a maximum of 100 courses and up to 10^4 queries. This means your solution should be efficient enough to handle multiple queries without recalculating the prerequisite relationships each time."
+    },
+    {
+      "content": "You might want to preprocess the prerequisite relationships before answering the queries. One way to do this is to use the Floyd-Warshall algorithm to compute transitive closure, which will help you determine if one course is a prerequisite of another in O(numCourses^3) time."
+    },
+    {
+      "content": "When processing the queries, ensure that you are correctly indexing the courses. The courses are labeled from 0 to numCourses - 1, so make sure your checks respect this indexing."
+    },
+    {
+      "content": "As you implement your solution, consider edge cases such as when there are no prerequisites at all. In this case, any query asking if one course is a prerequisite of another should return false."
+    },
+    {
+      "content": "Think about how to structure your final answer. You need to return a boolean array where each entry corresponds to whether the first course in the query is a prerequisite of the second course."
+    },
+    {
+      "content": "Finally, ensure your implementation correctly handles all queries efficiently after preprocessing. You could use a 2D array where `reachable[i][j]` is true if course i is a prerequisite of course j, allowing O(1) query time."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= numCourses <= 100",
+    "0 <= prerequisites.length <= (numCourses * (numCourses - 1) / 2)",
+    "All pairs [ai, bi] are unique and a != b.",
+    "The prerequisites graph has no cycles.",
+    "1 <= queries.length <= 10^4",
+    "Return format: boolean array where answer[j] indicates if course u[j] is a prerequisite of course v[j]."
+  ]
+}

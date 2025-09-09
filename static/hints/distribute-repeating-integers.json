@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You have an array of integers, `nums`, and an array of customer orders, `quantity`. Each customer must receive a specific number of identical integers."
+    },
+    {
+      "content": "Notice that the maximum number of unique integers in `nums` is 50. This means you can leverage this limited variety when considering how to satisfy each customer's order."
+    },
+    {
+      "content": "Consider counting the occurrences of each unique integer in `nums`. This will help you determine how many of each integer you have available for distribution."
+    },
+    {
+      "content": "Think about how you can represent the orders in `quantity`. Each order specifies a quantity of identical integers. You might want to sort this array to prioritize larger orders first."
+    },
+    {
+      "content": "When distributing integers, remember that you can only give a customer integers of one type. This means you need to ensure that for each order, you have enough of a single integer type available."
+    },
+    {
+      "content": "Try to visualize the distribution as a backtracking problem. For each customer, you can attempt to assign them integers from `nums` and backtrack if you can't satisfy their order."
+    },
+    {
+      "content": "Think about edge cases: What happens if `quantity` contains an order larger than the total count of any single integer in `nums`? This would immediately make it impossible to satisfy that customer."
+    },
+    {
+      "content": "Consider using a frequency map for `nums` to keep track of how many of each integer you have. This will allow you to check quickly if you can fulfill an order."
+    },
+    {
+      "content": "As you attempt to assign integers to customers, keep in mind that once you assign an integer to a customer, you should reduce the count of that integer in your frequency map."
+    },
+    {
+      "content": "You may want to implement a recursive function that tries to assign integers to each customer in order. If you reach a point where you can't satisfy a customer's order, return false."
+    },
+    {
+      "content": "Consider what happens if you have leftover integers in `nums` after satisfying all customer orders. This doesn't affect the solution as long as all orders are fulfilled."
+    },
+    {
+      "content": "If you find a valid distribution for all customers, return true. If you exhaust all possibilities without satisfying all orders, return false."
+    },
+    {
+      "content": "You might want to implement a pruning strategy in your backtracking. If at any point you can't satisfy the remaining orders with the available integers, you should stop exploring that path."
+    },
+    {
+      "content": "Keep in mind the time complexity of your solution. Since `m` (the number of customers) can be up to 10 and the maximum unique integers is 50, your solution should be efficient enough to handle these limits."
+    },
+    {
+      "content": "Finally, think about how you can use a depth-first search (DFS) approach to explore the possible distributions. Each recursive call can represent assigning a specific integer to a customer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, 1 <= nums[i] <= 1000, 1 <= m <= 10, 1 <= quantity[i] <= 10^5.",
+    "There are at most 50 unique values in nums.",
+    "Each customer must receive exactly quantity[i] integers, all of which must be the same.",
+    "Return true if all customers can be satisfied, otherwise return false."
+  ]
+}

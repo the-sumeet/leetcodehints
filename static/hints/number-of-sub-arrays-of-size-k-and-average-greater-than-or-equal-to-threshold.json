@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a sub-array. A sub-array is a contiguous part of the array. For this problem, you will need to extract sub-arrays of size `k` from the given array."
+    },
+    {
+      "content": "Remember that the average of a sub-array can be calculated by summing its elements and dividing by `k`. Focus on how you can efficiently calculate the sum of elements for each sub-array."
+    },
+    {
+      "content": "Consider using a sliding window approach to maintain the sum of the current sub-array of size `k`. This way, you can update the sum by subtracting the element that is sliding out of the window and adding the new element that is sliding in."
+    },
+    {
+      "content": "Make sure to calculate the average correctly. To avoid floating-point division issues, you can compare the sum directly with `k * threshold` instead of calculating the average explicitly."
+    },
+    {
+      "content": "Think about edge cases, such as when `k` is equal to the length of the array. In this case, there is only one sub-array to consider, which is the entire array itself."
+    },
+    {
+      "content": "When implementing the sliding window, ensure that you initialize the first window correctly. Calculate the sum of the first `k` elements before entering the loop for sliding the window."
+    },
+    {
+      "content": "As you slide the window, keep a count of how many times the average of the current sub-array meets or exceeds the threshold. This will be your final answer."
+    },
+    {
+      "content": "Consider the constraints provided in the problem. For example, the maximum length of the array is 100,000, which suggests that your solution needs to be efficient, ideally O(n) time complexity."
+    },
+    {
+      "content": "Test your implementation with various edge cases, such as arrays with all elements equal, or when the threshold is zero. This will help ensure your solution is robust."
+    },
+    {
+      "content": "Finally, structure your code to clearly separate the logic for calculating the sum and checking against the threshold. This will make your code easier to read and debug."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 10^5",
+    "1 <= arr[i] <= 10^4",
+    "1 <= k <= arr.length",
+    "0 <= threshold <= 10^4",
+    "Return the number of sub-arrays of size k with an average >= threshold."
+  ]
+}

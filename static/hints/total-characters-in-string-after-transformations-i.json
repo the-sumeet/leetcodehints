@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how each character in the string transforms during each iteration. For example, 'a' becomes 'b', 'b' becomes 'c', and 'z' becomes 'ab'. This means that 'z' effectively increases the string length by 1 with each transformation."
+    },
+    {
+      "content": "Consider how many transformations are needed for each character. For characters 'a' to 'y', they will just move to the next character, while 'z' will double the length of the string. Think about how this affects the overall length after multiple transformations."
+    },
+    {
+      "content": "You can keep track of the length of the string after each transformation without actually creating the new string. This will help you manage memory and performance, especially given the constraints where the length of the string can go up to 100,000."
+    },
+    {
+      "content": "When a character is transformed, if it is 'z', it will split into 'ab'. This means that after one transformation, the length of the string can increase significantly. Make sure to account for this in your length calculations."
+    },
+    {
+      "content": "Think about how to handle the transformations efficiently. Instead of simulating each transformation, consider how many times each character will change and how 'z' will affect the length. You might want to use a loop to iterate over the string for 't' transformations."
+    },
+    {
+      "content": "Keep in mind the modulo operation. Since the length can grow large, you should return the result modulo 10^9 + 7. Make sure to apply this operation at every step where you update the length."
+    },
+    {
+      "content": "Consider edge cases, such as when the string consists entirely of 'z's or when the string has minimal length. How would these cases affect the transformations and final length?"
+    },
+    {
+      "content": "You might want to create a helper function to calculate the new length of the string after one transformation. This function can take the current length and the number of 'z's into account."
+    },
+    {
+      "content": "As you approach the final solution, think about how to efficiently count the number of 'z's in the string and how they will affect the length after each transformation. This can help you avoid unnecessary calculations."
+    },
+    {
+      "content": "Finally, remember that after 't' transformations, the length of the string can be calculated based on the initial length, the number of 'z's, and how many transformations are applied. Formulate a concise way to express this relationship."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length <= 10^5",
+    "s consists only of lowercase English letters.",
+    "1 <= t <= 10^5",
+    "Return the length modulo 10^9 + 7."
+  ]
+}

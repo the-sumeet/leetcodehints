@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the core requirement of the logger. It should only print a message if it hasn't printed the same message in the last 10 seconds. Think about how you can track the timestamps of the messages."
+    },
+    {
+      "content": "Consider using a data structure that allows you to store messages along with their timestamps. A dictionary or a hash map could be useful for this purpose, where the key is the message and the value is the timestamp."
+    },
+    {
+      "content": "Remember that the messages are unique and should be tracked independently. This means that if two different messages are printed at the same time, they should not interfere with each other."
+    },
+    {
+      "content": "Think about how to handle the case where the same message is printed multiple times. You need to check the timestamp of the last printed message for that specific message before deciding to print it again."
+    },
+    {
+      "content": "When implementing the `shouldPrintMessage` method, you should compare the current timestamp with the timestamp of the last printed message for the given message. If the difference is 10 seconds or more, you can print the message."
+    },
+    {
+      "content": "Consider edge cases where messages are printed in rapid succession. For example, if a message is printed at timestamp 1 and then again at timestamp 2, ensure that the second call correctly identifies that it should not print again."
+    },
+    {
+      "content": "Make sure to update the timestamp in your data structure after printing a message. This is crucial for the next time the same message is checked."
+    },
+    {
+      "content": "Think about how you will handle the case where a message is printed exactly at the 10-second mark. Should it print or not? This requires careful handling of the time comparison."
+    },
+    {
+      "content": "You might want to implement a simple test case to validate your logic. For instance, check if the logger correctly handles multiple messages and respects the 10-second rule."
+    },
+    {
+      "content": "Finally, ensure that your implementation is efficient. You should aim for an O(1) time complexity for the `shouldPrintMessage` method, which is achievable with the right data structure."
+    }
+  ],
+  "questionNotes": [
+    "Messages are unique and should be tracked independently.",
+    "The logger should only print a message if it hasn't printed the same message in the last 10 seconds.",
+    "The input consists of a sequence of method calls and their parameters.",
+    "The return format for `shouldPrintMessage` is a boolean indicating whether the message was printed."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a tree. A tree is a connected graph with no cycles, which means there is exactly one path between any two nodes. This property is crucial for determining the height of the tree when rooted at different nodes."
+    },
+    {
+      "content": "Consider the definition of tree height. The height of a tree rooted at a node is defined as the longest path from that node to any leaf. Think about how you might calculate this height for a given root."
+    },
+    {
+      "content": "To find the minimum height trees (MHTs), you should realize that the roots of these trees are likely to be near the center of the tree. Explore how you might identify these central nodes."
+    },
+    {
+      "content": "Use a breadth-first search (BFS) or depth-first search (DFS) to explore the tree. Starting from any node, you can explore to find the farthest node, which can help in identifying potential roots for MHTs."
+    },
+    {
+      "content": "After finding the farthest node from an arbitrary starting point, perform another BFS/DFS from that node. This will help you find the maximum distance from that node, which corresponds to the tree's diameter."
+    },
+    {
+      "content": "The nodes that are at the ends of the diameter are candidates for MHTs. However, if the diameter is even, there will be two central nodes; if odd, there will be one central node. Think about how you can extract these nodes."
+    },
+    {
+      "content": "Remember to handle edge cases. For instance, if there is only one node (n = 1), the only MHT is the node itself. Make sure your solution accounts for this scenario."
+    },
+    {
+      "content": "As you implement your solution, keep track of the nodes you visit during your BFS/DFS. You can use a queue for BFS or a stack for DFS to manage the traversal."
+    },
+    {
+      "content": "When you find the potential MHT roots, ensure that you return them in a list. The order of the roots does not matter, but they should be unique and valid according to the problem constraints."
+    },
+    {
+      "content": "Finally, consider edge cases with small trees, such as two connected nodes or a straight line of nodes. Test your implementation against these cases to ensure correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 2 * 10^4, edges.length == n - 1",
+    "Each edge connects two distinct nodes, and there are no repeated edges.",
+    "The input is guaranteed to be a tree.",
+    "Return format: A list of unique root labels for the minimum height trees."
+  ]
+}

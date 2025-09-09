@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to calculate the sum of distances for each index in the array based on the condition that the values at those indices are equal."
+    },
+    {
+      "content": "Consider how you would approach calculating the distance |i - j| for each index i. Remember that j should only be considered if nums[j] == nums[i] and j is not equal to i."
+    },
+    {
+      "content": "Think about how you can efficiently find all indices j for a given index i where nums[j] == nums[i]. You might want to use a data structure to group indices by their values."
+    },
+    {
+      "content": "What data structure could help you keep track of the indices of each unique value in nums? A dictionary or a hashmap could be useful to map each value to its list of indices."
+    },
+    {
+      "content": "Once you have the indices for each unique number, consider how you can calculate the sum of distances for each index. You might need to iterate through the list of indices for each unique number."
+    },
+    {
+      "content": "When calculating the distances, remember that the sum of distances can be computed more efficiently using prefix sums. Think about how you can calculate the distance contributions from both the left and right sides."
+    },
+    {
+      "content": "Consider edge cases, such as when all elements in nums are unique. How would your solution handle this scenario? Ensure that your solution correctly returns 0 for all indices in such cases."
+    },
+    {
+      "content": "Make sure to handle large inputs efficiently. The constraints allow for up to 100,000 elements in nums, so aim for a solution better than O(n^2) time complexity."
+    },
+    {
+      "content": "As you implement your solution, remember to initialize the output array arr with zeros, as specified in the problem. This will help you avoid uninitialized values."
+    },
+    {
+      "content": "Finally, think about how to combine the results from your calculations into the final output array. You will need to ensure that arr[i] is set to the correct sum of distances for each index i based on your earlier calculations."
+    }
+  ],
+  "questionNotes": [
+    "The input array nums is 0-indexed.",
+    "If there are no other indices j such that nums[j] == nums[i], set arr[i] to 0.",
+    "The output array arr must be of the same length as nums.",
+    "Constraints: 1 <= nums.length <= 10^5 and 0 <= nums[i] <= 10^9."
+  ]
+}

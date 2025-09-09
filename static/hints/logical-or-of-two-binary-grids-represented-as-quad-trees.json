@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a Quad-Tree. Each node can either be a leaf (representing a uniform grid of 0s or 1s) or an internal node (which has four children). Familiarize yourself with how to traverse and manipulate these nodes."
+    },
+    {
+      "content": "When combining two Quad-Trees, consider the logical OR operation. If either of the two nodes is a leaf with a value of True, the resulting node should also be a leaf with a value of True."
+    },
+    {
+      "content": "If both nodes are leaves with a value of False, the result should also be a leaf with a value of False. This is a straightforward case that can help simplify your logic."
+    },
+    {
+      "content": "For non-leaf nodes, you need to perform the logical OR operation on their respective children. This means you will need to recursively combine the four children of each node."
+    },
+    {
+      "content": "Before diving into recursion, check if either node is a leaf. If one is a leaf, you can directly use its value to determine the result for that subtree."
+    },
+    {
+      "content": "Remember to handle cases where both nodes are non-leaf. You will need to recursively call your function for all four pairs of children: top-left, top-right, bottom-left, and bottom-right."
+    },
+    {
+      "content": "Pay attention to how you combine the results of the children. If any of the resulting children from the logical OR operation is a leaf with a value of True, the parent node can also be a leaf with a value of True."
+    },
+    {
+      "content": "Consider edge cases where one of the Quad-Trees might be entirely made up of leaves, while the other is not. This can affect how you structure your logic."
+    },
+    {
+      "content": "When constructing the resulting Quad-Tree, ensure that you set the `isLeaf` property correctly based on the values of the children nodes. If all children are leaves and have the same value, the parent can also be a leaf."
+    },
+    {
+      "content": "Finally, make sure to return the resulting Quad-Tree in the correct format as specified in the problem statement. This includes ensuring that you represent leaf nodes and internal nodes correctly in your output."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: quadTree1 and quadTree2 are valid Quad-Trees each representing a n * n grid where n = 2^x and 0 <= x <= 9.",
+    "The return format must be a serialized Quad-Tree using level order traversal.",
+    "Both isLeaf and val can be set to True or False when isLeaf is False, and both are accepted in the answer."
+  ]
+}

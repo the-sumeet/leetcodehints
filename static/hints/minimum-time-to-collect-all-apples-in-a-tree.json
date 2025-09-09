@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. Remember that a tree is an acyclic connected graph, which means there are no cycles and there is exactly one path between any two nodes."
+    },
+    {
+      "content": "Consider how you would traverse the tree. A depth-first search (DFS) or breadth-first search (BFS) could be useful to explore all vertices starting from vertex 0."
+    },
+    {
+      "content": "Think about the implications of the `hasApple` array. You only need to collect apples from vertices that have them, which can help you optimize your path."
+    },
+    {
+      "content": "When you traverse the tree, keep track of whether you encounter any apples. If you reach a vertex with an apple, you need to plan a route back to the starting point."
+    },
+    {
+      "content": "Remember that you need to return to the starting vertex after collecting apples. This means that for each edge you traverse to collect an apple, you will also have to traverse it back."
+    },
+    {
+      "content": "Consider the case where there are no apples at all. What should your function return in this scenario? Think about how you would handle this edge case."
+    },
+    {
+      "content": "If you find an apple at a vertex, you should calculate the time required to reach that vertex and return. You can accumulate this time as you traverse."
+    },
+    {
+      "content": "As you explore the tree, you can use a recursive approach. For each node, check its children and see if they lead to any apples. If they do, include the time taken to traverse those edges."
+    },
+    {
+      "content": "When calculating the total time, remember to only count the edges that lead to apples. If a child node does not lead to an apple, you can skip adding that path's time."
+    },
+    {
+      "content": "Finally, ensure that your function correctly returns the total time spent collecting all apples and returning to the starting point. Consider how you will structure your return statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, edges.length == n - 1, hasApple.length == n",
+    "The tree is undirected, meaning edges can be traversed in both directions.",
+    "The starting vertex is always 0, and you must return to this vertex after collecting apples.",
+    "If there are no apples in the tree, the function should return 0."
+  ]
+}

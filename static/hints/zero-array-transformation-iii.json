@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the goal of the problem: you need to determine how many queries can be removed while still allowing the array `nums` to be transformed into a zero array. Think about how each query affects the elements in `nums`."
+    },
+    {
+      "content": "Consider the cumulative effect of all queries on each index of `nums`. For each index `i`, you need to ensure that the total decrements from the remaining queries can at least match the value of `nums[i]`."
+    },
+    {
+      "content": "To analyze the impact of each query, you might want to create an auxiliary array that tracks how many times each index is affected by the queries. This could help you visualize the contribution of each query."
+    },
+    {
+      "content": "Think about how to efficiently compute the total decrement available for each index in `nums` after removing certain queries. You might want to use a prefix sum approach to handle the ranges specified in the queries."
+    },
+    {
+      "content": "When considering which queries to remove, pay attention to the queries that cover the indices with the highest values in `nums`. Removing those might have a larger impact on the ability to zero out the array."
+    },
+    {
+      "content": "You may want to sort the queries based on their ranges or the number of elements they affect. This could help you prioritize which queries to keep or remove."
+    },
+    {
+      "content": "Consider edge cases where `nums` has all elements equal to zero, or where all queries cover the entire array. How would these scenarios affect your approach?"
+    },
+    {
+      "content": "Implement a function to check if a given set of queries can zero out `nums`. This will help you test various combinations of queries as you try to maximize the number of queries you can remove."
+    },
+    {
+      "content": "As you explore combinations of queries, keep track of the maximum number of queries you can remove while still being able to zero out `nums`. This can be done by iterating over possible removals and checking feasibility."
+    },
+    {
+      "content": "Finally, ensure your solution accounts for the case where it's impossible to zero out `nums`, in which case you should return -1. Make sure to handle this condition explicitly in your implementation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5; 0 <= nums[i] <= 10^5; 1 <= queries.length <= 10^5; queries[i].length == 2; 0 <= l_i <= r_i < nums.length.",
+    "The output should be the maximum number of queries that can be removed, or -1 if it's impossible to zero out the array.",
+    "Queries can affect the same indices multiple times, and the decrement can be chosen independently for each index in the range."
+  ]
+}

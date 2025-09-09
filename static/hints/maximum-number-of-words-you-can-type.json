@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by splitting the input string `text` into individual words. You can use a method like `split(' ')` to achieve this. This will help you analyze each word separately."
+    },
+    {
+      "content": "Next, consider how you will check if a word can be typed with the given broken letters. Think about using a loop to iterate through each character of a word and check against the `brokenLetters` string."
+    },
+    {
+      "content": "Remember that `brokenLetters` contains distinct letters, which means you can use a set for efficient lookups. Converting `brokenLetters` into a set will allow you to check if a character is broken in O(1) time."
+    },
+    {
+      "content": "As you iterate through each word, keep a counter to track how many words can be fully typed. Initialize this counter to zero before starting the iteration."
+    },
+    {
+      "content": "For each word, you can use a flag to determine if the word can be typed. If you find any character in the word that exists in the set of broken letters, you should break out of the loop for that word."
+    },
+    {
+      "content": "Consider edge cases where `brokenLetters` is empty. In such cases, all words in `text` should be counted since no keys are broken."
+    },
+    {
+      "content": "Think about how to handle words that are very short or very long. Ensure your solution works efficiently even when `text` is at its maximum length of 10,000 characters."
+    },
+    {
+      "content": "After checking each word, make sure to increment your counter only when a word can be fully typed. This means the flag you set earlier must indicate that no broken letters were found."
+    },
+    {
+      "content": "Finally, return the count of words that can be typed. Make sure to consider the return type as an integer, which represents the number of valid words."
+    },
+    {
+      "content": "To summarize your approach: split the text, convert broken letters to a set, iterate through each word, check each character against the set, and count valid words. This will lead you to the final solution."
+    }
+  ],
+  "questionNotes": [
+    "1 <= text.length <= 10^4",
+    "0 <= brokenLetters.length <= 26",
+    "text consists of words separated by a single space without any leading or trailing spaces.",
+    "Each word only consists of lowercase English letters.",
+    "brokenLetters consists of distinct lowercase English letters."
+  ]
+}

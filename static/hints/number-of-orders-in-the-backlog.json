@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array `orders`. Each element contains three values: price, amount, and orderType. Pay attention to how these values relate to buy and sell orders."
+    },
+    {
+      "content": "Remember that orderType is crucial. A value of 0 indicates a buy order, while 1 indicates a sell order. Make sure to handle these two types differently when processing the backlog."
+    },
+    {
+      "content": "When processing a buy order, check the backlog for sell orders. You should look for the sell order with the smallest price. If that price is less than or equal to the buy order's price, they can be matched."
+    },
+    {
+      "content": "For sell orders, you need to find the buy order with the largest price in the backlog. If that price is greater than or equal to the sell order's price, they can be matched and executed."
+    },
+    {
+      "content": "Think about how to maintain the backlog. You might want to use a data structure like a priority queue (min-heap for sell orders and max-heap for buy orders) to efficiently retrieve the necessary orders."
+    },
+    {
+      "content": "When adding orders to the backlog, ensure you keep track of the total amounts. If an order is partially fulfilled, update the amount of the order that remains in the backlog."
+    },
+    {
+      "content": "Consider edge cases, such as when all orders in the backlog are of one type (either all buy or all sell) and how that affects the ability to match new incoming orders."
+    },
+    {
+      "content": "Remember to apply the modulo operation (10^9 + 7) to your final result. This is important to handle large numbers and prevent overflow."
+    },
+    {
+      "content": "As you implement your solution, keep track of how you handle the amounts of orders that are matched and those that remain in the backlog. Make sure you update these counts correctly."
+    },
+    {
+      "content": "Finally, ensure your solution efficiently processes up to 100,000 orders. Think about the time complexity of your approach, especially how you manage the backlog."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= orders.length <= 10^5, 1 <= price_i, amount_i <= 10^9.",
+    "OrderType is either 0 (buy) or 1 (sell).",
+    "Return the total amount of orders in the backlog modulo 10^9 + 7.",
+    "Pay attention to how orders are processed in the order they are given."
+  ]
+}

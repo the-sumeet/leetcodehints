@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definitions of prime numbers and palindromes. A prime number has only two divisors: 1 and itself. A palindrome reads the same forwards and backwards. For example, 121 is a palindrome, while 123 is not."
+    },
+    {
+      "content": "Consider how you can check if a number is prime. A simple method is to test divisibility from 2 up to the square root of the number. If the number is divisible by any of these, it is not prime."
+    },
+    {
+      "content": "Next, think about how to check if a number is a palindrome. You can convert the number to a string and check if it reads the same forwards and backwards: `str(num) == str(num)[::-1]`."
+    },
+    {
+      "content": "Remember that the problem requires you to find the smallest prime palindrome that is greater than or equal to n. This means you need to start checking from n and move upwards."
+    },
+    {
+      "content": "When implementing your solution, consider edge cases. For instance, if n is less than 2, you should start from 2 since it is the smallest prime number."
+    },
+    {
+      "content": "You can create a loop that starts from n and checks each number to see if it is both prime and a palindrome. If it is, return that number immediately."
+    },
+    {
+      "content": "To optimize your search, you might want to skip even numbers after checking 2, as all other even numbers cannot be prime."
+    },
+    {
+      "content": "Consider precomputing a list of prime numbers up to a certain limit using the Sieve of Eratosthenes. This can help you quickly check if a number is prime."
+    },
+    {
+      "content": "When checking for palindromes, you can also consider generating palindromic numbers directly instead of checking each number. This can reduce the number of candidates significantly."
+    },
+    {
+      "content": "Finally, combine your checks for primality and palindromicity in your loop. If you find a number that satisfies both conditions, return it as the result."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^8",
+    "The answer always exists within the range [2, 2 * 10^8].",
+    "1 is not a prime number.",
+    "Return the smallest prime palindrome greater than or equal to n."
+  ]
+}

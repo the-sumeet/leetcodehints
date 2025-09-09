@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem: you need to find the longest substring where you can replace up to `k` characters to make all characters in that substring the same. Consider how you might keep track of the characters in the substring."
+    },
+    {
+      "content": "Think about using a sliding window approach. This means maintaining a window of characters and expanding or contracting it based on certain conditions. What conditions would cause you to shrink the window?"
+    },
+    {
+      "content": "As you expand your window, keep track of the count of the most frequently occurring character within that window. This will help you determine if you can convert the remaining characters to this most frequent character using your `k` replacements."
+    },
+    {
+      "content": "Remember that the length of the window minus the count of the most frequent character should be less than or equal to `k`. This is a key condition for determining if the current window is valid."
+    },
+    {
+      "content": "You might want to maintain a frequency count of characters in the current window. Consider using an array of size 26 (for each uppercase letter) to keep track of these counts."
+    },
+    {
+      "content": "When you find that the current window is invalid (i.e., you need more than `k` replacements), think about how to shrink the window from the left side. What character would you remove, and how would that affect your counts?"
+    },
+    {
+      "content": "Make sure to update your maximum length of valid substrings whenever you find a valid window. This will help you keep track of the best solution as you iterate through the string."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is 0. What does that imply for the longest substring? You should be able to handle such cases without additional replacements."
+    },
+    {
+      "content": "Think about the time complexity of your approach. A sliding window technique should ideally run in O(n) time, where n is the length of the string. How can you ensure that you only traverse the string a limited number of times?"
+    },
+    {
+      "content": "Finally, implement the sliding window logic with the character frequency count. Remember to return the maximum length found after processing the entire string. What will the final return statement look like?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5, s consists of only uppercase English letters, 0 <= k <= s.length.",
+    "The input string can contain any uppercase letters, and you can replace characters to maximize the length of a substring with identical characters.",
+    "The output should be a single integer representing the length of the longest valid substring."
+  ]
+}

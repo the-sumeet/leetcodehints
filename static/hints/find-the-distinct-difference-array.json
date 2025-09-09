@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array `nums`. You will need to calculate two things for each index: the distinct elements in the prefix and the distinct elements in the suffix."
+    },
+    {
+      "content": "Remember that the prefix for index `i` includes elements from `nums[0]` to `nums[i]`, while the suffix includes elements from `nums[i + 1]` to `nums[n - 1]`. Think about how to efficiently count distinct elements in both parts."
+    },
+    {
+      "content": "You can use a set to track distinct elements, as sets automatically handle uniqueness. For the prefix, iterate from the start to `i` and for the suffix, iterate from `i + 1` to the end."
+    },
+    {
+      "content": "Consider edge cases, such as when `i` is the last index. For the last element, the suffix will be empty, which means the number of distinct elements in the suffix is zero."
+    },
+    {
+      "content": "As you calculate the distinct counts, keep in mind that the result for each index `i` is given by the formula: `diff[i] = distinct_count_prefix - distinct_count_suffix`."
+    },
+    {
+      "content": "Think about how you can optimize the counting of distinct elements. Instead of recalculating for every index, you might maintain a running count of distinct elements as you move through the array."
+    },
+    {
+      "content": "When calculating the distinct elements for the suffix, you can start from the end of the array and move backwards, updating a set for distinct elements as you go."
+    },
+    {
+      "content": "Make sure to initialize your result array `diff` with the same length as `nums`. You will fill this array with the differences you compute."
+    },
+    {
+      "content": "After computing the distinct counts, ensure you return the `diff` array in the correct format. The output should be a single array of integers."
+    },
+    {
+      "content": "Finally, implement the logic to calculate the distinct counts for both the prefix and suffix in a single pass, if possible, to improve efficiency. You could use two sets or a single pass with careful management."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums.length <= 50",
+    "Each element in nums is between 1 and 50.",
+    "Indexing is 0-based.",
+    "The suffix for the last index is empty, so its distinct count is 0.",
+    "Return an array of integers representing the distinct differences."
+  ]
+}

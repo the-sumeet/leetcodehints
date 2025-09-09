@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the types of items in the bag: 1s, 0s, and -1s. Each type contributes differently to the total sum. Focus on how many of each type you have and how they can be used to maximize the sum."
+    },
+    {
+      "content": "Consider the maximum number of 1s you can take. If you can take all available 1s (up to k), what would the sum be? This is a good starting point for maximizing your total."
+    },
+    {
+      "content": "If k is greater than the number of 1s, think about how many 0s you can take next. Remember, taking 0s does not change the sum but can help reach the count of k."
+    },
+    {
+      "content": "What if k exceeds the total number of items you have? Make sure to check that k is always less than or equal to the total items (numOnes + numZeros + numNegOnes)."
+    },
+    {
+      "content": "Next, consider the scenario where you have to include some -1s. If you've already taken all 1s and 0s, how many -1s will you need to take to reach k? This will affect your total sum negatively."
+    },
+    {
+      "content": "Calculate the maximum sum step by step: first take all possible 1s, then as many 0s as needed, and finally fill in with -1s if necessary. This will give you a systematic approach to finding the maximum sum."
+    },
+    {
+      "content": "Think about edge cases where k is 0 or k equals the total number of items. What should the output be in these cases? Ensure your solution handles these scenarios correctly."
+    },
+    {
+      "content": "When calculating the sum, you can use a formula: total_sum = (number_of_1s_taken) * 1 + (number_of_0s_taken) * 0 + (number_of_neg1s_taken) * -1. This can help you keep track of your calculations."
+    },
+    {
+      "content": "If you have a situation where k is less than the number of 1s, the sum will simply be k. But if k is greater than the number of 1s, you'll need to account for the 0s and possibly the -1s."
+    },
+    {
+      "content": "Finally, put together all your calculations in a concise manner. Ensure you account for all possible cases of k, and summarize your findings to return the maximum possible sum."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= numOnes, numZeros, numNegOnes <= 50",
+    "Constraints: 0 <= k <= numOnes + numZeros + numNegOnes",
+    "The output should be the maximum possible sum of the selected k items."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the '*' character in the pattern can match any sequence of characters, including an empty sequence. Think about how you can break down the pattern into two parts: before and after the '*'."
+    },
+    {
+      "content": "Consider the lengths of the two parts of the pattern. The part before the '*' must match a prefix of the string, and the part after the '*' must match a suffix. This gives you a way to split the problem into manageable pieces."
+    },
+    {
+      "content": "You can iterate over possible lengths of the substring that the '*' could represent. For each possible length, check if the prefix of `s` matches the part before '*' and if the suffix of `s` matches the part after '*'."
+    },
+    {
+      "content": "Remember that the '*' can match zero characters. This means that you should also check if the part before '*' matches the beginning of `s` and the part after '*' matches the end of `s` when the '*' is treated as an empty sequence."
+    },
+    {
+      "content": "When checking the prefix and suffix, ensure that you do not go out of bounds of the string `s`. Use conditions to ensure that the indices you are accessing are valid."
+    },
+    {
+      "content": "Think about edge cases where the pattern is very short or where the '*' is at the beginning or end of the pattern. For example, how would you handle patterns like '*a' or 'a*'?"
+    },
+    {
+      "content": "You can use a loop to iterate through the possible lengths of the substring that '*' can represent. For each length, calculate the indices for the prefix and suffix and compare them to the corresponding parts of `s`."
+    },
+    {
+      "content": "Make sure to check for the case where the prefix length is equal to the length of `s`. In this case, you only need to check if the suffix matches an empty string."
+    },
+    {
+      "content": "After determining the lengths, ensure that you correctly extract the substrings from `s` and compare them to the respective parts of the pattern. Use string slicing to help with this."
+    },
+    {
+      "content": "Finally, implement the logic to return true if any of the prefix-suffix combinations match according to the pattern, and false if none do. Remember to consider all possible lengths for the substring represented by '*'."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 50, 1 <= p.length <= 50",
+    "s contains only lowercase English letters.",
+    "p contains only lowercase English letters and exactly one '*'",
+    "The '*' can match zero or more characters."
+  ]
+}

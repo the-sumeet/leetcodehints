@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation: replacing a substring with its preceding letters. For example, replacing 'b' with 'a' and 'a' with 'z' means you can effectively reduce the characters in a substring."
+    },
+    {
+      "content": "Consider the implications of choosing different substrings. The smallest lexicographical string will likely involve replacing characters that are larger with their preceding letters."
+    },
+    {
+      "content": "Think about the boundaries of your substring. You can select any non-empty substring, which means you can choose substrings of varying lengths, including single characters."
+    },
+    {
+      "content": "What happens if you replace a character at the start of the string? For instance, replacing 'c' in 'cbabc' will have a different effect than replacing 'b' or 'a'."
+    },
+    {
+      "content": "When replacing characters, make sure to handle the wrap-around from 'a' to 'z' correctly. This will be crucial for edge cases like the string 'aa'."
+    },
+    {
+      "content": "Consider iterating through the string to determine the best substring to replace. You might want to keep track of the smallest string you can generate during your iterations."
+    },
+    {
+      "content": "Think about using a greedy approach: at each character, decide if replacing it (and possibly the following characters) will yield a smaller string. This could involve checking adjacent characters."
+    },
+    {
+      "content": "You might want to maintain a variable to track the current smallest string you have seen so far. Update this variable whenever you find a new smaller string after an operation."
+    },
+    {
+      "content": "Remember to check for cases where replacing a substring could create a new opportunity for a smaller string. For example, replacing 'cb' to 'ba' might open up new possibilities."
+    },
+    {
+      "content": "Finally, once you have a strategy for determining which substring to replace, implement the logic to perform the replacement and return the result. Make sure to test edge cases like 'z' or long strings."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 3 * 10^5",
+    "s consists of lowercase English letters.",
+    "You can select any non-empty substring.",
+    "Replacing 'a' results in 'z'.",
+    "Return the lexicographically smallest string after performing the operation."
+  ]
+}

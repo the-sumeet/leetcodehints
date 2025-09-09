@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by analyzing the format of the input string. The time is given as 'hh:mm', which means it consists of two parts: hours ('hh') and minutes ('mm'). Each part may contain hidden digits represented by '?'."
+    },
+    {
+      "content": "Consider the constraints for valid hours and minutes. Hours must be between 00 and 23, while minutes must be between 00 and 59. This will help you determine what digits can replace the '?' characters."
+    },
+    {
+      "content": "Focus on replacing the '?' in the hour part first. If the first digit of the hour is '?', think about the maximum valid hour you can form. For example, if the hour starts with '2', the maximum valid hour is '23'."
+    },
+    {
+      "content": "When replacing the second digit of the hour, remember that if the first digit is '2', the second digit can only be '0', '1', '2', or '?' to ensure the hour stays valid (i.e., no '3' or higher)."
+    },
+    {
+      "content": "Next, move on to the minutes. The first digit of the minutes can be replaced with '5' at maximum, since minutes can only go up to '59'. If it's '?', consider this when forming the latest valid time."
+    },
+    {
+      "content": "For the second digit of the minutes, you can replace '?' with '9' to maximize the minutes, as long as the first digit is valid (e.g., if the first digit is '5', the second digit can only be '0-9')."
+    },
+    {
+      "content": "Keep in mind that there may be multiple '?' characters in the input. Ensure you handle each '?' independently while still adhering to the constraints of valid time."
+    },
+    {
+      "content": "As you replace the '?' characters, build the time string step by step. After replacing all '?', check if the resulting time is valid. If not, you may need to adjust your replacements."
+    },
+    {
+      "content": "Consider edge cases where the hour or minute could lead to an invalid time. For example, if the hour resolves to '24' or the minutes to '60', these should be adjusted to ensure validity."
+    },
+    {
+      "content": "Finally, after replacing all '?' and ensuring the time is valid, format the output correctly as 'hh:mm'. Make sure to include leading zeros where necessary, especially for single-digit hours and minutes."
+    }
+  ],
+  "questionNotes": [
+    "The input time format is always 'hh:mm'.",
+    "Valid hours range from 00 to 23.",
+    "Valid minutes range from 00 to 59.",
+    "Each '?' can be replaced by any digit (0-9) to form a valid time.",
+    "Ensure to format the output with leading zeros if applicable."
+  ]
+}

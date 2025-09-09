@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the initial setup. There are `n` children, and they are indexed from `0` to `n-1`. The ball starts with child `0` and is passed to the right."
+    },
+    {
+      "content": "Consider how the ball is passed. For each second, the ball moves to the next child in line. If it reaches the last child (child `n-1`), it will reverse direction."
+    },
+    {
+      "content": "Think about the direction change. When the ball reaches child `0`, it changes direction to the right, and when it reaches child `n-1`, it changes direction to the left."
+    },
+    {
+      "content": "Try simulating the ball passing for a small value of `k`. For example, with `n = 3` and `k = 5`, track the ball's position second by second to see the pattern."
+    },
+    {
+      "content": "Notice that after `2 * (n - 1)` seconds, the ball will return to the starting position (child `0`). This is because it takes `n-1` seconds to go to the end and `n-1` seconds to come back."
+    },
+    {
+      "content": "Use the modulo operation to simplify the number of seconds. Instead of passing the ball for `k` seconds, you can use `k % (2 * (n - 1))` to find an equivalent smaller number of seconds."
+    },
+    {
+      "content": "After calculating `k % (2 * (n - 1))`, determine the position of the ball. If the result is less than `n`, the ball is simply at that index."
+    },
+    {
+      "content": "If the result of `k % (2 * (n - 1))` is greater than or equal to `n`, it means the ball has passed the last child and is coming back. You need to calculate its position on the way back."
+    },
+    {
+      "content": "When the ball is coming back, the position can be calculated as `2 * (n - 1) - (k % (2 * (n - 1)))`. This gives you the child index correctly."
+    },
+    {
+      "content": "Combine your findings into a final step. Use the reduced `k` to determine if the ball is moving forward or backward and calculate the final child index accordingly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 50, 1 <= k <= 50",
+    "Children are indexed from 0 to n-1.",
+    "The ball starts with child 0 and is passed to the right.",
+    "The direction changes when the ball reaches either end of the line."
+  ]
+}

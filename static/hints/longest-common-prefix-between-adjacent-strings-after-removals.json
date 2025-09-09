@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to find the longest common prefix between two strings. You can do this by comparing characters of the two strings until they differ. For example, for 'jump' and 'jumpy', the common prefix is 'jump'."
+    },
+    {
+      "content": "Remember that after removing an element from the array, the adjacent pairs of strings will change. You need to iterate through the modified array and check the pairs of strings that are now adjacent."
+    },
+    {
+      "content": "Consider how you will handle the removal of an element. You can create a new array that excludes the current index, or you can work with the original array and skip the index during your checks."
+    },
+    {
+      "content": "When you remove an element, if the length of the modified array is less than 2, directly return 0 for that index because there are no adjacent pairs to compare."
+    },
+    {
+      "content": "Think about how to efficiently calculate the longest common prefix for all adjacent pairs in the modified array. You might want to define a helper function that takes two strings and returns their common prefix length."
+    },
+    {
+      "content": "As you iterate through the modified array, keep track of the maximum prefix length found among all adjacent pairs. You can initialize a variable to store this maximum length and update it as you find longer prefixes."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when all strings are unique or when they have no common prefixes at all. In such cases, your function should return 0 for that index."
+    },
+    {
+      "content": "Consider the constraints of the problem. With a maximum of 100,000 words and each word having a length of up to 10,000 characters, ensure your solution is efficient. A naive approach might lead to time limits being exceeded."
+    },
+    {
+      "content": "When constructing the answer array, remember that the length of the answer should match the number of elements in the original array. Each index in the answer corresponds to the result after removing the respective index from the original array."
+    },
+    {
+      "content": "Finally, think about how you will implement the loop that goes through each index to remove the element and calculate the longest common prefix. You might want to use a nested loop to handle the adjacent pairs after each removal."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= words.length <= 100,000",
+    "1 <= words[i].length <= 10,000",
+    "The sum of lengths of all words is <= 100,000.",
+    "Return an array where answer[i] is the length of the longest common prefix after removing words[i].",
+    "If no adjacent pairs remain or if none share a common prefix, return 0."
+  ]
+}

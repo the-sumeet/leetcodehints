@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the binary representation of the two numbers, `start` and `goal`. You can use Python's `bin()` function to convert a number to its binary form. For example, `bin(10)` returns '0b1010'."
+    },
+    {
+      "content": "Think about how to compare the binary representations of `start` and `goal`. You need to identify which bits differ between the two numbers. This can be done using the XOR operation (`^`). For instance, `start ^ goal` gives you a number where the bits are set to 1 wherever `start` and `goal` differ."
+    },
+    {
+      "content": "After performing the XOR operation, you will get a new number that highlights the differing bits. The next step is to count how many bits are set to 1 in this result. This count will tell you how many flips are needed."
+    },
+    {
+      "content": "To count the number of 1s in the binary representation of a number, you can use a loop or a built-in function. In Python, `bin(x).count('1')` will give you the number of 1s in `x`."
+    },
+    {
+      "content": "Consider edge cases where `start` and `goal` are the same. If they are equal, no bit flips are needed, so you can directly return 0."
+    },
+    {
+      "content": "Also, think about the maximum possible values for `start` and `goal`. The problem states that both can be as large as 10^9. Ensure that your solution handles these large numbers efficiently."
+    },
+    {
+      "content": "When counting the differing bits, remember that leading zeros in the binary representation do not affect the number of flips required. Focus only on the bits that are actually set in `start` and `goal`."
+    },
+    {
+      "content": "You may want to visualize the process of flipping bits. For example, if `start` is 10 (1010) and `goal` is 7 (0111), visualize how each flip changes the bits step by step."
+    },
+    {
+      "content": "To summarize your approach: First, calculate `start ^ goal` to find differing bits, then count the number of 1s in the result. This count will be your answer."
+    },
+    {
+      "content": "Finally, ensure your implementation is efficient. Counting bits can be done in O(log n) time, which is efficient enough for the given constraints. Aim to implement this in a clean and readable manner."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= start, goal <= 10^9",
+    "Return the minimum number of bit flips required to convert start to goal.",
+    "If start == goal, return 0 immediately."
+  ]
+}

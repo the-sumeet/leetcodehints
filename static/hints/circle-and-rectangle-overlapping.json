@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by visualizing the problem. Consider how the circle and rectangle are positioned in a 2D coordinate system. Remember that the circle is defined by its radius and center, while the rectangle is defined by its bottom-left and top-right corners."
+    },
+    {
+      "content": "Identify the closest point on the rectangle to the center of the circle. This is crucial because if the distance from the circle's center to this point is less than or equal to the radius, they overlap."
+    },
+    {
+      "content": "To find the closest point on the rectangle, you need to clamp the circle's center coordinates (xCenter, yCenter) to the rectangle's bounds. This means restricting xCenter between x1 and x2, and yCenter between y1 and y2."
+    },
+    {
+      "content": "You can use the following logic to clamp the coordinates: \n- For x: closestX = max(x1, min(xCenter, x2)) \n- For y: closestY = max(y1, min(yCenter, y2))"
+    },
+    {
+      "content": "Once you have the closest point (closestX, closestY), calculate the distance from the circle's center to this point. Use the distance formula: distance = sqrt((closestX - xCenter)^2 + (closestY - yCenter)^2)."
+    },
+    {
+      "content": "Instead of calculating the square root, you can compare the squared distance to avoid unnecessary computation. Check if: \n(distance^2 <= radius^2). This will help you determine if they overlap."
+    },
+    {
+      "content": "Consider edge cases where the circle is entirely inside the rectangle or entirely outside. What happens when the circle's center is exactly on the edge of the rectangle?"
+    },
+    {
+      "content": "Think about scenarios where the circle's radius is very large compared to the rectangle's dimensions. How does this affect the overlap condition?"
+    },
+    {
+      "content": "Make sure to handle the inputs correctly according to the constraints given. For example, ensure that x1 < x2 and y1 < y2 as specified."
+    },
+    {
+      "content": "Finally, summarize your approach: clamp the circle's center to the rectangle's bounds, calculate the squared distance to the closest point, and compare it to the squared radius to determine overlap."
+    }
+  ],
+  "questionNotes": [
+    "Circle is defined by (radius, xCenter, yCenter).",
+    "Rectangle is defined by (x1, y1, x2, y2) where (x1, y1) is the bottom-left and (x2, y2) is the top-right corner.",
+    "Return true if the circle and rectangle overlap; otherwise, return false.",
+    "Constraints: 1 <= radius <= 2000, -10^4 <= xCenter, yCenter <= 10^4, -10^4 <= x1 < x2 <= 10^4, -10^4 <= y1 < y2 <= 10^4."
+  ]
+}

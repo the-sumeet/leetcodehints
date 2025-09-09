@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what the GCD (Greatest Common Divisor) of a set of numbers means. The GCD of two or more integers is the largest integer that divides all of them without leaving a remainder. For example, GCD(12, 6) = 6."
+    },
+    {
+      "content": "Consider how you might split the array into subarrays. A subarray is a contiguous part of the original array. Think about how the GCD of a subarray can be calculated. You can use the GCD function iteratively as you include more elements."
+    },
+    {
+      "content": "Remember that you want all subarrays to have a GCD greater than one. This means that if a subarray contains only prime numbers, its GCD will be one unless the subarray has at least two elements that share a common factor."
+    },
+    {
+      "content": "Think about how to check the GCD of a subarray efficiently. You can maintain a running GCD as you iterate through the array. If at any point the GCD becomes one, you should consider splitting the array there."
+    },
+    {
+      "content": "Consider edge cases, such as arrays with only one element or arrays where all elements are the same. What happens if all elements are prime? How would you handle these cases in your logic?"
+    },
+    {
+      "content": "When you split the array, you need to keep track of the number of splits you make. This could be done with a counter that increments every time you create a new subarray."
+    },
+    {
+      "content": "Think about the implications of the GCD being greater than one. If you find a GCD of one for a subarray, that indicates a split point. Make sure your logic accounts for this by resetting your GCD calculation."
+    },
+    {
+      "content": "You might want to implement a helper function to calculate the GCD of two numbers. This can simplify your main logic when checking the GCD of the current subarray."
+    },
+    {
+      "content": "Consider using a loop to iterate through the array while maintaining a running GCD. If at any point the GCD is one, that’s a signal to split the array. Pseudocode could look like this:\n\n```\ncurrentGCD = arr[0]\nfor i from 1 to arr.length:\n    currentGCD = GCD(currentGCD, arr[i])\n    if currentGCD == 1:\n        // Split logic here\n```\n"
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct number of splits. You may need to account for the last subarray if the loop ends without a split. The return value should be the total count of subarrays formed."
+    }
+  ],
+  "questionNotes": [
+    "The input is an array of integers.",
+    "You need to split the array into contiguous subarrays.",
+    "Each subarray must have a GCD greater than one.",
+    "Consider edge cases such as single-element arrays or arrays with all prime numbers.",
+    "The output should be the minimum number of splits needed."
+  ]
+}

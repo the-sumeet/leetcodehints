@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to create a new matrix where each element is the product of all elements in the original matrix except for the one at the same position."
+    },
+    {
+      "content": "Consider how you would calculate the product for a single element in the resulting matrix. For example, for p[0][0], you would multiply all elements in grid except grid[0][0]."
+    },
+    {
+      "content": "Think about how to efficiently compute the product of all elements in the grid. A naive approach would involve nested loops, but this could be inefficient for larger matrices."
+    },
+    {
+      "content": "What if you calculated the total product of all elements in the grid first? Then, for each element grid[i][j], you could simply divide the total product by grid[i][j] to get the desired value for p[i][j]."
+    },
+    {
+      "content": "Remember that division might not be straightforward in a modular arithmetic context. Instead of division, consider how you can use properties of multiplication and modular arithmetic to achieve the same result."
+    },
+    {
+      "content": "Ensure that you handle the case where grid[i][j] is zero. This could affect the product calculations significantly, as multiplying by zero results in zero."
+    },
+    {
+      "content": "The problem specifies that the final result should be taken modulo 12345. Make sure to apply this operation after calculating each product in the resulting matrix."
+    },
+    {
+      "content": "When implementing your solution, pay attention to the constraints: the size of the grid can be large, so your algorithm should ideally run in O(n*m) time complexity."
+    },
+    {
+      "content": "You might want to use a single pass to calculate the total product and then another pass to fill in the product matrix. This way, you avoid recalculating the product multiple times."
+    },
+    {
+      "content": "As a final step, ensure that your solution correctly handles edge cases, such as matrices with only one element or matrices where all elements are the same."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == grid.length <= 10^5, 1 <= m == grid[i].length <= 10^5, 2 <= n * m <= 10^5, 1 <= grid[i][j] <= 10^9.",
+    "The result should be taken modulo 12345.",
+    "Each element p[i][j] is calculated as the product of all elements in grid except grid[i][j].",
+    "Be careful with zero values in the grid, as they will affect the products."
+  ]
+}

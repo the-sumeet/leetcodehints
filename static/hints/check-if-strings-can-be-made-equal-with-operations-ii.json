@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider the nature of the allowed operations. You can only swap characters at indices where the difference is even. This means that you can only swap characters among even indices with each other and odd indices with each other."
+    },
+    {
+      "content": "Try to visualize the strings in terms of their even and odd indexed characters. For example, if you have indices 0, 2, 4 as even and 1, 3, 5 as odd, think about how you can rearrange characters within these groups."
+    },
+    {
+      "content": "Count the occurrences of each character in both strings. For the strings to be made equal, the frequency of characters in the even indexed positions of s1 must match those in s2, and the same must hold for odd indexed positions."
+    },
+    {
+      "content": "You can create two separate frequency maps: one for characters at even indices and another for characters at odd indices. This will help you compare the two strings more effectively."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the strings are of length 1. In such cases, you cannot perform any swaps, so the strings must be equal to return true."
+    },
+    {
+      "content": "Think about the implications of having different characters in the even and odd indexed positions. If the characters don't match in frequency, it's impossible to make the strings equal."
+    },
+    {
+      "content": "When comparing the frequency maps, ensure that you are checking both even and odd indexed characters separately. This is crucial since swaps can only occur within these groups."
+    },
+    {
+      "content": "Consider using a single loop to populate the frequency maps for both strings simultaneously. This can help you keep your code efficient and clean."
+    },
+    {
+      "content": "After constructing the frequency maps, you need to compare them. If both frequency maps for even and odd indexed characters match, then the strings can be made equal."
+    },
+    {
+      "content": "Finally, remember to return true only if both frequency maps are equal. If either of them does not match, return false."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == s1.length == s2.length",
+    "1 <= n <= 10^5",
+    "s1 and s2 consist only of lowercase English letters.",
+    "You can only swap characters at indices i and j if j - i is even."
+  ]
+}

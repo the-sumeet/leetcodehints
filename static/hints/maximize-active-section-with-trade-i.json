@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the string. Notice that '1's represent active sections and '0's represent inactive sections. Your goal is to maximize the number of '1's after performing a trade."
+    },
+    {
+      "content": "Consider the effect of augmenting the string with '1's at both ends. This allows you to treat the ends of the string as always having an active section, which simplifies some edge cases."
+    },
+    {
+      "content": "Identify blocks of '1's that are surrounded by '0's. These are the only blocks that can be converted to '0's during a trade. Make sure to find all such blocks in the string."
+    },
+    {
+      "content": "When you perform a trade, you will convert one block of '1's to '0's and one block of '0's to '1's. Think about how the total number of active sections changes with each trade."
+    },
+    {
+      "content": "After converting a block of '1's to '0's, check how many new '1's you can create by converting a block of '0's that is adjacent to the '1's you just converted."
+    },
+    {
+      "content": "Keep track of the total number of '1's in the original string. This will help you calculate the maximum number of '1's after performing a trade."
+    },
+    {
+      "content": "Consider edge cases where there are no blocks of '1's surrounded by '0's. In such cases, no trade can be made, and the maximum number of active sections will be the count of '1's in the original string."
+    },
+    {
+      "content": "When iterating through the string, maintain a count of contiguous '0's and '1's. This will help you determine the blocks that can be traded effectively."
+    },
+    {
+      "content": "Think about how to store the lengths of the blocks of '0's and '1's. You might want to use a list to keep track of these lengths as you parse the string."
+    },
+    {
+      "content": "Finally, calculate the maximum number of '1's possible by considering each block of '0's that can be turned into '1's after a trade. Use the lengths of the surrounding blocks to help with this calculation."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n == s.length <= 10^5",
+    "s[i] is either '0' or '1'",
+    "You can perform at most one trade.",
+    "Treat the string as augmented with '1's at both ends.",
+    "The final output should be the maximum number of active sections after the trade."
+  ]
+}

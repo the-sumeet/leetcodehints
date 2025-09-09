@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirements for splitting the array. Each subsequence must be a consecutive increasing sequence, which means that for any three elements in a subsequence, they must differ by exactly 1."
+    },
+    {
+      "content": "Consider how to keep track of the counts of each number in the array. Since the array is sorted, you can use a frequency map (or dictionary) to count occurrences of each number."
+    },
+    {
+      "content": "Think about how you can form subsequences. You need at least three consecutive numbers to form a valid subsequence. If you encounter a number that cannot be part of a subsequence, you should immediately return false."
+    },
+    {
+      "content": "As you iterate through the array, keep track of how many subsequences you can form. Use a priority queue or a similar structure to manage the ends of the subsequences you are currently forming."
+    },
+    {
+      "content": "When you encounter a number, check if it can extend an existing subsequence. If not, see if you can start a new subsequence with it, ensuring that it meets the length requirement."
+    },
+    {
+      "content": "Pay attention to duplicates in the array. They can be used to form subsequences, but you must ensure that they are used correctly to maintain the increasing property."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array is very small (length less than 3) or when all elements are the same. What should your function return in these cases?"
+    },
+    {
+      "content": "Make sure to handle the situation where you run out of numbers to form a subsequence. If you have leftover numbers that cannot form a valid subsequence, you should return false."
+    },
+    {
+      "content": "Think about the overall time complexity of your approach. Since the input array can be up to 10,000 elements long, your solution should ideally be linear or linearithmic."
+    },
+    {
+      "content": "Try to outline your approach: use a frequency map to count occurrences, then iterate through the numbers while managing the subsequences. Pseudocode could look like this: \n\n```\nfor num in nums:\n    if can extend subsequence:\n        extend it\n    else if can start new subsequence:\n        start it\n    else:\n        return false\n```\n"
+    }
+  ],
+  "questionNotes": [
+    "The input array is sorted in non-decreasing order.",
+    "Each subsequence must be of length 3 or more.",
+    "You must return true if it's possible to split the array according to the conditions, otherwise return false.",
+    "Consider edge cases such as arrays with fewer than 3 elements or arrays with repeated elements."
+  ]
+}

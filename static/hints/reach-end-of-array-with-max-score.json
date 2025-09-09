@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the score calculation for a jump. The score for jumping from index `i` to index `j` is given by `(j - i) * nums[i]`. This means the score depends on both the distance of the jump and the value at the starting index."
+    },
+    {
+      "content": "Consider how you can represent the maximum score at each index. You might want to create an array `dp` where `dp[i]` represents the maximum score achievable when reaching index `i`."
+    },
+    {
+      "content": "Initialize `dp[0]` to 0 since you start at index 0 and have not made any jumps yet. The next step is to think about how to fill in the `dp` array based on possible jumps."
+    },
+    {
+      "content": "When evaluating potential jumps from index `i`, remember that you can only jump to indices greater than `i`. This means you'll need to iterate through all valid `j` indices for each `i`."
+    },
+    {
+      "content": "As you calculate the score for each jump, you should also keep track of the maximum score that can be achieved at each index. Use a nested loop where the outer loop iterates over `i` and the inner loop over possible `j` indices."
+    },
+    {
+      "content": "Think about the time complexity of your approach. A naive implementation with nested loops could lead to O(n^2) complexity, which might not be efficient for larger inputs. Consider ways to optimize your solution."
+    },
+    {
+      "content": "One optimization technique could involve using a data structure that allows you to efficiently retrieve the maximum score from previous indices. This could help reduce the number of calculations needed for each jump."
+    },
+    {
+      "content": "As you implement your solution, ensure you handle edge cases, such as when the array length is 1. In this case, you should return a score of 0 since you are already at the last index."
+    },
+    {
+      "content": "Remember to return the maximum score when you reach the last index. The final result should be the value stored in `dp[n - 1]`, where `n` is the length of the input array."
+    },
+    {
+      "content": "Before finalizing your solution, consider testing it with different scenarios, including edge cases and large inputs. This will help ensure your solution is robust and performs well across various cases."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^5",
+    "You can only jump to indices greater than your current index.",
+    "Return the maximum possible total score by the time you reach the last index."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of a polygon. Remember that to form a polygon, the sum of the lengths of the two shortest sides must be greater than the length of the longest side."
+    },
+    {
+      "content": "Consider sorting the array of side lengths. Sorting will help you easily access the longest side and check the condition for forming a polygon."
+    },
+    {
+      "content": "Once sorted, focus on the last three elements of the sorted array. These will represent the longest possible sides that could form a polygon."
+    },
+    {
+      "content": "Check the polygon condition for the last three sides: if the sum of the two shorter sides is greater than the longest side. If this condition is met, you can calculate the perimeter."
+    },
+    {
+      "content": "If the last three sides do not form a polygon, move to the next three sides (i.e., the next largest sides) and check again. Continue this process until you find a valid combination or exhaust the possibilities."
+    },
+    {
+      "content": "Remember to handle cases where there are duplicates in the side lengths. The logic remains the same, but ensure you are correctly checking combinations."
+    },
+    {
+      "content": "Consider edge cases where the array might contain the minimum number of elements (3) or where all elements are the same. These can often lead to valid polygons."
+    },
+    {
+      "content": "If you reach the beginning of the sorted array without finding a valid polygon, return -1 as specified in the problem statement."
+    },
+    {
+      "content": "Think about the time complexity of your solution. Sorting the array will take O(n log n), and checking the polygon condition can be done in O(n). Aim for an efficient solution."
+    },
+    {
+      "content": "Finally, implement the logic to calculate the perimeter of the valid polygon once you find a set of sides that satisfy the polygon condition. The perimeter is simply the sum of those sides."
+    }
+  ],
+  "questionNotes": [
+    "A polygon must have at least 3 sides.",
+    "The longest side must be smaller than the sum of the other sides.",
+    "Return -1 if no valid polygon can be formed.",
+    "Constraints: 3 <= n <= 100000, 1 <= nums[i] <= 10^9."
+  ]
+}

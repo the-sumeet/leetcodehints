@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation allowed on the array. Each element can be replaced by itself or its immediate neighbors (circularly). This means that for any element, you can only choose from three possible values in one second."
+    },
+    {
+      "content": "Consider the implications of the circular nature of the array. For example, if you are at index 0, you can also access the last element (index n-1) as a neighbor. This can create opportunities for spreading values across the array."
+    },
+    {
+      "content": "Think about the cases where all elements are already equal. What would the output be in such cases? This could help you identify base cases and optimize your solution."
+    },
+    {
+      "content": "Identify the unique values in the array. The number of unique values will influence the number of seconds needed to equalize the array. More unique values typically require more operations."
+    },
+    {
+      "content": "Consider how you can track the spread of values over time. You might want to simulate the process for a few seconds to see how values can propagate through the array."
+    },
+    {
+      "content": "Think about how you can use a breadth-first search (BFS) approach to simulate the spread of values. Each second could represent a level in the BFS where you propagate the values to their neighbors."
+    },
+    {
+      "content": "You might want to keep a count of how many seconds it takes for each unique value to spread to all positions in the array. This could help you determine the minimum seconds needed."
+    },
+    {
+      "content": "When implementing your solution, consider edge cases such as arrays with only one element or arrays where all elements are already the same. How does your solution handle these cases?"
+    },
+    {
+      "content": "Think about how to efficiently check after each second if all elements have become equal. You can use a set to track the unique values remaining in the array."
+    },
+    {
+      "content": "Finally, ensure that your solution efficiently handles the upper limits of the constraints. Aim for a time complexity that is linear with respect to the size of the array, O(n), if possible."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums.length <= 10^5",
+    "Each element in nums is between 1 and 10^9.",
+    "Return the minimum number of seconds needed to make all elements equal.",
+    "The operation affects all elements simultaneously."
+  ]
+}

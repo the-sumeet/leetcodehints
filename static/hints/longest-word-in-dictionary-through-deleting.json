@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means to form a word by deleting characters. You need to check if each word in the dictionary can be formed from the string `s` by removing some characters without reordering the remaining characters."
+    },
+    {
+      "content": "Consider writing a helper function that checks if a word can be formed from `s`. This function could use two pointers: one for the string `s` and one for the word you are checking."
+    },
+    {
+      "content": "When iterating through the characters of `s`, if you find a matching character with the current character of the word, move both pointers forward. If they don't match, just move the pointer for `s`."
+    },
+    {
+      "content": "Remember to keep track of the longest valid word found so far. You can use a variable to store the longest word and update it whenever you find a longer valid word."
+    },
+    {
+      "content": "In case of ties (multiple words of the same length), you need to return the word that is lexicographically smaller. Consider using string comparison to handle this."
+    },
+    {
+      "content": "Make sure to handle the edge case where the dictionary is empty. In such cases, you should return an empty string immediately."
+    },
+    {
+      "content": "Think about the constraints of the problem. With the maximum length of `s` and the dictionary, your solution should be efficient enough to handle the upper limits without timing out."
+    },
+    {
+      "content": "As you implement your solution, consider how you will iterate through the dictionary. A simple loop will suffice, but ensure that you are checking each word against `s` properly."
+    },
+    {
+      "content": "After checking all words in the dictionary, if you haven't found any valid word, return an empty string. This is important for cases where none of the words can be formed."
+    },
+    {
+      "content": "Finally, structure your code to first check for the longest word and then for lexicographical order only when the lengths are equal. This will keep your logic clean and efficient."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 1000, 1 <= dictionary.length <= 1000, 1 <= dictionary[i].length <= 1000.",
+    "Both `s` and `dictionary[i]` consist of lowercase English letters.",
+    "Return the longest word; if there's a tie in length, return the lexicographically smallest one.",
+    "If no word can be formed, return an empty string."
+  ]
+}

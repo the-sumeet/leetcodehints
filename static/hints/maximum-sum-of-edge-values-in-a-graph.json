@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. Each node connects to at most 2 other nodes, which means the graph can be represented as a collection of paths or cycles."
+    },
+    {
+      "content": "Consider how the values assigned to the nodes affect the edge values. The value of an edge is the product of the values assigned to the two nodes it connects."
+    },
+    {
+      "content": "Since the values assigned to nodes must be unique and range from 1 to n, think about how to maximize the products of the connected nodes. Higher values should ideally be assigned to nodes that are connected by edges."
+    },
+    {
+      "content": "To maximize the score, you might want to assign the highest values to nodes that have the most connections. However, remember that each node can have at most 2 edges."
+    },
+    {
+      "content": "Visualize the graph with a simple example. For instance, with nodes 0, 1, and 2 connected in a line, try different assignments of values and compute the edge scores."
+    },
+    {
+      "content": "Consider edge cases, such as when n = 1 or n = 2. How would you assign values in these scenarios? What would the edge scores be?"
+    },
+    {
+      "content": "Think about the order in which you assign values to nodes. A greedy approach might work well, where you start from the nodes with the most connections."
+    },
+    {
+      "content": "Remember that the graph is connected. This means that all nodes are reachable from any other node, which can simplify your approach to assigning values."
+    },
+    {
+      "content": "You can represent the graph using an adjacency list or adjacency matrix. Choose the representation that makes it easier for you to iterate over connections."
+    },
+    {
+      "content": "Try to create a function that calculates the score based on a given assignment of values to nodes. This will help you test different configurations."
+    },
+    {
+      "content": "When testing your function, consider edge cases with varying connectivity. For example, what happens if you have a cycle versus a straight line?"
+    },
+    {
+      "content": "As you iterate through possible assignments, keep track of the maximum score found. This could be done using a variable that updates whenever a higher score is computed."
+    },
+    {
+      "content": "Think about using a backtracking approach to explore different combinations of node assignments. This can help ensure that you find the optimal assignment."
+    },
+    {
+      "content": "You might want to sort the edges based on their potential contribution to the score. Edges connecting higher-value nodes should be prioritized."
+    },
+    {
+      "content": "Consider whether there are any patterns in the optimal assignments for small graphs. This might give you insights into how to approach larger graphs."
+    }
+  ],
+  "questionNotes": [
+    "The graph is undirected and connected.",
+    "Each node can connect to at most 2 other nodes.",
+    "Values assigned to nodes must be unique and range from 1 to n.",
+    "The score is the sum of the products of the values assigned to the nodes connected by each edge.",
+    "Return the maximum score achievable."
+  ]
+}

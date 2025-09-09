@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the mapping of numbers to letters. Each number from '1' to '26' corresponds to a letter from 'A' to 'Z'. Make sure you can easily convert single digits and two-digit numbers into their respective characters."
+    },
+    {
+      "content": "Consider the base cases. For example, if the string starts with '0', it cannot be decoded at all. Similarly, any segment of the string that contains '00' or starts with '0' (except for '10' and '20') is invalid."
+    },
+    {
+      "content": "Think about how you can break down the string into smaller parts. You can decode a string in two ways: either as a single digit or as a pair of digits. This means you need to analyze the string from the end to the beginning or vice versa."
+    },
+    {
+      "content": "Use dynamic programming to store the number of ways to decode substrings of the input string. Create an array `dp` where `dp[i]` represents the number of ways to decode the substring `s[0:i]`."
+    },
+    {
+      "content": "Initialize your `dp` array. Set `dp[0]` to 1 (an empty string has one way to be decoded) and `dp[1]` based on whether the first character is valid (i.e., not '0')."
+    },
+    {
+      "content": "When filling in the `dp` array, for each character in the string, check if it can be decoded as a single digit. If `s[i-1]` is between '1' and '9', then add `dp[i-1]` to `dp[i]`."
+    },
+    {
+      "content": "Next, check if the last two characters can form a valid two-digit number. If `s[i-2:i]` (the substring of the last two characters) is between '10' and '26', then add `dp[i-2]` to `dp[i]`."
+    },
+    {
+      "content": "Consider edge cases like leading zeros. If at any point you encounter '0' not preceded by '1' or '2', you should return 0 immediately since it cannot be decoded."
+    },
+    {
+      "content": "Don't forget to return the last element of your `dp` array, `dp[n]`, where `n` is the length of the string. This will give you the total number of ways to decode the entire string."
+    },
+    {
+      "content": "As a final check, ensure that your solution handles strings of varying lengths and configurations, including those with leading zeros, and edge cases like '10', '20', and '30'."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 100, s contains only digits and may contain leading zero(s).",
+    "Return 0 if the string cannot be decoded in any valid way.",
+    "Leading zeros are not valid unless they form '10' or '20'."
+  ]
+}

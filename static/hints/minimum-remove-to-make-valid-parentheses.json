@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what makes a parentheses string valid. A valid string must have matching opening and closing parentheses, and they must be properly nested."
+    },
+    {
+      "content": "Consider using a stack to help you track the parentheses. When you encounter an '(', push it onto the stack, and when you encounter a ')', check if there's a matching '(' in the stack."
+    },
+    {
+      "content": "As you traverse the string, keep a count of unmatched parentheses. You will need to know how many '(' and ')' are unmatched by the end of your first pass through the string."
+    },
+    {
+      "content": "After counting, you can determine how many parentheses need to be removed to make the string valid. This will be the total of unmatched '(' and unmatched ')'."
+    },
+    {
+      "content": "You can make a second pass through the string to construct the valid output. Use a counter to keep track of how many '(' and ')' you can include based on your earlier counts."
+    },
+    {
+      "content": "While building the result string, ensure that you only add '(' if you have not exceeded the allowed count of valid '(' from your first pass."
+    },
+    {
+      "content": "Similarly, add ')' only if it does not exceed the number of valid ')' that you can include. This will help maintain the balance between the parentheses."
+    },
+    {
+      "content": "Remember to also include all lowercase characters in your result, as they do not affect the validity of the parentheses."
+    },
+    {
+      "content": "Consider edge cases such as strings that are already valid or strings that contain no parentheses at all. These should be handled gracefully."
+    },
+    {
+      "content": "Finally, ensure your result string is built in the same order as the original string, preserving the positions of the valid characters and parentheses."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "s[i] is either '(', ')', or a lowercase English letter.",
+    "Return any valid string that results from the minimum removals.",
+    "An empty string is also considered a valid output."
+  ]
+}

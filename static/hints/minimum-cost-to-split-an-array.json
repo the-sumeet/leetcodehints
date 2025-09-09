@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a subarray. A subarray is a contiguous part of the array. For example, in the array [1, 2, 3], the subarrays include [1], [1, 2], [1, 2, 3], [2], [2, 3], and [3]."
+    },
+    {
+      "content": "Focus on how to calculate the importance value of a subarray. The importance value is determined by adding a constant k to the length of the trimmed version of the subarray."
+    },
+    {
+      "content": "The trimmed version of a subarray is obtained by removing all elements that appear only once. For instance, if your subarray is [1, 2, 2, 3], the trimmed version would be [2, 2]."
+    },
+    {
+      "content": "To find the minimum cost of splitting the array, consider how different splits affect the total cost. Each split will create two or more subarrays, each with its own importance value."
+    },
+    {
+      "content": "Think about the implications of the parameter k. A larger k will increase the importance value of each subarray, potentially affecting how you choose to split the array."
+    },
+    {
+      "content": "You will need to iterate through possible split points in the array. For each split point, calculate the importance value for the resulting subarrays."
+    },
+    {
+      "content": "Keep track of the frequency of elements as you create subarrays. This will help you efficiently compute the trimmed length for each subarray."
+    },
+    {
+      "content": "Consider using a dynamic programming approach. You can define a DP array where dp[i] represents the minimum cost to split the array up to index i."
+    },
+    {
+      "content": "When calculating dp[i], you will need to look back at previous indices to determine where to split. For each possible split point j, compute the cost of the subarray from j to i."
+    },
+    {
+      "content": "To efficiently compute the trimmed length, maintain a frequency map of elements in the current subarray. Update this map as you extend the subarray."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when all elements in the array are unique or when all elements are the same. These cases will affect the trimmed length significantly."
+    },
+    {
+      "content": "Make sure to initialize your DP array correctly. dp[0] should represent the cost of the first element as a subarray, which will simply be k + 0."
+    },
+    {
+      "content": "As you compute the importance value for each subarray, remember to sum the costs of all subarrays formed by your splits to get the total cost."
+    },
+    {
+      "content": "Consider the time complexity of your approach. A naive solution might be too slow, so think about how to optimize the frequency counting and importance calculation."
+    },
+    {
+      "content": "Finally, ensure that you return the minimum cost from your DP array. The last element of the DP array will hold the minimum cost for splitting the entire array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "0 <= nums[i] < nums.length",
+    "1 <= k <= 10^9",
+    "Subarrays must be contiguous and non-empty.",
+    "The importance value is calculated as k + trimmed(subarray).length."
+  ]
+}

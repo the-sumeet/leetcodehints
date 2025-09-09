@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by visualizing the grid created by the horizontal and vertical bars. Remember that the grid is defined by the positions of these bars, and the holes you can create depend on their arrangement."
+    },
+    {
+      "content": "Consider the effect of removing a bar on the dimensions of the square hole. Removing a horizontal bar increases the vertical space, while removing a vertical bar increases the horizontal space available for the square."
+    },
+    {
+      "content": "Think about how to determine the maximum distance between consecutive horizontal and vertical bars. The largest square that can fit will be limited by the smallest of these distances."
+    },
+    {
+      "content": "You can calculate the gaps between the bars by sorting the `hBars` and `vBars` arrays. This will help you identify the maximum distance between consecutive bars easily."
+    },
+    {
+      "content": "When calculating the gaps, don't forget to account for the edges of the grid. The first gap starts from the beginning of the grid to the first bar and the last gap goes from the last bar to the end of the grid."
+    },
+    {
+      "content": "After calculating the gaps, you need to find the maximum gap for both horizontal and vertical bars. The size of the largest square hole will be the minimum of these two maximum gaps."
+    },
+    {
+      "content": "Make sure to handle cases where there are no bars removed. The initial configuration should also be considered when calculating gaps."
+    },
+    {
+      "content": "Remember that the constraints allow for a large range of values for `n` and `m`, so your solution should be efficient. Sorting the bars will take O(k log k) time, where k is the number of bars."
+    },
+    {
+      "content": "Consider edge cases where there are very few bars or where the bars are positioned very close together. These scenarios can affect the maximum area calculation significantly."
+    },
+    {
+      "content": "Finally, implement the logic to compute the maximum area of the square. The area is simply the side length squared, so if you find the maximum side length, just return that squared."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^9, 1 <= m <= 10^9",
+    "1 <= hBars.length <= 100, 1 <= vBars.length <= 100",
+    "All values in hBars and vBars are distinct.",
+    "Bars are indexed starting from 1.",
+    "Return the maximum area of the square-shaped hole as an integer."
+  ]
+}

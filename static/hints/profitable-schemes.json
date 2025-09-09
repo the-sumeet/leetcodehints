@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find subsets of crimes that meet two criteria: the total profit must be at least `minProfit`, and the total number of members required for those crimes must not exceed `n`."
+    },
+    {
+      "content": "Consider the constraints carefully. The number of members `n` can go up to 100, and the number of crimes can also be up to 100. This suggests that a brute-force approach might not be feasible due to the potential number of combinations."
+    },
+    {
+      "content": "Think about how you can represent the subsets of crimes. You might want to use bit manipulation or combinations to generate all possible subsets of the crimes."
+    },
+    {
+      "content": "Remember that for each subset of crimes, you need to calculate both the total profit and the total number of members required. Keep track of these values as you generate subsets."
+    },
+    {
+      "content": "When calculating the total profit, ensure that you only count profits from the crimes included in the current subset. Similarly, sum up the group sizes for those crimes."
+    },
+    {
+      "content": "Consider using dynamic programming to optimize your solution. You can create a DP table where `dp[i][j]` represents the number of ways to achieve a profit of `j` using `i` members."
+    },
+    {
+      "content": "Initialize your DP table carefully. Start with `dp[0][0] = 1`, which means there's one way to achieve zero profit with zero members."
+    },
+    {
+      "content": "Iterate through each crime and update your DP table. For each crime, you will need to consider adding it to existing schemes, which requires iterating backwards through your DP table."
+    },
+    {
+      "content": "When updating the DP table, ensure that you only update the profit values that are achievable given the current number of members. This prevents counting schemes that exceed the member limit."
+    },
+    {
+      "content": "After processing all crimes, sum up the values in your DP table that correspond to profits greater than or equal to `minProfit`. Make sure to consider only those entries where the number of members used is less than or equal to `n`."
+    },
+    {
+      "content": "Don’t forget to apply the modulo operation (`10^9 + 7`) at each step to avoid overflow, especially when summing up the number of schemes."
+    },
+    {
+      "content": "Consider edge cases, such as when `minProfit` is 0. In this case, any combination of crimes that uses up to `n` members should be counted."
+    },
+    {
+      "content": "Also think about cases where all profits are zero. You will need to ensure that your logic accounts for these scenarios correctly."
+    },
+    {
+      "content": "As a final step, ensure that your solution is efficient enough to handle the upper limits of the constraints. Profiling your code may help identify bottlenecks."
+    },
+    {
+      "content": "Once you have your DP table filled out, the final answer will be the sum of all valid schemes that meet the profit requirement. Make sure to check your indexing carefully."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100, 0 <= minProfit <= 100, 1 <= group.length <= 100, 1 <= group[i] <= 100, profit.length == group.length, 0 <= profit[i] <= 100.",
+    "The answer should be returned modulo 10^9 + 7.",
+    "Ensure to handle cases where `minProfit` is 0 correctly.",
+    "Keep in mind that members cannot participate in more than one crime."
+  ]
+}

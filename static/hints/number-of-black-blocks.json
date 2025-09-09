@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the grid. You have an m x n grid, and you need to identify 2x2 blocks. Each block can be defined by its top-left corner, which can range from (0,0) to (m-2, n-2)."
+    },
+    {
+      "content": "Remember that the blocks are defined by their top-left corners. Each block consists of four cells: the top-left, top-right, bottom-left, and bottom-right cells. Make sure you can visualize how these cells are arranged."
+    },
+    {
+      "content": "Consider how to represent the grid. You could use a set to store the coordinates of the black cells for quick lookup. This will help you determine how many black cells are in each block efficiently."
+    },
+    {
+      "content": "When iterating through possible block starting points, remember to check the four cells that make up each block. You will need to count how many of these cells are black."
+    },
+    {
+      "content": "Think about how to handle blocks that are at the edges of the grid. For example, blocks starting at the last row or last column will not have a complete 2x2 formation. Make sure your loop respects the grid boundaries."
+    },
+    {
+      "content": "As you count the black cells in each block, you will need to maintain a count of how many blocks contain exactly 0, 1, 2, 3, or 4 black cells. Consider using an array of size 5 to store these counts."
+    },
+    {
+      "content": "Take care of edge cases, such as when the coordinates array is empty. In this case, all blocks will have 0 black cells, and your output should reflect that."
+    },
+    {
+      "content": "When processing the coordinates, ensure that you are not counting cells outside the bounds of the grid. Validate each coordinate before marking it as black."
+    },
+    {
+      "content": "After counting the black cells in each block, remember to return the results in the specified format: a 0-indexed integer array of size 5. Each index corresponds to the count of blocks with that number of black cells."
+    },
+    {
+      "content": "Finally, consider the efficiency of your solution. Since m and n can be very large (up to 100,000), aim for a solution that processes the coordinates in linear time relative to their count, rather than the size of the grid."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= m, n <= 100,000; 0 <= coordinates.length <= 10,000.",
+    "Coordinates are unique and within the grid bounds.",
+    "Return an array of size 5 where arr[i] is the number of blocks with exactly i black cells.",
+    "Blocks are defined by their top-left corner, which must be within the bounds (0 <= x < m-1 and 0 <= y < n-1)."
+  ]
+}

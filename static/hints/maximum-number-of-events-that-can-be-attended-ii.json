@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the events array. Each event is represented as [startDay, endDay, value]. Make sure you can access the start, end, and value of each event easily."
+    },
+    {
+      "content": "Consider how you can represent the events in a way that allows you to sort them. Sorting by endDay can be beneficial because it helps in determining which events can be attended sequentially."
+    },
+    {
+      "content": "Think about how you can keep track of the maximum values you can achieve by attending events. A good approach is to use dynamic programming to store the maximum values up to a certain number of events attended."
+    },
+    {
+      "content": "Remember that you can attend at most 'k' events. This constraint means you'll need to manage your selections carefully to maximize the total value."
+    },
+    {
+      "content": "When considering which events to attend, think about the conflicts. If two events overlap, you can't attend both. You may need to skip one for a potentially higher value event."
+    },
+    {
+      "content": "You might want to use a binary search to find the last non-conflicting event for a given event. This can help you efficiently determine which prior events can be attended."
+    },
+    {
+      "content": "As you build your dynamic programming table, consider using a 2D array where dp[i][j] represents the maximum value obtainable by attending 'j' events from the first 'i' events."
+    },
+    {
+      "content": "Make sure to handle the base cases in your dynamic programming solution. For instance, if no events are attended, the maximum value should be 0."
+    },
+    {
+      "content": "When filling in your dp table, think about two choices for each event: either attend it or skip it. If you attend it, add its value to the best value from the last non-conflicting event."
+    },
+    {
+      "content": "Don't forget to account for the case where you might not attend 'k' events if it’s not possible due to overlaps. Your solution should return the maximum value achievable with up to 'k' events."
+    },
+    {
+      "content": "Consider edge cases, such as when all events overlap completely or when all events are non-overlapping. How would your algorithm perform in these scenarios?"
+    },
+    {
+      "content": "You should also think about how to handle ties in values. If two events provide the same value, your algorithm should still choose the one that allows for the best overall outcome."
+    },
+    {
+      "content": "As you implement your solution, ensure that you are correctly updating your dp table based on the choices you make. Debugging with small test cases can help you verify correctness."
+    },
+    {
+      "content": "Before finalizing your solution, review the constraints given in the problem. Ensure your approach is efficient enough to handle the upper limits of the input sizes."
+    },
+    {
+      "content": "Finally, make sure your function returns the expected output format, which is a single integer representing the maximum sum of values from attending events."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= events.length",
+    "1 <= k * events.length <= 10^6",
+    "1 <= startDay[i] <= endDay[i] <= 10^9",
+    "1 <= value[i] <= 10^6",
+    "End day is inclusive: you cannot attend two events that overlap on the same day.",
+    "You do not have to attend exactly k events; attending fewer is allowed if necessary."
+  ]
+}

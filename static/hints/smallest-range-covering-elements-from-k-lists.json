@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find a range [a, b] that includes at least one number from each of k sorted lists."
+    },
+    {
+      "content": "Consider the constraints: you have at most 3500 lists and each list can have up to 50 integers. This suggests that a brute-force approach might not be efficient."
+    },
+    {
+      "content": "Since the lists are sorted, think about how you can leverage this property to find the smallest range efficiently."
+    },
+    {
+      "content": "One approach is to use a min-heap (or priority queue) to keep track of the smallest elements from each list. This can help you efficiently find the current minimum in the range."
+    },
+    {
+      "content": "You will also need to keep track of the maximum value among the current elements from the lists, as the range is defined by both the minimum and maximum values."
+    },
+    {
+      "content": "Consider using a pointer for each list to track which element you are currently considering. Initially, you can start with the first element of each list."
+    },
+    {
+      "content": "As you process the elements, you will want to continuously update the minimum and maximum values and check if the current range includes elements from all lists."
+    },
+    {
+      "content": "When you find a valid range, check if it's smaller than any previously found range. If it is, update your result."
+    },
+    {
+      "content": "Be mindful of how you handle the pointers: when you move the pointer from the list that has the current minimum, you need to fetch the next element from that list."
+    },
+    {
+      "content": "Make sure to handle the case where you run out of elements in any list. This means you cannot form a valid range anymore."
+    },
+    {
+      "content": "Think about the edge cases, such as when all lists contain the same elements or when there is only one list."
+    },
+    {
+      "content": "Remember the tie-breaking rule: if two ranges have the same length, the one with the smaller starting point should be preferred."
+    },
+    {
+      "content": "As you implement the solution, keep track of the indices of the elements you are considering in each list for easy access."
+    },
+    {
+      "content": "You might want to define a structure to hold the current minimum, maximum, and the indices of the elements in the lists for clarity."
+    },
+    {
+      "content": "Finally, once you have iterated through the lists and found the smallest range, ensure you return it in the correct format as [a, b]."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: nums.length == k, 1 <= k <= 3500, 1 <= nums[i].length <= 50.",
+    "Each nums[i] is sorted in non-decreasing order.",
+    "Return format: a list containing two integers [a, b].",
+    "Tie-breaking: prefer the range with the smaller starting point if two ranges are of the same length."
+  ]
+}

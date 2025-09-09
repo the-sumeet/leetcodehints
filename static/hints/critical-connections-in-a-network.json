@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a critical connection. A critical connection is one that, if removed, increases the number of connected components in the network."
+    },
+    {
+      "content": "Consider how you can represent the network. An adjacency list is a common way to represent undirected graphs, where each server points to a list of its directly connected servers."
+    },
+    {
+      "content": "Think about how to traverse the graph. Depth-First Search (DFS) is a useful technique for exploring all connections from a given server."
+    },
+    {
+      "content": "As you traverse the graph, you may want to keep track of the discovery time of each server. This will help you identify back edges and determine critical connections."
+    },
+    {
+      "content": "Remember that you need to maintain a parent-child relationship in your DFS to avoid counting back edges as critical connections."
+    },
+    {
+      "content": "You might want to use a `low` array along with the `disc` array. The `low` value of a node indicates the lowest discovery time reachable from that node."
+    },
+    {
+      "content": "During your DFS, if you find that the lowest reachable vertex from a child is greater than the discovery time of the current vertex, then the edge connecting them is a critical connection."
+    },
+    {
+      "content": "Consider edge cases, such as when there are only two servers connected by one edge. This is a simple case where the only connection is critical."
+    },
+    {
+      "content": "Make sure to handle the input format correctly. The connections are given as pairs, and you need to ensure that you treat them as undirected."
+    },
+    {
+      "content": "Remember that the output can be in any order. Just ensure that all critical connections are included in your final result."
+    },
+    {
+      "content": "Think about the time complexity of your solution. A DFS traversal generally runs in O(V + E), where V is the number of vertices and E is the number of edges."
+    },
+    {
+      "content": "Consider using a set or a list to store the critical connections you find during your traversal. This will help you collect results efficiently."
+    },
+    {
+      "content": "Be mindful of the constraints: you need to handle up to 100,000 servers and connections efficiently, so avoid any O(n^2) solutions."
+    },
+    {
+      "content": "You might want to implement your DFS in a recursive manner, but be cautious about stack overflow with deep recursion. An iterative approach using a stack could be safer."
+    },
+    {
+      "content": "As you implement your DFS, ensure you are correctly marking nodes as visited to avoid infinite loops and redundant checks."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5",
+    "n - 1 <= connections.length <= 10^5",
+    "0 <= a_i, b_i <= n - 1",
+    "a_i != b_i; no repeated connections",
+    "Return format: list of critical connections in any order"
+  ]
+}

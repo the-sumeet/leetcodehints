@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. A tree with n nodes has n-1 edges and is connected without cycles. Make sure you can visualize the tree based on the edges provided."
+    },
+    {
+      "content": "Remember that the root of the tree is node 0. You will need to traverse this tree starting from the root to determine the size of subtrees."
+    },
+    {
+      "content": "Each node has a label, and your goal is to count how many nodes in the subtree of each node have the same label as that node. Think about how you can store and compare these labels during your traversal."
+    },
+    {
+      "content": "Consider using Depth-First Search (DFS) to explore each subtree. As you visit each node, you can maintain a count of labels in a dictionary or an array."
+    },
+    {
+      "content": "When you visit a node, increment the count for its label. After visiting all children, you can determine how many nodes in the subtree share the same label as the current node."
+    },
+    {
+      "content": "Be careful with the return format. You need to return an array where the index corresponds to the node number, and the value at that index is the count of nodes with the same label in its subtree."
+    },
+    {
+      "content": "Think about edge cases such as a tree with only one node. In this case, the output should simply be [1] since the single node is its own subtree."
+    },
+    {
+      "content": "Also, consider trees where all nodes have the same label. What would the output look like in such cases? It should reflect that all nodes are counted in each subtree."
+    },
+    {
+      "content": "As you implement your DFS, remember to return the count of nodes with the same label back up the recursion stack. This will help you build the answer for the parent nodes."
+    },
+    {
+      "content": "Finally, ensure you handle the tree traversal correctly to avoid missing any nodes. You might want to keep track of visited nodes to prevent cycles, although in a tree, this shouldn't be necessary."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n <= 10^5",
+    "edges.length == n - 1",
+    "0 <= ai, bi < n, ai != bi",
+    "labels.length == n",
+    "labels consists of only lowercase English letters."
+  ]
+}

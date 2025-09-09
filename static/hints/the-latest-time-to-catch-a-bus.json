@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by sorting the `buses` and `passengers` arrays. This will help you manage the boarding process more easily since you can handle passengers in the order of their arrival times."
+    },
+    {
+      "content": "Remember that passengers will board the bus based on their arrival times, and they cannot board if they arrive after the bus departs. Think about how you will track which passengers have boarded each bus."
+    },
+    {
+      "content": "You need to keep track of the number of passengers that have boarded each bus. Use a counter to ensure that you do not exceed the `capacity` of each bus."
+    },
+    {
+      "content": "Consider using a pointer or index to traverse through the `passengers` array. This will allow you to efficiently determine which passengers can board each bus as it departs."
+    },
+    {
+      "content": "As you process each bus, check how many passengers can board it. If the bus departs and is not full, you will need to determine the latest time you can arrive at the station without conflicting with existing passengers."
+    },
+    {
+      "content": "When calculating the latest time you can arrive, remember that you cannot arrive at the same time as any existing passenger. This means you need to find the maximum time that is less than the arrival time of the next passenger."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no passengers arriving before a bus departs. In such cases, you can arrive exactly at the bus's departure time, provided you are not the same as another passenger."
+    },
+    {
+      "content": "You might want to implement a loop that iterates through each bus and checks the passengers that can board it. After processing each bus, update your latest possible arrival time accordingly."
+    },
+    {
+      "content": "When you reach the last bus, ensure you check if you can arrive at the bus departure time or if you need to adjust to avoid conflicts with passengers."
+    },
+    {
+      "content": "Finally, ensure that your function returns the latest time you can arrive at the bus station. This should be the maximum valid time found during your processing, adjusted to avoid conflicts with passenger arrival times."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == buses.length, m == passengers.length, 1 <= n, m, capacity <= 10^5",
+    "Each element in buses and passengers is unique.",
+    "You cannot arrive at the same time as another passenger.",
+    "All bus departure times are unique."
+  ]
+}

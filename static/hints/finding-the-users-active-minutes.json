@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the logs. Each entry in the logs contains a user ID and a time. You need to process these logs to determine how many unique minutes each user has been active."
+    },
+    {
+      "content": "Remember that a user can perform multiple actions in the same minute. This means you need to track unique minutes for each user. Consider using a set for each user to automatically handle duplicates."
+    },
+    {
+      "content": "Think about how you will store the unique active minutes for each user. A dictionary (or hashmap) can be useful here, where the key is the user ID and the value is a set of unique minutes."
+    },
+    {
+      "content": "As you process each log entry, add the time to the corresponding user's set of unique minutes. This will allow you to count how many unique minutes each user has been active."
+    },
+    {
+      "content": "After processing all logs, you will have a dictionary mapping user IDs to their counts of unique active minutes. You need to convert this information into the required output format."
+    },
+    {
+      "content": "To create the output array, initialize an array of size k with all zeros. For each user, increment the count in the output array at the index corresponding to their unique active minutes."
+    },
+    {
+      "content": "Make sure to remember that the output array is 1-indexed. This means that if a user has 1 unique active minute, you should increment answer[1] instead of answer[0]."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no logs or when all users have the same number of unique active minutes. How will your solution handle these scenarios?"
+    },
+    {
+      "content": "After constructing the output array, ensure that you return it in the correct format as specified in the problem statement. Double-check the indexing and the size of the array."
+    },
+    {
+      "content": "Finally, think about the time complexity of your solution. You will need to process each log entry, so consider how this impacts the overall performance of your solution."
+    }
+  ],
+  "questionNotes": [
+    "Logs are a 2D array where each entry is [ID, time].",
+    "User active minutes (UAM) is the count of unique minutes a user has actions.",
+    "Output array must be 1-indexed.",
+    "Constraints: 1 <= logs.length <= 10^4, 0 <= ID_i <= 10^9, 1 <= time_i <= 10^5.",
+    "Handle cases where multiple actions occur in the same minute."
+  ]
+}

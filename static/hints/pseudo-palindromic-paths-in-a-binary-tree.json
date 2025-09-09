@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a pseudo-palindromic path is. A path is pseudo-palindromic if the counts of the digits can be rearranged to form a palindrome. This means that at most one digit can have an odd count."
+    },
+    {
+      "content": "Consider how you will traverse the binary tree. A depth-first search (DFS) approach is often suitable for exploring paths from the root to the leaves. Think about how you can keep track of the current path as you traverse."
+    },
+    {
+      "content": "As you traverse, maintain a count of how many times each digit (from 1 to 9) appears in the current path. You can use an array of size 10 (index 0 unused) to count occurrences of each digit."
+    },
+    {
+      "content": "Remember to check if a node is a leaf node. A leaf node is a node that does not have any children. You will want to evaluate the current path for pseudo-palindromic properties when you reach a leaf."
+    },
+    {
+      "content": "When you reach a leaf node, check the counts of the digits. You can determine if the path is pseudo-palindromic by counting how many digits have an odd count. If more than one digit has an odd count, the path is not pseudo-palindromic."
+    },
+    {
+      "content": "Think about how to backtrack after exploring a node. When you finish exploring a path, you'll need to decrement the count of the current node's value before returning to the previous node in the tree."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree has only one node. In this case, the single node path is trivially pseudo-palindromic."
+    },
+    {
+      "content": "Make sure to handle the case where the tree is skewed (all nodes have only one child). Each path in such a tree will be a straight line, and you will still need to evaluate each leaf."
+    },
+    {
+      "content": "While traversing the tree, keep a global count of pseudo-palindromic paths. Increment this count each time you find a valid pseudo-palindromic path at a leaf node."
+    },
+    {
+      "content": "Finally, ensure that your function returns the total count of pseudo-palindromic paths once the traversal is complete. You may want to return this count after the DFS completes."
+    }
+  ],
+  "questionNotes": [
+    "Node values are digits from 1 to 9.",
+    "A path is pseudo-palindromic if at most one digit has an odd count.",
+    "The number of nodes in the tree is in the range [1, 10^5].",
+    "Return the number of pseudo-palindromic paths from the root to leaf nodes."
+  ]
+}

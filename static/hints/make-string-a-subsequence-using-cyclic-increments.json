@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for str2 to be a subsequence of str1. A string A is a subsequence of string B if you can remove some characters from B (without reordering) to get A."
+    },
+    {
+      "content": "Consider how the cyclic increment operation works. For example, if you increment 'z', it wraps around to 'a'. This means you can change any character in str1 to any character that follows it cyclically."
+    },
+    {
+      "content": "Think about the lengths of str1 and str2. If str2 is longer than str1, it's impossible for str2 to be a subsequence of str1, so you can immediately return false in that case."
+    },
+    {
+      "content": "Try to simulate the process of checking if str2 can be formed from str1. You can use two pointers: one for str1 and one for str2. Move through str1 and see if you can match characters from str2."
+    },
+    {
+      "content": "Remember that you can perform the increment operation at most once. This means you should consider how to group the characters in str1 that need to be incremented to match the characters in str2."
+    },
+    {
+      "content": "As you iterate through str1 and str2, keep track of the characters in str1 that can be incremented to match characters in str2. This will help you decide if the operation can be performed successfully."
+    },
+    {
+      "content": "When comparing characters from str1 and str2, consider the cyclic nature of the alphabet. You may need to calculate the effective distance between characters to determine if one can be incremented to match the other."
+    },
+    {
+      "content": "Think about edge cases, such as when str1 contains characters that are already greater than the corresponding characters in str2. In such cases, those characters cannot be decremented, and you need to handle them carefully."
+    },
+    {
+      "content": "You might want to create a helper function that determines if one character can be incremented to match another character. This function could return true or false based on the cyclic increment logic."
+    },
+    {
+      "content": "Finally, ensure that you only perform the increment operation once and check if all necessary characters in str1 can be adjusted to form str2 as a subsequence. Keep track of which characters you've already matched."
+    }
+  ],
+  "questionNotes": [
+    "1 <= str1.length <= 10^5",
+    "1 <= str2.length <= 10^5",
+    "str1 and str2 consist of only lowercase English letters.",
+    "Return true if str2 can be formed as a subsequence of str1 after at most one operation."
+  ]
+}

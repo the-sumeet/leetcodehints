@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to replace the number `n` with the sum of its prime factors repeatedly until you reach a stable value. Make sure you grasp what prime factors are and how they can be summed."
+    },
+    {
+      "content": "Consider how to find the prime factors of a number. You can use trial division starting from the smallest prime (2) and check divisibility. For example, to find the prime factors of 15, you would check divisibility by 2, then 3, and finally 5."
+    },
+    {
+      "content": "Remember that if a prime factor divides `n` multiple times, you need to include it in the sum as many times as it divides `n`. For instance, for `n = 8`, the prime factorization is `2 * 2 * 2`, and you would sum `2 + 2 + 2`."
+    },
+    {
+      "content": "Think about how to implement the replacement process. You can use a loop that continues until `n` does not change after replacing it with the sum of its prime factors."
+    },
+    {
+      "content": "Consider edge cases. What happens if `n` is already a prime number? In that case, the smallest value `n` can take is itself since it has no prime factors other than itself."
+    },
+    {
+      "content": "You might want to create a helper function to calculate the sum of prime factors. This function should take an integer `n` and return the sum of its prime factors."
+    },
+    {
+      "content": "Keep track of the values of `n` at each step. You can use a set to store previously seen values to detect when `n` stabilizes, preventing infinite loops."
+    },
+    {
+      "content": "While calculating the prime factors, ensure you handle the case where `n` becomes 1, as it has no prime factors. You should stop the process when `n` reaches 1."
+    },
+    {
+      "content": "Think about the efficiency of your solution. The maximum value of `n` is 100,000. Make sure your method for finding prime factors is efficient enough to handle the upper limit within a reasonable time."
+    },
+    {
+      "content": "Finally, structure your main function to call the helper function for prime factor summation and loop until `n` stabilizes. Don't forget to return the smallest value that `n` reaches."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 100,000",
+    "If n is prime, return n.",
+    "Include prime factors in the sum as many times as they divide n.",
+    "The process continues until n does not change."
+  ]
+}

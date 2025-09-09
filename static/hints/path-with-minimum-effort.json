@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find a path from the top-left to the bottom-right of a grid, minimizing the maximum height difference between consecutive cells. Think about how you can represent this problem using a graph."
+    },
+    {
+      "content": "Consider what it means to minimize the maximum absolute difference in heights. This suggests that you might need to explore paths in a way that prioritizes smaller differences. How can you represent the effort required to travel between two cells?"
+    },
+    {
+      "content": "Think about the directions you can move in the grid: up, down, left, and right. Make sure to handle the boundaries of the grid correctly to avoid index errors when moving to neighboring cells."
+    },
+    {
+      "content": "A useful data structure for this problem could be a priority queue. This will allow you to always expand the path with the least effort first. Consider how you can use this to keep track of the current maximum effort as you explore paths."
+    },
+    {
+      "content": "You might want to implement a variant of Dijkstra's algorithm. Instead of finding the shortest path based on distance, you'll be finding the path with the minimum maximum effort. Think about how you can adapt the algorithm to fit this requirement."
+    },
+    {
+      "content": "When exploring neighbors of a cell, calculate the effort required to move to each neighbor. Keep track of the maximum effort encountered along the path to that neighbor. This will help you determine if you should update your path to that neighbor."
+    },
+    {
+      "content": "Remember to use a visited set or array to avoid revisiting cells and getting stuck in loops. This will also help improve the efficiency of your algorithm."
+    },
+    {
+      "content": "Consider edge cases, such as when the grid is 1x1 (where no movement is needed) or when the heights are uniform (where the effort should be zero). How will your algorithm handle these scenarios?"
+    },
+    {
+      "content": "As you implement your algorithm, ensure that you are correctly returning the minimum effort required to reach the bottom-right cell. This is the final value you need to output after completing your pathfinding."
+    },
+    {
+      "content": "Finally, think about how to structure your code for clarity. You might want to separate the logic for calculating efforts and the logic for exploring the grid. This will make your code easier to read and debug."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= rows, columns <= 100; 1 <= heights[i][j] <= 10^6.",
+    "You are allowed to move up, down, left, or right.",
+    "The grid is 0-indexed, starting from (0, 0) to (rows-1, columns-1).",
+    "Return the minimum effort as an integer."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the bitwise AND operation. The result of `a & b` is non-zero if there is at least one bit position where both `a` and `b` have a 1. This means that for three numbers to AND to zero, they must not share any bit positions where they both have a 1."
+    },
+    {
+      "content": "Consider how many indices you need to choose from the array. You are looking for triples (i, j, k), which means you will be selecting three indices from the array. Remember that the same index can be used multiple times in a single triple."
+    },
+    {
+      "content": "Think about how to iterate through all possible triples. You can use three nested loops to generate all combinations of indices (i, j, k). This will help you evaluate the AND condition for each combination."
+    },
+    {
+      "content": "When counting valid triples, ensure you check the condition `nums[i] & nums[j] & nums[k] == 0`. This is the crux of the problem, so make sure your condition is correctly implemented."
+    },
+    {
+      "content": "Consider edge cases. For example, what happens if the array contains zeros? Since `0 & x = 0` for any integer `x`, any triple that includes a zero will satisfy the condition."
+    },
+    {
+      "content": "To optimize your solution, think about the properties of numbers. If two numbers AND to zero, what can you infer about their binary representations? This might help you reduce the number of comparisons needed."
+    },
+    {
+      "content": "You might want to create a helper function to check if a given triple satisfies the AND condition. This can help keep your main loop cleaner and more readable."
+    },
+    {
+      "content": "When counting valid triples, remember to account for the fact that the same combination of indices can be counted multiple times due to the nature of the loops. Ensure you are counting all valid arrangements."
+    },
+    {
+      "content": "Consider using a hashmap to store the counts of numbers that can form valid pairs. This can help you quickly determine how many numbers can combine with a given number to produce a valid AND result."
+    },
+    {
+      "content": "If you're still struggling with performance, think about reducing the number of checks. For example, if you know that a certain number has a specific bit set, you can skip checking numbers that also have that bit set."
+    },
+    {
+      "content": "Keep in mind the constraints of the problem. With a maximum length of 1000 for `nums`, a direct cubic solution might be too slow. Look for ways to reduce the complexity of your approach."
+    },
+    {
+      "content": "You might want to use bit manipulation techniques to efficiently check the AND condition. For instance, you can precompute the AND results of pairs and store them for quick access."
+    },
+    {
+      "content": "As you implement your solution, consider how you will handle large arrays. Test your code with edge cases, such as arrays filled with the maximum number of elements or containing the maximum possible values."
+    },
+    {
+      "content": "Before finalizing your solution, review the output format. Ensure that you are returning the count of valid triples as an integer, as specified in the problem statement."
+    },
+    {
+      "content": "Finally, try to outline your approach in pseudocode before jumping into coding. This can help clarify your logic and ensure you don't miss any important steps in your implementation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "0 <= nums[i] < 2^16",
+    "Return the count of valid triples (i, j, k) where 0 <= i, j, k < nums.length",
+    "Indices can be reused in triples, meaning (i, j, k) can have the same index multiple times."
+  ]
+}

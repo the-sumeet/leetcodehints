@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find pairs of indices (i, j) such that the product of nums[i] and nums[j] is divisible by k. Remember that i must be less than j."
+    },
+    {
+      "content": "Consider the mathematical property of divisibility: for a product to be divisible by k, at least one of the numbers must have a factor that contributes to k. Think about how you can express this in terms of the elements of the array."
+    },
+    {
+      "content": "You can simplify the problem by looking at the remainders of the numbers when divided by k. If nums[i] % k = r1 and nums[j] % k = r2, then (r1 * r2) % k should be 0 for the product to be divisible by k."
+    },
+    {
+      "content": "Create a frequency array to count how many numbers fall into each remainder category. This can help you quickly determine how many pairs can be formed based on their remainders."
+    },
+    {
+      "content": "Consider edge cases where k is larger than the maximum value in nums. In such cases, think about how many pairs can still be formed based on their remainders."
+    },
+    {
+      "content": "When counting pairs, remember that the order matters: (i, j) is different from (j, i). However, since you are only interested in pairs where i < j, you can focus on combinations rather than permutations."
+    },
+    {
+      "content": "Think about how to efficiently iterate through the frequency array. For each remainder, you need to check against all other remainders to see if their product is divisible by k."
+    },
+    {
+      "content": "You might want to use a nested loop to check pairs of remainders. However, be cautious about counting pairs where both indices belong to the same remainder category."
+    },
+    {
+      "content": "Remember to handle the case where both indices are from the same remainder category separately. You can use combinations to count valid pairs within that category."
+    },
+    {
+      "content": "While iterating through pairs of remainders, ensure that you do not double-count pairs. You can achieve this by always ensuring the first index is less than the second."
+    },
+    {
+      "content": "As you implement your solution, consider the time complexity. A naive O(n^2) solution might be too slow for the upper limits of n. Aim for a more efficient approach using the frequency array."
+    },
+    {
+      "content": "Make sure to test your implementation with edge cases, such as when nums contains only one element or when all elements are the same."
+    },
+    {
+      "content": "Consider using a hashmap or dictionary to store the frequency of each remainder. This can help you quickly look up how many elements can form a valid pair with the current element."
+    },
+    {
+      "content": "As you finalize your implementation, ensure that you are correctly returning the total count of valid pairs. This should be an integer representing the number of pairs found."
+    },
+    {
+      "content": "Before submitting your solution, review your code for any off-by-one errors or incorrect handling of indices. These are common pitfalls in problems involving pairs."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "1 <= nums[i], k <= 10^5",
+    "Indices must satisfy 0 <= i < j <= n - 1",
+    "Return the number of valid pairs (i, j) where nums[i] * nums[j] is divisible by k."
+  ]
+}

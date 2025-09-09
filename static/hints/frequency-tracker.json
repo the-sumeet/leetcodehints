@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you will store the numbers and their frequencies. Consider using a dictionary (or hash map) where the key is the number and the value is its frequency."
+    },
+    {
+      "content": "When implementing the `add` method, remember to increase the frequency of the number each time it is added. If the number is not already in the dictionary, you will need to initialize its frequency."
+    },
+    {
+      "content": "In the `deleteOne` method, be careful to check if the number exists in your data structure before attempting to decrease its frequency. If it does exist and its frequency is greater than zero, decrement it."
+    },
+    {
+      "content": "Think about how you will track the frequencies of numbers. You might want to maintain a second dictionary that maps frequencies to the count of numbers that have that frequency."
+    },
+    {
+      "content": "When implementing `hasFrequency`, you will need to check if your frequency map contains the desired frequency. If it does, return true; otherwise, return false."
+    },
+    {
+      "content": "Consider edge cases such as trying to delete a number that isn’t present or checking for a frequency that doesn't exist. Your methods should handle these cases gracefully without errors."
+    },
+    {
+      "content": "Make sure to handle the case where the frequency of a number becomes zero after deletion. You may want to remove the number from your frequency map entirely."
+    },
+    {
+      "content": "Think about how you will initialize your data structure. You will need to set up both the frequency map and the count of frequencies when you create a new instance of `FrequencyTracker`."
+    },
+    {
+      "content": "Remember that the constraints specify that there can be at most 200,000 calls to the methods. Ensure that your operations are efficient, ideally O(1) for add, deleteOne, and hasFrequency."
+    },
+    {
+      "content": "Finally, when you put everything together, your class should maintain both a mapping of numbers to their frequencies and a mapping of frequencies to how many numbers have that frequency. This dual structure will allow you to efficiently answer the hasFrequency queries."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= number <= 10^5, 1 <= frequency <= 10^5.",
+    "At most, 2 * 10^5 calls will be made to add, deleteOne, and hasFrequency in total.",
+    "Ensure to handle edge cases where numbers do not exist or frequencies are zero."
+  ]
+}

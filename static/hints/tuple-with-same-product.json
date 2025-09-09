@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to find tuples (a, b, c, d) such that the product of a and b equals the product of c and d. Remember, all elements must be distinct."
+    },
+    {
+      "content": "Consider how many ways you can choose pairs (a, b) and (c, d) from the array. Since the elements must be distinct, think about how to ensure that no element is reused in a single tuple."
+    },
+    {
+      "content": "To find pairs (a, b), you can use nested loops. For each pair, calculate the product and store it in a data structure that allows you to count how many times each product occurs."
+    },
+    {
+      "content": "Think about using a dictionary (or hashmap) to store the products as keys and the count of pairs that produce each product as values. This will help you efficiently find matching products."
+    },
+    {
+      "content": "When you have the counts of pairs for each product, you can calculate the number of valid tuples. If a product occurs 'n' times, you can form n * (n - 1) tuples from those pairs."
+    },
+    {
+      "content": "Consider edge cases, such as when the array has fewer than four elements. In such cases, it's impossible to form any valid tuples, so you should return 0."
+    },
+    {
+      "content": "Make sure to handle the uniqueness of elements correctly. When counting pairs, ensure that you are not counting tuples that reuse the same elements."
+    },
+    {
+      "content": "Think about the time complexity of your approach. With a nested loop for pairs and a hashmap for counting, how efficient is your solution? Can you optimize it further?"
+    },
+    {
+      "content": "As you implement your solution, remember to test it with various inputs, including edge cases like the minimum and maximum constraints of the input array."
+    },
+    {
+      "content": "Finally, once you have the counts from your hashmap, you can compute the total number of valid tuples by summing up the contributions from each product. Ensure your final count is correct and matches the expected output format."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 1000",
+    "1 <= nums[i] <= 10^4",
+    "All elements in nums are distinct.",
+    "Return the total number of valid tuples (a, b, c, d)."
+  ]
+}

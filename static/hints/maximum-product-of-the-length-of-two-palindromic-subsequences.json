@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindromic subsequence is. A palindromic subsequence reads the same forwards and backwards. For example, in the string 'racecar', 'aceca' is a palindromic subsequence."
+    },
+    {
+      "content": "Consider how to find the length of the longest palindromic subsequence within a given string. You might want to use dynamic programming to build a table that helps you calculate the lengths of palindromic subsequences."
+    },
+    {
+      "content": "Think about how to generate all possible pairs of disjoint subsequences from the string. Keep in mind that two subsequences are disjoint if they do not share any characters from the original string."
+    },
+    {
+      "content": "When generating subsequences, you can use bit manipulation to represent which characters are included in each subsequence. For a string of length n, you can iterate through numbers from 0 to (2^n) - 1 to generate all possible subsequences."
+    },
+    {
+      "content": "As you generate pairs of subsequences, ensure that they are disjoint. You can check this by using a bitmask representation to see if the two subsequences share any indices."
+    },
+    {
+      "content": "Once you have two valid disjoint subsequences, calculate their lengths and their product. Keep track of the maximum product found during your iterations."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the string has repeated characters. For example, in 'bb', the only valid subsequences are 'b' from the first index and 'b' from the second index."
+    },
+    {
+      "content": "Consider the constraints on the string length (2 <= s.length <= 12). This means that a brute-force approach might be feasible, as the maximum number of subsequences is manageable."
+    },
+    {
+      "content": "You may also want to precompute the lengths of all palindromic subsequences for each possible subsequence of the string to avoid recalculating them multiple times."
+    },
+    {
+      "content": "Finally, as you implement your solution, ensure that you return the maximum product of the lengths of the two palindromic subsequences correctly. The return value should be an integer representing this maximum product."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= s.length <= 12",
+    "Characters are lowercase English letters only.",
+    "Two subsequences must be disjoint (no shared indices).",
+    "Return the maximum product of the lengths as an integer."
+  ]
+}

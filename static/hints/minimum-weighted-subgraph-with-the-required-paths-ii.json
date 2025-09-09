@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input tree. It is an undirected weighted tree, which means there are no cycles, and it is fully connected. Each edge has a weight that contributes to the total weight of any subtree."
+    },
+    {
+      "content": "Review how to represent the tree using the edges array. You can use an adjacency list or a dictionary to keep track of the connections and weights between nodes."
+    },
+    {
+      "content": "Consider how to find paths in a tree. Since it's a tree, there is exactly one unique path between any two nodes. This property can simplify your approach to finding the required paths."
+    },
+    {
+      "content": "For each query, you need to find paths from both src1 and src2 to dest. Think about how you can find the Lowest Common Ancestor (LCA) of these nodes to help identify the necessary edges."
+    },
+    {
+      "content": "The LCA can help you break down the problem. Once you find the LCA of src1 and src2, you can determine which edges are needed to connect both to dest."
+    },
+    {
+      "content": "Remember to account for the weights of the edges in your calculations. As you identify the edges needed for the paths, sum their weights to get the total weight of the subtree."
+    },
+    {
+      "content": "When processing each query, ensure that you're correctly handling the case where src1, src2, and dest are distinct. This is crucial since it affects which edges you will include."
+    },
+    {
+      "content": "Consider edge cases where the tree is skewed or has varying weights. For example, if all weights are the same, the solution might be simpler than in cases with diverse weights."
+    },
+    {
+      "content": "Think about how to efficiently find the LCA. You might want to preprocess the tree to allow for faster queries, especially since the number of queries can be large (up to 100,000)."
+    },
+    {
+      "content": "You can use Depth First Search (DFS) to calculate the depth of each node and store parent pointers to help find the LCA efficiently."
+    },
+    {
+      "content": "As you implement your solution, keep track of the total weight of the edges you include in the subtree for each query. This will be your final answer for that query."
+    },
+    {
+      "content": "After calculating the weights for each query, make sure to return the results in the correct format as specified in the problem statement. Each answer should correspond to the respective query."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Since you may have to process many queries, aim for an efficient solution that minimizes redundant calculations."
+    },
+    {
+      "content": "To summarize, focus on finding the paths using LCA, summing the weights of the necessary edges, and ensuring your solution is efficient enough to handle the upper limits of the input constraints."
+    },
+    {
+      "content": "Finally, remember to test your solution with a variety of test cases, including edge cases such as trees with minimum and maximum nodes, as well as varying edge weights."
+    }
+  ],
+  "questionNotes": [
+    "The tree is undirected and weighted, with n nodes (3 <= n <= 100,000).",
+    "Each edge connects two nodes with a given weight.",
+    "Queries consist of three distinct nodes: src1, src2, and dest.",
+    "The output should be an array of total weights for each query, corresponding to the minimum subtree weight."
+  ]
+}

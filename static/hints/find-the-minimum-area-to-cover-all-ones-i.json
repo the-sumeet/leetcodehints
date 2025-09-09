@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the boundaries of the rectangle that can cover all the 1's in the grid. You need to find the minimum and maximum row and column indices that contain a 1."
+    },
+    {
+      "content": "To find the minimum row index, iterate through each row and check for the presence of 1. The first row that contains a 1 gives you the minimum row index."
+    },
+    {
+      "content": "Similarly, find the maximum row index by iterating through the rows from the bottom up. The last row that contains a 1 will give you the maximum row index."
+    },
+    {
+      "content": "Now, do the same for columns: find the minimum and maximum column indices that contain a 1. This will help you define the rectangle's width."
+    },
+    {
+      "content": "Remember that the area of a rectangle is calculated as width multiplied by height. The width is determined by the difference between the maximum and minimum column indices, plus one."
+    },
+    {
+      "content": "The height can be calculated similarly using the row indices. Make sure to add one to the difference between the maximum and minimum row indices to account for inclusive boundaries."
+    },
+    {
+      "content": "Consider edge cases where the grid might have only one row or one column. Ensure your logic handles these cases correctly to avoid off-by-one errors."
+    },
+    {
+      "content": "You may want to initialize your min and max indices to extreme values (like the grid dimensions) to ensure they are updated correctly during the search."
+    },
+    {
+      "content": "Once you have the min and max indices for both rows and columns, calculate the area using the formula: area = (maxRow - minRow + 1) * (maxCol - minCol + 1)."
+    },
+    {
+      "content": "Finally, ensure your implementation correctly returns the area as an integer. Double-check that your indices are being updated correctly throughout your iterations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= grid.length, grid[i].length <= 1000",
+    "grid[i][j] is either 0 or 1.",
+    "There is guaranteed to be at least one 1 in the grid.",
+    "The area should be returned as an integer."
+  ]
+}

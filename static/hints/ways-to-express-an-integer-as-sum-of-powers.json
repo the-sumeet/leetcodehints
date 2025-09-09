@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to express the integer `n` as a sum of unique integers raised to the power of `x`. Make sure to clarify what 'unique' means in this context."
+    },
+    {
+      "content": "Consider the base case where `n` is small. For instance, if `n = 1` and `x = 1`, how many unique integers can you use? This will help you think about the problem in simpler terms."
+    },
+    {
+      "content": "Think about how to generate the unique integers that can be used. You can start by calculating the maximum integer `k` such that `k^x` is less than or equal to `n`. This will give you a range of integers to work with."
+    },
+    {
+      "content": "You might want to use a recursive approach to explore all combinations of unique integers. As you explore, keep track of the current sum and the integers used so far to ensure uniqueness."
+    },
+    {
+      "content": "Consider using memoization to store results of subproblems. This can help avoid recalculating the number of ways to express smaller values of `n` with certain integers."
+    },
+    {
+      "content": "When implementing your recursive function, think about the parameters you will need. You might need to pass the current integer being considered, the remaining sum, and a set of used integers."
+    },
+    {
+      "content": "Don't forget to handle the modulo operation as specified in the problem. Since the result can be very large, remember to apply the modulo at each step of your calculations."
+    },
+    {
+      "content": "Consider edge cases, such as when `n` is less than the smallest power of `1^x`. How should your function respond in these cases? What if `n` is exactly equal to a power of an integer?"
+    },
+    {
+      "content": "As you build your solution, think about how you can iterate through potential integers efficiently. You might want to use a loop to try each integer and recursively call your function for the remaining sum."
+    },
+    {
+      "content": "Finally, put together your recursive function and ensure it returns the correct count of unique sets. Make sure to test your implementation with the provided examples and edge cases to verify its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 300, 1 <= x <= 5",
+    "Return the result modulo 10^9 + 7.",
+    "Ensure that the integers used in the sum are unique.",
+    "Consider edge cases where n is small or equal to powers of integers."
+  ]
+}

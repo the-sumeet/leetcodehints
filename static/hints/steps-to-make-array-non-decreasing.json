@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for an array to be non-decreasing. An array is non-decreasing if for every index `i`, `nums[i] <= nums[i+1]`. This means that each element is less than or equal to the next."
+    },
+    {
+      "content": "Consider how you would identify elements that need to be removed in one step. You need to check pairs of elements: for each index `i` (where `1 <= i < nums.length`), if `nums[i-1] > nums[i]`, then `nums[i]` should be removed."
+    },
+    {
+      "content": "Think about how to implement the removal of elements. You can create a new list to store elements that should remain after each step. This will help you avoid modifying the array while iterating over it."
+    },
+    {
+      "content": "After removing elements in one step, you need to check if the array is still decreasing. If it is, repeat the process. Keep a counter to track how many steps you perform until the array is non-decreasing."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array is already non-decreasing. In this case, you should return `0` immediately without performing any steps."
+    },
+    {
+      "content": "Think about how to efficiently check if the array has become non-decreasing after each step. You could use a simple loop to verify the condition after each removal."
+    },
+    {
+      "content": "Remember to handle cases where the array might become empty after several removals. You should return `0` in such cases as well, since an empty array is considered non-decreasing."
+    },
+    {
+      "content": "When implementing your solution, consider the time complexity. Each step involves iterating through the array, so think about how to minimize the number of iterations needed."
+    },
+    {
+      "content": "As you iterate over the array to check for removals, keep track of the indices of elements that need to be kept. This will help you build the new array for the next iteration."
+    },
+    {
+      "content": "Finally, ensure your function returns the correct number of steps. You can do this by initializing a step counter and incrementing it each time you perform a removal step."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "The array is 0-indexed.",
+    "Return the number of steps until the array is non-decreasing.",
+    "An empty array is considered non-decreasing."
+  ]
+}

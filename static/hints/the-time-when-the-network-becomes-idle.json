@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the network. You have a master server (server 0) and several data servers. Each server is connected through edges, which represent direct communication channels."
+    },
+    {
+      "content": "Focus on how messages are sent. At second 0, all data servers send their messages to the master server. Think about how you can represent this initial sending of messages in your code."
+    },
+    {
+      "content": "Consider how messages travel through the network. You need to find the shortest path from each data server to the master server. A breadth-first search (BFS) could be useful here to determine the distance from the master server to each data server."
+    },
+    {
+      "content": "Once you have the distances, remember that the master server processes messages instantly. After processing, it sends replies back through the same path. How will you track when each data server receives a reply?"
+    },
+    {
+      "content": "Pay attention to the patience array. Each server will resend its message based on its patience value if it hasn't received a reply. This means you need to keep track of the time elapsed since each server sent its message."
+    },
+    {
+      "content": "Think about how to calculate the time at which each server will resend its message. For a server with a patience of `p`, it will resend its message at times that are multiples of `p` after the initial send time."
+    },
+    {
+      "content": "You should also consider the scenario when a server resends its message. If the time taken for the reply to reach back is less than the time a server resends, how will this affect the next resend time?"
+    },
+    {
+      "content": "To find the earliest second when the network becomes idle, you need to track when the last message is sent and when the last reply is received. This will help you determine when no messages are in transit."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when a server's patience is very high or very low. What happens if a server never resends because it receives a reply quickly?"
+    },
+    {
+      "content": "Finally, calculate the maximum time at which any server will stop sending messages. This will be your answer, but remember to account for the time taken for the last reply to reach the server."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == patience.length, 2 <= n <= 10^5, patience[0] == 0, 1 <= patience[i] <= 10^5 for 1 <= i < n.",
+    "The servers are indexed from 0 to n-1; server 0 is the master server.",
+    "Each edge is unique, and there are no duplicate edges.",
+    "The network is fully connected, meaning every server can reach every other server."
+  ]
+}

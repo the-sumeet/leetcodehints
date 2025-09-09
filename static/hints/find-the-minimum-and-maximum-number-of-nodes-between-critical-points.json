@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a critical point is in the context of a linked list. A node is critical if it is either a local maxima or a local minima, meaning it is greater or smaller than its adjacent nodes."
+    },
+    {
+      "content": "Remember that a node can only be a local maxima or minima if it has both a previous and a next node. This means you should start checking from the second node and stop at the second-to-last node."
+    },
+    {
+      "content": "As you traverse the linked list, keep track of the indices of the critical points you find. You can store these indices in a list to help calculate distances later."
+    },
+    {
+      "content": "When checking if a node is a local maxima or minima, make sure to compare the current node's value with both its previous and next nodes. Use conditions like `if (prev < curr > next)` for local maxima."
+    },
+    {
+      "content": "After identifying all critical points, check how many you found. If there are fewer than two, you should return [-1, -1] immediately, as specified in the problem."
+    },
+    {
+      "content": "To calculate the distances between critical points, iterate through the list of indices you recorded. The minimum distance can be found by checking the difference between consecutive critical points."
+    },
+    {
+      "content": "For the maximum distance, you can simply take the difference between the first and the last critical point in your list of indices."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when all nodes have the same value, which will result in no critical points being found."
+    },
+    {
+      "content": "Ensure that your solution runs efficiently within the constraints. You should aim for a time complexity of O(n), where n is the number of nodes in the linked list."
+    },
+    {
+      "content": "Finally, structure your return statement to match the required output format: an array containing [minDistance, maxDistance]. Make sure to handle the case where critical points are not found correctly."
+    }
+  ],
+  "questionNotes": [
+    "A critical point is defined as a local maxima or minima.",
+    "A node can only be a critical point if it has both a previous and a next node.",
+    "Return [-1, -1] if there are fewer than two critical points.",
+    "Constraints: 2 <= number of nodes <= 100,000; 1 <= Node.val <= 100,000."
+  ]
+}

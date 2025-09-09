@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the picking order. You pick a slice, then Alice picks the next slice counter-clockwise, and Bob picks the next slice clockwise. This means your choice affects the slices available to Alice and Bob."
+    },
+    {
+      "content": "Consider the total number of slices. Since the length of the slices array is always 3n, think about how many slices you can actually pick. You can pick n slices in total."
+    },
+    {
+      "content": "Think about the implications of your choice. If you pick a slice, both Alice and Bob will take slices adjacent to your choice. This means the strategy involves not just maximizing your current pick, but also minimizing the potential picks for Alice and Bob."
+    },
+    {
+      "content": "Try to visualize the problem with a smaller example. For example, with slices = [1, 2, 3], you can see how the picking order works and how it affects the outcome."
+    },
+    {
+      "content": "You might want to use dynamic programming to solve this problem. Consider defining a DP table where dp[i][j] represents the maximum sum you can achieve by picking j slices from the first i slices."
+    },
+    {
+      "content": "When defining your DP state, think about the choices you have. If you pick the i-th slice, what are the implications for the next slices you can pick? You will need to skip certain slices to account for Alice and Bob's picks."
+    },
+    {
+      "content": "Remember that you can only pick n slices. This means you need to keep track of how many slices you have picked so far in your DP solution."
+    },
+    {
+      "content": "Consider edge cases where the slices are all the same size. How does this affect your strategy? Would it change your picking order?"
+    },
+    {
+      "content": "Think about the circular nature of the pizza. If you pick a slice near the end of the array, it affects the slices at the beginning of the array due to the circular arrangement."
+    },
+    {
+      "content": "As you build your DP solution, ensure you handle the circular nature of the slices correctly. You might need to consider two scenarios: picking from the first slice to the last slice, and picking from the second slice to the last slice."
+    },
+    {
+      "content": "When filling out your DP table, remember to consider both cases when you pick a slice: the slice you pick and the slices that will be unavailable due to Alice and Bob's picks."
+    },
+    {
+      "content": "To maximize your sum, you should explore all possible starting points for your picks. This means iterating through the slices and calculating the maximum sum for each possible starting slice."
+    },
+    {
+      "content": "Make sure to implement the logic for skipping slices correctly. If you pick slice i, you cannot pick slices i-1 and i+1 in the next round, which affects how you fill your DP table."
+    },
+    {
+      "content": "Before finalizing your DP approach, write down the recurrence relation based on your observations. This will help clarify how to transition between states in your DP table."
+    },
+    {
+      "content": "Finally, ensure you return the correct result after filling your DP table. You should return the maximum value found in your DP table after considering all possible starting slices."
+    }
+  ],
+  "questionNotes": [
+    "The length of the slices array is always 3n, where n is a positive integer.",
+    "You can pick exactly n slices from the pizza.",
+    "The picking order is you -> Alice (counter-clockwise) -> Bob (clockwise).",
+    "The slices are arranged in a circular manner, meaning the last slice is adjacent to the first slice.",
+    "You need to consider the implications of your choice on the available slices for Alice and Bob.",
+    "Ensure to handle edge cases, such as all slices being the same size."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an anagram is. Two strings are anagrams if they contain the same characters in the same frequency. For example, 'abc' and 'cba' are anagrams."
+    },
+    {
+      "content": "Consider how you can measure the difference between the two strings. You might want to count the frequency of each character in both strings to see how many characters need to be changed."
+    },
+    {
+      "content": "Use a frequency counter for both strings. You can create a dictionary or an array of size 26 (for each letter of the alphabet) to count occurrences of each character in both strings."
+    },
+    {
+      "content": "Think about how to calculate the number of changes needed. For each character, if the count in string 't' is greater than in string 's', you will need to change the excess characters in 't'."
+    },
+    {
+      "content": "You can iterate through the frequency counts of both strings. For each character, compute the difference in counts and sum the excess characters that need to be replaced."
+    },
+    {
+      "content": "Keep in mind that you only need to count the characters in 't' that are in excess compared to 's'. If 't' has fewer characters of a certain type than 's', you don't need to change anything for that character."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when both strings are already anagrams. In this case, the result should be 0, as no changes are needed."
+    },
+    {
+      "content": "Consider the constraints given in the problem. Both strings are guaranteed to have the same length, which simplifies your logic since you don't need to handle different lengths."
+    },
+    {
+      "content": "Remember that the characters are limited to lowercase English letters. This means you can use a fixed-size array (of size 26) for counting instead of a hash map."
+    },
+    {
+      "content": "To finalize your approach, calculate the total number of replacements needed by summing the differences for each character from the frequency counts. This will give you the minimum number of steps required."
+    }
+  ],
+  "questionNotes": [
+    "Both strings s and t have the same length.",
+    "An anagram contains the same characters in the same frequency.",
+    "You can replace any character in t in one step.",
+    "Return the minimum number of steps needed to make t an anagram of s.",
+    "Constraints: 1 <= s.length <= 5 * 10^4, s.length == t.length, both strings consist of lowercase English letters."
+  ]
+}

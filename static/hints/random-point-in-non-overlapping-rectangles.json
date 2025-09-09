@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the rectangles. Each rectangle is defined by two points: the bottom-left corner (a_i, b_i) and the top-right corner (x_i, y_i). This means you can determine the width and height of each rectangle."
+    },
+    {
+      "content": "Calculate the area of each rectangle using the formula: area = (x_i - a_i) * (y_i - b_i). This will help you understand how many integer points are available in each rectangle."
+    },
+    {
+      "content": "Since you need to pick a point uniformly at random, consider how to choose a rectangle first. You can use the areas of the rectangles to create a weighted random selection mechanism."
+    },
+    {
+      "content": "You can create a cumulative area array to help with the weighted random selection. For example, if the areas of rectangles are [A1, A2, A3], the cumulative areas will be [A1, A1+A2, A1+A2+A3]."
+    },
+    {
+      "content": "When picking a rectangle, generate a random number between 0 and the total area. Use binary search on the cumulative area array to find which rectangle corresponds to the random number."
+    },
+    {
+      "content": "Once a rectangle is selected, you need to generate a random point within its bounds. The x-coordinate can be chosen randomly between a_i and x_i, and the y-coordinate between b_i and y_i."
+    },
+    {
+      "content": "Make sure to handle the random selection correctly. Use a random integer generator that can give you values within the specified range for both x and y coordinates."
+    },
+    {
+      "content": "Consider edge cases where rectangles may have minimal dimensions, such as when the width or height is 1. Ensure your random point generation still works correctly in these scenarios."
+    },
+    {
+      "content": "Remember that the pick method should return an array of two integers, representing the coordinates of the randomly selected point. Ensure your return format matches the expected output."
+    },
+    {
+      "content": "Finally, implement the pick method to return the random point. You should have all the components: selecting a rectangle based on area, generating a random point within that rectangle, and returning the result."
+    }
+  ],
+  "questionNotes": [
+    "Rectangles are defined by two points: bottom-left (a_i, b_i) and top-right (x_i, y_i).",
+    "All rectangles are non-overlapping and axis-aligned.",
+    "Return format for the pick method is an array of two integers: [u, v].",
+    "Constraints: 1 <= rects.length <= 100; -10^9 <= a_i < x_i <= 10^9; -10^9 <= b_i < y_i <= 10^9; x_i - a_i <= 2000; y_i - b_i <= 2000.",
+    "At most 10^4 calls to pick will be made."
+  ]
+}

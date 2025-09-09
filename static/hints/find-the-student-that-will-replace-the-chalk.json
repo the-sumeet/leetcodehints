@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem flow. The teacher gives problems to students in a round-robin fashion, starting from student 0 to student n-1 and then back to student 0. Make sure you can simulate this process."
+    },
+    {
+      "content": "Consider how you will track the remaining pieces of chalk as each student uses them. You can use a variable to keep track of the current amount of chalk left after each student's turn."
+    },
+    {
+      "content": "Think about how you can iterate through the students. You might want to use a loop that continues until the chalk runs out, but be careful about managing the index to avoid going out of bounds."
+    },
+    {
+      "content": "Instead of simulating each student's turn one by one, consider the total chalk consumption in one full round (i.e., the sum of all elements in the chalk array). This could help you determine how many full rounds you can complete before running out of chalk."
+    },
+    {
+      "content": "Calculate the total chalk used in one complete round: `totalChalk = sum(chalk)`. Then, check how many full rounds you can perform with the initial `k` chalk pieces: `fullRounds = k // totalChalk`."
+    },
+    {
+      "content": "After determining how many full rounds you can complete, calculate the remaining chalk after those rounds: `remainingChalk = k % totalChalk`. This will help you know how much chalk you have left to distribute among the students."
+    },
+    {
+      "content": "Now, you can iterate through the chalk array again, but this time only until you run out of the remaining chalk. Keep track of the index of the student who cannot complete their problem due to insufficient chalk."
+    },
+    {
+      "content": "As you iterate through the chalk array, check if the `remainingChalk` is less than the chalk needed by the current student. If it is, this student will be the one to replace the chalk."
+    },
+    {
+      "content": "Make sure you handle the case where `k` is less than the smallest element in `chalk`. This means the first student will always be the one to replace the chalk."
+    },
+    {
+      "content": "Finally, remember to return the index of the student who needs to replace the chalk. This should be the index of the student who cannot fulfill their chalk requirement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: chalk.length == n, 1 <= n <= 10^5, 1 <= chalk[i] <= 10^5, 1 <= k <= 10^9",
+    "The students are 0-indexed.",
+    "If the current chalk is less than chalk[i], that student will replace the chalk.",
+    "You need to return the index of the student who will replace the chalk."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. The numbers in the array are guaranteed to be in the range [1, n], where n is the length of the array. This means that every number in the array should ideally map to an index in a 1-based index system."
+    },
+    {
+      "content": "Consider how you can utilize the input array itself to track which numbers are present. Think about how you might mark the indices of the numbers you encounter in the array."
+    },
+    {
+      "content": "Remember that the numbers can be repeated in the input array. How will you handle duplicates? You don't need to worry about counting occurrences, just tracking presence."
+    },
+    {
+      "content": "A common technique for problems like this is to use the array indices to represent the numbers. For example, if you encounter the number 3, you might mark the index 2 (since it's 0-based) as visited."
+    },
+    {
+      "content": "Think about how you can modify the values in the array to indicate whether a number has been seen. One approach is to negate the value at the corresponding index to mark it as present."
+    },
+    {
+      "content": "After marking the indices, you will need to iterate through the array again. This time, look for indices that have not been marked. These will correspond to the missing numbers."
+    },
+    {
+      "content": "Keep in mind that the output should be an array of missing numbers. You will need to create a new list to store these numbers as you find them."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array contains all numbers from 1 to n or when it contains only duplicates. What should your function return in these cases?"
+    },
+    {
+      "content": "To achieve O(n) time complexity and O(1) extra space, focus on modifying the input array directly. You can use the properties of the numbers and their indices to avoid using additional data structures."
+    },
+    {
+      "content": "Finally, remember to restore the original values of the array if necessary, especially if you need to return it to its original state after processing. However, since the problem states that the returned list does not count as extra space, you can ignore this as long as you don't use additional arrays."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length",
+    "1 <= n <= 10^5",
+    "1 <= nums[i] <= n",
+    "The returned list does not count as extra space."
+  ]
+}

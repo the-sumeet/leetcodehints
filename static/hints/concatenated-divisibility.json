@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for a number to be divisible by k. For example, a number is divisible by 5 if it ends in 0 or 5. This property can help you narrow down possible permutations."
+    },
+    {
+      "content": "Consider how to generate permutations of the array `nums`. Python's `itertools.permutations` can be useful for generating all possible arrangements of the numbers."
+    },
+    {
+      "content": "Remember that the concatenated number can be very large, so you should avoid converting it to an integer directly. Instead, you can check divisibility by constructing the number as a string."
+    },
+    {
+      "content": "When concatenating numbers, ensure you maintain the correct order. For example, concatenating `3` and `12` gives `312`, while concatenating `12` and `3` gives `123`."
+    },
+    {
+      "content": "Sorting the array `nums` at the beginning can help ensure that you are checking permutations in lexicographical order. This is important for finding the smallest permutation."
+    },
+    {
+      "content": "Think about edge cases, such as when `k` is greater than the maximum possible concatenated number. This might help you determine if a solution is possible early on."
+    },
+    {
+      "content": "Consider using a helper function to check if a given concatenated string is divisible by `k`. This function can take a list of integers, concatenate them, and return a boolean."
+    },
+    {
+      "content": "As you generate permutations, you can immediately check if the concatenated result is divisible by `k`. If it is, you can compare it with the smallest valid permutation found so far."
+    },
+    {
+      "content": "Keep track of the smallest valid permutation found during your checks. Use a variable to store this and update it whenever you find a new valid permutation that is smaller."
+    },
+    {
+      "content": "If no valid permutation is found after checking all possibilities, ensure you return an empty list as specified in the problem statement."
+    },
+    {
+      "content": "Be cautious about leading zeros in concatenated numbers. For instance, concatenating `0` with any number might lead to unexpected results when checking divisibility."
+    },
+    {
+      "content": "Consider the constraints: with a maximum of 13 numbers, generating all permutations is feasible, but you should still aim for efficiency in checking divisibility."
+    },
+    {
+      "content": "When checking for divisibility, remember that you can use modulo operations on the concatenated string representation without converting it to an integer."
+    },
+    {
+      "content": "To summarize, your approach will involve generating permutations, checking each for divisibility, and keeping track of the smallest valid permutation found."
+    },
+    {
+      "content": "Finally, ensure your final output is in the correct format: a list of integers representing the smallest lexicographical permutation or an empty list if none exist."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 13",
+    "1 <= nums[i] <= 10^5",
+    "1 <= k <= 100",
+    "Return the lexicographically smallest permutation that forms a divisible concatenation.",
+    "If no valid permutation exists, return an empty list."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definitions of global and local inversions. A global inversion counts all pairs (i, j) where nums[i] > nums[j] and i < j, while a local inversion only considers adjacent pairs (i, i+1)."
+    },
+    {
+      "content": "Consider the implications of the input array being a permutation of integers from 0 to n-1. This means each number appears exactly once, which simplifies some aspects of counting inversions."
+    },
+    {
+      "content": "Think about how local inversions are a subset of global inversions. If the number of global inversions equals the number of local inversions, it implies that there are no global inversions that are not local."
+    },
+    {
+      "content": "To check for this condition, you might want to iterate through the array and count local inversions directly. This can be done in a single pass by comparing each element with its next neighbor."
+    },
+    {
+      "content": "When counting global inversions, consider how you can efficiently determine the number of inversions without checking every pair. A naive O(n^2) solution will be too slow for large n."
+    },
+    {
+      "content": "You could use a modified merge sort algorithm to count global inversions in O(n log n) time. This will allow you to efficiently keep track of how many elements are greater than the current element as you sort."
+    },
+    {
+      "content": "Remember that if you find any global inversion that is not a local inversion, you can immediately return false. This can help you short-circuit your checks."
+    },
+    {
+      "content": "While implementing your solution, ensure that you handle edge cases, such as arrays of length 1 or 2, where the number of inversions can be easily calculated."
+    },
+    {
+      "content": "As you implement the counting logic, keep track of both local and global inversions in separate counters. This will help you compare them at the end of your algorithm."
+    },
+    {
+      "content": "Finally, after counting both types of inversions, simply return whether the two counts are equal. This will be your final check to determine the output."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 1 <= n <= 10^5, 0 <= nums[i] < n.",
+    "All integers in nums are unique and form a permutation of [0, n-1].",
+    "Return true if the number of global inversions is equal to the number of local inversions."
+  ]
+}

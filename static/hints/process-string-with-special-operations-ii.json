@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to process each character in the string `s`. Each character can either be a lowercase letter or one of the special characters: '*', '#', or '%'. Make sure you can identify these characters correctly."
+    },
+    {
+      "content": "When you encounter a lowercase letter, you should append it to a result string. Think about how you can maintain this result as you process the string from left to right."
+    },
+    {
+      "content": "The '*' character is used to remove the last character from the result. Consider how you can implement this removal efficiently, especially if the result is empty."
+    },
+    {
+      "content": "The '#' character duplicates the current result. When implementing this, think about how you can concatenate the result to itself without creating unnecessary copies."
+    },
+    {
+      "content": "The '%' character reverses the current result. You might want to explore how to reverse a string in your programming language of choice. Keep in mind that reversing an empty string should still result in an empty string."
+    },
+    {
+      "content": "As you process the string, maintain a way to track the length of the result. This will help you when you need to return the k-th character and check if it is within bounds."
+    },
+    {
+      "content": "Remember that the index `k` is zero-based. This means that if `k` is equal to the length of the result, it is out of bounds, and you should return '.' in that case."
+    },
+    {
+      "content": "Consider edge cases, such as when the result becomes empty due to operations like '*' or when `k` is very large. You need to ensure your solution can handle these without errors."
+    },
+    {
+      "content": "Instead of building the full result string, think about how you can keep track of its length dynamically. This could save memory and time, especially with the constraints given."
+    },
+    {
+      "content": "When duplicating the result with '#', you might want to think about how this affects the length of the result. Each duplication effectively doubles the length, so keep that in mind."
+    },
+    {
+      "content": "If you find that the result grows too large, consider using a more efficient way to represent it, such as tracking lengths and only constructing the string when necessary."
+    },
+    {
+      "content": "As you implement the logic for each special character, write test cases to verify that each operation behaves as expected. This will help you catch any mistakes early."
+    },
+    {
+      "content": "Think about how you can manage the operations in a single pass through the string. You want to avoid unnecessary iterations or complex structures that could slow down your solution."
+    },
+    {
+      "content": "Before returning the k-th character, ensure that you check if `k` is less than the length of the result. If it is not, return '.' as specified in the problem statement."
+    },
+    {
+      "content": "Finally, consider how you will handle the final output. The result should be a character, so make sure your return statement is correctly formatted to handle the case where you need to return '.'"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5; 0 <= k <= 10^15.",
+    "The length of the result after processing s will not exceed 10^15.",
+    "Return '.' if k is out of bounds of the result.",
+    "Indexing for k is zero-based."
+  ]
+}

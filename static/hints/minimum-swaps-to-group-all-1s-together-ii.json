@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem's requirements. You need to group all the 1's together in a circular array with the minimum number of swaps. Remember that in a circular array, the first and last elements are adjacent."
+    },
+    {
+      "content": "Identify the total number of 1's in the array. This will help you determine how many 1's need to be grouped together. For example, if your array is [0, 1, 0, 1, 1, 0, 0], then you have 3 ones."
+    },
+    {
+      "content": "Consider the concept of a sliding window. If you treat the array as circular, you can simulate this by extending the array. For instance, you can create a new array that is the original array concatenated with itself."
+    },
+    {
+      "content": "When using a sliding window, the window size should be equal to the number of 1's you found. This way, you can slide through the array and count how many 0's are in each window."
+    },
+    {
+      "content": "As you slide the window, keep track of the number of 0's in the current window. The goal is to minimize the number of 0's in the window, as each 0 represents a swap needed to bring a 1 into that position."
+    },
+    {
+      "content": "Make sure to handle the circular nature of the array correctly. When you slide past the end of the original array, you need to wrap around to the beginning. This is where the extended array comes in handy."
+    },
+    {
+      "content": "After calculating the number of 0's in each window, the minimum number of swaps required will be the smallest count of 0's found in any valid window of size equal to the number of 1's."
+    },
+    {
+      "content": "Consider edge cases such as when there are no 1's or when all elements are 1's. In these cases, the number of swaps required should be 0."
+    },
+    {
+      "content": "Remember that the input constraints specify that the length of the array can be up to 100,000. Ensure your solution is efficient, ideally O(n) time complexity, to handle the largest cases."
+    },
+    {
+      "content": "Finally, implement the logic to calculate the minimum number of swaps based on your sliding window results. You should be able to return this value as the output."
+    }
+  ],
+  "questionNotes": [
+    "The array is circular, meaning the first and last elements are adjacent.",
+    "Count the total number of 1's to determine the size of the window.",
+    "Handle edge cases where there are no 1's or all elements are 1's.",
+    "The solution should be efficient, ideally O(n) time complexity."
+  ]
+}

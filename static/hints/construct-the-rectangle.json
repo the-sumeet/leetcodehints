@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between length (L), width (W), and area. The area of a rectangle is calculated as L * W. So, if you know the area, you can express W as area / L."
+    },
+    {
+      "content": "Remember that the problem states L must be greater than or equal to W. This means you need to find pairs (L, W) where L >= W while ensuring L * W equals the given area."
+    },
+    {
+      "content": "Consider the constraints on L and W. Since L and W must be integers, you will need to check integer values for L starting from the square root of the area down to 1. Why start from the square root? Because this will help minimize the difference between L and W."
+    },
+    {
+      "content": "The smallest difference between L and W occurs when both are as close as possible to the square root of the area. Calculate the integer square root of the area and use it as a starting point for L."
+    },
+    {
+      "content": "When iterating down from the integer square root, check if the area is divisible by the current L. If it is, calculate W as area / L. This ensures that both L and W are integers."
+    },
+    {
+      "content": "As you find valid pairs (L, W), keep track of the pair that has the smallest difference |L - W|. This will help you meet the requirement of minimizing the difference."
+    },
+    {
+      "content": "Pay attention to the edge case where the area is 1. What will be the values of L and W in this case? Think about how the constraints apply here."
+    },
+    {
+      "content": "Make sure to return the result in the format specified: an array [L, W]. Double-check that L is always the first element and W is the second element."
+    },
+    {
+      "content": "If you find multiple pairs with the same difference, remember that you only need to return the first one you find that meets the conditions. This is because L should always be greater than or equal to W."
+    },
+    {
+      "content": "Now, put together your logic into a loop that starts from the integer square root of the area and goes downwards, checking divisibility, calculating W, and comparing differences. You are very close to the final solution!"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= area <= 10^7",
+    "L must be greater than or equal to W (L >= W).",
+    "Return format: an array [L, W].",
+    "Minimize the difference |L - W|.",
+    "If multiple pairs have the same difference, return the first valid pair found."
+  ]
+}

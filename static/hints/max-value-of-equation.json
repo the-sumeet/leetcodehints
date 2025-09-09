@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the equation you need to maximize: `y_i + y_j + |x_i - x_j|`. Notice that `|x_i - x_j|` simplifies to `x_j - x_i` since the points are sorted by x-values."
+    },
+    {
+      "content": "Think about how to iterate through the points. Since the points are sorted by x-values, you can use a nested loop, but consider if there's a more efficient way to avoid checking all pairs."
+    },
+    {
+      "content": "Focus on the constraint `|x_i - x_j| <= k`. This means for a given point `i`, you only need to consider points `j` such that `x_j` is within `k` units of `x_i`."
+    },
+    {
+      "content": "You can maintain a sliding window of valid points. As you iterate through the points, keep track of the points that are within the range defined by `k`."
+    },
+    {
+      "content": "Use a deque (double-ended queue) to efficiently manage the points that are within the valid range of `k`. This will allow you to quickly access the maximum `y` value from the valid points."
+    },
+    {
+      "content": "When adding a new point to your window, check if the point at the front of the deque is still valid. If `x_j - x_i > k`, remove points from the front until the condition is satisfied."
+    },
+    {
+      "content": "As you process each point, calculate the potential maximum value using the current point and the maximum `y` value from the deque. Update your maximum result accordingly."
+    },
+    {
+      "content": "Remember to add the current point's index and `y` value to the deque after processing. This ensures that you are ready for the next iterations."
+    },
+    {
+      "content": "When adding a new point to the deque, ensure you maintain the order by removing points from the back of the deque if their `y` values are less than the current point's `y` value."
+    },
+    {
+      "content": "Consider edge cases where `k` is 0. In this case, you can only consider adjacent points, which simplifies your checks."
+    },
+    {
+      "content": "Also think about scenarios where all `y` values are negative. The logic should still hold, but ensure your maximum value calculation is robust against negative values."
+    },
+    {
+      "content": "As you implement the deque, remember to handle the case where the deque might be empty. You should only calculate the maximum if there are valid points in the deque."
+    },
+    {
+      "content": "After iterating through all points, ensure you return the maximum value found. This is the final result you need to output."
+    },
+    {
+      "content": "Before finalizing your solution, test it against the provided examples and some edge cases, such as points with large gaps or all points having the same `y` value."
+    },
+    {
+      "content": "You are very close to the solution! Consider how you will structure your main loop and the conditions for adding/removing points from the deque."
+    }
+  ],
+  "questionNotes": [
+    "The points are guaranteed to be sorted by x-values.",
+    "You must ensure that the indices satisfy `1 <= i < j <= points.length`.",
+    "The output must be a single integer representing the maximum value found.",
+    "Constraints include `2 <= points.length <= 10^5` and `0 <= k <= 2 * 10^8`."
+  ]
+}

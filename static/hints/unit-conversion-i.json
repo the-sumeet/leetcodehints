@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a 2D array called `conversions` that describes how to convert between different units. Each entry in this array gives you a source unit, a target unit, and a conversion factor."
+    },
+    {
+      "content": "Consider how you can represent the relationships between units. You might find it helpful to think of this problem in terms of a graph, where each unit is a node and each conversion is a directed edge with a weight (the conversion factor)."
+    },
+    {
+      "content": "Since you're trying to find the equivalent number of units for each type based on unit 0, think about how you can traverse this graph. A depth-first search (DFS) or breadth-first search (BFS) could be useful to explore all conversions starting from unit 0."
+    },
+    {
+      "content": "Remember that the output array `baseUnitConversion` should have a length of `n`, where `n` is the number of units. Initialize this array with the first element set to 1 (since one unit of type 0 is equivalent to one unit of itself)."
+    },
+    {
+      "content": "As you traverse the graph, make sure to multiply the conversion factors appropriately. For example, if you convert from unit 0 to unit 1 with a factor of 2, and then from unit 1 to unit 2 with a factor of 3, the total conversion from unit 0 to unit 2 should be 2 * 3."
+    },
+    {
+      "content": "Consider edge cases where there are multiple paths to convert between units. Ensure that you are correctly accumulating the conversion factors without overwriting previously calculated values in `baseUnitConversion`."
+    },
+    {
+      "content": "Since the conversion factors can be very large, remember to take each result modulo 10^9 + 7 as you compute the conversions. This will prevent overflow and ensure you meet the problem's requirements."
+    },
+    {
+      "content": "Think about how you can efficiently traverse the graph. A queue might be useful if you choose a BFS approach, while a stack could be useful for DFS. Keep track of visited nodes to avoid cycles, even though the problem guarantees unique paths."
+    },
+    {
+      "content": "As you implement your traversal, make sure to update the `baseUnitConversion` array correctly for each unit you visit. You will likely need to check if you have already computed a value for a unit before updating it."
+    },
+    {
+      "content": "Finally, once you have traversed all units and filled in the `baseUnitConversion` array, return this array. Ensure you handle the output format correctly, as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5",
+    "conversions.length == n - 1",
+    "0 <= sourceUnit[i], targetUnit[i] < n",
+    "1 <= conversionFactor[i] <= 10^9",
+    "Unit 0 can be converted into any other unit through a unique combination of conversions."
+  ]
+}

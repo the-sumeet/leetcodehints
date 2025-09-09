@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `app_events` table. Each session is identified by a unique `session_id`, and events are categorized by `event_type`. Pay attention to how you will group the data based on `session_id`."
+    },
+    {
+      "content": "Consider how to calculate the duration of each session. You will need to find the minimum and maximum `event_timestamp` for each `session_id` to determine the session duration."
+    },
+    {
+      "content": "Remember that the session duration must be converted from a timestamp difference to minutes. You can use SQL functions like `TIMESTAMPDIFF` or equivalent to achieve this."
+    },
+    {
+      "content": "Next, focus on counting the types of events within each session. You will need to count scroll events and click events separately. Use conditional counting to achieve this."
+    },
+    {
+      "content": "To check the click-to-scroll ratio, you will need to ensure that you do not divide by zero. Handle cases where there are no scroll events to avoid division errors."
+    },
+    {
+      "content": "Make sure to filter out sessions that contain any purchase events. This is a crucial condition for identifying zombie sessions."
+    },
+    {
+      "content": "After filtering, you will need to apply the criteria for a zombie session: duration > 30 minutes, at least 5 scrolls, click-to-scroll ratio < 0.20, and no purchases."
+    },
+    {
+      "content": "When ordering the results, first sort by `scroll_count` in descending order, and then by `session_id` in ascending order. Think about how to structure your final SELECT statement."
+    },
+    {
+      "content": "Consider edge cases such as sessions with exactly 5 scroll events or sessions that last exactly 30 minutes. Ensure your conditions handle these correctly."
+    },
+    {
+      "content": "Use Common Table Expressions (CTEs) or subqueries to simplify your main query. This can help you break down the problem into manageable parts."
+    },
+    {
+      "content": "Be mindful of performance. Indexing on `session_id` and `event_timestamp` can help speed up your queries, especially if the dataset is large."
+    },
+    {
+      "content": "Think about how you will return the results. Ensure your final output matches the required format with the correct column names and types."
+    },
+    {
+      "content": "As you write your query, test it with smaller datasets first to ensure each part is functioning correctly before combining everything."
+    },
+    {
+      "content": "Remember that `event_value` is only relevant for purchase events. You can ignore it for other event types when counting or calculating ratios."
+    },
+    {
+      "content": "Finally, ensure that your SQL logic is clear and maintainable. Comment your code to explain the purpose of each section, especially complex conditions."
+    }
+  ],
+  "questionNotes": [
+    "A session is defined by `session_id`, and events are grouped accordingly.",
+    "The session duration must be calculated in minutes.",
+    "Zombie sessions must have no purchase events.",
+    "The click-to-scroll ratio must be calculated carefully to avoid division by zero.",
+    "Results should be ordered by `scroll_count` (DESC) and `session_id` (ASC)."
+  ]
+}

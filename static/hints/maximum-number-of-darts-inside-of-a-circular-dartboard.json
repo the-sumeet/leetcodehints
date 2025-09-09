@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem: you need to find a circular dartboard of radius `r` that can cover the maximum number of dart positions. Think about how to determine if a dart is inside the circle."
+    },
+    {
+      "content": "Recall the formula for the distance between two points. A dart at position `(x_i, y_i)` is inside the circle centered at `(cx, cy)` if the distance from the dart to the center is less than or equal to `r`. This can be expressed as: \n\n`(x_i - cx)^2 + (y_i - cy)^2 <= r^2`."
+    },
+    {
+      "content": "Consider that the center of the dartboard can be placed at any dart's position. This means you can iterate through each dart's position as a potential center for the dartboard."
+    },
+    {
+      "content": "For each dart position considered as the center, calculate how many other darts fall within the radius `r`. You can do this by checking the distance condition for each dart against the current center."
+    },
+    {
+      "content": "You need to check every pair of darts to see if they can form a circle of radius `r` that covers both. This is important because the optimal circle may not be centered at a dart's position."
+    },
+    {
+      "content": "When checking pairs of darts, calculate the distance between them. If the distance is greater than `2 * r`, then neither dart can be covered by a dartboard centered between them."
+    },
+    {
+      "content": "For pairs of darts that are within `2 * r`, calculate the potential centers of the dartboard. There will be two possible centers for each pair of darts."
+    },
+    {
+      "content": "To find the potential centers, use the midpoint of the two darts and calculate the perpendicular bisector. This will help you find the exact center points that maintain the radius `r`."
+    },
+    {
+      "content": "Remember to check edge cases, such as when there is only one dart. In this case, the answer is always `1` since the dartboard can cover that single dart."
+    },
+    {
+      "content": "As you check each potential center, keep a count of how many darts fall within the radius `r`. Use a variable to track the maximum count found so far."
+    },
+    {
+      "content": "Consider using a nested loop: the outer loop can iterate through each dart, while the inner loop checks against all other darts to determine coverage."
+    },
+    {
+      "content": "When counting darts within the radius, ensure that you do not double-count the dart that is used as the center of the dartboard."
+    },
+    {
+      "content": "After calculating the maximum darts for all potential centers, return this maximum count as your result."
+    },
+    {
+      "content": "Think about performance: with a maximum of 100 darts, your approach should be efficient enough to handle the `O(n^3)` complexity that arises from checking pairs and counting darts."
+    },
+    {
+      "content": "Finally, make sure to handle the input and output format correctly, returning the maximum count as an integer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= darts.length <= 100",
+    "Each dart position is unique.",
+    "Dart positions are given as pairs of integers.",
+    "The radius r is an integer between 1 and 5000.",
+    "Return format: a single integer representing the maximum number of darts that can be covered."
+  ]
+}

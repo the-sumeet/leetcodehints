@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the time for each lap is calculated using the formula provided: `f[i] * r[i]^(x-1)`, where `x` is the lap number. Make sure to practice calculating the time for the first few laps using this formula."
+    },
+    {
+      "content": "Consider how you can use the tires repeatedly. Each tire can be used for multiple laps, and the time taken for each successive lap increases exponentially based on the `r[i]` value. How will this affect your choice of tires?"
+    },
+    {
+      "content": "Think about the impact of the `changeTime`. If you switch tires, you incur a cost of `changeTime` seconds. This means you need to weigh the benefits of changing tires against the time you save by using a tire for multiple laps."
+    },
+    {
+      "content": "To minimize the total time, you might want to calculate how many laps you can complete with a single tire before switching becomes beneficial. Try to determine a threshold where the time saved by switching tires outweighs the `changeTime`."
+    },
+    {
+      "content": "Consider precomputing the time taken for each tire for a certain number of laps. For example, compute the time for the first few laps (up to a reasonable limit) for each tire type and store these values."
+    },
+    {
+      "content": "You can store the minimum time to complete `k` laps using each tire in an array. This will help you quickly reference the best times as you build up to `numLaps`."
+    },
+    {
+      "content": "Remember to account for the case where you might want to change tires after completing a certain number of laps. This means you will need to iterate over possible lap counts to find the optimal switching point."
+    },
+    {
+      "content": "When calculating the total time for a combination of laps and tire changes, ensure you are correctly adding the `changeTime` only when a tire switch occurs. Be careful with your indexing!"
+    },
+    {
+      "content": "Edge cases can include scenarios where `numLaps` is very small (like 1 or 2) or very large. Make sure your solution handles these cases efficiently."
+    },
+    {
+      "content": "If you find that the time for a tire becomes too large (e.g., exceeding a certain threshold), consider stopping the calculation for that tire. This can save computation time."
+    },
+    {
+      "content": "You may want to implement a dynamic programming approach where you keep track of the minimum time to complete laps up to `numLaps`. This could involve building a table of results."
+    },
+    {
+      "content": "When implementing your solution, ensure that you consider all possible combinations of tire usage and switching. This can lead to a more optimal solution than just using one tire type."
+    },
+    {
+      "content": "Consider using a priority queue or a similar data structure to keep track of the best times for each tire as you compute them. This can help in efficiently finding the minimum time."
+    },
+    {
+      "content": "As you finalize your approach, ensure that you are correctly returning the minimum time as specified in the problem statement. Double-check your return format and values."
+    },
+    {
+      "content": "Finally, think about edge cases where all tires have the same `f[i]` or `r[i]` values. How would that affect your calculations? Make sure your solution is robust against such scenarios."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= tires.length <= 10^5, 1 <= f[i], changeTime <= 10^5, 2 <= r[i] <= 10^5, 1 <= numLaps <= 1000.",
+    "Indexing is 0-based.",
+    "You can switch tires after any lap, including changing to the same tire.",
+    "The return value must be the minimum time to complete all laps."
+  ]
+}

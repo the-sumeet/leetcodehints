@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the two operations you need to perform on the image: flipping and inverting. Flipping means reversing each row of the matrix, while inverting means changing 0s to 1s and 1s to 0s."
+    },
+    {
+      "content": "Consider how you can reverse a row in a matrix. You might want to use a loop or a built-in function to help with this. For example, if you have a row like [1, 0, 1], reversing it should give you [1, 0, 1]."
+    },
+    {
+      "content": "Try to implement the horizontal flip first. Iterate through each row of the matrix and reverse it. You can use slicing in Python: `row[::-1]` will reverse the row."
+    },
+    {
+      "content": "After flipping the image, focus on the inversion step. You will need to traverse the flipped matrix and replace each 0 with 1 and each 1 with 0. Think about how you can do this efficiently."
+    },
+    {
+      "content": "Remember to handle each row independently during both operations. After you reverse a row, you should immediately apply the inversion on that same row before moving to the next one."
+    },
+    {
+      "content": "Consider edge cases, such as a 1x1 matrix. What would happen if the image is just [[1]] or [[0]]? Make sure your solution works for the smallest possible input."
+    },
+    {
+      "content": "Think about the constraints given: n can be between 1 and 20. This means your solution doesn't need to be overly optimized for performance, but clarity and correctness are key."
+    },
+    {
+      "content": "As you implement the inversion, you can use a nested loop or a list comprehension. For example, you might replace each element in a row using: `1 - pixel` where `pixel` is the current element."
+    },
+    {
+      "content": "Once you have both operations implemented, test your code with the provided examples to ensure it behaves as expected. Pay attention to the order of operations: flip first, then invert."
+    },
+    {
+      "content": "Finally, ensure your function returns the modified image in the correct format. It should still be a 2D array of the same dimensions as the input image, just with the transformations applied."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == image.length, n == image[i].length, 1 <= n <= 20",
+    "Each element in the image is either 0 or 1.",
+    "The output should be a 2D array of the same dimensions as the input."
+  ]
+}

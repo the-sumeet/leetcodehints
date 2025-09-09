@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the board. It's a 2x3 grid, which means there are 6 positions, and one of them is always empty (0). Visualize how the tiles can move around the empty space."
+    },
+    {
+      "content": "Consider how to represent the board state. You can use a tuple or a string to represent the current configuration of the board. For example, the board [[1,2,3],[4,5,0]] can be represented as '123450'."
+    },
+    {
+      "content": "Think about the possible moves. The empty space (0) can swap with any of its adjacent tiles (up, down, left, right). Identify the indices of the empty space to determine which tiles can be swapped."
+    },
+    {
+      "content": "When implementing moves, remember that the board is fixed in size. Ensure that your swap logic checks for boundaries so you don't attempt to swap out of the grid."
+    },
+    {
+      "content": "To find the least number of moves, consider using a breadth-first search (BFS). This approach explores all possible states level by level, ensuring that you find the shortest path to the solution."
+    },
+    {
+      "content": "As you implement BFS, maintain a queue to track the current board state and the number of moves taken to reach that state. You can also use a set to avoid revisiting states you've already processed."
+    },
+    {
+      "content": "Don't forget to check for the solved state after each move. The target configuration is [[1,2,3],[4,5,0]]. If you reach this state, return the number of moves taken."
+    },
+    {
+      "content": "Consider edge cases where the board is already solved or where it is impossible to reach the solved state. For example, if the configuration is [[1,2,3],[5,4,0]], you should return -1."
+    },
+    {
+      "content": "To determine if a board configuration is solvable, you can calculate the number of inversions. An inversion is a pair of tiles (a,b) such that a appears before b but a > b. If the number of inversions is odd, the puzzle is unsolvable."
+    },
+    {
+      "content": "Make sure to handle the empty tile correctly in your inversion count. You can ignore the empty tile when counting inversions, but remember its position affects the solvability."
+    },
+    {
+      "content": "When implementing BFS, consider the order of moves. You might want to prioritize certain moves based on their potential to lead to the solved state more quickly."
+    },
+    {
+      "content": "As you explore new states in BFS, ensure that you are generating new board configurations correctly after each swap. You can create a new board state by copying the current state and applying the swap."
+    },
+    {
+      "content": "Think about how to represent the visited states efficiently. Using a set of strings or tuples can help you quickly check if a state has already been processed."
+    },
+    {
+      "content": "If your BFS completes without finding the target state, return -1. This indicates that the board configuration is unsolvable."
+    },
+    {
+      "content": "Finally, when implementing your solution, keep your code modular. Break down the problem into smaller functions, such as one for generating possible moves, one for checking solvability, and one for the BFS logic."
+    }
+  ],
+  "questionNotes": [
+    "The board is always 2x3, containing unique values from 0 to 5.",
+    "The target solved state is [[1,2,3],[4,5,0]].",
+    "Return -1 if the board configuration is unsolvable.",
+    "Consider using BFS for finding the least number of moves.",
+    "Check for the number of inversions to determine solvability."
+  ]
+}

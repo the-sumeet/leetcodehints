@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation allowed: you can swap two elements if their absolute difference is less than or equal to the given limit. This means that you can only swap elements that are 'close' to each other."
+    },
+    {
+      "content": "Consider the implications of the limit on the array. For example, if the limit is very small, you may not be able to swap many elements, which could affect your ability to sort the array."
+    },
+    {
+      "content": "Think about how you can group elements based on their values and the limit. Elements that can be swapped with each other can form a connected component. Look for ways to identify these groups."
+    },
+    {
+      "content": "Once you have identified groups of swappable elements, consider how to sort each group independently. Sorting within these groups will help you achieve a lexicographically smaller array."
+    },
+    {
+      "content": "Remember that the overall order of elements matters. After sorting the groups, you need to ensure that the entire array is in the correct order, not just the individual groups."
+    },
+    {
+      "content": "Use a data structure that can efficiently manage and sort the elements within each group. A priority queue or a simple list that you can sort might be useful here."
+    },
+    {
+      "content": "Consider edge cases where the array is already sorted or when all elements are the same. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "Keep in mind that the input array can be large (up to 100,000 elements). Your solution should be efficient, ideally aiming for a time complexity that is linearithmic or better."
+    },
+    {
+      "content": "As you implement your solution, think about how to handle the merging of sorted groups back into a single array. Ensure that you maintain the lexicographical order throughout."
+    },
+    {
+      "content": "Finally, consider how you will return the result. Make sure to format the output as specified in the problem statement, which is a single array of integers."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "1 <= limit <= 10^9",
+    "You can swap nums[i] and nums[j] if |nums[i] - nums[j]| <= limit.",
+    "Return the lexicographically smallest array possible."
+  ]
+}

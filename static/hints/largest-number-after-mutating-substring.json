@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the `change` array works. Each index represents a digit from 0 to 9, and the value at that index is what the digit will be mutated to. For example, if `change[1] = 8`, then the digit '1' will become '8'."
+    },
+    {
+      "content": "Consider how to identify the substring you want to mutate. You can iterate through the string `num` and check if mutating a digit will yield a larger number. Keep track of whether you are currently mutating a substring."
+    },
+    {
+      "content": "Remember that you can only mutate a single contiguous substring. This means once you start mutating, you should continue until you decide to stop. Think about how to determine when to stop mutating."
+    },
+    {
+      "content": "Pay attention to the digits in `num` that do not change or decrease in value when mutated. If a digit's mapped value is less than or equal to itself, it might be better to stop mutating at that point."
+    },
+    {
+      "content": "When you decide to stop mutating, ensure that you concatenate the mutated and non-mutated parts of the string correctly. This will help you form the final output string."
+    },
+    {
+      "content": "Consider edge cases such as leading zeros in the output. If the mutation leads to a leading zero, it might not be valid. You should handle this by ensuring the output string does not start with '0' unless the entire number is '0'."
+    },
+    {
+      "content": "Think about how to keep track of the maximum number you've encountered while iterating through `num`. You may want to maintain a variable that stores the best result so far."
+    },
+    {
+      "content": "As you iterate through `num`, keep a flag to indicate if you are currently in a mutation phase. If you encounter a digit that is not beneficial to mutate, you might want to end the mutation phase."
+    },
+    {
+      "content": "When you finish processing the string, ensure you compare the original `num` with the mutated result to determine which is larger. This is crucial to return the correct largest number."
+    },
+    {
+      "content": "Finally, consider how you will return the result. You should return the largest number as a string, ensuring that it matches the format specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= num.length <= 10^5",
+    "num consists of only digits 0-9.",
+    "change.length == 10",
+    "0 <= change[d] <= 9",
+    "You can mutate only a single contiguous substring.",
+    "Return the largest possible integer as a string."
+  ]
+}

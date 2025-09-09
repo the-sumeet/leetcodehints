@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a square-free integer is. A square-free integer is one that is not divisible by any perfect square greater than 1. For example, 6 is square-free, but 12 is not because it is divisible by 4 (which is 2 squared)."
+    },
+    {
+      "content": "Consider how to determine if a product of numbers is square-free. You can achieve this by checking the prime factorization of the product. If any prime factor appears with an exponent of 2 or more, the product is not square-free."
+    },
+    {
+      "content": "Think about how to generate subsets from the array. You can use bit manipulation to represent subsets. For an array of size n, there are 2^n possible subsets, including the empty set."
+    },
+    {
+      "content": "Remember that the problem specifies non-empty subsets. So, when generating subsets, you will need to exclude the empty subset from your count."
+    },
+    {
+      "content": "Since the maximum value of nums[i] is 30, consider how many unique prime factors there are in this range. This will help you in determining the square-free nature of the products efficiently."
+    },
+    {
+      "content": "As you generate each subset, calculate the product of its elements. You can maintain a count of the prime factors for the current subset product to check if it remains square-free."
+    },
+    {
+      "content": "To efficiently check if the product is square-free, you could use a bitmask to track the prime factors. If you encounter a prime factor twice while building the product, you can immediately conclude that the product is not square-free."
+    },
+    {
+      "content": "Consider how to handle duplicates in the input array. If an element appears multiple times, it will affect the number of unique subsets. You need to account for this when counting square-free subsets."
+    },
+    {
+      "content": "Since the result can be large, remember to use modulo 10^9 + 7 for your final count. This is a common practice in competitive programming to prevent overflow."
+    },
+    {
+      "content": "Finally, after generating all subsets and counting the square-free ones, ensure your implementation correctly returns the count. The return type should be an integer, and you must not include the empty subset in your final answer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "Constraints: 1 <= nums[i] <= 30",
+    "Return the count of square-free non-empty subsets modulo 10^9 + 7.",
+    "A subset is different if the chosen indices to delete are different."
+  ]
+}

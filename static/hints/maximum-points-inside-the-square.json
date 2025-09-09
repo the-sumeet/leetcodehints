@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of a square centered at the origin. The square's boundaries can be defined by the side length 'l'. A point (x, y) is inside the square if: -l/2 <= x <= l/2 and -l/2 <= y <= l/2."
+    },
+    {
+      "content": "Consider how to calculate the maximum side length of the square based on the points provided. The furthest point from the origin will determine the potential size of the square."
+    },
+    {
+      "content": "Remember that the square can have a side length of zero. This means that you can always count at least one point if it is the only one with a unique tag."
+    },
+    {
+      "content": "Think about how to efficiently check which points are inside the square for different side lengths. You might want to iterate over possible side lengths based on the distances of the points from the origin."
+    },
+    {
+      "content": "Since points can have the same tag, you need to ensure that no two points with the same tag are counted. Consider using a set to track tags of points that are included in the square."
+    },
+    {
+      "content": "Sort the points based on their distance from the origin. This will allow you to easily determine which points fall within a certain square size as you increase the side length."
+    },
+    {
+      "content": "As you iterate through the sorted points, maintain a count of unique tags within the current square size. Update your maximum count whenever you find a valid configuration."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when all points have the same tag or when the maximum square size is very small. How will your logic handle these situations?"
+    },
+    {
+      "content": "Consider using a sliding window approach to efficiently manage which tags are currently inside the square as you vary the side length. This can help reduce the time complexity."
+    },
+    {
+      "content": "Finally, remember to return the maximum count of unique tags found within any valid square. Make sure to handle the case where no valid square can be formed."
+    }
+  ],
+  "questionNotes": [
+    "The square is centered at the origin (0, 0) and has edges parallel to the axes.",
+    "A point is considered inside the square if it lies on or within the square's boundaries.",
+    "No two points with the same tag can be inside the square.",
+    "Constraints: 1 <= s.length, points.length <= 10^5; -10^9 <= points[i][0], points[i][1] <= 10^9.",
+    "Both points and tags are indexed from 0, and each point has a unique coordinate."
+  ]
+}

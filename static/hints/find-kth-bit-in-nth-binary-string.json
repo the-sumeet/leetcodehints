@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the binary strings are constructed. The first string is '0', and each subsequent string is built from the previous one by concatenating '1' and a modified version of it."
+    },
+    {
+      "content": "Notice the pattern in the construction of the strings: S_i = S_(i-1) + '1' + reverse(invert(S_(i-1))). This means each string's length grows exponentially. Try to calculate the lengths of the strings for small values of n."
+    },
+    {
+      "content": "For S_n, the length can be derived as: len(S_n) = 2 * len(S_(n-1)) + 1. This means you can find the length of S_n without building the entire string, which is crucial for larger values of n."
+    },
+    {
+      "content": "Consider the position k in S_n. If k is less than or equal to the length of S_(n-1), then the k-th bit is simply in S_(n-1). If k equals the length of S_(n-1) + 1, the bit is '1'."
+    },
+    {
+      "content": "If k is greater than the length of S_(n-1) + 1, then the k-th bit is in the reversed and inverted part. Calculate the position in the inverted string using the formula: new_k = total_length - k + 1."
+    },
+    {
+      "content": "When you're looking for the k-th bit in the inverted part, remember that you need to invert the bit you find. If you find a '0', it becomes '1', and vice versa."
+    },
+    {
+      "content": "Make sure to handle the base case where n = 1 separately. In this case, S_1 is simply '0', and you can directly return '0' if k is 1."
+    },
+    {
+      "content": "Keep track of the lengths of the strings as you go deeper into the recursion. This will help you avoid unnecessary computations and will make it easier to find the k-th bit."
+    },
+    {
+      "content": "If you're using recursion, be cautious about the depth of recursion. Since n can be up to 20, ensure your approach is efficient and does not lead to stack overflow."
+    },
+    {
+      "content": "Finally, implement the logic to find the k-th bit based on the conditions you've identified. Use the lengths and the rules for determining which part of the string to look in. Remember to return the inverted value if you're in the inverted part."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 20, 1 <= k <= 2^n - 1",
+    "The binary strings grow exponentially in length.",
+    "The indexing for k starts at 1, not 0.",
+    "The construction of S_n involves concatenation, inversion, and reversal."
+  ]
+}

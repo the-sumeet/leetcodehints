@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the flow of water from the cells. Water can flow to neighboring cells if the neighboring cell's height is less than or equal to the current cell's height. Think about how you can represent this flow in your code."
+    },
+    {
+      "content": "Consider how the Pacific Ocean touches the left and top edges of the grid, while the Atlantic Ocean touches the right and bottom edges. You will need to handle these boundaries in your implementation."
+    },
+    {
+      "content": "You might want to use a depth-first search (DFS) or breadth-first search (BFS) approach to explore the cells. Think about how you can mark cells that can reach either ocean."
+    },
+    {
+      "content": "As you explore the grid, maintain two separate boolean matrices: one for cells that can reach the Pacific Ocean and another for those that can reach the Atlantic Ocean. This will help you keep track of which cells can flow to which ocean."
+    },
+    {
+      "content": "When performing the DFS/BFS, start from the cells adjacent to the oceans. For the Pacific Ocean, start from the top row and the leftmost column. For the Atlantic Ocean, start from the bottom row and the rightmost column."
+    },
+    {
+      "content": "As you traverse the grid, ensure that you only move to neighboring cells that have a height less than or equal to the current cell's height. This is crucial for simulating the flow of water accurately."
+    },
+    {
+      "content": "After you have marked the reachable cells for both oceans, iterate through the grid and collect the coordinates of cells that can reach both oceans. This will form your result."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the grid has only one cell or when all cells have the same height. In these cases, all cells should be reachable by both oceans."
+    },
+    {
+      "content": "Remember to return the result in the specified format: a 2D list of grid coordinates. Each coordinate should be represented as a list of two integers [r, c]."
+    },
+    {
+      "content": "Finally, consider the time complexity of your approach. Since you are performing searches on a grid, think about how to optimize your solution to handle the maximum constraints efficiently."
+    }
+  ],
+  "questionNotes": [
+    "The grid dimensions are m x n, where 1 <= m, n <= 200.",
+    "Cell heights are non-negative integers between 0 and 10^5.",
+    "Return a 2D list of coordinates where each coordinate is in the format [r, c].",
+    "Ensure to handle edge cases like single cell grids or uniform height grids."
+  ]
+}

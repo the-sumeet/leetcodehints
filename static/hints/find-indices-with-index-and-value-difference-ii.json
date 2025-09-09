@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the conditions for the indices i and j. You need to ensure that the absolute difference between the indices is at least 'indexDifference'. Think about how you can iterate through the array to check pairs of indices."
+    },
+    {
+      "content": "Consider how you can efficiently check pairs of indices while keeping track of their differences. A brute force approach would involve checking all pairs, but that could be too slow for large arrays. Can you think of a way to limit the pairs you check?"
+    },
+    {
+      "content": "Focus on the second condition: the absolute difference between the values at indices i and j must be at least 'valueDifference'. This means you need to compare the values in the array as you check the indices. What data structures could help you with this?"
+    },
+    {
+      "content": "Remember that indices i and j can be the same. This means that if 'indexDifference' is 0, you can always return [i, i] if the value at that index satisfies the value condition. How would you handle this case in your solution?"
+    },
+    {
+      "content": "Think about how to optimize your search for valid pairs. You might want to use a sliding window or a hash set to keep track of previously seen values and their indices. This could help you quickly find pairs that meet the criteria."
+    },
+    {
+      "content": "As you iterate through the array, maintain a collection of indices that you've already processed. When checking a new index, you can look back at the stored indices to see if any of them satisfy the conditions with the current index."
+    },
+    {
+      "content": "Pay attention to the constraints provided in the problem. The maximum length of the array is 100,000, and the values can be as large as 1 billion. Make sure your approach can handle these limits efficiently."
+    },
+    {
+      "content": "Consider edge cases where the array has only one element or where all elements are the same. How would your solution behave in these scenarios? Make sure to test these cases."
+    },
+    {
+      "content": "When you find a valid pair of indices, remember that the problem allows for multiple valid outputs. You can return any valid pair as soon as you find one. Think about how to structure your return statement."
+    },
+    {
+      "content": "Finally, implement your solution iteratively and test it against the provided examples. Make sure to check if your solution correctly handles the conditions and returns the expected output format, which is an array of two integers."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums.length <= 100000",
+    "Constraints: 0 <= nums[i] <= 10^9",
+    "Constraints: 0 <= indexDifference <= 100000",
+    "Constraints: 0 <= valueDifference <= 10^9",
+    "Return format: an integer array [i, j] or [-1, -1] if no valid indices are found.",
+    "i and j can be equal, especially if indexDifference is 0."
+  ]
+}

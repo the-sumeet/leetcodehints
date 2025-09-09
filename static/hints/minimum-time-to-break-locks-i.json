@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the mechanics of how the sword's energy increases. Each minute, the energy increases by the current factor `x`, which starts at 1 and increases by `k` after breaking each lock."
+    },
+    {
+      "content": "Consider how to approach the problem sequentially. For each lock, you need to calculate how many minutes it will take for the sword's energy to meet or exceed the required strength for that lock."
+    },
+    {
+      "content": "Remember that after breaking a lock, the energy resets to 0. This means you will need to re-calculate the energy required for each subsequent lock based on the new factor `x`."
+    },
+    {
+      "content": "Think about how to keep track of the current time and the current factor `x`. You might want to use a loop to simulate the passing of time until the sword's energy is sufficient to break a lock."
+    },
+    {
+      "content": "Since the number of locks `n` is small (up to 8), you can afford to use a brute-force approach or simulation. However, ensure that your implementation efficiently handles the energy calculations."
+    },
+    {
+      "content": "Pay attention to the order in which you break the locks. The time taken may vary based on the sequence of locks, especially if some locks require significantly more energy than others."
+    },
+    {
+      "content": "Consider edge cases, such as when all locks require the same amount of energy or when the energy required for the locks is in ascending or descending order. How would these scenarios affect your time calculations?"
+    },
+    {
+      "content": "You might want to create a function that calculates the time needed to break a single lock given the current energy and factor `x`. This can help modularize your code and make it easier to test."
+    },
+    {
+      "content": "As you simulate breaking each lock, keep a running total of the time spent. After breaking each lock, update the factor `x` and reset the energy to 0 before proceeding to the next lock."
+    },
+    {
+      "content": "Finally, ensure that you return the total time taken to break all locks. This should be the sum of all the minutes calculated for each lock, considering the resets and factor increases."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 8, 1 <= k <= 10, 1 <= strength[i] <= 10^6.",
+    "The energy of the sword resets to 0 after breaking each lock.",
+    "The factor `x` increases by `k` after each lock is broken.",
+    "The output should be the minimum time in minutes required to break all locks."
+  ]
+}

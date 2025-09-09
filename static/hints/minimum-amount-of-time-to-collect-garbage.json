@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have an array of strings representing garbage types at each house and an array representing travel times between consecutive houses."
+    },
+    {
+      "content": "Identify the three types of garbage: 'M' for metal, 'P' for paper, and 'G' for glass. You need to track how many units of each type of garbage are present at each house."
+    },
+    {
+      "content": "For each type of garbage, you need to calculate two things: the total time spent picking up the garbage and the total travel time needed to reach the last house that contains that type of garbage."
+    },
+    {
+      "content": "Consider how to efficiently calculate the total time for each type of garbage. You can loop through the `garbage` array and count the units of each type as you go."
+    },
+    {
+      "content": "While counting the garbage, also keep track of the last index where each type of garbage appears. This will help you compute the travel time later."
+    },
+    {
+      "content": "Remember that the travel time is cumulative. If a truck needs to travel from house i to house i+1, you should sum up the travel times for all relevant segments."
+    },
+    {
+      "content": "After calculating the total pickup time and travel time for each type of garbage, you can sum these values to get the final result."
+    },
+    {
+      "content": "Make sure to handle cases where some types of garbage may not be present at all. In such cases, their pickup and travel times should be zero."
+    },
+    {
+      "content": "Consider edge cases, such as when all garbage is of one type or when there is only one house with all types of garbage. How would your logic handle these scenarios?"
+    },
+    {
+      "content": "Finally, ensure your function returns the total time as a single integer. You should have a clear structure in your code that separates the counting, travel time calculation, and final summation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= garbage.length <= 10^5",
+    "Each garbage[i] consists of only the characters 'M', 'P', and 'G'.",
+    "travel.length == garbage.length - 1",
+    "1 <= travel[i] <= 100",
+    "Return a single integer representing the total time in minutes."
+  ]
+}

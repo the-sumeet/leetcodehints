@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the board. It's a 2D grid where you can move in four possible directions: up, down, left, and right. Make sure to visualize how you can navigate through this grid."
+    },
+    {
+      "content": "Think about how you will check for the existence of the word in the grid. A depth-first search (DFS) approach is a common way to explore all possible paths. You can start from each cell in the grid."
+    },
+    {
+      "content": "When performing the DFS, keep track of the current position in the grid and the index of the character in the word you are trying to match. This will help you determine if you are on the right track."
+    },
+    {
+      "content": "Consider the base case for your recursive function. You should return true if you have matched all characters of the word. If you reach a point where the character does not match, return false."
+    },
+    {
+      "content": "Remember that you cannot use the same cell more than once in a single search path. You may want to mark a cell as visited by temporarily changing its value or using a separate visited array."
+    },
+    {
+      "content": "Think about the constraints of the problem. The grid can be as large as 6x6, and the word can be up to 15 characters long. Ensure your algorithm handles these sizes efficiently."
+    },
+    {
+      "content": "Consider edge cases, such as when the grid is empty or when the word is longer than the total number of cells in the grid. These cases should return false immediately."
+    },
+    {
+      "content": "As you implement the DFS, be careful to backtrack correctly. After exploring a path, make sure to unmark the cell so it can be used in other paths."
+    },
+    {
+      "content": "Think about pruning your search. If at any point the remaining characters in the word are more than the number of cells left to explore, you can terminate that path early."
+    },
+    {
+      "content": "Finally, combine all your thoughts into a single function that iterates through each cell in the grid, calling your DFS function. Ensure you return true as soon as you find a valid path."
+    }
+  ],
+  "questionNotes": [
+    "The board is a grid of size m x n, where 1 <= m, n <= 6.",
+    "The word can be up to 15 characters long.",
+    "You cannot use the same letter cell more than once in the search.",
+    "The search can only move horizontally or vertically (not diagonally).",
+    "Return true if the word exists in the grid, otherwise return false."
+  ]
+}

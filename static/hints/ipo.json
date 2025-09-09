@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the inputs: you have a list of projects, each with a profit and a minimum capital required to start. Your goal is to maximize your capital after completing at most `k` projects."
+    },
+    {
+      "content": "Consider how you can only start projects if your current capital is greater than or equal to the required capital for that project. This means you need to track which projects are available based on your capital."
+    },
+    {
+      "content": "Think about the order of operations. You may want to prioritize projects that require less capital initially, as they can help you build up your capital faster."
+    },
+    {
+      "content": "You might want to sort the projects based on their required capital. This will help you efficiently determine which projects you can start at any given time."
+    },
+    {
+      "content": "Once you've sorted the projects by capital, consider using a max-heap (or priority queue) to keep track of the profits of the projects you can currently afford. This will allow you to always pick the project with the highest profit."
+    },
+    {
+      "content": "Remember to keep track of how many projects you've completed. You can only finish at most `k` distinct projects, so you'll need to stop once you've reached that limit."
+    },
+    {
+      "content": "As you complete projects and gain profits, update your current capital accordingly. This will allow you to potentially unlock more projects as you progress."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is 0. In this case, you should return your initial capital without completing any projects."
+    },
+    {
+      "content": "Also, think about what happens if there are no projects that you can afford to start with your initial capital. You should handle this situation gracefully."
+    },
+    {
+      "content": "When implementing the max-heap, ensure that you are efficiently adding and removing elements. This will help keep your solution optimal, especially with larger inputs."
+    },
+    {
+      "content": "As you iterate through the projects, you may need to keep a pointer or index to track which projects you have already considered for starting."
+    },
+    {
+      "content": "Make sure to account for the fact that you can only complete projects if you have enough capital. This means that after each project, you might unlock new projects to consider."
+    },
+    {
+      "content": "After completing a project and updating your capital, check again for new projects that can now be started with the updated capital. This is a crucial step to maximize your final capital."
+    },
+    {
+      "content": "As a final thought, think about how you will return the final maximized capital. You should ensure that your return value is within the constraints given in the problem statement."
+    },
+    {
+      "content": "To summarize your approach: Sort the projects, utilize a max-heap for profits, track your capital, and ensure you do not exceed `k` projects. Start implementing this logic step by step."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= 10^5, 0 <= w <= 10^9, n == profits.length, n == capital.length, 1 <= n <= 10^5, 0 <= profits[i] <= 10^4, 0 <= capital[i] <= 10^9.",
+    "You can complete at most k distinct projects.",
+    "You must return the final maximized capital after completing the projects.",
+    "Consider edge cases where k is 0 or where no projects can be started initially."
+  ]
+}

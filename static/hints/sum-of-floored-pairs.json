@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the floor division operation. The floor of a division, floor(a / b), gives you the largest integer less than or equal to a / b. For example, floor(5 / 2) = 2."
+    },
+    {
+      "content": "Consider the range of indices i and j. You need to calculate floor(nums[i] / nums[j]) for all pairs (i, j) where 0 <= i, j < nums.length. This means you will be iterating through the array twice."
+    },
+    {
+      "content": "Think about the time complexity of a naive solution. If you use two nested loops to calculate the floor division for each pair, the time complexity will be O(n^2), which may not be efficient for large arrays."
+    },
+    {
+      "content": "Instead of calculating the floor division for every pair directly, consider how many times each unique value in nums can contribute to the sum. This can help reduce redundant calculations."
+    },
+    {
+      "content": "You can use a frequency array to count how many times each number appears in nums. This will help you efficiently calculate contributions from each number."
+    },
+    {
+      "content": "Focus on the unique values in nums. For each unique value, compute how many pairs (i, j) contribute to the total sum by using the frequency of the numbers involved."
+    },
+    {
+      "content": "To simplify the calculation of floor(nums[i] / nums[j]), note that for a fixed nums[j], all nums[i] less than nums[j] will contribute 0 to the sum."
+    },
+    {
+      "content": "Consider how you can iterate through the sorted unique values of nums. For each unique value, you can calculate how many values are less than it and how many are greater."
+    },
+    {
+      "content": "When you have a unique value nums[j], determine how many nums[i] are less than or equal to it. This will help you calculate the contribution of nums[j] to the overall sum."
+    },
+    {
+      "content": "Remember to apply modular arithmetic to keep the sum manageable. Since the result can be very large, use modulo 10^9 + 7 at each step of your calculations."
+    },
+    {
+      "content": "As you sum contributions, keep track of the total in a variable and apply the modulo operation after each addition to avoid overflow."
+    },
+    {
+      "content": "Think about edge cases, such as when nums contains only one element or when all elements are the same. How does that affect the sum of floor divisions?"
+    },
+    {
+      "content": "You may want to implement a helper function to calculate the contribution of each unique value efficiently. This function can take the unique value and the frequency array as parameters."
+    },
+    {
+      "content": "When implementing your solution, ensure that you handle both the counting of contributions and the modular arithmetic correctly to avoid any off-by-one errors."
+    },
+    {
+      "content": "Finally, consider how you will return the result. Make sure to return the final sum modulo 10^9 + 7 as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^5",
+    "Return the result modulo 10^9 + 7",
+    "Consider edge cases like single-element arrays or arrays with identical elements."
+  ]
+}

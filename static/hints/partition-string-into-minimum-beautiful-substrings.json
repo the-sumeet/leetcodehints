@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what makes a substring 'beautiful'. A beautiful substring must not have leading zeros and must represent a power of 5 in binary."
+    },
+    {
+      "content": "Consider the binary representations of the first few powers of 5. For example, 5^0 = 1 (binary '1'), 5^1 = 5 (binary '101'), and 5^2 = 25 (binary '11001'). This will help you identify valid beautiful substrings."
+    },
+    {
+      "content": "Remember that a substring cannot start with '0' unless it is exactly '0'. This means you need to handle leading zeros carefully when checking for beautiful substrings."
+    },
+    {
+      "content": "Think about how you can iterate through the string to find all possible substrings. You can use two nested loops: one for the starting index and another for the ending index of the substring."
+    },
+    {
+      "content": "As you extract substrings, check if they are beautiful. If a substring is beautiful, you can consider it as a valid partition. Keep track of the minimum number of partitions needed."
+    },
+    {
+      "content": "You might want to use a dynamic programming approach. Create an array where each index represents the minimum number of beautiful substrings needed to partition the string up to that index."
+    },
+    {
+      "content": "While filling the dynamic programming array, for each ending index, check all possible starting indices to see if the substring from the start to the end is beautiful. Update your DP array accordingly."
+    },
+    {
+      "content": "Don't forget to handle the case where it's impossible to partition the string into beautiful substrings. In such cases, you should return -1."
+    },
+    {
+      "content": "Consider edge cases, such as when the string is '0'. This should immediately return -1 since '0' is not a beautiful substring."
+    },
+    {
+      "content": "Finally, make sure to return the value from your DP array that corresponds to the end of the string. This value will represent the minimum number of beautiful substrings needed."
+    }
+  ],
+  "questionNotes": [
+    "A substring is contiguous and must not have leading zeros unless it is '0'.",
+    "The binary representation must correspond to a power of 5.",
+    "Return -1 if partitioning is impossible.",
+    "Constraints: 1 <= s.length <= 15, s[i] is either '0' or '1'."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the provided data. You have three tables: Drivers, Rides, and AcceptedRides. Familiarize yourself with the columns in each table, as they will be crucial for your queries."
+    },
+    {
+      "content": "Identify the relationships between the tables. For example, the 'driver_id' in AcceptedRides links to the 'driver_id' in Drivers, and 'ride_id' in AcceptedRides links to 'ride_id' in Rides. This will help you understand how to join the tables."
+    },
+    {
+      "content": "Consider the timeframes involved. The join_date of drivers might affect which rides they can accept. Pay attention to the dates in the Rides table and how they relate to the join dates of the drivers."
+    },
+    {
+      "content": "Think about how to filter the rides based on the driver's join date. You might need to ensure that a ride's requested_at date is after the driver's join_date to consider it valid."
+    },
+    {
+      "content": "When querying, remember to group your results. You may want to group by driver_id to aggregate data like total ride distance or duration for each driver."
+    },
+    {
+      "content": "Consider edge cases where a driver has no accepted rides. You might want to ensure your query accounts for these drivers so they still appear in your results."
+    },
+    {
+      "content": "Think about the sorting of results. If you need to return the results in a specific order, like by total distance or duration, make sure to include an ORDER BY clause in your SQL query."
+    },
+    {
+      "content": "Don't forget to handle ties in your results. If two drivers have the same total distance or duration, think about how you will decide which one to return first."
+    },
+    {
+      "content": "As you build your query, start with a simple SELECT statement to retrieve data from one table, then gradually add JOINs to include data from the other tables."
+    },
+    {
+      "content": "Use aggregate functions like SUM() to calculate total distances and durations for each driver. This will be essential for your final output."
+    },
+    {
+      "content": "Ensure you are selecting the correct columns for your final output. You might need to return driver_id, total distance, and total duration, among others."
+    },
+    {
+      "content": "Check the data types of your columns, especially dates. Make sure you are comparing dates correctly to avoid any logical errors in your query."
+    },
+    {
+      "content": "Consider using Common Table Expressions (CTEs) to break down your query into manageable parts. This can help with readability and debugging."
+    },
+    {
+      "content": "When constructing your final SELECT statement, remember to alias your aggregated columns for clarity in the output."
+    },
+    {
+      "content": "Finally, ensure your query returns results in the specified format. If the problem statement requires a specific structure, make sure you adhere to it closely."
+    }
+  ],
+  "questionNotes": [
+    "The join_date of drivers must be before the requested_at date of rides.",
+    "Handle cases where drivers have no accepted rides; they should still be included in the final output.",
+    "Pay attention to sorting and tie-breaking rules for total distance and duration.",
+    "Output format should match the required structure specified in the problem statement."
+  ]
+}

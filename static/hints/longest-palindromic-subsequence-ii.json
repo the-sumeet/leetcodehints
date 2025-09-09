@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindromic subsequence is. A subsequence is a sequence derived from another sequence where some elements may be deleted without changing the order of the remaining elements. For example, in 'bbabab', 'bab' is a palindromic subsequence."
+    },
+    {
+      "content": "Consider the properties of palindromes. A palindrome reads the same forwards and backwards. This means that if you can find a subsequence that matches this property, you may be on the right track."
+    },
+    {
+      "content": "Think about how to approach the problem. You might want to use dynamic programming to build a solution. Start by defining a 2D array where each cell represents the longest palindromic subsequence between two indices of the string."
+    },
+    {
+      "content": "Identify the base case for your dynamic programming approach. A single character is always a palindrome of length 1. Thus, for any index i, dp[i][i] = 1."
+    },
+    {
+      "content": "Next, consider how to fill in your DP table. If the characters at two indices match, you can extend the length of the palindromic subsequence found between the indices. For example, if s[i] == s[j], then dp[i][j] = dp[i + 1][j - 1] + 2."
+    },
+    {
+      "content": "What if the characters do not match? In this case, you need to consider the maximum length found by either excluding the character at index i or the character at index j. Thus, dp[i][j] = max(dp[i + 1][j], dp[i][j - 1])."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the input string is empty or has only one character. Both cases should return lengths of 0 and 1, respectively."
+    },
+    {
+      "content": "When implementing your solution, remember to iterate through the string in a way that ensures you fill your DP table correctly. Typically, this would involve filling the table diagonally."
+    },
+    {
+      "content": "After filling the DP table, the value at dp[0][n-1] (where n is the length of the string) will give you the length of the longest palindromic subsequence. However, be cautious about the constraints and ensure your solution is efficient."
+    },
+    {
+      "content": "Finally, consider how to return the result. The problem may require you to return the length of the longest palindromic subsequence, so ensure your final output matches the expected format."
+    }
+  ],
+  "questionNotes": [
+    "The input string can contain both uppercase and lowercase letters.",
+    "The function should return the length of the longest palindromic subsequence.",
+    "Consider edge cases such as empty strings or strings with all identical characters.",
+    "The solution should be efficient, ideally O(n^2) in time complexity."
+  ]
+}

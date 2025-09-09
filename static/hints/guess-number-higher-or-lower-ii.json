@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to guess a number between 1 and n, and each wrong guess costs you the value of that guess. Think about how you can minimize your potential losses."
+    },
+    {
+      "content": "Consider the range of numbers you can guess. When you guess a number, you split the range into two parts: those higher than your guess and those lower. This division is key to minimizing your cost."
+    },
+    {
+      "content": "Think about the worst-case scenario for each guess. If you guess a number x and it's incorrect, you will have to pay x dollars. You need to account for the worst-case cost of subsequent guesses."
+    },
+    {
+      "content": "Dynamic programming could be a useful approach here. Define a function `dp(start, end)` that returns the minimum cost to guarantee a win between the numbers `start` and `end`."
+    },
+    {
+      "content": "When calculating the cost for a guess, consider all possible guesses within your range. For each guess, calculate the cost based on the worst-case scenario of the remaining numbers."
+    },
+    {
+      "content": "You can optimize your guesses by iterating through possible guesses and calculating the total cost for each. Remember to include the cost of the guess itself plus the maximum cost of the two resulting ranges."
+    },
+    {
+      "content": "Think about base cases. For example, if there's only one number (n = 1), the cost is 0 because you can guess it without any loss. Similarly, for two numbers, you can derive a straightforward cost."
+    },
+    {
+      "content": "Consider memoization to store results of previously computed ranges. This will help avoid redundant calculations and improve the efficiency of your solution."
+    },
+    {
+      "content": "Your final solution should iterate through all possible guesses for a given range and compute the minimum cost. Make sure to handle ranges of size 1 and 2 explicitly to avoid unnecessary calculations."
+    },
+    {
+      "content": "As a final step, ensure your implementation correctly handles all edge cases, such as the smallest values of n. The final output should be the minimum cost to guarantee a win for the range 1 to n."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 200",
+    "You need to return the minimum amount of money required to guarantee a win.",
+    "The function should handle cases where n is 1 or 2 specifically to avoid unnecessary calculations."
+  ]
+}

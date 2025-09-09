@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to rotate the ring. You can rotate it both clockwise and anticlockwise. For example, if the ring is 'godding' and you want to align 'd', you can rotate it left or right to reach 'd'."
+    },
+    {
+      "content": "Consider how to calculate the number of steps to rotate the ring. If you are at position 'i' and want to reach position 'j', the clockwise steps can be calculated as (j - i + n) % n, where n is the length of the ring."
+    },
+    {
+      "content": "Don't forget to account for the pressing of the button after aligning each character. Each character in the key will require both rotation steps and one additional step for pressing."
+    },
+    {
+      "content": "Think about how to keep track of the current position of the ring. You will need to update this position after each character is spelled."
+    },
+    {
+      "content": "Consider using a breadth-first search (BFS) approach to explore all possible positions of the ring as you spell out the key. This will help you find the minimum steps efficiently."
+    },
+    {
+      "content": "Make sure to handle cases where the same character appears multiple times in the key. You may need to rotate to different positions in the ring to find the optimal path."
+    },
+    {
+      "content": "You can create a mapping of characters to their indices in the ring. This will allow you to quickly find all positions of a character in the ring when trying to spell it."
+    },
+    {
+      "content": "When calculating the steps to reach a character, remember to check both the clockwise and anticlockwise distances and choose the minimum."
+    },
+    {
+      "content": "Consider edge cases where the ring and key have different lengths or when the key consists of characters that are not present in the ring. The problem guarantees that the key can always be spelled, so focus on the valid cases."
+    },
+    {
+      "content": "As you implement your solution, think about using a queue for BFS and a set to track visited positions to avoid cycles and redundant calculations."
+    },
+    {
+      "content": "Remember that the initial position of the ring is at index 0. You need to account for this when calculating the steps for the first character in the key."
+    },
+    {
+      "content": "While implementing the BFS, you will need to store the current position of the ring and the number of steps taken so far. This will help you track progress as you spell each character."
+    },
+    {
+      "content": "As you move to each character in the key, update your current position based on the minimum steps calculated to reach that character from your current position."
+    },
+    {
+      "content": "When you reach the last character in the key, make sure to add the final pressing step to your total count of steps."
+    },
+    {
+      "content": "Finally, after implementing your BFS, ensure that you return the total number of steps taken to spell the entire key, including all rotations and presses."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= ring.length, key.length <= 100",
+    "ring and key consist of only lower case English letters.",
+    "It is guaranteed that key could always be spelled by rotating ring.",
+    "Initial position of the ring is at index 0 (12:00 direction)."
+  ]
+}

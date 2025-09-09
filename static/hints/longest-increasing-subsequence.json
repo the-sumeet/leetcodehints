@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence is derived from another sequence by deleting some or no elements without changing the order of the remaining elements. For example, from [10, 9, 2, 5], [10, 2, 5] is a subsequence."
+    },
+    {
+      "content": "Focus on the definition of 'increasing'. The subsequence must be strictly increasing, meaning each element must be greater than the previous one. For example, in [2, 3, 7], 3 is greater than 2 and 7 is greater than 3."
+    },
+    {
+      "content": "Consider how you might approach this problem with a brute-force method. You could check all possible subsequences, but this would be inefficient. Think about how many subsequences exist for an array of length n."
+    },
+    {
+      "content": "To improve efficiency, think about dynamic programming. You could maintain an array where each index represents the length of the longest increasing subsequence ending at that index. How would you fill this array?"
+    },
+    {
+      "content": "Remember to initialize your DP array. Each position can at least be a subsequence of length 1 (the element itself). So, start by setting each element of the DP array to 1."
+    },
+    {
+      "content": "As you iterate through the array, for each element, check all previous elements to see if you can extend the increasing subsequence. If nums[j] < nums[i], then you can potentially extend the subsequence ending at j to include i."
+    },
+    {
+      "content": "Keep track of the maximum length found in your DP array as you iterate. This will help you determine the length of the longest increasing subsequence at the end of your iterations."
+    },
+    {
+      "content": "Now, consider the follow-up question about achieving O(n log(n)) time complexity. Think about how you could use binary search to maintain a list of the smallest tail elements of increasing subsequences of various lengths."
+    },
+    {
+      "content": "You can use a helper array to store the smallest tail for all increasing subsequences found so far. When you encounter a new number, use binary search to determine its position in this helper array."
+    },
+    {
+      "content": "Finally, remember that the length of the helper array at the end of your process will give you the length of the longest increasing subsequence. This method is efficient and leverages both dynamic programming and binary search."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 2500",
+    "-10^4 <= nums[i] <= 10^4",
+    "Return the length of the longest strictly increasing subsequence.",
+    "Subsequences can have repeated numbers, but the increasing condition must be strictly followed."
+  ]
+}

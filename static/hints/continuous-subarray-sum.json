@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous segment of the array. For example, in the array [1, 2, 3], possible subarrays include [1, 2], [2, 3], and [1, 2, 3]."
+    },
+    {
+      "content": "Consider what it means for a sum of a subarray to be a multiple of k. If the sum of the elements in the subarray is x, then x % k should equal 0. This is the condition you need to check."
+    },
+    {
+      "content": "Remember that the problem specifies the subarray must have at least two elements. This means you should be looking for pairs or larger groups of numbers."
+    },
+    {
+      "content": "Think about how you can efficiently calculate the sum of subarrays. A naive approach would involve nested loops, but that may not be efficient enough given the constraints."
+    },
+    {
+      "content": "You can use a prefix sum approach to help calculate the sum of any subarray quickly. Maintain a running total of the sum as you iterate through the array."
+    },
+    {
+      "content": "As you calculate the prefix sum, keep track of the remainder when this sum is divided by k. This will help you determine if the sum of any subarray is a multiple of k."
+    },
+    {
+      "content": "Use a hash map (or dictionary) to store the first occurrence of each remainder. If you encounter the same remainder again, it indicates that the sum of the elements between these two indices is a multiple of k."
+    },
+    {
+      "content": "Make sure to check the length of the subarray formed by the indices corresponding to the same remainder. It should be at least two for it to be considered a 'good' subarray."
+    },
+    {
+      "content": "Consider edge cases, such as when k is 0. Remember that 0 is always a multiple of k, but how does that affect the sums you are checking?"
+    },
+    {
+      "content": "Your final implementation should return true if you find a valid subarray, and false if you finish checking all possibilities without finding one. Be careful to handle the case where the input array has fewer than two elements."
+    }
+  ],
+  "questionNotes": [
+    "A good subarray must have a length of at least 2.",
+    "The sum of the subarray must be a multiple of k.",
+    "0 is a multiple of k.",
+    "Constraints: 1 <= nums.length <= 10^5, 0 <= nums[i] <= 10^9, 1 <= k <= 2^31 - 1."
+  ]
+}

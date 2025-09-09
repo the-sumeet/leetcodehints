@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Think about the base cases first. If you have 1 step, how many ways can you climb it? What about 2 steps? Identifying these will help you build your solution."
+    },
+    {
+      "content": "Consider how you can reach the nth step. You could have arrived there from either the (n-1)th step or the (n-2)th step. This suggests a recursive relationship."
+    },
+    {
+      "content": "Define a function that calculates the number of ways to reach step n. You can start by writing a recursive function that uses the relationship from the previous hint."
+    },
+    {
+      "content": "While recursion is a good start, it can lead to repeated calculations. Think about how you could optimize this, perhaps by storing previously calculated results."
+    },
+    {
+      "content": "Consider using dynamic programming. You could maintain an array where each index represents the number of ways to reach that step. How would you initialize this array?"
+    },
+    {
+      "content": "For dynamic programming, remember to set the base cases in your array: dp[0] and dp[1]. What values should these hold?"
+    },
+    {
+      "content": "Now, think about filling in the rest of the array. For each step from 2 to n, how can you use the values of dp[i-1] and dp[i-2] to compute dp[i]?"
+    },
+    {
+      "content": "After filling your array, the answer will be stored in dp[n]. How will you return this value? Make sure your function's return type matches the expected output."
+    },
+    {
+      "content": "Consider edge cases, such as the minimum input value (n = 1). Ensure your solution handles this correctly without errors."
+    },
+    {
+      "content": "You can also solve this problem using a space-optimized approach. Instead of an array, think about using just two variables to keep track of the last two results."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 45",
+    "You can climb either 1 or 2 steps at a time.",
+    "The output should be the number of distinct ways to reach the top."
+  ]
+}

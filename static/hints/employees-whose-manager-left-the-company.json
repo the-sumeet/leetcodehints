@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the employees who have a salary strictly less than $30,000. You can use a simple `SELECT` statement with a `WHERE` clause to filter these employees."
+    },
+    {
+      "content": "Remember to include the `employee_id` in your selection. This will be important for your final output. You can structure your query like this: `SELECT employee_id FROM Employees WHERE salary < 30000`."
+    },
+    {
+      "content": "Next, you need to check the `manager_id` of these employees. You will need to join the Employees table with itself to find out which of these employees have a manager that is not present in the table."
+    },
+    {
+      "content": "When performing the self-join, consider how to identify employees whose `manager_id` does not match any `employee_id` in the Employees table. This can be done using a `LEFT JOIN` or a `NOT EXISTS` clause."
+    },
+    {
+      "content": "Make sure to handle cases where `manager_id` is `NULL`. Employees without a manager should not be included in your results, so you can filter them out accordingly."
+    },
+    {
+      "content": "As you construct your query, remember to only return the `employee_id` of the employees meeting the criteria. You can use `SELECT DISTINCT` if necessary to avoid duplicates."
+    },
+    {
+      "content": "After filtering for employees with a salary less than $30,000 and whose manager has left, ensure that your results are ordered by `employee_id`. You can achieve this by adding an `ORDER BY employee_id` clause."
+    },
+    {
+      "content": "Consider edge cases where all employees have salaries above $30,000 or where all managers are still present. Your query should gracefully handle these scenarios and return an empty result set if needed."
+    },
+    {
+      "content": "Double-check your join condition to ensure it correctly identifies employees whose managers are no longer in the Employees table. This is crucial for getting the right results."
+    },
+    {
+      "content": "Finally, put together your complete SQL query. It should involve filtering, joining, and ordering, and look something like this: `SELECT e1.employee_id FROM Employees e1 LEFT JOIN Employees e2 ON e1.manager_id = e2.employee_id WHERE e1.salary < 30000 AND e2.employee_id IS NULL ORDER BY e1.employee_id`."
+    }
+  ],
+  "questionNotes": [
+    "employee_id is the primary key and unique for each employee.",
+    "manager_id can be NULL for employees without managers.",
+    "The output should only include employee_ids of employees meeting the salary and manager criteria.",
+    "Results must be ordered by employee_id."
+  ]
+}

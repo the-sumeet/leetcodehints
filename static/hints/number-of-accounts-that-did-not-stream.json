@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two tables: 'Subscriptions' and 'Streams'. Each account can be in the 'Subscriptions' table and may or may not have entries in the 'Streams' table."
+    },
+    {
+      "content": "Identify the accounts that are present in the 'Subscriptions' table. You'll need to extract the 'account_id' from this table as your primary set of accounts."
+    },
+    {
+      "content": "Next, look at the 'Streams' table to find which accounts have streamed content. Extract the 'account_id' from this table as well."
+    },
+    {
+      "content": "Consider how you can determine which accounts from the 'Subscriptions' table did not appear in the 'Streams' table. A good approach is to use a set for fast lookups."
+    },
+    {
+      "content": "Think about how to handle cases where an account has a subscription but no streams. You should ensure that you are only counting accounts that have never streamed at all."
+    },
+    {
+      "content": "Remember to check the date ranges in the 'Subscriptions' table. An account may be subscribed but could have streamed outside of their subscription period. However, the problem does not require checking dates, just presence in streams."
+    },
+    {
+      "content": "You might want to create a set of streamed account IDs to simplify your comparison with the subscription accounts. This will allow you to easily identify which accounts are missing from the streams."
+    },
+    {
+      "content": "Consider edge cases such as when there are no subscriptions or no streams at all. Make sure your solution can handle these scenarios gracefully."
+    },
+    {
+      "content": "Once you have the set of accounts that did not stream, remember to return the count of these accounts. Think about how you will format this output."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient. Aim for a time complexity that is manageable given the potential size of the input data."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of two tables: Subscriptions and Streams.",
+    "Each table contains account_id which is the key to relate them.",
+    "You need to find accounts that are in Subscriptions but not in Streams.",
+    "The output should be the count of such accounts.",
+    "Consider edge cases like empty tables or accounts with overlapping subscription dates."
+  ]
+}

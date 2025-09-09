@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to serve groups of customers in a way that maximizes the number of happy groups. A group is happy if they receive fresh donuts."
+    },
+    {
+      "content": "Consider how the batch size affects the serving of groups. If a group’s size is larger than the batch size, they will never be happy since they can't be fully served at once."
+    },
+    {
+      "content": "Think about the constraints provided. The batch size can range from 1 to 9, and the number of groups can be up to 30. This suggests that a brute force solution might be feasible."
+    },
+    {
+      "content": "You can rearrange the groups. This means you should explore different permutations of the groups to find the optimal arrangement that maximizes happy groups."
+    },
+    {
+      "content": "Consider the modulo operation with the batch size. Groups that fit perfectly within the batch size (i.e., groups[i] % batchSize == 0) will not contribute to happy groups."
+    },
+    {
+      "content": "Think about how to keep track of the number of donuts served. You can maintain a running total of served donuts to determine if a new group can be served fresh donuts."
+    },
+    {
+      "content": "You might want to categorize groups based on their sizes. For example, groups that are smaller than the batch size can be potential candidates for being happy."
+    },
+    {
+      "content": "Try to find a greedy strategy. For instance, you could prioritize serving smaller groups first to maximize the number of happy groups."
+    },
+    {
+      "content": "Consider edge cases, such as when all groups are larger than the batch size. How would this impact your solution? Would any groups be happy in this scenario?"
+    },
+    {
+      "content": "Think about dynamic programming. You could create a DP table where each state represents the maximum number of happy groups that can be achieved with a certain number of served donuts."
+    },
+    {
+      "content": "Remember that the order in which you serve groups matters. You could use backtracking to explore all possible arrangements of groups and count the happy ones."
+    },
+    {
+      "content": "Consider using a recursive approach to explore different group arrangements while keeping track of the current number of happy groups."
+    },
+    {
+      "content": "When implementing your solution, make sure to handle the case where a group cannot be served fresh donuts due to leftovers from previous groups."
+    },
+    {
+      "content": "You might want to implement a helper function that checks if a group can be happy based on the current state of served donuts."
+    },
+    {
+      "content": "As you approach your final implementation, think about how to optimize your solution. Can you reduce the number of permutations you need to check?"
+    }
+  ],
+  "questionNotes": [
+    "1 <= batchSize <= 9",
+    "1 <= groups.length <= 30",
+    "1 <= groups[i] <= 10^9",
+    "A group is happy if they receive fresh donuts.",
+    "You can rearrange the order of groups.",
+    "Return the maximum possible number of happy groups."
+  ]
+}

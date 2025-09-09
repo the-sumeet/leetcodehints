@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you will store the stock prices. You need a way to associate each timestamp with its price. A dictionary (or hashmap) could be a good choice for this, where the key is the timestamp and the value is the price."
+    },
+    {
+      "content": "Remember that you need to handle updates to the price at a specific timestamp. If an update comes in for a timestamp that already exists, you should replace the old price with the new one. Consider how you will track the latest timestamp."
+    },
+    {
+      "content": "To efficiently find the latest price, you can maintain a variable to store the most recent timestamp. When you update a price, check if the new timestamp is greater than the current latest timestamp."
+    },
+    {
+      "content": "For finding the maximum and minimum prices, think about how you will keep track of these values. You might want to maintain separate variables for maximum and minimum prices that get updated whenever you add or modify a price."
+    },
+    {
+      "content": "When updating a price, ensure that you also check if the new price affects the current maximum or minimum. If the updated price is greater than the current maximum, you need to update the maximum. Similarly, check for the minimum."
+    },
+    {
+      "content": "Consider edge cases, such as when the same timestamp is updated multiple times. You need to ensure that your logic correctly handles these updates without losing track of the maximum and minimum prices."
+    },
+    {
+      "content": "Think about how to efficiently retrieve the maximum and minimum prices. If you maintain a sorted data structure (like a balanced tree or a heap), it could help you keep track of the maximum and minimum prices dynamically."
+    },
+    {
+      "content": "You might want to use a priority queue or a sorted list to keep track of the prices. This will allow you to quickly access the minimum and maximum prices when needed."
+    },
+    {
+      "content": "Make sure to handle the scenario where all prices are updated to the same value. In this case, your maximum and minimum should reflect that value correctly."
+    },
+    {
+      "content": "Finally, implement the methods for current, maximum, and minimum carefully. Ensure that they return the correct values based on the latest updates, and do not forget to handle any potential edge cases that may arise from the updates."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= timestamp, price <= 10^9",
+    "At most 10^5 calls will be made in total to update, current, maximum, and minimum.",
+    "current, maximum, and minimum will be called only after update has been called at least once.",
+    "Ensure to handle duplicate timestamps correctly by updating the price.",
+    "The latest price is determined by the highest timestamp recorded."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a boomerang is in this context. A boomerang is defined by a point 'i' and two other points 'j' and 'k' such that the distance from 'i' to 'j' is equal to the distance from 'i' to 'k'."
+    },
+    {
+      "content": "Remember that the distance between two points (x1, y1) and (x2, y2) can be calculated using the formula: distance = (x2 - x1)² + (y2 - y1)². This avoids floating-point inaccuracies."
+    },
+    {
+      "content": "Since the points are distinct, you won't have to worry about the same point being counted multiple times. However, you should consider the order of points when counting boomerangs."
+    },
+    {
+      "content": "Try to iterate through each point as the 'i' point. For each 'i', calculate the distances to all other points 'j' and store these distances in a frequency map (or dictionary)."
+    },
+    {
+      "content": "As you calculate distances, remember to update your frequency map. The key will be the distance, and the value will be the count of points that have that distance from point 'i'."
+    },
+    {
+      "content": "After populating the frequency map for a particular point 'i', you can determine how many boomerangs can be formed. If there are 'count' points at a certain distance, the number of ways to choose 2 points from these is count * (count - 1)."
+    },
+    {
+      "content": "Make sure to sum the number of boomerangs for each point 'i' as you iterate through all points. This will give you the total count of boomerangs."
+    },
+    {
+      "content": "Consider edge cases, such as when there is only one point. In this case, the output should be 0 since you cannot form any boomerangs."
+    },
+    {
+      "content": "Keep in mind the constraints: 'n' can be as large as 500. Your solution should ideally run in O(n^2) time complexity to handle the upper limits efficiently."
+    },
+    {
+      "content": "Finally, remember to return the total count of boomerangs after completing the iteration through all points. Ensure your return statement is correctly formatted."
+    }
+  ],
+  "questionNotes": [
+    "Points are distinct and unique.",
+    "The order of points in the tuple matters (i, j, k).",
+    "Constraints: 1 <= n <= 500; points[i].length == 2.",
+    "Distance should be calculated using squared values to avoid floating-point issues."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the range of days the employee is available. You have a total of `days` available, which means days are indexed from 1 to `days`."
+    },
+    {
+      "content": "Next, consider how meetings are represented. Each meeting is given as a start and end day, and they can overlap. Think about how you can efficiently track which days are occupied by meetings."
+    },
+    {
+      "content": "One approach is to create a boolean array of size `days` to mark days that are occupied by meetings. However, this may not be memory efficient given the constraints (up to 10^9)."
+    },
+    {
+      "content": "Instead of using a boolean array, consider using a set or a list to store the ranges of days that are covered by meetings. You can then merge overlapping meetings to simplify the process."
+    },
+    {
+      "content": "When merging meetings, sort them by their start day. If two meetings overlap, you can combine them into a single meeting that covers the entire range."
+    },
+    {
+      "content": "After merging, you will have a list of non-overlapping meetings. You can then iterate through these meetings to determine the days that are occupied."
+    },
+    {
+      "content": "Calculate the total number of days occupied by meetings by summing the lengths of the merged meeting ranges. For each meeting `[start, end]`, the number of occupied days is `end - start + 1`."
+    },
+    {
+      "content": "Once you have the total occupied days, subtract this from the total available days to find the days without meetings. Make sure to handle edge cases where all days might be occupied."
+    },
+    {
+      "content": "Consider edge cases such as when there are no meetings at all or when meetings cover the entire range of available days. How would your logic handle these situations?"
+    },
+    {
+      "content": "Finally, ensure your solution runs efficiently given the constraints. Aim for a time complexity that is better than O(days) to handle the upper limits of the input size."
+    }
+  ],
+  "questionNotes": [
+    "1 <= days <= 10^9",
+    "1 <= meetings.length <= 10^5",
+    "1 <= meetings[i][0] <= meetings[i][1] <= days",
+    "Meetings may overlap, so consider merging them.",
+    "Return the count of days without meetings."
+  ]
+}

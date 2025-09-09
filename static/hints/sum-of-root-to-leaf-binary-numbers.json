@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree. Each node represents a binary digit (0 or 1), and you need to traverse from the root to each leaf node to form binary numbers."
+    },
+    {
+      "content": "Consider how you can represent the binary number as you traverse the tree. You can use a variable to keep track of the current value as you move down the tree."
+    },
+    {
+      "content": "Remember that moving down the tree corresponds to shifting the current binary number to the left (multiplying by 2) and adding the new node's value. For example, if the current number is `n` and you encounter a node with value `v`, the new number becomes `n * 2 + v`."
+    },
+    {
+      "content": "Focus on identifying leaf nodes during your traversal. A leaf node is a node that does not have any children (both left and right children are null). You will need to sum the binary numbers represented by all leaf nodes."
+    },
+    {
+      "content": "Think about using a depth-first search (DFS) approach to traverse the tree. You can implement this using recursion or an iterative approach with a stack."
+    },
+    {
+      "content": "As you traverse, when you reach a leaf node, add the current binary number to a total sum variable. Make sure to initialize this sum variable before starting your traversal."
+    },
+    {
+      "content": "Consider edge cases, such as the minimum tree size. If the tree only has one node (the root), the output should simply be the value of that node."
+    },
+    {
+      "content": "Keep in mind the constraints provided: the tree will have between 1 and 1000 nodes, and each node's value will be either 0 or 1. This means your solution should efficiently handle trees of varying depths."
+    },
+    {
+      "content": "You can use a helper function to encapsulate the logic for the DFS traversal, passing along the current value and the total sum as parameters."
+    },
+    {
+      "content": "Finally, ensure that your function returns the total sum after the traversal is complete. This will be the sum of all binary numbers represented by the root-to-leaf paths."
+    }
+  ],
+  "questionNotes": [
+    "The binary tree nodes contain values only 0 or 1.",
+    "A root-to-leaf path forms a binary number starting from the root.",
+    "Leaf nodes are defined as nodes with no children.",
+    "The output must fit within a 32-bit integer.",
+    "The number of nodes is guaranteed to be between 1 and 1000."
+  ]
+}

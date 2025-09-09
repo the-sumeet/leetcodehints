@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what makes a substring 'beautiful'. A substring is considered beautiful if the number of vowels equals the number of consonants."
+    },
+    {
+      "content": "Identify the vowels in the string. Remember that the vowels are 'a', 'e', 'i', 'o', 'u'. You can create a helper function to check if a character is a vowel."
+    },
+    {
+      "content": "Next, for each substring, count the number of vowels and consonants. You can do this using a sliding window approach to avoid recalculating counts from scratch."
+    },
+    {
+      "content": "Remember that a substring is defined as a contiguous sequence of characters. This means you will need to consider all possible starting and ending indices for substrings."
+    },
+    {
+      "content": "When checking the conditions for a beautiful substring, make sure to check both conditions: the counts of vowels and consonants must be equal, and their product must be divisible by k."
+    },
+    {
+      "content": "To efficiently count substrings, consider using a nested loop. The outer loop can set the starting index, while the inner loop can expand the substring to include more characters."
+    },
+    {
+      "content": "As you count vowels and consonants, maintain two separate counters. Update these counters as you expand or contract your substring."
+    },
+    {
+      "content": "Think about edge cases, such as strings that contain only vowels or only consonants. What will happen in these scenarios?"
+    },
+    {
+      "content": "Consider the performance implications of your approach. Since the maximum string length is 50,000, a naive O(n^2) solution may be too slow. Look for ways to optimize your counting."
+    },
+    {
+      "content": "You can use a dictionary to store the counts of (vowel_count, consonant_count) pairs as you iterate through the string. This can help you quickly check if a certain count has been seen before."
+    },
+    {
+      "content": "When you find a beautiful substring, remember to increment your result count. Ensure that you are counting all valid substrings, including overlapping ones."
+    },
+    {
+      "content": "Make sure to handle the case where k is 1. Any non-empty substring with equal vowels and consonants will satisfy the condition since any number is divisible by 1."
+    },
+    {
+      "content": "After implementing the counting logic, test your solution with various inputs, including edge cases like strings of length 1 and strings without any vowels or consonants."
+    },
+    {
+      "content": "Finally, consider if there are any optimizations you can make based on the properties of the string or the values of k. For example, if k is larger than the maximum possible product of vowels and consonants, you can skip certain checks."
+    },
+    {
+      "content": "Once you have the counts and checks in place, ensure that your function returns the total count of beautiful substrings as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 50,000; 1 <= k <= 1000.",
+    "Vowel letters are 'a', 'e', 'i', 'o', 'u'.",
+    "A substring is a contiguous sequence of characters.",
+    "Return the count of non-empty beautiful substrings."
+  ]
+}

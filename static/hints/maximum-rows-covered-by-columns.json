@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for a row to be covered. A row is covered if all its `1`s are in the selected columns or if it has no `1`s at all."
+    },
+    {
+      "content": "Consider the constraints of the problem. The matrix has a maximum size of 12x12, which allows for some brute-force approaches since the total number of columns (n) is relatively small."
+    },
+    {
+      "content": "Think about how you can represent the selection of columns. You might want to use combinations to generate all possible sets of columns of size `numSelect`."
+    },
+    {
+      "content": "When generating combinations, remember to check how many rows each combination covers. You can iterate through each row and check if it is covered by the currently selected columns."
+    },
+    {
+      "content": "Create a helper function that checks if a specific row is covered by the selected columns. This function should return true if all `1`s in the row are in the selected columns."
+    },
+    {
+      "content": "Consider edge cases, such as when `numSelect` is equal to `n`, which means you can select all columns. In this case, all rows should be covered."
+    },
+    {
+      "content": "As you implement the solution, keep track of the maximum number of rows covered across all combinations of selected columns. You can use a variable to store this maximum."
+    },
+    {
+      "content": "When checking coverage for each row, remember that a row with no `1`s is automatically considered covered. This can simplify your checks."
+    },
+    {
+      "content": "Make sure to handle cases where multiple combinations cover the same maximum number of rows. Your goal is to return the maximum count, not the combinations themselves."
+    },
+    {
+      "content": "Finally, as you finalize your solution, ensure that your function returns the correct integer representing the maximum number of covered rows based on the selected columns."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 12; 1 <= numSelect <= n.",
+    "A row is covered if all its `1`s are in the selected columns or if it has no `1`s.",
+    "Return the maximum number of rows that can be covered, not the combinations of columns."
+  ]
+}

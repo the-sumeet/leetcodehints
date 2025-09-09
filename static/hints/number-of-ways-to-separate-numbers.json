@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. The integers must be positive, non-decreasing, and cannot have leading zeros. This means that any segment of the string that starts with '0' (except for '0' itself) is invalid."
+    },
+    {
+      "content": "Consider how you can split the string into different valid segments. Each segment must represent a valid integer. For example, in '327', you can have '3', '27' or '327'."
+    },
+    {
+      "content": "Think about how you can use dynamic programming to keep track of the number of ways to form valid integers up to each position in the string. This will help you build solutions from smaller subproblems."
+    },
+    {
+      "content": "Define a DP array where dp[i] represents the number of ways to split the substring num[0:i]. Initialize dp[0] to 1, as there is one way to interpret an empty string."
+    },
+    {
+      "content": "As you iterate through the string, consider every possible ending position for a valid number. For each position, check all possible starting positions that could form valid integers."
+    },
+    {
+      "content": "When checking for valid integers, ensure that the integer formed is non-decreasing compared to the last valid integer added to your list. This is crucial for maintaining the non-decreasing order."
+    },
+    {
+      "content": "Pay special attention to segments that start with '0'. If a segment starts with '0' and its length is greater than 1, it cannot be a valid integer."
+    },
+    {
+      "content": "To avoid leading zeros, if you encounter a '0' at position j, you can only consider it as a valid integer if j is the start of the segment (i.e., j == i)."
+    },
+    {
+      "content": "As you build your DP solution, remember to take results modulo 10^9 + 7 to handle large numbers and avoid overflow."
+    },
+    {
+      "content": "When transitioning in your DP array, if you find a valid number from num[j:i] that is greater than or equal to the last valid number, you can add dp[j] to dp[i]."
+    },
+    {
+      "content": "Consider edge cases such as the input '094' or '0'. These should immediately return 0, as they do not meet the criteria for valid integers."
+    },
+    {
+      "content": "Remember to check the length of the number being formed. If it's more than one digit and starts with '0', it should be discarded."
+    },
+    {
+      "content": "You might want to implement a helper function to check if a substring is a valid integer according to the rules specified (non-decreasing, no leading zeros)."
+    },
+    {
+      "content": "As you finalize your DP solution, ensure that you account for all possible splits and transitions correctly. This will help you avoid missing valid configurations."
+    },
+    {
+      "content": "After constructing the DP array, the answer will be found in dp[num.length()]. Make sure to return this value modulo 10^9 + 7."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= num.length <= 3500",
+    "All integers must be positive and non-decreasing.",
+    "No integer can have leading zeros, except for the integer '0' itself.",
+    "Return the number of valid configurations modulo 10^9 + 7."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operations allowed: you can increase a single element at a cost of `cost1`, or you can increase two different elements at a cost of `cost2`. Think about how these operations can be used to equalize the array."
+    },
+    {
+      "content": "Consider the target value that all elements in the array should reach. This could be the maximum value in the array or some value above the current maximum. Why might you choose a value greater than the maximum?"
+    },
+    {
+      "content": "To minimize costs, think about how many times you need to perform each operation for each element in the array. You may want to calculate the difference between each element and your target value."
+    },
+    {
+      "content": "When calculating costs, consider how you can use the two operations in combination. For instance, if `cost2` is significantly lower than `2 * cost1`, you might prefer to use the pair operation more often."
+    },
+    {
+      "content": "Try to derive a formula for the total cost based on the differences between the target value and each element in the array. This will help you structure your calculations."
+    },
+    {
+      "content": "Think about edge cases where all elements are already equal. What should the cost be in this scenario? This will help you identify if your solution is handling such cases correctly."
+    },
+    {
+      "content": "Consider using binary search to efficiently find the optimal target value. You can search between the minimum and maximum values in the array to find the cost-effective target."
+    },
+    {
+      "content": "When implementing binary search, remember that you need to calculate the total cost for each mid-point you check. This involves summing the costs for both operations based on the differences."
+    },
+    {
+      "content": "Make sure to handle large numbers carefully, as the final result should be returned modulo `10^9 + 7`. This is important to prevent overflow and meet the problem's requirements."
+    },
+    {
+      "content": "As you implement the cost calculation, consider how to efficiently sum the costs for both operations. You might want to keep track of how many elements are below the target and how many are above."
+    },
+    {
+      "content": "Think about how to optimize the calculation of costs. Instead of recalculating from scratch for each target during binary search, consider how you can reuse previous calculations."
+    },
+    {
+      "content": "When you find a potential target value during binary search, ensure that you correctly calculate the costs for both operations. This is crucial for determining whether to adjust your search range."
+    },
+    {
+      "content": "Remember to test your solution against various edge cases, such as when `cost1` is much larger than `cost2`, or when the array consists of identical elements."
+    },
+    {
+      "content": "As you finalize your approach, ensure that your code is efficient enough to handle the upper limits of the input constraints, particularly with `nums.length` up to `10^5`."
+    },
+    {
+      "content": "You are close to the solution! Focus on implementing the binary search and cost calculation together, ensuring you correctly track and minimize the total cost as you iterate."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5, 1 <= nums[i] <= 10^6, 1 <= cost1 <= 10^6, 1 <= cost2 <= 10^6.",
+    "Return the result modulo 10^9 + 7.",
+    "Consider edge cases where all elements are already equal.",
+    "Ensure to handle large numbers to prevent overflow."
+  ]
+}

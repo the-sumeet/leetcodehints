@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the sequence you need to generate. The output should alternate between integers and the strings 'fizz', 'buzz', or 'fizzbuzz' based on divisibility rules."
+    },
+    {
+      "content": "Remember that the sequence is 1-indexed. This means that the first element corresponds to 1, the second to 2, and so on. Pay attention to how this affects your calculations for divisibility."
+    },
+    {
+      "content": "Consider how you will manage the multithreading aspect. Each function (fizz, buzz, fizzbuzz, number) will be called from separate threads, so synchronization will be key to ensuring the correct order of outputs."
+    },
+    {
+      "content": "You might want to use a shared variable or a counter to keep track of which number should be printed next. This will help you coordinate the output across different threads."
+    },
+    {
+      "content": "Think about using condition variables or locks to control access to the shared counter. This will prevent race conditions where multiple threads try to print at the same time."
+    },
+    {
+      "content": "When implementing the fizz, buzz, fizzbuzz, and number methods, ensure that each method checks the current number's divisibility before deciding what to print."
+    },
+    {
+      "content": "You can use a loop to iterate through numbers from 1 to n. Inside this loop, you will need to determine which function to call based on the current number."
+    },
+    {
+      "content": "Remember to handle the case where a number is divisible by both 3 and 5. This should trigger the fizzbuzz function, so ensure that check is done first before checking for fizz or buzz."
+    },
+    {
+      "content": "Consider edge cases, such as when n is at its minimum (1). What should your output be in this case? Ensure your implementation handles such scenarios gracefully."
+    },
+    {
+      "content": "As a final step, ensure that your implementation correctly calls the print functions in the right order based on the current number being processed. This will likely involve some form of signaling between threads."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 50",
+    "The output is 1-indexed, meaning the first element corresponds to 1.",
+    "Ensure proper synchronization between threads to maintain output order.",
+    "Divisibility checks should be prioritized: check for 'fizzbuzz' first, then 'fizz', then 'buzz'."
+  ]
+}

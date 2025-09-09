@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Think about how a linked list is structured. Each node points to the next node, and you can access a node through its reference. You need to manipulate the pointers to effectively remove a node from the list."
+    },
+    {
+      "content": "Remember that you are given a pointer to the node you want to delete, not the head of the list. This means you can't traverse the list from the beginning; you can only work with the given node and its neighbors."
+    },
+    {
+      "content": "Since the node to be deleted is guaranteed not to be the last node, you can safely copy the value from the next node into the current node you want to delete. This will effectively 'overwrite' the current node's value."
+    },
+    {
+      "content": "After copying the value from the next node, you need to adjust the pointers. Specifically, you should set the current node's next pointer to skip the next node, thus removing it from the list."
+    },
+    {
+      "content": "Consider edge cases where the linked list has only two nodes. How does your approach handle this scenario? The logic should still hold since the node to delete will never be the last node."
+    },
+    {
+      "content": "Make sure to think about the implications of modifying the linked list structure. You should not leave any dangling pointers, which could lead to memory leaks or corrupted data."
+    },
+    {
+      "content": "When you copy the value from the next node, think about what happens to the next node itself. You are not deleting it, but effectively making the current node take its place."
+    },
+    {
+      "content": "After adjusting the pointers and copying the value, ensure that the original next node is no longer referenced. This is crucial for proper deletion of the node from the linked list."
+    },
+    {
+      "content": "To visualize, consider the following pseudocode: \n```\nnode.val = node.next.val;\nnode.next = node.next.next;\n```\nThis shows how you can overwrite the value and adjust the pointer."
+    },
+    {
+      "content": "Finally, remember that you do not need to return anything from your function, as the linked list is modified in place. Ensure your function signature reflects this."
+    }
+  ],
+  "questionNotes": [
+    "You are given a reference to a node in a singly-linked list.",
+    "The node to be deleted is guaranteed to not be the last node.",
+    "All node values are unique.",
+    "The linked list will have at least two nodes.",
+    "You should not return anything; modify the list in place."
+  ]
+}

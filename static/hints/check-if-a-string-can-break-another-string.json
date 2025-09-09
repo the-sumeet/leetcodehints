@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for one string to 'break' another. A string x can break string y if, when both are sorted, x[i] >= y[i] for all indices i. This means you need to compare the characters in a sorted order."
+    },
+    {
+      "content": "Think about how you can sort both strings. Sorting will help you easily compare the characters of both strings in their respective positions. Consider using a built-in sorting function to simplify this step."
+    },
+    {
+      "content": "After sorting both strings, focus on comparing the characters one by one. You can iterate through the sorted characters and check if one string can break the other by checking the condition x[i] >= y[i]."
+    },
+    {
+      "content": "Remember that you need to check both directions: whether s1 can break s2 and whether s2 can break s1. You might want to create a helper function to perform the comparison."
+    },
+    {
+      "content": "Consider edge cases, such as when both strings contain the same characters. In this case, they should be able to break each other. What happens if both strings are empty or consist of the same character repeated?"
+    },
+    {
+      "content": "Think about the time complexity of your approach. Sorting both strings takes O(n log n), and the comparison takes O(n). Make sure your solution can handle the upper limit of n, which is 100,000."
+    },
+    {
+      "content": "You can optimize your comparison by checking if one string can break the other without explicitly sorting. Instead, count the frequency of each character in both strings and compare the cumulative counts."
+    },
+    {
+      "content": "To implement the frequency count, consider using an array of size 26 (for each letter of the alphabet) to store the counts of characters in each string. This will allow you to efficiently compare the two strings without sorting."
+    },
+    {
+      "content": "Once you have the character counts, iterate through the counts to determine if one string can break the other. You can maintain a running total of the counts to check if at any point the count from one string exceeds that of the other."
+    },
+    {
+      "content": "Finally, ensure that your function returns a boolean value indicating whether one string can break the other. You might want to return true as soon as you find a valid break condition to optimize performance."
+    }
+  ],
+  "questionNotes": [
+    "Both strings s1 and s2 have the same length.",
+    "The strings consist only of lowercase English letters.",
+    "The input size can be up to 100,000 characters.",
+    "You need to check if some permutation of s1 can break some permutation of s2 or vice-versa."
+  ]
+}

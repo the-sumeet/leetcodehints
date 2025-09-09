@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two tables: 'Visits' and 'Transactions'. Each table has a 'user_id' that links them together."
+    },
+    {
+      "content": "Focus on the relationship between visits and transactions. Each visit can have zero or more transactions, and you need to count how many transactions occurred for each visit."
+    },
+    {
+      "content": "Consider how you will iterate through both tables. You might want to use a nested loop to match visits with transactions based on 'user_id' and 'visit_date'."
+    },
+    {
+      "content": "Think about how to store the results. A dictionary could be useful to keep track of the count of transactions for each visit, using a tuple of (user_id, visit_date) as the key."
+    },
+    {
+      "content": "Before diving into coding, sketch out the logic. For each visit, check if there are any transactions that match the user_id and fall on or after the visit_date."
+    },
+    {
+      "content": "Pay attention to edge cases. What if a user has multiple visits on the same day? How will you handle transactions that occur on the same day as the visit?"
+    },
+    {
+      "content": "Consider the possibility of no transactions for a visit. Ensure your solution accounts for visits that have zero transactions, as they should still be included in the final output."
+    },
+    {
+      "content": "Think about the output format. You need to return the number of transactions per visit in a structured way. What data structure will you use for the final output?"
+    },
+    {
+      "content": "When counting transactions, ensure you only count those that occur on or after the visit date. This means you'll need to compare dates carefully."
+    },
+    {
+      "content": "You may want to convert the date strings into a date format for easier comparison. Consider using a date library or built-in functions to handle this."
+    },
+    {
+      "content": "As you implement your solution, test it with the provided sample data to ensure your logic holds. What results do you expect for each visit?"
+    },
+    {
+      "content": "After counting transactions, remember to format your output correctly. You might need to sort your results or structure them in a specific way."
+    },
+    {
+      "content": "Consider performance. If the tables are large, how will your approach scale? Think about optimizing your loops or using more efficient data structures."
+    },
+    {
+      "content": "Make sure to handle any potential duplicates in transactions. If a user has multiple transactions on the same day, how will that affect your counts?"
+    },
+    {
+      "content": "Finally, review your code for edge cases again. Ensure that all possible scenarios are covered, especially with varying numbers of transactions per visit."
+    }
+  ],
+  "questionNotes": [
+    "The 'Visits' table contains unique user_id and visit_date pairs.",
+    "The 'Transactions' table may have multiple entries for the same user_id and transaction_date.",
+    "Ensure to count transactions that occur on or after the visit_date.",
+    "Include visits with zero transactions in the final output."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the server assignment logic. Each request is assigned to the server based on its index modulo the number of servers, `k`. If that server is busy, you need to check the next servers in a circular manner."
+    },
+    {
+      "content": "Consider how to keep track of when each server becomes available again. You can use an array to store the end time of the last request handled by each server."
+    },
+    {
+      "content": "Initialize an array `end_time` of size `k` to keep track of when each server will be free. Initially, all values can be set to 0, indicating that all servers are available at time 0."
+    },
+    {
+      "content": "As you iterate through each request, check the `end_time` of the server at index `i % k`. If it is less than or equal to the arrival time of the request, that server can handle it."
+    },
+    {
+      "content": "If the initially selected server is busy, you need to check subsequent servers in a circular fashion. Use a loop that increments the server index until you find an available server or check all servers."
+    },
+    {
+      "content": "When a server handles a request, update its `end_time` to the current arrival time plus the load of the request. This will ensure you know when the server will be free next."
+    },
+    {
+      "content": "Keep a count of how many requests each server has handled. You can maintain a separate array `request_count` of size `k` that increments each time a server successfully handles a request."
+    },
+    {
+      "content": "After processing all requests, determine the maximum value in the `request_count` array. This value represents the highest number of requests handled by any server."
+    },
+    {
+      "content": "To find the busiest servers, iterate through the `request_count` array and collect the indices of servers that have handled the maximum number of requests."
+    },
+    {
+      "content": "Remember to handle the case where multiple servers have the same maximum count. You should return all such servers as they are considered the busiest."
+    },
+    {
+      "content": "Consider edge cases where all requests may be dropped if they arrive while all servers are busy. Ensure your logic accounts for this scenario."
+    },
+    {
+      "content": "Think about the constraints given in the problem. The number of servers `k` can be as large as 100,000, so your solution should be efficient, ideally O(n) where n is the number of requests."
+    },
+    {
+      "content": "The arrival times and load times are both strictly positive integers and can be very large (up to 1 billion). Make sure your solution handles these values correctly without overflow."
+    },
+    {
+      "content": "You should also ensure that your solution correctly handles the input format, which includes two arrays of equal length. Validate this before processing."
+    },
+    {
+      "content": "Finally, remember that the output format requires a list of server IDs. Ensure you return the indices in a format that matches the problem requirements."
+    }
+  ],
+  "questionNotes": [
+    "1 <= k <= 100,000",
+    "1 <= arrival.length, load.length <= 100,000",
+    "arrival.length == load.length",
+    "1 <= arrival[i], load[i] <= 1,000,000,000",
+    "arrival is strictly increasing",
+    "Return a list of server IDs that handled the most requests, in any order."
+  ]
+}

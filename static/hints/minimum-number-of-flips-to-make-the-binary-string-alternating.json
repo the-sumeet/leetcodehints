@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an alternating string is. An alternating binary string does not have two adjacent characters that are the same. For example, '010' and '1010' are alternating, while '00' and '11' are not."
+    },
+    {
+      "content": "Consider the two possible patterns for an alternating string of length n: one starting with '0' (i.e., '010101...') and one starting with '1' (i.e., '101010...'). You will need to compare your string against both patterns."
+    },
+    {
+      "content": "For each character in the string, check if it matches the expected character in both alternating patterns. Count the number of mismatches for each pattern. This will give you an idea of how many flips (Type-2 operations) are needed."
+    },
+    {
+      "content": "When counting mismatches, remember that you may need to rotate the string (Type-1 operation) before counting. Think about how many rotations you might need to consider to find the minimum flips."
+    },
+    {
+      "content": "To efficiently handle rotations, you can concatenate the string with itself (e.g., 's + s'). This way, you can easily extract all possible rotations as substrings of the concatenated string."
+    },
+    {
+      "content": "As you extract each rotation, calculate the number of flips needed to convert that rotation into both alternating patterns. Keep track of the minimum number of flips across all rotations."
+    },
+    {
+      "content": "When calculating flips for a rotation, iterate through the substring and compare each character to the expected character in both alternating patterns. Increment your flip count for each mismatch."
+    },
+    {
+      "content": "Consider edge cases, such as very short strings (length 1 or 2). What should your function return for these cases? Ensure your solution handles these gracefully."
+    },
+    {
+      "content": "After you have the minimum flips for both patterns across all rotations, the final answer will be the smaller of the two counts. Make sure to return this value as your result."
+    },
+    {
+      "content": "Remember to analyze the time complexity of your approach. Given the constraints (up to 100,000 characters), ensure your solution is efficient enough to handle the largest inputs."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 100000, s[i] is either '0' or '1'.",
+    "The string is called alternating if no two adjacent characters are equal.",
+    "You can perform Type-1 operations (rotations) any number of times before counting flips.",
+    "Return the minimum number of Type-2 operations required to make the string alternating."
+  ]
+}

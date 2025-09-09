@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the two binary search trees (BSTs). Each tree's properties allow you to efficiently search for values. Remember that in a BST, for any given node, the left subtree contains only nodes with values less than the node's value, and the right subtree contains only nodes with values greater."
+    },
+    {
+      "content": "Think about how you can traverse both trees. You might want to consider using in-order traversal to get a sorted list of values from each BST. This could help you in finding pairs that sum up to the target value."
+    },
+    {
+      "content": "Consider using a set or a hash table to store the values from one of the trees. This will allow you to quickly check if the complement of a value (i.e., target - current value) exists in the other tree."
+    },
+    {
+      "content": "When traversing the first BST, for each value you encounter, calculate its complement with respect to the target. For example, if your target is 5 and you find a value of 2, the complement would be 3 (5 - 2)."
+    },
+    {
+      "content": "As you traverse the second BST, check if the current node's value is equal to the complement you calculated from the first BST. If you find a match, you have found a pair that sums to the target."
+    },
+    {
+      "content": "Consider edge cases where one or both trees could be empty. Make sure your solution handles these scenarios gracefully, returning false if no pairs can be found."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Using a set to store values from one tree and then searching in the other could help you achieve a more efficient solution than a brute-force approach."
+    },
+    {
+      "content": "Remember that the values in the BSTs can be negative, zero, or positive. Ensure your logic accounts for all possible values when calculating complements."
+    },
+    {
+      "content": "You may want to implement helper functions for in-order traversal and for checking complements. These functions can help keep your code organized and readable."
+    },
+    {
+      "content": "Finally, ensure your function returns a boolean indicating whether such a pair exists. You might want to structure your return statement to clearly reflect this outcome."
+    }
+  ],
+  "questionNotes": [
+    "The input consists of two BSTs and a target sum.",
+    "The trees can contain negative, zero, and positive integers.",
+    "You need to return a boolean indicating whether there are two values (one from each tree) that sum to the target.",
+    "Consider edge cases where one or both trees are empty."
+  ]
+}

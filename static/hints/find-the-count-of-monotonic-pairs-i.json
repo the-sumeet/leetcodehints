@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the definition of monotonic pairs. A pair (arr1, arr2) is considered monotonic if arr1 is non-decreasing and arr2 is non-increasing, with the condition that arr1[i] + arr2[i] equals nums[i] for all valid indices."
+    },
+    {
+      "content": "Consider the constraints given in the problem. The length of the array nums is at most 2000, and each element can be at most 50. This suggests that a brute-force approach may not be feasible due to the potential number of pairs."
+    },
+    {
+      "content": "Think about how to construct the arrays arr1 and arr2. Since arr1 must be non-decreasing, for each index i, you can choose arr1[i] such that it is less than or equal to nums[i]."
+    },
+    {
+      "content": "For a fixed value of arr1[i], you can determine arr2[i] as nums[i] - arr1[i]. Ensure that arr2[i] is non-negative, which gives a constraint on the values you can choose for arr1[i]."
+    },
+    {
+      "content": "Notice that the choice of arr1[i] affects the choices for arr1[j] for j > i due to the non-decreasing requirement. Think about how to keep track of valid choices as you iterate through the array."
+    },
+    {
+      "content": "You can use dynamic programming to keep track of the number of valid pairs. Define a DP table where dp[i][j] represents the number of ways to fill the first i elements of arr1 such that arr1[i-1] = j."
+    },
+    {
+      "content": "When filling the DP table, consider how to transition from dp[i-1] to dp[i]. You will need to sum valid transitions based on the constraints of monotonicity."
+    },
+    {
+      "content": "To efficiently calculate the number of valid transitions, consider using cumulative sums. This will help you quickly compute the number of ways to fill arr1 up to a certain value."
+    },
+    {
+      "content": "Remember to apply modulo 10^9 + 7 to your results to avoid overflow and meet the problem's requirements."
+    },
+    {
+      "content": "Think about edge cases, such as when nums contains the same value multiple times. How would this affect the number of monotonic pairs?"
+    },
+    {
+      "content": "Consider the minimum and maximum values for arr1[i]. The minimum is 0, and the maximum is nums[i]. This gives you a range for each index."
+    },
+    {
+      "content": "When calculating the number of valid pairs, ensure that you do not double-count any configurations. Each configuration should be uniquely counted based on the constraints."
+    },
+    {
+      "content": "As you build your solution, keep track of the total count of valid pairs and ensure that your final result is computed correctly before returning."
+    },
+    {
+      "content": "Review your DP transitions carefully. Each transition should respect the monotonicity conditions of both arr1 and arr2."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient enough to handle the upper limits of the input constraints. Aim for a time complexity that is manageable given n up to 2000."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums.length <= 2000",
+    "Each nums[i] is a positive integer and can be at most 50.",
+    "Return the count of monotonic pairs modulo 10^9 + 7.",
+    "Both arr1 and arr2 must have the same length as nums."
+  ]
+}

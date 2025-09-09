@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid representation. Each cell can either be a server (1) or not (0). Focus on how servers can communicate based on their positions in rows and columns."
+    },
+    {
+      "content": "Consider how to count the number of servers in each row and each column. You might want to use two separate arrays or lists to keep track of these counts as you iterate through the grid."
+    },
+    {
+      "content": "As you traverse the grid, whenever you find a server (1), increment the corresponding row and column count. This will help you determine later which servers can communicate."
+    },
+    {
+      "content": "After counting the servers in each row and column, you need to revisit the grid. For each server, check if its row or column count is greater than 1. If so, it can communicate with at least one other server."
+    },
+    {
+      "content": "When checking the counts for each server, remember to only count those that can communicate. You can maintain a total count of servers that meet this criterion."
+    },
+    {
+      "content": "Think about edge cases, such as a grid filled entirely with servers or entirely with zeros. How should your solution handle these scenarios?"
+    },
+    {
+      "content": "Consider the time complexity of your approach. You should aim for a solution that efficiently processes the grid, ideally in O(m * n) time, where m is the number of rows and n is the number of columns."
+    },
+    {
+      "content": "Make sure to handle the constraints properly: the grid size can be as large as 250x250. Your solution should be optimized to handle the maximum input size without timing out."
+    },
+    {
+      "content": "You can use a single pass to count servers in rows and columns, followed by another pass to count communicative servers. This two-pass approach can simplify your logic."
+    },
+    {
+      "content": "Finally, implement the logic to sum up the servers that can communicate based on the counts you collected. If a server's row count or column count is greater than 1, include it in your final count."
+    }
+  ],
+  "questionNotes": [
+    "Each cell in the grid is either 1 (server) or 0 (no server).",
+    "Two servers communicate if they are in the same row or column.",
+    "Return the total number of servers that can communicate with at least one other server.",
+    "Constraints: 1 <= m, n <= 250; grid[i][j] == 0 or 1."
+  ]
+}

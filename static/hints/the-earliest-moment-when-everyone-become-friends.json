@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. You are given a list of events, where each event contains a date and two friends who become friends on that date. Make sure you can parse this input correctly."
+    },
+    {
+      "content": "Think about how you can represent friendships. You may want to use a data structure that allows you to keep track of which individuals are friends with each other. A union-find (disjoint set) structure could be useful here."
+    },
+    {
+      "content": "Consider how you will process the events in chronological order. Since the events are provided with dates, sorting them will be necessary to ensure you are processing them in the correct sequence."
+    },
+    {
+      "content": "As you process each event, you should union the two friends mentioned in the event. This means you need to implement a union operation in your data structure to connect the two individuals."
+    },
+    {
+      "content": "Keep track of the number of unique friends. You can use a counter to determine when all individuals have become friends. This will help you identify the earliest moment when everyone is connected."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there are no events or when all individuals are already friends. Think about what the output should be in these scenarios."
+    },
+    {
+      "content": "If you encounter multiple events on the same date, process them all before moving to the next date. This ensures that friendships formed on the same day are accounted for correctly."
+    },
+    {
+      "content": "Consider the return value carefully. You need to return the earliest date when all individuals are friends. If they never all become friends, think about what value you should return."
+    },
+    {
+      "content": "To check if all individuals are friends, you can verify if they all belong to the same connected component in your union-find structure. This will help you determine when to return the date."
+    },
+    {
+      "content": "Finally, ensure your implementation efficiently handles the union and find operations. You may want to implement path compression and union by rank to optimize these operations."
+    }
+  ],
+  "questionNotes": [
+    "Input is a list of events, each formatted as [date, friend1, friend2].",
+    "Return the earliest date when all individuals (0 to n-1) are friends.",
+    "If not all individuals become friends, define what to return (e.g., -1).",
+    "Events may occur on the same date; process all of them before moving on.",
+    "Ensure to handle edge cases like no events or already connected individuals."
+  ]
+}

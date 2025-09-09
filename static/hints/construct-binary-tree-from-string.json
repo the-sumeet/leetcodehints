@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input string. The string represents a binary tree where each node is represented by a number followed by its children enclosed in parentheses. For example, in '4(2(3)(1))', '4' is the root, '2' is the left child, and '6' is the right child."
+    },
+    {
+      "content": "Identify how to parse the string. You can use a stack to keep track of the current node and its children as you traverse the string. Each time you encounter a '(', it indicates the start of a child node."
+    },
+    {
+      "content": "Consider how to differentiate between left and right children. In the string, the first child after a node is always the left child, and any subsequent children are right children. This means you need to manage the order in which you add children."
+    },
+    {
+      "content": "Think about how to handle the numbers in the string. You will need to extract the number before the parentheses as the value of the node. Use a loop to read characters until you hit a '(' or ')' to get the full number."
+    },
+    {
+      "content": "Pay attention to negative numbers. The input can contain negative values, so make sure your number parsing logic can handle the '-' sign correctly. You might need to check for a '-' at the beginning of the number."
+    },
+    {
+      "content": "As you parse the string, keep track of your position. You can use an index variable that increments as you process each character. This will help you manage where you are in the string and when to create new nodes."
+    },
+    {
+      "content": "When you encounter a ')', it indicates the end of a child node. You should pop from your stack and link the child node back to its parent. Make sure to check if the parent already has a left child before adding a right child."
+    },
+    {
+      "content": "Consider edge cases, such as empty strings or strings that only contain numbers without any parentheses. Decide how you want to handle these cases in your implementation."
+    },
+    {
+      "content": "Think about the base case for your recursive function (if you choose to use recursion). When you reach the end of the string or a closing parenthesis, you should know when to stop creating nodes."
+    },
+    {
+      "content": "Finally, once you have parsed the entire string, ensure that your tree is correctly constructed. You might want to write a helper function to visualize or print the tree to verify its structure."
+    }
+  ],
+  "questionNotes": [
+    "Input is a string representing a binary tree.",
+    "Each node is represented by a number followed by its children in parentheses.",
+    "The first child after a node is the left child, subsequent children are right children.",
+    "Handle negative numbers correctly.",
+    "Consider edge cases like empty strings."
+  ]
+}

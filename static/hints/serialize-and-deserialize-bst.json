@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary search tree (BST). In a BST, for any given node, all values in the left subtree are less than the node's value, and all values in the right subtree are greater. This property will help you in both serialization and deserialization."
+    },
+    {
+      "content": "Consider how you can represent the tree as a string. You might want to use a preorder traversal for serialization, which processes the root node first, followed by the left subtree and then the right subtree. This order will help you reconstruct the tree later."
+    },
+    {
+      "content": "When serializing, think about how to represent null nodes. You can use a placeholder (like 'null' or a specific character) to indicate that a node does not exist. This will help maintain the structure during deserialization."
+    },
+    {
+      "content": "For deserialization, you'll need to split the serialized string back into individual values. Consider how you will handle the placeholder for nulls during this process. You might use a queue or a stack to manage the nodes as you reconstruct the tree."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as an empty tree. An empty tree should serialize to a specific string (like '[]') and deserialize back to a null root. Think about how your algorithm will differentiate between an empty tree and a tree with nodes."
+    },
+    {
+      "content": "As you implement the serialization function, keep track of the order in which you add nodes to the string. You can use a recursive function to traverse the tree and build the string incrementally."
+    },
+    {
+      "content": "When deserializing, after splitting the string into values, you will need to reconstruct the tree by inserting nodes one by one. Remember that you can use the properties of the BST to determine where to place each node."
+    },
+    {
+      "content": "Consider the efficiency of your algorithm. The serialization and deserialization processes should ideally run in O(n) time, where n is the number of nodes in the tree. Think about how you can achieve this efficiency."
+    },
+    {
+      "content": "Make sure to test your implementation with various test cases, including edge cases like a single-node tree, a balanced tree, and a skewed tree. This will help ensure your solution is robust."
+    },
+    {
+      "content": "Finally, think about how to structure your final code. You might want to create two separate functions: one for serialization and one for deserialization. Ensure that they work seamlessly together to maintain the integrity of the BST."
+    }
+  ],
+  "questionNotes": [
+    "The number of nodes in the tree is in the range [0, 10^4].",
+    "0 <= Node.val <= 10^4.",
+    "The input tree is guaranteed to be a binary search tree.",
+    "Output format for serialization should be a string representation of the tree."
+  ]
+}

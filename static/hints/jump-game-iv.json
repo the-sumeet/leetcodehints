@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic mechanics of the jumps allowed. You can jump to the next index, the previous index, or any index that has the same value as the current index."
+    },
+    {
+      "content": "Consider how you can represent your current position and the steps taken. A queue might be useful to explore the positions you can jump to in a breadth-first manner."
+    },
+    {
+      "content": "Think about how you can track which indices you've already visited to avoid cycles and unnecessary re-processing. A set can help you manage this."
+    },
+    {
+      "content": "Since you can jump to any index with the same value, consider using a map to store all indices for each unique value in the array. This will allow you to quickly access all possible jumps."
+    },
+    {
+      "content": "When processing jumps to indices with the same value, ensure that you clear out these indices from your map after processing them to prevent redundant jumps."
+    },
+    {
+      "content": "Remember that you can only jump to indices within the bounds of the array. Always check that your jumps do not exceed the array limits."
+    },
+    {
+      "content": "Think about edge cases, such as when the array has only one element. How should your function handle this?"
+    },
+    {
+      "content": "You might want to use a breadth-first search (BFS) approach. This will help you explore all possible jumps level by level, ensuring you find the shortest path."
+    },
+    {
+      "content": "As you explore indices, keep track of the number of steps taken. This will be crucial for returning the minimum number of steps to reach the last index."
+    },
+    {
+      "content": "Consider how to handle the case where you can jump directly to the last index from the first index. What condition would allow you to return early?"
+    },
+    {
+      "content": "When implementing your BFS, make sure to enqueue all valid jumps from the current index before moving on to the next index in the queue."
+    },
+    {
+      "content": "Think about the time complexity of your approach. You want to ensure that your solution can handle the upper limit of constraints efficiently."
+    },
+    {
+      "content": "Ensure that your solution correctly returns the number of steps as soon as you reach the last index. You should not continue processing once the goal is achieved."
+    },
+    {
+      "content": "You may want to implement a check at the beginning of your function to see if the first index is the same as the last index, which would mean zero steps are needed."
+    },
+    {
+      "content": "Finally, review how you will structure your BFS loop. You will need to manage the queue and the set of visited indices carefully to avoid infinite loops."
+    }
+  ],
+  "questionNotes": [
+    "You can jump to index i + 1, i - 1, or any index j where arr[i] == arr[j] and i != j.",
+    "You cannot jump outside the array bounds.",
+    "The output should be the minimum number of steps to reach the last index.",
+    "If you start at the last index, the output should be 0.",
+    "Consider the constraints: 1 <= arr.length <= 50,000 and -10^8 <= arr[i] <= 10^8."
+  ]
+}

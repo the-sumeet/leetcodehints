@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a trie. A trie is a tree where each node represents a character in a string. The path from the root to a node represents the prefix of the string formed by the characters along that path."
+    },
+    {
+      "content": "For the `insert` method, think about how to traverse the trie. You will need to create new nodes for characters that do not already exist in the trie. Remember, each node can represent multiple children."
+    },
+    {
+      "content": "When inserting a word, consider how to handle the end of the word. You may want to use a boolean flag in your nodes to indicate whether a complete word ends at that node."
+    },
+    {
+      "content": "In the `search` method, you need to traverse the trie based on the characters of the word. If you reach the end of the word and the node indicates it is the end of a valid word, return true."
+    },
+    {
+      "content": "For the `startsWith` method, the logic is similar to the `search` method but with one key difference: you do not need to check if the last character represents the end of a word, just that the prefix exists in the trie."
+    },
+    {
+      "content": "Consider edge cases such as inserting an empty string or searching for a string that is a prefix of another string. How should your trie handle these cases?"
+    },
+    {
+      "content": "Think about how to efficiently store the children of each node. A common approach is to use a dictionary (or hash map) where the keys are characters and the values are the corresponding child nodes."
+    },
+    {
+      "content": "Make sure to handle the constraints provided in the problem statement. For example, the maximum length of words and prefixes is 2000, and you may have up to 30,000 calls to the trie methods."
+    },
+    {
+      "content": "When implementing the `insert` method, ensure that you are not overwriting existing nodes. You should only create new nodes for characters that are not yet present in the trie."
+    },
+    {
+      "content": "Finally, when you think you have implemented the trie, test it with various inputs including edge cases like prefixes, complete words, and non-existent words to ensure all methods behave as expected."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= word.length, prefix.length <= 2000",
+    "Words and prefixes consist only of lowercase English letters.",
+    "At most 30,000 calls in total will be made to insert, search, and startsWith."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the format of a valid 24-hour time. The hour (HH) must be between 00 and 23, and the minutes (MM) must be between 00 and 59. This will help you filter out invalid combinations early."
+    },
+    {
+      "content": "Consider how to generate all possible combinations of the four digits. You can use permutations to create different arrangements of the digits. For example, using the digits [1, 2, 3, 4], you could generate '1234', '1243', etc."
+    },
+    {
+      "content": "As you generate combinations, remember that you need to split each combination into hours and minutes. For a combination like '1234', you would extract '12' as hours and '34' as minutes."
+    },
+    {
+      "content": "Implement a check to validate each time you generate. You can do this by ensuring that the hour is less than 24 and the minutes are less than 60. If either condition is not met, discard that combination."
+    },
+    {
+      "content": "Keep track of the latest valid time you find. You can compare times by converting them into minutes since midnight. For example, '23:41' can be converted to 23 * 60 + 41 = 1421 minutes."
+    },
+    {
+      "content": "Make sure to handle cases where no valid time can be formed. In such cases, your function should return an empty string. Think about how you will determine when to return this value."
+    },
+    {
+      "content": "Consider edge cases where all digits are the same, such as [5, 5, 5, 5]. What will your function return in this scenario? Make sure your logic accounts for this."
+    },
+    {
+      "content": "When generating permutations, remember that the order of digits matters. You might want to use a data structure that allows you to keep track of which digits have already been used in the current combination."
+    },
+    {
+      "content": "As you implement the solution, think about efficiency. Generating all permutations of four digits is manageable, but ensure that your validation checks are efficient to avoid unnecessary computations."
+    },
+    {
+      "content": "Finally, once you have the latest valid time, format it as 'HH:MM' before returning. This means you may need to add leading zeros for single-digit hours or minutes. For example, '3:5' should be formatted as '03:05'."
+    }
+  ],
+  "questionNotes": [
+    "The input array contains exactly 4 digits.",
+    "Each digit can be used exactly once to form the time.",
+    "Valid times must be formatted as 'HH:MM'.",
+    "HH must be between 00 and 23, and MM must be between 00 and 59.",
+    "Return an empty string if no valid time can be formed."
+  ]
+}

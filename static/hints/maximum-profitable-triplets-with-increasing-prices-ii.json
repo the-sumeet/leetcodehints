@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. You are given two lists: one for prices and one for profits. Make sure you know how to access elements in both lists using their indices."
+    },
+    {
+      "content": "Consider the relationship between the prices and profits. Each price at index `i` corresponds to the profit at the same index. This means you will need to examine pairs of prices and their associated profits."
+    },
+    {
+      "content": "Think about the requirement for triplets. You need to find three indices `i`, `j`, and `k` such that `i < j < k`. This means you will be looking for combinations of indices that maintain this order."
+    },
+    {
+      "content": "Remember that the prices must be strictly increasing. This means for any valid triplet `(i, j, k)`, the condition `prices[i] < prices[j] < prices[k]` must hold."
+    },
+    {
+      "content": "As you identify valid triplets, calculate the total profit for each triplet as `profits[i] + profits[j] + profits[k]`. You will need to keep track of the maximum profit found."
+    },
+    {
+      "content": "Consider edge cases such as when the length of the prices or profits list is less than 3. In these cases, you cannot form any triplets, so you should return 0 or an appropriate value."
+    },
+    {
+      "content": "Think about how to efficiently find the triplets. A brute force method would involve checking all combinations of three indices, which could be inefficient for larger lists."
+    },
+    {
+      "content": "You might want to explore using a nested loop approach where the outer loop fixes the first index and the inner loop finds valid pairs for the second and third indices."
+    },
+    {
+      "content": "When checking for valid triplet conditions, make sure to skip indices that do not satisfy the increasing price condition. Use a simple `if` statement to check this."
+    },
+    {
+      "content": "Consider using a data structure like a list or array to store the maximum profits found for each valid triplet as you iterate through the indices."
+    },
+    {
+      "content": "You may want to keep track of the maximum profit found so far in a variable that you update whenever you find a new triplet with a higher profit."
+    },
+    {
+      "content": "Double-check your logic for handling ties in profits. If two triplets yield the same maximum profit, you should still only return the maximum value, not the count of triplets."
+    },
+    {
+      "content": "To optimize your solution, think about breaking out of loops early if you find that continuing would not yield a better result, especially if the prices are sorted."
+    },
+    {
+      "content": "Make sure to test your solution with various edge cases, including lists with duplicate prices, to ensure that your logic correctly identifies valid triplets."
+    },
+    {
+      "content": "Finally, structure your return statement to output the maximum profit found. If no valid triplets were found, ensure your function returns 0."
+    }
+  ],
+  "questionNotes": [
+    "Input lists 'prices' and 'profits' must be of the same length.",
+    "Triplets must satisfy the condition 'i < j < k' for indices.",
+    "Prices must be strictly increasing for a valid triplet.",
+    "Return the maximum profit from valid triplets, or 0 if none exist."
+  ]
+}

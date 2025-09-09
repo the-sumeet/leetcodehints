@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the bitwise OR operation. The expression `a OR (a + 1)` will set all bits to 1 that are set in either `a` or `a + 1`. This means the result will have a specific pattern based on the bits of `a`."
+    },
+    {
+      "content": "Notice that since `nums[i]` are all prime numbers, they are odd (except for 2). This means that for odd primes, `ans[i]` must be even to satisfy the condition, as only an even number ORed with the next odd number can yield an odd result."
+    },
+    {
+      "content": "For each prime number in `nums`, consider the binary representation. The maximum bit length of the number will help you determine the possible values for `ans[i]`."
+    },
+    {
+      "content": "To find `ans[i]`, you can iterate through potential values starting from 0 up to `nums[i]`. For each value, check if `value OR (value + 1) == nums[i]`."
+    },
+    {
+      "content": "Keep in mind that if you do not find any valid `ans[i]` for a given `nums[i]`, you should set `ans[i]` to -1. This is especially relevant for the smallest prime, which is 2."
+    },
+    {
+      "content": "Consider edge cases where `nums[i]` is the smallest prime (2). What values of `ans[i]` can you test to see if they yield the correct result?"
+    },
+    {
+      "content": "When testing values for `ans[i]`, remember to minimize each value. This means you should always start from the smallest possible candidate and work upwards."
+    },
+    {
+      "content": "For larger primes, like 31, think about how many bits are needed to represent the number. This can help you limit the range of values you need to test for `ans[i]`."
+    },
+    {
+      "content": "If you find that `ans[i]` must be even for odd primes, you can optimize your search by only testing even numbers starting from 0."
+    },
+    {
+      "content": "As a final step, ensure that your solution handles all elements of the input array and returns the correct format. If an element cannot be formed, it should be -1."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 100",
+    "2 <= nums[i] <= 1000",
+    "nums[i] is a prime number.",
+    "Return an array of the same length as nums.",
+    "If no valid ans[i] exists, set ans[i] = -1."
+  ]
+}

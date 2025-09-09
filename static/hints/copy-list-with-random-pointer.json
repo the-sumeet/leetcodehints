@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the linked list. Each node has a value and two pointers: 'next' and 'random'. The 'random' pointer can point to any node in the list or be null."
+    },
+    {
+      "content": "Consider how you will create a deep copy of the list. You need to create new nodes that mirror the original nodes, ensuring that the new nodes do not reference the original nodes."
+    },
+    {
+      "content": "Think about how you can traverse the original list to create the new nodes. You might want to keep track of the original nodes and their corresponding new nodes for easy reference."
+    },
+    {
+      "content": "One effective method is to first create a copy of each node and insert it right next to the original node. For example, if you have nodes A -> B, you can transform it into A -> A' -> B -> B'."
+    },
+    {
+      "content": "After inserting the copied nodes, you can set the 'random' pointers for the copied nodes. Since the copied node is right next to the original, you can easily find the corresponding copied node using the original's 'random' pointer."
+    },
+    {
+      "content": "Once the 'random' pointers are set, you will need to separate the copied list from the original list. This means restoring the original list and extracting the copied nodes into a new list."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the input list is empty. An empty list should simply return null."
+    },
+    {
+      "content": "Remember that the random pointers can point to null. Ensure your code can handle this case without throwing errors."
+    },
+    {
+      "content": "When returning the copied list, ensure that you return the head of the new list. This is crucial for the function to work correctly."
+    },
+    {
+      "content": "To summarize, you will need to: 1) Create new nodes, 2) Set next and random pointers, and 3) Extract the new list while restoring the original. Think about how you will implement this in code."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= n <= 1000",
+    "Node.val ranges from -10^4 to 10^4",
+    "Node.random can be null or point to any node in the list.",
+    "The output format requires returning the head of the copied linked list."
+  ]
+}

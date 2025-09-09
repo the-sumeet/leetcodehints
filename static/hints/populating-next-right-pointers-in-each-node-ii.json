@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree. Each node has a value, pointers to its left and right children, and a next pointer that you need to populate. Visualize how nodes are connected in a level order traversal."
+    },
+    {
+      "content": "Consider how you would traverse the tree level by level. A common approach is to use a queue to help with this. Think about how you would enqueue the nodes and process them to set the next pointers."
+    },
+    {
+      "content": "Remember that the next pointer of a node should point to the immediate right node at the same level. If a node is the last node at its level, its next pointer should be set to NULL."
+    },
+    {
+      "content": "Since you need to use constant extra space, think about how you can use the existing next pointers to link nodes at the same level. This could help you avoid using a queue."
+    },
+    {
+      "content": "You can start by processing the first node of each level and then use the next pointers to find the next node at the same level. This way, you can link nodes without additional space."
+    },
+    {
+      "content": "As you traverse, keep track of the current node and the next node that is at the same level. When you finish processing a node, set its next pointer to the next node you found."
+    },
+    {
+      "content": "Consider edge cases such as an empty tree. Make sure your function handles this case by checking if the root is NULL at the beginning."
+    },
+    {
+      "content": "Think about how you can implement a loop that continues until you have processed all nodes at the current level. You might need to use a pointer to track the start of the next level."
+    },
+    {
+      "content": "When you finish processing all nodes at the current level, move to the next level by using the next pointers you set. This will allow you to efficiently traverse the entire tree."
+    },
+    {
+      "content": "Finally, ensure that your implementation correctly sets the next pointers for all nodes, especially for the last node in each level. This is crucial for the correctness of your solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The number of nodes in the tree is in the range [0, 6000].",
+    "Node values are within the range -100 to 100.",
+    "You may only use constant extra space.",
+    "The recursive approach is acceptable as implicit stack space does not count as extra space."
+  ]
+}

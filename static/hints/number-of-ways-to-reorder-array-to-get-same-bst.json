@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how a Binary Search Tree (BST) is constructed. The first element of the array becomes the root, and subsequent elements are placed based on their value relative to the current nodes."
+    },
+    {
+      "content": "Consider how the structure of the BST is determined by the order of insertion. For example, in the array [2,1,3], 2 becomes the root, 1 goes to the left, and 3 goes to the right."
+    },
+    {
+      "content": "Think about the properties of BSTs: for any node, all values in the left subtree are smaller, and all values in the right subtree are larger. This will help you understand how to group elements."
+    },
+    {
+      "content": "When reordering the array, the relative positions of elements that belong to the left and right subtrees of each node must remain unchanged to maintain the same BST structure."
+    },
+    {
+      "content": "To find the number of valid reorderings, you can use combinatorial counting. Specifically, if you know how many elements belong to the left and right subtrees, you can calculate the number of ways to interleave these elements."
+    },
+    {
+      "content": "Use the binomial coefficient to calculate the number of ways to choose positions for elements in the left subtree from the total elements being considered. This is crucial for counting reorderings."
+    },
+    {
+      "content": "Remember that the binomial coefficient C(n, k) can be calculated as n! / (k! * (n-k)!). You will need to compute factorials and their modular inverses for efficiency."
+    },
+    {
+      "content": "Don’t forget to take the modulo 10^9 + 7 into account when performing calculations to prevent overflow and adhere to the problem's requirements."
+    },
+    {
+      "content": "Consider edge cases where the array has only one element or is already in sorted order. What would be the expected output in these scenarios?"
+    },
+    {
+      "content": "You can use recursion to construct the BST and simultaneously count the number of valid reorderings for each subtree. This will help you break down the problem."
+    },
+    {
+      "content": "As you construct the BST recursively, keep track of the number of elements in the left and right subtrees for each node. This information is essential for calculating the reorderings."
+    },
+    {
+      "content": "When you reach a leaf node in your recursion, you can return 1, as there's only one way to arrange a single element."
+    },
+    {
+      "content": "After calculating the number of ways for both left and right subtrees, multiply these values together and apply the binomial coefficient to get the total for the current subtree."
+    },
+    {
+      "content": "Make sure you handle the base cases in your recursive function correctly. For example, if there are no left or right children, you should return the appropriate count."
+    },
+    {
+      "content": "Finally, ensure that your solution efficiently handles the maximum constraints, especially since n can be as large as 1000. Consider the time complexity of your approach."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "All integers in nums are distinct.",
+    "Return the answer modulo 10^9 + 7.",
+    "The output must be the number of reorderings that yield the same BST."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a 2D array where each sub-array contains an index and a time. The first element indicates which button was pressed, and the second element indicates the time of the press."
+    },
+    {
+      "content": "Remember that the time taken to press a button is calculated based on the difference in time between consecutive button presses. For the first button press, the time taken is simply the time at which it was pressed."
+    },
+    {
+      "content": "Consider how you will store the time taken for each button. You might want to use a dictionary or an array where the keys or indices correspond to the button indices."
+    },
+    {
+      "content": "As you iterate through the events, keep track of the last time a button was pressed. This will help you calculate the time taken for each button correctly."
+    },
+    {
+      "content": "Don't forget to handle the case where a button is pressed multiple times. You will need to accumulate the time taken for each button across all its presses."
+    },
+    {
+      "content": "When calculating the time taken for each button, ensure you are correctly updating the time for the first press and subsequent presses. For example, if button 1 is pressed at time 2 and then at time 15, the time taken for the second press is 15 - 9 (where 9 is the last time button 1 was pressed)."
+    },
+    {
+      "content": "After calculating the total time taken for each button, you need to determine which button has the longest time. Keep track of both the maximum time and the corresponding button index."
+    },
+    {
+      "content": "Be mindful of tie-breaking rules: if two buttons have the same longest time, return the button with the smallest index. You might want to update your maximum time only if you find a strictly greater time or if the time is equal but the button index is smaller."
+    },
+    {
+      "content": "Consider edge cases, such as when there is only one button press. In this case, the time taken will simply be the time of that single press."
+    },
+    {
+      "content": "Once you have the total times calculated and the maximum identified, return the index of the button with the longest push time. Make sure your final return statement is structured correctly."
+    }
+  ],
+  "questionNotes": [
+    "1 <= events.length <= 1000",
+    "events[i] == [index_i, time_i]",
+    "1 <= index_i, time_i <= 10^5",
+    "The input is sorted in increasing order of time.",
+    "If multiple buttons have the same longest time, return the button with the smallest index."
+  ]
+}

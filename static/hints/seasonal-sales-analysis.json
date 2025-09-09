@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to categorize the sales data by season. You can extract the month from the `sale_date` and use it to determine which season it belongs to. For example, months 12, 1, and 2 correspond to Winter."
+    },
+    {
+      "content": "Make sure to join the `sales` table with the `products` table on `product_id`. This will allow you to access the `category` for each sale, which is essential for grouping the data later."
+    },
+    {
+      "content": "After joining the tables, consider how to aggregate the data. You will need to calculate both the total quantity sold and the total revenue for each category within each season. Remember, revenue is calculated as `quantity * price`."
+    },
+    {
+      "content": "When grouping the data, use both the season and category as your grouping keys. This will help you obtain the total quantity and total revenue for each category in each season."
+    },
+    {
+      "content": "Pay attention to how you define the seasons. You can use a `CASE` statement or a similar structure to categorize each sale into its respective season based on the month extracted from `sale_date`."
+    },
+    {
+      "content": "To resolve ties in popularity (when two categories have the same total quantity), you should also consider the total revenue. Make sure to include logic that checks for this condition when determining the most popular category."
+    },
+    {
+      "content": "Once you have your aggregated results, sort them by season in ascending order. This will ensure that your final output is in the correct order as specified in the problem statement."
+    },
+    {
+      "content": "Make sure to define the output format correctly. Your result should include the columns: `season`, `category`, `total_quantity`, and `total_revenue`. Check that the data types match the expected output types."
+    },
+    {
+      "content": "Consider edge cases, such as when a season has no sales at all. Ensure your query handles these scenarios gracefully, possibly by excluding such seasons from the final output."
+    },
+    {
+      "content": "Finally, review the SQL syntax you will use to implement your solution. A common structure might involve a `SELECT` statement with `JOIN`, `GROUP BY`, and `ORDER BY` clauses. Make sure to test your query with the provided sample data."
+    }
+  ],
+  "questionNotes": [
+    "Seasons are defined as: Winter (Dec, Jan, Feb), Spring (Mar, Apr, May), Summer (Jun, Jul, Aug), Fall (Sep, Oct, Nov).",
+    "Popularity is determined first by total quantity sold, then by total revenue in case of a tie.",
+    "The output must be ordered by season in ascending order.",
+    "Ensure correct data types in the output (e.g., decimal for revenue).",
+    "Handle edge cases where there may be no sales in a season."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a substring is. A substring is any contiguous sequence of characters within a string. For example, from 'ABC', the substrings include 'A', 'B', 'C', 'AB', 'BC', and 'ABC'."
+    },
+    {
+      "content": "Consider how you would generate all possible substrings of a given string. You can use two nested loops where the outer loop picks the starting index and the inner loop picks the ending index."
+    },
+    {
+      "content": "Think about how to count unique characters in a substring. You can use a set to keep track of characters that appear in the substring, as sets automatically handle duplicates."
+    },
+    {
+      "content": "When counting unique characters, remember to check each character's frequency in the entire string. This will help you determine if it is unique or not."
+    },
+    {
+      "content": "Instead of calculating unique characters for each substring independently, consider optimizing your approach. How might you leverage previously computed results?"
+    },
+    {
+      "content": "Consider the contribution of each character to the unique counts of the substrings. For each character, you can calculate how many substrings it contributes to based on its position."
+    },
+    {
+      "content": "For a character at index `i`, think about how many substrings start before it and end after it. This will help you determine how many times that character contributes to the unique character count."
+    },
+    {
+      "content": "You might want to maintain a count of the last occurrence of each character. This will help you efficiently calculate the contribution of each character to the unique counts."
+    },
+    {
+      "content": "As you iterate through the string, keep track of the start of the last substring containing the current character. This will help you avoid counting characters that are not unique."
+    },
+    {
+      "content": "Consider edge cases, such as when the string contains all identical characters. What would the output be in such cases?"
+    },
+    {
+      "content": "Think about the time complexity of your approach. Generating all substrings directly can lead to a time complexity of O(n^3). How can you reduce this?"
+    },
+    {
+      "content": "You can use a sliding window technique to maintain the current substring and its unique characters. This can help you efficiently calculate unique characters as you expand or contract the window."
+    },
+    {
+      "content": "Remember to account for the constraints provided. The string can be up to 100,000 characters long, so your solution needs to be efficient enough to handle large inputs."
+    },
+    {
+      "content": "As you work on the implementation, keep in mind that the final result should be the sum of unique character counts for all substrings. How will you accumulate this sum?"
+    },
+    {
+      "content": "Finally, ensure that your function returns an integer as specified in the problem statement. Consider how you will format your return value."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "s consists of uppercase English letters only.",
+    "Count repeated substrings.",
+    "Return the sum of unique character counts for all substrings."
+  ]
+}

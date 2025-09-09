@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the game. You will be passing the ball from one player to another based on the `receiver` array, which defines who receives the ball next."
+    },
+    {
+      "content": "Remember that the game consists of `k` passes. Each pass contributes to the score, which is the sum of the indices of all players who have touched the ball."
+    },
+    {
+      "content": "Consider how to represent the sequence of passes. You can use a loop to simulate the passing of the ball from the starting player to the next player defined in the `receiver` array."
+    },
+    {
+      "content": "Think about the implications of starting with different players. You need to evaluate the score for each possible starting player and keep track of the maximum score."
+    },
+    {
+      "content": "Since `receiver` can contain duplicate values, passing the ball to the same player multiple times is possible. This could lead to cycles, which you should account for."
+    },
+    {
+      "content": "To avoid recalculating the score for the same starting player multiple times, consider using memoization or storing previously computed scores."
+    },
+    {
+      "content": "Pay attention to the constraints: `1 <= receiver.length == n <= 10^5` and `1 <= k <= 10^10`. This suggests that a naive solution iterating through all passes for large `k` won't be efficient."
+    },
+    {
+      "content": "Think about how the number of passes can affect the score. If `k` is larger than the number of unique players involved in the passing sequence, the sequence will start repeating."
+    },
+    {
+      "content": "You might want to explore the concept of cycles in the passing sequence. If you detect a cycle, you can compute the score for one full cycle and multiply it by how many times it fits into `k`."
+    },
+    {
+      "content": "Consider how to handle the remaining passes after accounting for full cycles. You will need to sum the scores for the remaining passes after the last complete cycle."
+    },
+    {
+      "content": "When calculating scores, ensure that you are summing up all indices correctly, including repetitions. Keep track of the total score as you pass the ball."
+    },
+    {
+      "content": "You may want to implement a helper function to calculate the score for a given starting player and the number of passes. This can help in organizing your code."
+    },
+    {
+      "content": "As you implement your solution, keep testing with edge cases, such as when `k` is very large compared to the number of players or when all players pass to the same player."
+    },
+    {
+      "content": "Don't forget to handle cases where `receiver[i]` equals `i`, which means a player passes the ball to themselves. This can create a cycle that needs special handling."
+    },
+    {
+      "content": "Finally, ensure that your solution returns the maximum score found across all possible starting players. You can maintain a variable to track this maximum score."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= receiver.length == n <= 10^5, 0 <= receiver[i] <= n - 1, 1 <= k <= 10^10.",
+    "The score includes all indices touched by the ball, including repetitions.",
+    "Consider cycles in the passing sequence to optimize the score calculation.",
+    "Handle cases where players may pass to themselves."
+  ]
+}

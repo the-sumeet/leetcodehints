@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to group all the 1's together in the array with the minimum number of swaps. Think about what a swap entails and how it affects the array."
+    },
+    {
+      "content": "Consider the total number of 1's in the array. This will help you determine how many 1's need to be grouped together. For example, in the array [1,0,1,0,1], there are three 1's."
+    },
+    {
+      "content": "Next, think about the sliding window technique. You can create a window of size equal to the number of 1's and slide it across the array to count how many 1's are in each window."
+    },
+    {
+      "content": "As you slide the window, keep track of the number of 0's in the current window. The number of swaps needed to group the 1's in that window will be equal to the number of 0's in it."
+    },
+    {
+      "content": "Make sure to handle edge cases where there are no 1's or all elements are 1's. In these cases, the number of swaps required will be zero."
+    },
+    {
+      "content": "Think about how you can efficiently calculate the number of swaps as you move the window from the start to the end of the array. You might want to update the count of 0's dynamically."
+    },
+    {
+      "content": "When you move the window, if you are leaving an element behind and adding a new element, update your count of 0's accordingly. For example, if you leave a 0 and add a 1, your count of 0's decreases."
+    },
+    {
+      "content": "Consider maintaining a variable to keep track of the minimum number of swaps needed as you evaluate each window. Update this variable whenever you find a window with fewer swaps."
+    },
+    {
+      "content": "At the end of your sliding window process, the variable holding the minimum swaps will give you the answer. Make sure to return this value correctly."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases, such as arrays with all 0's, all 1's, or alternating patterns. This will ensure your solution is robust."
+    }
+  ],
+  "questionNotes": [
+    "You need to return the minimum number of swaps required to group all 1's together.",
+    "Consider edge cases where the array might have no 1's or all elements are 1's.",
+    "The input array can contain 0's and 1's only.",
+    "The output should be a single integer representing the minimum swaps."
+  ]
+}

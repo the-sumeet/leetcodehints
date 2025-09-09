@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. You have nodes and edges, where each edge has a traversal time. Consider how you would represent this graph in a way that allows you to easily traverse it."
+    },
+    {
+      "content": "Think about how you would typically find the shortest path in a graph. Dijkstra's algorithm is a common choice for weighted graphs like this one. How would you adapt it to account for the disappearing nodes?"
+    },
+    {
+      "content": "Remember that you need to track not only the minimum time to reach each node but also whether you can reach the node before it disappears. This means you need to compare the time it takes to reach a node with its disappearance time."
+    },
+    {
+      "content": "As you implement your algorithm, consider using a priority queue to efficiently get the next node to explore based on the shortest known distance. This will help you manage the nodes you have yet to visit."
+    },
+    {
+      "content": "When processing each node, check if the current time exceeds the disappearance time of that node. If it does, you should not consider that path further. This is crucial for nodes that disappear before you can reach them."
+    },
+    {
+      "content": "Don't forget to initialize your answer array properly. Set the time for the starting node (node 0) to 0, and all other nodes to a placeholder value (like infinity) to indicate they are initially unreachable."
+    },
+    {
+      "content": "As you explore the graph, update the answer array with the minimum time to reach each node. If you find a shorter path to a node, make sure to update both the time and the priority queue accordingly."
+    },
+    {
+      "content": "Consider edge cases such as when there are no edges at all. How would your algorithm handle a graph with only one node or a graph where all nodes disappear immediately?"
+    },
+    {
+      "content": "Make sure to handle multiple edges between nodes correctly. If there are multiple paths to a node, you should always take the one that allows you to reach it before it disappears."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct format. If a node is unreachable, it should return -1 in the answer array. Review the expected output format to ensure you meet the requirements."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 50,000; 0 <= edges.length <= 100,000; 1 <= length[i] <= 100,000.",
+    "The graph can be disconnected and may contain multiple edges between the same nodes.",
+    "Return format: answer[i] should be the minimum time to reach node i, or -1 if unreachable.",
+    "Node indexing starts from 0, and the disappear array corresponds directly to node indices."
+  ]
+}

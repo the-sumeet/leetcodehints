@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to traverse a multi-dimensional array. You will need to iterate through each element of the array and check if it's an integer or another array."
+    },
+    {
+      "content": "Consider using a generator function. This allows you to yield values one at a time, which is perfect for an inorder traversal where you may encounter integers and arrays at different levels."
+    },
+    {
+      "content": "Remember that you can use the `isinstance()` function to check if an element is a list or an integer. This will help you decide whether to yield the integer or to call the generator recursively for the inner array."
+    },
+    {
+      "content": "Think about the base case for your recursion. When you encounter an integer, you should yield it directly. When you encounter an array, you need to perform the inorder traversal on that array."
+    },
+    {
+      "content": "Take into account edge cases such as empty arrays. An empty array should not yield any values, so ensure your generator handles this gracefully."
+    },
+    {
+      "content": "You can use a loop to iterate through the elements of the array. For each element, check if it is an integer or another array, and handle each case accordingly."
+    },
+    {
+      "content": "While traversing, remember that you should yield integers in the order they are encountered. This means you need to yield all integers from the current level before moving deeper into any nested arrays."
+    },
+    {
+      "content": "Consider how you will handle the `done` property of the generator. When there are no more integers to yield, the generator should naturally finish, returning `done: true`."
+    },
+    {
+      "content": "You might want to test your generator with various nested structures to ensure it behaves as expected. For example, try inputs with varying depths and mix of integers and arrays."
+    },
+    {
+      "content": "Finally, ensure your generator function is defined correctly to yield values. It should look something like this: `def inorderTraversal(arr):` and then use `yield` within your traversal logic."
+    }
+  ],
+  "questionNotes": [
+    "The input is a multi-dimensional array that can contain integers and other arrays.",
+    "The output should be a generator that yields integers in inorder traversal.",
+    "Edge cases include handling empty arrays and ensuring that the generator correctly signals when it is done yielding values.",
+    "You cannot create a new flattened version of the array; the solution must work directly with the nested structure."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how to represent the deque. A circular array can be a good choice since it allows you to efficiently use space. Consider using an array of size `k` and two pointers to track the front and rear."
+    },
+    {
+      "content": "Remember that in a circular deque, when you reach the end of the array, you should wrap around to the beginning. This means you need to handle the indices carefully using modulo operations."
+    },
+    {
+      "content": "For the `insertFront` and `insertLast` methods, check if the deque is full before adding an element. You can use a counter to keep track of the current number of elements."
+    },
+    {
+      "content": "When implementing `deleteFront` and `deleteLast`, ensure that you update your pointers correctly and also handle the case when the deque becomes empty after deletion."
+    },
+    {
+      "content": "Implement the `isEmpty` and `isFull` methods based on the number of elements in the deque. If the count equals zero, the deque is empty; if it equals `k`, it is full."
+    },
+    {
+      "content": "Consider edge cases when the deque has only one element. Both the front and rear pointers should point to the same index in this case, and deleting from either side should set the deque back to empty."
+    },
+    {
+      "content": "For the `getFront` and `getRear` methods, check if the deque is empty before trying to return an element. If it is empty, return -1 as specified."
+    },
+    {
+      "content": "Think about how to initialize your pointers for the front and rear of the deque. They should be initialized to -1 or 0 based on your design choice, and you need to update them correctly during insertions and deletions."
+    },
+    {
+      "content": "When inserting elements, update the front or rear pointer accordingly and increment the count of elements. Use modulo to wrap around if the pointers exceed the array bounds."
+    },
+    {
+      "content": "Finally, ensure that your methods return the correct boolean values based on the success of the operations. For example, if an insertion fails because the deque is full, return false."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= 1000",
+    "0 <= value <= 1000",
+    "At most 2000 calls will be made to the methods.",
+    "Return -1 for getFront and getRear if the deque is empty."
+  ]
+}

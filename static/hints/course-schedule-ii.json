@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem as a graph where courses are nodes and prerequisites are directed edges. Each prerequisite relationship indicates a dependency that must be satisfied before taking a course."
+    },
+    {
+      "content": "Consider how to represent the courses and their prerequisites. You can use an adjacency list to store which courses depend on which other courses."
+    },
+    {
+      "content": "Think about how you can track the number of prerequisites each course has. This will help you determine which courses can be taken at any point in time."
+    },
+    {
+      "content": "You might want to use a queue to keep track of courses that have no remaining prerequisites. This will allow you to process courses in the correct order."
+    },
+    {
+      "content": "As you take a course, remember to reduce the count of prerequisites for its dependent courses. If any dependent course's prerequisites drop to zero, add it to the queue."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no prerequisites at all. In this case, you can simply return a list of courses in any order."
+    },
+    {
+      "content": "Be cautious of cycles in the graph. If you cannot take all courses because of circular dependencies, you should return an empty array."
+    },
+    {
+      "content": "When implementing your solution, keep track of the number of courses taken. If this number equals numCourses at the end, you have a valid ordering."
+    },
+    {
+      "content": "Remember that there can be multiple valid course orders. Your solution should return any valid order, not necessarily a unique one."
+    },
+    {
+      "content": "To bring it all together, you might want to implement a topological sort using Kahn's algorithm or DFS. Start with courses that have no prerequisites and build the order from there."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= numCourses <= 2000",
+    "0 <= prerequisites.length <= numCourses * (numCourses - 1)",
+    "prerequisites[i].length == 2",
+    "0 <= a_i, b_i < numCourses",
+    "a_i != b_i",
+    "All pairs [a_i, b_i] are distinct.",
+    "Return format: an array of course order or an empty array if impossible."
+  ]
+}

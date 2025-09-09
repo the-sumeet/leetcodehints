@@ -1,0 +1,58 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. It's a directed acyclic graph (DAG), which means there are no cycles. This property can help simplify traversal methods like DFS or BFS."
+    },
+    {
+      "content": "Make sure to note that nodes 0 and n-1 are always online. This means your path must start at node 0 and end at node n-1, but can only pass through nodes that are online."
+    },
+    {
+      "content": "Consider how to represent the graph. You can use an adjacency list where each node points to its outgoing edges, which includes the destination node and the cost."
+    },
+    {
+      "content": "Since the problem involves finding paths with a specific cost constraint, think about how you can track the total cost as you traverse the graph. You might want to use a priority queue or a similar structure."
+    },
+    {
+      "content": "Remember that the score of a path is defined as the minimum edge cost along that path. This means you need to keep track of the minimum edge cost as you explore each valid path."
+    },
+    {
+      "content": "You should filter out any edges that lead to offline nodes before you start your pathfinding. This will reduce unnecessary computations."
+    },
+    {
+      "content": "When exploring paths, consider using a depth-first search (DFS) or breadth-first search (BFS) approach. You can recursively explore paths while keeping track of the total cost and the minimum edge cost."
+    },
+    {
+      "content": "As you traverse the graph, if the total cost exceeds k, you should stop exploring that path immediately. This will help optimize your search."
+    },
+    {
+      "content": "Think about how to handle the case where no valid paths exist. You should return -1 in such cases, so make sure to have a condition to check for this at the end of your pathfinding."
+    },
+    {
+      "content": "Consider using binary search on the minimum edge cost to optimize your solution. You can check if there's a valid path for a given minimum edge cost and adjust your search space accordingly."
+    },
+    {
+      "content": "When implementing the binary search, for each candidate minimum edge cost, filter the edges to only include those with costs greater than or equal to this candidate, and then check for valid paths."
+    },
+    {
+      "content": "Ensure that your pathfinding method can efficiently determine if a valid path exists under the constraints provided. This might involve a modified BFS or DFS that respects the edge costs."
+    },
+    {
+      "content": "Pay attention to the edge cases, such as when all nodes are online but the costs make it impossible to stay under k, or when there are no edges at all."
+    },
+    {
+      "content": "Remember to handle large inputs efficiently, as the constraints allow for a significant number of nodes and edges. Optimize your graph traversal to avoid timeouts."
+    },
+    {
+      "content": "Finally, make sure to test your implementation with various edge cases, such as disconnected nodes, varying costs, and different online configurations to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "The graph is a directed acyclic graph (DAG).",
+    "Nodes 0 and n-1 are always online.",
+    "A valid path can only include online nodes.",
+    "The total recovery cost must not exceed k.",
+    "Score is defined as the minimum edge cost along the valid path.",
+    "Return -1 if no valid path exists.",
+    "Constraints: 2 <= n <= 5 * 10^4, 0 <= m <= min(10^5, n * (n - 1) / 2), 0 <= cost_i <= 10^9, 0 <= k <= 5 * 10^13."
+  ]
+}

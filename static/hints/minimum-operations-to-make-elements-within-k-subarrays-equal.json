@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to create at least `k` non-overlapping subarrays of size `x` where all elements are equal. Think about how to group elements in `nums` into these subarrays."
+    },
+    {
+      "content": "Consider how you can calculate the cost of making all elements in a subarray equal. For a subarray of size `x`, if you want to make all elements equal to a target value, you will need to compute the total operations needed for each element in that subarray."
+    },
+    {
+      "content": "To find the minimum operations for a subarray, you can iterate through the subarray and calculate the difference between each element and the target value, summing the absolute differences."
+    },
+    {
+      "content": "Think about how you can choose a target value for the subarrays. A good starting point could be the median of the subarray, as it minimizes the sum of absolute differences."
+    },
+    {
+      "content": "Remember that you need to find `k` non-overlapping subarrays. This means that once you decide on a subarray, you cannot include any of its elements in another subarray."
+    },
+    {
+      "content": "Consider using a sliding window approach to generate all possible subarrays of size `x`. This will help you efficiently calculate the cost for each potential subarray."
+    },
+    {
+      "content": "As you calculate the costs for each subarray, store them in a list. You will need to sort this list to help you find the minimum costs for selecting `k` non-overlapping subarrays."
+    },
+    {
+      "content": "When selecting `k` subarrays, ensure that you maintain the non-overlapping condition. You can keep track of the end index of the last selected subarray to enforce this."
+    },
+    {
+      "content": "Think about edge cases, such as when `k` is 1. In this case, you only need to find the minimum operations for a single subarray of size `x`."
+    },
+    {
+      "content": "Consider the constraints of the problem. The maximum length of `nums` is 100,000, which means your solution needs to be efficient, ideally O(n log n) or O(n)."
+    },
+    {
+      "content": "You may want to use dynamic programming to keep track of the minimum operations needed to form `k` subarrays up to each index. This could help in optimizing your solution."
+    },
+    {
+      "content": "As you build your dynamic programming solution, think about how to transition from one state to the next when adding a new subarray."
+    },
+    {
+      "content": "When calculating the total operations for `k` subarrays, ensure that you are correctly summing the costs of the selected subarrays and not double-counting any elements."
+    },
+    {
+      "content": "To finalize your approach, consider how to efficiently compute the minimum operations for each possible configuration of `k` subarrays. This might involve a combination of sorting and dynamic programming."
+    },
+    {
+      "content": "Now, try to implement your approach. Start with calculating the costs for all subarrays of size `x`, then build up to selecting `k` of them while ensuring they are non-overlapping."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 100000",
+    "-10^6 <= nums[i] <= 10^6",
+    "2 <= x <= nums.length",
+    "1 <= k <= 15",
+    "2 <= k * x <= nums.length",
+    "Ensure that subarrays are non-overlapping."
+  ]
+}

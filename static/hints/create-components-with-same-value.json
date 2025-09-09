@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the structure of a tree. A tree is a connected acyclic graph. Each edge connects two nodes, and removing an edge will split the tree into two components."
+    },
+    {
+      "content": "Consider the values associated with each node in the `nums` array. The goal is to create components where the sum of values in each component is the same."
+    },
+    {
+      "content": "Think about how you can calculate the total sum of the values in the tree. This will help you determine the target value for each component."
+    },
+    {
+      "content": "Remember that for a component to have the same value, the total sum of values must be divisible by the number of components you want to create."
+    },
+    {
+      "content": "Identify the maximum possible value that each component can have. This will be the greatest common divisor (GCD) of the sums of the components you can create."
+    },
+    {
+      "content": "To find the GCD, you can use the `gcd` function from the math library. Consider how you can apply this to the sums of potential components."
+    },
+    {
+      "content": "As you traverse the tree, keep track of the sums of the subtrees. This will help you identify potential points where you can cut edges."
+    },
+    {
+      "content": "Implement a depth-first search (DFS) or breadth-first search (BFS) to explore the tree and calculate subtree sums. Each time you reach a leaf node, return its value."
+    },
+    {
+      "content": "When calculating subtree sums, check if the sum of the subtree can be a valid component. If it matches the target value, you can consider deleting the edge leading to that subtree."
+    },
+    {
+      "content": "Count how many edges you can delete while maintaining the condition that all components have the same value. This will involve checking each subtree sum against the target."
+    },
+    {
+      "content": "Be cautious about edge cases, such as when there is only one node or when all nodes have the same value. How would these cases affect your approach?"
+    },
+    {
+      "content": "Consider how to handle the case where no edges can be deleted. What should your function return in this scenario?"
+    },
+    {
+      "content": "Think about how you can optimize your solution. Is there a way to avoid recalculating sums for nodes that have already been processed?"
+    },
+    {
+      "content": "Before finalizing your solution, ensure that you have tested it against various test cases, especially edge cases like trees with only two nodes or all nodes having distinct values."
+    },
+    {
+      "content": "Finally, remember to return the maximum number of edges that can be deleted. Ensure your function is structured to return this value correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 20,000, 1 <= nums[i] <= 50.",
+    "The tree is represented by n-1 edges, indicating a valid tree structure.",
+    "Each node is indexed from 0 to n-1.",
+    "The output should be the maximum number of edges that can be deleted."
+  ]
+}

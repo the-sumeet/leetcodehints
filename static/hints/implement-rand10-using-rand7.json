@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider how the `rand7()` function works. It generates a random integer uniformly from 1 to 7. Think about how you can use multiple calls to `rand7()` to create a larger range of numbers."
+    },
+    {
+      "content": "To generate numbers from 1 to 10, you need to think about how to map the output of `rand7()` to the desired range. One approach is to combine the outputs of multiple `rand7()` calls."
+    },
+    {
+      "content": "Since `rand7()` gives you values from 1 to 7, try to create a two-dimensional grid using two calls to `rand7()`. This will give you a range of values that can be manipulated to fit within 1 to 10."
+    },
+    {
+      "content": "If you call `rand7()` twice, you can think of the first call as giving you the row and the second call as giving you the column in a 7x7 grid. This results in 49 possible outcomes."
+    },
+    {
+      "content": "However, 49 is greater than 10. You will need to discard some outcomes to ensure uniform distribution. Consider how you can take advantage of the modulo operation to map your 49 outcomes to 10."
+    },
+    {
+      "content": "When using the modulo operation, remember that you need to handle the cases where the result falls outside the desired range. Specifically, if the result is greater than 10, you should discard that outcome and try again."
+    },
+    {
+      "content": "Think about the probability of each number from 1 to 10 being selected. You want to ensure that each number has an equal chance. How can you adjust your method to maintain this uniformity?"
+    },
+    {
+      "content": "Consider the expected number of calls to `rand7()`. If you discard some outcomes, you might end up calling `rand7()` more times than necessary. Can you find a way to minimize the number of calls?"
+    },
+    {
+      "content": "You might want to create a loop that continues to call `rand7()` until you get a valid outcome that maps to 1-10. This will ensure you only accept valid results."
+    },
+    {
+      "content": "Finally, think about how you will structure your `rand10()` function. It should call `rand7()` as needed, handle the mapping and discarding of invalid results, and return a number between 1 and 10."
+    }
+  ],
+  "questionNotes": [
+    "You can only use the `rand7()` function.",
+    "The output must be a uniform random integer in the range [1, 10].",
+    "You should not use any built-in random APIs.",
+    "Each test case will have an internal argument n, which indicates how many times `rand10()` will be called."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to represent an event. Each event can be represented as a half-open interval [startTime, endTime). Make sure to note that this means 'startTime' is inclusive while 'endTime' is exclusive."
+    },
+    {
+      "content": "Consider how you would check for overlapping intervals. When booking a new event, you need to check if it overlaps with existing events. An overlap occurs if the start time of the new event is less than the end time of an existing event and vice versa."
+    },
+    {
+      "content": "Think about how to store the events. A list or a balanced tree could work, but remember that you need to maintain the order of events based on their start times for efficient overlap checking."
+    },
+    {
+      "content": "When you check for overlaps, you need to keep track of how many events overlap at any given time. You can use a counter to increment when an event starts and decrement when it ends."
+    },
+    {
+      "content": "To avoid triple bookings, you need to ensure that at no point do three events overlap. This means you should check your counter to see if it reaches 3 when adding a new event."
+    },
+    {
+      "content": "Consider edge cases where events start and end at the same time. For example, if an event starts at 10 and another ends at 10, they do not overlap. Make sure your overlap logic correctly accounts for this."
+    },
+    {
+      "content": "When booking an event, you might need to iterate through existing events to check for overlaps. Make sure to handle the intervals correctly to avoid off-by-one errors."
+    },
+    {
+      "content": "As you implement the booking logic, remember to return 'false' immediately if adding the event would cause a triple booking. This means you should stop checking further once you reach a count of 3."
+    },
+    {
+      "content": "You might find it useful to create a helper function that checks for overlaps and counts them. This function can take the start and end times of the new event and return the number of overlaps."
+    },
+    {
+      "content": "Finally, ensure that your 'book' function returns 'true' only if the event can be added successfully without causing a triple booking. Otherwise, it should return 'false'. This is crucial for the correct functioning of your calendar."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= start < end <= 10^9",
+    "At most 1000 calls will be made to book.",
+    "Events are represented as half-open intervals [startTime, endTime).",
+    "Return 'true' if the event can be booked, otherwise return 'false'."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the structure of the rotated array. The array is sorted but has been rotated, which means there is a 'pivot' point where the order breaks. This pivot divides the array into two sorted subarrays."
+    },
+    {
+      "content": "To find the target, you need to leverage the properties of the sorted subarrays. If you can determine which subarray the target might be in, you can narrow down your search."
+    },
+    {
+      "content": "Consider using binary search, which is efficient for sorted arrays. However, since the array is rotated, you need to adjust your binary search logic to account for the rotation."
+    },
+    {
+      "content": "When performing binary search, check the middle element and compare it with the target. Depending on the value of the middle element, you can decide which half of the array to search next."
+    },
+    {
+      "content": "If the middle element is greater than the leftmost element, it indicates that the left half is sorted. You can then check if the target lies within this sorted half."
+    },
+    {
+      "content": "If the left half is sorted, but the target is not in this range, you should search in the right half. Conversely, if the left half is not sorted, the right half must be sorted."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the array has only one element or when the target is less than the smallest element or greater than the largest element."
+    },
+    {
+      "content": "Pay attention to the return format: you should return the index of the target if found, or -1 if it is not present in the array. Make sure your function adheres to this requirement."
+    },
+    {
+      "content": "Consider the constraints provided: the array length can be up to 5000, and all values are unique. This means you will not encounter duplicate targets, simplifying your search."
+    },
+    {
+      "content": "Finally, think about how you would implement the binary search logic. You will need to maintain two pointers (left and right) and calculate the middle index to evaluate the conditions discussed."
+    }
+  ],
+  "questionNotes": [
+    "Array is sorted in ascending order and may be rotated.",
+    "All values in nums are unique.",
+    "Return the index of target or -1 if not found.",
+    "Constraints: 1 <= nums.length <= 5000, -10^4 <= nums[i] <= 10^4."
+  ]
+}

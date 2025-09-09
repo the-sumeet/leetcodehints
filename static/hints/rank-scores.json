@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how to sort the scores in descending order. You need to ensure that the highest scores come first, which is essential for ranking."
+    },
+    {
+      "content": "Consider how you will handle ties in scores. If two players have the same score, they should receive the same rank, and the next rank should skip the number of tied scores."
+    },
+    {
+      "content": "You might find it helpful to use a window function to calculate the rank. Look into SQL functions like DENSE_RANK() or ROW_NUMBER() that can assist with ranking."
+    },
+    {
+      "content": "Remember that the rank should not have gaps. For example, if two scores are tied for rank 1, the next score should be ranked 3, not 2."
+    },
+    {
+      "content": "When writing your SQL query, ensure that you select both the score and the calculated rank in your final output. The result should be ordered by score in descending order."
+    },
+    {
+      "content": "Think about how to group your scores. You may need to group by score to correctly assign ranks to tied scores."
+    },
+    {
+      "content": "Make sure to format your output correctly. The final result should have two columns: 'score' and 'rank', and it should be sorted by 'score' in descending order."
+    },
+    {
+      "content": "Consider edge cases, such as when all scores are the same or when there is only one score in the table. How will your ranking logic handle these scenarios?"
+    },
+    {
+      "content": "To implement the ranking logic, you can use a common table expression (CTE) to first calculate the ranks based on the sorted scores before selecting the final output."
+    },
+    {
+      "content": "Your final SQL query should look something like this: SELECT score, RANK() OVER (ORDER BY score DESC) as rank FROM Scores. Make sure to adjust it to handle ties correctly."
+    }
+  ],
+  "questionNotes": [
+    "The 'id' column is the primary key and has unique values.",
+    "Scores are floating point values with two decimal places.",
+    "The ranking must be from highest to lowest, with no gaps in ranks for tied scores.",
+    "The output must be ordered by score in descending order."
+  ]
+}

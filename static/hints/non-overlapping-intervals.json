@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for intervals to be overlapping. Two intervals [a, b] and [c, d] overlap if they share any points, which occurs if a < d and c < b."
+    },
+    {
+      "content": "Consider how you can represent the intervals in a way that makes it easier to compare them. Sorting the intervals by their start times can be a good first step."
+    },
+    {
+      "content": "After sorting, think about how you can iterate through the intervals to check for overlaps. You might want to maintain a variable that keeps track of the end of the last added interval."
+    },
+    {
+      "content": "As you iterate through the sorted intervals, check if the current interval overlaps with the last added interval. If they overlap, you will need to decide which one to keep."
+    },
+    {
+      "content": "To minimize the number of intervals removed, consider keeping the interval that ends first. This strategy can help reduce the chances of future overlaps."
+    },
+    {
+      "content": "Keep a counter to track how many intervals you need to remove. Each time you find an overlap and decide to keep one, increment this counter appropriately."
+    },
+    {
+      "content": "Think about edge cases, such as when all intervals are the same or when there are only two intervals. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "Remember that intervals that touch at a point are considered non-overlapping. Make sure your logic accounts for this when checking for overlaps."
+    },
+    {
+      "content": "Review the constraints of the problem, especially the range of the start and end values of the intervals. This can help you avoid potential pitfalls with integer overflow or invalid ranges."
+    },
+    {
+      "content": "To finalize your approach, ensure that your implementation correctly returns the count of intervals removed. This should be the only output of your function."
+    }
+  ],
+  "questionNotes": [
+    "1 <= intervals.length <= 10^5",
+    "intervals[i].length == 2",
+    "-5 * 10^4 <= start[i] < end[i] <= 5 * 10^4",
+    "Intervals that touch at a point are non-overlapping."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input lists. Each interval is represented as a pair of integers [start, end] where start <= end. Make sure you know how to access these intervals in both lists."
+    },
+    {
+      "content": "Since both lists are sorted and disjoint, you can use a two-pointer technique to traverse both lists simultaneously. Initialize pointers for both lists at the start."
+    },
+    {
+      "content": "When comparing two intervals, check if they overlap. Two intervals [a, b] and [c, d] overlap if and only if a <= d and c <= b. Think about how you can use this condition to find intersections."
+    },
+    {
+      "content": "If you find an intersection, you need to determine the intersection interval. The start of the intersection will be the maximum of the two start points, and the end will be the minimum of the two end points."
+    },
+    {
+      "content": "After finding an intersection, you should add it to your result list. Remember to handle cases where the intersection is a single point, such as when start equals end."
+    },
+    {
+      "content": "If the current interval from the first list ends before the current interval from the second list starts, move the pointer of the first list forward. This is because there can be no intersection with the current first interval."
+    },
+    {
+      "content": "Conversely, if the current interval from the second list ends before the current interval from the first list starts, move the pointer of the second list forward. Keep this in mind as you traverse."
+    },
+    {
+      "content": "Consider edge cases where one of the lists is empty. Your solution should handle this gracefully and return an empty list if there are no intervals to intersect."
+    },
+    {
+      "content": "Make sure to return the result in the correct format. The output should be a list of intervals, each represented as a list of two integers [start, end]."
+    },
+    {
+      "content": "As a final step, ensure your implementation efficiently handles the constraints, particularly the maximum size of the lists. Aim for a time complexity of O(n + m), where n and m are the lengths of the two lists."
+    }
+  ],
+  "questionNotes": [
+    "Input lists are pairwise disjoint and sorted.",
+    "The intersection of two closed intervals is either empty or a closed interval.",
+    "Return format must be a list of intervals: [[start1, end1], [start2, end2], ...].",
+    "Handle cases where one or both lists are empty.",
+    "Constraints: 0 <= firstList.length, secondList.length <= 1000."
+  ]
+}

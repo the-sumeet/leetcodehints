@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirement for the strings to be in lexicographic order after deletions. This means that for any two strings, the characters must be compared column by column."
+    },
+    {
+      "content": "Consider the case where you have only one string. In this scenario, no deletions are needed since there's nothing to compare against. What does this imply for the minimum number of deletions?"
+    },
+    {
+      "content": "Think about how to compare two strings. If you have two strings `strs[i]` and `strs[j]`, you can check if they are in order by comparing their characters at each index until you find a mismatch."
+    },
+    {
+      "content": "When you find a mismatch between two strings at a certain column, you might need to delete that column. However, think about how you can avoid deleting columns unnecessarily by checking other strings."
+    },
+    {
+      "content": "You can use a set to keep track of the indices of columns that need to be deleted. This way, you can ensure that you only delete columns that are causing the strings to be out of order."
+    },
+    {
+      "content": "Consider how to iterate through the columns of the strings. You might want to loop through each column index and check the order of the strings for that specific column."
+    },
+    {
+      "content": "As you check each column, keep a count of how many columns you need to delete. This will help you determine the minimum number of deletions required."
+    },
+    {
+      "content": "Think about edge cases, such as when all strings are identical or when they are already sorted. How would these cases affect your deletion count?"
+    },
+    {
+      "content": "When comparing characters in the strings, remember that you only need to check each column once per pair of strings. This can help optimize your solution."
+    },
+    {
+      "content": "Finally, after processing all columns, you can return the size of the set containing the indices of the columns to be deleted. This will give you the minimum number of deletions needed."
+    }
+  ],
+  "questionNotes": [
+    "All strings have the same length.",
+    "Return the minimum number of deletion indices.",
+    "Strings must be in lexicographic order after deletions.",
+    "Constraints: 1 <= n <= 100, 1 <= strs[i].length <= 100."
+  ]
+}

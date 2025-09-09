@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Remember that a binary search tree (BST) has a specific property: for any given node, all values in the left subtree are less than the node's value, and all values in the right subtree are greater. This property is crucial for efficiently finding the k-th smallest element."
+    },
+    {
+      "content": "Consider how you might perform an in-order traversal of the BST. An in-order traversal visits the nodes in ascending order, which aligns perfectly with the task of finding the k-th smallest element."
+    },
+    {
+      "content": "As you traverse the BST in order, keep a counter to track how many nodes you've visited. When the counter reaches k, you can return the current node's value."
+    },
+    {
+      "content": "Think about the base case: what happens if k is 1? In that case, you should return the smallest element in the BST, which is the leftmost node."
+    },
+    {
+      "content": "What if k equals the total number of nodes in the BST? You should return the largest element, which is the rightmost node. Make sure your algorithm can handle these edge cases."
+    },
+    {
+      "content": "Consider the time complexity of your approach. An in-order traversal will take O(n) time in the worst case, where n is the number of nodes in the BST. This is acceptable given the constraints."
+    },
+    {
+      "content": "If you're worried about space complexity, remember that you can perform the in-order traversal iteratively using a stack instead of recursion, which can help avoid stack overflow issues with deep trees."
+    },
+    {
+      "content": "You may want to implement a helper function to perform the in-order traversal. This function can take the current node and the counter as parameters and return the k-th smallest value when the counter reaches k."
+    },
+    {
+      "content": "If the BST is modified frequently, consider maintaining a balanced BST or using a data structure like a balanced tree or a min-heap to optimize for frequent k-th smallest queries."
+    },
+    {
+      "content": "Finally, ensure that your function correctly handles the input format. The root of the BST will be provided as a tree structure, and you need to extract values correctly from it during your traversal."
+    }
+  ],
+  "questionNotes": [
+    "The BST property: left < node < right.",
+    "In-order traversal yields values in ascending order.",
+    "1-indexed k: k = 1 returns the smallest, k = n returns the largest.",
+    "Constraints: 1 <= k <= n <= 10^4 and 0 <= Node.val <= 10^4."
+  ]
+}

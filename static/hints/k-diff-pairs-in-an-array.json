@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a k-diff pair is. A k-diff pair consists of two indices in the array such that the absolute difference between the values at those indices equals k. For example, in the pair (1, 3), the difference is |1 - 3| = 2, which matches k."
+    },
+    {
+      "content": "Consider how you will iterate through the array to find these pairs. You need to check pairs of elements, which means you might need a nested loop. However, think about how you can avoid counting duplicates."
+    },
+    {
+      "content": "Remember that the problem specifies 'unique k-diff pairs.' This means that if you find the pair (x, y), you should not count (y, x) again. Think about using a data structure that helps you keep track of what pairs you've already counted."
+    },
+    {
+      "content": "Pay attention to the value of k. If k is zero, the problem changes slightly. You need to find pairs of identical numbers. Consider how you can count occurrences of each number in the array."
+    },
+    {
+      "content": "Use a hash map (or dictionary) to count the occurrences of each number in the array. This will help you quickly determine if a complement exists for each number when checking for pairs."
+    },
+    {
+      "content": "When k is greater than zero, for each unique number in your hash map, check if the number plus k exists in the map. If it does, you have found a valid k-diff pair."
+    },
+    {
+      "content": "When k is zero, you should look for numbers that appear more than once in your hash map. Each unique number with a count greater than one forms a valid k-diff pair."
+    },
+    {
+      "content": "Consider edge cases such as an empty array or an array with only one element. What should your function return in these cases? Think about how the constraints affect your implementation."
+    },
+    {
+      "content": "Make sure to handle large input sizes efficiently. Your solution should ideally run in O(n) time complexity to handle the upper limits of the input constraints."
+    },
+    {
+      "content": "Finally, remember to return the count of unique pairs rather than the pairs themselves. You can maintain a count variable that you increment each time you find a valid pair."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^4",
+    "-10^7 <= nums[i] <= 10^7",
+    "0 <= k <= 10^7",
+    "Return the number of unique k-diff pairs.",
+    "A k-diff pair is defined as (nums[i], nums[j]) where |nums[i] - nums[j]| == k.",
+    "Ensure uniqueness in pairs; (x, y) is the same as (y, x)."
+  ]
+}

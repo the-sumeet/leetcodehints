@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how memory allocation works in this problem. Each second, the program allocates an increasing number of bits (1 bit at second 1, 2 bits at second 2, etc.) to the memory stick with more available memory."
+    },
+    {
+      "content": "Consider how to determine which memory stick has more available memory at each second. You can use a simple comparison to check if memory1 is greater than, less than, or equal to memory2."
+    },
+    {
+      "content": "Think about how you will keep track of the time (in seconds) and the amount of memory allocated. You might want to use a loop that continues until the program crashes."
+    },
+    {
+      "content": "Remember to handle the case when both memory sticks have the same available memory. In this case, you should allocate memory from memory1."
+    },
+    {
+      "content": "When checking if the program crashes, ensure that both memory sticks have enough available memory for the current second's allocation. If neither stick has enough, that's when you should break the loop."
+    },
+    {
+      "content": "You need to return the crash time and the remaining memory in both sticks when the program crashes. Make sure to format the return value as an array with three elements: [crashTime, memory1, memory2]."
+    },
+    {
+      "content": "Consider edge cases where one or both memory sticks start with zero memory. How will your logic handle these cases? Make sure to test these scenarios."
+    },
+    {
+      "content": "Think about the maximum possible values for memory1 and memory2. They can be as high as 2^31 - 1. Ensure your solution can handle large integers without running into overflow issues."
+    },
+    {
+      "content": "As you implement your solution, remember that the loop should increment the second count and allocate the correct amount of memory at each iteration. You might want to use a counter variable for the seconds."
+    },
+    {
+      "content": "Finally, your loop should look something like this: while both memory1 and memory2 can accommodate the current second's allocation, keep allocating memory. When they can't, record the crash time and remaining memory."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= memory1, memory2 <= 2^31 - 1",
+    "Return format: [crashTime, memory1, memory2]",
+    "Tie-breaking: Allocate from memory1 if both sticks have the same available memory."
+  ]
+}

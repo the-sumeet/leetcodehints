@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous portion of an array. For example, in the array [2, 1, 4, 3], the subarrays include [2], [2, 1], [1, 4], and so on."
+    },
+    {
+      "content": "Focus on the range defined by 'left' and 'right'. You need to identify subarrays where the maximum element falls within this range. Consider how you can check the maximum of each subarray efficiently."
+    },
+    {
+      "content": "Think about how to iterate through the array to form subarrays. You might want to use two nested loops, but this could lead to a time complexity issue. Can you optimize this?"
+    },
+    {
+      "content": "Consider using a sliding window approach. This means maintaining a window of elements that meet your criteria as you iterate through the array. What conditions would you check to expand or contract this window?"
+    },
+    {
+      "content": "You need to count valid subarrays. As you identify elements that are within the bounds, think about how you can calculate the number of valid subarrays that can be formed from the current window."
+    },
+    {
+      "content": "Handle edge cases where all elements are outside the range. For example, if all elements in the array are less than 'left' or greater than 'right', how should your code behave?"
+    },
+    {
+      "content": "Remember to keep track of the last position where an element was found that is greater than 'right'. This will help you reset your window when you encounter such an element."
+    },
+    {
+      "content": "When you find an element that is within the bounds, count how many valid subarrays can end at that index. This can be derived from the length of the current valid window."
+    },
+    {
+      "content": "Consider how to efficiently calculate the number of valid subarrays when you encounter an element that is less than 'left'. This may involve using the size of the current valid segment."
+    },
+    {
+      "content": "Finally, think about how you would implement the logic to sum all the valid subarray counts as you iterate through the array. Make sure to handle the transitions between valid and invalid segments correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "0 <= nums[i] <= 10^9",
+    "0 <= left <= right <= 10^9",
+    "The answer will fit in a 32-bit integer."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the representation of the balls in the string. In the string, '1' represents a black ball and '0' represents a white ball. Your goal is to move all '1's to the right and all '0's to the left."
+    },
+    {
+      "content": "Consider how you can swap adjacent balls. Each swap can only affect two adjacent positions in the string. Think about how many swaps you would need to perform to move a '1' to the right of a '0'."
+    },
+    {
+      "content": "Count the total number of black balls ('1's) in the string. This will help you determine how many positions you need to fill with '1's on the right side of the string."
+    },
+    {
+      "content": "As you iterate through the string, keep track of the number of '1's you have encountered so far. This will help you identify how many '0's you need to pass over to get each '1' to its correct position."
+    },
+    {
+      "content": "Think about the positions of the '1's in the string. For each '1' you encounter, calculate how many '0's are to the left of it. This count will directly contribute to the number of swaps needed."
+    },
+    {
+      "content": "Create a variable to accumulate the total number of swaps. Every time you encounter a '1', add the number of '0's that have been seen so far to this variable."
+    },
+    {
+      "content": "Remember to reset your count of '0's each time you encounter a '1'. This way, you can accurately track how many '0's are in the way of each subsequent '1'."
+    },
+    {
+      "content": "Consider edge cases, such as when the string is already in the correct order (e.g., '0111'). In such cases, your function should return 0 immediately."
+    },
+    {
+      "content": "Make sure to handle the case where there are no black balls ('1's) or no white balls ('0's). In these cases, no swaps will be needed, and the answer should be 0."
+    },
+    {
+      "content": "Finally, implement your logic in a loop that goes through the string once, keeping track of the counts of '1's and '0's, and calculating the total number of swaps needed to group all '1's to the right."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == s.length <= 10^5",
+    "s[i] is either '0' or '1'.",
+    "Return the minimum number of steps to group all black balls to the right and all white balls to the left.",
+    "The output should be a single integer representing the number of swaps."
+  ]
+}

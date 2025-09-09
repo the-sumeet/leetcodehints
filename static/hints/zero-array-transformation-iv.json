@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have an integer array `nums` and a 2D array `queries`. Each query affects a range of indices in `nums`, decrementing their values by a specified amount."
+    },
+    {
+      "content": "Consider how each query modifies the `nums` array. For example, if `nums = [2, 0, 2]` and you apply the query `[0, 2, 1]`, you would subtract 1 from all elements in the range from index 0 to 2."
+    },
+    {
+      "content": "Think about how to keep track of the cumulative effect of the queries. You might want to simulate the application of each query one by one and check the state of `nums` after each query."
+    },
+    {
+      "content": "Remember that the goal is to turn `nums` into a Zero Array, meaning all elements must be zero. As you apply queries, check if any element in `nums` becomes negative, which would indicate that the queries cannot achieve a Zero Array."
+    },
+    {
+      "content": "Consider edge cases, such as when `nums` is already a Zero Array or when the queries do not have enough decrement power to reduce all elements to zero. How would you handle these scenarios?"
+    },
+    {
+      "content": "To find the minimum `k`, you need to keep track of how many queries you've applied before achieving a Zero Array. Make sure to return -1 if it's impossible to achieve this even after all queries."
+    },
+    {
+      "content": "You might want to use a loop to iterate through the queries and a separate loop to apply the effects of each query to `nums`. Pay attention to the indices specified in each query."
+    },
+    {
+      "content": "When applying a query, ensure that you only decrement the values in the specified range. You can use a simple for loop to iterate over the indices from `l` to `r` and decrement each corresponding value in `nums`."
+    },
+    {
+      "content": "As you process each query, check if `nums` has become a Zero Array. You can do this by checking if all elements in `nums` are zero after each query application."
+    },
+    {
+      "content": "Finally, think about how you will return the result. If you find that `nums` becomes a Zero Array after applying the first `k` queries, return `k`. If you finish all queries and `nums` is not a Zero Array, return -1."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10, 0 <= nums[i] <= 1000, 1 <= queries.length <= 1000",
+    "Each query is of the form [l_i, r_i, val_i] where 0 <= l_i <= r_i < nums.length and 1 <= val_i <= 10.",
+    "Return the minimum possible non-negative value of k or -1 if not possible.",
+    "Ensure to check for negative values in nums after applying queries."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous portion of the array. For example, in the array [1, 2, 3], the subarrays include [1], [2], [3], [1, 2], [2, 3], and [1, 2, 3]."
+    },
+    {
+      "content": "Next, consider how to calculate the range of a subarray. The range is defined as the difference between the maximum and minimum values within that subarray. For example, for the subarray [1, 2], the range is 2 - 1 = 1."
+    },
+    {
+      "content": "Think about how many subarrays can be formed from an array of length n. There are a total of n(n + 1)/2 subarrays. This means we need to consider how to efficiently calculate the range for each of these subarrays."
+    },
+    {
+      "content": "Instead of calculating the max and min for each subarray from scratch, consider using a sliding window approach or a stack to maintain the maximum and minimum values as you iterate through the array."
+    },
+    {
+      "content": "You might want to consider how to efficiently determine the contribution of each element in the array to the overall sum of ranges. Think about how many subarrays an element contributes to as a maximum and as a minimum."
+    },
+    {
+      "content": "For each element in the array, calculate the number of subarrays where it is the maximum and the number of subarrays where it is the minimum. This can help you derive a formula for the total contribution of each element."
+    },
+    {
+      "content": "Use two pointers or a stack to find the next greater and next smaller elements for each element in the array. This will help you in determining the boundaries of the subarrays where the current element is the max or min."
+    },
+    {
+      "content": "Remember to account for the contribution of each element to the total sum. If an element is the maximum in certain subarrays, you will add its value multiplied by the number of such subarrays to the total. Conversely, subtract its value when it is the minimum."
+    },
+    {
+      "content": "Consider edge cases such as arrays with all identical elements or arrays with negative numbers. How do these affect the range and the overall sum?"
+    },
+    {
+      "content": "Finally, try to combine all the insights you've gathered. You should be able to derive a formula that calculates the total sum of ranges in O(n) time complexity by leveraging the contributions of each element based on their roles as maximums and minimums."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "-10^9 <= nums[i] <= 10^9",
+    "A subarray is a contiguous non-empty sequence of elements.",
+    "The output should be the sum of all subarray ranges."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a pivot index is in the context of this problem. A pivot index is an index where the sum of the elements to the left equals the sum of the elements to the right."
+    },
+    {
+      "content": "Consider how you can calculate the prefix sums of the array. Prefix sums will help you efficiently determine the left and right sums for each potential pivot index."
+    },
+    {
+      "content": "Remember that the pivot index must be between 1 and n-1 (inclusive). Make sure your implementation respects these boundaries."
+    },
+    {
+      "content": "Think about how changing one element to the value of k could affect the sums. You need to determine how many pivot indices can still satisfy the condition after this change."
+    },
+    {
+      "content": "Before modifying any elements, calculate the number of valid pivot indices in the original array. This will give you a baseline to compare against after changes."
+    },
+    {
+      "content": "When you change an element to k, you need to recalculate the sums for the affected pivot indices. Focus on how the change impacts the left and right sums."
+    },
+    {
+      "content": "Consider iterating through each index of the array to simulate changing the element at that index to k. For each change, recalculate the number of valid pivot indices."
+    },
+    {
+      "content": "While iterating through the array, maintain a running total of the left sum as you check each pivot index. This will help you avoid recalculating sums from scratch."
+    },
+    {
+      "content": "Keep track of the maximum number of valid partitions found after each potential change. You will return this maximum value at the end."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when all elements are the same or when k is equal to one of the existing elements. These can affect the number of valid partitions."
+    },
+    {
+      "content": "Consider the scenario where changing an element does not increase the number of valid partitions. In such cases, you might want to keep the original array."
+    },
+    {
+      "content": "You can optimize your approach by breaking early if you find that a certain change does not yield any new valid partitions."
+    },
+    {
+      "content": "Make sure to handle the case where k is outside the range of the existing numbers in the array. This could lead to different partition results."
+    },
+    {
+      "content": "After implementing the logic, test your solution with various edge cases, such as arrays with negative numbers, zeros, and large values for k."
+    },
+    {
+      "content": "Finally, ensure that your solution runs efficiently given the constraints. Aim for a time complexity that is better than O(n^2) for larger arrays."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 2 <= n <= 10^5, -10^5 <= k, nums[i] <= 10^5",
+    "Pivot index must satisfy: 1 <= pivot < n",
+    "You can change at most one element to k or leave the array unchanged.",
+    "Return the maximum number of valid partitions after at most one change."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Employee table. Each employee has an ID, a name, a salary, and a managerId. The managerId corresponds to the ID of another employee who is their manager."
+    },
+    {
+      "content": "You need to compare the salary of each employee with the salary of their manager. To do this, you'll likely need to join the Employee table with itself."
+    },
+    {
+      "content": "When performing a self-join, alias the Employee table to differentiate between employees and their managers. For instance, you can use aliases like 'e' for employees and 'm' for managers."
+    },
+    {
+      "content": "In your self-join, make sure to join on the condition where the employee's managerId matches the manager's id. This will allow you to access the manager's salary."
+    },
+    {
+      "content": "After joining, filter the results to only include rows where the employee's salary is greater than the manager's salary. This is the core condition of the problem."
+    },
+    {
+      "content": "Remember to select only the employee names for the final output. You can use the SELECT statement to specify the columns you want in your result."
+    },
+    {
+      "content": "Consider edge cases where an employee might not have a manager (i.e., managerId is NULL). You will need to handle this appropriately, as these employees should not be included in your final result."
+    },
+    {
+      "content": "Think about how you will handle employees with the same salary as their managers. According to the problem statement, you should only return employees who earn strictly more than their managers."
+    },
+    {
+      "content": "Ensure your SQL query returns results in the correct format. You should only return the name of the employees who earn more than their managers."
+    },
+    {
+      "content": "Your final SQL query might look something like this: SELECT e.name FROM Employee e JOIN Employee m ON e.managerId = m.id WHERE e.salary > m.salary. Make sure to test this with the provided sample data."
+    }
+  ],
+  "questionNotes": [
+    "The Employee table has unique IDs for each employee.",
+    "managerId can be NULL, indicating that the employee does not have a manager.",
+    "Only employees earning strictly more than their managers should be included in the results.",
+    "The output should only contain the names of the qualifying employees."
+  ]
+}

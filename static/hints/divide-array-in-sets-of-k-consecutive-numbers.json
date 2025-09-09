@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering the constraints of the problem. You need to divide the array into groups of size `k`. Ensure that the total number of elements in `nums` is divisible by `k`."
+    },
+    {
+      "content": "Think about how you can use a frequency count of the numbers in the array. This will help you understand how many of each number you have to work with when forming groups."
+    },
+    {
+      "content": "Use a data structure like a hash map or a dictionary to count the occurrences of each number in the array. This will be essential for managing the counts as you form groups."
+    },
+    {
+      "content": "Consider sorting the unique numbers in the array. This will help you easily access the smallest available number when trying to form groups of consecutive numbers."
+    },
+    {
+      "content": "As you form groups, remember to decrement the counts of the numbers used in each group. This ensures that you do not use the same number more times than it appears in the original array."
+    },
+    {
+      "content": "When forming a group starting from the smallest number, check if the next `k-1` consecutive numbers are available. If any number in this range is not available, return false."
+    },
+    {
+      "content": "You may want to use a loop that continues until all numbers are processed. Each time you successfully form a group, update your counts and check the next smallest number."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is 1. In this case, any array can be divided into sets of size 1, so the answer should be true."
+    },
+    {
+      "content": "Another edge case is when `k` is greater than the number of unique elements in `nums`. In such cases, it's impossible to form the required groups, and you should return false."
+    },
+    {
+      "content": "Finally, ensure that your algorithm runs efficiently. Given the constraints, aim for a solution that works in O(n log n) time due to sorting, followed by O(n) for counting and grouping."
+    }
+  ],
+  "questionNotes": [
+    "1 <= k <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "The array must be divided into sets of exactly size k.",
+    "Return true if possible, otherwise false."
+  ]
+}

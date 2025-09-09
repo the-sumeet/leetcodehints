@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider how threads operate in Java. Each thread can execute independently, which means they may not run in the order you expect. Think about how you can control the execution order of these threads."
+    },
+    {
+      "content": "You need to ensure that the method `second()` is called only after `first()` has completed. This suggests that you might need some form of synchronization between the threads."
+    },
+    {
+      "content": "Look into Java's synchronization mechanisms. You might want to explore using `synchronized` methods or blocks, or even higher-level constructs like `CountDownLatch` or `Semaphore`."
+    },
+    {
+      "content": "Remember that the `Foo` class methods can be called by multiple threads simultaneously. How can you ensure that only one thread can execute a method at a time while maintaining the required order?"
+    },
+    {
+      "content": "Consider using `wait()` and `notify()` methods. These can help you coordinate the execution of `first()`, `second()`, and `third()` by allowing threads to wait for certain conditions to be met."
+    },
+    {
+      "content": "Think about how you can use flags or counters to track the completion of each method. For example, you could use a boolean flag to indicate whether `first()` has completed before allowing `second()` to run."
+    },
+    {
+      "content": "You might want to create a mechanism that allows `second()` to wait until `first()` is done. This could be done using a simple `if` check combined with `synchronized` blocks."
+    },
+    {
+      "content": "What if `third()` needs to wait for `second()`? You will need a similar mechanism for `third()` to ensure it only executes after `second()` has completed."
+    },
+    {
+      "content": "Consider the order of execution in your implementation. You might want to create a sequence of method calls that ensures `first()`, then `second()`, and finally `third()` are executed in that order."
+    },
+    {
+      "content": "You are very close! Think about how you can implement a simple control structure that uses `wait()` and `notify()` to manage the execution order. For instance, after `first()` completes, it can notify `second()` to proceed."
+    }
+  ],
+  "questionNotes": [
+    "The methods must execute in the order: first(), second(), third().",
+    "The input is a permutation of [1, 2, 3], meaning each number will appear exactly once.",
+    "Threads may not execute in the order you expect, so synchronization is crucial.",
+    "Ensure that your solution handles cases where threads are scheduled in any order."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the knight's movement on a phone keypad. The knight can jump in an 'L' shape, which means it can move to specific positions from any given number. Visualize the keypad and list the possible moves for each digit."
+    },
+    {
+      "content": "Consider how many distinct phone numbers can be formed based on the knight's starting position. For `n = 1`, the answer is simply the number of digits on the keypad, which is 10."
+    },
+    {
+      "content": "For `n = 2`, think about how many valid moves the knight can make from each digit. You can create a mapping that shows how many valid digits can be reached from each starting digit."
+    },
+    {
+      "content": "To solve for larger `n`, consider using dynamic programming. Define a 2D array where `dp[i][j]` represents the number of distinct phone numbers of length `i` that end at digit `j`."
+    },
+    {
+      "content": "Initialize your base case for `n = 1`. Each digit can be reached in exactly one way: by starting on that digit itself. Thus, `dp[1][j] = 1` for all digits `j` from 0 to 9."
+    },
+    {
+      "content": "Next, for each subsequent length `i`, calculate `dp[i][j]` by summing the values of `dp[i-1][k]` for all valid digits `k` that can jump to digit `j`."
+    },
+    {
+      "content": "Make sure to handle the modulo operation (10^9 + 7) when calculating the sums to avoid overflow and meet the problem's requirements."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when `n` is very small (like 1) or very large (up to 5000). Ensure your solution efficiently handles the maximum constraints."
+    },
+    {
+      "content": "After filling out your DP table, the final result will be the sum of all `dp[n][j]` for `j` from 0 to 9. This gives you the total number of distinct phone numbers of length `n`."
+    },
+    {
+      "content": "Remember, the key to solving this problem is understanding the knight's movement and efficiently utilizing dynamic programming to build up the solution incrementally."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 5000",
+    "Return the result modulo 10^9 + 7.",
+    "You can start from any digit on the keypad.",
+    "Each number must be of length n, and all digits must be numeric (0-9)."
+  ]
+}

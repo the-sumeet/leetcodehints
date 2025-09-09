@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Employee table. Each employee has a unique `id`, a `name`, a `department`, and a `managerId`. The `managerId` indicates who the employee reports to, and it can be null for employees without a manager."
+    },
+    {
+      "content": "To identify managers, you'll need to group employees by their `managerId`. This will help you count how many direct reports each manager has. Remember that the `managerId` will point to the `id` of the manager."
+    },
+    {
+      "content": "Consider using a `GROUP BY` clause to aggregate the number of reports for each manager. You can use the `COUNT` function to count the number of employees that share the same `managerId`."
+    },
+    {
+      "content": "When grouping by `managerId`, you will need to filter out managers who have fewer than five direct reports. Use the `HAVING` clause to enforce this condition after counting."
+    },
+    {
+      "content": "Make sure to join the results back to the Employee table to retrieve the names of the managers. You can do this by joining on the `id` of the manager and the `managerId` of the employees."
+    },
+    {
+      "content": "Remember that a manager can have multiple direct reports, and you need to ensure that you are only selecting those who meet the minimum requirement of five. Think about how to structure your query to filter these results effectively."
+    },
+    {
+      "content": "Consider edge cases where managers might not have any direct reports or where all employees report to the same manager. Ensure your query handles these scenarios appropriately."
+    },
+    {
+      "content": "Your final output should only include the names of the managers who have at least five direct reports. Make sure to select the correct column from your joined results."
+    },
+    {
+      "content": "The output format is important: you should return a table with a single column named `name`. Ensure your query reflects this by using an appropriate `SELECT` statement."
+    },
+    {
+      "content": "Finally, remember that the order of the results does not matter as per the problem statement. Focus on getting the correct managers first, and the order can be any."
+    }
+  ],
+  "questionNotes": [
+    "The `id` column is unique and serves as the primary key.",
+    "The `managerId` can be null, indicating no manager.",
+    "Only include managers with at least five direct reports in the output.",
+    "Return the result with a single column named `name`."
+  ]
+}

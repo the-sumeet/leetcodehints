@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a Minimum Spanning Tree (MST) is. Recall that it connects all vertices with the minimum total edge weight without forming cycles."
+    },
+    {
+      "content": "Remember that an edge can be critical if removing it increases the weight of the MST. Think about how you can determine the weight of the MST with and without a specific edge."
+    },
+    {
+      "content": "Consider using Kruskal's or Prim's algorithm to find the MST. Kruskal's algorithm is particularly useful here since it works well with edge lists."
+    },
+    {
+      "content": "When implementing Kruskal's algorithm, ensure you have a way to union and find components efficiently. A Disjoint Set Union (DSU) or Union-Find structure is commonly used."
+    },
+    {
+      "content": "To find critical edges, after finding the MST weight, try removing each edge one by one and recompute the MST weight. If the new weight is greater, that edge is critical."
+    },
+    {
+      "content": "For pseudo-critical edges, an edge is considered pseudo-critical if it can be included in at least one MST but not all. You might need to force its inclusion and then check the MST weight."
+    },
+    {
+      "content": "Pay attention to the edge weights. If all edges have the same weight, all edges are pseudo-critical since any combination will yield the same MST weight."
+    },
+    {
+      "content": "Make sure to handle the input correctly. The edges are given as a list of lists where each inner list contains two vertices and a weight."
+    },
+    {
+      "content": "The indices of the edges in the output are important. Make sure to return them in the correct format as specified in the problem statement."
+    },
+    {
+      "content": "Consider edge cases such as when there are only two vertices. In this case, the only edge present will be both critical and pseudo-critical."
+    },
+    {
+      "content": "When checking for pseudo-critical edges, you can try to include an edge in your MST calculation and see if it changes the total weight compared to the original MST."
+    },
+    {
+      "content": "Remember that the output requires two lists: one for critical edges and one for pseudo-critical edges. Make sure to separate them clearly."
+    },
+    {
+      "content": "If you encounter multiple edges with the same weight, ensure your algorithm correctly handles tie-breaking when selecting edges for the MST."
+    },
+    {
+      "content": "After implementing the MST finding logic, validate your results against the provided examples to ensure correctness."
+    },
+    {
+      "content": "Finally, think about the efficiency of your solution. The constraints allow for up to 200 edges, so ensure your approach runs efficiently within these limits."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 100",
+    "1 <= edges.length <= min(200, n * (n - 1) / 2)",
+    "edges[i].length == 3, 0 <= a_i < b_i < n, 1 <= weight_i <= 1000",
+    "All pairs (a_i, b_i) are distinct.",
+    "Return format: two lists of indices; first for critical edges, second for pseudo-critical edges."
+  ]
+}

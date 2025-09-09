@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the goal: you need to have exactly one stone in each of the 9 cells of the 3x3 grid. This means that the total number of stones is fixed at 9, so you will need to redistribute them."
+    },
+    {
+      "content": "Consider how you can move stones between adjacent cells. Remember that a stone can only be moved to a cell that shares a side (up, down, left, right). This adjacency constraint is crucial for planning your moves."
+    },
+    {
+      "content": "Count the number of stones in each cell. Identify which cells have more than one stone (these are your surplus cells) and which cells have zero stones (these are your deficit cells)."
+    },
+    {
+      "content": "When moving stones, think about the distance. The number of moves required to transfer a stone from one cell to another is determined by how many adjacent cells you need to pass through. Consider using a distance metric."
+    },
+    {
+      "content": "Visualizing the grid can help. You might want to draw the grid and mark the surplus and deficit cells. This can make it easier to plan the sequence of moves."
+    },
+    {
+      "content": "Try to prioritize moving stones from cells with the highest surplus to those with the highest deficit. This greedy approach can help minimize the number of moves."
+    },
+    {
+      "content": "Keep track of the total number of moves you make. Each time you move a stone, increment your move counter. This will allow you to determine the minimum moves once all cells have one stone."
+    },
+    {
+      "content": "Consider edge cases, such as when all stones are clustered in a corner or when they are evenly distributed. How would your approach change in these scenarios?"
+    },
+    {
+      "content": "Think about the order of moves. Sometimes, moving a stone to an adjacent cell might block future moves. Try to find a sequence that allows for the most efficient redistribution."
+    },
+    {
+      "content": "You can implement a breadth-first search (BFS) or a depth-first search (DFS) to explore all possible moves systematically. This will help ensure you find the minimum moves needed."
+    }
+  ],
+  "questionNotes": [
+    "The grid is always 3x3 and contains exactly 9 stones.",
+    "You can only move stones to adjacent cells.",
+    "You must return the minimum number of moves required to achieve the goal.",
+    "The input grid will always have non-negative integers, and the sum of all elements will be 9."
+  ]
+}

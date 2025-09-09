@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find two indices `i` and `j` such that `nums[i] == nums[j]` and the absolute difference between `i` and `j` is at most `k`. Think about how you can track the indices of the elements as you iterate through the array."
+    },
+    {
+      "content": "Consider how you can efficiently check for duplicates in the array. A nested loop would work, but it would be inefficient for larger arrays. Think about using a data structure that allows for quick lookups, such as a hash map or a set."
+    },
+    {
+      "content": "Remember that the indices `i` and `j` must be distinct. This means you cannot compare an element with itself. As you check for duplicates, ensure that you are keeping track of the indices correctly."
+    },
+    {
+      "content": "As you iterate through the array, you might want to store the last seen index of each number. This way, when you encounter the same number again, you can easily check the condition on the indices."
+    },
+    {
+      "content": "Think about the implications of the constraint `abs(i - j) <= k`. This means that if you find a duplicate, you should check if the difference between the current index and the last seen index of that number is less than or equal to `k`."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is 0. In this case, you will never find two distinct indices that satisfy the condition since they cannot be the same index. What should your function return in this case?"
+    },
+    {
+      "content": "You should also consider the case where the array has only one element. Since there cannot be two distinct indices, what would your function return?"
+    },
+    {
+      "content": "To implement your solution, you might want to use a loop to iterate through the array while maintaining a map (or dictionary) that records the last index of each number. When you encounter a number, check if it exists in the map and then verify the index condition."
+    },
+    {
+      "content": "As you implement your solution, remember to update the map with the current index of the number after checking for duplicates. This ensures that you always have the most recent index available for comparison."
+    },
+    {
+      "content": "Finally, ensure that your function returns `true` as soon as you find a valid pair of indices. If you finish iterating through the array without finding such a pair, return `false`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "-10^9 <= nums[i] <= 10^9",
+    "0 <= k <= 10^5",
+    "Indices i and j must be distinct.",
+    "Return true if such indices exist, otherwise return false."
+  ]
+}

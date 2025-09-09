@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You need to generate integers of length `n` where the absolute difference between every two consecutive digits is `k`. This means if you have a digit `d`, the next digit can only be `d + k` or `d - k`."
+    },
+    {
+      "content": "Consider how to generate numbers of length `n`. You can use a recursive approach or iterative method to build numbers digit by digit. Remember, the first digit cannot be zero if `n > 1`."
+    },
+    {
+      "content": "Think about the range of digits you can use. Digits must be between 0 and 9. If you add or subtract `k` from a digit, ensure that the result remains within this range."
+    },
+    {
+      "content": "When constructing numbers, start from each possible first digit (1 to 9) and explore valid digits for the following positions. This ensures you avoid leading zeros."
+    },
+    {
+      "content": "You can use a queue or stack to facilitate breadth-first or depth-first search. For each digit, compute the next possible digits and continue building until you reach the desired length `n`."
+    },
+    {
+      "content": "Remember to check if the generated number has reached the required length `n` before adding it to your results. If it does, convert the list of digits back to an integer."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is 0. In this scenario, all digits must be the same, and you will only generate numbers like 11, 22, ..., 99."
+    },
+    {
+      "content": "Make sure to handle cases where adding or subtracting `k` leads to invalid digits (like negative digits or digits greater than 9). Use conditions to filter these out."
+    },
+    {
+      "content": "As you build your numbers, keep track of the unique integers generated. You might use a set to avoid duplicates, especially if `k` is small."
+    },
+    {
+      "content": "Finally, after generating all possible integers, ensure your result is in the required format (an array of integers) and check that it adheres to the constraints before returning."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 9, 0 <= k <= 9",
+    "No leading zeros are allowed for integers of length greater than 1.",
+    "Return the answer in any order.",
+    "The integers must be valid (0-9) without leading zeros."
+  ]
+}

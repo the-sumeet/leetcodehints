@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints for each tower's height. Each tower can have a height that is a positive integer and must not exceed the corresponding value in the `maximumHeight` array."
+    },
+    {
+      "content": "Consider the requirement that no two towers can have the same height. This means that the heights assigned to the towers must be unique."
+    },
+    {
+      "content": "To maximize the total height, you should ideally use the largest possible heights first. Think about sorting the `maximumHeight` array in descending order to facilitate this."
+    },
+    {
+      "content": "After sorting, try to assign the maximum height available to the first tower. Then, for each subsequent tower, ensure that its height is unique and does not exceed its maximum allowed height."
+    },
+    {
+      "content": "If you encounter a situation where the next tower cannot be assigned a unique height (for example, all available heights are taken), you should return -1 immediately."
+    },
+    {
+      "content": "Remember to keep track of the heights you have already assigned. A set or a boolean array can help you efficiently check for uniqueness."
+    },
+    {
+      "content": "As you assign heights, decrement from the maximum height if necessary to ensure uniqueness. For example, if the first tower can be 4, the next can be 3, and then you can assign 2 to the next tower if it allows."
+    },
+    {
+      "content": "Think about edge cases, such as when all values in `maximumHeight` are the same. How would you handle this scenario to ensure all heights remain unique?"
+    },
+    {
+      "content": "Consider the case where `maximumHeight` has only one tower. What would be the expected output in that case? Ensure your solution handles small inputs correctly."
+    },
+    {
+      "content": "Finally, once you have assigned heights to all towers, calculate the total height. Make sure to return this sum, or -1 if you couldn't assign unique heights."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= maximumHeight.length <= 10^5",
+    "Constraints: 1 <= maximumHeight[i] <= 10^9",
+    "Heights must be positive integers.",
+    "No two towers can have the same height.",
+    "Return -1 if it's not possible to assign unique heights."
+  ]
+}

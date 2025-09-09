@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem's graph representation. Each number in the array can be thought of as a node, and an edge exists between two nodes if they share a common factor greater than 1."
+    },
+    {
+      "content": "Consider how to determine if two numbers share a common factor. The greatest common divisor (GCD) can be a useful function here. If GCD(nums[i], nums[j]) > 1, then they are connected."
+    },
+    {
+      "content": "Think about how to represent the connections between nodes. You could use an adjacency list or a union-find structure to manage the connections between the numbers."
+    },
+    {
+      "content": "When constructing the graph, remember that the numbers are unique. This means no duplicate nodes will exist in your representation."
+    },
+    {
+      "content": "Consider how to efficiently find all pairs of numbers that share a common factor. A brute-force approach would involve checking each pair, but this can be optimized."
+    },
+    {
+      "content": "You may want to use a sieve-like approach to group numbers by their prime factors. This could help in efficiently connecting nodes that share common factors."
+    },
+    {
+      "content": "Think about the union-find (disjoint set) data structure. It can help you efficiently manage and merge connected components as you find common factors."
+    },
+    {
+      "content": "When using union-find, remember to implement path compression and union by rank to optimize the operations."
+    },
+    {
+      "content": "As you connect nodes, keep track of the size of each component. You'll need to find the maximum size after processing all connections."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array has only one number. In this case, the largest component size will simply be 1."
+    },
+    {
+      "content": "Think about how to handle numbers that are prime. They will only connect to other numbers that share a common multiple."
+    },
+    {
+      "content": "Remember to return the size of the largest connected component at the end of your function. This means you'll need to maintain a way to track sizes."
+    },
+    {
+      "content": "You might want to use a dictionary or array to count the sizes of each component as you perform union operations."
+    },
+    {
+      "content": "When implementing your solution, ensure that you handle all numbers in the range up to 100,000 efficiently, considering the constraints."
+    },
+    {
+      "content": "Before finalizing your implementation, review your logic for merging components and ensure that you are correctly updating sizes during union operations."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 20,000",
+    "1 <= nums[i] <= 100,000",
+    "All values in nums are unique."
+  ]
+}

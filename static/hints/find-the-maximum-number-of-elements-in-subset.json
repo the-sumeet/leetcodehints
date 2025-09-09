@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the pattern required for the subset. The selected elements must be arranged in a specific way: [x, x^2, x^4, ..., x^(k/2), x^k, x^(k/2), ..., x^4, x^2, x]. This means that for every element x, there must be corresponding powers of x present in the subset."
+    },
+    {
+      "content": "Consider how to group the elements in the array. Since the numbers are positive integers, think about how you can identify pairs of numbers where one is a power of the other. For example, if you have a number x, check if x^2, x^4, etc., are also present in the array."
+    },
+    {
+      "content": "Remember that the maximum subset can only include unique base numbers. For example, if you have multiple instances of the same number, they can only contribute once to the base of the powers. Think about how to count unique elements in your approach."
+    },
+    {
+      "content": "You might want to use a frequency map (or dictionary) to keep track of how many times each number appears in the input array. This will help you determine how many times you can use each base number when forming the subset."
+    },
+    {
+      "content": "When iterating through the numbers, for each unique number, check its powers. You can do this by multiplying the current number by itself until it exceeds the maximum number in the array. This will help you find all valid powers of that base."
+    },
+    {
+      "content": "Consider edge cases where the input array has only one unique number. In such cases, the maximum subset size will be 1, as you can only form a subset with that single number."
+    },
+    {
+      "content": "Think about how to handle duplicates in your array. If a number appears multiple times, you can only use it once as a base for the powers, but you can use its duplicates in the final arrangement of the subset."
+    },
+    {
+      "content": "As you build your subset, keep track of the maximum size found. You can do this by maintaining a variable that updates whenever you find a valid combination of base and its powers."
+    },
+    {
+      "content": "Consider how to efficiently check for the presence of powers in your frequency map. You can use a loop to check each power of the base number and see if it exists in the map, updating your count accordingly."
+    },
+    {
+      "content": "Finally, ensure that your solution accounts for the maximum subset size correctly. You should return the largest size found during your iterations through the array and its unique numbers."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^9",
+    "The output should be the maximum number of elements in a subset that follows the specified pattern.",
+    "The subset can contain duplicates of the same number but only one base for powers."
+  ]
+}

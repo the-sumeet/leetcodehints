@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'good' node is in the context of the binary tree. A node is considered good if all the values of the nodes in the path from the root to that node are less than or equal to the value of that node."
+    },
+    {
+      "content": "Consider how you would traverse the binary tree. A common approach is to use Depth-First Search (DFS) or Breadth-First Search (BFS). Think about how you can keep track of the maximum value encountered along the path to the current node."
+    },
+    {
+      "content": "While traversing the tree, you can maintain a variable to store the maximum value found so far. When you visit a node, compare its value with this maximum value to determine if it's a good node."
+    },
+    {
+      "content": "Remember that the root node is always a good node. Initialize your count of good nodes starting from 1 for the root, and then proceed to check its children."
+    },
+    {
+      "content": "When you move to a child node, update the maximum value seen so far if the current node's value is greater than the previous maximum. This ensures that you are always comparing against the correct maximum value as you go deeper into the tree."
+    },
+    {
+      "content": "Think about how you will handle null nodes in the tree. You should ensure that your traversal stops when you reach a null child, which indicates the end of a path."
+    },
+    {
+      "content": "Consider edge cases, such as a tree with only one node or a tree where all nodes have the same value. How would your function behave in these scenarios?"
+    },
+    {
+      "content": "As you implement your function, ensure that it correctly counts the number of good nodes and returns this count at the end of your traversal. You might want to return the count from the recursive function or keep a global count."
+    },
+    {
+      "content": "You can use recursion to simplify your implementation. Define a helper function that takes the current node and the maximum value seen so far as parameters."
+    },
+    {
+      "content": "Finally, make sure to test your solution against the provided examples and any additional edge cases you can think of. Pay special attention to how your solution handles large trees, as performance is a key consideration."
+    }
+  ],
+  "questionNotes": [
+    "The number of nodes in the binary tree is in the range [1, 10^5].",
+    "Each node's value is between [-10^4, 10^4].",
+    "The root node is always considered a good node.",
+    "You need to return the total count of good nodes."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two arrays: `stayScore` and `travelScore`. Each array has dimensions based on the number of days (k) and the number of cities (n). Make sure you can visualize how these arrays correlate to the tourist's choices."
+    },
+    {
+      "content": "Consider the two choices the tourist has each day: staying in the current city or moving to another city. Think about how you can represent the current state of the tourist's journey. A common approach is to use dynamic programming to keep track of the maximum points earned."
+    },
+    {
+      "content": "Define a DP table where `dp[day][city]` represents the maximum points that can be earned up to `day` if the tourist is in `city`. This will help you systematically build up the solution day by day."
+    },
+    {
+      "content": "Initialize your DP table for day 0. The points earned on the first day will be directly taken from the `stayScore` array, since the tourist can start in any city. Make sure to set `dp[0][city] = stayScore[0][city]` for all cities."
+    },
+    {
+      "content": "For each subsequent day, you need to calculate the maximum points for each city based on the previous day's scores. Remember to consider both staying in the current city and moving to another city. Use a nested loop to iterate through each city for the current day and the previous day."
+    },
+    {
+      "content": "When calculating the maximum points for moving to a different city, ensure you add the points from `travelScore` correctly. For example, if moving from `curr` to `dest`, update the DP table as follows: `dp[day][dest] = max(dp[day][dest], dp[day-1][curr] + travelScore[curr][dest])`."
+    },
+    {
+      "content": "Don't forget to include the points from `stayScore` when calculating the maximum for staying in the same city. You should update the DP table entry for staying in the same city as: `dp[day][curr] = max(dp[day][curr], dp[day-1][curr] + stayScore[day][curr])`."
+    },
+    {
+      "content": "After filling out your DP table for all days and all cities, the final answer will be the maximum value in the last row of your DP table (i.e., `dp[k-1][...]`). Make sure to check all cities for the maximum score."
+    },
+    {
+      "content": "Consider edge cases, such as when there is only one city or when `k` is 1. Ensure your code handles these scenarios correctly, as they can lead to different logic paths."
+    },
+    {
+      "content": "Finally, review the constraints carefully. Ensure your solution runs efficiently within the given limits, specifically O(n * k) time complexity, as both n and k can be as large as 200."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 200, 1 <= k <= 200",
+    "Arrays: travelScore[i][j] and stayScore[i][j] must be accessed correctly based on 0-indexing.",
+    "The tourist can start in any city on day 0.",
+    "Return the maximum points earned after exactly k days."
+  ]
+}

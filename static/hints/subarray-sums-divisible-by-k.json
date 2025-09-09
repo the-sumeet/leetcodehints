@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous part of the array. For example, in the array [1, 2, 3], the subarrays include [1], [2], [3], [1, 2], [2, 3], and [1, 2, 3]."
+    },
+    {
+      "content": "Consider how to calculate the sum of a subarray. You can do this by iterating through the array and maintaining a running sum. Pay attention to how you can efficiently calculate sums for different subarrays."
+    },
+    {
+      "content": "Think about how to check if a sum is divisible by k. You can use the modulo operator. If `sum % k == 0`, then the sum is divisible by k."
+    },
+    {
+      "content": "Instead of checking every possible subarray directly, consider using a prefix sum approach. A prefix sum allows you to calculate the sum of any subarray in constant time after an initial O(n) setup."
+    },
+    {
+      "content": "When using prefix sums, you can keep track of the cumulative sum as you iterate through the array. For each element, update the cumulative sum and check its modulo with k."
+    },
+    {
+      "content": "To efficiently count the number of valid subarrays, maintain a hashmap (or dictionary) to store the frequency of each remainder when the prefix sum is divided by k. This will help you find how many times a certain remainder has occurred."
+    },
+    {
+      "content": "Remember to handle negative numbers correctly when calculating the remainder. The result of `prefix_sum % k` can be negative, so adjust it by adding k and taking modulo k again to ensure it is non-negative."
+    },
+    {
+      "content": "As you iterate through the array, for each prefix sum, check how many times the same remainder has been seen before. Each occurrence indicates a valid subarray that ends at the current index."
+    },
+    {
+      "content": "Don't forget to initialize your hashmap with the case where the prefix sum is exactly divisible by k at the start (i.e., remainder 0). This accounts for subarrays that start from index 0."
+    },
+    {
+      "content": "Finally, implement the logic to iterate through the array, update the prefix sum and the hashmap, and keep a count of valid subarrays. Make sure to return the total count at the end."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 3 * 10^4",
+    "-10^4 <= nums[i] <= 10^4",
+    "2 <= k <= 10^4",
+    "Return the number of non-empty subarrays.",
+    "A subarray is a contiguous part of the array."
+  ]
+}

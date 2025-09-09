@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to count all square submatrices that consist entirely of 1s. A square submatrix is defined by its top-left corner and its size."
+    },
+    {
+      "content": "Consider how you can identify a square submatrix. A single cell with a value of 1 represents a square of size 1. Think about how you can build larger squares from smaller ones."
+    },
+    {
+      "content": "To count squares efficiently, you might want to use dynamic programming. Create a 2D array (let's call it `dp`) where `dp[i][j]` represents the size of the largest square submatrix with the bottom-right corner at cell `(i, j)`."
+    },
+    {
+      "content": "When filling the `dp` array, if `matrix[i][j]` is 1, the size of the square ending at that cell can be determined by the minimum of the squares ending at the left, top, and top-left cells, plus one: \n\n`dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1`."
+    },
+    {
+      "content": "Don't forget to handle the boundaries of the matrix. If you're at the first row or first column, the value of `dp[i][j]` should just be the value of `matrix[i][j]`."
+    },
+    {
+      "content": "As you fill the `dp` array, keep a running total of the squares counted. Each `dp[i][j]` value contributes to the total count of squares. For example, if `dp[i][j] = k`, it means there are `k` squares ending at `(i, j)`."
+    },
+    {
+      "content": "Make sure to consider edge cases, such as matrices filled entirely with 0s or entirely with 1s. What should your output be in these scenarios?"
+    },
+    {
+      "content": "Remember to initialize your `dp` array appropriately. If the input matrix has dimensions `m x n`, then `dp` should also be of size `m x n`."
+    },
+    {
+      "content": "After implementing the logic, test your solution with various test cases, including edge cases like a 1x1 matrix, a matrix with all zeros, and a large matrix with mixed values."
+    },
+    {
+      "content": "Finally, ensure your function returns the total count of square submatrices found. You might want to return the count as an integer after summing up all values in the `dp` array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 300, 1 <= arr[0].length <= 300, 0 <= arr[i][j] <= 1.",
+    "The output should be a single integer representing the count of square submatrices.",
+    "Be careful with indexing, especially when accessing `dp[i-1][j]`, `dp[i][j-1]`, and `dp[i-1][j-1]` to avoid out-of-bounds errors."
+  ]
+}

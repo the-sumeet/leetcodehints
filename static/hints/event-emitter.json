@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by defining the `EventEmitter` class. Remember, this class will need to manage subscriptions and emit events. Think about how you want to store the events and their corresponding callbacks."
+    },
+    {
+      "content": "Consider using an object to map event names to arrays of callback functions. This will allow you to easily access and manage multiple listeners for each event."
+    },
+    {
+      "content": "For the `subscribe` method, you need to add a callback to the array of callbacks for the specified event. Make sure to return an object that contains an `unsubscribe` method."
+    },
+    {
+      "content": "In the `unsubscribe` method, you'll want to remove a specific callback from the event's listener array. Think about how you can identify which callback to remove based on its index."
+    },
+    {
+      "content": "When implementing the `emit` method, remember to check if there are any listeners for the event. If there are none, return an empty array as specified in the problem statement."
+    },
+    {
+      "content": "For the `emit` method, if there are callbacks, you need to call each one in the order they were subscribed to. Collect the results of these calls in an array to return."
+    },
+    {
+      "content": "Don't forget that the `emit` method can take an optional array of arguments. Make sure to pass these arguments to each callback when you call them."
+    },
+    {
+      "content": "Consider edge cases, such as emitting an event that has no subscribers. Your implementation should handle this gracefully and return an empty array."
+    },
+    {
+      "content": "Make sure that your `unsubscribe` method correctly updates the list of callbacks. After removing a callback, the remaining callbacks should still be callable."
+    },
+    {
+      "content": "Finally, ensure that your methods return the correct values as specified in the problem. For example, `subscribe` should return an object with `unsubscribe`, and `emit` should return the results of the callbacks."
+    }
+  ],
+  "questionNotes": [
+    "The `subscribe` method allows multiple listeners for the same event.",
+    "The `unsubscribe` method should remove the callback based on a 0-indexed order.",
+    "The `emit` method can take an optional array of arguments to pass to callbacks.",
+    "Return an empty array from `emit` if no callbacks are subscribed to the event."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subset is. A subset of a set is any combination of its elements, including the empty set and the set itself. For example, the subsets of [1, 2] are [], [1], [2], and [1, 2]."
+    },
+    {
+      "content": "Consider the size of the input array `nums`. Since the problem states that all elements are unique, how does this affect the subsets you can generate? Remember, the number of subsets of a set with `n` elements is `2^n`."
+    },
+    {
+      "content": "Think about how you can use recursion to generate subsets. You can either include an element in the current subset or exclude it. This decision-making process can be represented as a tree structure."
+    },
+    {
+      "content": "When implementing a recursive function, you'll want to track the current subset being built. You can use a list to store this subset and add it to your results when you reach a base case."
+    },
+    {
+      "content": "Consider the base case for your recursive function. When should you stop the recursion? A common approach is to stop when you've considered all elements in `nums`."
+    },
+    {
+      "content": "As you build the subsets, ensure you make a copy of the current subset before adding it to the results. This is important to avoid modifying the same list reference in subsequent recursive calls."
+    },
+    {
+      "content": "Think about how to handle the empty subset. You should include it in your results right from the start. This can be done by initializing your results list with an empty list."
+    },
+    {
+      "content": "When you are at a particular index in `nums`, you can decide to either include the current number or not. After making this decision, you should move to the next index in the recursive call."
+    },
+    {
+      "content": "Make sure to consider edge cases, such as when `nums` has only one element. What subsets do you expect in that case? You should still generate the empty subset and the subset containing the single element."
+    },
+    {
+      "content": "Finally, put together all the pieces. Your function should start from index 0, and for each element, recursively decide to include or exclude it, building up the subsets. Remember to return the collected subsets at the end."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10",
+    "Range of elements: -10 <= nums[i] <= 10",
+    "All numbers in nums are unique.",
+    "Return format: List of lists, which is the power set including the empty set."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a perfect binary tree. Each node has two children, and all leaves are at the same level. Visualize how levels are defined: level 0 is the root, level 1 is the children of the root, and so on."
+    },
+    {
+      "content": "To solve the problem, you'll need to traverse the tree and identify which nodes are at odd levels. Consider using a breadth-first search (BFS) approach to easily track the current level of each node."
+    },
+    {
+      "content": "As you traverse the tree, collect the values of nodes at odd levels into a list. For example, if you encounter nodes with values 3 and 5 at level 1, store them in a temporary list."
+    },
+    {
+      "content": "Once you have collected the values from the odd levels, reverse this list. This will allow you to prepare for placing these values back into the tree in the correct order."
+    },
+    {
+      "content": "After reversing the values, you will need to traverse the tree again, this time replacing the node values at the odd levels with the reversed values. Keep track of your position in the reversed list."
+    },
+    {
+      "content": "Remember to handle the case where there are no odd levels in the tree. A perfect binary tree with only one level (just the root) will not have any odd levels to reverse."
+    },
+    {
+      "content": "Consider edge cases where the tree may have only one node or where all values are the same. How will your solution handle these scenarios?"
+    },
+    {
+      "content": "When implementing your solution, ensure that you maintain the structure of the tree while only changing the values at the odd levels. You might want to use a queue for BFS to keep track of nodes and their levels."
+    },
+    {
+      "content": "As you replace the values in the tree, make sure you are correctly indexing into the reversed list. This will require careful management of your index as you traverse the tree."
+    },
+    {
+      "content": "Finally, ensure that your function returns the root of the modified tree. The return type should match the expected format, which is the root node of the binary tree after the modifications."
+    }
+  ],
+  "questionNotes": [
+    "A perfect binary tree has all parent nodes with two children and all leaves at the same level.",
+    "Node levels start from 0 for the root, 1 for its children, and so on.",
+    "The number of nodes in the tree is in the range [1, 2^14].",
+    "Node values are between 0 and 100,000.",
+    "Return the root of the modified tree after reversing values at odd levels."
+  ]
+}

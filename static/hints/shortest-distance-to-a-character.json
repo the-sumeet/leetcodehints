@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find the distance from each index in the string to the nearest occurrence of a specific character. Make sure you know how to calculate the distance using the absolute value function."
+    },
+    {
+      "content": "Consider how you might traverse the string. You will likely need to examine each character in the string to determine its distance to the target character. Think about how you can keep track of the positions of the character 'c' as you iterate."
+    },
+    {
+      "content": "Think about how to efficiently store the indices of the character 'c' in the string. You could use a list to hold these indices, which will help you calculate distances later."
+    },
+    {
+      "content": "As you calculate distances, remember that the distance for each index will depend on the closest occurrence of 'c'. You might want to calculate distances in two passes: one from left to right and another from right to left."
+    },
+    {
+      "content": "When you traverse the string from left to right, keep track of the last seen index of 'c'. For each index, you can compute the distance to this last seen index."
+    },
+    {
+      "content": "Similarly, when you traverse from right to left, you can update the distances based on the closest occurrence of 'c' found in that direction. This way, you ensure that you capture the minimum distance."
+    },
+    {
+      "content": "Make sure to initialize your answer array properly. Each entry should start with a large value (like infinity) to ensure that any calculated distance will be smaller."
+    },
+    {
+      "content": "Consider edge cases, such as when 'c' is at the very beginning or end of the string. How will your distance calculations handle these scenarios?"
+    },
+    {
+      "content": "Remember that the output should be an array of integers, where each integer corresponds to the distance for the respective index in the string. Ensure your final output matches the expected format."
+    },
+    {
+      "content": "As a final step, ensure that your solution is efficient. The problem constraints allow for a string length of up to 10^4, so aim for a solution that runs in linear time, O(n). You might want to analyze the time complexity of your approach."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^4; s[i] and c are lowercase English letters.",
+    "It is guaranteed that c occurs at least once in s.",
+    "Return an array of integers where answer[i] is the distance from index i to the closest occurrence of character c.",
+    "The distance is defined as abs(i - j), where abs is the absolute value function."
+  ]
+}

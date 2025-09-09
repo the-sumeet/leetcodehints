@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to create folder names based on the input array, ensuring that each name is unique. If a name has already been used, you must append a suffix in the form of (k) to make it unique."
+    },
+    {
+      "content": "Consider using a data structure to keep track of the folder names you've already created. A set or a dictionary can be useful here, as they allow for fast lookups to check if a name already exists."
+    },
+    {
+      "content": "When you encounter a name that has already been used, you need to find the smallest integer k such that the new name 'name(k)' is unique. Think about how you can systematically increment k until you find a valid name."
+    },
+    {
+      "content": "Remember that the suffix (k) should be added only when necessary. If a name is unique, you should simply add it to your result without any modifications."
+    },
+    {
+      "content": "Pay attention to how you generate the new names with the suffix. For example, if 'gta' is taken, the next name should be 'gta(1)', then 'gta(2)', and so on. Make sure to keep track of how many times you've appended a suffix to each base name."
+    },
+    {
+      "content": "Consider edge cases where the input names might already include suffixes like (1), (2), etc. You need to differentiate between the base name and its suffixed versions to avoid conflicts."
+    },
+    {
+      "content": "You may want to use a loop to check for existing names and increment k. Be cautious with how you format the new names, ensuring you’re appending the suffix correctly."
+    },
+    {
+      "content": "Think about the return format. You need to return an array of strings that represent the actual names assigned to each folder in the order they were created. Make sure your solution constructs this output correctly."
+    },
+    {
+      "content": "As you implement your solution, test it with various inputs to ensure it handles all scenarios, including cases where multiple folders have the same base name and require different suffixes."
+    },
+    {
+      "content": "To finalize your approach, consider how you will handle the logic for checking existing names and generating new ones. You might end up with a structure that looks like this: \n\n```python\nif name not in created_names:\n    created_names.add(name)\nelse:\n    k = 1\n    while f'{name}({k})' in created_names:\n        k += 1\n    created_names.add(f'{name}({k})')\n```"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= names.length <= 5 * 10^4",
+    "Each name is at most 20 characters long.",
+    "Names consist of lowercase letters, digits, and round brackets.",
+    "You must return an array of the actual folder names assigned.",
+    "Ensure uniqueness for each folder name, including those with suffixes."
+  ]
+}

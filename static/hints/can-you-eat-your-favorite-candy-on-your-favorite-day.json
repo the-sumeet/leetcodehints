@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You can only eat candies of type `i` if you have finished all candies of type `i-1`. This means you need to track how many candies you've eaten of each type."
+    },
+    {
+      "content": "Consider how the daily cap affects your candy consumption. You must eat at least one candy each day, but you cannot exceed the `dailyCap`. Think about how this impacts the number of days it takes to finish each type of candy."
+    },
+    {
+      "content": "For each query, determine the total number of candies you need to eat before you can reach the favorite type. This includes all candies from type 0 up to the favorite type `favoriteType[i]`."
+    },
+    {
+      "content": "Calculate the total days required to eat all candies of types 0 to `favoriteType[i]`. This can be done by summing the candies of each type and dividing by the `dailyCap`, rounding up as needed."
+    },
+    {
+      "content": "Remember that you must eat at least one candy per day. If you have `n` candies of a type and a `dailyCap` of `k`, the minimum days to finish that type is `ceil(n / k)`."
+    },
+    {
+      "content": "When checking if you can eat a candy of `favoriteType[i]` on `favoriteDay[i]`, ensure that the total days calculated to reach that type does not exceed `favoriteDay[i]`. This means you need to check if the days required are less than or equal to `favoriteDay[i]`."
+    },
+    {
+      "content": "Consider edge cases where `favoriteDay` is very large compared to the total number of candies. You might be able to eat candies of your favorite type even if it's far in the future, depending on your daily cap."
+    },
+    {
+      "content": "Make sure to handle the case where `dailyCap` is larger than the total candies available. If the cap allows you to finish all candies in fewer days than `favoriteDay[i]`, it might still be possible to eat the favorite candy on that day."
+    },
+    {
+      "content": "As you implement your solution, keep track of the total number of candies eaten until the day of interest. This will help you determine if you can eat the favorite candy on that specific day without exceeding the daily limit."
+    },
+    {
+      "content": "Finally, consider how to structure your answer array. For each query, append `true` or `false` based on whether the conditions are met for that query. Ensure that your logic is efficient enough to handle the upper limits of the constraints."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= candiesCount.length <= 10^5",
+    "1 <= candiesCount[i] <= 10^5",
+    "1 <= queries.length <= 10^5",
+    "0 <= favoriteType[i] < candiesCount.length",
+    "0 <= favoriteDay[i] <= 10^9",
+    "1 <= dailyCap[i] <= 10^9",
+    "Return a boolean array where each element corresponds to a query."
+  ]
+}

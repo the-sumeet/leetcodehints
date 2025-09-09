@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the problem. You have a graph represented by intersections and roads, where each road has a travel time. Think about how you can represent this graph in code, possibly using an adjacency list."
+    },
+    {
+      "content": "Consider using Dijkstra's algorithm to find the shortest path from intersection 0 to intersection n-1. This algorithm is suitable because it efficiently finds the shortest paths in graphs with non-negative weights."
+    },
+    {
+      "content": "As you implement Dijkstra's algorithm, keep track of the shortest time to reach each intersection. You can use a priority queue to always expand the least costly node first."
+    },
+    {
+      "content": "In addition to tracking the shortest time, you also need to count the number of ways to reach each intersection. You can maintain a separate array that counts the number of ways to reach each node."
+    },
+    {
+      "content": "When updating the shortest time for a neighbor node, you need to also update the count of ways. If you find a shorter path to a node, reset its count. If you find another path with the same shortest time, add to the count."
+    },
+    {
+      "content": "Don't forget to handle the modulo operation as specified in the problem. Since the answer can be large, ensure you take results modulo 10^9 + 7 whenever you update the count of ways."
+    },
+    {
+      "content": "Pay attention to the constraints provided, especially the maximum number of intersections (n) and roads. This will help you determine the efficiency of your solution."
+    },
+    {
+      "content": "Consider edge cases, such as when there are only two intersections or when all roads have the same travel time. How would your algorithm handle these scenarios?"
+    },
+    {
+      "content": "Make sure to initialize your distance array and count array properly. The distance to the starting intersection (0) should be 0, and the count of ways to reach it should be 1."
+    },
+    {
+      "content": "After finishing Dijkstra's algorithm, the answer to the problem will be the count of ways to reach intersection n-1. Ensure you return this count modulo 10^9 + 7."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 200, n - 1 <= roads.length <= n * (n - 1) / 2",
+    "Each road is bi-directional and has a unique time associated with it.",
+    "You must return the number of ways modulo 10^9 + 7.",
+    "You can reach any intersection from any other intersection, which implies the graph is connected."
+  ]
+}

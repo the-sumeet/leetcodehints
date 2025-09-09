@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operations allowed: you can either add the current x to y or y to x. This means that from any point (x, y), you can generate new points that are either (x, x+y) or (x+y, y)."
+    },
+    {
+      "content": "Consider the relationship between the starting point (sx, sy) and the target point (tx, ty). Think about how you can reach (tx, ty) from (sx, sy) using the allowed operations."
+    },
+    {
+      "content": "Notice that both operations increase the sum of the coordinates. This implies that if you can reach (tx, ty) from (sx, sy), then tx and ty must be greater than or equal to sx and sy respectively."
+    },
+    {
+      "content": "If you can reach (tx, ty) from (sx, sy), the coordinates must satisfy the condition: tx >= sx and ty >= sy. If either of these conditions is false, you can immediately return false."
+    },
+    {
+      "content": "Think about how you can reverse the operations. Instead of trying to move from (sx, sy) to (tx, ty), consider how you could move from (tx, ty) back to (sx, sy)."
+    },
+    {
+      "content": "When reversing, if tx > ty, you can subtract ty from tx. This operation is the reverse of (x+y, y) and helps you trace back towards (sx, sy)."
+    },
+    {
+      "content": "Similarly, if ty > tx, you can subtract tx from ty. This means you can reduce the larger coordinate until it matches the smaller one or goes below sx or sy."
+    },
+    {
+      "content": "You should continue this process until either you reach (sx, sy) or one of the coordinates goes below its starting value. If you reach (sx, sy), return true."
+    },
+    {
+      "content": "Pay attention to the case where tx equals sx and ty equals sy. In this case, you should return true immediately since you are already at the target."
+    },
+    {
+      "content": "Consider what happens when both tx and ty are equal to sx and sy. This is a special case where no operations are needed, and you should return true."
+    },
+    {
+      "content": "When subtracting, if at any point tx or ty becomes less than sx or sy, you should return false since you cannot go back up to sx or sy."
+    },
+    {
+      "content": "Think about edge cases where sx and sy are equal, and tx and ty are much larger. How will the operations affect the ability to reach the target?"
+    },
+    {
+      "content": "As you work through the problem, maintain a loop or recursion to keep subtracting the smaller coordinate from the larger one until you reach the base case."
+    },
+    {
+      "content": "Finally, ensure that your solution handles the constraints efficiently, especially given the upper limits of 10^9 for the coordinates."
+    },
+    {
+      "content": "To summarize, the key is to iteratively reduce the target coordinates by subtracting the smaller from the larger until you either match (sx, sy) or go below it."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= sx, sy, tx, ty <= 10^9",
+    "Return format: Boolean (true or false)",
+    "Operations: (x, y) can become (x, x+y) or (x+y, y)",
+    "Both tx and ty must be greater than or equal to sx and sy to even consider reaching the target."
+  ]
+}

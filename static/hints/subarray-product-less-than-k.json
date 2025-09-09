@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous part of an array. For example, in the array [10, 5, 2, 6], the subarrays include [10], [5], [10, 5], and so on."
+    },
+    {
+      "content": "Think about how you can calculate the product of elements in a subarray. You might want to use a nested loop to generate all possible subarrays and calculate their products, but consider the efficiency of this approach."
+    },
+    {
+      "content": "Notice that the problem asks for the product to be strictly less than k. What happens when k is less than or equal to 1? How would that affect the possible subarrays?"
+    },
+    {
+      "content": "Instead of using a nested loop to generate subarrays, consider using a sliding window technique. This allows you to maintain a window of elements and adjust its size dynamically based on the product."
+    },
+    {
+      "content": "As you implement the sliding window, keep track of the current product of the elements in the window. If the product exceeds or equals k, you will need to shrink the window from the left."
+    },
+    {
+      "content": "When you find a valid window (where the product is less than k), all subarrays that end at the right pointer and start anywhere from the left pointer to the right pointer are valid. How can you calculate the number of these subarrays?"
+    },
+    {
+      "content": "Consider edge cases, such as when the input array is empty or when k is very small (like 0). How would these cases affect your implementation?"
+    },
+    {
+      "content": "Make sure to handle large values of k and the constraints on the size of the input array. Think about how your solution will perform with the upper limits of the input size."
+    },
+    {
+      "content": "As you implement your solution, remember to initialize your variables correctly. You will need variables for the product, left pointer, and a count of valid subarrays."
+    },
+    {
+      "content": "Finally, think about how to return the count of valid subarrays. You will need to ensure that you are counting correctly as you adjust the window size and product."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 3 * 10^4",
+    "1 <= nums[i] <= 1000",
+    "0 <= k <= 10^6",
+    "Return the count of contiguous subarrays with a product less than k."
+  ]
+}

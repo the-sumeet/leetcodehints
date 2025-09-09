@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic structure of the problem. You have `n` dice, each with `k` faces, and you want to find combinations that sum up to a specific `target`. Think about how many outcomes there are when rolling `n` dice."
+    },
+    {
+      "content": "Consider how to represent the possible outcomes. Each die can land on any number from 1 to `k`. For example, with one die, the possible outcomes are simply the numbers 1 through `k`."
+    },
+    {
+      "content": "Think about the total number of ways to roll `n` dice. It is `k^n`. This is important because it gives you the total sample space from which you will derive your valid outcomes."
+    },
+    {
+      "content": "To count the valid combinations that sum to `target`, you might want to use a dynamic programming approach. Define a 2D array `dp` where `dp[i][j]` represents the number of ways to roll `i` dice to get a sum of `j`."
+    },
+    {
+      "content": "Initialize your DP array. Start with `dp[0][0] = 1`, meaning there is one way to roll zero dice to achieve a sum of zero. All other sums with zero dice should be initialized to zero."
+    },
+    {
+      "content": "Think about how to fill in the DP table. For each die and each possible sum, consider all the possible outcomes of the current die. You can iterate through each face value of the die and add the number of ways from the previous dice."
+    },
+    {
+      "content": "When filling the DP table, ensure you only consider valid sums. For each die, when calculating the sum, you should only add the outcomes from previous sums that are valid (i.e., non-negative)."
+    },
+    {
+      "content": "Remember to apply the modulo operation as specified in the problem. Since results can be large, every time you update your DP table, take the result modulo `10^9 + 7`."
+    },
+    {
+      "content": "Consider edge cases, such as when the target is less than `n` or greater than `n * k`. In these cases, the result should be zero because it's impossible to achieve those sums."
+    },
+    {
+      "content": "Finally, after building the DP table, the answer will be found in `dp[n][target]`. This gives you the number of ways to roll `n` dice to achieve the `target` sum."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n, k <= 30; 1 <= target <= 1000.",
+    "Return the result modulo 10^9 + 7.",
+    "Ensure to handle edge cases where target is less than n or greater than n*k."
+  ]
+}

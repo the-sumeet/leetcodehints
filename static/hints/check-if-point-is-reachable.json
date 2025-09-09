@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the moves you can make from any point (x, y). You can move to (x, y - x), (x - y, y), (2 * x, y), or (x, 2 * y). Each of these moves changes the coordinates in specific ways."
+    },
+    {
+      "content": "Consider the implications of each move. For example, moving to (x, y - x) will decrease the y-coordinate, while (2 * x, y) will increase the x-coordinate significantly. Think about how these moves affect the parity (odd/even nature) of the coordinates."
+    },
+    {
+      "content": "What happens to the coordinates if you apply the moves repeatedly? Can you derive a pattern or a set of reachable coordinates from (1, 1)? This might give you insight into which coordinates are reachable."
+    },
+    {
+      "content": "Notice that the initial point (1, 1) has both coordinates as odd numbers. Explore how the parity of the coordinates changes with each move. Does it remain consistent or change?"
+    },
+    {
+      "content": "Try to derive a relationship between the target coordinates (targetX, targetY) and the starting point (1, 1). Specifically, think about the greatest common divisor (GCD) of the coordinates and how it might relate to the moves you can make."
+    },
+    {
+      "content": "Consider using the GCD of the target coordinates. If you can reach (targetX, targetY), what can you say about the GCD of these coordinates compared to the GCD of (1, 1)?"
+    },
+    {
+      "content": "If you can reach (targetX, targetY), what must be true about the GCD of these coordinates? Specifically, how does the GCD relate to the possible moves you can make from (1, 1)?"
+    },
+    {
+      "content": "Think about the base case: can you reach (1, 1) from any (targetX, targetY)? If not, what are the conditions that must be satisfied for a point to be reachable?"
+    },
+    {
+      "content": "As you analyze the moves, consider the effect of each operation on the GCD. For example, moving to (x - y, y) will affect the GCD of the coordinates. How can you express this mathematically?"
+    },
+    {
+      "content": "Explore the idea of reversing the moves. Instead of trying to reach (targetX, targetY), consider how you could reduce (targetX, targetY) back to (1, 1) using the inverse of the allowed moves."
+    },
+    {
+      "content": "When reducing (targetX, targetY), what conditions must hold true for the coordinates to remain valid? Consider the implications of each operation on the coordinates."
+    },
+    {
+      "content": "If you reach a point where one of the coordinates is less than or equal to zero, what does that mean for the validity of your path? Ensure you stay within the bounds of the grid."
+    },
+    {
+      "content": "Try to create a loop or recursive function that attempts to reduce (targetX, targetY) back to (1, 1) using the inverse operations. What base case will you use to stop the recursion?"
+    },
+    {
+      "content": "Before finalizing your approach, consider edge cases where either targetX or targetY is very large. How does this affect your method of checking reachability?"
+    },
+    {
+      "content": "Finally, ensure your solution efficiently checks for reachability without excessive computation. You might want to consider a mathematical approach or a while loop that reduces the coordinates step by step."
+    }
+  ],
+  "questionNotes": [
+    "You start at (1, 1) and can only move to defined points.",
+    "The moves can increase or decrease coordinates significantly.",
+    "The constraints are 1 <= targetX, targetY <= 10^9.",
+    "Consider the parity of coordinates and the GCD relationship.",
+    "Ensure to check for edge cases where coordinates might lead to negative values."
+  ]
+}

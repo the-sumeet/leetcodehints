@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the shifting operation works. Each element in the grid moves to the right, and when it reaches the end of a row, it wraps around to the beginning of the next row."
+    },
+    {
+      "content": "Consider how many total elements are in the grid. The grid has m rows and n columns, so the total number of elements is m * n. This can help you understand how shifting works across rows."
+    },
+    {
+      "content": "Notice that shifting the grid k times is equivalent to shifting it k % (m * n) times. This is because after m * n shifts, the grid returns to its original configuration."
+    },
+    {
+      "content": "To implement the shifting, think about how you can represent the grid as a single list. You can flatten the 2D grid into a 1D list, perform the shifts, and then convert it back to a 2D grid."
+    },
+    {
+      "content": "When flattening the grid, you can use a nested loop: iterate over each row and then each column to collect elements into a single list."
+    },
+    {
+      "content": "After flattening, you can calculate the new starting index for the shifted list. This can be done using the formula: new_start = (total_elements - k) % total_elements."
+    },
+    {
+      "content": "Once you have the new starting index, you can create the new 1D list by slicing the original list from the new start index to the end, and then from the beginning to the new start index."
+    },
+    {
+      "content": "Finally, to convert the 1D list back into a 2D grid, you will need to iterate over the new list and fill in the grid row by row."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when k is 0, where the grid should remain unchanged, or when k is a multiple of the total number of elements."
+    },
+    {
+      "content": "As a final step, remember to return the newly formed 2D grid in the correct format. Ensure that your output matches the expected structure."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == grid.length, n == grid[i].length",
+    "1 <= m <= 50, 1 <= n <= 50",
+    "-1000 <= grid[i][j] <= 1000",
+    "0 <= k <= 100",
+    "Shifts wrap around from the end of one row to the beginning of the next."
+  ]
+}

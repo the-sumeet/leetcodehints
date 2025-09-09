@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the problem. You have two sorted arrays, `nums1` and `nums2`, and you can traverse them while switching paths at common elements. Think about how you can traverse these arrays efficiently."
+    },
+    {
+      "content": "Since both arrays are sorted, consider how you can take advantage of this property. You might want to use two pointers to traverse both arrays simultaneously."
+    },
+    {
+      "content": "Identify the common elements between `nums1` and `nums2`. These elements are crucial because they define where you can switch paths. You can use a set to store the elements of one array for quick lookup."
+    },
+    {
+      "content": "As you traverse the arrays, maintain a running sum of the unique elements you've encountered. This will help you calculate the score for each valid path."
+    },
+    {
+      "content": "When you encounter a common element, you have a choice: continue in the same array or switch to the other array. Think about how to keep track of the maximum score at each of these switch points."
+    },
+    {
+      "content": "Consider using a variable to keep track of the last maximum score you obtained before switching paths. This will help you decide the best score to carry forward when you switch."
+    },
+    {
+      "content": "Don't forget to handle the case where there are no common elements. In such cases, the maximum score will simply be the sum of all elements in the array with the larger sum."
+    },
+    {
+      "content": "Make sure to take the modulo of the result with `10^9 + 7` as specified in the problem statement. This is important to prevent overflow and meet the problem's requirements."
+    },
+    {
+      "content": "Think about edge cases, such as when one of the arrays is much longer than the other. How will this affect your traversal and the scores you calculate?"
+    },
+    {
+      "content": "When implementing your solution, ensure that you only count each unique element once. This is key to calculating the correct score for your paths."
+    },
+    {
+      "content": "You may want to create a helper function to calculate the score for a given array segment. This can help keep your code organized and easier to debug."
+    },
+    {
+      "content": "As you build your solution, test it with the provided examples to ensure it behaves as expected. Pay attention to the output format and ensure it matches the requirements."
+    },
+    {
+      "content": "Consider how you will handle the traversal logic. You might need a loop that continues until you reach the end of both arrays, checking for common elements along the way."
+    },
+    {
+      "content": "When you switch arrays, make sure to carry over the maximum score from the previous array. This will ensure that you are always maximizing your score."
+    },
+    {
+      "content": "Finally, think about how to structure your final return statement. You should return the maximum score modulo `10^9 + 7`, as specified in the problem."
+    }
+  ],
+  "questionNotes": [
+    "Arrays nums1 and nums2 are sorted and contain distinct integers.",
+    "You can switch paths at common elements, but only once per element.",
+    "The score is the sum of unique values in the path.",
+    "Return the result modulo 10^9 + 7.",
+    "Constraints: 1 <= nums1.length, nums2.length <= 10^5; 1 <= nums1[i], nums2[i] <= 10^7."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the robot's movements. The robot can move in four directions: left, right, up, and down. Each movement has an associated cost based on the row or column it moves into."
+    },
+    {
+      "content": "Consider the starting and home positions. If the robot is already at its home position, what would the total cost be? Think about how to handle this edge case."
+    },
+    {
+      "content": "Think about how to calculate the cost for each move. For a move to a new row, you will need to add the cost from the rowCosts array, and for a move to a new column, you will add the cost from the colCosts array."
+    },
+    {
+      "content": "You will need to determine the direction and number of steps required to move from the start position to the home position. This involves calculating the differences in the row and column indices."
+    },
+    {
+      "content": "Break down the movement into two parts: vertical (up/down) and horizontal (left/right). Calculate the total cost for each part separately before summing them up."
+    },
+    {
+      "content": "When moving vertically, iterate from the starting row to the home row. For each row you move into, add the corresponding row cost to a total cost variable."
+    },
+    {
+      "content": "Similarly, for horizontal movement, iterate from the starting column to the home column. Add the corresponding column costs for each column you move into."
+    },
+    {
+      "content": "Be careful with the direction of movement. If you need to move up, you will iterate downwards in your loop. If you need to move down, iterate upwards."
+    },
+    {
+      "content": "Make sure to handle the case where the robot needs to move in both dimensions. You might want to calculate the costs for vertical and horizontal movements in separate functions for clarity."
+    },
+    {
+      "content": "Finally, combine the costs from both vertical and horizontal movements to get the total minimum cost for the robot to return home. Ensure that your loops correctly account for the inclusive nature of the moves."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == rowCosts.length, n == colCosts.length",
+    "1 <= m, n <= 10^5",
+    "0 <= rowCosts[r], colCosts[c] <= 10^4",
+    "startPos.length == 2, homePos.length == 2",
+    "0 <= start row, home row < m, 0 <= start col, home col < n",
+    "Return the total cost as an integer."
+  ]
+}

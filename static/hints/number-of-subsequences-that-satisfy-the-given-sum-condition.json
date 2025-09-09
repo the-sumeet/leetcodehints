@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence can be derived from the original array by deleting some elements without changing the order of the remaining elements. For example, from [3, 5, 6, 7], [3, 6] is a valid subsequence."
+    },
+    {
+      "content": "Think about the properties of the minimum and maximum elements in a subsequence. The key condition is that the sum of the minimum and maximum elements must be less than or equal to the target. This means you need to identify pairs of elements in the array that satisfy this condition."
+    },
+    {
+      "content": "Consider sorting the array first. Sorting can help you efficiently find the minimum and maximum values in potential subsequences. After sorting, the smallest element will be at the beginning and the largest at the end."
+    },
+    {
+      "content": "Once the array is sorted, you can use a two-pointer technique. One pointer can start from the beginning (min) and the other from the end (max) of the sorted array. Adjust the pointers based on the sum of the elements they point to."
+    },
+    {
+      "content": "When the sum of the elements at the two pointers is less than or equal to the target, all subsequences formed by the elements between these two pointers are valid. Calculate the number of such subsequences using the formula 2^(count) where count is the number of elements between the two pointers."
+    },
+    {
+      "content": "If the sum exceeds the target, move the max pointer left to try and reduce the sum. This way, you can explore smaller maximum values while keeping the minimum fixed."
+    },
+    {
+      "content": "Remember to handle duplicates in the array correctly. If there are repeated numbers, the count of valid subsequences will increase significantly. Make sure to calculate the number of ways to choose elements properly."
+    },
+    {
+      "content": "Consider how to handle large numbers. Since the result can be very large, you will need to return the answer modulo 10^9 + 7. This means applying the modulo operation at appropriate steps in your calculations."
+    },
+    {
+      "content": "Think about edge cases, such as when the array has only one element or when all elements are the same. How would these cases affect the number of valid subsequences?"
+    },
+    {
+      "content": "Finally, put together your approach: Sort the array, use two pointers to find valid min-max pairs, calculate the number of valid subsequences for each pair, and sum these counts while applying the modulo operation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^6",
+    "Constraints: 1 <= target <= 10^6",
+    "Return the result modulo 10^9 + 7.",
+    "Subsequences must be non-empty.",
+    "The array can contain duplicate numbers."
+  ]
+}

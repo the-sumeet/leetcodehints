@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a linked list. Each node has a value and a pointer to the next node. You will need to traverse this list to split it into parts."
+    },
+    {
+      "content": "Consider how to determine the size of each part. If there are `n` nodes and you need to split them into `k` parts, calculate the base size as `n // k` and the remainder as `n % k`."
+    },
+    {
+      "content": "Remember that some parts may be `null`. If `n` is less than `k`, you will have some empty parts. Think about how to handle these cases when constructing your output."
+    },
+    {
+      "content": "As you traverse the linked list, keep track of how many nodes you have processed. Use this count to determine when to split the list into a new part."
+    },
+    {
+      "content": "When creating each part, ensure that you correctly link the last node of the current part to `null`. This maintains the integrity of the linked list structure."
+    },
+    {
+      "content": "Think about edge cases, such as when the linked list is empty (`head` is `null`). How will you represent this in your output when `k` is greater than zero?"
+    },
+    {
+      "content": "Consider using a loop to iterate through the linked list and a counter to keep track of how many parts you have created. Stop when you reach `k` parts or the end of the list."
+    },
+    {
+      "content": "You can use a list to store the parts as you create them. Each time you create a part, append it to this list. Make sure to handle the case where you have fewer nodes than `k`."
+    },
+    {
+      "content": "When returning the result, ensure that the output is in the correct format: an array of linked list parts. Each part should be represented as a ListNode, even if it is `null`."
+    },
+    {
+      "content": "Finally, think about how to implement the logic for splitting the list. You might want to use a nested loop: the outer loop for parts and the inner loop for nodes in each part. Ensure you account for the size of each part based on the previously calculated sizes."
+    }
+  ],
+  "questionNotes": [
+    "The number of nodes in the list is in the range [0, 1000].",
+    "0 <= Node.val <= 1000.",
+    "1 <= k <= 50.",
+    "Parts should be in the order of occurrence in the input list.",
+    "Parts occurring earlier should have a size greater than or equal to parts occurring later.",
+    "Return an array of the k parts, where parts can be null."
+  ]
+}

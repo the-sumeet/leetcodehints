@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. The ship can only carry a limited number of boxes and a maximum weight. Make sure to keep track of both limits as you process the boxes."
+    },
+    {
+      "content": "Consider how to group boxes for delivery. You cannot deliver boxes out of order, so think about how to maximize the number of boxes delivered in one trip without exceeding the limits."
+    },
+    {
+      "content": "Remember that the ship must return to storage after delivering boxes. This means every trip consists of going to the port and coming back, which counts as two trips in total."
+    },
+    {
+      "content": "You can use a greedy approach to determine how many boxes to take on each trip. Start from the beginning of the list and keep adding boxes until you hit either the maxBoxes or maxWeight limit."
+    },
+    {
+      "content": "Keep track of the current weight and number of boxes as you iterate through the list. If adding a new box exceeds either limit, you need to finalize the current trip."
+    },
+    {
+      "content": "After deciding which boxes to take, note the port of the first box in the current trip. This will be the destination for that trip."
+    },
+    {
+      "content": "For each trip, if the ship is already at the correct port for the box being delivered, you can skip the trip to that port. This can save trips if the same port is visited multiple times in a row."
+    },
+    {
+      "content": "Think about how to efficiently calculate the number of trips needed. Each trip to a port and back counts as two trips, except when the ship is already at the port."
+    },
+    {
+      "content": "Consider edge cases, such as when there is only one box or when all boxes are destined for the same port. How would your logic change in these scenarios?"
+    },
+    {
+      "content": "Make sure to handle the case where no boxes can be taken due to weight or box limits. The algorithm should still account for trips made even if no boxes are delivered."
+    },
+    {
+      "content": "As you iterate through the boxes, keep a count of the total trips made. Each time you finalize a trip, increment your trip counter appropriately."
+    },
+    {
+      "content": "If you reach the end of the boxes list, ensure that the ship returns to storage. This final return trip must be counted in the total number of trips."
+    },
+    {
+      "content": "You may want to use a while loop to process the boxes until all are delivered. Inside the loop, keep track of the current index and adjust it based on how many boxes were taken."
+    },
+    {
+      "content": "When implementing your solution, consider using a helper function to calculate the trips for a given set of boxes. This can help keep your main function clean and organized."
+    },
+    {
+      "content": "Your final implementation should return the total number of trips as an integer. Make sure to test your solution with various edge cases to ensure its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= boxes.length <= 10^5, 1 <= portsCount, maxBoxes, maxWeight <= 10^5, 1 <= ports[i] <= portsCount, 1 <= weights[i] <= maxWeight.",
+    "The boxes must be delivered in the order they are given.",
+    "The ship must end at storage after all boxes have been delivered."
+  ]
+}

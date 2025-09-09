@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. Each cell can either contain gold (a positive integer) or be empty (0). You can only collect gold from cells that are not empty."
+    },
+    {
+      "content": "Remember that you can start collecting gold from any cell that contains gold. This means you need to explore all potential starting points in the grid."
+    },
+    {
+      "content": "Think about how you can traverse the grid. You can move in four directions: left, right, up, or down. Ensure that you keep track of the cells you have already visited to avoid counting gold multiple times."
+    },
+    {
+      "content": "Consider using Depth-First Search (DFS) or backtracking to explore paths. This will allow you to explore all possible routes from each starting position."
+    },
+    {
+      "content": "As you traverse, maintain a running total of the gold collected. When you reach a cell with no further moves (either because it's empty or already visited), compare the total collected with a maximum value to keep track of the highest amount of gold collected."
+    },
+    {
+      "content": "Be mindful of the constraints: the grid can be at most 15x15, which means your algorithm should be efficient but doesn't need to be overly complex due to the limited size."
+    },
+    {
+      "content": "When implementing your DFS, consider marking cells as visited by changing their value temporarily or using a separate structure to keep track of visited cells."
+    },
+    {
+      "content": "After exploring all paths from a starting cell, you'll want to backtrack properly to ensure you can explore other potential paths from different starting cells."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as grids that contain only zeros or grids that have gold in isolated cells. These cases should still return a valid maximum gold count, which might be 0."
+    },
+    {
+      "content": "Finally, ensure your function returns the maximum gold collected after exploring all starting positions. You might want to initialize a variable to track the overall maximum before starting your DFS."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == grid.length, n == grid[i].length, 1 <= m, n <= 15, 0 <= grid[i][j] <= 100.",
+    "There are at most 25 cells containing gold.",
+    "You cannot revisit the same cell during a single path traversal.",
+    "You can start and stop collecting gold from any position with gold."
+  ]
+}

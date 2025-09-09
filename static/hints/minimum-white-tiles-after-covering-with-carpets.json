@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by analyzing the input string `floor`. Identify the positions of the white tiles ('1') since these are the tiles you want to cover with carpets."
+    },
+    {
+      "content": "Count the total number of white tiles in the `floor`. This will give you a baseline for how many tiles you need to cover."
+    },
+    {
+      "content": "Consider how the carpets can overlap. Each carpet can cover a range of tiles, and overlapping can help minimize the visible white tiles."
+    },
+    {
+      "content": "Think about a sliding window approach. You could slide a window of size `carpetLen` across the `floor` to see how many white tiles can be covered at each position."
+    },
+    {
+      "content": "Create a prefix sum array to efficiently calculate the number of white tiles in any segment of the floor. This will help you quickly determine how many tiles a carpet can cover."
+    },
+    {
+      "content": "Remember that you have `numCarpets` available. You need to choose the best positions for these carpets to maximize the coverage of white tiles."
+    },
+    {
+      "content": "Consider edge cases where `numCarpets` is greater than or equal to the total number of white tiles. In such cases, the answer would be 0."
+    },
+    {
+      "content": "When placing carpets, think about the starting positions. Each carpet can start at any tile, but you need to ensure it stays within the bounds of the `floor`."
+    },
+    {
+      "content": "If you cover a segment with a carpet, the next carpet can be placed either on the same segment or further along the `floor`. Consider both options."
+    },
+    {
+      "content": "As you evaluate different placements of carpets, keep track of the maximum number of white tiles that can be covered. This will help you calculate the minimum visible white tiles."
+    },
+    {
+      "content": "Use a greedy approach to select the segments that cover the most white tiles first. This strategy can lead to a more optimal solution."
+    },
+    {
+      "content": "Make sure to handle cases where carpets can overlap effectively. Overlapping can sometimes lead to a better overall coverage."
+    },
+    {
+      "content": "While iterating through possible carpet placements, consider using a recursive or dynamic programming approach to explore all combinations of carpet placements."
+    },
+    {
+      "content": "Once you have a way to calculate the number of white tiles covered with a given carpet placement, use that to determine the minimum number of visible tiles."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient enough to handle the upper limits of the constraints, especially since both `numCarpets` and `floor.length` can be as large as 1000."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= carpetLen <= floor.length <= 1000",
+    "floor[i] is either '0' or '1'.",
+    "1 <= numCarpets <= 1000.",
+    "Carpets can overlap, and the goal is to minimize visible white tiles."
+  ]
+}

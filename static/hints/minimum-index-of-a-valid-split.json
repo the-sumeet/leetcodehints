@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the dominant element in the array. Remember, the problem states that there is exactly one dominant element, which means it occurs more than half the time in the array."
+    },
+    {
+      "content": "Consider how you can split the array into two parts. A valid split occurs at an index `i` where both parts have the same dominant element. Think about how you can check the elements in both subarrays after a split."
+    },
+    {
+      "content": "You need to keep track of the frequency of the dominant element as you iterate through the array. Use a counter to maintain how many times the dominant element appears in the left subarray as you progress through potential split points."
+    },
+    {
+      "content": "Calculate the total count of the dominant element in the entire array at the start. This will help you determine if the left and right subarrays are valid after each split."
+    },
+    {
+      "content": "When checking if a split is valid, ensure that both subarrays contain the dominant element and that it meets the dominance condition. For the left subarray, the condition is `count_left * 2 > (i + 1)`."
+    },
+    {
+      "content": "As you iterate through the array, after checking the left subarray, also check the right subarray. For the right subarray, the condition is `count_right * 2 > (n - i - 1)`."
+    },
+    {
+      "content": "Remember to update your counts as you move the split index. When you move from index `i` to `i + 1`, adjust the counts of the dominant element accordingly."
+    },
+    {
+      "content": "Consider edge cases where the dominant element is at the start or end of the array. What happens if you try to split right at the beginning or the end?"
+    },
+    {
+      "content": "If you find a valid split, keep track of the minimum index found. You should return this index once you've checked all possible splits."
+    },
+    {
+      "content": "Finally, if no valid split is found after checking all indices, remember to return -1 as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "There is exactly one dominant element in nums.",
+    "Valid split requires both subarrays to have the same dominant element.",
+    "Return -1 if no valid split exists."
+  ]
+}

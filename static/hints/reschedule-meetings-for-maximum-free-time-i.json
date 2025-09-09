@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the meetings. Each meeting is defined by a start and end time, and they do not overlap. This means that if you move a meeting, you have to ensure it still fits within the event time and does not overlap with any other meetings."
+    },
+    {
+      "content": "Consider the total free time available in the event. Calculate the free time before the first meeting, between consecutive meetings, and after the last meeting. This will help you visualize where you can potentially create more free time."
+    },
+    {
+      "content": "When rescheduling meetings, remember that you can only move the start time of a meeting, not change its duration. Think about how moving a meeting earlier can create gaps in the schedule."
+    },
+    {
+      "content": "Since you can reschedule at most k meetings, think about which meetings would yield the most free time if moved. Prioritize meetings that are closer to the start of the event or those that create larger gaps when moved."
+    },
+    {
+      "content": "Keep in mind the constraints on the meetings. For example, the meetings must remain non-overlapping after rescheduling, which means you need to check the new start and end times against the existing meetings."
+    },
+    {
+      "content": "To maximize free time, you might want to focus on the largest gaps created by moving meetings. Calculate the potential free time created by moving each meeting and keep track of the best options."
+    },
+    {
+      "content": "Consider edge cases where moving a meeting doesn't create any additional free time because it would overlap with another meeting. Make sure to handle these cases carefully."
+    },
+    {
+      "content": "As you iterate through the meetings, maintain a count of how many meetings you've moved. Once you reach k moves, stop considering further moves, even if they might create more free time."
+    },
+    {
+      "content": "You can create a helper function to calculate the free time available between two time points. This will help you in evaluating the effect of moving meetings on the overall free time."
+    },
+    {
+      "content": "Finally, think about how to implement a strategy that evaluates all possible combinations of moving up to k meetings. You may need to use a priority queue or a similar structure to efficiently find the best meetings to move."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= eventTime <= 10^9, 2 <= n <= 10^5, 1 <= k <= n.",
+    "Meetings are non-overlapping and must remain so after rescheduling.",
+    "Return the maximum amount of free time possible after rearranging the meetings.",
+    "Meetings cannot be rescheduled outside the event time."
+  ]
+}

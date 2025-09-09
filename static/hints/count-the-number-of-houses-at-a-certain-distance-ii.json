@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the layout of the houses and streets. Each house i is connected to house i + 1, which means you can move directly between consecutive houses."
+    },
+    {
+      "content": "Consider how the additional street between house x and house y affects the distances between houses. This connection can create shortcuts in the path between certain pairs of houses."
+    },
+    {
+      "content": "For each k from 1 to n, you need to count the number of pairs of houses (i, j) such that the minimum distance between them is exactly k. Think about how to calculate distances based on the direct connections."
+    },
+    {
+      "content": "Remember that the distance between two houses i and j without the additional street is simply |i - j|. How does the additional street change this distance for certain pairs?"
+    },
+    {
+      "content": "When considering pairs of houses (i, j), be careful to account for both (i, j) and (j, i) since the problem specifies that both directions count."
+    },
+    {
+      "content": "You can start by calculating the distances for pairs of houses without the additional street. Make a list of these distances for all pairs (i, j)."
+    },
+    {
+      "content": "Next, identify which pairs of houses can benefit from the additional street. Specifically, check if one house is x and the other is y, or vice versa."
+    },
+    {
+      "content": "For each pair of houses that can use the additional street, calculate the new distance and see if it changes the count for any k."
+    },
+    {
+      "content": "When counting pairs for each distance k, think about how many pairs have the same distance. You can use a frequency array to help keep track of counts."
+    },
+    {
+      "content": "Make sure to initialize your result array with zeros. You'll fill this array with counts for each distance from 1 to n as you calculate them."
+    },
+    {
+      "content": "Consider edge cases, such as when x and y are the same. This means the additional street does not create any new paths, and you should account for this in your distance calculations."
+    },
+    {
+      "content": "As you loop through all pairs of houses, remember to optimize your approach. You might not need to check every possible pair if you can derive some distances based on existing calculations."
+    },
+    {
+      "content": "After filling your result array, remember to return it in the correct format. The problem specifies a 1-indexed array, so be careful with your indexing."
+    },
+    {
+      "content": "Finally, consider how to handle large values of n efficiently. If you find that your solution is too slow, think about ways to reduce the number of pairs you check or how to calculate distances more quickly."
+    },
+    {
+      "content": "You should now be close to implementing your solution. Make sure to test it with various inputs to ensure it handles all edge cases correctly, especially with the additional street."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5, 1 <= x, y <= n.",
+    "The result should be a 1-indexed array of length n.",
+    "Count both directions for each pair (i, j) and (j, i).",
+    "Consider edge cases where x and y are the same."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding that you need to divide the rods into two groups with equal sums. This means you are looking for two disjoint subsets of rods that can balance each other."
+    },
+    {
+      "content": "Consider the total length of all rods. If the total length is odd, it's impossible to split it into two equal parts, so you can immediately return 0."
+    },
+    {
+      "content": "Think about how you can represent the problem using dynamic programming. You can use a DP table to keep track of possible sums you can achieve with the rods."
+    },
+    {
+      "content": "Define a DP state that captures the difference between the two groups. For example, if you have a current difference of `d`, you can try adding or removing a rod to see how it affects the difference."
+    },
+    {
+      "content": "You can use a recursive approach with memoization to explore the different ways to choose rods. This will help avoid recalculating results for the same state."
+    },
+    {
+      "content": "Remember that for each rod, you have three choices: add it to the first group, add it to the second group, or ignore it. This leads to a tree of possibilities."
+    },
+    {
+      "content": "Keep track of the maximum height achieved for valid configurations. You want to maximize the height of the billboard, which is the sum of the rods in one of the groups."
+    },
+    {
+      "content": "When calculating the sums, ensure you are considering the absolute difference between the two groups. The goal is to minimize this difference to achieve equal heights."
+    },
+    {
+      "content": "Consider edge cases where you have very few rods. For example, with only one rod, it is impossible to create two supports, so the answer should be 0."
+    },
+    {
+      "content": "If you have two rods of the same length, they can form a valid support. Think about how you can pair rods effectively to maximize the height."
+    },
+    {
+      "content": "You might want to sort the rods first. This can help in trying to form pairs or groups that are closer in length, which could lead to a better balance."
+    },
+    {
+      "content": "As you build your dynamic programming solution, consider using a dictionary to map the difference in sums to the maximum height achievable with that difference."
+    },
+    {
+      "content": "When iterating through the rods, update your DP table based on the current rod's length. This will help you keep track of the best possible heights as you progress."
+    },
+    {
+      "content": "Make sure to handle the case where no valid configuration exists. You should return 0 if you cannot find two groups with equal sums."
+    },
+    {
+      "content": "Finally, think about how you will return the result. You want to return the maximum height of the billboard, which is the sum of the rods in one of the two groups."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= rods.length <= 20",
+    "Constraints: 1 <= rods[i] <= 1000",
+    "Constraints: sum(rods[i]) <= 5000",
+    "Return 0 if it's impossible to support the billboard.",
+    "The two supports must be of equal height."
+  ]
+}

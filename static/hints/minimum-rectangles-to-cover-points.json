@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the rectangles. Each rectangle can cover points within a width of 'w', meaning if you select a starting x-coordinate, the rectangle can extend to 'x + w'."
+    },
+    {
+      "content": "Consider how to group the points based on their x-coordinates. Sorting the points by their x-coordinates can help you easily determine which points can be covered by the same rectangle."
+    },
+    {
+      "content": "When iterating through the sorted points, keep track of the rightmost x-coordinate you can reach with the current rectangle. This will help you decide when to start a new rectangle."
+    },
+    {
+      "content": "Remember that the height of the rectangle is determined by the maximum y-coordinate of the points it covers. You need to keep track of the maximum y-value as you extend the rectangle."
+    },
+    {
+      "content": "Think about edge cases, such as when 'w' is zero. In this case, each point will require its own rectangle since no width is allowed."
+    },
+    {
+      "content": "Consider the scenario where all points have the same x-coordinate. How would you handle that? You would need separate rectangles for each point based on their y-coordinates."
+    },
+    {
+      "content": "As you group points into rectangles, ensure you are checking that the next point falls within the width restriction. If it does not, you need to finalize the current rectangle and start a new one."
+    },
+    {
+      "content": "You might want to use a greedy approach. Start from the leftmost point and keep adding points to the current rectangle until adding another point would exceed the width 'w'."
+    },
+    {
+      "content": "After determining the maximum y-value for the current rectangle, move to the next point that is outside the current rectangle's width and repeat the process."
+    },
+    {
+      "content": "Finally, ensure your solution handles large inputs efficiently. Aim for a time complexity of O(n log n) due to sorting, and O(n) for the rectangle counting process."
+    }
+  ],
+  "questionNotes": [
+    "1 <= points.length <= 10^5",
+    "points[i].length == 2",
+    "0 <= x_i <= 10^9",
+    "0 <= y_i <= 10^9",
+    "0 <= w <= 10^9",
+    "All pairs (x_i, y_i) are distinct."
+  ]
+}

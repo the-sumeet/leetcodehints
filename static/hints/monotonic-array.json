@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definitions of monotonic arrays. An array is monotonic increasing if each element is less than or equal to the next. Conversely, it is monotonic decreasing if each element is greater than or equal to the next."
+    },
+    {
+      "content": "Consider how you might traverse the array. You could use a single loop to compare each element with the next one. Think about what conditions you need to check during this traversal."
+    },
+    {
+      "content": "As you loop through the array, keep track of whether you've encountered any violations of the monotonic conditions. For example, if you find an element that is greater than the next one while checking for increasing order, you can mark this as a violation."
+    },
+    {
+      "content": "You can use two flags: one for checking if the array is increasing and another for checking if it is decreasing. Initialize both flags to true and update them based on your comparisons."
+    },
+    {
+      "content": "When comparing elements, remember to handle equal elements properly. Equal elements should not cause a violation in either monotonic condition."
+    },
+    {
+      "content": "Think about edge cases, such as arrays with only one element. An array with a single element should be considered monotonic by definition."
+    },
+    {
+      "content": "Consider the performance of your solution. Since you only need to make a single pass through the array, aim for a time complexity of O(n). This means you should avoid nested loops."
+    },
+    {
+      "content": "As you implement your solution, remember to return true if either of your flags remains true after the loop completes. If both flags are false, return false."
+    },
+    {
+      "content": "Make sure to test your solution with various test cases, including edge cases like an empty array or arrays with all identical elements."
+    },
+    {
+      "content": "To finalize your approach, think about how you can combine your checks into a single return statement. If either the increasing or decreasing flag is still true after the loop, return true."
+    }
+  ],
+  "questionNotes": [
+    "An array is monotonic if it is either monotone increasing or monotone decreasing.",
+    "Monotone increasing: nums[i] <= nums[j] for all i <= j.",
+    "Monotone decreasing: nums[i] >= nums[j] for all i <= j.",
+    "Constraints: 1 <= nums.length <= 10^5 and -10^5 <= nums[i] <= 10^5.",
+    "Return true if the array is monotonic, false otherwise."
+  ]
+}

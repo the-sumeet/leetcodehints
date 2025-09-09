@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem constraints. You can jump between indices in the range [i + 1, min(n - 1, i + k)]. Make sure you are clear about how far you can jump based on the value of k."
+    },
+    {
+      "content": "Consider how you can keep track of the maximum score as you jump through the array. You might want to maintain a variable to store the current maximum score at each index."
+    },
+    {
+      "content": "Think about the order in which you can access the indices. You can only jump forward, so you need a way to calculate scores based on previous jumps efficiently."
+    },
+    {
+      "content": "You might want to use a dynamic programming approach. Define a DP array where dp[i] represents the maximum score you can achieve when you reach index i."
+    },
+    {
+      "content": "To fill the DP array, consider how to compute dp[i] based on the previous indices you can jump from. You can use a loop to iterate through the possible jumps from each index."
+    },
+    {
+      "content": "Remember that you can only jump from indices within the last k steps. Use a sliding window technique to efficiently calculate the maximum score from the last k indices."
+    },
+    {
+      "content": "As you compute the maximum scores, ensure that you are correctly summing the values from the nums array. Each dp[i] should include nums[i] plus the maximum score from the valid previous indices."
+    },
+    {
+      "content": "Consider edge cases where k is larger than the length of the nums array or when all values in nums are negative. How will your approach handle these scenarios?"
+    },
+    {
+      "content": "Think about the time complexity of your solution. If you are using a nested loop, it might be inefficient for larger inputs. Can you optimize it using a deque or priority queue?"
+    },
+    {
+      "content": "Finally, ensure your implementation returns the correct value at the last index of the DP array, which represents the maximum score achievable to reach the end of the array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length, k <= 10^5; -10^4 <= nums[i] <= 10^4",
+    "You start at index 0 and must reach index n - 1.",
+    "Your score is the sum of all nums[j] for each index j visited.",
+    "The function should return an integer representing the maximum score."
+  ]
+}

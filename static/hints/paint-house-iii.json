@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have an array `houses` where each element represents either a color (1 to n) or 0 for unpainted houses. Make sure to handle the unpainted houses correctly."
+    },
+    {
+      "content": "Identify how neighborhoods are formed. A neighborhood is a continuous segment of houses painted the same color. Consider how changing the color of a house affects the neighborhood count."
+    },
+    {
+      "content": "Think about the cost matrix `cost`. Each entry `cost[i][j]` represents the cost to paint house `i` with color `j + 1`. This means you need to adjust your indexing when accessing this matrix."
+    },
+    {
+      "content": "Pay attention to the `target` neighborhoods. If the initial count of neighborhoods from the already painted houses exceeds `target`, it's impossible to achieve the goal. You should return -1 in that case."
+    },
+    {
+      "content": "Consider edge cases where all houses are already painted. If the number of neighborhoods matches `target`, return 0 since no additional cost is needed."
+    },
+    {
+      "content": "Use dynamic programming to approach this problem. Define a state that keeps track of the current house index, the number of neighborhoods formed so far, and the last color used."
+    },
+    {
+      "content": "Your DP state could look like this: `dp[i][k][c]`, where `i` is the current house index, `k` is the number of neighborhoods, and `c` is the last color used. This helps in managing transitions efficiently."
+    },
+    {
+      "content": "When transitioning between states in your DP, consider the cost of painting the current house in different colors. If you paint it the same color as the last one, it won't change the neighborhood count."
+    },
+    {
+      "content": "If you paint the current house a different color, you will need to increment the neighborhood count. Make sure to account for the cost of painting when updating your DP state."
+    },
+    {
+      "content": "Implement a base case for your DP. If you reach the end of the houses and the number of neighborhoods matches `target`, return the accumulated cost. If not, return a large value to indicate failure."
+    },
+    {
+      "content": "You may need to iterate through all possible colors for each unpainted house. Use a nested loop structure to explore all combinations of colors and neighborhoods."
+    },
+    {
+      "content": "Don't forget to handle cases where houses are already painted. You should skip over these houses in your DP transitions and only focus on those that are unpainted."
+    },
+    {
+      "content": "Consider memoization to optimize your DP solution. Store results of previously computed states to avoid redundant calculations and speed up your solution."
+    },
+    {
+      "content": "As you implement your solution, keep track of the minimum cost found that meets the neighborhood requirement. If no valid configuration is found, ensure you return -1."
+    },
+    {
+      "content": "Finally, ensure your function handles all edge cases, including the smallest and largest inputs allowed by the constraints. Test thoroughly with various scenarios."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == houses.length == cost.length, n == cost[i].length",
+    "1 <= m <= 100, 1 <= n <= 20, 1 <= target <= m",
+    "0 <= houses[i] <= n, meaning houses can be unpainted (0) or painted (1 to n)",
+    "Return -1 if it's impossible to achieve the target neighborhoods",
+    "Ensure to track the cost of painting correctly, especially when transitioning between states."
+  ]
+}

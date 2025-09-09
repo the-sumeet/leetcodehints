@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operations involved: bitwise OR and bitwise AND. These operations will be key in determining the number of set bits for the pairs you will evaluate."
+    },
+    {
+      "content": "Remember that a pair (num1, num2) is distinct from (num2, num1). This means you need to consider both orders when counting excellent pairs."
+    },
+    {
+      "content": "Focus on how to efficiently count the number of set bits in a number. You can use the built-in function in Python: `bin(num).count('1')` to get the count of set bits."
+    },
+    {
+      "content": "Consider using a set to store unique numbers from the input array. This will help you avoid duplicate pairs and simplify your calculations."
+    },
+    {
+      "content": "You need to calculate the sum of set bits from both the OR and AND operations. Make sure you understand how these operations work on binary representations."
+    },
+    {
+      "content": "Think about the constraints: the maximum size of the array is 100,000, and the values can be as large as 1 billion. This suggests that a brute-force solution may not be efficient enough."
+    },
+    {
+      "content": "Instead of checking all pairs, consider iterating through the unique numbers and calculating the required conditions with each number in the set. This will reduce the number of comparisons."
+    },
+    {
+      "content": "When calculating the number of set bits for pairs, remember that you can precompute the set bits for each unique number to avoid recalculating them multiple times."
+    },
+    {
+      "content": "Make sure to handle the case where num1 equals num2. A pair like (num1, num1) can still be excellent if it meets the condition."
+    },
+    {
+      "content": "As you iterate through pairs, maintain a count of how many pairs meet the condition. You can use a variable to accumulate this count."
+    },
+    {
+      "content": "Be mindful of the value of k. If k is larger than the maximum possible sum of set bits from any pair, you can immediately return 0."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array has only one unique number or when all numbers are the same. These cases can simplify your logic."
+    },
+    {
+      "content": "You might want to use a nested loop to evaluate pairs, but ensure that you only check distinct pairs to avoid counting duplicates."
+    },
+    {
+      "content": "Think about the complexity of your solution. If you end up with a nested loop, analyze how many iterations it will take and whether it fits within the time limits."
+    },
+    {
+      "content": "Finally, your result should be the total count of distinct excellent pairs. Ensure that you return this count as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 100000",
+    "1 <= nums[i] <= 10^9",
+    "1 <= k <= 60",
+    "Pairs (num1, num2) are distinct if either num1 != num2 or num2 != num1.",
+    "A pair (num1, num1) can also be excellent if num1 exists in nums."
+  ]
+}

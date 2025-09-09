@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem's requirements. You can remove a stone if it shares the same row or column with another stone. Think about how you can represent the connections between stones."
+    },
+    {
+      "content": "Consider how you might group stones based on their rows and columns. You can use two separate sets or maps to track which rows and columns have stones."
+    },
+    {
+      "content": "Think about the implications of removing a stone. When you remove one stone, it might allow you to remove others. This suggests a connected component approach might be useful."
+    },
+    {
+      "content": "Visualize the stones on a grid. For example, for stones at coordinates like (0,0) and (0,1), you can see they are in the same row. How would this affect your ability to remove stones?"
+    },
+    {
+      "content": "Consider using a graph traversal technique like Depth-First Search (DFS) or Breadth-First Search (BFS) to explore the connected components formed by the stones."
+    },
+    {
+      "content": "When using DFS or BFS, start from any stone and mark all reachable stones. Each traversal will help you count how many stones can be removed from that component."
+    },
+    {
+      "content": "Remember that the maximum number of stones you can remove from a connected component is equal to the number of stones in that component minus one. Why is that?"
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there is only one stone present. In this case, no stones can be removed, so your function should return 0."
+    },
+    {
+      "content": "As you implement your solution, ensure you are not revisiting stones. Use a visited set to keep track of which stones have already been counted."
+    },
+    {
+      "content": "Finally, to return the correct result, sum the removable stones from all connected components and remember to subtract the number of components from the total count."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= stones.length <= 1000",
+    "Coordinates: 0 <= x_i, y_i <= 10^4",
+    "Uniqueness: No two stones can occupy the same coordinate.",
+    "Return format: The function should return the largest possible number of stones that can be removed."
+  ]
+}

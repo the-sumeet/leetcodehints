@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. Each ticket is represented as a pair of strings, indicating a flight from one airport to another. Your goal is to reconstruct a valid itinerary using all the tickets."
+    },
+    {
+      "content": "Remember that the itinerary must start from 'JFK'. This is a crucial detail that will guide your initial steps in constructing the itinerary."
+    },
+    {
+      "content": "Consider how you can represent the tickets. A graph structure, where each airport points to its destinations, could be useful. Think about how you would store this information."
+    },
+    {
+      "content": "When building your graph, ensure that you can efficiently retrieve the next airport to visit. Using a priority queue or a sorted list can help you maintain the lexical order of the destinations."
+    },
+    {
+      "content": "As you build the graph, remember that you need to account for all tickets. Each ticket should be used exactly once, so think about how to track the usage of tickets."
+    },
+    {
+      "content": "Consider using Depth-First Search (DFS) to explore the graph. This approach will allow you to traverse through the airports and build the itinerary step by step."
+    },
+    {
+      "content": "While traversing, make sure to backtrack if you reach a dead end. This will help you explore all possible paths and find the correct itinerary."
+    },
+    {
+      "content": "Think about how to handle cases with multiple valid itineraries. You need to ensure that you always choose the lexicographically smallest option. This may involve sorting your destinations before traversal."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when there are tickets that lead to the same destination. Ensure your algorithm can handle these scenarios without skipping valid paths."
+    },
+    {
+      "content": "As you construct the itinerary, consider using a stack or a list to keep track of the current path. You can add airports to this structure as you visit them and remove them when backtracking."
+    },
+    {
+      "content": "Once you've explored all paths, you'll need to ensure that the final itinerary is returned in the correct format. The output should be a list of strings representing the ordered airports."
+    },
+    {
+      "content": "Remember to check the constraints of the problem. You must use all tickets exactly once, and the number of tickets will not exceed 300. This will help you determine the efficiency of your solution."
+    },
+    {
+      "content": "When implementing your solution, consider the time complexity of your approach. Aim for a solution that efficiently handles the maximum input size."
+    },
+    {
+      "content": "As a final step, ensure that your solution is thoroughly tested with different scenarios, including edge cases. This will help confirm that your itinerary reconstruction is both correct and optimal."
+    },
+    {
+      "content": "To summarize, you need to build a graph, perform a DFS while maintaining lexical order, and ensure all tickets are used exactly once. Focus on these key components to guide your implementation."
+    }
+  ],
+  "questionNotes": [
+    "The itinerary must start from 'JFK'.",
+    "All tickets must be used exactly once.",
+    "If multiple valid itineraries exist, return the one with the smallest lexical order.",
+    "Input size constraints: 1 <= tickets.length <= 300.",
+    "Each ticket is represented as a pair of strings, [from, to]."
+  ]
+}

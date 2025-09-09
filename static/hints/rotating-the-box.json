@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the box is represented. Each cell can be a stone '#', an obstacle '*', or empty '.'. Think about how these elements interact with each other when the box is rotated."
+    },
+    {
+      "content": "Consider how gravity affects the stones. When the box is rotated, stones will fall to the lowest available position in their new column. Visualize how stones would move downwards in the presence of obstacles."
+    },
+    {
+      "content": "Before rotating, you might want to think about how to process each column of the original grid. You can iterate through the columns and determine where each stone would land after the rotation."
+    },
+    {
+      "content": "As you process each column, keep track of the current position where the next stone should fall. If you encounter an obstacle '*', reset this position to just above the obstacle."
+    },
+    {
+      "content": "You can create a new grid for the rotated box. Remember that after rotation, the first row of the original grid becomes the last column of the new grid. Plan your indexing accordingly."
+    },
+    {
+      "content": "When iterating through the original grid, you can use a nested loop: the outer loop for columns and the inner loop for rows. This will help you gather stones and obstacles in the correct order."
+    },
+    {
+      "content": "Don't forget to initialize the new grid with empty cells ('.') before filling in the stones and obstacles. This ensures that you have a clean slate to work with."
+    },
+    {
+      "content": "After processing each column, fill the new grid from the bottom up for each column. This means starting from the last row and working your way up to place stones and obstacles."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no stones in a column or when the entire column is filled with obstacles. How will these scenarios affect your logic?"
+    },
+    {
+      "content": "Finally, ensure that your function returns the new grid in the correct format. The output should be an n x m matrix, where n is the number of columns in the original grid and m is the number of rows."
+    }
+  ],
+  "questionNotes": [
+    "The input grid is m x n, where m is the number of rows and n is the number of columns.",
+    "Each cell can contain '#', '*', or '.', and the stones '#' will fall due to gravity when rotated.",
+    "The output grid should be n x m after rotation, representing the new positions of stones and obstacles."
+  ]
+}

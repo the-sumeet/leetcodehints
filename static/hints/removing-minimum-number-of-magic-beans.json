@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Consider the problem of equalizing the number of beans in the non-empty bags. What is the maximum number of beans that any bag has? This will help you understand the range of possible values for the remaining beans."
+    },
+    {
+      "content": "Think about how you can iterate through the list of beans. You might want to consider removing beans to match the count of the bag with the least number of beans, but what if you could choose a different target?"
+    },
+    {
+      "content": "To minimize the number of beans removed, you should think about potential target values for the remaining beans. What if you set the target to be the number of beans in each bag, one at a time?"
+    },
+    {
+      "content": "When you choose a target number of beans, how will you calculate the total number of beans removed? You can iterate through the bags and sum the differences between the current number of beans and the target, but only for bags with more than the target."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when all bags have the same number of beans. In this case, no beans need to be removed. How would you check for this condition?"
+    },
+    {
+      "content": "Consider sorting the array of beans. By sorting, you can easily determine how many beans to remove for each unique count of beans in the bags. What does this allow you to do with your calculations?"
+    },
+    {
+      "content": "As you iterate through the sorted beans, keep track of the total number of beans removed and the number of bags that are still in play. How does this affect your calculations as you move to the next unique bean count?"
+    },
+    {
+      "content": "Think about using a prefix sum to optimize the calculation of beans removed. By maintaining a running total of beans, you can quickly compute how many beans need to be removed for each target value."
+    },
+    {
+      "content": "You should also consider the case where you decide not to remove any beans from bags that already have the target number. How would you adjust your total removal calculation in this scenario?"
+    },
+    {
+      "content": "Finally, remember to return the minimum number of beans removed across all possible target values. How will you keep track of the minimum as you iterate through the unique counts?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= beans.length <= 10^5",
+    "Constraints: 1 <= beans[i] <= 10^5",
+    "You can remove any number of beans from each bag, including none.",
+    "The result should be the minimum total number of beans removed.",
+    "Only non-empty bags can remain after the removal process."
+  ]
+}

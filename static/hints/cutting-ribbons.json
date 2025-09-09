@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You are given an array of ribbon lengths and a target number of pieces. Your goal is to determine the maximum number of pieces you can cut from the ribbons without exceeding the target length."
+    },
+    {
+      "content": "Consider how you can approach this problem. A good way to think about it is to use a binary search technique to find the maximum length of pieces you can cut. What would be the minimum and maximum lengths you can consider for the binary search?"
+    },
+    {
+      "content": "When performing binary search, define your search space. The minimum length of a piece is 1 (you can't cut a piece of length 0), and the maximum length is the length of the longest ribbon in the array."
+    },
+    {
+      "content": "For each candidate length during your binary search, you need to calculate how many pieces of that length can be cut from all ribbons combined. Think about how you would iterate through the ribbons to sum up the total number of pieces."
+    },
+    {
+      "content": "When calculating the number of pieces for a given length, remember to use integer division. For example, if you have a ribbon of length 9 and you are checking for pieces of length 3, you can cut 9 // 3 = 3 pieces."
+    },
+    {
+      "content": "Consider edge cases, such as when the array of ribbons is empty or when the target number of pieces is very high compared to the lengths of the ribbons. What should your function return in these scenarios?"
+    },
+    {
+      "content": "Think about how to handle cases where the desired number of pieces cannot be achieved. You might need to return a specific value, such as 0, if it's impossible to cut the ribbons into the required number of pieces."
+    },
+    {
+      "content": "As you implement the binary search, keep track of the maximum number of pieces you can achieve. If you find that a certain length allows you to meet or exceed the target number of pieces, you may want to explore longer lengths."
+    },
+    {
+      "content": "Make sure to check for off-by-one errors in your binary search implementation. When adjusting your search space, ensure that you're correctly updating the left and right pointers based on whether the current length can yield enough pieces."
+    },
+    {
+      "content": "Finally, as you finalize your solution, ensure that you return the correct value based on your findings. What should you return if you find a length that allows you to cut exactly the target number of pieces?"
+    }
+  ],
+  "questionNotes": [
+    "You can cut pieces of length 1 or more; lengths of 0 are not valid.",
+    "The input array can contain duplicate lengths.",
+    "The output should be a single integer representing the maximum number of pieces.",
+    "Consider edge cases where the ribbons are shorter than the desired piece length."
+  ]
+}

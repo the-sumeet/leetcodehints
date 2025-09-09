@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree. Each node has a value and can have up to two children. You will need to traverse this tree to find the deepest nodes."
+    },
+    {
+      "content": "Consider how you can determine the depth of each node. You might want to implement a depth-first search (DFS) or breadth-first search (BFS) to explore the tree and keep track of the depth as you go."
+    },
+    {
+      "content": "As you traverse the tree, maintain a record of the maximum depth encountered. You can use a variable to store this maximum depth and update it whenever you find a node deeper than the current maximum."
+    },
+    {
+      "content": "While traversing, also keep track of which nodes are at the maximum depth. You can use a list or set to store these deepest nodes as you identify them."
+    },
+    {
+      "content": "Once you have identified all the deepest nodes, think about how to find the smallest subtree that contains all of them. This subtree will be rooted at the lowest common ancestor (LCA) of these deepest nodes."
+    },
+    {
+      "content": "To find the LCA, you will need to check the parent nodes of the deepest nodes. If a node is an ancestor of all deepest nodes, it could be a candidate for the LCA."
+    },
+    {
+      "content": "You may want to implement a helper function to find the LCA of two nodes. This function can be recursive and should check if the current node is one of the nodes you're looking for."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree has only one node. In this case, that node is both the deepest and the smallest subtree."
+    },
+    {
+      "content": "Remember that the values of nodes are unique, which simplifies finding the LCA since you won't have to deal with duplicate values."
+    },
+    {
+      "content": "Finally, ensure that your function returns the subtree rooted at the LCA of the deepest nodes. You might want to write a function that returns the subtree starting from a given node."
+    }
+  ],
+  "questionNotes": [
+    "The number of nodes in the tree will be in the range [1, 500].",
+    "0 <= Node.val <= 500 and all values are unique.",
+    "A node is deepest if it has the largest depth.",
+    "Return the subtree rooted at the smallest node that contains all the deepest nodes."
+  ]
+}

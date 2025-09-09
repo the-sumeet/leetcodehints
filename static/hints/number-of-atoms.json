@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by breaking down the formula into its components. Identify how atoms are represented in the string, paying attention to uppercase and lowercase letters."
+    },
+    {
+      "content": "Remember that each atom can be followed by a number, which indicates its count. If there is no number, the count is implicitly 1."
+    },
+    {
+      "content": "Consider how to handle parentheses in the formula. They indicate that the elements inside them may have a multiplier following the closing parenthesis."
+    },
+    {
+      "content": "You might want to use a stack data structure to help manage nested parentheses. When you encounter '(', push a new context onto the stack, and when you see ')', pop the context off."
+    },
+    {
+      "content": "As you parse the formula, keep track of the current count of each atom in a dictionary or a similar structure. This will help you accumulate counts as you encounter atoms."
+    },
+    {
+      "content": "When you encounter a digit, remember to handle multi-digit numbers. For example, 'H12' means there are 12 hydrogen atoms."
+    },
+    {
+      "content": "Don't forget to consider the case where a multiplier follows a closing parenthesis. For example, in 'Mg(OH)2', the '2' applies to both 'O' and 'H'."
+    },
+    {
+      "content": "After processing the entire formula, you will have a dictionary with atom counts. Think about how to sort this dictionary by atom names for the final output."
+    },
+    {
+      "content": "When constructing the output string, ensure that you only append counts greater than 1. For example, 'H2' is valid, but 'O1' should just be 'O'."
+    },
+    {
+      "content": "Consider edge cases such as nested parentheses and large multipliers. For example, in 'K4(ON(SO3)2)2', ensure that each atom is counted correctly."
+    },
+    {
+      "content": "Make sure to handle the case where the formula starts directly with an atom or a parenthesis. This can affect how you initialize your parsing."
+    },
+    {
+      "content": "As you build the final output, remember that the order of atoms matters. You need to sort the atoms alphabetically before constructing the result."
+    },
+    {
+      "content": "You might want to create helper functions to parse different parts of the formula, such as one for handling atoms and another for handling parentheses."
+    },
+    {
+      "content": "Think about how you will handle the stack when you encounter nested parentheses. Each time you pop from the stack, you should apply the multiplier to the elements inside."
+    },
+    {
+      "content": "Finally, ensure that your final output string is formatted correctly. It should be a single string with atoms in sorted order followed by their counts."
+    }
+  ],
+  "questionNotes": [
+    "The atomic element starts with an uppercase letter followed by optional lowercase letters.",
+    "Counts follow atoms and are only present if greater than 1; 'H1' is invalid.",
+    "Parentheses can contain nested formulas and may have multipliers after them.",
+    "The output should list atoms in sorted order with counts only if greater than 1."
+  ]
+}

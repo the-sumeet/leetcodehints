@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider the properties of a Binary Search Tree (BST). In a BST, for any given node, all values in the left subtree must be less than the node's value, and all values in the right subtree must be greater."
+    },
+    {
+      "content": "The input is a preorder traversal of a BST. Remember that in preorder traversal, the current node is visited first, followed by the left subtree, and then the right subtree."
+    },
+    {
+      "content": "Think about how you can use a stack to help verify the preorder sequence. You can push the root node onto the stack and then process the next values in the sequence."
+    },
+    {
+      "content": "As you process each value in the preorder list, maintain a variable to track the last popped value from the stack. This will help you ensure that you are following the BST properties."
+    },
+    {
+      "content": "If you encounter a value that is less than the last popped value, it indicates that the current sequence cannot represent a valid BST. Make sure to check this condition as you iterate through the list."
+    },
+    {
+      "content": "Consider edge cases such as an empty list or a list with a single element. Both of these cases should return true, as they represent valid BSTs."
+    },
+    {
+      "content": "When processing each value, if it is greater than the last popped value, you should keep track of the minimum value that can be allowed for the next nodes in the sequence."
+    },
+    {
+      "content": "Think about how to handle the transition from left to right subtrees. When you find a value that is greater than the root, it should not be less than any previously popped values."
+    },
+    {
+      "content": "You might want to use a loop to iterate through the preorder list while maintaining a stack. Each time you pop from the stack, update the minimum allowed value for subsequent nodes."
+    },
+    {
+      "content": "Finally, ensure your function returns a boolean value indicating whether the preorder sequence can represent a valid BST. You should have a clear exit condition when the loop completes."
+    }
+  ],
+  "questionNotes": [
+    "The input is a list of integers representing the preorder traversal of a BST.",
+    "The sequence must adhere to BST properties for all nodes.",
+    "An empty list or a list with one element should return true.",
+    "The values in the input list are unique."
+  ]
+}

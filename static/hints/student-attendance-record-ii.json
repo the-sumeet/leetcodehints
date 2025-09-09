@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the three characters in the attendance record: 'A' for Absent, 'L' for Late, and 'P' for Present. You need to create records of length `n` that follow specific rules regarding 'A' and 'L'."
+    },
+    {
+      "content": "Focus on the first criterion: a student can be absent for fewer than 2 days. This means that in any valid record, the maximum number of 'A's is 1."
+    },
+    {
+      "content": "Next, consider the second criterion: a student cannot be late for 3 or more consecutive days. This means sequences like 'LLL' are not allowed in any valid record."
+    },
+    {
+      "content": "Think about how many valid records you can create if you only use 'P' and 'L'. This will help you establish a base case before introducing 'A'."
+    },
+    {
+      "content": "For a record of length `n`, you can have records made up entirely of 'P' or 'L'. How many combinations can you form with these two characters without violating the consecutive 'L' rule?"
+    },
+    {
+      "content": "Consider using dynamic programming to keep track of valid sequences. You could define a state that represents the number of valid records of a certain length that end in specific characters."
+    },
+    {
+      "content": "Define your states clearly. For example, let `dp[i]` represent the number of valid records of length `i`. You might also want to track records ending in 'P', 'L', and 'LL' separately."
+    },
+    {
+      "content": "Think about how you can transition from shorter records to longer ones. For instance, how can you extend a valid record of length `i-1` to length `i`?"
+    },
+    {
+      "content": "When adding a new character to a valid record, ensure that adding 'L' does not create a sequence of 'LLL'. This will help you maintain the second criterion."
+    },
+    {
+      "content": "Now, consider how to incorporate 'A' into your valid records. If you have a valid record of length `n-1`, you can create a new valid record by adding 'A' at any position, provided it does not exceed 1 'A'."
+    },
+    {
+      "content": "Keep in mind the modulo operation as specified in the problem. Since the number of records can be large, every time you update your count, apply the modulo to keep the number manageable."
+    },
+    {
+      "content": "You might need to calculate the total number of valid records by summing the valid records of lengths `n` with 0 'A's and those with 1 'A'."
+    },
+    {
+      "content": "Consider edge cases, such as when `n` is very small (like 1 or 2). How many valid records can you manually enumerate for these cases to verify your approach?"
+    },
+    {
+      "content": "After calculating the valid records for both cases (with and without 'A'), combine these results to get the final count of valid attendance records."
+    },
+    {
+      "content": "Finally, ensure that your solution runs efficiently given the constraints. Since `n` can be as large as 100,000, aim for a time complexity that is linear or close to it."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100000",
+    "Return the result modulo 10^9 + 7.",
+    "Records must have fewer than 2 'A's and never have 'L' for 3 or more consecutive days."
+  ]
+}

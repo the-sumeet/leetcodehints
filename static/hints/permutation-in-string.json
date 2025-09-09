@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a permutation is. A permutation of a string is a rearrangement of its characters. For example, the permutations of 'ab' are 'ab' and 'ba'."
+    },
+    {
+      "content": "Consider the lengths of the strings. If the length of s1 is greater than the length of s2, immediately return false. This is because s2 can't contain a substring longer than itself."
+    },
+    {
+      "content": "Think about how you can represent the frequency of characters in s1. You can use a hash map or an array of size 26 (for lowercase English letters) to count occurrences of each character."
+    },
+    {
+      "content": "Now, you need to check substrings of s2. You can use a sliding window approach to examine each substring of length equal to s1. This means maintaining a window of characters and updating their counts as you slide the window."
+    },
+    {
+      "content": "As you slide the window across s2, remember to update the character counts: add the new character that enters the window and remove the character that exits the window."
+    },
+    {
+      "content": "At each position of the sliding window, compare the character counts of the current window in s2 with the character counts of s1. If they match, you have found a permutation."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when either string is empty. According to the constraints, both strings will have a length of at least 1, so you don't need to worry about empty strings here."
+    },
+    {
+      "content": "Consider the performance of your solution. The sliding window approach should allow you to check each substring in linear time relative to the length of s2, leading to an overall time complexity of O(n), where n is the length of s2."
+    },
+    {
+      "content": "Ensure you are correctly initializing and updating your character count arrays. You might want to initialize the count array for s1 once and then create a separate count array for the current window in s2."
+    },
+    {
+      "content": "Finally, remember to return true as soon as you find a matching permutation. If you finish checking all possible windows without finding a match, return false."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s1.length, s2.length <= 10^4",
+    "s1 and s2 consist of lowercase English letters.",
+    "Return true if s2 contains a permutation of s1, false otherwise."
+  ]
+}

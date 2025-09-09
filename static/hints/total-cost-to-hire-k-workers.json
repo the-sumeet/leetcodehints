@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input parameters: you have an array of costs, a number of workers to hire (k), and a limit on how many candidates you can consider from both ends of the array (candidates)."
+    },
+    {
+      "content": "Note that in each hiring session, you can only choose from the first 'candidates' workers or the last 'candidates' workers. This means you need to keep track of the current valid range of workers."
+    },
+    {
+      "content": "When hiring, you need to find the worker with the lowest cost from the valid candidates. Make sure to handle the case where there are fewer than 'candidates' workers remaining."
+    },
+    {
+      "content": "Remember to break ties by choosing the worker with the smallest index. This is important because it affects which worker you will select when costs are the same."
+    },
+    {
+      "content": "As you hire workers, make sure to remove them from the pool of candidates. This means updating your valid range of workers after each hiring session."
+    },
+    {
+      "content": "You can use a min-heap (or priority queue) to efficiently get the worker with the lowest cost. This will help you manage the candidates you are considering for each hiring session."
+    },
+    {
+      "content": "Think about how to initialize your heap with the first 'candidates' workers and the last 'candidates' workers. You may need to handle overlaps carefully."
+    },
+    {
+      "content": "After each hiring session, remember to add new candidates to your heap. This will involve checking the next worker in line from both the front and back of your current range."
+    },
+    {
+      "content": "Keep track of the total cost as you hire each worker. You will need to return this total cost after hiring exactly 'k' workers."
+    },
+    {
+      "content": "Consider edge cases, such as when 'k' is equal to the length of the costs array or when 'candidates' is larger than the number of remaining workers. These scenarios may require special handling."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= costs.length <= 10^5",
+    "1 <= costs[i] <= 10^5",
+    "1 <= k, candidates <= costs.length",
+    "Workers can only be hired once.",
+    "Tie-breaking is done by the smallest index."
+  ]
+}

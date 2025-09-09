@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what constitutes a cycle in the grid. A cycle must have a length of 4 or more and return to the starting cell. Think about how you can represent the grid and the connections between cells."
+    },
+    {
+      "content": "Consider how you can traverse the grid. You can move in four directions: up, down, left, and right. Make sure to keep track of the cells you've visited to avoid revisiting them immediately."
+    },
+    {
+      "content": "When exploring from a cell, you should only move to adjacent cells that have the same value. This means you need to check the value of the current cell before moving to a neighbor."
+    },
+    {
+      "content": "To avoid going back to the last visited cell, you can pass the previous cell's coordinates as an argument in your recursive or iterative function. This way, you can ensure you don't revisit it."
+    },
+    {
+      "content": "You will need to keep track of visited cells to avoid infinite loops. Consider using a 2D array or a set to mark cells as visited during your traversal."
+    },
+    {
+      "content": "Think about the base case for your search. If you return to the starting cell and the path length is 4 or more, you have found a cycle. Otherwise, continue exploring."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as grids that are too small to contain a cycle (e.g., 1x1 or 1x2). These should immediately return false."
+    },
+    {
+      "content": "Consider using Depth-First Search (DFS) for exploring the grid. This approach will allow you to explore all possible paths from a given cell."
+    },
+    {
+      "content": "As you implement DFS, remember to backtrack correctly. After exploring a path, make sure to unmark the cell as visited when you backtrack to allow other paths to use it."
+    },
+    {
+      "content": "Finally, think about how to initiate the search. You can loop through each cell in the grid and start a DFS from any unvisited cell. If any DFS call returns true, you can return true immediately."
+    }
+  ],
+  "questionNotes": [
+    "A cycle must consist of the same value and have a length of at least 4.",
+    "You can only move to adjacent cells with the same value, and not backtrack to the last visited cell.",
+    "The grid can have dimensions up to 500x500, so consider the efficiency of your solution.",
+    "Return true if any cycle exists; otherwise, return false."
+  ]
+}

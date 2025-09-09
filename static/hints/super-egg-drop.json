@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem's constraints. You have `k` eggs and `n` floors. The goal is to minimize the number of drops required to find the critical floor `f` where eggs start breaking."
+    },
+    {
+      "content": "Consider the base cases. What happens when you have only one egg? How does that affect your strategy for determining the critical floor?"
+    },
+    {
+      "content": "If you have one egg (`k = 1`), you must drop it from every floor starting from the first to the last. This means you will need `n` drops in the worst case."
+    },
+    {
+      "content": "Now, think about what happens when you have more than one egg (`k > 1`). You can use a strategy that allows you to minimize the maximum number of drops required."
+    },
+    {
+      "content": "A common strategy is to use a binary search approach, but with multiple eggs, you need to balance the drops between the eggs. This leads to a recursive approach."
+    },
+    {
+      "content": "Define a function `dp(k, n)` that represents the minimum number of drops needed with `k` eggs and `n` floors. What would be your base cases for this function?"
+    },
+    {
+      "content": "For `dp(k, 0)`, the result is `0` since there are no floors to test. For `dp(1, n)`, the result is `n`, as you will need to drop from each floor."
+    },
+    {
+      "content": "Think about how to build the solution recursively. If you drop an egg from a certain floor `x`, you have two scenarios: the egg breaks or it doesn't. How would you express this in your recursive function?"
+    },
+    {
+      "content": "When the egg breaks, you need to check the floors below `x`, which means you reduce the number of eggs to `k-1` and the number of floors to `x-1`. If it doesn't break, you check the floors above `x`, keeping `k` the same but reducing floors to `n-x`."
+    },
+    {
+      "content": "To minimize the worst-case number of drops, you should try dropping the egg from different floors. This leads to a decision tree where you want to minimize the maximum of the two scenarios."
+    },
+    {
+      "content": "Consider using dynamic programming to store previously computed results for `dp(k, n)`. This will help avoid recalculating the same values multiple times."
+    },
+    {
+      "content": "You can optimize the choice of floor `x` to drop from using a loop or binary search to find the optimal `x` that minimizes the maximum drops in both scenarios."
+    },
+    {
+      "content": "The time complexity of your solution might be significant if you do not optimize the floor selection. Try to minimize the number of iterations when choosing `x`."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when `n` is very small (like 1 or 2) or when `k` is very small compared to `n`. How do these cases affect your function?"
+    },
+    {
+      "content": "Finally, ensure your function returns the correct format as specified in the problem statement. What should the function ultimately return?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= 100, 1 <= n <= 10^4.",
+    "Ensure to handle the base cases for dynamic programming correctly.",
+    "The function should return the minimum number of moves required.",
+    "Consider the implications of breaking and non-breaking scenarios in your recursive strategy."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. You have 'n' nodes and a list of edges connecting these nodes. Make sure you visualize the graph to see how nodes are interconnected."
+    },
+    {
+      "content": "Remember that the edges are undirected. This means that if there is an edge from node 'u' to node 'v', you can traverse from 'u' to 'v' and from 'v' to 'u'."
+    },
+    {
+      "content": "The function incident(a, b) counts the number of edges connected to either node 'a' or node 'b'. Think about how to efficiently calculate this for any pair of nodes."
+    },
+    {
+      "content": "Consider using an adjacency list or an edge count array to keep track of how many edges are connected to each node. This will help you quickly calculate incident(a, b) for any pair."
+    },
+    {
+      "content": "When iterating through pairs of nodes (a, b), remember that you need to ensure 'a < b'. This will help you avoid counting the same pair twice and simplify your calculations."
+    },
+    {
+      "content": "For each pair (a, b), calculate incident(a, b) and check if it exceeds the current query value. Think about how you can efficiently filter pairs based on this condition."
+    },
+    {
+      "content": "Since the number of nodes 'n' can be large (up to 20,000), consider the time complexity of your solution. A brute-force O(n^2) approach may not be feasible for the upper limits."
+    },
+    {
+      "content": "You might want to sort the queries first. This way, you can process them in increasing order and potentially reuse computations for pairs that have already been counted."
+    },
+    {
+      "content": "Think about how to maintain a count of valid pairs as you process each query. You may need to keep track of how many pairs have an incident value greater than the current query."
+    },
+    {
+      "content": "Consider using a two-pointer technique or binary search on the sorted list of pairs to efficiently count how many pairs meet the condition for each query."
+    },
+    {
+      "content": "Don't forget to handle multiple edges between the same nodes. This could affect the incident count and should be accounted for in your edge counting mechanism."
+    },
+    {
+      "content": "Pay attention to the constraints of the problem, especially the range of values for 'queries[j]'. This will help you understand the limits of your calculations."
+    },
+    {
+      "content": "As you implement your solution, make sure to test it with edge cases, such as graphs with the minimum number of edges and nodes, or graphs where all nodes are interconnected."
+    },
+    {
+      "content": "When returning the results, ensure that your output format matches the requirement: an array of answers corresponding to each query."
+    },
+    {
+      "content": "Finally, consider how you will optimize your solution to handle the maximum constraints efficiently. Revisit your approach if it seems too slow."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 20,000; 1 <= edges.length <= 100,000; 1 <= queries.length <= 20; 0 <= queries[j] < edges.length.",
+    "The graph is undirected and can have multiple edges between the same nodes.",
+    "Ensure to return an array of answers where answers[j] corresponds to the j-th query.",
+    "Pairs (a, b) must satisfy a < b."
+  ]
+}

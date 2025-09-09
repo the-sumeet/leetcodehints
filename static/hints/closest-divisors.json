@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to find two integers whose product is either `num + 1` or `num + 2`. Think about how you can derive factors for a given number."
+    },
+    {
+      "content": "Consider how to find divisors of a number efficiently. Remember that if `d` is a divisor of `n`, then `n/d` is also a divisor. You only need to check up to the square root of the number."
+    },
+    {
+      "content": "For both `num + 1` and `num + 2`, calculate the divisors. You can start by iterating from 1 to the square root of each of these numbers and check if they divide evenly."
+    },
+    {
+      "content": "When you find a divisor `d`, the corresponding pair would be `(d, (num + 1) / d)` or `(d, (num + 2) / d)`. Make sure to store these pairs."
+    },
+    {
+      "content": "Remember to check both `num + 1` and `num + 2` separately. You will need to compare the closest pairs from both results to find the best answer."
+    },
+    {
+      "content": "Define what 'closest' means in this context. You need to minimize the absolute difference between the two integers. For example, if you have pairs (a, b) and (c, d), you want to compare |a - b| and |c - d|."
+    },
+    {
+      "content": "When you have multiple pairs from both `num + 1` and `num + 2`, think about how to compare them. You may want to keep track of the best pair found so far."
+    },
+    {
+      "content": "Consider edge cases, such as when `num` is very small (like 1 or 2). What will be the closest divisors in those cases? Make sure your code handles these cases correctly."
+    },
+    {
+      "content": "After finding all pairs, you might need to implement a way to return the result. Ensure that your output format matches the requirement: two integers in any order."
+    },
+    {
+      "content": "Finally, ensure your solution is efficient given the constraints (1 <= num <= 10^9). Aim for a solution that runs in O(sqrt(n)) time complexity, where n is either `num + 1` or `num + 2`."
+    }
+  ],
+  "questionNotes": [
+    "You need to find divisors for both `num + 1` and `num + 2`.",
+    "The output can be in any order.",
+    "You must minimize the absolute difference between the two integers.",
+    "Constraints: 1 <= num <= 10^9."
+  ]
+}

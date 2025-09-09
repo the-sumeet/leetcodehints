@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the formula for the sum of squared differences: it's the sum of (nums1[i] - nums2[i])^2 for all i. This means that the larger the difference between corresponding elements, the larger the contribution to the total sum."
+    },
+    {
+      "content": "Consider how the modifications allowed by k1 and k2 can affect the differences. You can increase or decrease elements of nums1 and nums2, which means you can potentially reduce the differences between the two arrays."
+    },
+    {
+      "content": "Think about the impact of modifying an element. If nums1[i] is much smaller than nums2[i], increasing nums1[i] might be a good strategy. Conversely, if nums1[i] is larger, decreasing it could help minimize the difference."
+    },
+    {
+      "content": "Before diving into modifications, calculate the initial sum of squared differences without any changes. This will give you a baseline to compare against after modifications."
+    },
+    {
+      "content": "When considering how to distribute k1 and k2, remember that you can modify multiple elements. Prioritize the elements with the largest initial differences, as reducing these will have the most significant impact on the total sum."
+    },
+    {
+      "content": "You might want to create a list of the absolute differences between nums1 and nums2. This will help you identify which pairs need the most adjustment."
+    },
+    {
+      "content": "Plan how to use k1 and k2 effectively. If k1 + k2 is less than the total number of differences, you may need to choose the most impactful differences to modify."
+    },
+    {
+      "content": "Consider edge cases where k1 or k2 is zero. In such cases, you can only modify the other array. How does this affect your strategy?"
+    },
+    {
+      "content": "When modifying elements, keep track of the total number of modifications used. You cannot exceed k1 or k2, so ensure your adjustments stay within these limits."
+    },
+    {
+      "content": "Finally, after making modifications, recalculate the sum of squared differences. Ensure you are returning the minimum value found after considering all possible modifications."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums1.length == nums2.length, 1 <= n <= 10^5.",
+    "Each element in nums1 and nums2 is between 0 and 10^5.",
+    "k1 and k2 can be as large as 10^9, allowing for significant modifications.",
+    "You can modify elements to become negative integers."
+  ]
+}

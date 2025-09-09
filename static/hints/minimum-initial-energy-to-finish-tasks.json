@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array. Each task is represented as a pair: [actual_i, minimum_i]. The first element is the energy spent to complete the task, while the second is the minimum energy required to start it."
+    },
+    {
+      "content": "Consider how the order of tasks affects your ability to complete them. Some tasks may require more energy to start than others, so think about how to prioritize them."
+    },
+    {
+      "content": "Identify the minimum energy required to start each task. This is crucial because if your current energy is less than minimum_i for any task, you cannot start that task."
+    },
+    {
+      "content": "Think about the concept of 'net energy' after completing a task. After finishing a task, your energy decreases by actual_i. This means you will need to ensure you have enough energy to both start and finish tasks."
+    },
+    {
+      "content": "You may want to sort the tasks based on their minimum_i values. This can help you determine the order in which you can feasibly complete the tasks."
+    },
+    {
+      "content": "Consider edge cases where all tasks have the same minimum_i. How does this affect the initial energy needed? What if tasks have varying actual_i values but similar minimum_i?"
+    },
+    {
+      "content": "To find the minimum initial energy, you can simulate the process of completing the tasks. Start with an initial guess and check if you can finish all tasks."
+    },
+    {
+      "content": "Use a binary search approach to efficiently find the minimum initial energy. Start with a range of possible energy values, from 1 to a maximum based on the tasks."
+    },
+    {
+      "content": "When performing the binary search, for each mid-point energy value, simulate the completion of tasks. If you can finish all tasks with that energy, try a lower value; otherwise, increase it."
+    },
+    {
+      "content": "Keep track of your current energy as you simulate completing tasks. If at any point your energy drops below the minimum required for the next task, that initial guess is too low."
+    },
+    {
+      "content": "Consider the scenario when your energy is just enough to complete a task. What happens if you have leftover energy? How does this affect your ability to start subsequent tasks?"
+    },
+    {
+      "content": "Make sure to test your solution against edge cases, such as tasks where actual_i equals minimum_i. This will help ensure your logic is robust."
+    },
+    {
+      "content": "Remember that the tasks can be completed in any order. This flexibility can be leveraged to minimize the initial energy required."
+    },
+    {
+      "content": "As you implement your solution, focus on maintaining clarity in your code. Use descriptive variable names and comments to explain your thought process."
+    },
+    {
+      "content": "Before finalizing your solution, run through a few examples manually to ensure your logic holds up. This will help catch any potential edge cases you might have overlooked."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= tasks.length <= 10^5",
+    "1 <= actual_i <= minimum_i <= 10^4",
+    "Tasks can be completed in any order.",
+    "Return the minimum initial amount of energy required to finish all tasks."
+  ]
+}

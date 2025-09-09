@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array. Each element in the `questions` array is a pair where the first value represents the points earned for solving that question, and the second value indicates how many questions you will skip if you solve it."
+    },
+    {
+      "content": "Consider how you will track your current position in the `questions` array as you make decisions. You need to decide whether to solve or skip each question based on the points and brainpower constraints."
+    },
+    {
+      "content": "Think about using dynamic programming to store the maximum points you can earn up to each question. You can create an array `dp` where `dp[i]` represents the maximum points you can earn considering questions up to index `i`."
+    },
+    {
+      "content": "When processing each question, you have two choices: either solve it or skip it. If you solve it, you need to account for the brainpower cost and ensure you skip the appropriate number of questions."
+    },
+    {
+      "content": "If you solve question `i`, the next question you can consider is `i + brainpower[i] + 1`. This means you need to carefully calculate the index to update in your `dp` array."
+    },
+    {
+      "content": "Make sure to initialize your `dp` array correctly. The base case can be `dp[0] = questions[0][0]` if you solve the first question, or `dp[0] = 0` if you skip it."
+    },
+    {
+      "content": "As you iterate through the `questions`, update your `dp` array by comparing the points earned by solving the current question versus the points earned by skipping it. Use the formula: `dp[i] = max(dp[i], dp[j] + points[i])` where `j` is the index of the next question you can solve after `i`."
+    },
+    {
+      "content": "Consider edge cases where the `brainpower` required might skip you out of bounds of the array. Ensure your index calculations do not lead to accessing out-of-bounds elements."
+    },
+    {
+      "content": "After processing all questions, the maximum points you can earn will be the maximum value in the `dp` array. This is your final result."
+    },
+    {
+      "content": "Remember to return the maximum points as a single integer. Ensure your implementation handles all constraints and edge cases correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= questions.length <= 10^5",
+    "Each questions[i] has exactly 2 elements: points[i] and brainpower[i].",
+    "1 <= points[i], brainpower[i] <= 10^5.",
+    "You must process questions in order, starting from index 0.",
+    "Return the maximum points as a single integer."
+  ]
+}

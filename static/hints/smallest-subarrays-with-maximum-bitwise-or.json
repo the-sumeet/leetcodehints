@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of bitwise OR. The bitwise OR operation combines bits of numbers such that if either bit is 1, the result is 1. For example, `1 | 2` results in `3` (in binary: `01 | 10 = 11`)."
+    },
+    {
+      "content": "Consider how to compute the bitwise OR for subarrays. You can use a loop to iterate through the array and keep track of the current OR value as you expand the subarray. Remember that the OR operation is cumulative."
+    },
+    {
+      "content": "Identify the maximum possible bitwise OR for the entire array. This will be crucial because you need to find subarrays that match this maximum value. You can find this by iterating through the array and applying the OR operation to all elements."
+    },
+    {
+      "content": "When you are at index `i`, you need to find the smallest subarray starting from `i` that achieves the maximum bitwise OR found earlier. Think about how you can keep expanding the subarray until the OR reaches the maximum."
+    },
+    {
+      "content": "As you expand the subarray from index `i`, keep track of the length of the subarray. Once you reach the maximum OR, you can record the length and then stop expanding further."
+    },
+    {
+      "content": "Remember that the maximum bitwise OR might not be achieved immediately at the next index. You may need to include several elements in the subarray starting from `i` to reach it. Ensure your logic accounts for this."
+    },
+    {
+      "content": "Consider edge cases, such as when the array consists of only one element. In this case, the maximum OR is the element itself, and the answer should be `[1]`."
+    },
+    {
+      "content": "Think about how to efficiently store the results for each starting index. You can use an array of the same length as `nums` to store the lengths of the smallest subarrays."
+    },
+    {
+      "content": "When you find a subarray that achieves the maximum OR, check if there are smaller subarrays that also achieve it as you continue to expand. This will ensure you find the minimum length."
+    },
+    {
+      "content": "Finally, ensure your solution runs efficiently within the constraints. The maximum length of `nums` is 10^5, so aim for a solution that is linear or near-linear in complexity, possibly using a two-pointer technique."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 1 <= n <= 10^5, 0 <= nums[i] <= 10^9.",
+    "The result should be an integer array of size n.",
+    "Each answer[i] should represent the length of the minimum sized subarray starting at index i.",
+    "The bitwise OR must equal the maximum possible OR for any subarray starting from index i."
+  ]
+}

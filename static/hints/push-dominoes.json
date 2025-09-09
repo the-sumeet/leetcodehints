@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the initial state of the dominoes. Each character in the string represents a domino's state: 'L' for left, 'R' for right, and '.' for upright. Think about how the dominoes interact with each other based on their states."
+    },
+    {
+      "content": "Consider how the dominoes falling to the left ('L') and right ('R') affect the adjacent dominoes. For example, if you have 'R.' followed by 'L', what happens to the '.'? This is a key interaction to analyze."
+    },
+    {
+      "content": "Identify the segments of dominoes that are affected by a push. For example, in the string '.L.R...', the domino at position 1 is influenced by the 'L' and the one at position 3 by the 'R'. How do you determine which dominoes will fall and which will remain standing?"
+    },
+    {
+      "content": "Think about how to traverse the string. You might want to use a loop to go through each character and check its state. Keep track of the last seen 'R' or 'L' to determine how the '.' characters should change."
+    },
+    {
+      "content": "When you encounter a 'R', mark the position and continue until you find an 'L' or reach the end of the string. If you find an 'L' before a '.', consider the distance between 'R' and 'L' to decide how the '.' should be updated."
+    },
+    {
+      "content": "What happens when you have multiple '.' characters between an 'R' and an 'L'? Remember that if the distance is equal, the middle dominoes will remain upright. You need to handle this tie-breaking scenario carefully."
+    },
+    {
+      "content": "You might want to create a new array or string to store the final state of the dominoes. As you iterate through the original string, update this new structure based on the interactions you've analyzed."
+    },
+    {
+      "content": "Consider edge cases such as having only 'R's or only 'L's in the string. How does that affect the final state? Also, think about what happens if there are no dominoes pushed at all."
+    },
+    {
+      "content": "Make sure to handle the case where dominoes are at the ends of the string. For example, if the string starts with 'R', all subsequent '.' should become 'R'. Similarly, if it ends with 'L', all preceding '.' should become 'L'."
+    },
+    {
+      "content": "Finally, after processing all characters, convert your result array or string back to the required format and return it. Ensure that your final output matches the expected string format as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, where n is the length of the dominoes string.",
+    "Each domino can be in one of three states: 'L', 'R', or '.'.",
+    "Be mindful of tie-breaking scenarios when both sides exert force on a domino.",
+    "The final output must be a string representing the state of all dominoes after all interactions."
+  ]
+}

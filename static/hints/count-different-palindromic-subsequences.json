@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence can be formed by deleting zero or more characters from the string without changing the order of the remaining characters."
+    },
+    {
+      "content": "Consider the definition of a palindrome. A string is palindromic if it reads the same forwards and backwards. For example, 'abcba' is a palindrome, while 'abc' is not."
+    },
+    {
+      "content": "Think about how you can generate all possible subsequences of the string. You can use recursion or dynamic programming to explore all combinations of characters."
+    },
+    {
+      "content": "When generating subsequences, remember that you should only count unique palindromic subsequences. This means you need a way to ensure that duplicates are not counted multiple times."
+    },
+    {
+      "content": "You might want to use a set to store palindromic subsequences, as sets automatically handle uniqueness for you."
+    },
+    {
+      "content": "Consider the base case: a single character is always a palindrome. So, each character in the string contributes at least one palindromic subsequence."
+    },
+    {
+      "content": "When you encounter the same character at both ends of a subsequence, this is a key to forming larger palindromes. Think about how to expand around these characters."
+    },
+    {
+      "content": "If you have two identical characters at the start and end of a subsequence, you can form new palindromes by including or excluding characters in between them."
+    },
+    {
+      "content": "You can use a dynamic programming table to keep track of palindromic subsequences. Define a 2D array where `dp[i][j]` represents the number of unique palindromic subsequences in the substring `s[i...j]`."
+    },
+    {
+      "content": "When filling the DP table, consider three cases: when the characters at both ends are the same, when they are different, and when you have a single character."
+    },
+    {
+      "content": "Pay attention to the modulo operation. Since the result can be very large, make sure to take results modulo 10^9 + 7 at every step of your calculations."
+    },
+    {
+      "content": "Keep in mind the constraints: the length of the string can be up to 1000, so your solution needs to be efficient. Aim for a time complexity of O(n^2)."
+    },
+    {
+      "content": "You may also want to handle edge cases, such as strings with all identical characters or strings with no repeating characters, as they will have different counts of palindromic subsequences."
+    },
+    {
+      "content": "As you implement your solution, remember to test with various inputs, including the smallest and largest possible strings, to ensure your logic holds in all cases."
+    },
+    {
+      "content": "Finally, think about how to return the result. You need to return the count of unique palindromic subsequences modulo 10^9 + 7, so ensure your final return statement reflects that."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 1000",
+    "Characters in string s are limited to 'a', 'b', 'c', or 'd'.",
+    "Return the count modulo 10^9 + 7.",
+    "Only count unique non-empty palindromic subsequences."
+  ]
+}

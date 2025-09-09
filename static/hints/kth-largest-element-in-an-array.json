@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "First, clarify what the 'kth largest element' means. It refers to the element that would be in the k-th position if the array were sorted in descending order."
+    },
+    {
+      "content": "Consider the constraints of the problem. The length of the array can be up to 100,000, which means that an O(n log n) solution (like sorting) might be too slow for the upper limits."
+    },
+    {
+      "content": "Think about using a data structure that can efficiently keep track of the largest elements. What about using a min-heap of size k? This could help you maintain the k largest elements efficiently."
+    },
+    {
+      "content": "If you use a min-heap, remember that the smallest element in the heap will be the kth largest element in the array once you've processed all elements. How would you implement this?"
+    },
+    {
+      "content": "When inserting elements into the min-heap, if the heap exceeds size k, you'll need to remove the smallest element. Can you think of how to do this efficiently?"
+    },
+    {
+      "content": "Consider edge cases, such as when k equals 1. What would that mean for the kth largest element? It would be the largest element in the array."
+    },
+    {
+      "content": "You should also handle cases where all elements are the same. How does your approach handle this situation? The kth largest element should still be the same as any other element."
+    },
+    {
+      "content": "Make sure to think about the time complexity of your approach. Using a min-heap will give you O(n log k) time complexity, which is efficient given the constraints."
+    },
+    {
+      "content": "In your implementation, remember to import the necessary libraries for using a heap. For example, in Python, you would use `heapq`."
+    },
+    {
+      "content": "Finally, once you've processed all elements and your heap contains k elements, the root of the min-heap will be your answer. How will you extract and return that value?"
+    }
+  ],
+  "questionNotes": [
+    "The kth largest element is based on sorted order, not distinct elements.",
+    "1 <= k <= nums.length <= 100,000",
+    "-10^4 <= nums[i] <= 10^4"
+  ]
+}

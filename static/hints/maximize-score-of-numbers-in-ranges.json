@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the intervals defined by the `start` array and the integer `d`. Each interval for the i-th element is [start[i], start[i] + d]. This means for each element, you can choose any integer within this range."
+    },
+    {
+      "content": "Consider the implications of the score being defined as the minimum absolute difference between any two chosen integers. This means you need to ensure that the integers you select are as far apart as possible to maximize this minimum difference."
+    },
+    {
+      "content": "Think about how to represent the chosen integers. You can choose the maximum value from each interval, which is `start[i] + d`, or the minimum value, which is `start[i]`. What happens if you choose a mix of both?"
+    },
+    {
+      "content": "To maximize the score, you might want to sort the intervals based on their starting points. This could help in visualizing how to select numbers that are spaced apart."
+    },
+    {
+      "content": "Consider using a binary search approach to find the maximum possible score. You can check for a feasible score by attempting to place numbers within the intervals and ensuring the minimum difference is at least your current score guess."
+    },
+    {
+      "content": "When checking if a certain score is feasible, you can iterate through the intervals and try to place each number while maintaining the required minimum difference. Keep track of the last chosen number to ensure the next one respects the score constraint."
+    },
+    {
+      "content": "Think about edge cases, such as when `d` is zero. In this case, all chosen integers must be equal to their corresponding `start` values, leading to a score of zero."
+    },
+    {
+      "content": "Remember to handle cases where the intervals might overlap. This could affect how you choose the integers and might lead to different strategies for maximizing the score."
+    },
+    {
+      "content": "As you implement the binary search, remember to define the boundaries for your search space. The minimum score can start at 0, and the maximum score could be the maximum difference between the farthest points of the intervals."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct format as specified in the problem statement. You should return the maximum score as an integer, which represents the largest minimum absolute difference you can achieve."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= start.length <= 10^5",
+    "0 <= start[i] <= 10^9",
+    "0 <= d <= 10^9",
+    "The score is defined as the minimum absolute difference between any two chosen integers.",
+    "Ensure to handle edge cases where d is 0 or intervals overlap."
+  ]
+}

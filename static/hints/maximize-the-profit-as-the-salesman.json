@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the offers. Each offer consists of a start index, an end index, and a gold amount. This means that each offer specifies a range of houses and the price for that range."
+    },
+    {
+      "content": "Consider how to represent the houses and the offers. A simple way to visualize this is to think of a list where each index corresponds to a house, and the values represent whether a house is sold or available."
+    },
+    {
+      "content": "Think about how to handle overlapping offers. If two buyers want to buy overlapping ranges of houses, you need to decide which offer to accept to maximize your profit."
+    },
+    {
+      "content": "You can start by sorting the offers based on their end index. This will help in processing them in a linear fashion and make it easier to check for conflicts with previously accepted offers."
+    },
+    {
+      "content": "Consider using dynamic programming to keep track of the maximum profit you can earn up to each house. This way, you can build your solution incrementally."
+    },
+    {
+      "content": "When processing each offer, you should check if the houses in the range of the current offer are already sold. If they are not sold, you can calculate the potential profit."
+    },
+    {
+      "content": "Use a DP array where `dp[i]` represents the maximum profit you can achieve by considering houses from 0 to i. Make sure to update this array based on the offers you accept."
+    },
+    {
+      "content": "For each offer, if you decide to take it, you should add its gold value to the maximum profit possible from the last house that is not in the current offer's range. This ensures you are not double-counting houses."
+    },
+    {
+      "content": "Pay attention to the base case for your DP array. For houses that are not part of any offer, their profit will simply be the maximum profit from the previous house."
+    },
+    {
+      "content": "Finally, ensure you return the maximum value from your DP array after processing all offers. This will give you the maximum profit possible from selling the houses."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, 1 <= offers.length <= 10^5, offers[i].length == 3",
+    "Houses are indexed from 0 to n-1.",
+    "Different buyers cannot buy the same house.",
+    "Some houses may remain unsold.",
+    "Return the maximum amount of gold that can be earned."
+  ]
+}

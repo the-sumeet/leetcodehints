@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the distance function. The distance between two characters can be calculated by considering their positions in the alphabet and the cyclic nature. For example, the distance between 'a' and 'z' is 1, while the distance between 'a' and 'c' is 2."
+    },
+    {
+      "content": "Remember that the goal is to create the lexicographically smallest string possible. This means you should aim to change characters in `s` to 'a' as much as possible, but you need to keep track of the distance constraint `k`."
+    },
+    {
+      "content": "Consider how many characters you can change to 'a' from `s`. For each character `s[i]`, calculate the distance to 'a' and see if you can afford that change within the remaining `k`."
+    },
+    {
+      "content": "When changing characters, prioritize characters that are further from 'a' first, as they will consume more of your `k`. Keep a running total of the distance consumed as you make changes."
+    },
+    {
+      "content": "Think about edge cases. What happens if `k` is 0? In this case, you cannot change any characters, and the output should simply be the original string `s`."
+    },
+    {
+      "content": "If you reach a point where you can no longer change a character to 'a' without exceeding `k`, consider leaving that character as is or changing it to the next smallest possible character that fits within the remaining `k`."
+    },
+    {
+      "content": "You may also want to keep track of how many changes you have made and how much distance you have left. This will help you decide on subsequent characters to change."
+    },
+    {
+      "content": "As you iterate through the string, maintain a list or array to build your result string `t`. This way, you can easily append characters as you decide what to change."
+    },
+    {
+      "content": "After processing all characters, ensure that the resulting string `t` is valid by checking that the total distance from `s` to `t` does not exceed `k`."
+    },
+    {
+      "content": "Finally, think about how to implement the logic efficiently. You might want to iterate through the string once, making decisions based on the current character and the remaining `k`."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length <= 100",
+    "0 <= k <= 2000",
+    "s consists only of lowercase English letters.",
+    "The distance function is cyclic, so consider the wrap-around from 'z' to 'a'.",
+    "If k = 0, return s as is; no changes are allowed.",
+    "The output must be a single string, and it should be the lexicographically smallest possible string under the given constraints."
+  ]
+}

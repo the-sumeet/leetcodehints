@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation defined in the problem. You need to identify the largest index `i` where `s[i] < s[i - 1]`. This indicates a point where the string is not sorted."
+    },
+    {
+      "content": "Once you find `i`, you need to look for the largest index `j` such that all characters from `s[i]` to `s[j]` are less than `s[i - 1]`. This is crucial for determining the swap."
+    },
+    {
+      "content": "Remember that after swapping characters at indices `i - 1` and `j`, you must reverse the suffix starting from index `i`. This is a key part of the operation that changes the string."
+    },
+    {
+      "content": "Consider how many operations are required to sort the string. Each operation involves finding `i` and `j`, swapping, and reversing. Keep track of the number of operations you perform."
+    },
+    {
+      "content": "Think about edge cases, such as when the string is already sorted. How many operations would you need in that case? The answer should be zero."
+    },
+    {
+      "content": "You might want to implement a function that checks if the string is sorted. This can help you determine when to stop performing operations."
+    },
+    {
+      "content": "As you perform operations, the string will gradually approach a sorted state. Make sure to keep track of the current state of the string after each operation."
+    },
+    {
+      "content": "Consider using a loop to repeatedly apply the operation until the string is sorted. You can use a counter to keep track of the number of operations."
+    },
+    {
+      "content": "Be mindful of the constraints: the length of the string can be up to 3000. This may affect your choice of algorithm for finding `i` and `j`."
+    },
+    {
+      "content": "When looking for `j`, ensure that you check all characters from `i` to `j` against `s[i - 1]`. This requires careful iteration and comparison."
+    },
+    {
+      "content": "Since the number of operations can be large, remember to return the result modulo `10^9 + 7`. This is a common requirement in competitive programming."
+    },
+    {
+      "content": "Consider edge cases where multiple characters are the same. How would this affect your choice of `j`? Ensure your logic handles ties appropriately."
+    },
+    {
+      "content": "You may want to implement helper functions for finding `i` and `j`. This can help keep your main logic clean and focused."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Each operation involves finding indices and potentially reversing parts of the string, which could lead to a quadratic time complexity."
+    },
+    {
+      "content": "As a final step, make sure to test your implementation with various test cases, including edge cases like strings of length 1 or strings that are already sorted."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 3000",
+    "s consists only of lowercase English letters.",
+    "Return the number of operations modulo 10^9 + 7.",
+    "The operation involves finding indices i and j, swapping, and reversing a suffix."
+  ]
+}

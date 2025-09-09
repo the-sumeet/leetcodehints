@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the relevant time frame for your query. You need to filter the orders to include only those from February 2020. Think about how you can use date functions to achieve this."
+    },
+    {
+      "content": "Next, consider how to join the two tables. Since you need product names along with their ordered units, you'll want to join the Products table with the Orders table on the `product_id` column."
+    },
+    {
+      "content": "When joining the tables, remember that the Orders table may contain duplicate entries for the same product on different dates. Think about how you can aggregate these duplicates to get the total units ordered."
+    },
+    {
+      "content": "To aggregate the units ordered, you can use the `SUM()` function. This will allow you to calculate the total units for each product within the specified date range."
+    },
+    {
+      "content": "After summing the units, you need to filter the results to include only those products that have at least 100 units ordered. Consider using the `HAVING` clause for this purpose."
+    },
+    {
+      "content": "Make sure to group your results appropriately. You'll need to group by the `product_id` to ensure that the sum of units is calculated correctly for each product."
+    },
+    {
+      "content": "Don't forget to select the `product_name` along with the total units in your final output. This means your `SELECT` statement should include both of these fields."
+    },
+    {
+      "content": "Pay attention to the output format. The result should include columns named `product_name` and `unit`. Ensure that your final query reflects this requirement."
+    },
+    {
+      "content": "Consider edge cases such as products that have zero units ordered in February 2020. Ensure that your query does not include these products in the final output."
+    },
+    {
+      "content": "Finally, write your SQL query to combine all these elements. Start with the `SELECT` statement, then add the `JOIN`, `WHERE`, `GROUP BY`, and `HAVING` clauses to complete your query."
+    }
+  ],
+  "questionNotes": [
+    "The `product_id` in the Products table is the primary key, ensuring uniqueness.",
+    "The `product_id` in the Orders table is a foreign key, linking to the Products table.",
+    "The output must include product names and total units ordered, with the columns named exactly as specified.",
+    "Only include products with at least 100 units ordered in February 2020 in the final output."
+  ]
+}

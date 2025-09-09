@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the equivalence of dominoes. Two dominoes [a, b] and [c, d] are equivalent if they can be rotated to match each other. This means that either (a == c and b == d) or (a == d and b == c)."
+    },
+    {
+      "content": "Consider how you will represent each domino. You can use a tuple (min(a, b), max(a, b)) to ensure that the order of numbers does not matter. This way, [1, 2] and [2, 1] will both be represented as (1, 2)."
+    },
+    {
+      "content": "Think about how to count pairs. You need to find all pairs (i, j) such that 0 <= i < j < dominoes.length. A nested loop could work, but it may not be efficient for larger inputs."
+    },
+    {
+      "content": "Instead of using a nested loop, consider using a dictionary to count occurrences of each unique domino representation. This will allow you to efficiently calculate the number of equivalent pairs later."
+    },
+    {
+      "content": "When you have the counts of each unique domino, you can calculate the number of pairs from each count. If a domino appears 'n' times, the number of ways to choose 2 from 'n' is given by the formula n * (n - 1) / 2."
+    },
+    {
+      "content": "Don't forget to handle edge cases. For instance, if all dominoes are unique, the output should be 0 since there are no equivalent pairs."
+    },
+    {
+      "content": "Make sure to iterate through the list of dominoes only once to build your dictionary of counts. This will keep your solution efficient and within the time limits."
+    },
+    {
+      "content": "Consider how to initialize your dictionary. You can use a default dictionary from the collections module in Python to simplify counting occurrences."
+    },
+    {
+      "content": "As you implement your solution, remember to test it with various cases, including cases with the minimum and maximum number of dominoes, as well as cases with duplicates."
+    },
+    {
+      "content": "Once you have the counts, sum up the pairs calculated from each count to get the final result. This will be your answer to the problem."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= dominoes.length <= 4 * 10^4",
+    "Each domino is represented as a list of two integers, and both integers are between 1 and 9.",
+    "The output should be the number of equivalent pairs (i, j) where 0 <= i < j < dominoes.length."
+  ]
+}

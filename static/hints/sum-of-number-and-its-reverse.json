@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for a number to be the sum of itself and its reverse. For example, if you have a number 'x', its reverse is obtained by reversing its digits. Can you think of a simple example?"
+    },
+    {
+      "content": "Consider how you might generate the reverse of a number. You could convert the number to a string, reverse that string, and then convert it back to an integer. What would that look like in pseudocode?"
+    },
+    {
+      "content": "Think about the range of numbers you need to check. Given the constraint that 0 <= num <= 100,000, how many potential pairs of numbers (x and its reverse) do you need to consider?"
+    },
+    {
+      "content": "Notice that if num is less than 10, it can always be expressed as the sum of itself and its reverse (which is itself). What does this tell you about the base cases?"
+    },
+    {
+      "content": "When checking if a number can be expressed as the sum of a number and its reverse, you can iterate through all possible values of 'x' starting from 0 up to 'num'. How would you efficiently check if 'num - x' equals the reverse of 'x'?"
+    },
+    {
+      "content": "Remember that leading zeros in the reversed number do not affect its value. For example, reversing '140' gives '041', which is still 41. How will this affect your calculations?"
+    },
+    {
+      "content": "As you iterate through potential values of 'x', you should calculate both 'x' and its reverse. What data structure or method would be best for storing and comparing these values?"
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when num is 0. What should your function return in this case, and why?"
+    },
+    {
+      "content": "Consider the efficiency of your approach. If you check every number from 0 to num, what is the time complexity? Can you think of ways to optimize this?"
+    },
+    {
+      "content": "Finally, implement a loop that checks each number 'x' from 0 to num. For each 'x', calculate its reverse and check if 'x + reverse(x) == num'. If you find a match, return true; otherwise, return false after the loop."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= num <= 100,000",
+    "The reverse of a number may have leading zeros.",
+    "Return true if num can be expressed as the sum of a non-negative integer and its reverse, otherwise return false."
+  ]
+}

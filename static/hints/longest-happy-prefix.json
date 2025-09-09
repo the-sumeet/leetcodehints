@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a prefix and a suffix are. A prefix is a substring that starts from the beginning of the string, while a suffix is a substring that ends at the end of the string. For example, in the string 'abc', 'a' is a prefix and 'c' is a suffix."
+    },
+    {
+      "content": "Remember that a happy prefix must be non-empty and cannot be the entire string itself. This means you should consider prefixes of lengths from 1 to n-1, where n is the length of the string."
+    },
+    {
+      "content": "Think about how you can efficiently find both prefixes and suffixes. A naive approach would involve checking all prefixes against all suffixes, but this can be improved."
+    },
+    {
+      "content": "Consider using a string matching algorithm like the KMP (Knuth-Morris-Pratt) algorithm. The KMP algorithm computes a 'prefix function' which can help identify the longest prefix that matches a suffix."
+    },
+    {
+      "content": "The prefix function for a string s gives you the length of the longest proper prefix which is also a suffix for every prefix of the string. This could be a key insight for solving the problem."
+    },
+    {
+      "content": "When implementing the prefix function, you will need to maintain an array where each entry at index i stores the length of the longest prefix which is also a suffix for the substring s[0...i]."
+    },
+    {
+      "content": "Make sure to handle the case where the string has no happy prefix. You should return an empty string in this case, so think about how you will check for this condition."
+    },
+    {
+      "content": "As you build the prefix function, remember that the value at the last index of the array will tell you the length of the longest happy prefix. However, you need to ensure that this prefix is not equal to the entire string."
+    },
+    {
+      "content": "Consider edge cases such as strings with all identical characters, like 'aaaa'. What would the longest happy prefix be in this case?"
+    },
+    {
+      "content": "Keep in mind that the longest happy prefix can overlap with the string. For example, in 'abab', 'ab' is both a prefix and a suffix."
+    },
+    {
+      "content": "When you get the length of the longest happy prefix from the prefix function, you will need to extract the substring from the original string using this length."
+    },
+    {
+      "content": "Think about the time complexity of your solution. The naive approach could be O(n^2), but with the KMP algorithm, you can achieve O(n) for computing the prefix function."
+    },
+    {
+      "content": "Make sure to validate your implementation with various test cases, including strings of length 1, strings with no happy prefixes, and strings with multiple valid happy prefixes."
+    },
+    {
+      "content": "If the prefix function returns a length of zero for the last character, that means there is no happy prefix. Ensure your return statement handles this correctly."
+    },
+    {
+      "content": "Your final implementation should return the substring of the original string that corresponds to the length found in the prefix function, ensuring it's not the entire string."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "s contains only lowercase English letters.",
+    "A happy prefix must be non-empty and cannot be the entire string.",
+    "Return an empty string if no happy prefix exists."
+  ]
+}

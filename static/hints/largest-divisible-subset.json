@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the condition for the subset: for any two elements in the subset, one must be divisible by the other. This means you should think about how to compare elements in terms of divisibility."
+    },
+    {
+      "content": "Consider sorting the input array. Why do you think sorting might help? When the array is sorted, if `nums[i]` is divisible by `nums[j]`, then `i` must be greater than `j`."
+    },
+    {
+      "content": "Think about using dynamic programming to keep track of the largest divisible subset ending at each index. You can maintain an array `dp` where `dp[i]` represents the size of the largest divisible subset that ends with `nums[i]`."
+    },
+    {
+      "content": "As you iterate through the sorted array, for each `nums[i]`, check all previous elements `nums[j]` (where `j < i`). If `nums[i] % nums[j] == 0`, you can potentially extend the subset ending at `j`."
+    },
+    {
+      "content": "While updating `dp[i]`, also maintain a `prev` array to keep track of the previous index in the subset. This will help you reconstruct the subset later."
+    },
+    {
+      "content": "After filling the `dp` array, identify the maximum value in `dp` to find the length of the largest subset. You will also need to track the index where this maximum occurs to start reconstructing the subset."
+    },
+    {
+      "content": "To reconstruct the subset, start from the index of the maximum value in `dp` and use the `prev` array to backtrack through the indices. This will give you the elements of the largest divisible subset."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array has only one element. What should your output be in that case? Also, think about how the constraints (like uniqueness of elements) affect your approach."
+    },
+    {
+      "content": "Remember that the problem allows for multiple valid outputs. If you find a valid subset, it may not be the only one. Your implementation should still satisfy the divisibility condition."
+    },
+    {
+      "content": "As a final step, ensure your function handles the input and output formats correctly. You should return the largest divisible subset as an array, maintaining the order of elements as they appear in the original input."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "Constraints: 1 <= nums[i] <= 2 * 10^9",
+    "All integers in nums are unique.",
+    "Return any valid largest divisible subset if multiple exist."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the problem. You have two arrays: `fronts` and `backs`. Each index represents a card, with `fronts[i]` being the number on the front and `backs[i]` on the back."
+    },
+    {
+      "content": "Consider what it means for an integer to be 'good'. An integer is good if it is facing down on some card and not facing up on any card. Think about how you can track which numbers are facing up and which are facing down."
+    },
+    {
+      "content": "You can use sets to keep track of the numbers that are facing up and those that are facing down. This will help you quickly determine which numbers are good after any flips."
+    },
+    {
+      "content": "Remember that you can flip any number of cards, including zero. This means you have the flexibility to manipulate the facing numbers. Think about how flipping a card changes the state of the numbers."
+    },
+    {
+      "content": "As you iterate through the cards, add the numbers on the fronts to the 'up' set and the numbers on the backs to the 'down' set. This will allow you to see which numbers are present in both sets."
+    },
+    {
+      "content": "After populating the sets, you need to find the smallest integer that is in the 'down' set but not in the 'up' set. Consider iterating from 1 upwards to find this minimum good integer."
+    },
+    {
+      "content": "Be cautious about edge cases. For example, if all numbers on the fronts are also on the backs, there will be no good integers. Make sure to handle this case explicitly."
+    },
+    {
+      "content": "You should also consider the constraints given in the problem. Both `fronts` and `backs` can have a length of up to 1000, and values can range from 1 to 2000. This means your solution should be efficient enough to handle the upper limits."
+    },
+    {
+      "content": "When searching for the minimum good integer, you can stop checking once you reach a number that exceeds the maximum possible value in the `backs` array. This can help optimize your search."
+    },
+    {
+      "content": "Finally, if you find that there are no good integers after your checks, remember to return 0 as specified in the problem statement. Make sure your return logic accounts for this."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == fronts.length == backs.length",
+    "1 <= n <= 1000",
+    "1 <= fronts[i], backs[i] <= 2000",
+    "Return 0 if there are no good integers."
+  ]
+}

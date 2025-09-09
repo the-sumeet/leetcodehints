@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main components: `FriendRequest` and `RequestAccepted`. Each of these contains lists of interactions between users."
+    },
+    {
+      "content": "Focus on the `FriendRequest` data first. You need to keep track of how many requests each user sent. Consider using a dictionary to count requests for each user."
+    },
+    {
+      "content": "Next, look at the `RequestAccepted` data. Similar to the previous step, you should count how many requests each user accepted. Again, a dictionary can be useful for this."
+    },
+    {
+      "content": "Think about how you will calculate the acceptance rate. The acceptance rate for a user can be defined as the number of requests accepted divided by the number of requests sent."
+    },
+    {
+      "content": "Remember to handle cases where a user has sent no requests. In such cases, the acceptance rate should be defined as 0 to avoid division by zero."
+    },
+    {
+      "content": "When calculating the acceptance rate, you might want to store the results in a new structure. Consider using a list of tuples where each tuple contains the user ID and their acceptance rate."
+    },
+    {
+      "content": "Ensure that you format the acceptance rate as a percentage. You can multiply the rate by 100 to convert it from a decimal to a percentage."
+    },
+    {
+      "content": "After calculating the acceptance rates, consider how you will sort the results. You may want to sort primarily by acceptance rate and secondarily by user ID in case of ties."
+    },
+    {
+      "content": "Your final output should include the user ID and their acceptance rate formatted as a percentage. Make sure to return the results in the specified format."
+    },
+    {
+      "content": "As a final step, ensure that your code handles edge cases, such as users with no sent requests or no accepted requests. You might want to test your function with a variety of input scenarios."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of two lists: FriendRequest and RequestAccepted.",
+    "Each entry in FriendRequest is a triplet: [sender_id, send_to_id, request_date].",
+    "Each entry in RequestAccepted is a triplet: [requester_id, accepter_id, accept_date].",
+    "The acceptance rate is calculated as accepted requests / sent requests.",
+    "Handle division by zero by defining acceptance rate as 0 for users with no sent requests.",
+    "The output format should include user ID and acceptance rate as a percentage.",
+    "Sort the output primarily by acceptance rate and secondarily by user ID."
+  ]
+}

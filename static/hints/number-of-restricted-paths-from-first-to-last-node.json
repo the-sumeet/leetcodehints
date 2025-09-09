@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the graph structure. You have nodes and edges, where each edge has a weight. Visualize the graph with nodes labeled from 1 to n."
+    },
+    {
+      "content": "Consider how to represent the graph in code. An adjacency list is a common way to store graphs. You can use a dictionary where each key is a node and the value is a list of tuples representing connected nodes and their weights."
+    },
+    {
+      "content": "You need to calculate the shortest distance from each node to the last node (node n). Dijkstra's algorithm is a suitable choice for this since it efficiently finds the shortest paths in a weighted graph."
+    },
+    {
+      "content": "When implementing Dijkstra's algorithm, keep in mind to use a priority queue (or a min-heap) to always expand the least costly node first. This will help you efficiently find the shortest paths."
+    },
+    {
+      "content": "After calculating the shortest distances to the last node for each node, store these distances in an array. This will be essential for checking the restricted path condition later."
+    },
+    {
+      "content": "Next, think about how to find all paths from node 1 to node n. You can use Depth First Search (DFS) or Breadth First Search (BFS) to explore all possible paths in the graph."
+    },
+    {
+      "content": "While traversing the graph, ensure that you only follow edges that maintain the condition: distanceToLastNode(z_i) > distanceToLastNode(z_{i+1}). This is crucial for identifying restricted paths."
+    },
+    {
+      "content": "Keep track of the number of valid restricted paths you find. Since the result can be large, remember to take the modulo with 10^9 + 7 as specified in the problem."
+    },
+    {
+      "content": "Consider edge cases such as graphs with only two nodes or graphs where all edges have the same weight. These can help ensure your solution is robust."
+    },
+    {
+      "content": "Finally, ensure your implementation handles the constraints well, especially with n up to 20,000 and edges up to 40,000. Optimize your graph traversal to avoid timeouts."
+    }
+  ],
+  "questionNotes": [
+    "The graph is undirected and connected.",
+    "Node labels range from 1 to n.",
+    "Each edge is unique between two nodes.",
+    "Return the number of restricted paths modulo 10^9 + 7.",
+    "The distances must be strictly decreasing along the path."
+  ]
+}

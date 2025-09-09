@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to identify groups of adjacent letters in the string `s`. For example, in `s = 'heeellooo'`, the groups are 'h', 'eee', 'll', and 'ooo'. You can iterate through the string and count consecutive characters to form these groups."
+    },
+    {
+      "content": "Once you have the groups, consider how to compare these groups with the groups formed by each word in the `words` array. You will need to ensure that both strings have the same characters in the same order."
+    },
+    {
+      "content": "Think about how to handle the case where the length of a group in the query word is less than 3. In such cases, that group cannot be stretched to match the corresponding group in `s`."
+    },
+    {
+      "content": "When comparing groups, if the group in the query word has a size of 2 or 1, it should not match a group in `s` that is larger than 2. For example, 'll' in 'hello' cannot match 'eee' in 'heeellooo'."
+    },
+    {
+      "content": "Consider how to handle cases where the groups in `s` are larger than those in the query words. You need to check if the size of the group in `s` is at least 3 and if the corresponding group in the query can be stretched to match it."
+    },
+    {
+      "content": "You should also account for the possibility of extra characters in the groups of `s`. For instance, if `s` has 'eee' and the query has 'e', you can stretch 'e' to 'eee', but not to 'ee'."
+    },
+    {
+      "content": "As you compare each group, keep a count of how many words in the `words` array can be considered stretchy. Make sure to reset your count for each new word you check."
+    },
+    {
+      "content": "Implement a function to extract groups from both `s` and each query word. This function should return a list of tuples containing the character and its count, which will make comparisons easier."
+    },
+    {
+      "content": "Remember to handle edge cases where the lengths of `s` and the query words differ significantly. If they do not match in the number of groups, you can immediately conclude that the word is not stretchy."
+    },
+    {
+      "content": "Finally, put together the logic to check if each group in the query can match the corresponding group in `s`. If you find any group that cannot be stretched appropriately, that word is not stretchy."
+    }
+  ],
+  "questionNotes": [
+    "Ensure to handle groups of characters correctly.",
+    "A group in the query word must be able to stretch to match the corresponding group in `s`.",
+    "Groups in `s` must have sizes of at least 3 to be stretchable.",
+    "Return the count of stretchy words, not the words themselves."
+  ]
+}

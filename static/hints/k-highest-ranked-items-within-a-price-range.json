@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. Each cell can either be a wall (0), an empty cell (1), or an item with a price. Make sure you can identify which cells you can move to from your starting position."
+    },
+    {
+      "content": "Consider how to traverse the grid. A Breadth-First Search (BFS) is a good approach for finding the shortest paths from the starting position to all reachable cells. Remember that you can only move to cells that are not walls."
+    },
+    {
+      "content": "As you traverse the grid, keep track of the distance from the starting position to each reachable item cell. You will need this information to rank the items later."
+    },
+    {
+      "content": "Filter the reachable items based on the given price range. Only keep items whose prices fall within the specified `low` and `high` values from the `pricing` array."
+    },
+    {
+      "content": "Once you have the valid items, you need to rank them. The first criterion is the distance from the start. You can use a tuple to store both the distance and the item's price for easier sorting later."
+    },
+    {
+      "content": "After sorting the items by distance, price, and their coordinates, remember to handle the case where there are fewer than `k` items. You should return all reachable items if they are less than `k`."
+    },
+    {
+      "content": "When sorting the items, consider using a custom sorting function or a priority queue. The order of sorting should be: distance (ascending), price (ascending), row (ascending), column (ascending)."
+    },
+    {
+      "content": "Make sure to consider edge cases, such as when the starting position is surrounded by walls or when there are no items within the price range. Your code should handle these gracefully."
+    },
+    {
+      "content": "As you prepare to return the results, ensure that you format the output correctly. The result should be a list of lists, with each inner list containing the row and column of the item."
+    },
+    {
+      "content": "Finally, implement your solution step by step. Start with the BFS to find reachable cells, then filter and sort the items, and finally prepare the output. This modular approach will help you debug and validate each part of your solution."
+    }
+  ],
+  "questionNotes": [
+    "The grid can contain walls (0), empty cells (1), and items with prices (positive integers).",
+    "You can only move to cells that are not walls.",
+    "The distance is measured in steps to adjacent cells.",
+    "Return the k highest-ranked items, or fewer if there are not enough items.",
+    "Sorting criteria: distance, price, row, column (all ascending).",
+    "Handle edge cases where no items are reachable or within the price range."
+  ]
+}

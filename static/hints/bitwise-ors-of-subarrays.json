@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous part of the array. For example, in the array [1, 2, 3], the subarrays include [1], [2], [3], [1, 2], [2, 3], and [1, 2, 3]."
+    },
+    {
+      "content": "Remember that the bitwise OR operation combines bits from two numbers. For example, the bitwise OR of 2 (binary 10) and 3 (binary 11) is 3 (binary 11). This means that when calculating the OR for subarrays, you should keep combining the elements as you expand the subarray."
+    },
+    {
+      "content": "Consider how to efficiently compute the OR for all possible subarrays. You don't need to compute the OR from scratch for each subarray. Instead, you can build it incrementally as you extend the subarray."
+    },
+    {
+      "content": "Think about how to keep track of the distinct OR results. A set data structure can be useful here since it automatically handles uniqueness for you."
+    },
+    {
+      "content": "When iterating through the array, for each starting index, try to extend the subarray to the right. Update the current OR value and add it to your set of results. This way, you can capture all distinct ORs for subarrays starting from that index."
+    },
+    {
+      "content": "Pay attention to the constraints. The length of the array can be up to 50,000, so your solution should ideally be linear or near-linear in complexity to handle the upper limits efficiently."
+    },
+    {
+      "content": "Consider edge cases, such as when the array contains all zeros or when it contains the same number repeated. How do these cases affect the distinct OR results?"
+    },
+    {
+      "content": "Remember that the OR operation is cumulative. If you have an OR result from a previous element, you can simply OR it with the next element to get the new result. This can save computation time."
+    },
+    {
+      "content": "Think about how to implement the loop structure. You might want an outer loop for the starting index of the subarray and an inner loop for the ending index. This will help you explore all possible subarrays."
+    },
+    {
+      "content": "Finally, after collecting all distinct OR results in your set, remember to return the size of the set as the answer. This size represents the number of unique bitwise ORs from all subarrays."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 50,000; 0 <= arr[i] <= 10^9.",
+    "Focus on distinct values of the bitwise OR.",
+    "A subarray is defined as a contiguous non-empty sequence.",
+    "The result should be the count of unique OR values, not the values themselves."
+  ]
+}

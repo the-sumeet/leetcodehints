@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the rules for vowel transitions. Each vowel can only be followed by specific other vowels. For instance, 'a' can only be followed by 'e'. Make a list of these transitions."
+    },
+    {
+      "content": "Consider how you would represent the number of valid strings of length 1. There are 5 vowels, so for n = 1, the count is simply 5."
+    },
+    {
+      "content": "Think about how to build strings of length greater than 1. You can build a string of length n by appending a vowel to a valid string of length n-1. This suggests a recursive or dynamic programming approach."
+    },
+    {
+      "content": "Define a dynamic programming array where each index represents the count of valid strings ending with a specific vowel. For example, dp[i][0] could represent the count of strings of length i ending with 'a'."
+    },
+    {
+      "content": "Initialize your base case for n = 1. Each vowel has exactly one string of length 1: dp[1][0] = 1 for 'a', dp[1][1] = 1 for 'e', and so on."
+    },
+    {
+      "content": "Now, think about how to fill in the dynamic programming table. For each vowel at length i, sum the counts from the previous length (i-1) based on the allowed transitions."
+    },
+    {
+      "content": "For example, to calculate dp[i][0] (for 'a'), you would only consider dp[i-1][1] (for 'e') since 'a' can only follow 'e'."
+    },
+    {
+      "content": "Make sure to apply the modulo operation (10^9 + 7) at each step to prevent overflow and to meet the problem's requirements."
+    },
+    {
+      "content": "Consider edge cases, such as the smallest value of n (n = 1). Ensure your implementation correctly handles this case."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Since you are filling a table of size n with a constant number of operations for each vowel, what is the overall complexity?"
+    },
+    {
+      "content": "You may want to optimize space by only keeping track of the counts for the last two lengths instead of the entire dp array, as each state only depends on the previous state."
+    },
+    {
+      "content": "Once you have filled in your dynamic programming table, the final answer will be the sum of counts for all vowels at length n. Ensure you return this sum modulo 10^9 + 7."
+    },
+    {
+      "content": "Make sure to test your implementation with various values of n to confirm that it handles all cases correctly, especially the upper limit (n = 20,000)."
+    },
+    {
+      "content": "Before finalizing your solution, review the transition rules again to ensure that your implementation accurately reflects them in the dp table."
+    },
+    {
+      "content": "Now, you're close to a complete solution! Remember to structure your code for clarity, and ensure that your transitions are correctly implemented in the dynamic programming approach."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 20000",
+    "Return the result modulo 10^9 + 7",
+    "Each vowel has specific rules for what can follow it, which must be adhered to in the solution."
+  ]
+}

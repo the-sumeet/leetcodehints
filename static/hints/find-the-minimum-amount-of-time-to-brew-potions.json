@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Consider how the brewing process works sequentially. Each wizard must complete their work on a potion before the next wizard can start. This means you need to keep track of when each wizard finishes their current potion."
+    },
+    {
+      "content": "Think about how to calculate the time taken by each wizard for a potion. The time for wizard `i` on potion `j` is given by the formula: `time_ij = skill[i] * mana[j]`. Make sure you understand how to apply this formula correctly."
+    },
+    {
+      "content": "You need to maintain a running total of time for each wizard. Each wizard's start time for the next potion will depend on when they finish the current potion and when the previous wizard finishes their work on that potion."
+    },
+    {
+      "content": "Create an array to keep track of the finish time for each wizard after they complete each potion. This will help you determine when a wizard can start the next potion."
+    },
+    {
+      "content": "When calculating the finish time for the first potion, the first wizard can start immediately at time 0. For subsequent potions, consider the finish time of the previous wizard and the current wizard's finish time for the previous potion."
+    },
+    {
+      "content": "Make sure to handle the transition between potions carefully. The start time for a wizard on the next potion should be the maximum of their finish time from the previous potion and the finish time of the previous wizard on the current potion."
+    },
+    {
+      "content": "As you iterate through each potion and each wizard, ensure you are correctly updating the finish time for each wizard. This will be crucial for determining the overall time required to brew all potions."
+    },
+    {
+      "content": "Think about edge cases, such as when there is only one wizard or one potion. How does the logic change in these scenarios? Ensure your solution works for the minimum constraints."
+    },
+    {
+      "content": "After processing all potions, the final answer will be the finish time of the last wizard on the last potion. Make sure to return this value correctly."
+    },
+    {
+      "content": "Consider how you might structure your loops. You will likely need a nested loop: one for potions and one for wizards. This will help you calculate the finish times in the correct order."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == skill.length, m == mana.length",
+    "1 <= n, m <= 5000",
+    "1 <= mana[i], skill[i] <= 5000",
+    "Return the minimum amount of time required for all potions to be brewed.",
+    "Ensure you maintain the correct finish times for each wizard."
+  ]
+}

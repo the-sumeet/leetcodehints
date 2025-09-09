@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the board layout. You have a starting point 'S' at the bottom right and an endpoint 'E' at the top left. The characters in between can be numeric values (1-9) or obstacles ('X')."
+    },
+    {
+      "content": "Consider how you can move on the board. You can move up, left, or diagonally up-left. Make sure to account for the boundaries of the board to avoid out-of-bounds errors."
+    },
+    {
+      "content": "Think about how to track your current position and the score you collect as you move. You might want to use a 2D array to store the maximum score at each position."
+    },
+    {
+      "content": "As you traverse the board, you need to keep track of the number of paths that lead to each maximum score. This means you will need another 2D array to count the paths."
+    },
+    {
+      "content": "When moving to a new cell, check if it is an obstacle ('X'). If it is, you cannot move there. This will affect how you update your score and path counts."
+    },
+    {
+      "content": "You can use dynamic programming to fill your score and path arrays. Start from the 'S' position and work your way to 'E', updating scores and paths based on valid moves."
+    },
+    {
+      "content": "Make sure to initialize your starting point correctly. The score at 'S' should be 0, and the path count should be 1 since you start there."
+    },
+    {
+      "content": "When updating the maximum score for a cell, consider the maximum score from the three possible previous positions (up, left, up-left)."
+    },
+    {
+      "content": "If you find a new maximum score for a cell, reset the path count for that cell to the sum of the path counts from the previous positions that led to this score."
+    },
+    {
+      "content": "If you encounter a cell that has the same maximum score as before, add the path counts from the previous positions to the current cell's path count."
+    },
+    {
+      "content": "Don't forget to apply the modulo operation (10^9 + 7) to your path counts to handle large numbers and avoid overflow."
+    },
+    {
+      "content": "After processing the board, check the score and path count at the 'E' position. If it remains unchanged from initialization, it means no path exists."
+    },
+    {
+      "content": "Consider edge cases such as a board filled with obstacles, or a board where 'E' is directly adjacent to 'S' without any numeric values."
+    },
+    {
+      "content": "Remember to return the result as a list of two integers: the maximum score and the number of paths. If there's no valid path, return [0, 0]."
+    },
+    {
+      "content": "Finally, think about how to structure your loops and conditions to ensure you are checking all possible paths efficiently without redundant calculations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= board.length == board[i].length <= 100",
+    "Starting point 'S' is at the bottom right corner, and endpoint 'E' is at the top left corner.",
+    "You can only move to cells that are not obstacles ('X').",
+    "Return format: [maximum score, number of paths] or [0, 0] if no path exists.",
+    "Use modulo 10^9 + 7 for the number of paths."
+  ]
+}

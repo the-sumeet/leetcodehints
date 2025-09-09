@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a 'good' subset of rows. A subset is good if the sum of each column in that subset is at most half of the number of rows in the subset."
+    },
+    {
+      "content": "Consider the implications of the requirement that the sum of each column must be at most floor(k / 2), where k is the number of rows in your subset. This means that if you have k rows, the maximum number of 1's allowed in each column is k // 2."
+    },
+    {
+      "content": "Think about how you can iterate through the rows of the matrix. You might want to start with an empty list and gradually add rows while checking the conditions for being a good subset."
+    },
+    {
+      "content": "To check if a subset of rows is good, you will need to maintain a count of 1's in each column as you add rows. How will you keep track of these counts efficiently?"
+    },
+    {
+      "content": "Consider using a loop to go through each row and add it to your subset if it maintains the good subset condition. What happens if you add a row that causes one of the column sums to exceed floor(k / 2)?"
+    },
+    {
+      "content": "Remember that the output needs to be sorted in ascending order. You might want to keep track of the indices of the rows you are selecting as you build your subset."
+    },
+    {
+      "content": "Think about edge cases, such as when the grid has only one row. How will this affect your approach? Can a single row always be considered a good subset?"
+    },
+    {
+      "content": "If you find that no rows can be selected to form a good subset, ensure that your function returns an empty array. How will you check this condition?"
+    },
+    {
+      "content": "Consider the maximum constraints of the problem. With m up to 10,000 and n up to 5, how can you ensure your solution is efficient enough to handle the largest cases?"
+    },
+    {
+      "content": "You may want to use a greedy approach, starting with rows that have fewer 1's. This could help in maintaining the condition of the good subset more easily."
+    },
+    {
+      "content": "As you build your subset, think about how you can efficiently update the column sums. Would a simple array suffice, or do you need a more complex data structure?"
+    },
+    {
+      "content": "When iterating through possible subsets, consider if you should stop early if adding a new row makes it impossible to maintain the good subset condition."
+    },
+    {
+      "content": "You might want to implement a way to backtrack if adding a row leads to a failure in maintaining the good subset condition. How can you remove rows from your current selection?"
+    },
+    {
+      "content": "As you finalize your subset, make sure to convert the indices of the selected rows into the required output format. What is the expected format for the return value?"
+    },
+    {
+      "content": "Before finalizing your solution, test it against various edge cases, such as all zeros, all ones, and mixed cases to ensure it handles all scenarios correctly."
+    }
+  ],
+  "questionNotes": [
+    "The output must be an array of row indices sorted in ascending order.",
+    "If multiple good subsets exist, returning any one of them is acceptable.",
+    "If no good subset can be formed, return an empty array.",
+    "Constraints: 1 <= m <= 10^4, 1 <= n <= 5, grid[i][j] is either 0 or 1."
+  ]
+}

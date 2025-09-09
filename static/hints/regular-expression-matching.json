@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic characters in the pattern. The '.' character matches any single character in the string, while '*' indicates that the preceding character can appear zero or more times."
+    },
+    {
+      "content": "Consider how to handle the '*' character. It can modify the preceding character, which means you need to think about both including and excluding it in your matching logic."
+    },
+    {
+      "content": "Think about how to iterate through both the input string `s` and the pattern `p`. You may want to use two pointers to keep track of your position in both the string and the pattern."
+    },
+    {
+      "content": "Remember that the matching must cover the entire input string. This means that both the string and pattern must be fully consumed for a match to be considered valid."
+    },
+    {
+      "content": "Consider edge cases, such as when the pattern is empty or when the string is empty. What would you return in these scenarios?"
+    },
+    {
+      "content": "You might want to define a recursive function that checks if the current characters match and then decides how to proceed based on the next character in the pattern."
+    },
+    {
+      "content": "When encountering a '*', you have two main choices: either treat it as matching zero occurrences of the preceding character or match one or more occurrences. Think about how to implement this branching logic."
+    },
+    {
+      "content": "If the current characters match (or if the pattern character is '.'), you can move both pointers forward. If they don't match, you'll need to consider the '*' case."
+    },
+    {
+      "content": "Keep in mind that if you choose to match the '*' with one occurrence of the preceding character, you should move the string pointer forward by one, but keep the pattern pointer at the '*' position."
+    },
+    {
+      "content": "If you decide to match zero occurrences of the preceding character, you should move the pattern pointer past the '*' and the preceding character."
+    },
+    {
+      "content": "Make sure to handle cases where the pattern might have multiple '*' characters or when the string has repeating characters that need to be matched."
+    },
+    {
+      "content": "Consider using dynamic programming as an alternative approach. You can create a 2D table where the cell at (i, j) indicates whether the first i characters of `s` match the first j characters of `p`."
+    },
+    {
+      "content": "In the dynamic programming approach, initialize the table with base cases for empty strings and patterns. How do you fill in the table based on matches and the '*' character?"
+    },
+    {
+      "content": "Think about how to handle the case when both the string and pattern are fully traversed. What should your function return in this case?"
+    },
+    {
+      "content": "Finally, ensure that your function returns a boolean value indicating whether the entire string matches the pattern. Consider edge cases where patterns might lead to unexpected results."
+    }
+  ],
+  "questionNotes": [
+    "The matching should cover the entire input string, not partial matches.",
+    "Constraints: 1 <= s.length <= 20, 1 <= p.length <= 20.",
+    "s contains only lowercase English letters; p contains lowercase letters, '.', and '*'.",
+    "Each '*' will have a valid preceding character."
+  ]
+}

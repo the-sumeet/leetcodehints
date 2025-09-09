@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to fit packages into boxes from a single supplier, minimizing the total wasted space. Each box can hold only one package."
+    },
+    {
+      "content": "Consider how to check if a package can fit into a box. A package of size `p` can fit into a box of size `b` if `p <= b`. Think about how you can iterate through the boxes for each package."
+    },
+    {
+      "content": "Remember that you have multiple suppliers, each providing different box sizes. You need to evaluate the total wasted space for each supplier and select the one with the minimum waste."
+    },
+    {
+      "content": "The wasted space for a package placed in a box is calculated as `waste = box_size - package_size`. Make sure to sum this waste for all packages when calculating total waste for a supplier."
+    },
+    {
+      "content": "Before diving into the solution, sort the `packages` array. This will help you efficiently find the smallest box that can fit each package as you iterate through the boxes."
+    },
+    {
+      "content": "When considering each supplier's boxes, sort the boxes as well. This allows you to use a two-pointer technique or binary search to quickly find the appropriate box for each package."
+    },
+    {
+      "content": "Think about edge cases. For example, what happens if the largest package cannot fit into any box provided by a supplier? You should return -1 in such scenarios."
+    },
+    {
+      "content": "As you calculate the total wasted space for each supplier, keep track of the minimum waste encountered. Use a variable to hold this minimum value and update it as you find lower totals."
+    },
+    {
+      "content": "Make sure to implement the modulo operation with `10^9 + 7` as specified in the problem statement. This is crucial to avoid overflow and meet the problem's requirements."
+    },
+    {
+      "content": "Consider using a binary search to find the first box that can fit a given package size. This can significantly reduce the time complexity when checking box sizes."
+    },
+    {
+      "content": "Remember that you only need to evaluate the total waste for each supplier once. Store the results in a list and then determine the minimum after processing all suppliers."
+    },
+    {
+      "content": "When calculating the total waste for a supplier, ensure that you are correctly accumulating waste for each package and not skipping any packages."
+    },
+    {
+      "content": "Be cautious about the constraints. The number of packages and boxes can be large, so aim for an efficient solution, ideally O(n log n) due to sorting and binary search."
+    },
+    {
+      "content": "After evaluating all suppliers, if you find that no supplier can fit all packages, remember to return -1 as specified in the problem statement."
+    },
+    {
+      "content": "Finally, ensure that your code handles all edge cases, such as when all packages fit perfectly into boxes with no waste, or when the boxes are too small for all packages."
+    }
+  ],
+  "questionNotes": [
+    "Each package must fit into a box from a single supplier.",
+    "Total wasted space is the sum of (box_size - package_size) for each package.",
+    "Return -1 if it's impossible to fit all packages in boxes.",
+    "The answer should be returned modulo 10^9 + 7.",
+    "Packages and box sizes are given as integers, and box sizes are distinct."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node has a left and right child. Visualize how you can traverse the tree in different directions (left or right) from any node."
+    },
+    {
+      "content": "Remember that a ZigZag path consists of alternating directions. If you go left from a node, the next move must be to the right, and vice versa. Think about how you can keep track of the current direction as you traverse."
+    },
+    {
+      "content": "Consider using a depth-first search (DFS) approach to explore the tree. This will allow you to visit each node and explore both left and right children recursively."
+    },
+    {
+      "content": "As you traverse the tree, maintain a count of the current ZigZag length. Each time you switch directions, increase the count. If you move in the same direction, reset the count."
+    },
+    {
+      "content": "Think about how to handle the base case when you reach a leaf node. At this point, you should compare the current ZigZag length with the maximum length found so far and update it if necessary."
+    },
+    {
+      "content": "You will need to call your DFS function twice for each node: once for the left child and once for the right child. This way, you can explore both potential ZigZag paths starting from that node."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree has only one node. In this case, the longest ZigZag path length should be 0 since there are no other nodes to traverse."
+    },
+    {
+      "content": "Make sure to pass the current length of the ZigZag path and the direction to the recursive function. This will help you keep track of the state as you move through the tree."
+    },
+    {
+      "content": "When implementing the DFS function, you might want to use a helper function that takes parameters for the current node, the current length of the ZigZag path, and the direction (left or right)."
+    },
+    {
+      "content": "Finally, ensure that you return the maximum ZigZag length found after traversing the entire tree. This will be your final answer to the problem."
+    }
+  ],
+  "questionNotes": [
+    "A ZigZag path is defined as alternating left and right moves.",
+    "Zigzag length is defined as the number of nodes visited - 1.",
+    "A single node has a length of 0.",
+    "The number of nodes in the tree is in the range [1, 5 * 10^4].",
+    "1 <= Node.val <= 100."
+  ]
+}

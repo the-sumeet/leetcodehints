@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints for Alice and Bob's positions. Alice must always be in the upper left corner of the rectangle, and Bob must be in the lower right corner. This means that Alice's x-coordinate must be less than or equal to Bob's x-coordinate, and Alice's y-coordinate must be less than or equal to Bob's y-coordinate."
+    },
+    {
+      "content": "Consider how to iterate through pairs of points. You can use a nested loop to compare each point with every other point. Make sure to check the ordering of the coordinates to determine which point can be Alice and which can be Bob."
+    },
+    {
+      "content": "When checking if a pair of points (Alice, Bob) is valid, think about the other points in the list. You need to ensure that no other point lies inside or on the rectangle formed by Alice and Bob."
+    },
+    {
+      "content": "To check if a point lies inside or on the fence, you can define the rectangle's boundaries using Alice's and Bob's coordinates. For a point (x, y) to be inside or on the fence, it must satisfy: `Alice.x <= x <= Bob.x` and `Alice.y <= y <= Bob.y`."
+    },
+    {
+      "content": "Remember that the rectangle can have zero area (i.e., it can be a line). This means that if Alice and Bob share the same x-coordinate or y-coordinate, you still need to check the validity of other points."
+    },
+    {
+      "content": "Consider sorting the points based on their coordinates. This can help you efficiently check for valid pairs since you can quickly eliminate points that cannot be Alice or Bob based on their positions."
+    },
+    {
+      "content": "When iterating through pairs of points, ensure that you are not counting the same pair twice. You can achieve this by ensuring that you always choose the point with the smaller coordinates as Alice."
+    },
+    {
+      "content": "As you check each pair of points, maintain a count of valid pairs. This will be your final answer, so make sure to initialize it properly before starting the iterations."
+    },
+    {
+      "content": "Think about edge cases, such as when all points are aligned vertically or horizontally. These cases might lead to more valid pairs since they can form lines rather than areas."
+    },
+    {
+      "content": "Consider using a set to store all points for quick lookup. This can help you determine if a point lies inside or on the fence in constant time."
+    },
+    {
+      "content": "When checking if a point is inside or on the fence, remember to include the boundary conditions. A point that lies exactly on the fence should not make Alice sad."
+    },
+    {
+      "content": "You might want to use a helper function to determine if a point is inside or on the fence. This can make your main logic cleaner and easier to read."
+    },
+    {
+      "content": "As you implement the solution, keep track of the time complexity. The naive approach of checking all pairs and all points could lead to O(n^3) time complexity, which may not be efficient enough for larger inputs."
+    },
+    {
+      "content": "Consider the implications of the problem constraints. With n up to 1000, an O(n^2) solution might be feasible, but you should still aim for efficiency."
+    },
+    {
+      "content": "Before finalizing your solution, test it against edge cases, such as the minimum and maximum coordinate values, to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 1000",
+    "All points[i] are distinct.",
+    "Points can have coordinates in the range of -10^9 to 10^9.",
+    "Alice's position must be the upper left corner; Bob's must be the lower right corner.",
+    "Return the number of valid pairs of points."
+  ]
+}

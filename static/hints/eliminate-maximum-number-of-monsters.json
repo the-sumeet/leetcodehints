@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how long it takes each monster to reach the city. For each monster, you can calculate the time it takes to reach the city using the formula: `time[i] = dist[i] / speed[i]`."
+    },
+    {
+      "content": "Remember that your weapon takes one minute to charge. This means that you can only eliminate one monster per minute. Think about how this affects your strategy in choosing which monster to eliminate first."
+    },
+    {
+      "content": "Consider sorting the monsters based on their time to reach the city. This way, you can prioritize eliminating the monsters that are closest to the city first."
+    },
+    {
+      "content": "When evaluating which monsters to eliminate, keep track of the time elapsed. If you eliminate a monster at time `t`, the next monster can only be eliminated at `t + 1`."
+    },
+    {
+      "content": "It’s important to check if a monster reaches the city at the same time you are ready to eliminate it. If a monster reaches the city exactly when your weapon is charged, you lose."
+    },
+    {
+      "content": "Consider using a loop to iterate through the sorted list of monsters. You can maintain a counter for the number of monsters you have successfully eliminated."
+    },
+    {
+      "content": "As you loop through the sorted monsters, compare the time it takes for each monster to reach the city with the time you are ready to eliminate the next monster. If a monster's time is less than or equal to your current time, you cannot eliminate it."
+    },
+    {
+      "content": "Think about edge cases, such as when all monsters have the same distance and speed. How does that affect your ability to eliminate them?"
+    },
+    {
+      "content": "Make sure to return the correct result: the maximum number of monsters you can eliminate before any reach the city. If you can eliminate all, return `n`."
+    },
+    {
+      "content": "As a final step, ensure that your implementation handles large inputs efficiently, given the constraints of the problem. Consider the time complexity of your approach."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == dist.length == speed.length",
+    "1 <= n <= 10^5",
+    "1 <= dist[i], speed[i] <= 10^5",
+    "Return the maximum number of monsters eliminated or n if all can be eliminated.",
+    "If a monster reaches the city at the exact moment the weapon is charged, it counts as a loss."
+  ]
+}

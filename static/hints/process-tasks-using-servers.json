@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the problem. You have two lists: one for servers and one for tasks. Each server has a weight, and each task has a processing time. Your goal is to assign tasks to servers based on their weights and availability."
+    },
+    {
+      "content": "Consider how to keep track of which servers are free and when they will become free again. You might want to use a priority queue (min-heap) to efficiently manage the servers based on their weights."
+    },
+    {
+      "content": "Think about how to handle the task queue. As tasks arrive at each second, you need to insert them into a queue. You will process tasks in the order they arrive, so maintaining the order is crucial."
+    },
+    {
+      "content": "When assigning a task to a server, remember the tie-breaking rules: if two servers have the same weight, choose the one with the smallest index. This means you should store both the weight and the index in your priority queue."
+    },
+    {
+      "content": "You need to manage the timing of when tasks are assigned and when servers become free. Create a way to track the current time and update it as tasks are processed. Use a separate data structure to keep track of when each server will be free."
+    },
+    {
+      "content": "As tasks are processed, if all servers are busy, you must wait until a server becomes free. This means you need to check the next available time for servers and possibly delay task assignment."
+    },
+    {
+      "content": "Consider edge cases, such as when the number of tasks is less than the number of servers. In this case, not all servers will be used, and you should ensure that your algorithm can handle this gracefully."
+    },
+    {
+      "content": "Make sure to initialize your result array correctly. The length of this array should match the number of tasks, and each entry should correspond to the index of the server assigned to each task."
+    },
+    {
+      "content": "As you implement the solution, keep track of the current time and the state of each server (whether it's free or busy). You may want to use a min-heap for the servers and a queue for the tasks to efficiently manage both."
+    },
+    {
+      "content": "Finally, when a server becomes free, check if there are tasks waiting in the queue. If so, assign the next task to the free server following the weight and index rules. Make sure to update the server's next free time accordingly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: servers.length == n, tasks.length == m, 1 <= n, m <= 2 * 10^5, 1 <= servers[i], tasks[j] <= 2 * 10^5.",
+    "Return an array ans of length m, where ans[j] is the index of the server assigned to the j-th task.",
+    "Tasks are assigned in the order they arrive, and if multiple servers become free at the same time, tasks are assigned based on their order of arrival.",
+    "Remember to handle tie-breaking rules for server assignment based on weight and index."
+  ]
+}

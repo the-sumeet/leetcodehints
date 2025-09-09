@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node has a unique value, and the levels of the tree are determined by the distance from the root node. Make sure you can traverse the tree level by level."
+    },
+    {
+      "content": "You will need to collect the values of nodes at each level. Consider using a breadth-first search (BFS) approach to traverse the tree and gather these values into lists for each level."
+    },
+    {
+      "content": "Once you have the values for each level, check if they are already sorted. If a level is sorted, you can skip any operations for that level."
+    },
+    {
+      "content": "To determine how many swaps are needed to sort a level, think about the concept of 'minimum number of swaps to sort an array'. This can be achieved by tracking the positions of elements and their sorted counterparts."
+    },
+    {
+      "content": "Consider using a mapping of the original indices of each value in the level to their indices in the sorted version of that level. This will help you identify misplaced elements."
+    },
+    {
+      "content": "For each level, you can create a cycle decomposition of the indices. Each cycle will tell you how many swaps are needed to sort the elements within that cycle."
+    },
+    {
+      "content": "Remember that the number of swaps needed to sort a cycle of length k is (k - 1). This means you'll need to sum up the swaps required for all cycles in a level."
+    },
+    {
+      "content": "As you implement your solution, pay attention to edge cases such as a single-node tree or a tree where all levels are already sorted. These cases should return 0 operations."
+    },
+    {
+      "content": "After processing all levels, sum the total number of operations needed across all levels to get your final answer. Make sure to handle large trees efficiently since the constraints allow up to 100,000 nodes."
+    },
+    {
+      "content": "Finally, ensure your function returns the total count of swaps as an integer. Be mindful of the input format and constraints to avoid any off-by-one errors."
+    }
+  ],
+  "questionNotes": [
+    "The binary tree contains unique values.",
+    "You can swap values only between nodes at the same level.",
+    "Each level must be sorted in strictly increasing order.",
+    "Constraints: 1 <= Node.val <= 100000, number of nodes in the range [1, 100000].",
+    "Return the minimum number of operations needed."
+  ]
+}

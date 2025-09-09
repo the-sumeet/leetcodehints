@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. Alice has `n` candies, and she can eat only `n / 2` of them. Your goal is to maximize the number of different types of candies she can eat."
+    },
+    {
+      "content": "Consider how to count the different types of candies in the `candyType` array. You might want to use a data structure that helps you keep track of unique elements, such as a set or a dictionary."
+    },
+    {
+      "content": "Think about the constraints: `n` is always even, so the number of candies Alice can eat is always an integer. This means that if `n` is 6, she can eat 3 candies, and if `n` is 4, she can eat 2 candies."
+    },
+    {
+      "content": "Once you have the unique types of candies, you need to determine how many of these types Alice can actually eat. If the number of unique types is less than or equal to `n / 2`, she can eat one of each type."
+    },
+    {
+      "content": "If the number of unique types is greater than `n / 2`, then Alice can only eat `n / 2` candies. This means you need to return the smaller of the two values: the count of unique types or `n / 2`."
+    },
+    {
+      "content": "To implement this, start by creating a set from the `candyType` array. This will automatically filter out duplicates and give you the unique types of candies."
+    },
+    {
+      "content": "Next, calculate `n / 2` and compare it with the size of the set of unique candy types. You can use the built-in functions to get the size of the set."
+    },
+    {
+      "content": "Remember to handle edge cases: what if all candies are of the same type? In this case, the number of unique types will be 1, and Alice can only eat one type."
+    },
+    {
+      "content": "Consider the time complexity of your solution. Using a set to count unique types is efficient, but make sure your overall approach is optimal given the constraints."
+    },
+    {
+      "content": "Finally, put together your approach: create a set from `candyType`, calculate `n / 2`, and return the minimum of the size of the set and `n / 2`. This will give you the maximum number of different types of candies Alice can eat."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == candyType.length, 2 <= n <= 10^4, n is even.",
+    "Candy types can range from -10^5 to 10^5.",
+    "Focus on counting unique candy types and how many candies Alice can eat.",
+    "Return the maximum number of different types Alice can eat."
+  ]
+}

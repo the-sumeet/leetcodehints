@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the absolute difference. For any two numbers a and b, the absolute difference is given by |a - b|. This means that the order of a and b does not matter."
+    },
+    {
+      "content": "Since the array is sorted in non-decreasing order, think about how this property can help simplify the calculation of absolute differences. For example, if nums[i] is less than nums[j], then |nums[i] - nums[j]| simplifies to nums[j] - nums[i]."
+    },
+    {
+      "content": "Consider how you can calculate the sum of absolute differences for each element in the array. You might want to break down the problem: for each index i, you need to sum the differences with all other elements, which can be split into two parts: elements before i and elements after i."
+    },
+    {
+      "content": "Notice that for an element at index i, all elements before it (from index 0 to i-1) are less than or equal to it, and all elements after it (from index i+1 to end) are greater than or equal to it. This can help you compute the sums more efficiently."
+    },
+    {
+      "content": "Think about how to accumulate the sums of the elements before and after the current index. You can maintain two cumulative sums: one for the left side (elements before i) and one for the right side (elements after i)."
+    },
+    {
+      "content": "As you iterate through the array, you can keep track of the total sum of elements seen so far and the count of those elements. This will help you compute the contribution of the left and right parts to the absolute difference sum for each index."
+    },
+    {
+      "content": "When calculating the result for index i, the contribution from the left side can be computed as: `count_left * nums[i] - sum_left`, where `count_left` is the number of elements before i and `sum_left` is their total sum. Similarly, compute the right contribution."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the array has only two elements. In this case, the result for each element can be computed directly without needing to loop through all elements."
+    },
+    {
+      "content": "Remember that the result array should have the same length as the input array. Make sure to initialize it properly and fill it with the computed results for each index."
+    },
+    {
+      "content": "Finally, put all the pieces together: loop through the array, calculate the left and right contributions for each index, and store the results. Ensure that your algorithm runs efficiently, ideally in O(n) time."
+    }
+  ],
+  "questionNotes": [
+    "The input array nums is sorted in non-decreasing order.",
+    "You need to return an array result where result[i] is the sum of absolute differences for nums[i].",
+    "Constraints: 2 <= nums.length <= 10^5 and 1 <= nums[i] <= nums[i + 1] <= 10^4.",
+    "Be careful with 0-indexing when accessing elements in the array."
+  ]
+}

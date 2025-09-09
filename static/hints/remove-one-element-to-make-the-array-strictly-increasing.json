@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for an array to be strictly increasing. An array is strictly increasing if for every index `i`, the condition `nums[i - 1] < nums[i]` holds true."
+    },
+    {
+      "content": "Consider the case where the array is already strictly increasing. What should you return in that case? Think about how removing an element might still keep the array valid."
+    },
+    {
+      "content": "Identify the first place in the array where the strictly increasing condition fails. This will help you determine which element might be a candidate for removal."
+    },
+    {
+      "content": "When you find an index `i` where `nums[i - 1] >= nums[i]`, you have two potential candidates for removal: `nums[i - 1]` or `nums[i]`. Think about how removing either affects the surrounding elements."
+    },
+    {
+      "content": "After identifying a candidate for removal, check the resulting array after removing that element. You need to verify if the remaining elements are still strictly increasing."
+    },
+    {
+      "content": "Remember to handle the edge cases where the failing condition occurs at the beginning or the end of the array. How does this change your approach?"
+    },
+    {
+      "content": "If you remove `nums[i - 1]`, check if `nums[i - 2] < nums[i]` (if `i - 2` is a valid index). If you remove `nums[i]`, check if `nums[i - 1] < nums[i + 1]` (if `i + 1` is a valid index)."
+    },
+    {
+      "content": "Consider using a loop to traverse the array and find the first index where the condition fails. This will help you systematically check each element."
+    },
+    {
+      "content": "If you find more than one index where the condition fails, think about how that affects the ability to remove just one element to achieve a strictly increasing array."
+    },
+    {
+      "content": "Finally, ensure that your function returns a boolean value. What will your return statement look like after checking all necessary conditions?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 1000",
+    "Each element in nums is between 1 and 1000.",
+    "Return true if the array can be made strictly increasing by removing exactly one element.",
+    "If the array is already strictly increasing, return true."
+  ]
+}

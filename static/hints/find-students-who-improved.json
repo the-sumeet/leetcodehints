@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by grouping the scores by `student_id` and `subject`. This will allow you to analyze each student's performance in each subject separately."
+    },
+    {
+      "content": "Within each group, you will need to sort the scores by `exam_date`. This will help you identify the first and latest scores for each student in a subject."
+    },
+    {
+      "content": "Remember to check that a student has taken exams in the same subject on at least two different dates. You can do this by counting the number of distinct exam dates for each student and subject combination."
+    },
+    {
+      "content": "Once you have the sorted scores, extract the first score and the latest score for each student and subject. You can do this by accessing the first and last elements of the sorted list of scores."
+    },
+    {
+      "content": "After obtaining the first and latest scores, apply the condition to check if the latest score is greater than the first score. This will help you filter out the students who have shown improvement."
+    },
+    {
+      "content": "Make sure to select the appropriate columns for your final output: `student_id`, `subject`, `first_score`, and `latest_score`. This will ensure your result matches the expected format."
+    },
+    {
+      "content": "Pay attention to the ordering of the final result. You need to sort the output by `student_id` and then by `subject` in ascending order."
+    },
+    {
+      "content": "Consider edge cases such as students who have only one score in a subject or students who have the same score on different dates. These cases should not be included in your final result."
+    },
+    {
+      "content": "When implementing your solution, think about using window functions or common table expressions (CTEs) if your SQL dialect supports them. This can simplify your queries and make them more readable."
+    },
+    {
+      "content": "Finally, ensure that your SQL query correctly handles the grouping, filtering, and ordering in a single pass. This will make your solution efficient and concise."
+    }
+  ],
+  "questionNotes": [
+    "The primary key is (student_id, subject, exam_date).",
+    "A student must have taken exams in the same subject on at least two different dates to be considered for improvement.",
+    "The result must be ordered by student_id and subject in ascending order.",
+    "Return columns: student_id, subject, first_score, latest_score."
+  ]
+}

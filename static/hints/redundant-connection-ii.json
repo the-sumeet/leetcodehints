@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. The edges represent a directed graph where each edge points from a parent to a child. A rooted tree should have exactly one parent for each node, except for the root."
+    },
+    {
+      "content": "Remember that the original graph was a tree before adding one extra edge. This means that every node except the root should have exactly one parent, and there should be no cycles."
+    },
+    {
+      "content": "Identify the properties of a tree: there should be no cycles and every node must be reachable from the root. The extra edge you add might create a cycle or a node with two parents."
+    },
+    {
+      "content": "To find the redundant edge, you can start by checking for cycles in the directed graph. A cycle indicates that there is an edge that can be removed to restore the tree structure."
+    },
+    {
+      "content": "You can represent the graph using an adjacency list or a dictionary to keep track of the parents of each node. This will help you identify which nodes have multiple parents."
+    },
+    {
+      "content": "As you traverse the edges, maintain a count of parents for each node. If you find a node that already has a parent and you encounter it again, you have found a potential redundant edge."
+    },
+    {
+      "content": "Pay attention to the order of edges in the input. If multiple edges could be removed to restore the tree, the problem requires you to return the one that appears last in the list."
+    },
+    {
+      "content": "Consider using a depth-first search (DFS) or breadth-first search (BFS) to explore the graph. This can help you identify cycles and track parent relationships effectively."
+    },
+    {
+      "content": "When checking for cycles, remember that if you revisit a node that is already in your current path of exploration, you have found a cycle."
+    },
+    {
+      "content": "Make sure to handle the case where the additional edge connects two nodes where one is already a descendant of the other, resulting in a cycle."
+    },
+    {
+      "content": "As you identify potential redundant edges, keep track of the last edge that could be removed to break the cycle. This will ensure you meet the problem's requirement."
+    },
+    {
+      "content": "After identifying the redundant edge, verify that removing it results in a valid tree structure. This involves checking that all nodes except the root have exactly one parent."
+    },
+    {
+      "content": "Remember to consider edge cases such as when the extra edge connects the root to another node or when it connects two leaf nodes."
+    },
+    {
+      "content": "Make sure to test your solution against various scenarios, including larger graphs, to ensure it handles all edge cases efficiently."
+    },
+    {
+      "content": "Finally, ensure that your output format matches the expected format, which is an array representing the edge to be removed."
+    }
+  ],
+  "questionNotes": [
+    "The input graph is a directed graph that started as a rooted tree.",
+    "Each node has distinct values from 1 to n, and there are n nodes.",
+    "The added edge is not one that already existed.",
+    "Return the edge that can be removed to restore the tree structure, prioritizing the last occurrence in the input."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by splitting both sentences into words. You can use the `split()` method in Python, which will give you a list of words from each sentence. For example: `words1 = s1.split()`."
+    },
+    {
+      "content": "Next, you need to count the occurrences of each word in both lists. A good way to do this is by using a dictionary to map each word to its count. You can iterate through each list and update the count accordingly."
+    },
+    {
+      "content": "Remember that a word is considered uncommon if it appears exactly once in one sentence and does not appear at all in the other. Make sure to check both conditions when you are processing your counts."
+    },
+    {
+      "content": "You can use the `collections.Counter` class in Python to simplify counting the words. This class will create a dictionary-like object that counts the occurrences of each word for you."
+    },
+    {
+      "content": "After counting the words, you will need to filter the counts to find the uncommon words. Loop through the counts and check for each word if its count is 1 in one sentence and 0 in the other."
+    },
+    {
+      "content": "Consider edge cases, such as when one or both sentences are empty. An empty sentence should not contribute any words to the final list of uncommon words."
+    },
+    {
+      "content": "Make sure to return the result as a list of strings. The order of the words in your output does not matter, so you can collect them in a simple list."
+    },
+    {
+      "content": "As you collect the uncommon words, you might want to use a list comprehension for a more concise implementation. For example: `uncommon_words = [word for word in counts if condition]`."
+    },
+    {
+      "content": "When checking the conditions for uncommon words, remember to use logical operators to combine the checks for both sentences. You can check if a word's count in one sentence is 1 and in the other is 0."
+    },
+    {
+      "content": "Finally, ensure that your function handles all inputs within the constraints provided. Test your function with various cases, including sentences with repeated words, to verify its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s1.length, s2.length <= 200",
+    "Words consist only of lowercase letters and are separated by a single space.",
+    "A word is uncommon if it appears exactly once in one sentence and not at all in the other.",
+    "Return the result as a list of strings in any order."
+  ]
+}

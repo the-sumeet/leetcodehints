@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subset is. A subset is any combination of elements from the array, including the empty set and the set itself. For example, for the array [1, 2], the subsets are [], [1], [2], and [1, 2]."
+    },
+    {
+      "content": "Consider how you can generate subsets using recursion or backtracking. You can make a choice to include or exclude each element in your array as you build your subsets."
+    },
+    {
+      "content": "Since the input array may contain duplicates, think about how to handle these duplicates to avoid generating the same subset multiple times. Sorting the array can help manage duplicates effectively."
+    },
+    {
+      "content": "When you sort the array, you can skip over duplicate elements during your recursive calls. For example, if you are at index `i` and `nums[i] == nums[i-1]`, you can choose not to include `nums[i]` in the current subset if it was not included in the previous step."
+    },
+    {
+      "content": "Make sure to define a base case for your recursion. A common base case is when you reach the end of the array, at which point you can add the current subset to your results."
+    },
+    {
+      "content": "Think about how to store your results. You can use a list to collect all the unique subsets generated during your recursive calls. Remember to include the empty subset as well."
+    },
+    {
+      "content": "As you build your subsets, consider using a temporary list to hold the current subset being constructed. You can add this list to your results when you reach the base case."
+    },
+    {
+      "content": "When implementing your recursive function, ensure you carefully manage the index you are currently processing. You will need to increment the index appropriately as you explore including or excluding each element."
+    },
+    {
+      "content": "Keep in mind the constraints provided: the input array length can be up to 10, and the values can range from -10 to 10. This means your solution should efficiently handle all possible combinations without exceeding time limits."
+    },
+    {
+      "content": "Finally, ensure your output format matches the requirement. You should return a list of lists, where each inner list represents a unique subset. Be careful to avoid duplicates in your final result."
+    }
+  ],
+  "questionNotes": [
+    "The input array may contain duplicates, which means the resulting subsets must also be unique.",
+    "The output can be in any order, but it must not contain duplicate subsets.",
+    "The constraints allow for arrays of length up to 10, so consider the exponential growth of subsets when designing your solution."
+  ]
+}

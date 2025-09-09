@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a singly linked list. Each node contains a value and a pointer to the next node. Familiarize yourself with how to traverse a linked list."
+    },
+    {
+      "content": "Consider how you would normally access elements in an array. In a linked list, you cannot directly access a node by index; you must traverse the list from the head."
+    },
+    {
+      "content": "Think about how to ensure each node has an equal probability of being selected. This is a classic problem that can be solved using a technique called Reservoir Sampling."
+    },
+    {
+      "content": "In Reservoir Sampling, you maintain a variable to hold the currently selected node value as you traverse the list. The probability of replacing this value should decrease as you visit more nodes."
+    },
+    {
+      "content": "As you iterate through the linked list, use a counter to keep track of the current node index. For each node, generate a random number to decide whether to replace the currently selected node value."
+    },
+    {
+      "content": "Remember that the random selection should give each node a chance proportional to its position in the list. For example, the first node has a 1/1 chance, the second node has a 1/2 chance, and so forth."
+    },
+    {
+      "content": "Make sure to handle the case where the linked list has only one node. In this case, the only possible value to return is that node's value."
+    },
+    {
+      "content": "Consider the efficiency of your solution. You should aim for O(n) time complexity for the traversal and O(1) space complexity. This means you should not store the entire list in memory."
+    },
+    {
+      "content": "When implementing the `getRandom` method, ensure it can be called multiple times without altering the list or affecting the randomness of future calls."
+    },
+    {
+      "content": "You are almost there! The final step is to implement the logic for random selection within your `getRandom` method. Remember to use a random number generator to decide if you should update your current selection."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The number of nodes in the linked list will be in the range [1, 10^4].",
+    "Node values range from -10^4 to 10^4.",
+    "At most 10^4 calls will be made to getRandom.",
+    "Ensure each node has an equal probability of being chosen."
+  ]
+}

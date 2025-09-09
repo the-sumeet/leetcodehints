@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. Each row and column is sorted in ascending order. This means that the smallest element is at the top-left corner, and the largest is at the bottom-right corner."
+    },
+    {
+      "content": "Consider how you can efficiently access the k-th smallest element without flattening the entire matrix. Think about how you might use a min-heap to help you track the smallest elements."
+    },
+    {
+      "content": "Remember that the k-th smallest element is not necessarily located at a specific row or column. You need to explore elements in a way that respects the sorted nature of the matrix."
+    },
+    {
+      "content": "A common approach is to use a priority queue (min-heap). You can start by adding the first element of each row into the heap. This allows you to always access the smallest current element."
+    },
+    {
+      "content": "When extracting the smallest element from the heap, consider what to do next. If you pop the smallest element from the heap, you should push the next element from the same row into the heap."
+    },
+    {
+      "content": "Make sure to track how many elements you've extracted from the heap. Once you extract k elements, the last one you pop will be your k-th smallest element."
+    },
+    {
+      "content": "Think about edge cases, such as when k equals 1. What would your approach return in this case? Ensure your solution handles the smallest input sizes correctly."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Using a min-heap will generally give you a time complexity of O(k log n), where n is the number of rows (or columns) in the matrix."
+    },
+    {
+      "content": "If you want to optimize further, consider binary search on the range of values in the matrix. This can help you find the k-th smallest element in O(n log(max - min)) time."
+    },
+    {
+      "content": "Your final solution should carefully manage memory. Aim for a solution that does not require O(n^2) space. Think about how you can achieve this with only a few variables or a heap."
+    }
+  ],
+  "questionNotes": [
+    "Matrix is n x n and sorted in ascending order both row-wise and column-wise.",
+    "1 <= n <= 300, and -10^9 <= matrix[i][j] <= 10^9.",
+    "You must return the k-th smallest element, not the k-th distinct element.",
+    "1 <= k <= n^2, and k can be as large as n^2 in the worst case."
+  ]
+}

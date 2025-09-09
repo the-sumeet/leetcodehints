@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by checking if the lengths of the two strings are the same. If they are not, you can immediately return false, as scrambled strings must have the same length."
+    },
+    {
+      "content": "Consider the base case where the length of the strings is 1. If both strings are equal, they are trivially scrambled versions of each other."
+    },
+    {
+      "content": "Next, think about how you can split the strings into two non-empty substrings. You can iterate over possible split indices from 1 to the length of the string minus 1."
+    },
+    {
+      "content": "When you split the strings, you can either keep the order of the substrings or swap them. This gives you two scenarios to check for each split."
+    },
+    {
+      "content": "For each split index, you will need to recursively check both scenarios (keeping the order and swapping) for the two resulting substrings."
+    },
+    {
+      "content": "Remember to check if the characters in both strings are the same. If they are not, return false immediately. This can be done using a frequency count."
+    },
+    {
+      "content": "You can use a dictionary or an array to count the occurrences of each character in both strings. If the counts don't match, return false."
+    },
+    {
+      "content": "Be cautious about the order of recursive calls. You need to ensure that you are checking both possible arrangements of the substrings correctly."
+    },
+    {
+      "content": "Consider using memoization to store results of previously computed substring pairs to avoid redundant calculations and improve efficiency."
+    },
+    {
+      "content": "Think about how you can represent the state of your recursive function. A good signature might be something like `isScramble(s1, s2, start1, start2, length)`."
+    },
+    {
+      "content": "When implementing the recursive function, make sure to handle the indices correctly, especially when splitting the strings."
+    },
+    {
+      "content": "As a performance optimization, you can return false early if the sorted characters of both strings do not match. This can save time on deeper recursive calls."
+    },
+    {
+      "content": "You may want to create a helper function that can handle the recursive logic cleanly, separating your concerns between checking and splitting."
+    },
+    {
+      "content": "Think about edge cases, such as when both strings are empty or consist of the same character repeated. How does your logic handle these cases?"
+    },
+    {
+      "content": "Finally, ensure that your function returns a boolean value as specified in the problem statement. This is crucial for the correct output format."
+    }
+  ],
+  "questionNotes": [
+    "The strings s1 and s2 must have the same length.",
+    "The characters in s1 and s2 consist of lowercase English letters.",
+    "The maximum length of the strings is 30, which allows for recursive solutions with memoization.",
+    "The function should return true if s2 is a scrambled string of s1, otherwise false."
+  ]
+}

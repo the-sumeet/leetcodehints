@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for two products to be coprime. Recall that two numbers are coprime if their greatest common divisor (gcd) is 1."
+    },
+    {
+      "content": "You need to iterate through the array and calculate the product of the first i + 1 elements and the product of the remaining elements for each valid split index i."
+    },
+    {
+      "content": "Remember that a valid split index i must satisfy 0 <= i <= n - 2. This means you will be checking splits from index 0 to index n-2."
+    },
+    {
+      "content": "Consider how to efficiently compute the product of the elements. You might want to maintain a running product for the left side as you iterate through the array."
+    },
+    {
+      "content": "For the right side product, you can compute it as the total product of the array divided by the left side product at each index."
+    },
+    {
+      "content": "Think about edge cases. What happens if the array has only one element? How will this affect your split logic?"
+    },
+    {
+      "content": "You might want to use a helper function to compute the gcd. This will help you keep your main logic clean and focused."
+    },
+    {
+      "content": "As you iterate through the array, keep track of the total product of all elements. This will allow you to compute the right product quickly."
+    },
+    {
+      "content": "When checking if the products are coprime, use the gcd function. If the gcd of the two products is 1, you have found a valid split."
+    },
+    {
+      "content": "If you find a valid split, return the index immediately. If you finish the loop without finding one, return -1."
+    },
+    {
+      "content": "Consider the constraints: n can be as large as 10^4 and each element can be as large as 10^6. This implies that you need to be careful with large number multiplications to avoid overflow."
+    },
+    {
+      "content": "Think about the efficiency of your solution. A naive approach with repeated multiplication could lead to performance issues. Can you optimize it?"
+    },
+    {
+      "content": "You may also want to consider using modular arithmetic to manage large products if you encounter overflow issues."
+    },
+    {
+      "content": "Make sure to test your solution with various edge cases, such as arrays with all elements being the same, or arrays with prime numbers."
+    },
+    {
+      "content": "Finally, ensure that your function handles the return format correctly. It should return the smallest valid index or -1 if no valid split exists."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 1 <= n <= 10^4, 1 <= nums[i] <= 10^6.",
+    "Valid split index i must satisfy 0 <= i <= n - 2.",
+    "Return the smallest index i for a valid split or -1 if no valid split exists."
+  ]
+}

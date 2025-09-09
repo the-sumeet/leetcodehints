@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement rules of the robot. It can only move right or down, but if it encounters a mirror, it gets reflected. Make sure to visualize how the robot behaves when it hits a mirror."
+    },
+    {
+      "content": "Consider how you will represent the grid in your code. A 2D array is a good choice, and remember that the robot starts at position (0, 0) and needs to reach (m - 1, n - 1)."
+    },
+    {
+      "content": "Think about how to track the paths the robot takes. You might want to use a recursive approach or dynamic programming to count the unique paths. Keep in mind that paths can diverge when encountering mirrors."
+    },
+    {
+      "content": "When the robot hits a mirror, it changes direction. If moving right into a mirror, it will move down instead. If moving down into a mirror, it will move right. Make sure to implement this reflection logic correctly."
+    },
+    {
+      "content": "Consider edge cases where the robot might move out of bounds. If a reflection leads the robot outside the grid, that path should not be counted. Ensure you handle these out-of-bounds checks in your code."
+    },
+    {
+      "content": "You may want to use memoization to store the number of paths from certain positions to avoid recalculating them. This can significantly improve the efficiency of your solution."
+    },
+    {
+      "content": "As you implement your solution, remember to apply the modulo operation (10^9 + 7) to the result to prevent overflow and meet the problem's requirements."
+    },
+    {
+      "content": "Test your implementation with simple cases first, such as a grid with no mirrors or a grid that is entirely filled with mirrors. This will help you ensure that your reflection logic is working correctly."
+    },
+    {
+      "content": "When counting paths, ensure that you only count unique paths. This means you need to carefully track the robot's position and the direction it came from to avoid counting the same path multiple times."
+    },
+    {
+      "content": "Finally, think about how you will structure your recursive function or dynamic programming table. You might want to pass the current position and direction as parameters to handle the reflections properly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == grid.length, n == grid[i].length, 2 <= m, n <= 500.",
+    "grid[i][j] is either 0 or 1, with grid[0][0] and grid[m - 1][n - 1] guaranteed to be 0.",
+    "The result should be returned modulo 10^9 + 7.",
+    "Ensure to handle out-of-bounds movements correctly.",
+    "Paths must be unique, so track positions and directions carefully."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid dimensions. You have a grid of size m x n, where m and n can be as large as 100,000. This means you need to consider an efficient way to represent and manipulate the grid since directly using a 2D array may not be feasible."
+    },
+    {
+      "content": "Remember that guards can see in four directions: north, south, east, and west. Think about how you can traverse the grid from each guard's position to mark the cells they can see."
+    },
+    {
+      "content": "Consider how walls and other guards block the line of sight. When you encounter a wall or another guard while traversing, you should stop marking cells in that direction."
+    },
+    {
+      "content": "You need to keep track of which cells are guarded. A good approach would be to use a set or a dictionary to store the coordinates of guarded cells, as this allows for fast lookups and insertions."
+    },
+    {
+      "content": "Before starting to mark guarded cells, ensure that you handle the input correctly. You should convert the guards and walls lists into a more manageable format, such as sets, for quick access and to avoid duplicate entries."
+    },
+    {
+      "content": "When counting unguarded cells, remember to exclude the cells that contain guards or walls. You can keep a count of these cells separately while traversing the grid."
+    },
+    {
+      "content": "Consider edge cases such as when all cells are guarded or when there are no guards at all. How will your logic handle these scenarios?"
+    },
+    {
+      "content": "As you implement the logic to mark guarded cells, think about the order of operations. You may want to first mark all the cells that are visible to guards before counting unguarded cells."
+    },
+    {
+      "content": "After marking all guarded cells, you can iterate through the grid again to count the unguarded cells. Remember to check against your set of guarded cells to determine if a cell is unguarded."
+    },
+    {
+      "content": "Finally, ensure your solution runs efficiently within the constraints. Aim for a time complexity that is linear relative to the number of cells, ideally O(m * n), since this will allow you to handle the upper limits of the input size."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 10^5; 2 <= m * n <= 10^5; 1 <= guards.length, walls.length <= 5 * 10^4; 2 <= guards.length + walls.length <= m * n.",
+    "Positions in guards and walls are unique.",
+    "Return the number of unguarded cells in the grid."
+  ]
+}

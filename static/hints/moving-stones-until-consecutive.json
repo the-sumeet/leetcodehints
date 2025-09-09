@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by sorting the positions of the stones. This will help you easily identify the leftmost, middle, and rightmost stones. For example, if the input is `a = 1`, `b = 2`, `c = 5`, after sorting you will have `x = 1`, `y = 2`, `z = 5`."
+    },
+    {
+      "content": "Consider the condition for the game to end: the stones must be in consecutive positions. This means that for stones at positions `x`, `y`, and `z`, you need `y - x = 1` and `z - y = 1`."
+    },
+    {
+      "content": "To determine the minimum number of moves, think about how far apart the stones are. If the distance between the leftmost and rightmost stones is less than or equal to 2, you can move one stone to make them consecutive."
+    },
+    {
+      "content": "For the maximum number of moves, consider the possible positions you can move to. You can move a stone to any integer position that is not occupied by another stone and is within the bounds of the leftmost and rightmost stones."
+    },
+    {
+      "content": "If the stones are already in consecutive positions, you should return `[0, 0]`. This is a special case where no moves can be made."
+    },
+    {
+      "content": "Think about the possible gaps between the stones. If the gap between the leftmost and middle stone is greater than 1, you can potentially make multiple moves. Identify how many valid positions exist in that gap."
+    },
+    {
+      "content": "For example, if the stones are at positions `1`, `2`, and `5`, the gap between `2` and `5` is `3`, which allows for two potential moves: moving to `3` or `4`."
+    },
+    {
+      "content": "Keep track of the number of moves made. For the maximum moves, consider moving a stone to the nearest valid position and then moving it again if possible."
+    },
+    {
+      "content": "Remember to check if moving the leftmost stone or the rightmost stone yields different results. You might find that one approach allows for more moves than the other."
+    },
+    {
+      "content": "Finally, structure your return statement to output the results in the required format: an array with two integers representing the minimum and maximum moves, like `return [minMoves, maxMoves];`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= a, b, c <= 100; a, b, and c have different values.",
+    "The output should be an array of length 2: [minMoves, maxMoves].",
+    "The game ends when the stones are in consecutive positions."
+  ]
+}

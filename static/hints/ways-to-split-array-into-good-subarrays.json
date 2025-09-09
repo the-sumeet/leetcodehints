@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying what a 'good' subarray is. A good subarray contains exactly one `1`. Think about how you can find all the positions of `1` in the array."
+    },
+    {
+      "content": "Consider how to count the number of `0`s between each pair of `1`s. These `0`s can be used to form different subarrays. For example, if you have `1` at index `i` and `j`, the `0`s between them can be included in various ways."
+    },
+    {
+      "content": "Remember that the array can be split at different points. If you have multiple `1`s, each pair of `1`s can create multiple good subarrays. Think about how to calculate the number of ways to include `0`s between them."
+    },
+    {
+      "content": "You can iterate through the array to find the indices of all `1`s. Store these indices in a list. This will help you in determining how many `0`s are between each pair of `1`s."
+    },
+    {
+      "content": "For each pair of consecutive `1`s, count the number of `0`s between them. If there are `k` `0`s between two `1`s, you can create `k + 1` good subarrays by choosing to include any number of `0`s from `0` to `k`."
+    },
+    {
+      "content": "Make sure to handle edge cases where there are no `1`s or only one `1`. In these cases, the number of ways to split into good subarrays will be different."
+    },
+    {
+      "content": "As you calculate the number of ways for each pair of `1`s, keep a running product of these counts. This will give you the total number of ways to split the array into good subarrays."
+    },
+    {
+      "content": "Since the result can be very large, remember to take modulo `10^9 + 7` at each step of your calculations to avoid overflow and meet the problem's requirements."
+    },
+    {
+      "content": "Consider how to handle the cases where there are multiple `1`s in a row. You should ensure that you only count good subarrays that have exactly one `1`."
+    },
+    {
+      "content": "Finally, ensure that your solution runs efficiently, ideally in linear time, since the input size can be as large as `10^5`. Think about how you can achieve this using a single pass through the array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Each element of nums can only be 0 or 1.",
+    "Return the result modulo 10^9 + 7.",
+    "A subarray is defined as a contiguous non-empty sequence.",
+    "A good subarray contains exactly one element with the value 1."
+  ]
+}

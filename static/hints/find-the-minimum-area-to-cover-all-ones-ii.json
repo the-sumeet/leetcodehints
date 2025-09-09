@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the positions of all the 1's in the grid. This will help you understand the area you need to cover with rectangles."
+    },
+    {
+      "content": "Remember that the rectangles must be non-overlapping and can touch each other. Think about how to define the boundaries of each rectangle."
+    },
+    {
+      "content": "Consider the dimensions of the grid. With a maximum size of 30x30, a brute force approach might be feasible, but it’s essential to optimize for the minimum area."
+    },
+    {
+      "content": "You can represent each rectangle by its top-left and bottom-right corners. For a rectangle defined by corners (r1, c1) and (r2, c2), the area can be calculated as (r2 - r1 + 1) * (c2 - c1 + 1)."
+    },
+    {
+      "content": "Explore the idea of dynamic programming or backtracking to systematically try different combinations of rectangles that cover all the 1's."
+    },
+    {
+      "content": "When selecting rectangles, ensure that each rectangle covers at least one 1 and does not overlap with others. You might want to keep track of which 1's have already been covered."
+    },
+    {
+      "content": "Think about the order in which you select rectangles. The first rectangle you choose can significantly affect the remaining area that needs to be covered."
+    },
+    {
+      "content": "Consider edge cases where the grid has a very sparse distribution of 1's. This could lead to scenarios where rectangles must be chosen carefully to minimize area."
+    },
+    {
+      "content": "You might want to precompute the areas of all possible rectangles that can be formed in the grid. This will save time when calculating the total area for combinations."
+    },
+    {
+      "content": "As you iterate through possible rectangle placements, keep a running total of the area covered and use a variable to track the minimum area found."
+    },
+    {
+      "content": "Make sure to handle cases where there are exactly three 1's, as the only possible solution is to create three rectangles each covering one 1."
+    },
+    {
+      "content": "When implementing your solution, consider using a recursive function that tries to place rectangles and backtracks if a configuration does not lead to a valid solution."
+    },
+    {
+      "content": "If your approach leads to a high time complexity, think about pruning your search space. If you already exceed the minimum area found, you can stop exploring that path."
+    },
+    {
+      "content": "As a final step, ensure that your solution correctly handles the return format, which is the minimum possible sum of the areas of the three rectangles."
+    },
+    {
+      "content": "Before finalizing your solution, test it against various edge cases, including grids that are filled with 1's and those with a mix of 0's and 1's in different configurations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= grid.length, grid[i].length <= 30",
+    "grid[i][j] is either 0 or 1.",
+    "At least three 1's must be present in the grid.",
+    "Rectangles must have non-zero areas and can touch but not overlap.",
+    "Return the minimum possible sum of the areas of the three rectangles."
+  ]
+}

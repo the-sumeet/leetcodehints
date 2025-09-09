@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to handle multiple queries that ask for the sum of elements in a specific range of an array. Think about how you would calculate a sum for a given range."
+    },
+    {
+      "content": "Consider how you would implement the `NumArray` class. You need a constructor that takes an integer array as input. What should you do with this array to make the sum queries efficient?"
+    },
+    {
+      "content": "When implementing the `sumRange` method, think about how you would iterate through the array to compute the sum. What indices will you need to access based on the `left` and `right` parameters?"
+    },
+    {
+      "content": "Remember that the indices `left` and `right` are inclusive. This means that both the elements at these indices should be included in the sum. Make sure your logic accounts for this."
+    },
+    {
+      "content": "If you compute the sum directly by iterating through the range for each query, it might be inefficient for large arrays and many queries. Can you think of a way to optimize the sum calculations?"
+    },
+    {
+      "content": "One common optimization technique is to use a prefix sum array. This array can store cumulative sums, allowing you to calculate any range sum in constant time after an initial setup. How would you create this prefix sum array?"
+    },
+    {
+      "content": "To create the prefix sum array, you can initialize it with an extra space for the zero index. Each element at index `i` in the prefix sum array should represent the sum of elements from the start of the array up to index `i-1` of the original array."
+    },
+    {
+      "content": "When you want to compute the sum for a range `left` to `right`, you can use the prefix sum array to find the result in constant time. The formula would be: `prefixSum[right + 1] - prefixSum[left]`. Can you implement this?"
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the array is very small or contains negative numbers. How would your implementation behave in these scenarios?"
+    },
+    {
+      "content": "Finally, ensure that your class handles the constraints given in the problem, such as the maximum number of queries and the bounds on the values in the array. Consider how these constraints might affect your implementation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^4",
+    "-10^5 <= nums[i] <= 10^5",
+    "0 <= left <= right < nums.length",
+    "At most 10^4 calls will be made to sumRange.",
+    "Indices are inclusive for the range sum."
+  ]
+}

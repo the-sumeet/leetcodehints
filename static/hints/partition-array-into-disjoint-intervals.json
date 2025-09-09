@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirement for the partition. You need to split the array into two contiguous parts: 'left' and 'right'. Ensure that every element in 'left' is less than or equal to every element in 'right'."
+    },
+    {
+      "content": "Consider how you can identify the boundary between the 'left' and 'right' subarrays. You might want to track the maximum value in the 'left' subarray as you iterate through the array."
+    },
+    {
+      "content": "As you iterate through the array, maintain a variable to keep track of the maximum value found in the 'left' part. This will help you determine when you can safely partition the array."
+    },
+    {
+      "content": "Simultaneously, you should also track the minimum value in the 'right' part. This can be done by iterating from the end of the array towards the beginning."
+    },
+    {
+      "content": "Think about how you can use two pointers or indices: one for the end of the 'left' subarray and one for the start of the 'right' subarray. This can help you find the correct partition point efficiently."
+    },
+    {
+      "content": "Remember that 'left' must be non-empty. Therefore, your loop for finding the partition point should not allow the 'left' subarray to be empty."
+    },
+    {
+      "content": "You can use a loop to iterate through the array, updating the maximum of 'left' and the minimum of 'right' as you go. When the maximum of 'left' is less than or equal to the minimum of 'right', you've found a valid partition."
+    },
+    {
+      "content": "Be cautious about the index you use for the partition. The partition point should be such that the left subarray includes the current index and the right subarray starts from the next index."
+    },
+    {
+      "content": "After determining the valid partition point, the length of 'left' will simply be the index of that partition point plus one, since indexing starts from zero."
+    },
+    {
+      "content": "Finally, ensure you handle edge cases where the array might have duplicate values or the maximum value in 'left' is equal to the minimum value in 'right'. These cases are valid for partitioning."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 10^5",
+    "0 <= nums[i] <= 10^6",
+    "There is at least one valid answer for the given input.",
+    "Both left and right subarrays must be non-empty."
+  ]
+}

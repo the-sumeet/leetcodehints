@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for two intervals to intersect. Two intervals [a, b] and [c, d] intersect if they share at least one common point. This includes cases where they touch at the endpoints."
+    },
+    {
+      "content": "Consider how you might represent groups of intervals. You can think of a group as a collection of intervals that do not overlap. How would you keep track of the intervals that are already in a group?"
+    },
+    {
+      "content": "Sort the intervals based on their starting points. This will help you easily identify overlapping intervals as you iterate through the list. Sorting can be done using a simple comparison function."
+    },
+    {
+      "content": "As you iterate through the sorted intervals, maintain a list of active groups. For each interval, check if it can fit into any of the existing groups without overlapping."
+    },
+    {
+      "content": "If an interval cannot fit into any existing group, you will need to create a new group. Think about how you can efficiently check for overlaps with the intervals in each active group."
+    },
+    {
+      "content": "You may want to use a data structure that allows you to keep track of the end points of the intervals in each group. A priority queue (or min-heap) could be useful for efficiently managing the end points."
+    },
+    {
+      "content": "When you add a new interval to a group, ensure you update the end point of that group. This will help you determine if subsequent intervals can still be added to that group."
+    },
+    {
+      "content": "Consider edge cases where all intervals are completely separate, or where they all overlap. How would your approach handle these scenarios? Make sure your solution is robust against such cases."
+    },
+    {
+      "content": "After processing all intervals, the number of active groups will give you the minimum number of groups needed. Ensure you return this count as the final output."
+    },
+    {
+      "content": "To summarize your approach: sort intervals, iterate through them while managing groups, and count the number of groups created. Think about how you can optimize checking for overlaps."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= intervals.length <= 10^5, 1 <= left_i <= right_i <= 10^6.",
+    "Two intervals [a, b] and [c, d] intersect if a <= d and c <= b.",
+    "Return the minimum number of groups needed.",
+    "Intervals are inclusive, meaning [a, b] includes both a and b."
+  ]
+}

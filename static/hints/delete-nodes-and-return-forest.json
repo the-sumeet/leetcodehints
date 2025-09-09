@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree and how nodes are connected. Each node has a left and right child, and you need to traverse this tree to find nodes to delete."
+    },
+    {
+      "content": "Consider how you will represent the list of values to delete. Using a set can make it easier to check if a node's value is in the `to_delete` list, as lookups in a set are O(1)."
+    },
+    {
+      "content": "Think about how you will traverse the tree. A depth-first search (DFS) or breadth-first search (BFS) can be used. Which one do you think would be more suitable for this problem?"
+    },
+    {
+      "content": "As you traverse the tree, you need to decide what to do when you find a node that needs to be deleted. Consider what happens to its children: should they be added to the forest?"
+    },
+    {
+      "content": "When you delete a node, you might need to keep track of the new roots of the trees that are formed. Make sure to add these new roots to your result list."
+    },
+    {
+      "content": "Remember that after deleting a node, its children should not be deleted unless they are also in the `to_delete` list. Think about how to handle this during your traversal."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree is empty or when all nodes are to be deleted. How would your solution handle these scenarios?"
+    },
+    {
+      "content": "Make sure your final output is in the correct format. You need to return a list of lists, where each inner list represents a tree in the forest."
+    },
+    {
+      "content": "As you implement your solution, think about how you will return the roots of the remaining trees. You might want to use a list to collect these roots as you traverse."
+    },
+    {
+      "content": "To get close to a solution, implement the DFS function that returns the new root of the subtree or null if the node is deleted. Ensure you handle the addition of children to the forest correctly."
+    }
+  ],
+  "questionNotes": [
+    "The binary tree is represented as a root node with left and right children.",
+    "Each node has a distinct value, which is important for identifying nodes to delete.",
+    "The `to_delete` list can contain up to 1000 distinct values.",
+    "The output should be a list of lists, representing the roots of the remaining trees in the forest."
+  ]
+}

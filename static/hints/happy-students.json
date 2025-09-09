@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the conditions under which each student becomes happy. A student is happy if they are selected and the total selected is greater than their threshold, or if they are not selected and the total selected is less than their threshold."
+    },
+    {
+      "content": "Consider the implications of selecting a certain number of students. If you select `k` students, think about how this affects the happiness of each student based on their respective values in the `nums` array."
+    },
+    {
+      "content": "Note that the total number of students is `n`, and the possible number of selected students can range from 0 to `n`. This gives you `n + 1` possible selections to consider."
+    },
+    {
+      "content": "Think about edge cases. For example, if all students have the same value in `nums`, how does this affect the number of valid selections?"
+    },
+    {
+      "content": "When you select `k` students, you need to check how many students have values in `nums` that are less than `k` and how many have values that are greater than `k`. This will help you determine if all students are happy."
+    },
+    {
+      "content": "Sort the `nums` array. This will help you easily count how many students have values less than or greater than a given number of selected students `k`."
+    },
+    {
+      "content": "After sorting, iterate through possible values of `k` from 0 to `n`. For each `k`, determine how many students are happy based on the sorted `nums`."
+    },
+    {
+      "content": "Use a two-pointer technique or binary search to efficiently find how many students have values less than `k` and how many have values greater than `k`."
+    },
+    {
+      "content": "Keep track of the number of valid selections that make all students happy. Remember to consider the cases where `k` equals the number of students who are happy."
+    },
+    {
+      "content": "Finally, ensure that you return the count of valid selections. This will be the total number of ways to select students such that all conditions for happiness are met."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5, 0 <= nums[i] < nums.length",
+    "The array is 0-indexed.",
+    "Consider edge cases where all values in nums are the same.",
+    "Return the total number of valid selections."
+  ]
+}

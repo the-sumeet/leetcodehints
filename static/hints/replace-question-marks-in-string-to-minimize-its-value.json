@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of the `cost(i)` function. It counts how many times the character at index `i` has appeared before it in the string. This means that the more a character is repeated, the higher the cost will be."
+    },
+    {
+      "content": "Notice that replacing '?' with characters that have not appeared yet will help in minimizing the cost. Think about how to keep track of which characters have been used as you iterate through the string."
+    },
+    {
+      "content": "Consider how you can replace '?' with characters in a way that ensures you don't create duplicates. This will help keep the cost lower. You might want to maintain a set of characters that have already been used."
+    },
+    {
+      "content": "When replacing '?', you should also think about the lexicographical order. If multiple characters can be used, always choose the smallest one to ensure the final string is the smallest possible."
+    },
+    {
+      "content": "As you iterate through the string, keep a count of how many times each character has appeared. This will help you calculate the cost efficiently when you encounter a non-'?' character."
+    },
+    {
+      "content": "If you encounter a '?', you can replace it with the next available character that hasn't been used yet. Make sure to update your count of used characters after each replacement."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when the string is entirely made of '?'. In such cases, you can simply fill it with the first few distinct characters of the alphabet."
+    },
+    {
+      "content": "Remember that the length of the string can be quite large (up to 100,000). Your approach should be efficient, ideally O(n), where n is the length of the string."
+    },
+    {
+      "content": "Think about how to handle situations where there are consecutive '?' characters. You will need to ensure that you replace them in a way that maintains the minimum cost and lexicographical order."
+    },
+    {
+      "content": "Once you have a strategy for replacing '?', implement it step by step. Start by creating a new list to build your result string and replace each character accordingly, then convert it back to a string before returning."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 100000",
+    "s[i] is either a lowercase English letter or '?'",
+    "Return the modified string with replaced occurrences of '?'",
+    "If multiple strings result in the minimum value, return the lexicographically smallest one."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. You need to represent the nodes and edges effectively. Consider using an adjacency list to store the graph connections."
+    },
+    {
+      "content": "Remember that you need to find sequences of nodes that are connected by edges. Think about how you can traverse the graph to find valid sequences of length 4."
+    },
+    {
+      "content": "A valid sequence must have unique nodes. Keep track of the nodes you have already included in your current sequence to avoid duplicates."
+    },
+    {
+      "content": "Consider using Depth First Search (DFS) or Breadth First Search (BFS) to explore the graph. Both methods can help you find paths of a specific length."
+    },
+    {
+      "content": "When exploring paths, ensure that you only continue to nodes that are directly connected to the current node. This is crucial for maintaining the validity of the sequence."
+    },
+    {
+      "content": "As you build your sequences, maintain a running total of the scores. This will help you evaluate the score of each valid sequence you find."
+    },
+    {
+      "content": "Remember to check all possible starting nodes. Each node can potentially be the start of a valid sequence, so iterate through all nodes."
+    },
+    {
+      "content": "Keep in mind that the maximum length of the sequence is 4. You can use a counter to track how many nodes you've added to your current sequence."
+    },
+    {
+      "content": "Consider edge cases where there may not be enough edges to form a sequence of length 4. If the total number of edges is less than 3, you can immediately return -1."
+    },
+    {
+      "content": "When you reach a sequence of length 4, compare its score to the maximum score found so far. Update the maximum score if the current sequence's score is higher."
+    },
+    {
+      "content": "If you finish exploring all nodes and haven't found any valid sequences, remember to return -1 as specified in the problem statement."
+    },
+    {
+      "content": "Think about how to efficiently track the maximum score. You might want to initialize a variable to store the maximum score at the beginning."
+    },
+    {
+      "content": "Consider using a set to store visited nodes during your traversal to prevent cycles and ensure that each node is only counted once in the sequence."
+    },
+    {
+      "content": "You might want to implement a helper function that takes a starting node and attempts to build sequences from there. This can help modularize your code."
+    },
+    {
+      "content": "Finally, ensure that your solution handles large inputs efficiently. Pay attention to the time complexity of your traversal method, especially with the constraints given."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == scores.length, 4 <= n <= 5 * 10^4, 1 <= scores[i] <= 10^8, 0 <= edges.length <= 5 * 10^4.",
+    "Each node can only appear once in a sequence.",
+    "Return -1 if no valid sequence of length 4 exists.",
+    "The edges are undirected and there are no duplicate edges."
+  ]
+}

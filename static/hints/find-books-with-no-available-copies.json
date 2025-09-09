@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the two tables: `library_books` and `borrowing_records`. You need to identify books that are currently borrowed and have zero copies available. Make sure to note the columns in each table."
+    },
+    {
+      "content": "Focus on the `borrowing_records` table. A book is considered currently borrowed if there is at least one record with a `NULL` `return_date`. Think about how you can filter these records."
+    },
+    {
+      "content": "Next, consider how to count the number of current borrowers for each book. You can use a `GROUP BY` clause on `book_id` in the `borrowing_records` table to achieve this."
+    },
+    {
+      "content": "You need to join the `library_books` table with the aggregated results from the `borrowing_records`. This will allow you to access the `total_copies` for each book alongside the current borrower count."
+    },
+    {
+      "content": "When joining the tables, ensure you handle cases where a book might not have any current borrowers. You can use a `LEFT JOIN` to include all books from `library_books`."
+    },
+    {
+      "content": "After joining, calculate the available copies for each book. This can be done by subtracting the current borrowers from the `total_copies`. Think about how to express this calculation in your query."
+    },
+    {
+      "content": "Now, filter the results to include only those books where the available copies are zero. This is a crucial step to meet the problem's requirements."
+    },
+    {
+      "content": "Remember to order the final results. You need to sort by the number of current borrowers in descending order and then by the book title in ascending order. Think about how to apply the `ORDER BY` clause."
+    },
+    {
+      "content": "Consider edge cases such as books with no copies at all or books that have never been borrowed. Ensure your query correctly identifies these scenarios."
+    },
+    {
+      "content": "Finally, structure your SELECT statement to return the required columns: `book_id`, `title`, `author`, `genre`, `publication_year`, and `current_borrowers`. Make sure to alias your count of borrowers appropriately."
+    }
+  ],
+  "questionNotes": [
+    "Ensure to filter for books with zero available copies, which is calculated as total_copies - current_borrowers.",
+    "A book is considered currently borrowed if there exists a borrowing record with a NULL return_date.",
+    "Use LEFT JOIN to ensure all books are included even if they have no current borrowers.",
+    "The output should be ordered by current_borrowers (descending) and then by title (ascending).",
+    "Return the result in the specified format with the exact column names."
+  ]
+}

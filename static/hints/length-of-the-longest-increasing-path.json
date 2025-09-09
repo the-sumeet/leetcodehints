@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of an increasing path. An increasing path consists of points where both x and y coordinates must strictly increase as you move along the path."
+    },
+    {
+      "content": "Remember that the input coordinates are distinct, meaning no two points are the same. This property can simplify some checks when building your increasing path."
+    },
+    {
+      "content": "The problem specifies that the increasing path must include the point at index k. Make sure to consider the coordinates[k] as a starting point for your path."
+    },
+    {
+      "content": "Consider sorting the coordinates based on their x values, and in case of ties, sort by y values. This will help in efficiently finding increasing paths."
+    },
+    {
+      "content": "After sorting, think about how you can iterate through the sorted list to find points that can extend the increasing path starting from coordinates[k]."
+    },
+    {
+      "content": "You might want to use a dynamic programming approach to keep track of the longest increasing path length that can be formed up to each point."
+    },
+    {
+      "content": "When building your DP array, remember that for each point, you should check all previously considered points to see if they can connect to the current point."
+    },
+    {
+      "content": "To check if a point can connect to another, ensure that both the x and y coordinates of the former are less than those of the latter."
+    },
+    {
+      "content": "Consider edge cases where the input has only one point or where all points are in a straight line. How would your algorithm handle these scenarios?"
+    },
+    {
+      "content": "You can optimize the search for valid preceding points by maintaining a list of the longest paths ending at each point, rather than checking all previous points."
+    },
+    {
+      "content": "Remember to initialize the DP array properly. Each point can at least form a path of length 1 by itself."
+    },
+    {
+      "content": "As you build the DP array, keep track of the maximum length of the path that includes the point coordinates[k]."
+    },
+    {
+      "content": "Once you have processed all points, the result will be the maximum value in your DP array that corresponds to paths including coordinates[k]."
+    },
+    {
+      "content": "Don't forget to handle the case where there are no valid paths that can be formed from coordinates[k]. What should you return in that case?"
+    },
+    {
+      "content": "Finally, ensure that your implementation is efficient enough to handle the upper limits of the input constraints, particularly with n up to 100,000."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n == coordinates.length <= 10^5",
+    "coordinates[i].length == 2",
+    "0 <= coordinates[i][0], coordinates[i][1] <= 10^9",
+    "All elements in coordinates are distinct.",
+    "0 <= k <= n - 1",
+    "Return the maximum length of an increasing path that contains coordinates[k]."
+  ]
+}

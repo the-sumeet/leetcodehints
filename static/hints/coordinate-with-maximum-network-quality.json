@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of reachability. A tower is reachable from a coordinate if the Euclidean distance between them is less than or equal to the given radius. Recall that the Euclidean distance between two points (x1, y1) and (x2, y2) is calculated as: \n\n    d = sqrt((x2 - x1)^2 + (y2 - y1)^2)"
+    },
+    {
+      "content": "Next, focus on how to calculate the signal quality from a tower at a specific coordinate. The formula is ⌊q_i / (1 + d)⌋, where d is the distance to the tower. Make sure to implement the floor function correctly."
+    },
+    {
+      "content": "Consider how to iterate over potential coordinates to evaluate their network quality. Since the towers have coordinates ranging from 0 to 50, you may want to check all integral coordinates within the bounding box defined by the towers and the radius."
+    },
+    {
+      "content": "When calculating the network quality at a coordinate, remember to sum the signal qualities from all reachable towers. You can initialize a variable to keep track of the total quality as you iterate through the towers."
+    },
+    {
+      "content": "Don't forget to handle the case where multiple coordinates yield the same maximum network quality. You need to return the lexicographically smallest coordinate in such cases. This means comparing the x and y values appropriately."
+    },
+    {
+      "content": "As you implement the solution, consider edge cases such as when there is only one tower or when all towers are outside the radius of the coordinate being evaluated. In these cases, ensure your logic still correctly computes the network quality."
+    },
+    {
+      "content": "Make sure to check the constraints carefully. The number of towers can go up to 50, and the maximum coordinate values are also capped at 50. This means your solution should efficiently handle up to 2500 potential coordinates in the worst case."
+    },
+    {
+      "content": "Think about how to efficiently compute the distance and quality for each tower. You might want to pre-compute the distances for all towers to avoid recalculating them multiple times for the same coordinate."
+    },
+    {
+      "content": "When implementing the loop to evaluate each coordinate, consider using nested loops: an outer loop for x-coordinates and an inner loop for y-coordinates. This will help you systematically cover all potential coordinates."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct format. You need to return an array of two integers representing the best coordinate found. Double-check that the output adheres to the specified format."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= towers.length <= 50, towers[i].length == 3, 0 <= x_i, y_i, q_i <= 50, 1 <= radius <= 50.",
+    "Coordinates are integral, and the result must be in the form [c_x, c_y].",
+    "If multiple coordinates have the same quality, return the lexicographically smallest one.",
+    "Ensure to handle the floor function correctly when calculating signal quality."
+  ]
+}

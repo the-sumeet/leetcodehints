@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for points to be on the same straight line. Two points define a line, but three points can be collinear if they share the same slope."
+    },
+    {
+      "content": "Recall the formula for the slope between two points: `slope = (y2 - y1) / (x2 - x1)`. However, be careful with division by zero when `x2 == x1`."
+    },
+    {
+      "content": "Instead of using floating-point division for slopes, consider using a pair of integers to represent the slope as a fraction (dy, dx) to avoid precision issues."
+    },
+    {
+      "content": "You can store slopes in a map (or dictionary) where the key is the slope and the value is the count of points that share that slope with a given starting point."
+    },
+    {
+      "content": "Iterate through each point in the array, treating it as the starting point, and calculate the slope with every other point."
+    },
+    {
+      "content": "For each starting point, initialize a map to count the occurrences of each slope. Remember to handle vertical lines separately."
+    },
+    {
+      "content": "When calculating the slope, reduce the dy and dx by their greatest common divisor (GCD) to ensure the slope is stored in its simplest form."
+    },
+    {
+      "content": "Consider edge cases such as when there are only two points, where the answer is trivially 2, since any two points can form a line."
+    },
+    {
+      "content": "Don't forget to account for duplicate points if they were allowed; however, in this problem, all points are unique."
+    },
+    {
+      "content": "After processing all points, keep track of the maximum count of points found on the same line for any starting point."
+    },
+    {
+      "content": "Make sure to check if the maximum count is updated after processing each point. You may need a variable to hold this maximum count."
+    },
+    {
+      "content": "Consider using a nested loop where the outer loop picks the starting point and the inner loop checks all other points for slopes."
+    },
+    {
+      "content": "Remember to return the maximum number of points that lie on the same line after checking all possible lines formed by pairs of points."
+    },
+    {
+      "content": "In terms of complexity, think about how your approach scales with the maximum constraints of 300 points. Aim for an O(n^2) solution."
+    },
+    {
+      "content": "Finally, ensure that your solution handles all edge cases and returns the correct maximum count of collinear points after all calculations."
+    }
+  ],
+  "questionNotes": [
+    "1 <= points.length <= 300",
+    "points[i].length == 2",
+    "-10^4 <= x_i, y_i <= 10^4",
+    "All points are unique."
+  ]
+}

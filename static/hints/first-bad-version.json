@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem: you need to identify the first bad version among a sequence of versions. The key point is that once a version is bad, all subsequent versions are also bad."
+    },
+    {
+      "content": "Consider how you can minimize the number of calls to the `isBadVersion(version)` API. A linear search would be inefficient, especially for large values of n. Think about using a more efficient searching technique."
+    },
+    {
+      "content": "Recall the concept of binary search. It allows you to efficiently narrow down the range of possible versions by repeatedly dividing the search interval in half."
+    },
+    {
+      "content": "In binary search, you typically maintain two pointers: `left` and `right`. Initially, set `left` to 1 and `right` to n. This represents the range of versions you are considering."
+    },
+    {
+      "content": "In each iteration of your binary search, calculate the midpoint version: `mid = left + (right - left) / 2`. This will help you determine whether the bad version is to the left or right of `mid`."
+    },
+    {
+      "content": "After checking `isBadVersion(mid)`, if it returns true, this means the first bad version is at `mid` or to the left of it. Update your `right` pointer to `mid`."
+    },
+    {
+      "content": "Conversely, if `isBadVersion(mid)` returns false, it means the first bad version must be to the right of `mid`. Update your `left` pointer to `mid + 1`."
+    },
+    {
+      "content": "Continue this process until `left` equals `right`. At this point, `left` will point to the first bad version."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there is only one version (n = 1) or when the first version is bad (bad = 1)."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct version number. It should return the index of the first bad version, which is the value of `left` after the loop concludes."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= bad <= n <= 2^31 - 1",
+    "The function should return the first bad version index.",
+    "API `isBadVersion(version)` is provided and should be used to check if a version is bad.",
+    "The search space is from 1 to n, inclusive."
+  ]
+}

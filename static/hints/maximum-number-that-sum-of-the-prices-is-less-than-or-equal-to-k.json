@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to calculate the price of a number based on the given `x`. The price is determined by counting the set bits in specific positions of the binary representation. For instance, if `x = 1`, you check every bit; if `x = 2`, you check every second bit."
+    },
+    {
+      "content": "To compute the accumulated price for numbers from 1 to `num`, you will need to sum the prices of each individual number. Make sure to implement a function that can calculate the price for any given number based on the rules provided."
+    },
+    {
+      "content": "Consider how you will iterate through numbers starting from 1 and calculate their prices until the accumulated price exceeds `k`. You might want to maintain a running total for the accumulated price."
+    },
+    {
+      "content": "Think about how you can efficiently check if the accumulated price is less than or equal to `k`. You might want to use a loop that continues until the accumulated price exceeds `k`, and track the last valid number."
+    },
+    {
+      "content": "What happens if `k` is very small? For example, if `k = 1`, you might want to quickly determine the maximum number you can reach without exceeding this limit. Consider edge cases like this when implementing your solution."
+    },
+    {
+      "content": "Remember that the maximum value for `k` can be as large as 10^15, which means your solution needs to be efficient. Avoid unnecessary calculations and optimize where possible, especially in the price calculation."
+    },
+    {
+      "content": "When calculating the price for each number, ensure you correctly handle the binary representation. You can use bit manipulation techniques to count the set bits at the specified positions efficiently."
+    },
+    {
+      "content": "As you implement your solution, consider using a helper function to encapsulate the logic for calculating the price of a number. This will make your code cleaner and easier to debug."
+    },
+    {
+      "content": "After iterating through numbers and accumulating their prices, remember to return the greatest 'cheap' number found. This means you need to keep track of the last number that had an accumulated price less than or equal to `k`."
+    },
+    {
+      "content": "Finally, ensure you handle the return format correctly. You should return the maximum cheap number found, and consider what to do if no numbers fit the criteria."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= 10^15, 1 <= x <= 8",
+    "The price is calculated based on set bits at positions x, 2x, 3x, etc.",
+    "Accumulated price is the total price from numbers 1 to num.",
+    "A number is considered cheap if its accumulated price is <= k.",
+    "Return the greatest cheap number."
+  ]
+}

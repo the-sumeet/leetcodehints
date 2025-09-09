@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input array `w`. Each element represents the weight associated with its index. The goal is to pick an index based on these weights, meaning higher weights should have a higher chance of being selected."
+    },
+    {
+      "content": "Consider how you can calculate the total weight. The sum of all weights will be crucial in determining the probability of selecting each index. You can use a simple loop to sum the weights."
+    },
+    {
+      "content": "Think about how to represent the cumulative weights. For each index `i`, you can create an array where each element at index `i` represents the sum of weights from index 0 to `i`. This will help in determining ranges for random selection."
+    },
+    {
+      "content": "Remember that the cumulative weights can be thought of as defining ranges for each index. For example, if `w = [1, 3]`, the cumulative weights would be `[1, 4]`. This means index 0 corresponds to the range [0, 1) and index 1 corresponds to [1, 4)."
+    },
+    {
+      "content": "When implementing the `pickIndex` function, consider using a random number generator to select a number between 0 and the total weight. This number will help you determine which index to return based on the cumulative weights."
+    },
+    {
+      "content": "You can use binary search to find the appropriate index based on the random number generated. This is efficient and allows you to quickly determine which range the random number falls into."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the weights array has only one element. In this case, you should always return 0 since that is the only valid index."
+    },
+    {
+      "content": "Consider the constraints provided in the problem. The weights can be large, and the number of times `pickIndex` can be called is limited. Ensure your solution is efficient to handle the maximum constraints."
+    },
+    {
+      "content": "Take note of the return format: your function should return an integer index. Ensure that your random selection logic consistently adheres to the defined probabilities."
+    },
+    {
+      "content": "Finally, you can start implementing your function. Initialize your cumulative weights, calculate the total weight, and set up the random selection mechanism. Remember to use binary search for efficient index retrieval."
+    }
+  ],
+  "questionNotes": [
+    "The input array `w` contains positive integers representing weights.",
+    "The probability of selecting index `i` is given by `w[i] / sum(w)`.",
+    "Cumulative weights can be used to define ranges for random selection.",
+    "Binary search can be employed to efficiently find the index based on a random number.",
+    "The function `pickIndex` must return an integer index.",
+    "Handle cases where the weights array has only one element."
+  ]
+}

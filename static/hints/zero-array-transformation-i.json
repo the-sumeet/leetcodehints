@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a Zero Array is. A Zero Array is simply an array where all elements are equal to 0. Think about how you can decrement the values in `nums` to achieve this."
+    },
+    {
+      "content": "Consider how the queries are structured. Each query gives you a range `[l_i, r_i]` within which you can choose indices to decrement. Make sure to visualize how you can select subsets of indices from these ranges."
+    },
+    {
+      "content": "Think about the cumulative effect of the queries. Each query allows you to decrement values in a specific range. What happens if you sum the decrements allowed by all queries? How does this relate to the values in `nums`?"
+    },
+    {
+      "content": "Remember that each element in `nums` must reach 0 after all decrements. If any element is greater than the total number of decrements available for its index, it will be impossible to achieve a Zero Array."
+    },
+    {
+      "content": "You might want to create a helper array to track how many decrements each index can receive from the queries. This can help you determine if you can reduce each element in `nums` to zero."
+    },
+    {
+      "content": "Consider edge cases, such as when `nums` contains only zeros initially or when all values are the same. How do these scenarios affect the transformation into a Zero Array?"
+    },
+    {
+      "content": "As you process each query, think about how to efficiently update your helper array. You could use a difference array technique to apply the decrements in an efficient manner."
+    },
+    {
+      "content": "Once you have your helper array filled with the total decrements for each index, compare it against `nums`. If any index in `nums` has a value greater than the corresponding value in the helper array, return false."
+    },
+    {
+      "content": "Make sure to handle the input constraints carefully. With up to 100,000 elements in `nums` and `queries`, your solution needs to be efficient. Aim for a solution that runs in linear time relative to the input size."
+    },
+    {
+      "content": "Finally, think about the return format. You need to return a boolean value indicating whether it's possible to transform `nums` into a Zero Array. Ensure your final checks are clear and concise."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "0 <= nums[i] <= 10^5",
+    "1 <= queries.length <= 10^5",
+    "queries[i].length == 2",
+    "0 <= l_i <= r_i < nums.length",
+    "Return format: boolean (true or false)"
+  ]
+}

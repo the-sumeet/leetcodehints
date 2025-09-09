@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to collect at least `k` characters of 'a', 'b', and 'c' from either end of the string. Consider how you can track the characters you collect from both the left and right sides."
+    },
+    {
+      "content": "Think about how to efficiently count the characters as you take them from the left and right. You might want to maintain a count of 'a', 'b', and 'c' as you iterate through the string."
+    },
+    {
+      "content": "Consider edge cases where `k` is 0. If `k` is 0, you don't need to collect any characters, and the answer should be 0 minutes."
+    },
+    {
+      "content": "What if the string `s` doesn't contain enough of one of the characters? Make sure to handle cases where it's impossible to collect `k` of each character, and remember to return -1 in such scenarios."
+    },
+    {
+      "content": "You can use two pointers to represent the left and right ends of the string. As you move these pointers inward, keep track of how many characters you've collected from each side."
+    },
+    {
+      "content": "Try to simulate the process of taking characters from both ends. For every combination of characters taken from the left and right, check if you have at least `k` of each character."
+    },
+    {
+      "content": "When checking combinations, consider how many characters you need to take from the left versus the right. You might want to loop through possible counts of characters taken from one side and calculate the required from the other side."
+    },
+    {
+      "content": "Make sure to keep track of the minimum time taken to collect at least `k` of each character. You can update this minimum whenever you find a valid combination."
+    },
+    {
+      "content": "Don't forget to account for the total number of characters taken. Each character taken from either end counts as one minute, so keep a cumulative count as you explore different combinations."
+    },
+    {
+      "content": "As a final step, ensure you check all possible combinations of characters taken from both ends, and return the minimum time found. Consider using a nested loop to explore all valid left and right character counts."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5, s consists only of 'a', 'b', and 'c'.",
+    "0 <= k <= s.length.",
+    "Return -1 if it's not possible to take k of each character.",
+    "The order of taking characters matters; you can only take from the ends."
+  ]
+}

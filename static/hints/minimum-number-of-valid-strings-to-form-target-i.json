@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a valid string is. A valid string is any prefix of the strings in the `words` array. For example, if `words` contains 'abc', then 'a', 'ab', and 'abc' are all valid prefixes."
+    },
+    {
+      "content": "Consider how to check if a substring of `target` can be formed by valid prefixes. You might want to iterate through `target` and see how far you can match valid prefixes from `words`."
+    },
+    {
+      "content": "Think about how you can store the valid prefixes. You could create a set or a list of prefixes from the `words` array to make it easier to check if a substring of `target` is valid."
+    },
+    {
+      "content": "When you are checking substrings of `target`, remember that you can take prefixes of varying lengths. You should explore all possible lengths of valid prefixes that can match the starting part of `target`."
+    },
+    {
+      "content": "Consider using a dynamic programming approach. You can maintain an array `dp` where `dp[i]` represents the minimum number of valid strings needed to form the substring `target[0:i]`."
+    },
+    {
+      "content": "Initialize your `dp` array with a value that represents infinity (or a large number) for all indices except `dp[0]`, which should be 0 since no strings are needed to form an empty target."
+    },
+    {
+      "content": "As you iterate through `target`, for each position `i`, look back at all previous positions `j` and check if the substring `target[j:i]` is a valid prefix. If it is valid, update `dp[i]` accordingly."
+    },
+    {
+      "content": "Make sure to handle cases where it's impossible to form the target. If after processing all characters in `target`, `dp[target.length]` is still infinity, return -1."
+    },
+    {
+      "content": "Don't forget to consider edge cases, such as when `target` is empty or when none of the prefixes can match the beginning of `target`. How will your solution handle these scenarios?"
+    },
+    {
+      "content": "Finally, ensure that your solution runs efficiently. Given the constraints, aim for a solution that avoids unnecessary repeated checks. You might want to optimize how you check valid prefixes."
+    }
+  ],
+  "questionNotes": [
+    "1 <= words.length <= 100",
+    "1 <= words[i].length <= 5 * 10^3",
+    "The sum of lengths of all words is <= 10^5.",
+    "1 <= target.length <= 5 * 10^3",
+    "Both words and target consist only of lowercase English letters.",
+    "Return -1 if it's not possible to form the target."
+  ]
+}

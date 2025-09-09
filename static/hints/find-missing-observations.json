@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the total number of rolls, which is the sum of the known rolls and the missing rolls. The total number of rolls is given by `n + m`."
+    },
+    {
+      "content": "Next, calculate the total sum that would yield the desired mean. This can be done using the formula: `total_sum = mean * (n + m)`."
+    },
+    {
+      "content": "Now, compute the sum of the known rolls from the `rolls` array. This will help you determine how much the missing rolls need to sum up to."
+    },
+    {
+      "content": "To find the sum of the missing rolls, subtract the sum of the known rolls from the total sum calculated in the previous hint."
+    },
+    {
+      "content": "Remember that the missing rolls must be integers between 1 and 6, inclusive. This means the sum of the missing rolls must also satisfy certain bounds."
+    },
+    {
+      "content": "Consider the minimum and maximum possible sums for the missing rolls. The minimum sum occurs when all missing rolls are 1, and the maximum occurs when all are 6."
+    },
+    {
+      "content": "Set up inequalities based on the minimum and maximum sums of the missing rolls. Specifically, check if the calculated sum of missing rolls falls within the range of `n` to `6 * n`."
+    },
+    {
+      "content": "If the calculated sum is valid, you can distribute this sum across the `n` missing rolls. Start by filling all rolls with the minimum value (1) and then adjust to reach the required sum."
+    },
+    {
+      "content": "When adjusting the rolls, ensure that you do not exceed the maximum allowed value of 6 for any roll. This may require careful distribution of the remaining sum."
+    },
+    {
+      "content": "Finally, return the array of missing rolls. If the conditions for valid rolls are not met, return an empty array."
+    }
+  ],
+  "questionNotes": [
+    "The average value must be an integer, so the total sum of rolls must be divisible by `n + m`.",
+    "The missing observations must be integers between 1 and 6.",
+    "If no valid configuration of missing rolls exists, return an empty array.",
+    "Multiple valid answers may exist; returning any valid configuration is acceptable."
+  ]
+}

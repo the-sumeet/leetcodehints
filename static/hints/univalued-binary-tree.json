@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node has a value and potentially two children (left and right). You need to check if all nodes in this tree have the same value."
+    },
+    {
+      "content": "Consider how you will traverse the tree. You can use either depth-first search (DFS) or breadth-first search (BFS) to visit each node. Think about how you would implement one of these traversal methods."
+    },
+    {
+      "content": "When you visit a node, compare its value with a reference value (the value of the root node, for example). If you find a node with a different value, you can immediately conclude that the tree is not uni-valued."
+    },
+    {
+      "content": "Make sure to handle the base case. If the tree is empty (i.e., the root is null), how should you respond? Consider what it means for a tree to be uni-valued in this scenario."
+    },
+    {
+      "content": "Think about the return type of your function. You need to return a boolean value: true if the tree is uni-valued and false otherwise. Ensure your function signature reflects this."
+    },
+    {
+      "content": "As you traverse the tree, keep track of the value you are comparing against. If you encounter a null node, skip it, but if you find a non-null node with a different value, return false."
+    },
+    {
+      "content": "If you are using recursion, remember that each recursive call should check the left and right children of the current node. You can combine the results of these checks to determine the final outcome."
+    },
+    {
+      "content": "Consider edge cases, such as a tree with only one node. What should your function return in this case? Think about why a single node tree is trivially uni-valued."
+    },
+    {
+      "content": "When implementing your traversal, ensure that you are not using any additional data structures that could increase the space complexity unnecessarily. Aim for an O(h) space complexity where h is the height of the tree."
+    },
+    {
+      "content": "Finally, put together your logic. You will need to recursively check each node, comparing its value to the root's value, and return true only if all nodes match. Remember to handle null nodes appropriately."
+    }
+  ],
+  "questionNotes": [
+    "A binary tree is uni-valued if all nodes have the same value.",
+    "The input is the root of the binary tree.",
+    "Return true if the tree is uni-valued, otherwise return false.",
+    "Constraints: 1 <= number of nodes <= 100, 0 <= Node.val < 100."
+  ]
+}

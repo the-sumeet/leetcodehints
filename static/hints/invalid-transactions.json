@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by parsing each transaction string into its components: name, time, amount, and city. You can use the `split` method to separate the values by commas. For example, `transaction.split(',')` will give you an array of these components."
+    },
+    {
+      "content": "Remember to convert the amount from a string to an integer for comparison. You can do this using `int(amount)` after extracting it from the parsed transaction array."
+    },
+    {
+      "content": "Identify the first condition for an invalid transaction: if the amount exceeds $1000. This is a straightforward check that can be done immediately after parsing the transaction."
+    },
+    {
+      "content": "The second condition for invalidity involves checking if a transaction occurs within 60 minutes of another transaction with the same name but in a different city. You will need to store transactions in a way that allows you to compare them efficiently."
+    },
+    {
+      "content": "Consider using a dictionary to group transactions by name. The keys can be the names, and the values can be lists of transactions (or their parsed components) that you can iterate through for comparisons."
+    },
+    {
+      "content": "When checking for the second condition, sort the transactions by time for each name. This will make it easier to check for transactions that are within 60 minutes of each other."
+    },
+    {
+      "content": "As you iterate through the sorted transactions for each name, compare each transaction with the others that come after it in the list. If the time difference is less than or equal to 60 minutes and the cities are different, mark both transactions as invalid."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when there are no transactions for a particular name or when all transactions are valid. Ensure your solution accounts for all possible scenarios."
+    },
+    {
+      "content": "Once you have identified all invalid transactions, collect them into a result list. Make sure to avoid duplicates by using a set or checking before adding to the list."
+    },
+    {
+      "content": "Finally, return the list of invalid transactions. Remember that the order of the transactions in the output does not matter, so you can return them as you collect them."
+    }
+  ],
+  "questionNotes": [
+    "Each transaction is in the format '{name},{time},{amount},{city}'.",
+    "The amount must be checked to see if it exceeds $1000.",
+    "Transactions must be compared based on name and city for the second condition.",
+    "You may return the answer in any order.",
+    "Constraints: transactions.length <= 1000; time and amount are within specified ranges."
+  ]
+}

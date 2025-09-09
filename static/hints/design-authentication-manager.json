@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `AuthenticationManager` class. It needs to store tokens along with their expiration times. Consider using a dictionary to map `tokenId` to its expiration time."
+    },
+    {
+      "content": "Remember that the `timeToLive` defines how long a token remains valid after its generation. When generating a token, the expiration time should be set to `currentTime + timeToLive`."
+    },
+    {
+      "content": "In the `renew` method, check if the token exists and is still valid. If the token is expired, you should not renew it. Think about how you would determine if a token is expired based on the current time."
+    },
+    {
+      "content": "When implementing `countUnexpiredTokens`, you need to iterate through your stored tokens and count how many have expiration times greater than the `currentTime`. This will give you the count of valid tokens."
+    },
+    {
+      "content": "Consider edge cases where a token is generated and then immediately checked for expiration. Make sure your logic correctly handles these scenarios, especially at the boundary of expiration times."
+    },
+    {
+      "content": "You may want to store the tokens in a way that allows for efficient expiration checks. A priority queue or a sorted list could help, but a simple dictionary with timestamps may suffice given the constraints."
+    },
+    {
+      "content": "Pay attention to the constraints provided in the problem statement. For example, the maximum number of calls is 2000, which suggests that your methods should be efficient, ideally O(1) for `generate` and `renew`, and O(n) for `countUnexpiredTokens`."
+    },
+    {
+      "content": "Make sure to handle the scenario where multiple renewals or generations occur at the same `currentTime`. The problem states that expiration happens before any other actions, so ensure your logic reflects this."
+    },
+    {
+      "content": "While implementing the `generate` method, ensure that it correctly overwrites any existing token with the same `tokenId`. This is because the problem guarantees unique token IDs for each call to `generate`."
+    },
+    {
+      "content": "Finally, when you think you have everything in place, test your implementation with edge cases, such as renewing an expired token or counting tokens at the exact moment they expire. This will help ensure your solution is robust."
+    }
+  ],
+  "questionNotes": [
+    "1 <= timeToLive <= 10^8",
+    "1 <= currentTime <= 10^8",
+    "1 <= tokenId.length <= 5",
+    "tokenId consists only of lowercase letters.",
+    "All calls to generate will contain unique values of tokenId.",
+    "The values of currentTime across all function calls will be strictly increasing.",
+    "At most 2000 calls will be made to all functions combined."
+  ]
+}

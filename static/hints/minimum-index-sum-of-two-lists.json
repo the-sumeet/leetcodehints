@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find common strings between two lists and calculate their index sums. Remember, the index sum for a string that appears at index `i` in `list1` and index `j` in `list2` is `i + j`."
+    },
+    {
+      "content": "Consider how to efficiently find common strings. One approach is to use a set to store the strings from one list (say `list1`) and then check for these strings in the other list (`list2`). This can help you quickly determine which strings are common."
+    },
+    {
+      "content": "Keep track of the indices of the common strings. As you find a common string, calculate its index sum and compare it with the current minimum index sum you have recorded. Make sure to initialize your minimum index sum to a large value."
+    },
+    {
+      "content": "When you find a common string, you need to check if its index sum is less than the current minimum. If it is, update your minimum index sum and reset your list of results. If it equals the current minimum, simply add it to your results list."
+    },
+    {
+      "content": "Don't forget to handle cases where multiple common strings have the same minimum index sum. Your results list should be able to accommodate multiple strings if they share the same index sum."
+    },
+    {
+      "content": "Remember to consider the constraints provided in the problem. The lengths of the lists can go up to 1000, and the strings can be up to 30 characters long. This means your solution should be efficient enough to handle the maximum input sizes."
+    },
+    {
+      "content": "Think about the return format. The problem states that you can return the result in any order, which gives you some flexibility in how you present the output. However, ensure that you return an array of strings."
+    },
+    {
+      "content": "Make sure to test your solution against edge cases. For example, what happens if both lists contain only one common string? Or if all strings are common? Testing these scenarios will help ensure your solution is robust."
+    },
+    {
+      "content": "As you implement your solution, consider the use of a dictionary to map strings to their indices in `list1`. This can help you quickly access the index of a string when checking against `list2`."
+    },
+    {
+      "content": "Finally, your implementation should iterate through `list2` and for each string, check if it exists in the dictionary you created from `list1`. Calculate the index sum and update your results accordingly. Make sure to handle the final output correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= list1.length, list2.length <= 1000",
+    "1 <= list1[i].length, list2[i].length <= 30",
+    "All strings in list1 and list2 are unique.",
+    "There is at least one common string between list1 and list2.",
+    "Return format: An array of common strings with the least index sum, in any order."
+  ]
+}

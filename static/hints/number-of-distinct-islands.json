@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the grid. Each cell can either be part of an island (1) or water (0). Your goal is to identify distinct islands formed by connected 1s."
+    },
+    {
+      "content": "Consider how to traverse the grid. You might want to use Depth-First Search (DFS) or Breadth-First Search (BFS) to explore the islands. Think about how you can mark visited cells to avoid counting them multiple times."
+    },
+    {
+      "content": "As you traverse an island, keep track of its shape. You can do this by recording the relative positions of the cells you visit. For example, you can store the coordinates of each cell relative to the starting point of the island."
+    },
+    {
+      "content": "Remember that islands can have different shapes and sizes. To identify distinct islands, you'll need to ensure that the shape you record is unique. Consider using a set to store these shapes."
+    },
+    {
+      "content": "When you encounter a '1', initiate your traversal from that cell. Make sure to explore all four possible directions (up, down, left, right) to fully capture the island's shape."
+    },
+    {
+      "content": "Think about how to encode the shape of each island. You could use a tuple of coordinates that represent the shape's structure. For instance, if you start at (0,0) and move to (0,1) and (1,0), your shape could be represented as [(0,0), (0,1), (1,0)]."
+    },
+    {
+      "content": "After you finish exploring an island, convert its shape representation into a format that can be stored in a set. This will help you automatically handle duplicates."
+    },
+    {
+      "content": "Don't forget to reset the visited cells after you finish processing an island if you plan to reuse the grid for subsequent islands. Alternatively, you can modify the grid to mark visited cells."
+    },
+    {
+      "content": "Consider edge cases such as an empty grid or a grid with no islands. Ensure your solution can handle these scenarios without errors."
+    },
+    {
+      "content": "Finally, once you have collected all unique island shapes in a set, the number of distinct islands will simply be the size of that set. Make sure to return the correct count."
+    }
+  ],
+  "questionNotes": [
+    "The grid consists of 1s (land) and 0s (water).",
+    "An island is formed by connected 1s in 4 directions (up, down, left, right).",
+    "You need to count distinct islands, meaning islands with the same shape are considered the same.",
+    "Be cautious of edge cases like empty grids or grids filled with 0s.",
+    "Return the count of distinct islands as an integer."
+  ]
+}

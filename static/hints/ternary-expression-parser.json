@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a ternary expression. A basic ternary expression follows the format 'condition ? trueValue : falseValue'. This means if the condition is true, you return trueValue; otherwise, you return falseValue."
+    },
+    {
+      "content": "Consider how nested ternary expressions work. For example, in 'F?1:T?4:5', if the first condition 'F' is false, you need to evaluate the second ternary expression 'T?4:5'. This requires you to parse the expression recursively."
+    },
+    {
+      "content": "Think about how to identify the parts of the expression. You need to find the position of the first '?' to determine the condition, and then find the corresponding ':' to separate the true and false values."
+    },
+    {
+      "content": "When parsing the expression, keep track of the depth of nested ternaries. Each '?' should have a matching ':' that closes it. Use a counter to manage this depth as you iterate through the string."
+    },
+    {
+      "content": "As you parse the string, consider using a stack to help keep track of the current position in the expression. This can help you handle nested expressions more effectively."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the expression is just a single character (either 'T' or 'F'). In such cases, you should return that character directly without further processing."
+    },
+    {
+      "content": "Think about how to handle the return values of the true and false branches. If the trueValue or falseValue is another ternary expression, you will need to recursively evaluate that as well."
+    },
+    {
+      "content": "Consider what happens if there are multiple nested ternary expressions. Ensure that your parsing logic correctly identifies the boundaries of each ternary expression and evaluates them in the correct order."
+    },
+    {
+      "content": "When implementing your solution, make sure to test it against various cases, including deeply nested expressions and those that contain only 'T' or 'F'. This will help ensure your parser is robust."
+    },
+    {
+      "content": "Finally, implement the parsing logic in a way that returns the final evaluated result after processing the entire expression. You should be close to a complete solution by now, focusing on correctly handling the nested structure."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The input string will only contain characters 'T', 'F', '?', and ':'.",
+    "Indexing: Ensure that you correctly match each '?' with its corresponding ':'.",
+    "Uniqueness: Each ternary expression is unique in terms of its structure.",
+    "Return format: The output should be a single character, either 'T' or 'F', based on the evaluation of the expression."
+  ]
+}

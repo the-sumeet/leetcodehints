@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A palindrome reads the same forwards and backwards, like 'aba' or 'racecar'. Make sure you can identify palindromic substrings in a given string."
+    },
+    {
+      "content": "Remember that you need to find palindromic substrings of odd lengths. This means the length of the substring must be 1, 3, 5, etc. Consider how you can check for odd lengths when you find palindromes."
+    },
+    {
+      "content": "Think about how to efficiently check if a substring is a palindrome. A common method is to expand around the center of the substring. For a substring of odd length, you can use a single character as the center."
+    },
+    {
+      "content": "You need to ensure that the two palindromic substrings do not overlap. This means that if you choose a substring from indices i to j, the next substring must start from index k where k > j."
+    },
+    {
+      "content": "Consider how to store the lengths of the palindromic substrings you find. You may want to keep track of the maximum length of palindromes found up to each index in the string."
+    },
+    {
+      "content": "As you find palindromic substrings, store their lengths in a list or array. This will help you later when you need to calculate the product of lengths of two non-intersecting palindromic substrings."
+    },
+    {
+      "content": "You can iterate through the string and for each character, expand outwards to find all odd-length palindromes centered at that character. Keep track of their lengths."
+    },
+    {
+      "content": "When you find a palindrome, check if it can form a valid pair with previously found palindromes. For each new palindrome found, consider all previously found palindromes that end before the start of the new one."
+    },
+    {
+      "content": "To maximize the product of lengths, you can maintain a record of the maximum lengths of palindromes found up to each index. This way, when you find a new palindrome, you can quickly calculate potential products."
+    },
+    {
+      "content": "Be careful with edge cases, such as when the string is very short or when there are no valid pairs of palindromic substrings. Ensure that your solution can handle these gracefully."
+    },
+    {
+      "content": "When calculating the product of lengths, remember that you will need to check all pairs of palindromic substrings. Consider using nested loops or a more efficient approach to avoid excessive computation."
+    },
+    {
+      "content": "If you find multiple pairs of palindromic substrings that yield the same maximum product, ensure that your solution returns the correct one based on the problem's requirements."
+    },
+    {
+      "content": "You might want to think about the time complexity of your approach. Given the constraints, aim for an efficient solution that avoids checking all possible pairs directly."
+    },
+    {
+      "content": "As you finalize your approach, consider edge cases such as strings with all the same characters or strings with no odd-length palindromes. How will your solution handle these cases?"
+    },
+    {
+      "content": "Finally, ensure that you return the maximum product correctly. The output should be a single integer representing the maximum product of the lengths of the two palindromic substrings."
+    }
+  ],
+  "questionNotes": [
+    "The substrings must be of odd length.",
+    "The indices of the substrings must not overlap: 0 <= i <= j < k <= l < s.length.",
+    "The string length can be up to 100,000 characters.",
+    "Return the maximum product as an integer."
+  ]
+}

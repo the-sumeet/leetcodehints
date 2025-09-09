@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the spiral order traversal. You will need to traverse the matrix in layers, starting from the outermost layer and moving inward. Think about how you can represent the boundaries of the current layer."
+    },
+    {
+      "content": "Define the boundaries of your traversal. You can use four variables: `top`, `bottom`, `left`, and `right` to keep track of the current layer's limits. Initialize them to the edges of the matrix: `top = 0`, `bottom = m - 1`, `left = 0`, `right = n - 1`."
+    },
+    {
+      "content": "Consider the order of traversal. You will first traverse from left to right along the top boundary, then move down the right boundary, then traverse from right to left along the bottom boundary, and finally move up the left boundary. Make sure to update the boundaries after completing each direction."
+    },
+    {
+      "content": "After moving right across the top row, increment the `top` boundary. Similarly, after moving down the right column, decrement the `right` boundary, and so on. This will help you narrow down the area you need to traverse in the next iteration."
+    },
+    {
+      "content": "Think about edge cases, such as when the matrix has only one row or one column. In such cases, your traversal logic should still hold, but make sure to handle these scenarios without going out of bounds."
+    },
+    {
+      "content": "As you traverse, collect the elements in a list. You can start with an empty list and append elements as you visit them in the spiral order. Make sure to return this list at the end."
+    },
+    {
+      "content": "Consider using a loop that continues until the `top` boundary exceeds the `bottom` boundary or the `left` boundary exceeds the `right` boundary. This will ensure you stop when all elements have been traversed."
+    },
+    {
+      "content": "When implementing the traversal, be careful with the order of your loops. You might want to use a while loop for the outer traversal and nested loops for each direction of movement."
+    },
+    {
+      "content": "Remember to check the constraints of the problem, especially the limits on `m` and `n`. Ensure your solution is efficient enough to handle the maximum size of the matrix."
+    },
+    {
+      "content": "Finally, put all the pieces together. Your function should initialize the boundaries, use a while loop to traverse in spiral order, and return the collected elements. Ensure you test your solution with various matrix sizes and shapes."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == matrix.length, n == matrix[i].length, 1 <= m, n <= 10",
+    "Element values range: -100 <= matrix[i][j] <= 100",
+    "Return format: A list of elements in spiral order."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for a substring to be valid. A substring of `word1` is valid if it can be rearranged to have `word2` as a prefix. This means the substring must contain at least the same characters as `word2` in the required quantities."
+    },
+    {
+      "content": "Consider using a frequency count for the characters in `word2`. This will help you determine the necessary counts of each character that must be present in any valid substring of `word1`."
+    },
+    {
+      "content": "Think about how you can efficiently check the character counts of substrings of `word1`. A sliding window approach might be useful here, allowing you to maintain a count of characters as you expand and contract the window."
+    },
+    {
+      "content": "Define a sliding window that will represent the current substring of `word1`. You'll need to keep track of the start and end indices of this window as you iterate through `word1`."
+    },
+    {
+      "content": "As you move the end of the sliding window, update the character count for the current substring. When the window size reaches the length of `word2`, check if the counts match."
+    },
+    {
+      "content": "When the character count of the current window matches the character count of `word2`, it means that this substring can be rearranged to start with `word2`. Count this as a valid substring."
+    },
+    {
+      "content": "When the window is larger than the length of `word2`, move the start of the window forward to maintain the size. Remember to update your character counts accordingly as you slide the window."
+    },
+    {
+      "content": "Consider edge cases where `word1` is shorter than `word2`. In such cases, there can be no valid substrings, so you should return 0 immediately."
+    },
+    {
+      "content": "Make sure to handle all characters in `word2`. If `word2` contains characters that are not in `word1`, those characters will affect the validity of the substrings."
+    },
+    {
+      "content": "Think about how to efficiently check if the character counts of the current window match those of `word2`. You might want to maintain a count of how many characters are currently valid."
+    },
+    {
+      "content": "You can use a simple comparison of the frequency maps. If they match, increment your valid substring count. If they don't, you can adjust the window."
+    },
+    {
+      "content": "Remember that the constraints are significant. You need to ensure your solution runs in linear time, O(n), where n is the length of `word1`. This means avoiding nested loops."
+    },
+    {
+      "content": "As you implement the sliding window, consider using two arrays or dictionaries to store character counts for `word2` and the current window in `word1`. This will make comparison straightforward."
+    },
+    {
+      "content": "Don't forget to reset your counts appropriately when moving the start of the window. This is crucial for maintaining accurate counts as you slide through `word1`."
+    },
+    {
+      "content": "Finally, after processing all possible substrings, return the total count of valid substrings. Ensure your implementation handles all edge cases and runs efficiently."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= word1.length <= 10^6, 1 <= word2.length <= 10^4.",
+    "Both word1 and word2 consist only of lowercase English letters.",
+    "A valid substring must be able to rearrange to have word2 as a prefix.",
+    "Return the total number of valid substrings."
+  ]
+}

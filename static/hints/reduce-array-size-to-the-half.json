@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by determining the total number of elements in the array. Since the problem states that you need to remove at least half of the integers, calculate the threshold which is half of the length of the array."
+    },
+    {
+      "content": "Next, consider how often each integer appears in the array. You can use a frequency map (or dictionary) to count the occurrences of each integer. This will help you understand which integers contribute most to the size of the array."
+    },
+    {
+      "content": "Think about how you can prioritize which integers to remove. It might be beneficial to start by removing the integers that appear most frequently, as they will help you reach the target of removing half the elements more quickly."
+    },
+    {
+      "content": "Once you have the frequency counts, sort these counts in descending order. This way, you can easily access the most frequent integers first when deciding which ones to remove."
+    },
+    {
+      "content": "As you iterate through the sorted list of frequencies, keep a running total of the number of elements removed. Count how many different integers you need to remove to reach or exceed the threshold of half the original array size."
+    },
+    {
+      "content": "Remember that the goal is to minimize the size of the set of integers you choose to remove. So, while iterating through the sorted frequencies, keep track of how many unique integers you have removed."
+    },
+    {
+      "content": "Consider edge cases, such as when all elements in the array are the same. In this case, removing just one integer will suffice to meet the requirement."
+    },
+    {
+      "content": "If you reach the threshold of removed elements before you have exhausted all unique integers, you can stop iterating. The number of unique integers removed at this point will be your answer."
+    },
+    {
+      "content": "Be careful with the constraints: the length of the array is guaranteed to be even. This means that the half will always be a whole number, which simplifies your calculations."
+    },
+    {
+      "content": "Finally, ensure that your implementation efficiently handles the maximum constraints, particularly since the array can be as large as 100,000 elements. Aim for a time complexity of O(n log n) due to sorting."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= arr.length <= 10^5, arr.length is even.",
+    "1 <= arr[i] <= 10^5.",
+    "You need to return the minimum size of the set of integers removed.",
+    "The output should be a single integer representing the size of the set."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to compute a sum for each element in the matrix based on a defined neighborhood size `k`. This means that for each element at position (i, j), you will look at elements in the range from (i-k, j-k) to (i+k, j+k)."
+    },
+    {
+      "content": "Consider how to handle the boundaries of the matrix. When calculating the sum for an element, the indices might go out of bounds, especially when `k` is large. Make sure to check that your indices stay within the valid range of the matrix."
+    },
+    {
+      "content": "You can use nested loops to iterate over each element in the matrix. For each element, you will need another loop (or loops) to iterate through the neighborhood defined by `k`. Think about how you can efficiently sum the values in this neighborhood."
+    },
+    {
+      "content": "To avoid repeatedly summing the same elements for different positions, consider using a prefix sum array. This array will allow you to compute the sum of any submatrix in constant time after an initial setup phase."
+    },
+    {
+      "content": "When constructing the prefix sum matrix, remember that each entry at (i, j) in the prefix sum should represent the sum of all elements from the top-left corner (0, 0) to (i, j). This will help you quickly calculate sums for any rectangular area of the original matrix."
+    },
+    {
+      "content": "While calculating the prefix sums, be careful to include the necessary adjustments for overlapping areas. The formula for the prefix sum at (i, j) will involve adding the current element and subtracting the sums of the areas that are counted twice."
+    },
+    {
+      "content": "Once you have the prefix sum matrix, you can compute the result for each position (i, j) in the output matrix by using the prefix sums to get the sum of the relevant submatrix. Make sure to handle cases where the indices might go out of bounds."
+    },
+    {
+      "content": "When you're ready to compute the output matrix, remember that the sum for each answer[i][j] is derived from the prefix sums. You will need to consider the corners of the submatrix to ensure you are not accessing out-of-bounds indices."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is larger than half of the matrix dimensions. In such cases, the entire matrix will contribute to each element in the output matrix. This can simplify your calculations."
+    },
+    {
+      "content": "Finally, implement the logic to fill in the output matrix using the prefix sums. Remember to check your bounds carefully to avoid any index errors. The final step will be to ensure your output format matches the expected structure."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n, k <= 100",
+    "1 <= mat[i][j] <= 100",
+    "Ensure to handle out-of-bounds indices when calculating sums.",
+    "The output matrix should have the same dimensions as the input matrix."
+  ]
+}

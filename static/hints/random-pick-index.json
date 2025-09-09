@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the problem requirements. You need to create a class that initializes with an integer array and can randomly pick an index of a target number from that array. Make sure to handle duplicates correctly."
+    },
+    {
+      "content": "Consider how you will store the indices of the target number. You might want to create a method that collects all indices of the target in the array, especially since there can be duplicates."
+    },
+    {
+      "content": "Remember that the output must be random. Think about how you can use a random number generator to select an index from the list of indices you collected for the target."
+    },
+    {
+      "content": "When collecting indices, ensure that you are iterating through the entire array. A simple loop can help you gather all indices where the value matches the target."
+    },
+    {
+      "content": "Pay attention to the constraints: the length of the array can be up to 20,000, and there can be at most 10,000 calls to the pick method. Your solution should be efficient enough to handle these limits."
+    },
+    {
+      "content": "Consider edge cases, such as when the target appears only once in the array. Your method should still return the correct index, which is straightforward in this case."
+    },
+    {
+      "content": "Think about how you can ensure that each index for the target has an equal probability of being selected. This means that if the target appears multiple times, your random selection must account for that."
+    },
+    {
+      "content": "You might want to use a random number generator to pick an index from the list of indices you created. For example, if you have a list of indices, you can use `random.randint(0, len(indices) - 1)` to select a random index."
+    },
+    {
+      "content": "Make sure to test your implementation thoroughly. You should verify that the `pick` method returns valid indices and that the distribution of selected indices is uniform over multiple calls."
+    },
+    {
+      "content": "To summarize, your class should have a constructor to initialize the array and a method to pick a random index. Ensure that the method handles duplicates correctly and that the random selection is fair."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 20,000",
+    "Values of nums[i] can be between -2^31 and 2^31 - 1",
+    "The target will always exist in the array",
+    "At most 10,000 calls to the pick method are allowed",
+    "Return format: The index of the target in nums"
+  ]
+}

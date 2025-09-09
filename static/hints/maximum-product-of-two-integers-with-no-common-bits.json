@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirement for the two integers. They must not share any common set bits in their binary representation. This means that for any bit position, if one integer has a '1', the other must have a '0'."
+    },
+    {
+      "content": "Consider how you can check if two numbers share common bits. You can use the bitwise AND operation: if `nums[i] & nums[j]` equals 0, then they have no common set bits."
+    },
+    {
+      "content": "Think about how you can efficiently find pairs of numbers. A brute force approach would involve checking every possible pair, but this may be inefficient for large arrays. Can you think of a way to reduce the number of comparisons?"
+    },
+    {
+      "content": "To maximize the product, you should focus on the largest numbers in the array. Consider sorting the array first or keeping track of the two largest numbers that meet the criteria."
+    },
+    {
+      "content": "Keep in mind the constraints: the array can have up to 100,000 elements, and each number can be as large as 1,000,000. This means your solution needs to be efficient, ideally around O(n^2) or better."
+    },
+    {
+      "content": "When checking pairs, remember to ensure that the indices are distinct. You cannot use the same index for both numbers in the product calculation."
+    },
+    {
+      "content": "Consider using a bitmask to represent the set bits of each number. This can help you quickly determine if two numbers can form a valid pair without common bits."
+    },
+    {
+      "content": "As you iterate through the array, maintain a record of the maximum product found so far. If you find a pair that meets the criteria, calculate the product and update your maximum if it's greater."
+    },
+    {
+      "content": "Don't forget to handle cases where no valid pairs exist. If you finish checking all pairs and haven't found any that meet the criteria, you should return 0."
+    },
+    {
+      "content": "Finally, ensure your implementation is clean and efficient. You might want to test edge cases, such as when all numbers have common bits or when the input array has only two elements."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 10^5",
+    "Each number in nums is between 1 and 10^6.",
+    "You need to return the maximum product of two distinct indices.",
+    "If no valid pair exists, return 0."
+  ]
+}

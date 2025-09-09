@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a k-distant index is. An index `i` in the array `nums` is k-distant if there exists at least one index `j` such that the absolute difference between `i` and `j` is less than or equal to `k`, and the value at `nums[j]` is equal to `key`."
+    },
+    {
+      "content": "Consider how you can find all indices `j` where `nums[j]` equals `key`. You might want to loop through the array and store these indices in a list."
+    },
+    {
+      "content": "Once you have the indices of `key`, think about how to determine the k-distant indices. For each index `i`, check if there is a `j` such that `|i - j| <= k`. This means you need to check a range of indices around `i`."
+    },
+    {
+      "content": "Remember that the indices must be within the bounds of the array. Ensure that when you're checking for k-distant indices, you don't go out of the array's index range."
+    },
+    {
+      "content": "You can optimize your search by iterating through the array only once to find the indices of `key`, and then use those indices to determine the k-distant indices without needing to check every index for every `i`."
+    },
+    {
+      "content": "Think about using a set to store the k-distant indices. Sets can help you avoid duplicates and make it easier to manage the indices you find."
+    },
+    {
+      "content": "After you gather all k-distant indices, remember to sort them before returning. This is important as the output must be in increasing order."
+    },
+    {
+      "content": "Consider edge cases such as when `k` is equal to the length of the array or when all elements in `nums` are the same as `key`. How would these cases affect your solution?"
+    },
+    {
+      "content": "As you implement your solution, keep track of the indices you are checking. Use a loop to iterate through the indices of `nums`, and for each index, check the range of indices from `max(0, i - k)` to `min(len(nums) - 1, i + k)`."
+    },
+    {
+      "content": "Finally, once you have your list of k-distant indices, ensure you return them in the correct format. You can convert your set back to a list and sort it before returning."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 1000",
+    "1 <= nums[i] <= 1000",
+    "key is guaranteed to be in the array nums.",
+    "1 <= k <= nums.length",
+    "Return a list of indices sorted in increasing order."
+  ]
+}

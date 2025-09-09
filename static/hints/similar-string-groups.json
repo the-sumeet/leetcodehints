@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of similarity between two strings. Two strings are similar if they are identical or can be made identical by swapping at most two characters."
+    },
+    {
+      "content": "Consider the implications of the strings being anagrams of each other. This means they have the same characters in the same frequency, which simplifies some comparisons."
+    },
+    {
+      "content": "Think about how you can represent the similarity relationship. A graph could be a useful structure where each string is a node and an edge exists between two nodes if the strings are similar."
+    },
+    {
+      "content": "To check if two strings are similar, you can iterate through their characters and count the mismatches. If there are more than two mismatches, they are not similar."
+    },
+    {
+      "content": "When counting mismatches, keep track of the indices where the characters differ. This will help you determine if a swap can make the strings identical."
+    },
+    {
+      "content": "Remember that if two strings are similar, they can form a connected component in your graph. You can use Depth-First Search (DFS) or Breadth-First Search (BFS) to explore these components."
+    },
+    {
+      "content": "Consider edge cases, such as when the input list has only one string. In this case, there is only one group."
+    },
+    {
+      "content": "If you find that two strings are not similar, make sure to continue checking the rest of the strings in the list. You want to explore all possible connections."
+    },
+    {
+      "content": "You might want to use a visited set to keep track of which strings have already been grouped, to avoid counting them multiple times."
+    },
+    {
+      "content": "As you implement your graph traversal, remember to increment your group count each time you start exploring a new component."
+    },
+    {
+      "content": "Consider how to efficiently store and access the groups. A list of sets could work well, where each set contains strings that are similar to each other."
+    },
+    {
+      "content": "Think about the time complexity of your solution. With up to 300 strings and each string being up to 300 characters long, you need to ensure your approach is efficient."
+    },
+    {
+      "content": "You might want to implement a helper function to check if two strings are similar. This function can encapsulate the logic for counting mismatches."
+    },
+    {
+      "content": "When implementing the main logic, ensure that you handle all strings in the input list, even if they are not similar to others."
+    },
+    {
+      "content": "Finally, ensure your function returns the count of unique groups as specified in the problem statement. This is the final output you need."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= strs.length <= 300",
+    "Constraints: 1 <= strs[i].length <= 300",
+    "All strings consist of lowercase letters only.",
+    "All words in strs have the same length and are anagrams of each other."
+  ]
+}

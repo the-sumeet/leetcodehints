@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to traverse the grid. You can move to any adjacent cell (up, down, left, right) if the current cell's value is less than the query value."
+    },
+    {
+      "content": "Consider how to keep track of the cells you have visited. You need to ensure you only get points the first time you visit a cell."
+    },
+    {
+      "content": "Think about using a breadth-first search (BFS) or depth-first search (DFS) approach to explore the grid starting from the top-left corner. This will help you explore all reachable cells."
+    },
+    {
+      "content": "Before implementing your search, check if the value in the top-left cell is already greater than or equal to the query value. If it is, you can immediately return 0 points for that query."
+    },
+    {
+      "content": "As you explore the grid, maintain a count of points based on the number of unique cells visited that meet the criteria of being less than the query value."
+    },
+    {
+      "content": "You may want to sort the queries beforehand. This way, you can process smaller queries first and potentially use the results for larger queries."
+    },
+    {
+      "content": "When processing each query, consider using a set or a boolean matrix to track visited cells to avoid counting points from the same cell multiple times."
+    },
+    {
+      "content": "Remember that the grid can have a maximum size of 1000x1000, so ensure your solution is efficient enough to handle larger grids within the time limits."
+    },
+    {
+      "content": "Think about how you can optimize the search process. For example, once you know the maximum points for a certain query, you might not need to re-evaluate cells for larger queries."
+    },
+    {
+      "content": "Consider edge cases such as when all cells in the grid are greater than the maximum query value, which should return an array of zeros."
+    },
+    {
+      "content": "Make sure to return the results in the same order as the queries were provided. This is crucial for the output format."
+    },
+    {
+      "content": "You might want to implement a helper function to handle the BFS/DFS logic to keep your main function clean and focused on processing queries."
+    },
+    {
+      "content": "As you implement the BFS/DFS, ensure you handle the boundaries of the grid correctly to avoid index errors when moving to adjacent cells."
+    },
+    {
+      "content": "Think about the implications of using a queue for BFS versus a stack for DFS. Each has its benefits depending on how you want to explore the grid."
+    },
+    {
+      "content": "Finally, once you have your BFS/DFS logic in place, test your implementation with the provided examples to ensure it behaves as expected."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= m, n <= 1000, 4 <= m * n <= 10^5, 1 <= k <= 10^4, 1 <= grid[i][j], queries[i] <= 10^6.",
+    "You must return the answer array in the same order as the queries.",
+    "If the top-left cell's value is greater than or equal to the query, return 0 points for that query.",
+    "Keep track of unique cell visits to ensure points are counted correctly."
+  ]
+}

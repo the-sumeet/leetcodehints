@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of well-formed parentheses. A valid combination must have balanced opening '(' and closing ')' parentheses. For every opening parenthesis added, there must be a corresponding closing parenthesis later."
+    },
+    {
+      "content": "Consider using a recursive approach to build the combinations. You can keep track of how many opening and closing parentheses you have used so far. This will help ensure that you only add a closing parenthesis if there is a corresponding opening one."
+    },
+    {
+      "content": "Define your base case for the recursion. When you have used 'n' opening and 'n' closing parentheses, you should add the current combination to your results. This is when you know you have a valid combination."
+    },
+    {
+      "content": "Think about the conditions for adding parentheses. You can only add an opening parenthesis if you haven't reached 'n' yet, and you can only add a closing parenthesis if the number of closing parentheses used is less than the number of opening ones."
+    },
+    {
+      "content": "To visualize your recursive calls, you might want to draw a tree structure. Each node represents a state of your current string, and branches represent adding either an opening or closing parenthesis."
+    },
+    {
+      "content": "Remember to use a list to store the valid combinations. After reaching the base case, you should append the current combination to this list before returning from the recursive function."
+    },
+    {
+      "content": "Consider edge cases, such as the minimum input value of n = 1. Ensure your function handles this correctly by returning the expected output of ['()'] without any additional logic."
+    },
+    {
+      "content": "Make sure to reset or clear your current combination string after each recursive call to avoid carrying over characters from previous calls. This will help maintain the integrity of each combination."
+    },
+    {
+      "content": "You can optimize your recursion by using a helper function that takes parameters for the current combination, the count of opening, and the count of closing parentheses. This keeps your main function clean and focused."
+    },
+    {
+      "content": "Finally, ensure your function returns the list of combinations in the expected format. It should be a list of strings, each representing a valid combination of parentheses, like ['((()))', '(()())', ...]."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 8",
+    "Return format: A list of strings representing valid combinations of parentheses.",
+    "Each combination must be well-formed, meaning every opening parenthesis has a corresponding closing parenthesis."
+  ]
+}

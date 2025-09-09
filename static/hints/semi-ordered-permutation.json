@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a semi-ordered permutation is. Recall that the first element must be `1` and the last element must be `n`, where `n` is the length of the permutation."
+    },
+    {
+      "content": "Identify the positions of the elements `1` and `n` in the given permutation. This will help you understand how far they are from their desired positions."
+    },
+    {
+      "content": "Consider how many swaps are needed to move `1` to the front of the array and `n` to the back. Think about the number of adjacent swaps required for each element individually."
+    },
+    {
+      "content": "When moving `1` to the front, count how many elements are in front of it that are greater than `1`. Each of these elements will need to be swapped with `1` to move it to the front."
+    },
+    {
+      "content": "Similarly, when moving `n` to the back, count how many elements are behind it that are less than `n`. Each of these will need to be swapped with `n` to move it to the back."
+    },
+    {
+      "content": "If `1` is found after `n` in the permutation, the number of swaps needed will be the sum of the swaps for `1` and `n`. However, if `1` is before `n`, you will need to subtract one from the total swaps since they will overlap during the process."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the permutation is already semi-ordered. In this case, the number of operations required should be `0`."
+    },
+    {
+      "content": "Consider the constraints of the problem: the length of the permutation is between `2` and `50`, and all elements are unique integers from `1` to `n`. This means you can use simple loops without performance concerns."
+    },
+    {
+      "content": "Think about how you would implement the counting of swaps in code. You might want to use a simple loop to iterate through the list and keep track of the necessary counts."
+    },
+    {
+      "content": "Finally, combine your counts for the swaps needed for `1` and `n`, adjusting for any overlap, to return the minimum number of operations required to achieve a semi-ordered permutation."
+    }
+  ],
+  "questionNotes": [
+    "Ensure the first element is `1` and the last element is `n`.",
+    "The input is a permutation of integers from `1` to `n` with unique values.",
+    "The length of the permutation is guaranteed to be between `2` and `50`."
+  ]
+}

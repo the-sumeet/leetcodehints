@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the condition for divisibility. You need to find the smallest element in `nums` that divides every element in `numsDivide`. This means that for a candidate `x`, it must hold true that `y % x == 0` for all `y` in `numsDivide`."
+    },
+    {
+      "content": "Consider how to efficiently find the smallest element in `nums`. You can sort the array first, which will help in easily identifying the smallest elements as you iterate through potential candidates."
+    },
+    {
+      "content": "Think about how you would check if a number divides all elements in `numsDivide`. You could use a loop to check this condition for each candidate number you consider."
+    },
+    {
+      "content": "Remember that you can delete any number of elements from `nums`. This means that if the smallest element does not divide all elements in `numsDivide`, you may need to remove it and check the next smallest element."
+    },
+    {
+      "content": "As you iterate through the sorted `nums`, keep track of how many deletions you are making. This will help you determine the minimum deletions needed."
+    },
+    {
+      "content": "Consider edge cases where `nums` might contain duplicate values. Ensure that your deletion count correctly reflects the number of instances you need to remove."
+    },
+    {
+      "content": "What if `nums` contains elements that are larger than all elements in `numsDivide`? Think about how this would affect your choice of the smallest element."
+    },
+    {
+      "content": "You might want to compute the greatest common divisor (GCD) of the elements in `numsDivide`. This could help in determining the smallest element that could potentially divide all elements."
+    },
+    {
+      "content": "If the GCD of `numsDivide` is less than the smallest element in `nums`, it is impossible for any element in `nums` to divide all elements in `numsDivide`. This would lead you to return -1."
+    },
+    {
+      "content": "After sorting `nums`, you can iterate through it and for each unique element, check if it divides the GCD of `numsDivide`. If it does, calculate how many deletions would be needed to make that element the smallest."
+    },
+    {
+      "content": "Keep track of the minimum deletions required as you check each candidate. Use a variable to store the current minimum deletions and update it whenever you find a valid divisor."
+    },
+    {
+      "content": "Don't forget to handle cases where `nums` has only one element. If that element does not divide all elements in `numsDivide`, you should return -1 immediately."
+    },
+    {
+      "content": "Make sure to check if `nums` is empty or if `numsDivide` is empty as well. These cases should be handled explicitly to avoid unnecessary computations."
+    },
+    {
+      "content": "Consider using a binary search approach on the sorted `nums` to find the first element that can divide all elements in `numsDivide`. This could improve the efficiency of your solution."
+    },
+    {
+      "content": "Finally, ensure your solution adheres to the constraints given, especially with respect to the size of the arrays and the range of values. Optimize your solution to handle the upper limits effectively."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length, numsDivide.length <= 10^5",
+    "Values: 1 <= nums[i], numsDivide[i] <= 10^9",
+    "Return -1 if it's impossible to satisfy the divisibility condition.",
+    "You can delete any number of elements from nums.",
+    "The smallest element in nums must divide all elements in numsDivide."
+  ]
+}

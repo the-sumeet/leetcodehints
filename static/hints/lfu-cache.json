@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to implement a cache that evicts the least frequently used items first. Make sure you can differentiate between frequency of use and the order of use."
+    },
+    {
+      "content": "Consider how to store the key-value pairs. You might want to use a dictionary (hash map) for O(1) access to values. Think about how you will also keep track of the frequency of each key."
+    },
+    {
+      "content": "You need a way to keep track of how many times each key has been accessed. This can be done with another dictionary that maps keys to their access counts."
+    },
+    {
+      "content": "When a key is accessed (either through get or put), you need to update its frequency. Make sure you increment the count correctly and handle the case where a key is newly added."
+    },
+    {
+      "content": "Think about how to handle the eviction of keys. You need to maintain a structure that allows you to quickly find the least frequently used key. A min-heap or a sorted list of keys could be useful."
+    },
+    {
+      "content": "Remember to handle ties in frequency. If two keys have the same frequency, you should evict the one that was least recently used. This means you need to track the order of access as well."
+    },
+    {
+      "content": "You might want to use a doubly linked list to maintain the order of keys based on their last access time. This will help you efficiently remove the least recently used key when there’s a tie."
+    },
+    {
+      "content": "Consider the operations you need to implement: get and put. Both should run in O(1) time. Think about how to structure your data so that both operations can be performed efficiently."
+    },
+    {
+      "content": "In the put operation, if the cache is at capacity, you need to evict a key before inserting a new one. Make sure your eviction logic is integrated into the put method."
+    },
+    {
+      "content": "When implementing the get method, if the key does not exist, you should return -1. Make sure to handle this case properly before trying to update the frequency."
+    },
+    {
+      "content": "As you implement the put method, remember that if the key already exists, you should update its value and increment its frequency, rather than just adding a new entry."
+    },
+    {
+      "content": "Think about edge cases, such as what happens when the cache is empty or when trying to add more items than the capacity allows. Your implementation should gracefully handle these scenarios."
+    },
+    {
+      "content": "Make sure to test your implementation with various scenarios, including adding items, accessing them, and reaching the capacity limit. This will help ensure your logic is sound."
+    },
+    {
+      "content": "Consider using a combination of a dictionary for key-value pairs, another dictionary for frequencies, and a linked list or priority queue for managing the order of use. This will help you achieve O(1) operations."
+    },
+    {
+      "content": "Finally, when you are ready to write code, start with the class structure and the initialization of your data structures. Then, implement the get and put methods step by step, ensuring each part works correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= capacity <= 10^4, 0 <= key <= 10^5, 0 <= value <= 10^9",
+    "At most 2 * 10^5 calls will be made to get and put.",
+    "When there is a tie in frequency, the least recently used key should be evicted.",
+    "Return -1 if the key is not found during a get operation."
+  ]
+}

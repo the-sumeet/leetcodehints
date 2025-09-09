@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation you can perform. You can take the two smallest numbers from the array, remove them, and insert a new number calculated as `min(x, y) * 2 + max(x, y)`. This operation can only be performed if there are at least two elements in the array."
+    },
+    {
+      "content": "Consider how the operation affects the size of the numbers in the array. The new number created will always be larger than the maximum of the two numbers you removed, which can help you strategize which pairs to combine."
+    },
+    {
+      "content": "Think about the end goal: you want all numbers in the array to be at least `k`. Before performing operations, check which numbers are below `k` and how many operations you might need to elevate them."
+    },
+    {
+      "content": "A priority queue (or min-heap) can be useful here. This data structure allows you to efficiently retrieve and remove the two smallest numbers from the array, which is crucial for performing the operations."
+    },
+    {
+      "content": "As you perform operations, keep track of the number of operations you've completed. Each time you combine two numbers, increment your operation count."
+    },
+    {
+      "content": "When choosing pairs to combine, always select the two smallest numbers. This is because combining larger numbers will not help you reach the threshold `k` as efficiently."
+    },
+    {
+      "content": "After each operation, check the new state of the array. If all elements are now greater than or equal to `k`, you can stop and return the count of operations performed."
+    },
+    {
+      "content": "Consider edge cases where the smallest numbers are very close to `k`. You might need to perform several operations to push them over the threshold, so plan your operations carefully."
+    },
+    {
+      "content": "If you find that after several operations, some numbers are still below `k`, reassess your strategy. You may need to adjust which pairs you combine to maximize the increase in value."
+    },
+    {
+      "content": "Finally, ensure that you handle the case where the array size reduces to one element. The problem guarantees that a solution exists, so focus on the operations that will lead you to that single element being `>= k`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 200,000",
+    "1 <= nums[i] <= 1,000,000,000",
+    "1 <= k <= 1,000,000,000",
+    "The input is generated such that an answer always exists.",
+    "You can only perform the operation if there are at least two elements in nums."
+  ]
+}

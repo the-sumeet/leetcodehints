@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem's structure. You have courses that need to be taken in a specific order due to prerequisites. Think of this as a directed acyclic graph (DAG) where nodes represent courses and edges represent prerequisite relationships."
+    },
+    {
+      "content": "Consider how you would represent the courses and their relationships. An adjacency list is a good choice for representing the graph of courses and their prerequisites."
+    },
+    {
+      "content": "You need to keep track of the prerequisites for each course. A common approach is to use an array to count the number of prerequisites each course has, often referred to as 'indegree'."
+    },
+    {
+      "content": "Think about how you can identify which courses can be taken in the first semester. These are the courses that have no prerequisites (indegree of zero)."
+    },
+    {
+      "content": "Once you identify the courses that can be taken, you should consider how to manage the limit of 'k' courses per semester. You may need to prioritize which courses to take based on their dependencies."
+    },
+    {
+      "content": "Use a queue to manage the courses that can be taken. You can use a breadth-first search (BFS) approach to explore courses level by level, which aligns well with semesters."
+    },
+    {
+      "content": "As you take courses, remember to decrement the indegree of their dependent courses. This will help you track when new courses become available to take."
+    },
+    {
+      "content": "You might need to keep a count of the semesters as you progress through the courses. Each time you take courses in a semester, increment your semester count."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no relations at all. In this case, you can take all courses in one semester if k is greater than or equal to n."
+    },
+    {
+      "content": "Make sure to handle the case where you have more courses available than you can take in one semester (k). You will need to select the maximum possible courses while respecting the prerequisite constraints."
+    },
+    {
+      "content": "Think about how to efficiently select courses to take each semester. You can use a priority queue or sort the available courses based on some criteria, such as the number of remaining prerequisites."
+    },
+    {
+      "content": "Remember that the problem guarantees that it is always possible to take all courses. This means you don't have to handle cases where it's impossible to complete the courses."
+    },
+    {
+      "content": "When implementing your solution, ensure that you are correctly managing the state of each course (whether it has been taken and how many prerequisites remain)."
+    },
+    {
+      "content": "As you finalize your implementation, test with various inputs, especially edge cases like having all courses as prerequisites of one course or having no prerequisites at all."
+    },
+    {
+      "content": "Your final implementation should return the total number of semesters required to complete all courses. Keep track of this count throughout your BFS process."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 15, 1 <= k <= n, 0 <= relations.length <= n * (n-1) / 2.",
+    "All pairs [prevCourse i, nextCourse i] are unique.",
+    "The graph is a directed acyclic graph (DAG).",
+    "Ensure to handle the case where there are no relations.",
+    "The return format is a single integer representing the minimum number of semesters."
+  ]
+}

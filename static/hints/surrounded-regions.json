@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the board. The board is a 2D matrix consisting of 'X' and 'O'. Your goal is to identify 'O' regions that are completely surrounded by 'X' on all sides."
+    },
+    {
+      "content": "Consider how you can traverse the board. You can use Depth-First Search (DFS) or Breadth-First Search (BFS) to explore connected 'O' cells. Think about how you can mark the cells you visit to avoid counting them multiple times."
+    },
+    {
+      "content": "Remember that only 'O' regions that are not connected to the edge of the board can be considered surrounded. How will you handle the edge cases where 'O' cells are located at the borders?"
+    },
+    {
+      "content": "Before you start modifying the board, consider how you will track which 'O' cells should be converted to 'X' and which should remain 'O'. A temporary marker could be useful for this purpose."
+    },
+    {
+      "content": "When you find an 'O' that is connected to the edge, you should mark it so that you don't mistakenly convert it to 'X'. Think about how you can differentiate between 'O's that are safe and those that are not."
+    },
+    {
+      "content": "As you traverse the board, make sure to check all four possible directions (up, down, left, right) for each 'O' cell you encounter. This will help you identify the entire region connected to that cell."
+    },
+    {
+      "content": "After marking all the 'O's that are connected to the edge, the next step is to go through the board again. You will need to convert all remaining 'O's to 'X's and revert your temporary markers back to 'O's."
+    },
+    {
+      "content": "Consider edge cases where the board is very small, such as 1x1 or 1xN dimensions. How will your algorithm handle these cases? Make sure to test these scenarios."
+    },
+    {
+      "content": "Think about the time complexity of your solution. If you use DFS or BFS, how many cells will you potentially visit? What is the worst-case scenario in terms of performance?"
+    },
+    {
+      "content": "Finally, ensure your code handles all cases correctly before finalizing. You might want to write a few test cases, especially for boards with no 'O's or boards that are entirely 'O's."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 200, where m is the number of rows and n is the number of columns.",
+    "You need to modify the board in-place; no return value is required.",
+    "Only 'O' regions that are completely surrounded by 'X' should be converted to 'X'.",
+    "Be careful with 'O's that are on the edge of the board; they should not be captured."
+  ]
+}

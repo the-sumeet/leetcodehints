@@ -1,0 +1,58 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of complete and incomplete gardens. A garden is complete if it has at least `target` flowers. This distinction is crucial for calculating the total beauty."
+    },
+    {
+      "content": "Consider how to distribute the `newFlowers` across the gardens. You might want to prioritize gardens that are closest to becoming complete, as this will maximize the number of complete gardens."
+    },
+    {
+      "content": "Think about the edge cases where all gardens are already complete. In this scenario, the beauty will be determined solely by the minimum number of flowers in the incomplete gardens, which would be zero."
+    },
+    {
+      "content": "Keep track of how many flowers you need to make each garden complete. For each garden, calculate `needed[i] = target - flowers[i]` if `flowers[i] < target`."
+    },
+    {
+      "content": "After calculating the needed flowers for each garden, sort the gardens based on how many flowers they need to become complete. This will help you prioritize which gardens to focus on."
+    },
+    {
+      "content": "Consider the scenario where you have more `newFlowers` than needed to make all incomplete gardens complete. You should calculate the beauty in this case as well."
+    },
+    {
+      "content": "When calculating the total beauty, remember that the first part is the number of complete gardens multiplied by `full`. The second part depends on the minimum number of flowers in the incomplete gardens."
+    },
+    {
+      "content": "If there are no incomplete gardens, the second part of the beauty calculation will be zero. Make sure your logic accounts for this case."
+    },
+    {
+      "content": "As you distribute flowers, keep a running total of how many flowers have been planted. This will help ensure you do not exceed `newFlowers`."
+    },
+    {
+      "content": "You might need to handle cases where multiple gardens can be made complete with the same number of flowers. Think about how you can efficiently track the minimum number of flowers in incomplete gardens."
+    },
+    {
+      "content": "Consider using a loop to iterate through the sorted list of needed flowers. Deduct from `newFlowers` as you make gardens complete, and update the count of complete gardens."
+    },
+    {
+      "content": "After making as many gardens complete as possible, calculate the beauty based on the number of complete gardens and the minimum number of flowers in the remaining incomplete gardens."
+    },
+    {
+      "content": "If you run out of `newFlowers` before completing all possible gardens, you will need to determine the minimum number of flowers in the remaining incomplete gardens to finalize the beauty calculation."
+    },
+    {
+      "content": "Remember to check if there are any incomplete gardens left after attempting to use all `newFlowers`. If there are none, the second part of the beauty formula will be zero."
+    },
+    {
+      "content": "Finally, ensure that your function returns the total beauty as an integer. Pay attention to the data types you are using, especially when dealing with large numbers."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= flowers.length <= 10^5",
+    "1 <= flowers[i], target <= 10^5",
+    "1 <= newFlowers <= 10^10",
+    "1 <= full, partial <= 10^5",
+    "The gardens are indexed from 0.",
+    "Multiple gardens can have the same number of flowers.",
+    "If there are no incomplete gardens, the second part of the beauty is 0."
+  ]
+}

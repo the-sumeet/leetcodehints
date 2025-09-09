@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering how you can distribute the candies among the children. Each child can only receive candies from one pile, so think about how to maximize the number of candies each child can receive."
+    },
+    {
+      "content": "Notice that you can divide each pile into smaller piles. This means that if a pile has more candies than a certain number, you can create multiple piles of that size. Think about how you can determine the maximum number of candies each child can get."
+    },
+    {
+      "content": "Consider using a binary search approach to find the maximum number of candies each child can receive. You can set the search range from 1 to the maximum number of candies in any pile."
+    },
+    {
+      "content": "In your binary search, for a mid value (the number of candies each child could potentially get), calculate how many children can be satisfied with that number of candies using the available piles."
+    },
+    {
+      "content": "To determine how many children can be satisfied with a given mid value, iterate through each pile and for each pile, calculate how many full piles of size mid can be formed. You can do this by using integer division: `pile // mid`."
+    },
+    {
+      "content": "Keep a running total of how many children can be satisfied as you iterate through the piles. If this total is greater than or equal to k, then mid is a valid candidate for the answer."
+    },
+    {
+      "content": "If mid is a valid candidate, you should search for a potentially larger value by adjusting your binary search range. If it’s not valid, adjust your range to search for smaller values."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when the total number of candies is less than k. In such cases, the maximum number of candies each child can receive should be 0."
+    },
+    {
+      "content": "Make sure to track the maximum number of candies found during the binary search process. This will be your final answer once the search completes."
+    },
+    {
+      "content": "Finally, ensure that your binary search correctly handles the case when k is very large (up to 10^12) and that your calculations remain efficient, especially since the number of candies can be large (up to 10^7)."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= candies.length <= 10^5",
+    "1 <= candies[i] <= 10^7",
+    "1 <= k <= 10^12",
+    "Each child can only receive candies from one pile.",
+    "Some piles of candies may go unused."
+  ]
+}

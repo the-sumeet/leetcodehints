@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Consider how you can move in the grid. You can move to any of the four adjacent cells (up, down, left, right). Think about how this movement can help you form paths."
+    },
+    {
+      "content": "Each cell can be a starting point for a path. Make sure to account for all cells in the grid when counting paths."
+    },
+    {
+      "content": "Paths are only valid if they are strictly increasing. This means that the next cell in the path must have a greater value than the current cell."
+    },
+    {
+      "content": "Start by thinking about paths of length 1. How many cells are there in the grid? Each cell counts as a path of length 1."
+    },
+    {
+      "content": "For paths of length 2, consider pairs of cells. You need to check if moving from one cell to another is valid (i.e., if the second cell's value is greater)."
+    },
+    {
+      "content": "You can use Depth First Search (DFS) or Dynamic Programming (DP) to explore paths. Think about how you can store results of previously computed paths to avoid redundant calculations."
+    },
+    {
+      "content": "Since the grid can be large (up to 1000x1000), consider the efficiency of your approach. A naive solution may not run in a reasonable time."
+    },
+    {
+      "content": "You might want to sort the cells based on their values. This way, you can ensure that you only consider valid transitions when building paths."
+    },
+    {
+      "content": "When counting paths, remember to use a modulo operation to handle large numbers. The result should be returned modulo 10^9 + 7."
+    },
+    {
+      "content": "Think about using memoization to store the number of increasing paths starting from each cell. This can help speed up your calculations significantly."
+    },
+    {
+      "content": "You may need to explore all possible starting points and aggregate the results. Consider iterating through each cell and initiating a path count from there."
+    },
+    {
+      "content": "Consider edge cases where the grid has only one cell or where all cells have the same value. How would these cases affect your path counting?"
+    },
+    {
+      "content": "When implementing your solution, ensure that you handle boundaries of the grid properly to avoid accessing out-of-bounds indices."
+    },
+    {
+      "content": "As you implement your DFS or DP solution, keep track of visited cells to avoid cycles in your path exploration."
+    },
+    {
+      "content": "Once you have a method to count paths from a single cell, think about how to aggregate these counts for all cells in the grid."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == grid.length, n == grid[i].length, 1 <= m, n <= 1000, 1 <= m * n <= 10^5, 1 <= grid[i][j] <= 10^5.",
+    "Paths are strictly increasing; ensure that each step moves to a cell with a greater value.",
+    "Return the result modulo 10^9 + 7.",
+    "Two paths are considered different if they do not have exactly the same sequence of visited cells."
+  ]
+}

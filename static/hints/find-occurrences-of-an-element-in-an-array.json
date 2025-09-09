@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to find occurrences of an element in an array. You need to scan through the `nums` array and keep track of the indices where the element `x` appears."
+    },
+    {
+      "content": "Consider using a list to store the indices of each occurrence of `x`. This will help you quickly access the index for each query without needing to search the array multiple times."
+    },
+    {
+      "content": "Remember that the queries are 1-based. This means that if a query asks for the 1st occurrence, you should look for the index at position 0 in your list of indices."
+    },
+    {
+      "content": "Think about how to handle cases where there are fewer occurrences of `x` than requested by the query. You should return -1 in such cases."
+    },
+    {
+      "content": "When iterating through `nums`, make sure to check each element and compare it to `x`. If they match, save the current index to your list of occurrences."
+    },
+    {
+      "content": "After collecting all the indices of `x`, you can process each query. For each `queries[i]`, check if it is less than or equal to the length of your list of occurrences."
+    },
+    {
+      "content": "If `queries[i]` is valid, retrieve the index from your list of occurrences. If it exceeds the number of occurrences, return -1."
+    },
+    {
+      "content": "Consider edge cases, such as when `nums` contains no occurrences of `x`, or when all elements are the same but not equal to `x`."
+    },
+    {
+      "content": "Make sure to optimize your solution for the constraints given, especially since both `nums` and `queries` can be as large as 100,000."
+    },
+    {
+      "content": "To summarize, your approach should involve: 1) Collecting indices of `x`, 2) Processing each query against this list, and 3) Returning the results in the required format."
+    }
+  ],
+  "questionNotes": [
+    "Queries are 1-based indices.",
+    "Return -1 if there are fewer occurrences than requested.",
+    "Constraints: 1 <= nums.length, queries.length <= 10^5.",
+    "1 <= queries[i] <= 10^5.",
+    "1 <= nums[i], x <= 10^4."
+  ]
+}

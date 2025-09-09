@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to create a sequence of `k` consecutive `1`s in the array by swapping adjacent elements. What does it mean for elements to be adjacent?"
+    },
+    {
+      "content": "Consider the simplest case where `k` is equal to `1`. What would be the minimum moves required to have at least one `1` in the array? This can help you understand the base case."
+    },
+    {
+      "content": "Think about how many `1`s are present in the array. If the number of `1`s is less than `k`, it's impossible to form `k` consecutive `1`s. What should you return in that case?"
+    },
+    {
+      "content": "Identify the positions of all the `1`s in the array. This will help you visualize how to move them around. You can store these indices in a separate list."
+    },
+    {
+      "content": "Once you have the positions of the `1`s, consider how far each `1` needs to move to form a block of `k` consecutive `1`s. What would the target positions be?"
+    },
+    {
+      "content": "To minimize the number of swaps, focus on the `1`s that are closest to the desired positions. How can you calculate the total number of swaps needed for a specific block of `k` `1`s?"
+    },
+    {
+      "content": "For each possible block of `k` consecutive `1`s, calculate the total number of swaps required to align the `1`s in that block. This could involve summing the distances from the current positions to the target positions."
+    },
+    {
+      "content": "Consider using a sliding window approach to evaluate each block of `k` `1`s. As you slide the window, how can you efficiently update the number of swaps needed?"
+    },
+    {
+      "content": "When calculating the number of moves for a block of `k` `1`s, think about the contribution of each `1` to the total moves. How does the distance from its current position to its target position affect the total moves?"
+    },
+    {
+      "content": "Remember to account for the fact that moving a `1` to the right means you might need to move other `1`s as well. How does this affect the total number of moves?"
+    },
+    {
+      "content": "As you iterate through possible blocks of `k` `1`s, keep track of the minimum number of swaps found. What condition will help you update this minimum effectively?"
+    },
+    {
+      "content": "Consider edge cases where `k` is equal to the total number of `1`s in the array. What would the optimal arrangement look like, and how many moves would it take?"
+    },
+    {
+      "content": "Think about the performance of your solution. Given the constraints, how can you ensure your approach runs efficiently, ideally in linear time?"
+    },
+    {
+      "content": "Before finalizing your solution, test it with different edge cases, such as arrays filled with all `0`s or all `1`s, and varying values of `k`."
+    },
+    {
+      "content": "Finally, ensure your implementation correctly returns the minimum number of moves needed. What data structure will you use to store the positions of `1`s and calculate the swaps?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "nums[i] is either 0 or 1.",
+    "1 <= k <= sum(nums), meaning k cannot exceed the total number of 1's.",
+    "The output should be the minimum number of adjacent swaps required."
+  ]
+}

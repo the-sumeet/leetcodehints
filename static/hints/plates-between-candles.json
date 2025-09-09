@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the string `s`. It consists of plates (`*`) and candles (`|`). Your goal is to find the number of plates that are strictly between candles for each query."
+    },
+    {
+      "content": "Consider how to efficiently determine the positions of candles in the string. You might want to create a list that stores the indices of all candles as you iterate through the string."
+    },
+    {
+      "content": "For each query, you are given a substring defined by indices `left` and `right`. Make sure to extract the substring correctly and focus on the candles within that range."
+    },
+    {
+      "content": "Remember that a plate is only considered between candles if there is at least one candle to its left and one to its right. Think about how you can find the closest candles to the left and right of a given range."
+    },
+    {
+      "content": "When processing each query, you might want to first find the leftmost candle index that is greater than or equal to `left` and the rightmost candle index that is less than or equal to `right`."
+    },
+    {
+      "content": "Once you have the indices of the left and right candles, count the number of plates between these two indices. You can do this by iterating through the substring or using a precomputed count of plates."
+    },
+    {
+      "content": "Consider using a prefix sum array to keep track of the cumulative number of plates up to each index in the string. This will allow you to quickly calculate the number of plates between any two indices."
+    },
+    {
+      "content": "Make sure to handle edge cases where there may not be any candles in the specified range. If either the left or right candle index is invalid, the answer for that query should be zero."
+    },
+    {
+      "content": "Pay attention to the constraints of the problem. The length of `s` can be quite large (up to 100,000), so your solution should be efficient, ideally O(n) for preprocessing and O(1) for each query."
+    },
+    {
+      "content": "Finally, remember to return the answers in the same order as the queries. You can store the results in an array and return it after processing all queries."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= s.length <= 10^5; s consists of '*' and '|' characters.",
+    "1 <= queries.length <= 10^5; queries[i].length == 2.",
+    "0 <= left_i <= right_i < s.length.",
+    "A plate is considered between candles if there is at least one candle to its left and right in the substring."
+  ]
+}

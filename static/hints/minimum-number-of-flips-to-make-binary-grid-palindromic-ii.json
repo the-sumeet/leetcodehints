@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for a row or column to be palindromic. A row or column is palindromic if it reads the same from both ends. For example, [1, 0, 1] is palindromic, but [1, 0, 0] is not."
+    },
+    {
+      "content": "Consider how many flips are needed to make a single row palindromic. You can compare elements from the start and end of the row moving towards the center. For a row of length n, you only need to check the first n/2 elements."
+    },
+    {
+      "content": "When checking for palindromic properties, remember that you can flip either a 0 to a 1 or a 1 to a 0. Count how many mismatches there are and determine how many flips are required to resolve those mismatches."
+    },
+    {
+      "content": "Don't forget about the columns! The same logic applies to columns as it does to rows. You will need to check both rows and columns to ensure the entire grid is palindromic."
+    },
+    {
+      "content": "After ensuring all rows and columns are palindromic, you need to consider the additional requirement: the total number of 1's in the grid must be divisible by 4. Keep track of the count of 1's as you make flips."
+    },
+    {
+      "content": "Think about how flipping a cell affects both its row and its column. When you flip a cell, you may need to adjust your palindromic counts for both the corresponding row and column."
+    },
+    {
+      "content": "Consider edge cases, such as grids that are already palindromic. If you find that the grid is already meeting the palindromic condition, you will only need to check the divisibility of the total count of 1's."
+    },
+    {
+      "content": "You might want to implement a helper function to calculate the number of flips needed for a single row or column to become palindromic. This will help you modularize your solution."
+    },
+    {
+      "content": "As you implement your solution, keep track of the total number of flips made. You will need to return this count at the end, along with ensuring the count of 1's is divisible by 4."
+    },
+    {
+      "content": "Finally, consider how to adjust the number of flips to meet the divisibility requirement. If the total number of 1's is not divisible by 4, you may need to flip some additional cells, which could increase your flip count."
+    }
+  ],
+  "questionNotes": [
+    "The grid is m x n where 1 <= m * n <= 200,000.",
+    "Each cell in the grid can be either 0 or 1.",
+    "Ensure that the total number of 1's in the grid is divisible by 4 after making all rows and columns palindromic.",
+    "Output should be the minimum number of flips required."
+  ]
+}

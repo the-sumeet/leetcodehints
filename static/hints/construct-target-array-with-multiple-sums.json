@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Understand the starting point: You begin with an array `arr` consisting of all 1's. This is your initial state before any operations."
+    },
+    {
+      "content": "The operation allows you to set any index `i` of `arr` to the sum of all current elements in `arr`. Think about how this operation can change the values in `arr`."
+    },
+    {
+      "content": "Notice that the sum of the elements in `arr` will always be at least the number of elements in `arr` (since they all start as 1). This means the target must also be at least the length of the array."
+    },
+    {
+      "content": "Consider the relationship between the maximum element in `target` and the sum of the other elements. How does this relationship affect your ability to reach the target?"
+    },
+    {
+      "content": "If you can construct the target array, the maximum value in `target` must be achievable by summing the other elements. Think about how you could use the current values in `arr` to reach that maximum."
+    },
+    {
+      "content": "You might want to sort the `target` array. This can help you easily identify the largest element and analyze how to reach it through the sums of the others."
+    },
+    {
+      "content": "Consider a greedy approach: After sorting, repeatedly replace the maximum element with the sum of the others. Does this lead you back to the starting point?"
+    },
+    {
+      "content": "Think about the condition when you cannot reach a target. For example, if the maximum element is less than the sum of the others, what does that imply?"
+    },
+    {
+      "content": "If at any point the maximum value in `target` is less than or equal to the sum of the rest, you can replace it. But what happens if you reach a point where you cannot replace anymore?"
+    },
+    {
+      "content": "Keep in mind that the operations are reversible in a sense. If you can reach a certain configuration, you can also think about how to backtrack to see if you can reach the original state."
+    },
+    {
+      "content": "Consider edge cases where `target` contains repeated values. How does this affect the sum and the operations you can perform?"
+    },
+    {
+      "content": "Think about the constraints: `1 <= target[i] <= 10^9`. How does this large range influence your approach? Are there any performance considerations?"
+    },
+    {
+      "content": "Remember that the maximum number of elements is 50,000. This suggests that your solution should be efficient, ideally better than O(n^2)."
+    },
+    {
+      "content": "When you reach a configuration where you cannot make any more valid moves, how will you determine if you have successfully constructed the target?"
+    },
+    {
+      "content": "As a final step, consider how you would implement a loop that continues to replace the maximum value with the sum of the others until no further changes can be made. What condition would you check?"
+    }
+  ],
+  "questionNotes": [
+    "You start with an array of n 1's.",
+    "You can perform operations to modify the array by setting an index to the sum of all elements.",
+    "The target must be achievable from the starting array through a series of operations.",
+    "Constraints: 1 <= n <= 50,000 and 1 <= target[i] <= 10^9.",
+    "The solution should be efficient given the constraints."
+  ]
+}

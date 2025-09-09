@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the surface area of a single cube. A single cube has a surface area of 6 square units. Think about how this changes when you stack cubes on top of each other or place them adjacent to one another."
+    },
+    {
+      "content": "Consider how the adjacency of cubes affects the surface area. When two cubes are adjacent, they share a face, which reduces the total surface area. How many faces are lost when cubes are adjacent?"
+    },
+    {
+      "content": "For each cell in the grid, if it contains `v` cubes, it contributes `6 * v` to the surface area initially. But remember to account for the shared faces with neighboring cells."
+    },
+    {
+      "content": "Identify the neighbors of each cell in the grid. You can use the directions: up, down, left, and right to find adjacent cells. Be careful with the grid boundaries to avoid indexing errors."
+    },
+    {
+      "content": "When calculating the surface area for each cell, subtract the area of the shared faces with its neighbors. For example, if the neighbor has a height of `h`, the shared area is the minimum of `v` and `h`."
+    },
+    {
+      "content": "Make sure to handle edge cases where the grid has zero cubes. If a cell has a value of 0, it should not contribute to the surface area at all."
+    },
+    {
+      "content": "Consider the contribution of the bottom face of the cubes. Each tower contributes to the bottom surface area, which is equal to the number of cells that have at least one cube."
+    },
+    {
+      "content": "Think about how to iterate through the grid. You will need a nested loop to access each cell in the `n x n` grid. Keep track of the total surface area as you compute contributions from each cell."
+    },
+    {
+      "content": "As you calculate the surface area, maintain a running total. Start with the initial surface area for all cubes and then subtract the shared areas with neighbors."
+    },
+    {
+      "content": "Finally, ensure that your function returns the total surface area after considering all cells in the grid. Don't forget to include the bottom faces of the cubes in your final calculation!"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == grid.length == grid[i].length",
+    "1 <= n <= 50",
+    "0 <= grid[i][j] <= 50",
+    "The bottom face of each shape counts toward its surface area."
+  ]
+}

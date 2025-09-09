@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Consider how a falling path is defined. A falling path starts from any element in the first row and can only move to the next row directly below or diagonally left/right. This means you need to keep track of the row and the column as you move down the matrix."
+    },
+    {
+      "content": "Think about how you can use dynamic programming to solve this problem. You can create a new matrix (or modify the existing one) where each cell contains the minimum falling path sum to that cell."
+    },
+    {
+      "content": "Start by initializing the first row of your DP matrix (or the original matrix) since the falling path can start from any element in the first row. The values in this row will remain unchanged."
+    },
+    {
+      "content": "For each subsequent row, calculate the minimum falling path sum for each cell based on the possible cells from the previous row. For example, for cell (i, j), you can come from (i-1, j-1), (i-1, j), or (i-1, j+1)."
+    },
+    {
+      "content": "Make sure to handle the edges of the matrix carefully. When you're at the leftmost column, you can't access (i-1, j-1), and when you're at the rightmost column, you can't access (i-1, j+1)."
+    },
+    {
+      "content": "As you compute the minimum sums for each cell in the current row, you can update the original matrix to save space, reusing it to store the minimum sums."
+    },
+    {
+      "content": "After processing all rows, the last row of your DP matrix will contain the minimum sums for all paths ending in that row. You need to find the minimum value in this last row."
+    },
+    {
+      "content": "Consider edge cases such as when the matrix has only one row or one column. In these scenarios, the falling path sum is simply the minimum value of the single row or column."
+    },
+    {
+      "content": "Remember that the constraints specify that the matrix can contain negative values. Ensure your solution correctly handles these cases when calculating sums."
+    },
+    {
+      "content": "Finally, once you have the minimum sums calculated, return the smallest value from the last row of your matrix. This value represents the minimum falling path sum through the matrix."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == matrix.length == matrix[i].length",
+    "1 <= n <= 100",
+    "-100 <= matrix[i][j] <= 100",
+    "A falling path can start from any element in the first row.",
+    "The next element can be directly below, or diagonally left/right."
+  ]
+}

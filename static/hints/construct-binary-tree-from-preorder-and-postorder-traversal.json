@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree. In a preorder traversal, the first element is always the root of the tree. This will be crucial for reconstructing the tree."
+    },
+    {
+      "content": "In preorder, after the root, the next elements represent the left subtree followed by the right subtree. This can help you determine how to partition the remaining elements."
+    },
+    {
+      "content": "In postorder traversal, the last element is the root of the tree. This means that the last element in the postorder array should match the root you identified from the preorder array."
+    },
+    {
+      "content": "Consider how you can find the boundaries of the left and right subtrees in both the preorder and postorder arrays. The left subtree will always come before the right subtree in preorder."
+    },
+    {
+      "content": "You can use a hashmap to quickly find the index of any node in the postorder array. This will help you determine the size of the left subtree and subsequently the right subtree."
+    },
+    {
+      "content": "Remember that the elements in both arrays are unique. This means that when you are looking for a node in the postorder array, you can be certain that it will only appear once."
+    },
+    {
+      "content": "When constructing the tree recursively, you'll need to handle the base case where the subtree is empty. This can happen when the indices for your subarrays do not make sense."
+    },
+    {
+      "content": "Think about how to recursively build the left and right subtrees. After identifying the root from preorder, use the identified sizes to slice the arrays appropriately."
+    },
+    {
+      "content": "As you build the tree recursively, ensure that you are correctly updating the indices for the preorder and postorder arrays to reflect the current subtree being constructed."
+    },
+    {
+      "content": "Your final function will need to return the root of the constructed binary tree. Make sure that the return type matches the expected format, which is typically a TreeNode object."
+    }
+  ],
+  "questionNotes": [
+    "The preorder traversal starts with the root node, followed by the left subtree and then the right subtree.",
+    "The postorder traversal ends with the root node, with the left subtree followed by the right subtree preceding it.",
+    "Both arrays contain distinct values and are guaranteed to represent the same binary tree.",
+    "Constraints specify that the length of both arrays will be between 1 and 30."
+  ]
+}

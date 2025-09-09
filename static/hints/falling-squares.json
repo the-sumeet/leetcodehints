@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how each square is represented in the input array. Each square is defined by its left edge and its side length. This means that the right edge can be calculated as `left + sideLength`."
+    },
+    {
+      "content": "Consider how you will track the heights of the squares as they stack on top of each other. You might want to maintain a list or a map that keeps track of the highest point at each x-coordinate."
+    },
+    {
+      "content": "When a square is dropped, it will fall until it either hits the X-axis or lands on top of another square. Think about how you can determine the height at which the square will land."
+    },
+    {
+      "content": "To find where a square lands, you need to check all previously dropped squares that it overlaps with. This means checking for any squares whose left and right edges intersect with the new square's left and right edges."
+    },
+    {
+      "content": "As you check for overlaps, remember that a square only lands on another square if it is fully above it. If it only touches the side, it does not count as landing."
+    },
+    {
+      "content": "You can maintain a variable to keep track of the maximum height after each square is dropped. This will help you build the output array efficiently."
+    },
+    {
+      "content": "When iterating through the previously dropped squares to check for overlaps, you can optimize by only considering squares that are within the range of the new square's left and right edges."
+    },
+    {
+      "content": "Make sure to handle cases where multiple squares are dropped in close proximity. You will need to ensure that the heights are calculated correctly based on the highest square that overlaps."
+    },
+    {
+      "content": "Consider edge cases where squares are dropped at the same position or where squares are very large compared to their left position. How will this affect the landing heights?"
+    },
+    {
+      "content": "Remember that the height of a square is determined by the height of the highest square it lands on plus its own height. This means you may need to keep track of heights dynamically."
+    },
+    {
+      "content": "You might find it helpful to create a helper function that determines the landing height of a given square based on the current state of landed squares."
+    },
+    {
+      "content": "As you build your solution, ensure that you are correctly updating the maximum height after each square is processed. This will be essential for producing the correct output."
+    },
+    {
+      "content": "Think about how to efficiently store and retrieve the heights of the squares. A dictionary or a sorted list could be useful for managing the heights at various x-coordinates."
+    },
+    {
+      "content": "Once you have determined the landing height for a square, don't forget to update your data structure to reflect the new heights for the range that the square occupies."
+    },
+    {
+      "content": "Finally, ensure that your output format matches the requirements. You need to return an array where each element corresponds to the height after each square is dropped."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= positions.length <= 1000, 1 <= left[i] <= 10^8, 1 <= sideLength[i] <= 10^6.",
+    "Each square's height is determined by the highest square it lands on plus its own height.",
+    "A square only lands on another if it fully overlaps; touching sides do not count.",
+    "Return format: an array of heights after each square drop."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, consider how you can extract the digits of the integer. You can use the modulus operator `%` to get the last digit of the number. For example, `last_digit = x % 10`."
+    },
+    {
+      "content": "Once you have the last digit, think about how you can build the reversed number. You can initialize a variable to hold the reversed integer and multiply it by 10 before adding the last digit."
+    },
+    {
+      "content": "Remember to remove the last digit from the original number after processing it. You can do this using integer division: `x = x // 10`."
+    },
+    {
+      "content": "Consider how you will handle negative integers. You can check if the number is negative at the start and store this information so you can apply it later when returning the result."
+    },
+    {
+      "content": "As you build the reversed integer, keep an eye on the potential overflow. A signed 32-bit integer ranges from -2^31 to 2^31 - 1. You will need to check if the reversed number exceeds these bounds."
+    },
+    {
+      "content": "To check for overflow, you can compare the reversed integer against the maximum and minimum values before you finalize the return value. If it exceeds these bounds, return 0."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the input is 0 or when the reversed integer ends with zeros (like 120). Think about how to strip these zeros from the end."
+    },
+    {
+      "content": "You should also consider what happens when reversing leads to a number that is not valid in the 32-bit range. For instance, reversing 1534236469 would lead to a number that exceeds the maximum limit."
+    },
+    {
+      "content": "When you construct the reversed number, remember to account for the sign of the original integer. If the original integer was negative, the final result should also be negative."
+    },
+    {
+      "content": "Finally, put all the pieces together: extract digits, build the reversed number while checking for overflow, and ensure the sign is correct. Start implementing these steps in your code."
+    }
+  ],
+  "questionNotes": [
+    "The input x is a signed 32-bit integer.",
+    "The output must also be a signed 32-bit integer.",
+    "If the reversed integer overflows, return 0.",
+    "Trailing zeros in the original number should not appear in the reversed result."
+  ]
+}

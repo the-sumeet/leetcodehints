@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to handle multiple promises in JavaScript. Remember that `Promise.all()` can be useful, but it doesn't limit the number of concurrent promises."
+    },
+    {
+      "content": "Consider how you can manage the number of promises that are allowed to run concurrently. You need to keep track of how many promises are currently running."
+    },
+    {
+      "content": "Think about using a queue to manage the promises. You can add promises to the queue and process them based on the concurrency limit."
+    },
+    {
+      "content": "When a promise resolves, you should check if there are more promises in the queue that can be started. This will help you maintain the concurrency limit."
+    },
+    {
+      "content": "Make sure to handle the case where the pool of promises is empty. You need to stop processing when there are no more promises left to execute."
+    },
+    {
+      "content": "Consider edge cases, such as when the concurrency limit is greater than the number of promises. How should your function behave in this scenario?"
+    },
+    {
+      "content": "You may want to use `async/await` for cleaner syntax when dealing with promises. This can make your code easier to read and maintain."
+    },
+    {
+      "content": "Remember to return a promise that resolves when all the promises in the pool have been resolved. This is crucial for the function's expected behavior."
+    },
+    {
+      "content": "Think about how to handle errors in promises. You should ensure that an error in one promise does not prevent other promises from executing."
+    },
+    {
+      "content": "Finally, outline your function structure. You will need a way to manage the queue, track the number of active promises, and a mechanism to start new promises as others resolve."
+    }
+  ],
+  "questionNotes": [
+    "The input is an array of functions that return promises.",
+    "The second input is the concurrency limit, which defines how many promises can run at the same time.",
+    "Make sure to handle cases where the concurrency limit is greater than the number of promises.",
+    "The function should return a promise that resolves when all promises have completed."
+  ]
+}

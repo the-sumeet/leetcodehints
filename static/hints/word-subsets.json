@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a 'subset' in this context. A string `b` is a subset of string `a` if all characters in `b` can be found in `a` with at least the same frequency."
+    },
+    {
+      "content": "Consider how you can represent the frequency of characters in both `words1` and `words2`. A common approach is to use an array of size 26 (for each letter in the alphabet) to count occurrences."
+    },
+    {
+      "content": "Think about how to combine the requirements of all strings in `words2`. You might want to create a cumulative frequency count that represents the maximum requirements for each character across all strings in `words2`."
+    },
+    {
+      "content": "When iterating through `words2`, ensure you update your character frequency counts correctly. For example, if `b` has 2 'a's and 3 'b's, your cumulative count should reflect that."
+    },
+    {
+      "content": "As you check each string in `words1`, compare its character frequency count against the cumulative count from `words2`. A string is universal if it meets or exceeds the required counts for all characters."
+    },
+    {
+      "content": "Consider edge cases where `words2` might contain characters that are not present in any string in `words1`. How will your solution handle such cases?"
+    },
+    {
+      "content": "Make sure to handle the constraints effectively. For example, if `words1` or `words2` contains the maximum number of elements (10,000), your solution should still perform efficiently."
+    },
+    {
+      "content": "Remember that the strings in `words1` are unique. This means you don't have to worry about duplicate entries in your final result, but you should still return all valid universal strings."
+    },
+    {
+      "content": "When you construct your result array, think about the order of elements. While the problem states you can return the answer in any order, maintaining the order of `words1` can simplify your implementation."
+    },
+    {
+      "content": "Before finalizing your solution, consider writing test cases that cover various scenarios, including edge cases, to ensure your implementation is robust. For instance, test with empty `words2`, or `words1` containing only one string."
+    }
+  ],
+  "questionNotes": [
+    "A string b is a subset of string a if every letter in b occurs in a including multiplicity.",
+    "A string a from words1 is universal if for every string b in words2, b is a subset of a.",
+    "You may return the answer in any order.",
+    "All strings of words1 are unique.",
+    "1 <= words1.length, words2.length <= 10^4.",
+    "1 <= words1[i].length, words2[i].length <= 10."
+  ]
+}

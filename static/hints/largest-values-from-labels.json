@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You can select at most `numWanted` items, and for each label, you can only select up to `useLimit` items. This means you need to keep track of how many items you have taken for each label."
+    },
+    {
+      "content": "Consider how you might represent the items. You can create a list of tuples where each tuple contains the value and its corresponding label. This will help you sort and manage the items more easily."
+    },
+    {
+      "content": "Sorting the items by their values in descending order will help you prioritize the items with the highest values first. Think about how you can implement this sorting step effectively."
+    },
+    {
+      "content": "As you iterate through the sorted items, maintain a count of how many items you have taken for each label. You can use a dictionary to track the count of items for each label."
+    },
+    {
+      "content": "When selecting an item, check if adding it would exceed the `useLimit` for its label. If it does, skip that item and move to the next one in the sorted list."
+    },
+    {
+      "content": "Keep a running total of the sum of values from the selected items. Make sure to stop adding items once you reach the `numWanted` limit."
+    },
+    {
+      "content": "Consider edge cases, such as when `numWanted` is greater than the total number of items available, or when all items have the same label. How will your solution handle these scenarios?"
+    },
+    {
+      "content": "Think about how to handle ties in values. If two items have the same value, you should prioritize based on their order in the original input or any other consistent method."
+    },
+    {
+      "content": "After you have selected the items, ensure that you return the total sum of the selected values. Remember to check that your final sum does not exceed the constraints given."
+    },
+    {
+      "content": "You are almost there! Combine all the steps you have thought about. Start with sorting the items, then iterate through them while maintaining counts for each label and summing the values until you hit the limits."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == values.length == labels.length",
+    "1 <= n <= 2 * 10^4",
+    "0 <= values[i], labels[i] <= 2 * 10^4",
+    "1 <= numWanted, useLimit <= n",
+    "Return the maximum sum of selected values."
+  ]
+}

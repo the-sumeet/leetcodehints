@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints on building heights. The first building must be of height 0, and the height difference between adjacent buildings cannot exceed 1."
+    },
+    {
+      "content": "Consider how the restrictions affect the heights of the buildings. Each restriction gives a maximum height for a specific building, which will limit how tall that building can be."
+    },
+    {
+      "content": "Remember that building heights must be non-negative integers. This means that any height calculated or assigned must be at least 0."
+    },
+    {
+      "content": "Since the height of building 1 is fixed at 0, think about how this influences the heights of subsequent buildings. The maximum height of building 2 can only be 1."
+    },
+    {
+      "content": "When processing the restrictions, sort them by building ID. This will help you determine the maximum possible height of buildings in order."
+    },
+    {
+      "content": "After sorting, you can iterate through the restrictions and calculate the maximum possible height for each building based on the previous building's height."
+    },
+    {
+      "content": "For each building, consider the maximum height allowed by the restriction and the height that can be built based on the previous building's height."
+    },
+    {
+      "content": "Pay attention to the gaps between buildings with restrictions. The heights of buildings between two restricted buildings must be adjusted to maintain the height difference constraint."
+    },
+    {
+      "content": "When there are no restrictions, the maximum height of the last building can be simply `n - 1` since you can increment the height by 1 for each building."
+    },
+    {
+      "content": "If there are restrictions, after processing all the restricted buildings, you should also consider the heights of the buildings after the last restriction up to building n."
+    },
+    {
+      "content": "Use a two-pass approach: first, calculate heights from left to right based on restrictions, and then from right to left to ensure all constraints are satisfied."
+    },
+    {
+      "content": "During the left-to-right pass, keep track of the maximum height you can achieve for each building without violating the height difference rule."
+    },
+    {
+      "content": "In the right-to-left pass, do the same but ensure that the heights do not exceed the maximum heights set by the restrictions."
+    },
+    {
+      "content": "After both passes, the tallest building's height will be the maximum value found in your height array. Make sure to check all buildings for the final answer."
+    },
+    {
+      "content": "Finally, consider edge cases such as when there are no restrictions at all or when all buildings have the same maximum height restriction."
+    }
+  ],
+  "questionNotes": [
+    "Building 1 has a fixed height of 0.",
+    "Height difference between adjacent buildings cannot exceed 1.",
+    "Restrictions are given as pairs [id, maxHeight], where id is unique and not equal to 1.",
+    "The maximum number of restrictions is min(n - 1, 10^5).",
+    "Return the maximum possible height of the tallest building."
+  ]
+}

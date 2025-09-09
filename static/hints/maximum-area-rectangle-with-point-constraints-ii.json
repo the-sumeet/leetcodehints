@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of rectangles on a coordinate plane. A rectangle's corners must have both x and y coordinates that are distinct from the other points to ensure no points lie inside."
+    },
+    {
+      "content": "Consider how you can identify potential rectangles using combinations of the given points. You need to select four points that can serve as the corners of a rectangle."
+    },
+    {
+      "content": "Remember that the edges of the rectangle must be parallel to the axes. This means that for any two points chosen as corners, their x-coordinates and y-coordinates must be distinct."
+    },
+    {
+      "content": "Think about how to efficiently check if any points lie inside or on the border of the rectangle formed by your selected corners. This may involve checking all other points against the rectangle's boundaries."
+    },
+    {
+      "content": "You could use a set to store the points for O(1) average-time complexity when checking if a point lies inside the rectangle."
+    },
+    {
+      "content": "To find the area of a rectangle formed by two points (x1, y1) and (x2, y2), use the formula: Area = |x2 - x1| * |y2 - y1|. Ensure that x1 < x2 and y1 < y2 for consistent area calculation."
+    },
+    {
+      "content": "Consider sorting the points by their x-coordinates first, and then by their y-coordinates. This can help in systematically checking for potential rectangles."
+    },
+    {
+      "content": "Think about edge cases: What if there are fewer than four points? How will that affect your ability to form a rectangle?"
+    },
+    {
+      "content": "When checking for points inside the rectangle, remember that any point with coordinates (px, py) must satisfy: x1 < px < x2 and y1 < py < y2 to be considered inside."
+    },
+    {
+      "content": "If you find a rectangle, keep track of its area. Use a variable to store the maximum area found so far, and update it whenever you find a larger valid rectangle."
+    },
+    {
+      "content": "Consider using a nested loop to iterate through pairs of points to form possible rectangles. For each pair, check all other points to see if they violate the rectangle's constraints."
+    },
+    {
+      "content": "Remember to return -1 if no valid rectangles are found after checking all combinations. This is important for handling edge cases."
+    },
+    {
+      "content": "Think about the time complexity of your approach. With n points, a naive O(n^4) solution might be too slow. Can you optimize it?"
+    },
+    {
+      "content": "You may want to use a hashmap to group points by their x-coordinates or y-coordinates. This can help in quickly identifying potential rectangle corners."
+    },
+    {
+      "content": "As you implement your solution, consider using a helper function to check if a rectangle formed by two corners contains any other points. This will keep your code organized."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= xCoord.length == yCoord.length <= 200,000",
+    "0 <= xCoord[i], yCoord[i] <= 80,000,000",
+    "All given points are unique.",
+    "Return -1 if no valid rectangle can be formed."
+  ]
+}

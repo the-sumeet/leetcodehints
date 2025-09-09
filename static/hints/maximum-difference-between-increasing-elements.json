@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirements of the problem. You need to find two indices `i` and `j` such that `0 <= i < j < n` and `nums[i] < nums[j]`. This means you are looking for an increasing pair in the array."
+    },
+    {
+      "content": "Consider how you might iterate through the array. You will need to compare elements at different indices, but remember that `i` must always be less than `j`."
+    },
+    {
+      "content": "Think about how to keep track of the maximum difference. You might want to initialize a variable to store this maximum difference and update it as you find valid pairs."
+    },
+    {
+      "content": "Since you need to check pairs of elements, a nested loop could be a straightforward approach. The outer loop can iterate through `i`, and the inner loop can iterate through `j` starting from `i + 1`."
+    },
+    {
+      "content": "When calculating the difference, ensure that you only compute it when `nums[i] < nums[j]`. This is crucial as the problem specifies this condition."
+    },
+    {
+      "content": "To optimize your solution, consider if you can maintain a minimum value found so far as you iterate through the array. This way, you can reduce the number of comparisons needed."
+    },
+    {
+      "content": "Remember to handle the case where no valid pairs exist. If you never find a situation where `nums[i] < nums[j]`, you should return -1 as specified in the problem."
+    },
+    {
+      "content": "As you implement your solution, keep an eye on edge cases. For example, what happens if the array is strictly decreasing or if all elements are the same?"
+    },
+    {
+      "content": "Before finalizing your solution, test it against all provided examples and consider additional test cases, such as arrays with only two elements or arrays with large values."
+    },
+    {
+      "content": "Once you have your logic in place, ensure your final solution correctly returns the maximum difference or -1 when appropriate. You might want to use a variable to track the maximum difference as you iterate."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 2 <= n <= 1000, 1 <= nums[i] <= 10^9",
+    "Indices: Ensure to respect the condition 0 <= i < j < n.",
+    "Uniqueness: The problem does not require unique values in nums, but you must find a valid increasing pair.",
+    "Return format: Return the maximum difference or -1 if no valid pair exists."
+  ]
+}

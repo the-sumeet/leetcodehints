@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid and how you can move through it. You can move up, down, left, or right to adjacent rooms. Remember that each room has a specific time when you can start moving into it."
+    },
+    {
+      "content": "Consider how the alternating movement times affect your strategy. The first move takes 1 second, the second move takes 2 seconds, and this pattern continues. This means that the time taken to move depends on whether the move is odd or even."
+    },
+    {
+      "content": "You need to account for the time at which you can start moving into a room. This means that when you calculate the time to reach a room, you must add the time from the `moveTime` array to the time you arrive."
+    },
+    {
+      "content": "Think about using a priority queue (or a min-heap) to always expand the room that you can reach the fastest. This way, you can ensure that you are exploring the most promising paths first."
+    },
+    {
+      "content": "While exploring the rooms, keep track of the time taken to reach each room and the current move number (odd or even). This will help you determine how long the next move will take."
+    },
+    {
+      "content": "Make sure to handle the boundaries of the grid. When checking adjacent rooms, ensure you do not go out of bounds, as this will lead to errors."
+    },
+    {
+      "content": "You can represent the state of each room with a tuple that includes the current time and the room coordinates. This will help you manage the state as you traverse the grid."
+    },
+    {
+      "content": "Consider using a 2D array to store the minimum time to reach each room. This will prevent you from revisiting rooms unnecessarily and help you keep track of the best times."
+    },
+    {
+      "content": "As you implement the algorithm, remember to update the time for each room only if the new calculated time is less than the previously recorded time. This will ensure you are always moving towards the optimal solution."
+    },
+    {
+      "content": "Finally, ensure that you return the minimum time to reach the last room (n-1, m-1). This is the goal of the problem, so make sure your final output matches this requirement."
+    }
+  ],
+  "questionNotes": [
+    "Grid dimensions: 2 <= n, m <= 750.",
+    "Each room's moveTime can be between 0 and 10^9.",
+    "You start at room (0, 0) at time t = 0.",
+    "Moving takes alternating times: 1 second for the first move, 2 seconds for the second, and so on.",
+    "Only return the minimum time to reach room (n-1, m-1)."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. Each element in the matrix can be identified by its row and column indices. Consider how the diagonals are formed based on these indices."
+    },
+    {
+      "content": "Identify the bottom-left triangle of the matrix. The elements in this triangle can be found where the row index is greater than or equal to the column index (i >= j)."
+    },
+    {
+      "content": "Now, think about how to extract the elements of each diagonal in the bottom-left triangle. For a diagonal starting at (i, 0), you can traverse downwards and rightwards until you reach the matrix boundaries."
+    },
+    {
+      "content": "Once you have the elements of a diagonal, sort them in non-increasing order. You can use a simple sorting function available in most programming languages."
+    },
+    {
+      "content": "Next, consider the top-right triangle of the matrix. The elements here can be found where the row index is less than the column index (i < j)."
+    },
+    {
+      "content": "Similar to the bottom-left triangle, extract the elements of each diagonal in the top-right triangle. For a diagonal starting at (0, j), traverse downwards and leftwards."
+    },
+    {
+      "content": "Sort the extracted elements of the top-right diagonals in non-decreasing order. Again, utilize a sorting function to achieve this."
+    },
+    {
+      "content": "After sorting the diagonals, you need to place the sorted values back into their original positions in the matrix. Be careful to match the indices correctly."
+    },
+    {
+      "content": "Consider edge cases, such as when the matrix is of size 1x1 or when all elements are the same. How would your sorting logic handle these situations?"
+    },
+    {
+      "content": "Finally, ensure that your function returns the modified matrix in the correct format. The output should be a matrix of the same dimensions as the input, with the sorted diagonals in place."
+    }
+  ],
+  "questionNotes": [
+    "The matrix is square (n x n), where n can range from 1 to 10.",
+    "Elements in the matrix can be between -10^5 and 10^5.",
+    "Sorting for bottom-left diagonals is in non-increasing order, while for top-right diagonals it is in non-decreasing order.",
+    "Pay attention to the indices when sorting and placing back the elements."
+  ]
+}

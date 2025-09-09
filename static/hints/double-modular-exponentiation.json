@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the formula given in the problem: you need to compute `(a^b % 10) ^ c % m`. Make sure you are clear on how to apply the modulo operation at each step."
+    },
+    {
+      "content": "Remember that `a^b` can grow very large, so consider using modular exponentiation to compute `a^b % 10`. This will help you avoid overflow and keep your calculations manageable."
+    },
+    {
+      "content": "In Python, you can use the built-in function `pow(base, exp, mod)` which computes `(base^exp) % mod` efficiently. Think about how you can use this for both parts of the formula."
+    },
+    {
+      "content": "Pay attention to the constraints on the values of `a`, `b`, `c`, and `m`. They are all between 1 and 1000, which makes it feasible to iterate through the `variables` array without performance concerns."
+    },
+    {
+      "content": "You need to check each index `i` in the `variables` array to see if it satisfies the condition. Consider using a loop to iterate through the indices and store the good indices in a result list."
+    },
+    {
+      "content": "When checking the condition, remember to handle the case where `m` is 1. In this case, any number modulo 1 is 0, which may affect your comparison with `target`."
+    },
+    {
+      "content": "Make sure to initialize your result list outside of the loop that checks each index. This way, you can collect all good indices before returning them at the end."
+    },
+    {
+      "content": "Consider edge cases such as when `target` is 0. You should still check if the calculations yield 0, especially when `m` is involved in the final modulo operation."
+    },
+    {
+      "content": "After calculating the result for each index, ensure that you are comparing the result against `target` correctly. Use `==` for comparison to find good indices."
+    },
+    {
+      "content": "Finally, remember to return the list of good indices. The problem states that the order of indices does not matter, so you can return them as you collect them."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= variables.length <= 100",
+    "Each variables[i] is of the form [a_i, b_i, c_i, m_i]",
+    "1 <= a_i, b_i, c_i, m_i <= 1000",
+    "0 <= target <= 1000",
+    "Return an array of indices where the condition holds, order does not matter."
+  ]
+}

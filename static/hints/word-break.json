@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to determine if the string `s` can be split into one or more words from the `wordDict`. Consider how you might approach this with a brute-force method first."
+    },
+    {
+      "content": "Think about how you can utilize a recursive approach to solve this problem. You could check if the string starts with any of the words in the dictionary and then recursively check the remaining substring."
+    },
+    {
+      "content": "Consider using memoization to optimize your recursive solution. By storing results of already computed substrings, you can avoid redundant calculations and improve efficiency."
+    },
+    {
+      "content": "If you are using recursion, remember to check for base cases. For instance, if the string `s` is empty, you should return true, as an empty string can be segmented trivially."
+    },
+    {
+      "content": "You might want to convert the `wordDict` into a set for faster lookup times. This will allow you to quickly check if a substring exists in the dictionary."
+    },
+    {
+      "content": "Think about how you can iterate through the string `s` to check every possible prefix against the dictionary. For each prefix that matches, you can then check the remaining substring."
+    },
+    {
+      "content": "Consider using a dynamic programming approach. You can create a boolean array `dp` where `dp[i]` indicates whether the substring `s[0:i]` can be segmented into words from the dictionary."
+    },
+    {
+      "content": "When using dynamic programming, initialize `dp[0]` to true since an empty string can be segmented. Then, for each index `i`, check all possible previous indices `j` to see if the substring `s[j:i]` is in the dictionary and if `dp[j]` is true."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when `s` is very short or when `wordDict` contains very short or very long words. Ensure your solution handles all constraints effectively."
+    },
+    {
+      "content": "Finally, make sure to return the value of `dp[s.length()]` to determine if the entire string can be segmented. This will give you the answer to the problem."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 300, 1 <= wordDict.length <= 1000, 1 <= wordDict[i].length <= 20.",
+    "s and wordDict[i] consist of only lowercase English letters.",
+    "All the strings of wordDict are unique.",
+    "You can reuse words from the dictionary in the segmentation."
+  ]
+}

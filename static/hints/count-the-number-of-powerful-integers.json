@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a powerful integer. A powerful integer must end with the string `s` and have all its digits less than or equal to the `limit`."
+    },
+    {
+      "content": "Consider the range defined by `start` and `finish`. Any powerful integer must fall within this range. If `s` is greater than `finish`, no powerful integers can exist."
+    },
+    {
+      "content": "Think about how to check if a number has `s` as a suffix. You can convert the number to a string and use string methods to check for the suffix."
+    },
+    {
+      "content": "Remember that each digit of the powerful integer must be less than or equal to `limit`. This means you'll need to check each digit of the integer."
+    },
+    {
+      "content": "To generate candidates for powerful integers, consider appending `s` to numbers that are less than or equal to `limit`. For example, if `s` is '124', you might start with '0', '1', '2', ..., up to '4' and then append '124'."
+    },
+    {
+      "content": "You can use a loop to iterate through potential prefixes (0 to `limit`) and concatenate them with `s` to form powerful integers."
+    },
+    {
+      "content": "Make sure to convert the concatenated string back to an integer to check if it falls within the range `[start, finish]`."
+    },
+    {
+      "content": "Consider edge cases such as when `s` is larger than `finish`. In this case, you can immediately return 0 since no powerful integers can exist."
+    },
+    {
+      "content": "When checking if each digit of the powerful integer is less than or equal to `limit`, you might want to convert the integer back to a string for easy digit access."
+    },
+    {
+      "content": "Think about how to efficiently count the valid powerful integers. You might want to use a set to store unique powerful integers to avoid duplicates."
+    },
+    {
+      "content": "Remember that the problem states that `s` does not have leading zeros. This simplifies some checks since you don't have to worry about invalid prefixes."
+    },
+    {
+      "content": "Consider using a while loop or a for loop to generate numbers starting from `start` up to `finish`, checking each number for the suffix and digit constraints."
+    },
+    {
+      "content": "You may want to keep track of the count of powerful integers as you generate them. Initialize a counter at the start and increment it each time you find a valid powerful integer."
+    },
+    {
+      "content": "Be careful with the limits of the numbers you are working with, especially since `finish` can be as large as 10^15. Ensure your approach can handle large integers."
+    },
+    {
+      "content": "Finally, after generating all potential powerful integers, ensure you return the count of unique valid integers found within the specified range."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= start <= finish <= 10^15",
+    "1 <= limit <= 9",
+    "1 <= s.length <= floor(log10(finish)) + 1",
+    "s only consists of numeric digits which are at most limit.",
+    "s does not have leading zeros."
+  ]
+}

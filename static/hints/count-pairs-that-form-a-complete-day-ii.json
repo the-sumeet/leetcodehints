@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for two hours to form a complete day. A complete day is defined as any multiple of 24 hours. Therefore, you need to check if the sum of two hours is divisible by 24."
+    },
+    {
+      "content": "Consider how you can efficiently check if two numbers sum to a multiple of 24. You can use the property of modulo: if (a + b) % 24 == 0, then a + b is a multiple of 24."
+    },
+    {
+      "content": "Instead of checking all pairs (which would be O(n^2)), think about how you can categorize the hours based on their remainders when divided by 24. This can help reduce the number of checks needed."
+    },
+    {
+      "content": "Create a frequency array or a dictionary to count how many times each remainder (from 0 to 23) appears in the input array. This will help you quickly find pairs that can sum to a multiple of 24."
+    },
+    {
+      "content": "For each unique remainder, consider how you can pair it with other remainders. For example, if you have a remainder r, you need to find another remainder (24 - r) % 24 to form a complete day."
+    },
+    {
+      "content": "Don't forget to handle the case where the remainder is 0 separately. Pairs formed by two elements with a remainder of 0 can be counted using combinations since they can pair with each other."
+    },
+    {
+      "content": "When counting pairs, ensure you only count pairs (i, j) where i < j. This means you should not double-count pairs or count the same indices."
+    },
+    {
+      "content": "Consider edge cases where the input array has only one element or where all elements are the same. How would these cases affect your counting logic?"
+    },
+    {
+      "content": "After building your frequency map, iterate through it to calculate the number of valid pairs. Remember to account for pairs that can be formed from the same remainder category."
+    },
+    {
+      "content": "Finally, implement the logic to sum up the counts of valid pairs based on the remainders. Ensure your final count is returned as an integer representing the total number of pairs."
+    }
+  ],
+  "questionNotes": [
+    "1 <= hours.length <= 5 * 10^5",
+    "1 <= hours[i] <= 10^9",
+    "Return the total count of pairs (i, j) where i < j.",
+    "A pair forms a complete day if (hours[i] + hours[j]) % 24 == 0."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a right triangle in the context of a grid. A right triangle is formed by three points where two points share the same row and the third point shares the same column with one of them."
+    },
+    {
+      "content": "Focus on identifying the valid points in the grid. You only need to consider points with a value of 1 since those are the only points that can form triangles."
+    },
+    {
+      "content": "Consider how to iterate through the grid. You might want to use nested loops to check each combination of points, but be mindful of the conditions for forming a right triangle."
+    },
+    {
+      "content": "Think about how to count the number of points in each row and column. You can create two arrays: one to count the number of 1s in each row and another for each column."
+    },
+    {
+      "content": "When you find a point with a value of 1, you can use the counts from your row and column arrays to determine how many other points can form a triangle with it."
+    },
+    {
+      "content": "Remember that for each point (i, j) that you consider, you need to find pairs of points in the same row and column. Ensure you account for the fact that the point (i, j) itself cannot be counted as part of the triangle."
+    },
+    {
+      "content": "You can calculate the number of triangles formed by a point (i, j) as: (count in row - 1) * (count in column - 1). This gives you the number of valid pairs in the same row and column."
+    },
+    {
+      "content": "Make sure to handle cases where there are not enough points in a row or column. If there are fewer than two points in either, you cannot form a triangle."
+    },
+    {
+      "content": "Consider edge cases, such as when the grid is very small (e.g., 1x1 or 2x2) or when there are no 1s at all. These cases should return 0 as there are no triangles possible."
+    },
+    {
+      "content": "Finally, sum up the counts of triangles for all points in the grid to get your final answer. Remember to return the total count as an integer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= grid.length <= 1000, 1 <= grid[i].length <= 1000, 0 <= grid[i][j] <= 1.",
+    "The points forming the triangle must not be in the same column.",
+    "Ensure to only count unique triangles formed by distinct points."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a sub-folder. A folder is a sub-folder of another if it starts with the same path followed by a '/'. For example, '/a/b' is a sub-folder of '/a'."
+    },
+    {
+      "content": "Consider how you can efficiently check if one folder is a sub-folder of another. You might want to think about sorting the folder list first. Why could sorting help?"
+    },
+    {
+      "content": "When sorting the folders, remember that sub-folders will always appear immediately after their parent folder. This allows you to easily compare adjacent folders."
+    },
+    {
+      "content": "As you iterate through the sorted list of folders, keep track of the last added folder. You can then check if the current folder starts with this last added folder followed by a '/'."
+    },
+    {
+      "content": "Use a list to store the valid folders that are not sub-folders. For each folder, if it is not a sub-folder of the last added folder, append it to your result list."
+    },
+    {
+      "content": "Consider edge cases where there might be only one folder in the input list. Ensure your logic handles this case without errors."
+    },
+    {
+      "content": "Think about how to handle folders that are at the same level in the hierarchy. They should not be considered sub-folders of each other."
+    },
+    {
+      "content": "Remember that the input list can contain up to 40,000 folders. Your solution needs to be efficient, ideally O(n log n) due to sorting."
+    },
+    {
+      "content": "After implementing your logic, test it with various cases, including those with deep nesting of folders and those with no sub-folders at all."
+    },
+    {
+      "content": "Finally, ensure that your output format meets the requirements. You can return the result in any order, but it should only include the top-level folders."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= folder.length <= 40,000",
+    "Each folder[i] is unique.",
+    "Each folder starts with '/' and contains only lowercase letters.",
+    "The output can be in any order."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a dictionary of roots and a sentence made up of words. Your goal is to replace words in the sentence with their corresponding roots from the dictionary if they can be derived from them."
+    },
+    {
+      "content": "Consider how you will identify whether a word in the sentence can be replaced by a root. A word can be replaced if it starts with a root from the dictionary. Think about how you can check this efficiently."
+    },
+    {
+      "content": "To keep track of the shortest root for each derivative, you might want to use a data structure that allows for easy comparison. A list or a set can be useful for storing roots, but you may need to check each root against the words in the sentence."
+    },
+    {
+      "content": "When processing the sentence, split it into individual words. You can use the `split()` method in Python to create a list of words. This will help you iterate through each word and check for replacements."
+    },
+    {
+      "content": "As you check each word, remember that you need to find the shortest root. You can keep a variable to track the shortest root found so far for each word. If a shorter root is found, update this variable."
+    },
+    {
+      "content": "Don't forget to handle the case where a word may not have any corresponding root. In such cases, the original word should remain unchanged in the final sentence."
+    },
+    {
+      "content": "Once you have processed all the words in the sentence, you'll need to join them back together into a single string. The `join()` method can be used for this purpose, ensuring that words are separated by spaces."
+    },
+    {
+      "content": "Consider edge cases such as when the dictionary is empty or when the sentence contains only one word. How will your code handle these scenarios? Make sure to test these cases."
+    },
+    {
+      "content": "Think about the efficiency of your solution. Since the sentence can be quite long, you should aim for a solution that minimizes unnecessary checks. A trie data structure could be beneficial here for storing the roots."
+    },
+    {
+      "content": "Finally, put together all the pieces. You will iterate through the words, check for roots, keep track of the shortest one, and then build the final output sentence. Make sure to test your solution with the provided examples to ensure correctness."
+    }
+  ],
+  "questionNotes": [
+    "The dictionary can contain up to 1000 roots, and each root can be up to 100 characters long.",
+    "The sentence can be up to 1,000,000 characters long, with up to 1000 words.",
+    "Each word in the sentence is separated by exactly one space, with no leading or trailing spaces.",
+    "If a derivative can be replaced by multiple roots, choose the shortest one.",
+    "If no root matches a word, keep the original word in the output."
+  ]
+}

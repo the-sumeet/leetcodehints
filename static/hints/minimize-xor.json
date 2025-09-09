@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of the XOR operation. Recall that for any integer a, a XOR a = 0, and a XOR 0 = a. This means that to minimize the XOR result, we want to choose x such that it is as similar to num1 as possible."
+    },
+    {
+      "content": "Count the number of set bits (1s) in num2. You can use a simple loop or a bit manipulation trick to do this. Remember, the goal is to find an integer x that has the same number of set bits as num2."
+    },
+    {
+      "content": "Consider the binary representation of num1 and num2. Think about how the positions of the set bits in num2 can affect the value of x. The closer x is to num1 in terms of bit positions, the smaller the XOR value will tend to be."
+    },
+    {
+      "content": "When constructing x, prioritize setting bits in positions that are already set in num1. This will help keep the XOR value low. For example, if num1 has a 1 in a certain position, consider setting x to also have a 1 in that position if it does not exceed the required number of set bits."
+    },
+    {
+      "content": "If num1 has fewer set bits than num2, you will need to add additional set bits in x. Think about where you can add these bits without increasing the XOR value too much. You might need to look at the positions of the 0s in num1."
+    },
+    {
+      "content": "Make sure to handle edge cases where num1 and num2 are very close in value. For example, if num1 is 1 and num2 is 2, the solution might require careful consideration of how to add bits without drastically increasing the XOR."
+    },
+    {
+      "content": "Consider using a greedy approach to build x. Start with the bits of num1 and modify them to ensure that the number of set bits matches that of num2. This might involve flipping some bits from 0 to 1."
+    },
+    {
+      "content": "Keep track of the number of bits you've set in x as you build it. You need to ensure that you don't exceed the count of set bits specified by num2. Use a counter to help with this."
+    },
+    {
+      "content": "Once you have a candidate for x, calculate the XOR with num1 to check if it's indeed minimal. If not, reconsider the positions of the bits you've chosen and try to find a better configuration."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient, especially since the constraints allow for values up to 10^9. Aim for a solution that runs in linear time relative to the number of bits in the integers."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= num1, num2 <= 10^9",
+    "The result x must have the same number of set bits as num2.",
+    "The solution x is guaranteed to be uniquely determined.",
+    "The output should be a positive integer x."
+  ]
+}

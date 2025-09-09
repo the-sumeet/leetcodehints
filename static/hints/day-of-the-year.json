@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by parsing the input string to extract the year, month, and day. You can use string slicing to get these values. For example, the year can be obtained with `date[:4]`, the month with `date[5:7]`, and the day with `date[8:10]`."
+    },
+    {
+      "content": "Remember that the year can affect the number of days in February. Specifically, check if the year is a leap year. A leap year is defined as a year that is divisible by 4, but not divisible by 100 unless it is also divisible by 400."
+    },
+    {
+      "content": "Create a list or array that holds the number of days in each month for a non-leap year. For example, January has 31 days, February has 28 days, March has 31 days, and so on."
+    },
+    {
+      "content": "If the year is a leap year, adjust the days in February to 29. You can do this by checking the leap year condition and updating the days array accordingly."
+    },
+    {
+      "content": "Now, calculate the day of the year by summing the days of the months preceding the given month and adding the current day. Use a loop to iterate through the months leading up to the specified month."
+    },
+    {
+      "content": "Make sure to handle the case where the month is January correctly, as there are no preceding months to sum. In this case, the day of the year is simply the day value."
+    },
+    {
+      "content": "Consider edge cases such as the last day of the year (December 31) or the first day of the year (January 1). Ensure your logic correctly calculates these scenarios."
+    },
+    {
+      "content": "When summing the days of the months, remember that array indexing starts from zero. Adjust your loop accordingly to avoid off-by-one errors."
+    },
+    {
+      "content": "You might want to create a function that takes the date string as input and returns the computed day of the year. This will help keep your code organized and reusable."
+    },
+    {
+      "content": "Finally, combine all the pieces: parse the date, check for leap years, sum the days, and return the final count. Make sure to test your function with various date inputs to confirm its correctness."
+    }
+  ],
+  "questionNotes": [
+    "The input date is formatted as YYYY-MM-DD.",
+    "The output should be the day number of the year (1 to 365 or 1 to 366).",
+    "Leap years should be considered for February.",
+    "The date is guaranteed to be between January 1, 1900 and December 31, 2019."
+  ]
+}

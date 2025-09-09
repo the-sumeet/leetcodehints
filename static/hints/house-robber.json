@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem constraints. You cannot rob two adjacent houses. Think about how you can represent the decision of whether to rob a house or skip it."
+    },
+    {
+      "content": "Consider using dynamic programming to solve this problem. You can maintain an array where each index represents the maximum amount of money that can be robbed up to that house."
+    },
+    {
+      "content": "Think about the base cases for your dynamic programming solution. For example, if there is only one house, the maximum money is simply the amount in that house."
+    },
+    {
+      "content": "For two houses, the decision is straightforward: you take the maximum amount between the two. This will help you establish the first few values in your DP array."
+    },
+    {
+      "content": "As you build your DP solution, remember that for each house, you have two choices: rob it or skip it. If you rob it, you cannot rob the previous house."
+    },
+    {
+      "content": "Formulate the recursive relation: If you are at house `i`, the maximum money can be expressed as: `dp[i] = max(dp[i-1], nums[i] + dp[i-2])`. This captures both choices."
+    },
+    {
+      "content": "Make sure to initialize your DP array correctly. The first element should be `nums[0]`, and the second should be `max(nums[0], nums[1])`."
+    },
+    {
+      "content": "Consider edge cases: What if the input array has only one or two elements? Ensure your solution handles these cases without errors."
+    },
+    {
+      "content": "After filling up your DP array, the last element will contain the maximum amount of money you can rob. Remember to return this value as your final answer."
+    },
+    {
+      "content": "Before finalizing your solution, think about the space complexity. Can you optimize your solution to use less space than the full DP array?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100",
+    "Constraints: 0 <= nums[i] <= 400",
+    "Return the maximum amount of money that can be robbed without alerting the police.",
+    "Consider edge cases like arrays with only one or two houses."
+  ]
+}

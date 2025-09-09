@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main components: 'Transactions' and 'Chargebacks'. Each component is a list of records, and you'll need to process them separately before combining results."
+    },
+    {
+      "content": "Focus on the 'Transactions' data first. Identify which fields are important for your final output. You will likely need the 'id', 'amount', and 'trans_date' fields for each transaction."
+    },
+    {
+      "content": "Next, consider how to handle the 'Chargebacks'. Each chargeback is linked to a transaction by 'trans_id'. You need to determine which transactions have been charged back and how that affects your calculations."
+    },
+    {
+      "content": "Think about how to filter the transactions. You want to include only those transactions that were approved and not charged back. This means you'll need to check both the 'state' of each transaction and whether its 'id' exists in the 'Chargebacks' list."
+    },
+    {
+      "content": "As you filter the transactions, keep track of the total amount of approved transactions. You can initialize a variable to accumulate this total as you iterate through the transactions."
+    },
+    {
+      "content": "Consider edge cases such as transactions with no chargebacks or all transactions being chargebacks. Make sure your code can handle these scenarios without errors."
+    },
+    {
+      "content": "When checking for chargebacks, remember to compare the 'id' from 'Transactions' with the 'trans_id' from 'Chargebacks'. You might want to convert the 'Chargebacks' list into a set for faster lookups."
+    },
+    {
+      "content": "After filtering and summing the amounts, think about how to format your output. You might need to return the total amount as a single number or in a specific structure."
+    },
+    {
+      "content": "Make sure to test your solution with the provided sample test case and other edge cases, such as transactions with varying amounts and dates. This will help ensure your solution is robust."
+    },
+    {
+      "content": "Finally, implement the logic to filter, sum, and prepare your final output. You should have a clear plan for iterating through the transactions and checking against the chargebacks. For example: \n\n```\nfor transaction in transactions:\n    if transaction.id not in chargebacks_set:\n        total_amount += transaction.amount\n```\n\nEnsure you handle all necessary conditions."
+    }
+  ],
+  "questionNotes": [
+    "The 'Transactions' and 'Chargebacks' data are both lists of records.",
+    "Each transaction has a unique 'id', while chargebacks reference 'trans_id'.",
+    "You need to sum amounts for approved transactions that are not charged back.",
+    "Consider edge cases where there are no transactions or all are charged back.",
+    "Output format needs to be clarified; ensure it matches expected results."
+  ]
+}

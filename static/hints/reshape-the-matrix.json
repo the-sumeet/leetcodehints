@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the dimensions of the original matrix. You have an m x n matrix and you need to reshape it to r x c. What condition must be satisfied for this reshape to be valid?"
+    },
+    {
+      "content": "Consider the total number of elements in the original matrix. Calculate it as `totalElements = m * n`. For the reshape to be possible, this total must equal `r * c`. Why is this important?"
+    },
+    {
+      "content": "If the reshape is not valid (i.e., `totalElements` is not equal to `r * c`), what should you return? Think about how you can handle this condition early in your function."
+    },
+    {
+      "content": "Next, think about how to fill the new matrix. You will need to traverse the original matrix in a row-major order. How can you achieve this using indices?"
+    },
+    {
+      "content": "You can use two nested loops: one for the rows of the new matrix and another for the columns. How will you map the indices of the new matrix back to the original matrix?"
+    },
+    {
+      "content": "Consider using a single index to traverse the original matrix. For each element in the new matrix, you can calculate the corresponding index in the original matrix using a formula. What would that formula look like?"
+    },
+    {
+      "content": "Make sure to initialize your new matrix correctly. What data structure will you use to store the reshaped matrix? Remember to create it with the correct dimensions."
+    },
+    {
+      "content": "As you fill the new matrix, ensure you are handling the index calculations correctly. You will need to convert the row and column indices of the new matrix back to a single index for the original matrix. Can you express this in pseudocode?"
+    },
+    {
+      "content": "Don't forget to test your implementation with edge cases. What happens if the original matrix is empty or has only one element? How should your function handle these cases?"
+    },
+    {
+      "content": "Finally, write the logic to fill the new matrix. Use the index calculations you've derived to copy elements from the original matrix to the new one. Remember to return the new matrix if the reshape was successful, or the original matrix otherwise."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == mat.length, n == mat[i].length",
+    "1 <= m, n <= 100",
+    "-1000 <= mat[i][j] <= 1000",
+    "1 <= r, c <= 300",
+    "Return the original matrix if reshape is not possible."
+  ]
+}

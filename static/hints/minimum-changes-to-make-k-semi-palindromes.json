@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a semi-palindrome is. A string is a semi-palindrome if it can be divided into groups based on a divisor of its length, and each group forms a palindrome."
+    },
+    {
+      "content": "Identify the valid divisors for the string length. Remember that a divisor must be less than the length of the string and greater than 0. For example, for a string of length 6, valid divisors are 1, 2, 3, 4, and 5."
+    },
+    {
+      "content": "Consider how to partition the string into k substrings. Think about how you can iterate through the string and split it into k parts, and what the implications of that are for checking semi-palindromes."
+    },
+    {
+      "content": "When checking if a group of characters forms a palindrome, remember that a palindrome reads the same forwards and backwards. You can compare characters from the start and end of the group moving towards the center."
+    },
+    {
+      "content": "For each group formed by a divisor, count how many changes are needed to make it a palindrome. This involves comparing characters and determining how many do not match."
+    },
+    {
+      "content": "Create a function that calculates the number of changes needed for a single group to become a palindrome. This function will be useful when you check each substring."
+    },
+    {
+      "content": "Think about how you can store the results of your palindrome checks. You might want to use a 2D array where each entry represents the number of changes needed for each substring."
+    },
+    {
+      "content": "When you have k substrings, you will need to minimize the total number of changes across all substrings. Consider using dynamic programming to keep track of the minimum changes needed for each partition."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when k equals the length of the string or when k equals 1. What happens in these scenarios?"
+    },
+    {
+      "content": "As you implement the solution, ensure that you are iterating through each valid divisor and checking the necessary partitions for each one. This may involve nested loops."
+    },
+    {
+      "content": "When you calculate the total changes for each divisor, keep track of the minimum changes across all divisors. This will be your final answer."
+    },
+    {
+      "content": "Consider the time complexity of your solution. With a string length of up to 200, ensure that your approach is efficient enough to handle the worst-case scenarios."
+    },
+    {
+      "content": "Make sure to test your solution with various inputs, including edge cases like strings with all identical characters or strings that are already semi-palindromes."
+    },
+    {
+      "content": "If you find the problem too complex, break it down into smaller parts. Solve for the minimum changes needed for a single substring first before expanding to k substrings."
+    },
+    {
+      "content": "Finally, remember that the output should be the minimum number of changes required to make the k substrings semi-palindromes. Ensure your function returns this value correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= s.length <= 200, 1 <= k <= s.length / 2",
+    "The string contains only lowercase English letters.",
+    "Valid divisors must be less than the string length.",
+    "Each substring must be checked for palindrome properties based on the divisor."
+  ]
+}

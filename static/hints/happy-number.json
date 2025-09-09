@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a happy number. A happy number eventually reaches 1 when you repeatedly replace it with the sum of the squares of its digits. If it falls into a cycle that does not include 1, it is not a happy number."
+    },
+    {
+      "content": "To check if a number is happy, you'll need to repeatedly calculate the sum of the squares of its digits. Consider writing a helper function that takes an integer and returns the sum of the squares of its digits."
+    },
+    {
+      "content": "Remember that you can extract the digits of a number using modulus and integer division. For example, to get the last digit of a number `n`, you can use `n % 10`, and to remove the last digit, use `n //= 10`."
+    },
+    {
+      "content": "Think about how to keep track of numbers you've seen during the process. You can use a set to store these numbers. If you encounter a number you've seen before, it means you're in a cycle."
+    },
+    {
+      "content": "Before implementing the main logic, test your helper function separately. Make sure it correctly computes the sum of the squares for a variety of inputs, such as 19, 2, and other numbers."
+    },
+    {
+      "content": "Once you have the helper function, you can create a loop in your main function that continues until the number is 1 or a previously seen number is encountered. Use the set to check for cycles."
+    },
+    {
+      "content": "Consider edge cases, such as very large numbers close to the upper limit of the constraints. Ensure that your solution handles these efficiently without running into performance issues."
+    },
+    {
+      "content": "You might want to add a condition to break the loop if the number becomes 1, returning true immediately. This will make your code cleaner and more efficient."
+    },
+    {
+      "content": "When checking for cycles, remember to add the current number to your set right after calculating the sum of the squares, before the next iteration starts."
+    },
+    {
+      "content": "Your final implementation should return true if the number is happy (reaches 1) and false if it falls into a cycle. Make sure to test with both happy and unhappy numbers to verify correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 2^31 - 1",
+    "A happy number eventually reaches 1; if it loops endlessly, it is not happy.",
+    "Use a set to track previously seen numbers to detect cycles."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to determine the minimum radius of heaters such that all houses can be warmed. Think about how the position of heaters and houses affects the radius needed."
+    },
+    {
+      "content": "Consider how to calculate the distance from a house to the nearest heater. This will help you determine the required radius for each house. You might want to think about using absolute differences."
+    },
+    {
+      "content": "What happens if there are no heaters? Make sure to handle this edge case. If there are no heaters, the problem is unsolvable as no houses can be warmed."
+    },
+    {
+      "content": "Sort both the houses and heaters arrays. This will make it easier to find the nearest heater for each house using a two-pointer technique or binary search."
+    },
+    {
+      "content": "For each house, find the closest heater. You can do this efficiently using binary search. The goal is to minimize the maximum distance any house is from its nearest heater."
+    },
+    {
+      "content": "Once you have the closest heater for each house, calculate the required radius for each house. The radius for a house is the distance to its nearest heater."
+    },
+    {
+      "content": "Keep track of the maximum radius needed across all houses. This maximum will be your answer, as all heaters must have the same radius."
+    },
+    {
+      "content": "Consider edge cases where houses are positioned very close to or far from heaters. For example, if all houses are clustered together and heaters are far apart, the radius might need to be larger."
+    },
+    {
+      "content": "Remember to check the constraints. The number of houses and heaters can be large, so your solution should be efficient, ideally O(n log n) due to sorting and binary search."
+    },
+    {
+      "content": "Finally, think about how you would implement the binary search to find the nearest heater for each house. You can use the bisect module in Python or write your own binary search function."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= houses.length, heaters.length <= 3 * 10^4",
+    "1 <= houses[i], heaters[i] <= 10^9",
+    "All heaters must operate with the same radius.",
+    "Edge cases include no heaters present and houses being far apart from heaters."
+  ]
+}

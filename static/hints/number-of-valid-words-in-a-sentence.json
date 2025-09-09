@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by breaking down the sentence into tokens. You can use the `split` method to separate the sentence by spaces. Remember that there can be multiple spaces between tokens."
+    },
+    {
+      "content": "After splitting the sentence into tokens, iterate through each token. You'll need to check if each token meets the criteria for being a valid word."
+    },
+    {
+      "content": "A valid word should not contain any digits. You can check for digits using the `isdigit()` method. If a token contains a digit, it is immediately invalid."
+    },
+    {
+      "content": "Next, check for the presence of hyphens. A valid token can have at most one hyphen, and if it does, it must be surrounded by lowercase letters. You can find the position of the hyphen using the `find` method."
+    },
+    {
+      "content": "If a hyphen is found, ensure that it is not at the start or end of the token. This means checking the characters immediately before and after the hyphen."
+    },
+    {
+      "content": "Now consider punctuation marks. A valid token can have at most one punctuation mark, and it must be at the end of the token. You can check the last character of the token to see if it is one of the valid punctuation marks."
+    },
+    {
+      "content": "If you detect a punctuation mark at the end, ensure that the rest of the token (excluding the punctuation) still meets the criteria for valid words. This means checking again for digits and hyphens."
+    },
+    {
+      "content": "Remember to handle edge cases such as tokens that are only punctuation marks or hyphens. These should be considered invalid."
+    },
+    {
+      "content": "Count the number of valid tokens as you iterate through the list. You can maintain a counter that increments each time you find a valid word."
+    },
+    {
+      "content": "Finally, return the count of valid words. Ensure that your function handles leading and trailing spaces in the original sentence by trimming the input before processing."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= sentence.length <= 1000",
+    "Valid characters: lowercase letters, digits, spaces, hyphens, punctuation marks (!, ., ,)",
+    "Each token must be separated by one or more spaces.",
+    "A token is valid if it has no digits, at most one hyphen (surrounded by letters), and at most one punctuation mark (at the end)."
+  ]
+}

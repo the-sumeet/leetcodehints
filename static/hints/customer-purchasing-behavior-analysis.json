@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main tables: Transactions and Products. Each transaction links a customer to a product and includes details like the transaction date and amount."
+    },
+    {
+      "content": "Consider how you can group the transactions by customer. This will help you analyze purchasing behavior on a per-customer basis. Think about using a dictionary or a similar data structure to accumulate transactions for each customer."
+    },
+    {
+      "content": "Look at the relationships between the Transactions and Products tables. Each transaction references a product by its product_id. You will need to join these tables to access product details like category and price."
+    },
+    {
+      "content": "When analyzing purchasing behavior, consider metrics such as total spending per customer, the number of unique products purchased, and the frequency of purchases. What specific behaviors are you trying to analyze?"
+    },
+    {
+      "content": "Think about how to handle the transaction dates. You may want to sort transactions by date to analyze trends over time. Consider using datetime objects for easier manipulation."
+    },
+    {
+      "content": "Edge cases to consider include customers with no transactions or products with no sales. Ensure your solution can handle these scenarios gracefully without errors."
+    },
+    {
+      "content": "As you aggregate data, be mindful of how to represent the results. Will you return a list of customers with their metrics, or perhaps a summary report? Define the output format clearly."
+    },
+    {
+      "content": "When calculating metrics, consider using a loop to iterate over each customer's transactions. You might want to maintain a running total for spending and a set to track unique products."
+    },
+    {
+      "content": "You may also want to analyze purchasing patterns over time. For example, consider how many transactions occur in a month or the average amount spent per transaction."
+    },
+    {
+      "content": "Finally, think about how to present your findings. You might want to return a structured object that includes customer_id, total_spent, unique_products_count, and average_transaction_value, among other metrics."
+    }
+  ],
+  "questionNotes": [
+    "Ensure to handle cases where customers have no transactions.",
+    "Product prices should be accurately reflected in the total spending calculations.",
+    "Consider how to manage ties in metrics (e.g., two customers with the same total spending).",
+    "The output should be well-structured, possibly as a list of dictionaries or a JSON object."
+  ]
+}

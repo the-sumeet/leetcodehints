@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between quality and wage. Each worker's pay is proportional to their quality, which means if you pay one worker a certain amount, you can determine how much to pay another based on their quality ratio."
+    },
+    {
+      "content": "Consider how you can represent the payment structure mathematically. If you decide to pay a worker `w` based on their quality `q`, the pay for another worker with quality `q'` would be `w * (q' / q)`."
+    },
+    {
+      "content": "Notice that the minimum wage expectation for each worker is a constraint. This means that if you choose a worker with a certain quality, you must ensure that all other workers' payments respect their minimum wage expectations."
+    },
+    {
+      "content": "Think about how you can sort the workers. Sorting them by the ratio of wage to quality can help you determine the most cost-effective workers to hire."
+    },
+    {
+      "content": "When sorting, use the ratio `wage[i] / quality[i]` as a key. This will help you identify the workers who are more affordable relative to their quality."
+    },
+    {
+      "content": "After sorting, consider using a min-heap (or priority queue) to keep track of the top k workers based on quality. This will allow you to efficiently manage the total quality of the selected workers."
+    },
+    {
+      "content": "As you iterate through the sorted workers, maintain a running sum of the qualities of the workers you are considering. This will help you calculate the total cost when you select k workers."
+    },
+    {
+      "content": "Remember that you need to pay the workers based on the highest wage-to-quality ratio among the selected workers. This means you should always be prepared to adjust the total payment based on the worker with the highest ratio."
+    },
+    {
+      "content": "Consider edge cases where all workers have the same quality or wage. How would this affect your calculations? Ensure your solution handles such scenarios."
+    },
+    {
+      "content": "Think about how to efficiently compute the total cost when you have selected k workers. You might want to keep track of the total quality and the maximum wage-to-quality ratio as you build your group."
+    },
+    {
+      "content": "You may need to iterate through different combinations of workers to find the optimal group. However, using a greedy approach based on the sorted order can significantly reduce the number of combinations you need to check."
+    },
+    {
+      "content": "As you finalize your group of k workers, ensure that you calculate the total cost accurately. The cost should be the maximum wage-to-quality ratio multiplied by the total quality of the selected workers."
+    },
+    {
+      "content": "Don't forget to format your final answer to the required precision. The problem specifies that answers within 10^-5 of the actual answer will be accepted."
+    },
+    {
+      "content": "Before implementing, sketch out your plan. Identify the data structures you'll use, such as arrays for quality and wage, a priority queue for managing the top k workers, and variables for tracking total cost."
+    },
+    {
+      "content": "Finally, consider edge cases where k equals n. In this situation, you must hire all workers, and your solution should still correctly compute the total cost based on the highest wage-to-quality ratio."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == quality.length == wage.length",
+    "1 <= k <= n <= 10^4",
+    "1 <= quality[i], wage[i] <= 10^4",
+    "Ensure to return the answer with precision up to 10^-5.",
+    "Each worker's pay must respect their minimum wage expectation."
+  ]
+}

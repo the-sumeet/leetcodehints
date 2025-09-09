@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a stable binary array. Remember, it must contain exactly one '1' and no '0's. This means every valid configuration must have exactly one '1' in the array."
+    },
+    {
+      "content": "Consider how the 'limit' affects the arrangement of '0's and '1's. Any subarray larger than 'limit' must contain both '0' and '1'. Think about how this requirement constrains the positions of '0's and '1's."
+    },
+    {
+      "content": "Visualize the problem with small values for zero and one. For example, if zero = 1 and one = 1, the possible stable arrays are [1,0] and [0,1]. Try to list out these possibilities for small inputs."
+    },
+    {
+      "content": "When constructing stable arrays, the position of the single '1' is crucial. It can be placed in various positions, while '0's must be arranged around it. How many ways can you place '0's around a single '1'?"
+    },
+    {
+      "content": "Think about the constraints imposed by the 'limit'. If the limit is 1, then any two adjacent elements cannot both be '0's. How does this change when the limit increases?"
+    },
+    {
+      "content": "Consider using combinatorial counting to find the number of ways to arrange '0's and '1's. You might want to use combinations to determine how many ways you can choose positions for '0's around the '1'."
+    },
+    {
+      "content": "Explore the idea of dynamic programming or recursion to build up the number of valid arrays. You can define a function that counts valid configurations based on the current number of '0's, '1's, and the current position."
+    },
+    {
+      "content": "When counting configurations, remember to account for the 'limit'. You may want to maintain a sliding window of the last 'limit' elements to ensure they contain both '0' and '1'."
+    },
+    {
+      "content": "You might want to create a helper function that checks if a given array configuration meets the stability criteria, especially regarding the 'limit'. This can help you debug your counting logic."
+    },
+    {
+      "content": "Consider edge cases where either zero or one is very small. For instance, if zero = 1 and one = 1000, how would you ensure that all subarrays larger than the limit contain both '0' and '1'?"
+    },
+    {
+      "content": "Think about memoization to store results of subproblems. If you find the number of stable arrays for a certain configuration of 'zero', 'one', and 'limit', store that result to avoid recalculating it."
+    },
+    {
+      "content": "As you implement your solution, keep track of large numbers. The problem specifies returning the result modulo 10^9 + 7. Make sure to apply this at each step of your counting."
+    },
+    {
+      "content": "Try to break down the problem into smaller parts. For example, first calculate all possible arrangements of '0's and '1's without considering the 'limit', then add the 'limit' constraint."
+    },
+    {
+      "content": "As a final step, ensure your implementation correctly handles the return format. The output should be a single integer representing the total number of stable binary arrays."
+    },
+    {
+      "content": "You're almost there! Consider how you can combine all the insights you've gathered into a cohesive algorithm. Focus on how to efficiently count the arrangements while respecting the constraints."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= zero, one, limit <= 1000.",
+    "A stable binary array must have exactly one '1' and no '0's.",
+    "Each subarray larger than 'limit' must contain both '0' and '1'.",
+    "The result should be returned modulo 10^9 + 7."
+  ]
+}

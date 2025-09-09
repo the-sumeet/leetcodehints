@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a 'beautiful' array. Remember that it must consist of distinct positive integers and must not have any two integers that sum up to the given target."
+    },
+    {
+      "content": "Consider the smallest integers you can use to form the array. The smallest distinct positive integers are 1, 2, 3, etc. Think about how these numbers can be combined without violating the beautiful array condition."
+    },
+    {
+      "content": "What happens when you choose the number `target - 1`? This number could potentially conflict with other numbers in your array. Think about how to avoid such conflicts."
+    },
+    {
+      "content": "If `target` is less than or equal to `n`, you can use the first `n` natural numbers directly. However, if `target` is greater than `n`, you need to be more careful about your selection."
+    },
+    {
+      "content": "Consider the scenario where `target` is equal to `2 * k` for some integer `k`. This means that `k` is a potential conflict number. How can you adjust your selection to avoid including `k`?"
+    },
+    {
+      "content": "When constructing your array, you might need to skip certain numbers to avoid pairs that sum to `target`. Think about how to efficiently choose numbers while still keeping the sum minimal."
+    },
+    {
+      "content": "You can use a greedy approach to select the smallest available integers while ensuring that no two selected integers sum to `target`. Keep track of the numbers you have already selected."
+    },
+    {
+      "content": "Be mindful of the modulo operation. Since the result needs to be returned modulo `10^9 + 7`, ensure you apply this operation to your sum at the end of your calculations."
+    },
+    {
+      "content": "Consider edge cases where `n` is very large, close to `10^9`. Think about how you might optimize your solution to avoid excessive computation or memory usage."
+    },
+    {
+      "content": "Finally, after selecting your numbers, calculate the sum of the selected integers and apply the modulo operation. This will give you the minimum possible sum of the beautiful array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^9, 1 <= target <= 10^9.",
+    "The array must consist of pairwise distinct positive integers.",
+    "No two distinct indices i and j should satisfy nums[i] + nums[j] == target.",
+    "Return the result modulo 10^9 + 7."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A palindrome reads the same forwards and backwards, like 'racecar'. For a string to be rearranged into a palindrome, certain conditions must be met regarding the frequency of characters."
+    },
+    {
+      "content": "Consider the frequency of each character in the input string. You can use a hash map or an array to count occurrences. For example, for the string 'aabb', the counts would be: {'a': 2, 'b': 2}."
+    },
+    {
+      "content": "Remember that in a palindrome, at most one character can have an odd count (this would be the center character in an odd-length palindrome). What does this imply for strings with even and odd lengths?"
+    },
+    {
+      "content": "Check how many characters have odd frequencies. If more than one character has an odd count, it's impossible to form a palindrome. For 'abc', how many characters have odd counts?"
+    },
+    {
+      "content": "Once you have verified that a palindrome can be formed, think about how to generate all unique permutations of the characters. You might want to use backtracking to explore all combinations."
+    },
+    {
+      "content": "While generating permutations, ensure that you avoid duplicates. You can do this by sorting the characters first and skipping over characters that are the same as the previous one in your recursive calls."
+    },
+    {
+      "content": "When constructing the permutations, remember to build the half of the palindrome first. For example, with 'aabb', you would start with 'ab' and then mirror it to form 'abba'."
+    },
+    {
+      "content": "Think about how to handle the middle character if the length of the string is odd. This character will be placed in the center of the palindrome. How would you incorporate this into your permutation generation?"
+    },
+    {
+      "content": "After generating all unique permutations, you need to construct the full palindrome strings from these half permutations. Ensure your final output meets the requirements of the problem statement."
+    },
+    {
+      "content": "Finally, remember to return the results in a specific format. You might want to collect all unique palindromic permutations in a list and return that list. What data structure would best suit this?"
+    }
+  ],
+  "questionNotes": [
+    "Input string can contain lowercase letters only.",
+    "Output should be a list of unique palindromic permutations.",
+    "Consider edge cases like empty strings or strings with all identical characters."
+  ]
+}

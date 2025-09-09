@@ -1,0 +1,58 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to differentiate between odd-numbered and even-numbered jumps. Odd jumps require you to jump to the smallest index with a value greater than or equal to the current index's value, while even jumps require the largest index with a value less than or equal."
+    },
+    {
+      "content": "Consider how you can represent the jumps. You might want to create a function that, given an index, returns the next index you can jump to based on whether it's an odd or even jump."
+    },
+    {
+      "content": "Think about how to efficiently find the next valid jump. A brute force approach would involve checking all subsequent indices, but this could be improved using data structures that maintain order, like a balanced tree or a sorted list."
+    },
+    {
+      "content": "Remember that you can only jump forward in the array. This means that for any index `i`, you will only consider indices `j` where `j > i`."
+    },
+    {
+      "content": "When implementing the jump logic, consider using a loop or recursion to explore all possible jumps from a given starting index. You should keep track of whether you can reach the end of the array."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when the array has only one element. In this case, the starting index is trivially good because you are already at the end."
+    },
+    {
+      "content": "You might want to maintain a boolean array to track which indices can reach the end of the array. This will help avoid redundant calculations."
+    },
+    {
+      "content": "Consider how to handle ties when multiple indices are valid for jumping. The problem specifies that you should choose the smallest index in such cases."
+    },
+    {
+      "content": "Think about using a priority queue or a sorted list to efficiently get the next valid jump index. This can help you quickly find the smallest or largest value as required."
+    },
+    {
+      "content": "When counting good starting indices, remember to iterate over the array and check each index to see if it can reach the end using the defined jumping rules."
+    },
+    {
+      "content": "You may want to implement a depth-first search (DFS) or dynamic programming approach to explore all possible paths from each starting index."
+    },
+    {
+      "content": "Make sure to handle the situation where no valid jumps are possible from a given index. You should return false for that index if it cannot reach the end."
+    },
+    {
+      "content": "Consider the time complexity of your solution. You want to ensure that your approach can handle the maximum constraints efficiently, especially since the array length can be up to 20,000."
+    },
+    {
+      "content": "As you implement your solution, use print statements or logging to debug and verify that your jump logic is working correctly for both odd and even jumps."
+    },
+    {
+      "content": "Finally, think about how you will return the result. You need to return the count of good starting indices, so ensure that your counting mechanism is correctly implemented."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 2 * 10^4",
+    "Values: 0 <= arr[i] < 10^5",
+    "You can only jump forward (i < j).",
+    "For odd jumps, find the smallest index j where arr[i] <= arr[j].",
+    "For even jumps, find the largest index j where arr[i] >= arr[j].",
+    "In case of ties, choose the smallest index j.",
+    "Return the number of good starting indices."
+  ]
+}

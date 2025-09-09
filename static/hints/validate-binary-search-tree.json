@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of a binary search tree (BST). Recall that for any node, all values in the left subtree must be less than the node's value, and all values in the right subtree must be greater."
+    },
+    {
+      "content": "Consider how you might traverse the tree. A common approach is to use an in-order traversal, which visits nodes in ascending order for a valid BST. Think about how you could implement this."
+    },
+    {
+      "content": "When checking if the current node's value is valid, you need to maintain a range of valid values. For a node, this range is defined by its ancestors. How would you pass down this range during traversal?"
+    },
+    {
+      "content": "You can use recursion to simplify the process. Define a helper function that takes a node and the current valid range (min and max values). This function should check if the node's value falls within this range."
+    },
+    {
+      "content": "Remember to update the valid range as you traverse the tree. For a left child, the maximum value should be updated to the current node's value, and for a right child, the minimum value should be updated."
+    },
+    {
+      "content": "Think about base cases for your recursive function. What should happen when you reach a null node? This is an important part of your termination condition."
+    },
+    {
+      "content": "Consider edge cases, such as a tree with only one node. How does this fit the definition of a BST? What should your function return in this case?"
+    },
+    {
+      "content": "You might want to check for duplicate values as well. Since the BST definition states 'strictly less' and 'strictly greater', how will you handle cases where a node has the same value as its parent?"
+    },
+    {
+      "content": "When implementing your solution, remember to account for the constraints provided, such as the range of node values. Ensure your solution handles the maximum and minimum integer values correctly."
+    },
+    {
+      "content": "Finally, implement your recursive function to check the BST validity. It should look something like this: `return isValidBST(node, min, max)` where you call it initially with the root node and the full range of valid values."
+    }
+  ],
+  "questionNotes": [
+    "A valid BST requires strict inequality: left < node < right.",
+    "The function should return true or false based on the validity of the BST.",
+    "The number of nodes in the tree is between 1 and 10,000.",
+    "Node values are within the range of -2^31 to 2^31 - 1."
+  ]
+}

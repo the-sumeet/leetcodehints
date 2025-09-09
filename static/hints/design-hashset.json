@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic operations of a HashSet: adding, checking for existence, and removing elements. Think about how these operations can be efficiently implemented using a hash function."
+    },
+    {
+      "content": "Consider how to handle collisions in your hash table. You might want to use separate chaining (linked lists) or open addressing (probing) to ensure that multiple keys can be stored in the same hash bucket."
+    },
+    {
+      "content": "Determine an appropriate size for your hash table. A common practice is to start with a size that is a prime number, which can help reduce collisions."
+    },
+    {
+      "content": "Think about how to compute the index for a given key. A simple way to do this is to use the modulo operation with the size of your hash table: `index = key % size`."
+    },
+    {
+      "content": "When implementing the `add` method, ensure that you only insert a key if it is not already present in the HashSet. This will help maintain uniqueness."
+    },
+    {
+      "content": "For the `contains` method, you need to check if a key exists in the HashSet. This involves computing the index and then checking the corresponding bucket for the presence of the key."
+    },
+    {
+      "content": "In the `remove` method, ensure that you correctly handle the case where the key is not found. You should only attempt to remove the key if it exists."
+    },
+    {
+      "content": "Consider edge cases, such as adding the same key multiple times, removing a key that doesn't exist, or checking for the existence of a key that has never been added."
+    },
+    {
+      "content": "Keep in mind the constraints provided in the problem. For instance, the keys will be in the range of 0 to 10^6, and you should ensure your implementation can handle the maximum number of operations efficiently."
+    },
+    {
+      "content": "You might want to implement a dynamic resizing strategy for your hash table. If the load factor (number of elements / size of the table) exceeds a certain threshold, consider resizing the table to maintain performance."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= key <= 10^6",
+    "At most 10^4 calls will be made to add, remove, and contains.",
+    "Ensure uniqueness of keys in the HashSet.",
+    "Handle collisions appropriately.",
+    "Return format: null for void methods, true/false for contains."
+  ]
+}

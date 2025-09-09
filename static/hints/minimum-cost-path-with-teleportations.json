@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. You have a 2D array where each cell has a cost associated with moving into it. Your task is to minimize the total cost to reach the bottom-right corner."
+    },
+    {
+      "content": "Remember that you can only move right or down normally. This means that from any cell (i, j), your possible moves are to (i, j + 1) or (i + 1, j)."
+    },
+    {
+      "content": "Take note of the teleportation feature. You can teleport to any cell (x, y) if the cost at that cell is less than or equal to the current cell's cost. This can significantly reduce your total cost."
+    },
+    {
+      "content": "You can teleport at most k times. Think about how you can keep track of the number of teleportations used as you navigate through the grid."
+    },
+    {
+      "content": "Consider using a priority queue (min-heap) to explore the cells. This will help you always expand the least costly path first, which is crucial for finding the minimum cost."
+    },
+    {
+      "content": "When implementing your algorithm, you will need to maintain a 3D array or a map to track the minimum cost to reach each cell with a specific number of teleportations used."
+    },
+    {
+      "content": "Make sure to handle the edge cases where you might not need to use teleportation at all. Sometimes, the normal moves alone might yield the minimum cost."
+    },
+    {
+      "content": "Think about how to efficiently check which cells you can teleport to. You might want to sort the cells based on their cost to facilitate this process."
+    },
+    {
+      "content": "As you explore the grid, keep updating your minimum cost for each cell based on whether you move normally or teleport. This will require careful condition checks."
+    },
+    {
+      "content": "Don't forget to handle cases where k is 0. In such scenarios, you can only rely on normal moves to reach the destination."
+    },
+    {
+      "content": "Consider the implications of the grid size and value limits. Since m and n can be as large as 80, ensure your solution is efficient enough to handle the maximum input size."
+    },
+    {
+      "content": "When implementing your priority queue, ensure that you store not just the cost but also the current position and the number of teleportations used."
+    },
+    {
+      "content": "As you reach the bottom-right cell, make sure to return the minimum cost found. If you can't reach it, consider how you will handle that case."
+    },
+    {
+      "content": "You may want to implement a function to check the valid teleportation options from a given cell. This function can help streamline your main algorithm."
+    },
+    {
+      "content": "Finally, think about how to ensure that you are not revisiting cells unnecessarily. Use a visited structure that takes into account both the cell position and the number of teleportations used."
+    }
+  ],
+  "questionNotes": [
+    "Grid size constraints: 2 <= m, n <= 80.",
+    "Grid values: 0 <= grid[i][j] <= 10^4.",
+    "Teleportation limit: 0 <= k <= 10.",
+    "Return the minimum total cost to reach cell (m - 1, n - 1).",
+    "You can teleport at most k times, and the cost of teleportation is 0."
+  ]
+}

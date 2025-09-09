@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to convert an integer to its binary representation. Each integer can be represented as a sequence of bits (0s and 1s). For example, the integer 5 is represented as '101' in binary."
+    },
+    {
+      "content": "Consider how to count the number of 1s in a binary representation. You can do this by iterating through each bit and checking if it is 1. However, think about how you can do this efficiently for all numbers from 0 to n."
+    },
+    {
+      "content": "Notice that for any integer i, the number of 1s in its binary representation can be related to the number of 1s in the binary representation of i // 2 (which is i right-shifted by 1). This relationship can help you build your answer iteratively."
+    },
+    {
+      "content": "You can use the property that if you know the count of 1s for i // 2, you can determine the count for i. Specifically, if i is even, the count is the same as i // 2, and if i is odd, it is one more than the count of i // 2."
+    },
+    {
+      "content": "Think about how you can initialize an array of size n + 1. You will need to fill this array with the count of 1s for each number from 0 to n. Make sure to handle the case for 0, which should always be 0."
+    },
+    {
+      "content": "To achieve linear time complexity O(n), you should avoid nested loops. Instead, use a single loop that iterates from 1 to n, updating the count based on the previously computed values."
+    },
+    {
+      "content": "As you build the array, remember to use the relationship between even and odd numbers to determine the count of 1s efficiently. This can be done in a single pass through the numbers."
+    },
+    {
+      "content": "Consider edge cases, such as when n = 0. Your function should return an array with just one element, which is 0."
+    },
+    {
+      "content": "When implementing the solution, ensure that you carefully handle the indexing of the array. The output array should be of length n + 1, where each index corresponds to the integer value."
+    },
+    {
+      "content": "You are almost there! Try writing the loop that fills in the counts based on the relationship discussed. Remember, for each i, if i is even, the count is the same as that of i // 2, and if i is odd, it is one more than that."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= n <= 10^5",
+    "Return an array of length n + 1.",
+    "ans[i] should represent the number of 1s in the binary representation of i.",
+    "Make sure to handle the case when n = 0."
+  ]
+}

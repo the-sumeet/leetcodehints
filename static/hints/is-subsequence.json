@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence can be formed by deleting some characters from a string without changing the order of the remaining characters. For example, in the string 'ahbgdc', 'abc' is a valid subsequence."
+    },
+    {
+      "content": "Consider how you could iterate through both strings. You might want to use two pointers: one for string `s` and another for string `t`. This will help you track your position in both strings as you check for matches."
+    },
+    {
+      "content": "Think about the base cases. What should your function return if `s` is an empty string? Remember that an empty string is a subsequence of any string, including another empty string."
+    },
+    {
+      "content": "When iterating through `t`, if you find a character that matches the current character in `s`, move the pointer for `s` to the next character. This way, you are checking for the next character in `s` sequentially."
+    },
+    {
+      "content": "Consider what happens when you reach the end of string `s`. If you have matched all characters of `s` before exhausting `t`, then `s` is a subsequence of `t`."
+    },
+    {
+      "content": "Make sure to handle the case where `t` is shorter than `s`. If `t.length < s.length`, you can immediately return false since `s` cannot be a subsequence of a shorter string."
+    },
+    {
+      "content": "Think about the time complexity of your approach. A simple two-pointer technique will generally run in O(n + m) time, where n is the length of `s` and m is the length of `t`. This is efficient given the constraints."
+    },
+    {
+      "content": "If you are considering multiple strings `s1, s2, ..., sk` to check against the same `t`, think about preprocessing `t`. You could create a mapping of character positions in `t` to quickly check for subsequences."
+    },
+    {
+      "content": "For the follow-up scenario with many incoming `s`, consider using a binary search approach on the preprocessed character positions in `t`. This way, you can quickly determine if the next character in `s` exists in `t`."
+    },
+    {
+      "content": "Finally, put together your logic in a loop that continues until you either find all characters of `s` in `t` or exhaust `t`. Make sure to return true or false based on whether all characters were matched."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= s.length <= 100",
+    "Constraints: 0 <= t.length <= 10^4",
+    "Both s and t consist only of lowercase English letters.",
+    "An empty string is a subsequence of any string.",
+    "If t is shorter than s, return false immediately."
+  ]
+}

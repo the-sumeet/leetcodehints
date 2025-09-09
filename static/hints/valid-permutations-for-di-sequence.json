@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find permutations of numbers from 0 to n that satisfy the conditions defined by the string `s`. Each character in `s` indicates whether the next number should be greater or smaller."
+    },
+    {
+      "content": "Consider the length of the string `s`. If `s` has a length of `n`, then you are dealing with `n + 1` numbers (from 0 to n). Make sure you understand how the characters in `s` relate to the indices of the permutation."
+    },
+    {
+      "content": "Think about the implications of the characters 'D' and 'I'. For example, if `s[i]` is 'I', then the permutation must increase at that index, which means `perm[i] < perm[i + 1]`. Conversely, 'D' means it must decrease, so `perm[i] > perm[i + 1]`."
+    },
+    {
+      "content": "Try to visualize how the characters in `s` create constraints on the permutation. For example, if you have a sequence like 'DID', how does that split the numbers into groups that must be arranged in a certain way?"
+    },
+    {
+      "content": "Consider using dynamic programming to keep track of the number of valid permutations up to each index. You can define a DP table where `dp[i]` represents the number of valid permutations for the first `i` characters of `s`."
+    },
+    {
+      "content": "When building your DP solution, think about how to transition from `dp[i]` to `dp[i + 1]`. You will need to account for the constraints imposed by `s[i]` when calculating the number of valid permutations."
+    },
+    {
+      "content": "Remember to initialize your DP table correctly. The base case is important; for an empty string or a single character, how many valid permutations can you have?"
+    },
+    {
+      "content": "Consider edge cases, such as when `s` is all 'I's or all 'D's. What patterns emerge in the valid permutations for these cases? This can help you identify potential optimizations."
+    },
+    {
+      "content": "Think about how to handle large numbers. Since the result needs to be returned modulo `10^9 + 7`, make sure to apply the modulo operation at each step of your calculations to prevent overflow."
+    },
+    {
+      "content": "You might want to precompute factorials and their modular inverses to efficiently calculate combinations. This will help you count how many ways you can arrange numbers given the constraints."
+    },
+    {
+      "content": "As you develop your solution, keep testing with small inputs to ensure your logic holds. For instance, try `s = 'D'` and `s = 'I'` to see if the outputs match your expectations."
+    },
+    {
+      "content": "Consider how the number of 'D's and 'I's in `s` affects the total number of valid permutations. Is there a relationship between the counts of 'D' and 'I' and the number of valid arrangements?"
+    },
+    {
+      "content": "When calculating the number of valid permutations, think about how to combine the results of smaller subproblems. This could involve summing the valid counts from previous indices based on the current character in `s`."
+    },
+    {
+      "content": "Before finalizing your approach, sketch out the transitions in your DP table. How does each character in `s` affect the previous counts? This will clarify your implementation."
+    },
+    {
+      "content": "Finally, ensure your implementation is efficient enough to handle the upper limits of the input size. Analyze the time complexity of your approach and optimize where necessary."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == s.length, 1 <= n <= 200, s[i] is either 'I' or 'D'.",
+    "Return the number of valid permutations modulo 10^9 + 7.",
+    "Important to note that permutations must include all integers from 0 to n."
+  ]
+}

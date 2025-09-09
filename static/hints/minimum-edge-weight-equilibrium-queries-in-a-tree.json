@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a tree. A tree with n nodes has exactly n-1 edges, and there is a unique path between any two nodes."
+    },
+    {
+      "content": "Each query asks for the minimum number of operations to make all edges on the path from node a to node b have the same weight. Think about how you can represent the path between two nodes."
+    },
+    {
+      "content": "Consider using Depth First Search (DFS) or Breadth First Search (BFS) to find the path between two nodes. This will help you identify which edges need to be changed."
+    },
+    {
+      "content": "As you traverse from node a to node b, keep track of the weights of the edges you encounter. You will need to count how many edges have different weights."
+    },
+    {
+      "content": "To minimize operations, you should aim to change the edges to the most frequently occurring weight on the path. This will reduce the number of changes needed."
+    },
+    {
+      "content": "You can use a frequency map (or dictionary) to count the occurrences of each edge weight on the path. This will help you quickly determine the most common weight."
+    },
+    {
+      "content": "Remember that the weights are limited to the range 1 to 26. This small range can help optimize your counting process."
+    },
+    {
+      "content": "When counting the frequencies of edge weights, ensure you handle the case where there are no edges on the path (for example, when a equals b)."
+    },
+    {
+      "content": "Consider edge cases such as paths that include only one edge or paths that traverse the entire tree. How do these cases affect your counting strategy?"
+    },
+    {
+      "content": "After counting the weights, the minimum number of operations needed will be the total number of edges minus the count of the most frequent weight."
+    },
+    {
+      "content": "Make sure to reset your data structures for each query since the queries are independent of each other."
+    },
+    {
+      "content": "Think about how you can efficiently implement the path finding and counting in a way that handles up to 20,000 queries without timing out."
+    },
+    {
+      "content": "You might want to preprocess the tree structure to allow for faster path queries. Consider using techniques like Lowest Common Ancestor (LCA) for efficient path retrieval."
+    },
+    {
+      "content": "As you implement your solution, pay attention to the edge cases where the tree might have varying weights or where paths overlap significantly."
+    },
+    {
+      "content": "Finally, ensure that your output matches the required format: an array of integers where each integer corresponds to the answer for each query."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^4, edges.length == n - 1, 1 <= w_i <= 26.",
+    "Each query is independent; the tree resets to its original state for each query.",
+    "Return an array of length m where answer[i] is the answer for queries[i].",
+    "Consider the uniqueness of paths in trees and that weights can be repeated."
+  ]
+}

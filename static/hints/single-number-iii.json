@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find two unique numbers in an array where every other number appears twice. This means you'll need a strategy to differentiate these unique numbers from the duplicates."
+    },
+    {
+      "content": "Consider how you might use bit manipulation to solve this problem. The XOR operation has a unique property: a ^ a = 0 and a ^ 0 = a. This could help you eliminate duplicate numbers."
+    },
+    {
+      "content": "When you XOR all the numbers in the array, the result will be the XOR of the two unique numbers. This is because all the numbers that appear twice will cancel each other out."
+    },
+    {
+      "content": "After obtaining the XOR result of the two unique numbers, you need to determine a way to separate these two numbers. Look for a bit that is set (1) in the XOR result; this bit can be used to differentiate the two unique numbers."
+    },
+    {
+      "content": "To find the distinguishing bit, you can use the expression `xorResult & -xorResult`. This operation isolates the rightmost set bit in the XOR result, which can be used to partition the original numbers."
+    },
+    {
+      "content": "Once you have the distinguishing bit, iterate through the original array again. Use the distinguishing bit to divide the numbers into two groups: one group where the bit is set and another where it is not."
+    },
+    {
+      "content": "As you separate the numbers into two groups based on the distinguishing bit, XOR the numbers in each group. This will give you the two unique numbers, as all duplicates will cancel out."
+    },
+    {
+      "content": "Remember to consider edge cases, such as when the input array has only two elements. In such cases, both elements are the unique numbers."
+    },
+    {
+      "content": "Keep in mind that the order of the output does not matter. You can return the two unique numbers in any order, so be flexible with your return format."
+    },
+    {
+      "content": "Finally, ensure that your solution meets the constraints of linear runtime complexity and constant space usage. This means you should not use additional data structures that grow with the input size."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 3 * 10^4",
+    "Each integer in nums will appear twice, only two integers will appear once.",
+    "The output can be in any order.",
+    "Consider edge cases with minimal input sizes."
+  ]
+}

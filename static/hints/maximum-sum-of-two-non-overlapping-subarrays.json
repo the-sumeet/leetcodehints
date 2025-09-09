@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of non-overlapping subarrays. You need to find two subarrays of lengths `firstLen` and `secondLen` that do not overlap in the original array `nums`."
+    },
+    {
+      "content": "Consider how to calculate the sum of a subarray. You can use a sliding window approach to efficiently compute the sum of any subarray of a given length."
+    },
+    {
+      "content": "Think about how you can iterate through the array to find the maximum sum for the first subarray of length `firstLen`. Store this maximum sum as you go."
+    },
+    {
+      "content": "After calculating the maximum sum for the first subarray, you need to ensure that the second subarray starts after the first one ends. Keep track of the maximum sum of the first subarray as you progress."
+    },
+    {
+      "content": "You should also consider the reverse case: what if the second subarray comes first? Calculate the maximum sum for the second subarray before the first one as well."
+    },
+    {
+      "content": "To avoid overlapping, when you calculate the sum of the second subarray, make sure to only consider indices that are valid (i.e., do not overlap with the first subarray)."
+    },
+    {
+      "content": "Use two loops: one for the first subarray and another for the second subarray, ensuring that they do not overlap. This will help you explore all possible combinations."
+    },
+    {
+      "content": "Consider edge cases where the lengths of `firstLen` and `secondLen` are at their minimum or maximum values. How does this affect the indices available for the subarrays?"
+    },
+    {
+      "content": "As you calculate the maximum sums, keep track of the overall maximum sum found for both configurations (first subarray first and second subarray first)."
+    },
+    {
+      "content": "Finally, ensure you return the maximum sum found from both configurations. You might want to use a variable to store this maximum and update it as you find larger sums."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= firstLen, secondLen <= 1000",
+    "2 <= firstLen + secondLen <= 1000",
+    "firstLen + secondLen <= nums.length <= 1000",
+    "0 <= nums[i] <= 1000",
+    "Subarrays must be contiguous and non-overlapping."
+  ]
+}

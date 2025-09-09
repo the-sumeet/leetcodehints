@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find pairs from two sorted arrays that yield the smallest sums. Remember that the arrays are sorted, which can help optimize your approach."
+    },
+    {
+      "content": "Consider how many pairs can be formed from the two arrays. If nums1 has 'm' elements and nums2 has 'n' elements, the total number of pairs is m * n. However, you only need the k smallest pairs."
+    },
+    {
+      "content": "Think about how you can leverage the sorted property of the arrays. For example, the smallest sum will always involve the smallest elements from both arrays. This can help you prioritize which pairs to consider first."
+    },
+    {
+      "content": "A brute-force approach would involve generating all possible pairs and sorting them by their sums. However, this is inefficient for large arrays. Can you think of a more efficient way to find the smallest sums?"
+    },
+    {
+      "content": "One efficient method to find the smallest pairs is to use a min-heap (priority queue). You can start by pushing the smallest pair (the first elements of both arrays) into the heap and then iteratively extract the smallest sums."
+    },
+    {
+      "content": "When using a min-heap, keep track of the indices of the elements in the pairs. After extracting a pair, you can generate new pairs by moving to the next element in either nums1 or nums2."
+    },
+    {
+      "content": "Make sure to handle duplicates correctly. If nums1 or nums2 contains duplicate elements, you may end up with the same pair multiple times. Consider using a set to avoid adding duplicate pairs to your result."
+    },
+    {
+      "content": "Remember to check the edge cases, such as when k is larger than the total number of possible pairs. In such cases, you should return all possible pairs instead of just k."
+    },
+    {
+      "content": "As you implement your solution, ensure that you maintain the correct order of pairs in your result. The output should be a list of pairs sorted by their sums."
+    },
+    {
+      "content": "Finally, think about the stopping condition for your loop. You should continue extracting from the heap until you have k pairs or the heap is empty. Ensure your implementation adheres to this logic."
+    }
+  ],
+  "questionNotes": [
+    "Both nums1 and nums2 are sorted in non-decreasing order.",
+    "1 <= nums1.length, nums2.length <= 10^5.",
+    "-10^9 <= nums1[i], nums2[i] <= 10^9.",
+    "1 <= k <= 10^4.",
+    "k must not exceed nums1.length * nums2.length.",
+    "Return format should be a list of pairs, e.g., [[u1, v1], [u2, v2], ...]."
+  ]
+}

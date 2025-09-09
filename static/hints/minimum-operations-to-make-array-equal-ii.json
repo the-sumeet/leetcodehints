@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the difference between each corresponding element of `nums1` and `nums2`. This will help you understand how much you need to adjust each element in `nums1` to match `nums2`."
+    },
+    {
+      "content": "Remember that the operation allows you to increase one element while decreasing another. This means that the total sum of the differences must be zero for it to be possible to equalize the two arrays."
+    },
+    {
+      "content": "Check if the total difference is divisible by `k`. If it is not, it's impossible to equalize the arrays, and you should return -1 immediately."
+    },
+    {
+      "content": "For each index, compute how much you need to increase or decrease `nums1[i]` to match `nums2[i]`. Store these values in two separate lists: one for increases and one for decreases."
+    },
+    {
+      "content": "The number of operations needed will depend on how many total increments and decrements you need to balance out. Each operation can adjust both an increment and a decrement."
+    },
+    {
+      "content": "You can think of the total increments needed as `total_increase` and total decrements as `total_decrease`. The number of operations required will be the maximum of the two divided by `k`."
+    },
+    {
+      "content": "Make sure to account for cases where `k` is zero. If `k` is zero, you can only make the arrays equal if they are already the same, otherwise return -1."
+    },
+    {
+      "content": "Consider edge cases where `nums1` and `nums2` are already equal. In this case, you should return 0 since no operations are needed."
+    },
+    {
+      "content": "To summarize, you need to calculate the total increments and decrements, check divisibility by `k`, and then determine the minimum number of operations based on these totals."
+    },
+    {
+      "content": "Finally, ensure that your implementation efficiently handles the constraints, especially since `n` can be as large as 100,000. Think about the time complexity of your approach."
+    }
+  ],
+  "questionNotes": [
+    "Arrays `nums1` and `nums2` are of equal length `n`.",
+    "You can perform operations only on `nums1`.",
+    "The operation consists of incrementing one index and decrementing another by `k`.",
+    "Return -1 if it's impossible to make the arrays equal.",
+    "Ensure to handle the case where `k` is zero."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of the town judge. Remember, the judge trusts nobody, and everyone else trusts the judge. This means that the judge will have a unique trust relationship compared to others."
+    },
+    {
+      "content": "Consider how you can represent the trust relationships. You might want to use an array or a dictionary to keep track of how many people trust each person, as well as how many people each person trusts."
+    },
+    {
+      "content": "Think about how to initialize your data structure. You will need to keep track of two counts for each person: the number of people they trust and the number of people that trust them."
+    },
+    {
+      "content": "As you iterate through the trust array, update your counts accordingly. For each trust relationship (a, b), you can increment the count for person b (trusted) and the count for person a (trusting)."
+    },
+    {
+      "content": "After processing all trust relationships, you should have two arrays or counters: one for the trust counts and one for the trusted counts. Analyze these counts to find the potential town judge."
+    },
+    {
+      "content": "Remember that the town judge must have a trust count of 0 (trusts nobody) and a trusted count of n-1 (trusted by everyone else). This is a key condition to check."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no trust relationships at all. In such cases, how would you determine if a judge exists?"
+    },
+    {
+      "content": "You should also consider the case where there are multiple candidates who could potentially be the judge. Make sure to check for the uniqueness of the candidate."
+    },
+    {
+      "content": "Once you identify a candidate, ensure that they meet the criteria of being trusted by exactly n-1 people and not trusting anyone. If they do not meet these criteria, return -1."
+    },
+    {
+      "content": "Finally, remember to return the label of the town judge or -1 if no valid judge exists. Make sure your function handles all edge cases correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 1000",
+    "0 <= trust.length <= 10^4",
+    "trust[i].length == 2, all pairs are unique.",
+    "a_i != b_i, 1 <= a_i, b_i <= n.",
+    "There is exactly one person that satisfies properties 1 and 2."
+  ]
+}

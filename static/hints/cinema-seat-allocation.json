@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the seating arrangement works in the cinema. Each row has 10 seats, and a group occupies 4 adjacent seats. Think about how you can represent the rows and reserved seats."
+    },
+    {
+      "content": "Consider how to store the reserved seats efficiently. Since there are at most 10 seats per row, you could use a set or a boolean array to mark reserved seats for each row."
+    },
+    {
+      "content": "Focus on how to check for available groups of 4 seats. You can iterate through the possible starting positions for a group (1 to 7) in each row and check if those seats are reserved."
+    },
+    {
+      "content": "Don't forget about the special case where groups can be split by the aisle. Groups can occupy seats like [1,2,3,4] or [3,4,5,6] or even [2,3,4,5] if the middle two seats are reserved."
+    },
+    {
+      "content": "When checking for available seats, consider using bit manipulation or simple condition checks to determine if a group can be seated. For example, if seats 1, 2, 3, and 4 are free, that’s a valid group."
+    },
+    {
+      "content": "Make sure to handle the input constraints properly. The number of rows, n, can be very large (up to 10^9), but the number of reserved seats is limited (up to 10^4). Think about how this affects your approach."
+    },
+    {
+      "content": "You might want to create a mapping of reserved seats by row. For example, use a dictionary where the key is the row number and the value is a set of reserved seat numbers for that row."
+    },
+    {
+      "content": "After processing the reserved seats, iterate through each row to count the maximum number of groups of 4 that can be seated. Remember to check each possible starting position for a group."
+    },
+    {
+      "content": "Consider edge cases, such as when all seats in a row are reserved or when there are no reserved seats at all. How would your solution handle these scenarios?"
+    },
+    {
+      "content": "Finally, ensure you return the total number of groups that can be seated across all rows. Accumulate the counts from each row and return that value."
+    }
+  ],
+  "questionNotes": [
+    "There are n rows of seats, numbered from 1 to n.",
+    "Each row has 10 seats, labelled from 1 to 10.",
+    "Input reservedSeats contains distinct seat reservations.",
+    "Constraints: 1 <= n <= 10^9, 1 <= reservedSeats.length <= min(10*n, 10^4).",
+    "Return the maximum number of four-person groups that can be seated."
+  ]
+}

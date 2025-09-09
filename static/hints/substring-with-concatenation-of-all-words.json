@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements clearly. You need to find all starting indices in the string `s` where a substring is a concatenation of all words in the `words` array."
+    },
+    {
+      "content": "Notice that all words in the `words` array are of the same length. This uniformity can help you determine how to segment the string `s`."
+    },
+    {
+      "content": "Calculate the total length of the concatenated substring. This is simply the number of words multiplied by the length of each word. For example, if there are 3 words each of length 3, the total length is 9."
+    },
+    {
+      "content": "Consider using a sliding window approach to check each substring of length equal to the total length calculated. This will allow you to efficiently check each segment of `s`."
+    },
+    {
+      "content": "You will need to keep track of the count of each word in the `words` array. A hash map (or dictionary) can be useful for this purpose."
+    },
+    {
+      "content": "As you slide the window across `s`, maintain a count of the words found in the current window. Compare this count to the original word count to determine if the current window is valid."
+    },
+    {
+      "content": "When checking the counts, ensure that the counts of the words in the current window match exactly with the counts from the `words` array. This means both the frequency and the words themselves must match."
+    },
+    {
+      "content": "Be mindful of the starting index when sliding the window. You will need to adjust the counts as you add a new word and remove the oldest word from the window."
+    },
+    {
+      "content": "Consider edge cases where `s` is shorter than the total length of the concatenated substring. In such cases, you can immediately return an empty list."
+    },
+    {
+      "content": "Remember that the order of the words in the `words` array does not matter; any permutation of the words that forms a valid substring is acceptable."
+    },
+    {
+      "content": "Think about how to efficiently manage the counts of words as you slide the window. You might want to use a second hash map to track the current counts in the window."
+    },
+    {
+      "content": "When you find a valid starting index, store it in a result list. Make sure to return this list in the correct format as specified in the problem statement."
+    },
+    {
+      "content": "Consider the performance of your solution. The size of `s` can be large, so aim for a solution that is better than O(n^2) by leveraging the sliding window technique."
+    },
+    {
+      "content": "Finally, before implementing, sketch out the logic on paper or in pseudocode. This will help solidify your approach and identify any potential pitfalls."
+    },
+    {
+      "content": "Now, you're close to a solution! Start implementing the sliding window logic while checking the counts of the words. Make sure to test with the provided examples."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^4, 1 <= words.length <= 5000, 1 <= words[i].length <= 30.",
+    "All words in the `words` array are of the same length.",
+    "Return the starting indices in any order.",
+    "Consider edge cases where `s` is shorter than the total length of concatenated words."
+  ]
+}

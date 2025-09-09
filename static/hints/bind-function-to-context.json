@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of context in JavaScript. The `this` keyword refers to the object that is executing the current function. In the context of your function, `this` will refer to the object you pass in."
+    },
+    {
+      "content": "Look at how functions can be invoked in JavaScript. The context can change based on how you call a function. For instance, calling a function as a method of an object will set `this` to that object."
+    },
+    {
+      "content": "Consider how you can bind a function to a specific context. JavaScript provides a method called `bind()` which allows you to create a new function that, when called, has its `this` keyword set to a specific value."
+    },
+    {
+      "content": "Think about the parameters of the function you need to call. The function `f` takes a `multiplier` as an argument, so you'll need to ensure that you pass this argument correctly when invoking the function."
+    },
+    {
+      "content": "Make sure to handle cases where the object passed might not have the expected properties. For example, if the object does not contain `x`, your function will not work as intended. Consider adding checks for this."
+    },
+    {
+      "content": "Review how to call the bound function. After binding, you will call the new function with the necessary arguments. Ensure that you're not passing the context again when calling the bound function."
+    },
+    {
+      "content": "Remember that the `bind()` method returns a new function. This means you should store the result of the `bind()` call in a variable before invoking it."
+    },
+    {
+      "content": "Think about how you will structure your final call. You will need to bind the function to the provided object and then invoke it with the array of arguments. This involves two steps: binding and calling."
+    },
+    {
+      "content": "Consider edge cases, such as when the multiplier is zero or when the object has unexpected properties. How does your function handle these scenarios? Make sure to test these cases."
+    },
+    {
+      "content": "Finally, put everything together: bind the function to the context and then call it with the parameters. You should have something like `const boundFunction = f.bind(context); boundFunction(multiplier);` but remember to replace `multiplier` with the actual argument from the array."
+    }
+  ],
+  "questionNotes": [
+    "Ensure that the object passed has the required properties for the function to work.",
+    "Remember that `this` in the function will refer to the object you bind it to.",
+    "The function should return the result of the computation based on the context and parameters."
+  ]
+}

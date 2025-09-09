@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to compare the width-to-height ratio of two rectangles. Remember that two rectangles are interchangeable if their ratios are equal, which means you can express this as width[i] / height[i] == width[j] / height[j]."
+    },
+    {
+      "content": "To avoid floating-point precision issues, consider using a different approach to compare ratios. Instead of dividing, you can cross-multiply: width[i] * height[j] should equal width[j] * height[i]."
+    },
+    {
+      "content": "Think about how to efficiently store and count rectangles with the same ratio. A dictionary (or hashmap) can be useful to map each unique ratio to its count of occurrences."
+    },
+    {
+      "content": "When you find that multiple rectangles share the same ratio, you can calculate the number of interchangeable pairs using combinations. Specifically, if there are k rectangles with the same ratio, the number of pairs is given by k * (k - 1) / 2."
+    },
+    {
+      "content": "Remember to simplify the ratio before storing it in your dictionary. You can do this by dividing both the width and height by their greatest common divisor (GCD)."
+    },
+    {
+      "content": "Consider edge cases where all rectangles are unique or where all rectangles have the same dimensions. How will your approach handle these scenarios?"
+    },
+    {
+      "content": "As you implement your solution, ensure that you account for the constraints given in the problem. For example, the maximum number of rectangles can be 100,000, so your solution should be efficient."
+    },
+    {
+      "content": "When iterating through the rectangles, keep track of the count of each unique ratio in your dictionary. This will help you efficiently calculate the total number of interchangeable pairs later."
+    },
+    {
+      "content": "After populating your dictionary with the counts of each ratio, iterate through the values in the dictionary to compute the total number of interchangeable pairs using the combination formula discussed earlier."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct format as specified in the problem statement. You should return a single integer representing the total number of interchangeable pairs."
+    }
+  ],
+  "questionNotes": [
+    "Rectangles are represented as a 2D array where each element is [width, height].",
+    "Two rectangles are interchangeable if their width-to-height ratios are equal.",
+    "Use cross multiplication to compare ratios to avoid floating-point issues.",
+    "Count occurrences of each unique ratio using a dictionary.",
+    "Return the total number of interchangeable pairs as a single integer."
+  ]
+}

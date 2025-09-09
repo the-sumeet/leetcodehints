@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the structure of the time string. The format is 'HH:MM', where 'HH' can be from '00' to '11' and 'MM' can be from '00' to '59'. This means you need to focus on valid ranges for hours and minutes."
+    },
+    {
+      "content": "Look at the first character of the string. If it's a '?', you need to determine what digit can replace it to maximize the hour value. Remember, the highest possible hour is '11'."
+    },
+    {
+      "content": "For the second character, if it's a '?', consider what the first character is. If the first character is '1', the second can be '0' or '1' to form '10' or '11'. If it's '0', the second can only be '0' to '9'."
+    },
+    {
+      "content": "Next, focus on the minutes. The first character of the minutes (after ':') can be any digit from '0' to '5' if it's a '?', to ensure the minutes are valid. The second character can be any digit from '0' to '9'."
+    },
+    {
+      "content": "When replacing '?', always aim for the highest digit possible to maximize the time. For example, if you have '1?:?4', replace the '?' in '1?' with '1' to get '11' and the '?' in '?4' with '5' to get '54'."
+    },
+    {
+      "content": "Consider edge cases where the first digit is '0'. In this case, you should replace it with '0' and maximize the second digit accordingly. For instance, '0?:5?' should yield '09:59'."
+    },
+    {
+      "content": "Make sure to validate your replacements. After filling in the '?' characters, check if the resulting string adheres to the 'HH:MM' format and falls within the valid range."
+    },
+    {
+      "content": "If you encounter a situation where multiple '?' characters are present, prioritize replacing them in the order that contributes most to a higher time. Start from the leftmost character and work your way right."
+    },
+    {
+      "content": "After determining the potential digits for each '?', construct the final time string. Ensure that you are always aiming for the latest possible valid time throughout your replacements."
+    },
+    {
+      "content": "Once you have filled in all the '?' characters, return the final string in the same format 'HH:MM'. Remember to check that it is indeed a valid time before returning."
+    }
+  ],
+  "questionNotes": [
+    "The input string is always of length 5.",
+    "The character at index 2 is always ':' and does not need to be replaced.",
+    "All characters except the one at index 2 can be digits or '?'.",
+    "You must ensure that the final result is a valid 12-hour time.",
+    "The output must be in the format 'HH:MM'."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the wraparound string concept. The string 'abcdefghijklmnopqrstuvwxyz' wraps around, meaning after 'z', it continues with 'a'. This affects how substrings can be formed."
+    },
+    {
+      "content": "Consider how to identify substrings of the given string `s` that can be found in the wraparound string. Each character can be a starting point for a substring."
+    },
+    {
+      "content": "Think about how you can utilize the properties of consecutive characters in `s`. For example, if 'a' is followed by 'b', this forms a valid sequence in the wraparound string."
+    },
+    {
+      "content": "You might want to keep track of the length of valid consecutive characters from the wraparound string. For instance, if you have 'abc', you can generate substrings of lengths 1, 2, and 3."
+    },
+    {
+      "content": "Consider using a set to store unique substrings. This will help you automatically handle duplicates since sets do not allow repeated elements."
+    },
+    {
+      "content": "As you iterate through the string `s`, check for each character if it continues the sequence from the previous character. If it does, increment a count of the current valid sequence length."
+    },
+    {
+      "content": "When you encounter a character that breaks the sequence, calculate the number of new unique substrings that can be formed from the current sequence length and add them to your set."
+    },
+    {
+      "content": "Remember that the number of unique substrings that can be formed from a sequence of length `n` is given by the formula: `n * (n + 1) / 2`. This accounts for all possible substrings of different lengths."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when `s` consists of a single character or when all characters are the same. These can affect the count of unique substrings."
+    },
+    {
+      "content": "Finally, ensure that you return the size of the set containing the unique substrings. This will give you the count of unique non-empty substrings of `s` present in the wraparound string."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "s consists of lowercase English letters.",
+    "Focus on uniqueness of substrings.",
+    "Handle edge cases like single characters or repeated characters."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the two tables: `ProductPurchases` and `ProductInfo`. You need to join these tables to get product categories for the pairs of products purchased together."
+    },
+    {
+      "content": "Focus on how to identify pairs of products that have been purchased together by the same user. You can use a self-join on the `ProductPurchases` table to achieve this."
+    },
+    {
+      "content": "When performing the self-join, ensure that you only consider pairs where `product1_id < product2_id`. This will help you avoid duplicate pairs and maintain the required order."
+    },
+    {
+      "content": "After identifying the product pairs, you need to count distinct users who purchased both products. Use the `COUNT(DISTINCT user_id)` function to achieve this."
+    },
+    {
+      "content": "Remember to filter the results to include only those product pairs that have been purchased by at least 3 different customers. This is crucial for the recommendation criteria."
+    },
+    {
+      "content": "Once you have the valid product pairs and their customer counts, you will need to join this result with the `ProductInfo` table to get the categories for both products."
+    },
+    {
+      "content": "Pay attention to the order of your final result. You need to sort by `customer_count` in descending order, and for ties, sort by `product1_id` and then `product2_id` in ascending order."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no product pairs that meet the criteria of being purchased together by at least 3 customers. Your query should handle this gracefully."
+    },
+    {
+      "content": "Make sure your SQL query uses appropriate aliases for clarity, especially when dealing with multiple joins and self-joins. This will help you avoid confusion in your final output."
+    },
+    {
+      "content": "Finally, structure your SELECT statement to return the required columns: `product1_id`, `product2_id`, `product1_category`, `product2_category`, and `customer_count`. Ensure the final output matches the specified format."
+    }
+  ],
+  "questionNotes": [
+    "The unique key for `ProductPurchases` is (user_id, product_id).",
+    "A product pair is valid if at least 3 different customers have purchased both products.",
+    "Return format must include product IDs, categories, and customer counts.",
+    "Order results by customer_count (desc), product1_id (asc), and product2_id (asc)."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the tree structure. A tree is an acyclic connected graph, which means there are no cycles and there's exactly one path between any two nodes."
+    },
+    {
+      "content": "Consider how the frog moves. It starts at vertex 1 and can jump to any directly connected unvisited vertex. Think about how you can represent the graph using an adjacency list."
+    },
+    {
+      "content": "Remember that the frog cannot jump back to a visited vertex. This means you need to keep track of which vertices have been visited during its jumps."
+    },
+    {
+      "content": "The frog's jumps are probabilistic. If it has multiple options, it jumps to one of them with equal probability. Make sure to calculate the probability based on the number of unvisited neighbors."
+    },
+    {
+      "content": "Think about the base case: If the frog has no unvisited neighbors, it remains on the current vertex. This should affect your probability calculations."
+    },
+    {
+      "content": "Consider using Depth-First Search (DFS) or Breadth-First Search (BFS) to explore the tree. This will help you simulate the frog's jumps over time."
+    },
+    {
+      "content": "As you simulate the jumps, keep track of the current time step. You need to stop when you reach the specified time 't'."
+    },
+    {
+      "content": "At each step, calculate the probability of reaching the target vertex. If the frog is at the target after 't' seconds, you’ll need to return that probability."
+    },
+    {
+      "content": "When calculating the probability, consider the number of ways to reach the target vertex versus the total possible paths the frog could take."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when 't' is 0. If 't' is 0, the frog is still at vertex 1, so the probability of being at any other vertex is 0."
+    },
+    {
+      "content": "If the target vertex is the starting vertex (1), the probability should be 1 if 't' is 0, or it should be calculated based on the frog's movements otherwise."
+    },
+    {
+      "content": "Consider memoization to store previously computed probabilities for specific states (current vertex, time left) to avoid redundant calculations."
+    },
+    {
+      "content": "Remember that the output should be a floating-point number with a precision of 10^-5. Ensure your final answer meets this requirement."
+    },
+    {
+      "content": "You may want to represent the graph as a dictionary of lists or a similar structure for efficient traversal. For example: `graph = {1: [2, 3, 7], 2: [1, 4, 6], ...}`."
+    },
+    {
+      "content": "Finally, consider how to implement the recursive function to calculate the probability. You will need parameters for the current vertex, time left, and a set of visited vertices."
+    }
+  ],
+  "questionNotes": [
+    "The tree has n vertices and n-1 edges, ensuring it is connected and acyclic.",
+    "The frog starts at vertex 1 and cannot revisit vertices.",
+    "The output probability must be accurate to within 10^-5.",
+    "The target vertex can be any vertex from 1 to n, including the starting vertex."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering how to store the elements in the set. You need to ensure that both insertion and deletion are efficient. Think about using a data structure that allows for fast lookups."
+    },
+    {
+      "content": "You should use a combination of a list (or array) and a hash map (or dictionary). The list will help you store the elements for random access, while the hash map will allow you to quickly check for existence and get the index of elements."
+    },
+    {
+      "content": "When inserting an element, check if it already exists using the hash map. If it doesn't, add it to both the list and the hash map. Remember to return true if the insertion is successful."
+    },
+    {
+      "content": "For the remove operation, you'll need to check if the element exists in the hash map. If it does, remove it from both the list and the hash map. Make sure to maintain the order of elements in the list."
+    },
+    {
+      "content": "When removing an element from the list, consider how to efficiently fill the gap left by the removed element. You can swap it with the last element in the list and then remove the last element."
+    },
+    {
+      "content": "The getRandom function should return a random element from the list. Use a random number generator to select an index from the list, ensuring that it falls within the valid range of indices."
+    },
+    {
+      "content": "Be mindful of edge cases, such as trying to remove an element that does not exist in the set. Your remove function should return false in such cases."
+    },
+    {
+      "content": "Consider the constraints provided: you will have at most 2 * 10^5 calls to insert, remove, and getRandom. This means your operations must be efficient in terms of time complexity."
+    },
+    {
+      "content": "Ensure that your getRandom function can only be called when there is at least one element in the set. You might want to handle this with an assertion or a check at the beginning of the function."
+    },
+    {
+      "content": "Finally, implement the class methods with the outlined structures. Remember to test each method independently to ensure they work correctly, especially focusing on the efficiency of each operation."
+    }
+  ],
+  "questionNotes": [
+    "Each element must have the same probability of being returned by getRandom.",
+    "Return true for insert if the item was not present, false otherwise.",
+    "Return true for remove if the item was present, false otherwise.",
+    "Constraints: -2^31 <= val <= 2^31 - 1, at most 2 * 10^5 calls to insert, remove, and getRandom.",
+    "getRandom is guaranteed to be called when at least one element exists."
+  ]
+}

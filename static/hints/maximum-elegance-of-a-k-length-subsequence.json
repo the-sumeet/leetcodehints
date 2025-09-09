@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to calculate the elegance of a subsequence. Elegance is defined as the total profit plus the square of the number of distinct categories in that subsequence."
+    },
+    {
+      "content": "Remember that you need to select a subsequence of exactly size k. This means you cannot select more or less than k items from the original array."
+    },
+    {
+      "content": "Consider the implications of selecting items with the same category. While they may contribute to the total profit, they will not increase the count of distinct categories."
+    },
+    {
+      "content": "Think about how you can maximize both the total profit and the number of distinct categories. Can you prioritize items with higher profits or unique categories?"
+    },
+    {
+      "content": "Sort the items based on profit in descending order. This can help you quickly identify the most profitable items to consider for your subsequence."
+    },
+    {
+      "content": "As you iterate through the sorted items, keep track of the distinct categories you encounter. Use a set to help maintain uniqueness."
+    },
+    {
+      "content": "When you reach k items, calculate the current elegance. If you have not yet reached k distinct categories, consider how you might adjust your selection."
+    },
+    {
+      "content": "If you have selected k items but they all belong to the same category, your elegance calculation will be limited. Think about how to replace one of the items with a different category item."
+    },
+    {
+      "content": "Consider edge cases where all items belong to the same category or where k equals the number of items. How does this affect your calculations?"
+    },
+    {
+      "content": "You may need to explore combinations of items. Use a priority queue or similar structure to help manage the selection of items based on profit and category."
+    },
+    {
+      "content": "While iterating through combinations, keep track of the maximum elegance found so far. Update it whenever you find a new combination that yields a higher elegance."
+    },
+    {
+      "content": "Remember to handle large inputs efficiently. You might need to optimize your approach to avoid excessive time complexity, especially since n can be as large as 100,000."
+    },
+    {
+      "content": "After calculating the elegance for various combinations, ensure that you return the maximum elegance found. Pay attention to the return format specified in the problem."
+    },
+    {
+      "content": "Consider using a hashmap to store the maximum profit for each category. This can help you quickly assess which items to include in your subsequence."
+    },
+    {
+      "content": "Finally, think about how to structure your final solution. You may want to encapsulate your logic in a function that takes the items and k as parameters and returns the maximum elegance."
+    }
+  ],
+  "questionNotes": [
+    "Elegance = total_profit + distinct_categories^2.",
+    "You must select exactly k items from the items array.",
+    "Items are represented as [profit, category].",
+    "Maximize both total profit and the number of distinct categories.",
+    "Constraints: 1 <= n <= 100000, 1 <= profit[i] <= 10^9, 1 <= category[i] <= n, 1 <= k <= n."
+  ]
+}

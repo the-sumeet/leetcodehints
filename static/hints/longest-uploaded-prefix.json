@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the data structure you'll need. You will need to track which videos have been uploaded and the longest prefix of uploaded videos. Consider using an array or a set to keep track of uploaded videos."
+    },
+    {
+      "content": "Think about how you will represent the uploaded videos. Since the videos are distinct and numbered from 1 to n, a boolean array where the index represents the video number could be useful."
+    },
+    {
+      "content": "When uploading a video, you need to update your data structure to mark that video as uploaded. Make sure you also consider how this affects the longest uploaded prefix."
+    },
+    {
+      "content": "To find the longest uploaded prefix, you will need to check sequentially from 1 upwards until you find a video that has not been uploaded. This can be optimized by maintaining a variable that tracks the last longest prefix found."
+    },
+    {
+      "content": "Consider edge cases, such as uploading all videos in reverse order. What will happen to your longest prefix in this case? Ensure your solution handles this efficiently."
+    },
+    {
+      "content": "When implementing the 'longest' method, think about how you can avoid re-checking all previous videos if you have already found the longest prefix. You might want to keep a pointer that only moves forward."
+    },
+    {
+      "content": "Remember that the input constraints specify that at least one call will be made to 'longest'. This means your implementation must handle the case where no videos have been uploaded yet."
+    },
+    {
+      "content": "You may want to initialize your data structure in the constructor to ensure that it can handle the maximum constraints efficiently. Think about the time complexity of your upload and longest methods."
+    },
+    {
+      "content": "As you implement the upload method, ensure that it correctly updates the longest prefix if the newly uploaded video is the next in sequence. You may want to check if the uploaded video is equal to the current longest prefix + 1."
+    },
+    {
+      "content": "Finally, consider how to handle the return values. The 'longest' method should return an integer representing the length of the longest uploaded prefix. Make sure your method returns 0 if no videos have been uploaded."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5 and at most 2 * 10^5 calls in total.",
+    "All video numbers are distinct and valid (1 to n).",
+    "At least one call will be made to 'longest'.",
+    "Return format: 'longest' should return an integer.",
+    "Consider edge cases like uploading in reverse order."
+  ]
+}

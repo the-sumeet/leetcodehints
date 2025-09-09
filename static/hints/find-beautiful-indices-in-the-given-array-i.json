@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a 'beautiful index'. You need to find indices in the string `s` where the substring matches the string `a`. Make sure to consider the bounds of the index when checking for substrings."
+    },
+    {
+      "content": "Remember that the substring `s[i..(i + a.length - 1)]` must equal `a`. This means you need to ensure that `i` is within the valid range, specifically `0 <= i <= s.length - a.length`."
+    },
+    {
+      "content": "Next, you need to find indices `j` where the substring matches `b`. Similar to `a`, ensure that `j` is also within the valid bounds: `0 <= j <= s.length - b.length`."
+    },
+    {
+      "content": "After identifying potential indices `i` for `a`, check for the existence of a corresponding index `j` for `b` such that the absolute difference `|j - i|` is less than or equal to `k`. This is crucial for determining if `i` is a beautiful index."
+    },
+    {
+      "content": "Consider using two separate loops: one to find all indices of `a` and another to find all indices of `b`. You can then check each index of `a` against the indices of `b` to see if they satisfy the distance condition."
+    },
+    {
+      "content": "When storing the beautiful indices, ensure that you maintain uniqueness. You can use a set to store indices temporarily and then convert it to a sorted list before returning."
+    },
+    {
+      "content": "Think about edge cases, such as when `a` and `b` are the same string. In this case, ensure that you are correctly checking the distance condition without mistakenly counting the same index multiple times."
+    },
+    {
+      "content": "Pay attention to the constraints provided. For instance, `1 <= k <= s.length <= 10^5` means your solution needs to be efficient. Aim for a time complexity that is linear or near-linear with respect to the length of `s`."
+    },
+    {
+      "content": "As you implement the solution, consider how you will handle cases where there are no beautiful indices. Your function should return an empty array in such cases."
+    },
+    {
+      "content": "Finally, when you have your list of beautiful indices, make sure to return them in sorted order. You can achieve this with a simple sorting function before returning the result."
+    }
+  ],
+  "questionNotes": [
+    "Indices are 0-indexed.",
+    "You must check both conditions for a beautiful index: matching substring and distance constraint.",
+    "Return the result as a sorted array of unique indices.",
+    "Constraints: 1 <= k <= s.length <= 10^5; 1 <= a.length, b.length <= 10."
+  ]
+}

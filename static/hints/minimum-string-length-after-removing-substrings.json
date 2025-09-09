@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to remove the substrings 'AB' and 'CD' from the given string. Each removal can potentially create new instances of these substrings, so think about how to handle that."
+    },
+    {
+      "content": "Consider using a stack data structure to help with the removal process. As you iterate through the string, you can push characters onto the stack and check if the top of the stack forms either 'AB' or 'CD'."
+    },
+    {
+      "content": "When you encounter a character that could form 'AB' or 'CD' with the top of the stack, you should pop the top character off the stack instead of pushing the current character. This simulates the removal of the substring."
+    },
+    {
+      "content": "Think about the order of operations. You might want to iterate through the string only once while maintaining the stack. This will help you keep track of the current state of the string after potential removals."
+    },
+    {
+      "content": "Remember that the stack will only contain characters that do not form 'AB' or 'CD'. After processing the entire string, the size of the stack will give you the length of the resulting string."
+    },
+    {
+      "content": "Consider edge cases such as strings that do not contain 'AB' or 'CD' at all. What should your function return in these cases? Ensure your implementation handles such scenarios correctly."
+    },
+    {
+      "content": "Also consider what happens with overlapping substrings. For example, in 'ABCDAB', removing the first 'AB' will create a new 'AB'. Your approach should account for this dynamic."
+    },
+    {
+      "content": "As you build your solution, make sure to test it with various strings, especially those that are at the minimum and maximum lengths allowed by the constraints."
+    },
+    {
+      "content": "After processing the string with the stack, the remaining characters in the stack represent the final string. The length of this stack is your desired output."
+    },
+    {
+      "content": "Finally, ensure that your function returns the length of the stack as the output. You might want to write a small test case to verify that your implementation works as expected."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 100",
+    "The string consists only of uppercase English letters.",
+    "The output should be the minimum possible length of the resulting string after all removals."
+  ]
+}

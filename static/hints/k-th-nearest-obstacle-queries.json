@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to calculate the distance of an obstacle from the origin. The distance is given by the formula |x| + |y|. Make sure you can compute this for any point (x, y)."
+    },
+    {
+      "content": "Remember that the queries are given in the form of an array of coordinates. After each query, you need to add the new obstacle's distance to a collection of distances."
+    },
+    {
+      "content": "Think about how you will store the distances of the obstacles. A simple list can work, but consider how you will keep it sorted to easily find the k-th nearest obstacle."
+    },
+    {
+      "content": "When processing each query, check how many obstacles have been added so far. If the count is less than k, you should return -1 for that query."
+    },
+    {
+      "content": "Consider using a data structure that allows for efficient insertion and retrieval of the k-th smallest element. A min-heap or a sorted list might be useful here."
+    },
+    {
+      "content": "As you process each query, remember to update your collection of distances. You may need to sort or maintain the order of distances after each insertion."
+    },
+    {
+      "content": "Handle edge cases where k is larger than the number of obstacles present. Ensure your logic correctly identifies when there are not enough obstacles."
+    },
+    {
+      "content": "When you add a new distance, you may want to check if it can affect the k-th nearest distance. This means you should only consider the k-th element if there are at least k distances."
+    },
+    {
+      "content": "After processing all queries, ensure that your results array is built correctly. Each entry should correspond to the k-th nearest obstacle distance or -1 as needed."
+    },
+    {
+      "content": "To finalize your approach, think about the overall time complexity. Inserting into a sorted list or maintaining a heap can affect performance, especially with the upper constraint limits."
+    }
+  ],
+  "questionNotes": [
+    "The distance of an obstacle at coordinate (x, y) is given by |x| + |y|.",
+    "You need to return -1 if there are less than k obstacles after a query.",
+    "All queries are unique, meaning no two obstacles will be placed at the same coordinate.",
+    "The input constraints allow for up to 200,000 queries and coordinates ranging from -10^9 to 10^9.",
+    "The results array should match the order of the queries, with each entry corresponding to the k-th nearest obstacle distance."
+  ]
+}

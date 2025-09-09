@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the threading model. Each of the three methods (zero, even, odd) will be called by a different thread. You need to ensure that they execute in the correct order to produce the desired output."
+    },
+    {
+      "content": "Think about how to synchronize the threads. You might want to use a combination of locks and condition variables to control the execution order of the methods."
+    },
+    {
+      "content": "Remember that the output sequence starts with a zero, followed by an odd number, and then an even number. This pattern must repeat until you reach the specified count of numbers, which is 2n."
+    },
+    {
+      "content": "Consider using a counter to keep track of how many odd and even numbers have been printed. This will help you determine when to print the next zero, odd, or even number."
+    },
+    {
+      "content": "When implementing the zero method, ensure it only prints '0' and then signals the odd and even methods to proceed. Use condition variables to notify the other threads."
+    },
+    {
+      "content": "In the odd method, after printing an odd number, you should signal the even method to print the next even number. Make sure to manage the sequence correctly."
+    },
+    {
+      "content": "The even method should print even numbers in the correct order. After printing, it should signal the zero method to print the next zero."
+    },
+    {
+      "content": "You will need to handle the case where n is small (like 1) to ensure that your logic works for all edge cases. Test with the smallest inputs to verify correctness."
+    },
+    {
+      "content": "Make sure to handle the stopping condition properly. Each thread should know when to stop based on the value of n, ensuring that no extra numbers are printed."
+    },
+    {
+      "content": "Finally, think about the overall structure of your class. You will need to initialize shared variables and possibly use a mutex to protect access to the shared state across threads."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 1000",
+    "Output format: The output must be a single string of numbers in the sequence '010203...'.",
+    "Each method must only print its respective number and signal the next method appropriately."
+  ]
+}

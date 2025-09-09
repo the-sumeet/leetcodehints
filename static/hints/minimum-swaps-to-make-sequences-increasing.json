@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to make both sequences strictly increasing. This means that for any index `i`, `nums1[i]` must be less than `nums1[i+1]` and `nums2[i]` must be less than `nums2[i+1]`."
+    },
+    {
+      "content": "Consider the implications of swapping elements at the same index in both arrays. Swapping can potentially help in making both arrays strictly increasing. Think about how you can track the number of swaps needed."
+    },
+    {
+      "content": "Identify the base cases. For the first element, you can start with either `nums1[0]` or `nums2[0]`. This means you have two potential starting points for your sequences."
+    },
+    {
+      "content": "Use a dynamic programming approach where you maintain two states: one for when you do not swap at index `i` and one for when you do swap. This will help you keep track of the minimum swaps needed."
+    },
+    {
+      "content": "Define two variables, say `noSwap` and `swap`, to represent the minimum swaps needed if you do not swap or if you do swap at the current index. Initialize them appropriately for the first index."
+    },
+    {
+      "content": "As you iterate through the arrays, check the conditions for maintaining the strictly increasing property. For example, if `nums1[i-1] < nums1[i]` and `nums2[i-1] < nums2[i]`, you can continue without a swap."
+    },
+    {
+      "content": "Think about the cases where you might need to swap. If `nums1[i-1] < nums2[i]` and `nums2[i-1] < nums1[i]`, you can swap and potentially reduce the number of swaps needed."
+    },
+    {
+      "content": "Pay attention to the edge cases, especially when the arrays have only two elements. Ensure that your logic holds for the smallest input sizes."
+    },
+    {
+      "content": "Remember to update your `noSwap` and `swap` variables based on the conditions you check for each index. This will allow you to build your solution iteratively."
+    },
+    {
+      "content": "Consider the final step: after processing all elements, the result will be the minimum of `noSwap` and `swap` for the last index. This gives you the minimum number of swaps needed."
+    },
+    {
+      "content": "Think about how you can handle cases where both arrays contain the same elements. Ensure your logic can differentiate between swapping and not swapping effectively."
+    },
+    {
+      "content": "Visualize the process with a small example. For instance, with `nums1 = [1, 3]` and `nums2 = [2, 4]`, trace through your logic and see how swaps affect the sequences."
+    },
+    {
+      "content": "Make sure to account for all possible scenarios at each index, including when both options (swap or no swap) are valid. This will help you avoid missing optimal solutions."
+    },
+    {
+      "content": "As you finalize your approach, ensure that your solution runs efficiently within the constraints provided, especially since the input size can be large."
+    },
+    {
+      "content": "You're very close! The final hint is to ensure that your algorithm is correctly updating the states for `noSwap` and `swap` at each index based on the conditions you have established."
+    }
+  ],
+  "questionNotes": [
+    "Both arrays nums1 and nums2 are of the same length.",
+    "You can only swap elements at the same index.",
+    "An array is strictly increasing if arr[i] < arr[i+1] for all valid i.",
+    "The input guarantees that a solution always exists.",
+    "Consider edge cases with the smallest input sizes (e.g., length 2)."
+  ]
+}

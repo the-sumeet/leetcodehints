@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how you can move from one building to the next. If the next building is shorter or the same height, you can move freely without using bricks or ladders."
+    },
+    {
+      "content": "When moving to a taller building, you have two options: use a ladder or use bricks. Think about how you can keep track of the height differences that require resources."
+    },
+    {
+      "content": "Consider using a greedy approach. Each time you encounter a height increase, decide whether to use a ladder or bricks based on the height difference."
+    },
+    {
+      "content": "Keep a count of how many bricks you have used and how many ladders you've deployed as you iterate through the buildings. This will help you manage your resources."
+    },
+    {
+      "content": "Use a min-heap (or priority queue) to keep track of the height differences where you used ladders. This will help you optimize the use of ladders for the largest height differences."
+    },
+    {
+      "content": "If you run out of bricks, check if you can replace the largest height difference (from your min-heap) with a ladder. This is crucial for maximizing the distance you can travel."
+    },
+    {
+      "content": "Make sure to handle cases where you have no ladders left. In this scenario, you can only use bricks for the remaining height differences."
+    },
+    {
+      "content": "When iterating through the buildings, remember to stop as soon as you cannot move to the next building due to lack of resources. This will be your answer."
+    },
+    {
+      "content": "Consider edge cases, such as when all buildings are of equal height or when you have no bricks or ladders at all. What should your output be in these cases?"
+    },
+    {
+      "content": "Finally, ensure you return the correct index of the furthest building you can reach. The index should be 0-based, so keep that in mind when implementing your solution."
+    }
+  ],
+  "questionNotes": [
+    "1 <= heights.length <= 10^5",
+    "1 <= heights[i] <= 10^6",
+    "0 <= bricks <= 10^9",
+    "0 <= ladders <= heights.length",
+    "Return the furthest building index (0-indexed) you can reach."
+  ]
+}

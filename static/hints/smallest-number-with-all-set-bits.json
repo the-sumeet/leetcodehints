@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a number with all set bits looks like in binary. For example, 3 in binary is '11', and 7 is '111'. These numbers are formed by having all bits set to 1."
+    },
+    {
+      "content": "Consider how to represent numbers with all set bits mathematically. A number with all set bits can be expressed as 2^k - 1, where k is the number of bits. For example, for k=3, 2^3 - 1 = 7."
+    },
+    {
+      "content": "To solve the problem, you need to find the smallest number x such that x >= n and x has all bits set. Think about how you can generate numbers with all set bits starting from n."
+    },
+    {
+      "content": "You can start checking from n and incrementally test each number to see if it has all bits set. A number has all bits set if it is of the form 2^k - 1 for some k."
+    },
+    {
+      "content": "To check if a number has all bits set, you can use a bit manipulation trick: `x & (x + 1)` should equal 0. This works because if all bits are set, adding 1 will cause a carry that resets all bits."
+    },
+    {
+      "content": "Make sure to handle edge cases. For example, if n itself is a number with all bits set, your output should be n. So, always check if n meets the criteria before incrementing."
+    },
+    {
+      "content": "Consider using a loop to iterate from n upwards. For each number, check if it has all bits set using the method discussed earlier. If it does, return that number."
+    },
+    {
+      "content": "Remember that the maximum value for n is 1000. You can precompute or store the numbers with all bits set up to a certain limit to optimize your search."
+    },
+    {
+      "content": "Think about how you can efficiently find the next number with all bits set after n. You might want to keep track of the largest number with all bits set that is less than or equal to n."
+    },
+    {
+      "content": "Finally, implement the logic to return the first number greater than or equal to n that has all bits set. Use the bit manipulation check to ensure your solution is correct."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 1000",
+    "The output must be the smallest number x such that x >= n and x has all bits set.",
+    "A number has all bits set if it can be expressed as 2^k - 1 for some integer k."
+  ]
+}

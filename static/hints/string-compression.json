@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to identify groups of consecutive repeating characters in the input array. You can use a loop to iterate through the `chars` array and keep track of the current character and its count."
+    },
+    {
+      "content": "Consider how you will store the compressed characters back into the original array. You will need to maintain an index to track where to write the compressed output."
+    },
+    {
+      "content": "Remember that if a character appears only once, you simply append that character. If it appears multiple times, you will need to append both the character and its count."
+    },
+    {
+      "content": "Think about how to convert the count of repeated characters into characters when the count is 10 or more. You will need to handle each digit separately."
+    },
+    {
+      "content": "When iterating through the array, keep a pointer for the current index of the `chars` array where you will write the compressed values. This will help you avoid overwriting values unintentionally."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the input array has only one character or when all characters are unique. How will your logic adapt to these scenarios?"
+    },
+    {
+      "content": "As you build the compressed string, consider how to manage the transition from one character group to another. You will need to reset your count and update the current character when you encounter a different character."
+    },
+    {
+      "content": "After processing all characters, ensure that you return the correct length of the modified array. This length should reflect how many characters were written to the beginning of the array."
+    },
+    {
+      "content": "Pay attention to the constraints of the problem, specifically the limit on the length of the `chars` array and the requirement for constant space. This means you should not use any additional data structures that grow with input size."
+    },
+    {
+      "content": "To approach the final solution, consider writing pseudocode that outlines your logic for iterating through the array, counting characters, and writing the compressed output. For example:\n\n```\nfor i from 0 to length(chars):\n    if chars[i] == current_char:\n        count++\n    else:\n        write current_char and count to chars\n        reset count\n```\nThis will help you visualize the steps needed."
+    }
+  ],
+  "questionNotes": [
+    "The output should modify the input array `chars` directly and return the new length.",
+    "Group lengths that are 10 or longer must be split into multiple characters.",
+    "Characters beyond the returned length in the array do not matter and should be ignored.",
+    "1 <= chars.length <= 2000; chars[i] can be any printable character."
+  ]
+}

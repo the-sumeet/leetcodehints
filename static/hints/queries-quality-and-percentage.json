@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the table. You have four columns: `query_name`, `result`, `position`, and `rating`. Focus on how the `rating` and `position` will be used to calculate the quality of each query."
+    },
+    {
+      "content": "Remember that queries with a rating less than 3 are considered poor. You will need to count these queries to calculate the poor query percentage later. Think about how you can filter or group the data based on this condition."
+    },
+    {
+      "content": "To calculate the quality of each query, you'll need to compute the average of the ratio of `rating` to `position`. Consider how you can aggregate this information for each `query_name`."
+    },
+    {
+      "content": "When calculating the average ratio, ensure you handle the division correctly. You might want to sum the ratios first and then divide by the total number of queries for that `query_name`."
+    },
+    {
+      "content": "For the poor query percentage, remember to count the total number of queries for each `query_name` and the number of poor queries. The formula will be `(number of poor queries / total queries) * 100`."
+    },
+    {
+      "content": "Pay attention to the rounding requirements. Both the quality and the poor query percentage need to be rounded to two decimal places. Consider how you will implement this rounding in your SQL query."
+    },
+    {
+      "content": "Think about how you can use SQL functions like `AVG()` for calculating the average and `COUNT()` for counting the number of queries. You might also need to use `CASE` statements to differentiate between poor and non-poor queries."
+    },
+    {
+      "content": "You will likely need to use a `GROUP BY` clause to aggregate results by `query_name`. Ensure that your final output includes the correct columns: `query_name`, `quality`, and `poor_query_percentage`."
+    },
+    {
+      "content": "Consider edge cases, such as when a query has no poor ratings or when all ratings are poor. How will your calculations handle these scenarios? Make sure your logic accounts for these possibilities."
+    },
+    {
+      "content": "Finally, structure your SQL query to select from the `Queries` table, applying the necessary calculations and aggregations. Make sure to format the final output as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "The `position` column has values from 1 to 500.",
+    "The `rating` column has values from 1 to 5.",
+    "Queries with a rating less than 3 are considered poor.",
+    "Quality is defined as the average of the ratio of rating to position.",
+    "Poor query percentage is the percentage of queries with a rating less than 3.",
+    "Both quality and poor query percentage should be rounded to 2 decimal places.",
+    "The result can be returned in any order."
+  ]
+}

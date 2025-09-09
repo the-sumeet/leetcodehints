@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a special triplet. You need to find indices (i, j, k) such that 0 <= i < j < k < n, and the values at these indices must satisfy specific conditions based on the value at index j."
+    },
+    {
+      "content": "Notice that for a triplet (i, j, k) to be special, both nums[i] and nums[k] must equal 2 * nums[j]. This means you can derive the values of nums[i] and nums[k] directly from nums[j]."
+    },
+    {
+      "content": "Think about how you can iterate through the array to find valid indices for j. For each j, you will need to count how many valid i's and k's can be found that satisfy the conditions."
+    },
+    {
+      "content": "To efficiently count the valid i's and k's, consider using a hashmap (or dictionary) to keep track of how many times each number appears as you iterate through the array."
+    },
+    {
+      "content": "As you iterate through the array, for each j, check how many times the value nums[j] appears before it (for i) and how many times 2 * nums[j] appears after it (for k). This will help you count the special triplets."
+    },
+    {
+      "content": "Remember to handle the modulo operation as specified in the problem. Since the result can be large, ensure that you take the result modulo 10^9 + 7 at each step of your calculations."
+    },
+    {
+      "content": "Consider edge cases, such as arrays with all identical elements or arrays where no special triplet can be formed. How does your approach handle these cases?"
+    },
+    {
+      "content": "When counting valid triplets, be cautious about the order of indices. Ensure that your counting logic respects the constraints of i < j < k."
+    },
+    {
+      "content": "You might want to create a function that counts the valid i's and k's for a given j. This function could take the current index and the hashmap as parameters to return the count."
+    },
+    {
+      "content": "Finally, integrate your counting logic into a loop that iterates through each index j in the array. Make sure to accumulate the total count of special triplets and return it at the end."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= n == nums.length <= 10^5",
+    "Values: 0 <= nums[i] <= 10^5",
+    "Return the total count modulo 10^9 + 7.",
+    "Indices must satisfy: 0 <= i < j < k < n."
+  ]
+}

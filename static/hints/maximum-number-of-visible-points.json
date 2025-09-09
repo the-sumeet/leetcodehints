@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of angles in the 2D plane. You will need to calculate the angle between your position and each point in the array. Remember that you are initially facing east, which corresponds to an angle of 0 degrees."
+    },
+    {
+      "content": "To compute the angle to a point, use the `atan2` function, which takes the difference in y-coordinates and x-coordinates. This will give you the angle in radians, which you can convert to degrees."
+    },
+    {
+      "content": "Consider how to handle the case where multiple points have the same coordinates. You can always see points at your location regardless of your angle, so keep a count of these points."
+    },
+    {
+      "content": "When calculating the angles for points, ensure that you normalize the angles to be within the range [0, 360) degrees. This will help you manage the circular nature of angles."
+    },
+    {
+      "content": "Sort the calculated angles of the points. This will allow you to easily find how many points fall within a given range of angles using a sliding window or two-pointer technique."
+    },
+    {
+      "content": "Remember to account for the field of view. For an angle `d`, your field of view is from `d - angle/2` to `d + angle/2`. You may need to wrap around if this range exceeds 360 degrees."
+    },
+    {
+      "content": "To simplify the handling of angles, consider duplicating the angle list by adding 360 degrees to each angle. This allows you to handle cases where the field of view wraps around the 0-degree mark."
+    },
+    {
+      "content": "Use a two-pointer technique to find the maximum number of points visible within the field of view. One pointer can represent the start of the field of view, while the other expands to include points until the angle exceeds the limit."
+    },
+    {
+      "content": "Keep track of the maximum number of visible points found during your iteration through the angles. Update this maximum whenever you find a new valid range of points."
+    },
+    {
+      "content": "Consider edge cases where the angle is 0 or very close to 360 degrees. In these cases, you might only see points that are directly in front of you."
+    },
+    {
+      "content": "Be mindful of the constraints, especially the upper limit on the number of points (10^5). Your solution should be efficient, ideally O(n log n) due to sorting."
+    },
+    {
+      "content": "When implementing your solution, ensure that you correctly handle the case where multiple points are located at your position. These should be counted regardless of the angle."
+    },
+    {
+      "content": "Make sure to test your implementation with various angles, including edge cases like 0, 1, and 359 degrees, to ensure your angle calculations are robust."
+    },
+    {
+      "content": "Once you have the maximum number of visible points, remember to return this value as the final output of your function."
+    },
+    {
+      "content": "Before finalizing your solution, review the logic of your angle calculations and the two-pointer method to ensure that they correctly reflect the problem requirements."
+    }
+  ],
+  "questionNotes": [
+    "You can always see points at your location regardless of your rotation.",
+    "Points do not obstruct your vision to other points.",
+    "The angle is inclusive, meaning points on the boundary of your field of view are visible.",
+    "Constraints: 1 <= points.length <= 10^5; 0 <= angle < 360; 0 <= pos_x, pos_y, x_i, y_i <= 100."
+  ]
+}

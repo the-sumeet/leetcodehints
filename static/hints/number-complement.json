@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to convert a decimal number to its binary representation. You can use the built-in functions in many programming languages to achieve this. For example, in Python, you can use `bin(num)` to get the binary string."
+    },
+    {
+      "content": "Once you have the binary representation, think about how to flip the bits. Remember that flipping a bit means changing '0' to '1' and '1' to '0'. You can iterate through each character in the binary string to achieve this."
+    },
+    {
+      "content": "Consider how to handle the binary string. You might want to create a new string for the complement rather than modifying the original. This will help you keep track of the changes more easily."
+    },
+    {
+      "content": "After flipping the bits, you'll have a new binary string. The next step is to convert this binary string back into a decimal integer. Look for functions that can convert binary strings to integers, such as `int(complement_string, 2)` in Python."
+    },
+    {
+      "content": "Make sure to consider edge cases, such as the smallest value for `num`, which is 1. The binary representation of 1 is '1', and its complement should be '0'."
+    },
+    {
+      "content": "Think about the constraints provided in the problem. You need to ensure that your solution works for all values of `num` within the range of 1 to less than 2^31. This means your approach should be efficient."
+    },
+    {
+      "content": "You can also optimize your solution by avoiding string manipulation. Instead of converting to binary and back, consider using bitwise operations directly on the integer to calculate the complement."
+    },
+    {
+      "content": "To find the complement using bitwise operations, you can use the expression `~num` which gives the bitwise NOT of `num`. However, this will include leading ones in the result, so you'll need to mask it properly."
+    },
+    {
+      "content": "To mask the result, you can create a mask that has the same number of bits as `num`. You can do this by using `(1 << num.bit_length()) - 1`, which creates a number with all bits set to 1 up to the length of `num`."
+    },
+    {
+      "content": "Finally, combine your findings: the complement can be calculated with the expression `mask ^ num`, where `mask` is the one you created based on the bit length of `num`. This will give you the correct complement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= num < 2^31",
+    "The binary representation should not have leading zero bits.",
+    "Return the complement as an integer."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider what it means for a basket of candies to have maximum tastiness. The tastiness is defined as the smallest absolute difference between the prices of any two candies in the basket. Think about how you can select k distinct candies to maximize this minimum difference."
+    },
+    {
+      "content": "Start by sorting the array of prices. Sorting will help you easily calculate the differences between the prices of candies, as the smallest differences will be between adjacent elements in the sorted array."
+    },
+    {
+      "content": "Once the array is sorted, think about how you can select k candies. You need to ensure that the selected candies are distinct. What strategy might you use to select them while considering the differences?"
+    },
+    {
+      "content": "To find the maximum tastiness, you might want to use a binary search approach. Consider what range of possible tastiness values you need to search through, and how you can check if a certain tastiness value is achievable."
+    },
+    {
+      "content": "When using binary search, define your search space. The minimum possible tastiness is 0 (if you have candies of the same price), and the maximum could be the difference between the maximum and minimum prices in the sorted array."
+    },
+    {
+      "content": "For each mid value in your binary search, you need a helper function to check if it's possible to select k candies such that the minimum difference between any two selected candies is at least mid. How would you implement this check?"
+    },
+    {
+      "content": "As you iterate through the sorted prices, maintain a count of how many candies you can select that meet the minimum difference requirement. If you can select k candies, then that mid value is achievable."
+    },
+    {
+      "content": "Remember to handle edge cases. For example, if all prices are the same, what will your function return? Ensure your logic accounts for scenarios where distinct prices are not available."
+    },
+    {
+      "content": "Think about how you will update your binary search bounds. If you can select k candies with the current mid value, you might want to try for a larger tastiness, so adjust your lower bound. If not, adjust your upper bound."
+    },
+    {
+      "content": "Finally, ensure your function returns the correct value. After your binary search completes, the result will be the highest tastiness value you found that allowed for the selection of k candies."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= k <= price.length <= 10^5",
+    "1 <= price[i] <= 10^9",
+    "You must select k distinct candies.",
+    "Return the maximum tastiness, which is the smallest absolute difference of prices in the selected candies."
+  ]
+}

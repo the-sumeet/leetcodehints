@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, understand what it means for a binary string to be alternating. An alternating string has no two adjacent characters that are the same. For example, '010' and '1010' are alternating, while '000' is not."
+    },
+    {
+      "content": "Count the number of '0's and '1's in the string. For a string to be rearranged into an alternating pattern, the counts of '0's and '1's must differ by at most 1. If they differ by more than that, it's impossible to create an alternating string."
+    },
+    {
+      "content": "Consider the two possible alternating patterns for a string of length n: one starting with '0' (e.g., '0101...') and another starting with '1' (e.g., '1010...'). Depending on the counts of '0's and '1's, one of these patterns will be valid."
+    },
+    {
+      "content": "To determine the number of swaps needed, you can compare the original string with the two valid patterns. Count how many characters are out of place for each pattern."
+    },
+    {
+      "content": "When counting mismatches, remember that a mismatch for '0' in the '0101...' pattern means you have a '1' in that position, and vice versa. Keep track of the mismatches for both patterns separately."
+    },
+    {
+      "content": "After counting mismatches, you will have two values: one for each pattern. The number of swaps needed to fix the mismatches is half the number of mismatches since each swap corrects two positions."
+    },
+    {
+      "content": "If the number of mismatches for both patterns is odd, it indicates that you cannot achieve an alternating string with that pattern. In such a case, return -1."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as strings with a single character or strings that are already alternating. For a single character, the output should be 0 since no swaps are needed."
+    },
+    {
+      "content": "Remember that the output should be the minimum number of swaps required. If both patterns are valid, you should return the smaller of the two swap counts."
+    },
+    {
+      "content": "Finally, implement the logic to compare the original string with the two patterns, count mismatches, and calculate the swaps needed. Use the counts to determine if the transformation is possible."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 1000",
+    "Characters in s are either '0' or '1'.",
+    "Return -1 if it's impossible to make the string alternating.",
+    "Output the minimum number of swaps needed."
+  ]
+}

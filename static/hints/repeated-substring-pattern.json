@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering the length of the string `s`. If the length is 1, can it be constructed from a substring? Think about how many times a substring can repeat to form `s`."
+    },
+    {
+      "content": "Examine the possible lengths of the substring. Any valid substring must divide the length of `s` evenly. What are the factors of the length of `s`?"
+    },
+    {
+      "content": "For a substring of length `n`, the string `s` can be constructed by repeating this substring `k` times, where `k = len(s) / n`. Consider how you might check this condition."
+    },
+    {
+      "content": "You can iterate through possible lengths of the substring from 1 up to half the length of `s`. Why is half the length a good stopping point?"
+    },
+    {
+      "content": "When you find a candidate substring, you can create a new string by repeating this substring `k` times. How can you efficiently check if this new string matches `s`?"
+    },
+    {
+      "content": "Consider using string slicing to extract the substring and then use string multiplication to form the repeated string. For example: `substring = s[:n]` and then `repeated = substring * k`."
+    },
+    {
+      "content": "Think about edge cases, such as when `s` consists of the same character repeated multiple times. How would your logic handle such cases?"
+    },
+    {
+      "content": "You might also consider using a more efficient approach involving string manipulation. For example, if you concatenate `s` with itself and check for `s` in the result, what does that imply?"
+    },
+    {
+      "content": "Remember to check if the length of `s` is divisible by the length of your candidate substring before proceeding to compare strings. This is crucial for avoiding unnecessary checks."
+    },
+    {
+      "content": "Finally, once you have a candidate substring, ensure to validate that repeating it `k` times indeed reconstructs `s`. If it does, you can confidently return true; otherwise, continue checking other lengths."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^4",
+    "s consists of lowercase English letters.",
+    "The output should be a boolean value: true or false.",
+    "Consider edge cases with single-character strings or strings with all identical characters."
+  ]
+}

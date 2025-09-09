@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to create a wrapper function around the asynchronous function `fn`. This wrapper will be responsible for managing the time limit."
+    },
+    {
+      "content": "Consider using `Promise.race()` to handle multiple promises. You can create a promise that rejects after the time limit and race it against the original function's promise."
+    },
+    {
+      "content": "When implementing the time limit, think about how to create a timeout promise. This promise should use `setTimeout` to reject after `t` milliseconds."
+    },
+    {
+      "content": "Make sure to handle both the resolved and rejected states of the original function. You will need to return an object with either the result or the error message."
+    },
+    {
+      "content": "Remember to measure the time taken by the function execution. You can use `performance.now()` to get the current time before and after the function call."
+    },
+    {
+      "content": "Consider edge cases, such as when `fn` throws an error immediately. Ensure your implementation can catch and handle this correctly."
+    },
+    {
+      "content": "Think about the return format. If the function resolves successfully, you should return an object with the `resolved` key and the time taken. If it fails, return an object with the `rejected` key."
+    },
+    {
+      "content": "Make sure to handle the case where the time limit is set to 0. In this case, the function should immediately reject with 'Time Limit Exceeded'."
+    },
+    {
+      "content": "In your implementation, ensure that the timeout promise and the original function promise are properly set up to race against each other. This is crucial for enforcing the time limit."
+    },
+    {
+      "content": "Finally, put all the pieces together. Your function should create both promises, use `Promise.race()`, and handle the results appropriately to return the required format."
+    }
+  ],
+  "questionNotes": [
+    "fn is an asynchronous function that returns a promise.",
+    "The time limit t is in milliseconds and can be 0.",
+    "Return format must be an object with either 'resolved' or 'rejected' keys.",
+    "Handle edge cases like immediate errors and zero time limits."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You have an m x n grid, where m can be at most 5 and n can be up to 1000. This means that while m is small, n can be quite large, which may lead you to consider dynamic programming or combinatorial approaches."
+    },
+    {
+      "content": "Consider how you can represent the coloring of the grid. Each cell can be painted in one of three colors: red, green, or blue. Think about how the colors of adjacent cells affect your choices for the current cell."
+    },
+    {
+      "content": "Focus on the adjacency condition. No two adjacent cells can have the same color. This means that the color of a cell will depend on the colors of its neighboring cells. How can you track these dependencies?"
+    },
+    {
+      "content": "Try to break down the problem into smaller parts. For example, consider how to color a single row first. How many ways can you color a row of length n with the given constraints?"
+    },
+    {
+      "content": "For a single row, if you choose a color for the first cell, you have two choices for the second cell (since it can't be the same color). This pattern continues. Can you derive a formula for the number of ways to paint a single row?"
+    },
+    {
+      "content": "Once you have the number of ways to paint a single row, think about how this can be extended to multiple rows. Each new row will also depend on the colors of the previous row, so consider how to combine the results."
+    },
+    {
+      "content": "You might want to use dynamic programming to store the results of previous calculations. Define a state that captures the number of valid colorings for a certain number of rows and columns."
+    },
+    {
+      "content": "Remember to account for the modulo operation as specified in the problem. Since the number of ways can grow large, make sure to take results modulo 10^9 + 7 at each step."
+    },
+    {
+      "content": "Consider edge cases, such as when m = 1 or n = 1. How does the solution simplify in these scenarios? Can you derive the results directly without complex calculations?"
+    },
+    {
+      "content": "Think about how to represent the colors of the rows. You might want to use bit masking or tuples to represent the colors of the last row when calculating the number of ways to paint the next row."
+    },
+    {
+      "content": "When calculating the number of ways to paint the next row based on the previous row, ensure that you are correctly iterating through all possible color combinations that satisfy the adjacency condition."
+    },
+    {
+      "content": "Consider using a recursive approach with memoization to avoid recalculating the same states. This can help reduce the time complexity of your solution."
+    },
+    {
+      "content": "As you build your solution, test it with small inputs to ensure correctness. For example, check m = 2 and n = 2 to see if your logic holds."
+    },
+    {
+      "content": "Once you have a working solution for smaller grids, gradually test it with larger values of n while keeping m fixed. This will help you identify any performance issues."
+    },
+    {
+      "content": "Finally, think about how to structure your final function. You will need to initialize your DP table, iterate through the rows, and apply the coloring logic you've developed. What will your return statement look like?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m <= 5, 1 <= n <= 1000",
+    "Return the result modulo 10^9 + 7.",
+    "All cells must be painted, and no two adjacent cells can have the same color."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the boolean expression. Identify the basic components: '0', '1', '&', '|', and parentheses. Recognizing how these elements interact is crucial for evaluating the expression."
+    },
+    {
+      "content": "Remember that the operations '&' and '|' are both binary operators. When evaluating an expression, you need to consider the order of operations, which is determined by parentheses first, followed by left-to-right evaluation."
+    },
+    {
+      "content": "Consider how changing a '1' to a '0' or a '0' to a '1' affects the overall value of the expression. Each of these changes counts as one operation, so think about the cost of each change."
+    },
+    {
+      "content": "When you encounter an '&' or a '|', think about how changing one to the other could potentially affect the final result. For example, changing '&' to '|' could increase the chance of the expression evaluating to '1'."
+    },
+    {
+      "content": "Evaluate small sub-expressions first. For instance, if you have '(0&1)', what is its value? Then think about how you could change it to get a different result with the least cost."
+    },
+    {
+      "content": "Keep track of the minimum cost needed to change the expression's final value. You can use a recursive approach or dynamic programming to store intermediate results for sub-expressions."
+    },
+    {
+      "content": "Consider using a stack to help manage the parentheses. As you encounter '(', push the current context onto the stack, and when you see ')', pop from the stack to evaluate the enclosed expression."
+    },
+    {
+      "content": "When evaluating an expression, create a function that returns both the final value of the expression and the minimum cost to achieve that value. This dual return can simplify your logic."
+    },
+    {
+      "content": "Think about base cases. For example, if the expression is just '0' or '1', what is the minimum cost to change it to the opposite value? These cases can help you build your recursive solution."
+    },
+    {
+      "content": "As you evaluate expressions with multiple operators, remember to consider all possible combinations of changes. For example, if you have '1|0', changing '1' to '0' or '|' to '&' can yield different costs."
+    },
+    {
+      "content": "Pay attention to nested expressions. Each time you encounter a nested expression, you may need to evaluate it independently before combining its result with the outer expression."
+    },
+    {
+      "content": "Consider edge cases where the expression is already at the desired value. For example, if the expression evaluates to '0' and you want '0', the cost is zero, so handle this case early."
+    },
+    {
+      "content": "When working with larger expressions, ensure your solution is efficient. Aim for a time complexity that is manageable given the constraints (up to 100,000 characters)."
+    },
+    {
+      "content": "To finalize your approach, think about how to systematically apply changes to the expression. You might want to use a recursive function that explores all possible changes and tracks the minimum cost."
+    },
+    {
+      "content": "As a final step, ensure your implementation correctly handles all operations and edge cases. Test your function with various expressions to validate its correctness and efficiency."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= expression.length <= 10^5",
+    "Expression only contains '1', '0', '&', '|', '(', and ')'.",
+    "All parentheses are properly matched.",
+    "There will be no empty parentheses (i.e: '()' is not a substring of expression)."
+  ]
+}

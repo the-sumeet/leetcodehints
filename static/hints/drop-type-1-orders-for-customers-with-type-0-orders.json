@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of orders, each with an `order_id`, `customer_id`, and `order_type`. Pay attention to how you can group orders by `customer_id`."
+    },
+    {
+      "content": "Identify the criteria for dropping orders. You need to drop Type 1 orders (where `order_type` is 1) for customers who have at least one Type 0 order (where `order_type` is 0). This means you need to check the presence of Type 0 orders for each customer."
+    },
+    {
+      "content": "Consider using a data structure to keep track of which customers have Type 0 orders. A set or a dictionary can be useful for this purpose, allowing you to efficiently check if a customer qualifies for dropping their Type 1 orders."
+    },
+    {
+      "content": "Iterate through the list of orders and populate your data structure with customers who have Type 0 orders. For each order, check the `order_type` and update your structure accordingly."
+    },
+    {
+      "content": "Once you have identified customers with Type 0 orders, you can filter out the Type 1 orders. Think about how you can create a new list of orders that excludes these Type 1 orders for the identified customers."
+    },
+    {
+      "content": "Make sure to handle cases where a customer has both Type 0 and Type 1 orders. You should only drop the Type 1 orders and retain the Type 0 orders for those customers."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no Type 0 orders at all. In such cases, no orders should be dropped, and all orders should be returned as is."
+    },
+    {
+      "content": "Think about the return format. You will need to return the remaining orders in the same structure as the input. Ensure that you maintain the integrity of the original data structure."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various inputs, including edge cases. For example, what happens if all customers have only Type 1 orders? Your solution should still correctly return all orders."
+    },
+    {
+      "content": "Now, you can start implementing your solution. Begin with the logic to identify customers with Type 0 orders, then proceed to filter out the Type 1 orders. Remember to keep the original structure intact."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of a list of orders with fields: order_id, customer_id, and order_type.",
+    "You need to drop Type 1 orders for customers who have Type 0 orders.",
+    "Ensure that you maintain the original order and structure of the data in the output.",
+    "Consider edge cases where there are no Type 0 orders or all orders are Type 1."
+  ]
+}

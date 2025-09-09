@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by breaking down the problem into smaller parts. You need to check for four specific patterns in the `dna_sequence`. Consider how you might approach checking each pattern one at a time."
+    },
+    {
+      "content": "For the first pattern, check if the `dna_sequence` starts with 'ATG'. You can use string methods available in SQL to accomplish this. Think about how you would write a condition to check the beginning of a string."
+    },
+    {
+      "content": "Next, focus on the stop codons. You need to check if the sequence ends with 'TAA', 'TAG', or 'TGA'. You can use the `LIKE` operator in SQL for this. Remember to account for the length of the sequences when checking the end."
+    },
+    {
+      "content": "For the third pattern, you need to determine if the sequence contains the motif 'ATAT'. Consider using the `LIKE` operator again, but this time to check for the presence of a substring anywhere in the `dna_sequence`."
+    },
+    {
+      "content": "The last pattern requires checking for at least three consecutive 'G's. You can use a pattern like 'GGG%' in your `LIKE` condition. Think about how you can structure this to ensure it captures any occurrence of 'GGG' or more."
+    },
+    {
+      "content": "As you build your SQL query, remember to create a structure that allows you to return multiple columns for each pattern. Each column should indicate whether the pattern is present (1) or not (0)."
+    },
+    {
+      "content": "Make sure to alias your columns appropriately in the SELECT statement. This will help you return the results in the desired format. For example, you might use 'has_start' for the first pattern."
+    },
+    {
+      "content": "Don't forget to order your results by `sample_id` in ascending order at the end of your query. This is important for the output format specified in the problem statement."
+    },
+    {
+      "content": "Consider edge cases such as sequences that are very short or do not contain any of the patterns. How will your checks handle these cases? Ensure your conditions are robust enough to handle such scenarios."
+    },
+    {
+      "content": "Think about how you can combine all these checks into a single SQL query. You might need to use CASE statements to evaluate each pattern and return the appropriate 1 or 0 for each column."
+    }
+  ],
+  "questionNotes": [
+    "Each row in the Samples table is unique based on sample_id.",
+    "The output must be ordered by sample_id in ascending order.",
+    "Return format includes additional columns indicating the presence of each pattern.",
+    "Ensure to handle edge cases where DNA sequences may not meet any of the specified patterns."
+  ]
+}

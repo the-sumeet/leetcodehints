@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a Quad-Tree. Each node can either be a leaf node or have four children. A leaf node indicates that the corresponding sub-grid contains only 0's or only 1's."
+    },
+    {
+      "content": "Before diving into the recursion, consider how to check if a sub-grid is uniform. You can iterate through the elements of the sub-grid to see if they all have the same value."
+    },
+    {
+      "content": "When you find a uniform sub-grid, set the `isLeaf` property to `True` and the `val` property to the value of that sub-grid (either 0 or 1). This means you won't need to create children for this node."
+    },
+    {
+      "content": "If the sub-grid is not uniform, create a new node with `isLeaf` set to `False`. You can set the `val` to either 0 or 1; it doesn't affect the correctness of the Quad-Tree."
+    },
+    {
+      "content": "Divide the current grid into four quadrants: top-left, top-right, bottom-left, and bottom-right. You can calculate the boundaries for each quadrant based on the current grid's dimensions."
+    },
+    {
+      "content": "For each of the four quadrants, make a recursive call to build the Quad-Tree. Ensure that you pass the correct sub-grid to each recursive call."
+    },
+    {
+      "content": "Remember to handle the base case for the recursion properly. If the grid size is 1x1, it should directly return a leaf node with the corresponding value."
+    },
+    {
+      "content": "When constructing the Quad-Tree, consider edge cases such as all 0's or all 1's in the grid. These should create a single leaf node instead of multiple nodes."
+    },
+    {
+      "content": "After constructing the Quad-Tree, think about how to serialize it for output. The output format requires a level order traversal representation of the tree."
+    },
+    {
+      "content": "As a final step, ensure that your function returns the root of the Quad-Tree after all recursive calls have completed. This root node will represent the entire grid."
+    }
+  ],
+  "questionNotes": [
+    "Grid is n x n where n is a power of 2 (2^x for 0 <= x <= 6).",
+    "The output format is a level order traversal of the Quad-Tree.",
+    "Each node is represented as [isLeaf, val], where 1 indicates True and 0 indicates False.",
+    "You can set val to either 0 or 1 when isLeaf is False, both are accepted."
+  ]
+}

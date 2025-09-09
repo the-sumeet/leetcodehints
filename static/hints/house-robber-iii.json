@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree. Each node represents a house, and the values represent the amount of money in each house. Remember that you cannot rob two directly linked houses."
+    },
+    {
+      "content": "Consider how you would approach the problem recursively. For each house, you have two choices: either rob it and skip its children, or skip it and consider its children. This leads to a decision tree."
+    },
+    {
+      "content": "Think about the base cases for your recursion. What should happen when you reach a leaf node? How do you handle null nodes?"
+    },
+    {
+      "content": "You can use a helper function that returns two values for each node: the maximum amount of money that can be robbed if you rob this house, and the maximum amount if you do not rob this house."
+    },
+    {
+      "content": "When you rob a house, you need to add its value to the maximum money from its grandchildren (the children of its children). If you do not rob it, you can take the maximum from its direct children."
+    },
+    {
+      "content": "Formulate the recursive relationships clearly. For a given node, if you rob it, the total is its value plus the values from its grandchildren. If you don't rob it, the total is the sum of the maximum values from its children."
+    },
+    {
+      "content": "Be careful with the tree traversal. You might want to use a depth-first search (DFS) approach to visit each node and calculate the values recursively."
+    },
+    {
+      "content": "Consider memoization or dynamic programming to optimize your solution. You can store the results of previously computed nodes to avoid redundant calculations."
+    },
+    {
+      "content": "Think through some edge cases, such as when the tree has only one node or when it is skewed (all nodes are on one side). How will your solution handle these cases?"
+    },
+    {
+      "content": "Finally, ensure your function returns the maximum value from the root node. You should call your helper function starting from the root and return the maximum of the two values it provides."
+    }
+  ],
+  "questionNotes": [
+    "The input is a binary tree represented by a root node.",
+    "You cannot rob two directly linked houses.",
+    "The number of nodes is between 1 and 10^4.",
+    "Node values range from 0 to 10^4."
+  ]
+}

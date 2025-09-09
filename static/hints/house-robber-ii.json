@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider how the circular arrangement of houses affects your approach. You cannot rob both the first and the last house because they are adjacent."
+    },
+    {
+      "content": "Think about how you would solve the problem if the houses were arranged in a straight line. What is the maximum amount you could rob from that arrangement?"
+    },
+    {
+      "content": "You can break the circular problem into two linear problems: one where you include the first house and exclude the last, and another where you exclude the first house and include the last."
+    },
+    {
+      "content": "For each of the two linear cases, you can use dynamic programming to keep track of the maximum amount that can be robbed up to each house."
+    },
+    {
+      "content": "Define a function that takes an array of house values and returns the maximum amount that can be robbed from that linear arrangement."
+    },
+    {
+      "content": "In your dynamic programming approach, maintain an array where each index represents the maximum amount that can be robbed up to that house. You can decide to rob or skip each house based on the previous values."
+    },
+    {
+      "content": "Remember the base cases for your dynamic programming array: if there are no houses, the maximum is 0; if there is one house, the maximum is the value of that house."
+    },
+    {
+      "content": "When filling out your DP array, consider the recurrence relation: for each house, you can either take the current house's value plus the maximum amount from two houses back, or just take the maximum from the previous house."
+    },
+    {
+      "content": "After calculating the maximum amounts for both linear cases, the final answer will be the maximum of the two results."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there is only one house or when all houses have zero value. What should your function return in these scenarios?"
+    }
+  ],
+  "questionNotes": [
+    "The houses are arranged in a circle, so the first and last houses are adjacent.",
+    "You must not rob two adjacent houses.",
+    "Constraints: 1 <= nums.length <= 100, 0 <= nums[i] <= 1000.",
+    "Return the maximum amount of money that can be robbed."
+  ]
+}

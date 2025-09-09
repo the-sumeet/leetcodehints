@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. You are given an array of pairs, where each pair represents a day and its corresponding stock price. Make sure to visualize how these points will be plotted on a 2D plane."
+    },
+    {
+      "content": "Consider how you would connect these points with lines. A line can be represented by two points, and if three points are collinear, they can be represented by a single line."
+    },
+    {
+      "content": "To determine if three points are collinear, you can use the slope formula. Remember that the slope between two points (x1, y1) and (x2, y2) is (y2 - y1) / (x2 - x1)."
+    },
+    {
+      "content": "Think about how you can iterate through the list of stock prices to check for collinearity. You can maintain a count of how many lines you need as you progress through the points."
+    },
+    {
+      "content": "When checking for collinearity, you can compare the slope of the current segment with the previous one. If they are equal, you continue on the same line; if not, you need to start a new line."
+    },
+    {
+      "content": "Make sure to handle the case where there are only two points. Any two points can always form a line, so the minimum number of lines needed in that case is 1."
+    },
+    {
+      "content": "Consider edge cases where all points are either increasing or decreasing. In such cases, you might end up with just one line. How would your logic handle this scenario?"
+    },
+    {
+      "content": "As you iterate through the stock prices, keep track of the last two points to calculate the current slope. If the slope changes, increment your line count."
+    },
+    {
+      "content": "Remember to sort the stockPrices by day before processing them. This ensures that you are always moving from left to right on the X-axis."
+    },
+    {
+      "content": "Finally, consider how you will return the count of lines. You should return the total number of line segments required to represent the entire line chart."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= stockPrices.length <= 10^5",
+    "Each stockPrices[i] contains two elements: day and price.",
+    "All day values are distinct.",
+    "The output should be the minimum number of lines needed to represent the chart."
+  ]
+}

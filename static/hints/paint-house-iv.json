@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You have to paint houses such that no two adjacent houses have the same color. This means for any house `i`, the color of house `i` cannot be the same as house `i-1`."
+    },
+    {
+      "content": "Consider the second condition regarding equidistant houses. For an even number of houses `n`, the pairs of equidistant houses are: (0, n-1), (1, n-2), (2, n-3), etc. Make sure to keep track of these pairs when choosing colors."
+    },
+    {
+      "content": "Think about how you can represent the state of painting the houses. You might want to use dynamic programming to keep track of the minimum costs associated with painting each house a specific color."
+    },
+    {
+      "content": "Define a DP table where `dp[i][j]` represents the minimum cost to paint up to house `i` with color `j`. You will need to fill this table considering the constraints mentioned."
+    },
+    {
+      "content": "When filling the DP table, remember to check the previous house's color. You cannot paint house `i` with the same color as house `i-1`. This can be done using a loop to check the other two colors."
+    },
+    {
+      "content": "For the equidistant condition, ensure that when calculating costs for house `i`, you also check the color of the house that is equidistant from the end. This means you need to ensure that `dp[i][j]` does not conflict with `dp[n-i-1][...]`."
+    },
+    {
+      "content": "As you build your DP table, consider initializing the first house's costs directly from the `cost` array. For example, `dp[0][j] = cost[0][j]` for each color `j`."
+    },
+    {
+      "content": "When calculating the minimum cost for house `i`, take the minimum of the costs from the previous house for the two colors that are not the same as the current color. This will help you avoid adjacent color conflicts."
+    },
+    {
+      "content": "At the end, after filling the DP table, the result will be the minimum value from the last row of the DP table, ensuring that the last house's color does not conflict with the first house's color."
+    },
+    {
+      "content": "Finally, don't forget to handle edge cases, such as when all costs are zero or when the costs vary significantly. Make sure your solution can handle the upper limits of the constraints efficiently."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5, n is even.",
+    "cost.length == n and cost[i].length == 3.",
+    "0 <= cost[i][j] <= 10^5.",
+    "Return the minimum cost to paint the houses satisfying the given conditions."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for the array to be complementary. For an array `nums` of length `n`, it is complementary if for every index `i`, `nums[i] + nums[n - 1 - i]` equals the same value. This means you need to focus on pairs of elements."
+    },
+    {
+      "content": "Consider how many pairs you can form from the array. Since `n` is even, you can form `n/2` pairs. For each pair, you need to ensure their sum can be adjusted to a common target sum."
+    },
+    {
+      "content": "Think about the possible sums that can be formed with the elements in `nums`. The minimum sum of a pair is `2` (1 + 1) and the maximum is `2 * limit`. This gives you a range of possible target sums to consider."
+    },
+    {
+      "content": "For each pair `(nums[i], nums[n - 1 - i])`, identify how many moves are needed to make their sum equal to a target sum. You can replace either number with any integer from `1` to `limit`."
+    },
+    {
+      "content": "Create a frequency array (or a similar structure) to track how many moves are needed to achieve each possible target sum. This can help you efficiently calculate the total moves required for each potential target sum."
+    },
+    {
+      "content": "When calculating the moves for each pair, consider the following scenarios:  \n- If the current sum is less than the target, you may need to increase one or both numbers.  \n- If the current sum is greater than the target, you may need to decrease one or both numbers."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when all numbers are already at the limit or when they are all the same. These cases can simplify your calculations considerably."
+    },
+    {
+      "content": "As you build your frequency array, remember to account for the number of moves required to change a number to either the lower limit (1) or the upper limit (limit). This will help you minimize the total moves."
+    },
+    {
+      "content": "Once you have your frequency array populated with the required moves for each possible target sum, find the target sum that requires the least number of moves. This will be your answer."
+    },
+    {
+      "content": "Finally, ensure that your implementation efficiently handles the constraints, especially since `n` can be as large as `100,000`. Aim for a solution that operates in linear time with respect to the size of the input."
+    }
+  ],
+  "questionNotes": [
+    "The input array `nums` has an even length `n`.",
+    "The value of `limit` defines the range of integers you can use to replace elements in `nums`.",
+    "You need to return the minimum number of moves required to make the array complementary.",
+    "Each number in `nums` can be replaced by any integer between 1 and `limit`, inclusive.",
+    "Constraints: 2 <= n <= 10^5, 1 <= nums[i] <= limit <= 10^5."
+  ]
+}

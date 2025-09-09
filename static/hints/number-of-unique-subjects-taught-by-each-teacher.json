@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `Teacher` table. Each row represents a unique combination of `teacher_id`, `subject_id`, and `dept_id`. Focus on how to group the data by `teacher_id`."
+    },
+    {
+      "content": "Consider what it means to count unique subjects. You need to ensure that you are not counting the same subject multiple times for a teacher, even if they teach it in different departments."
+    },
+    {
+      "content": "Think about how SQL aggregate functions work. You will likely need to use `COUNT()` to get the number of unique subjects for each teacher. Remember to use `DISTINCT` to ensure uniqueness."
+    },
+    {
+      "content": "You might want to start by selecting the distinct subjects for each teacher. This can be done using a `GROUP BY` clause on `teacher_id` and `subject_id`."
+    },
+    {
+      "content": "After grouping by `teacher_id` and `subject_id`, you can then count the number of unique subjects per teacher. This will require a nested query or a common table expression (CTE)."
+    },
+    {
+      "content": "Make sure to handle cases where a teacher may not teach any subjects. Your query should still return a row for such teachers, potentially with a count of zero."
+    },
+    {
+      "content": "When counting unique subjects, consider using a `JOIN` if you have other related tables, but in this case, you only need to focus on the `Teacher` table."
+    },
+    {
+      "content": "Remember to return the result in the specified format. The output should include `teacher_id` and a count of unique subjects, labeled as `cnt`."
+    },
+    {
+      "content": "Pay attention to the order of the results. Although the problem states that the order does not matter, it’s good practice to ensure consistent output, perhaps by ordering by `teacher_id`."
+    },
+    {
+      "content": "Finally, your SQL query might look something like this: `SELECT teacher_id, COUNT(DISTINCT subject_id) AS cnt FROM Teacher GROUP BY teacher_id;`. Ensure you test it with various inputs to confirm it handles all edge cases."
+    }
+  ],
+  "questionNotes": [
+    "Each row in the Teacher table indicates a unique combination of teacher_id, subject_id, and dept_id.",
+    "The primary key is (subject_id, dept_id), which ensures that the same subject cannot be taught in the same department by the same teacher multiple times.",
+    "The output must include teacher_id and a count of unique subjects (cnt).",
+    "Return format does not require a specific order for the results."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the vowels in the string. Remember, you need to ensure that every substring contains all five vowels: 'a', 'e', 'i', 'o', and 'u'. Consider how you can track the presence of these vowels as you explore substrings."
+    },
+    {
+      "content": "Think about how to count consonants in the string. A consonant is any letter that is not a vowel. You can maintain a count of consonants as you iterate through the string to help you check the condition of having exactly k consonants."
+    },
+    {
+      "content": "Consider using a sliding window approach. This technique allows you to efficiently explore substrings by expanding and contracting a window while keeping track of the number of vowels and consonants within that window."
+    },
+    {
+      "content": "When using a sliding window, determine how to adjust the window size. You can increment the right end of the window to expand it and include more characters, while also moving the left end to shrink it when necessary."
+    },
+    {
+      "content": "As you slide the window, maintain a count of how many distinct vowels you have encountered. You can use a dictionary or a set to track the vowels. Ensure that you only count a vowel once, regardless of how many times it appears in the substring."
+    },
+    {
+      "content": "Keep track of the number of consonants in the current window. If this number exceeds k, you will need to move the left side of the window to reduce the count of consonants back to k."
+    },
+    {
+      "content": "Once you have a valid window (containing all vowels and exactly k consonants), count how many valid substrings can be formed from this window. You can do this by moving the left pointer to count all valid starting positions for the current right pointer."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when k is 0. In this case, you should only consider substrings that contain all vowels and no consonants. Think about how this simplifies your checks."
+    },
+    {
+      "content": "Remember to consider the constraints carefully. The length of the string can be quite large (up to 200,000). Your solution should be efficient, ideally O(n) or O(n log n), to handle the maximum input sizes."
+    },
+    {
+      "content": "Finally, ensure your output is correct by testing against various cases, including those where the string contains repeated characters or is composed entirely of vowels or consonants. Make sure to return the total count of valid substrings."
+    }
+  ],
+  "questionNotes": [
+    "You need to find substrings that contain all five vowels: 'a', 'e', 'i', 'o', 'u'.",
+    "Each substring must contain exactly k consonants.",
+    "The input string length is between 5 and 200,000.",
+    "The output should be the total count of valid substrings.",
+    "Consider edge cases such as k = 0 or strings with no valid substrings."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by defining the `ThroneInheritance` class and initializing it with the king's name. You'll want to store the king and create a structure to hold the family tree, such as a dictionary where each key is a person's name and the value is a list of their children."
+    },
+    {
+      "content": "Think about how to represent the family relationships. You could use a dictionary where each key is a parent's name and the value is a list of their children's names. This will help you easily access a parent's children when implementing the `birth` method."
+    },
+    {
+      "content": "In the `birth` method, ensure you add the new child's name to the correct parent's list in your dictionary. Remember to check if the parent exists in the dictionary before adding the child."
+    },
+    {
+      "content": "For the `death` method, you need to keep track of who is dead. You can use a set to store the names of deceased individuals, which will allow you to efficiently check if someone is alive when generating the inheritance order."
+    },
+    {
+      "content": "When implementing the `getInheritanceOrder` method, you need to traverse the family tree starting from the king. Use a recursive or iterative approach to collect names, but skip any names that are in the set of deceased individuals."
+    },
+    {
+      "content": "Consider the order in which you collect names during the traversal. You should always visit the oldest child first, which means you should iterate through the list of children in the order they were added."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when a person has no children or when all of a person's children are dead. In these cases, you will need to move up the family tree to find the next eligible successor."
+    },
+    {
+      "content": "Remember that the `Successor` function is not directly implemented but is conceptually important. You can think of it as a helper function that dictates the order of traversal based on the rules provided."
+    },
+    {
+      "content": "While building the inheritance order, ensure that you respect the constraints provided, such as the maximum number of calls to `birth` and `death`, and the uniqueness of names."
+    },
+    {
+      "content": "Finally, when returning the inheritance order, make sure to return an array of names in the correct format, excluding any deceased individuals. This will be your final output for the `getInheritanceOrder` method."
+    }
+  ],
+  "questionNotes": [
+    "The class must handle the king's name and family relationships efficiently.",
+    "Use a dictionary for storing parent-child relationships.",
+    "Track deceased individuals using a set for efficient lookups.",
+    "Ensure that the order of children is respected when traversing the family tree.",
+    "Handle cases where a person has no children or all children are deceased.",
+    "Return the inheritance order as an array, excluding deceased members."
+  ]
+}

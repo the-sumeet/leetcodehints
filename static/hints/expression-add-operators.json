@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to generate expressions from the input string. You can think of each digit as a potential starting point for an expression, and you will need to consider inserting operators between them."
+    },
+    {
+      "content": "Remember that you can insert three types of operators: '+', '-', and '*'. Each operator will affect the evaluation of the expression differently, especially the multiplication operator due to its precedence."
+    },
+    {
+      "content": "Consider how to handle multiple digits. If you have '123', you can treat it as '1', '2', and '3' or as '12' and '3', or even '123' as a whole. This means you need to explore all possible partitions of the string."
+    },
+    {
+      "content": "Think about using a recursive approach to explore all combinations of inserting operators. You can define a recursive function that takes the current index in the string and the current expression being built."
+    },
+    {
+      "content": "When you reach the end of the string, evaluate the current expression to see if it matches the target. You might want to create a helper function to evaluate the expression safely."
+    },
+    {
+      "content": "Be cautious about leading zeros. If you form a number that starts with '0', it should only be considered valid if it is exactly '0'. This means you need to check for leading zeros when forming numbers."
+    },
+    {
+      "content": "To evaluate expressions correctly, remember that multiplication has a higher precedence than addition and subtraction. You may need to implement a way to handle operator precedence when evaluating the final expression."
+    },
+    {
+      "content": "You can use a stack to help with evaluating expressions, especially when handling operator precedence. Push numbers onto the stack and apply operators as you encounter them."
+    },
+    {
+      "content": "Consider edge cases such as when the input string is very short (e.g., '1') or when the target is very large or very small. These cases might lead to quick conclusions about possible expressions."
+    },
+    {
+      "content": "Make sure to return all valid expressions in a list. The order of expressions in the output does not matter, but they should all be unique and valid according to the problem's constraints."
+    },
+    {
+      "content": "As you build your expressions, keep track of the current value of the expression and the last value added to the stack. This will help you manage the multiplication and addition/subtraction correctly."
+    },
+    {
+      "content": "You might want to use a backtracking approach to explore all possible combinations of digits and operators. This means you can try adding an operator and then recursively call your function to continue building the expression."
+    },
+    {
+      "content": "When you evaluate the expression, consider using a simple parser to handle the string representation of the expression. This will help you convert it back to a numerical value for comparison with the target."
+    },
+    {
+      "content": "If you find that your current approach is not yielding results, consider logging intermediate expressions to debug and see where your logic might be failing or missing cases."
+    },
+    {
+      "content": "Finally, remember to handle the case where no valid expressions are found. Your function should return an empty list in such scenarios, ensuring that it meets the problem's requirements."
+    }
+  ],
+  "questionNotes": [
+    "Operands in the returned expressions should not contain leading zeros.",
+    "A number can contain multiple digits.",
+    "The output should be a list of unique valid expressions.",
+    "If no expressions evaluate to the target, return an empty list."
+  ]
+}

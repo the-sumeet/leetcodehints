@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree. The root node is labeled 1, and for any node labeled 'x', its children are labeled '2*x' (left child) and '2*x + 1' (right child)."
+    },
+    {
+      "content": "Notice that the labeling alternates direction based on the row number. For odd rows, the labels increase from left to right, while for even rows, they decrease from right to left. This means you'll need to determine the row of the given label."
+    },
+    {
+      "content": "To find the row of a node with a given label, observe that the number of nodes in the first 'n' rows is given by the formula: `2^n - 1`. You can find the row by determining the largest 'n' such that `2^n - 1 < label`."
+    },
+    {
+      "content": "Once you determine the row, calculate the index of the label within that row. For odd rows, the index is straightforward, but for even rows, you'll need to adjust it since the labels are in reverse order."
+    },
+    {
+      "content": "To construct the path from the label to the root, you can keep track of the current node and its parent. Use the properties of the binary tree to backtrack from the given label to the root."
+    },
+    {
+      "content": "When moving from a node to its parent, remember that for a node with label 'x': if 'x' is even, its parent is 'x/2'; if 'x' is odd, its parent is '(x-1)/2'."
+    },
+    {
+      "content": "As you backtrack to the root, store each label in a list. Since you start from the target label and move up to the root, you will need to reverse the list before returning it."
+    },
+    {
+      "content": "Consider edge cases such as the smallest label (1) which directly leads to the root without any parents. Ensure your solution handles this gracefully."
+    },
+    {
+      "content": "Make sure to test your solution with different labels, especially those that are powers of two, as they represent the leftmost nodes in their respective rows."
+    },
+    {
+      "content": "Now, try to implement the logic to find the path. Start with the given label, determine its row, and then backtrack to the root while constructing the path list. Don't forget to reverse the list before returning!"
+    }
+  ],
+  "questionNotes": [
+    "1 <= label <= 10^6",
+    "The tree is infinite and labeled in a specific zigzag manner.",
+    "Ensure to handle both odd and even row labels correctly.",
+    "Return the path as a list from the root to the given label."
+  ]
+}

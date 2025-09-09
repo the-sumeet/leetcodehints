@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a list of edges represented as tuples (u, v, w), where 'u' is the source node, 'v' is the target node, and 'w' is the travel time. This forms a directed graph."
+    },
+    {
+      "content": "Consider how you can represent the graph in code. An adjacency list or a dictionary of lists might be useful for storing the edges and their weights. For example: `graph[u] = [(v, w)]`."
+    },
+    {
+      "content": "Think about how to traverse the graph to find the shortest path from the starting node 'k' to all other nodes. Dijkstra's algorithm is a good choice for this type of problem since it efficiently finds the shortest paths in a weighted graph."
+    },
+    {
+      "content": "Remember that Dijkstra's algorithm uses a priority queue to explore the node with the smallest known distance first. You can use a min-heap to implement this efficiently."
+    },
+    {
+      "content": "As you implement Dijkstra's algorithm, keep track of the distances from the starting node 'k' to each node. Initialize the distance to the starting node as 0 and all others as infinity."
+    },
+    {
+      "content": "While processing each node, update the distances to its neighbors if a shorter path is found. Make sure to only update the distance if the new calculated distance is less than the previously recorded distance."
+    },
+    {
+      "content": "After running Dijkstra's algorithm, check if all nodes have been reached. If any node still has a distance of infinity, it means that node is unreachable from 'k'."
+    },
+    {
+      "content": "To return the result, you need to calculate the maximum time taken for all nodes to receive the signal. This will be the maximum value in your distance array."
+    },
+    {
+      "content": "If any node is unreachable, return -1. Otherwise, return the maximum time value you computed. Make sure to handle cases where 'n' is 1 separately, as it simplifies the problem."
+    },
+    {
+      "content": "Finally, consider edge cases such as when there are no edges in the graph or when 'k' is the only node. These cases can help ensure your solution is robust."
+    }
+  ],
+  "questionNotes": [
+    "1 <= k <= n <= 100",
+    "1 <= times.length <= 6000",
+    "times[i].length == 3",
+    "1 <= u_i, v_i <= n, u_i != v_i",
+    "0 <= w_i <= 100",
+    "All pairs (u_i, v_i) are unique.",
+    "Return -1 if not all nodes can receive the signal."
+  ]
+}

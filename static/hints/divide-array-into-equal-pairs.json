@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to form pairs from an array of integers. Each pair must consist of two equal elements, and every element must be used exactly once."
+    },
+    {
+      "content": "Consider the length of the array. Since the array has 2 * n elements, think about how many pairs you need to form. If the array length is odd or not a multiple of 2, it’s impossible to form pairs."
+    },
+    {
+      "content": "Think about how you can count the occurrences of each number in the array. A good approach is to use a hash map (or dictionary) to keep track of how many times each number appears."
+    },
+    {
+      "content": "Once you have the counts, consider what it means for a number to be able to form pairs. Specifically, each number must appear an even number of times to be paired completely."
+    },
+    {
+      "content": "As you analyze the counts, remember that if any number has an odd count, you can immediately conclude that forming pairs is impossible. This is a key insight."
+    },
+    {
+      "content": "If all counts are even, you can form pairs. However, think about how you would implement the logic to check this condition efficiently."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array consists of the same number repeated or when there are multiple unique numbers with varying counts."
+    },
+    {
+      "content": "You might want to sort the array first to visualize the pairs better, but remember that sorting is not necessary for the solution. Focus on counting instead."
+    },
+    {
+      "content": "Once you have your counts, iterate through the hash map. For each unique number, check if its count is even. If you find any odd count, return false immediately."
+    },
+    {
+      "content": "Finally, if you finish checking all counts and find them all even, you can confidently return true. This will indicate that it is possible to form the required pairs."
+    }
+  ],
+  "questionNotes": [
+    "The length of nums is always 2 * n.",
+    "Each element must belong to exactly one pair.",
+    "Pairs must consist of equal elements.",
+    "Return true if pairs can be formed, otherwise return false.",
+    "Constraints: 1 <= n <= 500, 1 <= nums[i] <= 500."
+  ]
+}

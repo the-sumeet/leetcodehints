@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. A square matrix has the same number of rows and columns. For example, in a 3x3 matrix, the primary diagonal runs from the top-left to the bottom-right."
+    },
+    {
+      "content": "Identify the indices for the primary diagonal. For a matrix `mat`, the elements on the primary diagonal can be accessed with indices where the row index equals the column index, i.e., `mat[i][i]`."
+    },
+    {
+      "content": "Next, consider the secondary diagonal. This diagonal runs from the top-right to the bottom-left. The indices for the secondary diagonal can be accessed using `mat[i][n-1-i]`, where `n` is the size of the matrix."
+    },
+    {
+      "content": "Remember that the center element in an odd-sized matrix (like a 3x3) is counted in both diagonals. Make sure to only add it once to your total sum."
+    },
+    {
+      "content": "To calculate the sum, initialize a variable to hold the total. Start adding elements from the primary diagonal using a loop."
+    },
+    {
+      "content": "After summing the primary diagonal, proceed to sum the secondary diagonal. Ensure to check if the current index corresponds to the center element in an odd-sized matrix to avoid double counting."
+    },
+    {
+      "content": "Consider edge cases, such as the smallest matrix (1x1). The sum should simply be the single element in this case."
+    },
+    {
+      "content": "When implementing your solution, ensure to handle both even and odd-sized matrices correctly. The logic for accessing indices will remain the same, but the center element condition will vary."
+    },
+    {
+      "content": "Make sure to return the total sum as the output of your function. The return type should match the expected output format, which is an integer."
+    },
+    {
+      "content": "Finally, your code structure might look like this: initialize a sum variable, loop through the matrix to add the primary diagonal, then loop again for the secondary diagonal, checking for the center element. Remember to return the sum at the end!"
+    }
+  ],
+  "questionNotes": [
+    "The matrix is square, meaning the number of rows equals the number of columns.",
+    "For the primary diagonal, use indices where row index equals column index.",
+    "For the secondary diagonal, use indices where the column index is `n-1-i`.",
+    "In odd-sized matrices, the center element is counted in both diagonals; only add it once.",
+    "The function should return an integer representing the total diagonal sum."
+  ]
+}

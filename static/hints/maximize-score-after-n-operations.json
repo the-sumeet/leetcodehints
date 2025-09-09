@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to perform exactly n operations on an array of size 2 * n, where each operation involves selecting two elements and calculating their GCD."
+    },
+    {
+      "content": "Remember that the score for each operation increases with the operation index. The score for the first operation is multiplied by 1, the second by 2, and so on. This means later operations can contribute more to the total score."
+    },
+    {
+      "content": "Consider how the GCD function works. The GCD of two numbers is the largest number that divides both of them. For example, gcd(8, 12) = 4. The choice of pairs can significantly affect your total score."
+    },
+    {
+      "content": "Think about the implications of removing elements after each operation. Once you choose two elements, they are no longer available for future operations, which means you need to plan your choices carefully."
+    },
+    {
+      "content": "Since the array has a maximum size of 14 (when n = 7), you can afford to explore combinations of pairs. Consider how you can generate all possible pairs from the array."
+    },
+    {
+      "content": "A brute-force approach could involve checking all combinations of pairs and calculating the total score for each valid combination. However, this may not be efficient enough, so think about how you can optimize this."
+    },
+    {
+      "content": "To optimize, consider using a backtracking approach. You can recursively select pairs, calculate the score, and then backtrack to try different combinations."
+    },
+    {
+      "content": "As you implement the backtracking, keep track of the maximum score found so far. This will help you determine when to prune branches of your search that cannot yield a better score."
+    },
+    {
+      "content": "Ensure you are correctly calculating the GCD for each pair. You can use Python's built-in `math.gcd` function or implement your own GCD function using the Euclidean algorithm."
+    },
+    {
+      "content": "Consider edge cases, such as when all numbers are the same. What happens to the GCD in this scenario? How does it affect your score?"
+    },
+    {
+      "content": "Think about the order in which you perform operations. Since the score is dependent on the operation index, you might want to prioritize pairs that yield a higher GCD earlier in the process."
+    },
+    {
+      "content": "You may want to sort the array first or use a priority queue to always access the highest GCD pairs first. This could help in maximizing the score more efficiently."
+    },
+    {
+      "content": "When implementing the backtracking, make sure to keep track of which elements have been used. You can use a boolean array or modify the original array temporarily during recursion."
+    },
+    {
+      "content": "As you finalize your implementation, test it with various inputs to ensure it handles all edge cases and adheres to the constraints provided in the problem statement."
+    },
+    {
+      "content": "Finally, remember to return the maximum score after all operations have been performed. This will be the result of your backtracking algorithm."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 7, nums.length == 2 * n, 1 <= nums[i] <= 10^6",
+    "You must perform exactly n operations.",
+    "The score for each operation is based on the operation index and the GCD of the chosen elements.",
+    "Elements are removed from the array after each operation."
+  ]
+}

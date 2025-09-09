@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how Excel columns are labeled. Each letter corresponds to a number: A = 1, B = 2, ..., Z = 26. After Z, the sequence continues with AA = 27, AB = 28, and so on."
+    },
+    {
+      "content": "Notice that the column numbering is similar to a base-26 numbering system, but it is not zero-indexed. This means that 'A' represents 1, not 0. Think about how you would convert a number to a different base."
+    },
+    {
+      "content": "When converting from the column number to the title, you will need to repeatedly divide the number by 26. However, since the letters start from 1, you need to adjust the number by subtracting 1 before the division."
+    },
+    {
+      "content": "As you divide the column number by 26, keep track of the remainder. This remainder will help you determine which letter corresponds to the current position in the title."
+    },
+    {
+      "content": "Remember to handle the case where the column number is exactly divisible by 26. In this case, the last letter should be 'Z', and you need to adjust the column number accordingly."
+    },
+    {
+      "content": "Construct the title in reverse order. Start with an empty string and prepend each letter you determine from the remainders. This means you will be building the string from the last character to the first."
+    },
+    {
+      "content": "Consider edge cases, such as the smallest input (columnNumber = 1) and the largest input (columnNumber = 2^31 - 1). Make sure your solution handles these correctly."
+    },
+    {
+      "content": "You might want to use a loop to continue dividing the column number until it reaches zero. Each iteration will give you a new character to add to your title."
+    },
+    {
+      "content": "After determining the characters, make sure to reverse the string before returning it, as you have constructed it backwards during the loop."
+    },
+    {
+      "content": "To summarize, your approach will involve a loop that divides the number by 26, calculates the remainder, and constructs the string. Ensure you adjust for the 1-based indexing during the calculations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= columnNumber <= 2^31 - 1",
+    "The output should be a string representing the column title.",
+    "Each letter corresponds to a number in a 1-based index manner."
+  ]
+}

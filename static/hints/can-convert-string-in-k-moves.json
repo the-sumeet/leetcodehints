@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to shift a character in the string. For example, shifting 'a' by 1 results in 'b', and shifting 'z' by 1 wraps around to 'a'. Consider how many shifts are needed to convert each character in `s` to the corresponding character in `t`."
+    },
+    {
+      "content": "Remember that the problem allows you to choose any index from `s` for each move. This means you can strategically decide which characters to shift based on their required shifts. Make sure to calculate the shifts for each character pair `(s[i], t[i])`."
+    },
+    {
+      "content": "Calculate the shift needed for each character in `s` to match the corresponding character in `t`. You can use the formula: `shift = (t[i] - s[i] + 26) % 26` to ensure you handle the wrap-around correctly."
+    },
+    {
+      "content": "Once you have the shifts for each character, sum them up. This total will give you an idea of how many shifts are needed in total. If this total is less than or equal to `k`, then it might be possible to convert `s` to `t`."
+    },
+    {
+      "content": "Consider the case when `k` is less than the total number of shifts needed. In such cases, you can immediately return false. Also, think about how many characters you can shift in a single move; you can only shift one character per move."
+    },
+    {
+      "content": "If the total shifts needed are less than or equal to `k`, check how many moves you have left after performing the necessary shifts. You can use the remaining moves to shift any characters that do not need to be changed, as long as you stay within the limit of `k`."
+    },
+    {
+      "content": "Ensure you account for the uniqueness of character shifts. Each index can only be chosen once, so think about how to prioritize which characters to shift first based on their required shifts."
+    },
+    {
+      "content": "Consider edge cases such as when `s` and `t` are already the same. In this case, you can return true immediately if `k` is non-negative, as no moves are needed."
+    },
+    {
+      "content": "Think about scenarios where `k` is very large (e.g., `k = 10^9`). How does this affect your calculations? You might find that you can always make the shifts needed as long as you have enough moves."
+    },
+    {
+      "content": "Finally, implement a check to ensure that the total shifts needed do not exceed `k`, and that you can utilize the remaining moves effectively. If you can manage this, you can return true; otherwise, return false."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length, t.length <= 10^5",
+    "0 <= k <= 10^9",
+    "s and t contain only lowercase English letters.",
+    "You can only shift one character per move, and each index can only be chosen once."
+  ]
+}

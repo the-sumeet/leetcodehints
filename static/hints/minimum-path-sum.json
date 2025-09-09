@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. You have a 2D array where you can only move down or right. Think about how you would represent your current position in the grid."
+    },
+    {
+      "content": "Consider how to keep track of the minimum path sum as you traverse the grid. You will need to maintain a way to store the cumulative sums as you move through the grid."
+    },
+    {
+      "content": "Think about dynamic programming. You can create a 2D array (or modify the input grid) to store the minimum path sums up to each cell. This way, you can build on previously computed values."
+    },
+    {
+      "content": "For the starting point (0,0), the minimum path sum is simply the value at that cell. What should you do for the first row and the first column since they can only be reached from one direction?"
+    },
+    {
+      "content": "As you fill in your DP table (or modify the grid), remember to consider the minimum path sum from the cell directly above and the cell to the left. How will you combine these values?"
+    },
+    {
+      "content": "When calculating the minimum path sum for a cell, you might use a formula like: `grid[i][j] += min(grid[i-1][j], grid[i][j-1])`. Ensure that you handle edge cases for the first row and first column."
+    },
+    {
+      "content": "Don’t forget to check how you handle the grid boundaries. Make sure your logic for accessing `grid[i-1][j]` and `grid[i][j-1]` does not go out of bounds."
+    },
+    {
+      "content": "After filling in the DP table, the answer will be located at the bottom-right corner of the grid. Make sure to return the correct value from that cell."
+    },
+    {
+      "content": "Consider edge cases, such as a grid with only one row or one column. How would your solution handle these scenarios?"
+    },
+    {
+      "content": "Finally, ensure your solution runs efficiently given the constraints of the problem. Aim for a time complexity of O(m * n) and think about how space complexity can be optimized."
+    }
+  ],
+  "questionNotes": [
+    "You can only move down or right in the grid.",
+    "The grid is filled with non-negative integers.",
+    "The dimensions of the grid are m x n, where 1 <= m, n <= 200.",
+    "Each grid value is between 0 and 200.",
+    "The output should be the minimum path sum from the top-left to the bottom-right corner."
+  ]
+}

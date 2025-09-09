@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You need to create a playlist of a specific length (`goal`) using `n` different songs, ensuring that each song is played at least once."
+    },
+    {
+      "content": "Consider how you can represent the playlist. You might want to use a recursive approach or dynamic programming to keep track of the number of ways to fill the playlist as you go."
+    },
+    {
+      "content": "Think about the base case: If `goal` is equal to `n`, how many different playlists can you create? This is a simpler scenario since each song must be played exactly once."
+    },
+    {
+      "content": "When `goal` is greater than `n`, you will need to repeat some songs. However, remember that a song can only be repeated after `k` different songs have been played."
+    },
+    {
+      "content": "Define a function that calculates the number of valid playlists given the current state. You can use parameters like the current length of the playlist and the number of songs already used."
+    },
+    {
+      "content": "Consider using a dynamic programming table where `dp[i][j]` represents the number of ways to create a playlist of length `i` using `j` different songs."
+    },
+    {
+      "content": "Initialize your DP table correctly. For example, `dp[0][0]` should be 1, as there is one way to create a playlist of length 0 with 0 songs."
+    },
+    {
+      "content": "Think about how to fill in the DP table. For each `i` (length of playlist) and `j` (number of different songs used), you will have two cases to consider: adding a new song or repeating an existing song."
+    },
+    {
+      "content": "When adding a new song, you can choose from the `n - j` songs that haven't been used yet. When repeating a song, ensure that you only do so if `j > k`."
+    },
+    {
+      "content": "Make sure to apply the modulo operation (`10^9 + 7`) at each step to prevent overflow and to meet the problem's requirements."
+    },
+    {
+      "content": "Consider edge cases, such as when `n` is 0 or `goal` is 0. How would those affect the number of possible playlists?"
+    },
+    {
+      "content": "You might want to visualize the DP transitions. For example, if you're at `dp[i][j]`, what are the possible transitions to `dp[i+1][j+1]` and `dp[i+1][j]`?"
+    },
+    {
+      "content": "Make sure to iterate through all possible lengths of the playlist and all possible numbers of unique songs used. This will ensure that you cover all combinations."
+    },
+    {
+      "content": "As a final step, after filling the DP table, the answer will be found at `dp[goal][n]`, which represents the number of ways to create a playlist of the desired length using all available songs."
+    },
+    {
+      "content": "Remember to test your implementation with various edge cases and sample inputs to ensure correctness, especially with small values of `n`, `goal`, and `k`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= k < n <= goal <= 100",
+    "Every song must be played at least once.",
+    "A song can only be repeated after k other songs have been played.",
+    "Return the result modulo 10^9 + 7."
+  ]
+}

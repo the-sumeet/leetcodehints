@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem setup. You have friends arriving and leaving at specific times, and each friend sits on the smallest unoccupied chair available. Make sure to keep track of both the arrival and leaving times."
+    },
+    {
+      "content": "Consider how you will represent the chairs. You can use a set or a priority queue to keep track of which chairs are occupied and which are free. Think about how you can efficiently find the smallest unoccupied chair."
+    },
+    {
+      "content": "As friends arrive, you need to check for the smallest unoccupied chair. When a friend leaves, that chair should be marked as available again. Make sure to handle these events in chronological order."
+    },
+    {
+      "content": "You might want to sort the events based on time. Create a list of events for each friend, including both their arrival and leaving times, and sort this list. This will help you process the events in the correct order."
+    },
+    {
+      "content": "When processing the events, use a loop to iterate through the sorted list of events. For each arrival, find and assign the smallest unoccupied chair, and for each leaving event, mark the chair as available."
+    },
+    {
+      "content": "Remember that the arrival times are distinct, which simplifies your event processing. However, ensure that you handle the leaving times correctly, especially if they coincide with another friend's arrival."
+    },
+    {
+      "content": "Keep track of which chair each friend occupies. You can use an array where the index represents the friend and the value at that index represents the chair number they are sitting on."
+    },
+    {
+      "content": "When a friend arrives, if they are the target friend, you should return the chair number they occupy immediately after they sit down. Make sure to check if the chair is available before assigning it."
+    },
+    {
+      "content": "Consider edge cases, such as when all chairs are occupied and a new friend arrives. How will you find the next available chair? Think about how you can efficiently manage the chairs without scanning all of them each time."
+    },
+    {
+      "content": "Finally, implement the logic to return the chair number for the target friend after processing all events. Make sure your return statement is correctly formatted to match the expected output."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == times.length, 2 <= n <= 10^4",
+    "Each times[i] is distinct, and 1 <= arrival_i < leaving_i <= 10^5",
+    "0 <= targetFriend <= n - 1",
+    "Return the chair number that the friend numbered targetFriend will sit on."
+  ]
+}

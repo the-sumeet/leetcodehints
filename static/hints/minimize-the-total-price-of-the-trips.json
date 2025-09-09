@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. A tree is an acyclic connected graph, which means there is exactly one path between any two nodes. This property will be crucial when calculating the paths for your trips."
+    },
+    {
+      "content": "Remember that you can halve the prices of non-adjacent nodes before starting your trips. Think about how this choice can affect the total price sum of the trips."
+    },
+    {
+      "content": "Consider how the trips are defined. Each trip has a start and an end node. You will need to find the path between these two nodes in the tree and calculate the price sum along that path."
+    },
+    {
+      "content": "To find the path between two nodes in a tree, you might want to use Depth First Search (DFS) or Breadth First Search (BFS). This will help you explore all possible paths from the start node to the end node."
+    },
+    {
+      "content": "When you calculate the price sum for a path, remember to account for the prices of all nodes on that path. If you decide to halve the price of certain nodes, make sure to apply this change before calculating the sum."
+    },
+    {
+      "content": "Think about the implications of halving prices. If you halve the price of a node, it will affect all trips that include that node in their path. Consider how many trips a node is involved in when deciding which nodes to halve."
+    },
+    {
+      "content": "Since the tree has a maximum of 50 nodes, you can afford to explore different combinations of nodes to halve their prices. However, be mindful of the constraint that the nodes you choose to halve must be non-adjacent."
+    },
+    {
+      "content": "Use a recursive backtracking approach to explore the combinations of nodes to halve. Keep track of the total price sum for each combination and update the minimum found."
+    },
+    {
+      "content": "While exploring combinations, ensure that you maintain a record of which nodes are adjacent to each other. This will help you avoid selecting nodes that violate the non-adjacency condition."
+    },
+    {
+      "content": "Consider edge cases, such as when there are only two nodes or when all trips start and end at the same node. These cases might yield simpler solutions."
+    },
+    {
+      "content": "After calculating the price sums for all trips with a specific combination of halved prices, compare it with the minimum found so far. Update the minimum if the new total is lower."
+    },
+    {
+      "content": "Remember that price[i] is guaranteed to be an even integer. This means that when you halve a price, it will always result in an integer, which simplifies your calculations."
+    },
+    {
+      "content": "As you implement your solution, consider using a helper function to calculate the path and price sum for a trip. This will keep your code organized and easier to debug."
+    },
+    {
+      "content": "When you calculate the total price for trips, ensure that you are not double-counting any paths. Each trip should be calculated independently based on the current halved prices."
+    },
+    {
+      "content": "Your final solution should return the minimum total price sum after considering all possible combinations of halving prices. Make sure to test your solution against the provided examples to validate its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 50, edges.length == n - 1, price.length == n, price[i] is an even integer.",
+    "1 <= price[i] <= 1000, 1 <= trips.length <= 100, 0 <= start_i, end_i <= n - 1.",
+    "Ensure that the nodes chosen to halve prices are non-adjacent.",
+    "The path price sum includes all nodes on the path between start and end for each trip."
+  ]
+}

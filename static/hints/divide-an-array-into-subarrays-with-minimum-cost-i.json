@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider the definition of the cost of a subarray. The cost is determined solely by the first element of that subarray. This means that when dividing the array, the choice of the first element in each subarray is crucial."
+    },
+    {
+      "content": "Since you need to divide the array into exactly 3 subarrays, think about how you can represent the boundaries between these subarrays. You can use two indices to mark the end of the first subarray and the end of the second subarray."
+    },
+    {
+      "content": "You can iterate through the array to find potential split points. For a given split point, the first subarray will end at that point, and the second subarray will start from the next element. The third subarray will include all remaining elements."
+    },
+    {
+      "content": "When calculating the total cost, remember to add the cost of each of the three subarrays. This means you will need to keep track of the first elements of each subarray you form."
+    },
+    {
+      "content": "Think about how to minimize the total cost. You may want to explore all possible combinations of split points. This could lead to a brute-force solution, where you check every possible way to split the array into three parts."
+    },
+    {
+      "content": "Given the constraints (3 <= n <= 50), a brute-force approach could be feasible. You can use nested loops to iterate through potential split points, but be careful to ensure that you don't exceed the array bounds."
+    },
+    {
+      "content": "As you implement your solution, consider edge cases where the array has the minimum length (n = 3). This will help you ensure that your solution handles all scenarios correctly."
+    },
+    {
+      "content": "When you find a valid combination of subarrays, calculate the cost and keep track of the minimum cost found so far. You can initialize a variable to store the minimum cost and update it whenever you find a lower cost."
+    },
+    {
+      "content": "To optimize your solution, think about how you might avoid recalculating costs for overlapping subarrays. You might store the minimum costs for subarrays of different lengths in a dynamic programming table."
+    },
+    {
+      "content": "Finally, consider how you will return the result. You need to return the minimum possible sum of the costs of the three subarrays. Make sure your final implementation reflects this requirement."
+    }
+  ],
+  "questionNotes": [
+    "You must divide the array into exactly 3 disjoint contiguous subarrays.",
+    "The cost of an array is defined as the value of its first element.",
+    "Constraints: 3 <= n <= 50 and 1 <= nums[i] <= 50.",
+    "Ensure that your solution handles edge cases, especially when n is at its minimum."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the grid. It is an m x n binary matrix where '1' represents occupied cells and '0' represents empty cells. Your goal is to cover all '0's using the given stamp dimensions."
+    },
+    {
+      "content": "Consider the dimensions of the stamp. The stamp can only be placed in such a way that it fits entirely within the grid without overlapping any '1's. Think about how the stamp's dimensions might limit where you can place it."
+    },
+    {
+      "content": "Before diving into the solution, visualize the grid and the stamp. Try drawing a few examples on paper to see how the stamps can overlap and cover the empty cells."
+    },
+    {
+      "content": "Check for any immediate impossibilities. For instance, if the grid has a '1' in a position that is surrounded by '0's, it may block the placement of a stamp. Identify such positions in your grid."
+    },
+    {
+      "content": "Focus on the edges of the grid. A stamp placed near the edge of the grid has fewer options for placement. Make sure to account for these edge cases when designing your algorithm."
+    },
+    {
+      "content": "Think about how you can iterate through the grid. You might want to check each '0' cell and see if a stamp can be placed starting from that position. Consider using nested loops for this."
+    },
+    {
+      "content": "When checking if a stamp can fit, ensure that you validate each cell that the stamp would cover. If any of those cells contain a '1', then that position is not valid for placing the stamp."
+    },
+    {
+      "content": "You may want to create a helper function that checks if a stamp can be placed at a given starting position. This function should return true or false based on the conditions discussed."
+    },
+    {
+      "content": "Consider how to keep track of which cells have been covered by stamps. You could use a separate matrix or modify the original grid temporarily to mark covered cells."
+    },
+    {
+      "content": "After placing a stamp, remember that you can place another stamp on top of the already covered cells. This means you should keep checking for new placements until all '0's are covered."
+    },
+    {
+      "content": "Think about the stopping condition for your algorithm. You need to ensure that all '0's in the grid are covered by the end of your process. How will you determine that?"
+    },
+    {
+      "content": "Consider edge cases where the grid is entirely filled with '1's or entirely filled with '0's. How does your algorithm handle these scenarios? Are there any special outputs required?"
+    },
+    {
+      "content": "As you develop your solution, keep performance in mind. With constraints up to 200,000 cells, ensure that your algorithm is efficient enough to handle the worst-case scenarios."
+    },
+    {
+      "content": "You might want to implement a backtracking approach where you try placing a stamp, then recursively attempt to cover the remaining '0's. If you hit a dead end, you can backtrack and try a different placement."
+    },
+    {
+      "content": "Finally, ensure your function returns the correct boolean value. It should return true if all '0's can be covered and false otherwise. Consider edge cases in your final test cases."
+    }
+  ],
+  "questionNotes": [
+    "The grid is m x n with m, n <= 10^5 and m * n <= 2 * 10^5.",
+    "Stamps cannot be rotated and must fit entirely within the grid.",
+    "You can place multiple overlapping stamps.",
+    "Return true if all '0's can be covered without covering any '1's; otherwise, return false."
+  ]
+}

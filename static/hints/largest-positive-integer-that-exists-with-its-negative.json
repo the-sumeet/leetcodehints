@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find a positive integer k such that -k also exists in the array. Make sure to consider both positive and negative values in your approach."
+    },
+    {
+      "content": "Think about how you can efficiently check for the existence of -k for each positive integer k in the array. A good data structure for this task might be a set, as it allows for O(1) average time complexity for lookups."
+    },
+    {
+      "content": "As you iterate through the array, keep track of the largest positive integer you find that has its negative counterpart. This means you will need to check each positive integer against the set of numbers you create."
+    },
+    {
+      "content": "Consider edge cases where the array might contain only negative numbers or only positive numbers. In such cases, you should return -1, as there would be no valid k."
+    },
+    {
+      "content": "Remember that the input constraints guarantee that the array will not contain zeros. This simplifies your checks since you only need to focus on positive and negative integers."
+    },
+    {
+      "content": "When storing numbers in a set, ensure you are only adding the unique values from the array. This will prevent unnecessary duplicates and optimize your lookups."
+    },
+    {
+      "content": "While checking for each positive integer, keep updating a variable that tracks the maximum valid k found so far. If no valid k is found by the end of your iteration, you will return -1."
+    },
+    {
+      "content": "Think about the return statement. If you have not updated your maximum k variable, it means no valid k was found, and you should return -1. Otherwise, return the value of your maximum k."
+    },
+    {
+      "content": "Consider how you will handle the input array. You might want to iterate through it once to build your set and then iterate again to find the largest k, or you can do it in a single pass."
+    },
+    {
+      "content": "To summarize your approach: Create a set from the array, iterate through the positive integers, check if their negatives exist in the set, and keep track of the largest found. Finally, return the largest or -1 if none was found."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "-1000 <= nums[i] <= 1000",
+    "nums[i] != 0",
+    "Return the largest positive integer k or -1 if no such integer exists."
+  ]
+}

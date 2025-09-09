@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints on the log lengths and the truck capacity. Each truck can carry a log of length at most `k`, and you have two logs of lengths `n` and `m`. If both logs are less than or equal to `k`, you won't need to cut them."
+    },
+    {
+      "content": "Consider the scenario where one or both logs exceed the truck capacity `k`. In such cases, you will need to cut the logs. Think about how you can determine the lengths to cut the logs into."
+    },
+    {
+      "content": "When cutting a log of length `x`, you can create two pieces `len1` and `len2`. Remember that the cost of cutting is calculated as `len1 * len2`. This means you want to minimize this product while ensuring both pieces fit into the trucks."
+    },
+    {
+      "content": "If you decide to cut a log, you can iterate through possible cut lengths. For a log of length `x`, you can try cutting it at every point from `1` to `x-1`, calculating the cost for each cut."
+    },
+    {
+      "content": "Think about the maximum number of logs you can fit into the trucks. You have three trucks, so you can transport up to three logs. If you can fit both logs without cutting, the cost is zero."
+    },
+    {
+      "content": "Consider the edge cases where either `n` or `m` is equal to `k`. This will help you understand if you need to cut the other log or if they can both fit without cuts."
+    },
+    {
+      "content": "If both logs are longer than `k`, you will need to cut both. The challenge is to find the optimal cuts for both logs that minimize the total cost while ensuring all pieces fit into the trucks."
+    },
+    {
+      "content": "Calculate the minimum cost for each log separately when they need to be cut. You can store the minimum cost for cutting each log in a variable, and then sum these costs to get the total minimum cost."
+    },
+    {
+      "content": "As you implement your solution, make sure to handle the case where one log can be cut while the other can fit directly into a truck. This will help you optimize the overall cost."
+    },
+    {
+      "content": "Finally, ensure that your implementation checks all possible cuts for both logs and keeps track of the minimum cost found. You can use a nested loop to try all combinations of cuts."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= k <= 10^5, 1 <= n, m <= 2 * k",
+    "You can cut logs into smaller pieces to fit them into trucks.",
+    "The cost of cutting is len1 * len2 where len1 + len2 = x.",
+    "You have three trucks to transport the logs."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for an array to be strictly increasing. For an array to be strictly increasing, each element must be less than the next one. For example, in the array [1, 2, 3], all elements satisfy this condition."
+    },
+    {
+      "content": "Consider the operations allowed: you can increment any element of the array. Think about how you might need to adjust elements that are not in the correct order to achieve a strictly increasing sequence."
+    },
+    {
+      "content": "Look at the relationship between consecutive elements. For any two elements nums[i] and nums[i+1], if nums[i] >= nums[i+1], you'll need to perform operations to make nums[i+1] greater than nums[i]."
+    },
+    {
+      "content": "When you find that nums[i] >= nums[i+1], calculate how much you need to increment nums[i+1]. This can be done with the formula: increment = nums[i] - nums[i+1] + 1."
+    },
+    {
+      "content": "As you increment nums[i+1], keep a running total of the number of operations you've performed. This will help you track the minimum operations needed as you process the array."
+    },
+    {
+      "content": "Make sure to iterate through the array from the first element to the last. This way, you can ensure that each element is adjusted based on the previous one, maintaining the strictly increasing order."
+    },
+    {
+      "content": "Consider edge cases, such as when the array is already strictly increasing or when all elements are the same. How would your logic handle these scenarios?"
+    },
+    {
+      "content": "Remember that the array can have a length of 1, which is trivially strictly increasing. This means you can return 0 operations immediately for such cases."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Since you are iterating through the array once, your solution should ideally run in O(n) time, where n is the length of the array."
+    },
+    {
+      "content": "Finally, implement your solution by initializing a variable to keep track of the total operations and then loop through the array, applying the increment logic as needed. Don't forget to return the total operations at the end."
+    }
+  ],
+  "questionNotes": [
+    "The array must be strictly increasing, meaning nums[i] < nums[i+1] for all valid i.",
+    "You can only increment elements; no other operations are allowed.",
+    "The input array can have a length from 1 to 5000.",
+    "Each element in the array can range from 1 to 10^4.",
+    "An array of length 1 is already strictly increasing, so return 0."
+  ]
+}

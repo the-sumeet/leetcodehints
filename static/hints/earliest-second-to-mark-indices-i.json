@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the marking process. You can only mark an index if its corresponding value in `nums` is zero. Focus on how you can decrement the values in `nums` optimally within the given time frame."
+    },
+    {
+      "content": "Consider the order of operations. Each second, you can either decrement a value in `nums` or mark an index. Think about how to prioritize which index to decrement based on the upcoming `changeIndices`."
+    },
+    {
+      "content": "Pay attention to the `changeIndices` array. Each value in this array represents an index in `nums` that you can potentially mark if its value reaches zero. Make sure to track how many times each index appears in `changeIndices`."
+    },
+    {
+      "content": "It might be helpful to create a frequency count of how many times each index is referenced in `changeIndices`. This will help you decide which indices need to be decremented more urgently."
+    },
+    {
+      "content": "Think about the constraints: `nums` can have values up to 10^9, but the length of `nums` and `changeIndices` is limited to 2000. How does this affect your approach to decrementing values?"
+    },
+    {
+      "content": "Consider edge cases where some indices in `nums` may never be marked. For example, if an index is not referenced in `changeIndices`, it can never be marked. How will you handle such cases?"
+    },
+    {
+      "content": "As you iterate through `changeIndices`, keep track of the time spent on decrementing each index. You need to ensure that you have enough time to decrement each index to zero before you reach the point where you can mark it."
+    },
+    {
+      "content": "Think about how to implement a strategy that allows you to decrement values in `nums` while also checking if you can mark an index at each second. This could involve a loop that processes each second and updates the state of `nums`."
+    },
+    {
+      "content": "When you reach a point where all indices are marked, return the current second. If you finish processing `changeIndices` and not all indices are marked, return -1. Make sure your return statement is correctly placed."
+    },
+    {
+      "content": "Before finalizing your solution, consider edge cases where all values in `nums` are initially zero or where `changeIndices` references only one index. How would your algorithm handle these scenarios?"
+    }
+  ],
+  "questionNotes": [
+    "1-indexed arrays: Remember that both `nums` and `changeIndices` are 1-indexed.",
+    "Marking condition: You can only mark an index if `nums[changeIndices[s]]` is zero.",
+    "Return value: Return the earliest second when all indices can be marked, or -1 if impossible.",
+    "Constraints: 1 <= n == nums.length <= 2000; 0 <= nums[i] <= 10^9; 1 <= m == changeIndices.length <= 2000."
+  ]
+}

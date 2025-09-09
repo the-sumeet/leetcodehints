@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input structure. You have a 2D matrix where the rows represent points in the first group and the columns represent points in the second group. Each entry in the matrix indicates the cost to connect a specific point from the first group to a specific point from the second group."
+    },
+    {
+      "content": "Consider the constraints: the size of the first group is always greater than or equal to the size of the second group. This means you will have at least as many points to connect from the first group as there are in the second."
+    },
+    {
+      "content": "Think about the requirement that each point in both groups must be connected to at least one point in the opposite group. This means that you cannot simply connect all points in one group to the cheapest point in the other group."
+    },
+    {
+      "content": "To minimize costs, you might want to explore the idea of connecting points in a way that allows for shared connections. For instance, if two points in the first group can connect to the same point in the second group, that might reduce the overall cost."
+    },
+    {
+      "content": "Consider using a graph-based approach. You can think of this problem as finding a minimum-cost bipartite matching, where you want to ensure all nodes in both partitions are covered."
+    },
+    {
+      "content": "One technique to explore is the Hungarian algorithm, which is designed for solving assignment problems. However, since you have the additional requirement of covering all points, you may need to adapt this approach."
+    },
+    {
+      "content": "You might want to start by calculating the minimum cost to connect all points in the first group to the points in the second group without worrying about the coverage requirement. This can give you a baseline cost."
+    },
+    {
+      "content": "Think about how you can represent the connections between points. A priority queue or a min-heap could be useful for always connecting the cheapest available points first."
+    },
+    {
+      "content": "Consider edge cases where costs are zero. If there are any zero-cost connections, these should be prioritized to minimize the total cost."
+    },
+    {
+      "content": "When implementing, ensure you keep track of which points have been connected. This will help you determine when all points in both groups have met the connection requirement."
+    },
+    {
+      "content": "You might also want to look into dynamic programming techniques that can help you keep track of the minimum costs as you explore different connection strategies."
+    },
+    {
+      "content": "As you explore connections, be mindful of the fact that connecting one point in the first group to multiple points in the second group can be beneficial. This flexibility can lead to lower costs."
+    },
+    {
+      "content": "Try to break down the problem into smaller parts. For example, calculate the cost for connecting just a subset of points and see how that can be extended to the full problem."
+    },
+    {
+      "content": "Consider using a bitmask to represent the connections made to the second group. This can help you efficiently track which points have been connected."
+    },
+    {
+      "content": "Finally, remember to test your solution against the edge cases mentioned earlier, especially with the smallest and largest possible matrices to ensure your solution is robust."
+    }
+  ],
+  "questionNotes": [
+    "The first group has size 1 points, and the second group has size 2 points, with size 1 >= size 2.",
+    "The cost matrix is size 1 x size 2, where cost[i][j] is the connection cost between points.",
+    "Each point in both groups must be connected to at least one point in the opposite group.",
+    "Constraints: 1 <= size 1, size 2 <= 12; 0 <= cost[i][j] <= 100."
+  ]
+}

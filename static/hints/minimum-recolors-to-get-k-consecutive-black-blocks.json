@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem clearly. You need to find a substring of length `k` that consists of 'B' characters. If there are any 'W' characters in that substring, you'll need to count how many you need to change to 'B'."
+    },
+    {
+      "content": "Consider using a sliding window approach. This means you will maintain a window of size `k` and slide it across the string to check each substring of length `k`."
+    },
+    {
+      "content": "Initialize a counter to keep track of the number of 'W' characters in the current window. As you slide the window, update this counter efficiently by adding the new character entering the window and removing the character that is leaving the window."
+    },
+    {
+      "content": "Think about the edge cases. For example, if `k` is equal to `n`, you only need to check the entire string once. What would you do if the string is already all 'B'?"
+    },
+    {
+      "content": "When calculating the number of 'W' characters in your current window, remember that you can start by counting them in the first window and then adjust as you move the window to the right."
+    },
+    {
+      "content": "Keep track of the minimum number of 'W's found in any window of size `k`. This will give you the answer, as the minimum will represent the least number of recolors needed."
+    },
+    {
+      "content": "Make sure to handle the case where `k` is larger than the number of 'B's in the string. What happens if the number of 'W's is already less than `k`?"
+    },
+    {
+      "content": "Consider how the sliding window can be implemented. You might want to use a loop that runs from the start of the string to `n - k + 1` to ensure you cover all possible windows."
+    },
+    {
+      "content": "As you implement the sliding window, remember to check the characters at the start and end of the window when you move it. This ensures your count of 'W's is always correct."
+    },
+    {
+      "content": "Finally, after processing all windows, return the minimum number of changes required. This will be the minimum count of 'W's found in any of the windows of size `k`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100, 1 <= k <= n",
+    "Indexing is 0-based.",
+    "Return the minimum number of operations needed.",
+    "Consider edge cases where the string is already valid or contains only one color."
+  ]
+}

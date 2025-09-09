@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to partition the array into two subsets where the product of the elements in each subset equals the given target. This means both subsets must be non-empty and disjoint."
+    },
+    {
+      "content": "Consider the constraints: the array length is between 3 and 12, and all integers are distinct and positive. This allows you to think about using combinations or subsets since the input size is manageable."
+    },
+    {
+      "content": "Think about the properties of multiplication. If you can form one subset with a product equal to the target, what does that imply for the remaining elements? The product of the remaining elements must also equal the target."
+    },
+    {
+      "content": "You can use a backtracking approach to explore all possible subsets. For each element, decide whether to include it in the first subset or not and recursively check the remaining elements."
+    },
+    {
+      "content": "As you explore subsets, keep track of the current product of the selected elements. If at any point the product exceeds the target, you can prune that branch of the search."
+    },
+    {
+      "content": "Remember to check combinations of subsets. For example, if you have a subset that achieves the target, you need to ensure that the remaining elements can also form a subset with the same product."
+    },
+    {
+      "content": "Consider using a bitmask to represent subsets. Each bit in the bitmask can represent whether an element is included in the subset or not. This can simplify the process of generating subsets."
+    },
+    {
+      "content": "Be mindful of edge cases. For instance, if the target is greater than the product of all elements in the array, you can immediately return false."
+    },
+    {
+      "content": "When checking for subsets, ensure that you do not include the empty subset. Both subsets must contain at least one element."
+    },
+    {
+      "content": "Finally, implement the logic to check if the product of the elements in both subsets equals the target. You can iterate through the possible subsets and check their products."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= nums.length <= 12",
+    "1 <= target <= 10^15",
+    "1 <= nums[i] <= 100",
+    "All elements of nums are distinct.",
+    "Both subsets must be non-empty and disjoint."
+  ]
+}

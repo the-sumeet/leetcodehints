@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for an array to be 'fair'. A fair array has the sum of its even-indexed elements equal to the sum of its odd-indexed elements. Think about how removing an element might affect these sums."
+    },
+    {
+      "content": "Consider how the indices change after removing an element. If you remove an element at index `i`, the elements after `i` will shift left, which will change their indices. This is crucial for recalculating the sums."
+    },
+    {
+      "content": "To check if an array is fair after removing an element, you need to calculate the sums of the even and odd indexed elements. Think about how you can maintain these sums efficiently as you iterate through the array."
+    },
+    {
+      "content": "Instead of recalculating the sums from scratch for each removal, consider using prefix sums. You can maintain cumulative sums for even and odd indices as you traverse the array."
+    },
+    {
+      "content": "As you iterate through the array, keep track of the total sum of even-indexed and odd-indexed elements. When you remove an element, adjust these totals based on whether the removed index was even or odd."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the array has only one or two elements. What happens if you remove the only element? Or if you have two elements, how do their indices affect the sums?"
+    },
+    {
+      "content": "Think about how to count the valid indices where removing the element results in a fair array. You can maintain a counter that increments each time you find a fair configuration after a removal."
+    },
+    {
+      "content": "Make sure to consider the constraints given in the problem. For instance, the length of the array can be up to 100,000, so your solution needs to be efficient, ideally O(n) or O(n log n)."
+    },
+    {
+      "content": "As you implement the solution, ensure that you are correctly adjusting the even and odd sums based on the index of the element being removed. This will be key to determining if the remaining array is fair."
+    },
+    {
+      "content": "Finally, put together all the pieces: iterate through the array, adjust the sums based on the index being removed, and check for fairness. Don't forget to return the count of valid indices."
+    }
+  ],
+  "questionNotes": [
+    "The array is 0-indexed.",
+    "You must remove exactly one element.",
+    "An array is fair if the sum of even-indexed elements equals the sum of odd-indexed elements.",
+    "Constraints: 1 <= nums.length <= 10^5 and 1 <= nums[i] <= 10^4."
+  ]
+}

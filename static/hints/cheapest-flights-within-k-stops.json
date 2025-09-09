@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a list of flights represented as `[from, to, price]`. Each flight connects two cities and has an associated cost. Think about how you can represent this information in a graph."
+    },
+    {
+      "content": "Consider how you would traverse a graph to find the cheapest path. You might want to think about using a graph traversal algorithm like BFS or Dijkstra's algorithm. However, remember that you need to limit the number of stops to `k`."
+    },
+    {
+      "content": "Since you can have at most `k` stops, the total number of edges (or flights) you can take is `k + 1`. This means from the source city, you can reach the destination city in `k + 1` flights at most."
+    },
+    {
+      "content": "Make sure to handle edge cases where there are no flights or if the source and destination are the same. If `src` is equal to `dst`, the cost should be `0` if no stops are needed."
+    },
+    {
+      "content": "When implementing your solution, consider using a priority queue to keep track of the cheapest flights as you explore the graph. This can help efficiently find the minimum cost at each step."
+    },
+    {
+      "content": "You might want to maintain a distance array to track the minimum cost to reach each city. Initialize the distance to the source city as `0` and to all others as infinity. Update the costs as you explore the flights."
+    },
+    {
+      "content": "While exploring the flights, ensure you keep track of the number of stops taken. You can use a queue that stores tuples of the current city, the current cost, and the number of stops made so far."
+    },
+    {
+      "content": "Be careful to only add a flight to your queue if the number of stops is less than or equal to `k`. This is crucial to ensure you do not exceed the allowed number of stops."
+    },
+    {
+      "content": "Remember to check if you reach the destination city. If you do, you should return the cost associated with that route. If you exhaust all options without reaching the destination, return `-1`."
+    },
+    {
+      "content": "Consider edge cases where there are multiple paths to the destination with the same number of stops. You should always choose the path with the lowest cost. This might require careful management of your priority queue."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100; 0 <= flights.length <= (n * (n - 1) / 2)",
+    "Each flight is unique; there are no multiple flights between the same cities.",
+    "Return -1 if no valid route exists.",
+    "The cost of flights is always positive."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the function f(s). This function calculates the frequency of the smallest character in the string s. For example, in the string 'dcce', the smallest character is 'c', which appears twice, so f('dcce') = 2."
+    },
+    {
+      "content": "You need to compute f for each string in both the words and queries arrays. Consider how you can efficiently find the smallest character and its frequency in a given string."
+    },
+    {
+      "content": "Think about how you can find the smallest character in a string. You can iterate through the string and keep track of the smallest character found so far."
+    },
+    {
+      "content": "Once you have the smallest character, count its occurrences in the string. You can do this in a single pass through the string after determining the smallest character."
+    },
+    {
+      "content": "After calculating f for all words, store these frequencies in a list. You will need to compare these values against the frequencies calculated for each query."
+    },
+    {
+      "content": "Remember that you need to count how many words have a frequency greater than the frequency of the query string. This means you will need to compare each query's f value against all computed f values from words."
+    },
+    {
+      "content": "Consider using a loop to iterate through each query and a nested loop to compare against the frequencies of the words. This may lead to a time complexity of O(n * m), where n is the number of queries and m is the number of words."
+    },
+    {
+      "content": "To improve performance, you might want to sort the list of frequencies from words. This way, you can use binary search to quickly find how many words have a frequency greater than the query's frequency."
+    },
+    {
+      "content": "Be cautious about edge cases, such as when all words have the same frequency or when the queries contain strings with unique characters. Ensure your solution handles these scenarios correctly."
+    },
+    {
+      "content": "Finally, ensure that your return format is correct. You should return an array of integers, where each integer corresponds to the count of words for each query, maintaining the order of the queries."
+    }
+  ],
+  "questionNotes": [
+    "1 <= queries.length <= 2000",
+    "1 <= words.length <= 2000",
+    "1 <= queries[i].length, words[i].length <= 10",
+    "queries[i][j], words[i][j] consist of lowercase English letters.",
+    "Ensure you handle cases where frequencies are equal correctly."
+  ]
+}

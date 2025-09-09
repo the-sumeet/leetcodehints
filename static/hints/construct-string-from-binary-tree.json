@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node can have a left child, a right child, both, or neither. Visualizing the tree can help you see how the string representation will be constructed."
+    },
+    {
+      "content": "Remember that the string representation must follow a preorder traversal (root, left, right). This means you should visit the root node first, then recursively visit the left child, followed by the right child."
+    },
+    {
+      "content": "When constructing the string, always include the node's value first. After that, check if the node has children. If it does, you'll need to add parentheses around the children’s values."
+    },
+    {
+      "content": "Pay attention to the rules regarding empty parentheses. If a node has a right child but no left child, you must include '()' to indicate the absence of the left child."
+    },
+    {
+      "content": "Consider how to handle nodes with no children. If a node is a leaf (no children), you simply append its value without any parentheses."
+    },
+    {
+      "content": "When you encounter a node with only a left child, you do not need to add empty parentheses. This is crucial for keeping the string representation clean and accurate."
+    },
+    {
+      "content": "Think about the base cases for your recursive function. What should happen when you reach a null node? You should return an empty string or handle it appropriately based on the node's presence."
+    },
+    {
+      "content": "As you build your string, consider using a helper function that takes a node and constructs the string based on the rules. This function can call itself recursively for left and right children."
+    },
+    {
+      "content": "Make sure to test your implementation with edge cases, such as a tree with only one node, a tree that is skewed to the left, and one that is skewed to the right. These cases can help ensure your logic is robust."
+    },
+    {
+      "content": "Finally, ensure your output matches the expected format exactly. Even small discrepancies in formatting can lead to incorrect results. For example, ensure you handle the parentheses correctly around children."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The number of nodes in the tree is in the range [1, 10^4].",
+    "Node values are between -1000 and 1000.",
+    "The output must be a single string representation of the tree.",
+    "Follow preorder traversal: root, left, right.",
+    "Include empty parentheses only when a node has a right child but no left child."
+  ]
+}

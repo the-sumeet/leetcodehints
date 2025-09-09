@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider how the rotation of the array affects the indices of the elements. When you rotate the array, the last element moves to the front. For example, rotating [4, 3, 2, 6] by 1 gives [6, 4, 3, 2]."
+    },
+    {
+      "content": "Think about how to compute the rotation function F(k) efficiently. Instead of creating a new array for each rotation, can you find a way to compute F(k) based on F(k-1)?"
+    },
+    {
+      "content": "Notice that F(k) can be expressed in terms of F(k-1). For example, if you have F(k-1), how can you derive F(k) using the values of the original array and the previous F value?"
+    },
+    {
+      "content": "When calculating F(k), remember the formula: F(k) = F(k-1) + sum(nums) - n * nums[n-k]. This relationship can help you avoid recalculating the entire sum for each rotation."
+    },
+    {
+      "content": "Consider the edge case when the input array has only one element. What will F(0) and F(1) be in that case? This will help you ensure your solution handles small inputs correctly."
+    },
+    {
+      "content": "The maximum value of F(k) needs to be tracked as you compute each F(k). Think about how you can keep a variable to store the maximum value found so far."
+    },
+    {
+      "content": "You should also think about the constraints given in the problem. How will the size of the input (up to 10^5) affect the efficiency of your solution? Aim for a solution that runs in O(n) time."
+    },
+    {
+      "content": "Remember that the result must fit in a 32-bit integer. Ensure your calculations do not exceed this limit, especially when dealing with large sums or products."
+    },
+    {
+      "content": "As you implement your solution, consider using a loop to iterate through possible values of k from 0 to n-1. Update your F(k) based on the previous value and keep track of the maximum."
+    },
+    {
+      "content": "Finally, ensure your final implementation returns the maximum value found. This should be the result after calculating all F(k) values."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 1 <= n <= 10^5, -100 <= nums[i] <= 100.",
+    "F(k) is defined as: F(k) = 0 * arr[k][0] + 1 * arr[k][1] + ... + (n - 1) * arr[k][n - 1].",
+    "The answer must fit in a 32-bit integer.",
+    "You need to maximize the value of F(k) for k = 0 to n-1."
+  ]
+}

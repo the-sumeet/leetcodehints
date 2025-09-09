@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the grid. Each cell can either be empty (0) or an obstacle (1). Your goal is to navigate from the top-left corner (0, 0) to the bottom-right corner (m-1, n-1)."
+    },
+    {
+      "content": "Consider the constraints of the problem. You can eliminate up to k obstacles, which means you need to track how many obstacles you've removed as you navigate through the grid."
+    },
+    {
+      "content": "Think about the possible movements. You can move in four directions: up, down, left, and right. Make sure to check boundaries to avoid moving outside the grid."
+    },
+    {
+      "content": "Use a breadth-first search (BFS) approach for this problem. BFS is suitable here because it explores all possible paths level by level, which helps in finding the shortest path."
+    },
+    {
+      "content": "When implementing BFS, consider using a queue to keep track of your current position, the number of steps taken, and the number of obstacles eliminated so far."
+    },
+    {
+      "content": "You will need a way to mark visited cells. However, since you can eliminate obstacles, you should track the state of each cell based on the number of obstacles you've removed."
+    },
+    {
+      "content": "Define a 3D array or a similar structure to keep track of visited states: visited[x][y][obstaclesRemoved]. This will help you avoid revisiting the same cell with the same or more obstacles removed."
+    },
+    {
+      "content": "As you explore each cell, if you encounter an obstacle (1), check if you can eliminate it (i.e., if you have remaining k). If yes, enqueue the new state with the updated number of obstacles removed."
+    },
+    {
+      "content": "Don't forget to check if you reach the bottom-right corner. If you do, return the number of steps taken. If the queue is exhausted without reaching the goal, return -1."
+    },
+    {
+      "content": "Consider edge cases such as when the grid is already clear of obstacles or when k is larger than the total number of obstacles in the grid."
+    },
+    {
+      "content": "Think about how to optimize your BFS. You might want to prioritize paths that eliminate fewer obstacles first if you have multiple ways to reach the same cell."
+    },
+    {
+      "content": "Make sure to handle the scenario where the grid is very small, such as a 1x1 grid, where the start and end points are the same."
+    },
+    {
+      "content": "Remember to validate your input, especially the values of m, n, and k, to ensure they meet the problem constraints."
+    },
+    {
+      "content": "As you build your BFS, consider printing debug statements to trace the path and the state of obstacles eliminated for better understanding."
+    },
+    {
+      "content": "Finally, as you approach the final implementation, ensure your return statements are correctly placed to handle both success and failure cases."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 40; 1 <= k <= m * n.",
+    "grid[i][j] is either 0 or 1.",
+    "grid[0][0] == grid[m - 1][n - 1] == 0.",
+    "Return -1 if no valid path exists."
+  ]
+}

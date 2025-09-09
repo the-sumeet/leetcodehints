@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirements of the `RandomizedCollection`. You need to support three operations: `insert`, `remove`, and `getRandom`. Each operation should ideally run in O(1) time on average."
+    },
+    {
+      "content": "Consider how to handle duplicates in your collection. Unlike a standard set, you need to keep track of multiple occurrences of the same value. Think about using a data structure that can efficiently store duplicates."
+    },
+    {
+      "content": "For the `insert` method, you need to check if the value already exists. If it does not exist, return `true`; otherwise, return `false`. How will you keep track of whether a value was previously present?"
+    },
+    {
+      "content": "When implementing `remove`, remember that you only need to remove one occurrence of the value. If the value exists, return `true`; if it does not, return `false`. How will you efficiently find and remove an element?"
+    },
+    {
+      "content": "The `getRandom` method needs to return a random element from the collection. Think about how you can randomly access an element in constant time. Would an array or list be a suitable choice?"
+    },
+    {
+      "content": "You might want to maintain a list of elements for easy random access. However, you also need to maintain a mapping of values to their indices for efficient removal. How can you structure this?"
+    },
+    {
+      "content": "Consider using a dictionary (or hashmap) to map each value to a list of indices where it appears in the collection. This will help you manage duplicates efficiently."
+    },
+    {
+      "content": "When removing an element, you will need to update both the list of elements and the dictionary of indices. Think about how you can swap the element to be removed with the last element in the list to maintain O(1) removal."
+    },
+    {
+      "content": "Don't forget to handle the case where the last element is removed. Ensure that your data structures remain consistent after an element is removed."
+    },
+    {
+      "content": "For `getRandom`, you can use a random index to select an element from your list. Make sure the random index is within the bounds of the list size."
+    },
+    {
+      "content": "Pay attention to the constraints provided in the problem statement. You will have at most 2 * 10^5 calls to `insert`, `remove`, and `getRandom`. Your solution must handle this efficiently."
+    },
+    {
+      "content": "Consider edge cases, such as trying to remove an element that isn't present in the collection. Make sure your `remove` method handles this gracefully."
+    },
+    {
+      "content": "Think about how you will initialize your data structures in the constructor of `RandomizedCollection`. You will likely need both a list and a dictionary."
+    },
+    {
+      "content": "As a final step, ensure that your `insert`, `remove`, and `getRandom` methods are all implemented correctly and efficiently. Test each method independently to confirm they work as expected."
+    },
+    {
+      "content": "You are very close to a complete solution! Start implementing the methods one by one, ensuring to maintain the integrity of your data structures after each operation."
+    }
+  ],
+  "questionNotes": [
+    "Each operation (insert, remove, getRandom) must run in O(1) time on average.",
+    "Duplicates are allowed in the collection.",
+    "getRandom will only be called if there is at least one item in the collection.",
+    "The return value of insert should indicate whether the item was newly added (true) or already present (false)."
+  ]
+}

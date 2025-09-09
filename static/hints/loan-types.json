@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a JSON object with headers and rows. The 'Loans' key contains an array of arrays, where each inner array represents a loan record."
+    },
+    {
+      "content": "Identify the unique loan types present in the data. You can use a set to keep track of them as you iterate through the loan records."
+    },
+    {
+      "content": "Consider how you will group the loans by user_id. A good approach is to use a dictionary where the keys are user_ids and the values are lists of loan types."
+    },
+    {
+      "content": "As you process each loan record, think about how to append the loan type to the corresponding user_id's list in your dictionary. This will help you organize the data efficiently."
+    },
+    {
+      "content": "Remember to handle cases where a user may have multiple loans of the same type. Decide whether you want to store duplicates or only unique loan types for each user."
+    },
+    {
+      "content": "When you have grouped the loans, consider how you will format the output. You might want to create a new JSON object that lists each user_id alongside their associated loan types."
+    },
+    {
+      "content": "Think about edge cases, such as what happens if there are no loans or if all loans belong to a single user. Ensure your solution can handle these scenarios gracefully."
+    },
+    {
+      "content": "Make sure to test your solution with various inputs, including cases with different loan types and user_ids to ensure your logic is robust and covers all scenarios."
+    },
+    {
+      "content": "As you finalize your solution, consider how you will return the data. You might want to structure it as an array of objects, each containing a user_id and their corresponding loan types."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient. If the dataset is large, think about the time complexity of your approach and whether you can optimize it further."
+    }
+  ],
+  "questionNotes": [
+    "The input is a JSON object with a specific structure; ensure you parse it correctly.",
+    "Each loan record consists of three fields: loan_id, user_id, and loan_type.",
+    "User_ids may not be unique; multiple loans can belong to a single user.",
+    "Decide how to handle duplicate loan types for the same user.",
+    "Consider edge cases such as empty loan lists or all loans belonging to one user.",
+    "Output format should be clear; consider using an array of objects for user_id and their loan types."
+  ]
+}

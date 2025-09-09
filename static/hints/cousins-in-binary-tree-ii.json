@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree. Each node has a value, and you need to replace this value with the sum of its cousins. Remember that cousins are nodes at the same depth but with different parents."
+    },
+    {
+      "content": "Consider how you will traverse the tree. A level-order traversal (BFS) might be useful here since it allows you to process nodes level by level, making it easier to group nodes by their depth."
+    },
+    {
+      "content": "As you traverse the tree, keep track of the depth of each node. You can use a queue to help with the BFS and store both the node and its parent as you go."
+    },
+    {
+      "content": "While traversing, create a data structure (like a dictionary or list) to hold the sum of values for each depth. This will help you compute the sum of cousins later."
+    },
+    {
+      "content": "Remember that when you compute the sum for each node, you need to exclude the values of its siblings. So, when calculating the cousin sum, make sure to subtract the value of the parent node's children from the total sum at that depth."
+    },
+    {
+      "content": "Think about edge cases, such as when the tree has only one node or when all nodes at a certain depth have the same parent. How will these cases affect the sum of cousins?"
+    },
+    {
+      "content": "Once you have the sums for each depth, you can traverse the tree again to replace each node's value with the computed cousin sum. Make sure to handle nodes without cousins correctly, setting their values to 0."
+    },
+    {
+      "content": "As you implement your solution, consider the time complexity. A BFS traversal is O(n), where n is the number of nodes, which is efficient enough given the constraints."
+    },
+    {
+      "content": "After you have replaced the values, ensure you return the modified tree in the correct format. The output should be the root of the modified tree, not a list or array."
+    },
+    {
+      "content": "To finalize your approach, outline the steps: 1) Perform a BFS to gather sums by depth. 2) Replace each node's value based on the cousin sums. 3) Return the modified tree root."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The number of nodes in the tree is in the range [1, 10^5].",
+    "Node values are between 1 and 10^4.",
+    "Cousins are defined as nodes at the same depth with different parents.",
+    "Return the root of the modified tree."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A palindrome reads the same forwards and backwards, like 'a', 'aba', or 'racecar'. Your task is to find all possible ways to split the string into substrings that are palindromes."
+    },
+    {
+      "content": "Consider how you can explore all possible partitions of the string. You might want to use a recursive approach to try every possible split of the string. Think about how you can keep track of the current partition as you explore."
+    },
+    {
+      "content": "When you find a substring that is a palindrome, you should add it to your current partition. You can then recursively call your function to find palindromic partitions for the remaining substring. Make sure to check all possible starting points for the next substring."
+    },
+    {
+      "content": "To check if a substring is a palindrome, you can create a helper function. This function should take a string and return true if it is a palindrome, and false otherwise. Consider using two pointers to compare characters from both ends of the substring."
+    },
+    {
+      "content": "Think about the base case for your recursion. When should you stop partitioning? A good base case would be when there are no more characters left in the string to partition. At this point, you can add the current partition to your list of results."
+    },
+    {
+      "content": "Remember to handle the case where the input string has only one character. This is a simple case where the only partition is the string itself. Make sure your solution works for this edge case."
+    },
+    {
+      "content": "As you build your partitions, consider using a list to store the current partition. Each time you find a valid palindrome, add it to this list. When you reach the base case, make a copy of this list and add it to your final results."
+    },
+    {
+      "content": "Don't forget to backtrack! After exploring one partition, you should remove the last added palindrome from your current partition before trying the next possible palindrome. This will allow you to explore all possible combinations."
+    },
+    {
+      "content": "Think about the constraints of the problem. The maximum length of the string is 16 characters, which means that while the number of possible partitions can grow quickly, it is manageable with a recursive approach. Ensure your solution is efficient enough to handle the upper limit."
+    },
+    {
+      "content": "Finally, your function should return a list of lists, where each inner list represents a valid partition of palindromic substrings. Make sure to format your output correctly to match the expected result."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 16",
+    "s contains only lowercase English letters.",
+    "Return format: A list of lists containing all possible palindromic partitions."
+  ]
+}

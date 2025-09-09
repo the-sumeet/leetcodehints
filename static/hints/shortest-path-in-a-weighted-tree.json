@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a tree. A tree is an acyclic connected graph, which means there is exactly one path between any two nodes. This property will be crucial when calculating shortest paths."
+    },
+    {
+      "content": "Review the representation of the tree using the edges array. Each edge connects two nodes and has a weight, which represents the distance between those nodes. Make sure you can visualize how these edges connect the nodes."
+    },
+    {
+      "content": "Consider how to perform depth-first search (DFS) or breadth-first search (BFS) on the tree to compute the initial distances from the root node to all other nodes. This will help you understand the base case for your distance calculations."
+    },
+    {
+      "content": "When handling the queries, note that there are two types: updates to edge weights and distance queries. Make sure to differentiate between these two operations in your implementation."
+    },
+    {
+      "content": "For distance queries, remember that you need to return the shortest path from the root (node 1) to a specified node. Think about how you can store and retrieve these distances efficiently."
+    },
+    {
+      "content": "When updating an edge weight, consider how this affects the distances of nodes that are connected to this edge. You may need to traverse the tree again to recalculate affected distances."
+    },
+    {
+      "content": "Implement a way to efficiently update the distances after an edge weight change. This could involve a localized search rather than recalculating distances for all nodes."
+    },
+    {
+      "content": "Keep in mind the constraints of the problem. You can have up to 100,000 nodes and queries, so your solution needs to be efficient, ideally O(n) for updates and O(1) for distance queries."
+    },
+    {
+      "content": "Consider using a data structure that allows for quick updates and retrievals, such as a map or a list to store the current weights of the edges. This will help in managing the edge updates efficiently."
+    },
+    {
+      "content": "When processing the queries, ensure you handle the input correctly. For update queries, check that you are modifying the correct edge based on the provided nodes."
+    },
+    {
+      "content": "Think about edge cases, such as when the tree has only two nodes or when multiple updates are made to the same edge. How will this affect your distance calculations?"
+    },
+    {
+      "content": "Make sure to test your implementation with various scenarios, including trees with varying structures (e.g., skewed trees, balanced trees) to ensure robustness."
+    },
+    {
+      "content": "For the distance queries, consider maintaining a separate array that holds the distance from the root to each node, which can be updated as needed when edges change."
+    },
+    {
+      "content": "Remember that the output should be an array of distances corresponding to each distance query. Ensure your function returns this in the correct format."
+    },
+    {
+      "content": "As you finalize your implementation, think about how you can optimize the distance calculations further, perhaps by caching results or using a more advanced data structure like a segment tree."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, edges.length == n - 1, 1 <= w_i <= 10^4",
+    "Input guarantees that edges represent a valid tree.",
+    "Queries can be of two types: [1, u, v, w'] for updates and [2, x] for distance queries.",
+    "Ensure the output format is an integer array for distance queries.",
+    "Be mindful of edge cases, especially with minimal trees and multiple updates."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider the definition of absolute sum for a subarray. The absolute sum is the absolute value of the sum of the elements in the subarray. This means that both positive and negative sums can be considered, leading to potentially larger absolute values."
+    },
+    {
+      "content": "Think about how you can determine the sum of a subarray efficiently. You might want to explore the idea of maintaining a running sum as you iterate through the array."
+    },
+    {
+      "content": "Remember that you can have an empty subarray, which contributes an absolute sum of 0. This means your result should at least consider returning 0 if all subarray sums are negative."
+    },
+    {
+      "content": "You might want to split the problem into two parts: finding the maximum sum of subarrays and the minimum sum of subarrays. The maximum absolute sum will be the greater of the two absolute values."
+    },
+    {
+      "content": "To find the maximum subarray sum, you can use Kadane's algorithm. This algorithm allows you to find the maximum sum in linear time by maintaining a current sum and updating the maximum when necessary."
+    },
+    {
+      "content": "Similarly, you can modify Kadane's algorithm to find the minimum subarray sum. This will help you identify the subarray that yields the most negative sum, which is important for calculating the maximum absolute sum."
+    },
+    {
+      "content": "As you implement these algorithms, be cautious about how you handle updates to your current sums. Ensure that you reset your current sum appropriately when it becomes negative (for maximum) or positive (for minimum)."
+    },
+    {
+      "content": "When you have both the maximum and minimum subarray sums, calculate their absolute values. The final answer will be the maximum of these two absolute values."
+    },
+    {
+      "content": "Make sure to account for edge cases, such as arrays with all negative numbers or all positive numbers. Your algorithm should still return the correct maximum absolute sum in these scenarios."
+    },
+    {
+      "content": "Finally, put together your findings: iterate through the array once to calculate both the maximum and minimum subarray sums, and return the maximum of their absolute values. This should yield the desired result."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "-10^4 <= nums[i] <= 10^4",
+    "The absolute sum can be derived from both positive and negative subarrays.",
+    "An empty subarray is valid and has an absolute sum of 0."
+  ]
+}

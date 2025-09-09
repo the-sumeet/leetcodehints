@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the 'second greater integer'. For each element in the array, you need to find the first and then the second greater element that appears after it."
+    },
+    {
+      "content": "Consider how you can iterate through the array. A nested loop might seem like a straightforward approach, but it can lead to a time complexity of O(n^2). Think about how you might optimize this."
+    },
+    {
+      "content": "You need to keep track of the first greater element as you iterate through the array. How can you store this information efficiently?"
+    },
+    {
+      "content": "Using a stack can be helpful here. Think about how you can use a stack to keep track of indices of elements that you have seen but not yet resolved."
+    },
+    {
+      "content": "As you iterate through the array, push indices onto the stack when you encounter an element. When you find a greater element, pop from the stack to resolve the first greater element."
+    },
+    {
+      "content": "After finding the first greater element, you need to continue searching for the second greater element. Ensure that the index of the second greater element is greater than that of the first."
+    },
+    {
+      "content": "Remember that if there is no valid second greater element, you should return -1 for that position. Think about how to handle this case in your logic."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when all elements are the same or when the array is of length 1. What should your output be in these scenarios?"
+    },
+    {
+      "content": "Consider the constraints given in the problem. With a maximum length of 100,000 for the array, your solution should ideally run in O(n) time complexity."
+    },
+    {
+      "content": "To implement the stack, you can use it to store indices of elements. When you find a greater element, check the stack for the first element and then continue to find the second."
+    },
+    {
+      "content": "You might want to maintain a result array initialized to -1. As you find the second greater elements, you can update this result array."
+    },
+    {
+      "content": "Think about how to ensure that you only consider elements that are to the right of the current index. This is crucial for maintaining the correct order."
+    },
+    {
+      "content": "When popping from the stack, ensure that you are checking the values at those indices against the current element to maintain the 'greater than' condition."
+    },
+    {
+      "content": "Once you have the first greater element, you can use a second loop or continue processing to find the second greater element, ensuring to skip over the first greater element's index."
+    },
+    {
+      "content": "Your final output should be an array where each index corresponds to the original indices of the input array. Ensure your indices match up correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Values: 0 <= nums[i] <= 10^9",
+    "Return format: An integer array where answer[i] is the second greater integer of nums[i].",
+    "Uniqueness: There exists exactly one index k such that nums[k] > nums[i] and i < k < j."
+  ]
+}

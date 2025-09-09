@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a submatrix. A submatrix is defined by its top-left and bottom-right corners. In this problem, the top-left corner is fixed at (0, 0), so you only need to determine the bottom-right corner for each possible submatrix."
+    },
+    {
+      "content": "To find the sum of elements in a submatrix, consider how to efficiently compute the sum for various bottom-right corners. You can use a prefix sum array to help with this. The prefix sum allows you to calculate the sum of any submatrix in constant time after an initial setup."
+    },
+    {
+      "content": "Construct the prefix sum array such that each entry at (i, j) contains the sum of all elements in the submatrix from (0, 0) to (i, j). This will help you quickly compute the sum of any submatrix that includes the top-left corner."
+    },
+    {
+      "content": "When calculating the sum of a submatrix defined by (0, 0) to (i, j), you can use the prefix sum array as follows: sum = prefix[i][j]. Ensure you handle edge cases where i or j is 0 to avoid accessing out-of-bounds indices."
+    },
+    {
+      "content": "After calculating the sum for each possible bottom-right corner, check if it is less than or equal to k. Keep a count of how many of these sums satisfy the condition."
+    },
+    {
+      "content": "Consider edge cases where the matrix contains only one element or where k is very small. For instance, if k is less than the value of the top-left element, you can immediately conclude that no valid submatrices exist."
+    },
+    {
+      "content": "Remember that the constraints allow for a matrix of size up to 1000x1000. This means your solution should be efficient enough to handle potentially millions of operations, so aim for a time complexity better than O(n^4)."
+    },
+    {
+      "content": "Think about how to iterate through the possible bottom-right corners. You will need two nested loops: one for the row index and one for the column index, both starting from 0 and going up to the dimensions of the matrix."
+    },
+    {
+      "content": "As you iterate through the possible bottom-right corners, maintain a count of valid submatrices. You can use a simple integer variable to keep track of this count as you check each sum against k."
+    },
+    {
+      "content": "Finally, ensure that your function returns the count of valid submatrices. The return type should be an integer, representing the total number of submatrices that meet the criteria."
+    }
+  ],
+  "questionNotes": [
+    "The top-left element of the grid is fixed at (0, 0).",
+    "You need to return the count of submatrices with a sum less than or equal to k.",
+    "Constraints: 1 <= n, m <= 1000, 0 <= grid[i][j] <= 1000, 1 <= k <= 10^9.",
+    "Be mindful of edge cases, especially when k is smaller than the value at (0, 0).",
+    "The solution should be efficient, ideally better than O(n^4)."
+  ]
+}

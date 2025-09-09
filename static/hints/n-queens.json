@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. Remember that two queens cannot be in the same row, column, or diagonal. This means you will need to track which rows, columns, and diagonals are already occupied."
+    },
+    {
+      "content": "Consider how you can represent the chessboard. A common approach is to use a 2D array or a list of strings, where 'Q' represents a queen and '.' represents an empty space."
+    },
+    {
+      "content": "Think about how you can use backtracking to explore possible placements of queens. You can place a queen in a row and then recursively attempt to place queens in the subsequent rows."
+    },
+    {
+      "content": "When placing a queen, check if the column and both diagonals are free. You can use sets to keep track of the columns and diagonals that are already occupied."
+    },
+    {
+      "content": "For diagonals, remember that you can calculate the diagonal indices based on the row and column indices. The two diagonals can be represented as: \n- Left diagonal: `row - col` \n- Right diagonal: `row + col`."
+    },
+    {
+      "content": "You may want to create a helper function that attempts to place queens row by row. If you reach a row where you can’t place a queen, backtrack to the previous row."
+    },
+    {
+      "content": "Consider how to collect valid board configurations. Once you successfully place queens in all rows, convert the current board state into the required format (list of strings) and add it to your results."
+    },
+    {
+      "content": "Make sure to reset your tracking structures (like column and diagonal sets) when backtracking. This ensures that you do not carry over the state from one recursive call to another."
+    },
+    {
+      "content": "Think about the base case for your recursive function. When do you know you have a valid solution? Typically, this occurs when you've placed queens in all rows."
+    },
+    {
+      "content": "Remember that the output should contain all distinct solutions. You need to ensure that your algorithm does not generate duplicate board configurations."
+    },
+    {
+      "content": "Consider edge cases, such as when `n = 1`. What does the board look like? Make sure your solution handles this case correctly."
+    },
+    {
+      "content": "For larger values of `n`, think about the performance of your solution. Backtracking can be inefficient if not implemented carefully, so ensure you are pruning invalid placements early."
+    },
+    {
+      "content": "You might want to visualize the board as you debug your solution. Print out the board at various stages to see how queens are being placed and removed."
+    },
+    {
+      "content": "As you implement your solution, keep in mind the constraints `1 <= n <= 9`. This means your solution should be efficient enough to handle the upper limit within a reasonable time."
+    },
+    {
+      "content": "Finally, when you think you're close to the solution, try writing out the recursive function signature. It might look something like `def solve_n_queens(row, board, cols, left_diags, right_diags):`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 9",
+    "Output format: List of lists, where each inner list represents a board configuration.",
+    "Ensure uniqueness of board configurations in the output.",
+    "Track occupied columns and diagonals to avoid queen attacks."
+  ]
+}

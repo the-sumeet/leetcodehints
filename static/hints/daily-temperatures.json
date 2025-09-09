@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to find out how many days it will take from each day to see a warmer temperature. If there is no warmer temperature in the future, you should return 0 for that day."
+    },
+    {
+      "content": "Consider how you might compare each day's temperature to the temperatures of the following days. A brute-force approach would involve nested loops, which could lead to a time complexity of O(n^2)."
+    },
+    {
+      "content": "Think about using a stack to keep track of the indices of the days. This can help you efficiently find the next warmer day without needing to check every day after the current one repeatedly."
+    },
+    {
+      "content": "When you encounter a temperature that is higher than the temperature at the index stored at the top of the stack, you can calculate the difference in days. This is because the current day is the next warmer day for the day at the index on the stack."
+    },
+    {
+      "content": "Remember to pop indices from the stack when you find a warmer temperature. After processing, make sure to push the current day's index onto the stack."
+    },
+    {
+      "content": "You should iterate through the temperatures array from the start to the end. This way, you can ensure that when you check for a warmer temperature, you are only looking at future days."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array has only one temperature. In this case, the output should simply be [0] since there are no future days."
+    },
+    {
+      "content": "Make sure to initialize your answer array with zeros, as days that do not have a warmer temperature should remain 0."
+    },
+    {
+      "content": "As you implement the stack, ensure that you are correctly maintaining the order of indices. The stack should always have the indices of days in a way that allows you to find the next warmer day efficiently."
+    },
+    {
+      "content": "Finally, after you've processed all temperatures, review your logic to ensure that every day has been accounted for, and that your stack is being used correctly to determine the wait times."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= temperatures.length <= 10^5",
+    "Temperature values range: 30 <= temperatures[i] <= 100",
+    "Return format: an array of integers where answer[i] is the number of days to wait for a warmer temperature.",
+    "If no warmer temperature exists, answer[i] should be 0."
+  ]
+}

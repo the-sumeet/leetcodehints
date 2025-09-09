@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the tree structure. A tree is an acyclic connected graph, and here it's represented by edges connecting nodes. Make sure to visualize how the nodes are connected."
+    },
+    {
+      "content": "Remember that the tree is rooted at node 0. This means that any traversal or collection of coins should start from this node. Think about how you would perform a depth-first search (DFS) or breadth-first search (BFS) from the root."
+    },
+    {
+      "content": "Pay attention to the coin collection rules. You can collect coins in two ways, each with different point calculations. Make a list of the pros and cons of each method to help decide which to use at each node."
+    },
+    {
+      "content": "Consider how the collection of coins affects the subtree nodes. When you choose the second collection method, the coins in the subtree are halved. This could influence your strategy significantly."
+    },
+    {
+      "content": "Identify the base case for your recursive function. When you reach a leaf node (a node with no children), how will you calculate the points? This will help you build your solution from the bottom of the tree upwards."
+    },
+    {
+      "content": "Think about how to keep track of the maximum points collected as you traverse the tree. You might want to use a variable to store the current maximum points and update it as you calculate points for each node."
+    },
+    {
+      "content": "Consider using a DFS approach to explore all nodes. As you visit each node, calculate the points based on the two methods and decide which one yields a higher score."
+    },
+    {
+      "content": "Don't forget to account for the coins of the ancestors when collecting coins from a node. Ensure that you only collect coins from a node if all its ancestors' coins have been collected."
+    },
+    {
+      "content": "When calculating points, remember to handle the case where `coins[i] - k` is negative. You should subtract this value from your total points, which could lead to a loss of points."
+    },
+    {
+      "content": "Make sure to handle the edge cases where nodes have zero coins. If a node has no coins, what would be the best strategy to collect points from it?"
+    },
+    {
+      "content": "As you implement your solution, consider using memoization to store results of previously computed nodes to avoid redundant calculations, especially in a large tree."
+    },
+    {
+      "content": "Think about how to structure your data. You might want to build an adjacency list from the edges to represent the tree for easier traversal."
+    },
+    {
+      "content": "Before finalizing your solution, run through some test cases manually to ensure your logic holds. Pay special attention to the points calculation and subtree effects."
+    },
+    {
+      "content": "As you approach the end of your solution, ensure that your function correctly returns the maximum points collected after visiting all nodes in the tree."
+    },
+    {
+      "content": "Finally, review the constraints of the problem. Make sure your solution can handle the maximum limits of n and the values in the coins array efficiently."
+    }
+  ],
+  "questionNotes": [
+    "The tree is undirected and rooted at node 0.",
+    "The edges array has length n - 1, indicating the connections between nodes.",
+    "Coins can only be collected if all ancestors' coins have been collected first.",
+    "The two methods of collecting coins can yield different results; consider both carefully.",
+    "Ensure to handle cases where coins[i] - k is negative correctly.",
+    "The function should return the maximum points collected after visiting all nodes."
+  ]
+}

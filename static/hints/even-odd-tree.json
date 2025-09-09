@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node has a value and can have up to two children. Remember that the root node is at level 0, its children are at level 1, and so on."
+    },
+    {
+      "content": "Focus on how to traverse the tree level by level. A breadth-first search (BFS) approach using a queue can help you collect nodes at each level easily."
+    },
+    {
+      "content": "As you gather nodes for each level, keep track of whether the level index is even or odd. This will dictate the conditions you need to check for the node values."
+    },
+    {
+      "content": "For even-indexed levels (0, 2, 4, ...), ensure that all node values are odd and in strictly increasing order. You can maintain a variable to compare current values with the previous ones."
+    },
+    {
+      "content": "For odd-indexed levels (1, 3, 5, ...), check that all node values are even and in strictly decreasing order. Again, use a variable to track the last value to ensure the order is correct."
+    },
+    {
+      "content": "Pay attention to the uniqueness of values at each level. If you encounter duplicate values, the conditions for being Even-Odd are violated, and you should return false."
+    },
+    {
+      "content": "Consider edge cases, such as a tree with only one node. In this case, the tree is trivially Even-Odd since there are no levels to violate the conditions."
+    },
+    {
+      "content": "When implementing your solution, remember to handle null children correctly. They do not contribute to the level's values and should not affect your checks."
+    },
+    {
+      "content": "Make sure to return false immediately if any condition fails while traversing a level. This will optimize your function by avoiding unnecessary checks."
+    },
+    {
+      "content": "Finally, structure your function to return true only after all levels have been validated without any violations. Keep your checks clear and organized for readability."
+    }
+  ],
+  "questionNotes": [
+    "The binary tree is indexed starting from 0 at the root.",
+    "Even-indexed levels must have odd values in strictly increasing order.",
+    "Odd-indexed levels must have even values in strictly decreasing order.",
+    "Node values must be unique within their respective levels.",
+    "The number of nodes is in the range [1, 10^5], and values are between 1 and 10^6."
+  ]
+}

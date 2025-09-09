@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the conditions for forming a valid pair (i, j). You need to ensure that nums[i] == nums[j] and that the product i * j is divisible by k. Think about how you can check for equal values in the array."
+    },
+    {
+      "content": "Consider how you can iterate through the array to find pairs. A nested loop could be a straightforward approach, where the outer loop runs from 0 to n-1 and the inner loop runs from i+1 to n-1."
+    },
+    {
+      "content": "When checking for pairs, remember to only count pairs where i < j. This ensures that you are not counting the same pair twice or counting pairs where i == j."
+    },
+    {
+      "content": "Before diving into the implementation, think about how you will check if the product i * j is divisible by k. You can use the modulus operator: (i * j) % k == 0."
+    },
+    {
+      "content": "To optimize your solution, you might want to use a dictionary to count occurrences of each number in the array. This way, you can quickly find how many times a number appears when checking for pairs."
+    },
+    {
+      "content": "As you implement your solution, consider edge cases such as arrays with no duplicates. If nums has unique values, how many pairs can you form? What would your function return in that case?"
+    },
+    {
+      "content": "Think about the constraints given in the problem. The maximum length of nums is 100, and the values of nums and k are also limited to 100. This means that a solution with a time complexity of O(n^2) could be acceptable."
+    },
+    {
+      "content": "When you find a valid pair, you need to increment a counter. Make sure to initialize this counter before your loops start, and return it at the end of your function."
+    },
+    {
+      "content": "As you finalize your code, ensure that you are correctly handling the return format. You should return an integer representing the count of valid pairs."
+    },
+    {
+      "content": "To get closer to a complete solution, consider how you will structure your loops and conditions. For example, you could have something like:\n\n```python\nfor i in range(n):\n    for j in range(i + 1, n):\n        if nums[i] == nums[j] and (i * j) % k == 0:\n            count += 1\n```"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100",
+    "1 <= nums[i], k <= 100",
+    "Return the number of pairs (i, j) where 0 <= i < j < n.",
+    "Ensure that nums[i] == nums[j] and (i * j) is divisible by k.",
+    "Consider edge cases like arrays with no duplicate values."
+  ]
+}

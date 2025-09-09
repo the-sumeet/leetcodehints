@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of valid substrings. A valid substring of `word1` must be able to be rearranged such that `word2` is a prefix. Think about what it means for two strings to have the same characters in different orders."
+    },
+    {
+      "content": "Consider the frequency of characters in `word2`. You'll need to count how many of each character are required to form `word2`. This can be done using a frequency array or a dictionary."
+    },
+    {
+      "content": "Next, think about how you can check each substring of `word1`. You can use a sliding window approach to efficiently manage the character counts as you iterate through `word1`."
+    },
+    {
+      "content": "Remember that the length of valid substrings must be at least the length of `word2`. You can start checking substrings of `word1` that have a length equal to or greater than `word2`."
+    },
+    {
+      "content": "As you slide the window over `word1`, maintain a count of characters in the current window. When the window is of the correct size, check if the character counts match those needed for `word2`."
+    },
+    {
+      "content": "Consider edge cases where `word1` is shorter than `word2`. In such cases, immediately return 0 since no valid substrings can exist."
+    },
+    {
+      "content": "When checking if the substring can be rearranged to match `word2`, you can compare the frequency counts directly. If they match, it means the substring is valid."
+    },
+    {
+      "content": "Think about how to count all valid substrings efficiently. You might want to keep a total count of valid substrings as you iterate through `word1`."
+    },
+    {
+      "content": "Make sure to handle overlapping substrings correctly. As you move your window, you should be careful to update your counts accurately to reflect the characters entering and leaving the window."
+    },
+    {
+      "content": "Finally, ensure that your solution is optimized for the constraints given. You will need to handle up to 100,000 characters in `word1` and 10,000 characters in `word2`, so aim for a linear time complexity solution."
+    }
+  ],
+  "questionNotes": [
+    "1 <= word1.length <= 100000",
+    "1 <= word2.length <= 10000",
+    "word1 and word2 consist only of lowercase English letters.",
+    "A valid substring must be able to rearrange to have word2 as a prefix."
+  ]
+}

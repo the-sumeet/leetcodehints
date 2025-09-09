@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the board structure. The board is a 2D grid of characters, and you need to search for words that can be formed by adjacent cells. Remember that adjacency is defined as horizontal or vertical."
+    },
+    {
+      "content": "Consider how you will traverse the board. A common approach is to use Depth First Search (DFS) to explore all possible paths from each cell. Think about how you will track visited cells to avoid using the same cell multiple times in a single word."
+    },
+    {
+      "content": "Before diving into the search, think about how to efficiently check if a word exists in the list of words. You might want to use a data structure that allows for fast lookups, such as a set."
+    },
+    {
+      "content": "When implementing DFS, you can start from each cell in the board. For each cell, check if the first letter of any word matches the character in that cell. If it matches, continue searching for the next letter in adjacent cells."
+    },
+    {
+      "content": "As you explore paths with DFS, keep track of the current word being formed. If it matches any word in your list, add it to your results. Make sure to handle duplicates properly, as the words list contains unique words."
+    },
+    {
+      "content": "Think about the base case for your DFS function. You should stop exploring when you either find a word or when you can no longer form a valid word from the current path."
+    },
+    {
+      "content": "Consider the constraints of the problem. The board can be as large as 12x12, and the list of words can contain up to 30,000 words. This means your solution needs to be efficient, particularly in how you explore the board."
+    },
+    {
+      "content": "You might want to implement a Trie (prefix tree) to optimize the search process. By building a Trie from the list of words, you can quickly determine if a prefix of the current path is valid, allowing you to prune your search."
+    },
+    {
+      "content": "When implementing the Trie, remember to store the end of words in the Trie. This will help you know when you have formed a valid word during your DFS traversal."
+    },
+    {
+      "content": "Make sure to reset your visited state after each DFS call. You can use a separate data structure (like a boolean array) to track which cells have been visited during the current word search."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when the board is empty or when the words list is empty. Your function should handle these gracefully and return an empty list in such cases."
+    },
+    {
+      "content": "When you find a valid word, consider how you will store it. Using a set to store found words can help prevent duplicates automatically."
+    },
+    {
+      "content": "After completing the DFS from all cells, ensure that your final result is converted to a list before returning. The output format must match the expected format of a list of strings."
+    },
+    {
+      "content": "As a final step, think about how you will test your implementation. Create various test cases, including edge cases, to ensure your solution works correctly under different scenarios."
+    },
+    {
+      "content": "Now, you are close to a solution! Start implementing the DFS function, integrating the Trie for efficient prefix checking, and remember to handle the visited state correctly."
+    }
+  ],
+  "questionNotes": [
+    "The board is an m x n grid, where 1 <= m, n <= 12.",
+    "Words consist of lowercase English letters and are unique.",
+    "You cannot reuse the same letter cell in a word.",
+    "Return format should be a list of found words."
+  ]
+}

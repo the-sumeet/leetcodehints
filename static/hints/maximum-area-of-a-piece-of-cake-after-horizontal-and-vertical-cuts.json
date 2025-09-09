@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the cake and how the cuts divide it. Visualize the cake as a grid where horizontal and vertical cuts create smaller rectangles."
+    },
+    {
+      "content": "Think about how to find the maximum height of the pieces created by horizontal cuts. You can do this by calculating the differences between consecutive horizontal cut positions."
+    },
+    {
+      "content": "Similarly, for the vertical cuts, calculate the maximum width of the pieces. This will involve finding the differences between consecutive vertical cut positions."
+    },
+    {
+      "content": "Remember to include the edges of the cake when calculating the maximum height and width. For example, the first and last pieces will extend from the edges to the first and last cuts."
+    },
+    {
+      "content": "To handle the edges, consider adding 0 and the height/width of the cake to your cuts arrays before sorting them. This will help you calculate the full range of pieces."
+    },
+    {
+      "content": "Once you have the maximum height and width, the area of a piece of cake can be calculated simply by multiplying these two values together."
+    },
+    {
+      "content": "Since the area can be large, remember to take the result modulo 10^9 + 7 as specified in the problem statement."
+    },
+    {
+      "content": "Make sure to sort both the horizontalCuts and verticalCuts arrays before calculating the maximum differences. Sorting will help you easily find the largest segments."
+    },
+    {
+      "content": "Consider edge cases where there are no cuts or only one cut in either direction. How would that affect the maximum area calculation?"
+    },
+    {
+      "content": "After calculating the maximum height and width, combine these results to get the maximum area. Your final return should be in the format specified, ensuring you handle the modulo operation correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= h, w <= 10^9",
+    "1 <= horizontalCuts.length <= min(h - 1, 10^5)",
+    "1 <= verticalCuts.length <= min(w - 1, 10^5)",
+    "1 <= horizontalCuts[i] < h",
+    "1 <= verticalCuts[i] < w",
+    "All elements in horizontalCuts and verticalCuts are distinct.",
+    "Return the maximum area modulo 10^9 + 7."
+  ]
+}

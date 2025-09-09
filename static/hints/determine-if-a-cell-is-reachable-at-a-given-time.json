@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the Manhattan distance between the starting point (sx, sy) and the target point (fx, fy). This distance is given by: `distance = |fx - sx| + |fy - sy|`. This will help you understand the minimum number of seconds required to reach the target."
+    },
+    {
+      "content": "Remember that you can move to any of the 8 adjacent cells in one second. This means you can cover both horizontal and vertical distances simultaneously, which can reduce the time needed to reach the target."
+    },
+    {
+      "content": "Consider the case when the calculated distance is greater than t. If the distance exceeds t, it's impossible to reach the target in the given time, so you should return false immediately."
+    },
+    {
+      "content": "If the distance is less than or equal to t, think about the remaining time after reaching the target. You need to determine if you can use the remaining seconds effectively to stay at the target cell."
+    },
+    {
+      "content": "The key observation is that if you reach the target in `distance` seconds, you will have `t - distance` seconds left. You can use these seconds to move away from the target and then back to it."
+    },
+    {
+      "content": "To ensure you can return to the target cell after moving away, the remaining time `t - distance` must be even. This is because moving away and returning takes an even number of seconds."
+    },
+    {
+      "content": "Check the parity of `t - distance`. If it is even, you can return to the target cell; if it is odd, you cannot. This will help you finalize whether you can reach the target in exactly t seconds."
+    },
+    {
+      "content": "Also, consider edge cases where the starting point and target point are the same. If `sx == fx` and `sy == fy`, then you need to check if t is even to return true."
+    },
+    {
+      "content": "In summary, you need to evaluate three conditions: calculate the distance, check if distance <= t, and ensure that (t - distance) is even. If all conditions are satisfied, return true; otherwise, return false."
+    },
+    {
+      "content": "Now, put together all the checks you've considered: calculate the distance, check if it's feasible to reach the target in time, and confirm the parity of the remaining seconds. This will lead you to the final solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= sx, sy, fx, fy <= 10^9",
+    "0 <= t <= 10^9",
+    "You can visit the same cell multiple times.",
+    "Return true if you can reach the target cell in exactly t seconds; otherwise, return false."
+  ]
+}

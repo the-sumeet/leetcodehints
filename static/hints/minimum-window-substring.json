@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find the smallest substring in `s` that contains all characters from `t`, including duplicates. Make sure to consider cases where `s` may not contain all characters from `t`."
+    },
+    {
+      "content": "Think about how you can keep track of the characters in `t`. You might want to use a hash map (or dictionary) to count the occurrences of each character in `t`."
+    },
+    {
+      "content": "As you iterate through `s`, maintain a count of the characters you've seen so far. This will help you determine when you've formed a valid window that contains all characters from `t`."
+    },
+    {
+      "content": "Consider using two pointers (or indices) to represent the current window in `s`. One pointer can be used to expand the window, while the other can be used to contract it once a valid window is found."
+    },
+    {
+      "content": "When expanding the window, check if the current character is part of `t`. If it is, update your count of characters seen. You may need to check if you've met the requirements to form a valid window."
+    },
+    {
+      "content": "Once you have a valid window, try to minimize it by moving the left pointer to the right. Make sure to update your counts accordingly, and check if the window is still valid after each move."
+    },
+    {
+      "content": "It's essential to keep track of the minimum length of valid windows found during your iteration. Use variables to store the start and end indices of the best window you've found so far."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when `t` is longer than `s`. In such cases, it's impossible to find a valid substring, and you should return an empty string."
+    },
+    {
+      "content": "When returning the result, ensure you correctly extract the substring from `s` using the stored indices of the minimum window. The substring should be `s[start:end + 1]`."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Aim for an O(m + n) solution by ensuring that each character in `s` and `t` is processed a limited number of times."
+    },
+    {
+      "content": "Think about how you can efficiently check whether all required characters from `t` are present in the current window. You might want to maintain a count of how many unique characters you've matched."
+    },
+    {
+      "content": "If you encounter a character in `s` that is not in `t`, you can skip it entirely when expanding your window. This will help optimize your solution."
+    },
+    {
+      "content": "When checking if the current window is valid, compare your counts of characters in the window to those in `t`. You might need a separate counter for how many characters are currently satisfied."
+    },
+    {
+      "content": "Ensure that you handle both uppercase and lowercase letters correctly, as `s` and `t` can contain both. This may affect how you count characters."
+    },
+    {
+      "content": "Finally, remember that the problem states the answer is unique. This means you don't need to worry about ties when determining the minimum window substring."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == s.length, n == t.length",
+    "1 <= m, n <= 10^5",
+    "s and t consist of uppercase and lowercase English letters.",
+    "Return the empty string if no valid window exists.",
+    "The answer is guaranteed to be unique."
+  ]
+}

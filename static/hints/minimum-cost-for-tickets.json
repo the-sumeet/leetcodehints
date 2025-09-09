@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to cover all travel days with the minimum cost using three types of tickets: 1-day, 7-day, and 30-day passes."
+    },
+    {
+      "content": "Consider using dynamic programming to solve this problem. You can maintain an array where each index represents the minimum cost to cover travel up to that day."
+    },
+    {
+      "content": "Initialize a cost array, `dp`, where `dp[i]` will store the minimum cost to travel up to day `i`. The size of this array should be at least 366 to accommodate all days of the year."
+    },
+    {
+      "content": "You can iterate through each travel day in the `days` array and calculate the cost for each type of ticket. Make sure to only update costs for the days you are traveling."
+    },
+    {
+      "content": "For each travel day, consider three scenarios: buying a 1-day pass, buying a 7-day pass, and buying a 30-day pass. Use the costs array to determine the cost for each option."
+    },
+    {
+      "content": "When calculating the cost for a 7-day pass, make sure to account for the last 7 days covered by the pass. You should compare the current cost with the cost from 7 days prior."
+    },
+    {
+      "content": "Similarly, for the 30-day pass, ensure you are considering the cost from 30 days prior. This means you need to check the minimum cost accumulated up to that point."
+    },
+    {
+      "content": "Don't forget to handle days that are not in the `days` array. You can simply carry forward the previous minimum cost for those days."
+    },
+    {
+      "content": "Make sure to initialize your `dp` array properly. Start with `dp[0] = 0` (cost of traveling before day 1) and fill it based on the travel days provided."
+    },
+    {
+      "content": "At the end of your iterations, the answer will be found in `dp[365]`, which represents the minimum cost to cover all travel days in the year."
+    }
+  ],
+  "questionNotes": [
+    "The `days` array is strictly increasing and contains unique travel days.",
+    "The costs array has exactly three elements corresponding to the costs of the 1-day, 7-day, and 30-day passes.",
+    "Ensure that your solution handles edge cases, such as when all travel days fall within a single pass duration."
+  ]
+}

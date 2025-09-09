@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have an array `richer` that indicates relationships of wealth between people and an array `quiet` that indicates how quiet each person is. Make sure you understand how to interpret `richer[i] = [a_i, b_i]`."
+    },
+    {
+      "content": "Consider how you can represent the relationships in `richer`. You might want to think about using a graph structure where each person is a node and a directed edge from `a_i` to `b_i` indicates that `a_i` is richer than `b_i`."
+    },
+    {
+      "content": "Remember that the problem asks for the quietest person among those who are definitely richer than or equal to a given person. This means you need to explore all paths in your graph to find the quietest person for each individual."
+    },
+    {
+      "content": "Think about how to traverse the graph. A Depth-First Search (DFS) or Breadth-First Search (BFS) could be useful for exploring the relationships of wealth to find the quietest person for each node."
+    },
+    {
+      "content": "You need to keep track of the quietest person found during your traversal. Consider using a variable to store the current quietest person as you explore each node."
+    },
+    {
+      "content": "Pay attention to the uniqueness of the `quiet` values. Since all values are unique, you won't have to handle ties when determining the quietest person."
+    },
+    {
+      "content": "Make sure to handle cases where there are no richer relationships. For example, if `richer` is an empty array, the answer should simply be each person's own index since they are the quietest among themselves."
+    },
+    {
+      "content": "When constructing your answer array, remember that the index corresponds to the person, and the value at that index should be the index of the quietest person who is richer or equal in wealth."
+    },
+    {
+      "content": "Consider how to efficiently check if you've already found the quietest person for a given individual. You might want to use memoization to store results for each person as you compute them."
+    },
+    {
+      "content": "Finally, think about the overall complexity of your approach. You need to ensure that your solution runs efficiently within the constraints, especially since `n` can be as large as 500."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 500; 0 <= quiet[i] < n; all values in quiet are unique.",
+    "richer.length can be 0, meaning no relationships.",
+    "The output should be an array where answer[x] = y indicates the quietest person among those richer than or equal to person x."
+  ]
+}

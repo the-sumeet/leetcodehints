@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "To form a triangle with three sides, the lengths must satisfy the triangle inequality theorem. Specifically, for any three sides a, b, and c, they must satisfy: a + b > c, a + c > b, and b + c > a."
+    },
+    {
+      "content": "Since the order of the sides matters in the triangle inequality, consider sorting the array first. This will help you easily check the conditions for forming a triangle."
+    },
+    {
+      "content": "After sorting the array in non-decreasing order, remember that if you take the three largest sides, they are the most likely candidates for forming a valid triangle. Why? Because larger sides can potentially create a larger perimeter."
+    },
+    {
+      "content": "When checking for the triangle condition, focus on the last three elements of the sorted array. If nums[n-1], nums[n-2], and nums[n-3] are the three largest sides, check if nums[n-2] + nums[n-3] > nums[n-1]."
+    },
+    {
+      "content": "If the above condition is satisfied, you can calculate the perimeter as the sum of these three sides. If not, move to the next set of three sides by decrementing your index."
+    },
+    {
+      "content": "Make sure to loop through the sorted array from the end to the start, checking each triplet of sides until you find a valid triangle or exhaust all possibilities."
+    },
+    {
+      "content": "Consider edge cases where all sides are equal or where the largest side is equal to the sum of the other two. These cases can help you understand the boundaries of valid triangles."
+    },
+    {
+      "content": "If you find a valid triangle, remember to return the perimeter immediately. If you finish checking all possible triplets without finding a valid triangle, return 0."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Sorting the array takes O(n log n), and checking the triplets takes O(n). This is efficient enough given the constraints."
+    },
+    {
+      "content": "To summarize your approach: Sort the array, check triplets from the end of the array, and return the perimeter of the first valid triangle found, or 0 if none exist."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= nums.length <= 10^4",
+    "1 <= nums[i] <= 10^6",
+    "Return 0 if no valid triangle can be formed.",
+    "The perimeter should be the sum of the lengths of the three sides."
+  ]
+}

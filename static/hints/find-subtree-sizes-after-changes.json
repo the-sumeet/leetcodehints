@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the tree structure represented by the `parent` array. Each index represents a node, and the value at that index indicates its parent. For example, in `parent = [-1,0,0,1,1,1]`, node 1 and 2 are children of node 0."
+    },
+    {
+      "content": "Remember that node 0 is the root of the tree. This means it has no parent (indicated by -1). When processing the tree, you will always begin from this root node."
+    },
+    {
+      "content": "The string `s` provides a character for each node. For example, `s[0]` corresponds to node 0. You'll need to compare characters between nodes and their ancestors to determine if a change in parent should occur."
+    },
+    {
+      "content": "When trying to find the closest ancestor `y` of node `x` such that `s[x] == s[y]`, consider traversing up the tree using the `parent` array. This will involve a loop that continues until you reach the root or find a matching character."
+    },
+    {
+      "content": "As you make changes to the tree structure, keep track of the new parent for each node. You can use a new array to represent the updated parent-child relationships after all changes have been processed."
+    },
+    {
+      "content": "After modifying the tree, you will need to calculate the size of the subtree for each node. The size of a subtree rooted at a node can be calculated by counting all its descendants."
+    },
+    {
+      "content": "Consider using Depth-First Search (DFS) to compute the size of each subtree. You can start from the root and recursively count the number of nodes in each subtree."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when a node has no children or when all nodes have the same character. These cases can affect how the tree is structured after changes."
+    },
+    {
+      "content": "Remember that the final output should be an array where each index corresponds to the subtree size of the respective node. Ensure that your output format matches the requirements specified in the problem statement."
+    },
+    {
+      "content": "To summarize the approach: 1) Build the tree from the `parent` array, 2) Process each node to find its new parent based on the character conditions, 3) Rebuild the tree, and 4) Calculate subtree sizes using DFS."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == parent.length == s.length",
+    "1 <= n <= 10^5",
+    "0 <= parent[i] <= n - 1 for all i >= 1; parent[0] == -1",
+    "s consists only of lowercase English letters.",
+    "Return an array where answer[i] is the size of the subtree rooted at node i."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find combinations of `k` distinct numbers from the range 1 to 9 that sum up to `n`. Make sure you remember that each number can only be used once."
+    },
+    {
+      "content": "Consider how you can generate combinations of numbers. A common approach is to use backtracking, where you explore each possible number and decide whether to include it in the current combination."
+    },
+    {
+      "content": "Think about how to keep track of the current combination and the remaining sum. You can maintain a list for the current combination and a variable for the remaining sum you need to reach `n`."
+    },
+    {
+      "content": "Remember that since the numbers must be distinct and within the range of 1 to 9, you can limit your exploration to these numbers. You can use a loop starting from 1 to 9 to pick numbers."
+    },
+    {
+      "content": "While exploring combinations, if the size of your current combination reaches `k`, check if the sum equals `n`. If it does, you have found a valid combination to add to your results."
+    },
+    {
+      "content": "Consider edge cases such as when `k` is larger than the maximum number of distinct numbers available (which is 9). For example, if `k` is 4 and `n` is 1, you should immediately return an empty list."
+    },
+    {
+      "content": "When you reach a point where the current sum exceeds `n`, you should stop exploring that path. This will help you avoid unnecessary computations and keep your algorithm efficient."
+    },
+    {
+      "content": "Think about how to avoid duplicates in your results. Since you're only using numbers from 1 to 9 and each number can only be used once, ensure that you only move forward in your loop to prevent reusing numbers."
+    },
+    {
+      "content": "As you implement the backtracking function, remember to backtrack correctly by removing the last added number from your current combination after exploring that path. This will allow you to explore other combinations."
+    },
+    {
+      "content": "Finally, once you have implemented the backtracking logic, test your function with various inputs to ensure it handles all edge cases, such as the smallest and largest possible values for `k` and `n`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= k <= 9, 1 <= n <= 60",
+    "Only numbers 1 through 9 are used.",
+    "Each number can only be used once.",
+    "The output should not contain duplicate combinations.",
+    "Combinations may be returned in any order."
+  ]
+}

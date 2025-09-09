@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence can be formed by deleting some characters from a string without changing the order of the remaining characters. For example, from 'abcde', you can form 'ace' by removing 'b' and 'd'."
+    },
+    {
+      "content": "Consider the relationship between the two strings. The longest common subsequence (LCS) is the longest sequence that appears in both strings in the same order. Think about how you can compare characters from both strings."
+    },
+    {
+      "content": "You can use dynamic programming to solve this problem efficiently. Create a 2D array (or table) where the cell at position (i, j) represents the length of the LCS of the first i characters of text1 and the first j characters of text2."
+    },
+    {
+      "content": "Initialize your 2D array with zeros. The dimensions of the array should be (length of text1 + 1) by (length of text2 + 1) to accommodate the base case of comparing against an empty string."
+    },
+    {
+      "content": "As you fill in the table, compare characters from both strings. If text1[i-1] equals text2[j-1], then the value at dp[i][j] should be 1 plus the value from the previous indices dp[i-1][j-1]."
+    },
+    {
+      "content": "If the characters do not match, set dp[i][j] to the maximum of dp[i-1][j] and dp[i][j-1]. This represents the best LCS length found by either excluding the current character from text1 or text2."
+    },
+    {
+      "content": "Remember to iterate through your table starting from index 1. The first row and first column should remain zero, as they represent comparisons with an empty string."
+    },
+    {
+      "content": "After filling in the table, the length of the longest common subsequence will be found in the bottom-right cell of the table, dp[length of text1][length of text2]."
+    },
+    {
+      "content": "Consider edge cases where one or both strings are empty. Ensure your implementation correctly handles these scenarios by returning 0 when either string has a length of 0."
+    },
+    {
+      "content": "Finally, make sure to test your solution with various input cases, including strings with no common characters, identical strings, and strings with partial overlaps. This will help ensure your solution is robust."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= text1.length, text2.length <= 1000",
+    "Both strings consist of only lowercase English characters.",
+    "Return the length of the longest common subsequence, not the subsequence itself.",
+    "If there is no common subsequence, return 0."
+  ]
+}

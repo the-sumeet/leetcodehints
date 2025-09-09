@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to calculate two values from the digits of the number: the digit sum and the digit product. Make sure you know how to extract digits from an integer."
+    },
+    {
+      "content": "To extract digits from a number, consider converting the number to a string or using modulus and integer division. For example, using `n % 10` gives you the last digit, and `n // 10` reduces the number."
+    },
+    {
+      "content": "Once you have the digits, you can calculate the digit sum. Initialize a variable to hold the sum and iterate through each digit, adding it to this variable."
+    },
+    {
+      "content": "For the digit product, start with an initial value of 1 (since multiplying by 0 will always yield 0). Multiply each digit to this product variable as you extract them."
+    },
+    {
+      "content": "Remember to handle the case where any digit is zero. If the product becomes zero, the overall sum will also be zero, and you cannot divide by zero."
+    },
+    {
+      "content": "After calculating both the digit sum and product, you need to add these two values together. This will give you the divisor for the next step."
+    },
+    {
+      "content": "Now, check if the original number `n` is divisible by the sum of the digit sum and digit product. You can use the modulus operator `%` for this check."
+    },
+    {
+      "content": "If `n % (digitSum + digitProduct) == 0`, then `n` is divisible by the sum of the two values. Make sure to handle the case where the sum is zero gracefully."
+    },
+    {
+      "content": "Consider edge cases such as single-digit numbers. For example, if `n = 7`, what would the digit sum and product be? How does that affect divisibility?"
+    },
+    {
+      "content": "Finally, structure your function to return `true` or `false` based on the divisibility check. Ensure you test your function with various inputs to confirm its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^6",
+    "Return format: boolean (true or false)",
+    "Handle cases where the product of digits may be zero."
+  ]
+}

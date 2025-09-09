@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the score of a subarray. The score is calculated as the product of the length of the subarray and the GCD of its elements. Make sure you can compute GCD for any two numbers."
+    },
+    {
+      "content": "Consider how the doubling operation affects the GCD of a subarray. Doubling an element can only increase its value, potentially increasing the GCD of the subarray it belongs to. Think about how this might change the score."
+    },
+    {
+      "content": "Remember that you can only double each element once and you have a limited number of operations (k). This means you need to be strategic about which elements to double. How might you choose which elements to double?"
+    },
+    {
+      "content": "When evaluating subarrays, consider using a sliding window approach. This can help you efficiently calculate the GCD and the length of the subarray as you iterate through the array."
+    },
+    {
+      "content": "GCD has properties that can simplify your calculations. For example, GCD(a, b, c) = GCD(GCD(a, b), c). This means you can build the GCD incrementally as you expand or contract your window."
+    },
+    {
+      "content": "Think about edge cases, such as when k is 0. In this case, you can only use the original array. What would the maximum score be in that scenario?"
+    },
+    {
+      "content": "Consider the scenario where all elements in the array are the same. How would doubling any element affect the GCD and the overall score? This might help you identify special cases."
+    },
+    {
+      "content": "You may want to create a helper function to calculate the GCD of multiple numbers. This will be useful as you evaluate different subarrays."
+    },
+    {
+      "content": "As you iterate through the array, keep track of the maximum score encountered. This will help you determine when you've found the optimal subarray configuration."
+    },
+    {
+      "content": "When you double an element, consider how it affects the surrounding elements in the subarray. You might need to recalculate the GCD for the new configuration."
+    },
+    {
+      "content": "Think about how to efficiently manage the number of operations used. You could maintain a count of how many elements you've doubled and ensure it does not exceed k."
+    },
+    {
+      "content": "When examining each subarray, you might want to store the results of GCD calculations in a memoization structure to avoid redundant calculations."
+    },
+    {
+      "content": "Consider the implications of doubling the largest element in a subarray. Would this always yield the best score? Why or why not?"
+    },
+    {
+      "content": "You can optimize the search for the maximum score by breaking out of loops early when you know further calculations won't yield a better score."
+    },
+    {
+      "content": "Finally, ensure that your solution adheres to the constraints provided. For example, consider how the maximum value of elements (up to 10^9) might affect your GCD calculations."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n == nums.length <= 1500",
+    "1 <= nums[i] <= 10^9",
+    "1 <= k <= n",
+    "Each element can be doubled at most once.",
+    "The GCD of an array is the largest integer that evenly divides all its elements."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the ball moves through the grid. A ball dropped from a column can either move left or right based on the value of the cell it lands on. If the cell contains a 1, the ball moves to the right; if it contains -1, it moves to the left."
+    },
+    {
+      "content": "Consider how the ball interacts with the edges of the grid. If a ball is redirected to a wall (either the leftmost or rightmost column), it will get stuck. Make sure to handle these boundary conditions in your logic."
+    },
+    {
+      "content": "Think about how to track the position of the ball as it moves down the grid. You can use a loop to simulate the ball's journey from the top to the bottom of the grid, row by row."
+    },
+    {
+      "content": "When the ball is at a cell, check the direction it should move based on the value of that cell. Also, check the next cell in the direction the ball is moving to see if it will get stuck in a 'V' shape."
+    },
+    {
+      "content": "A 'V' shape occurs when a ball is redirected left into a cell with -1, while the next cell to the left contains 1. Make sure to handle this case to prevent the ball from falling out."
+    },
+    {
+      "content": "Consider using a helper function to encapsulate the logic of dropping a ball from a specific column. This function can return the final position of the ball or indicate if it gets stuck."
+    },
+    {
+      "content": "Remember to account for all n balls being dropped, iterating through each column at the top of the grid. Store the results in an array that corresponds to the initial column index."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when the grid has only one row or when all cells in a column are -1. These scenarios can lead to immediate returns of -1 for those columns."
+    },
+    {
+      "content": "As you implement your solution, think about the time complexity. Each ball could potentially traverse the entire height of the grid, so ensure your approach is efficient enough for the maximum constraints (m, n ≤ 100)."
+    },
+    {
+      "content": "Finally, ensure your function correctly returns the results in the specified format: an array of integers where each index represents the column the ball falls out of or -1 if it gets stuck."
+    }
+  ],
+  "questionNotes": [
+    "Grid dimensions: m x n (1 <= m, n <= 100).",
+    "Grid values: 1 (right) or -1 (left).",
+    "Return format: an array of size n.",
+    "Indexing starts from 0 for both rows and columns.",
+    "Consider edge cases where balls might get stuck immediately."
+  ]
+}

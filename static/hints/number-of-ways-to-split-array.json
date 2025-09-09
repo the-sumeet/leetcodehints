@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a valid split. A valid split at index i means that the sum of the first i + 1 elements must be greater than or equal to the sum of the last n - i - 1 elements."
+    },
+    {
+      "content": "Remember the constraints on the index i. It must satisfy the condition `0 <= i < n - 1` to ensure that both parts of the split are non-empty."
+    },
+    {
+      "content": "Consider how you can calculate the sums efficiently. Instead of recalculating the sums for every split, think about maintaining a running total for the left part and using the total sum of the array."
+    },
+    {
+      "content": "You can calculate the total sum of the array once at the beginning. Then, as you iterate through possible split indices, you can update the left sum incrementally."
+    },
+    {
+      "content": "Define two variables: one for the left sum and another for the total sum. For each index i, you can check if `left_sum >= (total_sum - left_sum)`."
+    },
+    {
+      "content": "As you iterate through the array, update the left sum by adding the current element. After updating, check if the current split is valid."
+    },
+    {
+      "content": "Keep a counter to track the number of valid splits. Each time you find a valid split, increment this counter."
+    },
+    {
+      "content": "Consider edge cases where all elements are negative or all are positive. How do these cases affect the number of valid splits?"
+    },
+    {
+      "content": "Make sure to test your solution with different input sizes and values, especially the minimum and maximum constraints."
+    },
+    {
+      "content": "Finally, ensure that your implementation runs efficiently, ideally in O(n) time, to handle the upper limit of the input size."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 10^5",
+    "Element values: -10^5 <= nums[i] <= 10^5",
+    "Valid split indices: 0 <= i < n - 1",
+    "Return the count of valid splits, not the splits themselves."
+  ]
+}

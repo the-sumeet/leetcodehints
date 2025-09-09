@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the pyramid. Each row has one less block than the row below it. For example, if the bottom row has 4 blocks, the next row will have 3 blocks, and so on."
+    },
+    {
+      "content": "Focus on the triangular patterns. Each pattern consists of three letters, where the first two letters represent the blocks below, and the third letter is the block that can be placed on top. Make sure to keep track of these patterns clearly."
+    },
+    {
+      "content": "Consider how to transition from one row to the next. For each pair of adjacent blocks in the current row, you will need to check if there is a corresponding pattern in the allowed list that can form the block above them."
+    },
+    {
+      "content": "You can use a set to store the allowed patterns for quick look-up. This will help you efficiently check if a combination of two blocks can form a valid top block."
+    },
+    {
+      "content": "Think about how to generate the next row of blocks based on the current row. You can iterate through the current row and check each adjacent pair of blocks to determine the possible blocks for the next row."
+    },
+    {
+      "content": "Remember that if the bottom row has length n, the top row will have length 1. You need to keep processing until you either reach the top or determine that it is impossible to build the pyramid."
+    },
+    {
+      "content": "Consider edge cases, such as when the allowed list is empty. What should your function return in this case? Think about how the absence of patterns affects the ability to build the pyramid."
+    },
+    {
+      "content": "You might want to implement a recursive or iterative approach to explore all possible configurations. Make sure to handle the base case where you have successfully built the top block."
+    },
+    {
+      "content": "As you build the pyramid, keep track of the current row and the next row. If at any point you cannot create a valid next row from the current row, you should return false."
+    },
+    {
+      "content": "Finally, ensure that your function returns true only if you can build the entire pyramid. You may want to implement a loop that continues until you reach a single block at the top, checking at each step if the next row can be constructed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= bottom.length <= 6",
+    "0 <= allowed.length <= 216",
+    "allowed[i].length == 3",
+    "All values in allowed are unique.",
+    "The letters in all input strings are from the set {'A', 'B', 'C', 'D', 'E', 'F'}."
+  ]
+}

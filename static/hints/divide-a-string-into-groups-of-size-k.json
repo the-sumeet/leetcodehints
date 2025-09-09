@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to split the string into groups of size k. You can use a loop to iterate through the string in increments of k. For example, using a for loop with a step of k will help you extract each group."
+    },
+    {
+      "content": "Consider the case when the length of the string is not a multiple of k. How will you handle the last group? You will need to check the remaining characters after forming all complete groups."
+    },
+    {
+      "content": "Remember that if the last group has fewer than k characters, you will need to add the fill character to make it of size k. Think about how you can determine how many fill characters are needed."
+    },
+    {
+      "content": "When you extract the last group, you can calculate how many fill characters to add by subtracting the number of remaining characters from k. For example, if you have 2 characters left and k is 5, you need to add 3 fill characters."
+    },
+    {
+      "content": "Make sure to initialize an empty list to store the groups as you create them. Each time you form a group, append it to this list."
+    },
+    {
+      "content": "You can use string slicing to easily get each group from the string. For example, `s[i:i+k]` will give you the substring starting from index i to i+k."
+    },
+    {
+      "content": "Consider edge cases such as when the string is exactly of length k or when k is larger than the string length. How will your logic handle these scenarios?"
+    },
+    {
+      "content": "As you build your final list of groups, ensure that you return it as an array of strings. Remember to join the groups correctly if you are using any temporary structures."
+    },
+    {
+      "content": "After forming all groups, check if the last group needs to be padded with fill characters. If it does, create the last group by combining the remaining characters and the required number of fill characters."
+    },
+    {
+      "content": "Finally, put together all the pieces. You should have a loop that processes the string in chunks of k, handles the last group with padding if necessary, and returns the complete list of groups."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length <= 100",
+    "s consists of lowercase English letters only.",
+    "1 <= k <= 100",
+    "fill is a lowercase English letter.",
+    "The output should be an array of strings representing each group."
+  ]
+}

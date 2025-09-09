@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree. Each node has a value representing the number of coins it contains. Your goal is to ensure that each node ends up with exactly one coin."
+    },
+    {
+      "content": "Consider how you can traverse the tree. A depth-first search (DFS) approach can be helpful here, as it allows you to explore each subtree fully before moving back up."
+    },
+    {
+      "content": "Think about the balance of coins at each node. If a node has more than one coin, it means you need to move the excess coins to its children or up to its parent. Conversely, if it has fewer than one coin, it will need coins from its children or parent."
+    },
+    {
+      "content": "As you traverse the tree, keep track of the number of moves required to balance the coins. Each time you move a coin, you can increment a counter that tracks the total moves made."
+    },
+    {
+      "content": "When calculating moves, remember that moving a coin from a node to its child counts as one move, and moving it back counts as another. Thus, the direction of the moves matters."
+    },
+    {
+      "content": "Consider edge cases where nodes may already have one coin. If a node has exactly one coin, you don't need to make any moves for that node, so you can skip it."
+    },
+    {
+      "content": "Make sure to handle nodes with zero coins carefully. You will need to ensure they receive coins from their parent or siblings, which might require additional moves."
+    },
+    {
+      "content": "As you implement your DFS, think about returning the number of excess coins from each subtree. This will help you calculate how many moves are needed to balance the coins at the current node."
+    },
+    {
+      "content": "While traversing, you can return a tuple from your DFS function that includes both the number of moves and the excess coins at that node. This will help you maintain clarity in your calculations."
+    },
+    {
+      "content": "Finally, remember to sum up the moves from all the nodes as you backtrack in your DFS. This will give you the total minimum moves required to balance the entire tree."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The number of nodes in the tree is n (1 <= n <= 100).",
+    "Each node's value (Node.val) is between 0 and n.",
+    "The total sum of all Node.val equals n, ensuring that a solution exists.",
+    "The output should be the minimum number of moves required."
+  ]
+}

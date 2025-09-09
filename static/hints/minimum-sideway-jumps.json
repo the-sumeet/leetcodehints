@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the problem. You have a 3-lane road, and the frog starts at lane 2, point 0. The goal is to reach point n while avoiding obstacles."
+    },
+    {
+      "content": "Consider how the frog can move. It can move forward in the same lane if there's no obstacle, or it can jump to another lane at the same point if that lane is free of obstacles."
+    },
+    {
+      "content": "Take note of the obstacles array. Each element indicates if there's an obstacle in that lane at that point. Remember, obstacles[0] and obstacles[n] will always be 0, meaning no obstacles at the start and end points."
+    },
+    {
+      "content": "Think about the implications of moving to another lane. If the frog is on lane 2 and encounters an obstacle, it can jump to lane 1 or lane 3, but only if those lanes are clear at that point."
+    },
+    {
+      "content": "You might want to track the number of side jumps the frog makes. Initialize a counter to keep track of these jumps as you simulate the frog's movement across the lanes."
+    },
+    {
+      "content": "Consider using a breadth-first search (BFS) approach. This will help you explore all possible paths the frog can take while keeping track of the minimum side jumps required."
+    },
+    {
+      "content": "While implementing BFS, maintain a queue that stores the current position of the frog (lane, point) and the number of side jumps taken to get there."
+    },
+    {
+      "content": "Don't forget to mark lanes as visited to avoid processing the same lane at the same point multiple times, which can lead to unnecessary computations."
+    },
+    {
+      "content": "As you move through the points, check for obstacles and decide whether to move forward in the same lane or jump to another lane based on the obstacles array."
+    },
+    {
+      "content": "Finally, ensure that you return the minimum number of side jumps needed to reach any lane at point n. You can do this by checking the results of the BFS at point n for all lanes."
+    }
+  ],
+  "questionNotes": [
+    "The frog starts at lane 2, point 0.",
+    "The goal is to reach point n with the minimum number of side jumps.",
+    "There are no obstacles at points 0 and n.",
+    "You can jump to any lane at the same point if it is free of obstacles.",
+    "The obstacles array has a length of n + 1.",
+    "Constraints: 1 <= n <= 500,000; 0 <= obstacles[i] <= 3."
+  ]
+}

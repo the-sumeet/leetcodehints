@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operations you can perform on the integer n. If n is even, you can simply divide it by 2. If n is odd, you have two choices: either add 1 or subtract 1. Consider how these operations affect the value of n."
+    },
+    {
+      "content": "Think about the base case: what happens when n is already 1? You should return 0 because no operations are needed. This will help you set up your base condition in a recursive or iterative solution."
+    },
+    {
+      "content": "When n is even, the operation is straightforward: n becomes n / 2. This operation reduces n significantly and should be prioritized. Can you think of a way to count how many times you can divide n by 2 until it becomes odd?"
+    },
+    {
+      "content": "For odd values of n, you have two options: n + 1 or n - 1. Consider how these options might lead to different paths towards reaching 1. Which operation would you choose to minimize the number of steps?"
+    },
+    {
+      "content": "If you choose n + 1 for an odd n, it will become even, allowing you to divide it by 2 in the next step. On the other hand, n - 1 will also lead to an even number, but which path might lead to fewer total operations?"
+    },
+    {
+      "content": "Consider using a breadth-first search (BFS) approach to explore all possible paths from n to 1. This will allow you to find the minimum number of operations by exploring each state level by level."
+    },
+    {
+      "content": "You might want to use a queue to keep track of the current number and the number of operations taken to reach it. Each time you process a number, enqueue its possible next states (n / 2 for even, n + 1 and n - 1 for odd)."
+    },
+    {
+      "content": "To optimize your solution, think about using memoization or a set to keep track of already visited states. This will prevent you from processing the same number multiple times and can significantly reduce the time complexity."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when n is 1 from the start. Also, consider the upper limit of n (2^31 - 1) and ensure your solution can handle large values efficiently."
+    },
+    {
+      "content": "As a final step, think about how you will return the result. You need to return the minimum number of operations required to reduce n to 1. Make sure your counting mechanism accurately reflects this."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 2^31 - 1",
+    "Return format: an integer representing the minimum number of operations.",
+    "Consider edge cases such as n = 1 and large values of n."
+  ]
+}

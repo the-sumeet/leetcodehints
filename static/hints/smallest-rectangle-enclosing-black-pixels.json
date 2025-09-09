@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. The grid consists of '0's and '1's, where '1' represents a black pixel and '0' represents a white pixel. Your goal is to find the smallest rectangle that encloses all '1's."
+    },
+    {
+      "content": "Identify the dimensions of the grid. You can determine the number of rows and columns by checking the length of the input list and the length of the first sublist. This will help you set up your loops."
+    },
+    {
+      "content": "Think about how to locate the boundaries of the rectangle. You need to find the minimum and maximum row and column indices that contain '1's. This will define the corners of your rectangle."
+    },
+    {
+      "content": "To find the leftmost boundary, iterate through each column and check for the first occurrence of '1'. You can stop as soon as you find a '1' in that column."
+    },
+    {
+      "content": "Similarly, to find the rightmost boundary, iterate through the columns in reverse order. This will help you determine the last column that contains a '1'."
+    },
+    {
+      "content": "For the top boundary, check each row from the top down until you find the first row that contains a '1'. This will be your top edge of the rectangle."
+    },
+    {
+      "content": "To find the bottom boundary, check each row from the bottom up. The first row that contains a '1' will give you the bottom edge of your rectangle."
+    },
+    {
+      "content": "Consider edge cases where there are no '1's in the grid. In such cases, the rectangle's coordinates should return (0, 0, 0, 0) since there are no black pixels."
+    },
+    {
+      "content": "When you have determined the boundaries (left, right, top, bottom), the area of the rectangle can be calculated using the formula: (right - left) * (bottom - top)."
+    },
+    {
+      "content": "Make sure to handle cases where the grid is empty or consists only of '0's. Your function should return the correct rectangle coordinates in these scenarios."
+    },
+    {
+      "content": "Think about how you will return the rectangle's coordinates. The expected output format is typically a list or tuple of integers representing the boundaries."
+    },
+    {
+      "content": "Consider using a single pass to find the boundaries if possible. This can optimize your solution and reduce the number of iterations through the grid."
+    },
+    {
+      "content": "Remember to check the constraints on the grid size. If the grid is very large, your solution should be efficient enough to handle it without timing out."
+    },
+    {
+      "content": "After implementing your boundary-finding logic, test your function with various edge cases, including grids with only one pixel and grids that are completely filled with '1's."
+    },
+    {
+      "content": "Finally, ensure that your function handles different grid shapes (e.g., rectangular vs. square) correctly when calculating the rectangle's area."
+    }
+  ],
+  "questionNotes": [
+    "The grid is represented as a list of lists, where each inner list corresponds to a row.",
+    "The function should return the coordinates of the smallest rectangle enclosing all '1's.",
+    "If there are no '1's, return (0, 0, 0, 0).",
+    "Indices are zero-based, so ensure your calculations reflect that.",
+    "Consider performance, especially for larger grids, as the solution needs to be efficient."
+  ]
+}

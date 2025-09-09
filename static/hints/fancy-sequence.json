@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by defining the `Fancy` class and its constructor. This constructor should initialize an empty sequence, which can be represented as a list or an array."
+    },
+    {
+      "content": "For the `append(val)` method, think about how you can add an integer to the end of your sequence. You can use list methods like `append()` in Python."
+    },
+    {
+      "content": "The `addAll(inc)` method needs to increment every element in your sequence by a given integer. Consider how you can loop through the sequence and update each value."
+    },
+    {
+      "content": "When implementing `multAll(m)`, remember that you need to multiply each element in the sequence by `m`. This is similar to `addAll`, but involves multiplication instead."
+    },
+    {
+      "content": "For `getIndex(idx)`, you need to check if `idx` is within the bounds of your sequence. If `idx` is greater than or equal to the length of the sequence, return -1."
+    },
+    {
+      "content": "Don't forget to apply the modulo operation when returning the value from `getIndex(idx)`. This is crucial to ensure the result stays within the specified limits."
+    },
+    {
+      "content": "Consider how to efficiently handle the `addAll` and `multAll` operations. Instead of updating all elements immediately, think about using a 'lazy' approach where you keep track of cumulative additions and multiplications."
+    },
+    {
+      "content": "You may need to maintain two additional variables: one for the total addition (`add`) and one for the total multiplication (`mult`). This can help you compute the actual value when `getIndex(idx)` is called."
+    },
+    {
+      "content": "When you append a new value, remember to adjust it based on the current `add` and `mult` values. The formula for the actual value would be `(val * mult) + add`."
+    },
+    {
+      "content": "Be cautious about the order of operations. If you call `multAll` after `addAll`, the effects should be applied correctly to all subsequent values."
+    },
+    {
+      "content": "Make sure to handle the case where multiple `multAll` or `addAll` operations are called in sequence. They should modify the state of the sequence without needing to iterate through it every time."
+    },
+    {
+      "content": "When implementing `getIndex(idx)`, compute the effective value by applying both the total addition and multiplication. Use the formula: `((sequence[idx] * mult) + add) % (10^9 + 7)`."
+    },
+    {
+      "content": "Remember to handle edge cases such as calling `getIndex` with an index that is out of bounds. Always return -1 in such cases."
+    },
+    {
+      "content": "Consider the constraints provided in the problem statement, especially the limits on the number of calls to each method. Your solution should be efficient enough to handle the maximum input size."
+    },
+    {
+      "content": "Finally, test your implementation with various sequences of operations to ensure all methods interact correctly and produce the expected results."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= val, inc, m <= 100",
+    "0 <= idx <= 10^5",
+    "At most 10^5 calls total will be made to append, addAll, multAll, and getIndex.",
+    "Ensure to return values modulo 10^9 + 7.",
+    "If idx is out of range, return -1."
+  ]
+}

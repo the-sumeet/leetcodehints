@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the pizza. It's a 2D grid where each cell can either be an apple ('A') or empty ('.'). This will help you visualize how to make cuts."
+    },
+    {
+      "content": "Remember that you need to make k pieces from the pizza using k-1 cuts. Each piece must contain at least one apple. Think about how you can ensure that each section has an apple after making a cut."
+    },
+    {
+      "content": "Consider how to represent the cuts. You can cut horizontally between rows or vertically between columns. Each cut divides the pizza into two parts."
+    },
+    {
+      "content": "When making a cut, think about the remaining pieces. After a cut, you need to check if the resulting piece has at least one apple."
+    },
+    {
+      "content": "To efficiently check for apples in a submatrix, consider using a prefix sum array. This will allow you to quickly calculate the number of apples in any rectangular section of the pizza."
+    },
+    {
+      "content": "Think about the base case: if k = 1, you don't need to make any cuts. In this case, you just need to check if the entire pizza has at least one apple."
+    },
+    {
+      "content": "For k > 1, you'll need to use recursion or dynamic programming. You can define a function that takes the current state of the pizza and the number of pieces left to cut."
+    },
+    {
+      "content": "When implementing the recursive function, remember to iterate through all possible cut positions and directions. For each position, make a cut and recursively call the function for the resulting pieces."
+    },
+    {
+      "content": "As you make cuts, keep track of the number of ways to cut the remaining pizza. Use a variable to accumulate the total count of valid ways."
+    },
+    {
+      "content": "Don't forget to apply the modulo operation (10^9 + 7) to your result to handle large numbers, as specified in the problem statement."
+    },
+    {
+      "content": "Pay attention to the constraints: the maximum size for rows and columns is 50, and k can be up to 10. This means your solution should be efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no apples at all or when k is larger than the total number of apples. How would your function handle these scenarios?"
+    },
+    {
+      "content": "You may want to use memoization to store results of subproblems. This can significantly reduce the number of redundant calculations in your recursive approach."
+    },
+    {
+      "content": "As you implement the cuts, ensure that you are correctly updating the boundaries of the pizza for each recursive call. This is crucial for maintaining the correct state."
+    },
+    {
+      "content": "Finally, think about how to return the result. You should return the total count of valid ways to cut the pizza, ensuring to apply the modulo operation before returning."
+    }
+  ],
+  "questionNotes": [
+    "Pizza is a 2D grid with 'A' (apple) and '.' (empty cell).",
+    "You must make k pieces using k-1 cuts, each piece must contain at least one apple.",
+    "Cuts can be made either horizontally or vertically.",
+    "The answer should be returned modulo 10^9 + 7.",
+    "Constraints: 1 <= rows, cols <= 50; 1 <= k <= 10."
+  ]
+}

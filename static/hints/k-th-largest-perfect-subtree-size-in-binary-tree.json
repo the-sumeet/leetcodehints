@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a perfect binary tree is. A perfect binary tree has all its leaves at the same level and every parent node has exactly two children."
+    },
+    {
+      "content": "Think about how you would traverse the binary tree to find all the perfect binary subtrees. A depth-first search (DFS) approach could be useful here."
+    },
+    {
+      "content": "As you traverse the tree, keep track of the size of each perfect binary subtree you encounter. You can use a helper function that returns the size of the subtree if it's perfect."
+    },
+    {
+      "content": "Remember that a perfect binary subtree of height h has exactly 2^h - 1 nodes. Use this property to verify if a subtree is perfect."
+    },
+    {
+      "content": "When checking if a subtree is perfect, ensure that both left and right subtrees are also perfect and that they have the same height."
+    },
+    {
+      "content": "You need to collect the sizes of all perfect binary subtrees. Consider using a list to store these sizes as you find them during your traversal."
+    },
+    {
+      "content": "After collecting the sizes, sort the list in non-increasing order. This will help you easily access the k-th largest size."
+    },
+    {
+      "content": "Be cautious about the value of k. If k is greater than the number of perfect binary subtrees found, you should return -1."
+    },
+    {
+      "content": "When sorting the sizes, make sure to handle duplicates correctly, as multiple subtrees can have the same size."
+    },
+    {
+      "content": "To finalize your solution, after sorting the sizes, simply return the size at the index corresponding to k-1 (considering 0-based indexing)."
+    }
+  ],
+  "questionNotes": [
+    "A perfect binary tree has all leaves at the same level and every parent has two children.",
+    "The number of nodes in the tree is in the range [1, 2000].",
+    "1 <= Node.val <= 2000.",
+    "1 <= k <= 1024.",
+    "Return -1 if there are fewer than k perfect binary subtrees."
+  ]
+}

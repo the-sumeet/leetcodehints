@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the problem. You have two characters, Alice and Bob, watering plants from opposite ends of a row. Each plant has a specific water requirement, and both characters have limited capacity in their watering cans."
+    },
+    {
+      "content": "Think about how Alice and Bob will move through the plants. Alice moves from left to right, while Bob moves from right to left. Consider using two pointers to represent their positions in the array of plants."
+    },
+    {
+      "content": "Remember that both Alice and Bob can refill their watering cans when they run out of water. Keep track of how much water each of them has left after watering each plant."
+    },
+    {
+      "content": "When both Alice and Bob reach the same plant, you need to implement the tie-breaking rule. If they have the same amount of water, Alice should water the plant. Make sure to handle this condition correctly."
+    },
+    {
+      "content": "As you iterate through the plants, maintain a count of how many times Alice and Bob refill their watering cans. This will be your final output."
+    },
+    {
+      "content": "Consider edge cases, such as when there is only one plant or when both Alice and Bob have just enough water to water all the plants without refilling. What would be the expected output in these cases?"
+    },
+    {
+      "content": "You can use a loop to simulate the watering process. For each plant, check if Alice or Bob has enough water. If not, increment the refill count and reset their water level to the maximum capacity."
+    },
+    {
+      "content": "Make sure to update the water levels for both Alice and Bob after they water a plant. This will help you track their remaining water accurately as they progress."
+    },
+    {
+      "content": "Think about how you will exit the loop. You should stop when both Alice and Bob have watered all the plants. This means that the pointers for both characters should meet or cross each other."
+    },
+    {
+      "content": "Finally, put all the pieces together. Create a function that implements the above logic, ensuring to return the total number of refills required by Alice and Bob."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, 1 <= plants[i] <= 10^6, max(plants[i]) <= capacityA, capacityB <= 10^9.",
+    "Alice waters from left to right, Bob waters from right to left.",
+    "If both reach the same plant, the one with more water waters it; if equal, Alice waters it.",
+    "Return the total number of refills needed."
+  ]
+}

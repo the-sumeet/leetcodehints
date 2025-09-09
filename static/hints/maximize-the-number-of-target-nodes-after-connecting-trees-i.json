@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of both trees. Remember that each tree is represented by an edge list, which defines how nodes are connected. Visualizing the trees can help you grasp their layout."
+    },
+    {
+      "content": "Consider how to calculate the distance from any node in the first tree to all nodes in the second tree. A depth-first search (DFS) or breadth-first search (BFS) can be useful for traversing the trees and finding distances."
+    },
+    {
+      "content": "When connecting a node from the first tree to a node in the second tree, think about how this affects the distances. You need to check the paths and ensure they meet the condition of being less than or equal to k."
+    },
+    {
+      "content": "Remember that a node is always a target to itself. This means that for each node in the first tree, you can start counting from that node before considering connections to the second tree."
+    },
+    {
+      "content": "You need to compute the number of target nodes for each node in the first tree when connected to every node in the second tree. Consider using a nested loop to iterate through each node in both trees."
+    },
+    {
+      "content": "Pay attention to the constraints of the problem. The maximum number of nodes in each tree is 1000, which means your solution should be efficient enough to handle up to 1,000,000 comparisons in the worst case."
+    },
+    {
+      "content": "Think about how to store the distances from nodes in the first tree to all nodes in the second tree. Using a distance matrix or a list of distances for each node can simplify the counting process."
+    },
+    {
+      "content": "As you iterate through each node in the first tree, keep track of the maximum number of target nodes found. Make sure to reset your counts appropriately for each new node."
+    },
+    {
+      "content": "Consider edge cases, such as when k is 0. In this scenario, only the node itself is a target. Make sure your solution handles this correctly."
+    },
+    {
+      "content": "Finally, ensure that your result array is built correctly. Each index in the result should correspond to the node index in the first tree, and it should store the maximum count of target nodes for that node."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n, m <= 1000",
+    "edges1.length == n - 1, edges2.length == m - 1",
+    "Both trees are valid and have distinct node labels.",
+    "A node is always a target to itself.",
+    "Return an array of n integers, where answer[i] corresponds to node i in the first tree."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A palindrome reads the same forwards and backwards, like 'aba' or 'racecar'. This property is crucial for determining how many changes are needed."
+    },
+    {
+      "content": "Consider how to split the string into `k` parts. Each part must be a palindrome. Think about how the splits can affect the number of changes needed."
+    },
+    {
+      "content": "For any substring, calculate how many changes are required to make it a palindrome. This can be done by comparing characters from the start and end moving towards the center."
+    },
+    {
+      "content": "To find the number of changes needed for a substring `s[l:r]`, iterate from `l` to `r` and count mismatches: `changes += (s[l] != s[r])`. This gives you the number of changes for that specific substring."
+    },
+    {
+      "content": "You might want to precompute the number of changes needed for every possible substring of `s`. Store these in a 2D array `changes[i][j]` where `changes[i][j]` represents the number of changes needed to make `s[i:j]` a palindrome."
+    },
+    {
+      "content": "Think about how to use dynamic programming to solve the problem. Define a DP table `dp[i][j]` where `i` is the number of characters considered and `j` is the number of palindromic partitions."
+    },
+    {
+      "content": "The base case for your DP could be when `j = 1`, meaning you only need to make the entire substring `s[0:i]` a palindrome. This is simply `changes[0][i-1]`."
+    },
+    {
+      "content": "For `j > 1`, you need to consider all possible positions to make the last cut. For each position `p`, the cost would be `dp[p][j-1] + changes[p][i-1]`."
+    },
+    {
+      "content": "Make sure to iterate through all possible cut points for the last partition. This means a nested loop structure where you iterate over `p` for each `i` and `j`."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when `k` is greater than the length of `s`. In such cases, the answer should be the number of characters in `s` minus `k`."
+    },
+    {
+      "content": "Consider the case where `k` equals the length of `s`. Each character can be its own palindrome, so the answer would be 0 changes needed."
+    },
+    {
+      "content": "As you build your solution, ensure that your DP table is filled in a bottom-up manner. Start from smaller substrings and build up to the full string."
+    },
+    {
+      "content": "After filling the DP table, the answer will be found in `dp[n][k]`, where `n` is the length of the string. This will give you the minimum changes needed for `k` palindromic partitions."
+    },
+    {
+      "content": "Finally, review the time complexity of your approach. The naive method could be O(n^3) due to the nested loops and substring checks. Consider optimizations if needed."
+    },
+    {
+      "content": "Before finalizing your solution, test it against edge cases and large inputs to ensure it performs efficiently and correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= s.length <= 100.",
+    "s only contains lowercase English letters.",
+    "Each substring must be non-empty and disjoint.",
+    "Return the minimal number of character changes needed."
+  ]
+}

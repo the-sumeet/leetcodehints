@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a list of rooms, each defined by a unique room ID and its size. Make sure to keep track of both attributes as you process the queries."
+    },
+    {
+      "content": "When processing each query, you need to check for rooms that meet the size requirement. This means filtering the rooms based on the 'minSize' value from the query."
+    },
+    {
+      "content": "Remember that the room IDs are unique. This uniqueness will help you avoid conflicts when comparing IDs for the closest match."
+    },
+    {
+      "content": "For each query, after filtering rooms by size, you will need to find the room that minimizes the absolute difference between the room ID and the preferred ID."
+    },
+    {
+      "content": "Consider using a data structure that allows for efficient searching and sorting, like a list or a dictionary, to store the rooms. This will help you quickly access and compare room IDs."
+    },
+    {
+      "content": "When calculating the absolute difference, use the formula `abs(roomId - preferred)` to determine how close each room is to the preferred ID."
+    },
+    {
+      "content": "If two rooms have the same absolute difference, you should return the room with the smaller ID. Make sure to implement this tie-breaking rule in your logic."
+    },
+    {
+      "content": "Think about the case where no rooms meet the size requirement. You should return -1 for those queries. Make sure to handle this condition explicitly."
+    },
+    {
+      "content": "You might want to sort the rooms initially by size and then by room ID. This will allow you to efficiently find the closest room that meets the size criteria."
+    },
+    {
+      "content": "As you process each query, consider maintaining a list of valid rooms that meet the size requirement. This will help you easily find the closest room."
+    },
+    {
+      "content": "When implementing your solution, consider edge cases such as when all rooms are smaller than the minimum size required or when the preferred ID is far from all room IDs."
+    },
+    {
+      "content": "You can optimize your search for the closest room by using binary search on the sorted list of room IDs. This will reduce the time complexity significantly."
+    },
+    {
+      "content": "Make sure to return the results in the same order as the queries were provided. This means you may need to store answers in a separate list and return that at the end."
+    },
+    {
+      "content": "Before finalizing your implementation, test it with various edge cases, such as having only one room or having multiple rooms with the same size but different IDs."
+    },
+    {
+      "content": "As a final step, ensure your function handles large inputs efficiently, given the constraints of up to 10^5 rooms and 10^4 queries."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == rooms.length, 1 <= n <= 10^5, k == queries.length, 1 <= k <= 10^4",
+    "Each roomId is guaranteed to be unique.",
+    "If no room meets the size requirement, return -1.",
+    "If there's a tie in absolute difference, return the room with the smallest ID.",
+    "Return the answer in the same order as the queries."
+  ]
+}

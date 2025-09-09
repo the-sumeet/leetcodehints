@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the bitwise OR operation. The OR of two numbers results in a number that has bits set to 1 wherever either of the numbers has a bit set to 1. This means that the OR of a subarray can only increase or stay the same as you add more elements."
+    },
+    {
+      "content": "Consider the properties of the array. Since all numbers are non-negative, if you find a single element that is greater than or equal to k, that element alone forms a valid special subarray of length 1."
+    },
+    {
+      "content": "Think about how to efficiently calculate the OR for subarrays. A naive approach would involve checking every possible subarray, but this would be too slow given the constraints. Instead, consider using a sliding window or two-pointer technique."
+    },
+    {
+      "content": "When using a sliding window, maintain a current OR value as you expand the window. If the current OR is less than k, expand the window by including more elements. If it is greater than or equal to k, try to shrink the window from the left to find the shortest valid subarray."
+    },
+    {
+      "content": "Keep track of the length of valid subarrays that meet the condition (OR >= k). You can use a variable to store the minimum length found so far, updating it whenever you find a valid subarray."
+    },
+    {
+      "content": "Be careful with edge cases. For example, if k is 0, any non-empty subarray will satisfy the condition since the OR of any non-empty set of non-negative integers is at least 0."
+    },
+    {
+      "content": "Consider the situation where all elements in the array are less than k. In such cases, you should return -1 since no valid subarray can be formed."
+    },
+    {
+      "content": "Remember that the problem asks for the length of the shortest special subarray. Ensure that your final answer reflects the minimum length found, and handle cases where no valid subarray exists."
+    },
+    {
+      "content": "As you implement the algorithm, pay attention to how you update the current OR value. You might need to carefully manage the left pointer of your sliding window to ensure you are calculating the OR correctly."
+    },
+    {
+      "content": "Finally, ensure that your solution runs efficiently within the constraints. Aim for a time complexity of O(n) by iterating through the array with a single pass using the sliding window approach."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 200,000",
+    "0 <= nums[i] <= 1,000,000,000",
+    "0 <= k <= 1,000,000,000",
+    "Return -1 if no special subarray exists.",
+    "Consider edge cases such as k = 0 and all elements being less than k."
+  ]
+}

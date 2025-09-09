@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem's requirements. You need to calculate the volume of water that can be trapped in a 2D elevation map represented by a matrix. Each cell's height is given, and water can only be trapped in valleys surrounded by higher cells."
+    },
+    {
+      "content": "Consider the boundaries of the matrix. Water cannot escape from the edges, so these cells will play a crucial role in determining how much water can be trapped in the interior cells."
+    },
+    {
+      "content": "Think about how water behaves. Water will rise to the level of the lowest surrounding wall. This means you need to keep track of the height of the walls surrounding each cell as you process the matrix."
+    },
+    {
+      "content": "Use a priority queue (min-heap) to efficiently retrieve the lowest height cell. This will help you manage the boundaries of the area you're considering for water trapping."
+    },
+    {
+      "content": "Initialize the priority queue with all the boundary cells of the matrix. These cells will form the initial walls for trapping water."
+    },
+    {
+      "content": "As you process each cell from the priority queue, keep track of the maximum height of the walls encountered so far. This will help you determine how much water can be trapped above the current cell."
+    },
+    {
+      "content": "For each cell processed, check its neighboring cells (up, down, left, right). If a neighbor is lower than the current maximum wall height, calculate the trapped water above that neighbor."
+    },
+    {
+      "content": "Make sure to mark cells as visited once they are processed to avoid re-processing them. This will help in maintaining efficiency."
+    },
+    {
+      "content": "When calculating trapped water, remember to consider the height of the neighboring cell. The water level above it will be the difference between the maximum wall height and the height of the neighbor."
+    },
+    {
+      "content": "Think about edge cases, such as when the matrix is a single row or a single column. In these cases, no water can be trapped, and you should return 0."
+    },
+    {
+      "content": "Consider how to handle cells that are already at the maximum height of the walls. These cells should not contribute to the trapped water volume."
+    },
+    {
+      "content": "After processing all boundary cells, ensure that you continue to check any unvisited cells that may still be able to trap water based on the walls formed."
+    },
+    {
+      "content": "Keep track of the total volume of trapped water as you process each cell. This will be your final output."
+    },
+    {
+      "content": "Finally, ensure that your algorithm runs efficiently, ideally in O(m * n log(m + n)) time complexity, given the constraints of the problem."
+    },
+    {
+      "content": "To summarize, use a priority queue to manage the heights of the walls, process the boundary cells first, and calculate trapped water based on the maximum wall height seen so far."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == heightMap.length, n == heightMap[i].length, 1 <= m, n <= 200, 0 <= heightMap[i][j] <= 2 * 10^4.",
+    "Ensure to handle edge cases like single row or column matrices.",
+    "The return format should be the total volume of trapped water."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous portion of an array. For example, in the array [3, 1, 2, 3], the subarrays include [3], [3, 1], [3, 1, 2], and so on."
+    },
+    {
+      "content": "Familiarize yourself with the XOR operation. XOR of two bits is 1 if the bits are different and 0 if they are the same. For example, 3 XOR 1 = 2 because in binary, 3 is 11 and 1 is 01."
+    },
+    {
+      "content": "Consider how to compute the XOR of elements in a subarray. You can maintain a running XOR as you iterate through the array. For a subarray starting at index i and ending at index j, XOR can be computed incrementally."
+    },
+    {
+      "content": "Think about how to check if the XOR of a subarray is at least K. You can do this by comparing the computed XOR value to K after calculating it for each subarray."
+    },
+    {
+      "content": "You need to iterate over all possible subarrays. This can be done using two nested loops: one for the start index and another for the end index of the subarray."
+    },
+    {
+      "content": "Remember to handle edge cases. For instance, what if the array is empty or contains only one element? Think about how these cases would affect your solution."
+    },
+    {
+      "content": "Consider the efficiency of your approach. A brute-force solution that checks all subarrays will have a time complexity of O(n^2). Think about whether you can reduce this complexity."
+    },
+    {
+      "content": "You might want to use a prefix XOR array to speed up your calculations. The prefix XOR at index i gives you the XOR of all elements from the start of the array to index i."
+    },
+    {
+      "content": "To find the XOR of a subarray from index i to j using a prefix XOR array, you can use the formula: prefixXOR[j] XOR prefixXOR[i-1]."
+    },
+    {
+      "content": "When counting subarrays with XOR at least K, consider maintaining a count of how many times each prefix XOR value has occurred. This can help you identify valid subarrays efficiently."
+    },
+    {
+      "content": "Think about how to efficiently check if there exists a prefix XOR that, when XORed with the current prefix XOR, gives a result that is at least K. This may involve using a data structure to store prefix XORs."
+    },
+    {
+      "content": "You may want to use a hash map or a set to store the prefix XOR values and their counts. This will allow you to quickly check for the required conditions."
+    },
+    {
+      "content": "Be careful with the case when K is 0. Subarrays with XOR equal to 0 should also be counted. Ensure your logic accounts for this scenario."
+    },
+    {
+      "content": "As you implement your solution, remember to test it with various edge cases, such as arrays with all zeros, negative numbers, and large values of K."
+    },
+    {
+      "content": "Finally, consider how you will return the result. The problem likely requires you to return the count of valid subarrays, so make sure your final implementation reflects that."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The array can contain negative numbers and zeros.",
+    "Indexing: Ensure you handle all indices correctly, especially when accessing prefix sums.",
+    "Return format: The solution should return the count of subarrays with XOR at least K."
+  ]
+}

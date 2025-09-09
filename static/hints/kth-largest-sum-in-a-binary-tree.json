@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to traverse a binary tree. You can use a breadth-first search (BFS) approach to explore the tree level by level. This will help you gather the sums of each level."
+    },
+    {
+      "content": "As you traverse the tree, maintain a list or an array to store the sum of values at each level. Remember to increment the level count as you move deeper into the tree."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree has only one node or when all nodes are on the same level. How will your approach handle these scenarios?"
+    },
+    {
+      "content": "Once you have the level sums, think about how you can sort or find the k-th largest sum efficiently. You might want to use a min-heap to keep track of the largest sums."
+    },
+    {
+      "content": "Remember to check if the number of levels is less than k. If so, you should return -1 as specified in the problem statement."
+    },
+    {
+      "content": "When calculating the level sums, ensure that you are correctly summing the values of all nodes at the current level before moving to the next one."
+    },
+    {
+      "content": "You can use a queue to facilitate the BFS traversal. At each level, enqueue the children of the nodes you are processing and calculate the sum for that level."
+    },
+    {
+      "content": "After collecting all the level sums, sort them in descending order. This will allow you to easily access the k-th largest sum."
+    },
+    {
+      "content": "If you're using a min-heap, you can insert each level sum into the heap and maintain its size to be at most k. The root of the heap will then represent the k-th largest sum."
+    },
+    {
+      "content": "Once you have the sorted list or heap, simply return the k-th largest sum. Remember to handle the case where k is greater than the number of levels."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5, 1 <= Node.val <= 10^6, 1 <= k <= n.",
+    "If there are fewer than k levels in the tree, return -1.",
+    "Level sums are not necessarily distinct, so k-th largest can refer to repeated sums."
+  ]
+}

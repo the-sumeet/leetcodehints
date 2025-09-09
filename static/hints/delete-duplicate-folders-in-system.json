@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. The input is a 2D array where each sub-array represents a folder path. For example, the path ['a', 'b'] represents the folder '/a/b'."
+    },
+    {
+      "content": "Consider how to represent the folder structure. You can use a tree-like structure or a dictionary to map each folder to its subfolders. This will help you easily identify duplicates."
+    },
+    {
+      "content": "Think about how to determine if two folders are identical. They are identical if they have the same set of subfolders, regardless of their depth in the hierarchy."
+    },
+    {
+      "content": "When comparing folders, you might want to sort the subfolders. Sorting will help ensure that the comparison is order-independent. For example, ['b', 'a'] should be treated the same as ['a', 'b']."
+    },
+    {
+      "content": "As you process each folder, maintain a record of their subfolder structures. This could be a string representation of the sorted subfolder list, which can be used as a key in a dictionary."
+    },
+    {
+      "content": "Be mindful of the fact that folders can be nested. When you find duplicates, you need to mark not just the folders themselves but also all their subfolders recursively."
+    },
+    {
+      "content": "You may want to use a set to keep track of marked folders. This will allow you to efficiently check if a folder or its subfolders should be deleted."
+    },
+    {
+      "content": "Consider the order of operations: first, identify all duplicates and mark them, then filter out the marked folders from the final result."
+    },
+    {
+      "content": "Remember that the output should only include folders that are not marked for deletion. This means you will need to construct a new list of paths based on your marked set."
+    },
+    {
+      "content": "Think about edge cases, such as when all folders are unique or when all folders are duplicates. Your solution should handle these scenarios gracefully."
+    },
+    {
+      "content": "Pay attention to the constraints provided. For example, there can be up to 20,000 paths, and the total length of all folder names can be up to 200,000. Your solution should be efficient."
+    },
+    {
+      "content": "You will need to return the result as a 2D array. Ensure that your final output matches the required format, which is a list of lists."
+    },
+    {
+      "content": "As you implement your solution, consider using a depth-first search (DFS) approach to traverse the folder structure. This can help you explore all subfolders effectively."
+    },
+    {
+      "content": "When implementing the marking of folders, ensure that you traverse the entire structure for each folder to capture all nested duplicates."
+    },
+    {
+      "content": "Finally, think about how to optimize your solution. Using memoization or caching results of subfolder structures can help reduce redundant calculations."
+    }
+  ],
+  "questionNotes": [
+    "Each folder path is represented as an absolute path in a 2D array.",
+    "Folders are considered identical if they have the same set of identical subfolders.",
+    "Mark all identical folders and their subfolders for deletion.",
+    "Return the remaining folders in any order as a 2D array.",
+    "Constraints: 1 <= paths.length <= 20000, 1 <= paths[i].length <= 500, total length <= 200000."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the rules for how the cells change each day. Each cell's state on the next day depends on its two neighbors. Specifically, if both neighbors are the same (both 0s or both 1s), the cell becomes 1; otherwise, it becomes 0."
+    },
+    {
+      "content": "Remember that the first and last cells do not have two neighbors. You will need to handle these edge cases separately when calculating the next state."
+    },
+    {
+      "content": "To simulate the changes, you can use a loop that runs for 'n' days. Within this loop, create a new array to store the next day's state based on the current day's state."
+    },
+    {
+      "content": "Consider how to efficiently calculate the next state without modifying the current state during the iteration. You can create a temporary array to hold the results."
+    },
+    {
+      "content": "Before implementing a full simulation, think about the constraints. Since 'n' can be as large as 1 billion, running a loop for 'n' days is not feasible. Look for patterns or cycles in the states."
+    },
+    {
+      "content": "Try simulating the process for a smaller number of days, such as 14 days. You may notice that the states begin to repeat after a certain number of days, which can help you reduce the number of iterations needed."
+    },
+    {
+      "content": "When you identify a repeating cycle, you can calculate the effective number of days to simulate by using modulo operation with the length of the cycle. This will allow you to skip unnecessary computations."
+    },
+    {
+      "content": "Make sure to handle the case where 'n' is smaller than the cycle length correctly. In such cases, simply simulate the states for 'n' days directly."
+    },
+    {
+      "content": "As you implement the solution, keep in mind that the output should be an array of 8 integers, representing the final state of the cells after 'n' days."
+    },
+    {
+      "content": "To finalize your implementation, ensure that you have tested edge cases, such as when all cells are initially empty or all are occupied. These cases can sometimes lead to different patterns or cycles."
+    }
+  ],
+  "questionNotes": [
+    "There are exactly 8 cells in the array.",
+    "Each cell can only be 0 (vacant) or 1 (occupied).",
+    "1 <= n <= 10^9, which means simulating each day directly is impractical.",
+    "The first and last cells do not have two neighbors.",
+    "The output must be the state of the prison after 'n' days."
+  ]
+}

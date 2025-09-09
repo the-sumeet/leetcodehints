@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to create a function `cancellable` that takes a function `fn`, an array of arguments `args`, and a timeout `t`. This function should return another function that can cancel the execution of `fn` if called before `t` milliseconds."
+    },
+    {
+      "content": "Remember that you will use `setTimeout` to delay the execution of `fn`. You will also need to store the ID returned by `setTimeout` so that you can clear it if `cancelFn` is invoked before the timeout period expires."
+    },
+    {
+      "content": "Think about how to structure your `cancelFn`. It should be a function that, when called, will prevent `fn` from executing if it hasn't already been executed. You might want to use a flag to indicate whether `fn` has been executed or not."
+    },
+    {
+      "content": "Consider the timing of when `fn` should be executed. You need to set up the initial delay using `setTimeout(fn, t)` and also ensure that `cancelFn` can prevent this execution if it is called within `t` milliseconds."
+    },
+    {
+      "content": "When implementing `cancelFn`, you can use `clearTimeout` to cancel the scheduled execution of `fn`. Make sure to check if the timeout ID is valid before calling `clearTimeout`."
+    },
+    {
+      "content": "You should also handle the case where `cancelFn` is called after `fn` has already executed. This means your flag should indicate that `fn` has already run, and `cancelFn` should not attempt to cancel it in that case."
+    },
+    {
+      "content": "Pay attention to the return format. You need to return an array of objects, each containing the time at which `fn` was executed and the value returned by `fn`. Make sure to structure your return statement accordingly."
+    },
+    {
+      "content": "Think about edge cases, such as what happens if `cancelFn` is called immediately after invoking `cancellable`. Ensure that your implementation can handle these scenarios gracefully."
+    },
+    {
+      "content": "As a final step, ensure that your function handles multiple calls correctly. If `cancelFn` is called multiple times, it should not throw errors or behave unexpectedly."
+    },
+    {
+      "content": "To bring it all together, your `cancellable` function might look like this: define `cancelFn`, set a timeout for `fn`, and ensure that `cancelFn` clears this timeout if invoked. Pay attention to the timing and execution order of your functions."
+    }
+  ],
+  "questionNotes": [
+    "fn is a function that will be executed after a delay.",
+    "args is a valid JSON array containing the arguments for fn.",
+    "1 <= args.length <= 10, 20 <= t <= 1000, 10 <= cancelTimeMs <= 1000.",
+    "The return format is an array of objects with 'time' and 'returned' keys."
+  ]
+}

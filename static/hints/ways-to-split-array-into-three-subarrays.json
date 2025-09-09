@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the conditions for a good split. You need to split the array into three non-empty parts: left, mid, and right. The sums of these parts must satisfy the conditions: sum(left) <= sum(mid) <= sum(right)."
+    },
+    {
+      "content": "Consider how you can calculate the sums of the subarrays efficiently. Instead of recalculating sums for each possible split, think about using prefix sums to keep track of cumulative sums up to each index."
+    },
+    {
+      "content": "Remember that the split must be contiguous and non-empty. This means that the indices for the left and mid parts must be chosen such that there is at least one element in each part."
+    },
+    {
+      "content": "When iterating through possible split points, note that the left subarray ends at index i, and the mid subarray starts at index i+1. Make sure to leave enough elements for the right subarray."
+    },
+    {
+      "content": "As you iterate, maintain a running total of the sums for the left and mid subarrays. Use these to check if the conditions are satisfied as you adjust your split points."
+    },
+    {
+      "content": "Think about how to count the valid splits. You may need to keep track of how many valid mid subarrays can be formed for each left subarray sum as you iterate through the array."
+    },
+    {
+      "content": "Consider edge cases, such as when all elements are the same or when the array has a large number of elements. How do these scenarios affect the number of valid splits?"
+    },
+    {
+      "content": "Don't forget about the modulo operation. Since the number of good ways can be large, make sure to return your result modulo 10^9 + 7 as specified in the problem statement."
+    },
+    {
+      "content": "To implement the counting of good splits, you might want to use a two-pointer technique or binary search to efficiently find the range of valid mid sums that satisfy the conditions for each left sum."
+    },
+    {
+      "content": "Finally, ensure that your solution runs efficiently within the constraints. Aim for a time complexity that is linear or near-linear to handle the upper limits of the input size."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= nums.length <= 10^5",
+    "Each element nums[i] is a non-negative integer (0 <= nums[i] <= 10^4).",
+    "The output must be returned modulo 10^9 + 7.",
+    "The split must result in three non-empty contiguous subarrays."
+  ]
+}

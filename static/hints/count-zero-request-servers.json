@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. You have `n` servers, and each log entry indicates a server's ID and the time it received a request. Make sure you can parse the `logs` array correctly."
+    },
+    {
+      "content": "Consider how you will track which servers received requests. You might want to use a set or a dictionary to keep track of server IDs that have received requests during specific time intervals."
+    },
+    {
+      "content": "Think about how to process the `queries`. Each query gives you a specific time, and you need to check the interval from `queries[i] - x` to `queries[i]`. Make sure you understand how to handle inclusive intervals."
+    },
+    {
+      "content": "You will need to check for each query how many servers did not receive any requests in the specified time interval. This means you should first determine which servers did receive requests in that interval."
+    },
+    {
+      "content": "To efficiently check which servers received requests, consider sorting the `logs` by time. This will help you quickly determine which logs fall within the time interval for each query."
+    },
+    {
+      "content": "When processing each query, you can use a two-pointer technique or binary search to find the relevant logs that fall within the time interval. This will help reduce the time complexity of your solution."
+    },
+    {
+      "content": "Remember that the server IDs are 1-indexed but your logs and queries are 0-indexed. Be cautious when accessing elements in arrays to avoid off-by-one errors."
+    },
+    {
+      "content": "After identifying the servers that received requests in the interval for a query, you can calculate the number of servers that did not receive any requests by subtracting the size of this set from `n`."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no logs at all or when all servers receive requests. How will your solution handle these scenarios?"
+    },
+    {
+      "content": "Finally, ensure your output format matches the requirements. You need to return an array where each element corresponds to the result of a query. Make sure to maintain the order of the queries."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, 1 <= logs.length <= 10^5, 1 <= queries.length <= 10^5",
+    "Each log entry contains a server ID and a time.",
+    "Time intervals for queries are inclusive.",
+    "Server IDs are 1-indexed, while arrays are 0-indexed.",
+    "Return an array of results corresponding to each query."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the two operations you can perform on the string. The first operation inverts characters from the start of the string up to index `i`, while the second operation inverts characters from index `i` to the end. Think about how these operations affect the string."
+    },
+    {
+      "content": "Consider what it means to make all characters equal. You can either convert all characters to '0' or all to '1'. This will help you determine the target character you want to achieve."
+    },
+    {
+      "content": "Take a look at the costs associated with each operation. The cost of the first operation is `i + 1` and the cost of the second operation is `n - i`. How do these costs compare as `i` changes?"
+    },
+    {
+      "content": "When thinking about the operations, consider the idea of segments of '0's and '1's in the string. Each segment might require a different strategy to minimize costs when converting to a uniform character."
+    },
+    {
+      "content": "Try to visualize the process of converting the string. For example, if you have segments like '00', '11', '00', how would you approach making them all '0' or all '1'? What operations would you perform first?"
+    },
+    {
+      "content": "You might want to calculate the cost for each possible index `i` where you can perform the operations. Keep track of the cumulative cost as you decide to invert segments. This could lead you to a minimum cost."
+    },
+    {
+      "content": "Consider edge cases, such as when the string is already uniform. What would be the cost in that scenario? This could save you unnecessary calculations."
+    },
+    {
+      "content": "Implement a loop that iterates through all possible indices `i` for both operations. For each index, calculate the total cost to convert the string to all '0's and all '1's, and keep track of the minimum cost found."
+    },
+    {
+      "content": "When calculating the cost, remember to account for the state of the string after each operation. If you invert a segment, you change the characters in that segment, which affects subsequent operations."
+    },
+    {
+      "content": "Finally, ensure that your function returns the minimum cost found after evaluating all possible operations. You should have a clear method for comparing the costs of converting to '0's versus '1's."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length == n <= 10^5",
+    "s[i] is either '0' or '1'",
+    "You can perform operations on any index i from 0 to n-1.",
+    "Return the minimum cost to make all characters equal, not the string itself."
+  ]
+}

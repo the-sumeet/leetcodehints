@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. You have a string and a list of shift operations. Each operation consists of two elements: a direction (0 for left, 1 for right) and a number of positions to shift."
+    },
+    {
+      "content": "Consider how shifting works. For example, if you have the string 'abc' and you perform a left shift by 1, the result will be 'bca'. What happens if you shift right instead?"
+    },
+    {
+      "content": "Think about how to handle multiple shifts. If you have several operations, you might want to combine them instead of applying them one by one. How can you calculate the net effect of all shifts?"
+    },
+    {
+      "content": "Remember that shifting a string can wrap around. For instance, shifting 'abc' left by 3 should return 'abc' again because it effectively completes a full cycle. How can you use modulo to simplify this?"
+    },
+    {
+      "content": "When calculating the total shift, keep in mind the length of the string. If the total shift exceeds the length of the string, you can reduce it using the modulo operation. This will help avoid unnecessary full rotations."
+    },
+    {
+      "content": "Consider edge cases, such as when the input string is empty or when there are no shift operations. What should your function return in these scenarios?"
+    },
+    {
+      "content": "Think about how to implement the shifting. You might want to use slicing in Python. For example, if you determine the effective shift is `k`, how would you slice the string to achieve the desired result?"
+    },
+    {
+      "content": "You can represent the effective shift as a single integer. If you have a left shift of `k`, it can be represented as a negative shift for easier calculations. How can you convert both left and right shifts into a single effective shift value?"
+    },
+    {
+      "content": "Before finalizing your shifts, ensure you account for both directions correctly. If you have a left shift of `k` and a right shift of `m`, how do you compute the final effective shift?"
+    },
+    {
+      "content": "Finally, once you have the effective shift, you can construct the final string using slicing. For example, if the effective shift is `k`, you can do something like: `result = s[-k:] + s[:-k]`. Make sure to handle the case when `k` is zero."
+    }
+  ],
+  "questionNotes": [
+    "The input string can be empty, and you should handle this case.",
+    "Shifts are defined by a direction (0 for left, 1 for right) and a number of positions.",
+    "The operations can be combined to find a single effective shift.",
+    "The final output should be the modified string after all shifts have been applied."
+  ]
+}

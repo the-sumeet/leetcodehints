@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. You will receive two lists: one for the bike locations and another for the student locations. Each location is represented as a pair of coordinates [x, y]."
+    },
+    {
+      "content": "Consider how you will calculate the distance between a bike and a student. The Manhattan distance is often used in grid-based problems, which is calculated as |x1 - x2| + |y1 - y2|."
+    },
+    {
+      "content": "Think about how to assign bikes to students. Each student can only take one bike, and each bike can only be assigned to one student. This creates a one-to-one mapping that you need to manage."
+    },
+    {
+      "content": "You may want to use a priority queue or a sorted list to manage the distances between bikes and students efficiently. This will help you quickly find the closest bike available for each student."
+    },
+    {
+      "content": "When handling ties in distance, you should prioritize the bike with the smaller index. This will require you to keep track of which bikes have already been assigned."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when there are more bikes than students or vice versa. Make sure your solution can handle these scenarios without errors."
+    },
+    {
+      "content": "As you iterate through the students, ensure you mark bikes as 'taken' once they are assigned. This will prevent multiple students from being assigned the same bike."
+    },
+    {
+      "content": "You will need to return the final assignments of bikes to students as a list of indices. Make sure the output format matches the expected structure exactly."
+    },
+    {
+      "content": "Consider using a greedy approach to assign bikes to students based on the shortest distance. Start by sorting the students and bikes based on their coordinates to facilitate distance calculations."
+    },
+    {
+      "content": "Finally, think about the overall time complexity of your solution. Aim for an efficient approach, ideally O(n log n), where n is the number of bikes or students, to ensure it runs well for larger inputs."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of two lists of coordinates: bikes and students.",
+    "Each coordinate is a pair [x, y].",
+    "Each student can take only one bike and vice versa.",
+    "Ties in distance should be resolved by bike index (lower index preferred).",
+    "Output should be a list of bike indices assigned to each student.",
+    "Consider edge cases where the number of bikes and students differ."
+  ]
+}

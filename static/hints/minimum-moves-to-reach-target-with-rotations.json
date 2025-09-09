@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by visualizing the snake's movement on a grid. The snake occupies two cells, so you need to keep track of both positions as it moves."
+    },
+    {
+      "content": "Remember that the snake can only move to adjacent cells if they are both empty. This means you need to check the next cell before moving."
+    },
+    {
+      "content": "Consider using a breadth-first search (BFS) approach. BFS is suitable here because it explores all possible moves level by level, ensuring you find the minimum moves."
+    },
+    {
+      "content": "You need to represent the snake's state not just by its head position, but also by its orientation (horizontal or vertical). This can be done using a tuple or a custom class."
+    },
+    {
+      "content": "When implementing BFS, maintain a queue that stores the current state of the snake (its head position, orientation, and the number of moves taken)."
+    },
+    {
+      "content": "Make sure to mark visited states to avoid processing the same configuration multiple times. This will help in reducing unnecessary computations."
+    },
+    {
+      "content": "For the rotation moves, check the conditions carefully: a clockwise rotation requires empty cells below the snake, while a counterclockwise rotation requires empty cells to the right."
+    },
+    {
+      "content": "Think about edge cases, such as when the snake is at the edge of the grid. Ensure your code handles these situations without trying to access out-of-bounds indices."
+    },
+    {
+      "content": "When checking for valid moves, consider using a helper function that checks if a move is valid based on the current snake position and orientation."
+    },
+    {
+      "content": "The target position for the snake is the bottom right corner of the grid. Ensure your BFS stops when the snake reaches the desired end position."
+    },
+    {
+      "content": "If your BFS completes and the target is not reached, remember to return -1, indicating that it's impossible to reach the target."
+    },
+    {
+      "content": "Keep in mind the grid's constraints: blocked cells (1s) and open cells (0s). Your movement logic should only allow transitions through open cells."
+    },
+    {
+      "content": "Consider the performance of your solution. Since the grid can be as large as 100x100, ensure that your BFS implementation is efficient and avoids unnecessary checks."
+    },
+    {
+      "content": "You may want to implement a simple test case to verify your BFS logic before tackling more complex scenarios. Start with a small grid."
+    },
+    {
+      "content": "As a final step, ensure your BFS correctly handles the snake's orientation transitions and that you are updating the move count appropriately with each valid action."
+    }
+  ],
+  "questionNotes": [
+    "The snake spans two cells, so track both positions.",
+    "Use BFS to find the minimum moves.",
+    "Mark visited states to avoid reprocessing.",
+    "Check conditions for valid moves carefully.",
+    "Return -1 if the target cannot be reached."
+  ]
+}

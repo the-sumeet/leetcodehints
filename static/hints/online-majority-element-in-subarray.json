@@ -1,0 +1,58 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the majority element in the context of a subarray. It's an element that appears at least 'threshold' times in that specific range."
+    },
+    {
+      "content": "Consider how you would count occurrences of elements in a subarray. A naive approach would be to iterate through the subarray for each query, but this could be inefficient for large inputs."
+    },
+    {
+      "content": "Think about how you can preprocess the array to enable faster queries. Could you use a hashmap to store the frequency of each element?"
+    },
+    {
+      "content": "Remember that the constraints indicate that the array can be quite large (up to 20,000 elements). This means your solution needs to be efficient, ideally better than O(n) for each query."
+    },
+    {
+      "content": "Consider using a data structure that allows you to maintain counts of elements efficiently. For example, a Segment Tree or a Binary Indexed Tree could be useful."
+    },
+    {
+      "content": "When implementing the query function, think about how to handle the left and right indices. You need to ensure that you are only counting elements within the specified range."
+    },
+    {
+      "content": "What happens if there are multiple elements that meet the threshold condition? You need to ensure that you return the correct element according to the problem statement."
+    },
+    {
+      "content": "Consider the case where no element meets the threshold. Your function should return -1 in this scenario. How will you check for this condition?"
+    },
+    {
+      "content": "You might want to use a frequency map to count occurrences of elements in the specified range. Make sure to handle the case where the frequency of an element is less than the threshold."
+    },
+    {
+      "content": "Think about edge cases, such as when the subarray has only one element or when the threshold is greater than the total number of elements in the subarray."
+    },
+    {
+      "content": "You could optimize your counting by only checking elements that appear in the subarray, rather than all possible elements in the original array."
+    },
+    {
+      "content": "Consider using a combination of a hashmap and a list to store the indices of each element. This way, you can quickly find how many times an element appears in a given range."
+    },
+    {
+      "content": "When counting elements, remember to check the frequency of each candidate element against the threshold. If it meets the condition, you can return it as the result."
+    },
+    {
+      "content": "You may want to implement a helper function to count the occurrences of a specific element within a given range. This can help keep your code organized."
+    },
+    {
+      "content": "Finally, ensure that your solution handles multiple queries efficiently. You might need to optimize the way you access and count elements to avoid repeated work."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 20,000",
+    "1 <= arr[i] <= 20,000",
+    "0 <= left <= right < arr.length",
+    "threshold <= right - left + 1",
+    "2 * threshold > right - left + 1",
+    "At most 10,000 calls will be made to query.",
+    "Return -1 if no element meets the threshold."
+  ]
+}

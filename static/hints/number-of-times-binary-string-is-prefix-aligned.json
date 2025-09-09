@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a prefix-aligned binary string. A binary string is prefix-aligned if all bits from index 1 to i are 1 after the i-th flip. This means you need to check the first i bits after each flip."
+    },
+    {
+      "content": "Consider how you will track the state of the binary string. You can use an array of size n initialized to 0 (all bits are 0) and update it as you process each flip in the `flips` array."
+    },
+    {
+      "content": "Remember that the `flips` array contains a permutation of integers from 1 to n. This means that every index will be flipped exactly once, and you won't have any duplicates."
+    },
+    {
+      "content": "After each flip, you need to check if the string is prefix-aligned. One way to do this is to keep a counter that tracks how many bits have been flipped to 1. Compare this counter to the current step number."
+    },
+    {
+      "content": "Think about how to efficiently check if the bits from 1 to i are all 1s. You can use a variable to keep track of the maximum index flipped so far and compare it to the current step number."
+    },
+    {
+      "content": "As you process each flip, update the maximum index flipped. If the maximum index equals the current step number, it indicates that all bits from 1 to i are 1, thus the string is prefix-aligned."
+    },
+    {
+      "content": "Don't forget to count how many times the string is prefix-aligned. You can maintain a counter that increments each time you find that the string is prefix-aligned after a flip."
+    },
+    {
+      "content": "Consider edge cases, such as when the flips array is in reverse order. How does this affect the prefix alignment? Make sure your solution handles all possible permutations."
+    },
+    {
+      "content": "When implementing your solution, pay attention to the 1-indexing of the problem. Ensure that you are correctly accessing the indices in your flips array."
+    },
+    {
+      "content": "Finally, put everything together. Loop through the flips array, update your binary string representation, check for prefix alignment, and return the count of prefix-aligned instances. Remember to handle the indexing correctly."
+    }
+  ],
+  "questionNotes": [
+    "The binary string is 1-indexed.",
+    "The flips array is a permutation of integers from 1 to n.",
+    "You need to return the count of times the string is prefix-aligned after each flip."
+  ]
+}

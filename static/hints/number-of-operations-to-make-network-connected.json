@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the network. Each computer can be thought of as a node and each connection as an edge in a graph. This problem can be approached using graph theory concepts."
+    },
+    {
+      "content": "Consider how many connected components are present in the graph formed by the computers and connections. Each connected component represents a group of computers that are already directly or indirectly connected."
+    },
+    {
+      "content": "To connect all computers, you need to ensure there is only one connected component. The number of operations required to connect all components is generally one less than the number of components."
+    },
+    {
+      "content": "Count the total number of connections you have. If the number of connections is less than `n - 1` (where `n` is the number of computers), it's impossible to connect all computers, and you should return -1."
+    },
+    {
+      "content": "Use a union-find (disjoint set) data structure to efficiently manage and count the connected components. This will help you determine how many components you have after processing all connections."
+    },
+    {
+      "content": "While processing the connections, keep track of how many connections you have and how many components are formed. Each time you successfully connect two components, you reduce the total count of components."
+    },
+    {
+      "content": "If you find that the number of connections is sufficient (i.e., at least `n - 1`), calculate the number of operations needed as `components - 1`. This is because you need to perform one operation to connect each additional component."
+    },
+    {
+      "content": "Be careful with edge cases, such as when there is only one computer (`n = 1`). In this case, no operations are needed, and you should return 0."
+    },
+    {
+      "content": "When implementing the union-find structure, remember to implement path compression and union by rank to keep the operations efficient, especially given the constraints of up to 100,000 computers."
+    },
+    {
+      "content": "Finally, ensure you return the correct result format: if it's possible to connect all computers, return the number of operations; otherwise, return -1. Make sure to validate your logic with the provided examples."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5",
+    "1 <= connections.length <= min(n * (n - 1) / 2, 10^5)",
+    "Each connection is unique and no two computers are connected by more than one cable.",
+    "Return -1 if it's not possible to connect all computers."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. Each transaction is represented as a pair of integers: cost and cashback. You need to complete all transactions in any order, which means the initial amount of money must be sufficient for all possible sequences."
+    },
+    {
+      "content": "Consider what happens after completing a transaction. Your money decreases by the cost of the transaction and increases by the cashback. This means that the net effect of a transaction is (cashback - cost)."
+    },
+    {
+      "content": "Think about the worst-case scenario. If you perform a transaction that has a high cost and low cashback first, you might run out of money. Therefore, you need to ensure that you have enough money to cover the highest cost transaction at any point."
+    },
+    {
+      "content": "To find the minimum starting money, you might want to track the cumulative effect of transactions as you process them in a specific order. This could help you identify the lowest point your money can reach."
+    },
+    {
+      "content": "Consider sorting the transactions based on their costs or some other criteria. This might help you simulate the process of completing transactions in a way that minimizes the required starting money."
+    },
+    {
+      "content": "Remember that the order of transactions can drastically affect the outcome. You need to ensure that your solution accounts for all possible orders, not just one specific sequence."
+    },
+    {
+      "content": "Calculate the net effect of each transaction as you simulate completing them. This will help you understand how much money you need to have at the start to avoid running out."
+    },
+    {
+      "content": "You might want to maintain a running total of your current money as you go through the transactions. Whenever you perform a transaction, update your current money and check if it drops below zero."
+    },
+    {
+      "content": "Consider the edge cases where cashback is greater than or equal to the cost. These transactions may not require any initial money if they are performed at the right time."
+    },
+    {
+      "content": "Think about using a greedy approach where you always try to perform the least costly transaction first. This might help you maintain a higher balance for subsequent transactions."
+    },
+    {
+      "content": "You can also calculate the maximum cost that you need to cover at any point during the transaction process. This will give you a clearer picture of how much initial money is necessary."
+    },
+    {
+      "content": "Keep track of the minimum money required at each step as you simulate the transactions. This will help you determine the overall minimum starting amount needed."
+    },
+    {
+      "content": "As you iterate through the transactions, consider how the cashback affects your ability to perform future transactions. This may help you identify critical points where you need more starting money."
+    },
+    {
+      "content": "Finally, ensure that your solution efficiently handles the maximum constraints, especially since the number of transactions can be as high as 100,000."
+    },
+    {
+      "content": "To summarize, focus on the relationship between cost and cashback for each transaction, and think about how to simulate the process in a way that guarantees completion of all transactions."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= transactions.length <= 10^5",
+    "Each transaction consists of two integers: cost_i and cashback_i.",
+    "0 <= cost_i, cashback_i <= 10^9",
+    "You must complete each transaction exactly once, in any order.",
+    "Return the minimum amount of money required before any transaction."
+  ]
+}

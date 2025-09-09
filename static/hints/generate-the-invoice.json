@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main components: 'Products' and 'Purchases'. Each has its own set of attributes that you'll need to work with."
+    },
+    {
+      "content": "Identify how the 'Products' and 'Purchases' relate to each other. Each purchase references a product by its 'product_id', so you'll need to link these two datasets."
+    },
+    {
+      "content": "Consider how to store the information from 'Products' in a way that allows you to easily access the price of each product. A dictionary or map could be useful here."
+    },
+    {
+      "content": "As you process each purchase, remember to check if the 'product_id' exists in your products data. This is crucial to avoid referencing invalid products."
+    },
+    {
+      "content": "When calculating the total price for each invoice, you will need to multiply the price of the product by the quantity purchased. Make sure to handle this calculation correctly."
+    },
+    {
+      "content": "Think about how to group purchases by 'invoice_id'. You can use a dictionary where the key is the 'invoice_id' and the value is a list of tuples containing product details."
+    },
+    {
+      "content": "Ensure you account for multiple entries for the same 'invoice_id'. You may need to aggregate the total costs for each product within the same invoice."
+    },
+    {
+      "content": "Consider edge cases, such as purchases with zero quantity or invoices that do not have any associated products. How will you handle these scenarios?"
+    },
+    {
+      "content": "Once you have grouped your purchases by invoice, you can start constructing the final invoice output. Think about how to format this data correctly."
+    },
+    {
+      "content": "The final output should include the 'invoice_id' and the total amount for each invoice. Make sure your output structure matches the expected format."
+    },
+    {
+      "content": "As you build your output, consider how to handle invoices that have no valid purchases. Should they be included in the final output or omitted?"
+    },
+    {
+      "content": "You might want to sort the invoices by 'invoice_id' in your final output. This can make it easier to read and verify your results."
+    },
+    {
+      "content": "Keep in mind the importance of testing your solution with various inputs. Try edge cases like having no purchases or having multiple purchases for the same product."
+    },
+    {
+      "content": "Make sure to validate that your total calculations are correct. You can do this by manually calculating totals for small datasets and comparing them to your output."
+    },
+    {
+      "content": "Finally, ensure your code is efficient, especially if the input sizes can be large. Think about the time complexity of your approach and how you can optimize it."
+    }
+  ],
+  "questionNotes": [
+    "The 'Products' array contains unique 'product_id's, so there will be no duplicates.",
+    "The 'Purchases' array may contain multiple entries for the same 'invoice_id'.",
+    "Handle cases where a purchase references a non-existent 'product_id'.",
+    "Output format should include 'invoice_id' and 'total_amount' for each invoice."
+  ]
+}

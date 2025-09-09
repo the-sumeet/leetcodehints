@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the two types of queries. The first type adds an obstacle at a specific distance, while the second type checks if a block of a given size can fit without intersecting any obstacles."
+    },
+    {
+      "content": "For type 1 queries, maintain a data structure to store the positions of obstacles. Consider using a set or a list to keep track of these positions efficiently."
+    },
+    {
+      "content": "When handling type 2 queries, think about how to determine the available space for placing a block. You need to consider the positions of obstacles within the specified range."
+    },
+    {
+      "content": "Remember that a block can touch an obstacle but cannot intersect it. This means that if an obstacle is at position `x`, a block of size `sz` can start at `x - sz`."
+    },
+    {
+      "content": "For a type 2 query, check the range from 0 to `x` and see if there is enough continuous space to fit the block of size `sz`. You may need to sort or iterate through the obstacles."
+    },
+    {
+      "content": "Consider edge cases where there are no obstacles in the range or when the block size is larger than the distance `x`. How would these affect your checks?"
+    },
+    {
+      "content": "When checking for available space, if you have multiple obstacles, you need to check the gaps between them. For example, if obstacles are at positions `a` and `b`, the gap is `b - a`."
+    },
+    {
+      "content": "Think about how to efficiently find the gaps between obstacles. If you sort the obstacles, you can easily compute the gaps by iterating through the sorted list."
+    },
+    {
+      "content": "After sorting the obstacles, check the space before the first obstacle and after the last obstacle as well. These areas may provide additional space for placing blocks."
+    },
+    {
+      "content": "When checking gaps, ensure that you also consider the size of the block. If the gap is less than `sz`, it won't be possible to place the block there."
+    },
+    {
+      "content": "As you implement the solution, keep track of the results for type 2 queries in a list. Ensure that you return the results in the same order as the queries were received."
+    },
+    {
+      "content": "Pay attention to the constraints given in the problem. For example, the maximum size for `x` and `sz` can influence how you structure your data and checks."
+    },
+    {
+      "content": "Consider edge cases where multiple obstacles are added in quick succession. Ensure that your data structure handles these updates efficiently."
+    },
+    {
+      "content": "Think about the time complexity of your solution. Sorting the obstacles might take `O(n log n)`, but how can you ensure that each query is processed efficiently afterward?"
+    },
+    {
+      "content": "Finally, ensure that your solution handles all possible scenarios correctly. Test it against various cases, including the maximum constraints."
+    }
+  ],
+  "questionNotes": [
+    "There are two types of queries: type 1 adds an obstacle, type 2 checks for block placement.",
+    "Obstacles are guaranteed to be unique and do not overlap when added.",
+    "A block can touch but not intersect obstacles.",
+    "The results for type 2 queries should be returned in the order they were asked.",
+    "Consider edge cases where there are no obstacles or where the block size exceeds the range."
+  ]
+}

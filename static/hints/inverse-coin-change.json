@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the number of ways to make change for each amount and the coin denominations. Each entry in the `numWays` array corresponds to the number of ways to form that amount using some denominations."
+    },
+    {
+      "content": "Notice that `numWays[1]` should be 0 if there are no denominations that can form the amount 1. This is a crucial observation that can help you eliminate certain possibilities."
+    },
+    {
+      "content": "Consider how you can derive the possible denominations from the `numWays` array. For example, if `numWays[2]` is 1, it indicates that the only way to form 2 is with a denomination of 2."
+    },
+    {
+      "content": "Look for patterns in the `numWays` array. If `numWays[i]` is greater than `numWays[i-1]`, it suggests that a new denomination could be contributing to the ways to form amount `i`."
+    },
+    {
+      "content": "When you identify a potential denomination, check if it aligns with the number of ways to form other amounts. For instance, if you assume a denomination of 2, verify how it affects `numWays[4]`, `numWays[6]`, etc."
+    },
+    {
+      "content": "Pay attention to the constraints given in the problem. Each denomination must be a positive integer and cannot exceed the length of `numWays`. This limits the possible denominations you can consider."
+    },
+    {
+      "content": "Consider edge cases, such as when `numWays` is filled with zeros or has only one non-zero entry. How would you handle these scenarios when trying to deduce the denominations?"
+    },
+    {
+      "content": "Create a list to collect potential denominations as you find them. Ensure that you only add unique denominations to this list to meet the problem's requirements."
+    },
+    {
+      "content": "Once you have a list of potential denominations, validate them by simulating the coin change problem using these denominations. Ensure that they reproduce the original `numWays` array."
+    },
+    {
+      "content": "Finally, remember to return the denominations in sorted order. If no valid set of denominations is found, return an empty array. This is crucial for passing the test cases."
+    }
+  ],
+  "questionNotes": [
+    "1-indexed array: numWays[i] corresponds to the number of ways to form amount i.",
+    "Denominations must be positive integers and cannot exceed numWays.length.",
+    "Return a sorted array of unique denominations or an empty array if none exist.",
+    "Pay attention to edge cases with zero values in numWays."
+  ]
+}

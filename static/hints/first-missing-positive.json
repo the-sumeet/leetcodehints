@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the range of positive integers you need to consider. Since you're looking for the smallest missing positive integer, focus on the range from 1 to n, where n is the length of the array."
+    },
+    {
+      "content": "Remember that negative numbers and zeros do not contribute to the smallest missing positive integer. You can ignore them while processing the array."
+    },
+    {
+      "content": "Consider how you can use the input array itself to track which positive integers are present. This will help you achieve O(1) auxiliary space."
+    },
+    {
+      "content": "Think about how you can map the integer values to their corresponding indices in the array. For example, if you find the number 1 in the array, you might want to mark the index 0."
+    },
+    {
+      "content": "You can iterate through the array and for each number, if it's in the range [1, n], place it in its correct index. This means placing the number x at index x-1."
+    },
+    {
+      "content": "While rearranging the numbers, be cautious of duplicates and out-of-range values. You might need to skip these during your placement."
+    },
+    {
+      "content": "After rearranging, the first index that does not contain the correct number indicates the smallest missing positive integer. For example, if index 0 does not have 1, then 1 is missing."
+    },
+    {
+      "content": "Make sure to handle cases where all numbers from 1 to n are present. In such cases, the answer would be n + 1."
+    },
+    {
+      "content": "As you implement the rearrangement, consider using a while loop to swap elements until each number is either out of range or in its correct position."
+    },
+    {
+      "content": "Pay attention to edge cases, such as arrays that contain only negative numbers or zeros. What should your function return in these cases?"
+    },
+    {
+      "content": "Think about how you can efficiently check which index is missing its corresponding number after the rearrangement. This can be done with a single pass through the array."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Each number should ideally be moved at most once, ensuring that your solution runs in O(n) time."
+    },
+    {
+      "content": "Remember that the constraints specify that the length of the array can be up to 100,000. Your solution needs to handle large inputs efficiently."
+    },
+    {
+      "content": "As you finalize your implementation, ensure that you are not using any additional data structures that would increase space complexity beyond O(1)."
+    },
+    {
+      "content": "You are very close to the solution! After rearranging the elements, iterate through the array to find the first index where the value does not match the expected index + 1."
+    }
+  ],
+  "questionNotes": [
+    "The smallest positive integer is defined as the first missing integer greater than 0.",
+    "The solution must run in O(n) time and use O(1) auxiliary space.",
+    "All negative numbers and zeros can be ignored.",
+    "Ensure that your solution handles arrays with duplicates and out-of-range values correctly.",
+    "If all numbers from 1 to n are present, return n + 1."
+  ]
+}

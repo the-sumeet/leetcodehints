@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the condition for marking an index. You can only mark an index `i` if `rewardValues[i]` is greater than your current total reward `x`. This means that your strategy will depend on the values in `rewardValues` and how you accumulate `x`."
+    },
+    {
+      "content": "Consider the implications of marking an index. Once you mark an index, you cannot mark it again, and it contributes to your total reward. Think about how to maximize the total reward by choosing the right indices in the right order."
+    },
+    {
+      "content": "Try sorting the `rewardValues` array. By sorting, you can more easily determine which values can be added to `x` as you build it up. This can help you visualize the best sequence of operations."
+    },
+    {
+      "content": "After sorting, start with the smallest value and see how it affects your total reward. If you cannot mark a value because it is not greater than `x`, you will need to consider the next larger value."
+    },
+    {
+      "content": "Think about the greedy approach. By always choosing the smallest unmarked value that is greater than `x`, you can gradually increase your total reward. This ensures that you don't miss any potential rewards."
+    },
+    {
+      "content": "Keep track of the indices you have marked. You will need to ensure that you are only considering unmarked indices when trying to add to your total reward. You might use a boolean array to track marked indices."
+    },
+    {
+      "content": "Consider edge cases, such as when all values in `rewardValues` are the same or when they are arranged in descending order. How would your approach change in these scenarios?"
+    },
+    {
+      "content": "As you iterate through the sorted values, maintain a running total of your reward. Each time you successfully mark an index, update `x` and continue checking subsequent values."
+    },
+    {
+      "content": "Remember to check if you can mark the next value after updating `x`. If you can, add it to your total reward; if not, move to the next unmarked value."
+    },
+    {
+      "content": "Finally, think about the time complexity of your approach. Sorting the array takes O(n log n), and iterating through it takes O(n). Ensure your solution is efficient given the constraints."
+    }
+  ],
+  "questionNotes": [
+    "1 <= rewardValues.length <= 2000",
+    "1 <= rewardValues[i] <= 2000",
+    "You can perform the operation any number of times.",
+    "Indices are marked once used and cannot be reused.",
+    "Return the maximum total reward as an integer."
+  ]
+}

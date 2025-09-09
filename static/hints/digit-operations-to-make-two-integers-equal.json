@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by analyzing the digits of both integers, n and m. Since they consist of the same number of digits, you can compare them position by position to determine how many operations are needed."
+    },
+    {
+      "content": "Consider the operations allowed: you can only increase digits that are not 9 and decrease digits that are not 0. Think about how these constraints might affect your ability to transform n into m."
+    },
+    {
+      "content": "Remember that n must never be a prime number during the transformation. It’s essential to check if n or any intermediate value becomes prime after an operation."
+    },
+    {
+      "content": "To check if a number is prime, you can use a simple function that tests divisibility from 2 up to the square root of the number. This will be useful to ensure n remains non-prime."
+    },
+    {
+      "content": "Think about edge cases where transforming n into m might be impossible. For example, if n is less than m, you will need to increase some digits, but if all digits are already at 9, you can't do that."
+    },
+    {
+      "content": "Consider the overall cost of transformation. Each time n changes, you need to add the current value of n to a total cost variable. Make sure to keep track of this cost throughout the operations."
+    },
+    {
+      "content": "When performing operations, try to minimize the number of intermediate values of n that are prime. You might want to create a strategy that avoids certain digits that lead to prime numbers."
+    },
+    {
+      "content": "If you find that transforming n to m is impossible at any point, make sure to return -1 immediately. This will help in optimizing your solution and avoiding unnecessary calculations."
+    },
+    {
+      "content": "As you implement the transformation logic, ensure you are checking the conditions after each operation. This means checking if n is prime and if it matches m after every valid operation."
+    },
+    {
+      "content": "Finally, think about how to structure your solution. A loop that iterates through the digits and applies the allowed operations while checking for primality and updating the cost might be a good approach."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n, m < 10^4",
+    "n and m consist of the same number of digits.",
+    "Return -1 if it is impossible to transform n into m.",
+    "n must not be a prime number at any point during the transformation."
+  ]
+}

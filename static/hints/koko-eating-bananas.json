@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem: Koko needs to eat all bananas in the piles within a given number of hours, h. The speed at which she eats, k, is what we need to determine. Think about how k affects the time taken to finish all piles."
+    },
+    {
+      "content": "Consider the maximum number of bananas in any single pile. Koko must eat at least this many bananas in one hour if she wants to finish that pile in time. This gives a lower bound for k: it must be at least as large as the largest pile."
+    },
+    {
+      "content": "The time taken to eat all bananas can be calculated based on k. For each pile, the time required to finish it can be computed as `ceil(pile_size / k)`. Remember that `ceil` can be represented as `(pile_size + k - 1) // k` in integer arithmetic."
+    },
+    {
+      "content": "Think about how to find the optimal k. You can use binary search to efficiently find the minimum k. The search range for k can be between 1 (eating one banana per hour) and the maximum pile size."
+    },
+    {
+      "content": "Set up your binary search: initialize `low` to 1 and `high` to the maximum value in the piles array. The middle point `mid` will represent a candidate for k. You will check if Koko can finish all bananas at this rate."
+    },
+    {
+      "content": "For each candidate k (mid), calculate the total time Koko would take to eat all the piles. Sum the time for each pile using the formula discussed. If the total time is less than or equal to h, then k is a valid candidate."
+    },
+    {
+      "content": "If Koko can finish with the current k, it means you can try a smaller k (move left in binary search). If she cannot finish, you need to increase k (move right). This way, you narrow down to the smallest valid k."
+    },
+    {
+      "content": "Consider edge cases: What if there is only one pile? Or if all piles are the same size? Ensure your solution handles these scenarios correctly."
+    },
+    {
+      "content": "Remember to keep track of the minimum k found during your binary search. This will be your final answer once the search concludes."
+    },
+    {
+      "content": "Finally, implement the binary search logic: While `low` is less than or equal to `high`, calculate mid, check if Koko can finish in h hours, and adjust your search bounds accordingly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= piles.length <= 10^4",
+    "h can be as large as 10^9, and piles[i] can also be up to 10^9.",
+    "Ensure you handle integer overflow when calculating time.",
+    "The return value must be an integer representing the minimum k.",
+    "Koko can eat from any pile each hour, and she cannot split her eating across multiple piles in an hour."
+  ]
+}

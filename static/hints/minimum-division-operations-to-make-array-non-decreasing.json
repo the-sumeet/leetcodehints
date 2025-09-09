@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation you can perform: dividing an element by its greatest proper divisor. This means for any number x, you need to find its largest divisor less than x. For example, for 25, the greatest proper divisor is 5."
+    },
+    {
+      "content": "Consider how the operation affects the order of the array. If you divide a number, it can potentially decrease its value, which might help in making the array non-decreasing. Think about how the array's elements relate to each other before and after the operation."
+    },
+    {
+      "content": "To determine the minimum number of operations, you may want to iterate through the array from the end to the beginning. This way, you can ensure that each element is less than or equal to the one that follows it after performing the necessary operations."
+    },
+    {
+      "content": "Identify the conditions under which it is impossible to make the array non-decreasing. For instance, if you have two consecutive elements where the first is greater than the second and cannot be reduced sufficiently, it may be impossible to achieve a non-decreasing order."
+    },
+    {
+      "content": "Think about edge cases, such as when all elements are the same or when the array is already non-decreasing. In these cases, you might not need to perform any operations, so consider how to quickly check for these scenarios."
+    },
+    {
+      "content": "For each element, calculate its greatest proper divisor efficiently. You can do this by iterating from 1 to the square root of the number and checking for divisibility. This will help you find the largest proper divisor quickly."
+    },
+    {
+      "content": "As you apply operations, keep track of how many operations you've performed. You might want to maintain a counter that increments each time you divide an element by its greatest proper divisor."
+    },
+    {
+      "content": "When checking if the array can be made non-decreasing, remember to update the current element after each operation. This means you need to check the new value against the next element in the array."
+    },
+    {
+      "content": "If at any point, you find that an element cannot be reduced to be less than or equal to the next element, you should return -1 immediately. This will save unnecessary computations."
+    },
+    {
+      "content": "Finally, think about how you will structure your code. You might want to use a loop to go through the array and a nested loop to find the greatest proper divisor for each element. Make sure to handle the return values correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^6",
+    "Return -1 if it's impossible to make the array non-decreasing.",
+    "You can perform the operation any number of times on any element."
+  ]
+}

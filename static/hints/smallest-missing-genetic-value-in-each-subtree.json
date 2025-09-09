@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the family tree. Each node has a parent, and you can represent the tree using an adjacency list. This will help you traverse the tree later."
+    },
+    {
+      "content": "Remember that the root node is always node 0, and its parent is represented as -1 in the parents array. Make sure to handle this special case when building your tree."
+    },
+    {
+      "content": "Consider how to traverse the tree. Depth-first search (DFS) or breadth-first search (BFS) are common approaches to explore all nodes in a subtree."
+    },
+    {
+      "content": "As you traverse each subtree, keep track of the genetic values present in that subtree. You can use a set or a boolean array to efficiently check for missing values."
+    },
+    {
+      "content": "The smallest missing genetic value will always be in the range of 1 to n + 1, where n is the number of nodes in the subtree. This is because the genetic values are distinct and fall within the range [1, 100000]."
+    },
+    {
+      "content": "When collecting genetic values from the subtree, ensure that you only collect values for the nodes that are part of that subtree. This will help you accurately determine the smallest missing value."
+    },
+    {
+      "content": "Think about how to efficiently determine the smallest missing value after collecting the genetic values. A simple way is to iterate from 1 upwards until you find a value not in your collected set."
+    },
+    {
+      "content": "Be cautious about the size of your data structures. Given the constraints, ensure that your solution runs efficiently, ideally in O(n) time, to handle the maximum input sizes."
+    },
+    {
+      "content": "Consider edge cases, such as when all nodes have genetic values from 1 to n. In this case, the smallest missing value would be n + 1."
+    },
+    {
+      "content": "As you build your answer array, remember that the order of the results must match the order of nodes from 0 to n-1. Ensure that you are storing results in the correct index."
+    },
+    {
+      "content": "While traversing the tree, you may want to use recursion to simplify your code. Each recursive call can handle a node and its children, making it easier to gather genetic values."
+    },
+    {
+      "content": "When checking for the smallest missing value, consider using a boolean array of size n + 1 to mark which genetic values are present. This can help you quickly find the first missing value."
+    },
+    {
+      "content": "Make sure to test your solution with various tree structures, including balanced trees, skewed trees, and trees with varying depths, to ensure robustness."
+    },
+    {
+      "content": "Once you have the genetic values for a subtree, you can use a loop to find the smallest missing value. Start from 1 and check each value until you find one that isn't present."
+    },
+    {
+      "content": "Finally, remember to handle the output format correctly. Your result should be an array of integers representing the smallest missing genetic values for each subtree."
+    }
+  ],
+  "questionNotes": [
+    "The tree is rooted at node 0, which has no parent (indicated by -1).",
+    "Each genetic value in nums is distinct and falls within the range [1, 100000].",
+    "The output array must match the order of nodes from 0 to n-1.",
+    "The smallest missing genetic value is always in the range [1, n + 1].",
+    "Consider edge cases where all values from 1 to n are present."
+  ]
+}

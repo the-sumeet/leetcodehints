@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input structure. You have a list of required skills and a list of people, each with their own skills. Make sure you can represent these skills in a way that is easy to manipulate."
+    },
+    {
+      "content": "Consider how to represent the skills. You might find it useful to use a bitmask or a dictionary to map skills to indices, which can help you track which skills are covered by which people."
+    },
+    {
+      "content": "Think about how you can represent the combination of skills that a team can cover. You will need to check if a combination of people covers all required skills."
+    },
+    {
+      "content": "Remember that the goal is to find the smallest team. This means you might need to explore combinations of people. Consider using a recursive approach or backtracking to explore these combinations."
+    },
+    {
+      "content": "Since the number of required skills is small (up to 16), you can use a bitmask to represent the skills. Each bit in an integer can represent whether a skill is covered (1) or not (0)."
+    },
+    {
+      "content": "As you explore combinations of people, keep track of the skills they cover using the bitmask. You want to combine the bitmasks of the selected people to see if they cover all required skills."
+    },
+    {
+      "content": "When considering combinations, be mindful of the size of the team. If you find a combination that covers all skills, check if its size is smaller than any previously found combination."
+    },
+    {
+      "content": "Consider edge cases, such as when a person has no skills or when the number of people is less than the number of required skills. How will these cases affect your approach?"
+    },
+    {
+      "content": "You might want to use a breadth-first search (BFS) or depth-first search (DFS) approach to explore all possible combinations of people. Think about how to implement this efficiently."
+    },
+    {
+      "content": "Keep track of the minimum size of the team found so far. You can store the indices of the people in a list and update it whenever you find a smaller sufficient team."
+    },
+    {
+      "content": "Ensure you are correctly checking if all required skills are covered. This can be done by comparing the combined bitmask of selected people against the bitmask representing all required skills."
+    },
+    {
+      "content": "Remember that the output format requires you to return the indices of the people in the team. Make sure you maintain the correct indices while exploring combinations."
+    },
+    {
+      "content": "As you build combinations, consider using memoization to avoid recalculating results for the same set of skills already covered. This can significantly reduce the computation time."
+    },
+    {
+      "content": "When you find a valid team, consider how you will return the result. You may want to return the indices in any order, but ensure they are unique and valid."
+    },
+    {
+      "content": "Finally, ensure your algorithm is efficient enough to handle the upper limits of the constraints. Analyze the time complexity of your approach to ensure it will run within acceptable limits."
+    }
+  ],
+  "questionNotes": [
+    "The number of required skills can be up to 16, which allows for bitmasking.",
+    "Each person's skills are guaranteed to be a subset of the required skills.",
+    "You need to return the indices of the people in the team, and the order does not matter.",
+    "A sufficient team must cover all required skills with the smallest number of people.",
+    "Ensure that the skills and people lists are unique, as per the problem constraints."
+  ]
+}

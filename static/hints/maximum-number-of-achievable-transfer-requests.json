@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem's constraints. You have 'n' buildings and a list of transfer requests. Each request specifies a transfer from one building to another."
+    },
+    {
+      "content": "Remember that for a set of requests to be achievable, the net change in employees for each building must be zero. This means that the number of employees leaving a building must equal the number of employees entering it."
+    },
+    {
+      "content": "Consider how you can represent the net change for each building. You might want to use an array of size 'n' initialized to zero, where each index represents a building."
+    },
+    {
+      "content": "When processing each request, you can increment the count for the 'to' building and decrement for the 'from' building. This will help you track the net changes."
+    },
+    {
+      "content": "Think about how you can use backtracking to explore different combinations of requests. You can either include a request or exclude it, which will help you find the maximum number of achievable requests."
+    },
+    {
+      "content": "As you explore combinations, keep track of the count of requests you've included. Use a variable to store the maximum count found so far."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when there are no requests at all. What should your function return in this case?"
+    },
+    {
+      "content": "When implementing backtracking, ensure that you revert any changes you make to the net change array after exploring a path. This is crucial for correctly exploring other combinations."
+    },
+    {
+      "content": "Consider using a helper function for the backtracking process. This function can take parameters like the current index in the requests list and the current count of achievable requests."
+    },
+    {
+      "content": "While iterating through the requests, if you reach the end of the list, check if the net change for all buildings is zero. If it is, update your maximum count."
+    },
+    {
+      "content": "You may want to use a loop to iterate through the requests and recursively call your backtracking function for both including and excluding each request."
+    },
+    {
+      "content": "Don’t forget to handle the case where a request is from a building to itself. This can be valid and should be considered in your calculations."
+    },
+    {
+      "content": "As you build your solution, consider the time complexity. Since 'n' can be up to 20 and requests can be up to 16, ensure your approach can handle the maximum input sizes efficiently."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases, such as all requests being to the same building or all buildings having equal requests."
+    },
+    {
+      "content": "Finally, ensure your function returns the maximum number of requests that can be achieved, not the requests themselves. This is a common point of confusion."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 20, 1 <= requests.length <= 16, requests[i].length == 2, 0 <= from_i, to_i < n",
+    "Indexing is zero-based, meaning the first building is 0 and the last is n-1.",
+    "The return value should be the maximum number of achievable requests, not the requests themselves.",
+    "Consider edge cases where buildings have no requests or all requests are self-transfers."
+  ]
+}

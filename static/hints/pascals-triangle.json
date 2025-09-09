@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of Pascal's triangle. Each row starts and ends with '1'. The values in between are calculated from the two numbers directly above them."
+    },
+    {
+      "content": "For any row 'i', the elements can be calculated using the elements from the previous row 'i-1'. Specifically, the element at position 'j' in row 'i' can be found by adding the elements at positions 'j-1' and 'j' from row 'i-1'."
+    },
+    {
+      "content": "Consider how you will store the triangle. A list of lists (or an array of arrays) is a good way to represent each row as a separate list."
+    },
+    {
+      "content": "When implementing the solution, remember that the first row (row 0) is simply [1]. You can build subsequent rows based on this initial row."
+    },
+    {
+      "content": "Think about how to handle the edge cases. For example, if numRows is 1, your output should simply be [[1]]."
+    },
+    {
+      "content": "You can use a loop to generate each row from 1 to numRows - 1. For each new row, create a new list starting with '1', then calculate the middle values, and end with '1'."
+    },
+    {
+      "content": "When calculating the middle values of a row, ensure you are checking the bounds of the previous row to avoid index errors. For example, the first and last indices are always '1'."
+    },
+    {
+      "content": "Remember that the number of elements in row 'i' is 'i + 1'. This means when you create a new row, its length will depend on the current row number."
+    },
+    {
+      "content": "As you build each row, you might want to store the previous row to use its values for the next row's calculations. Consider maintaining a variable to hold the last row generated."
+    },
+    {
+      "content": "Finally, ensure your function returns the triangle in the correct format, which is a list of lists. Each inner list represents a row of Pascal's triangle."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= numRows <= 30",
+    "Output format: A list of lists, where each inner list represents a row of Pascal's triangle.",
+    "The first row is indexed as row 0, and it contains only one element, which is 1."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a 'special' subarray. A subarray is special if the bitwise OR of its elements is at least `k`. Consider how the bitwise OR operation works and how it accumulates values."
+    },
+    {
+      "content": "Remember that the bitwise OR of a single number is the number itself. This means that any element greater than or equal to `k` is a special subarray of length 1. Can you identify such elements in the array?"
+    },
+    {
+      "content": "Think about how to generate subarrays from the given array. You can do this using two nested loops: the outer loop can represent the starting index, and the inner loop can represent the ending index of the subarray."
+    },
+    {
+      "content": "As you generate subarrays, calculate the bitwise OR for each subarray. Keep track of the length of the subarray if its OR value meets or exceeds `k`. How will you store the length of the shortest special subarray found?"
+    },
+    {
+      "content": "Consider edge cases, such as when all elements are less than `k`. What should your function return in such cases? Make sure to handle the scenario where no special subarray exists."
+    },
+    {
+      "content": "When calculating the bitwise OR for subarrays, you can optimize by using the result from the previous subarray. Instead of recalculating the OR from scratch, you can update it incrementally. For example: `currentOR |= nums[j];`."
+    },
+    {
+      "content": "As you iterate through the array, keep a variable to track the minimum length of the special subarrays found. Each time you find a valid subarray, compare its length to your current minimum length."
+    },
+    {
+      "content": "Make sure to initialize your minimum length variable to a value that represents 'infinity' (or a very large number) at the start, so that any valid subarray found will update it."
+    },
+    {
+      "content": "After iterating through all possible subarrays, check if your minimum length variable was updated. If it remains unchanged, it indicates that no special subarray was found, and you should return -1."
+    },
+    {
+      "content": "Finally, ensure your function returns the correct value. If a special subarray was found, return its length; otherwise, return -1. Test your implementation with the provided examples to verify correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 50",
+    "0 <= nums[i] <= 50",
+    "0 <= k < 64",
+    "Return -1 if no special subarray exists.",
+    "A special subarray must be non-empty."
+  ]
+}

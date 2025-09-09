@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the frog's jumping rules. The first jump must be exactly 1 unit, and subsequent jumps can be k-1, k, or k+1 units, where k is the distance of the last jump."
+    },
+    {
+      "content": "Consider the implications of the sorted nature of the stones. Since the stones are in ascending order, the frog can only move forward and cannot jump backward."
+    },
+    {
+      "content": "Think about how you might represent the state of the frog's position and the last jump size. You could use a recursive function or a dynamic programming approach to track these states."
+    },
+    {
+      "content": "You might want to create a helper function that checks if the frog can jump from one stone to the next based on the jump size. This will help isolate the jumping logic."
+    },
+    {
+      "content": "Remember that the frog can only land on stones. If there's a gap larger than the maximum possible jump (which is k + 1), the frog cannot proceed."
+    },
+    {
+      "content": "Consider using a depth-first search (DFS) or breadth-first search (BFS) to explore all possible jumps from the starting stone. Keep track of the current position and the last jump size."
+    },
+    {
+      "content": "When implementing your search, be mindful of visited states. You want to avoid re-exploring the same stone with the same jump size to prevent infinite loops."
+    },
+    {
+      "content": "Think about edge cases, such as when the stones are positioned very close together or when there are large gaps. How would your algorithm handle these scenarios?"
+    },
+    {
+      "content": "You might want to use a set or a map to store the stones for O(1) lookup time when checking if a stone exists at a given position."
+    },
+    {
+      "content": "If you're using recursion, consider memoization to store results of previously computed states. This can significantly improve performance."
+    },
+    {
+      "content": "As you implement your solution, ensure that you handle the case where the frog reaches the last stone correctly. The return value should be true if it lands on the last stone."
+    },
+    {
+      "content": "Check the constraints carefully. The number of stones can be up to 2000, which means your solution should ideally be O(n^2) or better to run efficiently."
+    },
+    {
+      "content": "When testing your solution, include edge cases such as the minimum number of stones and maximum gaps between stones to ensure robustness."
+    },
+    {
+      "content": "You could also consider a dynamic programming approach where you maintain a table that records whether the frog can reach each stone with a given jump size."
+    },
+    {
+      "content": "Finally, think about how to backtrack if the frog cannot make a jump. You may need to explore alternative jump sizes from the current stone."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= stones.length <= 2000",
+    "0 <= stones[i] <= 2^31 - 1",
+    "stones[0] == 0",
+    "stones is sorted in strictly increasing order.",
+    "The frog must land on the last stone to return true."
+  ]
+}

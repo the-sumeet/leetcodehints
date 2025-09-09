@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by cleaning the input string. You need to remove all spaces and dashes from the phone number. You can use string methods to filter out unwanted characters. For example, you can iterate through the string and keep only the digits."
+    },
+    {
+      "content": "Once you have a clean string of digits, count how many digits you have. This will help you determine how to group them. Remember, the final formatting depends on whether you have more than 4 digits or not."
+    },
+    {
+      "content": "If you have more than 4 digits, you should start grouping them in blocks of 3. Think about how you can use a loop to extract these blocks from the string. You can use slicing to get the first three digits."
+    },
+    {
+      "content": "After grouping the initial digits, check how many digits are left. If there are exactly 4 digits remaining, you will need to split them into two blocks of 2. Make sure to handle this case specifically."
+    },
+    {
+      "content": "If you have 3 digits left after grouping, they should form a single block of 3. This means you need to add that block to your result as well. Keep track of how many blocks you have created so far."
+    },
+    {
+      "content": "Consider using a list to store the blocks of digits as you create them. This will make it easier to join them later with dashes. You can append each block to the list as you process the digits."
+    },
+    {
+      "content": "Don't forget to handle the case where you have exactly 2 digits left at the end. This should be a single block of 2, and you should add it to your list of blocks. Make sure your logic correctly identifies this scenario."
+    },
+    {
+      "content": "When joining the blocks together, use the `join()` method to concatenate them with dashes. This will give you the final formatted phone number. Ensure that your blocks are in the correct order before joining."
+    },
+    {
+      "content": "Review the constraints carefully. You must ensure that your solution handles edge cases, such as when the input has the minimum number of digits or when all digits are grouped into blocks of 3 and 2 correctly."
+    },
+    {
+      "content": "Finally, put everything together. Make sure to test your function with different inputs to verify that it behaves as expected. Pay attention to the output format, ensuring there are no extra dashes or incorrect block sizes."
+    }
+  ],
+  "questionNotes": [
+    "Remove all spaces and dashes from the input.",
+    "Group digits into blocks of 3 until 4 or fewer digits remain.",
+    "Final blocks must be formatted as: 2 digits (1 block), 3 digits (1 block), or 4 digits (2 blocks of 2).",
+    "Return the formatted phone number joined by dashes.",
+    "Constraints: 2 <= number.length <= 100; at least two digits in number."
+  ]
+}

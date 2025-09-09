@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of islands in a grid. An island is defined as a group of connected 1's (land) that are adjacent either horizontally or vertically. Make sure you can identify and count islands in a single grid before tackling the comparison between two grids."
+    },
+    {
+      "content": "Consider how you can traverse the grid to identify islands. Depth-First Search (DFS) or Breadth-First Search (BFS) are common techniques used for this. Think about how you would mark visited cells to avoid counting the same island multiple times."
+    },
+    {
+      "content": "Remember that an island in grid2 is only considered a sub-island if all its 1's are also 1's in grid1. This means you will need to check grid1 while traversing grid2. Focus on how you can incorporate this check into your traversal."
+    },
+    {
+      "content": "When you find a 1 in grid2, start a DFS/BFS to explore the entire island. During this exploration, check if each corresponding cell in grid1 is also a 1. If you find a cell in grid2 that is a 1 but the corresponding cell in grid1 is a 0, you can conclude that this island is not a sub-island."
+    },
+    {
+      "content": "After marking an island in grid2, keep a count of how many of these islands are valid sub-islands. You may want to maintain a separate counter for valid sub-islands and increment it only when you confirm that the entire island in grid2 is also in grid1."
+    },
+    {
+      "content": "Consider edge cases where grid2 has islands that are entirely surrounded by water, or where grid1 has no islands at all. How will your algorithm handle these scenarios? Make sure to test these cases."
+    },
+    {
+      "content": "Think about the grid boundaries. When performing DFS/BFS, ensure that you do not go out of bounds of the grid. You can do this by checking the indices before accessing the grid elements."
+    },
+    {
+      "content": "You may also want to think about how to optimize your solution. For example, if you find a cell in grid2 that is a 0, you can skip any further checks for that cell. This can save time during your traversal."
+    },
+    {
+      "content": "As you implement your solution, consider using a visited array or marking cells in grid2 to avoid counting the same island multiple times. This will help maintain the integrity of your counts."
+    },
+    {
+      "content": "Finally, after implementing the logic to count sub-islands, ensure that your function returns the correct count. Double-check the return format and make sure it matches the expected output."
+    }
+  ],
+  "questionNotes": [
+    "An island is defined as a group of connected 1's (land) in the grid.",
+    "Cells outside the grid are considered water cells.",
+    "An island in grid2 is a sub-island if all its cells are also land in grid1.",
+    "You must return the count of sub-islands in grid2.",
+    "Constraints: m, n <= 500; grid1[i][j] and grid2[i][j] are either 0 or 1."
+  ]
+}

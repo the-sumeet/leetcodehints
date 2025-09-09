@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. Each substring must have a value less than or equal to k. This means if a substring starts with a digit that makes it exceed k, you cannot include that digit in the current substring."
+    },
+    {
+      "content": "Consider how you might iterate through the string. You will need to keep track of the current substring value as you build it from the digits of the string."
+    },
+    {
+      "content": "Think about how to handle the case where a single digit exceeds k. If any digit in the string is greater than k, you can immediately return -1, as no valid partition can be formed."
+    },
+    {
+      "content": "As you build substrings, remember to convert the substring from a string to an integer to check its value. Use a temporary variable to accumulate the substring's value."
+    },
+    {
+      "content": "When the accumulated value exceeds k, you need to start a new substring. Keep a counter to track how many substrings you have created so far."
+    },
+    {
+      "content": "Make sure to handle leading zeros properly, although the digits are from '1' to '9' in this problem, so you won't encounter them. However, consider edge cases where substrings might start with the maximum digit."
+    },
+    {
+      "content": "Think about how to reset the accumulated value when starting a new substring. You will need to add the current digit to the new substring's value."
+    },
+    {
+      "content": "Consider how to break out of the loop if you reach the end of the string. Ensure that you account for the last substring you may have formed."
+    },
+    {
+      "content": "After iterating through the string, return the count of substrings you've formed. If you never formed any valid substrings, return -1."
+    },
+    {
+      "content": "Finally, ensure your solution runs efficiently given the constraints. The length of the string can be up to 100,000, so aim for a linear time complexity solution."
+    }
+  ],
+  "questionNotes": [
+    "Each substring must have a value <= k.",
+    "If any digit in the string is greater than k, return -1.",
+    "The string consists only of digits from '1' to '9'.",
+    "The value of a substring is its integer interpretation.",
+    "Return the minimum number of substrings in a good partition."
+  ]
+}

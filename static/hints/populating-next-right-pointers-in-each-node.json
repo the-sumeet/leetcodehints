@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the structure of a perfect binary tree. Each node has two children, and all leaves are at the same level. This property will help you traverse the tree level by level."
+    },
+    {
+      "content": "Consider how you can traverse the tree. A level order traversal (BFS) is a common approach, but since you need to use constant extra space, think about how you might use the existing `next` pointers to help with this."
+    },
+    {
+      "content": "You can start by connecting the nodes at the current level. For each node, you need to set its `next` pointer to the node that is immediately to its right."
+    },
+    {
+      "content": "Remember that the `next` pointer of the last node in each level should be set to `NULL`. This means you need to handle the end of each level carefully."
+    },
+    {
+      "content": "Think about how you can use a pointer to traverse the current level while also keeping track of the next level. You might want to use two pointers: one for the current node and another to connect the nodes at the next level."
+    },
+    {
+      "content": "When you are at a node, you can access its children using `node.left` and `node.right`. Use these children to set the `next` pointers for the next level."
+    },
+    {
+      "content": "If you're using a while loop to traverse the current level, ensure that you check if the current node is not null before accessing its children. This will help avoid null pointer exceptions."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree is empty. Ensure your function can handle this case by returning early if the root is `NULL`."
+    },
+    {
+      "content": "You can also think about how you might implement this recursively. If you choose this approach, you will need to ensure that each recursive call correctly sets the `next` pointers for the left and right children."
+    },
+    {
+      "content": "Finally, remember that you need to maintain constant space. So, while you can use recursion, be mindful of the depth of the recursion stack and how it relates to the tree's height."
+    }
+  ],
+  "questionNotes": [
+    "The tree is a perfect binary tree, meaning all leaves are at the same level and every parent has two children.",
+    "You may only use constant extra space, so think carefully about your approach.",
+    "The input is given as a serialized array representation of the tree.",
+    "The output should represent the tree in level order, with '#' indicating the end of each level."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what constitutes a 'good meal'. A good meal consists of two different food items whose deliciousness values sum to a power of two. Make a list of the powers of two that you might need to consider."
+    },
+    {
+      "content": "Consider how you can efficiently check if a sum of two different deliciousness values is a power of two. You could create a set of powers of two up to the maximum possible sum of deliciousness values."
+    },
+    {
+      "content": "Remember that the input array can contain duplicates. When counting good meals, you need to consider the indices of items, so meals formed from the same deliciousness value at different indices should be counted separately."
+    },
+    {
+      "content": "Think about using a hashmap (or dictionary) to count the occurrences of each deliciousness value. This will help you quickly find how many of each food item you have when trying to form pairs."
+    },
+    {
+      "content": "When iterating through your deliciousness values, for each value, calculate the required complement that would make the sum a power of two. For example, if you're at deliciousness[i], and you want to check if deliciousness[i] + x is a power of two, then x = power_of_two - deliciousness[i]."
+    },
+    {
+      "content": "Don't forget to handle the case where the two food items are the same. If deliciousness[i] equals deliciousness[j], ensure that you are counting pairs correctly by considering their indices."
+    },
+    {
+      "content": "As you find valid pairs, remember to use the modulo operation to keep your results within the bounds specified by the problem (10^9 + 7). This is crucial to avoid overflow and ensure correctness."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array has only one element or when all elements are the same. How would these cases affect your counting of good meals?"
+    },
+    {
+      "content": "You might want to precompute the powers of two up to a certain limit based on the maximum possible sum of deliciousness values. This will help you efficiently check for valid pairs."
+    },
+    {
+      "content": "Finally, think about how to structure your loops. You might need a nested loop to check pairs, but ensure you only count pairs (i, j) where i < j to avoid double counting and ensure uniqueness."
+    }
+  ],
+  "questionNotes": [
+    "A good meal consists of two different food items.",
+    "The sum of their deliciousness must equal a power of two.",
+    "Items with different indices are considered different, even if they have the same deliciousness value.",
+    "Return the count of good meals modulo 10^9 + 7.",
+    "Constraints: 1 <= deliciousness.length <= 10^5 and 0 <= deliciousness[i] <= 2^20."
+  ]
+}

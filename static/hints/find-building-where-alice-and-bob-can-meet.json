@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement rules: Alice can move from building i to j if i < j and heights[i] < heights[j]. This means you need to consider the heights of buildings in relation to their indices."
+    },
+    {
+      "content": "Think about how to represent the possible buildings Alice and Bob can reach. You might want to create a list of reachable buildings for each building based on the movement rules."
+    },
+    {
+      "content": "Consider using a stack to help track the next greater building for each building. This can be useful for determining where Alice and Bob can move to."
+    },
+    {
+      "content": "When processing the queries, remember that both Alice and Bob need to reach the same building. This means you need to find a common building they can both access."
+    },
+    {
+      "content": "For each query, check if Alice and Bob are already in the same building. If they are, the answer is simply the index of that building."
+    },
+    {
+      "content": "If Alice and Bob are in different buildings, you will need to find the leftmost building they can both reach. This requires comparing their reachable buildings."
+    },
+    {
+      "content": "Make sure to handle the case where either Alice or Bob cannot move to any other building. In such cases, the answer for that query should be -1."
+    },
+    {
+      "content": "You might want to preprocess the heights array to create a mapping of each building to the next building it can reach. This can speed up the query processing."
+    },
+    {
+      "content": "Consider how to efficiently find the leftmost building that both can reach. You could use a two-pointer technique on the lists of reachable buildings."
+    },
+    {
+      "content": "Remember that the heights array can have up to 50,000 buildings, so your solution needs to be efficient, ideally O(n + q) where n is the number of buildings and q is the number of queries."
+    },
+    {
+      "content": "Think about edge cases, such as when the heights array has only one building or when all buildings have the same height. How would these cases affect the output?"
+    },
+    {
+      "content": "For the stack approach, you can iterate through the heights array from right to left to fill the next greater building for each building efficiently."
+    },
+    {
+      "content": "When processing each query, ensure that you are correctly comparing the reachable buildings from both Alice and Bob. A set intersection might be useful here."
+    },
+    {
+      "content": "If both Alice and Bob can reach multiple common buildings, ensure you return the leftmost one, which means you should keep track of the smallest index."
+    },
+    {
+      "content": "As you implement your solution, keep testing with various queries to ensure that you handle all possible scenarios correctly, especially edge cases."
+    }
+  ],
+  "questionNotes": [
+    "1 <= heights.length <= 5 * 10^4",
+    "1 <= heights[i] <= 10^9",
+    "1 <= queries.length <= 5 * 10^4",
+    "queries[i] = [a_i, b_i] where 0 <= a_i, b_i <= heights.length - 1",
+    "Return -1 if Alice and Bob cannot meet.",
+    "The answer should be the leftmost building index where they can meet."
+  ]
+}

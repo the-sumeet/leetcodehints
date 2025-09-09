@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. It is initialized to all zeros, and you need to perform operations based on the indices provided. Think about how you can represent the matrix and what operations you need to perform on it."
+    },
+    {
+      "content": "Consider how the operations defined by `indices` affect the matrix. Each entry in `indices` specifies a row and a column to increment. How many times will each cell in the matrix be incremented after processing all indices?"
+    },
+    {
+      "content": "Instead of directly manipulating the matrix, think about how many times each row and each column is incremented. You can use two separate arrays to count increments for rows and columns."
+    },
+    {
+      "content": "Create two arrays: one for counting increments in rows (`rowCount`) and another for columns (`colCount`). Each time you see an index, increment the corresponding row and column in these arrays."
+    },
+    {
+      "content": "After processing all indices and populating `rowCount` and `colCount`, you can determine the final value of each cell in the matrix by using the formula: `matrix[r][c] = rowCount[r] + colCount[c]`."
+    },
+    {
+      "content": "Now, focus on counting the odd values in the matrix. A cell value is odd if the sum of its row and column increments is odd. How can you efficiently check this for each cell?"
+    },
+    {
+      "content": "Iterate through each cell in the matrix dimensions (m x n). For each cell, check if the sum of the corresponding values from `rowCount` and `colCount` is odd. Keep a counter for odd values."
+    },
+    {
+      "content": "Remember to consider edge cases such as when `indices` is empty. What should your function return in that case? Think through the implications of having no increments."
+    },
+    {
+      "content": "As a performance optimization, ensure your solution runs in O(n + m + indices.length) time. This means you should avoid creating a full m x n matrix and instead rely on your counting arrays."
+    },
+    {
+      "content": "Finally, ensure your implementation correctly handles the constraints given in the problem statement. Double-check the bounds for m, n, and the indices to avoid any out-of-bounds errors."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 50",
+    "Constraints: 1 <= indices.length <= 100",
+    "Indices are 0-indexed.",
+    "Each indices[i] = [r_i, c_i] represents a row and column to increment.",
+    "The return value should be the count of odd-valued cells in the final matrix."
+  ]
+}

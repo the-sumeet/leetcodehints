@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the Manhattan distance formula: for two points (x1, y1) and (x2, y2), the distance is |x1 - x2| + |y1 - y2|. Familiarize yourself with how this distance behaves as you manipulate the coordinates."
+    },
+    {
+      "content": "Consider how the maximum distance between points changes when you remove a point. You need to evaluate the distances between all remaining pairs after each point is removed."
+    },
+    {
+      "content": "Think about the implications of removing a point. Removing a point may affect which two points have the maximum distance. Focus on how to efficiently find the maximum distance after each removal."
+    },
+    {
+      "content": "To find the maximum distance after removing a point, you will need to keep track of the coordinates of the remaining points. Consider how to efficiently calculate the maximum distance without recalculating for all pairs."
+    },
+    {
+      "content": "You can simplify the problem by realizing that the maximum Manhattan distance will be determined by the extreme points in the set. Identify the points with the maximum and minimum x and y coordinates."
+    },
+    {
+      "content": "When you remove a point, check if it is one of the extreme points (max x, min x, max y, min y). If it is, you will need to find the next extreme point to determine the new maximum distance."
+    },
+    {
+      "content": "Consider the four extreme values: max_x, min_x, max_y, and min_y. When a point is removed, the maximum distance will likely involve one of these extreme points."
+    },
+    {
+      "content": "Create a structure to hold the extreme points and their corresponding coordinates. This will help you quickly find the new extremes when a point is removed."
+    },
+    {
+      "content": "As you iterate through each point to remove, calculate the maximum distance using the remaining extreme points. This will help you find the new maximum distance efficiently."
+    },
+    {
+      "content": "Remember to handle the case where multiple points share the same extreme values. You may need to check if the point being removed is the only one at that extreme."
+    },
+    {
+      "content": "After calculating the maximum distances for each possible removal, keep track of the minimum of these maximum distances. This is your target value."
+    },
+    {
+      "content": "Consider edge cases, such as when all points are the same or when points are collinear. These scenarios may simplify the maximum distance calculations."
+    },
+    {
+      "content": "Think about the time complexity of your approach. You want to avoid a naive O(n^2) solution by leveraging the properties of Manhattan distance and extreme points."
+    },
+    {
+      "content": "Use a loop to iterate through each point, removing it and then calculating the maximum distance using the remaining points. Keep a variable to track the minimum maximum distance found."
+    },
+    {
+      "content": "Finally, ensure your function returns the correct format as specified in the problem statement. The output should be a single integer representing the minimized maximum distance."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= points.length <= 10^5",
+    "points[i].length == 2",
+    "1 <= points[i][0], points[i][1] <= 10^8",
+    "You must remove exactly one point.",
+    "The output should be the minimum possible maximum distance after removing a point."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, calculate the total sum of the array. If this sum is already divisible by `p`, you can return `0` immediately, as no subarray needs to be removed."
+    },
+    {
+      "content": "Next, determine the remainder when the total sum is divided by `p`. This remainder is crucial, as you need to adjust the sum to make it divisible by `p`."
+    },
+    {
+      "content": "Consider the problem of removing a subarray: if you remove a subarray with a sum equal to the remainder, the remaining sum will be divisible by `p`. Think about how you can find such a subarray."
+    },
+    {
+      "content": "You can use a sliding window technique to find the smallest subarray whose sum equals the remainder. Start with two pointers and adjust them to explore different subarrays."
+    },
+    {
+      "content": "As you slide your window across the array, keep track of the current sum of the elements within the window. If this sum matches the remainder, check if the length of the current window is the smallest found so far."
+    },
+    {
+      "content": "Remember that the subarray must not include the entire array. If you find a valid subarray that sums to the remainder, ensure that removing it does not leave you with an empty array."
+    },
+    {
+      "content": "Consider edge cases where the array has only one element. In such cases, you cannot remove the entire array, so think about how to handle this scenario."
+    },
+    {
+      "content": "If you cannot find any subarray that meets the criteria after checking all possibilities, you should return `-1` to indicate that it's impossible to achieve the goal."
+    },
+    {
+      "content": "When implementing your solution, make sure to handle large input sizes efficiently. Aim for a time complexity better than O(n^2) by using techniques like prefix sums or hash maps."
+    },
+    {
+      "content": "Finally, consider how you will return the length of the smallest subarray found. You might want to initialize a variable to track the minimum length and update it as you find valid subarrays."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "1 <= p <= 10^9",
+    "You cannot remove the entire array.",
+    "Return -1 if it's impossible to achieve the goal."
+  ]
+}

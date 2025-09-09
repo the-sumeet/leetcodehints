@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the graph's structure. The edges between nodes are determined by the condition |nums[i] - nums[j]| <= maxDiff. This means you need to compare every pair of nodes to see if an edge exists."
+    },
+    {
+      "content": "Consider how you might represent the graph. An adjacency list or matrix could work, but think about the efficiency of checking the edge condition for potentially large n."
+    },
+    {
+      "content": "Remember that the graph is undirected. If there is an edge from node i to node j, then there is also an edge from node j to node i."
+    },
+    {
+      "content": "When processing the queries, think about how you can efficiently find the shortest path between the queried nodes. A breadth-first search (BFS) is a good choice for unweighted graphs."
+    },
+    {
+      "content": "Before diving into the queries, ensure you have a clear understanding of how to build the graph. You could iterate through all pairs of nodes and create edges based on the maxDiff condition."
+    },
+    {
+      "content": "Consider edge cases, such as when maxDiff is 0. In this scenario, only nodes with the same value in nums can be connected. How would this affect your graph?"
+    },
+    {
+      "content": "Think about how to handle queries where the start and end nodes are the same. The distance should be 0 in this case, as no movement is needed."
+    },
+    {
+      "content": "As you implement the BFS for finding the shortest path, keep track of visited nodes to avoid cycles and unnecessary computations."
+    },
+    {
+      "content": "For each query, if you find a path between the nodes, you need to return the number of edges in that path. Remember that the distance is defined as the number of edges traversed."
+    },
+    {
+      "content": "If no path exists between the queried nodes, you should return -1. Make sure to handle this case in your BFS implementation."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Building the graph might take O(n^2) in the worst case, and each query could take O(n) if you perform BFS. Is this efficient enough given the constraints?"
+    },
+    {
+      "content": "You might want to preprocess the graph before answering the queries. This could involve creating a connected components representation to quickly answer if two nodes are reachable."
+    },
+    {
+      "content": "Think about how to optimize the BFS. If you can limit the number of nodes you explore based on the maxDiff condition, this could save time."
+    },
+    {
+      "content": "When implementing BFS, remember to use a queue to explore nodes level by level. This ensures you find the shortest path in an unweighted graph."
+    },
+    {
+      "content": "As you finalize your implementation, test it against edge cases, such as the minimum and maximum values for n, nums, and maxDiff to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums.length <= 10^5",
+    "0 <= nums[i] <= 10^5",
+    "0 <= maxDiff <= 10^5",
+    "1 <= queries.length <= 10^5",
+    "queries[i] == [u_i, v_i], 0 <= u_i, v_i < n",
+    "The graph is undirected, and edges are based on the absolute difference condition."
+  ]
+}

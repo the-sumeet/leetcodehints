@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a prefix sum is. The prefix sum at index `i` is the sum of all elements from index `0` to `i`. For example, if `nums = [2, 3, -1]`, the prefix sums would be `[2, 5, 4]`."
+    },
+    {
+      "content": "Consider how rearranging the elements can affect the prefix sums. A larger number at the beginning of the array will contribute more positively to the prefix sums. Think about how to maximize the positive contributions."
+    },
+    {
+      "content": "Identify the role of negative numbers in the prefix sums. If a negative number appears early in the array, it can decrease the subsequent prefix sums significantly. How can you minimize their impact?"
+    },
+    {
+      "content": "To maximize the score, you want as many prefix sums as possible to be positive. What is the condition for a prefix sum to be positive? Formulate that condition based on the arrangement of your numbers."
+    },
+    {
+      "content": "Try sorting the array in descending order. This way, larger numbers will contribute to the prefix sums first. What happens to the prefix sums when you do this?"
+    },
+    {
+      "content": "After sorting, calculate the prefix sums and count how many of them are positive. This will give you an idea of the score. Remember to handle cases where the prefix sum could become negative."
+    },
+    {
+      "content": "Consider edge cases where all numbers are negative or zero. How would these cases affect your score? What would the maximum score be in such scenarios?"
+    },
+    {
+      "content": "Think about the impact of zero in your array. If you have zeros, they can help maintain a non-negative prefix sum. How should you place zeros in your sorted array?"
+    },
+    {
+      "content": "As you calculate the prefix sums, keep a running total of the score. You might want to break out of the loop early if you encounter a prefix sum that is not positive, as subsequent sums will also be affected."
+    },
+    {
+      "content": "Finally, ensure that your implementation efficiently handles the constraints given (up to 100,000 elements). Consider the time complexity of your sorting and prefix sum calculation."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 100000",
+    "-10^6 <= nums[i] <= 10^6",
+    "The output should be the maximum number of positive prefix sums.",
+    "Prefix sums are calculated after rearranging the elements.",
+    "You can rearrange the array in any order."
+  ]
+}

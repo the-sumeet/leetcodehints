@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to determine if two rectangles intersect. For two rectangles defined by their bottom-left and top-right corners, check if their projections on both the x-axis and y-axis overlap."
+    },
+    {
+      "content": "To find the intersection of two rectangles, calculate the new bottom-left and top-right corners of the intersecting area. The new bottom-left corner will be the maximum of the bottom-left corners of the two rectangles, and the top-right corner will be the minimum of the top-right corners."
+    },
+    {
+      "content": "Once you have the coordinates of the intersecting rectangle, calculate its width and height. The width is the difference between the x-coordinates of the top-right and bottom-left corners, and the height is the difference between the y-coordinates."
+    },
+    {
+      "content": "Remember that the largest square that can fit inside a rectangle is determined by the smaller dimension of that rectangle. Therefore, the side length of the largest square will be the minimum of the width and height of the intersecting rectangle."
+    },
+    {
+      "content": "Iterate through all pairs of rectangles to check for intersections. For each pair, if they intersect, compute the dimensions of the intersection and update your maximum square side length if necessary."
+    },
+    {
+      "content": "Keep track of the maximum side length of the square found during your iterations. If no intersections are found, ensure that you return 0 as specified in the problem statement."
+    },
+    {
+      "content": "Consider edge cases where rectangles may touch at the edges or corners but do not overlap. Make sure your intersection logic correctly identifies these scenarios as non-intersecting."
+    },
+    {
+      "content": "When calculating the area of the square, remember that area = side_length * side_length. Ensure you handle the case where the maximum side length remains 0."
+    },
+    {
+      "content": "Think about how to efficiently check intersections. You might want to use a nested loop to compare each rectangle with every other rectangle, but consider optimizing if needed."
+    },
+    {
+      "content": "Finally, ensure your function handles the input format correctly. You are given two lists of coordinates, so make sure you are accessing the coordinates properly using indices."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10, meaning the number of rectangles is small.",
+    "Each rectangle is defined by two points: bottom-left and top-right.",
+    "Return 0 if no intersecting area exists for at least two rectangles.",
+    "The area of the square is calculated as side_length squared."
+  ]
+}

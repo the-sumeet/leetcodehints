@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirements of the problem. You need to find a number greater than or equal to `num` that is zero-free (contains no '0' digits) and whose digit product is divisible by `t`."
+    },
+    {
+      "content": "Consider how to generate candidates for the number you need to find. You might want to increment `num` and check each subsequent number until you find a valid one."
+    },
+    {
+      "content": "Remember that a number is zero-free if it does not contain the digit '0'. This means you should avoid any number that has '0' in its string representation."
+    },
+    {
+      "content": "Think about how to efficiently check if a number's digits multiply to a product that is divisible by `t`. You can compute the product of the digits and then check the divisibility."
+    },
+    {
+      "content": "When checking for divisibility, consider using the modulo operation. If the product of the digits modulo `t` is zero, then the product is divisible by `t`."
+    },
+    {
+      "content": "You may want to convert the string representation of the number to an integer for easier arithmetic operations, but remember to convert it back to a string when returning the result."
+    },
+    {
+      "content": "Consider edge cases where the input number is already zero-free and its product of digits is divisible by `t`. In such cases, you can return the original number immediately."
+    },
+    {
+      "content": "If you reach a number that contains '0', skip it and continue searching. You need to ensure that the final number has no '0' digits."
+    },
+    {
+      "content": "Keep track of the smallest valid number you find. If you find a valid number that meets the criteria, compare it with previously found numbers to ensure it's the smallest."
+    },
+    {
+      "content": "Think about how you will handle large numbers. Since `num` can be up to 200,000 digits long, you will need to ensure your solution can handle such large inputs efficiently."
+    },
+    {
+      "content": "If you exhaust all possibilities and do not find a valid number, remember to return '-1' as specified in the problem statement."
+    },
+    {
+      "content": "Consider using a loop that increments the number and checks each candidate until you find a valid zero-free number. Make sure to implement a way to skip numbers with '0'."
+    },
+    {
+      "content": "As you increment the number, think about how you can efficiently check if the product of the digits is divisible by `t`. You may want to keep a running product instead of recalculating it from scratch."
+    },
+    {
+      "content": "Make sure to handle cases where the product of digits can grow very large, especially since `t` can be as large as 10^14. You might want to use properties of divisibility to simplify checks."
+    },
+    {
+      "content": "Before finalizing your solution, consider testing it against various edge cases, such as very large numbers, numbers that are already valid, and numbers just below valid thresholds."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= num.length <= 200000; num consists only of digits ['0'-'9'] and does not contain leading zeros.",
+    "Return format: If no valid number exists, return '-1'.",
+    "A number is zero-free if it contains no '0' digits.",
+    "The product of the digits must be divisible by t."
+  ]
+}

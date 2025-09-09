@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operations you can perform on the stack: 'Push' adds an element to the top, while 'Pop' removes the top element. Think about how you can control the order of elements in the stack to match the target array."
+    },
+    {
+      "content": "Remember that the integers you will push to the stack come from a stream in the range [1, n]. This means you will only be able to push integers up to n, so consider how this limits your operations."
+    },
+    {
+      "content": "The target array is strictly increasing, which means that once you push a number onto the stack, the next number you want to match must be greater than the last. This can help you decide when to push and when to pop."
+    },
+    {
+      "content": "As you iterate through the stream from 1 to n, check if the current number is in the target array. If it is, you should 'Push' it onto the stack. If it is not, you will need to 'Push' it and then 'Pop' it immediately."
+    },
+    {
+      "content": "When you push a number that is not in the target, think about how you can keep track of the index of the target array. This will help you determine whether to continue pushing or to stop once the stack matches the target."
+    },
+    {
+      "content": "Consider using a pointer or index to traverse the target array. This pointer will help you know which element you are currently trying to match with the stack's top element."
+    },
+    {
+      "content": "Make sure to handle the case where you reach the end of the target array. If the stack matches the target, you should stop processing further integers from the stream."
+    },
+    {
+      "content": "Think about the operations you need to return. You should collect the sequence of 'Push' and 'Pop' operations in a list and return it as the final output."
+    },
+    {
+      "content": "Pay attention to the constraints: the target array's length can be up to 100, and the values in the target are unique and strictly increasing. This means you won't have to deal with duplicates or out-of-order elements."
+    },
+    {
+      "content": "As a final step, ensure your implementation correctly reflects the operations performed, especially in cases where you have to pop elements that are not part of the target. You should only push and pop as necessary to match the target."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= target.length <= 100",
+    "1 <= n <= 100",
+    "1 <= target[i] <= n",
+    "target is strictly increasing.",
+    "Return the sequence of operations as a list of strings."
+  ]
+}

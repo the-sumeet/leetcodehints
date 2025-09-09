@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to find the largest rectangle that can be formed in a histogram represented by an array of heights. Each bar has a width of 1."
+    },
+    {
+      "content": "Consider the area of a rectangle. The area can be calculated as `height * width`. In this case, the width is always 1, so the area simplifies to just the height of the bars."
+    },
+    {
+      "content": "Think about how to determine the height of the rectangle. The height of the rectangle is limited by the shortest bar in the range you are considering."
+    },
+    {
+      "content": "You can visualize the problem by drawing the histogram. This will help you understand how different heights interact with each other."
+    },
+    {
+      "content": "To find the largest rectangle, you might want to consider every possible pair of bars. However, this brute-force approach can be inefficient."
+    },
+    {
+      "content": "Instead of checking every pair, think about using a stack to keep track of the indices of the bars. This can help you efficiently calculate the area when you encounter a shorter bar."
+    },
+    {
+      "content": "When you encounter a bar that is shorter than the bar at the top of the stack, it means you can calculate the area for the rectangle formed by the bar at the top of the stack."
+    },
+    {
+      "content": "To calculate the area when popping from the stack, you need to know the width of the rectangle. This width is determined by the distance between the current index and the index of the new top of the stack after popping."
+    },
+    {
+      "content": "Make sure to handle the case where the stack is empty after popping. In this case, the width is simply the current index."
+    },
+    {
+      "content": "Don't forget to process all remaining bars in the stack after you finish iterating through the heights. This will ensure you check for the largest rectangle that might end at the last bar."
+    },
+    {
+      "content": "Consider edge cases, such as when the heights array has only one element or when all heights are the same. What would the largest rectangle be in these scenarios?"
+    },
+    {
+      "content": "Remember that the constraints state that heights can be between 0 and 10^4, and the length of the heights array can go up to 10^5. Your solution should be efficient enough to handle these limits."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Using a stack to maintain indices allows you to achieve a linear time complexity of O(n), which is efficient for this problem."
+    },
+    {
+      "content": "As a final step, ensure that your function returns the maximum area found during the process. You might want to keep track of this maximum area in a variable."
+    },
+    {
+      "content": "To summarize, you will iterate through the heights, use a stack to manage indices, calculate areas when necessary, and keep track of the maximum area found."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= heights.length <= 10^5",
+    "Heights can range from 0 to 10^4.",
+    "Each bar has a width of 1.",
+    "Return the area of the largest rectangle in the histogram."
+  ]
+}

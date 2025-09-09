@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `invocations` array. Each element represents a directed edge in a graph where method `a` invokes method `b`. This means you can think of methods as nodes and invocations as directed edges."
+    },
+    {
+      "content": "Identify the methods that are directly or indirectly invoked by method `k`. You can use Depth-First Search (DFS) or Breadth-First Search (BFS) starting from method `k` to find all suspicious methods."
+    },
+    {
+      "content": "Once you have identified all suspicious methods, consider how to determine which methods can be safely removed. A method can be removed if no other method outside the suspicious group invokes it."
+    },
+    {
+      "content": "To efficiently track which methods are invoked by others, create an adjacency list from the `invocations` array. This will help you easily find which methods invoke a given method."
+    },
+    {
+      "content": "As you build your adjacency list, also maintain an 'in-degree' count for each method. This will help you determine if a method can be removed (i.e., if its in-degree is zero)."
+    },
+    {
+      "content": "After identifying the suspicious methods, check if any of them have an in-degree greater than zero. If any suspicious method is invoked by a non-suspicious method, you cannot remove them all."
+    },
+    {
+      "content": "If you find that all suspicious methods can be removed, compile a list of all remaining methods. This involves iterating through all methods and checking if they are not in the suspicious set."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no invocations (the `invocations` array is empty). In this case, all methods should remain, as there are no dependencies."
+    },
+    {
+      "content": "Be careful with the indexing of methods. Remember that methods are numbered from 0 to n-1, so ensure that your logic accounts for this correctly when accessing elements in your data structures."
+    },
+    {
+      "content": "Finally, ensure that your output format matches the requirements. You need to return an array of remaining methods, and the order does not matter, so you can use any collection type that suits your needs."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, 0 <= k <= n - 1, 0 <= invocations.length <= 2 * 10^5.",
+    "Each invocation is unique, meaning invocations[i] != invocations[j].",
+    "Return an array of remaining methods after removing suspicious ones.",
+    "If it's not possible to remove all suspicious methods, return an empty array."
+  ]
+}

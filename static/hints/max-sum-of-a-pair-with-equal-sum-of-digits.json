@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find two indices `i` and `j` in the array such that the sum of the digits of `nums[i]` equals the sum of the digits of `nums[j]`. Make sure to remember that `i` must not equal `j`."
+    },
+    {
+      "content": "Consider how you can calculate the sum of digits for a number. A simple way to do this is to repeatedly divide the number by 10 and sum the remainders. For example, for `num = 18`, the sum of digits is `1 + 8 = 9`."
+    },
+    {
+      "content": "Think about how you can group numbers by their digit sums. You could use a dictionary (or hashmap) where the key is the digit sum and the value is a list of numbers that have that digit sum. This will help you find pairs efficiently."
+    },
+    {
+      "content": "As you populate the dictionary with numbers, keep track of the maximum two numbers for each digit sum. This way, when you find a matching digit sum, you can easily calculate the maximum pair sum."
+    },
+    {
+      "content": "Remember to handle cases where there are fewer than two numbers for a given digit sum. If you find a digit sum with only one number, you cannot form a valid pair from it."
+    },
+    {
+      "content": "When you find pairs of numbers with the same digit sum, calculate their sums and keep track of the maximum sum found so far. Initialize a variable to store this maximum sum."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array has only one number or when all numbers have unique digit sums. In these cases, you should return -1 as specified."
+    },
+    {
+      "content": "While iterating through the numbers, ensure that you are not comparing a number with itself by checking the indices. Use a nested loop or a combination of loops to compare different indices."
+    },
+    {
+      "content": "Once you have processed all numbers and their digit sums, check if you have found a valid maximum sum. If not, return -1. Otherwise, return the maximum sum you calculated."
+    },
+    {
+      "content": "To summarize your approach: 1) Calculate digit sums, 2) Group numbers by their digit sums, 3) Track maximum pairs, and finally, 4) Return the maximum sum or -1 if no pairs exist."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^9",
+    "Indices i and j must be distinct (i != j).",
+    "Return -1 if no valid pairs exist."
+  ]
+}

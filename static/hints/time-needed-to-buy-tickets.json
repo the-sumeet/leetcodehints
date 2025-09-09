@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You have a queue of people where each person wants to buy a certain number of tickets. Remember that each person can only buy one ticket at a time and must return to the end of the line after each purchase."
+    },
+    {
+      "content": "Consider how the queue changes after each person buys a ticket. The person at the front of the queue will buy one ticket, and if they still want more, they go to the back of the line. Think about how you can simulate this process."
+    },
+    {
+      "content": "Focus on the person at index `k`. You need to track how many tickets they have left and when they will finish buying all their tickets. What happens when they reach the front of the line?"
+    },
+    {
+      "content": "As you simulate the queue, keep track of the time taken for each ticket purchase. You can use a loop to process each person in the queue until the person at index `k` has bought all their tickets."
+    },
+    {
+      "content": "When processing the queue, remember that once a person buys a ticket, they decrement their ticket count. If their ticket count reaches zero, they leave the queue. Make sure to handle this condition correctly."
+    },
+    {
+      "content": "Think about the conditions under which the loop should continue. You need to keep iterating until the person at index `k` has no tickets left. What condition will you check to determine this?"
+    },
+    {
+      "content": "Consider using a queue data structure to manage the people in line. This will help you easily simulate the behavior of people buying tickets and going to the back of the line."
+    },
+    {
+      "content": "As you implement the solution, be mindful of the constraints. The maximum number of people is 100, and the maximum tickets any person can buy is also 100. This means your solution should efficiently handle up to 10,000 ticket purchases in the worst case."
+    },
+    {
+      "content": "When you are ready to implement, think about how to keep track of the time. You can use a simple counter that increments every time a ticket is bought. Make sure to return this counter when the person at index `k` has completed their purchases."
+    },
+    {
+      "content": "Finally, ensure that your implementation correctly outputs the total time taken for the person at index `k` to finish buying their tickets. This is the final value you will return from your function."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == tickets.length, 1 <= n <= 100, 1 <= tickets[i] <= 100, 0 <= k < n",
+    "The queue is 0-indexed, meaning the first person is at index 0.",
+    "Each person takes exactly 1 second to buy a ticket.",
+    "A person can only buy one ticket at a time and must go to the back of the line if they want to buy more."
+  ]
+}

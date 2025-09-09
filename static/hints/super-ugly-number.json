@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a super ugly number is. Recall that a super ugly number is a positive integer whose prime factors are limited to the given array of primes. The first super ugly number is always 1."
+    },
+    {
+      "content": "Consider how you can generate super ugly numbers. You might want to think about using a min-heap (or priority queue) to efficiently get the smallest current super ugly number."
+    },
+    {
+      "content": "Remember that each time you extract the smallest number from the heap, you can generate new super ugly numbers by multiplying it with each prime in the given array. This will help you expand your list of super ugly numbers."
+    },
+    {
+      "content": "Think about how to avoid duplicates when generating new super ugly numbers. You can use a set to keep track of the numbers you've already added to the heap."
+    },
+    {
+      "content": "You will need to iterate until you find the n-th super ugly number. Keep a counter for how many super ugly numbers you've processed so far."
+    },
+    {
+      "content": "When you pop the smallest number from the heap, make sure to multiply it by each prime and push the results back into the heap, checking for duplicates."
+    },
+    {
+      "content": "Consider the performance of your solution. Using a min-heap allows you to efficiently manage the smallest elements, but ensure your approach handles the maximum constraints effectively."
+    },
+    {
+      "content": "Pay attention to the constraints provided: n can be as large as 100,000, and the number of primes can be up to 100. This means your solution needs to be optimized for both time and space."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when n is 1, where the output should simply be 1, as it is the first super ugly number regardless of the primes."
+    },
+    {
+      "content": "Finally, once you have generated enough super ugly numbers, return the n-th number from your list. Ensure that your indexing is correct, as n is 1-based."
+    }
+  ],
+  "questionNotes": [
+    "A super ugly number has prime factors only from the given array of primes.",
+    "The first super ugly number is always 1.",
+    "Constraints: 1 <= n <= 100000, 1 <= primes.length <= 100, 2 <= primes[i] <= 1000.",
+    "All primes are unique and sorted in ascending order.",
+    "Return the n-th super ugly number, where n is 1-based indexing."
+  ]
+}

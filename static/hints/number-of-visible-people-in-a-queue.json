@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the visibility condition: a person can see another person if they are taller than everyone in between them. This means you need to compare heights carefully."
+    },
+    {
+      "content": "Consider how you would approach this problem with a brute-force solution. For each person, you could check all the people to their right until you find someone they can see or reach the end of the queue."
+    },
+    {
+      "content": "When iterating through the queue, remember that you only need to check the heights of the people in between the two you are comparing. Think about how you can keep track of the maximum height encountered."
+    },
+    {
+      "content": "What data structure could help you keep track of the heights efficiently as you iterate? A stack might be useful for this problem to maintain a list of visible people."
+    },
+    {
+      "content": "As you process each person from right to left, you can use a stack to keep track of the heights of people who are visible. This way, you can easily determine who can see whom."
+    },
+    {
+      "content": "When you encounter a person, pop from the stack until you find a person taller than the current one or the stack is empty. This will help you determine how many people the current person can see."
+    },
+    {
+      "content": "Make sure to push the current person's height onto the stack after processing them. This way, they can potentially help the next person in line determine visibility."
+    },
+    {
+      "content": "Keep in mind that the heights are distinct integers. This uniqueness simplifies some conditions since you won't have to deal with ties."
+    },
+    {
+      "content": "Think about edge cases, such as when there's only one person in the queue. In this case, that person cannot see anyone, so the output should be [0]."
+    },
+    {
+      "content": "Consider the time complexity of your solution. A naive O(n^2) solution may be too slow for large inputs, so aim for an O(n) solution using the stack."
+    },
+    {
+      "content": "As you build your answer array, remember to initialize it with zeros. Each index will eventually hold the count of visible people for that specific person."
+    },
+    {
+      "content": "When you process each person, update the answer array with the number of people they can see before moving to the next person."
+    },
+    {
+      "content": "After processing all people, ensure that your answer array is in the correct format and matches the expected output structure."
+    },
+    {
+      "content": "Test your solution with various input cases, especially edge cases, to ensure it handles all scenarios correctly."
+    },
+    {
+      "content": "Finally, think about how you would explain your approach to someone else. Being able to articulate your thought process is crucial in an interview setting."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == heights.length, 1 <= n <= 10^5, 1 <= heights[i] <= 10^5.",
+    "All heights are unique integers.",
+    "Output should be an array where answer[i] is the number of people the i-th person can see to their right."
+  ]
+}

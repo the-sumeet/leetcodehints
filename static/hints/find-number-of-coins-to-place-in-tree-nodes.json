@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a tree. A tree is a connected acyclic graph, and in this problem, you are given the edges that define the tree's connections."
+    },
+    {
+      "content": "Remember that the tree is rooted at node 0. This means that you can use a depth-first search (DFS) or breadth-first search (BFS) starting from node 0 to explore the tree."
+    },
+    {
+      "content": "For each node, you need to determine the size of its subtree. The size of a subtree rooted at node `i` includes all nodes that can be reached from `i`."
+    },
+    {
+      "content": "If the size of the subtree for a node is less than 3, you will place 1 coin on that node. Think about how you can easily count the number of nodes in the subtree."
+    },
+    {
+      "content": "For nodes with a subtree size of 3 or more, you need to calculate the maximum product of costs from any 3 distinct nodes in that subtree."
+    },
+    {
+      "content": "To find the maximum product of costs, consider using a list to store the costs of all nodes in the subtree. You can then sort this list to easily find the top three costs."
+    },
+    {
+      "content": "Be careful with negative costs. If the maximum product of costs is negative, you should place 0 coins on that node instead of a calculated amount."
+    },
+    {
+      "content": "When calculating the product, remember to handle the case where there are not enough distinct nodes with positive costs. What should you do if you have fewer than three distinct costs?"
+    },
+    {
+      "content": "As you traverse the tree, maintain a list of costs for each subtree. You can use a recursive DFS function to gather costs and calculate the product at each node."
+    },
+    {
+      "content": "Consider edge cases such as all nodes having negative costs or the smallest tree possible (just 2 nodes). How would your logic handle these scenarios?"
+    },
+    {
+      "content": "When returning the results, ensure that the output array is indexed correctly. The result for each node should correspond to its index in the original input."
+    },
+    {
+      "content": "Think about how you will traverse the tree. A recursive DFS approach is often straightforward for tree problems. What base cases will you need for your recursion?"
+    },
+    {
+      "content": "Make sure to test your implementation with different tree structures, including skewed trees and balanced trees, to verify that your logic holds in all cases."
+    },
+    {
+      "content": "As you implement the DFS, remember to pass the necessary parameters to keep track of the costs and subtree sizes at each node."
+    },
+    {
+      "content": "Finally, ensure that your function returns an array of the correct size and format. Each index in the result array should correspond to the number of coins for that node."
+    }
+  ],
+  "questionNotes": [
+    "The tree is undirected and has n nodes with n-1 edges.",
+    "The tree is rooted at node 0.",
+    "The costs can be negative, and you must handle them appropriately.",
+    "If the subtree size is less than 3, place 1 coin.",
+    "If the product of costs is negative, place 0 coins.",
+    "Return an array of size n where each index corresponds to the number of coins for that node."
+  ]
+}

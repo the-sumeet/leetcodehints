@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem visually. You have two horizontal lines, and you need to connect elements from `nums1` to `nums2` without any lines crossing. Think about how you can represent these connections."
+    },
+    {
+      "content": "Consider using a dynamic programming approach. You can create a 2D array `dp` where `dp[i][j]` represents the maximum number of uncrossed lines that can be drawn using the first `i` elements of `nums1` and the first `j` elements of `nums2`."
+    },
+    {
+      "content": "Identify the base case for your dynamic programming array. If either `nums1` or `nums2` is empty, then the maximum number of lines is 0. This will help you initialize your `dp` array."
+    },
+    {
+      "content": "As you fill in the `dp` array, think about the conditions under which you can draw a line. If `nums1[i-1] == nums2[j-1]`, you can draw a line and increase the count based on previous values in the `dp` array."
+    },
+    {
+      "content": "When `nums1[i-1] != nums2[j-1]`, you should consider the maximum lines possible by either ignoring the current element of `nums1` or `nums2`. This will help you decide how to fill in the `dp` array."
+    },
+    {
+      "content": "Make sure to iterate through both arrays correctly. Remember that your `dp` array is 1-based indexed in terms of the elements of `nums1` and `nums2`, but the actual arrays are 0-based indexed."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when both arrays contain the same number multiple times or when they have completely distinct elements. How will your algorithm handle these cases?"
+    },
+    {
+      "content": "Think about the time complexity of your solution. Given the constraints, an O(n * m) solution where n is the length of `nums1` and m is the length of `nums2` should be efficient enough."
+    },
+    {
+      "content": "As you implement your dynamic programming solution, remember to update your `dp` array correctly based on the conditions discussed. The final answer will be found in `dp[nums1.length][nums2.length]`."
+    },
+    {
+      "content": "Before finalizing your solution, test it with the provided examples and some edge cases to ensure it handles all scenarios correctly. Consider cases with minimum and maximum lengths of input arrays."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums1.length, nums2.length <= 500",
+    "Each element in nums1 and nums2 is between 1 and 2000.",
+    "The lines cannot intersect, even at endpoints.",
+    "Each number can only belong to one connecting line."
+  ]
+}

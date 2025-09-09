@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the data in the Stadium table. Each row contains an 'id', 'visit_date', and 'people' count. Make sure to note that 'id' is unique and increases with each row."
+    },
+    {
+      "content": "Focus on the requirement for consecutive 'id's. You need to identify groups of rows where the 'id's are sequential (e.g., 1, 2, 3 or 4, 5, 6)."
+    },
+    {
+      "content": "Remember that you need at least three consecutive rows. Think about how you can group the data based on the 'id' values."
+    },
+    {
+      "content": "Consider how to filter the rows based on the 'people' count. You only want rows where 'people' is greater than or equal to 100."
+    },
+    {
+      "content": "You may want to use a window function or a self-join to help identify consecutive rows. This can simplify the logic for finding groups of three or more."
+    },
+    {
+      "content": "As you filter the data, keep track of the 'id' values and their corresponding 'people' counts. You will need to check that all values in a group meet the 'people' criteria."
+    },
+    {
+      "content": "Think about how you can use a temporary table or a Common Table Expression (CTE) to store intermediate results. This can help you manage the logic for consecutive 'id's."
+    },
+    {
+      "content": "When checking for consecutive 'id's, consider using the difference between the current 'id' and the previous one. If the difference is 1, they are consecutive."
+    },
+    {
+      "content": "Make sure to handle cases where there are gaps in the 'id' sequence. You need to ensure that you only count rows that are truly consecutive."
+    },
+    {
+      "content": "After identifying groups of consecutive 'id's, you will need to check the count of these groups. Use a counting mechanism to ensure you only select groups with three or more rows."
+    },
+    {
+      "content": "Once you have your filtered groups, remember to order the final result by 'visit_date' in ascending order as specified in the problem statement."
+    },
+    {
+      "content": "Consider edge cases such as when there are less than three rows in total or when no rows meet the criteria of having at least 100 people."
+    },
+    {
+      "content": "You might want to use a subquery to first filter the rows based on the 'people' count before checking for consecutive 'id's. This can reduce the number of rows you need to process."
+    },
+    {
+      "content": "As you approach the final solution, ensure that your query returns the correct columns: 'id', 'visit_date', and 'people'."
+    },
+    {
+      "content": "Finally, remember to test your solution with various datasets, including those with edge cases like all rows having less than 100 people or exactly three consecutive valid rows."
+    }
+  ],
+  "questionNotes": [
+    "The 'visit_date' column contains unique values.",
+    "You need at least three consecutive 'id's with 'people' >= 100.",
+    "The result must be ordered by 'visit_date' in ascending order.",
+    "Consider using window functions or CTEs for better management of consecutive rows."
+  ]
+}

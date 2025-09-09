@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to calculate how many operations it takes to move all balls to each box. Remember, you can only move balls to adjacent boxes."
+    },
+    {
+      "content": "Consider how you would approach the problem for a single box. If you want to move all balls to box `i`, think about how many moves it would take from each other box to reach box `i`."
+    },
+    {
+      "content": "Break down the problem into smaller parts. For each box, you can calculate the total number of operations required by summing the distances from all other boxes that contain balls."
+    },
+    {
+      "content": "Notice that the distance a ball has to travel depends on its position relative to the target box. For example, if a ball is in box `j` and you want to move it to box `i`, the distance is `abs(i - j)`."
+    },
+    {
+      "content": "Think about how you can iterate through the boxes. You might want to use a nested loop where the outer loop selects the target box, and the inner loop calculates the total operations from all other boxes."
+    },
+    {
+      "content": "Keep track of the total number of balls as you iterate through the boxes. This will help you efficiently calculate the number of operations needed for each box."
+    },
+    {
+      "content": "Consider using two passes through the boxes: one from left to right and another from right to left. This way, you can accumulate the operations needed as you go."
+    },
+    {
+      "content": "In your first pass, calculate the operations needed to move balls to the left. In the second pass, calculate the operations needed to move balls to the right and combine the results."
+    },
+    {
+      "content": "Make sure to account for edge cases, such as when there are no balls in any box or when all balls are already in one box. How would your solution handle these scenarios?"
+    },
+    {
+      "content": "Finally, ensure that your output format is correct. You need to return an array where each index represents the minimum operations for that box. Each value should be computed based on the initial configuration of the boxes."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 2000, boxes[i] is either '0' or '1'.",
+    "Output should be an array of size n.",
+    "Indexing is zero-based.",
+    "Each answer[i] is calculated based on the initial state of the boxes."
+  ]
+}

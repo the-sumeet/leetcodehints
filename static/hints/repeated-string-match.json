@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for string `b` to be a substring of repeated string `a`. Remember that a substring is a contiguous sequence of characters within a string."
+    },
+    {
+      "content": "Consider how many times you might need to repeat string `a` to ensure that `b` can fit within it. Think about the lengths of both strings and how they relate to each other."
+    },
+    {
+      "content": "Calculate the minimum number of times you would need to repeat `a` based on the length of `b`. You can start by dividing the length of `b` by the length of `a` to get a baseline number of repetitions."
+    },
+    {
+      "content": "After calculating the baseline repetitions, remember to check if `b` can be a substring of the repeated version of `a`. You might need to repeat `a` one more time than your initial calculation to account for cases where `b` starts near the end of one repetition of `a`."
+    },
+    {
+      "content": "Consider edge cases where `b` is shorter than `a`. In such cases, you might only need to check if `b` is a substring of `a` without any repetitions."
+    },
+    {
+      "content": "Make sure to handle the case where `b` contains characters not present in `a`. If `b` has characters that don't exist in `a`, it's impossible for `b` to be a substring of any repetitions of `a`."
+    },
+    {
+      "content": "You can use a loop to construct the repeated string `a` and check for the substring `b`. However, be mindful of performance; avoid constructing very large strings unnecessarily."
+    },
+    {
+      "content": "When you repeat `a`, you can concatenate it in a loop until the length of the repeated string is at least as long as `b`. This will help you ensure you have enough characters to check against."
+    },
+    {
+      "content": "Once you have the repeated string, use a substring search method (like `in` in Python) to check if `b` is indeed a substring of the repeated `a`. Keep track of how many times you repeated `a`."
+    },
+    {
+      "content": "Finally, if you reach a point where the repeated string is longer than necessary but still doesn't contain `b`, return -1. This indicates that it's impossible for `b` to be a substring of any repetitions of `a`."
+    }
+  ],
+  "questionNotes": [
+    "1 <= a.length, b.length <= 10^4",
+    "Both strings consist of lowercase English letters.",
+    "Return -1 if it's impossible for b to be a substring of any repetitions of a."
+  ]
+}

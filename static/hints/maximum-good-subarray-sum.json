@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'good' subarray is. A subarray is considered good if the absolute difference between the first and last elements is exactly equal to k. For example, in the array [1, 2, 3, 4, 5, 6] with k = 1, the subarray [5, 6] is good since |5 - 6| = 1."
+    },
+    {
+      "content": "Think about how you can iterate through the array to find potential starting points for good subarrays. You might want to consider each element as a potential starting point and then look for a corresponding ending element that satisfies the good subarray condition."
+    },
+    {
+      "content": "As you iterate through the array, keep track of the indices of elements that could serve as the start of a good subarray. This will help you quickly find pairs of elements that meet the condition |nums[i] - nums[j]| = k."
+    },
+    {
+      "content": "When you find a valid pair (i, j) such that |nums[i] - nums[j]| = k, remember to calculate the sum of the subarray from index i to j. You can use a simple loop to sum the elements in this range."
+    },
+    {
+      "content": "Consider edge cases where the array might contain negative numbers or where k is larger than the possible differences in the array. Ensure that your logic can handle these scenarios without errors."
+    },
+    {
+      "content": "To optimize your solution, think about using a hashmap or dictionary to store the indices of elements. This can help you quickly find pairs that satisfy the good subarray condition without needing to check every possible pair."
+    },
+    {
+      "content": "As you find good subarrays, keep track of the maximum sum encountered. You can use a variable initialized to zero to store this maximum sum and update it whenever you find a new good subarray with a higher sum."
+    },
+    {
+      "content": "Remember that if no good subarray is found, you need to return 0. Make sure to handle this case in your final implementation by checking if your maximum sum variable was ever updated."
+    },
+    {
+      "content": "When summing the elements of a good subarray, ensure that you include all elements from the starting index to the ending index. Use a loop or a built-in function to compute this sum efficiently."
+    },
+    {
+      "content": "Finally, put all the pieces together: iterate through the array, check for good subarrays, calculate their sums, and keep track of the maximum. Ensure your code is efficient enough to handle the upper limits of the constraints."
+    }
+  ],
+  "questionNotes": [
+    "A subarray is good if |nums[i] - nums[j]| == k.",
+    "Return the maximum sum of all good subarrays, or 0 if none exist.",
+    "Constraints: 2 <= nums.length <= 10^5, -10^9 <= nums[i] <= 10^9, 1 <= k <= 10^9.",
+    "Consider edge cases with negative numbers and large values of k."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how resizing affects the total space wasted. Each time you resize, the size of the array must be at least as large as the number of elements required at that time. Think about how to calculate the wasted space for a given size."
+    },
+    {
+      "content": "Consider the scenario when you have `k = 0`. In this case, you cannot resize the array at all. How would you determine the initial size to minimize wasted space across all time points?"
+    },
+    {
+      "content": "When `k > 0`, you have the flexibility to resize the array. Think about the optimal points in time to resize the array. You might want to resize when there's a significant increase in the number of elements required."
+    },
+    {
+      "content": "Notice that the wasted space can be calculated as `size_t - nums[t]` for each time `t`. To minimize the total wasted space, you should try to choose the sizes wisely based on the maximum number of elements required up to that time."
+    },
+    {
+      "content": "You can use dynamic programming to keep track of the minimum wasted space for each possible number of resizes. Define a DP table where `dp[i][j]` represents the minimum wasted space using the first `i` elements with `j` resizes."
+    },
+    {
+      "content": "Think about how to transition between states in your DP table. For each `dp[i][j]`, you might want to check all previous indices `p` (where `p < i`) to see if resizing at `p` minimizes the space wasted from `p` to `i`."
+    },
+    {
+      "content": "When calculating the wasted space from `p` to `i`, you can find the maximum `nums[t]` for `t` in that range. This maximum will determine the size of the array if you decide to resize at `p`."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when `k` is equal to the length of `nums` minus one. In this case, you can resize as many times as needed, which might lead to zero wasted space."
+    },
+    {
+      "content": "Remember that the initial size does not count towards the number of resizes allowed. You can set it to the minimum required size at the start, which can help reduce wasted space significantly."
+    },
+    {
+      "content": "Finally, consider how to implement the transition logic in your DP solution. You will need to loop through each possible `p` for every `i` and calculate the total wasted space efficiently. This will be crucial for optimizing your solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 200",
+    "1 <= nums[i] <= 10^6",
+    "0 <= k <= nums.length - 1",
+    "The initial size does not count towards the number of resizing operations."
+  ]
+}

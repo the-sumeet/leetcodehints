@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input string. It represents a file system using new line (`\n`) for directories and files, and tab (`\t`) for the depth of each item. Each level of depth corresponds to how many tabs precede the name."
+    },
+    {
+      "content": "You need to parse the input string line by line. Use the `split` method on `\n` to separate the items and then analyze the leading tabs to determine the depth of each item."
+    },
+    {
+      "content": "As you analyze each line, keep track of the current path length for directories. You can use a stack or a list to maintain the lengths of paths at different levels of depth."
+    },
+    {
+      "content": "Remember that the length of the absolute path to a file is the sum of the lengths of all directories leading to that file plus the length of the file itself. Don't forget to add slashes (`/`) between directories."
+    },
+    {
+      "content": "When you encounter a file (which contains a dot `.` in its name), calculate the total path length and check if it's the longest one you've found so far. Keep a variable to store the maximum length."
+    },
+    {
+      "content": "Consider edge cases where there are no files at all. If the input only contains directories, your function should return 0."
+    },
+    {
+      "content": "Make sure to handle varying depths correctly. If a line has more tabs than the previous line, it indicates a deeper directory, while fewer tabs mean you're going back up in the directory structure."
+    },
+    {
+      "content": "When calculating lengths, ensure you add the length of the slashes between directories. For example, if you have two directories and a file, the length should include the slashes: `dir/subdir/file.ext`."
+    },
+    {
+      "content": "As you iterate through the lines, you might want to reset the path length when you encounter a new directory. This way, you can build the path correctly for each file."
+    },
+    {
+      "content": "Finally, after processing all lines, return the maximum length found. If no file was found, ensure your return value is 0."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of new line characters (`\n`) and tab characters (`\t`).",
+    "A file name contains a dot (`.`) for its extension, while directory names do not.",
+    "The output should be the length of the longest absolute path to a file, or 0 if no files exist.",
+    "Constraints specify that the input length is between 1 and 10^4 characters."
+  ]
+}

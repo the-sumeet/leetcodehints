@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the bitwise OR operation. The result of `a | b` includes all bits that are set in either `a` or `b`. This means that if you want to maximize the OR result, you should focus on maximizing the individual elements in the array."
+    },
+    {
+      "content": "Consider how multiplying an element by 2 affects its binary representation. Multiplying by 2 shifts the bits to the left, which can potentially increase the OR result significantly if you choose the right element."
+    },
+    {
+      "content": "Think about the constraints: you can perform the operation at most `k` times. This means you need to be strategic about which element you choose to multiply and how many times you do it."
+    },
+    {
+      "content": "Before applying any operations, calculate the initial OR value of the array. This will give you a baseline to compare against after performing the operations."
+    },
+    {
+      "content": "When considering which element to multiply, focus on the elements that contribute the least to the current OR value. Enhancing these elements may yield a larger overall OR after the operations."
+    },
+    {
+      "content": "For each element in the array, simulate the effect of multiplying it by 2 up to `k` times. Keep track of the maximum OR value you can achieve with each simulation."
+    },
+    {
+      "content": "Remember that multiplying an element by 2 multiple times can be treated as multiplying it by `2^m` where `m` is the number of times you multiply. This can help you calculate the new value directly."
+    },
+    {
+      "content": "Use a loop to iterate through each element in the array. For each element, create a temporary copy of the array and apply the multiplication operation, then calculate the new OR value."
+    },
+    {
+      "content": "As you calculate potential OR values, maintain a variable to track the maximum found so far. This will help you determine the best outcome after all operations are considered."
+    },
+    {
+      "content": "Finally, ensure you return the maximum OR value after considering all possible operations. You might want to structure your code to keep track of the highest result encountered during your simulations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "1 <= k <= 15",
+    "Focus on maximizing the OR result by strategically multiplying elements.",
+    "You can multiply the same element multiple times, up to `k` times."
+  ]
+}

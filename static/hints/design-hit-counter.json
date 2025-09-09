@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic functionality of the HitCounter. You need to track the number of hits that occur within a certain time frame. Consider how you will store the hits and their corresponding timestamps."
+    },
+    {
+      "content": "Think about how you will structure your data. A list or array can be useful to keep track of the timestamps of each hit. Remember that you need to manage the timestamps in relation to the current time."
+    },
+    {
+      "content": "When implementing the `hit` method, ensure that you are correctly adding the current timestamp to your data structure. Consider what happens if multiple hits occur at the same timestamp."
+    },
+    {
+      "content": "For the `getHits` method, you need to return the number of hits that occurred in the last 300 seconds. This means you will need to filter your stored timestamps based on the current time."
+    },
+    {
+      "content": "Pay attention to the time window of 300 seconds. You should only count hits that occurred within the last 300 seconds from the current timestamp. Think about how you will efficiently remove old hits from your data structure."
+    },
+    {
+      "content": "Consider using a queue or a deque to store the timestamps of hits. This will allow you to efficiently add new hits and remove old ones that fall outside the 300-second window."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when no hits have occurred yet, or when all hits are older than 300 seconds. Your `getHits` method should return 0 in these scenarios."
+    },
+    {
+      "content": "Think about how you will implement the logic to check if a hit is within the last 300 seconds. You might want to use a simple comparison between the current timestamp and the oldest timestamp in your data structure."
+    },
+    {
+      "content": "As you implement the `getHits` method, ensure that it efficiently counts the hits without iterating through all timestamps unnecessarily. This is crucial for performance, especially if many hits are recorded."
+    },
+    {
+      "content": "Finally, make sure to test your implementation with various scenarios, including rapid hits, hits spaced out over time, and edge cases like querying right after the 300-second window has expired."
+    }
+  ],
+  "questionNotes": [
+    "The HitCounter must track hits in a time window of 300 seconds.",
+    "The `hit` method should record the timestamp of each hit.",
+    "The `getHits` method should return the count of hits in the last 300 seconds.",
+    "Consider the efficiency of your solution, especially for the `getHits` method.",
+    "Handle edge cases where no hits are recorded or all hits are outside the time window."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. Each column must be strictly increasing, meaning that for any two rows i and j in the same column, grid[i][j] must be less than grid[i+1][j]."
+    },
+    {
+      "content": "Consider how to compare the values in each column. For each column, you'll need to compare adjacent rows to determine how much you need to increment the values to maintain the strictly increasing property."
+    },
+    {
+      "content": "Focus on one column at a time. For a given column j, iterate through the rows from the second row to the last row. Check if grid[i][j] is less than or equal to grid[i-1][j]."
+    },
+    {
+      "content": "When you find that grid[i][j] is not strictly greater than grid[i-1][j], calculate how much you need to increment grid[i][j] to make it strictly greater. This can be done with: increment = grid[i-1][j] - grid[i][j] + 1."
+    },
+    {
+      "content": "Keep a running total of the operations needed for each column. You can sum the increments calculated for each row in the column to get the total operations needed for that column."
+    },
+    {
+      "content": "Don't forget to reset your operations count for each new column. After processing one column, you should start fresh for the next column."
+    },
+    {
+      "content": "Think about edge cases. What happens if the matrix has only one row or one column? In such cases, the matrix is already strictly increasing by default."
+    },
+    {
+      "content": "Make sure to handle large values correctly. Given the constraints, ensure that your calculations do not exceed the limits of integer representation in your programming language."
+    },
+    {
+      "content": "After processing all columns, return the total number of operations. This should be the sum of operations from all columns."
+    },
+    {
+      "content": "Finally, consider the time complexity of your approach. Since you're iterating through each element of the matrix, think about how this might scale with larger matrices."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == grid.length, n == grid[i].length, 1 <= m, n <= 50, 0 <= grid[i][j] < 2500.",
+    "Each column must be strictly increasing, meaning grid[i][j] < grid[i+1][j] for all valid i.",
+    "You need to return the total number of operations as a single integer."
+  ]
+}

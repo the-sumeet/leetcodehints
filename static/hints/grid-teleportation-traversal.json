@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. You have a 2D array where each cell can be empty ('.'), an obstacle ('#'), or a teleportation portal ('A' - 'Z'). The goal is to navigate from the top-left corner to the bottom-right corner."
+    },
+    {
+      "content": "Consider how you can move within the grid. You can only move to adjacent cells (up, down, left, right) unless there is an obstacle. Make sure to account for grid boundaries to avoid out-of-bounds errors."
+    },
+    {
+      "content": "Think about how to track your position and the moves you make. A common approach is to use a queue to implement a breadth-first search (BFS) for exploring the grid, as it naturally finds the shortest path."
+    },
+    {
+      "content": "When you encounter a portal, remember that you can teleport to any other cell with the same letter. This means you need to keep track of which portals you've already used to avoid using them again."
+    },
+    {
+      "content": "You might want to create a mapping of portal letters to their positions in the grid. This will help you quickly find all possible teleportation destinations when you step on a portal."
+    },
+    {
+      "content": "Consider edge cases, such as when the grid is very small (1x1) or when the path is completely blocked by obstacles. Make sure your algorithm can handle these scenarios gracefully."
+    },
+    {
+      "content": "As you implement your BFS, keep track of the number of moves taken to reach each cell. Use a data structure to record the minimum moves required to reach each cell, especially after using a portal."
+    },
+    {
+      "content": "Remember to mark cells as visited to avoid cycles and unnecessary re-exploration. This is crucial for both regular moves and teleportation to ensure efficiency."
+    },
+    {
+      "content": "When you reach the bottom-right cell, return the number of moves taken. If you exhaust all possibilities and cannot reach the destination, return -1."
+    },
+    {
+      "content": "Finally, consider how to handle the teleportation logic within your BFS. You may need to enqueue multiple positions when using a portal, so ensure your queue management accommodates this."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m == matrix.length <= 1000, 1 <= n == matrix[i].length <= 1000",
+    "matrix[i][j] is either '#', '.', or an uppercase English letter.",
+    "matrix[0][0] is guaranteed not to be an obstacle.",
+    "Each portal letter can only be used once during the journey."
+  ]
+}

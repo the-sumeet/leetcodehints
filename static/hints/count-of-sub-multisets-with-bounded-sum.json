@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the difference between subsets and sub-multisets. A sub-multiset allows for duplicates based on their occurrences in the original array."
+    },
+    {
+      "content": "Consider how you might represent the elements of `nums` and their counts. You might want to use a dictionary or a counter to track how many times each element appears."
+    },
+    {
+      "content": "Think about how to generate all possible sub-multisets. You can use a recursive approach or dynamic programming to explore combinations of elements."
+    },
+    {
+      "content": "When generating sub-multisets, remember that the order of elements does not matter, but the count of each element does. This means you should consider combinations of different counts for each unique element."
+    },
+    {
+      "content": "To efficiently count sub-multisets, consider how to calculate the sum of elements as you build them. You may need to track the current sum and compare it against the bounds `l` and `r`."
+    },
+    {
+      "content": "Given the constraints, you might want to optimize your approach. Think about using a dynamic programming table to store the number of ways to achieve each possible sum."
+    },
+    {
+      "content": "The maximum possible sum is 20,000, so ensure your data structures can handle sums up to this limit. A list or array indexed by sum could be useful."
+    },
+    {
+      "content": "As you build your DP table, remember to consider the modulo operation. Since the result can be large, applying modulo 10^9 + 7 at each step is essential."
+    },
+    {
+      "content": "When counting valid sub-multisets, ensure you only count those whose sums fall within the range [l, r]. You might need to sum values from your DP table over this range."
+    },
+    {
+      "content": "Consider edge cases such as when `nums` contains only zeros or when `l` and `r` are both zero. How do these scenarios affect your counting?"
+    },
+    {
+      "content": "Remember that the empty sub-multiset has a sum of 0. Decide if you want to include it in your count based on the values of `l` and `r`."
+    },
+    {
+      "content": "To implement the counting of sub-multisets, think about iterating through each unique element and its count, updating your DP table accordingly."
+    },
+    {
+      "content": "You may want to use a two-pointer technique or prefix sums to efficiently sum counts over the range [l, r] once your DP table is built."
+    },
+    {
+      "content": "As a final step, ensure your implementation correctly handles the modulo operation and returns the final count as specified in the problem statement."
+    },
+    {
+      "content": "Try to write down pseudocode for your approach. This can help clarify your thoughts and ensure you have covered all necessary components."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 2 * 10^4",
+    "0 <= nums[i] <= 2 * 10^4",
+    "Sum of nums does not exceed 2 * 10^4",
+    "0 <= l <= r <= 2 * 10^4",
+    "Return the count modulo 10^9 + 7",
+    "A sub-multiset allows duplicates based on occurrences in nums."
+  ]
+}

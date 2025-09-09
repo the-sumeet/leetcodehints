@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the bitwise XOR operation. Remember that for any two bits, the result of XOR is 1 if the bits are different and 0 if they are the same. This means that the XOR operation can be used to maximize certain bits in the result."
+    },
+    {
+      "content": "Consider how the queries are structured. Each query consists of two values: `x_i` and `m_i`. You need to find the maximum XOR value with `x_i` from elements in `nums` that are less than or equal to `m_i`."
+    },
+    {
+      "content": "Think about how you can efficiently filter the `nums` array based on the `m_i` value from each query. A simple approach would be to iterate through `nums` for each query, but that may not be efficient enough for larger inputs."
+    },
+    {
+      "content": "Since `nums` can contain up to 100,000 elements, consider sorting `nums` first. This will allow you to quickly find elements that are less than or equal to `m_i` using binary search."
+    },
+    {
+      "content": "Once you have the valid elements from `nums` for a given query, you need to compute the XOR with `x_i`. Keep track of the maximum XOR value you find."
+    },
+    {
+      "content": "Remember to handle the case where no elements in `nums` are less than or equal to `m_i`. In such cases, you should return -1 for that query."
+    },
+    {
+      "content": "When performing the XOR operation, consider how the bits of `x_i` interact with the bits of the elements in `nums`. The goal is to maximize the number of 1s in the result."
+    },
+    {
+      "content": "You might want to use a data structure that allows for fast lookups and insertions. A Trie (prefix tree) can be an effective way to store the numbers for quick maximum XOR calculations."
+    },
+    {
+      "content": "If you use a Trie, each node can represent a bit (0 or 1). You can traverse the Trie to find the best possible match for maximizing the XOR with `x_i`."
+    },
+    {
+      "content": "Consider the constraints of the problem. Since `nums` and `queries` can be large, ensure that your solution runs efficiently within O(n log n) or O(n) time complexity for preprocessing and O(log n) for each query."
+    },
+    {
+      "content": "Make sure to test your solution with edge cases, such as when `nums` contains only one element, or when all elements are greater than `m_i`."
+    },
+    {
+      "content": "Think about how to structure your final result. You need to return an array where each index corresponds to the result of each query. Ensure that you maintain the order of the queries."
+    },
+    {
+      "content": "As you implement your solution, keep track of the maximum XOR found for each query. You can initialize a variable to store this value and update it as you iterate through the valid elements."
+    },
+    {
+      "content": "Before finalizing your implementation, review your logic for handling multiple queries. Ensure that the filtering of `nums` and the XOR calculations are performed correctly for each individual query."
+    },
+    {
+      "content": "Finally, consider edge cases where `nums` may contain duplicate values. Ensure your logic handles these correctly and does not count duplicates unnecessarily."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length, queries.length <= 10^5",
+    "queries[i].length == 2",
+    "0 <= nums[j], x_i, m_i <= 10^9",
+    "Return an integer array where answer.length == queries.length",
+    "If all elements in nums are larger than m_i, return -1 for that query."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operations you can perform on each character in string `s`. You can either shift to the next letter or the previous letter in the alphabet, and each operation has a specific cost associated with it."
+    },
+    {
+      "content": "Remember that shifting from 'z' to 'a' or from 'a' to 'z' wraps around the alphabet. This means that when calculating the distance between two characters, you need to consider both forward and backward shifts."
+    },
+    {
+      "content": "For each character in `s` and its corresponding character in `t`, calculate the cost of shifting to the next letter and the cost of shifting to the previous letter. Store these costs in a way that makes them easy to access."
+    },
+    {
+      "content": "When calculating the cost for shifting, you can derive the index of a character by using `ord(char) - ord('a')`. This will help you access the `nextCost` and `previousCost` arrays."
+    },
+    {
+      "content": "Consider edge cases where the characters in `s` and `t` are the same. In such cases, the cost to transform is zero for that character, so you can skip any calculations for those indices."
+    },
+    {
+      "content": "To efficiently compute the total cost, you can iterate through each character in the strings and maintain a running total of the minimum costs calculated for each character position."
+    },
+    {
+      "content": "Think about how to handle the wrap-around effect when calculating the total cost. For example, if you need to shift 'a' to 'z', you need to account for the costs accordingly."
+    },
+    {
+      "content": "You can also optimize your approach by precomputing the costs of shifting each character to its target character before iterating through the strings, allowing you to directly access the costs."
+    },
+    {
+      "content": "As you implement your solution, ensure that you handle large inputs efficiently, as the constraints allow for strings of length up to 100,000. Aim for a solution that runs in linear time relative to the length of the strings."
+    },
+    {
+      "content": "Finally, once you have the total cost calculated for all character transformations, return the total cost as the shift distance from `s` to `t`. Make sure to test your solution with various edge cases to validate its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Both strings `s` and `t` have the same length.",
+    "The `nextCost` and `previousCost` arrays are of length 26, corresponding to each letter of the alphabet.",
+    "Costs can be very large (up to 10^9), so ensure your solution handles large integers.",
+    "Consider the wrap-around behavior when shifting characters.",
+    "Pay attention to cases where no shifts are needed (i.e., when characters are the same)."
+  ]
+}

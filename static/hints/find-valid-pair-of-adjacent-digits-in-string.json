@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to identify adjacent digits in the string. You can do this by iterating through the string and checking each character against the next one. For example, if you have the string `s`, you can check pairs like `s[i]` and `s[i+1]`."
+    },
+    {
+      "content": "Remember that a valid pair requires the two digits to be different. As you iterate through the string, make sure to check if `s[i]` is not equal to `s[i+1]` before proceeding to the next steps."
+    },
+    {
+      "content": "Next, you'll need to count how many times each digit appears in the string. You can use a dictionary or an array to store the counts for each digit from '1' to '9'. This will help you verify the second condition for a valid pair."
+    },
+    {
+      "content": "When counting the digits, remember that the digit '1' should be counted as one, '2' as two, and so on. This means that the count for each digit should match its numeric value."
+    },
+    {
+      "content": "As you check each pair of adjacent digits, after confirming they are different, check their counts. For example, if you find a pair `s[i]` and `s[i+1]`, you need to verify that `count[s[i]] == int(s[i])` and `count[s[i+1]] == int(s[i+1])`."
+    },
+    {
+      "content": "Make sure to return the first valid pair you find. You can stop the iteration once you find a valid pair and return it immediately. If no valid pair is found after checking all pairs, you should return an empty string."
+    },
+    {
+      "content": "Consider edge cases where the string has all the same digits, like `s = '222'`. In such cases, there won't be any valid pairs, so your function should handle this gracefully."
+    },
+    {
+      "content": "Don't forget to handle the constraints given in the problem. The string length will always be between 2 and 100, and it will only contain digits from '1' to '9'. This simplifies some of your checks."
+    },
+    {
+      "content": "While implementing, keep an eye on the performance. Since you're iterating through the string and counting digits, ensure your solution runs efficiently within the constraints."
+    },
+    {
+      "content": "Finally, think about how to structure your code. You might want to separate the counting logic from the pair-checking logic for better readability. Start with counting the digits, then loop through the string to find the valid pairs."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= s.length <= 100",
+    "s only consists of digits from '1' to '9'.",
+    "A valid pair consists of two adjacent digits that are different and whose counts match their numeric values.",
+    "Return the first valid pair found or an empty string if none exists."
+  ]
+}

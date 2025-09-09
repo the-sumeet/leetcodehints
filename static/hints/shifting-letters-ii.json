@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how shifting works. A forward shift means moving a character to the next letter in the alphabet, while a backward shift means moving to the previous letter. For example, shifting 'a' forward gives 'b', and shifting 'z' backward gives 'y'."
+    },
+    {
+      "content": "Consider how to handle the wrap-around cases. When shifting 'z' forward, it should become 'a', and when shifting 'a' backward, it should become 'z'. You can use modulo arithmetic to simplify this."
+    },
+    {
+      "content": "You will need to apply multiple shifts to the string. Think about how you can efficiently manage these shifts without directly modifying the string multiple times, which can be costly."
+    },
+    {
+      "content": "Instead of applying each shift immediately, consider accumulating the effects of all shifts first. You can create an array to track how many shifts to apply at each index."
+    },
+    {
+      "content": "For each shift operation, increment or decrement the values in your tracking array based on the direction and the range specified in the shifts array."
+    },
+    {
+      "content": "After processing all shifts, you will need to apply the accumulated shifts to the original string. Remember to consider the direction of the shifts when applying them."
+    },
+    {
+      "content": "Make sure to handle the case where the shifts array is empty. What should your function return in that case? Think about how your implementation should behave with minimal input."
+    },
+    {
+      "content": "Consider edge cases where the start and end indices of a shift are the same. This means only one character is being shifted. How will this affect your tracking array?"
+    },
+    {
+      "content": "When applying the shifts, ensure that you correctly wrap characters around the alphabet. You might want to create a helper function to handle the shifting logic cleanly."
+    },
+    {
+      "content": "As a final step, iterate over the original string and apply the shifts using your tracking array. Remember to convert the indices based on the accumulated shifts to get the final result."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length, shifts.length <= 5 * 10^4",
+    "Each shifts[i] has exactly 3 elements: [start_i, end_i, direction_i]",
+    "0 <= start_i <= end_i < s.length",
+    "0 <= direction_i <= 1 (0 for backward, 1 for forward)",
+    "s consists of lowercase English letters."
+  ]
+}

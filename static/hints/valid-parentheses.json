@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering how you can keep track of the opening brackets. You might want to use a data structure that allows you to easily add and remove elements, such as a stack."
+    },
+    {
+      "content": "Remember that every time you encounter an opening bracket, you should push it onto the stack. When you encounter a closing bracket, you'll need to check if it matches the top element of the stack."
+    },
+    {
+      "content": "Think about what happens when you encounter a closing bracket. If the stack is empty at this point, it means there is no corresponding opening bracket, which should immediately return false."
+    },
+    {
+      "content": "When you pop the top of the stack for a closing bracket, ensure that the popped bracket matches the expected opening bracket. You can use a mapping of closing to opening brackets for this check."
+    },
+    {
+      "content": "Consider what you should do after processing all characters in the string. If the stack is empty at this point, it indicates that all opening brackets were matched correctly."
+    },
+    {
+      "content": "Pay attention to the order of brackets. For example, '([)]' is invalid because the order of closing brackets does not match the order of opening ones."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as strings with only closing brackets or a mix of different types of brackets. These cases should return false."
+    },
+    {
+      "content": "You can implement the solution in a single pass through the string. As you iterate through the characters, manage the stack accordingly."
+    },
+    {
+      "content": "If you find a closing bracket that does not match the expected opening bracket, you should immediately return false. This is crucial for maintaining the validity of the parentheses."
+    },
+    {
+      "content": "Finally, ensure that you check the stack after processing the entire string. If the stack is empty, return true; otherwise, return false. This final check confirms that all opening brackets were matched."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^4",
+    "Input string consists only of characters '()[]{}'.",
+    "Ensure that every closing bracket corresponds to the correct type of opening bracket."
+  ]
+}

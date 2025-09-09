@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a shortest common supersequence (SCS) is. An SCS of a set of strings is the shortest string that contains each of the strings as a subsequence."
+    },
+    {
+      "content": "Remember that each string in the input array has a fixed length of 2. This can simplify your approach since you only need to consider pairs of characters."
+    },
+    {
+      "content": "Consider how to combine the characters of the strings. For example, if you have 'ab' and 'ba', think about how you can interleave these characters to form different combinations."
+    },
+    {
+      "content": "When generating SCSs, keep in mind that the order of characters matters. The resulting string must maintain the order of characters from each original string."
+    },
+    {
+      "content": "Focus on generating unique SCSs. If two SCSs are permutations of each other, you should only keep one of them in your final output."
+    },
+    {
+      "content": "You can use a frequency array of size 26 to represent the count of each character in the resulting SCS. This will help you easily compare different SCSs."
+    },
+    {
+      "content": "Think about how to handle the case where all input strings are the same. In this case, the SCS will just be the characters of the string repeated according to their counts."
+    },
+    {
+      "content": "Consider edge cases where the input strings have overlapping characters. This will affect how you construct the SCS and ensure all strings are represented."
+    },
+    {
+      "content": "You might want to use a set to store the SCSs initially to avoid duplicates. After generating the SCSs, you can convert them back to frequency arrays."
+    },
+    {
+      "content": "When counting character frequencies, remember to initialize your frequency array to zero for all characters before updating it based on the SCS."
+    },
+    {
+      "content": "Make sure to handle the output format correctly. You need to return a 2D array of frequency counts, where each inner array corresponds to a unique SCS."
+    },
+    {
+      "content": "To ensure you are generating the shortest SCS, consider using a greedy approach to combine characters, or explore backtracking to find all combinations."
+    },
+    {
+      "content": "Pay attention to the constraints: you have at most 16 unique letters and a maximum of 256 strings. This can guide your choice of data structures."
+    },
+    {
+      "content": "Remember to check for permutations of SCSs before adding them to your result. You can use a canonical form (like sorting) to help with this check."
+    },
+    {
+      "content": "As a final step, ensure that your implementation efficiently handles the maximum input sizes specified in the problem constraints."
+    }
+  ],
+  "questionNotes": [
+    "Each string in words has a length of exactly 2.",
+    "All strings in words are unique.",
+    "You need to return frequency arrays for SCSs, not the SCS strings themselves.",
+    "Ensure to filter out permutations of SCSs from the output."
+  ]
+}

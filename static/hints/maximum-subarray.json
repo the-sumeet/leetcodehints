@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to find a contiguous subarray within the given array that has the largest sum. Remember that the subarray must consist of at least one element."
+    },
+    {
+      "content": "Consider the possibility of negative numbers in the array. They can affect the sum of subarrays. Think about how you might handle these cases when calculating sums."
+    },
+    {
+      "content": "A brute force approach would involve checking all possible subarrays. This would mean using two nested loops to calculate the sum of every subarray, which can be inefficient. Can you think of a better way?"
+    },
+    {
+      "content": "Look into Kadane's algorithm, which is a well-known method for solving this problem in O(n) time. It involves maintaining a running sum and updating the maximum sum found so far."
+    },
+    {
+      "content": "In Kadane's algorithm, you will need to keep track of two variables: the current subarray sum and the maximum sum found. As you iterate through the array, decide whether to add the current element to the existing subarray or start a new subarray."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as arrays with only one element or all negative numbers. The maximum sum should still be returned correctly in these scenarios."
+    },
+    {
+      "content": "When implementing Kadane's algorithm, initialize your maximum sum to a very small number (or the first element of the array) to ensure that it can accommodate negative sums."
+    },
+    {
+      "content": "As you iterate through the array, continuously update the current sum. If the current sum drops below zero, reset it to zero, as starting fresh may yield a better sum."
+    },
+    {
+      "content": "Consider how you would implement the divide and conquer approach. This involves splitting the array into two halves, finding the maximum subarray sum in each half, and also considering the maximum subarray that crosses the midpoint."
+    },
+    {
+      "content": "For the divide and conquer approach, you will need to find the maximum subarray sum that crosses the midpoint. This requires calculating sums from the midpoint to the left and from the midpoint to the right."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "-10^4 <= nums[i] <= 10^4",
+    "The subarray must be contiguous and contain at least one element.",
+    "Return the sum of the maximum subarray, not the subarray itself."
+  ]
+}

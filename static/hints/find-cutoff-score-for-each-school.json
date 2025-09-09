@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main parts: 'Schools' and 'Exam'. Each school has an ID and a capacity, while the exam data consists of scores and corresponding student counts."
+    },
+    {
+      "content": "Consider how you will represent the cutoff score for each school. The cutoff score is the minimum score that allows a school to accept its maximum capacity of students."
+    },
+    {
+      "content": "Think about how to sort the exam scores. Sorting will help you easily determine which scores are eligible for each school's capacity. You might want to create a list of tuples with scores and their counts."
+    },
+    {
+      "content": "Remember that you need to handle cases where the number of students exceeds the capacity of the school. How will you ensure that you only select the top scores up to the school's capacity?"
+    },
+    {
+      "content": "When iterating through the sorted exam scores, keep a running total of students accepted. You will need to check if adding the current score's students exceeds the school's capacity."
+    },
+    {
+      "content": "Consider how to handle ties in scores. If multiple scores can fill the capacity, you'll need to decide on a rule for which score to use as the cutoff."
+    },
+    {
+      "content": "Make sure to account for schools with a capacity of zero. What should the cutoff score be in such cases? Think about how you will represent this in your output."
+    },
+    {
+      "content": "As you implement the logic, consider using a dictionary to map each school ID to its cutoff score. This will help you organize the results as you calculate them."
+    },
+    {
+      "content": "After determining the cutoff scores, remember to format your output correctly. You may need to return the results in a specific order or structure based on the problem statement."
+    },
+    {
+      "content": "Finally, ensure that your solution handles edge cases, such as when there are more students than total capacity across all schools or when scores are not sufficient to fill all capacities."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of two arrays: Schools and Exam.",
+    "Each school has a unique ID and a specified capacity.",
+    "Exam scores are associated with a count of students achieving those scores.",
+    "You need to determine the cutoff score for each school based on its capacity.",
+    "Handle cases where multiple scores may fill the capacity (tie-breaking).",
+    "Consider schools with zero capacity and how to represent their cutoff score.",
+    "Output should be structured as a mapping of school IDs to their cutoff scores."
+  ]
+}

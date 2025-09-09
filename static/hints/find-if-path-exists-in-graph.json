@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. Each edge connects two vertices, and since the graph is bi-directional, you can traverse it in both directions. Think about how you might represent this graph in code."
+    },
+    {
+      "content": "Consider using an adjacency list to represent the graph. This is a common and efficient way to store graph data. For example, if you have edges like [[0,1],[1,2]], your adjacency list might look like: {0: [1], 1: [0, 2], 2: [1]}."
+    },
+    {
+      "content": "Think about how to traverse the graph. Depth-first search (DFS) or breadth-first search (BFS) are both suitable methods for exploring paths in a graph. Which one do you think would be more appropriate for this problem?"
+    },
+    {
+      "content": "If you choose DFS, remember to keep track of visited nodes to avoid cycles and infinite loops. You can use a set or an array to mark nodes as visited."
+    },
+    {
+      "content": "Before diving into the traversal, consider edge cases. For instance, what if the source and destination are the same? In that case, you should return true immediately."
+    },
+    {
+      "content": "When implementing the traversal, start from the source node and explore all its neighbors. If you reach the destination node during your exploration, you can conclude that a path exists."
+    },
+    {
+      "content": "If you are using BFS, remember to use a queue to manage the nodes to explore next. Enqueue the source node initially and then process each node by dequeuing it and enqueuing its unvisited neighbors."
+    },
+    {
+      "content": "As you traverse the graph, if you explore all possible paths and do not find the destination, you should return false. Make sure to handle the case where there are no edges in the graph."
+    },
+    {
+      "content": "Consider the constraints given in the problem. You need to ensure your solution is efficient enough to handle the maximum limits of n and edges, which can be up to 200,000."
+    },
+    {
+      "content": "Finally, make sure your function returns the correct boolean value based on whether a path exists. You can structure your return statements to reflect this clearly."
+    }
+  ],
+  "questionNotes": [
+    "The graph is bi-directional, meaning each edge can be traversed in both directions.",
+    "Vertices are labeled from 0 to n - 1, so ensure your indexing is correct.",
+    "Each vertex pair is connected by at most one edge, and no vertex has an edge to itself.",
+    "If the source is the same as the destination, return true immediately.",
+    "Consider performance, as n and the number of edges can be large (up to 200,000)."
+  ]
+}

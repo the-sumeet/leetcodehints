@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the total number of candies that Alice and Bob have. This will help you understand how much candy needs to be exchanged. You can use the `sum()` function in Python to get the total for each array."
+    },
+    {
+      "content": "Once you have the totals, determine the difference between Alice's total and Bob's total. This difference will guide you in figuring out how much candy needs to be swapped to equalize their totals."
+    },
+    {
+      "content": "Remember that when they swap one box of candy, the change in their totals will depend on the values of the boxes they exchange. If Alice gives away box `a` and receives box `b`, the new totals can be expressed as: `Alice's new total = Alice's total - a + b`."
+    },
+    {
+      "content": "To achieve equal totals after the swap, you can derive an equation from the difference you calculated earlier. Specifically, you want to find `a` from Alice's boxes and `b` from Bob's boxes such that: `b - a = (totalAlice - totalBob) / 2`."
+    },
+    {
+      "content": "Since the equation involves finding two specific values from two different arrays, consider using a hash set for one of the arrays. This will allow you to quickly check if a required value exists in the other array."
+    },
+    {
+      "content": "You can iterate through Alice's boxes and for each box `a`, calculate the required box `b` that Bob would need to swap with. Use the equation derived in the previous hint to find `b`."
+    },
+    {
+      "content": "Make sure to check if the required `b` exists in Bob's set of boxes. If it does, you have found a valid swap, and you can return the pair `[a, b]`."
+    },
+    {
+      "content": "Consider edge cases where the sizes of `aliceSizes` and `bobSizes` are at their minimum or maximum limits. Ensure your solution handles these efficiently, especially since the maximum length can be 10^4."
+    },
+    {
+      "content": "If there are multiple valid answers, remember that you can return any one of them. Your solution does not need to find all possible pairs, just one valid pair is sufficient."
+    },
+    {
+      "content": "Finally, ensure your return format is correct. You need to return an array with two integers, where the first integer is from Alice's boxes and the second is from Bob's boxes."
+    }
+  ],
+  "questionNotes": [
+    "Alice and Bob have different total numbers of candies.",
+    "The input arrays can have lengths up to 10^4.",
+    "Each box contains between 1 and 10^5 candies.",
+    "At least one valid answer exists for the given input.",
+    "Return format must be an array of two integers: [aliceBox, bobBox]."
+  ]
+}

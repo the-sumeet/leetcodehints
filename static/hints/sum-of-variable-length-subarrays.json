@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous part of an array. For each index `i`, you will need to consider a specific subarray that ends at `i`."
+    },
+    {
+      "content": "For each index `i`, you need to determine the starting point of the subarray. This is defined as `start = max(0, i - nums[i])`. Make sure you understand how to calculate this value."
+    },
+    {
+      "content": "Once you have the `start` index for each `i`, you can calculate the sum of the elements in the subarray `nums[start ... i]`. Consider how you would iterate through the array to achieve this."
+    },
+    {
+      "content": "Think about how you can efficiently calculate the sum of the subarray for each index. You might want to use a cumulative sum or a running total to avoid recalculating sums repeatedly."
+    },
+    {
+      "content": "Remember to handle the case when `nums[i]` is greater than `i`. In this scenario, the `start` index will be 0, meaning the subarray will include all elements from the beginning of the array up to `i`."
+    },
+    {
+      "content": "Consider edge cases, such as when the array has only one element. How would your logic apply in this case? What would the sum be?"
+    },
+    {
+      "content": "As you iterate through the array, keep a running total of the sums you calculate for each subarray. You will need to return this total sum at the end."
+    },
+    {
+      "content": "Make sure to account for the constraints given in the problem. The array size `n` can be at most 100, and each element can be as large as 1000. How does this affect your solution?"
+    },
+    {
+      "content": "When implementing your solution, ensure that you are correctly indexing into the array. Remember that array indices start at 0 in most programming languages."
+    },
+    {
+      "content": "Finally, put together your logic into a function. You will loop through each index `i`, calculate the subarray sum, and accumulate these sums to get your final result. Think about how you would structure this loop."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n == nums.length <= 100",
+    "1 <= nums[i] <= 1000",
+    "Subarrays are contiguous parts of the array.",
+    "The starting index for the subarray is calculated as max(0, i - nums[i]).",
+    "Return the total sum of all subarray sums."
+  ]
+}

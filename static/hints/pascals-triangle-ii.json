@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Pascal's triangle starts with a single '1' at the top. Each subsequent row is built from the previous one. The first few rows look like this:\n```\nRow 0:    1\nRow 1:   1 1\nRow 2:  1 2 1\nRow 3: 1 3 3 1\n```\nThink about how you can build each row from the previous row."
+    },
+    {
+      "content": "Notice that the elements in each row of Pascal's triangle correspond to the coefficients in the binomial expansion. For example, the 3rd row corresponds to the expansion of (a + b)^3, which gives you the coefficients [1, 3, 3, 1]."
+    },
+    {
+      "content": "To compute the row at index `rowIndex`, you can start with an array initialized to all zeros of size `rowIndex + 1`. The first element is always `1`, since every row starts with `1`."
+    },
+    {
+      "content": "You can fill in the values of the row by iterating through the indices. Each element at index `j` (for `1 <= j <= rowIndex`) can be computed as the sum of the two elements above it from the previous row: `triangle[i][j] = triangle[i-1][j-1] + triangle[i-1][j]`."
+    },
+    {
+      "content": "Instead of storing all previous rows, you can optimize space. You only need to keep track of the current row and the previous row. This way, you can overwrite the previous row after you've used it to compute the current row."
+    },
+    {
+      "content": "When filling the current row, iterate from the end to the beginning. This prevents overwriting values that you still need to compute the current row's elements. For example:\n```\nfor j from rowIndex down to 1:\n    currentRow[j] = currentRow[j] + currentRow[j-1]\n```"
+    },
+    {
+      "content": "Make sure to handle the edge cases where `rowIndex` is `0` or `1`. These cases should return `[1]` and `[1, 1]` respectively without further calculations."
+    },
+    {
+      "content": "Remember that the output should be a list representing the row at the given `rowIndex`. Ensure that the returned list is formatted correctly as per the requirements."
+    },
+    {
+      "content": "You can also consider the mathematical properties of combinations to directly compute the values of the row using the formula: `C(n, k) = n! / (k! * (n - k)!)`. However, this may not be as space-efficient."
+    },
+    {
+      "content": "Finally, implement your function to return the computed row. Ensure you test your function with various `rowIndex` values, including the maximum constraint of `33` to confirm performance."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= rowIndex <= 33",
+    "Return format: A list of integers representing the row at the given rowIndex.",
+    "The rowIndex is 0-indexed, meaning the first row is rowIndex 0."
+  ]
+}

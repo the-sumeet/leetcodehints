@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a substring is. A substring is any contiguous sequence of characters within the string. For example, in 'abbca', 'ab', 'bb', and 'bca' are all substrings."
+    },
+    {
+      "content": "Think about how to calculate the appeal of a single substring. The appeal is defined as the number of distinct characters in that substring. For instance, the appeal of 'abb' is 2 because it contains 'a' and 'b'."
+    },
+    {
+      "content": "Consider how many substrings can be formed from a string of length n. There are n * (n + 1) / 2 possible substrings. This is a key insight for calculating the total appeal efficiently."
+    },
+    {
+      "content": "Instead of generating all substrings explicitly, think about how you can keep track of the distinct characters as you expand your substring. This can save time and space."
+    },
+    {
+      "content": "You can use a sliding window approach to maintain the current substring. As you add a character to the window, check if it's a new character to update your distinct count."
+    },
+    {
+      "content": "Keep track of the last occurrence of each character in the string. This way, when you encounter a character that has appeared before, you can determine how many new substrings can be formed."
+    },
+    {
+      "content": "When a character at index i is encountered, calculate how many substrings can end at i that include this character. Use the last occurrence of this character to determine the starting point of valid substrings."
+    },
+    {
+      "content": "The contribution of each character to the total appeal can be calculated based on its position and its last occurrence. For example, if a character appears for the first time at index i, it contributes to all substrings starting from the beginning up to i."
+    },
+    {
+      "content": "Consider edge cases such as strings with all identical characters (e.g., 'aaaa'). What would the appeal be for all substrings in this case? How does it affect your calculations?"
+    },
+    {
+      "content": "Also think about the case when the string has all unique characters (e.g., 'abcd'). How would this simplify your calculations for the total appeal?"
+    },
+    {
+      "content": "As you iterate through the string, maintain a total appeal variable that accumulates the appeal of all substrings ending at each character. This will help you build the final result incrementally."
+    },
+    {
+      "content": "You may need to use a hashmap or an array to track the last seen index of each character efficiently. This will allow you to quickly update your distinct count as you process each character."
+    },
+    {
+      "content": "Remember to initialize your last seen indices correctly. If a character has not been seen before, its last index can be considered as -1."
+    },
+    {
+      "content": "Once you have the total appeal calculated for all substrings, ensure you return the result in the correct format as specified in the problem statement."
+    },
+    {
+      "content": "To summarize, focus on maintaining a count of distinct characters while efficiently calculating contributions of each character to the total appeal based on their positions and last occurrences."
+    }
+  ],
+  "questionNotes": [
+    "The appeal of a string is defined as the number of distinct characters in it.",
+    "A substring is a contiguous sequence of characters.",
+    "You need to return the total appeal of all substrings of the given string.",
+    "Constraints: 1 <= s.length <= 10^5, and s consists of lowercase English letters."
+  ]
+}

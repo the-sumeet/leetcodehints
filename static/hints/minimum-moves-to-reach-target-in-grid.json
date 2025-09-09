@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement rules. You can only move to (x + m, y) or (x, y + m), where m = max(x, y). This means that in each move, you're effectively increasing one of the coordinates significantly."
+    },
+    {
+      "content": "Consider the implications of the movement rules. If you start at (sx, sy), what are the possible values for m? How do these values affect your position after each move?"
+    },
+    {
+      "content": "Think about the relationship between the starting point (sx, sy) and the target point (tx, ty). Since you can only move to the right or upwards, ensure that tx >= sx and ty >= sy."
+    },
+    {
+      "content": "Try to visualize the grid and the allowed movements. For example, if you start at (1, 2), what are the potential next positions? Can you reach (5, 4) in a straightforward manner?"
+    },
+    {
+      "content": "Consider edge cases where the target point is very close to the starting point. For instance, if (sx, sy) is (1, 1) and (tx, ty) is (2, 2), can you reach the target? Why or why not?"
+    },
+    {
+      "content": "To reach (tx, ty), you might need to overshoot and then adjust back. Think about how you can use the properties of m to help you reach the target efficiently."
+    },
+    {
+      "content": "Notice that if you can reach (tx, ty), the number of moves required will depend on how many times you can apply the movement rules effectively. Each move can potentially double one of the coordinates."
+    },
+    {
+      "content": "Consider the mathematical implications of your moves. If you move from (sx, sy) to (tx, ty), what equations can you form to represent the moves? How does m influence these equations?"
+    },
+    {
+      "content": "Think about the conditions under which reaching (tx, ty) is impossible. For example, if you reach a point where tx < sx or ty < sy, what does that indicate?"
+    },
+    {
+      "content": "Try to derive a formula or a method to calculate the number of moves based on the differences between the coordinates. For example, how can you express the number of moves in terms of (tx - sx) and (ty - sy)?"
+    },
+    {
+      "content": "Explore the idea of working backwards. If you were at (tx, ty), what could have been your previous positions? This might help you identify the moves needed to reach the target."
+    },
+    {
+      "content": "Consider using a while loop or recursion to simulate the movements towards the target. Keep track of the number of moves made and the current position."
+    },
+    {
+      "content": "Think about the maximum possible values for sx, sy, tx, and ty, given the constraints. How does this affect your algorithm's efficiency and the potential for overflow?"
+    },
+    {
+      "content": "Remember that you need to return -1 if the target is unreachable. What checks can you implement to determine this condition early in your solution?"
+    },
+    {
+      "content": "Finally, try to come up with a final algorithm that combines your findings. Focus on how you can minimize the number of moves while ensuring you can reach (tx, ty)."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= sx <= tx <= 10^9, 0 <= sy <= ty <= 10^9.",
+    "You can only move right or up, never left or down.",
+    "If (tx, ty) is unreachable from (sx, sy), return -1.",
+    "The return format should be an integer representing the minimum moves or -1."
+  ]
+}

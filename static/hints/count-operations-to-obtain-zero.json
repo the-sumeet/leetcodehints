@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation: you always subtract the smaller number from the larger one. This means you need to compare the two numbers at each step."
+    },
+    {
+      "content": "Consider what happens when one of the numbers becomes zero. The operation stops, so you need to track how many operations it takes to reach that state."
+    },
+    {
+      "content": "Think about how you can represent the operations. You can use a loop that continues until either num1 or num2 is zero. Each iteration of the loop represents one operation."
+    },
+    {
+      "content": "You can simplify the subtraction process. Instead of subtracting num2 from num1 or vice versa repeatedly, consider how many times you can subtract in one go. For example, if num1 is much larger than num2, you can subtract num2 multiple times in one operation."
+    },
+    {
+      "content": "Use integer division to determine how many times you can subtract. For example, if num1 >= num2, you can do `num1 -= num2 * (num1 // num2)` in one step, and count how many operations that represents."
+    },
+    {
+      "content": "Don't forget to increment your operation counter correctly. Each time you perform a subtraction, whether it's one or multiple, you should update your count accordingly."
+    },
+    {
+      "content": "Consider edge cases where either num1 or num2 starts at zero. In such cases, you should immediately return 0 since no operations are needed."
+    },
+    {
+      "content": "Think about the constraints provided (0 <= num1, num2 <= 100000). Ensure your solution handles the maximum values efficiently, as a naive approach could lead to performance issues."
+    },
+    {
+      "content": "When implementing the loop, remember to switch the roles of num1 and num2 when necessary. This will help maintain the condition of always subtracting the smaller from the larger."
+    },
+    {
+      "content": "As a final step, ensure your function returns the total count of operations after either num1 or num2 reaches zero. This is the main output of your function."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= num1, num2 <= 100000",
+    "Return the total number of operations needed to make either num1 or num2 zero.",
+    "The operation continues until one of the numbers becomes zero."
+  ]
+}

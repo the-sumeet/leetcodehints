@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a table with columns 'id' and 'drink', where 'drink' can contain null values. Familiarize yourself with how to access the rows and columns in your data structure."
+    },
+    {
+      "content": "Consider how you might iterate through the rows of the table. You will need to keep track of the last non-null value you encounter as you go through each row. Think about using a variable to store this value."
+    },
+    {
+      "content": "When you encounter a null value in the 'drink' column, you should replace it with the last non-null value you stored. Make sure to update this stored value whenever you find a non-null entry."
+    },
+    {
+      "content": "Pay attention to the order of the rows. The replacement should always be with the most recent non-null value that appeared before the current row. This means your logic should be linear, processing each row one at a time."
+    },
+    {
+      "content": "Consider edge cases such as when the first row has a null value. How will you handle that? You might want to decide on a default value or leave it as null if there is no previous value."
+    },
+    {
+      "content": "Think about how you will handle the output. You need to ensure that the modified table retains its original structure but reflects the changes made to the 'drink' column."
+    },
+    {
+      "content": "As you implement your solution, make sure to test it with various input scenarios, including all rows having null values, no null values, and a mix of both. This will help ensure your solution is robust."
+    },
+    {
+      "content": "You may want to use a loop to go through each row while maintaining a reference to the last non-null 'drink'. This could look something like: 'if current_drink is null, then set current_drink to last_non_null_drink'."
+    },
+    {
+      "content": "Remember to update the last non-null value each time you find a valid drink. This means that after processing a non-null entry, you should set your variable that holds the last non-null value to this new drink."
+    },
+    {
+      "content": "Finally, ensure that your function returns the modified table in the same format as the input. This means you need to maintain the structure of the headers and rows while applying your changes."
+    }
+  ],
+  "questionNotes": [
+    "The input is structured with 'headers' and 'rows', where 'rows' contains the actual data.",
+    "The 'drink' column can contain null values that need to be replaced with the previous non-null value.",
+    "Consider edge cases like leading nulls or all nulls in the 'drink' column.",
+    "The output must maintain the original structure of the input data."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. You have a parent array `par` which defines the relationships between nodes. Each `par[i]` gives the parent of node `i`, with `-1` indicating the root."
+    },
+    {
+      "content": "Next, consider how to calculate the path XOR sum for a node. The path XOR sum for a node `u` can be computed by XORing the values from the root to that node. Think about how you can traverse the tree to achieve this."
+    },
+    {
+      "content": "Remember that the XOR operation is both associative and commutative. This means the order of operations doesn't matter, which can simplify how you compute the path XOR sums."
+    },
+    {
+      "content": "When processing the queries, you need to find the distinct path XOR sums in the subtree rooted at a given node `u`. Make sure you understand what constitutes a subtree in this context."
+    },
+    {
+      "content": "To gather all path XOR sums in a subtree, you may want to perform a depth-first search (DFS) starting from the node `u`. Keep track of the XOR sums as you traverse."
+    },
+    {
+      "content": "As you collect the XOR sums, use a set to ensure that you only keep distinct values. This will help you later when you need to sort and find the k-th smallest value."
+    },
+    {
+      "content": "After collecting the distinct XOR sums, convert the set to a sorted list. This will allow you to easily access the k-th smallest element based on the queries."
+    },
+    {
+      "content": "Pay attention to the requirement that if there are fewer than `k` distinct XOR sums, you should return `-1`. Ensure your code handles this case properly."
+    },
+    {
+      "content": "Consider edge cases where the tree might have only one node or where all nodes have the same value. How would your code behave in these scenarios?"
+    },
+    {
+      "content": "Make sure to handle the input efficiently, especially since `n` can be as large as 50,000. Think about the time complexity of your approach."
+    },
+    {
+      "content": "When implementing the DFS, remember to pass along the current XOR value as you go deeper into the tree. This will help you compute the path XOR sums dynamically."
+    },
+    {
+      "content": "You may want to cache results for each node after the first query to avoid recomputing the XOR sums for multiple queries on the same subtree."
+    },
+    {
+      "content": "As you prepare to return your results, ensure that your output format matches the requirements: an integer array where each element corresponds to a query result."
+    },
+    {
+      "content": "Think about how you will structure your function to handle multiple queries efficiently. You may want to preprocess the tree before answering the queries."
+    },
+    {
+      "content": "Finally, consider the constraints again: `1 <= n == vals.length <= 5 * 10^4`. Make sure your solution can handle the upper limits without timing out."
+    }
+  ],
+  "questionNotes": [
+    "The tree is defined by the parent array `par`, where `par[0] == -1` indicates the root.",
+    "Each node's value is given in the `vals` array, and the path XOR sum is the XOR of values from the root to that node.",
+    "Queries are in the form `[u, k]`, where `u` is the node and `k` is the k-th smallest distinct path XOR sum.",
+    "Return -1 if there are fewer than `k` distinct path XOR sums in the subtree.",
+    "Constraints: 1 <= n <= 5 * 10^4, 0 <= vals[i] <= 10^5, and 1 <= queries.length <= 5 * 10^4."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. You have directed edges with weights, and each node has a special ability to reverse one incoming edge. This means you need to consider both the original edges and the potential reversed edges when calculating costs."
+    },
+    {
+      "content": "Consider using a graph traversal algorithm like Dijkstra's or a modified BFS. You will need to keep track of the cost to reach each node, as well as whether you have used the switch at that node."
+    },
+    {
+      "content": "When traversing edges, make sure to account for the cost of using the switch. If you reverse an edge from `v` to `u`, the cost to traverse it becomes `2 * w`. This will affect your total cost calculation."
+    },
+    {
+      "content": "Think about how to represent the state of each node. You might want to maintain two distances for each node: one for when you haven't used the switch and one for when you have."
+    },
+    {
+      "content": "Don't forget to initialize your distances properly. For the starting node (node 0), the cost should be 0. For all other nodes, you can initialize the costs to infinity."
+    },
+    {
+      "content": "As you explore the graph, ensure that you update the costs correctly. If you find a cheaper way to reach a node, update its cost and continue exploring from there."
+    },
+    {
+      "content": "When you reach the destination node (node n-1), check both states: the cost if you used the switch and the cost if you didn't. The minimum of these two will be your answer."
+    },
+    {
+      "content": "Consider edge cases where there might be no valid path to reach the destination node. If you finish exploring and the cost to reach node n-1 is still infinity, return -1."
+    },
+    {
+      "content": "Pay attention to the constraints given in the problem. With up to 50,000 nodes and 100,000 edges, your solution needs to be efficient, ideally around O((n + m) log n) for Dijkstra's algorithm."
+    },
+    {
+      "content": "Finally, make sure to test your solution with various cases, including cases where the optimal path requires using the switch and cases where it does not."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 50,000",
+    "1 <= edges.length <= 100,000",
+    "0 <= u_i, v_i <= n - 1",
+    "1 <= w_i <= 1000",
+    "Return -1 if there is no possible path."
+  ]
+}

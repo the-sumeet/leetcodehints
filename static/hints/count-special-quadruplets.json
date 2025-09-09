@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirements for the quadruplets. You need to find indices a, b, c, and d such that nums[a] + nums[b] + nums[c] == nums[d] and a < b < c < d."
+    },
+    {
+      "content": "Consider how you can iterate through the array. Since you need to maintain the order of indices, think about using nested loops to select a, b, and c, and then check for d."
+    },
+    {
+      "content": "Remember that the indices must be distinct and in increasing order. This means that once you choose a, b, and c, d must be chosen from the remaining elements to the right of c."
+    },
+    {
+      "content": "To avoid counting duplicates, ensure that you are only counting distinct quadruplets. You can use a set to keep track of the unique combinations you find."
+    },
+    {
+      "content": "Think about how you can optimize your search for d. Instead of checking every possible d for each combination of a, b, and c, consider using a hashmap to store the values of nums and their indices."
+    },
+    {
+      "content": "As you iterate through possible a, b, and c, calculate the sum of nums[a], nums[b], and nums[c]. Then check if this sum exists in your hashmap for any index greater than c."
+    },
+    {
+      "content": "Consider edge cases where all elements are the same or where the sum of the first three elements is larger than any element in the array. How will these cases affect your counting?"
+    },
+    {
+      "content": "You may want to keep track of the count of valid quadruplets as you find them. Initialize a counter variable before your loops and increment it whenever you find a valid quadruplet."
+    },
+    {
+      "content": "Make sure to handle the constraints properly. The input array will always have at least 4 elements and each element will be between 1 and 100."
+    },
+    {
+      "content": "You are very close to the solution! Try implementing the logic for your nested loops and the hashmap to count the valid quadruplets. Don't forget to return the final count at the end!"
+    }
+  ],
+  "questionNotes": [
+    "You need to find distinct quadruplets (a, b, c, d) such that nums[a] + nums[b] + nums[c] == nums[d].",
+    "Indices must satisfy a < b < c < d.",
+    "The input array nums will have a length between 4 and 50.",
+    "Each element in nums will be between 1 and 100.",
+    "Ensure that you are counting unique quadruplets only."
+  ]
+}

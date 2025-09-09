@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the `shift()` function works. It takes a letter and returns the next letter in the alphabet, wrapping around from 'z' to 'a'. For example, `shift('a')` returns 'b' and `shift('z')` returns 'a'."
+    },
+    {
+      "content": "Consider how the `shifts` array affects the string `s`. Each element in `shifts` tells you how many times to shift the first `i + 1` letters of `s`. This means that the first element of `shifts` only affects the first letter of `s`, the second element affects the first two letters, and so on."
+    },
+    {
+      "content": "Think about how to apply the shifts in reverse order. Instead of shifting the first `i + 1` letters for each `shifts[i]`, you can accumulate the total shifts needed for each letter from the end of the string to the beginning."
+    },
+    {
+      "content": "To manage the large values in `shifts`, note that shifting a letter by 26 (the number of letters in the alphabet) results in the same letter. Therefore, you can use `shifts[i] % 26` to reduce the number of shifts."
+    },
+    {
+      "content": "Create a new string or a list to build the final result. As you compute the shifts, replace each letter in `s` with its shifted version based on the accumulated shifts."
+    },
+    {
+      "content": "Remember to handle the wrap-around when shifting letters. If a letter 'a' is shifted by 1, it becomes 'b'. If 'z' is shifted by 1, it wraps around to 'a'. You can achieve this by using the formula: `newChar = (originalChar - 'a' + totalShifts) % 26 + 'a'`."
+    },
+    {
+      "content": "Consider edge cases, such as when `s` has only one character or when all values in `shifts` are zero. What would the output be in these scenarios?"
+    },
+    {
+      "content": "As you iterate through the string, keep a running total of the shifts. Start from the last index of `shifts` and move backwards, accumulating the shifts for each letter as you go."
+    },
+    {
+      "content": "Ensure that your final output is a string. If you used a list to build the result, convert it back to a string before returning it."
+    },
+    {
+      "content": "You are almost there! After calculating the new characters based on the shifts, remember to join them together to form the final string. Think about how you will return this final result."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length <= 10^5",
+    "s consists of lowercase English letters.",
+    "shifts.length == s.length",
+    "0 <= shifts[i] <= 10^9"
+  ]
+}

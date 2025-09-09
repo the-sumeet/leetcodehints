@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of the convex hull. The convex hull is the smallest convex shape that can enclose all the given points (trees in this case)."
+    },
+    {
+      "content": "Consider the properties of the convex hull: it should contain all the outermost points and exclude any points that are inside the hull. Visualize this with a rubber band stretched around the outermost trees."
+    },
+    {
+      "content": "You can use algorithms like Graham's scan or Andrew's monotone chain to compute the convex hull. Both have a time complexity of O(n log n), which is efficient given the constraints."
+    },
+    {
+      "content": "Remember to sort the points before applying the convex hull algorithm. Sorting can be done based on the x-coordinates, and in case of ties, by the y-coordinates."
+    },
+    {
+      "content": "When implementing the convex hull, ensure you handle the points in a counter-clockwise manner to maintain the correct order of the perimeter."
+    },
+    {
+      "content": "Think about edge cases where all trees are in a straight line. The fence in this case would just be the endpoints of that line."
+    },
+    {
+      "content": "If there are only a few trees, like two or three, the convex hull will simply be the trees themselves. Make sure your algorithm can handle these small cases."
+    },
+    {
+      "content": "As you implement the algorithm, keep track of the points that are added to the hull. You can use a stack to help manage the points efficiently."
+    },
+    {
+      "content": "When checking whether to add a point to the hull, use the cross product to determine the orientation of the points. This will help you decide if you should keep or discard points."
+    },
+    {
+      "content": "Ensure that your final result includes only the points that form the perimeter of the fence. You may need to convert your data structure to match the required output format."
+    },
+    {
+      "content": "Consider the uniqueness of the points. The problem guarantees that all positions are unique, which simplifies some aspects of your implementation."
+    },
+    {
+      "content": "Pay attention to the constraints, especially the maximum number of trees (3000). Your solution should be efficient enough to handle the upper limit."
+    },
+    {
+      "content": "After implementing the convex hull, test your solution with various cases, including edge cases like all points forming a square or a triangle."
+    },
+    {
+      "content": "Make sure to return the points in any order as specified in the problem statement. This gives you some flexibility in your implementation."
+    },
+    {
+      "content": "Finally, review your implementation to ensure it correctly handles all scenarios and edge cases before submitting. Debugging will help identify any potential issues."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= trees.length <= 3000",
+    "Each trees[i] has exactly 2 elements.",
+    "0 <= x_i, y_i <= 100",
+    "All given positions are unique.",
+    "Return format: Any order of the perimeter points is acceptable."
+  ]
+}

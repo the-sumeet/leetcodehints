@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Consider how the sliding window works. The window of size `k` will contain elements from index `i` to `i + k - 1`. Think about how you can efficiently keep track of the maximum value within this window as it slides."
+    },
+    {
+      "content": "What happens when the window moves? The leftmost element of the current window is no longer in the window, and a new element enters from the right. You need to determine how to handle this change efficiently."
+    },
+    {
+      "content": "Brute force would involve checking each window individually, which results in a time complexity of O(n * k). Consider if there's a way to reduce this time complexity by using a data structure that allows for fast maximum retrieval."
+    },
+    {
+      "content": "Think about using a deque (double-ended queue) to maintain the indices of the elements in the current window. This can help you efficiently manage which elements are in the window and which are candidates for the maximum."
+    },
+    {
+      "content": "When using a deque, ensure that you maintain the indices in a way that the front of the deque always contains the index of the maximum element for the current window."
+    },
+    {
+      "content": "As you add a new element to the window, remove elements from the back of the deque that are smaller than the new element. This ensures that only potential maximum candidates remain in the deque."
+    },
+    {
+      "content": "When the window slides, check if the element at the front of the deque is out of the bounds of the current window. If it is, remove it from the front of the deque."
+    },
+    {
+      "content": "Remember to initialize your result array to store the maximum values for each window position. You will fill this array as you slide the window across the input array."
+    },
+    {
+      "content": "Consider edge cases such as when `k` equals 1. In this scenario, the maximum for each window is simply the element itself."
+    },
+    {
+      "content": "Think about how to handle negative numbers in the array. The logic for finding the maximum should remain the same regardless of the sign of the numbers."
+    },
+    {
+      "content": "Make sure to account for the constraints provided in the problem statement. The input array can be quite large, so efficiency is key."
+    },
+    {
+      "content": "As you implement the solution, ensure that you are correctly managing the indices in the deque and that your result array is being filled in the correct order."
+    },
+    {
+      "content": "You may want to visualize how the deque changes as the window slides. This can help you understand if you are maintaining the correct maximum values."
+    },
+    {
+      "content": "When you reach the end of the input array, ensure that you have processed all windows and included their maximum values in the result array."
+    },
+    {
+      "content": "Finally, remember to return the result array containing the maximum values for each sliding window. This should be in the same order as the windows appear."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "-10^4 <= nums[i] <= 10^4",
+    "1 <= k <= nums.length",
+    "The output should be an array of integers representing the maximums of each sliding window."
+  ]
+}

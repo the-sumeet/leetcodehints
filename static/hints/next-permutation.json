@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the next permutation. The goal is to find the next lexicographically greater arrangement of the array. If no such arrangement exists, you should return the array sorted in ascending order."
+    },
+    {
+      "content": "Identify the rightmost pair of consecutive elements where the first element is less than the second. This indicates where the next permutation can be formed. For example, in the array [1, 2, 3], the pair is (2, 3)."
+    },
+    {
+      "content": "Once you find this pair, denote the index of the first element as 'i'. This is the point where you need to make a change to find the next permutation. Make sure to handle the case where the entire array is in descending order."
+    },
+    {
+      "content": "Next, look for the smallest element to the right of index 'i' that is larger than the element at index 'i'. This will be the element you swap with the element at index 'i' to create a larger permutation."
+    },
+    {
+      "content": "After swapping, you need to reverse the sequence of elements to the right of index 'i'. This ensures that you get the smallest possible order for those elements, completing the formation of the next permutation."
+    },
+    {
+      "content": "Remember to handle edge cases. For example, if the input array is already the largest permutation (like [3, 2, 1]), you should return the smallest permutation, which is the sorted array."
+    },
+    {
+      "content": "Consider the constraints of the problem. You are required to perform this operation in place and use only constant extra memory. Think about how you can achieve this without using additional data structures."
+    },
+    {
+      "content": "Make sure to test your solution with edge cases, such as arrays with duplicate elements, single-element arrays, and arrays that are already sorted in ascending order."
+    },
+    {
+      "content": "As a next step, try to outline the main steps of your algorithm. For example: 1) Find the pivot, 2) Find the successor, 3) Swap them, 4) Reverse the suffix."
+    },
+    {
+      "content": "You are very close to the solution! Implement the steps you outlined in the previous hint. Make sure to keep track of the indices correctly and ensure that your swaps and reversals are done in place."
+    }
+  ],
+  "questionNotes": [
+    "The next permutation must be generated in place.",
+    "You can only use constant extra memory.",
+    "If the input is the largest permutation, return the smallest permutation (sorted order).",
+    "1 <= nums.length <= 100, 0 <= nums[i] <= 100."
+  ]
+}

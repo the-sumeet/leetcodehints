@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous part of the array. For instance, in the array [1, 2, 3], the subarrays include [1], [2], [3], [1, 2], [2, 3], and [1, 2, 3]."
+    },
+    {
+      "content": "Consider how you might calculate the sum of all possible subarrays. You could use a nested loop, where the outer loop picks the starting index and the inner loop picks the ending index. Think about the time complexity of this approach."
+    },
+    {
+      "content": "Instead of calculating the sum for each subarray from scratch, think about how you can maintain a running sum as you iterate through the array. This can help reduce the number of operations needed."
+    },
+    {
+      "content": "You can use a hashmap (or dictionary) to store the cumulative sums you've seen so far. This can help you quickly check how many times a certain cumulative sum has occurred."
+    },
+    {
+      "content": "Remember the relationship between cumulative sums and the target sum k. If you have a cumulative sum up to index j and you want to find a subarray that sums to k, you can check if (cumulative_sum - k) exists in your hashmap."
+    },
+    {
+      "content": "Think about how to initialize your hashmap. You might want to start with a base case where the cumulative sum is zero. This can help handle cases where a subarray starting from index 0 sums to k."
+    },
+    {
+      "content": "As you iterate through the array, update your cumulative sum and check how many times (cumulative_sum - k) has occurred in your hashmap. Each occurrence indicates a valid subarray."
+    },
+    {
+      "content": "Don't forget to update the hashmap with the current cumulative sum after checking for (cumulative_sum - k). This ensures that you account for subarrays that may end at the current index."
+    },
+    {
+      "content": "Consider edge cases such as when all elements are negative or when k is negative. Ensure your solution handles these scenarios correctly."
+    },
+    {
+      "content": "Finally, ensure your function returns the total count of valid subarrays. You can maintain a counter that increments every time you find a valid subarray during your iteration."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 2 * 10^4",
+    "-1000 <= nums[i] <= 1000",
+    "-10^7 <= k <= 10^7",
+    "A subarray must be contiguous and non-empty.",
+    "Return the total number of subarrays whose sum equals k."
+  ]
+}

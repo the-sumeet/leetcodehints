@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous part of the array. For example, in the array [1, 2, 3], the subarrays include [1], [1, 2], [1, 2, 3], [2], [2, 3], and [3]."
+    },
+    {
+      "content": "Focus on identifying the segments of the array that consist solely of zeros. For instance, in the array [1, 0, 0, 2, 0], the zeros form segments like [0, 0] and [0]."
+    },
+    {
+      "content": "Consider how many zeros are grouped together. If you have a segment of k zeros, how many subarrays can you form from this segment? Think about smaller segments first."
+    },
+    {
+      "content": "If you have k consecutive zeros, you can form subarrays of lengths ranging from 1 to k. The total number of such subarrays can be calculated using the formula: k * (k + 1) / 2."
+    },
+    {
+      "content": "As you iterate through the array, keep a count of the current number of consecutive zeros. Reset this count whenever you encounter a non-zero element."
+    },
+    {
+      "content": "Make sure to handle the case where the array starts or ends with zeros. You need to check for zeros until the end of the array."
+    },
+    {
+      "content": "Think about edge cases: What happens if the array has no zeros at all? How will your solution handle an empty segment of zeros?"
+    },
+    {
+      "content": "Consider the constraints of the problem. The array can have up to 100,000 elements, so your solution should ideally run in linear time, O(n)."
+    },
+    {
+      "content": "While iterating through the array, maintain a variable to accumulate the total count of zero-filled subarrays. Update this variable each time you encounter a zero or a non-zero."
+    },
+    {
+      "content": "Finally, ensure that your final count includes all segments of zeros found during your iteration. Don't forget to check the last segment if it ends with zeros."
+    }
+  ],
+  "questionNotes": [
+    "A subarray is a contiguous non-empty sequence of elements.",
+    "You need to return the total count of subarrays filled with 0.",
+    "Constraints: 1 <= nums.length <= 100,000; -10^9 <= nums[i] <= 10^9.",
+    "Consider edge cases where there are no zeros in the array."
+  ]
+}

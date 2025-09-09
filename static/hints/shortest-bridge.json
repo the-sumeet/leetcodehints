@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the two islands in the grid. You can do this using Depth-First Search (DFS) or Breadth-First Search (BFS) to traverse through the connected '1's."
+    },
+    {
+      "content": "Remember that the islands are made up of '1's and are separated by '0's. Your goal is to find the shortest path of '0's that connects these two islands."
+    },
+    {
+      "content": "While traversing the grid, keep track of the coordinates of the '1's that belong to each island. This will help you in calculating the distance between the islands."
+    },
+    {
+      "content": "Consider using a queue to perform a multi-source BFS starting from all the '1's of one island. This can help you explore the nearest '0's efficiently."
+    },
+    {
+      "content": "As you perform BFS, keep a count of how many '0's you have traversed. The first time you reach any '1' from the other island will give you the minimum number of flips needed."
+    },
+    {
+      "content": "When implementing BFS, you can use a set to keep track of visited '0's to avoid counting them multiple times. This will also help to prevent infinite loops."
+    },
+    {
+      "content": "Make sure to handle the edges of the grid carefully. When checking neighboring cells, ensure you do not go out of bounds."
+    },
+    {
+      "content": "Consider edge cases such as when islands are very close to each other or when they are located at opposite corners of the grid."
+    },
+    {
+      "content": "Your final answer should be the minimum count of '0's flipped to connect the two islands. Ensure you return this count as an integer."
+    },
+    {
+      "content": "Think about how you can optimize your BFS. You might want to stop the search as soon as you reach a '1' from the other island, as that will give you the shortest distance."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == grid.length == grid[i].length, 2 <= n <= 100.",
+    "grid[i][j] is either 0 or 1.",
+    "There are exactly two islands in the grid.",
+    "Return the smallest number of 0's you must flip to connect the two islands."
+  ]
+}

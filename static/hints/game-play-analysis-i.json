@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `Activity` table. You have `player_id`, `device_id`, `event_date`, and `games_played`. Focus on the `player_id` and `event_date` columns, as they will be crucial for identifying the first login date."
+    },
+    {
+      "content": "Consider how you can group the records by `player_id`. Grouping will allow you to analyze the data for each player individually, which is necessary to find their first login date."
+    },
+    {
+      "content": "Think about the SQL functions that can help you retrieve the minimum date. The `MIN()` function is useful for finding the earliest date in a set of dates."
+    },
+    {
+      "content": "Remember that `event_date` is of type date. When using the `MIN()` function, it will automatically consider the chronological order of the dates."
+    },
+    {
+      "content": "As you formulate your SQL query, make sure to select both `player_id` and the result of the `MIN(event_date)` function. This will ensure you return the correct information for each player."
+    },
+    {
+      "content": "Keep in mind that the result should include each `player_id` only once, along with their corresponding first login date. This means your query should not have any duplicate `player_id` entries."
+    },
+    {
+      "content": "Consider using a `GROUP BY` clause in your SQL query. This will allow you to aggregate the data by `player_id` and apply the `MIN()` function to `event_date` effectively."
+    },
+    {
+      "content": "Be aware of potential edge cases, such as players who have never logged in. In this case, they won't appear in the output since the query will only return players with at least one entry in the `Activity` table."
+    },
+    {
+      "content": "Your final SQL query should look something like this: `SELECT player_id, MIN(event_date) AS first_login FROM Activity GROUP BY player_id`. This will give you the desired output."
+    },
+    {
+      "content": "Finally, ensure your query is syntactically correct and test it with different datasets to verify that it handles all cases, including multiple logins on the same day for a player."
+    }
+  ],
+  "questionNotes": [
+    "The primary key is (player_id, event_date), ensuring uniqueness of records.",
+    "The output should return each player_id with their first login date.",
+    "Players with no logins will not appear in the result.",
+    "The order of the result does not matter."
+  ]
+}

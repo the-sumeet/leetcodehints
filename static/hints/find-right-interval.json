@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the intervals. Each interval is represented as a pair of integers, [start, end]. Your task is to find another interval whose start is greater than or equal to the end of the current interval."
+    },
+    {
+      "content": "Remember that the start times of the intervals are unique. This uniqueness can simplify your search for the right interval since you won't have to handle ties."
+    },
+    {
+      "content": "Consider how you will iterate through the list of intervals. You may want to maintain the original indices of the intervals for the final output, so think about how to do this while sorting or searching."
+    },
+    {
+      "content": "Think about how to efficiently find the right interval. A linear search would be too slow for larger inputs. Can you use sorting and binary search to improve the performance?"
+    },
+    {
+      "content": "When sorting the intervals, sort them based on their start times. This will allow you to quickly find the smallest start time that is greater than or equal to the end time of the current interval."
+    },
+    {
+      "content": "After sorting, you can use binary search to find the right interval. For each interval, you will look for the first interval that starts after the end of the current interval."
+    },
+    {
+      "content": "Make sure to handle cases where no right interval exists. In such cases, you should return -1 for that particular index in the output array."
+    },
+    {
+      "content": "Consider edge cases such as when there is only one interval in the input. What should your output be in this scenario?"
+    },
+    {
+      "content": "Think about the time complexity of your approach. Sorting the intervals will take O(n log n) time, and using binary search for each interval will take O(log n) time, leading to an overall complexity of O(n log n)."
+    },
+    {
+      "content": "As a final step, ensure that your output array maintains the original order of the intervals. You might want to create a separate array to store the results before returning it."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= intervals.length <= 2 * 10^4",
+    "Each interval has exactly 2 elements: start and end.",
+    "The start points of each interval are unique.",
+    "If no right interval exists for an interval, return -1 at that index."
+  ]
+}

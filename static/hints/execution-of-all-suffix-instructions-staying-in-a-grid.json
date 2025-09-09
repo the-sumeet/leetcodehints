@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the robot moves based on the instructions. Each instruction corresponds to a specific movement: 'L' decreases the column index, 'R' increases it, 'U' decreases the row index, and 'D' increases it. Visualizing the grid can help clarify these movements."
+    },
+    {
+      "content": "Consider how to track the robot's position as it executes instructions. You can use two variables, `row` and `col`, initialized to `startPos`, to represent the robot's current position in the grid."
+    },
+    {
+      "content": "Think about how to check if the robot stays within the grid boundaries. The robot's position must always satisfy `0 <= row < n` and `0 <= col < n`. You can use these conditions to determine if the next move is valid."
+    },
+    {
+      "content": "You need to iterate through the instruction string `s` starting from each index `i`. For each starting index, execute the instructions sequentially and count how many can be executed before going off the grid."
+    },
+    {
+      "content": "To optimize your solution, consider working backwards from the end of the instruction string. This way, you can build up the count of executable instructions as you move towards the beginning of the string."
+    },
+    {
+      "content": "As you move backwards, maintain a count of how many instructions can be executed from the current index. If the next move is valid, increment the count from the previous index; otherwise, set the count to zero."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the grid size `n` is 1 or when the starting position is already at the edge of the grid. These cases might lead to immediate termination of instruction execution."
+    },
+    {
+      "content": "Make sure to initialize your answer array with the correct size, which is equal to the length of the instruction string `s`. Each index in this array will correspond to the count of executable instructions starting from that index."
+    },
+    {
+      "content": "When implementing the logic, consider using a loop that goes from the last index of the instruction string down to the first. This way, you can easily propagate the counts of executable instructions."
+    },
+    {
+      "content": "Finally, ensure that your function returns the answer array in the correct format. Each element should represent the number of instructions that can be executed starting from the corresponding index in `s`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n, m <= 500",
+    "startPos.length == 2",
+    "0 <= start row, start col < n",
+    "s consists of 'L', 'R', 'U', and 'D'.",
+    "The answer array must be of length m, where answer[i] is the count of instructions executable from index i."
+  ]
+}

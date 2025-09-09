@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to extract a k x k submatrix from the given grid. For a submatrix starting at (i, j), the elements will be from grid[i][j] to grid[i+k-1][j+k-1]."
+    },
+    {
+      "content": "Consider how to identify distinct values within the k x k submatrix. You might want to use a data structure that helps you track unique elements efficiently, such as a set."
+    },
+    {
+      "content": "Think about how to compute the minimum absolute difference between any two distinct values. You can sort the distinct values and then find the minimum difference between consecutive elements."
+    },
+    {
+      "content": "Remember that if all elements in the submatrix are the same, the minimum absolute difference should be 0. Ensure your solution accounts for this edge case."
+    },
+    {
+      "content": "When iterating through the grid to extract submatrices, ensure you only go up to (m-k) for rows and (n-k) for columns to avoid index out of bounds errors."
+    },
+    {
+      "content": "As you build the answer array, keep in mind the dimensions of the resulting array will be (m - k + 1) x (n - k + 1). Make sure to initialize this array correctly."
+    },
+    {
+      "content": "Consider using a sliding window approach to optimize the extraction of distinct values as you move from one submatrix to the next. This can reduce redundancy in your calculations."
+    },
+    {
+      "content": "You may want to use a two-pointer technique or a frequency map to track the counts of each distinct value in the current k x k submatrix efficiently."
+    },
+    {
+      "content": "After calculating the minimum absolute difference for each submatrix, ensure you store the results in the correct position in your answer array based on the top-left corner indices."
+    },
+    {
+      "content": "Finally, double-check your implementation against edge cases, such as when k = 1, which should always yield a result of 0 for each position in the answer array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m == grid.length <= 30, 1 <= n == grid[i].length <= 30, -10^5 <= grid[i][j] <= 10^5, 1 <= k <= min(m, n).",
+    "Return format: A 2D array of size (m - k + 1) x (n - k + 1).",
+    "If all elements in a submatrix are the same, the answer should be 0.",
+    "Ensure to handle distinct values correctly when calculating the minimum absolute difference."
+  ]
+}

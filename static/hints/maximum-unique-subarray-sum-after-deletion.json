@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a subarray. A subarray is a contiguous portion of the array. In this problem, you need to ensure that all elements in the chosen subarray are unique."
+    },
+    {
+      "content": "Consider how you can keep track of the elements you have seen so far while iterating through the array. A set can be useful for this purpose since it allows for O(1) average time complexity for insertions and lookups."
+    },
+    {
+      "content": "Think about how you can maintain a running sum of the current subarray. Whenever you encounter a duplicate, you will need to adjust your subarray to ensure all elements remain unique."
+    },
+    {
+      "content": "As you iterate through the array, if you find a duplicate, you might need to remove elements from the start of your current subarray until the duplicate can be added. This is a key step in maintaining uniqueness."
+    },
+    {
+      "content": "Keep track of the maximum sum you encounter as you continue to build your subarray. You can update this maximum sum whenever you successfully add a new unique element."
+    },
+    {
+      "content": "Consider edge cases where the array contains negative numbers. Deleting negative numbers may lead to a higher sum, so think about how you can incorporate this into your logic."
+    },
+    {
+      "content": "You can also think about using a sliding window approach. This means maintaining two pointers: one for the start and one for the end of your current subarray, adjusting them as necessary."
+    },
+    {
+      "content": "When you find a duplicate, move the start pointer to the right until the duplicate is removed from the current subarray. This will help you maintain the uniqueness constraint."
+    },
+    {
+      "content": "Remember to handle cases where the array has only one element or all elements are the same. What would the output be in these scenarios?"
+    },
+    {
+      "content": "Once you've implemented the logic for maintaining unique elements and calculating the sum, ensure you return the maximum sum found. You might want to initialize your maximum sum variable to a very low value to handle negative numbers."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100",
+    "-100 <= nums[i] <= 100",
+    "The subarray must be contiguous.",
+    "All elements in the subarray must be unique.",
+    "Return the maximum sum of a unique subarray after possible deletions."
+  ]
+}

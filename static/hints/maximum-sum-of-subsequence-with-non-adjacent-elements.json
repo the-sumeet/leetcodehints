@@ -1,0 +1,58 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to calculate the maximum sum of a subsequence with non-adjacent elements after applying each query that modifies the `nums` array."
+    },
+    {
+      "content": "Recall the definition of a subsequence: it can be formed by deleting some elements without changing the order of the remaining elements. This means you can skip elements but cannot rearrange them."
+    },
+    {
+      "content": "Consider how to calculate the maximum sum of non-adjacent elements in an array. A common approach is to use dynamic programming, where you maintain a running total of the best sums up to each index."
+    },
+    {
+      "content": "When processing each query, you need to update the `nums` array at the specified index. Make sure to handle the update correctly before calculating the maximum sum."
+    },
+    {
+      "content": "Think about how you can efficiently compute the maximum sum after each query. You may want to avoid recalculating from scratch each time."
+    },
+    {
+      "content": "A dynamic programming approach could involve maintaining two variables, `incl` (maximum sum including the current element) and `excl` (maximum sum excluding the current element)."
+    },
+    {
+      "content": "Remember to apply the modulo operation (10^9 + 7) to your results, as specified in the problem statement. This is important to ensure your results fit within standard integer limits."
+    },
+    {
+      "content": "Consider edge cases, such as when all elements are negative or when the array has only one element. How would your solution handle these scenarios?"
+    },
+    {
+      "content": "Take note of the input constraints: the length of `nums` and `queries` can be quite large (up to 50,000). Your solution should be optimized to handle this efficiently."
+    },
+    {
+      "content": "When updating `nums`, ensure that the index provided in the query is valid and that you are correctly replacing the value at that index."
+    },
+    {
+      "content": "After processing a query, you need to calculate the maximum sum of non-adjacent elements. Ensure your dynamic programming logic is correctly implemented to reflect the updated array."
+    },
+    {
+      "content": "You might find it useful to create a helper function that calculates the maximum sum of non-adjacent elements for a given array. This can help keep your code organized."
+    },
+    {
+      "content": "As you implement your solution, consider how you will accumulate the results of each query. You will need to sum these results and apply the modulo operation at the end."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases and sample inputs to ensure that it behaves as expected. Pay attention to how it handles negative numbers."
+    },
+    {
+      "content": "Finally, think about how you can optimize the maximum sum calculation after each query. Can you reuse results from previous calculations instead of starting from scratch?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 5 * 10^4",
+    "-10^5 <= nums[i] <= 10^5",
+    "1 <= queries.length <= 5 * 10^4",
+    "queries[i] == [pos_i, x_i]",
+    "0 <= pos_i <= nums.length - 1",
+    "-10^5 <= x_i <= 10^5",
+    "Return the final sum modulo 10^9 + 7."
+  ]
+}

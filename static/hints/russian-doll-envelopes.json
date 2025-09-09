@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the conditions for one envelope to fit into another. An envelope A can fit into envelope B if both the width and height of A are less than those of B."
+    },
+    {
+      "content": "Consider how you might represent the envelopes. They are given as pairs of integers, where the first integer is the width and the second is the height."
+    },
+    {
+      "content": "Think about sorting the envelopes. What would happen if you sorted them by width first? How would that help in determining the nesting of envelopes?"
+    },
+    {
+      "content": "When sorting by width, consider how to handle envelopes with the same width. What should you do with their heights to maintain the ability to nest them?"
+    },
+    {
+      "content": "A common approach is to sort the envelopes by width in ascending order and then by height in descending order for those with the same width. This prevents counting envelopes with the same width."
+    },
+    {
+      "content": "After sorting, the problem reduces to finding the longest increasing subsequence (LIS) based on the heights of the envelopes. This is a well-known problem in computer science."
+    },
+    {
+      "content": "To find the LIS efficiently, consider using a dynamic programming approach or a binary search method. The binary search method can be done using a helper array to track the smallest ending values of increasing subsequences."
+    },
+    {
+      "content": "When implementing the LIS, remember that you need to iterate through the heights of the sorted envelopes and use binary search to update your helper array."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when all envelopes have the same dimensions. What should your output be in that case?"
+    },
+    {
+      "content": "Consider the constraints of the problem. The number of envelopes can be as large as 100,000. Your solution should ideally be O(n log n) to handle the upper limits efficiently."
+    },
+    {
+      "content": "Think about how you will return the final result. You need to return the maximum number of envelopes that can be nested, which will be the length of the LIS you compute."
+    },
+    {
+      "content": "Before finalizing your solution, write some test cases to ensure your implementation handles various scenarios, including edge cases like all envelopes being the same or only one envelope."
+    },
+    {
+      "content": "As you implement the sorting and LIS logic, keep track of the indices and ensure that you are not mistakenly counting envelopes that cannot fit into each other."
+    },
+    {
+      "content": "After sorting, you might want to visualize how the envelopes stack up. Drawing a diagram could help clarify your understanding of the nesting process."
+    },
+    {
+      "content": "Finally, ensure your code is clean and well-commented. This will help you and others understand your thought process when reviewing your solution."
+    }
+  ],
+  "questionNotes": [
+    "An envelope can only fit into another if both width and height are greater.",
+    "Sorting envelopes is crucial; handle ties in width by sorting heights in descending order.",
+    "The maximum number of envelopes is the length of the longest increasing subsequence of heights after sorting.",
+    "Constraints: 1 <= envelopes.length <= 100,000; 1 <= w_i, h_i <= 100,000."
+  ]
+}

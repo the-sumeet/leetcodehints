@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence can be formed by deleting some characters from the original string without changing the order of the remaining characters. For example, from 'abcde', you can form 'ace' by removing 'b' and 'd'."
+    },
+    {
+      "content": "Consider how you can check if a word is a subsequence of the string `s`. One approach is to use two pointers: one for the string `s` and one for the word you're checking. Move through `s` and try to match characters in the word."
+    },
+    {
+      "content": "Think about the efficiency of your solution. Since the length of `s` can be up to 50,000 and there can be up to 5,000 words, a naive approach that checks each word against `s` character by character might be too slow. Aim for a solution that minimizes repeated work."
+    },
+    {
+      "content": "You might want to preprocess the string `s` to speed up the subsequence checks. For instance, you could create a mapping of each character to its indices in `s`. This way, you can quickly find where each character of a word appears in `s`."
+    },
+    {
+      "content": "When checking if a word is a subsequence, remember to maintain the order of characters. If you find a character in `s`, continue searching for the next character in `s` from the position right after the last found character."
+    },
+    {
+      "content": "Consider edge cases such as when `s` is empty or when `words` contains empty strings. An empty string can only match an empty word, so handle these cases explicitly in your solution."
+    },
+    {
+      "content": "Think about how to efficiently count the number of matching subsequences. You can initialize a counter and increment it each time you find a word that is a subsequence of `s`. Keep track of the number of matches."
+    },
+    {
+      "content": "Make sure to handle cases where words in the array are longer than `s`. If a word's length exceeds that of `s`, it cannot possibly be a subsequence, and you can skip checking it."
+    },
+    {
+      "content": "To implement the two-pointer technique, you can use a loop to iterate through each character of the word and another loop for the string `s`. If you reach the end of the word successfully, it means the word is a subsequence."
+    },
+    {
+      "content": "Finally, ensure your function returns the count of matching subsequences as an integer. Pay attention to the return type and format to match the problem's requirements."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 5 * 10^4",
+    "Constraints: 1 <= words.length <= 5000",
+    "Constraints: 1 <= words[i].length <= 50",
+    "Both s and words[i] consist of only lowercase English letters."
+  ]
+}

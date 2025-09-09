@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `SnapshotArray`. It is initialized with a given length, and all elements begin as 0. Think about how you would represent this array internally."
+    },
+    {
+      "content": "Consider how to implement the `set(index, val)` method. You need to store the value at the specified index. Remember, this method should update the current value of the array."
+    },
+    {
+      "content": "The `snap()` method is crucial. It should return a unique identifier (snap_id) for each snapshot taken. Think about how you can keep track of the number of snapshots taken so far."
+    },
+    {
+      "content": "When implementing `get(index, snap_id)`, you need to retrieve the value from the array as it was at the time of the specified snapshot. This means you might need to store historical values."
+    },
+    {
+      "content": "Consider using a list of lists (or a similar data structure) to store the values for each index over time. For example, `history[index]` could hold all values set at that index across different snapshots."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when `snap_id` is out of bounds. Make sure your implementation checks that the requested snapshot exists."
+    },
+    {
+      "content": "Think about how to efficiently manage memory and performance, especially since the constraints allow for a large number of operations. Avoid unnecessary copying of data."
+    },
+    {
+      "content": "When you take a snapshot, you should not only store the current values but also ensure that future updates do not affect past snapshots. This might involve creating a new entry in your history structure."
+    },
+    {
+      "content": "To summarize the data structure, you might want to maintain an array of lists where each list corresponds to an index in the `SnapshotArray`. Each list will hold the values set at that index for each snapshot."
+    },
+    {
+      "content": "Finally, your `get(index, snap_id)` function should efficiently retrieve the correct value. You may need to implement a binary search or a similar technique to find the right value in the history list for the given `snap_id`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= length <= 5 * 10^4",
+    "0 <= index < length",
+    "0 <= val <= 10^9",
+    "0 <= snap_id < (the total number of times we call snap())",
+    "At most 5 * 10^4 calls will be made to set, snap, and get."
+  ]
+}

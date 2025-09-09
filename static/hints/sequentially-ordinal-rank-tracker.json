@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the data structure you need to maintain the locations. You will need to store both the name and score of each location."
+    },
+    {
+      "content": "Think about how you will handle adding a new location. You need to ensure that the locations remain sorted based on their score and name. Consider using a list or a priority queue."
+    },
+    {
+      "content": "Remember that the locations should be sorted primarily by score (higher is better) and secondarily by name (lexicographically smaller is better for ties)."
+    },
+    {
+      "content": "When you add a location, you might need to insert it into the correct position in your data structure to maintain the order. How will you do that efficiently?"
+    },
+    {
+      "content": "The `get` method should return the ith best location. Keep in mind that the value of i corresponds to the number of times `get` has been called, starting from 1."
+    },
+    {
+      "content": "Consider how you will track the number of calls to `get`. You might want to use a simple counter that increments each time `get` is called."
+    },
+    {
+      "content": "Think about edge cases, such as when there are locations with the same score. How will your sorting handle these cases?"
+    },
+    {
+      "content": "When implementing the `add` method, ensure that you are not just appending to a list but placing the new location in the correct order."
+    },
+    {
+      "content": "You might want to explore using a data structure that allows for efficient insertion and retrieval, such as a sorted list or a balanced binary search tree."
+    },
+    {
+      "content": "As you implement the `get` method, remember that the list of locations must be maintained in a way that allows you to access the ith element in constant time."
+    },
+    {
+      "content": "Consider using a tuple (score, name) for each location, which will help with the sorting logic since Python tuples are compared lexicographically."
+    },
+    {
+      "content": "Make sure to test your implementation with various inputs, including edge cases like adding locations with the same score and querying multiple times."
+    },
+    {
+      "content": "Keep in mind the constraints of the problem, especially that the number of queries will never exceed the number of locations added. This can simplify some of your logic."
+    },
+    {
+      "content": "As a final step, ensure that your `get` method correctly accesses the list of locations based on the current count of calls to `get`."
+    },
+    {
+      "content": "You are almost there! Make sure your final implementation handles the insertion and retrieval efficiently, and double-check your sorting logic for correctness."
+    }
+  ],
+  "questionNotes": [
+    "Each location has a unique name and an integer score.",
+    "Locations are ranked by score (higher is better) and by name (lexicographically smaller if scores are equal).",
+    "The `get` method returns the ith best location, where i is the number of times `get` has been called.",
+    "The number of calls to `get` will not exceed the number of calls to `add` at any time.",
+    "Constraints: 1 <= name.length <= 10, 1 <= score <= 10^5, at most 4 * 10^4 calls in total."
+  ]
+}

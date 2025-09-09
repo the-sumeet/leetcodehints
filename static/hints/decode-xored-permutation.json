@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the `encoded` array is formed. Each element in `encoded` is the XOR of two consecutive elements in the `perm` array. For example, `encoded[i] = perm[i] XOR perm[i + 1]`."
+    },
+    {
+      "content": "Remember that XOR has specific properties: `a XOR a = 0` and `a XOR 0 = a`. This means if you know one of the numbers, you can easily find the other using XOR."
+    },
+    {
+      "content": "Consider how you can derive the original `perm` array from the `encoded` array. You might need to think about how to reconstruct the first element of `perm`."
+    },
+    {
+      "content": "Since `n` is always odd, the length of `encoded` is even. This is important because it guarantees that the number of elements in `perm` will always be one more than in `encoded`."
+    },
+    {
+      "content": "To find the first element of `perm`, you can use the properties of XOR. If you can compute the XOR of all elements in `encoded`, you can derive the first element of `perm`."
+    },
+    {
+      "content": "Once you have the first element of `perm`, you can iteratively compute the rest of the elements. Use the relationship `perm[i + 1] = encoded[i] XOR perm[i]` to build the array."
+    },
+    {
+      "content": "Make sure to handle the indexing correctly. Since `encoded` is one element shorter than `perm`, be careful when accessing elements in the loop."
+    },
+    {
+      "content": "Think about how to initialize your loop. You will start from the first element of `perm` and continue until you fill the entire array based on the `encoded` values."
+    },
+    {
+      "content": "Remember that the problem guarantees a unique solution. This means your approach should always yield the same `perm` for a given `encoded` input."
+    },
+    {
+      "content": "As a final step, ensure that your final output is in the correct format. You should return the entire `perm` array as the result of your function."
+    }
+  ],
+  "questionNotes": [
+    "The length of `encoded` is `n - 1`, where `n` is the length of `perm`.",
+    "The input array `encoded` is formed by XORing consecutive elements of `perm`.",
+    "The original array `perm` is guaranteed to be a unique permutation of the first `n` positive integers.",
+    "The value of `n` is always odd, which affects the length of the arrays.",
+    "Ensure correct indexing when reconstructing the `perm` array from `encoded`."
+  ]
+}

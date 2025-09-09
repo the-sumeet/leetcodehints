@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what overlapping intervals are. Two intervals [a, b] and [c, d] overlap if they share any common points. This can be checked using the condition: `a <= d && c <= b`."
+    },
+    {
+      "content": "Consider what merging intervals means. When two intervals overlap, you need to create a new interval that spans from the minimum start to the maximum end of the two overlapping intervals."
+    },
+    {
+      "content": "Think about how you would sort the intervals. Sorting them by their start time will help you easily identify overlaps as you iterate through the list."
+    },
+    {
+      "content": "Once sorted, you can initialize an empty list to hold the merged intervals. Start with the first interval and compare it with the next one in the sorted list."
+    },
+    {
+      "content": "As you iterate through the sorted intervals, check if the current interval overlaps with the last interval in your merged list. If they do, merge them; if not, add the current interval to the merged list."
+    },
+    {
+      "content": "Remember to handle the case where the list of intervals is empty. Your function should return an empty list in that case."
+    },
+    {
+      "content": "Consider edge cases, such as intervals that are exactly touching each other (e.g., [1, 4] and [4, 5]). They should be merged into [1, 5]."
+    },
+    {
+      "content": "Think about the time complexity of your solution. Sorting the intervals will take O(n log n), and merging them will take O(n), leading to an overall complexity of O(n log n)."
+    },
+    {
+      "content": "As you implement the merging logic, ensure that your merged intervals list is correctly updated. You might want to use a loop that checks the last added interval against the current one."
+    },
+    {
+      "content": "Finally, ensure that your output format matches the requirements. You need to return a list of lists, where each inner list represents a merged interval."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= intervals.length <= 10^4, intervals[i].length == 2, 0 <= start_i <= end_i <= 10^4.",
+    "Intervals are inclusive of their start and end points.",
+    "Overlapping intervals should be merged into a single interval.",
+    "Return format: An array of non-overlapping intervals."
+  ]
+}

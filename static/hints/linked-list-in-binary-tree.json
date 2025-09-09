@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of both the binary tree and the linked list. A binary tree consists of nodes where each node has up to two children, while a linked list is a sequence of nodes where each node points to the next. Visualizing these structures can help clarify how to traverse them."
+    },
+    {
+      "content": "Consider how you might represent the binary tree in code. You will typically have a TreeNode class with properties for the value and pointers to left and right children. Similarly, the linked list can be represented with a ListNode class."
+    },
+    {
+      "content": "Think about how to traverse the binary tree. You can use depth-first search (DFS) or breadth-first search (BFS) to explore all paths from the root to the leaves. Remember that you need to check for paths that match the linked list."
+    },
+    {
+      "content": "When traversing the binary tree, you need to check if the current node's value matches the head of the linked list. If it does, you should then check the subsequent nodes of the linked list against the downward path in the binary tree."
+    },
+    {
+      "content": "Consider how to handle cases where the linked list is longer than the possible paths in the binary tree. If the linked list has more nodes than the maximum depth of a path in the tree, you can immediately return False."
+    },
+    {
+      "content": "You will need a helper function to check if a path starting from a given node matches the linked list. This function should take the current tree node and the current linked list node as parameters."
+    },
+    {
+      "content": "When implementing the helper function, ensure that you handle the cases where either the tree node or the linked list node is null. If you reach the end of the linked list successfully, it means you found a matching path."
+    },
+    {
+      "content": "As you traverse the binary tree, you should explore both left and right children of each node. If a match is found at the current node, recursively check both children to see if the linked list continues to match."
+    },
+    {
+      "content": "Remember to account for the base case in your recursive function: if the linked list is fully traversed (i.e., you reach a null node), return True. If the tree node is null but the linked list is not, return False."
+    },
+    {
+      "content": "Finally, implement the main function that initiates the search from the root of the binary tree. For each node in the binary tree, call the helper function to check if a path starting from that node matches the linked list."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The binary tree will have between 1 and 2500 nodes, and the linked list will have between 1 and 100 nodes.",
+    "Node values are guaranteed to be between 1 and 100.",
+    "A downward path in the binary tree starts at a node and can go down to any of its descendants.",
+    "Return True if the linked list can be found in a downward path of the binary tree, otherwise return False."
+  ]
+}

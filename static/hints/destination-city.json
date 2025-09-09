@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have an array of paths, where each path connects two cities. Each path is represented as a pair [cityA, cityB]."
+    },
+    {
+      "content": "Consider how you can identify the destination city. A destination city is defined as a city that does not have any outgoing paths. Think about how you can track which cities have outgoing paths."
+    },
+    {
+      "content": "You can use a set to keep track of all cities that have outgoing paths. As you iterate through the paths, add cityA to this set since it has an outgoing path to cityB."
+    },
+    {
+      "content": "Next, create another set or list to keep track of all cities you've encountered. This will help you identify which cities are not in the outgoing paths set."
+    },
+    {
+      "content": "After populating your sets, the destination city will be the one that is not in the outgoing paths set. Think about how you can find this city efficiently."
+    },
+    {
+      "content": "Remember that the problem guarantees there will be exactly one destination city. This means you don't have to handle cases where there might be multiple candidates."
+    },
+    {
+      "content": "Consider edge cases, such as when there is only one path. For example, with paths = [['A', 'B']], the destination city is clearly 'B'."
+    },
+    {
+      "content": "As you implement your solution, ensure that you correctly handle the case sensitivity of city names. 'London' and 'london' should be treated as different cities."
+    },
+    {
+      "content": "Once you have your sets ready, you can iterate through the list of all cities and check which one is not in the outgoing paths set. This will be your destination city."
+    },
+    {
+      "content": "To summarize, your approach should involve: 1) Tracking outgoing paths, 2) Collecting all cities, and 3) Finding the city that is not in the outgoing paths set."
+    }
+  ],
+  "questionNotes": [
+    "The input is an array of pairs, where each pair represents a direct path between two cities.",
+    "The destination city is defined as the city with no outgoing paths.",
+    "There will be exactly one destination city as per the problem constraints.",
+    "City names are case-sensitive and can include uppercase and lowercase letters.",
+    "The input size is manageable (1 <= paths.length <= 100), so performance is not a major concern."
+  ]
+}

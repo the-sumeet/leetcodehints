@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of both IPv4 and IPv6 addresses. An IPv4 address consists of four decimal numbers separated by dots, while an IPv6 address consists of eight groups of hexadecimal numbers separated by colons."
+    },
+    {
+      "content": "For IPv4, remember that each segment must be between 0 and 255. Additionally, leading zeros are not allowed unless the segment is exactly '0'."
+    },
+    {
+      "content": "Consider how you will split the input string into segments for both IPv4 and IPv6. For IPv4, you can use the `split('.')` method, while for IPv6, you can use `split(':')`."
+    },
+    {
+      "content": "When validating each segment of an IPv4 address, check that it is numeric and falls within the valid range. Use conditions to ensure that it does not have leading zeros."
+    },
+    {
+      "content": "For IPv6, ensure that each segment is a valid hexadecimal number. You can use a regular expression to validate that each segment contains only valid characters (0-9, a-f, A-F)."
+    },
+    {
+      "content": "Don't forget to check the length of each segment in both types of addresses. IPv4 should have exactly four segments, while IPv6 must have exactly eight."
+    },
+    {
+      "content": "Be cautious with edge cases, such as empty segments or segments that contain invalid characters. For example, an IPv4 segment like '256' should be flagged as invalid."
+    },
+    {
+      "content": "After validating the segments for both IPv4 and IPv6, you should have a clear way to determine which type of IP address (if any) the input string represents."
+    },
+    {
+      "content": "Remember to return 'Neither' if the input string does not match the criteria for either IPv4 or IPv6. Ensure your function handles this case gracefully."
+    },
+    {
+      "content": "Finally, consider writing helper functions to validate segments for both IPv4 and IPv6. This will help keep your main function clean and focused on the overall logic."
+    }
+  ],
+  "questionNotes": [
+    "IPv4 format: x1.x2.x3.x4 where 0 <= xi <= 255 and xi cannot have leading zeros.",
+    "IPv6 format: x1:x2:x3:x4:x5:x6:x7:x8 where 1 <= xi.length <= 4 and xi is hexadecimal.",
+    "Return 'IPv4' for valid IPv4, 'IPv6' for valid IPv6, and 'Neither' for invalid addresses.",
+    "Input consists only of English letters, digits, and the characters '.' and ':'."
+  ]
+}

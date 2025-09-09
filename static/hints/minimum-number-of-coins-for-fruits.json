@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem's structure. You need to minimize the total coins spent while acquiring all fruits. Remember, buying one fruit allows you to take several subsequent fruits for free."
+    },
+    {
+      "content": "Consider how you can approach the problem using a greedy strategy. Think about whether you should always buy the cheapest available fruit or if there are cases where it might be better to buy a more expensive fruit to unlock cheaper subsequent fruits."
+    },
+    {
+      "content": "Identify the main decision point in your algorithm. When you decide to buy a fruit, you need to calculate how many subsequent fruits you can get for free. How will you track which fruits have been purchased and which are free?"
+    },
+    {
+      "content": "As you iterate through the prices array, keep track of the total coins spent. You can maintain a pointer or index to track which fruits have been acquired, either through purchase or for free."
+    },
+    {
+      "content": "Think about edge cases, such as when the prices array has only one fruit. In this case, the answer is simply the price of that fruit. How would your approach handle this?"
+    },
+    {
+      "content": "Consider using a loop to iterate through the prices array. For each fruit, decide whether to buy it or take it for free based on the current state of your total coins and the index of the last purchased fruit."
+    },
+    {
+      "content": "You might want to maintain a variable that tracks the index of the last purchased fruit. This will help you determine how many fruits you can take for free after making a purchase."
+    },
+    {
+      "content": "As you implement your solution, think about how you will handle the transition from one fruit to the next. If you buy fruit `i`, you should be able to skip to fruit `i + 1` and check if you can take it for free."
+    },
+    {
+      "content": "When implementing your loop, ensure that you are correctly updating your total coins and the index of the last purchased fruit. You may want to use a while loop or a for loop with careful index management."
+    },
+    {
+      "content": "Finally, ensure that your solution accounts for all fruits by the end of your iteration. Your final return statement should reflect the total coins spent to acquire all fruits, considering both purchases and free fruits."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= prices.length <= 1000, 1 <= prices[i] <= 10^5",
+    "The array is 0-indexed, meaning prices[i] corresponds to the (i + 1)th fruit.",
+    "You can take any number of the next i fruits for free after purchasing the (i + 1)th fruit.",
+    "You can still choose to purchase a fruit that you could take for free to receive its reward."
+  ]
+}

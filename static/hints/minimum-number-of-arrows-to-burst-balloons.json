@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the representation of each balloon. Each balloon is defined by a pair of integers [x_start, x_end], which indicates its horizontal span on the x-axis. Make sure to visualize how these ranges overlap."
+    },
+    {
+      "content": "Consider how an arrow shot at a specific x-coordinate can burst multiple balloons. An arrow at x will burst all balloons for which x_start <= x <= x_end. Think about how to maximize the number of balloons burst with each arrow."
+    },
+    {
+      "content": "To minimize the number of arrows, you might want to shoot arrows at points where the balloons overlap the most. Try sorting the balloons by their end coordinates (x_end). This can help you determine where to shoot the arrows effectively."
+    },
+    {
+      "content": "After sorting the balloons, iterate through the list and keep track of the position of the last shot arrow. If the start of the current balloon is greater than the position of the last arrow, you need to shoot a new arrow."
+    },
+    {
+      "content": "When you encounter a new balloon that does not overlap with the last shot arrow, increment your arrow count and update the position of the last arrow to the end of the current balloon."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there is only one balloon or when all balloons are separate with no overlaps. In these scenarios, each balloon will require its own arrow."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Sorting the balloons will take O(n log n), and iterating through them will take O(n). This should be efficient enough given the constraints."
+    },
+    {
+      "content": "Think about the constraints provided in the problem. The number of balloons can be up to 100,000, and the x-coordinates can range from -2^31 to 2^31 - 1. Ensure your solution can handle this range without overflow."
+    },
+    {
+      "content": "As you implement your solution, remember to return the total number of arrows needed as the final output. This should be a single integer representing the minimum number of arrows."
+    },
+    {
+      "content": "To finalize your approach, write pseudocode that outlines the steps: sorting the balloons, iterating through them, counting arrows, and updating the position of the last shot arrow. This will help you clarify your logic before coding."
+    }
+  ],
+  "questionNotes": [
+    "1 <= points.length <= 10^5",
+    "points[i].length == 2",
+    "-2^31 <= x_start < x_end <= 2^31 - 1",
+    "Each arrow can burst multiple balloons if they overlap.",
+    "Return a single integer representing the minimum number of arrows needed."
+  ]
+}

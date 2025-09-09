@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You are given a list of lists, where each inner list represents a conversion relationship between units. For example, [0, 1, 2] means that 0 units of the first type can be converted to 1 unit of the second type, with a conversion factor of 2."
+    },
+    {
+      "content": "Consider how you can represent these conversion relationships. A graph is a suitable data structure where nodes represent units and edges represent the conversion factors. Think about how you can build this graph from the input."
+    },
+    {
+      "content": "When building your graph, remember that each conversion is bidirectional. If you can convert from unit A to unit B, you should also be able to convert from unit B back to unit A. Make sure to store both directions in your graph."
+    },
+    {
+      "content": "Think about how to traverse this graph to find conversion paths. A breadth-first search (BFS) or depth-first search (DFS) could be useful for exploring all possible conversion routes between two units."
+    },
+    {
+      "content": "As you traverse the graph, keep track of the cumulative conversion factor. This will allow you to calculate the total conversion from one unit to another as you move through the graph."
+    },
+    {
+      "content": "Consider edge cases such as when there is no possible conversion between two units. Ensure your solution can handle these scenarios gracefully, perhaps by returning a specific value or indicating failure."
+    },
+    {
+      "content": "Pay attention to the indexing of your units. The problem may use 0-based indexing, so make sure your implementation reflects this correctly when accessing elements in your graph."
+    },
+    {
+      "content": "When you have multiple paths between two units, think about how you will handle them. You may need to decide whether to return the first valid conversion found or the one with the best conversion factor."
+    },
+    {
+      "content": "As you finalize your approach, remember to test your solution with various inputs, including edge cases like disconnected graphs or units that cannot be converted at all."
+    },
+    {
+      "content": "Now, implement your graph traversal and conversion logic. Start with a function that takes two units and returns the conversion factor by exploring the graph. Make sure to handle cases where no conversion is possible."
+    }
+  ],
+  "questionNotes": [
+    "Input is a list of lists representing conversion relationships.",
+    "Each inner list has three integers: [from_unit, to_unit, conversion_factor].",
+    "Conversions are bidirectional; if A to B is possible, B to A is also possible.",
+    "Consider using a graph data structure for representing conversions.",
+    "Handle cases where no conversion path exists between two units."
+  ]
+}

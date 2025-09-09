@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the relevant tables and their relationships. You need to focus on the `SalesPerson`, `Company`, and `Orders` tables to find out which salespersons have no orders with the company named 'RED'."
+    },
+    {
+      "content": "Consider how to filter the orders related to the company 'RED'. You will need to join the `Company` table with the `Orders` table to find the `com_id` for 'RED'."
+    },
+    {
+      "content": "Once you have the `com_id` for 'RED', think about how to find salespersons who do not have any orders linked to that `com_id`. This will likely involve using a `LEFT JOIN` or a `NOT EXISTS` clause."
+    },
+    {
+      "content": "Remember to select the names of the salespersons from the `SalesPerson` table. You will need to ensure that your query returns only those salespersons who are not associated with any orders to 'RED'."
+    },
+    {
+      "content": "Consider using a subquery to first identify all the `sales_id` that have orders for the company 'RED'. This will help you filter out those salespersons in your main query."
+    },
+    {
+      "content": "When constructing your query, think about how to handle cases where there are no orders at all. Ensure your query accounts for salespersons who might not have any orders."
+    },
+    {
+      "content": "Pay attention to the result format. You need to return only the `name` of the salespersons, so make sure to select only that column in your final output."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no salespersons at all or when all salespersons have orders with 'RED'. Your query should handle these gracefully and return an empty result set if needed."
+    },
+    {
+      "content": "Make sure to test your query with different datasets to ensure it behaves as expected. Check for cases where multiple salespersons have no orders related to 'RED'."
+    },
+    {
+      "content": "Finally, structure your SQL query to combine all these elements: join the necessary tables, filter out the salespersons with orders to 'RED', and select the required columns. Your final query might look something like this: `SELECT name FROM SalesPerson WHERE sales_id NOT IN (SELECT sales_id FROM Orders WHERE com_id = (SELECT com_id FROM Company WHERE name = 'RED'))`."
+    }
+  ],
+  "questionNotes": [
+    "Ensure to join the `Company` and `Orders` tables to find the `com_id` for 'RED'.",
+    "Use `LEFT JOIN` or `NOT EXISTS` to filter salespersons without orders for 'RED'.",
+    "Return only the `name` of the salespersons in your result set.",
+    "Handle edge cases where there are no orders or salespersons gracefully."
+  ]
+}

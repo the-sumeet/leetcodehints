@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to replace specific HTML entities with their corresponding characters. For example, `&amp;` should be replaced with `&`."
+    },
+    {
+      "content": "Consider how you will identify HTML entities in the input string. They all start with `&` and end with `;`. You might want to look for patterns that match this structure."
+    },
+    {
+      "content": "Create a mapping of HTML entities to their respective characters. For instance, you can use a dictionary where keys are entities like `&quot;` and values are their replacements like `\"`."
+    },
+    {
+      "content": "Think about how to iterate through the input string. You can use a loop to check each character and see if it starts an HTML entity. If you find `&`, check the subsequent characters to see if they form a valid entity."
+    },
+    {
+      "content": "When you encounter an `&`, you need to determine how many characters to check for the entity. This can be done by looking for the next `;` in the string. Make sure to handle cases where `;` might not be present."
+    },
+    {
+      "content": "Remember to handle cases where the entity is not recognized. If you encounter a string like `&ambassador;`, you should not replace it since it's not a valid entity in your mapping."
+    },
+    {
+      "content": "Consider using a list to build your output string as you parse through the input. This way, you can easily append characters or replaced entities as you go."
+    },
+    {
+      "content": "Think about edge cases, such as input strings that do not contain any HTML entities. Your function should still return the original string in such cases."
+    },
+    {
+      "content": "Make sure to test your implementation with various cases, including strings that contain multiple entities in a row or entities that are mixed with regular text."
+    },
+    {
+      "content": "Finally, put everything together. As you parse the string, replace recognized entities using your mapping, and concatenate the results into your output list. After parsing, join the list to form the final string."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= text.length <= 10^5",
+    "Input string may contain any ASCII characters.",
+    "Only specific HTML entities need to be replaced."
+  ]
+}

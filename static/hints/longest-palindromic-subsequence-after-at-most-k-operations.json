@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindromic subsequence is. A palindromic subsequence is a sequence that reads the same forwards and backwards. For example, in the string 'abca', 'aba' and 'aa' are palindromic subsequences."
+    },
+    {
+      "content": "Consider how you can manipulate the characters in the string with the allowed operations. Each character can be changed to its adjacent letters in the alphabet, meaning you can transform 'a' to 'b' or 'z', and so on. Think about how many changes are needed to make pairs of characters match."
+    },
+    {
+      "content": "Identify the two-pointer technique as a potential strategy. You can use two pointers, one starting from the beginning of the string and the other from the end, to compare characters and decide if they can be made the same with the allowed operations."
+    },
+    {
+      "content": "When comparing characters at the two pointers, if they are the same, you can move both pointers inward. If they are different, calculate the cost of changing one character to the other. Remember, the cost is determined by the distance in the alphabet."
+    },
+    {
+      "content": "Make sure to account for the wrapping around of the alphabet. For example, changing 'a' to 'z' or 'z' to 'a' counts as one operation. This will affect how you calculate the distance between characters."
+    },
+    {
+      "content": "Consider using dynamic programming to keep track of the longest palindromic subsequence length at each step. You can create a 2D DP table where dp[i][j] represents the maximum length of a palindromic subsequence in the substring s[i:j]."
+    },
+    {
+      "content": "Be mindful of the operations limit, k. When you encounter differing characters, check if the cost to make them the same is less than or equal to k. If it is, you can consider that pair as part of the palindromic subsequence."
+    },
+    {
+      "content": "Think about edge cases, such as when k is larger than the total number of operations needed to make the entire string a palindrome. In such cases, you can directly return the length of the string as the result."
+    },
+    {
+      "content": "When filling in your DP table, ensure that you also consider the scenario where you skip characters, which can help in cases where making a match is too costly. This will help you build the longest possible subsequence."
+    },
+    {
+      "content": "Finally, ensure you return the correct result format. The length of the longest palindromic subsequence should be returned as an integer, and keep in mind the constraints of the problem when designing your solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 200, 1 <= k <= 200",
+    "s consists of only lowercase English letters.",
+    "You can perform at most k operations.",
+    "The output should be the length of the longest palindromic subsequence."
+  ]
+}

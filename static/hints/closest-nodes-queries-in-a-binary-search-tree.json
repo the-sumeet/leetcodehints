@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a Binary Search Tree (BST). In a BST, for any given node, all values in the left subtree are smaller, and all values in the right subtree are larger. This property will help you efficiently search for the closest values."
+    },
+    {
+      "content": "Consider how you can traverse the BST to find the largest value less than or equal to a query and the smallest value greater than or equal to a query. You might want to think about using an iterative or recursive approach to navigate the tree."
+    },
+    {
+      "content": "When processing each query, keep track of two values: one for the largest value found that is less than or equal to the query, and another for the smallest value found that is greater than or equal to the query."
+    },
+    {
+      "content": "You can initialize these two tracking variables to -1. If you find a valid value during your traversal, update these variables accordingly. Make sure to handle cases where no such value exists."
+    },
+    {
+      "content": "As you traverse the tree, if the current node's value is greater than the query, you should move to the left child to find smaller values. Conversely, if it is less than the query, move to the right child to find larger values."
+    },
+    {
+      "content": "Think about edge cases, such as when the query is smaller than the smallest value in the tree or larger than the largest value. Ensure your logic correctly handles these scenarios by returning -1 when appropriate."
+    },
+    {
+      "content": "Once you have the logic for a single query, consider how you will apply this logic to all queries in the input array. You will need to store results in a 2D array corresponding to each query."
+    },
+    {
+      "content": "Remember to maintain the order of your results as they relate to the input queries. You can achieve this by iterating through the queries and appending results to your answer array in the correct order."
+    },
+    {
+      "content": "As you implement your solution, think about the time complexity. Each query will require a traversal of the BST, which can be done in O(h) time, where h is the height of the tree. In the worst case, this could be O(n) for a skewed tree."
+    },
+    {
+      "content": "Finally, ensure your function returns the answer in the specified format: a 2D array where each sub-array contains the two values for each query. Make sure to test your implementation with various input cases to validate its correctness."
+    }
+  ],
+  "questionNotes": [
+    "The BST property: left < node < right.",
+    "Return format: 2D array with [min_i, max_i] for each query.",
+    "If no valid min or max exists, return -1 for that value.",
+    "Constraints: 2 <= number of nodes <= 10^5 and 1 <= queries.length <= 10^5."
+  ]
+}

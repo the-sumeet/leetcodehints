@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the range of floors Alice has rented, which is from `bottom` to `top`. This means you need to consider all floors in this inclusive range when calculating consecutive floors."
+    },
+    {
+      "content": "Remember that the `special` array contains floors that should not be counted as part of the consecutive floors. Your goal is to find segments of floors between these special floors."
+    },
+    {
+      "content": "It might be helpful to sort the `special` array first. This way, you can easily identify the gaps between consecutive special floors."
+    },
+    {
+      "content": "Consider the special floors as boundaries. For example, if the sorted special floors are `[4, 6]`, you can think about the segments as (2, 3) and (5, 5) and (7, 9)."
+    },
+    {
+      "content": "Don’t forget to check the floors before the first special floor and after the last special floor. These can also contribute to the maximum consecutive floors without a special floor."
+    },
+    {
+      "content": "When calculating the maximum consecutive floors, you may want to initialize a variable to track the maximum length found so far. Update this variable as you find longer segments."
+    },
+    {
+      "content": "Consider edge cases where there are no special floors at all. In this case, the maximum consecutive floors would simply be `top - bottom + 1`."
+    },
+    {
+      "content": "Also, think about the case where all rented floors are special. In this scenario, the result should be 0, as there are no consecutive floors without a special floor."
+    },
+    {
+      "content": "As you iterate through the sorted special floors, calculate the length of each segment of non-special floors. Use the formula: `length = next_special - current_special - 1`."
+    },
+    {
+      "content": "Finally, ensure to check the segments before the first special floor and after the last special floor, and compare these lengths to find the maximum. You might end up with something like: `max_length = max(max_length, length_before_first, length_after_last)`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= special.length <= 10^5",
+    "1 <= bottom <= special[i] <= top <= 10^9",
+    "All values in special are unique.",
+    "Return format: a single integer representing the maximum number of consecutive floors without a special floor."
+  ]
+}

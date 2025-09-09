@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. Each cell can either be empty (0) or an obstacle (1). Your goal is to find a path from the top-left corner to the bottom-right corner while minimizing the number of obstacles you remove."
+    },
+    {
+      "content": "Consider how you can represent your current position and the obstacles you have removed so far. You might want to keep track of both the current cell and the count of obstacles removed to reach that cell."
+    },
+    {
+      "content": "Think about the possible movements you can make from any cell. You can move up, down, left, or right. Make sure to check the boundaries of the grid to avoid accessing invalid indices."
+    },
+    {
+      "content": "Since you want to minimize the number of obstacles removed, consider using a priority queue (min-heap) to always expand the least costly path first. This is similar to Dijkstra's algorithm."
+    },
+    {
+      "content": "When you add a cell to your priority queue, include the number of obstacles removed to reach that cell. This will help you prioritize paths that remove fewer obstacles."
+    },
+    {
+      "content": "Remember to maintain a visited structure to avoid processing the same cell multiple times. You can use a 2D array where each cell stores the minimum obstacles removed to reach that cell."
+    },
+    {
+      "content": "As you process each cell, check all four possible directions (up, down, left, right). For each direction, calculate the new cell's position and the updated count of obstacles removed."
+    },
+    {
+      "content": "If moving to a new cell results in a lower count of obstacles removed than previously recorded, update your visited structure and add this new state to the priority queue."
+    },
+    {
+      "content": "Consider edge cases where the grid is very small (like 1x1 or 2x2). Ensure your solution handles these cases correctly, especially since the starting and ending points are guaranteed to be empty."
+    },
+    {
+      "content": "Think about how to terminate your search. You can stop once you reach the bottom-right corner, returning the number of obstacles removed to get there."
+    },
+    {
+      "content": "Be aware of the constraints: the grid can be quite large (up to 100,000 cells). Your solution needs to be efficient in both time and space."
+    },
+    {
+      "content": "Consider how to handle cases where there is no path available without removing obstacles. While the problem guarantees a path exists, your logic should still be robust."
+    },
+    {
+      "content": "Make sure to test your solution with various grid configurations, especially those with clusters of obstacles that might require different strategies to navigate."
+    },
+    {
+      "content": "When implementing your priority queue, ensure that it correctly handles ties in the number of obstacles removed. You may want to prioritize cells based on their coordinates as a secondary criterion."
+    },
+    {
+      "content": "Finally, remember to return the result in the specified format: the minimum number of obstacles removed to reach the bottom-right corner. Ensure your function signature matches the expected output."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == grid.length, n == grid[i].length, 1 <= m, n <= 10^5, 2 <= m * n <= 10^5.",
+    "grid[i][j] is either 0 or 1; grid[0][0] == grid[m - 1][n - 1] == 0.",
+    "You can move up, down, left, or right.",
+    "Return the minimum number of obstacles to remove."
+  ]
+}

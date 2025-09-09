@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the salary categories defined in the problem. You need to categorize incomes into three groups: 'Low Salary' for incomes less than $20,000, 'Average Salary' for incomes between $20,000 and $50,000 (inclusive), and 'High Salary' for incomes greater than $50,000."
+    },
+    {
+      "content": "Consider how you can count the number of accounts in each salary category. You might want to think about using conditional statements to filter the income values for each category."
+    },
+    {
+      "content": "Remember that you need to return all three categories in your result, even if some categories have a count of zero. This means you'll need to ensure that your query includes all categories regardless of the data in the Accounts table."
+    },
+    {
+      "content": "You can use a SQL `CASE` statement to help categorize the incomes. This allows you to define conditions for each salary category directly in your query."
+    },
+    {
+      "content": "When counting the accounts in each category, consider using the `COUNT` aggregate function. You can group your results by the category defined in the `CASE` statement."
+    },
+    {
+      "content": "Think about how to handle the scenario where there are no accounts in a category. You might need to use a `UNION` to create a result set that includes all categories with their respective counts."
+    },
+    {
+      "content": "Make sure to alias the output columns correctly as specified in the problem statement: 'category' for the salary category and 'accounts_count' for the count of accounts."
+    },
+    {
+      "content": "You might want to test your query with edge cases, such as when all accounts fall into one category or when there are no accounts at all. This will help ensure your solution is robust."
+    },
+    {
+      "content": "Consider how you can structure your SQL query to ensure it is efficient. Using `GROUP BY` and `CASE` in a single query can help minimize the number of scans over the Accounts table."
+    },
+    {
+      "content": "Finally, remember to format your output correctly. The result should be a table with the specified column names, and you can return the results in any order as long as the structure is correct."
+    }
+  ],
+  "questionNotes": [
+    "The primary key is account_id, which ensures uniqueness of each account.",
+    "The income values can be any integer, and you should handle edge cases where no accounts fall into a category.",
+    "The result must include all three categories, returning 0 for any category without accounts."
+  ]
+}

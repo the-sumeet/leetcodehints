@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the initial state of the cities. Each city i has a direct road to city i + 1. This means the initial distance from city 0 to city n - 1 is simply n - 1."
+    },
+    {
+      "content": "Consider how the addition of a new road from city u to city v affects the shortest path. When a new road is added, it could potentially reduce the distance from city 0 to city n - 1."
+    },
+    {
+      "content": "Think about how you can represent the cities and roads. An adjacency list or a distance array could be useful to keep track of the shortest paths efficiently."
+    },
+    {
+      "content": "Since the queries are given in a specific order, you can process them sequentially. After each query, you need to recalculate the shortest path from city 0 to city n - 1."
+    },
+    {
+      "content": "Use a breadth-first search (BFS) or Dijkstra's algorithm to find the shortest path after each query. However, since the roads are unidirectional and the graph is initially linear, think about optimizing your approach."
+    },
+    {
+      "content": "Keep in mind that the queries are structured such that for any two queries, if one query starts before another, it also ends before it. This can simplify your logic."
+    },
+    {
+      "content": "After adding a road from u to v, check if this new road creates a shorter path to city n - 1. You might need to update the distance if the new path is shorter."
+    },
+    {
+      "content": "Consider maintaining a variable to track the current shortest distance from city 0 to city n - 1. Update this variable only when a new road reduces the distance."
+    },
+    {
+      "content": "When processing each query, you might want to check the distance from city 0 to city u and then from city v to city n - 1 to see if a new path is formed."
+    },
+    {
+      "content": "Remember to handle edge cases where adding a road does not change the shortest path. For example, if the new road does not connect to city n - 1 or does not lead to a shorter route."
+    },
+    {
+      "content": "You will need to return the shortest distance after each query. Ensure that your output format matches the requirements: an array of distances."
+    },
+    {
+      "content": "Make sure to account for the constraints: the number of cities and queries can be quite large. Your solution should be efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Think about how to efficiently check the shortest path after each query. Instead of recalculating the entire path, consider how to update only the affected distances."
+    },
+    {
+      "content": "As you implement your solution, keep track of the distances in a way that allows for quick updates and checks. This could involve using a priority queue or a simple array."
+    },
+    {
+      "content": "Finally, ensure that your solution handles all edge cases, such as multiple queries that might not change the shortest path or queries that create redundant paths."
+    }
+  ],
+  "questionNotes": [
+    "Cities are numbered from 0 to n - 1.",
+    "Initial roads are unidirectional from city i to city i + 1.",
+    "Queries are structured such that for any two queries, if one starts before the other, it also ends before it.",
+    "Return an array of shortest distances after each query.",
+    "Constraints: 3 <= n <= 10^5, 1 <= queries.length <= 10^5, unique roads in queries."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for two strings to be similar. Two strings are similar if they consist of the same characters, regardless of their order. For example, 'abc' and 'cba' are similar."
+    },
+    {
+      "content": "Consider how you can represent the unique characters of each string. One effective way is to use a set or a sorted string of characters. For instance, the string 'aba' can be represented as the set {'a', 'b'}."
+    },
+    {
+      "content": "Think about how you can compare the character sets of two strings. You can convert each string to a set of characters and check if the sets are equal. This will help you determine if two strings are similar."
+    },
+    {
+      "content": "You need to count pairs of similar strings. Remember that pairs are defined as (i, j) where 0 <= i < j < words.length. This means you only want to count each pair once."
+    },
+    {
+      "content": "To efficiently count the pairs, you can use a dictionary to store the frequency of each unique character set. For example, if 'aba' and 'aab' both map to the same set, you can increment a count for that set."
+    },
+    {
+      "content": "Consider how to calculate the number of pairs from the frequency of similar character sets. If a character set appears 'n' times, the number of unique pairs you can form is given by the combination formula: n choose 2, which is n * (n - 1) / 2."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when all strings are unique or when all strings are the same. Think about how these scenarios would affect your pair counting logic."
+    },
+    {
+      "content": "Remember to account for the constraints given in the problem. The number of strings can be up to 100, and each string can be up to 100 characters long. Ensure your solution is efficient enough to handle the worst-case scenario."
+    },
+    {
+      "content": "As you implement your solution, ensure that you are correctly iterating through the list of words and checking each pair only once. This will help avoid counting duplicates."
+    },
+    {
+      "content": "Finally, put together your approach: iterate through the list of words, create a set representation for each word, store the counts in a dictionary, and then calculate the total number of similar pairs based on the counts you've collected."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= words.length <= 100, 1 <= words[i].length <= 100",
+    "Strings consist only of lowercase English letters.",
+    "Return the number of pairs (i, j) such that 0 <= i < j <= words.length - 1.",
+    "Two strings are similar if they consist of the same unique characters."
+  ]
+}

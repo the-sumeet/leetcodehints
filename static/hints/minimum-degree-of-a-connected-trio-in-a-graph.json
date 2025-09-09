@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. You can represent the graph using an adjacency list or an adjacency matrix. This will help you easily check for connections between nodes."
+    },
+    {
+      "content": "Focus on identifying connected trios. A connected trio consists of three nodes where each node is connected to the other two. Think about how you can iterate through combinations of three nodes."
+    },
+    {
+      "content": "Remember that the graph is undirected. This means that if there is an edge from u to v, there is also an edge from v to u. Ensure your edge checks reflect this."
+    },
+    {
+      "content": "Use a nested loop to go through each combination of three nodes. For each combination, check if all three nodes are connected to each other."
+    },
+    {
+      "content": "To check if three nodes u, v, and w form a connected trio, ensure that the edges (u, v), (v, w), and (u, w) exist in your graph representation."
+    },
+    {
+      "content": "Once you find a connected trio, calculate its degree. The degree of a trio is the number of edges that connect any of the trio's nodes to nodes outside the trio."
+    },
+    {
+      "content": "To calculate the degree, you can iterate through the neighbors of each node in the trio and count how many of those neighbors are not in the trio."
+    },
+    {
+      "content": "Keep track of the minimum degree found among all connected trios. You can initialize a variable to store the minimum degree and update it whenever you find a lower degree."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no connected trios. Ensure your function returns -1 in such cases, which can be done by checking if your minimum degree variable was updated."
+    },
+    {
+      "content": "Optimize your approach by using a set to quickly check if a node is part of the trio when calculating the degree. This can reduce the time complexity of your degree calculation."
+    },
+    {
+      "content": "Be aware of the constraints: n can be up to 400, meaning your solution should ideally be better than O(n^3) to handle the largest cases efficiently."
+    },
+    {
+      "content": "Consider the possibility of multiple trios with the same minimum degree. Your solution should still return the minimum degree even if there are ties."
+    },
+    {
+      "content": "Make sure to handle the input correctly. The nodes are 1-indexed, so adjust any indexing in your implementation accordingly."
+    },
+    {
+      "content": "Once you have your algorithm working, test it with various edge cases, such as a graph with no edges or a complete graph where every trio is connected."
+    },
+    {
+      "content": "Finally, review your code for efficiency and readability. Ensure that your logic for finding trios and calculating degrees is clear and concise."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 400, edges[i].length == 2, 1 <= edges.length <= n * (n-1) / 2, 1 <= u_i, v_i <= n, u_i != v_i.",
+    "There are no repeated edges in the input.",
+    "Return -1 if there are no connected trios.",
+    "Nodes are 1-indexed."
+  ]
+}

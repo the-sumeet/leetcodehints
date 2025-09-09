@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an equal subarray is. An equal subarray consists of contiguous elements that are the same. For example, in the array [1, 1, 2, 2], the subarrays [1, 1] and [2, 2] are equal subarrays."
+    },
+    {
+      "content": "Consider how deleting elements can help you form longer equal subarrays. You are allowed to delete at most `k` elements. Think about how you can utilize this to maximize the length of the remaining equal elements."
+    },
+    {
+      "content": "Identify the most frequent element in the array. This element will likely be the target for forming the longest equal subarray since you can delete other elements to make space for it."
+    },
+    {
+      "content": "Use a sliding window approach to maintain a window of elements. As you expand the window, keep track of how many elements need to be deleted to make all elements in the window equal to the most frequent element."
+    },
+    {
+      "content": "While expanding the window, if the number of deletions required exceeds `k`, you should contract the window from the left. This helps ensure that you are always considering valid subarrays."
+    },
+    {
+      "content": "Keep track of the count of the most frequent element within the current window. This will help you quickly determine how many deletions are needed when you expand or contract the window."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when `k` is 0. In this case, you should only consider subarrays that are already equal without any deletions."
+    },
+    {
+      "content": "Consider the case where all elements in the array are the same. In this scenario, the length of the array itself is the answer, regardless of `k`."
+    },
+    {
+      "content": "As you iterate through the array, maintain a count of the current length of the window and update the maximum length found whenever the deletions are within the allowed limit."
+    },
+    {
+      "content": "Finally, think about how to implement the logic efficiently. You may need to use a hash map to count occurrences of elements or simply maintain a count of the most frequent element as you slide the window."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Elements in nums are between 1 and nums.length.",
+    "You can delete at most k elements.",
+    "Return the length of the longest equal subarray after deletions.",
+    "Consider edge cases where k = 0 or all elements are equal."
+  ]
+}

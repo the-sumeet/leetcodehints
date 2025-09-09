@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the effective value of the indices i, j, and k. The effective value is calculated using bitwise operations: ((nums[i] | nums[j]) & nums[k]). Make sure you are comfortable with how bitwise OR and AND work."
+    },
+    {
+      "content": "Consider how many triplets (i, j, k) can be formed from the array. Remember that i, j, and k can be the same or different. This means you will need to iterate through all possible combinations of indices."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Since you need to evaluate all triplets, a naive approach would involve three nested loops, leading to O(n^3) complexity. Can you optimize this?"
+    },
+    {
+      "content": "Pay attention to the constraints given in the problem. With n up to 100,000, an O(n^3) solution will be too slow. Consider if there are properties of the bitwise operations that can help reduce the number of computations."
+    },
+    {
+      "content": "To better understand the problem, try calculating the effective values for small arrays manually. For example, with nums = [1, 4], compute the effective values for all (i, j, k) combinations to see how they contribute to the final XOR."
+    },
+    {
+      "content": "Notice that the effective value depends on the values of nums[i], nums[j], and nums[k]. Explore if certain values can be fixed or if there are patterns in how they combine that could simplify the calculations."
+    },
+    {
+      "content": "You might want to explore how the properties of XOR work. Recall that XORing a number with itself results in 0. This might help in reducing the number of effective values you need to consider."
+    },
+    {
+      "content": "Consider using a single loop to iterate through one of the indices and then compute the effective values for the other two indices in a more efficient manner. This could help in reducing the overall complexity."
+    },
+    {
+      "content": "Try to derive a formula or a method to compute the effective values without explicitly iterating through all combinations. Look for symmetries or patterns in the bitwise operations."
+    },
+    {
+      "content": "Finally, ensure that you are correctly accumulating the XOR of all effective values. Be careful with how you initialize and update your result variable as you compute the effective values."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^9",
+    "Indices i, j, and k can be the same or different.",
+    "Return the final XOR result of all effective values."
+  ]
+}

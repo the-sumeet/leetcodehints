@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the mechanics of the game. You can insert a ball from your hand at any position in the board. Think about how you can create groups of three or more consecutive balls of the same color."
+    },
+    {
+      "content": "Consider how the removal of balls works. After inserting a ball, if it creates a group of three or more, that group is removed, which might lead to further removals. This chain reaction is crucial to solving the problem."
+    },
+    {
+      "content": "Think about how to represent the board and hand. The board is a string, while the hand is also a string. You might want to convert the hand into a count of each color for easier manipulation."
+    },
+    {
+      "content": "Identify the base case. If the board is empty after some insertions, you win. If you run out of balls in your hand and the board is not empty, you lose."
+    },
+    {
+      "content": "When inserting a ball, you can do it at multiple positions. Consider iterating through all possible insertion points for each ball in your hand."
+    },
+    {
+      "content": "Think about how to check for groups of three or more after each insertion. You could use a loop to scan through the board string and check for consecutive colors."
+    },
+    {
+      "content": "After inserting a ball and potentially removing groups, you need to recursively check if the board can be cleared. This suggests a depth-first search (DFS) approach."
+    },
+    {
+      "content": "Remember to keep track of how many balls you have inserted from your hand. You need to return the minimum number of insertions required to clear the board."
+    },
+    {
+      "content": "Consider edge cases. For example, if the board has only one ball and your hand has multiple of the same color, how many do you need to insert to clear it?"
+    },
+    {
+      "content": "Think about memoization. Since the board and hand can have limited lengths, you might encounter the same board state multiple times. Storing results of previously computed states can save time."
+    },
+    {
+      "content": "You need to manage the counts of balls in your hand carefully. When you use a ball, decrease its count, and when backtracking, remember to restore it."
+    },
+    {
+      "content": "As you implement your solution, ensure you handle the removal of balls correctly. After each insertion, you may need to repeatedly check for and remove groups until no more can be removed."
+    },
+    {
+      "content": "Try to visualize the process. Drawing out the board and hand can help you understand how insertions and removals affect the game state."
+    },
+    {
+      "content": "Consider how to structure your recursive function. It should take the current state of the board and the current counts of balls in hand as parameters."
+    },
+    {
+      "content": "Finally, ensure you handle the return value correctly. If you cannot clear the board, return -1; otherwise, return the minimum number of insertions needed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= board.length <= 16, 1 <= hand.length <= 5",
+    "The initial row of balls on the board will not have any groups of three or more consecutive balls of the same color.",
+    "Return -1 if it's impossible to clear the board.",
+    "Think about the order of insertions and how they affect the board state."
+  ]
+}

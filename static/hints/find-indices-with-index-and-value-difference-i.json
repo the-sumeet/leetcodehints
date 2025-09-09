@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the conditions you need to satisfy: the absolute difference between indices must be at least `indexDifference`, and the absolute difference between their values must be at least `valueDifference`."
+    },
+    {
+      "content": "Consider the constraints provided: the length of the array is between 1 and 100, and the values range from 0 to 50. This means you can afford to use a nested loop approach since the maximum operations would be manageable."
+    },
+    {
+      "content": "Remember that you can select the same index for both `i` and `j`. This means you should check if `abs(i - j) >= indexDifference` can be satisfied when `i = j`."
+    },
+    {
+      "content": "When iterating through the array, keep track of both indices `i` and `j`. You can use a nested loop where the outer loop iterates over `i` and the inner loop iterates over `j`."
+    },
+    {
+      "content": "Make sure to check the conditions in the correct order. First, check if the index condition is satisfied before checking the value condition, as this can help you exit early if the index condition fails."
+    },
+    {
+      "content": "Consider edge cases like when `indexDifference` is 0. In such cases, any two indices can be valid as long as their values satisfy the `valueDifference` condition."
+    },
+    {
+      "content": "If you find a valid pair of indices, you can return them immediately. There's no need to continue searching for other pairs once you have found one valid solution."
+    },
+    {
+      "content": "Think about using a break statement in your inner loop to stop checking further once you find a valid pair. This can help optimize your solution slightly."
+    },
+    {
+      "content": "You need to return the result in a specific format: an array containing the two indices or [-1, -1] if no valid pair is found. Be careful with the return statements."
+    },
+    {
+      "content": "As a final step, ensure that your solution handles all possible pairs of indices correctly, including edge cases where the array length is minimal or the differences are zero."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums.length <= 100",
+    "Value range: 0 <= nums[i] <= 50",
+    "Conditions: abs(i - j) >= indexDifference, abs(nums[i] - nums[j]) >= valueDifference",
+    "Return format: [i, j] or [-1, -1]",
+    "i and j can be equal."
+  ]
+}

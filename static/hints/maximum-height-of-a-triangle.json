@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the triangle is structured. The first row has 1 ball, the second has 2 balls, the third has 3 balls, and so on. The total number of balls needed for a triangle of height `h` is the sum of the first `h` natural numbers: `1 + 2 + ... + h = h * (h + 1) / 2`."
+    },
+    {
+      "content": "Remember that the balls in each row must be of the same color, and adjacent rows must be of different colors. This means you need to alternate colors as you build the triangle."
+    },
+    {
+      "content": "Consider the maximum height of the triangle you can build with the given counts of red and blue balls. You can only use a certain number of balls from each color for each row, so think about how to balance the two colors."
+    },
+    {
+      "content": "To find the maximum height, you can use a loop to incrementally test each height `h`, checking if you have enough balls of each color to fill the rows up to that height."
+    },
+    {
+      "content": "For each height `h`, calculate the number of balls needed for the rows of each color. For example, if `h` is odd, the rows will require more of one color than the other. Make sure to account for this when checking if you have enough balls."
+    },
+    {
+      "content": "You can use a simple formula to determine how many balls are needed for each color based on whether `h` is odd or even. For example, if `h` is odd, the red balls might need to fill more rows than the blue balls."
+    },
+    {
+      "content": "Consider edge cases, such as when one color has significantly more balls than the other. This could limit the height you can achieve even if the total number of balls is sufficient."
+    },
+    {
+      "content": "Keep track of the maximum height you can achieve as you iterate through possible heights. If you find a height where you don't have enough balls, stop and return the last successful height."
+    },
+    {
+      "content": "Make sure to test your solution against the provided examples and edge cases. For instance, what happens when both colors have the same number of balls, or when one color has only one ball?"
+    },
+    {
+      "content": "Finally, implement the logic to check for each height `h` if you can build the triangle with the available red and blue balls. You can use a while loop to continue checking until you can no longer satisfy the ball requirements."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= red, blue <= 100",
+    "The triangle must alternate colors between rows.",
+    "The total number of balls needed for height `h` is `h * (h + 1) / 2`.",
+    "Ensure to handle cases where one color has significantly more balls than the other."
+  ]
+}

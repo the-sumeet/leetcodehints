@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous part of the array. For example, in the array [1, 2, 3], the subarrays are [1], [2], [3], [1, 2], [2, 3], and [1, 2, 3]."
+    },
+    {
+      "content": "Consider how to calculate the GCD of a set of numbers. The GCD of two numbers can be found using the Euclidean algorithm. For multiple numbers, you can iteratively apply the GCD function."
+    },
+    {
+      "content": "Think about how you can iterate through all possible subarrays. You can use two nested loops: the outer loop to fix the starting point and the inner loop to extend the subarray to the end."
+    },
+    {
+      "content": "When checking the GCD of a subarray, remember that if the GCD of the subarray is not equal to k, you can skip counting that subarray. Keep track of the current GCD as you extend the subarray."
+    },
+    {
+      "content": "Before you start iterating, filter the array to only include elements that are multiples of k. This is because if any element in the subarray is not a multiple of k, the GCD cannot be k."
+    },
+    {
+      "content": "As you iterate, maintain a count of valid subarrays. Each time you find a subarray with a GCD of k, increment your count."
+    },
+    {
+      "content": "Consider edge cases, such as when the array contains only one element. If that element is equal to k, it should count as a valid subarray; otherwise, it should not."
+    },
+    {
+      "content": "Remember that the GCD can only be equal to k if all elements in the subarray are at least k. You might want to check for this condition while iterating."
+    },
+    {
+      "content": "To optimize, once you find a subarray where the GCD is k, you can potentially break out of the inner loop early if extending the subarray further would not yield a GCD of k."
+    },
+    {
+      "content": "Finally, ensure your function returns the count of valid subarrays. You might want to return the count at the end of your function after all iterations are complete."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 1000",
+    "1 <= nums[i], k <= 10^9",
+    "Subarrays must be contiguous and non-empty.",
+    "The GCD of the subarray must be exactly equal to k."
+  ]
+}

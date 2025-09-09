@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Think about how you can represent the range of each car on the number line. Each car is represented by a start and an end point, which means you can visualize it as an interval [start_i, end_i]."
+    },
+    {
+      "content": "Consider the fact that multiple cars can overlap on the number line. This means that simply counting the ranges won't give you the correct number of unique points covered."
+    },
+    {
+      "content": "You might want to keep track of all the points that are covered by the cars. One way to do this is by using a set to store all unique points."
+    },
+    {
+      "content": "When iterating through each car's range, remember that you need to include both the start and end points. For a car defined by [start_i, end_i], you should add all points from start_i to end_i inclusive."
+    },
+    {
+      "content": "Think about the efficiency of your approach. If you have many cars, adding each point to a set might become inefficient. Consider ways to reduce the number of operations needed."
+    },
+    {
+      "content": "Instead of using a set, you could also use an array to mark covered points. Given the constraints, you can create an array of size 101 (for points 1 to 100) and mark which points are covered."
+    },
+    {
+      "content": "As you iterate through the cars, update your array by marking the points covered by each car's range. For example, if a car covers points from 3 to 6, you would mark indices 3, 4, 5, and 6 in your array."
+    },
+    {
+      "content": "After marking all the points, you can simply count how many points are marked as covered. This will give you the total number of unique points covered by any car."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as cars that cover the same range or cars that are completely separate. Your logic should still correctly count all unique points."
+    },
+    {
+      "content": "Finally, ensure that your function returns the count of unique points correctly. You might want to return the length of the set or the count of marked points in your array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100",
+    "Each car's range is defined by two integers: 1 <= start_i <= end_i <= 100",
+    "The output should be the count of unique integer points covered by any car."
+  ]
+}

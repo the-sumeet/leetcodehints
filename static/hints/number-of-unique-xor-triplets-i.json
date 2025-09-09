@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a XOR triplet. A triplet is formed by three indices (i, j, k) where i <= j <= k. Make sure you can generate all possible combinations of these indices."
+    },
+    {
+      "content": "Remember that the input array is a permutation of numbers from 1 to n. This means every number in this range is present exactly once. Consider how this affects the possible XOR results."
+    },
+    {
+      "content": "When calculating the XOR for triplets, note that the same triplet can be formed in multiple ways due to the condition i <= j <= k. Think about how to avoid counting duplicates."
+    },
+    {
+      "content": "You can use a set to store the unique XOR results. Sets automatically handle duplicates, so you can simply add each XOR result to the set as you compute them."
+    },
+    {
+      "content": "To generate the triplet combinations, you can use three nested loops. The outer loop can iterate over i, the middle loop for j starting from i, and the inner loop for k starting from j."
+    },
+    {
+      "content": "While calculating the XOR for each triplet, you can do something like: `result = nums[i] ^ nums[j] ^ nums[k]`. Make sure to add `result` to your set."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array has the minimum length of 1. What triplet combinations can you form in this case?"
+    },
+    {
+      "content": "Think about the time complexity of your approach. With three nested loops, the complexity will be O(n^3), which might be too slow for n up to 100,000. Can you optimize this?"
+    },
+    {
+      "content": "Instead of using three nested loops, explore if there's a mathematical property or pattern in XOR that allows you to reduce the number of combinations you need to check."
+    },
+    {
+      "content": "Finally, remember to return the size of the set containing unique XOR results. The final line of your function might look something like: `return uniqueXORSet.size();`"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums.length <= 10^5",
+    "The input nums is a permutation of integers from 1 to n.",
+    "Ensure to handle uniqueness of XOR results.",
+    "i, j, k must satisfy i <= j <= k."
+  ]
+}

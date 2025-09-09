@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the minimum and maximum values in the sample. Since the sample consists of integers in the range [0, 255], the minimum will be the first index with a non-zero count and the maximum will be the last index with a non-zero count."
+    },
+    {
+      "content": "Next, calculate the total number of elements in the sample. You can do this by summing all the values in the `count` array. This will help you compute the mean and median later."
+    },
+    {
+      "content": "To calculate the mean, you'll need the total sum of all elements. You can find this by multiplying each index by its corresponding count and summing these products."
+    },
+    {
+      "content": "For the median, consider how to find the middle element(s) of the sorted sample. If the total count is odd, the median is the middle element; if even, it's the average of the two middle elements."
+    },
+    {
+      "content": "As you calculate the median, keep track of how many elements you've counted so far. This will help you determine when you've reached the middle of the sorted list."
+    },
+    {
+      "content": "When calculating the mode, identify the index with the highest count in the `count` array. Remember, the problem guarantees that the mode is unique."
+    },
+    {
+      "content": "Be careful with the precision of your results. The output should be formatted as floating-point numbers, and you need to ensure that answers are within 10^-5 of the actual values."
+    },
+    {
+      "content": "Consider edge cases where the sample might have very few unique elements. For instance, if all counts are concentrated on a few indices, how would that affect your calculations of mean and median?"
+    },
+    {
+      "content": "Make sure to handle the case where the count of elements is at its maximum limit. This could affect performance if not handled correctly. Think about how you can optimize your calculations."
+    },
+    {
+      "content": "Finally, structure your return value as an array containing the minimum, maximum, mean, median, and mode in that order. Ensure that you maintain the correct data types for each statistic."
+    }
+  ],
+  "questionNotes": [
+    "The input `count` array has a fixed length of 256.",
+    "Each `count[i]` can be between 0 and 10^9.",
+    "The total number of elements represented by `count` is guaranteed to be at least 1 and can be up to 10^9.",
+    "The mode is guaranteed to be unique, which simplifies the calculation.",
+    "The output must be an array of floating-point numbers with specific precision requirements."
+  ]
+}

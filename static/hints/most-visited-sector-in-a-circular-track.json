@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the structure of the problem. You have a circular track divided into `n` sectors, and you will be given a sequence of starting and ending points for each round in the `rounds` array."
+    },
+    {
+      "content": "Consider how to traverse the sectors in a circular manner. When moving from one sector to another, if you reach the end (sector `n`), you should wrap around to sector `1`."
+    },
+    {
+      "content": "Think about how to track the visits to each sector. You could use an array of size `n` initialized to zero, where each index corresponds to a sector and the value at that index counts the number of visits."
+    },
+    {
+      "content": "As you iterate through the `rounds` array, remember that each round starts at `rounds[i - 1]` and ends at `rounds[i]`. You need to increment the visit count for each sector you pass through during this round."
+    },
+    {
+      "content": "Pay attention to the direction of traversal. If you start at a higher sector number and end at a lower one, you will need to wrap around the circular track."
+    },
+    {
+      "content": "After counting the visits for each sector, you will need to determine which sectors have the maximum visit count. This requires a simple comparison of values in your visit count array."
+    },
+    {
+      "content": "Once you identify the maximum visit count, gather all sectors that match this count. Make sure to store these sectors in a list or array."
+    },
+    {
+      "content": "Remember to sort the final list of most visited sectors in ascending order before returning it. Sorting is crucial to meet the output requirements."
+    },
+    {
+      "content": "Consider edge cases, such as when all rounds start and end at the same sector or when the number of sectors is small. How would your logic handle these scenarios?"
+    },
+    {
+      "content": "Finally, ensure your solution adheres to the constraints given in the problem statement, such as the limits on `n` and the uniqueness of consecutive rounds."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 100",
+    "1 <= m <= 100, where rounds.length == m + 1",
+    "1 <= rounds[i] <= n",
+    "rounds[i] != rounds[i + 1] for 0 <= i < m",
+    "Return the most visited sectors in ascending order."
+  ]
+}

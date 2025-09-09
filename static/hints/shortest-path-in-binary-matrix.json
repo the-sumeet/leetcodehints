@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary matrix. The matrix consists of 0s and 1s, where 0 represents a clear cell and 1 represents a blocked cell. You need to find a path from the top-left corner (0, 0) to the bottom-right corner (n-1, n-1)."
+    },
+    {
+      "content": "Consider how you can traverse the matrix. Since you can move in 8 directions (up, down, left, right, and the four diagonals), think about how you can represent these movements. A common approach is to use a list of coordinate offsets for these directions."
+    },
+    {
+      "content": "Think about the algorithm you will use to find the shortest path. Breadth-First Search (BFS) is a good choice for this problem because it explores all possible paths layer by layer, ensuring that the first time it reaches the target cell, it has found the shortest path."
+    },
+    {
+      "content": "Before implementing BFS, ensure you have a way to keep track of visited cells to avoid cycles. You can use a 2D list or set to store the coordinates of cells that have already been visited."
+    },
+    {
+      "content": "When implementing BFS, start from the top-left corner and enqueue it. Each time you dequeue a cell, check all 8 possible directions for valid moves (i.e., cells that are within bounds, not visited, and are 0)."
+    },
+    {
+      "content": "As you explore each cell, keep track of the number of steps taken to reach that cell. This can be done by maintaining a distance counter that increments with each step taken in BFS."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the starting cell (0, 0) or the ending cell (n-1, n-1) is blocked (i.e., has a value of 1). In such cases, you should immediately return -1."
+    },
+    {
+      "content": "Consider what happens when you reach the bottom-right corner. If you successfully reach this cell, return the number of steps taken. If BFS completes without reaching this cell, return -1."
+    },
+    {
+      "content": "Ensure you account for the constraints given in the problem. The grid size can be as large as 100x100, so your algorithm should be efficient. BFS has a time complexity of O(n^2) in this case, which is acceptable."
+    },
+    {
+      "content": "Finally, put together your BFS logic. Start with the initial cell, explore all 8 directions, and queue valid cells while marking them as visited. Keep a counter for the path length and return it when you reach the target cell."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100",
+    "The matrix is n x n, and grid[i][j] is either 0 or 1.",
+    "Return -1 if there is no clear path.",
+    "A clear path consists of cells with value 0 and can be traversed in 8 directions."
+  ]
+}

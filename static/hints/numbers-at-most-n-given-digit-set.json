@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You can only use the digits provided in the array to form numbers. Each digit can be used multiple times, which means you can create combinations of varying lengths."
+    },
+    {
+      "content": "Consider how many numbers can be formed with different lengths. For example, if you have one-digit numbers, how many can be formed? Then think about two-digit numbers, three-digit numbers, and so on."
+    },
+    {
+      "content": "The total number of k-digit numbers that can be formed using the digits is given by the formula: `len(digits) ^ k`. This means if you have 3 digits, you can form 3^2 = 9 two-digit numbers."
+    },
+    {
+      "content": "When counting the numbers, remember that they must be positive integers. This means you cannot start a number with '0', but in this case, all your digits are from '1' to '9'."
+    },
+    {
+      "content": "You need to count all valid numbers that are less than or equal to n. Start by counting all numbers with fewer digits than n. For example, if n has 3 digits, count all 1-digit and 2-digit numbers first."
+    },
+    {
+      "content": "When counting numbers with the same number of digits as n, you need to compare each digit of your formed number with the corresponding digit of n. This will help you determine if you can form a valid number."
+    },
+    {
+      "content": "If the current digit of n is greater than the largest digit in your array, then all combinations of the remaining digits can be used to form valid numbers. For example, if n = 456 and your digits are ['1', '3', '5'], you can use all combinations of the digits."
+    },
+    {
+      "content": "If the current digit of n is less than the smallest digit in your array, you cannot form any valid numbers starting with that digit. For instance, if n = 234 and your digits are ['5', '7', '9'], you cannot form any valid numbers."
+    },
+    {
+      "content": "If the current digit of n is within the range of your digits, you need to consider both the numbers that can be formed with the current digit and the numbers that can be formed with the remaining digits."
+    },
+    {
+      "content": "Keep track of how many digits you have processed so far. For each digit in n, you will either count valid combinations or stop counting if you cannot form a valid number."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when n is less than the smallest digit in your array. In such cases, the answer should be 0 since no valid numbers can be formed."
+    },
+    {
+      "content": "Consider implementing a recursive or iterative approach to generate numbers based on the digits. This can help visualize how numbers are formed and counted."
+    },
+    {
+      "content": "Remember to account for the fact that you can form numbers with leading digits repeatedly. For example, '11', '111', etc. are valid as long as they are less than or equal to n."
+    },
+    {
+      "content": "As you approach the final count, ensure that you are correctly summing all numbers formed with fewer digits and those formed with the same number of digits as n."
+    },
+    {
+      "content": "Finally, ensure that your solution efficiently handles the upper limit of n (up to 10^9). Think about how you can avoid generating all possible numbers explicitly."
+    }
+  ],
+  "questionNotes": [
+    "1 <= digits.length <= 9",
+    "digits[i].length == 1",
+    "digits[i] is a digit from '1' to '9'.",
+    "All the values in digits are unique.",
+    "digits is sorted in non-decreasing order.",
+    "1 <= n <= 10^9"
+  ]
+}

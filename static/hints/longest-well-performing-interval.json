@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying what constitutes a tiring day. A tiring day is defined as one where the hours worked exceed 8. You can create a simple function to classify each day in the `hours` array."
+    },
+    {
+      "content": "Consider how you can represent the number of tiring and non-tiring days within any given interval. You might want to maintain a count of both types of days as you iterate through the list."
+    },
+    {
+      "content": "Think about how to efficiently check if the number of tiring days is greater than the number of non-tiring days in any interval. You could use a prefix sum or a running total to keep track of the counts."
+    },
+    {
+      "content": "You could transform the `hours` array into a new array of +1 and -1 values, where +1 represents a tiring day and -1 represents a non-tiring day. This transformation can help simplify the problem."
+    },
+    {
+      "content": "Once you have the transformed array, the problem can be reframed as finding the longest subarray with a positive sum. This is a common problem and can often be solved using a hash map."
+    },
+    {
+      "content": "As you iterate through the transformed array, maintain a cumulative sum. Use a hash map to store the first occurrence of each cumulative sum. This will help you quickly find the length of subarrays with a positive sum."
+    },
+    {
+      "content": "When you encounter a cumulative sum that has been seen before, calculate the length of the subarray between the first occurrence and the current index. This length could be a candidate for the longest well-performing interval."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when all days are non-tiring or when the entire array is tiring. Make sure your algorithm can handle these scenarios gracefully."
+    },
+    {
+      "content": "Consider the constraints of the problem, especially the maximum length of the `hours` array. Aim for a solution that operates in linear time, O(n), to ensure efficiency."
+    },
+    {
+      "content": "Finally, ensure that your function returns the length of the longest well-performing interval correctly. You might want to initialize a variable to track the maximum length found during your iteration."
+    }
+  ],
+  "questionNotes": [
+    "A day is tiring if hours worked > 8.",
+    "A well-performing interval has more tiring days than non-tiring days.",
+    "Return the length of the longest well-performing interval.",
+    "Constraints: 1 <= hours.length <= 10^4, 0 <= hours[i] <= 16."
+  ]
+}

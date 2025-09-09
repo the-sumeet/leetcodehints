@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence can be formed by deleting some or no elements from the array while maintaining the order of the remaining elements."
+    },
+    {
+      "content": "Remember that the empty subsequence has a sum of 0. This means that 0 should be included in your list of possible sums."
+    },
+    {
+      "content": "Consider how many subsequences can be formed from the array. For an array of size n, there are 2^n possible subsequences, including the empty one."
+    },
+    {
+      "content": "Think about how you can generate all possible subsequence sums. You might want to use recursion or bit manipulation to explore all combinations."
+    },
+    {
+      "content": "When generating subsequence sums, keep track of each sum you compute. You can use a set to avoid duplicates initially, but remember that duplicates are allowed in the final result."
+    },
+    {
+      "content": "Since k can be as large as 2000, you will need an efficient way to sort or select the k-th largest sum from your list of sums."
+    },
+    {
+      "content": "Consider using a max heap or a min heap to keep track of the largest k sums efficiently. This way, you can maintain only the top k sums as you generate them."
+    },
+    {
+      "content": "Think about edge cases, such as when all elements are negative. How does this affect the sums you can generate?"
+    },
+    {
+      "content": "Remember that the input constraints allow for large negative and positive integers. Ensure your solution handles integer overflow if necessary."
+    },
+    {
+      "content": "When you have your list of sums, sort it in descending order to easily access the k-th largest sum."
+    },
+    {
+      "content": "Be careful with indexing when retrieving the k-th largest sum. Remember that in programming, indexing usually starts from 0, so you need to access index k-1."
+    },
+    {
+      "content": "If you're using a heap, once you have k elements, the smallest element in the heap will be your k-th largest sum. Make sure to return that correctly."
+    },
+    {
+      "content": "Consider edge cases where k is larger than the number of unique sums. How will you handle this situation?"
+    },
+    {
+      "content": "You might want to implement a function to generate all subsequence sums first, and then focus on the logic to find the k-th largest from that collection."
+    },
+    {
+      "content": "Before finalizing your approach, think about the time complexity of your solution. Generating all subsequences has a complexity of O(2^n), which may be impractical for larger n."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 1 <= n <= 10^5, -10^9 <= nums[i] <= 10^9, 1 <= k <= min(2000, 2^n)",
+    "The empty subsequence has a sum of 0.",
+    "Subsequence sums can include duplicates.",
+    "Return the k-th largest subsequence sum, considering 0-based indexing."
+  ]
+}

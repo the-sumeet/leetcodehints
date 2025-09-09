@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering how to store the words efficiently. A common approach is to use a Trie (prefix tree) since it allows for efficient prefix searching and can easily handle the dot matching."
+    },
+    {
+      "content": "When implementing the Trie, think about how each node will represent a character. Each node can have multiple children, one for each possible character that follows."
+    },
+    {
+      "content": "Remember to handle the case when adding a word. You will need to traverse the Trie, creating new nodes as necessary for each character in the word."
+    },
+    {
+      "content": "For the search function, consider how you will handle the '.' character. It can represent any letter, so you will need to explore all possible paths in the Trie when you encounter a dot."
+    },
+    {
+      "content": "Think about how to implement the recursive search function. You can use a helper function that takes the current node and the current index in the search word as parameters."
+    },
+    {
+      "content": "Make sure to check the base case in your recursive search function. If you reach the end of the search word, check if the current node represents the end of a valid word in the Trie."
+    },
+    {
+      "content": "Consider the constraints: you can have at most 25 characters in a word and at most 10^4 calls. This means your solution should be efficient in both time and space."
+    },
+    {
+      "content": "When searching for words with dots, remember that you can have at most 2 dots in the search query. This can simplify the logic since you won't have to handle more than a few branches at a time."
+    },
+    {
+      "content": "Think about edge cases, such as searching for an empty string or adding duplicate words. Ensure your implementation correctly handles these scenarios."
+    },
+    {
+      "content": "Finally, implement the search function to handle both regular characters and dots. You can use backtracking to explore all possible matches for the dots in the search string."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= word.length <= 25",
+    "Words consist of lowercase English letters.",
+    "Search words can contain '.' which matches any letter.",
+    "At most 10^4 calls to addWord and search.",
+    "There can be at most 2 dots in search queries."
+  ]
+}

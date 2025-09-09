@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a strobogrammatic number is. A strobogrammatic number appears the same when rotated 180 degrees. For example, '69' becomes '69' when flipped upside down."
+    },
+    {
+      "content": "Identify the valid digit pairs that can form a strobogrammatic number. The pairs are: (0,0), (1,1), (6,9), and (8,8). Make a list of these pairs to reference later."
+    },
+    {
+      "content": "Consider how to check each digit in the string. You will need to iterate through the string from both ends towards the center. This means using two pointers: one starting at the beginning and the other at the end."
+    },
+    {
+      "content": "As you iterate, check if the characters at the two pointers form a valid strobogrammatic pair. If they do not, you can immediately conclude that the number is not strobogrammatic."
+    },
+    {
+      "content": "Remember to handle edge cases, such as strings of length 0 or 1. A single digit can only be strobogrammatic if it is '0', '1', or '8'."
+    },
+    {
+      "content": "Think about how to handle even and odd length strings differently. For an odd-length string, the middle character must also be strobogrammatic by itself."
+    },
+    {
+      "content": "While checking pairs, consider the character mappings. You might want to create a mapping dictionary for quick lookups, such as: `mapping = {'0': '0', '1': '1', '6': '9', '8': '8', '9': '6'}`."
+    },
+    {
+      "content": "As you check each character, if you find a mismatch or an invalid character that doesn't belong to your strobogrammatic pairs, you can conclude the number is not strobogrammatic."
+    },
+    {
+      "content": "After iterating through the string, if all pairs are valid, then the number is strobogrammatic. You can return true or false based on this check."
+    },
+    {
+      "content": "Finally, ensure your function handles leading zeros properly. A valid strobogrammatic number should not have leading zeros unless it is '0' itself."
+    }
+  ],
+  "questionNotes": [
+    "Input is a string representing the number.",
+    "Valid strobogrammatic pairs are (0,0), (1,1), (6,9), (8,8).",
+    "Single digit numbers must be '0', '1', or '8' to be strobogrammatic.",
+    "Leading zeros are not allowed unless the number is '0'."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a Directed Acyclic Graph (DAG) is. Remember that in a DAG, there are no cycles, which means you can always find a topological order."
+    },
+    {
+      "content": "Review the concept of a topological sort. A valid topological order ensures that for every directed edge u → v, node u appears before node v in the ordering."
+    },
+    {
+      "content": "Consider how to represent the graph using an adjacency list or an adjacency matrix. This will help you visualize the relationships between nodes."
+    },
+    {
+      "content": "Think about how to calculate the profit for a given order. The profit is the sum of the products of each node's score and its position in the order."
+    },
+    {
+      "content": "Remember that the position is 1-based, meaning the first node processed is at position 1, the second at position 2, and so on."
+    },
+    {
+      "content": "Consider using a topological sorting algorithm like Kahn's algorithm or depth-first search (DFS) to generate valid orders of the nodes."
+    },
+    {
+      "content": "What happens if you process nodes with higher scores earlier? Try to think about how the order of processing affects the total profit."
+    },
+    {
+      "content": "Since the number of nodes (n) is small (up to 22), you might want to explore generating all topological orders and calculating profits for each."
+    },
+    {
+      "content": "Pay attention to the constraints: the score for each node can be quite large (up to 10^5), which could lead to large profit values."
+    },
+    {
+      "content": "When generating topological orders, be careful to respect the dependencies defined by the edges. Use a queue or a stack to manage nodes with no incoming edges."
+    },
+    {
+      "content": "Think about how to maximize the profit. Would it be beneficial to sort nodes by their scores before processing them? Why or why not?"
+    },
+    {
+      "content": "Consider edge cases such as when there are no edges at all. What would the optimal order be in such cases?"
+    },
+    {
+      "content": "If there are multiple valid topological orders, how can you ensure that you are maximizing the profit? Is there a specific strategy you can use?"
+    },
+    {
+      "content": "As a next step, try to implement a function that generates a topological order and calculates the profit for that order."
+    },
+    {
+      "content": "Finally, think about how to combine the generation of topological orders with profit calculation efficiently. Can you do it in a single pass?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == score.length <= 22",
+    "1 <= score[i] <= 10^5",
+    "0 <= edges.length <= n * (n - 1) / 2",
+    "The input graph is guaranteed to be a DAG.",
+    "There are no duplicate edges.",
+    "Return the maximum possible profit achievable."
+  ]
+}

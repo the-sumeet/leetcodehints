@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. You have a directed graph with weighted edges. Make sure to visualize how nodes are connected and how weights affect the paths."
+    },
+    {
+      "content": "Consider how to represent the graph. Adjacency lists or adjacency matrices are common representations. Which one do you think would be more efficient given the constraints?"
+    },
+    {
+      "content": "Identify the key nodes: src1, src2, and dest. You need to ensure that both src1 and src2 can reach dest in the subgraph you will create."
+    },
+    {
+      "content": "Think about how you can find paths from src1 to dest and from src2 to dest. What algorithms can you use to find the shortest paths in a weighted directed graph?"
+    },
+    {
+      "content": "Dijkstra's algorithm is a good choice for finding the shortest path in a weighted graph. Consider implementing it to find the shortest paths from src1 and src2 to dest."
+    },
+    {
+      "content": "As you implement Dijkstra's algorithm, remember to keep track of the edges used to reach each node. This will help you later when calculating the weight of the subgraph."
+    },
+    {
+      "content": "After finding paths from src1 and src2 to dest, analyze the edges used. You need to determine which edges are common to both paths and which are unique."
+    },
+    {
+      "content": "Calculate the total weight of the edges used in both paths. This will help you understand the minimum weight of the subgraph you need to form."
+    },
+    {
+      "content": "Consider edge cases where there may be no path from src1 or src2 to dest. How will you handle these cases in your implementation?"
+    },
+    {
+      "content": "If either path does not exist, remember to return -1 immediately. This is a crucial step to avoid unnecessary calculations."
+    },
+    {
+      "content": "Think about how to combine the edges from both paths. If there are overlapping edges, you should only count them once in the total weight."
+    },
+    {
+      "content": "Make sure to account for all edges involved in both paths. You may need to create a set to keep track of unique edges and their weights."
+    },
+    {
+      "content": "Once you have the total weight of the edges, ensure that you are returning the correct format. What should your final output be if the subgraph exists?"
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases, including graphs with no edges, graphs where src1 or src2 cannot reach dest, and graphs with multiple paths."
+    },
+    {
+      "content": "Finally, consider optimizing your solution. Are there ways to reduce the time complexity, especially given the constraints of up to 100,000 nodes and edges?"
+    }
+  ],
+  "questionNotes": [
+    "The graph is directed and weighted.",
+    "You must return the minimum weight of a subgraph that allows paths from both src1 and src2 to dest.",
+    "If no such subgraph exists, return -1.",
+    "Constraints: 3 <= n <= 100000, 0 <= edges.length <= 100000.",
+    "src1, src2, and dest are pairwise distinct."
+  ]
+}

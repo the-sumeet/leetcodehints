@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the function `isPrefixAndSuffix(str1, str2)`. It returns true if `str1` is both a prefix and a suffix of `str2`. For example, `isPrefixAndSuffix('a', 'aba')` is true, but `isPrefixAndSuffix('a', 'ab')` is false."
+    },
+    {
+      "content": "Consider how you can iterate through the `words` array to form pairs of indices `(i, j)` where `i < j`. This means you'll need a nested loop structure to compare each word with every other word that comes after it."
+    },
+    {
+      "content": "Think about how to check if one string is a prefix of another. You can use the `startswith` method in Python or compare the beginning characters of the strings directly."
+    },
+    {
+      "content": "Don't forget to check if the first string is also a suffix of the second string. You can use the `endswith` method or compare the ending characters of the strings."
+    },
+    {
+      "content": "When you find a valid pair `(i, j)`, make sure to count it. You will need a counter variable to keep track of the number of valid pairs."
+    },
+    {
+      "content": "Consider edge cases where the words might be of different lengths. A shorter word can only be a prefix and suffix of a longer word, so you should check the lengths before proceeding with the prefix/suffix checks."
+    },
+    {
+      "content": "Remember that the constraints specify that the length of each word can be up to 100,000 and the total length of all words combined can be up to 500,000. This means your solution needs to be efficient."
+    },
+    {
+      "content": "To optimize your solution, think about how you can avoid unnecessary comparisons. If `len(words[i]) > len(words[j])`, you can skip checking `words[i]` against `words[j]`."
+    },
+    {
+      "content": "You can also consider using a dictionary or a set to store the words and their lengths, which may help in quickly checking valid pairs."
+    },
+    {
+      "content": "As you implement the nested loops, ensure that you are correctly managing the indices to avoid counting pairs where `i` is not less than `j`."
+    },
+    {
+      "content": "While testing your solution, create some edge cases such as words that are identical, very short words, and very long words to ensure your logic holds."
+    },
+    {
+      "content": "Think about how you would handle cases where there are no valid pairs. Your function should return 0 in such scenarios."
+    },
+    {
+      "content": "As you finalize your logic, ensure that you are returning the correct type as specified in the problem statement. The return value should be an integer."
+    },
+    {
+      "content": "Before concluding your solution, double-check that you are correctly implementing the prefix and suffix checks. It might be helpful to write a small helper function for clarity."
+    },
+    {
+      "content": "Now, try to combine everything you've learned into a cohesive approach. Start with the nested loops, implement the prefix and suffix checks, and ensure you are counting valid pairs correctly."
+    }
+  ],
+  "questionNotes": [
+    "1 <= words.length <= 10^5",
+    "1 <= words[i].length <= 10^5",
+    "words[i] consists only of lowercase English letters.",
+    "The sum of the lengths of all words[i] does not exceed 5 * 10^5.",
+    "Return an integer denoting the number of index pairs (i, j) such that i < j."
+  ]
+}

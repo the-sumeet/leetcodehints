@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node can have up to two children: a left child and a right child. Think about how you can traverse the tree to access each node."
+    },
+    {
+      "content": "Consider how to calculate the height of the tree. The height is defined as the number of edges on the longest path from the root to a leaf. You can use a recursive function to determine this."
+    },
+    {
+      "content": "Next, think about the dimensions of the result matrix. The number of rows (m) is equal to the height of the tree plus one, and the number of columns (n) is given by the formula `2^(height + 1) - 1`. Make sure to compute these values correctly."
+    },
+    {
+      "content": "When placing nodes in the matrix, remember that the root node goes in the middle of the first row. Specifically, it will be placed at `res[0][(n-1)/2]`. Visualize this placement to help with subsequent nodes."
+    },
+    {
+      "content": "For each node placed at position `res[r][c]`, the left child should be placed at `res[r+1][c - 2^(height - r - 1)]` and the right child at `res[r+1][c + 2^(height - r - 1)]`. Think about how to implement this logic recursively."
+    },
+    {
+      "content": "Consider edge cases such as a tree with only one node or a tree that is skewed to one side. How would your matrix look in these cases? Ensure your solution handles these scenarios correctly."
+    },
+    {
+      "content": "As you build the matrix, remember to fill in empty cells with an empty string `''`. This will ensure that the formatting of the output matches the requirements."
+    },
+    {
+      "content": "You might want to use a queue or stack to help with the traversal of the tree. This can help you keep track of the current node and its position in the matrix as you go deeper into the tree."
+    },
+    {
+      "content": "Make sure to handle null nodes properly. If a node is null, you should not try to place it in the matrix, but you still need to account for its position to maintain the structure."
+    },
+    {
+      "content": "Finally, think about how to integrate all these pieces together into a single function. You will need a main function to initialize the matrix and call a helper function to fill it recursively based on the rules you've established."
+    }
+  ],
+  "questionNotes": [
+    "The height of the tree is defined as the number of edges on the longest path from the root to a leaf.",
+    "The number of rows m should be equal to height + 1.",
+    "The number of columns n should be equal to 2^(height + 1) - 1.",
+    "Place the root node at res[0][(n-1)/2].",
+    "Ensure that empty cells are filled with an empty string '' in the result matrix.",
+    "Handle null nodes correctly to maintain the structure of the tree."
+  ]
+}

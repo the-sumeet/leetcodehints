@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of half-open intervals. A half-open interval [left, right) includes 'left' but excludes 'right'. This is crucial for how you manage the ranges."
+    },
+    {
+      "content": "Consider how to represent the tracked ranges. You might want to use a data structure that allows you to efficiently add, remove, and query ranges. Think about using a sorted list or a balanced tree."
+    },
+    {
+      "content": "When adding a range, you need to handle overlapping intervals. If the new range overlaps with existing ranges, you should merge them. This requires checking the start and end points of existing intervals."
+    },
+    {
+      "content": "For the `removeRange` method, think about how to split existing intervals. If you remove a part of an interval, you may need to create new intervals that represent the remaining parts."
+    },
+    {
+      "content": "In the `queryRange` method, you need to check if the entire range is covered by existing intervals. This means checking that there are no gaps in coverage."
+    },
+    {
+      "content": "Consider edge cases, such as adding a range that is completely outside of existing ranges. How should your data structure respond in this case?"
+    },
+    {
+      "content": "Think about the efficiency of your operations. Since you can have up to 10^4 calls, you want to make sure that adding, removing, and querying ranges can be done quickly, ideally in logarithmic time."
+    },
+    {
+      "content": "When merging intervals, remember that you should only merge if the new interval overlaps with an existing one. If it starts after an existing interval ends, you can simply add it."
+    },
+    {
+      "content": "For removing ranges, if the range to be removed overlaps with an existing range, you will need to adjust the start or end of the existing range accordingly."
+    },
+    {
+      "content": "Make sure to handle cases where the `removeRange` method is called with a range that does not overlap any existing ranges. In this case, the existing ranges should remain unchanged."
+    },
+    {
+      "content": "When implementing the `queryRange` method, you can iterate through the sorted list of intervals to check if the queried range is fully covered. This may involve checking each interval against the queried range."
+    },
+    {
+      "content": "Consider using a data structure that allows for efficient searching, such as an interval tree or a segment tree, to manage the ranges effectively."
+    },
+    {
+      "content": "Think about how to represent your intervals. A simple tuple or a custom class can be used to store the start and end points of each interval."
+    },
+    {
+      "content": "You may want to maintain the list of intervals in a sorted order. This allows for easier merging and querying of ranges."
+    },
+    {
+      "content": "As a final step, ensure that your implementation correctly handles all edge cases, such as querying ranges that are exactly at the boundaries of existing ranges."
+    }
+  ],
+  "questionNotes": [
+    "The intervals are half-open: [left, right) means left is included, right is excluded.",
+    "You need to manage overlapping intervals when adding or removing ranges.",
+    "Efficiency is key: aim for logarithmic time complexity for add, remove, and query operations.",
+    "Handle edge cases, such as adding/removing ranges that do not overlap with existing ones."
+  ]
+}

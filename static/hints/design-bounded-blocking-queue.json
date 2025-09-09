@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic operations of a queue: enqueue (add an item) and dequeue (remove an item). In this problem, you need to implement these operations while respecting a maximum size for the queue."
+    },
+    {
+      "content": "Consider how you will manage the maximum size of the queue. You need to ensure that the queue does not exceed this limit when adding new items. Think about using a counter to track the current number of items."
+    },
+    {
+      "content": "Since this is a bounded blocking queue, you need to handle situations where enqueueing is attempted on a full queue. You might want to block the thread until space becomes available. How will you implement this blocking behavior?"
+    },
+    {
+      "content": "For the dequeue operation, you should also consider what happens when trying to dequeue from an empty queue. You may need to block the thread until an item is available. Think about how you can signal when an item is added."
+    },
+    {
+      "content": "You can use synchronization mechanisms to manage access to the queue. Consider using locks or semaphores to ensure that multiple threads can safely enqueue and dequeue items without causing race conditions."
+    },
+    {
+      "content": "When implementing the enqueue and dequeue methods, think about using a wait-notify mechanism. For example, if the queue is full, the enqueue method can wait until an item is dequeued, at which point it can notify waiting threads."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as attempting to dequeue from an empty queue or enqueueing into a full queue. These cases should be handled gracefully, potentially using condition variables to manage the waiting threads."
+    },
+    {
+      "content": "Consider using a data structure that supports efficient enqueue and dequeue operations. A linked list or a circular buffer could be good choices for implementing the bounded queue."
+    },
+    {
+      "content": "Remember to implement the constructor for your BoundedBlockingQueue class, which should take the maximum size as an argument. Ensure that your queue is initialized correctly based on this size."
+    },
+    {
+      "content": "Finally, think about the return values for your methods. The enqueue method might return void, while the dequeue method should return the item that was removed. Make sure to consider what happens when the queue is empty or full."
+    }
+  ],
+  "questionNotes": [
+    "The queue must block when trying to enqueue if it is full and block when trying to dequeue if it is empty.",
+    "You will need to manage concurrent access to the queue, ensuring thread safety.",
+    "The maximum size of the queue is specified when the BoundedBlockingQueue is created.",
+    "Use appropriate synchronization mechanisms to handle blocking and waking of threads."
+  ]
+}

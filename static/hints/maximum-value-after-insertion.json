@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, consider how the sign of the number affects the insertion of the digit. If the number is negative, your goal will be to minimize the negative impact, while if it's positive, you want to maximize the value."
+    },
+    {
+      "content": "Think about the positions where you can insert the digit. For a positive number, you want to insert 'x' before the first digit that is smaller than 'x'. For a negative number, you should insert 'x' before the first digit that is larger than 'x'."
+    },
+    {
+      "content": "When dealing with a negative number, remember that inserting 'x' in front of a larger digit will yield a smaller overall value. Thus, the strategy will differ based on the sign of 'n'."
+    },
+    {
+      "content": "Consider edge cases where 'n' consists of repeated digits or is already at its maximum. For example, if 'n' is '999' and 'x' is '9', inserting 'x' anywhere will yield the same result."
+    },
+    {
+      "content": "You might want to iterate through the string representation of 'n' to find the optimal position for 'x'. Keep track of the current best result as you explore different insertion points."
+    },
+    {
+      "content": "Make sure to handle the insertion correctly. When you find the position to insert 'x', you'll need to concatenate the parts of the string before and after this position."
+    },
+    {
+      "content": "If 'n' is negative, be cautious about how you compare digits. You are effectively looking for the first digit that is larger than 'x' to maintain the largest possible value."
+    },
+    {
+      "content": "Consider using a loop to check each character in 'n'. You can use a simple condition to decide whether to insert 'x' at the current index or move to the next index."
+    },
+    {
+      "content": "Remember to account for the case where 'x' is larger than all digits in 'n'. In this case, you'll want to insert 'x' at the end of the string."
+    },
+    {
+      "content": "Finally, once you've determined the correct position for 'x', construct the new string and return it. Ensure that you handle the negative sign correctly if applicable."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n.length <= 10^5; 1 <= x <= 9.",
+    "The digits in n are in the range [1, 9].",
+    "n is a valid representation of an integer and may start with a negative sign.",
+    "Return format: a string representing the maximum value of n after insertion."
+  ]
+}

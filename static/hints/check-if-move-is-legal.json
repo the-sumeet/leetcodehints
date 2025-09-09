@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the board structure. The board is an 8x8 grid where each cell can be free ('.'), white ('W'), or black ('B'). Make sure you can visualize the board and identify these cells."
+    },
+    {
+      "content": "Focus on the conditions that make a move legal. A move is legal if it results in a good line of three or more cells of the same color at the endpoints, with the middle cells being of the opposite color."
+    },
+    {
+      "content": "Consider the four possible directions for forming good lines: horizontal, vertical, and the two diagonal directions. You will need to check each of these directions from the cell you are changing."
+    },
+    {
+      "content": "When checking for good lines, remember to count the cells in both directions from the cell you are changing. You need to ensure that you have at least two cells of the opposite color in line with the new color."
+    },
+    {
+      "content": "As you check each direction, keep track of how many 'W' and 'B' cells you encounter. You should stop counting when you hit a free cell ('.') or go out of bounds."
+    },
+    {
+      "content": "Don't forget to check edge cases where the cell is at the boundary of the board. Ensure that your index calculations do not go out of the 0-7 range."
+    },
+    {
+      "content": "When you find a good line, make sure to validate that the endpoints are of the same color as the one you are placing. The middle cells must be the opposite color."
+    },
+    {
+      "content": "You can represent the directions as vectors. For example, horizontal can be represented as (0, 1) for right and (0, -1) for left. This will help you iterate through the board more systematically."
+    },
+    {
+      "content": "After checking all four directions, if you find at least one valid good line, you should return true. Otherwise, return false."
+    },
+    {
+      "content": "As a final step, ensure that your function handles the input correctly. You need to check that the cell at (rMove, cMove) is indeed free ('.') before making any changes."
+    }
+  ],
+  "questionNotes": [
+    "The board is always 8x8, meaning indices range from 0 to 7.",
+    "The input cell (rMove, cMove) must be a free cell ('.') for the move to be considered.",
+    "A good line must have at least three cells, with the endpoints being the same color and the middle cells being the opposite color.",
+    "You need to check all four directions for potential good lines after placing the new color."
+  ]
+}

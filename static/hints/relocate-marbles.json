@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input arrays. You have an array `nums` representing initial positions of marbles, and two arrays `moveFrom` and `moveTo` that dictate how the marbles will be moved. Make sure to keep track of how many marbles are at each position."
+    },
+    {
+      "content": "Consider using a data structure that allows you to efficiently track the number of marbles at each position. A dictionary (or hashmap) could be useful here, where the keys are positions and the values are the counts of marbles at those positions."
+    },
+    {
+      "content": "As you process the `moveFrom` and `moveTo` arrays, remember that you are moving all marbles from `moveFrom[i]` to `moveTo[i]`. You will need to update your data structure accordingly by decrementing the count at `moveFrom[i]` and incrementing it at `moveTo[i]`."
+    },
+    {
+      "content": "After processing all moves, you need to extract the occupied positions. This means you should gather all keys from your data structure that have a count greater than zero."
+    },
+    {
+      "content": "Think about how to sort the final list of occupied positions. Since you need to return the sorted list, you can use a sorting function on the list of occupied positions after you have collected them."
+    },
+    {
+      "content": "Be mindful of edge cases. For instance, if all marbles end up in the same position after the moves, your final result should still reflect that single occupied position."
+    },
+    {
+      "content": "Remember to handle the constraints given in the problem. Specifically, ensure that the lengths of `moveFrom` and `moveTo` are equal, and that all positions in `moveFrom` have at least one marble at the time of the move."
+    },
+    {
+      "content": "When implementing your solution, consider iterating through the `moveFrom` and `moveTo` arrays in a single loop. This can help keep your code clean and efficient."
+    },
+    {
+      "content": "Once you have your occupied positions, use a set to automatically handle any duplicates before sorting. This will simplify your final output."
+    },
+    {
+      "content": "Finally, ensure that your output format matches the requirements. You need to return a sorted list of unique occupied positions, so make sure to convert your set back into a list before sorting."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "1 <= moveFrom.length <= 10^5 and moveFrom.length == moveTo.length",
+    "1 <= nums[i], moveFrom[i], moveTo[i] <= 10^9",
+    "There is at least one marble in moveFrom[i] at the time of the move."
+  ]
+}

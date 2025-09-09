@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the bitwise AND operation. It returns a number that has bits set to 1 only where both operands have bits set to 1. For example, `5 & 3` results in `1` because in binary, `5` is `101` and `3` is `011`."
+    },
+    {
+      "content": "Consider how the bitwise AND behaves with multiple numbers. The result will only have bits set to 1 where all numbers in the combination have those bits set to 1. This means that if you're looking for a combination with a non-zero AND, all selected numbers must share at least one common bit."
+    },
+    {
+      "content": "Think about how to efficiently find combinations of numbers. Instead of generating all possible combinations, consider focusing on the bits of each number. For each bit position, count how many numbers have that bit set."
+    },
+    {
+      "content": "Create a frequency count for each bit position (from 0 to 30, since numbers can go up to 10^7). For each number in the candidates, check which bits are set and update your counts accordingly."
+    },
+    {
+      "content": "Remember that the maximum size of a valid combination corresponds to the maximum count of numbers that share a common bit. For example, if 4 numbers have the 3rd bit set, then the largest combination with a non-zero AND that includes that bit can be of size 4."
+    },
+    {
+      "content": "Iterate through each bit position from 0 to 30. For each position, check how many candidates have that bit set. Keep track of the maximum count found across all bit positions."
+    },
+    {
+      "content": "Consider edge cases where all numbers might be the same or where only one number is present. In these cases, the output should be straightforward, as the only combination is the number itself."
+    },
+    {
+      "content": "When counting how many candidates have a specific bit set, remember to use bitwise operations. For example, to check if the k-th bit is set in a number `num`, use `num & (1 << k) != 0`."
+    },
+    {
+      "content": "After counting the occurrences of each bit, the final answer will be the maximum count found. This represents the size of the largest combination of candidates that has a bitwise AND greater than 0."
+    },
+    {
+      "content": "Finally, ensure that your solution efficiently handles the upper limits of the constraints, especially since the length of `candidates` can be as large as 100,000. Aim for a time complexity of O(n) or O(n log n) for optimal performance."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= candidates.length <= 10^5",
+    "Constraints: 1 <= candidates[i] <= 10^7",
+    "The result should be the size of the largest combination with a bitwise AND greater than 0.",
+    "Consider the maximum bit position needed based on the upper limit of candidates."
+  ]
+}

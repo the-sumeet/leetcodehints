@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Consider how the order of cooking dishes affects the like-time coefficient. The time taken to cook each dish is cumulative, so cooking higher satisfaction dishes later can yield a higher total."
+    },
+    {
+      "content": "Notice that if a dish has a negative satisfaction level, it may reduce the overall like-time coefficient. Think about whether you should include such dishes."
+    },
+    {
+      "content": "Sorting the satisfaction levels can help. If you sort the array in ascending order, you can evaluate the impact of including or excluding dishes more easily."
+    },
+    {
+      "content": "After sorting, consider starting from the highest satisfaction dish and working backwards to see if including lower satisfaction dishes increases the total."
+    },
+    {
+      "content": "What happens if you only include dishes with positive satisfaction values? Explore the case where you might want to discard all negative values."
+    },
+    {
+      "content": "You may want to calculate the like-time coefficient incrementally. Start with an empty total and add dishes one by one, checking the resulting total each time."
+    },
+    {
+      "content": "Think about the cumulative nature of the time variable. Each dish contributes to the total time, so the position of each dish in the cooking order matters significantly."
+    },
+    {
+      "content": "Create a function that calculates the total like-time coefficient for a given set of dishes. This will help you test different combinations of included dishes."
+    },
+    {
+      "content": "Consider using a greedy approach. Start with the highest satisfaction dish and keep adding dishes as long as they increase the total like-time coefficient."
+    },
+    {
+      "content": "What if you reached a point where adding a dish decreases the total? You should stop adding dishes at that point."
+    },
+    {
+      "content": "Remember that you can discard dishes. If the satisfaction level of a dish is low enough, it may be beneficial to skip it entirely."
+    },
+    {
+      "content": "Think about edge cases, such as when all satisfaction levels are negative. In such cases, the maximum like-time coefficient would be zero since no dishes should be cooked."
+    },
+    {
+      "content": "As you implement your solution, be mindful of the constraints. The maximum length of the satisfaction array is 500, so ensure your approach is efficient."
+    },
+    {
+      "content": "Consider the impact of the order of dishes after sorting. If you start from the least satisfying dish and move to the most, you may find a point where the total starts to decrease."
+    },
+    {
+      "content": "To summarize, you want to maximize the sum of the like-time coefficients by carefully selecting which dishes to cook based on their satisfaction levels and the order of cooking."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == satisfaction.length, 1 <= n <= 500, -1000 <= satisfaction[i] <= 1000",
+    "Dishes can be prepared in any order, and some dishes can be discarded.",
+    "The like-time coefficient is defined as time[i] * satisfaction[i].",
+    "If all satisfaction levels are negative, the output should be 0."
+  ]
+}

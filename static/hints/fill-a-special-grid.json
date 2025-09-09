@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the grid. For a given n, the grid size is 2^n x 2^n. For example, if n = 2, the grid size will be 4 x 4."
+    },
+    {
+      "content": "Remember that the grid is divided into four quadrants. Each quadrant must satisfy the special grid conditions, and the numbers must be arranged such that the largest numbers are in the top-left quadrant."
+    },
+    {
+      "content": "Consider how you can fill the grid recursively. You can fill the top-left quadrant first, then use the values to fill the other quadrants based on the conditions."
+    },
+    {
+      "content": "When filling each quadrant, think about the ranges of numbers you can use. For example, the top-left quadrant will use the highest numbers, while the top-right will use the lowest."
+    },
+    {
+      "content": "For a 2x2 grid (n=1), you can visualize the quadrants as: \n- Top-left: [3] \n- Top-right: [0] \n- Bottom-left: [2] \n- Bottom-right: [1]. \nMake sure to maintain the order when filling."
+    },
+    {
+      "content": "As you fill the quadrants, ensure that the maximum of the top-right quadrant is less than the minimum of the bottom-right quadrant. This is crucial for maintaining the special condition."
+    },
+    {
+      "content": "Think about how to calculate the starting number for each quadrant. For example, the top-left quadrant can start from the maximum number (2^(2n) - 1) and fill downwards."
+    },
+    {
+      "content": "When you fill the quadrants, you can use a helper function to handle the recursive filling. This function can take parameters for the current size of the grid and the starting number."
+    },
+    {
+      "content": "Keep in mind that each quadrant is itself a special grid. This means that your recursive function should also be able to handle smaller grids until you reach the base case (1x1 grid)."
+    },
+    {
+      "content": "Finally, focus on how to implement the recursive function. You will need to define the base case and the recursive case clearly, ensuring that you fill each quadrant correctly based on the current size."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= n <= 10",
+    "Grid size is 2^n x 2^n.",
+    "Ensure that each quadrant is filled correctly and satisfies the special conditions.",
+    "The return format should be a 2D list representing the grid."
+  ]
+}

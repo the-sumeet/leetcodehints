@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the total sum of the array `nums`. This will help you determine if it's possible to partition the array into `k` subsets with equal sums. Remember, if the total sum is not divisible by `k`, you can immediately return false."
+    },
+    {
+      "content": "Once you have the total sum, calculate the target sum for each subset by dividing the total sum by `k`. If this target sum is less than the maximum element in `nums`, it's impossible to create the subsets, so return false."
+    },
+    {
+      "content": "Consider using a backtracking approach to explore different combinations of elements in `nums`. You can maintain a list to keep track of the current subset sums as you attempt to build them."
+    },
+    {
+      "content": "When implementing backtracking, start by sorting `nums` in descending order. This can help in optimizing the search by trying larger numbers first, which may lead to quicker pruning of invalid paths."
+    },
+    {
+      "content": "As you attempt to fill a subset, if the current subset sum exceeds the target sum, backtrack immediately. This helps in reducing unnecessary calculations."
+    },
+    {
+      "content": "Make sure to handle cases where the same number can be used multiple times. You can use a boolean array to keep track of which elements have been included in the current subset."
+    },
+    {
+      "content": "Consider edge cases where `k` is equal to the length of `nums`. In this case, each element must be its own subset, so check if all elements are unique."
+    },
+    {
+      "content": "Think about how you can efficiently check if all subsets have been filled correctly. You can use a counter to track how many subsets have been successfully formed."
+    },
+    {
+      "content": "Remember to check the base case in your recursion: if you have formed `k-1` subsets successfully, the remaining elements must form the last subset, so you can return true."
+    },
+    {
+      "content": "Finally, ensure your function returns false if at any point it becomes impossible to form a valid subset. This includes checking if you run out of numbers or if the current subset cannot reach the target sum."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= nums.length <= 16",
+    "1 <= nums[i] <= 10",
+    "Each element can appear multiple times, up to 4 times.",
+    "Return true if you can partition the array into k subsets with equal sums."
+  ]
+}

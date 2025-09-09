@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the h-index. It is the maximum value of h such that the researcher has published at least h papers that have each been cited at least h times."
+    },
+    {
+      "content": "Notice that the input array `citations` is sorted in non-descending order. This property can be leveraged to find the h-index efficiently."
+    },
+    {
+      "content": "Think about how you can use binary search to find the h-index. You want to determine the largest index where the number of citations is at least as large as the corresponding index value."
+    },
+    {
+      "content": "Define the search space for binary search. You can start with `left` at 0 and `right` at the length of the citations array, which will help you narrow down the possible values of h."
+    },
+    {
+      "content": "In your binary search, calculate the middle index `mid`. The condition to check is whether the citations at `mid` are greater than or equal to the number of papers that would correspond to that index (i.e., `n - mid`)."
+    },
+    {
+      "content": "Remember that if `citations[mid]` is greater than or equal to `n - mid`, it means that you have found a potential h-index, but you should continue searching to the left to see if there's a higher valid h-index."
+    },
+    {
+      "content": "If `citations[mid]` is less than `n - mid`, you need to search to the right because it indicates that the current `mid` cannot be a valid h-index."
+    },
+    {
+      "content": "Keep track of the maximum valid h-index found during your binary search. This will be the value you return at the end of your search."
+    },
+    {
+      "content": "Consider edge cases, such as when all citations are zero or when the citations array has only one element. How will these cases affect the h-index calculation?"
+    },
+    {
+      "content": "Finally, implement the binary search logic and ensure that you return the correct h-index after the search completes. Remember to handle the case where no valid h-index is found."
+    }
+  ],
+  "questionNotes": [
+    "Citations array is sorted in non-descending order.",
+    "1 <= n <= 10^5 and 0 <= citations[i] <= 1000.",
+    "The output should be the maximum h-index value.",
+    "Consider edge cases like all citations being zero or only one paper."
+  ]
+}

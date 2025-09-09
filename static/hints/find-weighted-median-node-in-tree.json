@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. A tree is a connected graph with no cycles, and in this case, it is undirected and weighted. Make sure you can visualize how nodes are connected and how weights are assigned to edges."
+    },
+    {
+      "content": "Review how to represent the tree using the given edges. You can use an adjacency list to store which nodes are connected and the weights of those connections. For example, if you have an edge [u, v, w], you should store both u -> v and v -> u with weight w."
+    },
+    {
+      "content": "Think about how to traverse the tree to find the path between two nodes. Depth-first search (DFS) or breadth-first search (BFS) can help you explore the tree and find the path from node u to node v."
+    },
+    {
+      "content": "When you find the path from u to v, calculate the total weight of that path. This is the sum of the weights of all edges on that path. Make sure to keep track of the weights as you traverse."
+    },
+    {
+      "content": "Once you have the total path weight, remember that the weighted median node is defined as the first node on the path where the cumulative weight from u to that node is at least half of the total path weight."
+    },
+    {
+      "content": "Consider how to efficiently calculate the cumulative weights as you traverse the path from u to v. You can maintain a running total that adds the weight of each edge as you move along the path."
+    },
+    {
+      "content": "Take care to handle the case where u and v are the same node. In this case, the weighted median node is simply u (or v) since there are no edges to traverse."
+    },
+    {
+      "content": "Think about the constraints of the problem, especially the number of nodes and queries. Since n can be as large as 100,000, your solution needs to be efficient, ideally O(n) for preprocessing and O(log n) for each query."
+    },
+    {
+      "content": "Make sure to handle edge cases where the path weight is very small or where the weights of edges are very large. This can affect how you calculate the half of the total path weight."
+    },
+    {
+      "content": "Consider using a data structure to store the edges and their weights that allows for quick lookups. A map or dictionary might be useful for storing the adjacency list representation of the tree."
+    },
+    {
+      "content": "When processing multiple queries, think about whether you can preprocess the tree to allow for faster query responses. For example, storing the paths or cumulative weights in a way that avoids recomputation."
+    },
+    {
+      "content": "As you implement the solution, pay attention to the order of nodes in your path. The problem states to return the first node that meets the weighted median condition, so ensure your traversal respects this order."
+    },
+    {
+      "content": "If you encounter ties where two nodes could potentially be the weighted median, clarify how to handle these. The problem specifies returning the first node along the path that meets the criteria."
+    },
+    {
+      "content": "Finally, ensure your output format matches the requirements. You need to return an array of node indices corresponding to each query, so keep track of the results as you process each query."
+    },
+    {
+      "content": "To wrap up, implement a function that takes the edges and queries as input, processes each query to find the weighted median node, and returns the results as an array. Make sure to test your implementation with various edge cases."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 100,000; edges.length == n - 1; 1 <= w[i] <= 10^9; 1 <= queries.length <= 100,000.",
+    "The tree is valid and undirected, meaning each edge connects two nodes without creating cycles.",
+    "Node indices range from 0 to n-1.",
+    "Return format: an array where ans[j] is the node index of the weighted median for queries[j].",
+    "Handle cases where u and v are the same correctly."
+  ]
+}

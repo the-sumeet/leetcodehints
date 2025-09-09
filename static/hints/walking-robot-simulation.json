@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the robot's initial position and orientation. The robot begins at (0, 0) facing north, which corresponds to the positive Y direction on the XY-plane."
+    },
+    {
+      "content": "Consider how the robot changes its direction based on the commands. Use a simple array to represent the four possible directions: North, East, South, and West. For example, you could use an array like `directions = [(0,1), (1,0), (0,-1), (-1,0)]`."
+    },
+    {
+      "content": "When processing a command, check if it is a turn (-2 for left, -1 for right) or a move (1 to 9). For turns, you will need to update the robot's current direction index accordingly."
+    },
+    {
+      "content": "For movement commands, remember that the robot can move forward a specified number of units. You need to loop through the number of units and update the robot's position accordingly, checking for obstacles at each step."
+    },
+    {
+      "content": "Obstacles are given as coordinates in the `obstacles` array. Store these in a set for O(1) average time complexity when checking if the robot's next position is blocked."
+    },
+    {
+      "content": "As the robot moves, keep track of the maximum squared distance from the origin. Use the formula `distance_squared = x^2 + y^2` to calculate this whenever the robot moves to a new position."
+    },
+    {
+      "content": "Make sure to handle the case where the robot encounters an obstacle. If the next position is blocked, the robot should not move into that position but instead stay in its current position."
+    },
+    {
+      "content": "Consider edge cases, such as when the robot starts at an obstacle position (0, 0). Ensure that your logic allows the robot to ignore obstacles at the starting point until it moves away."
+    },
+    {
+      "content": "You might want to implement a function to handle direction changes and movement separately for better clarity and organization in your code. This could help in debugging and testing."
+    },
+    {
+      "content": "Finally, ensure your implementation correctly returns the maximum squared distance achieved. Remember to return the result as an integer, as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "The robot starts at (0, 0) facing north.",
+    "Commands can be: -2 (turn left), -1 (turn right), or 1 to 9 (move forward).",
+    "Obstacles are specified as pairs of coordinates in the obstacles array.",
+    "The robot should ignore obstacles at (0, 0) until it moves away from the origin.",
+    "Return the maximum squared Euclidean distance from the origin as an integer."
+  ]
+}

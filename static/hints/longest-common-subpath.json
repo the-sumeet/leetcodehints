@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subpath is. A subpath is a contiguous sequence of cities in a friend's path. For example, in the path [0, 1, 2, 3], the subpath [1, 2] is valid."
+    },
+    {
+      "content": "Consider the constraints of the problem. The maximum number of cities (n) can be up to 100,000, and the total length of all paths combined can also be up to 100,000. This means that a brute-force approach that checks all possible subpaths may not be efficient."
+    },
+    {
+      "content": "Think about how to efficiently find common subpaths across multiple arrays. A good way to approach this is to use hashing techniques to represent subpaths uniquely."
+    },
+    {
+      "content": "You might want to look into using a rolling hash. This technique allows you to compute hash values for subarrays efficiently, which can help in comparing subpaths across different friends' paths."
+    },
+    {
+      "content": "Consider binary search for the length of the common subpath. You can search for the maximum length of the subpath that is common to all friends' paths, which can help narrow down your search space."
+    },
+    {
+      "content": "When using binary search, define your search range. The minimum length of a common subpath is 0, and the maximum is the length of the shortest path among all friends."
+    },
+    {
+      "content": "For each candidate length during the binary search, check if there is a common subpath of that length. You can do this by generating all possible subpaths of that length for one friend's path and checking if they exist in the other paths."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when one of the paths is empty or when all paths are of length 1. These can impact the result significantly."
+    },
+    {
+      "content": "When generating subpaths, remember to use a set to store the hashes of subpaths for efficient lookup. This will allow you to quickly check if a subpath exists in another friend's path."
+    },
+    {
+      "content": "Consider how to handle collisions in your hash function. While unlikely, two different subpaths could produce the same hash value. You may want to verify the actual subpaths in case of a hash collision."
+    },
+    {
+      "content": "As you implement the binary search, ensure that your check for common subpaths is efficient. You might want to use a helper function that takes in a length and checks for common subpaths."
+    },
+    {
+      "content": "Remember to return the length of the longest common subpath, not the subpath itself. This means your final result should be an integer."
+    },
+    {
+      "content": "If at any point you find no common subpath, you should be prepared to return 0 as specified in the problem statement."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases and large inputs to ensure it performs well under the constraints provided."
+    },
+    {
+      "content": "Finally, think about how to structure your code. You may want to separate the logic for hashing, checking common subpaths, and the binary search into different functions for clarity."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100,000; m == paths.length; 2 <= m <= 100,000; sum(paths[i].length) <= 100,000.",
+    "The same city is not listed multiple times consecutively in paths[i].",
+    "Return the length of the longest common subpath, or 0 if there is no common subpath."
+  ]
+}

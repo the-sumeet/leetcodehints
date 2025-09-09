@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the arrays. You have an array `a` with exactly 4 elements and an array `b` with at least 4 elements. Your goal is to select 4 distinct indices from `b`."
+    },
+    {
+      "content": "Remember that the indices you choose from `b` must be in strictly increasing order (i.e., `i0 < i1 < i2 < i3`). This is crucial for calculating the score correctly."
+    },
+    {
+      "content": "Think about how you can iterate through the array `b`. Since you need to choose 4 indices, consider using nested loops or a combination of loops to ensure you are selecting unique indices."
+    },
+    {
+      "content": "Calculate the score for a combination of indices as you go. The score is computed as: `score = a[0] * b[i0] + a[1] * b[i1] + a[2] * b[i2] + a[3] * b[i3]`."
+    },
+    {
+      "content": "Consider using a variable to keep track of the maximum score you find during your iterations. Initialize this variable to a very low value (like negative infinity) to ensure any score you calculate will be higher."
+    },
+    {
+      "content": "When iterating through `b`, ensure that you are not only picking indices but also checking if the current combination gives a higher score than the previously recorded maximum score."
+    },
+    {
+      "content": "Think about edge cases. For example, what happens if `b` contains negative numbers? How will that affect your score? Make sure your logic accounts for all possible values in `b`."
+    },
+    {
+      "content": "You might want to use combinations from the itertools library if you're using Python. This can simplify the process of generating the index combinations from `b`."
+    },
+    {
+      "content": "As a final step, make sure to return the maximum score you calculated after all combinations have been evaluated. This should be the final output of your function."
+    },
+    {
+      "content": "Before finalizing your solution, review the constraints again. Ensure that your approach efficiently handles the maximum size of `b` (up to 10^5) without running into performance issues."
+    }
+  ],
+  "questionNotes": [
+    "You must select 4 indices from `b` in strictly increasing order.",
+    "The length of `a` is always 4, while `b` has at least 4 elements.",
+    "The score is calculated using the formula: `score = a[0] * b[i0] + a[1] * b[i1] + a[2] * b[i2] + a[3] * b[i3]`.",
+    "Be aware of negative values in `b`, as they can affect the maximum score.",
+    "Return the maximum score found after evaluating all combinations."
+  ]
+}

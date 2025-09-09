@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the distance from your starting position [0, 0] to the target position [x_target, y_target]. You can use the Manhattan distance formula: `distance = |x_target| + |y_target|`."
+    },
+    {
+      "content": "Next, consider the ghosts. For each ghost, calculate the distance from its position to the target using the same Manhattan distance formula. This will help you understand how quickly each ghost can reach the target."
+    },
+    {
+      "content": "Remember that all movements occur simultaneously. Therefore, if you reach the target at the same time as any ghost, it does not count as an escape. This means you need to arrive strictly before any ghost."
+    },
+    {
+      "content": "Think about how to compare your distance to the target with the distances of all ghosts. If your distance is less than the distance of every ghost, you can escape."
+    },
+    {
+      "content": "Consider edge cases where multiple ghosts might be in the same position. They will all have the same distance to the target, so you only need to calculate the distance for each unique ghost position."
+    },
+    {
+      "content": "What if a ghost is positioned directly between you and the target? In such cases, you need to ensure that the ghost cannot reach the target before you do."
+    },
+    {
+      "content": "You should iterate through the list of ghosts and check if any ghost can reach the target in fewer or equal moves compared to you. If even one ghost can, you cannot escape."
+    },
+    {
+      "content": "Make sure to handle the case where the target is at the same position as a ghost. In this scenario, you would not escape since the ghost would reach the target simultaneously."
+    },
+    {
+      "content": "To summarize, your final check should be: if your distance to the target is less than the minimum distance of all ghosts to the target, return true; otherwise, return false."
+    },
+    {
+      "content": "Before you finalize your solution, ensure that you consider all possible ghost positions and their distances. A loop through the ghost array to find the minimum distance will be essential."
+    }
+  ],
+  "questionNotes": [
+    "You start at position [0, 0].",
+    "The target position is given as [x_target, y_target].",
+    "Each ghost's position is given in the format ghosts[i] = [x_i, y_i].",
+    "You escape if you reach the target before any ghost reaches you.",
+    "If you arrive at the same time as a ghost, it counts as being caught.",
+    "Constraints: 1 <= ghosts.length <= 100, -10^4 <= x_i, y_i <= 10^4, -10^4 <= x_target, y_target <= 10^4."
+  ]
+}

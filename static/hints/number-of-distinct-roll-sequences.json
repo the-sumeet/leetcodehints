@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints on the sequences. You need to ensure that the greatest common divisor (GCD) of any two adjacent rolls is 1. This means that two consecutive numbers cannot share any prime factors."
+    },
+    {
+      "content": "Consider the implications of the second condition: equal values cannot be adjacent and must have at least two rolls in between. This limits how often you can use the same number in your sequence."
+    },
+    {
+      "content": "Think about how many unique numbers you can use in your sequences. Since you're rolling a 6-sided die, your possible values are {1, 2, 3, 4, 5, 6}."
+    },
+    {
+      "content": "To satisfy the GCD condition, you can create pairs of numbers that can be adjacent. For example, (1, 2), (1, 3), (2, 3), etc., but not (2, 4) or (3, 6)."
+    },
+    {
+      "content": "You might want to create a function to check if two numbers can be adjacent based on the GCD condition. This will help you filter out invalid pairs."
+    },
+    {
+      "content": "Consider using dynamic programming to build your sequences. You can define a state that represents the last number used and the current length of the sequence."
+    },
+    {
+      "content": "Think about how to transition between states in your dynamic programming approach. If you are at position i and have used a number, what are the valid numbers you can use at position i+1?"
+    },
+    {
+      "content": "Remember to account for the second condition when transitioning states. If you used a number at position i, you can't use it at i+1 or i+2."
+    },
+    {
+      "content": "You should also keep track of the sequence length in your DP table. This will allow you to build sequences of varying lengths up to n."
+    },
+    {
+      "content": "When filling your DP table, consider initializing it for the base case where n = 1. There are 6 possible sequences: (1), (2), (3), (4), (5), (6)."
+    },
+    {
+      "content": "As you build your DP solution, remember to apply the modulo operation (10^9 + 7) to prevent overflow and meet the problem's requirements."
+    },
+    {
+      "content": "Consider how you can optimize your state transitions. For example, you might want to precompute valid transitions based on the GCD condition."
+    },
+    {
+      "content": "Make sure to test your solution with edge cases, such as n = 1 and n = 2, to ensure that your logic holds for the smallest inputs."
+    },
+    {
+      "content": "Once you have your DP table filled, the answer will be the sum of all valid sequences of length n. Make sure to check that you are summing correctly."
+    },
+    {
+      "content": "Finally, ensure that your implementation is efficient enough to handle the upper limit of n (10^4). Consider the time complexity of your approach."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^4",
+    "You are rolling a 6-sided die, so possible values are {1, 2, 3, 4, 5, 6}.",
+    "Return the result modulo 10^9 + 7.",
+    "Two sequences are distinct if at least one element is different.",
+    "Indexing is 1-based for the conditions on equal values."
+  ]
+}

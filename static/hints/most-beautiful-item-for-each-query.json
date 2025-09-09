@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a list of items, where each item consists of a price and a beauty value. Each query asks for the maximum beauty of items that can be bought with a certain budget."
+    },
+    {
+      "content": "Consider how you can efficiently find the maximum beauty for multiple queries. A brute force approach would involve checking all items for each query, which can be inefficient for large inputs."
+    },
+    {
+      "content": "Think about sorting the items based on price. This will allow you to quickly determine which items fall within the price limit of each query. How would you organize the items after sorting?"
+    },
+    {
+      "content": "Once the items are sorted by price, you can create a new array that keeps track of the maximum beauty seen so far as you iterate through the sorted items. This way, for any price, you can easily find the maximum beauty of items that are affordable."
+    },
+    {
+      "content": "When processing each query, you can use binary search to find the position in the sorted items where the price exceeds the query value. This will help you quickly locate the relevant items."
+    },
+    {
+      "content": "Remember to handle cases where no items are affordable for a given query. You should return 0 in those cases. How will you check if there are no items that meet the price condition?"
+    },
+    {
+      "content": "Consider edge cases, such as when all items are too expensive for the lowest query or when multiple items have the same price but different beauty values. Make sure your solution accounts for these scenarios."
+    },
+    {
+      "content": "As you build your solution, ensure that you maintain the original order of queries when returning the results. You might want to store the results in a separate array indexed by the original query indices."
+    },
+    {
+      "content": "After implementing the sorting and maximum beauty tracking, think about the overall time complexity of your solution. Aim for a solution that is efficient enough to handle the upper limits of the input constraints."
+    },
+    {
+      "content": "Finally, put together all the pieces: sorting the items, preparing the maximum beauty array, and processing the queries efficiently. Ensure that your final implementation correctly returns the array of maximum beauties for each query."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= items.length, queries.length <= 10^5",
+    "Each item has exactly 2 elements: price and beauty.",
+    "Prices and beauties are in the range [1, 10^9].",
+    "Return an array of the same length as queries.",
+    "If no item is affordable for a query, return 0."
+  ]
+}

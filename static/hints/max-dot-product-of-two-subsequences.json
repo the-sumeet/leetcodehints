@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. Remember, a subsequence can be formed by deleting some elements from an array without changing the order of the remaining elements. For example, from [2, 3, 5], you can form [2, 5] or [3] but not [5, 2]."
+    },
+    {
+      "content": "Consider the dot product of two sequences. The dot product of two sequences A and B of the same length is calculated as A[0]*B[0] + A[1]*B[1] + ... + A[n]*B[n]. This means you need to pair elements from both subsequences."
+    },
+    {
+      "content": "Think about how to select subsequences of the same length from both arrays. You can use a recursive approach or dynamic programming to explore all possible combinations of subsequences."
+    },
+    {
+      "content": "Since the problem involves maximizing the dot product, consider how negative numbers can affect your calculations. Sometimes, including negative numbers might lead to a higher overall product when paired with other elements."
+    },
+    {
+      "content": "Focus on the lengths of the subsequences. You need to ensure that both selected subsequences are of the same length. This adds a layer of complexity when selecting elements from nums1 and nums2."
+    },
+    {
+      "content": "Use dynamic programming to store intermediate results. You can create a 2D DP table where dp[i][j] represents the maximum dot product of subsequences of length j using the first i elements of nums1 and nums2."
+    },
+    {
+      "content": "Initialize your DP table carefully. The base case should handle subsequences of length 1. For example, dp[i][1] should be the maximum product of nums1[i] and any element from nums2."
+    },
+    {
+      "content": "Consider how to fill in the DP table. For each pair of indices (i, j), you can either include the current elements of nums1 and nums2 in your subsequence or skip them. Think about how to derive the maximum value based on previous computations."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when one of the arrays contains only negative numbers. The maximum dot product might still be negative, so ensure your algorithm can handle this scenario."
+    },
+    {
+      "content": "Think about the time complexity of your approach. With two arrays of length up to 500, a naive solution could lead to exponential time complexity. Aim for a solution that is polynomial time, ideally O(n * m) where n and m are the lengths of nums1 and nums2."
+    },
+    {
+      "content": "Consider how to handle ties in the maximum dot product. If multiple subsequences yield the same product, you should still return the maximum value found, as the problem does not require uniqueness."
+    },
+    {
+      "content": "Remember to check the constraints given in the problem. The elements of nums1 and nums2 can range from -1000 to 1000, which means you need to handle both positive and negative values effectively."
+    },
+    {
+      "content": "When implementing your solution, ensure that you properly handle the case where both arrays are of length 1. The output should simply be the product of the two elements."
+    },
+    {
+      "content": "As you finalize your approach, think about how to extract the result from your DP table. The maximum dot product will likely be found in the last row or column of your DP table, depending on how you structured it."
+    },
+    {
+      "content": "Now, try to outline the final steps of your algorithm. You should iterate through your DP table to determine the maximum dot product by considering all possible subsequence lengths. Make sure to include checks for valid subsequence lengths."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums1.length, nums2.length <= 500",
+    "-1000 <= nums1[i], nums2[i] <= 1000",
+    "Return the maximum dot product of non-empty subsequences of the same length.",
+    "Subsequences must maintain the relative order of elements."
+  ]
+}

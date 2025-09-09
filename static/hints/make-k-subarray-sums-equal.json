@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a circular array. In a circular array, the end connects back to the start, which means that when considering subarrays, the indices can wrap around. This will be important when calculating sums."
+    },
+    {
+      "content": "Consider the length of the array and how it relates to the subarray length `k`. Since the array is circular, any subarray of length `k` can start from any index and wrap around. Think about how many unique subarrays of length `k` you can form."
+    },
+    {
+      "content": "To ensure all subarray sums are equal, focus on the sum of elements in each subarray. If you can determine a target sum for these subarrays, you can work towards adjusting the elements in `arr` to achieve that sum."
+    },
+    {
+      "content": "Calculate the sum of the first `k` elements in the array. This will be your initial reference point. As you slide the window across the array, you can keep track of the sums of the subarrays of length `k`."
+    },
+    {
+      "content": "When adjusting the elements of `arr`, think about how to minimize the number of operations. You may want to consider the median of the elements in each subarray as a potential target value, since it minimizes the total distance to all elements."
+    },
+    {
+      "content": "Remember that you can perform operations on any element any number of times. This means you should keep track of how many operations are needed for each element to reach the target value you decide on."
+    },
+    {
+      "content": "As you calculate the required operations for each subarray, consider using a frequency array or a map to keep track of how many times each value appears in the relevant segments of the array."
+    },
+    {
+      "content": "Make sure to handle edge cases where `k` is equal to the length of `arr`. In this case, you only have one subarray to consider, and you can directly compute the needed operations to make all elements equal."
+    },
+    {
+      "content": "To optimize your solution, you might want to think about how to efficiently calculate the operations needed for overlapping subarrays. This could reduce redundant calculations and improve performance."
+    },
+    {
+      "content": "Finally, think about how you will return the result. You need to return the minimum number of operations required to make all subarray sums equal. Ensure your logic accounts for all possible subarrays and their adjustments."
+    }
+  ],
+  "questionNotes": [
+    "The array is circular, meaning subarrays can wrap around.",
+    "Subarrays of length `k` can start from any index in `arr`.",
+    "You need to return the minimum number of operations to make all subarray sums equal.",
+    "Consider edge cases where `k` is equal to the length of `arr`.",
+    "Focus on efficiency due to constraints: 1 <= k <= arr.length <= 10^5."
+  ]
+}

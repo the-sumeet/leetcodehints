@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how tasks are represented. Each task has an enqueue time and a processing time. You'll need to keep track of when each task becomes available for processing."
+    },
+    {
+      "content": "Consider how the CPU behaves when it is idle. If there are no tasks available, it remains idle. If tasks are available, it will pick the one with the shortest processing time."
+    },
+    {
+      "content": "Think about how to manage the tasks that become available over time. You might want to use a priority queue (min-heap) to efficiently retrieve the task with the shortest processing time."
+    },
+    {
+      "content": "Remember that if two tasks have the same processing time, the CPU should choose the task with the smaller index. This means you'll need to incorporate the task's index into your sorting criteria."
+    },
+    {
+      "content": "As you process tasks, keep track of the current time. You will need to update this time as tasks are completed and new tasks become available."
+    },
+    {
+      "content": "When implementing your solution, consider edge cases such as when multiple tasks become available at the same time. Ensure your priority queue handles these cases correctly."
+    },
+    {
+      "content": "You should also handle the situation where the CPU is idle while waiting for tasks to become available. The CPU should not start processing until a task is available."
+    },
+    {
+      "content": "After processing a task, immediately check for any new tasks that have become available. If there are any, select the next task to process based on the rules provided."
+    },
+    {
+      "content": "Make sure to return the order of task indices as specified in the problem. This means you need to maintain a list of the order in which tasks are processed."
+    },
+    {
+      "content": "Finally, consider how to efficiently manage the enqueue times and processing times as you iterate through the tasks. You may need to sort the tasks initially based on their enqueue times."
+    }
+  ],
+  "questionNotes": [
+    "Tasks are represented as a 2D array where tasks[i] = [enqueueTime, processingTime].",
+    "The CPU processes one task at a time and can only start processing when tasks are available.",
+    "If multiple tasks are available, the one with the shortest processing time is chosen; if tied, the task with the smallest index is selected.",
+    "Return the order of task indices in the order they are processed.",
+    "Constraints: 1 <= n <= 10^5 and 1 <= enqueueTime[i], processingTime[i] <= 10^9."
+  ]
+}

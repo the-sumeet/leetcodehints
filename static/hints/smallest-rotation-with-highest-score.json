@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the rotation of the array works. For a given index k, the rotated array can be visualized as two segments: the part from k to the end and the part from the start to k-1."
+    },
+    {
+      "content": "Consider how to calculate the score for a specific rotation. For each element in the rotated array, check if it is less than or equal to its index."
+    },
+    {
+      "content": "Remember that the score for each index is determined by the condition: `nums[i] <= i`. If this condition is true, it contributes one point to the score."
+    },
+    {
+      "content": "Think about how to efficiently compute the score for each rotation without explicitly rotating the array. You might want to use modular arithmetic to simulate the rotation."
+    },
+    {
+      "content": "For a given k, the element that was originally at index i in nums will be at index `(i + k) % n` in the rotated array. Use this to determine the score."
+    },
+    {
+      "content": "As you calculate the scores for each possible rotation, keep track of the maximum score found and the corresponding index k."
+    },
+    {
+      "content": "When you find a new maximum score, update both the score and the index k. If the score is the same as the current maximum, ensure you only update k if it is smaller."
+    },
+    {
+      "content": "Consider edge cases, such as when the array has only one element. What would the score be for any rotation in this case?"
+    },
+    {
+      "content": "Think about how the constraints affect your approach. The length of nums can be up to 100,000, so aim for a solution better than O(n^2)."
+    },
+    {
+      "content": "You may want to compute the scores in a single pass for each rotation. Look for patterns in how scores change as you increment k."
+    },
+    {
+      "content": "Use a loop to iterate over all possible rotation indices from 0 to n-1. For each k, calculate the score based on the original array."
+    },
+    {
+      "content": "To optimize, consider how the score changes as k increases. You might find that you can derive the score for k from the score of k-1."
+    },
+    {
+      "content": "Keep track of the number of points for each k in an array or variable. This will help you easily compare scores as you iterate."
+    },
+    {
+      "content": "After calculating scores for all k, return the index of the maximum score. If there's a tie, return the smallest k."
+    },
+    {
+      "content": "Before finalizing your solution, test it against the provided examples and think about additional edge cases, such as all elements being in increasing or decreasing order."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100000",
+    "0 <= nums[i] < nums.length",
+    "Return the smallest index k if multiple indices have the same highest score."
+  ]
+}

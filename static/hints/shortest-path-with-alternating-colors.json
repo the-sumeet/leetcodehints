@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the graph structure. You have two types of edges: red and blue. Each edge connects two nodes, and you need to alternate colors while traversing."
+    },
+    {
+      "content": "Think about how to represent the graph. You can use an adjacency list for both red and blue edges. This will help you easily access the neighbors of each node based on the edge color."
+    },
+    {
+      "content": "Consider using a breadth-first search (BFS) approach. BFS is suitable for finding the shortest path in an unweighted graph, which is similar to your problem since each edge can be considered to have the same weight."
+    },
+    {
+      "content": "When performing BFS, you need to keep track of the current node, the color of the last edge used to reach that node, and the distance from the starting node (node 0)."
+    },
+    {
+      "content": "You can use a queue to facilitate the BFS. Each entry in the queue could be a tuple containing the current node, the distance, and the last edge color used."
+    },
+    {
+      "content": "Make sure to initialize your distance array with -1 to indicate unreachable nodes. Set the distance for the starting node (node 0) to 0."
+    },
+    {
+      "content": "When exploring neighbors, only consider edges that are of a different color than the last edge used. This is crucial for maintaining the alternating color requirement."
+    },
+    {
+      "content": "After processing all nodes, ensure you return the final distances in the required format. The output should be an array of distances from node 0 to each node."
+    },
+    {
+      "content": "Think about edge cases, such as when there are no edges at all or when all edges are of one color. How should your algorithm handle these scenarios?"
+    },
+    {
+      "content": "Finally, ensure your BFS implementation correctly handles the queue and updates distances. You might want to use a set to track visited nodes per color to avoid cycles."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100",
+    "0 <= redEdges.length, blueEdges.length <= 400",
+    "Each edge is represented as [a, b] where 0 <= a, b < n.",
+    "Return an array of length n where answer[x] is the length of the shortest path from node 0 to node x with alternating colors, or -1 if it doesn't exist."
+  ]
+}

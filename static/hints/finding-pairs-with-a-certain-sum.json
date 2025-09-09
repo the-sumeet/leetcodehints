@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `FindSumPairs` class. You need to initialize it with two arrays, `nums1` and `nums2`. Think about how you will store these arrays and how they will be accessed later."
+    },
+    {
+      "content": "Consider how the `add` method modifies `nums2`. You'll need to ensure that the value at the specified index is updated correctly. Remember that this method does not return anything, so you should focus on modifying the internal state."
+    },
+    {
+      "content": "The `count` method requires you to find pairs `(i, j)` such that `nums1[i] + nums2[j]` equals a given total. Think about how you can efficiently calculate this without checking every possible pair each time."
+    },
+    {
+      "content": "To optimize the counting process, consider using a hash map (or dictionary) to store the frequency of each value in `nums2`. This way, you can quickly look up how many times a specific complement exists in `nums2`."
+    },
+    {
+      "content": "When counting pairs, for each element in `nums1`, calculate the complement needed from `nums2` to reach the target total. For example, if `tot` is 7 and `nums1[i]` is 2, the complement would be `7 - 2 = 5`."
+    },
+    {
+      "content": "Don't forget to handle the case where `nums2` is updated. After an `add` operation, the counts in your hash map should reflect the new values in `nums2`. This means you might need to update the frequency count after each addition."
+    },
+    {
+      "content": "Pay attention to the constraints, especially the maximum sizes of `nums1` and `nums2`. This will affect your choice of data structures and algorithms. With `nums2` being much larger, ensure your counting method is efficient."
+    },
+    {
+      "content": "Consider edge cases, such as when `nums2` has very few unique values or when all values are the same. How would these cases affect the number of pairs that can be formed?"
+    },
+    {
+      "content": "When implementing the `count` method, remember that you need to return the total number of valid pairs. Ensure that you are iterating through all elements in `nums1` and checking the frequency of their complements in `nums2`."
+    },
+    {
+      "content": "Finally, think about how you can structure your code for clarity and efficiency. You might want to separate the logic for updating `nums2` and counting pairs into distinct methods or functions for better readability."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums1.length <= 1000, 1 <= nums2.length <= 10^5",
+    "1 <= nums1[i] <= 10^9, 1 <= nums2[i] <= 10^5",
+    "0 <= index < nums2.length, 1 <= val <= 10^5, 1 <= tot <= 10^9",
+    "At most 1000 calls are made to add and count each.",
+    "The add method modifies nums2 in place and does not return a value."
+  ]
+}

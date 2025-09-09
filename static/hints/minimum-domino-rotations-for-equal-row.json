@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the dominoes. Each domino has a top and a bottom value, represented by two arrays: `tops` and `bottoms`. Your goal is to make all values in either `tops` or `bottoms` the same."
+    },
+    {
+      "content": "Consider the possible target values that you can achieve by rotating the dominoes. The target values can only be the numbers present in the `tops` and `bottoms` arrays. Think about how many dominoes need to be rotated to achieve a uniform row."
+    },
+    {
+      "content": "Identify the counts of each number in the `tops` and `bottoms` arrays. This will help you determine which number is the most frequent and might require the least rotations to achieve uniformity."
+    },
+    {
+      "content": "Remember that you can only rotate a domino if the target value exists in either the top or bottom of that domino. For example, if you want to make all values in `tops` equal to 2, check how many dominoes have either 2 on top or bottom."
+    },
+    {
+      "content": "Consider edge cases where a number does not appear in either `tops` or `bottoms`. If you choose a target value that is not present in at least one of the arrays, it will be impossible to achieve uniformity."
+    },
+    {
+      "content": "To find the minimum number of rotations, iterate through each candidate target value (the numbers from 1 to 6). For each candidate, count how many rotations are needed to make all values in `tops` or `bottoms` equal to that candidate."
+    },
+    {
+      "content": "When counting rotations for a target value, keep track of how many dominoes already have that value in the `tops` and how many in the `bottoms`. Use this information to calculate the rotations needed."
+    },
+    {
+      "content": "If you find that it's possible to make all values in `tops` or `bottoms` equal to a candidate, store the minimum rotations required. If no candidate works, you should return -1."
+    },
+    {
+      "content": "Make sure to handle all potential candidates (1 through 6) and consider the case where no rotations can achieve uniformity. Check if the minimum rotations found is valid."
+    },
+    {
+      "content": "Finally, ensure your function returns the minimum number of rotations or -1 if it's impossible. You might want to structure your solution to iterate through possible candidates and keep track of the minimum rotations efficiently."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= tops.length <= 2 * 10^4, bottoms.length == tops.length",
+    "Each value in tops and bottoms is between 1 and 6.",
+    "Return -1 if it's impossible to make all values in either tops or bottoms equal.",
+    "Consider edge cases where some numbers might not appear in the arrays."
+  ]
+}

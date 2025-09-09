@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of an imbalance number. It counts the number of adjacent elements in the sorted version of a subarray that differ by more than 1."
+    },
+    {
+      "content": "Remember that a subarray is a contiguous part of the array. For an array of length n, there are a total of n * (n + 1) / 2 subarrays."
+    },
+    {
+      "content": "Consider how you might generate all possible subarrays. You can use two nested loops: the outer loop to fix the starting index, and the inner loop to fix the ending index."
+    },
+    {
+      "content": "When you extract a subarray, you will need to sort it to calculate the imbalance number. Sorting can be done using built-in functions, but consider the time complexity."
+    },
+    {
+      "content": "Think about how to efficiently count the imbalance numbers after sorting. You can iterate through the sorted subarray and count the pairs that have a difference greater than 1."
+    },
+    {
+      "content": "Take care to handle the edge cases where the subarray has only one element. The imbalance number for such subarrays should be zero."
+    },
+    {
+      "content": "Consider the constraints provided: 1 <= nums.length <= 1000. This means your solution should ideally be better than O(n^3) to handle the upper limits efficiently."
+    },
+    {
+      "content": "You might want to use a data structure to maintain the counts of elements in the current subarray. This could help in calculating the imbalance without needing to sort each time."
+    },
+    {
+      "content": "Think about how you can use a frequency map or a set to keep track of unique elements in the subarray. This could simplify the imbalance calculation."
+    },
+    {
+      "content": "When calculating the imbalance, focus on the unique elements in the sorted subarray. The imbalance number is influenced by the gaps between these unique elements."
+    },
+    {
+      "content": "As you iterate through the sorted unique elements, keep a running total of the imbalance counts. This will help you accumulate the imbalance for each subarray."
+    },
+    {
+      "content": "Consider how you can optimize the counting of imbalance numbers. Instead of sorting every subarray, can you maintain a sorted list of unique elements dynamically?"
+    },
+    {
+      "content": "Remember to account for duplicates in the original array. They won't contribute to the imbalance number, so ensure your counting logic reflects that."
+    },
+    {
+      "content": "After implementing the logic for a single subarray, test it thoroughly with various inputs, especially edge cases like arrays with all identical elements."
+    },
+    {
+      "content": "Finally, think about how to sum the imbalance numbers across all subarrays. You can initialize a total variable and keep adding the imbalance counts from each subarray."
+    }
+  ],
+  "questionNotes": [
+    "Imbalance number is defined based on the sorted version of the subarray.",
+    "Subarrays are contiguous and non-empty.",
+    "Constraints: 1 <= nums.length <= 1000, 1 <= nums[i] <= nums.length.",
+    "Return the sum of imbalance numbers for all subarrays."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirement to build words one character at a time. This means that for a word to be valid, all its prefixes must also be present in the list of words."
+    },
+    {
+      "content": "Consider using a set to store the words for quick lookup. This will help you verify if a prefix exists in the dictionary efficiently."
+    },
+    {
+      "content": "Begin by sorting the list of words. Sorting helps in two ways: it allows you to check prefixes in order and ensures that if two words are of the same length, the lexicographically smaller one comes first."
+    },
+    {
+      "content": "Iterate through the sorted list of words. For each word, check if all its prefixes (up to the length of the word minus one) are present in the set of words."
+    },
+    {
+      "content": "To check prefixes, you can use slicing. For a word `w`, its prefixes can be checked with `w[:i]` for `i` from 1 to `len(w) - 1`."
+    },
+    {
+      "content": "Keep track of the longest valid word found during your iteration. You can use a variable to store the current longest word and update it when you find a longer valid word."
+    },
+    {
+      "content": "Remember to handle the case where no valid word is found. You should return an empty string in such cases."
+    },
+    {
+      "content": "Consider edge cases such as when all words are single characters or when there are no valid prefixes for any word. How would your solution handle these?"
+    },
+    {
+      "content": "When comparing two words of the same length, ensure that you are correctly implementing the lexicographical order check. You can do this using simple string comparison in Python."
+    },
+    {
+      "content": "Finally, ensure that your function returns the longest word found. If there are multiple candidates, your sorting step should help you pick the correct one based on lexicographical order."
+    }
+  ],
+  "questionNotes": [
+    "1 <= words.length <= 1000",
+    "1 <= words[i].length <= 30",
+    "words[i] consists of lowercase English letters.",
+    "Return the longest word that can be built one character at a time.",
+    "If there are multiple longest words, return the lexicographically smallest one.",
+    "Return an empty string if no valid word can be formed."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'beautiful index' is. An index `i` is considered beautiful if the substring starting at `i` matches the string `a`."
+    },
+    {
+      "content": "Remember to check the boundaries of the string when looking for matches. Ensure that `i` does not exceed `s.length - a.length`."
+    },
+    {
+      "content": "You will need to find all occurrences of the substring `a` in `s`. Consider using a loop to iterate through the string and check for matches."
+    },
+    {
+      "content": "Once you find an index `i` where `s[i..(i + a.length - 1)] == a`, you need to check for the existence of `b` within a certain range of indices."
+    },
+    {
+      "content": "For each beautiful index `i`, you need to find indices `j` such that `s[j..(j + b.length - 1)] == b` and `|j - i| <= k`."
+    },
+    {
+      "content": "Think about how to efficiently find all occurrences of `b` in `s`. You might want to store these indices in a list or set."
+    },
+    {
+      "content": "When checking the condition `|j - i| <= k`, remember that this means `j` must be within the range `[i - k, i + k]`."
+    },
+    {
+      "content": "You may want to sort the indices of `b` before checking the distance condition to make it easier to find valid `j` indices."
+    },
+    {
+      "content": "Consider edge cases where `a` or `b` might not appear in `s` at all. How will your implementation handle these situations?"
+    },
+    {
+      "content": "Make sure to handle overlapping occurrences correctly. An index `i` can be beautiful even if multiple `j` indices exist within the range."
+    },
+    {
+      "content": "After collecting all beautiful indices, ensure you return them in sorted order. You might want to use a data structure that maintains order."
+    },
+    {
+      "content": "Pay attention to the input constraints. The maximum length of `s`, `a`, and `b` can be quite large, so consider the efficiency of your solution."
+    },
+    {
+      "content": "Think about the time complexity of your approach. A naive solution might not work within the constraints, so aim for something more efficient."
+    },
+    {
+      "content": "You can optimize the search for `b` by using a sliding window or two-pointer technique to check the range around each beautiful index `i`."
+    },
+    {
+      "content": "As a final step, ensure that your output format is correct. You need to return an array of indices, so pay attention to how you structure your final result."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= s.length <= 5 * 10^5",
+    "1 <= a.length, b.length <= 5 * 10^5",
+    "Indices are 0-based.",
+    "Return the array in sorted order.",
+    "Consider edge cases where `a` or `b` do not exist in `s`."
+  ]
+}

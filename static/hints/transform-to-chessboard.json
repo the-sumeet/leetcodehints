@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a chessboard pattern looks like. A valid chessboard alternates between 0s and 1s, so the top-left corner could be either 0 or 1. For example, a 4x4 chessboard could look like:\n```\n0 1 0 1\n1 0 1 0\n0 1 0 1\n1 0 1 0\n```"
+    },
+    {
+      "content": "Check the size of the board, `n x n`. Remember that `n` must be even or odd. How does the parity of `n` affect the arrangement of 0s and 1s in a chessboard?"
+    },
+    {
+      "content": "Count the number of 0s and 1s in the board. For a valid chessboard, the counts should be equal or differ by one (if `n` is odd). What does this imply about the possible arrangements?"
+    },
+    {
+      "content": "Consider the arrangement of rows and columns. If you can swap rows and columns, think about how you can group rows and columns based on their patterns. What patterns are valid for a chessboard?"
+    },
+    {
+      "content": "Identify the two possible valid patterns for a chessboard based on the top-left corner. For example, if the top-left is 0, the second row must start with 1. Write down both patterns explicitly."
+    },
+    {
+      "content": "When checking if the board can be transformed into a chessboard, remember that adjacent cells must not be the same. How can you verify this condition for the current board?"
+    },
+    {
+      "content": "For each row, determine if it matches one of the two valid chessboard patterns. Count how many rows match each pattern. This will help you understand how many swaps might be needed."
+    },
+    {
+      "content": "If you have the counts of rows matching each pattern, think about how many swaps are necessary to convert the rows into the desired configuration. What is the formula for the number of swaps needed?"
+    },
+    {
+      "content": "Similarly, repeat the row-checking process for columns. Count how many columns match each of the two valid chessboard patterns. How does this affect your total swap count?"
+    },
+    {
+      "content": "Remember that you can swap any two rows or columns. This means the order of swaps does not matter. How can you use this to simplify your calculations?"
+    },
+    {
+      "content": "Consider edge cases where the board is already in a valid chessboard configuration. How will you handle this scenario in your implementation?"
+    },
+    {
+      "content": "Think about cases where the board cannot be transformed into a chessboard. What specific conditions would lead to a return value of -1?"
+    },
+    {
+      "content": "As you finalize your approach, ensure that you account for both row and column swaps in your calculations. How will you combine these to get the final count of moves?"
+    },
+    {
+      "content": "Before implementing, outline the steps of your algorithm clearly. Start with counting rows and columns, then check patterns, and finally calculate the swaps needed."
+    },
+    {
+      "content": "Be careful with indexing and ensure you handle all edge cases correctly. Pay attention to how you access elements in the grid during your checks."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == board.length, n == board[i].length, 2 <= n <= 30.",
+    "Each board[i][j] is either 0 or 1.",
+    "Return -1 if transformation to a chessboard is impossible.",
+    "A valid chessboard can start with either 0 or 1 in the top-left corner."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the coordinates of the rectangles. Each rectangle is defined by two points: the bottom-left corner (x1, y1) and the top-right corner (x2, y2). Make sure you visualize how these points relate to each other."
+    },
+    {
+      "content": "Consider the conditions for two rectangles to overlap. They overlap if one rectangle is not completely to the left, right, above, or below the other rectangle. Think about how you can express these conditions mathematically."
+    },
+    {
+      "content": "To check if two rectangles do not overlap, think about the 'non-overlapping' conditions. For example, if one rectangle is completely to the left of the other, it means that the right edge of the first rectangle is less than or equal to the left edge of the second rectangle."
+    },
+    {
+      "content": "List out the conditions for non-overlapping rectangles: \n- rec1 is to the left of rec2: rec1[2] <= rec2[0] \n- rec1 is to the right of rec2: rec1[0] >= rec2[2] \n- rec1 is above rec2: rec1[1] >= rec2[3] \n- rec1 is below rec2: rec1[3] <= rec2[1]"
+    },
+    {
+      "content": "Now that you have the non-overlapping conditions, remember that if any of these conditions are true, the rectangles do not overlap. Therefore, if none of these conditions are true, the rectangles must overlap."
+    },
+    {
+      "content": "Think about edge cases where rectangles just touch each other at the edges or corners. Remember that touching does not count as overlapping, so ensure your conditions account for this."
+    },
+    {
+      "content": "You can implement the logic using a simple function that checks the non-overlapping conditions. If any condition is met, return false. Otherwise, return true."
+    },
+    {
+      "content": "Consider the constraints provided in the problem. The rectangle coordinates can range from -10^9 to 10^9, so make sure your solution can handle large integer values without any issues."
+    },
+    {
+      "content": "Remember that the input will always be valid rectangles with non-zero area. This means that x1 must be less than x2 and y1 must be less than y2 for both rectangles."
+    },
+    {
+      "content": "Finally, put together your function to check for overlaps. You might want to write a simple test case to verify your implementation, such as checking if rec1 = [0,0,2,2] and rec2 = [1,1,3,3] returns true."
+    }
+  ],
+  "questionNotes": [
+    "Each rectangle is represented by a list of four integers: [x1, y1, x2, y2].",
+    "The coordinates are axis-aligned, meaning they are parallel to the x-axis and y-axis.",
+    "Two rectangles overlap if their intersection area is positive, not just touching at edges or corners.",
+    "The input rectangles will always be valid with non-zero area.",
+    "Constraints: -10^9 <= rec1[i], rec2[i] <= 10^9."
+  ]
+}

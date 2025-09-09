@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a smooth descent period is. A smooth descent period consists of contiguous days where each day's price is exactly 1 less than the previous day's price, except for the first day of the period."
+    },
+    {
+      "content": "Consider how to identify individual smooth descent periods in the array. Each day can be considered a smooth descent period by itself, so you should start counting from each day."
+    },
+    {
+      "content": "Think about how you can extend a smooth descent period. If you find a day where the price decreases by 1 from the previous day, you can extend the current period."
+    },
+    {
+      "content": "You can use a loop to iterate through the prices array. Keep track of the current length of the smooth descent period as you go through each price."
+    },
+    {
+      "content": "Remember to count the single-day periods as well. Each day contributes at least one period to the total count."
+    },
+    {
+      "content": "When you find a valid smooth descent (where the price decreases by 1), you can add the length of the current period to your total count. This will help you accumulate the total number of periods."
+    },
+    {
+      "content": "Consider edge cases, such as when the prices array has only one element. In this case, there is only one smooth descent period."
+    },
+    {
+      "content": "As you iterate through the array, maintain a variable to track the length of the current smooth descent period. Reset this variable when the descent condition is not met."
+    },
+    {
+      "content": "Make sure to handle cases where prices do not decrease by 1. In such cases, you should reset your current period length to 1 since each day is a period by itself."
+    },
+    {
+      "content": "Finally, ensure that your solution efficiently counts the periods without unnecessary nested loops. You can achieve this in a single pass through the array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= prices.length <= 10^5",
+    "Prices are integers: 1 <= prices[i] <= 10^5",
+    "Each single day is considered a smooth descent period.",
+    "Contiguous days must have prices that decrease by exactly 1."
+  ]
+}

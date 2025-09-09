@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for an element to be 'good'. An element at index `i` is good if it is strictly greater than the elements at indices `i - k` and `i + k`, if those indices exist."
+    },
+    {
+      "content": "Consider the edge cases where `i - k` or `i + k` might be out of bounds. Elements at the boundaries of the array should be handled carefully, as they may not have both neighbors."
+    },
+    {
+      "content": "You can iterate through the array using a loop. For each element, check if it qualifies as good by comparing it with its neighbors at the specified indices."
+    },
+    {
+      "content": "Remember to check the bounds of the array when accessing `nums[i - k]` and `nums[i + k]`. You can use conditional statements to ensure you do not access an index that is out of range."
+    },
+    {
+      "content": "Create a variable to keep track of the sum of good numbers. Initialize it to zero and add the good numbers to this variable as you identify them."
+    },
+    {
+      "content": "When checking if an element is good, you can use a simple condition: `if (nums[i] > nums[i - k] && nums[i - k] exists) && (nums[i] > nums[i + k] && nums[i + k] exists)`. This will help you determine if the current number is good."
+    },
+    {
+      "content": "Make sure to handle the case where `k` is equal to the floor of half the length of the array. This will ensure that you are correctly checking the farthest elements."
+    },
+    {
+      "content": "Consider using a single loop to traverse the array. For each index, check the conditions for being a good number and update the sum accordingly."
+    },
+    {
+      "content": "You might want to use a helper function to check if an index is valid before comparing the values. This can make your main logic cleaner and easier to read."
+    },
+    {
+      "content": "Finally, ensure that you return the sum of all good numbers after the loop completes. The return statement should simply be `return sum;` where `sum` is your accumulated total."
+    }
+  ],
+  "questionNotes": [
+    "An element is good if it is strictly greater than nums[i - k] and nums[i + k] (if they exist).",
+    "Handle edge cases where i - k or i + k might be out of bounds.",
+    "Return the sum of all good numbers.",
+    "Constraints: 2 <= nums.length <= 100, 1 <= nums[i] <= 1000, 1 <= k <= floor(nums.length / 2).",
+    "Indices are 0-based."
+  ]
+}

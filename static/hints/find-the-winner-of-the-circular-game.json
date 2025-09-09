@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the circular nature of the problem. Since friends are arranged in a circle, think about how you can use modular arithmetic to wrap around the indices when counting friends."
+    },
+    {
+      "content": "Consider how to represent the friends. You could use a list or an array to keep track of which friends are still in the game. When a friend is eliminated, you can mark them as out."
+    },
+    {
+      "content": "Think about how to handle the counting. You will need to keep track of your current position and count `k` friends. Remember that counting wraps around, so use the modulo operator to stay within bounds."
+    },
+    {
+      "content": "When a friend is eliminated, the next counting starts from the friend immediately clockwise of the eliminated friend. Make sure your logic correctly identifies this next starting point."
+    },
+    {
+      "content": "Consider edge cases, such as when `n` is 1. What should your function return in this case? Also, think about how your algorithm handles the case where `k` equals `n`."
+    },
+    {
+      "content": "As you implement the elimination process, ensure that you are updating your list of friends correctly. You might want to use a boolean array to track which friends are still in the game."
+    },
+    {
+      "content": "To improve efficiency, think about how you can avoid repeatedly searching through the list of friends. Instead of removing elements from the list, consider using an index to track the current state."
+    },
+    {
+      "content": "Try to derive a mathematical formula or recursive relation for the winner's position based on the number of friends and the step size. This could help you achieve a solution in linear time with constant space."
+    },
+    {
+      "content": "Remember to account for the 1-based indexing of friends in the problem statement. Your final answer should reflect this indexing when returning the winner."
+    },
+    {
+      "content": "You can also think about the Josephus problem, which this game resembles. The position of the last remaining person can be derived using a recursive formula: `josephus(n, k) = (josephus(n-1, k) + k) % n`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= n <= 500",
+    "Friends are numbered from 1 to n.",
+    "Counting wraps around the circle.",
+    "Return the winner's number, which is 1-based."
+  ]
+}

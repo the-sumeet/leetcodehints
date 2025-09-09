@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you can represent the seats. You need a way to track which seats are reserved and which are available. Consider using a data structure that allows for efficient retrieval of the smallest available seat."
+    },
+    {
+      "content": "A priority queue (min-heap) could be a good choice for managing the available seats. It allows you to quickly access and remove the smallest seat number when reserving a seat."
+    },
+    {
+      "content": "Remember that when you reserve a seat, you need to mark it as unavailable. Think about how you can efficiently update your data structure when a seat is reserved or unreserved."
+    },
+    {
+      "content": "When implementing the `unreserve` method, ensure that you correctly add the seat back to the available list. You might need to maintain the order of available seats for efficient retrieval."
+    },
+    {
+      "content": "Consider edge cases such as reserving all seats and then unreserving one. What should happen in this scenario? Ensure your implementation can handle these transitions smoothly."
+    },
+    {
+      "content": "Make sure to handle the constraints properly. For instance, the maximum number of seats is 100,000, so your solution should be efficient in both time and space."
+    },
+    {
+      "content": "Think about how you can maintain a list of reserved and unreserved seats. You might want to use a boolean array or a set to keep track of reserved seats."
+    },
+    {
+      "content": "When unreserving a seat, you need to ensure that it is added back to the available seats in a way that maintains the order. How can you efficiently insert it back into your data structure?"
+    },
+    {
+      "content": "Consider the performance of your `reserve` and `unreserve` methods. They should ideally run in logarithmic time if you're using a priority queue or balanced tree structure."
+    },
+    {
+      "content": "You are almost there! Think about how you can implement the `reserve` method to fetch and return the smallest available seat, and ensure that the seat is marked as reserved immediately after fetching."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100000, 1 <= seatNumber <= n.",
+    "Each call to reserve guarantees at least one unreserved seat.",
+    "Each call to unreserve guarantees that the seatNumber is reserved.",
+    "At most 100000 calls in total will be made to reserve and unreserve."
+  ]
+}

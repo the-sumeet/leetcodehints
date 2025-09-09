@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the two tables: Employees and Salaries. Each table has a unique identifier, employee_id, which you will use to join the tables."
+    },
+    {
+      "content": "Consider how you can identify missing information. An employee's name is missing if the name column is NULL or empty, while a salary is missing if the salary column is NULL."
+    },
+    {
+      "content": "Think about how you can combine the two tables. You might want to use a LEFT JOIN to include all employees and their corresponding salaries, even if some salaries are missing."
+    },
+    {
+      "content": "When performing the join, focus on the condition that checks for missing values. You will need to check both the name from the Employees table and the salary from the Salaries table."
+    },
+    {
+      "content": "Remember that the final output should only include the employee_id of those with missing information. You can use a WHERE clause to filter out employees who have both name and salary present."
+    },
+    {
+      "content": "Ensure that your results are ordered by employee_id in ascending order. This can be done easily by adding an ORDER BY clause at the end of your query."
+    },
+    {
+      "content": "Consider edge cases, such as when all employees have complete information or when there are no employees at all. How should your query handle these scenarios?"
+    },
+    {
+      "content": "Make sure to account for employees that are present in one table but not in the other. For instance, if an employee exists in the Employees table but not in Salaries, they should still be included in the result."
+    },
+    {
+      "content": "As you formulate your SQL query, remember to check for NULL values specifically. Use IS NULL to identify missing names and salaries effectively."
+    },
+    {
+      "content": "Your final SQL statement might look something like this: SELECT employee_id FROM Employees LEFT JOIN Salaries ON Employees.employee_id = Salaries.employee_id WHERE Employees.name IS NULL OR Salaries.salary IS NULL ORDER BY employee_id;"
+    }
+  ],
+  "questionNotes": [
+    "Each employee_id in Employees and Salaries is unique.",
+    "An employee's information is considered missing if either their name or salary is NULL.",
+    "Results must be ordered by employee_id in ascending order."
+  ]
+}

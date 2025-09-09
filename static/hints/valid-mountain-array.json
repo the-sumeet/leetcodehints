@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by checking the length of the array. A valid mountain array must have at least 3 elements. If the length is less than 3, you can immediately return false."
+    },
+    {
+      "content": "Next, identify the conditions for the 'uphill' part of the mountain. You need to find an index `i` such that all elements before `i` are strictly increasing. This means `arr[j] < arr[j+1]` for all `j` from 0 to `i-1`."
+    },
+    {
+      "content": "While checking for the uphill part, ensure that you stop as soon as the condition `arr[j] < arr[j+1]` fails. This will help you find the peak of the mountain."
+    },
+    {
+      "content": "After finding the peak, you need to check the 'downhill' part. From the peak index `i`, ensure that all subsequent elements are strictly decreasing, meaning `arr[k] > arr[k+1]` for all `k` from `i` to the end of the array."
+    },
+    {
+      "content": "Remember that the peak cannot be the first or the last element of the array. Make sure that `i` is within the bounds of `0 < i < arr.length - 1`."
+    },
+    {
+      "content": "Consider edge cases where the array has repeated elements. For example, if two adjacent elements are equal, it will violate the strictly increasing or decreasing condition."
+    },
+    {
+      "content": "You can implement a loop that first checks for the increasing sequence and then for the decreasing sequence. Use a single variable to track the current index as you traverse the array."
+    },
+    {
+      "content": "As you traverse the array, keep track of whether you've already found the peak. This can help you avoid unnecessary checks after reaching the peak."
+    },
+    {
+      "content": "After traversing the array, check if you've successfully found a peak and that you have traversed all the way down to the last element. If both conditions are satisfied, return true."
+    },
+    {
+      "content": "Finally, remember to return false if any of the conditions for a valid mountain array are not met during your checks."
+    }
+  ],
+  "questionNotes": [
+    "The array must have at least 3 elements.",
+    "The peak must not be the first or last element.",
+    "Elements must be strictly increasing before the peak and strictly decreasing after.",
+    "Repeated elements are not allowed in either the increasing or decreasing sequences."
+  ]
+}

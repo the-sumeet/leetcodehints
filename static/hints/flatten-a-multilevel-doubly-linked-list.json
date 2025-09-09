@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the nodes in the doubly linked list. Each node has three pointers: `next`, `prev`, and `child`. The `child` pointer can point to another list, which you will need to flatten as well."
+    },
+    {
+      "content": "Consider how you will traverse the list. You can use a while loop to iterate through the nodes. Pay attention to the `next` pointer to move to the next node in the same level."
+    },
+    {
+      "content": "When you encounter a node with a `child`, you will need to handle this node specially. You should save the `next` pointer of the current node before moving to the child list, so you can reconnect it later."
+    },
+    {
+      "content": "Think about how to flatten the child list. You can create a recursive function or use an iterative approach with a stack to process the child nodes. Remember to set the `child` pointers to null after flattening."
+    },
+    {
+      "content": "Make sure to reconnect the nodes after flattening the child list. After processing the child, you need to link the last node of the flattened child list back to the saved `next` node."
+    },
+    {
+      "content": "Consider edge cases, such as when the input list is empty. Your function should return `null` in this case without trying to access any properties of the nodes."
+    },
+    {
+      "content": "As you flatten the list, keep track of the head of the flattened list. This will be the starting point you return at the end of your function."
+    },
+    {
+      "content": "While flattening, ensure that you maintain the order of nodes. Nodes from the child list should appear immediately after their parent node and before the parent's next node."
+    },
+    {
+      "content": "Remember to handle the `prev` pointers as well. When you link nodes together, ensure that the `prev` pointers are set correctly to maintain the doubly linked structure."
+    },
+    {
+      "content": "Your final implementation should traverse the entire structure, flattening all levels into a single list. After flattening, return the head of the newly formed list with all `child` pointers set to null."
+    }
+  ],
+  "questionNotes": [
+    "Each node has a `next`, `prev`, and `child` pointer.",
+    "The `child` pointer may point to another doubly linked list.",
+    "All `child` pointers must be set to null in the final output.",
+    "The number of nodes will not exceed 1000.",
+    "Return the head of the flattened list."
+  ]
+}

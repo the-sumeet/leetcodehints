@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the two tables: `Signups` and `Confirmations`. The `Signups` table contains unique user IDs and their signup timestamps, while the `Confirmations` table tracks confirmation requests and their outcomes."
+    },
+    {
+      "content": "Focus on the `Confirmations` table. Each user can have multiple entries, and you need to categorize them based on the `action` column, either 'confirmed' or 'timeout'. Think about how you can count these actions for each user."
+    },
+    {
+      "content": "Consider how to join the two tables. You want to ensure that you include all users from the `Signups` table, even those who have no entries in the `Confirmations` table. This is a classic case for a LEFT JOIN."
+    },
+    {
+      "content": "When calculating the confirmation rate, remember that it is defined as the number of 'confirmed' actions divided by the total number of requests. Be careful to handle users with zero requests correctly."
+    },
+    {
+      "content": "To handle the rounding of the confirmation rate to two decimal places, consider using a function like ROUND in SQL. This will ensure your output matches the required format."
+    },
+    {
+      "content": "Think about how to aggregate the data after the join. You will likely need to use GROUP BY on the `user_id` to summarize the counts of 'confirmed' and total requests for each user."
+    },
+    {
+      "content": "Don't forget to account for users with no confirmation requests. They should have a confirmation rate of 0. You can use a CASE statement to handle this situation in your SQL query."
+    },
+    {
+      "content": "Make sure your final output includes both the `user_id` and the calculated `confirmation_rate`. The result should be formatted correctly to match the expected output structure."
+    },
+    {
+      "content": "Consider edge cases, such as users who only have 'timeout' entries or those who have no entries in the `Confirmations` table at all. Your logic should handle these gracefully."
+    },
+    {
+      "content": "Finally, write your SQL query to implement the logic you've developed. Remember to test your query with the provided sample data to ensure it produces the correct results."
+    }
+  ],
+  "questionNotes": [
+    "The confirmation rate is calculated as confirmed requests divided by total requests.",
+    "Users with no confirmation requests should have a confirmation rate of 0.",
+    "Use a LEFT JOIN to include all users from the Signups table.",
+    "Round the confirmation rate to two decimal places in the output.",
+    "The output should include user_id and confirmation_rate in any order."
+  ]
+}

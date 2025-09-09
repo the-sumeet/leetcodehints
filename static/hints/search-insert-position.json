@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find the position of a target value in a sorted array of distinct integers. If the target is not present, you should return the index where it can be inserted while maintaining the sorted order."
+    },
+    {
+      "content": "Remember that the array is sorted and contains distinct integers. This means you won't have to deal with duplicate values, which simplifies the problem. Think about how you can leverage the sorted property of the array."
+    },
+    {
+      "content": "Consider using binary search to achieve the O(log n) runtime complexity. In binary search, you repeatedly divide the search interval in half. If the target value is less than the middle element, you search the left half; otherwise, you search the right half."
+    },
+    {
+      "content": "Before implementing binary search, define your search boundaries. You will need two pointers: one for the start of the array and one for the end. Initialize them to the first and last indices of the array, respectively."
+    },
+    {
+      "content": "As you perform binary search, calculate the middle index. Use this index to compare the middle element with the target. Depending on the comparison, adjust your search boundaries accordingly."
+    },
+    {
+      "content": "Pay attention to the case when the target is not found. After the binary search loop, you will have narrowed down the potential insertion point. This point will be the index where the target should be inserted."
+    },
+    {
+      "content": "Consider edge cases, such as when the target is smaller than the smallest element in the array or larger than the largest element. How will your algorithm handle these scenarios?"
+    },
+    {
+      "content": "Keep in mind that the return value should be the index. If the target is found, return its index; if not, return the index where it would be inserted. Think about how you will determine this index."
+    },
+    {
+      "content": "In your implementation, ensure that you handle the case where the array is empty. What should your function return if there are no elements in the array?"
+    },
+    {
+      "content": "Now, implement the binary search logic. After determining the mid-point and adjusting your boundaries, if you exit the loop without finding the target, return the appropriate index where the target should be inserted."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^4",
+    "-10^4 <= nums[i] <= 10^4",
+    "nums contains distinct values sorted in ascending order.",
+    "-10^4 <= target <= 10^4",
+    "Return the index of the target if found, or the index where it would be inserted."
+  ]
+}

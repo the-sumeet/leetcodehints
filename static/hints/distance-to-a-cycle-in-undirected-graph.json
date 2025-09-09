@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of an undirected graph. Each edge connects two vertices, and there can be cycles formed by traversing these edges."
+    },
+    {
+      "content": "Consider how you would represent the graph in code. An adjacency list is a common choice for undirected graphs, where each vertex points to a list of its neighbors."
+    },
+    {
+      "content": "Think about how to detect cycles in an undirected graph. A Depth-First Search (DFS) can be useful here, but be careful to avoid counting the edge that leads back to the parent node as a cycle."
+    },
+    {
+      "content": "When traversing the graph, maintain a record of visited nodes. This will help you avoid infinite loops and ensure you only process each node once."
+    },
+    {
+      "content": "As you detect cycles, consider how you can mark the nodes that are part of the cycle. You might want to use a separate data structure to keep track of these nodes."
+    },
+    {
+      "content": "Once you have identified the cycle nodes, think about how you can calculate the distance from each node in the graph to the nearest node in the cycle."
+    },
+    {
+      "content": "You may want to use a Breadth-First Search (BFS) starting from all cycle nodes simultaneously. This will allow you to find the shortest distance to the cycle efficiently."
+    },
+    {
+      "content": "In your BFS, maintain a queue that starts with all cycle nodes and a distance counter initialized to zero. This will help you propagate distances outward."
+    },
+    {
+      "content": "As you process each node in the BFS, ensure you update the distance for each neighbor if the new calculated distance is shorter than any previously recorded distance."
+    },
+    {
+      "content": "Consider edge cases such as when there are no cycles in the graph. What should your function return in such scenarios?"
+    },
+    {
+      "content": "Think about how you will handle disconnected components in the graph. Ensure that your BFS accounts for all nodes, even if they are not part of a cycle."
+    },
+    {
+      "content": "Remember to return the distances in the order of the original node indices. This means you should maintain an array where the index corresponds to the node number."
+    },
+    {
+      "content": "As you finalize your approach, ensure you handle large graphs efficiently. Consider the time complexity of your solution, especially with BFS and cycle detection."
+    },
+    {
+      "content": "Before finalizing your code, write out a few test cases, particularly edge cases, to ensure your logic holds. For example, test with a graph that has multiple cycles."
+    },
+    {
+      "content": "Your final implementation should combine the cycle detection and distance calculation into a cohesive function. Ensure your code is clean and well-commented."
+    }
+  ],
+  "questionNotes": [
+    "The graph is undirected and may contain multiple cycles.",
+    "Input is given as an edge list, where each edge connects two vertices.",
+    "Return the distance from each node to the nearest cycle node.",
+    "Handle cases where there are no cycles gracefully.",
+    "Output should be in the order of node indices."
+  ]
+}

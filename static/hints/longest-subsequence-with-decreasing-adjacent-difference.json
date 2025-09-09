@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence can be derived from the original array by deleting some elements without changing the order of the remaining elements. For example, from [16, 6, 3], you can form [16, 3] or [6, 3]."
+    },
+    {
+      "content": "Focus on the requirement for the absolute differences between consecutive elements. For a valid subsequence, the condition |seq[1] - seq[0]| >= |seq[2] - seq[1]| must hold, and so on. This means you need to track the differences as you build your subsequence."
+    },
+    {
+      "content": "Consider how you might iterate through the array to form potential subsequences. You could use a nested loop to check pairs of elements and see if they can be part of the same subsequence based on the difference condition."
+    },
+    {
+      "content": "Think about using dynamic programming to store the lengths of valid subsequences. Create an array, `dp`, where `dp[i]` represents the length of the longest valid subsequence ending at index `i`."
+    },
+    {
+      "content": "As you fill in the `dp` array, remember to calculate the absolute differences between elements. You will need to compare the current element with all previous elements to see if you can extend the subsequence."
+    },
+    {
+      "content": "When updating the `dp` array, ensure you are also keeping track of the last difference used in the subsequence. This will help you maintain the non-increasing order of differences."
+    },
+    {
+      "content": "Consider edge cases where the array is very small or contains duplicate values. How would these affect your subsequence? For instance, in an array like [10, 10, 10], the longest subsequence is just the same repeated number."
+    },
+    {
+      "content": "Make sure to handle the case where no valid subsequence can be formed. You should still return a length, which could be 1 if the array has at least two elements."
+    },
+    {
+      "content": "After populating the `dp` array, the final answer will be the maximum value in `dp`. This represents the length of the longest subsequence found."
+    },
+    {
+      "content": "Before finalizing your solution, review the constraints given in the problem. Ensure your approach runs efficiently within the limits, as the maximum length of `nums` can be up to 10,000."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 10^4",
+    "Values: 1 <= nums[i] <= 300",
+    "Return the length of the longest valid subsequence.",
+    "Subsequences must maintain the order of elements from the original array."
+  ]
+}

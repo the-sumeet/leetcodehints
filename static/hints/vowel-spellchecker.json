@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the three matching strategies: exact match (case-sensitive), case-insensitive match, and vowel error match. Each has its own priority, so make sure you handle them in the correct order."
+    },
+    {
+      "content": "For the exact match, you can simply check if the query word is present in the wordlist. This can be done using a simple equality check."
+    },
+    {
+      "content": "For the case-insensitive match, you can convert both the query and the words in the wordlist to lowercase and check for equality. Remember to keep track of the original case of the word in the wordlist."
+    },
+    {
+      "content": "When handling vowel errors, create a helper function that replaces each vowel in the query with every possible vowel. For example, if the query is 'hallo', you would generate 'hallo', 'hello', 'hillu', etc."
+    },
+    {
+      "content": "Make sure to define which characters are considered vowels. In this case, they are 'a', 'e', 'i', 'o', and 'u'. You can use a set for efficient lookups."
+    },
+    {
+      "content": "Store the wordlist in a way that allows for fast lookups. Using a set for exact matches and a dictionary for case-insensitive matches can be helpful."
+    },
+    {
+      "content": "Consider edge cases such as queries that have no vowels or queries that are completely different from any word in the wordlist. Ensure your function returns an empty string in these cases."
+    },
+    {
+      "content": "Remember that you need to return the first matching word according to the specified rules. Use the order of the original wordlist to determine which match to return."
+    },
+    {
+      "content": "You can iterate through the queries and apply the three matching strategies in order. If you find a match at any stage, return the corresponding word immediately."
+    },
+    {
+      "content": "Finally, implement the logic to handle the vowel error replacements. You will need to loop through the vowels and replace them one at a time, checking against the wordlist for matches."
+    }
+  ],
+  "questionNotes": [
+    "The wordlist and queries can have lengths up to 5000.",
+    "Each word in the wordlist and queries can be up to 7 characters long.",
+    "Queries and words consist only of English letters.",
+    "Return an empty string if no matches are found.",
+    "Preserve the case of the first matching word found in the wordlist."
+  ]
+}

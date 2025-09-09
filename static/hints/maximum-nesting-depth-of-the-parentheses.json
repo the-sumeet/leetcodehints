@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input string. The string consists of valid parentheses, which means every opening '(' has a corresponding closing ')'. Your goal is to determine how deep these parentheses are nested."
+    },
+    {
+      "content": "Consider how you might track the current depth of nested parentheses as you traverse the string. You could use a counter that increments when you encounter an opening parenthesis '(' and decrements when you encounter a closing parenthesis ')'."
+    },
+    {
+      "content": "As you iterate through the string, keep track of the maximum depth encountered. This means you should compare the current depth with the maximum depth each time you change the depth."
+    },
+    {
+      "content": "Think about initializing your depth counter and maximum depth variable. You might start both at zero, and remember to update the maximum depth whenever you increase the current depth."
+    },
+    {
+      "content": "When you encounter '(', increase your current depth. For example, if your current depth is 0 and you find '(', set your current depth to 1. If you find another '(', increase it to 2, and so on."
+    },
+    {
+      "content": "When you encounter ')', you should decrease your current depth. Make sure that your current depth does not go below zero, as this would indicate an imbalance in parentheses, but since the problem guarantees valid input, you don't need to handle this case."
+    },
+    {
+      "content": "Remember to check the maximum depth after updating your current depth. You can do this by comparing the current depth with the maximum depth and updating the maximum depth if the current depth is greater."
+    },
+    {
+      "content": "Consider edge cases, such as strings with no parentheses or strings that are entirely made up of nested parentheses. How would your logic handle these cases?"
+    },
+    {
+      "content": "As a final touch, ensure that your function returns the maximum depth after processing the entire string. This means your return statement should be placed after you've finished iterating through the string."
+    },
+    {
+      "content": "Here's a near-solution outline: Loop through each character in the string, update the current depth and maximum depth accordingly, and finally return the maximum depth. Pseudocode could look like this:\n\n```\nfor char in s:\n    if char == '(':  \n        current_depth += 1\n        max_depth = max(max_depth, current_depth)\n    elif char == ')':\n        current_depth -= 1\nreturn max_depth\n```"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 100",
+    "The string consists of digits 0-9 and characters '+', '-', '*', '/', '(', and ')'.",
+    "It is guaranteed that parentheses expression s is a valid parentheses string (VPS)."
+  ]
+}

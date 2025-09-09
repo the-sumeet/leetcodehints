@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node has a value and can have up to two children. Identify how you can traverse this tree to find both the start node and the destination node."
+    },
+    {
+      "content": "Consider how you can locate the start node (s) and the destination node (t) within the tree. You might want to perform a traversal (like DFS or BFS) to find their respective paths to the root."
+    },
+    {
+      "content": "Once you find the paths from both nodes to the root, think about how to compare these paths. The point where the paths diverge will help you determine the steps needed to move from the start node to the destination node."
+    },
+    {
+      "content": "Remember that moving to the parent node is represented by 'U'. Ensure you account for the correct number of 'U' moves needed to get from the start node to the lowest common ancestor (LCA) of both nodes."
+    },
+    {
+      "content": "After reaching the LCA, you will need to navigate from there to the destination node. This will involve moving down the tree, which is represented by 'L' for left and 'R' for right."
+    },
+    {
+      "content": "When constructing the final path string, concatenate the 'U' moves needed to reach the LCA with the 'L' and 'R' moves needed to reach the destination node. Make sure to keep track of the order of operations."
+    },
+    {
+      "content": "Consider edge cases, such as when the start node is a direct parent of the destination node. In this case, your path would simply be 'L' or 'R' depending on the direction."
+    },
+    {
+      "content": "Be mindful of the constraints given in the problem. The tree will always have unique values, and you should not encounter any cycles. This allows you to safely use a simple traversal method."
+    },
+    {
+      "content": "As you implement your solution, think about how to efficiently store and retrieve the paths from each node to the root. You might use a dictionary or a list to keep track of the nodes visited."
+    },
+    {
+      "content": "Finally, ensure your output format matches the requirements. You need to return a string composed of 'L', 'R', and 'U' characters representing the steps taken from the start node to the destination node."
+    }
+  ],
+  "questionNotes": [
+    "The binary tree is structured such that each node has a unique value from 1 to n.",
+    "The startValue and destValue are guaranteed to be different.",
+    "The output should be a string of characters 'L', 'R', and 'U' indicating the path.",
+    "Constraints specify that n (number of nodes) is between 2 and 100,000."
+  ]
+}

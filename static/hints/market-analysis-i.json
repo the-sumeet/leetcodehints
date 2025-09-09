@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the tables provided: Users, Orders, and Items. Focus on the Users and Orders tables since you need to find user-specific order information."
+    },
+    {
+      "content": "Identify the columns you need from the Users table: user_id and join_date. You will also need to count the orders from the Orders table where each user is a buyer."
+    },
+    {
+      "content": "Remember that you need to filter the orders to only include those made in the year 2019. Think about how you can use a WHERE clause to achieve this."
+    },
+    {
+      "content": "Consider how you will join the Users and Orders tables. You will likely use a LEFT JOIN to ensure all users are included, even those who made no orders."
+    },
+    {
+      "content": "When counting the number of orders, use the COUNT function. Be sure to group your results by user_id to get the correct counts for each user."
+    },
+    {
+      "content": "Pay attention to the output format. You need to return buyer_id, join_date, and the count of orders in 2019, ensuring that buyer_id corresponds to user_id."
+    },
+    {
+      "content": "Think about how to handle users with zero orders in 2019. A LEFT JOIN will help you include these users with a count of zero."
+    },
+    {
+      "content": "You might want to use the COALESCE function to handle NULL values for users with no orders. This will allow you to return 0 instead of NULL for the order count."
+    },
+    {
+      "content": "Be mindful of the date format when filtering orders. Ensure that your date conditions accurately reflect the year 2019."
+    },
+    {
+      "content": "Finally, construct your SQL query to select the required fields, join the tables, filter by date, group by user_id, and count the orders. Make sure to test your query with different datasets to cover edge cases."
+    }
+  ],
+  "questionNotes": [
+    "Ensure you understand the relationships between the tables, especially foreign keys.",
+    "Remember to handle users with no orders correctly to avoid missing them in the output.",
+    "The result can be returned in any order, so you do not need to sort the output.",
+    "Focus on the correct date filtering to ensure only orders from 2019 are counted."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the k-constraint. A substring satisfies the k-constraint if it has at most k '0's or at most k '1's. This means you need to count the number of '0's and '1's in any substring you consider."
+    },
+    {
+      "content": "Think about how to efficiently count '0's and '1's in a substring. A naive approach would involve counting for every substring, which could be too slow. Consider using prefix sums to store cumulative counts of '0's and '1's."
+    },
+    {
+      "content": "When you preprocess the string with prefix sums, create two arrays: one for the count of '0's and another for the count of '1's. This will allow you to quickly calculate the number of '0's or '1's in any substring defined by indices l and r."
+    },
+    {
+      "content": "Remember that for any substring s[l..r], you can calculate the number of '0's as: count_0 = prefix_0[r + 1] - prefix_0[l]. Similarly, calculate the number of '1's using the prefix sums for '1's."
+    },
+    {
+      "content": "To find valid substrings, you need to check both conditions for each substring: count of '0's <= k and count of '1's <= k. If either condition is satisfied, the substring is valid."
+    },
+    {
+      "content": "Consider how to efficiently count all valid substrings for each query. You might want to iterate through all possible starting points for substrings and check the counts, but this could lead to O(n^2) complexity."
+    },
+    {
+      "content": "Instead of checking all substrings, think about how to use a sliding window approach. Maintain a window of valid substrings that satisfy the k-constraint and expand or contract this window as needed."
+    },
+    {
+      "content": "When using a sliding window, maintain two pointers. Start both pointers at the beginning of the substring defined by the query, and expand the right pointer until you exceed the k-constraint."
+    },
+    {
+      "content": "Once the right pointer exceeds the k-constraint, increment the left pointer to reduce the count back to valid. Count the number of valid substrings formed during this process."
+    },
+    {
+      "content": "For each query, after calculating the number of valid substrings, store the result in the answer array. Make sure to handle multiple queries efficiently."
+    },
+    {
+      "content": "Consider edge cases, such as when k is very large (greater than the number of '0's or '1's in the substring). In such cases, all substrings will be valid."
+    },
+    {
+      "content": "Also, think about cases where the entire string consists of the same character. This will help you understand the extremes of the problem."
+    },
+    {
+      "content": "Make sure to handle the constraints properly: the length of s can be up to 100,000 and the number of queries can also be large. Your solution needs to be efficient to handle this scale."
+    },
+    {
+      "content": "As you implement your solution, keep testing with different edge cases to ensure your logic holds. Pay attention to off-by-one errors, especially with the boundaries of the substring."
+    },
+    {
+      "content": "Finally, consider how to optimize your sliding window approach further if needed. You might want to look into maintaining counts of '0's and '1's dynamically as you adjust the window."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 100000, 1 <= k <= s.length, 1 <= queries.length <= 100000.",
+    "Each queries[i] is distinct and defined as [l_i, r_i] with 0 <= l_i <= r_i < s.length.",
+    "Output should be an array where answer[i] corresponds to the result of queries[i]."
+  ]
+}

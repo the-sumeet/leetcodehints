@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for an array to be sorted. An array is sorted in non-decreasing order if for every pair of indices i and j where i < j, nums[i] <= nums[j]."
+    },
+    {
+      "content": "Identify the first and last indices where the order is violated. This will help you determine the boundaries of the subarray that needs sorting."
+    },
+    {
+      "content": "To find the first index where the order is violated, iterate from the beginning of the array and look for the first instance where nums[i] > nums[i + 1]."
+    },
+    {
+      "content": "Similarly, to find the last index where the order is violated, iterate from the end of the array and look for the first instance where nums[j] < nums[j - 1]."
+    },
+    {
+      "content": "Once you have the initial boundaries, check if the elements in the identified subarray are out of place compared to the rest of the array. This might involve finding the minimum and maximum values in the subarray."
+    },
+    {
+      "content": "If the minimum value in the subarray is less than any element before the starting index, or if the maximum value is greater than any element after the ending index, you may need to adjust your boundaries."
+    },
+    {
+      "content": "Consider edge cases such as arrays that are already sorted or arrays with only one element. In these cases, the length of the subarray that needs sorting is 0."
+    },
+    {
+      "content": "Keep track of the length of the subarray that needs to be sorted. This can be calculated as the difference between the last and first indices of the subarray plus one."
+    },
+    {
+      "content": "Think about how you can achieve this in O(n) time complexity. You may want to avoid nested loops and focus on a single pass to determine the boundaries and the necessary adjustments."
+    },
+    {
+      "content": "Finalize your approach by writing out the steps in pseudocode, ensuring that you handle all edge cases and return the correct length of the subarray."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^4",
+    "Value range: -10^5 <= nums[i] <= 10^5",
+    "Return format: Length of the shortest unsorted continuous subarray."
+  ]
+}

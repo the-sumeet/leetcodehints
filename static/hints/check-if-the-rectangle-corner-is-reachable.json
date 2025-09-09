@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by visualizing the problem. You need to find a clear path from the origin (0, 0) to the point (xCorner, yCorner) without intersecting any circles. Draw the rectangle and the circles on a coordinate plane to understand the space you have to work with."
+    },
+    {
+      "content": "Consider the geometry of the circles. Each circle defined by (xi, yi, ri) has a center at (xi, yi) and a radius of ri. This means any point within a distance of ri from (xi, yi) is considered inside the circle and thus not valid for your path."
+    },
+    {
+      "content": "Think about the edges of the rectangle. The path must only touch the rectangle at the corners (0, 0) and (xCorner, yCorner). This means the path can’t intersect the rectangle's sides except at these points."
+    },
+    {
+      "content": "Check the constraints carefully. The coordinates of the rectangle can be very large (up to 10^9), which implies that a brute force approach checking every point is not feasible. You need an efficient way to determine if a path exists."
+    },
+    {
+      "content": "Identify the areas of the rectangle that are safe from the circles. For each circle, calculate the area that is 'unsafe' by considering the distance from the circle's center to the edges of the rectangle."
+    },
+    {
+      "content": "You might want to use a graph traversal technique to explore the space. Consider using BFS or DFS to explore potential paths from the starting point to the destination while avoiding the circles."
+    },
+    {
+      "content": "Before implementing the pathfinding algorithm, ensure you can efficiently check if a point is inside any circle. This can be done using the distance formula: a point (px, py) is inside a circle if (px - xi)^2 + (py - yi)^2 < ri^2."
+    },
+    {
+      "content": "Think about edge cases where circles might be very close to the rectangle's corners. For instance, if a circle is centered at (0, 0) with a radius that reaches the origin, this would immediately invalidate the path."
+    },
+    {
+      "content": "Consider the case where multiple circles overlap or are very close to each other. You will need to account for the combined effect of these circles when determining safe areas."
+    },
+    {
+      "content": "When implementing your pathfinding algorithm, keep track of visited points to avoid cycles and unnecessary computations. This will help optimize your solution."
+    },
+    {
+      "content": "You can start by checking if the path is blocked right from the start. If the origin (0, 0) is inside any circle, return false immediately as no path can start from there."
+    },
+    {
+      "content": "As you explore paths, consider the boundaries created by the circles. You may need to adjust your pathfinding logic to ensure that you are not just avoiding the circles but also staying within the rectangle."
+    },
+    {
+      "content": "Think about how to efficiently represent the circles and the rectangle in your code. You might want to create a function that checks if a point is safe based on the circles."
+    },
+    {
+      "content": "As you approach the final solution, consider edge cases where the rectangle might be completely surrounded by circles. This will help you ensure your solution is robust."
+    },
+    {
+      "content": "Finally, implement the pathfinding logic. You can use a queue for BFS or a stack for DFS, and remember to check each point against all circles to ensure it’s a valid move."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= xCorner, yCorner <= 10^9; 1 <= circles.length <= 1000; circles[i].length == 3; 1 <= xi, yi, ri <= 10^9.",
+    "The path must not touch or lie inside any circle and can only touch the rectangle at the corners.",
+    "Ensure to handle edge cases where circles are very close to the rectangle's corners."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of an ideal array. Each element must be between 1 and maxValue, and each element must be divisible by the previous one."
+    },
+    {
+      "content": "Consider the implications of the divisibility condition. If arr[i] is divisible by arr[i - 1], what values can arr[i] take based on the value of arr[i - 1]?"
+    },
+    {
+      "content": "Think about how many choices you have for arr[0]. You can choose any integer from 1 to maxValue. How does this affect the rest of the array?"
+    },
+    {
+      "content": "When you choose a starting value for arr[0], how many valid choices do you have for arr[1]? List out the possible values for a few starting values."
+    },
+    {
+      "content": "Notice that the choices for arr[i] depend on the previous value. If arr[i-1] is k, then arr[i] can be k, 2k, 3k, ..., up to maxValue. How can you calculate the number of valid choices?"
+    },
+    {
+      "content": "Consider using dynamic programming to store the number of valid arrays that can be formed starting with each possible value. How would you structure your DP table?"
+    },
+    {
+      "content": "You may want to initialize a DP array where dp[i] represents the number of ideal arrays of length i. What would the base case look like?"
+    },
+    {
+      "content": "Think about how you can fill in the DP table. For each possible starting value, you can iterate through its multiples. How would you accumulate the counts in your DP array?"
+    },
+    {
+      "content": "Remember to apply the modulo operation (10^9 + 7) to avoid overflow. Where in your calculations will you need to include this?"
+    },
+    {
+      "content": "As you iterate through possible starting values, consider how to avoid counting the same ideal array multiple times. How can you ensure uniqueness?"
+    },
+    {
+      "content": "What edge cases might arise? For example, how would your solution handle the smallest values of n and maxValue?"
+    },
+    {
+      "content": "After constructing your DP table, how will you derive the final answer? What should you return based on your DP results?"
+    },
+    {
+      "content": "Make sure to test your implementation with the provided examples. What outputs do you expect for n = 2, maxValue = 5 and n = 5, maxValue = 3?"
+    },
+    {
+      "content": "Consider the performance of your solution. If n can go up to 10^4 and maxValue can also be 10^4, what is the time complexity of your approach?"
+    },
+    {
+      "content": "Finally, ensure your code is clean and well-commented. How can you structure your code to make it easy to understand the flow of logic?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^4, 1 <= maxValue <= 10^4.",
+    "Return the result modulo 10^9 + 7.",
+    "Ensure the array is 0-indexed.",
+    "Count distinct ideal arrays; avoid duplicates in counting.",
+    "Each arr[i] must be divisible by arr[i - 1] for 0 < i < n."
+  ]
+}

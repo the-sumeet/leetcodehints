@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You can only work on one milestone per week, and you cannot work on two milestones from the same project in consecutive weeks. This means that you need to alternate between projects."
+    },
+    {
+      "content": "Consider how to represent the projects and their milestones. A simple array can be used, where each index corresponds to a project and the value at that index represents the number of milestones left to complete."
+    },
+    {
+      "content": "Think about how you can maximize the number of weeks worked. You should prioritize working on projects with the most milestones available, but remember to alternate between projects to avoid consecutive work on the same project."
+    },
+    {
+      "content": "You can use a greedy approach to select the project with the most milestones available each week. However, you need to ensure that the project you choose does not violate the consecutive week rule."
+    },
+    {
+      "content": "Consider using a max-heap (or priority queue) to efficiently get the project with the most milestones. Each week, you can pop the project with the highest milestones, work on it, and then push it back with one less milestone."
+    },
+    {
+      "content": "When working on a project, if it has only one milestone left, you need to be careful about when you choose to work on it. If you work on it too soon, you might not be able to work on other projects afterward without violating the rules."
+    },
+    {
+      "content": "Think about the scenario when you have two projects with the same number of milestones. How will you decide which one to work on? The order of selection can affect the total number of weeks you can work."
+    },
+    {
+      "content": "You may want to simulate the process for a few weeks to see how the milestones decrease. Keep track of how many weeks you have worked and how many milestones are left for each project after each week."
+    },
+    {
+      "content": "Consider edge cases, such as when there is only one project or when all projects have the same number of milestones. How do these cases affect your approach to maximizing the weeks worked?"
+    },
+    {
+      "content": "Finally, think about how you will determine when to stop working. You will stop when there are no valid milestones left to work on without violating the consecutive week rule. How can you check this condition efficiently?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == milestones.length, 1 <= n <= 10^5, 1 <= milestones[i] <= 10^9.",
+    "You must work every week, finishing exactly one milestone.",
+    "You cannot work on two milestones from the same project for two consecutive weeks.",
+    "Return the maximum number of weeks you can work, not necessarily finishing all milestones."
+  ]
+}

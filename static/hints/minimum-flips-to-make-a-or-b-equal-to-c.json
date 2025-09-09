@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the bitwise OR operation. For any two bits, the result of a OR b is 1 if at least one of the bits is 1, otherwise it is 0. Consider how this relates to the bits of a, b, and c."
+    },
+    {
+      "content": "Break down the problem by comparing the binary representations of a, b, and c. Identify which bits in a OR b do not match the corresponding bits in c."
+    },
+    {
+      "content": "Create a function to count the number of bits that differ between two integers. This will help you analyze how many flips are needed at a basic level."
+    },
+    {
+      "content": "Consider the cases where the bits of c are 1. For each bit position where c has a 1, at least one of a or b must also have a 1. If both are 0, you'll need to flip at least one of them."
+    },
+    {
+      "content": "When c has a 0 at a certain bit position, both a and b must also have 0 at that position to satisfy the condition a OR b == c. If either has a 1, you will need to flip it to 0."
+    },
+    {
+      "content": "Make a list of conditions based on the bits of a, b, and c. For each bit position, determine if you need to flip a bit in a, b, or both."
+    },
+    {
+      "content": "Think about how to efficiently iterate through the bits of a, b, and c. You can use bitwise operations like shifting and masking to check each bit one by one."
+    },
+    {
+      "content": "Remember to handle all bit positions up to the maximum possible value of a, b, and c. This means you may need to consider up to 30 bits (since 2^30 > 10^9)."
+    },
+    {
+      "content": "Count the total number of flips required based on the conditions you've established. Keep track of each bit position's requirement as you iterate."
+    },
+    {
+      "content": "Finally, ensure your solution accounts for edge cases, such as when a, b, or c are already equal or when they are at their maximum constraints. Refine your counting logic to ensure accuracy."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= a, b, c <= 10^9",
+    "Focus on the bitwise representation of the numbers.",
+    "Flips can change bits from 0 to 1 or from 1 to 0.",
+    "The goal is to make (a OR b) equal to c with the minimum number of flips."
+  ]
+}

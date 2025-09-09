@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by defining the main components of the File Sharing System. You need to manage users and the files they share. Think about how to represent users and their shared files in your data structures."
+    },
+    {
+      "content": "Consider how users will join and leave the sharing system. You might want to keep track of active users and their current state. A simple list or set could work well for this."
+    },
+    {
+      "content": "When a user joins, they may need to specify which files they want to share. Think about how to store this information. A dictionary mapping user IDs to the files they share could be useful."
+    },
+    {
+      "content": "For the 'request' operation, consider how to handle file requests. You need to check if the requested file is available from the user who is being requested. Keep in mind that a user can have multiple files."
+    },
+    {
+      "content": "Pay attention to the input structure. The requests are given as lists of parameters. Make sure to parse these correctly when implementing your methods. For example, `request` might take a user ID and a file ID."
+    },
+    {
+      "content": "Think about edge cases, such as what happens when a user requests a file that is not shared by anyone. You might want to return a specific value or message in such cases."
+    },
+    {
+      "content": "Consider how to handle multiple users requesting the same file at the same time. You might need to implement a way to manage these requests fairly or in a specific order."
+    },
+    {
+      "content": "When a user leaves, you need to ensure that their shared files are no longer available for requests. This might involve removing them from your data structures."
+    },
+    {
+      "content": "Make sure to handle the case where a user joins with an empty file list. This should not cause errors in your system, so plan for how to manage users without shared files."
+    },
+    {
+      "content": "Finally, think about how to return the results of the 'request' operation. You might want to return a success message or the file itself, depending on your design choice. Ensure your return format is consistent."
+    }
+  ],
+  "questionNotes": [
+    "Each user can share multiple files, but each file must be unique per user.",
+    "The join operation should allow users to specify which files they want to share.",
+    "Requests should handle cases where files are not available gracefully.",
+    "Ensure that the system can handle concurrent requests and user joins/leaves without issues."
+  ]
+}

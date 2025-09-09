@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how happiness is calculated for both introverts and extroverts. Introverts lose happiness for each neighbor, while extroverts gain happiness. This difference in happiness calculation is key to maximizing the total happiness."
+    },
+    {
+      "content": "Consider the grid size and how people can be placed. The grid is m x n, and you can choose to place fewer people than you have available. Think about how to maximize happiness by strategically placing introverts and extroverts."
+    },
+    {
+      "content": "Remember that neighbors are only those directly adjacent (north, south, east, west). This means placing people in corners or edges of the grid can affect their happiness differently compared to placing them in the center."
+    },
+    {
+      "content": "Introverts have a starting happiness of 120 and lose 30 for each neighbor. If they are placed next to other people, their happiness can drop significantly. Consider how to isolate introverts to maintain their happiness."
+    },
+    {
+      "content": "Extroverts start with 40 happiness and gain 20 for each neighbor. They thrive on having more neighbors, so placing them together can significantly increase their happiness. Think about clustering extroverts."
+    },
+    {
+      "content": "Explore edge cases, such as when there are no introverts or no extroverts. How does this affect the overall happiness? What configurations yield the maximum happiness in those scenarios?"
+    },
+    {
+      "content": "Use a backtracking approach to explore different placements of introverts and extroverts. This allows you to evaluate various configurations and their resulting happiness scores."
+    },
+    {
+      "content": "Keep track of the maximum happiness score as you explore different configurations. You might want to use a variable to store this maximum score and update it whenever you find a better configuration."
+    },
+    {
+      "content": "When placing introverts and extroverts, consider the order of placement. Placing introverts first might yield different results than placing extroverts first. Experiment with different sequences."
+    },
+    {
+      "content": "Think about the constraints: the maximum number of people is 6, and the grid size is at most 5x5. This allows for a manageable number of configurations to evaluate, making brute-force approaches feasible."
+    },
+    {
+      "content": "Consider using a recursive function to handle the placement of individuals in the grid. This function can take parameters for the current state of the grid, remaining introverts, remaining extroverts, and the current happiness score."
+    },
+    {
+      "content": "As you implement your solution, remember to check for boundary conditions when placing people in the grid. Ensure that you do not exceed the grid dimensions when calculating neighbors."
+    },
+    {
+      "content": "In your recursive function, after placing a person, calculate the new happiness score based on the current grid state. This will help you evaluate the effectiveness of each configuration."
+    },
+    {
+      "content": "When evaluating happiness, remember to account for the happiness loss or gain based on the current number of neighbors. This may require a helper function to calculate happiness for each person."
+    },
+    {
+      "content": "Finally, ensure you return the maximum happiness score found after exploring all configurations. This will be the output of your function."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 5 and 0 <= introvertsCount, extrovertsCount <= min(m * n, 6)",
+    "Grid cells are indexed starting from (1,1) to (m,n).",
+    "You do not have to place all introverts and extroverts in the grid.",
+    "Maximize the total happiness, which is the sum of individual happiness scores."
+  ]
+}

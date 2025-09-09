@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `Person` table. You have two columns: `id` and `email`, where `id` is unique for each record. Focus on the `email` column since that is where duplicates will be found."
+    },
+    {
+      "content": "Consider how you can identify duplicates in the `email` column. Think about using a counting mechanism to track how many times each email appears in the table."
+    },
+    {
+      "content": "You might want to use a SQL aggregate function to help with counting. Functions like `COUNT()` can be useful for this purpose. Remember to group your results by the `email` column."
+    },
+    {
+      "content": "When using the `COUNT()` function, you will need to filter the results to only show emails that appear more than once. This can be done using the `HAVING` clause in SQL."
+    },
+    {
+      "content": "Make sure to select the correct column name in your output. The result should have a single column named `Email`, which will contain the duplicate emails."
+    },
+    {
+      "content": "Think about the order of your results. The problem states that the output can be in any order, so you don't need to worry about sorting the results."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no duplicate emails in the table. What should your query return in that scenario? Ensure your query handles this gracefully."
+    },
+    {
+      "content": "Remember that the email addresses are guaranteed to be in lowercase and non-null. This simplifies your checks, as you won't need to handle case sensitivity or null values."
+    },
+    {
+      "content": "As you write your SQL query, ensure that you are correctly referencing the `Person` table and using the appropriate SQL syntax for grouping and filtering."
+    },
+    {
+      "content": "Finally, your SQL query should look something like this: `SELECT email FROM Person GROUP BY email HAVING COUNT(email) > 1`. This will give you the desired result of duplicate emails."
+    }
+  ],
+  "questionNotes": [
+    "The `id` column is unique and serves as the primary key.",
+    "The `email` column will not contain uppercase letters and is never NULL.",
+    "Return a single column named `Email` containing the duplicate emails.",
+    "The output can be in any order."
+  ]
+}

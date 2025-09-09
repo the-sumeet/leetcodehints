@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input string. Each character represents a type of building: '0' for offices and '1' for restaurants. Your goal is to select three buildings such that no two consecutive selected buildings are of the same type."
+    },
+    {
+      "content": "Consider the possible combinations of buildings you can select. Since you need to choose 3 buildings, think about how you can represent the indices of these buildings in the string. For example, if you select buildings at indices i, j, and k, they must satisfy i < j < k."
+    },
+    {
+      "content": "You need to ensure that the selected buildings alternate in type. This means that if you select a building of type '0', the next building must be of type '1', and vice versa. This alternating pattern is crucial for valid selections."
+    },
+    {
+      "content": "To efficiently count valid selections, consider iterating through the string and maintaining counts of how many buildings of each type you have seen so far. This will help you quickly determine valid combinations as you progress."
+    },
+    {
+      "content": "As you iterate through the string, you can keep track of the indices of the last seen '0' and '1'. This will help you find valid pairs of buildings that can be selected together with a third building."
+    },
+    {
+      "content": "When you find a building of type '0' at index k, look for the last two buildings of type '1' before it. Similarly, do the opposite when you find a building of type '1'. This will help you count valid combinations."
+    },
+    {
+      "content": "Remember to account for edge cases, such as strings that contain only one type of building (e.g., '000' or '111'). In these cases, no valid selections can be made."
+    },
+    {
+      "content": "Think about how to efficiently count the valid selections without checking every possible triplet. You can use a nested loop structure, but ensure that you are only checking valid combinations based on the last seen indices."
+    },
+    {
+      "content": "A possible approach is to use two pointers or a sliding window technique to maintain the last seen indices of '0' and '1'. This will allow you to dynamically count valid combinations as you iterate through the string."
+    },
+    {
+      "content": "Finally, as you implement your solution, ensure that you return the count of valid selections as an integer. Pay attention to the constraints, especially the length of the string which can go up to 100,000."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= s.length <= 10^5",
+    "s[i] is either '0' or '1'.",
+    "You must select 3 buildings such that no two consecutive buildings are of the same type.",
+    "Return the number of valid ways to select 3 buildings."
+  ]
+}

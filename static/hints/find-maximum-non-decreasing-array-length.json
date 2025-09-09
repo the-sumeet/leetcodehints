@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a non-decreasing array. An array is non-decreasing if for every index `i`, `nums[i] <= nums[i+1]`. This means that each element should be less than or equal to the next one."
+    },
+    {
+      "content": "Consider what operations you can perform on the array. You can select any subarray and replace it with the sum of its elements. Think about how this operation can change the relationships between adjacent elements."
+    },
+    {
+      "content": "When replacing a subarray with its sum, the length of the array decreases. Keep track of how many elements you can potentially remove while still achieving a non-decreasing sequence."
+    },
+    {
+      "content": "Identify the longest non-decreasing subsequence in the original array. This will give you a baseline for the maximum possible length of a non-decreasing array after operations."
+    },
+    {
+      "content": "Consider edge cases where the array is already non-decreasing. If `nums` is sorted, the answer is simply the length of the array."
+    },
+    {
+      "content": "Think about how to handle segments of the array that are decreasing. If you encounter a pair of elements where `nums[i] > nums[i+1]`, you might need to consider merging elements to maintain a non-decreasing order."
+    },
+    {
+      "content": "You can traverse the array and keep track of the lengths of non-decreasing segments. If you find a decreasing pair, think about how merging elements could help."
+    },
+    {
+      "content": "As you traverse, maintain a count of the maximum length of non-decreasing segments. This could help you determine where you might need to perform operations."
+    },
+    {
+      "content": "Consider using a two-pointer technique or a single pass through the array to keep track of the current segment length and the maximum segment length found so far."
+    },
+    {
+      "content": "When you find a decreasing pair, think about how merging the previous segment with the next one could potentially yield a longer non-decreasing segment."
+    },
+    {
+      "content": "Pay attention to the constraints. The array length can be up to 100,000, so your solution should ideally be linear in complexity."
+    },
+    {
+      "content": "Remember that the sum of a subarray can be greater than any of its individual elements. This means that replacing a decreasing pair with their sum could help in some cases."
+    },
+    {
+      "content": "Consider the case where the entire array is decreasing. In this scenario, the best you can do is to reduce it to a single element, which would yield a maximum length of 1."
+    },
+    {
+      "content": "Think about how you can keep track of the previous sum when merging segments. This will help you determine if the new segment can be non-decreasing with respect to the previous elements."
+    },
+    {
+      "content": "Finally, you should implement a way to calculate the maximum length of the non-decreasing array after considering all possible merges. This will involve checking each segment and its potential merges."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^5",
+    "The input array is 0-indexed.",
+    "You can perform any number of operations.",
+    "The output should be the maximum length of a non-decreasing array."
+  ]
+}

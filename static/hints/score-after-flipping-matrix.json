@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how a binary matrix can be interpreted as binary numbers. Each row in the matrix represents a binary number, where the leftmost bit is the most significant bit."
+    },
+    {
+      "content": "Consider the impact of toggling a row or a column. Toggling a row flips all bits in that row, while toggling a column flips all bits in that column. Think about how these operations can maximize the binary values of the rows."
+    },
+    {
+      "content": "Focus on the first column of the matrix. If you toggle the first column, it will affect every row's most significant bit. What should you do if the majority of the bits in the first column are 0s?"
+    },
+    {
+      "content": "For each row, if the first bit (most significant bit) is 0, consider toggling that row. This will ensure that the highest possible value for that row is achieved. Think about how this applies to the rest of the columns."
+    },
+    {
+      "content": "After ensuring the first bit of each row is 1, look at the remaining bits in each row. For each column, you need to decide whether toggling it will increase the number of 1s in that column across all rows."
+    },
+    {
+      "content": "Count the number of 1s in each column after potentially toggling the rows. If the count of 1s in a column is less than half the number of rows, toggling that column will increase the overall score."
+    },
+    {
+      "content": "Calculate the score of the matrix after deciding which rows and columns to toggle. Remember that the score is the sum of all the binary numbers represented by the rows."
+    },
+    {
+      "content": "Consider edge cases, such as when the matrix is 1x1. What is the score if the only element is 0? What if it is 1? How do these cases fit into the general logic of toggling?"
+    },
+    {
+      "content": "Be mindful of the constraints: the matrix can be as large as 20x20. Ensure your approach is efficient enough to handle the maximum input size without excessive computations."
+    },
+    {
+      "content": "Finally, implement your logic step-by-step. Start by toggling rows based on the first column, then evaluate each column for potential toggles. Make sure to calculate the final score correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 20",
+    "Each grid[i][j] is either 0 or 1.",
+    "The score is the sum of the binary numbers represented by each row.",
+    "You can toggle any row or column any number of times, including zero."
+  ]
+}

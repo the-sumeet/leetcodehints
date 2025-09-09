@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the `arr` and the `pieces`. Each element in `arr` must be present in one of the subarrays in `pieces`, and the order of these elements must be preserved."
+    },
+    {
+      "content": "Consider how you can map each integer in `arr` to its corresponding subarray in `pieces`. Think about using a dictionary to store the starting points of each subarray for quick access."
+    },
+    {
+      "content": "Remember that the elements in `pieces` cannot be reordered. This means that if a subarray starts with a number, all subsequent numbers in `pieces` must follow the same order as they appear in `arr`."
+    },
+    {
+      "content": "As you iterate through `arr`, check if the current number exists as a starting number in your mapping of `pieces`. If it does, you will need to ensure that the following numbers in `arr` match the sequence in the corresponding subarray."
+    },
+    {
+      "content": "Think about how you can handle cases where an element in `arr` doesn't have a corresponding subarray in `pieces`. This would immediately mean that forming `arr` is impossible."
+    },
+    {
+      "content": "When you find a match in `pieces`, keep track of your position in both `arr` and the matched subarray. You will need to ensure that you can advance through both without skipping any elements."
+    },
+    {
+      "content": "Consider edge cases where `pieces` has only one subarray or where `arr` and `pieces` have the minimum allowed length. How does your approach handle these scenarios?"
+    },
+    {
+      "content": "Make sure to validate that the lengths of the matched subarrays from `pieces` align with the segments of `arr` you are currently checking. If they don't match, return false."
+    },
+    {
+      "content": "You might want to implement a loop that goes through each element in `arr`, checks for its corresponding subarray in `pieces`, and verifies if the entire segment matches. This could look like: `for each num in arr: if num in pieces_map: ...`."
+    },
+    {
+      "content": "Finally, after processing all elements in `arr`, ensure that you have successfully matched all segments with no leftover unmatched elements. If everything aligns correctly, return true."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= pieces.length <= arr.length <= 100",
+    "Sum of lengths of pieces[i] must equal arr.length.",
+    "1 <= pieces[i].length <= arr.length.",
+    "All integers in arr and pieces are distinct."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you can combine the `Students`, `Subjects`, and `Examinations` tables. You will need to use a SQL JOIN to bring together the relevant data from these tables."
+    },
+    {
+      "content": "Consider using a LEFT JOIN between the `Students` table and the `Subjects` table. This will ensure that you get all students and all subjects, even if there are no corresponding entries in the `Examinations` table."
+    },
+    {
+      "content": "Next, you'll want to aggregate the data from the `Examinations` table. Think about how you can count the number of times each student attended each subject. The SQL function `COUNT()` will be useful here."
+    },
+    {
+      "content": "Remember to group your results appropriately. You will need to group by both `student_id` and `subject_name` to get the correct counts of attended exams for each student in each subject."
+    },
+    {
+      "content": "When counting the attended exams, ensure that you account for cases where a student has not attended a subject at all. This is where the LEFT JOIN will help, as it will return a count of 0 for those subjects."
+    },
+    {
+      "content": "Don't forget to include the `student_name` in your final output. You can include it in your SELECT statement alongside the `student_id` and `subject_name`."
+    },
+    {
+      "content": "Make sure to handle the ordering of your results. The output should be sorted first by `student_id` and then by `subject_name` to match the required output format."
+    },
+    {
+      "content": "As you construct your query, pay attention to the return format. The output table should have the exact column names as specified: `student_id`, `student_name`, `subject_name`, and `attended_exams`."
+    },
+    {
+      "content": "Consider edge cases, such as students who have not attended any exams at all. Ensure your query correctly reflects a count of 0 for these instances."
+    },
+    {
+      "content": "Finally, put everything together in a single SQL query. Use the appropriate JOINs, GROUP BY, and COUNT functions to achieve the desired output. Remember to check your syntax and test your query with sample data."
+    }
+  ],
+  "questionNotes": [
+    "Each student takes every subject, so every student should appear with every subject in the final output.",
+    "The Examinations table may contain duplicates, so counting must be handled carefully.",
+    "The result must be ordered by student_id and subject_name.",
+    "Ensure to return a count of 0 for subjects that a student has not attended."
+  ]
+}

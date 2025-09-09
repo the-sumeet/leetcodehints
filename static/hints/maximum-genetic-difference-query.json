@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. Each node's genetic value is equal to its index. The root node is indicated by a parent value of -1."
+    },
+    {
+      "content": "Consider how to traverse the tree from a given node to the root. You can use the `parents` array to find the path by repeatedly accessing the parent of the current node."
+    },
+    {
+      "content": "For a given query, you need to compute the XOR of the query value with the genetic values of all nodes on the path to the root. Make sure to include both the starting node and the root."
+    },
+    {
+      "content": "Remember that XOR has properties that can help you. Specifically, `a XOR a = 0` and `a XOR 0 = a`. This can simplify your calculations."
+    },
+    {
+      "content": "When processing each query, store the maximum XOR value found along the path to the root. You can initialize a variable to keep track of this maximum value."
+    },
+    {
+      "content": "Think about edge cases, such as when the query node is the root itself. The maximum genetic difference in this case will just be the XOR with the root's value."
+    },
+    {
+      "content": "You may want to create a helper function to find the path from a node to the root. This function could return a list of genetic values encountered along the way."
+    },
+    {
+      "content": "As you traverse from the node to the root, compute the XOR for each genetic value and update your maximum value accordingly."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Each query requires traversing up to the root, which could be O(h) where h is the height of the tree."
+    },
+    {
+      "content": "If the tree is very deep (like a linked list), this could lead to performance issues. Think about how you might optimize this traversal."
+    },
+    {
+      "content": "You could preprocess the tree to create a structure that allows for faster queries. For example, consider using a binary lifting technique to speed up ancestor queries."
+    },
+    {
+      "content": "While implementing, ensure that you handle the constraints properly. The number of nodes can be large, and your solution should be efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Pay attention to the output format. You need to return an array of results corresponding to each query in the order they were provided."
+    },
+    {
+      "content": "For each query, after computing the maximum XOR, store the result in the output array. Ensure that you maintain the order of queries."
+    },
+    {
+      "content": "Finally, consider edge cases in the input, such as minimum and maximum values for `val[i]`. How do these affect the XOR operation?"
+    }
+  ],
+  "questionNotes": [
+    "The tree is rooted, and each node's genetic value is its index.",
+    "The `parents` array defines the tree structure; `parents[i]` is the parent of node `i`.",
+    "Queries consist of pairs `[node_i, val_i]`, where you need to find the maximum genetic difference for each query.",
+    "The output should be an array of results corresponding to each query, maintaining the order of queries.",
+    "Constraints include: 2 <= parents.length <= 100000, 1 <= queries.length <= 30000, and genetic values range from 0 to 200000."
+  ]
+}

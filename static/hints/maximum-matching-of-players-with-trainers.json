@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the matching criteria: a player can only be matched with a trainer if the player's ability is less than or equal to the trainer's training capacity. This means you'll need to compare each player's ability with the available trainers."
+    },
+    {
+      "content": "Consider sorting both the `players` and `trainers` arrays. Sorting can help you efficiently find matches since you can iterate through both lists in a single pass."
+    },
+    {
+      "content": "Think about using two pointers: one pointer for the `players` array and another for the `trainers` array. This approach allows you to traverse both arrays simultaneously and find valid matches."
+    },
+    {
+      "content": "When you find a valid match (i.e., `players[i] <= trainers[j]`), increment both pointers to avoid reusing the player and trainer. If the player's ability exceeds the trainer's capacity, move the trainer pointer forward to find a better match."
+    },
+    {
+      "content": "Remember to keep track of the number of matches you make. You can use a counter variable that increments each time you successfully match a player with a trainer."
+    },
+    {
+      "content": "Consider edge cases: What if all players have abilities greater than any trainer's capacity? In this case, the maximum number of matches would be zero."
+    },
+    {
+      "content": "Also, think about the case where all trainers have a higher capacity than all players. In this scenario, the maximum number of matches will be limited by the number of players."
+    },
+    {
+      "content": "Ensure that your solution efficiently handles the constraints, especially since both arrays can have lengths up to 100,000. Aim for a time complexity of O(n log n) due to sorting, followed by O(n) for the matching process."
+    },
+    {
+      "content": "As you implement your solution, be careful with the indices. Remember that both arrays are 0-indexed and ensure that you do not go out of bounds while accessing elements."
+    },
+    {
+      "content": "Finally, after implementing the matching logic, return the count of matches. Make sure to test your solution with various test cases to validate its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Players and trainers are both 0-indexed arrays.",
+    "A player can match with at most one trainer, and vice versa.",
+    "The maximum number of matchings is what you need to return.",
+    "Constraints: 1 <= players.length, trainers.length <= 10^5 and 1 <= players[i], trainers[j] <= 10^9."
+  ]
+}

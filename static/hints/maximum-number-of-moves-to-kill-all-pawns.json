@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the knight's movement on a chessboard. The knight can move in an 'L' shape: two squares in one direction and one square perpendicular. This gives it eight possible moves from any position."
+    },
+    {
+      "content": "Consider how to calculate the minimum number of moves required for the knight to reach each pawn. You can use a breadth-first search (BFS) approach to explore all possible knight moves from its starting position."
+    },
+    {
+      "content": "Remember that the knight can pass over other pawns without capturing them. Focus on the pawn that is selected for capture in each turn, as this will influence the game's strategy."
+    },
+    {
+      "content": "Alice and Bob take turns capturing pawns, with Alice trying to maximize the total moves and Bob trying to minimize them. Think about how each player's strategy will affect the game flow."
+    },
+    {
+      "content": "When calculating the total number of moves, remember that each player will always choose the pawn that best serves their strategy. This means considering not just the immediate move count but the overall impact on future moves."
+    },
+    {
+      "content": "You should keep track of the remaining pawns after each turn. Once a pawn is captured, it should no longer be considered in subsequent moves."
+    },
+    {
+      "content": "Consider edge cases where there are only a few pawns left. How does the strategy change when there are fewer options for both players?"
+    },
+    {
+      "content": "Think about the implications of the knight's starting position. If the knight is closer to some pawns than others, how does that affect Alice's choices?"
+    },
+    {
+      "content": "As you implement the BFS for calculating moves, ensure that you're marking visited positions to avoid cycles and redundant calculations."
+    },
+    {
+      "content": "You may want to create a function to calculate the distance from the knight to each pawn. This will help you determine which pawn to capture next based on the current player's strategy."
+    },
+    {
+      "content": "When Alice picks a pawn, she should choose the one that maximizes the total moves. Conversely, Bob should pick the one that minimizes the total moves left for Alice."
+    },
+    {
+      "content": "Use memoization or dynamic programming to store results of previously computed states. This can help speed up the calculation of total moves for different configurations of remaining pawns."
+    },
+    {
+      "content": "Consider how to represent the state of the game. A good approach is to use a bitmask to indicate which pawns are still on the board, allowing you to efficiently track the game state."
+    },
+    {
+      "content": "You may need to implement a recursive function that simulates the game, alternating between Alice's and Bob's turns, while keeping track of the total moves made."
+    },
+    {
+      "content": "Finally, ensure that your function returns the total number of moves made during the game as specified in the problem statement. This should be the sum of moves made by both players."
+    }
+  ],
+  "questionNotes": [
+    "The chessboard is 50 x 50, and the knight's position is given by (kx, ky).",
+    "Positions of pawns are unique and do not include the knight's position.",
+    "Both players play optimally, with Alice aiming to maximize total moves and Bob to minimize them.",
+    "The output should be the total number of moves made until all pawns are captured."
+  ]
+}

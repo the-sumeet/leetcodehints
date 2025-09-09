@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to calculate the cost of a subarray. The cost is defined as alternating sums based on the indices. For example, for a subarray nums[l..r], the cost can be computed as: `cost(l, r) = nums[l] - nums[l + 1] + nums[l + 2] - nums[l + 3] + ...`."
+    },
+    {
+      "content": "Consider how the sign of each element in the subarray alternates. This means that the first element contributes positively, the second negatively, the third positively, and so on. Pay attention to how this affects the overall sum for different subarrays."
+    },
+    {
+      "content": "Think about the implications of splitting the array into multiple subarrays. Each split can potentially increase the total cost, especially if it allows you to maximize positive contributions from certain elements."
+    },
+    {
+      "content": "Try calculating the total cost for the entire array without any splits. This will give you a baseline to compare against when you start considering splits. For example, for nums = [1, -2, 3, 4], calculate `cost(0, 3)`."
+    },
+    {
+      "content": "Identify potential split points in the array. A good strategy is to check where the transition from positive to negative contributions occurs. This can help you maximize the cost when you split the array."
+    },
+    {
+      "content": "As you explore potential splits, keep track of the maximum cost you can achieve. You can maintain a variable to store the maximum cost found so far as you iterate through possible splits."
+    },
+    {
+      "content": "Consider edge cases where the array has only one element or where all elements are negative. How does this affect your approach to splitting? Make sure your solution handles these cases correctly."
+    },
+    {
+      "content": "When calculating costs for subarrays, remember to keep track of the indices carefully. Ensure that you are not exceeding array bounds when determining the ranges for your splits."
+    },
+    {
+      "content": "You might want to create a helper function that calculates the cost of a subarray given its start and end indices. This function will be useful as you iterate through potential splits."
+    },
+    {
+      "content": "Finally, think about how to implement the logic to iterate through the array and check all possible splits. You want to ensure that you are maximizing the total cost while considering all valid subarray combinations."
+    }
+  ],
+  "questionNotes": [
+    "The cost of a subarray is defined as alternating sums based on the indices.",
+    "You must split the array into subarrays such that each element belongs to exactly one subarray.",
+    "The total cost is maximized when considering all possible splits.",
+    "Constraints: 1 <= nums.length <= 10^5 and -10^9 <= nums[i] <= 10^9.",
+    "If nums is not split into subarrays, the total cost is simply cost(0, n - 1)."
+  ]
+}

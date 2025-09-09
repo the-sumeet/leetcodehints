@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to determine if a given string follows a specific pattern. Each letter in the pattern corresponds to a substring in the string, and the same letter must map to the same substring."
+    },
+    {
+      "content": "Consider how you can represent the mapping between characters in the pattern and substrings in the string. You might want to use a dictionary or a hashmap to keep track of these mappings."
+    },
+    {
+      "content": "Think about the lengths of the substrings that correspond to each character in the pattern. If a character appears multiple times, the corresponding substring must be the same each time. This means you need to ensure consistency in your mappings."
+    },
+    {
+      "content": "You should also consider how to handle cases where the pattern has unique characters versus repeated characters. For example, the pattern 'aaaa' should map to a single substring, while 'abab' will require two different substrings."
+    },
+    {
+      "content": "To check if the mapping is valid, you can iterate through the pattern and the string simultaneously. For each character in the pattern, check if it has already been mapped to a substring, and if so, verify that it matches the current substring."
+    },
+    {
+      "content": "As you iterate, you need to decide on the length of the substrings. You can use a nested loop to try different lengths for the first character in the pattern and see if you can successfully map the rest of the pattern to the string."
+    },
+    {
+      "content": "When trying different lengths for substrings, remember to keep track of the characters that have already been mapped to avoid conflicts. You can maintain a set of used substrings to ensure that each character maps to a unique substring."
+    },
+    {
+      "content": "Consider edge cases such as when the pattern is empty or when the string is empty. What should your function return in these cases? Make sure to handle these scenarios in your solution."
+    },
+    {
+      "content": "Think about the base case for your recursive function (if you choose to use recursion). When should you stop trying to find a mapping? Typically, this could be when you've processed all characters in the pattern."
+    },
+    {
+      "content": "Finally, you can start implementing your solution. Use backtracking to explore all possible mappings of characters to substrings. If a mapping fails, you should backtrack and try a different substring length for the current character."
+    }
+  ],
+  "questionNotes": [
+    "The pattern can contain repeated characters, and the same character must map to the same substring.",
+    "The string may not contain substrings that map to different characters in the pattern.",
+    "Consider edge cases like empty strings or patterns.",
+    "The solution should return a boolean indicating whether the pattern matches the string."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "To start, think about the operations allowed: insertion, deletion, and replacement. Each operation changes the string in a specific way, and your goal is to determine the minimum number of these operations needed to transform one string into another."
+    },
+    {
+      "content": "Consider the lengths of the two strings. If either string is empty, the answer is simply the length of the other string, as you would need to perform that many insertions (or deletions)."
+    },
+    {
+      "content": "Think about using a dynamic programming approach. You can create a 2D table where each cell (i, j) represents the minimum edit distance between the first i characters of word1 and the first j characters of word2."
+    },
+    {
+      "content": "Initialize your DP table. The first row should represent converting an empty string to the first j characters of word2, which would require j insertions. The first column should represent converting the first i characters of word1 to an empty string, requiring i deletions."
+    },
+    {
+      "content": "For each cell in the DP table, you will need to consider the three possible operations: insertion, deletion, and replacement. Calculate the minimum cost for each operation based on previously computed values in the table."
+    },
+    {
+      "content": "When filling in the DP table, if the characters at the current indices of word1 and word2 are the same, you can carry over the value from the diagonal cell (i-1, j-1) since no new operation is needed."
+    },
+    {
+      "content": "If the characters are different, you will need to consider the cost of each operation: \n- Insertion: take the value from (i, j-1) and add 1. \n- Deletion: take the value from (i-1, j) and add 1. \n- Replacement: take the value from (i-1, j-1) and add 1."
+    },
+    {
+      "content": "Make sure to iterate through all characters of both strings to fill the DP table completely. The final answer will be found in the bottom-right cell of the table, which represents the edit distance between the full lengths of both strings."
+    },
+    {
+      "content": "Consider edge cases such as when both strings are empty or when one is a substring of the other. These cases can help you verify that your implementation is correct."
+    },
+    {
+      "content": "Finally, remember to return the value in the bottom-right cell of your DP table as the result. This value represents the minimum number of operations required to convert word1 to word2."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= word1.length, word2.length <= 500",
+    "Both word1 and word2 consist of lowercase English letters.",
+    "The return format should be a single integer representing the minimum number of operations."
+  ]
+}

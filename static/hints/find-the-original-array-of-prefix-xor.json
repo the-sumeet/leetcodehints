@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Remember that the prefix XOR means that each element in the `pref` array is the result of XORing all previous elements in the `arr` array up to that index. For example, `pref[1]` is the XOR of `arr[0]` and `arr[1]`."
+    },
+    {
+      "content": "Consider how you can derive the original elements of `arr` from the `pref` array. Specifically, think about the relationship between `pref[i]` and `pref[i-1]`."
+    },
+    {
+      "content": "To find `arr[i]`, you can use the property of XOR: `a ^ a = 0` and `a ^ 0 = a`. This means you can express `arr[i]` in terms of `pref[i]` and `pref[i-1]`."
+    },
+    {
+      "content": "Notice that for the first element, `arr[0]` is simply `pref[0]`. This is a base case that can help you initialize your result array."
+    },
+    {
+      "content": "As you iterate through the `pref` array, you can compute each `arr[i]` using the formula: `arr[i] = pref[i] ^ pref[i-1]` for `i > 0`. This will allow you to reconstruct the original array."
+    },
+    {
+      "content": "Make sure to handle the edge case where the `pref` array has only one element. In this case, `arr` will just be the same single element."
+    },
+    {
+      "content": "When implementing your solution, remember to initialize an empty array `arr` of the same size as `pref` to store your results."
+    },
+    {
+      "content": "Consider the time complexity of your approach. You should aim for a linear time complexity solution, O(n), because you will need to process each element of the `pref` array exactly once."
+    },
+    {
+      "content": "Think about how you will return the result. The output should be an array of integers that represents the original array, so ensure your function returns the correct format."
+    },
+    {
+      "content": "Finally, remember to test your solution with various inputs, including edge cases like an array of size 1 or arrays with maximum constraints, to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= pref.length <= 10^5",
+    "Values: 0 <= pref[i] <= 10^6",
+    "The answer is guaranteed to be unique.",
+    "The output should be an array of integers.",
+    "Indexing starts at 0."
+  ]
+}

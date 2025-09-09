@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the array is modified when it is repeated 'k' times. For example, if arr = [1, 2] and k = 3, the modified array will be [1, 2, 1, 2, 1, 2]. Consider how this affects the sub-array sums."
+    },
+    {
+      "content": "Remember that the maximum sub-array sum can be calculated using Kadane's algorithm. This algorithm efficiently finds the maximum sum of a contiguous sub-array in linear time."
+    },
+    {
+      "content": "Since the array can be repeated up to 'k' times, think about how many times you really need to compute the sub-array sums. You might not need to actually construct the full array if you can derive the necessary sums from the original array."
+    },
+    {
+      "content": "Consider the case when k = 1. You only need to find the maximum sub-array sum of the original array. What does Kadane's algorithm return in this case?"
+    },
+    {
+      "content": "When k = 2, you can think of the array as two copies of the original array. The maximum sub-array sum could potentially include elements from both copies. How would you handle this in your calculations?"
+    },
+    {
+      "content": "If k > 2, you should consider the possibility of including elements from the beginning of the first array and the end of the second array. This means you need to calculate the maximum prefix sum and the maximum suffix sum of the original array."
+    },
+    {
+      "content": "Calculate the total sum of the original array. If this sum is positive, then repeating the array can contribute to the maximum sub-array sum. How does this influence your final result?"
+    },
+    {
+      "content": "For cases where k is very large, think about how the total sum of the original array can be leveraged. If the total sum is positive, the contribution from multiple full arrays can be significant."
+    },
+    {
+      "content": "Remember to take the result modulo 10^9 + 7 as specified. This is important to prevent overflow and meet the problem's requirements."
+    },
+    {
+      "content": "Combine all your findings: calculate the maximum sub-array sum for k = 1, the maximum prefix and suffix sums, and consider the contribution from the total sum when k > 2. How would you structure your final return statement?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 10^5, 1 <= k <= 10^5, -10^4 <= arr[i] <= 10^4.",
+    "The maximum sub-array sum can include a sub-array of length 0, which has a sum of 0.",
+    "Return the result modulo 10^9 + 7."
+  ]
+}

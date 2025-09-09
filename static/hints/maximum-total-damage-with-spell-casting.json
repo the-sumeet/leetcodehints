@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints on casting spells. If you cast a spell with damage `power[i]`, you cannot cast spells with damage `power[i] - 2`, `power[i] - 1`, `power[i] + 1`, or `power[i] + 2`. This means you need to consider how to group the spells based on their damage values."
+    },
+    {
+      "content": "Think about how you can represent the spells and their respective damages. A frequency map (or dictionary) could be useful to count how many spells have the same damage value. This will help you manage the spells you can and cannot cast."
+    },
+    {
+      "content": "Consider the maximum damage you can achieve by casting spells. You might want to iterate through the unique damage values in your frequency map, calculating the potential total damage for each value while respecting the casting constraints."
+    },
+    {
+      "content": "When iterating through the unique damage values, think about how to handle the spells that are adjacent to each damage value. For example, if you decide to cast a spell with damage `x`, you should skip `x-2`, `x-1`, `x+1`, and `x+2`."
+    },
+    {
+      "content": "To maximize the total damage, you may need to use dynamic programming. Create a DP array where each index represents the maximum damage you can achieve up to that damage value. This will allow you to build upon previously calculated results."
+    },
+    {
+      "content": "As you fill the DP array, remember to consider the frequency of each damage value. If you can cast multiple spells of the same damage, make sure to include that in your calculations for the maximum damage."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when all damage values are the same or when there are large gaps between damage values. These scenarios can affect how you approach the DP solution."
+    },
+    {
+      "content": "When updating your DP array, think about two scenarios: either you cast the current spell or you skip it. This will guide how you update the maximum damage for each damage value."
+    },
+    {
+      "content": "Make sure to initialize your DP array correctly. The base cases should account for the minimum damage values, and you should ensure that your DP array has enough space to handle all possible damage values."
+    },
+    {
+      "content": "Finally, after constructing your DP array, the answer will be the maximum value in the array. Ensure that you handle the indexing correctly, especially since damage values can be large and sparse."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= power.length <= 10^5",
+    "Constraints: 1 <= power[i] <= 10^9",
+    "Spells can have the same damage value.",
+    "Each spell can only be cast once.",
+    "Return the maximum total damage."
+  ]
+}

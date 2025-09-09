@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of tasks, each with a unique `task_id`, an `employee_id`, and a time range defined by `start_time` and `end_time`. Make sure you can parse this data correctly."
+    },
+    {
+      "content": "Consider how you will represent each task's duration. You might want to calculate the duration of each task as the difference between `end_time` and `start_time`. This will help you later when determining overlaps."
+    },
+    {
+      "content": "Think about how to identify overlapping tasks. Two tasks overlap if the start time of one task is before the end time of another task and vice versa. You can use conditions like: `task1.start < task2.end && task1.end > task2.start`."
+    },
+    {
+      "content": "When checking for concurrent tasks, remember that tasks assigned to different employees can overlap. So, you need to group tasks by `employee_id` before checking for overlaps."
+    },
+    {
+      "content": "You may want to sort the tasks by `start_time` for each employee. Sorting will make it easier to check for overlaps as you can compare each task with the next one in the sorted list."
+    },
+    {
+      "content": "Consider edge cases such as tasks that start and end at the same time. Decide how you want to handle these cases. Should they be considered overlapping or not?"
+    },
+    {
+      "content": "As you iterate through the sorted tasks, keep track of the total duration of tasks for each employee. Initialize a duration counter for each employee and update it as you find overlapping tasks."
+    },
+    {
+      "content": "You might want to use a data structure to store the total duration for each employee. A dictionary or a hashmap could work well, where the key is the `employee_id` and the value is the total duration."
+    },
+    {
+      "content": "Think about how to handle multiple overlapping tasks. If a task overlaps with several others, you need to ensure that you calculate the total duration correctly without double counting."
+    },
+    {
+      "content": "When calculating the total duration for overlapping tasks, consider merging overlapping time intervals. This will help you avoid counting the same time twice."
+    },
+    {
+      "content": "After processing all tasks, you might want to return the results in a specific format. Decide how you want to present the total duration for each employee."
+    },
+    {
+      "content": "Make sure to handle the case where an employee has no tasks. Your solution should still return a valid output, perhaps with a duration of zero."
+    },
+    {
+      "content": "Consider performance implications. If the number of tasks is large, how will your approach scale? Aim for an efficient algorithm, ideally O(n log n) due to sorting."
+    },
+    {
+      "content": "As a final step, ensure that your solution is well-tested against various scenarios, including edge cases like tasks with the same start and end times, and employees with no tasks."
+    },
+    {
+      "content": "To get closer to a solution, start implementing the logic for parsing the input and sorting the tasks by `start_time`. Then, proceed to check for overlaps and calculate durations."
+    }
+  ],
+  "questionNotes": [
+    "Each task has a unique `task_id`.",
+    "Tasks are defined by `start_time` and `end_time` in a specific format.",
+    "Tasks can overlap, and you need to handle overlaps correctly.",
+    "Return the total duration for each employee, even if it is zero."
+  ]
+}

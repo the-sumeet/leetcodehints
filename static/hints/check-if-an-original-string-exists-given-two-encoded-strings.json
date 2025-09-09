@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the encoding process works. The original string can be split into substrings, and some of these can be replaced by their lengths. For example, 'abc' can become '3' if replaced, or remain 'abc' if not."
+    },
+    {
+      "content": "Consider the characters in both encoded strings. If the first character of `s1` is different from the first character of `s2`, the original string cannot exist. This is because the original string must start with the same character to produce both encodings."
+    },
+    {
+      "content": "Take note of the constraints: the maximum length of consecutive digits in `s1` and `s2` does not exceed 3. This means that any numeric part can represent a length of at most 999."
+    },
+    {
+      "content": "When you encounter digits in the encoded strings, remember that these digits represent lengths of substrings. Therefore, you need to track how many characters are represented by these digits."
+    },
+    {
+      "content": "Create a function to parse the encoded strings into segments. You can split the strings into segments of letters and groups of digits. For example, 'a12b' would split into ['a', '12', 'b']."
+    },
+    {
+      "content": "While parsing, keep track of the total length of characters represented by the digits. For instance, if you have '12', it represents a substring of length 12."
+    },
+    {
+      "content": "Since the encoded strings can contain both letters and digits, ensure your parsing function can differentiate between them effectively. Use a loop to go through each character and decide if it's a letter or part of a number."
+    },
+    {
+      "content": "Once you have parsed both strings into segments, compare the lengths of the segments. If one string has a segment that is a digit, it must match the corresponding segment in the other string in terms of the total length of characters."
+    },
+    {
+      "content": "Consider edge cases where one encoded string has a segment with digits while the other has letters. This would indicate that the original string cannot exist, as they cannot represent the same substring."
+    },
+    {
+      "content": "You can use a recursive approach to explore different ways of matching segments from both encoded strings. For each segment in `s1`, try to match it with segments in `s2` and see if they can represent the same original substring."
+    },
+    {
+      "content": "When matching segments, remember that a segment of digits can represent multiple possible lengths. For example, '12' could represent a substring of length 12 or could be split into '1' and '2', representing two separate lengths."
+    },
+    {
+      "content": "Implement a backtracking approach to explore all possible combinations of how segments can match up. This will help you determine if there is a valid original string that can produce both encoded strings."
+    },
+    {
+      "content": "Keep track of the indices of the segments you are currently comparing in both strings. This will help you avoid re-checking segments that have already been matched."
+    },
+    {
+      "content": "As you explore the combinations, ensure that you also check for the total character count represented by the segments. The total must match between the two encoded strings for a valid original string to exist."
+    },
+    {
+      "content": "Finally, ensure that your function returns true if you find a valid match and false if all combinations have been exhausted without a match. This will be the final check to confirm if an original string can exist."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s1.length, s2.length <= 40",
+    "s1 and s2 consist of digits 1-9 and lowercase English letters only.",
+    "The number of consecutive digits in s1 and s2 does not exceed 3.",
+    "Return true if an original string exists that could be encoded as both s1 and s2, otherwise return false."
+  ]
+}

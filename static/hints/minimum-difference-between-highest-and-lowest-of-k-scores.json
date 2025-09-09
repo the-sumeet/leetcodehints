@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find a way to select 'k' scores from the array such that the difference between the maximum and minimum scores in that selection is minimized."
+    },
+    {
+      "content": "Consider sorting the array first. Sorting can help you easily access the highest and lowest scores in any contiguous subarray of size 'k'. This is because the minimum difference will likely be found in a sorted section of the array."
+    },
+    {
+      "content": "Once the array is sorted, think about how you can create subarrays of size 'k'. The maximum score in a subarray will be the last element, and the minimum score will be the first element of that subarray."
+    },
+    {
+      "content": "To find the minimum difference, iterate through the sorted array and calculate the difference between the elements at indices 'i + k - 1' (max) and 'i' (min) for each valid starting index 'i'."
+    },
+    {
+      "content": "Remember to keep track of the minimum difference found during your iteration. You can initialize a variable to store this minimum difference and update it whenever you find a smaller difference."
+    },
+    {
+      "content": "Consider edge cases, such as when 'k' is equal to 1. In this case, the difference will always be 0 because you are only picking one score."
+    },
+    {
+      "content": "Make sure to handle the case where all scores are the same. The difference should still be calculated correctly, which will also result in 0."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Sorting the array takes O(n log n), and iterating through it takes O(n). This is efficient given the constraints."
+    },
+    {
+      "content": "As you implement your solution, ensure that you are correctly handling the indices in the sorted array to avoid out-of-bounds errors, especially when accessing 'i + k - 1'."
+    },
+    {
+      "content": "Finally, your implementation should return the minimum difference found after evaluating all possible subarrays of size 'k'. Make sure to test your code with various inputs to validate its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= nums.length <= 1000",
+    "Scores range: 0 <= nums[i] <= 10^5",
+    "Return the minimum possible difference between the highest and lowest scores of the selected k scores.",
+    "Consider edge cases like k = 1 or all scores being the same."
+  ]
+}

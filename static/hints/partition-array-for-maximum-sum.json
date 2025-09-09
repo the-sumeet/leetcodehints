@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to partition the array into contiguous subarrays of length at most `k`. Each subarray will be transformed into an array where all elements are replaced by the maximum value of that subarray."
+    },
+    {
+      "content": "Consider how you might approach the problem using dynamic programming. You could maintain a `dp` array where `dp[i]` represents the maximum sum you can achieve using the first `i` elements of the array."
+    },
+    {
+      "content": "Think about how to calculate the maximum value of a subarray efficiently. You can find the maximum value in a subarray by iterating through it, but remember that the length of the subarray is limited to `k`."
+    },
+    {
+      "content": "When iterating to fill your `dp` array, consider each possible ending index of the subarray. For each `i`, you can look back at most `k` indices to determine the best partitioning point."
+    },
+    {
+      "content": "Keep track of the maximum value found in the current subarray while iterating. For example, if you are at index `i`, you can check indices from `i-k+1` to `i` to find the maximum value."
+    },
+    {
+      "content": "Make sure to handle the base case correctly. For `dp[0]`, which represents an empty array, the maximum sum is `0`. Start filling your `dp` array from `1` to `n`."
+    },
+    {
+      "content": "As you fill in the `dp` array, use the formula: `dp[i] = max(dp[i], dp[j] + max_value * (i - j))` where `j` ranges from `i-k` to `i-1`, and `max_value` is the maximum in the subarray from `j+1` to `i`."
+    },
+    {
+      "content": "Consider edge cases such as when `k` is equal to `1` or when all elements in `arr` are the same. These cases can simplify the problem and help you validate your approach."
+    },
+    {
+      "content": "Make sure to test your solution with various input sizes and values, especially the maximum constraints. This will ensure that your solution is efficient and handles large inputs correctly."
+    },
+    {
+      "content": "Finally, ensure that your solution returns the correct value. The final answer should be `dp[n]`, where `n` is the length of the array, representing the maximum sum achievable after partitioning."
+    }
+  ],
+  "questionNotes": [
+    "1 <= arr.length <= 500",
+    "0 <= arr[i] <= 10^9",
+    "1 <= k <= arr.length",
+    "The answer fits in a 32-bit integer."
+  ]
+}

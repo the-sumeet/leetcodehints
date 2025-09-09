@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how to handle the input data structure. You have a 2D array where each sub-array contains survey responses. How will you access individual responses?"
+    },
+    {
+      "content": "Remember that you need to remove duplicates from each day's responses. Consider using a data structure that inherently handles uniqueness, such as a set, to achieve this."
+    },
+    {
+      "content": "Once you've removed duplicates from each sub-array, you'll want to count how often each response appears across all days. What data structure could help you keep track of these counts?"
+    },
+    {
+      "content": "As you count the occurrences of each response, think about how you can efficiently store and update these counts. A dictionary (or hashmap) could be a good choice for this purpose."
+    },
+    {
+      "content": "When counting, ensure you are iterating through each unique response from each day's set. How will you combine the counts from all days into a single frequency count?"
+    },
+    {
+      "content": "After counting the occurrences, you need to determine which response is the most common. What criteria will you use to resolve ties between responses with the same frequency?"
+    },
+    {
+      "content": "Consider how to implement the tie-breaking rule. You need to return the lexicographically smallest response in case of a tie. How can you keep track of this while iterating through your counts?"
+    },
+    {
+      "content": "Before finalizing your solution, think about edge cases. What if all responses are unique? Or if there are multiple responses with the same highest frequency?"
+    },
+    {
+      "content": "Make sure to handle the constraints given in the problem statement. For instance, what will happen if the input is at its maximum size? Consider the efficiency of your approach."
+    },
+    {
+      "content": "Finally, once you have the frequency counts and have handled potential ties, how will you return the result? Remember that your function should return a single string."
+    }
+  ],
+  "questionNotes": [
+    "1 <= responses.length <= 1000",
+    "1 <= responses[i].length <= 1000",
+    "1 <= responses[i][j].length <= 10",
+    "responses[i][j] consists of only lowercase English letters",
+    "Remove duplicates within each responses[i]",
+    "Return the most common response; if tied, return the lexicographically smallest one."
+  ]
+}

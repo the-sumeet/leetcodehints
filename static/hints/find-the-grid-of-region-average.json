@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a region in the grid. A region is a 3x3 subgrid where the absolute difference between any two adjacent pixels is less than or equal to the given threshold. Make sure to visualize this with an example."
+    },
+    {
+      "content": "Consider how to iterate through the grid to identify all possible 3x3 subgrids. Remember that the top-left corner of a 3x3 subgrid can only start from indices (i, j) where i < m-2 and j < n-2."
+    },
+    {
+      "content": "When checking if a 3x3 subgrid is a valid region, you will need to compare each pixel with its adjacent pixels. Think about how you can use nested loops to achieve this. For instance, you can use two loops to iterate through the 3x3 grid."
+    },
+    {
+      "content": "As you check each 3x3 subgrid, maintain a list or set to track which pixels belong to valid regions. This will help you later when calculating the average intensities for each pixel."
+    },
+    {
+      "content": "Make sure to handle the case where a pixel does not belong to any region. According to the problem statement, if a pixel is not part of any valid region, its value in the result grid should be the same as its original value."
+    },
+    {
+      "content": "When calculating the average intensity of a region, remember to round down the average. Use integer division or a method to ensure you are rounding down correctly when averaging multiple regions."
+    },
+    {
+      "content": "Consider how to combine the average intensities of multiple regions that a pixel belongs to. You will need to keep track of the rounded-down averages of each region for each pixel."
+    },
+    {
+      "content": "Think about edge cases, such as when the threshold is very low, or when all pixels have the same intensity. How would these cases affect the regions identified?"
+    },
+    {
+      "content": "After processing the grid, ensure that you construct the result grid correctly. Each pixel in the result grid should reflect the average intensity based on the regions it belongs to, or its original value if it belongs to none."
+    },
+    {
+      "content": "Finally, implement the logic to fill the result grid. You might want to maintain a separate grid for the averages and then copy values based on the regions identified. Make sure to test your solution with the provided examples to validate correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= n, m <= 500; 0 <= image[i][j] <= 255; 0 <= threshold <= 255.",
+    "Regions are defined by the absolute difference in intensity between adjacent pixels.",
+    "A pixel can belong to multiple regions, and the average intensity calculation must consider rounded-down values.",
+    "If a pixel does not belong to any region, its result value should equal its original value."
+  ]
+}

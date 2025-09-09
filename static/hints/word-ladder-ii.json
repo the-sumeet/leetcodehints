@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the problem. You need to transform `beginWord` into `endWord` by changing one letter at a time, and each intermediate word must be in the provided `wordList`."
+    },
+    {
+      "content": "Think about how you can represent the words and their transformations. A good approach is to use a graph where each word is a node and edges exist between words that differ by one letter."
+    },
+    {
+      "content": "Consider using a breadth-first search (BFS) to find the shortest transformation sequences. BFS is ideal for unweighted graphs and will help you explore all possible transformations layer by layer."
+    },
+    {
+      "content": "Before starting the BFS, check if `endWord` is in `wordList`. If it’s not, you can immediately return an empty list as no transformation can reach the target."
+    },
+    {
+      "content": "When performing BFS, maintain a queue to keep track of the current word and the path taken to reach it. This will help you reconstruct the paths later."
+    },
+    {
+      "content": "Use a set to store the `wordList` for O(1) average-time complexity when checking if a word exists in the list during transformations."
+    },
+    {
+      "content": "While exploring transformations, generate all possible words by changing each letter of the current word to every letter from 'a' to 'z'. This will help you find valid transformations."
+    },
+    {
+      "content": "Keep track of the visited words to avoid cycles in your BFS. You can use a separate set for this purpose."
+    },
+    {
+      "content": "After completing the BFS, you will have the shortest distance to `endWord`. Use this information to filter paths that are of the same length as the shortest path."
+    },
+    {
+      "content": "To reconstruct the paths, you can use a backtracking approach. Start from `endWord` and explore all possible previous words that could lead to it."
+    },
+    {
+      "content": "Make sure to handle cases where multiple paths can lead to the same word. You may need to store the predecessors of each word during BFS to facilitate path reconstruction."
+    },
+    {
+      "content": "Remember to return the paths in the specified format: a list of lists, where each inner list represents a valid transformation sequence."
+    },
+    {
+      "content": "Consider edge cases such as when the `wordList` is empty or contains only the `beginWord`. How should your function behave in these scenarios?"
+    },
+    {
+      "content": "Think about the constraints: the maximum length of words is 5, and the number of words in `wordList` can be up to 500. This means your solution should be efficient enough to handle these limits."
+    },
+    {
+      "content": "Finally, ensure that your solution accounts for uniqueness in the paths. If multiple paths of the same length exist, all should be returned."
+    }
+  ],
+  "questionNotes": [
+    "The transformation sequence must differ by only one letter at each step.",
+    "The `beginWord` does not need to be in `wordList`, but `endWord` must be.",
+    "All words in `wordList` are unique.",
+    "Return format: a list of lists, where each inner list is a valid transformation sequence.",
+    "Constraints: 1 <= beginWord.length <= 5, endWord.length == beginWord.length, 1 <= wordList.length <= 500."
+  ]
+}

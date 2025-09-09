@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering how you will store the tweets. Each tweet is associated with a name and a timestamp. Using a dictionary (or hashmap) where the keys are tweet names and the values are lists of timestamps can be a good approach."
+    },
+    {
+      "content": "Think about how to convert the frequency strings ('minute', 'hour', 'day') into actual time intervals in seconds. For example, 1 minute is 60 seconds, 1 hour is 3600 seconds, and 1 day is 86400 seconds."
+    },
+    {
+      "content": "When you record a tweet, you need to append the timestamp to the list corresponding to the tweet name in your storage structure. Ensure that you handle the case where a tweet name may not yet exist in your dictionary."
+    },
+    {
+      "content": "In the `getTweetCountsPerFrequency` method, you'll need to determine how many time chunks exist between `startTime` and `endTime`. This can be done by calculating the number of intervals of the specified frequency that fit within the range."
+    },
+    {
+      "content": "Consider how to iterate through the time range from `startTime` to `endTime`. You can use a loop that increments by the frequency interval to check how many tweets fall into each time chunk."
+    },
+    {
+      "content": "When counting the tweets for each chunk, make sure to include edge cases where a tweet's timestamp falls exactly on the boundary of a chunk. Decide whether to include it in the current chunk or the next based on your defined intervals."
+    },
+    {
+      "content": "Remember that the last chunk may not be a full interval. You need to ensure that the last chunk always ends at `endTime`, even if it contains fewer tweets than the other chunks."
+    },
+    {
+      "content": "As you count the tweets in each chunk, you might want to use a simple list to keep track of the counts for each chunk. Initialize this list with zeros, and update the counts as you find tweets in each chunk."
+    },
+    {
+      "content": "Don't forget to handle the case where there are no tweets for a given frequency. Your method should return an empty list if no tweets are found in the specified time range."
+    },
+    {
+      "content": "Finally, ensure that your method returns the counts in the correct format. The output should be a list of integers, where each integer represents the number of tweets in each time chunk."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= time, startTime, endTime <= 10^9",
+    "0 <= endTime - startTime <= 10^4",
+    "There will be at most 10^4 calls in total to recordTweet and getTweetCountsPerFrequency.",
+    "The last chunk may be shorter than the specified frequency's chunk size.",
+    "Return format: List of integers representing tweet counts per time chunk."
+  ]
+}

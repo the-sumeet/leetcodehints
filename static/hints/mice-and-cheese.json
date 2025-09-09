@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input arrays: `reward1` and `reward2`. Each index corresponds to a type of cheese, and the values represent the points each mouse would earn if they eat that cheese. Make sure to visualize how the points are distributed."
+    },
+    {
+      "content": "Consider what it means for the first mouse to eat exactly `k` types of cheese. This means you will need to select `k` indices from the cheese types for the first mouse, while the second mouse will eat the remaining `n - k` types."
+    },
+    {
+      "content": "Think about how you can calculate the total points for a specific selection of cheeses for both mice. For any selection of indices for the first mouse, the total points can be calculated as: `total_points = sum(reward1[i] for i in selected_indices) + sum(reward2[j] for j in remaining_indices`."
+    },
+    {
+      "content": "To maximize the total points, you need to make strategic choices about which cheeses the first mouse should eat. A good starting point is to consider the difference in rewards between the two mice for each cheese type. This can help you decide which cheeses are more beneficial for the first mouse."
+    },
+    {
+      "content": "Calculate the differences between the rewards for each cheese type: `diff[i] = reward1[i] - reward2[i]`. This will give you a sense of which cheeses provide more value to the first mouse compared to the second mouse."
+    },
+    {
+      "content": "Once you have the differences, sort the indices based on these differences. This will help you identify which `k` cheeses the first mouse should ideally eat to maximize the total score."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when `k` is 0 or equal to `n`. In these cases, the first mouse eats no cheese or all cheese, respectively. Make sure your logic accounts for these scenarios."
+    },
+    {
+      "content": "After selecting the top `k` cheeses for the first mouse based on the sorted differences, compute the total points by summing the rewards for the selected cheeses for the first mouse and the remaining cheeses for the second mouse."
+    },
+    {
+      "content": "Consider using a priority queue or a greedy approach to efficiently select the best `k` cheeses. This can help you maintain optimal performance, especially given the constraints of the problem."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient enough to handle the upper limits of the constraints. Think about the time complexity of your approach and how you can minimize it while still achieving the correct result."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n == reward1.length == reward2.length <= 10^5",
+    "1 <= reward1[i], reward2[i] <= 1000",
+    "0 <= k <= n",
+    "The first mouse must eat exactly k types of cheese.",
+    "Return the maximum total points achievable."
+  ]
+}

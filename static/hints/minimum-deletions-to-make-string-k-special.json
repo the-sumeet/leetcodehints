@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of frequency of characters in the string. For example, in the string 'aabcaba', the frequencies are: 'a' -> 4, 'b' -> 1, 'c' -> 1."
+    },
+    {
+      "content": "Consider how to calculate the frequency of each character in the string. You can use a dictionary or an array of size 26 (for lowercase English letters) to store these frequencies."
+    },
+    {
+      "content": "Think about the condition for a string to be k-special: the absolute difference between the frequencies of any two characters must be less than or equal to k. This means you need to identify the maximum and minimum frequencies."
+    },
+    {
+      "content": "Once you have the frequencies, find the maximum frequency (max_freq) and the minimum frequency (min_freq). The goal is to ensure that the difference between these two frequencies does not exceed k."
+    },
+    {
+      "content": "If max_freq - min_freq > k, you will need to reduce frequencies. Consider how many characters you need to delete to bring the max frequency down or the min frequency up to satisfy the k-special condition."
+    },
+    {
+      "content": "Think about which characters to delete. It might be more efficient to reduce the frequency of the most frequent characters first, as this could yield a larger reduction in the overall frequency range."
+    },
+    {
+      "content": "As you calculate the deletions needed, keep track of the total number of deletions. You can maintain a count of how many characters you have deleted from each frequency."
+    },
+    {
+      "content": "Consider edge cases: What if k is 0? In this case, all characters must have the same frequency, which simplifies your approach. You will need to make all character frequencies equal."
+    },
+    {
+      "content": "If the string has only one unique character, it is already k-special for any k. Thus, no deletions are needed in this case."
+    },
+    {
+      "content": "To finalize your solution, ensure that you return the total number of deletions required to make the string k-special. This should be the minimum number of characters you need to delete."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= word.length <= 10^5, 0 <= k <= 10^5.",
+    "The string consists only of lowercase English letters.",
+    "Return the total number of deletions needed to make the string k-special."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the mechanics of the stone smashing process. When you smash two stones of weights x and y, if they are equal, both are destroyed. If they are not equal, the smaller one is destroyed, and the larger one is reduced by the weight of the smaller one."
+    },
+    {
+      "content": "Consider the implications of the order in which you smash the stones. The result can vary based on the choice of stones. Think about how you can systematically explore different combinations of stones."
+    },
+    {
+      "content": "Notice that the problem can be thought of in terms of a dynamic programming approach. You might want to keep track of the possible weights that can be achieved after smashing stones together."
+    },
+    {
+      "content": "To simplify the problem, consider the total weight of all stones. The goal is to minimize the weight of the last stone, which suggests that you might want to think about how to balance the weights on either side."
+    },
+    {
+      "content": "You can think of this problem as a variation of the 'Partition Problem' where you want to split the stones into two groups such that the difference in their weights is minimized."
+    },
+    {
+      "content": "Try to use a dynamic programming array to keep track of possible weights that can be formed from the stones. This array can represent achievable weights up to the total weight of the stones."
+    },
+    {
+      "content": "Remember that the maximum weight of a single stone is 100, and there can be at most 30 stones. This means the total weight can be at most 3000, which is manageable for a dynamic programming solution."
+    },
+    {
+      "content": "Define a DP array where dp[j] is true if a weight j can be achieved using some subset of stones. Initialize dp[0] to true, since a weight of 0 can always be achieved with no stones."
+    },
+    {
+      "content": "Iterate through each stone and update the DP array in reverse order to avoid using the same stone multiple times. For each stone, update the achievable weights accordingly."
+    },
+    {
+      "content": "After populating the DP array, the smallest possible weight of the last stone can be found by checking the largest weight that can be achieved that is closest to half of the total weight of the stones. The result will be the total weight minus twice this closest weight."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= stones.length <= 30",
+    "Constraints: 1 <= stones[i] <= 100",
+    "Return 0 if there are no stones left.",
+    "The problem can be approached using dynamic programming.",
+    "Think about partitioning the stones to minimize the weight difference."
+  ]
+}

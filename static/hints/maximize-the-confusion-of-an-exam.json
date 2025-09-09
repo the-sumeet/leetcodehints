@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to maximize the number of consecutive 'T's or 'F's after changing at most 'k' answers in the string."
+    },
+    {
+      "content": "Consider how you can identify segments of consecutive 'T's and 'F's in the string. For example, in 'TTFF', you have two segments: 'TT' and 'FF'."
+    },
+    {
+      "content": "Think about how many changes you can make to transform 'F's into 'T's or vice versa. You can only change up to 'k' characters, so keep track of how many changes you have left."
+    },
+    {
+      "content": "Use a sliding window approach to maintain a window of characters that can be transformed. This window should contain either all 'T's or all 'F's, depending on which you want to maximize."
+    },
+    {
+      "content": "As you expand your window, count how many characters are not matching the desired character ('T' or 'F'). If this count exceeds 'k', you need to shrink the window from the left."
+    },
+    {
+      "content": "Make sure to calculate the length of the window whenever you can successfully transform the characters within the allowed changes. This will help you keep track of the maximum length found so far."
+    },
+    {
+      "content": "Remember to check both possibilities: maximizing 'T's and maximizing 'F's. You should run the sliding window logic twice: once for 'T' and once for 'F'."
+    },
+    {
+      "content": "Consider edge cases such as when all characters are the same or when 'k' is equal to the length of the string. How would these cases affect your approach?"
+    },
+    {
+      "content": "When implementing your solution, ensure you handle the boundaries of the string carefully to avoid index errors. Also, think about how to efficiently calculate the maximum length without redundant checks."
+    },
+    {
+      "content": "Finally, implement the sliding window logic and return the maximum length found after checking both transformations. Remember to keep track of the maximum length throughout the process."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 5 * 10^4, 1 <= k <= n.",
+    "answerKey[i] is either 'T' or 'F'.",
+    "Return the maximum number of consecutive 'T's or 'F's after performing at most k operations.",
+    "Consider both transformations: maximizing 'T's and maximizing 'F's."
+  ]
+}

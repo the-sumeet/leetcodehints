@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the game mechanics. Alice and Bob take turns removing stones, specifically a perfect square number of stones. The game ends when a player cannot make a move."
+    },
+    {
+      "content": "Consider small values of n to see how the game plays out. For example, if n = 1, Alice can remove 1 stone and win immediately. What happens for n = 2?"
+    },
+    {
+      "content": "Notice the relationship between the number of stones left and the winning or losing position. If a player can force the opponent into a losing position, they will win."
+    },
+    {
+      "content": "Define what a losing position is. A position is losing if no matter what move you make, you leave the opponent in a winning position."
+    },
+    {
+      "content": "For each position from 1 to n, determine if it's winning or losing based on the possible moves (removing square numbers). Start with the base cases."
+    },
+    {
+      "content": "Base cases: If n = 0, the player to move loses. If n = 1, the player wins by taking the last stone. Build from these cases."
+    },
+    {
+      "content": "Create an array or list to keep track of winning and losing positions. For example, `dp[i]` could represent whether having i stones is a winning position for the player whose turn it is."
+    },
+    {
+      "content": "Iterate through each number from 1 to n. For each i, check all square numbers (1, 4, 9, ...) that can be removed. Update your dp array accordingly."
+    },
+    {
+      "content": "When checking if a position is winning, look for any move that leads to a losing position for the opponent. If such a move exists, mark the current position as winning."
+    },
+    {
+      "content": "Remember the constraint: 1 <= n <= 10^5. Your solution should be efficient enough to handle the upper limit of n."
+    },
+    {
+      "content": "Consider edge cases: What if n is a perfect square? What if n is just above a perfect square? How do these affect the winning strategy?"
+    },
+    {
+      "content": "Think about the time complexity of your approach. You might need to optimize how you check for square numbers and update the dp array."
+    },
+    {
+      "content": "You can precompute the square numbers up to n to avoid recalculating them multiple times. This can save time in your main logic."
+    },
+    {
+      "content": "As you implement the solution, ensure that you are correctly indexing your dp array. Remember that arrays are typically 0-indexed in programming."
+    },
+    {
+      "content": "Finally, once your dp array is filled, the answer for whether Alice wins when starting with n stones will be found in dp[n]. Make sure to return the correct boolean value."
+    }
+  ],
+  "questionNotes": [
+    "Players can only remove a non-zero perfect square number of stones.",
+    "The game ends when a player cannot make a move, resulting in their loss.",
+    "Both players are assumed to play optimally.",
+    "1 <= n <= 10^5, ensure your solution is efficient."
+  ]
+}

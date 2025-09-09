@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the two arrays, `names` and `heights`, are related. Each index in `names` corresponds to the same index in `heights`. This means that `names[i]` is the name of the person with height `heights[i]`."
+    },
+    {
+      "content": "Consider how you might pair each name with its corresponding height. One approach is to create a list of tuples, where each tuple contains a name and its height, like this: `[(names[i], heights[i]) for i in range(n)]`."
+    },
+    {
+      "content": "Think about how you can sort these pairs based on height. Python's built-in sorting functions allow you to specify a key to sort by. You can use the height from each tuple as the key for sorting."
+    },
+    {
+      "content": "Remember that you need the names sorted in descending order based on height. When using sorting functions, you can set a parameter to sort in reverse order. In Python, this is done by setting `reverse=True`."
+    },
+    {
+      "content": "After sorting the pairs, you will need to extract the names from the sorted list. You can do this using a list comprehension that iterates over the sorted tuples and collects the names."
+    },
+    {
+      "content": "Consider edge cases, such as the minimum input size. For example, if there is only one person, the output should simply be their name. Ensure your solution handles this case correctly."
+    },
+    {
+      "content": "Make sure to pay attention to the constraints given in the problem. The heights are distinct, which means you won't have to worry about tie-breaking when sorting."
+    },
+    {
+      "content": "As you implement your solution, remember to test it with different scenarios, including the maximum number of names and heights. This will ensure your solution is efficient and handles all cases."
+    },
+    {
+      "content": "To summarize, your steps should include pairing names with heights, sorting those pairs by height in descending order, and finally extracting the names from the sorted pairs."
+    },
+    {
+      "content": "You are almost there! To put it all together, your final code will look something like this: `sorted_names = [name for name, height in sorted(pairs, key=lambda x: x[1], reverse=True)]`. Just remember to define `pairs` first!"
+    }
+  ],
+  "questionNotes": [
+    "Both `names` and `heights` are of length `n`.",
+    "Heights are distinct positive integers.",
+    "Names consist of lowercase and uppercase English letters.",
+    "Return format should be an array of names sorted in descending order by height."
+  ]
+}

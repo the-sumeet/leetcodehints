@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the candies are distributed. The first person gets 1 candy, the second gets 2, and so on. After reaching the last person, the distribution continues from the first person with an incremented amount."
+    },
+    {
+      "content": "Think about how many rounds of distribution you can complete with the given number of candies. Each complete round distributes a total of `num_people * (num_people + 1) / 2` candies."
+    },
+    {
+      "content": "Calculate how many complete rounds can be made with the available candies. Use integer division to find this: `rounds = candies // total_candies_per_round`."
+    },
+    {
+      "content": "After determining the number of complete rounds, calculate the total candies distributed in these rounds. This will help you determine how many candies remain after these rounds."
+    },
+    {
+      "content": "Don't forget to initialize an array to store the number of candies each person receives. This array should have a length equal to `num_people`."
+    },
+    {
+      "content": "After distributing candies for the complete rounds, check how many candies are left. This will be `candies - (rounds * total_candies_per_round)`."
+    },
+    {
+      "content": "You will need to distribute the remaining candies starting from the first person again. Remember to increment the amount of candies given based on the current round number."
+    },
+    {
+      "content": "Use a loop to distribute the remaining candies one by one to each person until you run out. Keep track of how many candies each person has received in the initialized array."
+    },
+    {
+      "content": "Ensure that when distributing the remaining candies, you do not exceed the number of candies left. The last person should receive whatever is left, even if it is less than the expected amount."
+    },
+    {
+      "content": "Finally, return the array that represents the final distribution of candies. Make sure to check that your indexing is correct and that you handle the remaining candies properly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= candies <= 10^9",
+    "Constraints: 1 <= num_people <= 1000",
+    "Return an array of length num_people.",
+    "Ensure to handle the remaining candies correctly after complete rounds."
+  ]
+}

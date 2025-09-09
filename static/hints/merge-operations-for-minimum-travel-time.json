@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a road of length `l`, with `n` signs at specified positions and corresponding travel times. Each segment between signs has a specific time per km, which affects the total travel time."
+    },
+    {
+      "content": "Remember that merging operations can only occur between adjacent signs. This means you can only merge signs at indices `i` and `i + 1` where `1 <= i < n - 1`."
+    },
+    {
+      "content": "When merging two signs, the time for the new sign becomes the sum of the two original times. Think about how this changes the travel time for the segments before and after the merge."
+    },
+    {
+      "content": "Calculate the total travel time without any merges first. This will give you a baseline to compare against after performing merges."
+    },
+    {
+      "content": "Consider how merging affects the distances between signs. The position of the merged sign remains the same as the right sign's position, but the time changes."
+    },
+    {
+      "content": "Keep in mind the constraints on `k`, the number of merges. You must perform exactly `k` merges, which means you need to plan your merges strategically to minimize total travel time."
+    },
+    {
+      "content": "Think about the greedy approach: merging signs with the highest travel times could potentially yield the best reduction in total travel time."
+    },
+    {
+      "content": "When merging signs, ensure that you update both the `position` and `time` arrays correctly. After a merge, the new `time` should be the sum of the two merged times, and the `position` array should reflect the remaining signs."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is 0. In this case, the output should simply be the total travel time calculated initially."
+    },
+    {
+      "content": "If `k` equals `n - 2`, you will be left with only two signs. Think about how to choose merges wisely to minimize the travel time between those two remaining signs."
+    },
+    {
+      "content": "You might want to implement a simulation of the merging process. After each merge, recalculate the total travel time and keep track of the minimum found."
+    },
+    {
+      "content": "Use a priority queue to manage the merges efficiently. This can help you always merge the most impactful signs first, based on their travel times."
+    },
+    {
+      "content": "After performing a merge, ensure that you recalculate the travel times for all segments affected by the merge. This includes the segment before the merge and the segment after."
+    },
+    {
+      "content": "As you implement your solution, consider using a recursive or iterative approach to explore all possible merge combinations, especially if `k` is small."
+    },
+    {
+      "content": "Finally, think about how to compare the total travel times after different merge configurations. You may want to store the minimum travel time found during your iterations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= l <= 10^5, 2 <= n <= min(l + 1, 50), 0 <= k <= min(n - 2, 10)",
+    "position.length == n, position[0] = 0 and position[n - 1] = l, position is sorted in strictly increasing order.",
+    "time.length == n, 1 <= time[i] <= 100, 1 <= sum(time) <= 100.",
+    "You must perform exactly k merges, which means planning is essential."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. Each node can have multiple children, and you can represent the tree using an adjacency list based on the given edges."
+    },
+    {
+      "content": "Remember that the XOR operation has specific properties. For example, `a XOR a = 0` and `a XOR 0 = a`. This can help in understanding how to combine values from different subtrees."
+    },
+    {
+      "content": "You need to find two non-overlapping subtrees. Think about how you can define a subtree in terms of its root and its children."
+    },
+    {
+      "content": "Consider using Depth First Search (DFS) to traverse the tree. This will help you calculate the XOR values of each subtree starting from the leaves up to the root."
+    },
+    {
+      "content": "While traversing, maintain a list or array to store the XOR values of all subtrees. Each entry in this list corresponds to the XOR value of the subtree rooted at that node."
+    },
+    {
+      "content": "When you calculate the XOR for a subtree, remember to include the value of the current node and the XOR values of its children."
+    },
+    {
+      "content": "After calculating the XOR values for all subtrees, you need to consider pairs of these values. Ensure that the pairs you consider come from non-overlapping subtrees."
+    },
+    {
+      "content": "To ensure non-overlapping, you can keep track of the nodes included in each subtree. Use a set to track visited nodes when combining XOR values from different subtrees."
+    },
+    {
+      "content": "Think about how to efficiently find the maximum XOR of two values from your list of subtree XORs. You might want to use a nested loop to check all pairs initially."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree has only one node or when all nodes have the same value. How would these cases affect your solution?"
+    },
+    {
+      "content": "You might want to optimize your pair checking. Instead of checking all pairs, think about using a data structure that allows you to quickly find maximum XORs, like a Trie."
+    },
+    {
+      "content": "While implementing, make sure to handle the case where there are no valid pairs of non-overlapping subtrees. What should your function return in such cases?"
+    },
+    {
+      "content": "As you implement the DFS, ensure that you correctly handle the return values. Each DFS call should return the XOR value of the subtree rooted at the current node."
+    },
+    {
+      "content": "Once you have the XOR values of all subtrees, focus on the logic to combine them. You need to ensure that you are only combining values from non-overlapping nodes."
+    },
+    {
+      "content": "Finally, before concluding, check if you can optimize your solution further. Are there any redundant calculations or checks you can eliminate?"
+    }
+  ],
+  "questionNotes": [
+    "The tree is represented by edges, which are pairs of indices.",
+    "The values of the nodes are given in a separate list, indexed in the same way as the nodes.",
+    "Subtrees must be non-overlapping, meaning no shared nodes between the two selected subtrees.",
+    "Consider edge cases such as single-node trees or trees where all values are the same.",
+    "Return a single integer representing the maximum XOR value found."
+  ]
+}

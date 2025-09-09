@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic requirements of the problem. You need to distribute all the money such that each child gets at least 1 dollar and no child gets exactly 4 dollars."
+    },
+    {
+      "content": "Remember that every child must receive at least 1 dollar. This means that the minimum amount of money needed is equal to the number of children. If `money < children`, it's impossible to distribute the money."
+    },
+    {
+      "content": "Consider how much money is left after giving each child 1 dollar. This leftover money can be used to give additional amounts to some children, but you need to avoid giving exactly 4 dollars."
+    },
+    {
+      "content": "Think about how you can maximize the number of children receiving 8 dollars. If a child receives 8 dollars, that means you have given away 7 dollars more than the minimum 1 dollar."
+    },
+    {
+      "content": "Calculate the maximum possible number of children that could receive 8 dollars by checking how much money would remain after giving `k` children 8 dollars. You can express this as: `remaining = money - 8 * k - children + k`."
+    },
+    {
+      "content": "Ensure that the remaining money is non-negative and does not allow for any child to receive 4 dollars. You can check this by verifying that the remaining money is not equal to 4 for any child."
+    },
+    {
+      "content": "Consider edge cases where the total money is just enough for the children to get 1 dollar each, or where the total money is very close to a multiple of 8."
+    },
+    {
+      "content": "Use a loop to iterate from the maximum possible number of children that can receive 8 dollars down to 0. For each iteration, check if the remaining money can be distributed without violating the rules."
+    },
+    {
+      "content": "As you iterate, keep track of the maximum number of children that can receive 8 dollars. If at any point the remaining money can be distributed without giving anyone 4 dollars, you have a valid distribution."
+    },
+    {
+      "content": "Finally, if you cannot find any valid distribution, make sure to return -1 as specified in the problem statement. This means that no configuration of distributions meets the criteria."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= money <= 200, 2 <= children <= 30.",
+    "Each child must receive at least 1 dollar.",
+    "No child can receive exactly 4 dollars.",
+    "Return -1 if no valid distribution exists."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. Each node can be thought of as a point that connects to other points. You will need to traverse this graph to visit all nodes."
+    },
+    {
+      "content": "Consider the constraints of the problem. The maximum number of nodes is 12, which suggests that a brute-force approach may be feasible. Think about how you might generate all possible paths."
+    },
+    {
+      "content": "Since you can start and stop at any node, think about how you might represent the starting point. You could iterate through each node as a potential starting point."
+    },
+    {
+      "content": "Remember that you can revisit nodes and reuse edges. This means that the path you take does not have to be a simple path (no repetitions)."
+    },
+    {
+      "content": "A common approach for pathfinding in graphs is to use Depth-First Search (DFS) or Breadth-First Search (BFS). Consider how you might implement these algorithms to explore all paths."
+    },
+    {
+      "content": "To track the nodes you have visited, you might use a bitmask. This will allow you to efficiently manage which nodes have been visited during your traversal."
+    },
+    {
+      "content": "Think about how you can represent the state of your traversal. A state could include the current node and the bitmask representing visited nodes."
+    },
+    {
+      "content": "When using a bitmask, remember that each bit represents whether a node has been visited. For example, if you have 4 nodes, a bitmask of '0110' means nodes 1 and 2 have been visited."
+    },
+    {
+      "content": "You will need to keep track of the shortest path length. Consider using a queue to explore paths level by level, updating the shortest path whenever you visit all nodes."
+    },
+    {
+      "content": "As you explore paths, ensure that you are not revisiting the same state (same node and visited mask) unnecessarily. This can help optimize your solution."
+    },
+    {
+      "content": "Consider edge cases such as when the graph has only one node. What would the shortest path be in this case?"
+    },
+    {
+      "content": "Think about how to handle the return value. You need to return the length of the shortest path that visits all nodes. Make sure your pathfinding logic captures this correctly."
+    },
+    {
+      "content": "You may want to implement memoization to store results of previously computed states to avoid redundant calculations and improve efficiency."
+    },
+    {
+      "content": "As you build your solution, test it with small graphs first to ensure that your traversal logic is correct before scaling up to larger graphs."
+    },
+    {
+      "content": "Finally, consider how you will structure your code. A recursive function for DFS combined with a loop for the starting points might be a good approach."
+    }
+  ],
+  "questionNotes": [
+    "The graph is undirected and connected.",
+    "Nodes are labeled from 0 to n - 1.",
+    "You can start and stop at any node.",
+    "You may revisit nodes and reuse edges.",
+    "Constraints: 1 <= n <= 12, 0 <= graph[i].length < n.",
+    "graph[i] does not contain i, and if graph[a] contains b, then graph[b] contains a."
+  ]
+}

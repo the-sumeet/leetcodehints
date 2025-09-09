@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the dimensions of the matrix M. You have an m x n matrix initialized with 0's. Make sure you keep track of how many rows and columns you have."
+    },
+    {
+      "content": "Each operation in the ops array specifies a rectangle in the matrix where the values will be incremented. For example, ops[i] = [a_i, b_i] means increment all elements M[x][y] for 0 <= x < a_i and 0 <= y < b_i."
+    },
+    {
+      "content": "Consider what happens when you apply multiple operations. The maximum value in the matrix will be determined by the smallest rectangle defined by the operations. Think about how to find the minimum a_i and b_i from the ops array."
+    },
+    {
+      "content": "If ops is empty, the entire matrix remains 0. Make sure to handle this edge case correctly, as the maximum integer would be 0 and the count would be m * n."
+    },
+    {
+      "content": "To find the maximum integer after all operations, you can calculate the minimum values of a_i and b_i from the ops array. This will give you the dimensions of the rectangle that has been incremented the most."
+    },
+    {
+      "content": "Once you have the minimum a_i and b_i, the maximum integer in the matrix will be the count of times it has been incremented. This is equal to the number of cells in the rectangle defined by those minimums: a_i * b_i."
+    },
+    {
+      "content": "Don’t forget to consider the case where the ops array might contain duplicate operations. However, this won't affect the maximum value since you only need the smallest a_i and b_i."
+    },
+    {
+      "content": "When implementing your solution, ensure you handle large values for m and n efficiently, as they can go up to 4 * 10^4. Think about the time complexity of your approach."
+    },
+    {
+      "content": "Remember to return the count of the maximum integers in the matrix, which you can determine by multiplying the minimum dimensions found from the ops array."
+    },
+    {
+      "content": "As a final step, ensure your code correctly handles all edge cases, including when ops is empty or when all operations point to the same rectangle."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 4 * 10^4",
+    "0 <= ops.length <= 10^4",
+    "ops[i].length == 2",
+    "1 <= a_i <= m",
+    "1 <= b_i <= n",
+    "Return the count of the maximum integers in the matrix."
+  ]
+}

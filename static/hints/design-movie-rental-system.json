@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the data structure for the movie entries. Each entry contains a shop index, a movie ID, and a rental price. You will need to store this information in a way that allows for efficient searching, renting, and dropping of movies."
+    },
+    {
+      "content": "Consider using a dictionary (or hashmap) where the key is the movie ID and the value is a list of tuples containing the shop index and price. This will help you quickly access all shops that have a particular movie."
+    },
+    {
+      "content": "When implementing the `search` function, you need to filter the shops that have an unrented copy of the movie. Think about how you can efficiently sort these shops by price and then by shop index in case of ties."
+    },
+    {
+      "content": "Remember that the search function should return at most 5 shops. You can use a min-heap or simply sort the list and slice it to get the top 5 results."
+    },
+    {
+      "content": "For the `rent` function, you will need to update your data structures to mark a movie as rented. This means removing the shop from the available list for that movie and possibly adding it to a rented list."
+    },
+    {
+      "content": "The `drop` function should reverse the changes made by the `rent` function. Make sure to add the movie back to the available list for that shop and update any relevant data structures."
+    },
+    {
+      "content": "In the `report` function, you need to gather all currently rented movies and sort them by price, then by shop index, and then by movie ID. Think about how you can maintain a list of rented movies efficiently."
+    },
+    {
+      "content": "Consider using a separate list or priority queue to keep track of rented movies and their details. This will help you efficiently generate the report of the cheapest rented movies."
+    },
+    {
+      "content": "Pay attention to the constraints, especially the maximum number of shops and entries. Your solution should handle large inputs efficiently, so think about the time complexity of your operations."
+    },
+    {
+      "content": "When sorting lists, remember that Python's sort is stable. This means that if two items have the same key, their original order is preserved. This can help with tie-breaking scenarios."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when no shops have an unrented copy of a movie during a search, or when there are fewer than 5 rented movies during a report."
+    },
+    {
+      "content": "For the `search` function, ensure that you are checking the availability of movies correctly. If a movie is rented, it should not appear in the search results."
+    },
+    {
+      "content": "You might want to use a set to keep track of rented movies for quick lookup. This will help prevent duplicates and ensure that you only report currently rented movies."
+    },
+    {
+      "content": "When implementing the `rent` and `drop` functions, ensure that you are correctly updating both the available and rented lists. This will help maintain the integrity of your data."
+    },
+    {
+      "content": "As a final step, consider how you will test your implementation. Create test cases that cover all possible scenarios, including edge cases like no available movies or all movies rented."
+    }
+  ],
+  "questionNotes": [
+    "Each shop carries at most one copy of a movie.",
+    "Rent will only be called if the shop has an unrented copy of the movie.",
+    "Drop will only be called if the shop had previously rented out the movie.",
+    "Return format for search: List of shops sorted by price, then by shop index.",
+    "Return format for report: List of rented movies sorted by price, then by shop index, then by movie ID."
+  ]
+}

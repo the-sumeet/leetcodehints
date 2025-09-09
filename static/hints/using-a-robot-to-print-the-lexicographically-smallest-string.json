@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operations you can perform with the robot. You can either take a character from the front of string `s` and add it to string `t`, or you can take a character from the end of string `t` and write it down. This means you need to manage two strings simultaneously."
+    },
+    {
+      "content": "Consider how the order of characters in `s` affects the order in which they can be written down. The goal is to produce the lexicographically smallest string, so you might want to prioritize certain characters when transferring from `s` to `t`."
+    },
+    {
+      "content": "Think about using a stack-like structure for `t`. When you remove characters from `t` to write them down, the last character added to `t` will be the first one you can write. This Last-In-First-Out (LIFO) behavior is crucial for your approach."
+    },
+    {
+      "content": "As you process characters from `s`, keep track of the smallest character that can be written down next. If the character at the front of `s` is smaller than the character at the end of `t`, consider moving it to `t`."
+    },
+    {
+      "content": "You may need to handle cases where multiple characters are the same. In such scenarios, ensure that you still maintain the lexicographical order by carefully choosing whether to move from `s` or write from `t`."
+    },
+    {
+      "content": "Think about edge cases, such as when `s` is already sorted or when it contains repeated characters. Your approach should still yield the correct result in these scenarios."
+    },
+    {
+      "content": "While iterating through `s`, you can maintain a pointer or index to track your current position. This will help you decide when to stop moving characters to `t` and when to start writing them down."
+    },
+    {
+      "content": "Consider using a priority queue or a similar data structure to help you efficiently manage the characters in `t`. This can help you quickly determine the smallest character available for writing."
+    },
+    {
+      "content": "You should also think about the termination condition for your operations. Both `s` and `t` need to be empty before you finish processing. Make sure to handle the cases where one of them is empty while the other still has characters."
+    },
+    {
+      "content": "Finally, put together all the pieces. As you process `s`, decide at each step whether to move a character to `t` or to write a character from `t`. Keep track of the result and ensure it remains lexicographically smallest."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5.",
+    "s consists of only English lowercase letters.",
+    "The output should be the lexicographically smallest string that can be written down.",
+    "Both strings `s` and `t` must be fully processed before returning the result."
+  ]
+}

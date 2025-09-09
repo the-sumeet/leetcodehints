@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation allowed: you can swap two elements if their GCD is greater than 1. This means that the elements must share a common factor."
+    },
+    {
+      "content": "Consider how the GCD operation can connect elements in the array. If two numbers have a GCD greater than 1, they can be part of the same 'connected component' for swapping."
+    },
+    {
+      "content": "Think about how to identify these connected components. You can use a graph approach where each number is a node and an edge exists between two nodes if their GCD > 1."
+    },
+    {
+      "content": "To find connected components, you might want to use Depth-First Search (DFS) or Union-Find. This will help you group numbers that can be swapped with each other."
+    },
+    {
+      "content": "Once you have the connected components, sort each component independently. This is because within a component, you can swap elements freely."
+    },
+    {
+      "content": "After sorting the components, check if the entire array can be sorted by comparing the sorted components with the sorted version of the original array."
+    },
+    {
+      "content": "Remember to handle edge cases, such as arrays with only one element or arrays where all elements are the same. These cases will trivially return true."
+    },
+    {
+      "content": "Consider the constraints: the length of the array can be up to 30,000. Your solution should be efficient, ideally around O(n log n) due to sorting."
+    },
+    {
+      "content": "Take note of the range of the numbers in the array (2 to 100,000). This can affect how you implement the GCD checks and the graph construction."
+    },
+    {
+      "content": "When implementing the GCD check, remember that GCD is commutative and associative. You can use the Euclidean algorithm for efficient computation."
+    },
+    {
+      "content": "Think about how to represent the graph of numbers. An adjacency list could be a good choice, but be mindful of the number of edges you might create."
+    },
+    {
+      "content": "As you build the connected components, ensure that you keep track of which elements belong to which component. This will be crucial for sorting them later."
+    },
+    {
+      "content": "After sorting the components, create a mapping from the original indices to the sorted indices. This will help you reconstruct the final sorted array."
+    },
+    {
+      "content": "Finally, compare the reconstructed sorted array with the fully sorted version of the original array. If they match, return true; otherwise, return false."
+    },
+    {
+      "content": "Consider edge cases where all elements are prime numbers. In such cases, no swaps can be made, and the array must already be sorted to return true."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 30,000",
+    "2 <= nums[i] <= 100,000",
+    "Return true if the array can be sorted using the allowed operations, otherwise return false.",
+    "Consider the implications of GCD and how it relates to the ability to swap elements."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between spells and potions. Each pair is considered successful if the product of their strengths is at least the given 'success' value."
+    },
+    {
+      "content": "Consider how to iterate over each spell and check against all potions. You will need to count how many potions meet the success criteria for each spell."
+    },
+    {
+      "content": "Think about how to calculate the minimum potion strength required for a successful pair with a given spell. For a spell strength `s`, the potion strength `p` must satisfy the condition: `p >= success / s`."
+    },
+    {
+      "content": "Since both arrays can be large, consider the efficiency of your approach. A nested loop that checks each spell against each potion could lead to a time complexity of O(n * m)."
+    },
+    {
+      "content": "To optimize, you might want to sort the potions array first. This way, you can use binary search to quickly find how many potions are valid for each spell."
+    },
+    {
+      "content": "After sorting the potions, for each spell, calculate the threshold potion strength and use a binary search (like `bisect_left`) to find the first potion that meets or exceeds this threshold."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when all potions are too weak for a given spell. What should you return in such cases?"
+    },
+    {
+      "content": "Make sure to return the results in the correct format: an integer array where each index corresponds to the number of successful pairs for the respective spell."
+    },
+    {
+      "content": "Consider the constraints of the problem, especially the maximum sizes of the input arrays and the values. How will this affect your choice of data structures and algorithms?"
+    },
+    {
+      "content": "As a final step, implement the logic to count successful pairs using the sorted potions and binary search. Ensure that your final implementation correctly populates the output array with the counts for each spell."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == spells.length, m == potions.length, 1 <= n, m <= 10^5",
+    "1 <= spells[i], potions[i] <= 10^5, 1 <= success <= 10^10",
+    "Return an integer array of length n, where pairs[i] is the number of successful pairs for spells[i]."
+  ]
+}

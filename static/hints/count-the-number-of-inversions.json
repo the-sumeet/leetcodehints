@@ -1,0 +1,58 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an inversion is. An inversion in an array is a pair of indices (i, j) such that i < j and nums[i] > nums[j]. This is crucial for counting inversions in the permutations."
+    },
+    {
+      "content": "Consider how you can generate permutations of the array [0, 1, 2, ..., n-1]. You can use recursive backtracking or the built-in permutation functions in some programming languages to help visualize the problem."
+    },
+    {
+      "content": "Think about how to count inversions in a given array. A naive approach is O(n^2), but you can also use a modified merge sort to count inversions in O(n log n) time."
+    },
+    {
+      "content": "Focus on the requirements array. Each requirement specifies a prefix of the permutation and the exact number of inversions that prefix must have. This means you need to check each permutation against these conditions."
+    },
+    {
+      "content": "Notice that the requirements array has unique end indices. This means that for each end index, you will have a distinct condition to satisfy regarding the number of inversions."
+    },
+    {
+      "content": "Since the answer can be very large, remember to apply the modulo operation (10^9 + 7) to your results at appropriate steps to prevent overflow."
+    },
+    {
+      "content": "You may want to preprocess the number of valid permutations for each possible number of inversions up to the maximum required in the requirements. This can help speed up checking each permutation."
+    },
+    {
+      "content": "Consider using dynamic programming to keep track of the number of ways to arrange the first k elements with a certain number of inversions. This can help you build up to the final solution."
+    },
+    {
+      "content": "Think about how to efficiently check if a permutation meets all the inversion requirements. You might want to store the inversion counts for each prefix as you build permutations."
+    },
+    {
+      "content": "When checking a permutation against the requirements, ensure you are checking in the correct order. The requirements are specified by their end indices, so you need to respect that order."
+    },
+    {
+      "content": "Consider edge cases such as when n is at its minimum value (2). How do the requirements affect the possible permutations in this case?"
+    },
+    {
+      "content": "You might want to create a helper function that counts the inversions in a given prefix of the permutation. This could simplify your main logic."
+    },
+    {
+      "content": "As you implement your solution, keep track of the current number of inversions as you build the permutation. This will help you quickly check against the requirements."
+    },
+    {
+      "content": "Remember that the requirements may not be independent. Satisfying one requirement might affect the ability to satisfy another, so consider how to manage this in your solution."
+    },
+    {
+      "content": "Finally, ensure your solution accounts for all permutations and correctly applies the modulo operation. After implementing, test your solution with the provided examples to validate correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 300",
+    "1 <= requirements.length <= n",
+    "Each requirements[i] = [end_i, cnt_i]",
+    "0 <= end_i <= n - 1",
+    "0 <= cnt_i <= 400",
+    "All end_i are unique.",
+    "At least one end_i == n - 1."
+  ]
+}

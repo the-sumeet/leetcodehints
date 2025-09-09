@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by counting the frequency of each character in the string. You can use a dictionary or a list to store these counts. For example, for the string 'aab', the frequencies would be {'a': 2, 'b': 1}."
+    },
+    {
+      "content": "Once you have the frequencies, identify how many characters have the same frequency. This will help you understand where conflicts arise. For instance, if two characters both have a frequency of 2, you'll need to make adjustments."
+    },
+    {
+      "content": "Consider how to make the frequencies unique. If two characters have the same frequency, you can either reduce one of their counts or increase the frequency of another character. Think about how many deletions would be necessary for each option."
+    },
+    {
+      "content": "To efficiently track the frequencies, you might want to use a set to keep track of the frequencies that you've already seen. This will help you quickly check if a frequency is unique or if it needs to be adjusted."
+    },
+    {
+      "content": "When adjusting frequencies, remember that you can only delete characters. If a frequency is already taken, you need to either reduce the current character's frequency or delete characters until you find a unique frequency."
+    },
+    {
+      "content": "Think about edge cases, such as when the string consists of a single character repeated multiple times. In this case, you may need to delete all but one instance to make the frequencies unique."
+    },
+    {
+      "content": "As you work through the frequencies, keep a count of the total deletions you've made. This will be your answer once all frequencies are unique. Consider how you can minimize the number of deletions by strategically choosing which frequencies to adjust."
+    },
+    {
+      "content": "If you encounter a frequency that is already in your set of unique frequencies, you'll need to decrement it until you find a frequency that isn't taken. This could involve multiple deletions for a single character."
+    },
+    {
+      "content": "Remember that the maximum frequency you need to consider is the length of the string. No frequency can exceed the total number of characters present."
+    },
+    {
+      "content": "At the end of your process, ensure that you return the total number of deletions made. This will be your final answer. Think through the logic of how you are counting deletions carefully."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length <= 10^5",
+    "s contains only lowercase English letters.",
+    "Character frequencies must be unique.",
+    "Only consider characters that remain in the string after deletions."
+  ]
+}

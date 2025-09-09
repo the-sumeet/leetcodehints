@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirements for each type of burger. A Jumbo Burger requires 4 tomato slices and 1 cheese slice, while a Small Burger requires 2 tomato slices and 1 cheese slice."
+    },
+    {
+      "content": "Think about how many of each type of burger you can make based on the available cheese slices. Since each burger requires 1 cheese slice, the total number of burgers cannot exceed the number of cheese slices."
+    },
+    {
+      "content": "Let `j` be the number of Jumbo Burgers and `s` be the number of Small Burgers. You can set up equations based on the total slices: `4j + 2s = tomatoSlices` and `j + s = cheeseSlices`."
+    },
+    {
+      "content": "From the second equation, you can express `s` in terms of `j`: `s = cheeseSlices - j`. Substitute this into the first equation to find a relationship between `j` and `tomatoSlices`."
+    },
+    {
+      "content": "Rearranging the equation will give you a way to express `j` in terms of `tomatoSlices` and `cheeseSlices`. Make sure to check if the resulting `j` is a non-negative integer."
+    },
+    {
+      "content": "Consider the constraints of the problem: both `tomatoSlices` and `cheeseSlices` must be non-negative integers. If either is negative, you should return an empty list immediately."
+    },
+    {
+      "content": "After calculating `j`, you should verify that the number of tomato slices used matches exactly with the available slices. If `4j` exceeds `tomatoSlices`, then adjust `j` accordingly."
+    },
+    {
+      "content": "Remember to check if the total number of slices used matches the total cheese slices. If the calculated `s` (number of Small Burgers) is negative, that means the configuration is not possible."
+    },
+    {
+      "content": "Ensure that the final values of `j` and `s` are both non-negative integers. If either is negative or if the total slices do not match, return an empty list."
+    },
+    {
+      "content": "Finally, construct your return statement. If you have valid values for `j` and `s`, return them in the format `[total_jumbo, total_small]`. If not, return `[]`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= tomatoSlices, cheeseSlices <= 10^7",
+    "Return format: A list of two integers [total_jumbo, total_small] or an empty list if impossible.",
+    "Both `j` (number of Jumbo Burgers) and `s` (number of Small Burgers) must be non-negative."
+  ]
+}

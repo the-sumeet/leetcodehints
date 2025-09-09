@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a singly linked list. Each node has a value and a pointer to the next node. Visualize the list and identify the nodes at the 'left' and 'right' positions that need to be reversed."
+    },
+    {
+      "content": "Consider how you can traverse the linked list to reach the 'left' position. You will need a pointer to keep track of the current node as you move through the list."
+    },
+    {
+      "content": "Once you reach the 'left' position, you'll need to maintain a reference to the node just before 'left' and the node at 'left' itself. This will help in reconnecting the reversed segment back to the list."
+    },
+    {
+      "content": "Think about how to reverse the nodes between 'left' and 'right'. You can use a loop to reverse the pointers of the nodes. Remember that each node's next pointer should point to the previous node."
+    },
+    {
+      "content": "As you reverse the nodes, keep track of the last node of the reversed segment. This will be important to connect it back to the rest of the list after the reversal is complete."
+    },
+    {
+      "content": "Consider edge cases, such as when 'left' is equal to 'right'. In this case, the list remains unchanged, and you can simply return the head."
+    },
+    {
+      "content": "Think about how to handle the connections before and after the reversed segment. You will need to connect the node just before 'left' to the node at 'right', and the node at 'left' to the node after 'right'."
+    },
+    {
+      "content": "To achieve the reversal in one pass, you might want to use a combination of pointers. You can maintain three pointers: one for the previous node, one for the current node, and one for the next node during the reversal process."
+    },
+    {
+      "content": "Make sure to update the head of the list if the reversal starts at the very beginning (i.e., when 'left' is 1). This is crucial for returning the correct modified list."
+    },
+    {
+      "content": "Once you have reversed the segment and reconnected the nodes, return the modified head of the list. Ensure that your function handles all edge cases and returns the list in the correct format."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 500, -500 <= Node.val <= 500, 1 <= left <= right <= n.",
+    "The input is a singly linked list, and the positions 'left' and 'right' are 1-indexed.",
+    "If left equals right, the list remains unchanged."
+  ]
+}

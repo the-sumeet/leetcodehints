@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the main operations you can perform: removing 'ab' for x points and 'ba' for y points. Consider how these operations can overlap and affect the string."
+    },
+    {
+      "content": "Think about how to traverse the string. You could use a loop to scan through the string and look for occurrences of 'ab' and 'ba'. What happens if you encounter both in a sequence?"
+    },
+    {
+      "content": "When you find 'ab' or 'ba', consider how removing one affects the potential to remove the other. For example, removing 'ab' might create a new 'ba' in the string."
+    },
+    {
+      "content": "Consider using a stack to help manage the characters as you process the string. This way, you can easily check the last added characters to see if they form 'ab' or 'ba'."
+    },
+    {
+      "content": "As you process the string, maintain a score variable to keep track of the points you accumulate. Each time you remove a substring, add the corresponding points to this score."
+    },
+    {
+      "content": "Think about edge cases, such as when the string contains no 'ab' or 'ba' substrings at all. What should your function return in that case?"
+    },
+    {
+      "content": "You may want to implement a greedy strategy where you always remove the substring that gives you the maximum points at each step. This could lead to a higher total score."
+    },
+    {
+      "content": "Make sure to handle cases where removing one substring creates new opportunities to remove others. You might need to iterate multiple times through the string."
+    },
+    {
+      "content": "Consider how to optimize your solution. If you can reduce the number of passes through the string, you can improve the performance significantly, especially with larger inputs."
+    },
+    {
+      "content": "Finally, ensure your function returns the maximum score after all possible removals. You might want to keep track of the highest score encountered during your iterations."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length <= 10^5",
+    "1 <= x, y <= 10^4",
+    "s consists of lowercase English letters.",
+    "The operations can be performed any number of times."
+  ]
+}

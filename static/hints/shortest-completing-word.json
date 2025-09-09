@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by focusing on the `licensePlate`. You need to extract the letters from it while ignoring any digits and spaces. Consider using a loop to iterate through the characters of the string and check if they are alphabetic."
+    },
+    {
+      "content": "Remember that the letters in `licensePlate` should be treated case insensitively. You can convert all characters to lower case to simplify your comparisons later on."
+    },
+    {
+      "content": "Once you have the relevant letters, you need to count their occurrences. A dictionary (or hashmap) can be useful here, where the keys are the letters and the values are their counts."
+    },
+    {
+      "content": "Next, you'll want to iterate through the `words` array. For each word, check if it contains all the letters from your count dictionary. This will involve another dictionary to count the letters in each word."
+    },
+    {
+      "content": "While checking each word, remember that a word is only a completing word if it contains each letter from `licensePlate` at least as many times as it appears in the `licensePlate`."
+    },
+    {
+      "content": "Keep track of the shortest completing word you find. You can initialize a variable to hold the shortest word and update it whenever you find a new completing word that is shorter."
+    },
+    {
+      "content": "If you encounter multiple words of the same length that qualify as completing words, you should return the first one you found. This means you should not update your shortest word variable unless you find a strictly shorter word."
+    },
+    {
+      "content": "Consider edge cases where `licensePlate` may contain only one letter or where all letters are the same. Make sure your implementation works correctly for these scenarios."
+    },
+    {
+      "content": "After processing all words, ensure that you return the shortest completing word. The return type should be a string, and you should handle the output correctly."
+    },
+    {
+      "content": "As a final step, review your logic to ensure that it handles all constraints specified in the problem, such as the maximum lengths of `licensePlate` and `words`, and the guaranteed existence of a solution."
+    }
+  ],
+  "questionNotes": [
+    "Ignore numbers and spaces in `licensePlate`.",
+    "Treat letters as case insensitive.",
+    "A letter must appear in the completing word the same number of times or more.",
+    "Return the first shortest completing word if there are ties."
+  ]
+}

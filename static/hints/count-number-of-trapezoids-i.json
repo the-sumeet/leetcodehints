@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a horizontal trapezoid. It must have at least one pair of horizontal sides, which means you need to find pairs of points that share the same y-coordinate."
+    },
+    {
+      "content": "To find pairs of points with the same y-coordinate, consider using a dictionary (or hashmap) to group points by their y-values. This will allow you to easily access all points at a specific height."
+    },
+    {
+      "content": "Once you have grouped the points by y-coordinate, focus on the pairs of points that can serve as the bases of the trapezoids. Each pair of points at the same y-level can potentially form the top or bottom of a trapezoid."
+    },
+    {
+      "content": "For each unique y-coordinate, if there are `k` points, you can select 2 points to form a base. The number of ways to choose 2 points from `k` is given by the combination formula C(k, 2) = k * (k - 1) / 2."
+    },
+    {
+      "content": "Remember that a trapezoid requires two bases. Thus, after selecting a pair of points from one y-level, you need to find pairs from another y-level to complete the trapezoid."
+    },
+    {
+      "content": "Make sure to handle the case where you have multiple pairs of bases. You will need to multiply the number of ways to choose pairs from the two different y-levels together to get the total combinations for that trapezoid."
+    },
+    {
+      "content": "Consider edge cases where there may not be enough points at certain y-levels to form pairs. If a y-level has fewer than 2 points, it cannot contribute to forming a trapezoid."
+    },
+    {
+      "content": "As you calculate the number of trapezoids, keep in mind the modulo operation. Since the result can be very large, return your final count modulo 10^9 + 7."
+    },
+    {
+      "content": "When implementing your solution, ensure you are using efficient data structures to maintain performance, especially since the input size can be large (up to 100,000 points)."
+    },
+    {
+      "content": "Finally, piece together your logic: iterate through your grouped y-coordinates, calculate combinations for each, and sum them up to get the total number of unique trapezoids."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 4 <= points.length <= 100,000",
+    "Points are pairwise distinct.",
+    "Return the result modulo 10^9 + 7.",
+    "A horizontal trapezoid requires at least one pair of horizontal sides (same y-coordinate)."
+  ]
+}

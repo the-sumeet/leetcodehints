@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, consider the total number of '1's in the string. To split the string into three parts with the same number of '1's, the total number of '1's must be divisible by 3. If it's not, you can immediately return 0."
+    },
+    {
+      "content": "If the total count of '1's is divisible by 3, denote this count as `k`. Each of the three parts must then contain exactly `k/3` '1's. Start by counting the occurrences of '1's as you iterate through the string."
+    },
+    {
+      "content": "As you traverse the string, maintain a count of how many '1's you've seen so far. When you reach a position where the count of '1's equals `k/3`, note that as a potential split point for `s1`."
+    },
+    {
+      "content": "Continue traversing the string to find where the count of '1's equals `2k/3`. This will help you identify potential split points for `s2`. Remember, you need to ensure that both parts are non-empty."
+    },
+    {
+      "content": "For each valid split point you find for `s1`, you can count how many valid split points exist for `s2` after it. This will help you calculate the number of ways to split the string."
+    },
+    {
+      "content": "Be careful to account for the fact that the parts must be non-empty. When counting valid split points, make sure that the splits do not overlap and that each part has at least one character."
+    },
+    {
+      "content": "When you find valid split points for `s1` and `s2`, the number of ways to choose valid `s3` is determined by the number of '0's between the split points. Consider how to distribute these '0's."
+    },
+    {
+      "content": "Use combinatorial math to calculate the number of ways to distribute the '0's between the split points. Specifically, if you have `x` zeros between `s1` and `s2`, the ways to split these can be calculated using the formula for combinations."
+    },
+    {
+      "content": "Remember to take the result modulo 10^9 + 7 as specified in the problem statement. This is crucial for avoiding overflow and meeting the problem's requirements."
+    },
+    {
+      "content": "Finally, ensure that your implementation efficiently handles the constraints, especially since the string length can be up to 100,000. Aim for a linear time complexity solution."
+    }
+  ],
+  "questionNotes": [
+    "The string must be split into 3 non-empty parts.",
+    "The total number of '1's in the string must be divisible by 3.",
+    "Each part must contain the same number of '1's.",
+    "Return the result modulo 10^9 + 7.",
+    "Constraints: 3 <= s.length <= 10^5, s[i] is either '0' or '1'."
+  ]
+}

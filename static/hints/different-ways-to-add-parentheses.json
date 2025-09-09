@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the expression. The expression consists of numbers and operators. You need to parse this string into separate numbers and operators for easier manipulation."
+    },
+    {
+      "content": "Consider how to evaluate expressions with parentheses. For example, the expression '2-1-1' can be grouped in different ways, such as '((2-1)-1)' and '(2-(1-1))'. Think about how you can represent these groupings programmatically."
+    },
+    {
+      "content": "Recursion is a key technique for this problem. You can define a recursive function that takes a substring of the expression and returns all possible results for that substring. This will help you explore different groupings."
+    },
+    {
+      "content": "When you encounter an operator, split the expression into two parts: the left side and the right side. You can then recursively compute the results for both sides and combine them based on the operator."
+    },
+    {
+      "content": "Make sure to handle all three operators: '+', '-', and '*'. Each operator will require a different way to combine the results from the left and right sides. For instance, for '+', you would sum the results, while for '*' you would multiply them."
+    },
+    {
+      "content": "Think about base cases for your recursion. If the substring contains only one number, return that number as the only possible result. This will help you build up results from the simplest cases."
+    },
+    {
+      "content": "You may want to use a memoization technique to store results of previously computed expressions. This can help avoid redundant calculations and improve the efficiency of your solution."
+    },
+    {
+      "content": "Consider edge cases, such as when the expression is very short (like a single number) or when it contains repeated operators. Ensure your solution handles these cases correctly."
+    },
+    {
+      "content": "When combining results from the left and right sides, be careful to apply the operator correctly. For example, if the operator is '-', you need to subtract the right result from the left result."
+    },
+    {
+      "content": "Finally, think about how to return the results. You need to return a list of integers, so make sure to collect all the results in a list and return it at the end of your function."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= expression.length <= 20",
+    "Expression consists of digits and operators '+', '-', and '*'.",
+    "Output values fit in a 32-bit integer.",
+    "The number of different results does not exceed 10^4."
+  ]
+}

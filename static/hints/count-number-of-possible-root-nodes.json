@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a tree. A tree with n nodes has exactly n-1 edges and is connected and acyclic. Make sure you can visualize the tree based on the given edges."
+    },
+    {
+      "content": "Consider how the guesses relate to the edges of the tree. Each guess indicates a potential parent-child relationship between two nodes. Think about how many guesses can be correct based on the choice of root."
+    },
+    {
+      "content": "Remember that the root of a tree can be any node. As you iterate through potential roots, you will need to count how many of Bob's guesses are valid for each root."
+    },
+    {
+      "content": "To count the correct guesses for a given root, you can perform a traversal (like DFS or BFS) starting from that root. Keep track of the parent-child relationships as you traverse."
+    },
+    {
+      "content": "When checking guesses, remember that if Bob guesses u as the parent of v, and you are considering u as the root, then this guess is valid if v is a descendant of u in the traversal."
+    },
+    {
+      "content": "You might want to create a mapping of guesses to edges in the tree for easier lookup. This will help you quickly determine if a guess is valid for the current root."
+    },
+    {
+      "content": "As you check each root, maintain a count of valid guesses. If the count meets or exceeds k, you can consider that root as a valid candidate."
+    },
+    {
+      "content": "Think about how to efficiently traverse the tree. A recursive DFS can be a good approach, but consider the implications of stack depth if the tree is very unbalanced."
+    },
+    {
+      "content": "After counting valid guesses for one root, you will need to reset your count and repeat the process for each node in the tree. This could lead to O(n^2) complexity if not handled carefully."
+    },
+    {
+      "content": "Consider using a single traversal to calculate valid guesses for all nodes. You can leverage the parent-child relationships to adjust counts as you switch roots."
+    },
+    {
+      "content": "When switching roots, if you move from a parent node to its child, you can adjust the count of valid guesses based on whether the guess was valid for the previous root."
+    },
+    {
+      "content": "Keep track of the total number of nodes that can be roots by maintaining a counter. Every time you find a root that meets the k valid guesses requirement, increment this counter."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when k is 0. In this case, every node should be counted as a valid root since having zero correct guesses is trivially satisfied."
+    },
+    {
+      "content": "Remember that the guesses array is unique and only contains edges that exist in the tree. This means you can directly map guesses to edges without worrying about duplicates."
+    },
+    {
+      "content": "Finally, ensure your solution adheres to the constraints provided, especially the limits on n and the number of guesses. This will help you optimize your solution appropriately."
+    }
+  ],
+  "questionNotes": [
+    "The tree is represented as a valid undirected graph with n nodes and n-1 edges.",
+    "Each guess is a unique edge in the tree, and the guesses array does not contain duplicates.",
+    "The output should be the number of nodes that can serve as valid roots based on the guesses.",
+    "k can be 0, meaning all nodes are valid roots if no correct guesses are required."
+  ]
+}

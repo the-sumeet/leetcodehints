@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find the longest substring that contains at most K distinct characters. Remember that a substring is a contiguous sequence of characters within a string."
+    },
+    {
+      "content": "Consider the input string 'eceba' and K = 2. The valid substrings with at most 2 distinct characters include 'ece', 'ceba', and 'ba'. Try to identify these substrings manually to get a feel for the problem."
+    },
+    {
+      "content": "Think about how you can keep track of the distinct characters in a substring. A good approach is to use a hash map (or dictionary) to count the occurrences of each character as you iterate through the string."
+    },
+    {
+      "content": "As you iterate through the string, maintain a window defined by two pointers (start and end). The 'end' pointer will expand the window, while the 'start' pointer will contract it when the number of distinct characters exceeds K."
+    },
+    {
+      "content": "When you encounter a character that causes the number of distinct characters to exceed K, move the 'start' pointer to the right until you are back to having at most K distinct characters. This is known as the sliding window technique."
+    },
+    {
+      "content": "Keep track of the maximum length of valid substrings found during your iteration. You can update this maximum length each time you successfully adjust your window to meet the K distinct character condition."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when K is greater than the number of distinct characters in the string. In such cases, the entire string is a valid substring."
+    },
+    {
+      "content": "Consider the return format of your result. You need to return the length of the longest substring, not the substring itself. Make sure your function's return type matches this requirement."
+    },
+    {
+      "content": "As you implement your solution, think about the time complexity. The sliding window technique should allow you to achieve a linear time complexity, O(n), where n is the length of the string."
+    },
+    {
+      "content": "Finally, make sure to test your solution with various edge cases, such as an empty string, a string with all identical characters, and cases where K is larger than the number of distinct characters in the string."
+    }
+  ],
+  "questionNotes": [
+    "You need to find the length of the longest substring with at most K distinct characters.",
+    "A substring is a contiguous sequence of characters.",
+    "Use a hash map to count character occurrences.",
+    "Employ the sliding window technique with two pointers.",
+    "Return the length of the longest valid substring, not the substring itself.",
+    "Consider edge cases such as empty strings and strings with fewer distinct characters than K."
+  ]
+}

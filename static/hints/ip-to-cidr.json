@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the IP address format. An IPv4 address consists of four octets (0-255) separated by dots. For example, '255.0.0.7' is a valid IPv4 address."
+    },
+    {
+      "content": "Next, familiarize yourself with CIDR notation. CIDR (Classless Inter-Domain Routing) is a way to specify IP addresses and their associated network masks. It is written as 'IP_address/Prefix_length'."
+    },
+    {
+      "content": "The prefix length indicates how many bits are used for the network part of the address. For example, in '255.0.0.7/10', the first 10 bits are used for the network."
+    },
+    {
+      "content": "Consider how to convert the IP address into its binary representation. Each octet can be converted into an 8-bit binary number. For instance, '255' becomes '11111111'."
+    },
+    {
+      "content": "Once you have the binary representation, think about how to group these bits according to the specified prefix length. The first 'n' bits will represent the network, while the remaining bits will represent the host."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the prefix length is 0 or 32. A prefix length of 0 means the entire IP address is part of the network, while a prefix length of 32 means the network consists of a single IP address."
+    },
+    {
+      "content": "You will need to calculate the range of IP addresses that fall under the CIDR notation. This involves determining the starting and ending IP addresses based on the prefix length."
+    },
+    {
+      "content": "To find the starting IP address, keep the first 'n' bits from the binary representation and set the remaining bits to 0. For the ending IP address, keep the first 'n' bits and set the remaining bits to 1."
+    },
+    {
+      "content": "After calculating the range, convert the binary starting and ending IP addresses back to decimal format. This will give you the full range of addresses in CIDR notation."
+    },
+    {
+      "content": "Finally, consider how to format your output. You will need to return the CIDR notation in the appropriate format, which includes the starting IP address and the prefix length."
+    }
+  ],
+  "questionNotes": [
+    "Ensure the input IP address is valid and follows the IPv4 format.",
+    "Prefix length should be between 0 and 32 inclusive.",
+    "Be aware of edge cases like the maximum and minimum possible IP addresses.",
+    "Output should be in the format 'IP_address/Prefix_length'."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by trimming any leading whitespace from the string. This is important because the conversion process should ignore any spaces before the actual number starts."
+    },
+    {
+      "content": "Next, check for the sign of the number. If the first non-whitespace character is a '+' or '-', store this information for later use. If neither is present, assume the number is positive."
+    },
+    {
+      "content": "After determining the sign, begin reading the characters of the string. Skip any leading zeros, as they do not affect the value of the integer."
+    },
+    {
+      "content": "As you read the characters, make sure to check if they are digits. If you encounter a non-digit character, stop reading further."
+    },
+    {
+      "content": "Remember to handle the case where no digits are found at all after the leading whitespace and optional sign. In this case, the result should be 0."
+    },
+    {
+      "content": "When converting the characters to an integer, be mindful of the 32-bit signed integer limits: -2^31 and 2^31 - 1. You will need to implement checks to ensure the final result does not exceed these limits."
+    },
+    {
+      "content": "If your integer exceeds the upper limit (2^31 - 1), set it to that limit. Similarly, if it goes below the lower limit (-2^31), set it to that limit."
+    },
+    {
+      "content": "Consider edge cases such as strings that contain only whitespace, strings with no digits, or strings that start with non-numeric characters. Each of these should return 0."
+    },
+    {
+      "content": "As you implement your conversion logic, think about how to accumulate the integer value from the characters you read. You might want to use a loop to build the number digit by digit."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correctly signed integer after all the checks and conversions. Pay attention to the return type and ensure it matches the expected output."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= s.length <= 200",
+    "s consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'",
+    "Return 0 if no valid conversion could be performed."
+  ]
+}

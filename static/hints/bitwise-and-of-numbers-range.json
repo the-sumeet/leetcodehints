@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what the bitwise AND operation does. It compares each bit of two numbers and returns a new number where each bit is set to 1 only if both bits are 1. For example, `5 & 7` results in `5` because in binary, `5` is `101` and `7` is `111`."
+    },
+    {
+      "content": "Consider the range [left, right]. The bitwise AND operation will yield 0 if any bit position in the range has both 0 and 1. This means that if the range is wide enough, the result can quickly become 0."
+    },
+    {
+      "content": "Think about the binary representation of the numbers in the range. The bitwise AND result will only keep the bits that are the same for all numbers in that range. If the range includes numbers that differ in higher bits, those bits will be cleared."
+    },
+    {
+      "content": "To optimize your approach, notice that the result of the AND operation will be influenced by the most significant bits that are the same in both `left` and `right`. Try to find the common prefix in the binary representation of `left` and `right`."
+    },
+    {
+      "content": "A useful observation is that if you keep shifting both `left` and `right` to the right until they are equal, you can count how many shifts you made. The final result can be constructed by shifting back the common value to the left by the number of shifts."
+    },
+    {
+      "content": "When you shift `left` and `right` to the right, you are effectively ignoring the less significant bits that will turn into 0 when ANDed. Make sure to keep track of how many times you shift."
+    },
+    {
+      "content": "Consider edge cases: What happens when `left` is equal to `right`? In this case, the result is simply `left` (or `right`)."
+    },
+    {
+      "content": "Also, think about the maximum range provided in the constraints. If `left` is `0` and `right` is `2147483647`, what would the AND result be? This can help you understand how the range affects the result."
+    },
+    {
+      "content": "You might want to implement a loop that continues shifting `left` and `right` until they are equal. Each time you shift, increment a counter to track how many shifts you've made."
+    },
+    {
+      "content": "Finally, once you have the common prefix (when `left` equals `right`), remember to shift it back to the left by the number of shifts you counted earlier. This will give you the correct AND result for the original range."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= left <= right <= 2^31 - 1",
+    "The result should be the bitwise AND of all numbers in the inclusive range [left, right].",
+    "Consider edge cases where left and right are the same or where the range is very wide."
+  ]
+}

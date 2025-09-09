@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a substring is. A substring is a contiguous sequence of characters within the string. For example, in the string 'abc', 'ab' and 'bc' are substrings, but 'ac' is not."
+    },
+    {
+      "content": "Consider how you can identify characters that appear more than once in the string. You might want to keep track of the positions of each character as you iterate through the string."
+    },
+    {
+      "content": "Think about using a dictionary (or hashmap) to store the indices of the characters. This way, when you encounter a character that you've seen before, you can easily find its previous index."
+    },
+    {
+      "content": "When you find a character that has appeared before, calculate the length of the substring between the two occurrences. Remember to exclude the characters themselves from this length."
+    },
+    {
+      "content": "Keep track of the maximum length of substrings found so far. Initialize a variable to store this maximum length and update it whenever you find a longer substring."
+    },
+    {
+      "content": "Don't forget about edge cases. What if all characters in the string are unique? Make sure to return -1 in this situation, as specified in the problem statement."
+    },
+    {
+      "content": "As you iterate through the string, consider the case where the string length is 1. How will your approach handle this? Make sure it adheres to the constraints provided."
+    },
+    {
+      "content": "When calculating the length of the substring, remember that the length is defined as the number of characters between the two equal characters, not including them. For example, between 'a' and 'a' in 'aa', the length is 0."
+    },
+    {
+      "content": "While iterating, ensure you are checking each character's last seen index. If you encounter the character again, compute the length and compare it with the maximum length found so far."
+    },
+    {
+      "content": "Finally, after iterating through the string, check if you found any valid substrings. If your maximum length variable remains unchanged (indicating no duplicates were found), return -1."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 300",
+    "The string contains only lowercase English letters.",
+    "Return the length of the longest substring between two equal characters, excluding the characters.",
+    "If no such substring exists, return -1."
+  ]
+}

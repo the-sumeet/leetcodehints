@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, consider the total sum of the array. If the total sum is not divisible by 3, it is impossible to partition the array into three parts with equal sums."
+    },
+    {
+      "content": "If the total sum is divisible by 3, calculate the target sum for each part, which will be total sum divided by 3. This is the sum each of the three parts must equal."
+    },
+    {
+      "content": "Next, think about how to iterate through the array to find partitions. You will need to maintain a running sum as you traverse the array to check if you can reach the target sum."
+    },
+    {
+      "content": "While iterating, keep track of how many times you reach the target sum. You need to reach it exactly twice before the last segment, as the last segment will automatically equal the target sum if the previous two do."
+    },
+    {
+      "content": "Remember to ensure that the indices for your partitions are valid. You need to find indices i and j such that i + 1 < j, meaning there must be at least one element in each part."
+    },
+    {
+      "content": "Consider edge cases where the array has negative numbers or zeros. Ensure your logic correctly handles these scenarios without skipping potential valid partitions."
+    },
+    {
+      "content": "As you implement your solution, think about using a loop to accumulate sums and check against the target. You can use a variable to count how many times you've hit the target sum."
+    },
+    {
+      "content": "When you reach the target sum for the first time, mark that index. Continue searching for the second target sum, ensuring that you are not overlapping the indices of the first partition."
+    },
+    {
+      "content": "After finding the second target sum, check if the remaining elements in the array automatically sum to the target. If they do, you have successfully partitioned the array."
+    },
+    {
+      "content": "Finally, remember to return true or false based on whether you found valid partitions. Ensure your return statement is correctly placed after your checks."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= arr.length <= 5 * 10^4",
+    "Element range: -10^4 <= arr[i] <= 10^4",
+    "Return true if partitioning is possible, false otherwise.",
+    "Ensure partitions are non-empty and indices are valid."
+  ]
+}

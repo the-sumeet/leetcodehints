@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a mountain array. A mountain array must have at least three elements and must rise to a peak before falling. Identify the peak index and ensure it has valid elements on both sides."
+    },
+    {
+      "content": "Consider how to identify the peak of the mountain. The peak is the highest point in the subarray where the elements before it are strictly increasing and the elements after it are strictly decreasing."
+    },
+    {
+      "content": "You can iterate through the array to find potential peaks. Remember that a peak must satisfy the condition: arr[i-1] < arr[i] > arr[i+1]."
+    },
+    {
+      "content": "When you find a peak, you should expand outwards to count how many elements are part of the mountain. Start from the peak and move left until the sequence stops increasing, then move right until it stops decreasing."
+    },
+    {
+      "content": "Keep track of the maximum length of the mountain found during your iteration. Initialize a variable to store this maximum length and update it whenever you find a longer mountain."
+    },
+    {
+      "content": "Don't forget to handle edge cases. For example, if the array length is less than 3, immediately return 0 since a mountain cannot exist."
+    },
+    {
+      "content": "While iterating, ensure that you check for consecutive equal elements, as they break the strict increasing or decreasing condition required for a mountain."
+    },
+    {
+      "content": "You should aim for a solution that runs in O(n) time complexity. This means you should only pass through the array a single time to find and measure mountains."
+    },
+    {
+      "content": "Consider using two pointers or a single loop to find peaks and measure the length of mountains efficiently. This will help you maintain O(1) space complexity."
+    },
+    {
+      "content": "Finally, ensure that your function returns 0 if no mountain subarray is found after checking the entire array. This is important for meeting the problem's requirements."
+    }
+  ],
+  "questionNotes": [
+    "The array must have at least 3 elements to form a mountain.",
+    "A peak must be greater than its neighbors: arr[i-1] < arr[i] > arr[i+1].",
+    "Return 0 if no mountain is found.",
+    "Constraints: 1 <= arr.length <= 10^4 and 0 <= arr[i] <= 10^4."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem's constraints. You have `n` rooms and a list of meetings, each defined by a start and end time. Remember that the start times of the meetings are unique."
+    },
+    {
+      "content": "Focus on how to allocate meetings to rooms. The rule is to always use the lowest numbered available room first. Think about how you can keep track of which rooms are currently occupied."
+    },
+    {
+      "content": "Consider using a priority queue (min-heap) to efficiently manage the rooms. This will allow you to quickly find the next available room or the one that will free up the soonest."
+    },
+    {
+      "content": "When a meeting cannot start because all rooms are occupied, it must be delayed. Make sure to account for this delay and how it affects the meeting's original duration."
+    },
+    {
+      "content": "Keep track of the number of meetings held in each room. You might want to use an array where the index represents the room number and the value at that index represents the count of meetings."
+    },
+    {
+      "content": "As you process each meeting, check if there are any rooms available. If not, determine when the next room will be free and schedule the meeting accordingly."
+    },
+    {
+      "content": "Be mindful of the half-closed interval definition [start, end). This means that the meeting ends at the 'end' time but does not include it. Ensure your logic respects this."
+    },
+    {
+      "content": "When a meeting is delayed, it should maintain its original duration. If the meeting starts at time `t` and ends at `t + duration`, make sure to calculate this correctly after the delay."
+    },
+    {
+      "content": "After processing all meetings, you need to determine which room held the most meetings. If there is a tie, return the room with the lowest number."
+    },
+    {
+      "content": "Consider edge cases, such as when there are more meetings than rooms. How will your approach handle the situation where all rooms are occupied for an extended period?"
+    },
+    {
+      "content": "Think about how you will represent the current state of each room. You could maintain a list of end times for each room to know when they become available."
+    },
+    {
+      "content": "Use a loop to iterate through the meetings sorted by their start times. This will help you process them in the order they occur."
+    },
+    {
+      "content": "When a room becomes available, check if there are any delayed meetings that can now be scheduled. Prioritize these based on their original start times."
+    },
+    {
+      "content": "Make sure to handle the case where a meeting might finish exactly when another starts. This means the room is available for the next meeting immediately."
+    },
+    {
+      "content": "Finally, after all meetings have been processed, iterate through your count array to find the room with the maximum meetings held. Remember to handle ties by choosing the lowest room number."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100, 1 <= meetings.length <= 10^5, meetings[i].length == 2, 0 <= start_i < end_i <= 5 * 10^5.",
+    "All start times are unique.",
+    "Return the room number that held the most meetings; in case of a tie, return the lowest room number."
+  ]
+}

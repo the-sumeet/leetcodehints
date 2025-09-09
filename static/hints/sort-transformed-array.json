@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the transformation function. The problem involves applying a quadratic transformation of the form `f(x) = ax^2 + bx + c` to each element in the input array. Make sure you can compute this for any given `x`."
+    },
+    {
+      "content": "Consider how the coefficients `a`, `b`, and `c` affect the shape of the transformation. For example, if `a` is positive, the parabola opens upwards, and if `a` is negative, it opens downwards. This will impact how you sort the transformed values."
+    },
+    {
+      "content": "Think about the original array's sorted order. Since the input array is already sorted, you can leverage this property when applying the transformation. How can you maintain or utilize this order after transformation?"
+    },
+    {
+      "content": "You might want to create a new array to hold the transformed values. As you compute `f(x)` for each element in the original array, consider where to place each transformed value in the new array to keep it sorted."
+    },
+    {
+      "content": "Pay attention to edge cases. For instance, if `a` is zero, the transformation simplifies to a linear function. How does this affect the sorting of the transformed array?"
+    },
+    {
+      "content": "When `a` is positive, the smallest transformed values will come from the smallest original values, and vice versa when `a` is negative. This can help you decide whether to fill the new array from the start or the end."
+    },
+    {
+      "content": "You can use two pointers to efficiently fill the new array. One pointer can start from the beginning of the original array and the other from the end. This allows you to compare transformed values and place them in the correct order."
+    },
+    {
+      "content": "As you fill the new array, remember to compare the transformed values from both pointers. Decide which value to place next based on the current values at the pointers, and then move the corresponding pointer accordingly."
+    },
+    {
+      "content": "Make sure to handle the final case when both pointers meet. This is crucial to ensure that all transformed values are included in the new array without skipping any."
+    },
+    {
+      "content": "Finally, once you have filled the new array with transformed values in sorted order, return this array. Ensure that the return format matches the problem's requirements."
+    }
+  ],
+  "questionNotes": [
+    "Input array is sorted in non-decreasing order.",
+    "The transformation is defined by three coefficients: a, b, and c.",
+    "Consider edge cases where a = 0 (linear case) or where the input array contains duplicate values.",
+    "The output should be a new sorted array after applying the transformation."
+  ]
+}

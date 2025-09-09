@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the matching criteria. A query matches the pattern if you can insert lowercase letters into the pattern to form the query. This means the characters of the pattern must appear in the same order in the query."
+    },
+    {
+      "content": "Consider using two pointers: one for the query and one for the pattern. This will help you traverse both strings simultaneously and check for matches."
+    },
+    {
+      "content": "When you encounter an uppercase letter in the pattern, it must match the current character in the query. If it does, move both pointers forward; if not, the query does not match."
+    },
+    {
+      "content": "If the current character in the pattern is lowercase, you can skip it or match it with the corresponding character in the query. Think about how to handle these cases with your pointers."
+    },
+    {
+      "content": "Make sure to handle cases where the pattern has more uppercase letters than the query can accommodate. This will help you avoid false positives."
+    },
+    {
+      "content": "Remember to account for any remaining characters in the query after you've processed the pattern. If you've matched all characters in the pattern, the remaining characters in the query can be any lowercase letters."
+    },
+    {
+      "content": "Consider edge cases, such as when the pattern is empty or when all characters in the query are lowercase. How should your function behave in these scenarios?"
+    },
+    {
+      "content": "Think about the return format: you need to return a boolean array where each index corresponds to whether the respective query matches the pattern. How will you build this array?"
+    },
+    {
+      "content": "Before finalizing your solution, test it with various inputs, including edge cases like all uppercase queries or queries with no matching characters at all."
+    },
+    {
+      "content": "As a final step, ensure that your implementation efficiently handles the maximum constraints. Aim for a solution that runs in linear time relative to the length of the queries and the pattern."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= pattern.length, queries.length <= 100",
+    "1 <= queries[i].length <= 100",
+    "queries[i] and pattern consist of English letters.",
+    "The output should be a boolean array corresponding to each query."
+  ]
+}

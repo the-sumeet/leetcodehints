@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem: if you find a 0 in the matrix, you need to set all elements in that row and column to 0. Think about how you can identify which rows and columns need to be zeroed out without modifying the matrix while you are checking it."
+    },
+    {
+      "content": "Consider using two additional arrays (or sets) to keep track of which rows and columns need to be zeroed. For example, you could have a boolean array for rows and another for columns. This way, you can mark the rows and columns that contain at least one 0."
+    },
+    {
+      "content": "Remember that the problem requires you to modify the matrix in place. This means you cannot use additional matrices of size m x n. Think about how you can use the original matrix to store your markers instead."
+    },
+    {
+      "content": "One approach is to use the first row and first column of the matrix itself to store the zeroing information. You can use the first row to track which columns need to be zeroed and the first column for the rows."
+    },
+    {
+      "content": "Before you start modifying the matrix, you need to check if the first row and first column themselves contain any zeros. This is important because if they do, you need to handle them separately to avoid overwriting your markers."
+    },
+    {
+      "content": "After marking the rows and columns using the first row and column, you should iterate through the matrix again to set the appropriate elements to zero. Be careful to skip the first row and first column during this step."
+    },
+    {
+      "content": "Once you've zeroed out the necessary elements based on your markers, you need to handle the first row and first column last. If they were marked for zeroing, set the entire first row or first column to zero."
+    },
+    {
+      "content": "Think about edge cases, such as when the matrix is already filled with zeros or when it contains only one row or one column. How will your solution handle these scenarios?"
+    },
+    {
+      "content": "Remember to consider the constraints of the problem. The matrix can be as large as 200 x 200, so your solution should be efficient in both time and space. Aim for O(1) space complexity beyond the input matrix."
+    },
+    {
+      "content": "Finally, put together your approach: Use the first row and column for marking, process the rest of the matrix to set zeros, and then handle the first row and column based on your markers. You are very close to a complete solution!"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == matrix.length, n == matrix[0].length, 1 <= m, n <= 200.",
+    "Element values range: -2^31 <= matrix[i][j] <= 2^31 - 1.",
+    "The solution must be done in place, without using additional matrices of size m x n.",
+    "Be cautious about modifying the matrix while reading it, as this could lead to incorrect results."
+  ]
+}

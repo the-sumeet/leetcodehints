@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what is being asked. For each element in the array, you need to count how many other elements are smaller than it. This means you will be comparing each element with every other element."
+    },
+    {
+      "content": "Consider how you can iterate through the array. You will need a nested loop structure, where the outer loop picks an element and the inner loop checks all other elements to count how many are smaller."
+    },
+    {
+      "content": "Remember that you should not count the element itself when comparing. This means you need to skip the index of the current element in the inner loop."
+    },
+    {
+      "content": "Think about how you can store the results. You will need an output array of the same length as the input array to hold the count of smaller numbers for each element."
+    },
+    {
+      "content": "Before implementing the solution, consider the time complexity of your approach. A nested loop will result in O(n^2) time complexity, which is acceptable for n up to 500."
+    },
+    {
+      "content": "You might want to consider edge cases, such as when all elements are the same. In this case, the output should be an array of zeros since there are no smaller numbers."
+    },
+    {
+      "content": "To improve efficiency, think about how you can avoid unnecessary comparisons. For instance, if you sort the array first, you can quickly determine how many numbers are smaller than each element."
+    },
+    {
+      "content": "If you choose to sort the array, remember to keep track of the original indices so you can return the results in the correct order."
+    },
+    {
+      "content": "When you implement your solution, make sure to test it with various inputs, including edge cases like an array with all identical elements or an array sorted in ascending or descending order."
+    },
+    {
+      "content": "Consider a partial implementation: You can start by writing the nested loops to count smaller numbers and store the results in a new array. For example:\n\n```python\nresult = [0] * len(nums)\nfor i in range(len(nums)):\n    for j in range(len(nums)):\n        if i != j and nums[j] < nums[i]:\n            result[i] += 1\n```"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 500",
+    "Values: 0 <= nums[i] <= 100",
+    "Return an array of counts corresponding to each element in the input array.",
+    "Ensure to handle cases where multiple elements are equal correctly."
+  ]
+}

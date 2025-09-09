@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find the maximum sum of `nums1[j] + nums2[j]` for indices `j` that satisfy the conditions `nums1[j] >= x_i` and `nums2[j] >= y_i` for each query."
+    },
+    {
+      "content": "Consider how you will iterate through the `queries` array. Each query consists of two integers, `x_i` and `y_i`, which you will use to filter the indices of `nums1` and `nums2`."
+    },
+    {
+      "content": "Think about how to efficiently check which indices satisfy the conditions for each query. A brute force approach would involve checking all indices for each query, which could be slow."
+    },
+    {
+      "content": "You might want to preprocess the `nums1` and `nums2` arrays. Consider creating a combined array of sums, `sums[j] = nums1[j] + nums2[j]`, to simplify your calculations later."
+    },
+    {
+      "content": "Sorting can be a powerful tool here. If you sort the indices based on the values in `nums1` and `nums2`, you can quickly find the maximum sums that meet the query constraints."
+    },
+    {
+      "content": "Remember to handle cases where no index satisfies the query conditions. You should return -1 for those queries. Think about how you will check if any valid indices exist."
+    },
+    {
+      "content": "When sorting, consider using a data structure that allows for efficient retrieval of maximum values, such as a max heap or a balanced binary search tree."
+    },
+    {
+      "content": "As you process each query, you may want to maintain a list of valid sums that meet the conditions. This will help you quickly find the maximum sum without re-evaluating all indices."
+    },
+    {
+      "content": "Make sure to account for the constraints given in the problem. For example, the lengths of `nums1`, `nums2`, and `queries` can be quite large, so your solution needs to be efficient."
+    },
+    {
+      "content": "Consider edge cases, such as when all values in `nums1` or `nums2` are less than the corresponding query values. Ensure your solution correctly identifies these cases."
+    },
+    {
+      "content": "When implementing your solution, think about how to maintain the sorted order of your sums as you filter out indices based on the query conditions."
+    },
+    {
+      "content": "You may want to use binary search to quickly find the first index that meets the `nums1[j] >= x_i` condition after sorting. This can significantly reduce the number of comparisons."
+    },
+    {
+      "content": "As you finalize your approach, ensure that you are correctly indexing into `nums1` and `nums2`. Remember that the queries are 1-indexed while the arrays are 0-indexed."
+    },
+    {
+      "content": "Before returning your results, double-check that you are correctly formatting the output as specified. Each answer should correspond to the respective query in the order they were given."
+    },
+    {
+      "content": "The final step is to implement your logic and test it against the provided examples. Make sure to handle both the normal cases and the edge cases you identified."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: nums1.length == nums2.length, 1 <= n <= 10^5, 1 <= nums1[i], nums2[i] <= 10^9, 1 <= queries.length <= 10^5.",
+    "Queries are 1-indexed: queries[i] = [x_i, y_i].",
+    "Return -1 if no index satisfies the conditions for a query.",
+    "The output should be an array where each element corresponds to the result of the respective query."
+  ]
+}

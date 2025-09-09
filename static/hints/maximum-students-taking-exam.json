@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the seating arrangement. Each seat can either be broken ('#') or available ('.'). You need to focus on how to place students in the available seats while ensuring they cannot cheat off each other."
+    },
+    {
+      "content": "Consider the visibility rules: students can see the answers from those directly to their left, right, upper left, and upper right. This means you need to track which seats are adjacent when placing students."
+    },
+    {
+      "content": "Given the constraints (1 <= m, n <= 8), you can afford to use a backtracking approach or bitmasking to explore possible arrangements of students in the classroom."
+    },
+    {
+      "content": "Think about how you can represent the state of the classroom. You might want to use a bitmask to represent which seats are occupied. For example, if there are 6 seats, you could use a 6-bit integer."
+    },
+    {
+      "content": "When placing a student in a seat, ensure that you check the visibility of adjacent seats. If a student is placed in seat (i, j), check seats (i, j-1), (i, j+1), (i-1, j-1), and (i-1, j+1)."
+    },
+    {
+      "content": "Make sure to handle edge cases where students are placed at the edges of the matrix. For example, if a student is in the first column, they won't have a left neighbor."
+    },
+    {
+      "content": "You might want to create a helper function that checks if placing a student in a specific seat is valid based on the current state of the classroom."
+    },
+    {
+      "content": "Consider using recursion to try placing students in each available seat. After placing a student, recursively call the function to try placing the next student."
+    },
+    {
+      "content": "Keep track of the maximum number of students placed in valid configurations. You can do this by maintaining a counter that increments each time a student is successfully placed."
+    },
+    {
+      "content": "When backtracking, remember to remove the student from the seat after exploring that configuration. This will allow you to explore other configurations without interference."
+    },
+    {
+      "content": "Think about how to optimize your search. You might want to prioritize placing students in seats that have fewer adjacent available seats to minimize potential cheating."
+    },
+    {
+      "content": "As you explore configurations, consider using memoization to store results of previously computed configurations to avoid redundant calculations."
+    },
+    {
+      "content": "If you implement a bitmask solution, ensure you carefully manage the bits to represent occupied seats and check visibility correctly when placing students."
+    },
+    {
+      "content": "After implementing your recursive function, test it with different configurations of the classroom to ensure it handles all edge cases, including all broken seats or all available seats."
+    },
+    {
+      "content": "Finally, ensure your function returns the maximum number of students that can be placed without cheating. This should be the result of your exploration."
+    }
+  ],
+  "questionNotes": [
+    "The matrix can have dimensions from 1x1 to 8x8.",
+    "Seats are represented by '.' (available) and '#' (broken).",
+    "Students can see answers from adjacent left, right, upper left, and upper right seats.",
+    "Directly in front or behind students, they cannot see each other's answers.",
+    "The goal is to maximize the number of students placed without cheating."
+  ]
+}

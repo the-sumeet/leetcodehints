@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a tree represented by a list of roads, where each road connects two cities. Remember that a tree with n nodes has exactly n-1 edges."
+    },
+    {
+      "content": "Consider how to traverse the tree. Depth-first search (DFS) or breadth-first search (BFS) can be useful to explore the cities and calculate the number of representatives in each subtree."
+    },
+    {
+      "content": "Each city has one representative. Think about how you can count the number of representatives that need to travel to the capital from each city."
+    },
+    {
+      "content": "Keep in mind the seating capacity of the cars. If a car can only hold 'seats' number of representatives, you need to calculate how many trips are required for the representatives from each city."
+    },
+    {
+      "content": "When calculating the fuel cost, remember that each trip to the capital costs 1 liter of fuel. If a car can take multiple representatives, you can minimize the number of trips."
+    },
+    {
+      "content": "As you traverse the tree, maintain a count of representatives for each city. For each city, calculate how many full cars are needed to transport all representatives to the capital."
+    },
+    {
+      "content": "Think about how to aggregate the fuel costs from each city back to the capital. The fuel cost from a city will be the number of trips multiplied by the distance to the capital."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no roads (i.e., only the capital city exists). In this case, the fuel cost should be zero."
+    },
+    {
+      "content": "You might want to use a recursive approach to calculate the number of representatives and the fuel cost for each subtree. This can help you manage the complexity of the tree structure."
+    },
+    {
+      "content": "Finally, ensure your function returns the total minimum fuel cost after aggregating the costs from all cities. Remember to handle large inputs efficiently, as n can be as large as 100,000."
+    }
+  ],
+  "questionNotes": [
+    "The input roads represent a valid tree structure.",
+    "Each city has exactly one representative.",
+    "The number of seats in each car is limited, affecting how many representatives can travel together.",
+    "The capital city is always city 0.",
+    "If there are no roads, the output should be 0."
+  ]
+}

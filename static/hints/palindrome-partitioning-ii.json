@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A palindrome reads the same forwards and backwards, like 'aba' or 'racecar'. For this problem, you need to find substrings of the given string that are palindromes."
+    },
+    {
+      "content": "Consider the example input 'aab'. The possible partitions are ['a', 'a', 'b'], ['aa', 'b'], and ['a', 'ab']. Identify which of these partitions consist entirely of palindromic substrings."
+    },
+    {
+      "content": "Think about how you can check if a substring is a palindrome. A simple approach is to compare the substring to its reverse. For example, you can use `s[start:end] == s[start:end][::-1]` in Python."
+    },
+    {
+      "content": "To solve the problem, you need to keep track of the cuts made. If a substring is a palindrome, you don't need to make a cut. If not, you will have to make a cut before that substring."
+    },
+    {
+      "content": "Consider using dynamic programming. Create an array `dp` where `dp[i]` represents the minimum cuts needed for the substring `s[0:i+1]`. This will help you build up your solution."
+    },
+    {
+      "content": "Initialize your `dp` array with the maximum possible cuts, which is the length of the string minus one. This is because in the worst case, you would cut between every character."
+    },
+    {
+      "content": "You also need a way to check if substrings are palindromic efficiently. Consider creating a 2D boolean array `isPalindrome` where `isPalindrome[i][j]` is true if the substring `s[i:j+1]` is a palindrome."
+    },
+    {
+      "content": "Fill the `isPalindrome` table. A substring `s[i:j]` is a palindrome if the characters at both ends are the same and the substring `s[i+1:j-1]` is also a palindrome."
+    },
+    {
+      "content": "Start filling the `isPalindrome` array for single characters and pairs of characters, then build up to longer substrings. This will ensure you have all necessary information for your `dp` calculations."
+    },
+    {
+      "content": "Once you have the `isPalindrome` table, iterate through the string to fill the `dp` array. For each index `i`, if `s[0:i+1]` is a palindrome, `dp[i]` is 0. Otherwise, check all possible cuts."
+    },
+    {
+      "content": "For each cut at position `j`, if `s[j+1:i+1]` is a palindrome, then `dp[i]` can potentially be updated to `dp[j] + 1`. This means you're making one additional cut."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the string is already a palindrome. In this case, the minimum cuts should be zero."
+    },
+    {
+      "content": "Remember to consider the constraints of the problem. The maximum length of the string is 2000, which means your solution should be efficient, ideally O(n^2) in time complexity."
+    },
+    {
+      "content": "Finally, your answer will be the value of `dp[n-1]`, where `n` is the length of the string. This value represents the minimum cuts needed for the entire string."
+    },
+    {
+      "content": "As a final step, ensure your implementation is clean and efficient. Test your solution with edge cases, such as strings of length 1 or strings that are already palindromes."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 2000",
+    "The string consists of lowercase English letters only.",
+    "You need to return the minimum cuts needed for a palindrome partitioning.",
+    "Consider edge cases, such as single-character strings or strings that are already palindromes."
+  ]
+}

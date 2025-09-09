@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of calls, each represented by a caller ID, recipient ID, and a timestamp. Make sure you can parse this data correctly."
+    },
+    {
+      "content": "Focus on the timestamp format. The call_time is given in 'YYYY-MM-DD HH:MM:SS'. You will need to extract the date part for comparison purposes."
+    },
+    {
+      "content": "Consider how to group calls by day. You can use a dictionary where the key is the date and the value is a list of calls that occurred on that date."
+    },
+    {
+      "content": "When grouping calls, remember to convert the call_time string into a date object to easily extract the date part."
+    },
+    {
+      "content": "Think about how to track the first and last calls for each day. You can maintain two variables for each date: one for the earliest call and one for the latest call."
+    },
+    {
+      "content": "As you iterate through the calls, update the first and last call timestamps based on the current call's timestamp. Use comparisons to determine which is earlier or later."
+    },
+    {
+      "content": "Don't forget to handle cases where there are no calls on a particular day. Ensure your logic accounts for days with only one call."
+    },
+    {
+      "content": "Consider how to store the results. You might want to use a list to keep track of the days where the first and last calls are from the same caller."
+    },
+    {
+      "content": "Pay attention to the caller ID. You need to check if the caller ID of the first call matches the caller ID of the last call for that day."
+    },
+    {
+      "content": "Think about how to format your output. You may want to return a list of dates where the first and last calls were made by the same caller."
+    },
+    {
+      "content": "Make sure to sort the calls by date and time before processing them to ensure you are checking the correct order of calls."
+    },
+    {
+      "content": "Consider edge cases, such as multiple calls on the same day from different callers. Ensure your logic correctly identifies the first and last calls."
+    },
+    {
+      "content": "You may need to convert the timestamps into a comparable format, like Unix timestamps, to simplify the comparison between call times."
+    },
+    {
+      "content": "As a final step, ensure your solution runs efficiently. Think about the time complexity of your approach, especially if the dataset is large."
+    },
+    {
+      "content": "To finalize your approach, outline the steps: parse the calls, group by date, find first and last calls, and check for matching caller IDs."
+    }
+  ],
+  "questionNotes": [
+    "Input is a list of calls with caller_id, recipient_id, and call_time.",
+    "Call_time is in the format 'YYYY-MM-DD HH:MM:SS'.",
+    "You need to group calls by date and check first and last calls for each date.",
+    "Return a list of dates where the first and last calls are from the same caller.",
+    "Be mindful of edge cases, such as no calls on a day or multiple calls from different callers."
+  ]
+}

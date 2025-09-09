@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main components: buses and passengers. Each bus has an ID, an arrival time, and a capacity, while each passenger has an ID and an arrival time."
+    },
+    {
+      "content": "Consider how to represent the buses and passengers in your code. You might want to use lists or dictionaries to store this information for easy access. For example, a list of dictionaries for buses could look like: `[{id: 1, arrival: 2, capacity: 1}, ...]`."
+    },
+    {
+      "content": "Think about the order of events. Passengers arrive at different times, and you need to determine which bus they can board based on their arrival time and the bus's capacity."
+    },
+    {
+      "content": "You should sort the buses by their arrival times. This will help you process the passengers in the order they arrive and match them to the appropriate bus."
+    },
+    {
+      "content": "When processing passengers, keep track of how many passengers have boarded each bus. You can use a dictionary to map bus IDs to the number of passengers that have boarded."
+    },
+    {
+      "content": "Consider edge cases where multiple passengers arrive at the same time as a bus. You need to ensure that the bus can accommodate as many passengers as its capacity allows."
+    },
+    {
+      "content": "Remember to account for the scenario where a bus arrives but is already full. You should skip adding more passengers to that bus once its capacity is reached."
+    },
+    {
+      "content": "As you iterate through the passengers, check if the current passenger's arrival time is less than or equal to the bus's arrival time. This will determine if they can board the bus."
+    },
+    {
+      "content": "Use a loop to go through each bus and a nested loop for the passengers. This will allow you to check each passenger against the current bus's conditions."
+    },
+    {
+      "content": "Keep in mind that once a passenger boards a bus, they cannot board another bus. Ensure that you mark passengers as 'boarded' after they get on a bus."
+    },
+    {
+      "content": "Consider using a priority queue or a sorted list to manage the passengers efficiently, especially if the number of passengers is large."
+    },
+    {
+      "content": "Think about the output format. You need to return a list where each element corresponds to the number of passengers that boarded each bus in order of their IDs."
+    },
+    {
+      "content": "Make sure to handle cases where no passengers board a bus. The output should reflect zero passengers for those buses."
+    },
+    {
+      "content": "As you build your solution, test it with the provided sample test case to ensure it works as expected. This will help you catch any logical errors early."
+    },
+    {
+      "content": "Finally, consider edge cases such as when all buses are full or when no passengers arrive. Ensure your solution can handle these gracefully."
+    }
+  ],
+  "questionNotes": [
+    "Buses are defined by their ID, arrival time, and capacity.",
+    "Passengers are defined by their ID and arrival time.",
+    "Buses can only board passengers who arrive on or before the bus's arrival time.",
+    "Once a bus reaches its capacity, it cannot take any more passengers.",
+    "Return a list of integers representing the number of passengers for each bus in order of their IDs."
+  ]
+}

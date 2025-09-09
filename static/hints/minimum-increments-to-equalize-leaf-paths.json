@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. Each node can be connected to multiple nodes, but there's only one path from the root to any leaf. Sketch the tree based on the edges provided to visualize the paths."
+    },
+    {
+      "content": "Identify the leaf nodes in the tree. Leaf nodes are those that do not have any children. You will need to calculate the path scores for all root-to-leaf paths, so knowing where the leaves are is essential."
+    },
+    {
+      "content": "Calculate the score for each root-to-leaf path. This score is the sum of the costs of all nodes along that path. For example, for a path 0 → 1 → 2, the score would be cost[0] + cost[1] + cost[2]."
+    },
+    {
+      "content": "Once you have the scores for all root-to-leaf paths, determine the maximum score among these paths. This value will help you understand the target score you want to equalize all paths to."
+    },
+    {
+      "content": "Consider how you will increase the costs of nodes. You can only increase costs, so focus on which nodes need to be increased to reach the maximum path score. Think about the nodes that are common in multiple paths."
+    },
+    {
+      "content": "Create a mapping of each node to the paths it contributes to. This will help you visualize how increasing a node's cost affects multiple paths. You can use a dictionary to track which paths each node is part of."
+    },
+    {
+      "content": "For each path that has a score less than the maximum score, calculate how much you need to increase the costs of the nodes in that path. This will give you a clearer picture of the total increments needed."
+    },
+    {
+      "content": "Keep track of how many unique nodes you need to increase. If multiple paths share nodes, increasing a shared node's cost may satisfy multiple paths at once. Be careful to count each node only once."
+    },
+    {
+      "content": "Think about edge cases, such as when all paths already have the same score. In such cases, you should return 0, as no increments are needed. Ensure your solution accounts for this condition."
+    },
+    {
+      "content": "Finally, implement a way to return the minimum number of nodes whose costs must be increased. You may want to use a greedy approach or a priority queue to efficiently determine which nodes to increase."
+    }
+  ],
+  "questionNotes": [
+    "The tree is undirected and rooted at node 0.",
+    "Leaf nodes are defined as nodes with no children.",
+    "The cost of nodes can only be increased, not decreased.",
+    "You must return the minimum number of unique nodes that need their costs increased.",
+    "Constraints ensure valid tree structure and cost limits."
+  ]
+}

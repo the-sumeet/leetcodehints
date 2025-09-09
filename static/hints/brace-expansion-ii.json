@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic structure of the input expression. It can contain lowercase letters, curly braces `{}`, and commas `,`. Each lowercase letter represents a single word."
+    },
+    {
+      "content": "Break down the expression into smaller parts. If you encounter a `{}`, it indicates a set of alternatives. For example, `{a,b}` represents the set {'a', 'b'}."
+    },
+    {
+      "content": "Remember that when you have multiple sets separated by commas, you need to take the union of the sets. For instance, `R({a,b},{c,d})` results in `{'a', 'b', 'c', 'd'}`."
+    },
+    {
+      "content": "When you see concatenation, like in `{a,b}{c,d}`, think about how to combine each element from the first set with each element from the second set. This is the Cartesian product."
+    },
+    {
+      "content": "Consider using a stack to help with parsing the expression. Push characters onto the stack until you find a closing brace `}`, at which point you can start forming sets."
+    },
+    {
+      "content": "As you parse the expression, keep track of the current set of words. You can use a list or a set to store the results temporarily before merging them."
+    },
+    {
+      "content": "Be cautious with nested braces. When you encounter a nested expression, make sure to evaluate it completely before moving on to concatenate it with other parts of the expression."
+    },
+    {
+      "content": "When you finish processing a set inside braces, make sure to handle the case where there are no elements. An empty set should not contribute any words."
+    },
+    {
+      "content": "After parsing the entire expression, you will have a collection of sets. Use a set to ensure all words are unique before sorting them."
+    },
+    {
+      "content": "Sorting the final list of words is crucial, as the output must be in lexicographical order. Use a sorting function after you have collected all unique words."
+    },
+    {
+      "content": "Consider edge cases, such as expressions with only single letters or deeply nested braces. For example, `{{a}}` should simply return `{'a'}`."
+    },
+    {
+      "content": "Make sure to handle cases where there are multiple commas in a row, which might represent empty sets or redundant elements. For example, `{{a,,b}}` should still yield `{'a', 'b'}`."
+    },
+    {
+      "content": "Think about how to efficiently combine results from multiple sets. You might want to use a recursive approach to handle nested structures."
+    },
+    {
+      "content": "As a final step, ensure that your function returns the result in the correct format. The output should be a sorted list of unique words."
+    },
+    {
+      "content": "Now, try to outline the main functions you will need: one for parsing the expression, one for handling sets, and one for combining results. This will help you structure your solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= expression.length <= 60",
+    "The expression consists of '{', '}', ',', or lowercase English letters.",
+    "The output must be a sorted list of unique words.",
+    "Handle nested braces and ensure proper set union and concatenation."
+  ]
+}

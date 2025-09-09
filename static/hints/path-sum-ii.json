@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node can have up to two children, and you need to traverse from the root to each leaf node. Visualize the tree structure with the given example to see how paths are formed."
+    },
+    {
+      "content": "Remember that a leaf node is defined as a node without any children. When you reach a leaf node during your traversal, you should check if the sum of the values along the path equals the targetSum."
+    },
+    {
+      "content": "Consider using Depth First Search (DFS) to explore all paths from the root to the leaves. This approach allows you to keep track of the current path and the current sum as you traverse the tree."
+    },
+    {
+      "content": "As you traverse, maintain a list to store the current path. When you reach a leaf node, check if the sum of the values in the current path matches targetSum. If it does, add a copy of the current path to your results."
+    },
+    {
+      "content": "Don't forget to backtrack after exploring a path. This means that once you finish exploring a node's children, you should remove the last node from your current path before returning to the previous node."
+    },
+    {
+      "content": "Consider edge cases like an empty tree (i.e., root is null) or a tree where no paths sum to targetSum. Ensure your solution handles these scenarios gracefully."
+    },
+    {
+      "content": "When checking if the current node is a leaf, ensure that both left and right children are null. This is crucial for correctly identifying leaf nodes."
+    },
+    {
+      "content": "Think about how you will handle the path list. You might want to use a temporary list to store the current path and only add it to the results list when you find a valid path."
+    },
+    {
+      "content": "Make sure to pass the current sum and the current path as parameters in your recursive function. This will help you keep track of the ongoing sum and the nodes visited so far."
+    },
+    {
+      "content": "Your final implementation should return a list of lists, where each inner list represents a valid path from root to leaf that sums to targetSum. Ensure that your return format matches the requirements exactly."
+    }
+  ],
+  "questionNotes": [
+    "The input tree is represented as an array, where the index of the array corresponds to the level-order traversal of the tree.",
+    "A path is valid if it starts from the root and ends at a leaf, and the sum of the values in that path equals targetSum.",
+    "Be mindful of the constraints: the number of nodes can be up to 5000, and node values and targetSum can range from -1000 to 1000."
+  ]
+}

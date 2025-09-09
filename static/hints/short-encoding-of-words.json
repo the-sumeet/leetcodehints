@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what the reference string `s` looks like. It must end with a `#` character and contain all the words in the array, separated by `#`."
+    },
+    {
+      "content": "Consider how the presence of overlapping suffixes in the words can affect the length of the reference string. For instance, if one word is a suffix of another, it doesn't need to be included in full."
+    },
+    {
+      "content": "Think about how you can identify which words are suffixes of others. This can help you determine which words can be excluded from the reference string to minimize its length."
+    },
+    {
+      "content": "A good approach is to sort the words in descending order by their lengths. This way, you can check for suffixes starting from the longest word."
+    },
+    {
+      "content": "When checking if a word is a suffix of another, remember to compare the end of the longer word with the entire shorter word. Use string slicing or comparison methods."
+    },
+    {
+      "content": "Keep track of the total length of the reference string as you add each word. Don't forget to add 1 for each `#` that separates the words."
+    },
+    {
+      "content": "You can use a set to store the words that you have already included in your reference string. This will help you avoid adding duplicates."
+    },
+    {
+      "content": "Consider the edge case where all words are unique and none are suffixes of one another. In this case, the length of the reference string will simply be the sum of all word lengths plus the number of words."
+    },
+    {
+      "content": "As you build the reference string, ensure that you are correctly counting the necessary `#` characters. Each word contributes one `#` after it, except the last one."
+    },
+    {
+      "content": "Finally, after calculating the total length of the reference string, make sure to return the length correctly. The final length will be the accumulated length of all unique words plus the required `#` characters."
+    }
+  ],
+  "questionNotes": [
+    "The reference string must end with a `#` character.",
+    "Words can have overlapping suffixes; only unique suffixes need to be included.",
+    "The maximum number of words is 2000, and each word can be up to 7 characters long.",
+    "Words consist only of lowercase letters."
+  ]
+}

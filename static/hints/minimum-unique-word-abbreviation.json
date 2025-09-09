@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of an abbreviation. An abbreviation for a word can be a shorter representation that may include letters and numbers. For example, 'apple' could be abbreviated as 'a3e' (the 'p's are replaced by '3')."
+    },
+    {
+      "content": "Consider how to generate all possible abbreviations for the target word. You can use a binary representation to decide whether to keep a letter or replace it with a count. For example, for 'apple', the binary '010' could mean keep 'a', skip 'p', and keep 'l'."
+    },
+    {
+      "content": "Think about how to check if an abbreviation is unique. An abbreviation is unique if it does not match any abbreviation of the words in the provided dictionary. You will need a way to generate abbreviations for each word in the dictionary as well."
+    },
+    {
+      "content": "When generating abbreviations, consider the length of the abbreviation. If an abbreviation is longer than the original word, it is not valid. For example, 'apple' should not be abbreviated to 'appl3' since it has more characters."
+    },
+    {
+      "content": "You need to handle edge cases where the dictionary might contain words of different lengths. Ensure that your abbreviation generation logic can handle these variations effectively."
+    },
+    {
+      "content": "Remember to consider the case where the target word is the same as a word in the dictionary. In this case, the abbreviation should be unique and not match the full word."
+    },
+    {
+      "content": "To optimize your solution, think about how you can avoid generating duplicate abbreviations. Use a set to store already generated abbreviations and check against it."
+    },
+    {
+      "content": "Consider using a backtracking approach to generate abbreviations. This way, you can explore different combinations of letters and counts systematically."
+    },
+    {
+      "content": "When you generate an abbreviation, make sure to check if it conflicts with any abbreviation from the dictionary. You may want to create a helper function to check for this."
+    },
+    {
+      "content": "Think about how to prioritize shorter abbreviations when there are multiple valid options. You might want to sort the results based on length or lexicographical order."
+    },
+    {
+      "content": "You might want to keep track of the best abbreviation found so far as you generate new ones. This way, you can return the minimum unique abbreviation efficiently."
+    },
+    {
+      "content": "Make sure to handle cases where no valid abbreviation exists. Your function should return an appropriate response in such cases, perhaps the full word itself."
+    },
+    {
+      "content": "Consider edge cases where the dictionary is empty. In such cases, the minimum unique abbreviation should be straightforward since there are no conflicts."
+    },
+    {
+      "content": "As you implement your solution, ensure that you test it with various edge cases, including very short words, long words, and words with repeated characters."
+    },
+    {
+      "content": "Finally, think about how to structure your code for clarity and maintainability. Breaking down your solution into smaller functions can help manage complexity."
+    }
+  ],
+  "questionNotes": [
+    "The target word must be abbreviated uniquely compared to all words in the dictionary.",
+    "Abbreviations can include both letters and numbers, but must not exceed the length of the original word.",
+    "If the target word is the same as any word in the dictionary, it cannot be used as an abbreviation.",
+    "Return the minimum unique abbreviation in terms of length and lexicographical order if there are ties."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements clearly. You need to form words from the given letters and calculate their scores based on the provided scoring system."
+    },
+    {
+      "content": "Consider how you will keep track of the letters available for forming words. A frequency map (or dictionary) could be useful to count occurrences of each letter."
+    },
+    {
+      "content": "Think about how you will calculate the score for each word. You can iterate through the characters of a word and sum their scores based on their indices in the score array."
+    },
+    {
+      "content": "Remember that each letter can only be used once per word formation. This means that after using a letter to form a word, you should reduce its count in your frequency map."
+    },
+    {
+      "content": "Consider how to handle the selection of words. You might want to explore using a backtracking approach to try forming different combinations of words."
+    },
+    {
+      "content": "When selecting words, ensure that you check if you have enough letters left to form each word. If not, skip that word and backtrack."
+    },
+    {
+      "content": "Think about how to keep track of the maximum score found during your exploration. You can use a variable to store the current maximum score and update it whenever you find a higher score."
+    },
+    {
+      "content": "Consider edge cases, such as when the letters provided are not sufficient to form any words. What should the output be in that case?"
+    },
+    {
+      "content": "You should also consider the case where some words cannot be formed due to letter constraints. Make sure your solution handles this gracefully."
+    },
+    {
+      "content": "Make sure to account for the uniqueness of words. Each word can only be used once in forming the score, so keep track of which words have been used."
+    },
+    {
+      "content": "As you implement your solution, think about the efficiency of your approach. Since the maximum number of words is 14, a backtracking solution is feasible."
+    },
+    {
+      "content": "You might want to implement a helper function to calculate the score of a word based on the letter frequencies and the score array."
+    },
+    {
+      "content": "Consider using a recursive function for backtracking, where you explore the inclusion of each word and recursively call the function with updated letter counts."
+    },
+    {
+      "content": "When you reach a base case in your recursion (e.g., no more words to consider or letters left), check if the current score is greater than the maximum score and update it accordingly."
+    },
+    {
+      "content": "Finally, ensure your function returns the maximum score found. This might involve returning the value of the maximum score variable after all combinations have been explored."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= words.length <= 14, 1 <= words[i].length <= 15, 1 <= letters.length <= 100.",
+    "Each letter can only be used once per word formation.",
+    "Words cannot be reused in forming the score.",
+    "The score for letters 'a' to 'z' corresponds to indices 0 to 25 in the score array.",
+    "Return the maximum score of any valid set of words formed."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you can count the frequency of each word in the input array. A dictionary (or hashmap) would be a great data structure for this purpose, where the keys are the words and the values are their counts."
+    },
+    {
+      "content": "Once you have the frequency of each word, consider how you might extract the top k frequent words. You will need to sort the words based on their frequency, and in case of ties, you should sort them lexicographically."
+    },
+    {
+      "content": "Remember that the output must be sorted first by frequency and then alphabetically. This means you might need to use a custom sorting function or a tuple to handle both sorting criteria."
+    },
+    {
+      "content": "Think about the constraints of the problem. You have up to 500 words, and each word can be up to 10 characters long. This means that your solution should be efficient enough to handle the maximum input size comfortably."
+    },
+    {
+      "content": "To achieve the desired time complexity of O(n log(k)), consider using a min-heap (or priority queue). This will allow you to efficiently keep track of the top k elements while processing the word frequencies."
+    },
+    {
+      "content": "When using a min-heap, you should push the word-frequency pairs into the heap. If the size of the heap exceeds k, pop the smallest element. This way, you maintain only the top k frequent words."
+    },
+    {
+      "content": "After populating the min-heap, you will need to extract the elements from it. Keep in mind that they will be in the wrong order (smallest frequency first), so you will need to reverse the order of the results before returning them."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when all words are unique or when k equals the number of unique words. Ensure your logic handles these scenarios correctly."
+    },
+    {
+      "content": "As you implement your solution, test it with the provided examples and additional edge cases to ensure it behaves as expected. Consider using assertions or print statements to verify intermediate results."
+    },
+    {
+      "content": "Finally, remember to return the result in the specified format, which is an array of strings. Ensure that your final output matches the expected output structure."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= words.length <= 500",
+    "1 <= words[i].length <= 10",
+    "words[i] consists of lowercase English letters.",
+    "k is in the range [1, The number of unique words[i]].",
+    "Return the k most frequent strings sorted by frequency and lexicographical order for ties."
+  ]
+}

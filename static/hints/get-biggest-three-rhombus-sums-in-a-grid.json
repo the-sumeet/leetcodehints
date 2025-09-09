@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the shape of the rhombus in the grid. A rhombus can be visualized as a diamond shape centered at a grid cell, with varying sizes. For example, a rhombus of size 1 includes just the center cell, while a size 2 rhombus includes the center and the cells directly above, below, left, and right."
+    },
+    {
+      "content": "Consider how to calculate the rhombus sum for a given center cell and size. You will need to sum the values of the cells that form the border of the rhombus. Make sure to handle the cases where the rhombus extends beyond the grid boundaries."
+    },
+    {
+      "content": "When iterating through the grid to find rhombus sums, remember that the maximum size of a rhombus centered at a cell depends on its position in the grid. For example, cells near the edges will have smaller rhombus sizes."
+    },
+    {
+      "content": "To calculate the rhombus sum, you can define a function that takes the center coordinates and the size of the rhombus as parameters. This function should return the sum of the border elements of the rhombus."
+    },
+    {
+      "content": "As you compute rhombus sums, store them in a set to automatically handle duplicates. This will help you ensure that only distinct rhombus sums are considered when you retrieve the largest values later."
+    },
+    {
+      "content": "Once you have collected all distinct rhombus sums, convert the set to a list and sort it in descending order. This will allow you to easily access the largest sums."
+    },
+    {
+      "content": "Remember the requirement to return only the three largest distinct rhombus sums. If there are fewer than three distinct sums, you should return all of them. Be careful to maintain the correct output format."
+    },
+    {
+      "content": "Think about edge cases, such as when the grid has only one cell. The only rhombus sum in this case would be the value of that single cell, and you should ensure your implementation handles this smoothly."
+    },
+    {
+      "content": "Consider how to efficiently iterate through potential center cells and sizes. You might want to use nested loops: one for the grid cells and another for the possible sizes of rhombuses that can be formed."
+    },
+    {
+      "content": "Finally, ensure that your function handles all constraints properly, such as the grid dimensions and the values of the cells. Pay attention to the indexing when accessing grid elements to avoid out-of-bounds errors."
+    }
+  ],
+  "questionNotes": [
+    "Rhombus shapes can have an area of 0, which is valid.",
+    "Return the three largest distinct rhombus sums in descending order.",
+    "If fewer than three distinct sums exist, return all of them.",
+    "Constraints: 1 <= m, n <= 50 and 1 <= grid[i][j] <= 10^5.",
+    "Ensure proper handling of grid boundaries when calculating rhombus sums."
+  ]
+}

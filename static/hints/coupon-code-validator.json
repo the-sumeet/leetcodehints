@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input arrays. You have three arrays: `code`, `businessLine`, and `isActive`. Each index `i` in these arrays corresponds to a single coupon's properties."
+    },
+    {
+      "content": "Focus on the validity conditions for a coupon. A coupon is valid if: 1) `code[i]` is non-empty and contains only alphanumeric characters and underscores, 2) `businessLine[i]` is one of the specified categories, and 3) `isActive[i]` is true."
+    },
+    {
+      "content": "To check if `code[i]` is valid, you can use a regular expression. A simple regex for your needs could be: `^[a-zA-Z0-9_]+$`. This will ensure that the code contains only the allowed characters."
+    },
+    {
+      "content": "For the `businessLine[i]`, create a set of valid categories: `{'electronics', 'grocery', 'pharmacy', 'restaurant'}`. This will help you quickly check if a given business line is valid."
+    },
+    {
+      "content": "Remember to iterate through all coupons and collect those that meet all validity criteria. You can use a list to store valid coupon codes as you find them."
+    },
+    {
+      "content": "Once you have collected all valid coupon codes, you need to sort them. First, sort by `businessLine` according to the specified order: `electronics`, `grocery`, `pharmacy`, `restaurant`."
+    },
+    {
+      "content": "Within each business line category, sort the coupon codes lexicographically. You can achieve this by using a custom sorting function that takes into account both the business line and the code."
+    },
+    {
+      "content": "When implementing the sorting, consider creating a mapping of business lines to their order. For example, you could use a dictionary: `order = {'electronics': 0, 'grocery': 1, 'pharmacy': 2, 'restaurant': 3}`."
+    },
+    {
+      "content": "As you build your final result, ensure that you return the codes in the correct format, which is an array of strings. Pay attention to the order of sorting when constructing this final array."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases. For example, what happens if all coupons are invalid? Or if all are valid but belong to the same category? Consider these scenarios to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == code.length == businessLine.length == isActive.length",
+    "1 <= n <= 100",
+    "0 <= code[i].length, businessLine[i].length <= 100",
+    "code[i] must consist of alphanumeric characters and underscores only.",
+    "businessLine[i] must be one of the four specified categories.",
+    "isActive[i] is a boolean indicating if the coupon is active.",
+    "Return an array of valid coupon codes, sorted by business line and then by code."
+  ]
+}

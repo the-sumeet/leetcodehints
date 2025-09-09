@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find the minimum number of coins to make a specific amount. What happens if the amount is 0? Think about edge cases."
+    },
+    {
+      "content": "Consider how you can use dynamic programming to solve this problem. You might want to create an array to store the minimum number of coins needed for each amount from 0 to the target amount."
+    },
+    {
+      "content": "Initialize your DP array with a size of `amount + 1`. Set the value for `dp[0]` to 0 (since no coins are needed to make 0) and all other values to a large number (like infinity) to represent that those amounts are initially unreachable."
+    },
+    {
+      "content": "Think about how you will fill in your DP array. For each coin, you should iterate through all amounts from the coin's value up to the target amount. This will allow you to update the minimum coins needed for each amount."
+    },
+    {
+      "content": "When updating your DP array, consider this: for each amount `i`, if using the current coin results in fewer coins than previously recorded, update `dp[i]`. This can be expressed as: `dp[i] = min(dp[i], dp[i - coin] + 1)`."
+    },
+    {
+      "content": "Remember to handle the case where it's impossible to form the amount with the given coins. After processing all coins, check if `dp[amount]` is still set to infinity. If it is, return -1."
+    },
+    {
+      "content": "Think about the time complexity of your solution. The outer loop iterates through the coins, and the inner loop iterates through the amounts. Can you express this in Big O notation?"
+    },
+    {
+      "content": "Consider edge cases such as when the `coins` array is empty or when the `amount` is 0. What should your function return in these scenarios?"
+    },
+    {
+      "content": "Make sure you understand how to handle large values of `amount`. Given the constraints, ensure that your solution can efficiently handle the maximum input sizes."
+    },
+    {
+      "content": "Finally, write out the core logic for filling the DP array in pseudocode. This will help you visualize the solution before implementing it in your preferred programming language."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= coins.length <= 12",
+    "1 <= coins[i] <= 2^31 - 1",
+    "0 <= amount <= 10^4",
+    "Return -1 if the amount cannot be formed with the given coins."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array. Each element is a pair representing the cost of sending a person to city A and city B. Make sure to consider how to balance the number of people sent to each city."
+    },
+    {
+      "content": "Since you need to send exactly n people to each city, think about how you can represent the decision for each person. You might want to keep track of how many people have been assigned to each city as you iterate through the costs."
+    },
+    {
+      "content": "Consider the difference in costs for each person when deciding which city to send them to. You can calculate the difference between the cost of sending a person to city A and city B. This will help you prioritize which people to send where."
+    },
+    {
+      "content": "You can sort the people based on the difference in costs. This way, you can ensure that those who have a larger preference for one city over the other are considered first when making assignments."
+    },
+    {
+      "content": "After sorting, you can iterate through the sorted list and assign the first n people to city A and the remaining to city B. Keep a running total of the costs as you make these assignments."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the costs are the same for both cities. In such cases, it doesn't matter which city you choose for those individuals, but ensure you still maintain the n-person limit for each city."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Sorting the costs will take O(n log n) time, and the subsequent assignment will take O(n) time. Ensure that your solution is efficient given the constraints."
+    },
+    {
+      "content": "Consider using a data structure to keep track of the total costs as you assign people to cities. This can help you avoid recalculating costs multiple times."
+    },
+    {
+      "content": "As you implement your solution, keep in mind the need to return the total minimum cost. Ensure that your final result is calculated correctly by summing the costs of the assigned individuals."
+    },
+    {
+      "content": "Finally, remember to test your solution with various edge cases, such as the minimum number of people (2) and cases where all costs are equal. This will help ensure your solution is robust."
+    }
+  ],
+  "questionNotes": [
+    "The input array 'costs' has a length of 2n, meaning it is always even.",
+    "Each costs[i] contains two integers: aCost[i] and bCost[i].",
+    "You must ensure exactly n people are sent to each city.",
+    "The constraints specify that 1 <= aCost[i], bCost[i] <= 1000.",
+    "Pay attention to the sorting of costs based on the difference between aCost and bCost."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array `nums`. It's a zero-based permutation of distinct integers from 0 to `nums.length - 1`. This means each integer in `nums` is unique and falls within the valid index range."
+    },
+    {
+      "content": "Consider how you would access elements in the array using the indices. For example, if you have an index `i`, how would you retrieve `nums[i]`? Think about how you can use this to build the new array `ans`."
+    },
+    {
+      "content": "The problem requires you to compute `ans[i]` as `nums[nums[i]]`. Break this down: first, find `nums[i]`, and then use that value as an index to access another element in `nums`."
+    },
+    {
+      "content": "Remember that the output array `ans` should have the same length as `nums`. Make sure to initialize `ans` with the correct size before you start populating it."
+    },
+    {
+      "content": "Think about the loop structure you'll need to iterate through each index of `nums`. You can use a simple `for` loop that runs from `0` to `nums.length - 1`."
+    },
+    {
+      "content": "As you build the `ans` array, ensure that you are correctly assigning values. For each index `i`, you should set `ans[i]` to `nums[nums[i]]`. Keep track of your indexing carefully."
+    },
+    {
+      "content": "Consider edge cases, such as the smallest possible input where `nums` has only one element. What would the output be in this case? This can help you validate your solution."
+    },
+    {
+      "content": "After constructing the `ans` array, think about how you'll return or output this array. Make sure your return statement matches the expected format."
+    },
+    {
+      "content": "If you're looking to optimize your solution, think about whether you can achieve this using O(1) extra space. Can you modify `nums` in place or use some clever indexing?"
+    },
+    {
+      "content": "Finally, try writing a small piece of pseudocode to outline your approach. For example: \n```\nfor i from 0 to nums.length - 1:\n    ans[i] = nums[nums[i]]\n```\nThis can guide you in implementing the actual code."
+    }
+  ],
+  "questionNotes": [
+    "The input array `nums` is a zero-based permutation of distinct integers from 0 to `nums.length - 1`.",
+    "The output array `ans` must have the same length as `nums`.",
+    "Each element in `ans` is defined as `ans[i] = nums[nums[i]]` for each index `i`.",
+    "Constraints: 1 <= nums.length <= 1000, 0 <= nums[i] < nums.length.",
+    "Elements in `nums` are guaranteed to be distinct."
+  ]
+}

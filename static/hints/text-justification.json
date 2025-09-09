@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to group words into lines. You need to keep adding words to a line until adding another word would exceed `maxWidth`. Consider using a loop to iterate through the `words` array."
+    },
+    {
+      "content": "As you add words to a line, keep track of the current length of the line and the number of words added. This will help you determine when to stop adding more words."
+    },
+    {
+      "content": "Remember to account for spaces between words. Each space takes up one character, so when calculating the total length of a line, include the spaces between the words."
+    },
+    {
+      "content": "Think about how to distribute extra spaces. For a fully justified line, if there are `n` gaps between `k` words, the spaces should be distributed as evenly as possible."
+    },
+    {
+      "content": "If the spaces do not divide evenly, the extra spaces should be added from the left. For example, if you have 5 spaces to distribute between 3 gaps, the first gap should get 3 spaces and the others 1 space each."
+    },
+    {
+      "content": "Consider the last line of the text. It should be left-justified, meaning you only need to add spaces to the right until it reaches `maxWidth`, without worrying about distributing spaces between words."
+    },
+    {
+      "content": "When you're preparing to add a new word, check if adding it would exceed `maxWidth`. If it does, finalize the current line before starting a new one."
+    },
+    {
+      "content": "Use a list to store the lines as you build them. This will allow you to return the final result as an array of strings."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when a line contains only one word. In this case, it should be left-justified, and you should add spaces only to the right."
+    },
+    {
+      "content": "You will need to handle different scenarios based on the number of words in a line. If there’s only one word, it should be treated differently than a line with multiple words."
+    },
+    {
+      "content": "After you finish processing all words, ensure that the last line is handled correctly. It should not have extra spaces between words and should be left-justified."
+    },
+    {
+      "content": "Consider using a helper function to format a single line of text. This can help keep your main logic cleaner and more organized."
+    },
+    {
+      "content": "When calculating how many spaces to add, remember to subtract the length of the words from `maxWidth` to find the number of spaces you need to distribute."
+    },
+    {
+      "content": "As you implement the logic, test with various inputs to ensure that your justification works correctly, especially for edge cases like single-word lines and the last line."
+    },
+    {
+      "content": "Finally, think about how to structure your code. You might want to create a loop that processes each word and builds lines, while another part handles the justification logic."
+    }
+  ],
+  "questionNotes": [
+    "Each line must have exactly `maxWidth` characters.",
+    "Extra spaces should be distributed evenly; left side gets more if not divisible.",
+    "The last line should be left-justified with no extra spaces between words.",
+    "Words have lengths between 1 and 20, and total words are at least 1.",
+    "The input array `words` contains only non-space characters."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by counting the frequency of each difficulty level in the tasks array. You can use a dictionary or a hashmap for this purpose. This will help you understand how many tasks you need to complete for each difficulty."
+    },
+    {
+      "content": "Remember that you can only complete tasks in rounds of either 2 or 3. This means that if a difficulty level has only 1 task, it is impossible to complete it, and you should return -1 for that case."
+    },
+    {
+      "content": "Consider how you can group the tasks into rounds. If you have a frequency of tasks that is not divisible by 2 or 3, think about how you can adjust the number of tasks completed in each round to minimize the total rounds."
+    },
+    {
+      "content": "When counting rounds, note that you should prioritize completing tasks in groups of 3 whenever possible. This minimizes the number of rounds since 3 is greater than 2."
+    },
+    {
+      "content": "For each difficulty level, calculate how many full rounds of 3 you can take. Use integer division to determine this. For example, if you have 7 tasks of a certain difficulty, you can complete 2 rounds of 3 (6 tasks) and will have 1 remaining task."
+    },
+    {
+      "content": "After calculating rounds of 3, check how many tasks are left. If the remaining tasks can form a group of 2, you can complete them in one additional round. If not, you may need to adjust your previous calculations."
+    },
+    {
+      "content": "Keep track of the total number of rounds required as you process each difficulty level. Make sure to sum the rounds correctly as you iterate through the frequency counts."
+    },
+    {
+      "content": "Consider edge cases where the total number of tasks for a difficulty level is less than 2. These cases should immediately return -1 since they cannot be completed in valid rounds."
+    },
+    {
+      "content": "Once you have processed all difficulty levels, ensure that you return the total count of rounds. If any difficulty level returned -1 during processing, your final result should also be -1."
+    },
+    {
+      "content": "As a final step, think about the overall time complexity of your solution. You should aim for a solution that runs efficiently, ideally in O(n) time, where n is the number of tasks."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= tasks.length <= 10^5",
+    "Constraints: 1 <= tasks[i] <= 10^9",
+    "You can only complete tasks in rounds of 2 or 3.",
+    "Return -1 if it's not possible to complete all tasks.",
+    "The tasks array is 0-indexed."
+  ]
+}

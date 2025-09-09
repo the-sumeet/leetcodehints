@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. You will receive an array of strings, where each string represents the ranks given by a voter to the teams. Each character in the string represents a team, and the position of the character indicates the rank."
+    },
+    {
+      "content": "Consider how to count the votes for each team. You need to keep track of how many times each team is ranked in each position (1st, 2nd, 3rd, etc.). A 2D array or a dictionary of dictionaries could be useful for this purpose."
+    },
+    {
+      "content": "When counting the votes, remember that the maximum length of any string is 26, corresponding to the 26 letters of the English alphabet. This means you can use a fixed-size array for counting positions if you choose, indexed by team letters."
+    },
+    {
+      "content": "After counting the votes, you will need to sort the teams. The primary sorting criterion is the number of votes received in the first position, followed by the second position, and so on. If teams are still tied after considering all positions, you will sort them alphabetically."
+    },
+    {
+      "content": "To implement the sorting, you can use a custom sorting function. In Python, for instance, you can use the `sorted()` function with a key that returns a tuple of counts and the team name for alphabetical sorting."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there is only one voter or when all teams receive the same number of votes in all positions. In such cases, the alphabetical order will determine the final ranking."
+    },
+    {
+      "content": "Consider using a data structure that allows you to store both the counts and the team names together, such as a list of tuples. This will help you maintain the association between the team and its vote counts."
+    },
+    {
+      "content": "As you prepare to return the result, remember that the output should be a single string containing the teams in the correct order. You can join the sorted list of team names into a single string using `''.join()`, for example."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various inputs to ensure that your tie-breaking logic works correctly. Create test cases that include ties at multiple levels and check if the alphabetical order is respected."
+    },
+    {
+      "content": "Finally, implement the sorting logic and ensure that you are returning the correct format. The final output should be a string of team names sorted according to the ranking system described."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= votes.length <= 1000, 1 <= votes[i].length <= 26.",
+    "All characters in votes[i] are unique.",
+    "All characters that occur in votes[0] also occur in votes[j] for 1 <= j < votes.length.",
+    "Return a single string of sorted team names."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to count all substrings of a given string that have exactly K distinct characters. Remember, a substring is a contiguous sequence of characters within a string."
+    },
+    {
+      "content": "Consider how you can generate all possible substrings from the input string. You can use a nested loop where the outer loop picks the starting index and the inner loop picks the ending index."
+    },
+    {
+      "content": "As you generate each substring, think about how you can count the distinct characters within it. You might want to use a data structure like a set or a dictionary to keep track of the characters."
+    },
+    {
+      "content": "Think about the efficiency of your approach. Generating all substrings has a time complexity of O(n^2), where n is the length of the string. This could be too slow for larger inputs."
+    },
+    {
+      "content": "You can optimize your solution by using a sliding window technique. This allows you to maintain a window of characters and adjust its size dynamically while counting distinct characters."
+    },
+    {
+      "content": "When using the sliding window, maintain two pointers: one for the start of the window and one for the end. As you expand the end pointer, include new characters in your count."
+    },
+    {
+      "content": "Keep track of the count of distinct characters in the current window. If you exceed K distinct characters, you will need to move the start pointer to reduce the count."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when K is greater than the number of distinct characters in the string. In such cases, the result should be zero."
+    },
+    {
+      "content": "Consider how to handle cases where K is zero. What should your function return if K is zero? Think about the definition of distinct characters in this scenario."
+    },
+    {
+      "content": "When counting substrings, ensure you only count those that meet the exact K distinct character requirement. This means you need to check your count after adjusting the window."
+    },
+    {
+      "content": "You may want to use a dictionary to keep track of the frequency of each character in the current window. This will help you efficiently determine when you have exactly K distinct characters."
+    },
+    {
+      "content": "As you adjust your window, ensure that you are correctly updating your character counts. If a character's count drops to zero, you need to decrement your distinct character count."
+    },
+    {
+      "content": "After you find a valid window with exactly K distinct characters, count all possible substrings that can be formed from this window. This can be done by considering the length of the window."
+    },
+    {
+      "content": "Remember to reset your counts appropriately when moving the start pointer. This is crucial to ensure that your sliding window reflects the correct state."
+    },
+    {
+      "content": "Finally, think about how you will return the result. You need to return the total count of valid substrings found during your traversal of the string."
+    }
+  ],
+  "questionNotes": [
+    "You need to count substrings with exactly K distinct characters.",
+    "Substrings are contiguous sequences of characters.",
+    "The time complexity should be considered for larger inputs.",
+    "K can be zero or greater than the number of distinct characters in the string."
+  ]
+}

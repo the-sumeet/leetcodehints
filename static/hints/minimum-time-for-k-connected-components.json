@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. Each edge has a time associated with it, and edges can be removed based on this time. Think about how the removal of edges affects the connectivity of the graph."
+    },
+    {
+      "content": "Consider the case when k equals n. What does it mean for the graph to have k connected components? In this scenario, each node must be its own component, so you might not need to remove any edges."
+    },
+    {
+      "content": "When k is less than n, you need to think about how to efficiently determine the number of connected components as edges are removed. You can use a union-find (disjoint set union) data structure to help manage and track connected components."
+    },
+    {
+      "content": "Sort the edges based on their removal time. This will allow you to process the edges in the order they are removed, which is crucial for determining the state of the graph at any given time."
+    },
+    {
+      "content": "As you iterate through the sorted edges, keep track of the number of connected components. Start with the initial number of components and decrease it as you remove edges that connect two previously connected components."
+    },
+    {
+      "content": "Remember to handle the case where there are no edges at all. If edges.length is 0, the number of components is simply n, and you can immediately return 0 if k equals n."
+    },
+    {
+      "content": "When checking if the number of components has reached k, make sure to keep track of the minimum time at which this occurs. You might want to use a variable to store this minimum time."
+    },
+    {
+      "content": "Consider edge cases where the graph starts off as disconnected. For example, if there are isolated nodes, they already count as separate components. This can affect your calculations significantly."
+    },
+    {
+      "content": "Think about how to efficiently update the number of components as edges are removed. The union-find structure will help you efficiently merge components when an edge is removed."
+    },
+    {
+      "content": "Finally, after processing all edges, ensure you have logic in place to return the minimum time when the number of components reaches k. If it never reaches k, consider what you should return."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, 0 <= edges.length <= 10^5",
+    "Each edge is unique, no duplicate edges.",
+    "Return the minimum time t such that at least k connected components exist.",
+    "If k equals n, return 0 immediately if there are no edges.",
+    "Ensure to handle cases where the graph is already disconnected."
+  ]
+}

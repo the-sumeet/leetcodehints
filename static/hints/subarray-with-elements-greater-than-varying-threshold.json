@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a subarray. A subarray is a contiguous part of the array, meaning that the elements must be next to each other in the original array."
+    },
+    {
+      "content": "Remember that you need to find a subarray of a specific length, k. Think about how you can iterate through the array to check each possible subarray of that length."
+    },
+    {
+      "content": "You need to check if every element in the subarray is greater than a certain value. This value is calculated as threshold / k. Make sure to handle integer division correctly."
+    },
+    {
+      "content": "Consider how you will calculate the threshold divided by k. If k is larger than the threshold, what will be the result? Think about edge cases where k could equal 1 or the length of the array."
+    },
+    {
+      "content": "To find the subarray, you can use a sliding window approach. This means you will maintain a window of size k and slide it across the array to check each subarray."
+    },
+    {
+      "content": "As you slide the window, you can check the condition for each element in the current window. If you find a valid subarray, return its size immediately."
+    },
+    {
+      "content": "Make sure to handle the case where no valid subarray exists. In such a case, you should return -1. Think about how you will keep track of whether you found a valid subarray."
+    },
+    {
+      "content": "When checking elements in the current window, you might want to use a loop to iterate through the elements. Consider how you can break out of the loop early if you find an element that doesn't satisfy the condition."
+    },
+    {
+      "content": "Consider the constraints of the problem. The length of the array can be quite large (up to 100,000), so your solution should be efficient, ideally O(n)."
+    },
+    {
+      "content": "Think about edge cases, such as when the array contains only one element or when all elements are the same. How do these cases affect your logic?"
+    },
+    {
+      "content": "You might want to use a variable to keep track of the maximum size of a valid subarray you find. This way, you can return the largest valid size if multiple subarrays exist."
+    },
+    {
+      "content": "When calculating threshold / k, ensure that you are using the correct data type to avoid any precision issues, especially since threshold and k can be large."
+    },
+    {
+      "content": "As you implement the sliding window, remember to update your window correctly by removing the element that goes out of the window and adding the new element that comes into the window."
+    },
+    {
+      "content": "Make sure to test your solution with various inputs, especially edge cases like the smallest and largest possible values for nums and threshold."
+    },
+    {
+      "content": "Finally, consider the return format. You need to return the size of the valid subarray or -1 if none exists. Ensure your function handles both cases correctly."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 10^5",
+    "1 <= nums[i], threshold <= 10^9",
+    "The subarray must be of length k, which is not specified in the input. You will need to determine k based on the problem context.",
+    "Return -1 if no valid subarray is found."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the types of edges in the graph. There are three types: edges that only Alice can traverse, edges that only Bob can traverse, and edges that both can traverse. This distinction is crucial for determining how to maintain full connectivity."
+    },
+    {
+      "content": "Consider the concept of connectivity in a graph. A graph is fully traversable by both Alice and Bob if there is a path between every pair of nodes for both of them. Think about how you can check this connectivity for each type of edge."
+    },
+    {
+      "content": "You may want to use a graph traversal algorithm like Depth-First Search (DFS) or Breadth-First Search (BFS) to determine if Alice and Bob can reach all nodes from any starting node. This will help you identify if the graph is initially fully traversable."
+    },
+    {
+      "content": "When checking connectivity, remember to handle the edges based on their types. You might want to build separate graphs for Alice and Bob, one using only their respective edges and another using edges of type 3."
+    },
+    {
+      "content": "After establishing the initial connectivity, think about how you can identify redundant edges. An edge is redundant if removing it does not affect the connectivity of the graph for either Alice or Bob."
+    },
+    {
+      "content": "Count the number of edges of each type. This will help you understand how many edges you can potentially remove while still keeping the graph fully traversable for both Alice and Bob."
+    },
+    {
+      "content": "Consider the edges of type 3 as the most valuable since they can be traversed by both Alice and Bob. Removing these edges should be your last resort since they maintain connectivity for both."
+    },
+    {
+      "content": "Think about the minimum spanning tree (MST) concept. You need to ensure that both Alice and Bob can reach all nodes, which might lead you to consider how many edges are necessary to maintain this connectivity."
+    },
+    {
+      "content": "If you find that either Alice or Bob cannot reach all nodes, you should return -1 immediately. This indicates that it is impossible to make the graph fully traversable."
+    },
+    {
+      "content": "As you attempt to maximize the number of removable edges, prioritize removing edges that are only traversable by one person (type 1 or type 2) if they do not affect overall connectivity."
+    },
+    {
+      "content": "You may want to implement a union-find (disjoint set) data structure to efficiently manage and check the connectivity of the graph as you consider removing edges."
+    },
+    {
+      "content": "Make sure to check edge cases, such as when there are very few nodes or when all edges are of type 3. These cases can affect your approach to determining connectivity."
+    },
+    {
+      "content": "After removing edges, always re-check the connectivity for both Alice and Bob. This ensures that the graph remains traversable after each removal."
+    },
+    {
+      "content": "Consider edge cases where the number of edges is equal to the number of nodes minus one. This could represent a minimal spanning tree, which is critical for ensuring connectivity."
+    },
+    {
+      "content": "Finally, think about how to structure your algorithm to count the maximum number of edges removed while still keeping the graph fully connected. You might want to maintain a counter for removable edges."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, 1 <= edges.length <= min(10^5, 3 * n * (n - 1) / 2)",
+    "Each edge is represented as a tuple [type, u, v] where 1 <= type <= 3 and 1 <= u < v <= n.",
+    "All tuples (type, u, v) are distinct.",
+    "Return -1 if it's impossible for Alice and Bob to fully traverse the graph."
+  ]
+}

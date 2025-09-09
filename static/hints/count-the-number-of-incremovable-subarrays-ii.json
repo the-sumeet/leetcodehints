@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an incremovable subarray is. An incremovable subarray is one that, when removed, leaves the remaining elements in a strictly increasing order."
+    },
+    {
+      "content": "Think about how to identify the boundaries of a subarray. For any subarray, you'll need to check the elements before and after it to determine if removing it results in a strictly increasing sequence."
+    },
+    {
+      "content": "Consider the edge cases. What happens if the array is already strictly increasing? How many subarrays would be incremovable in that case?"
+    },
+    {
+      "content": "Remember that a single element is always an incremovable subarray. This means that for an array of length n, you have at least n incremovable subarrays."
+    },
+    {
+      "content": "You can use two pointers or a sliding window approach to efficiently find the incremovable subarrays. Think about how you can expand or contract the window based on the conditions of being strictly increasing."
+    },
+    {
+      "content": "When checking if a subarray is incremovable, ensure that the elements immediately before and after the subarray maintain the strictly increasing property."
+    },
+    {
+      "content": "For example, if you have a subarray from index i to j, check that nums[i-1] < nums[j+1] (if those indices are valid) after removing nums[i] to nums[j]."
+    },
+    {
+      "content": "Consider using a nested loop to explore all possible subarrays. However, be cautious about the time complexity; aim for a more efficient solution than O(n^2)."
+    },
+    {
+      "content": "You may want to preprocess the array to identify segments that are already strictly increasing. This can help you quickly determine the boundaries of potential incremovable subarrays."
+    },
+    {
+      "content": "Think about how to count the number of valid subarrays efficiently. Instead of checking each possible subarray individually, look for patterns or properties that can help you aggregate counts."
+    },
+    {
+      "content": "If you find a subarray that is not incremovable, consider how that affects the count of subarrays that can be formed around it. This could help in optimizing your approach."
+    },
+    {
+      "content": "Make sure to handle cases where the array has duplicates. Remember that strictly increasing means no two adjacent elements can be equal."
+    },
+    {
+      "content": "You might want to maintain a count of valid starting and ending points for your subarrays as you iterate through the array."
+    },
+    {
+      "content": "As you approach the final solution, think about how to combine your findings from the left and right sides of each potential subarray to determine if it’s incremovable."
+    },
+    {
+      "content": "Finally, ensure that your solution adheres to the problem constraints, especially regarding the size of the input array and the values of its elements."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "A subarray must be contiguous and non-empty.",
+    "An empty array is considered strictly increasing.",
+    "After removing the subarray, the remaining elements must be strictly increasing."
+  ]
+}

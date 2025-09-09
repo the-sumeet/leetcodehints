@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. The robot can only move right or down, so think about how you can represent the paths from the top-left to the bottom-right corner."
+    },
+    {
+      "content": "Consider how obstacles (marked as 1) affect the possible paths. If a cell contains an obstacle, the robot cannot step on it, which means any path through that cell is invalid."
+    },
+    {
+      "content": "Think about using dynamic programming. You can create a 2D array (dp) where dp[i][j] represents the number of unique paths to reach cell (i, j) from (0, 0)."
+    },
+    {
+      "content": "Initialize your dp array. The starting point dp[0][0] should be set to 1 if there is no obstacle at the starting position. Otherwise, it should be 0."
+    },
+    {
+      "content": "For each cell in the grid, if it is not an obstacle, calculate the number of ways to reach that cell by summing the paths from the cell above it and the cell to the left."
+    },
+    {
+      "content": "Remember to handle the edges of the grid carefully. For cells in the first row or first column, you can only come from one direction (either left or above)."
+    },
+    {
+      "content": "Pay attention to the case when the grid is completely blocked by obstacles. What should your function return in such cases?"
+    },
+    {
+      "content": "As you fill the dp array, ensure you check for obstacles before adding paths from the above or left cells. If an obstacle is present, set that dp cell to 0."
+    },
+    {
+      "content": "After filling the dp array, the value at dp[m-1][n-1] will give you the total number of unique paths to the bottom-right corner. Make sure to return this value."
+    },
+    {
+      "content": "Consider edge cases such as a grid of size 1x1, or grids that are completely filled with obstacles except for the start and end points. How should your code handle these scenarios?"
+    }
+  ],
+  "questionNotes": [
+    "The grid is represented as an m x n array where m is the number of rows and n is the number of columns.",
+    "Obstacles are marked as 1, and free spaces are marked as 0.",
+    "The robot can only move down or right.",
+    "The answer must be returned as an integer, representing the number of unique paths.",
+    "Constraints: 1 <= m, n <= 100, and the answer will not exceed 2 * 10^9."
+  ]
+}

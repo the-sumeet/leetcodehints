@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by defining the `Router` class and initializing it with a `memoryLimit`. This limit will dictate how many packets can be stored at any time."
+    },
+    {
+      "content": "Consider using a data structure that allows for efficient insertion and removal of packets. A combination of a queue (for FIFO behavior) and a set (to check for duplicates) could be useful."
+    },
+    {
+      "content": "When implementing the `addPacket` method, check if the packet is a duplicate by using a unique identifier that combines the source, destination, and timestamp. If it exists, return false."
+    },
+    {
+      "content": "If a new packet is added and the total count exceeds `memoryLimit`, you will need to remove the oldest packet. Think about how you can efficiently track the order of packets."
+    },
+    {
+      "content": "In the `forwardPacket` method, ensure you correctly return the oldest packet in FIFO order and also remove it from your data structure."
+    },
+    {
+      "content": "For the `getCount` method, iterate through the stored packets and count how many match the specified destination and fall within the given timestamp range. Consider edge cases where no packets match."
+    },
+    {
+      "content": "Remember to handle the case where there are no packets to forward in the `forwardPacket` method. You should return an empty array in this scenario."
+    },
+    {
+      "content": "Since the queries for `addPacket` will be made in increasing order of timestamp, you can optimize your structure by assuming packets will not arrive out of order."
+    },
+    {
+      "content": "Think about how you will store packets. A list can maintain order, but you may also want to use a dictionary or set to quickly check for duplicates."
+    },
+    {
+      "content": "Finally, ensure that your methods are efficient enough to handle the constraints provided, especially since you may have up to 100,000 calls to your methods."
+    }
+  ],
+  "questionNotes": [
+    "Memory limit is the maximum number of packets the router can store at any time.",
+    "Packets are considered duplicates if they have the same source, destination, and timestamp.",
+    "The `forwardPacket` method should return an empty array if there are no packets to forward.",
+    "Queries for `addPacket` will be made in increasing order of timestamp."
+  ]
+}

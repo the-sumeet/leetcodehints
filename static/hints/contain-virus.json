@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to traverse the grid. You can use Depth-First Search (DFS) or Breadth-First Search (BFS) to explore contiguous regions of infected cells. Consider how you would mark cells as visited during your traversal."
+    },
+    {
+      "content": "When you find an infected region, you need to calculate how many uninfected cells are adjacent to it. This will help you determine which region poses the greatest threat. Remember to keep track of the boundaries of the region as you explore."
+    },
+    {
+      "content": "Think about how to count the walls required to quarantine an infected region. Each wall is placed between an infected cell and an uninfected cell. You can maintain a counter while exploring the region to calculate this effectively."
+    },
+    {
+      "content": "Make sure to handle the grid boundaries correctly. When checking adjacent cells, ensure you don't go out of bounds. This is crucial for avoiding index errors."
+    },
+    {
+      "content": "After determining the region that threatens the most uninfected cells, remember to quarantine it by marking those cells appropriately. You may want to change their state temporarily to avoid counting them again in the next iteration."
+    },
+    {
+      "content": "Consider using a priority queue to always select the region with the highest threat level efficiently. This will help you manage which region to quarantine on each day."
+    },
+    {
+      "content": "Remember that the problem specifies that there will never be a tie in terms of threat levels. This simplifies your logic when selecting which region to quarantine."
+    },
+    {
+      "content": "After quarantining a region, simulate the spread of the virus to the remaining uninfected cells. This involves checking each uninfected cell adjacent to the infected cells and marking them as infected if they are not blocked by walls."
+    },
+    {
+      "content": "Keep track of the total number of walls built across all iterations. This will be your final output. Make sure to reset your counters appropriately after each day."
+    },
+    {
+      "content": "Consider edge cases where the entire grid is already infected or where there are isolated infected cells. How will your algorithm handle these situations?"
+    },
+    {
+      "content": "You might want to implement a helper function that checks if a cell is within the grid boundaries and whether it is infected or uninfected. This will help streamline your code."
+    },
+    {
+      "content": "As you build your solution, ensure that you are not modifying the original grid until you are ready to quarantine a region. This will help you avoid confusion about the current state of the grid."
+    },
+    {
+      "content": "Think about the implications of the walls you build. Once a wall is built, it should effectively block the spread of the virus. Ensure your logic reflects this in the simulation."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases, such as a grid with no infected cells or a grid that is fully infected. This will help ensure your solution is robust."
+    },
+    {
+      "content": "Finally, remember to return the total number of walls built after all regions have been quarantined. This is the key output of your function."
+    }
+  ],
+  "questionNotes": [
+    "The grid is m x n where 1 <= m, n <= 50.",
+    "isInfected[i][j] is either 0 (uninfected) or 1 (infected).",
+    "There will never be a tie in terms of which region threatens the most uninfected cells.",
+    "You must return the total number of walls used to quarantine all infected regions or the number of walls if the world becomes fully infected."
+  ]
+}

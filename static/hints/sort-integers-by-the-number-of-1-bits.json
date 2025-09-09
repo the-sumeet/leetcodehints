@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to count the number of 1 bits in the binary representation of an integer. You can use the built-in function `bin(x).count('1')` in Python to achieve this."
+    },
+    {
+      "content": "Think about how you would sort a list based on a specific criterion. In this case, you need to sort by the number of 1 bits first and then by the integer value itself if there is a tie."
+    },
+    {
+      "content": "Consider using a sorting function that allows for custom key functions. In Python, you can use the `sorted()` function with a key that returns a tuple of (number of 1 bits, integer value)."
+    },
+    {
+      "content": "Remember that you need to handle cases where multiple integers have the same number of 1 bits. The secondary sort criterion should be the integer value itself."
+    },
+    {
+      "content": "Before implementing the sorting, ensure you understand the constraints: the input array can have up to 500 integers, and each integer can be as large as 10^4. This means your solution should be efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array contains only one element or when all elements are the same. How would your sorting logic handle these scenarios?"
+    },
+    {
+      "content": "You might want to create a helper function that takes an integer and returns the number of 1 bits. This will make your main sorting logic cleaner."
+    },
+    {
+      "content": "When implementing the sorting, think about the order of operations: first, you need to compute the number of 1 bits for each integer, then sort based on that count and the integer value."
+    },
+    {
+      "content": "Use a lambda function as the key in the sorting method. For example: `sorted(arr, key=lambda x: (bin(x).count('1'), x))` will sort the array as required."
+    },
+    {
+      "content": "Finally, ensure that your function returns the sorted array in the correct format as specified in the problem statement. Pay attention to the return type and structure."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 500",
+    "Values: 0 <= arr[i] <= 10^4",
+    "Sorting criteria: First by number of 1 bits, then by integer value for ties.",
+    "Return format: The sorted array should be returned as is."
+  ]
+}

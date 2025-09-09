@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the circular nature of the array. When calculating distances, remember that after reaching the end of the array, you wrap around to the beginning."
+    },
+    {
+      "content": "Consider how you can find the indices of all occurrences of a specific value in the array. This will help you determine the distances more efficiently."
+    },
+    {
+      "content": "For each query, first identify the value at the queried index. Then, check if this value appears elsewhere in the array."
+    },
+    {
+      "content": "Think about how to calculate the distance between two indices in a circular array. The distance from index `i` to index `j` can be calculated as: `min(abs(i - j), len(nums) - abs(i - j))`."
+    },
+    {
+      "content": "If the queried value appears only once in the array, you can immediately return -1 for that query, as there are no other indices to compare."
+    },
+    {
+      "content": "When you find multiple indices for the same value, you will need to compute the distance from the queried index to each of these indices and keep track of the minimum distance."
+    },
+    {
+      "content": "Consider using a dictionary to map each unique value in `nums` to a list of its indices. This will allow you to quickly access all indices for any queried value."
+    },
+    {
+      "content": "As you compute distances, remember to handle cases where the queried index is the only occurrence of its value, ensuring you return -1 in such cases."
+    },
+    {
+      "content": "When processing each query, make sure to account for the circular nature of the array when calculating distances. You might want to iterate through the list of indices for the queried value and compute distances accordingly."
+    },
+    {
+      "content": "Finally, implement the logic to return an array of results for each query. Ensure that your approach efficiently handles the maximum constraints, potentially using O(n) time complexity for preprocessing and O(1) for each query."
+    }
+  ],
+  "questionNotes": [
+    "The input array `nums` is circular, meaning after the last index, it wraps back to the first index.",
+    "Each query refers to an index in `nums`, and you must find the nearest index with the same value.",
+    "If no other index has the same value, return -1 for that query.",
+    "The output should be an array of results corresponding to each query.",
+    "Constraints: 1 <= queries.length <= nums.length <= 10^5 and 1 <= nums[i] <= 10^6."
+  ]
+}

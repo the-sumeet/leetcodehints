@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to count how many numbers to the right of each element in the array are smaller than that element."
+    },
+    {
+      "content": "Consider how you would approach this problem using a brute-force method. For each element, you could iterate through the elements to its right and count the smaller ones. What would the time complexity be?"
+    },
+    {
+      "content": "The brute-force solution would have a time complexity of O(n^2). Think about ways to optimize this. Can you think of any data structures that could help?"
+    },
+    {
+      "content": "One potential approach is to use a Binary Search Tree (BST) or a balanced BST. How could you use such a structure to keep track of the counts as you iterate through the array?"
+    },
+    {
+      "content": "Consider the idea of processing the array from right to left. How would this change your approach and potentially simplify the counting of smaller elements?"
+    },
+    {
+      "content": "When processing from right to left, you can maintain a sorted list of the elements you've seen so far. How would you insert new elements into this list while maintaining its sorted order?"
+    },
+    {
+      "content": "Think about using a data structure like a Fenwick Tree (or Binary Indexed Tree) or a Segment Tree. How could these help you efficiently count the smaller elements?"
+    },
+    {
+      "content": "If you decide to use a Fenwick Tree, remember that it can help you with prefix sums. How would you set up the tree to count the number of smaller elements efficiently?"
+    },
+    {
+      "content": "Make sure to handle the range of input values correctly. Given that nums[i] can be between -10^4 and 10^4, how will you map these values to indices in your data structure?"
+    },
+    {
+      "content": "Consider edge cases such as an array with all identical elements or an array that is sorted in descending order. What should your output look like in these cases?"
+    },
+    {
+      "content": "When returning the result, remember that the counts array must maintain the same order as the original nums array. How will you ensure that?"
+    },
+    {
+      "content": "If you are using a Fenwick Tree or similar structure, think about the update and query operations. What will their time complexities be, and how do they contribute to the overall complexity of your solution?"
+    },
+    {
+      "content": "As you implement your solution, be careful with off-by-one errors, especially with array indexing. How will you ensure that you are correctly referencing the right elements?"
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases, including the smallest and largest possible arrays. What outputs do you expect?"
+    },
+    {
+      "content": "You are very close to a complete solution. Focus on how to implement the counting mechanism efficiently while keeping track of the indices to return the correct result."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Range of values: -10^4 <= nums[i] <= 10^4",
+    "Return format: An integer array counts where counts[i] is the number of smaller elements to the right of nums[i].",
+    "Be mindful of the order of elements in the output; it should match the order in the input array."
+  ]
+}

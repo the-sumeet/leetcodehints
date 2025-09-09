@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to partition the array into two groups where the sum of each group is at least `k`. Consider how you can check the sums of these groups."
+    },
+    {
+      "content": "Think about the total sum of the array. If the total sum is less than `2 * k`, it's impossible to create two groups that satisfy the condition. This can help you quickly eliminate some cases."
+    },
+    {
+      "content": "Consider the properties of partitions. Each element can either go into Group 1 or Group 2. This binary decision for each element suggests a combinatorial approach."
+    },
+    {
+      "content": "Remember that the order of groups matters in this problem. For example, ([1, 2], [3]) is different from ([3], [1, 2]). Keep this in mind when counting partitions."
+    },
+    {
+      "content": "You can use a bitmask to represent the inclusion of each element in either group. This will help you systematically explore all possible partitions."
+    },
+    {
+      "content": "When generating partitions, ensure you calculate the sums of both groups correctly. You might want to maintain two separate sums as you iterate through your bitmask."
+    },
+    {
+      "content": "Consider edge cases where `nums` contains elements that are all the same or where `k` is larger than the sum of all elements. How would these cases affect your partitioning?"
+    },
+    {
+      "content": "Think about using dynamic programming to store intermediate results. For example, you could maintain a DP array where `dp[i]` represents the number of ways to partition the first `i` elements."
+    },
+    {
+      "content": "Make sure to handle large numbers properly. Since the result can be very large, remember to take modulo `10^9 + 7` at each step to avoid overflow."
+    },
+    {
+      "content": "As you implement your solution, consider how you will ensure that you count distinct partitions. You might need to use a set to track unique configurations."
+    },
+    {
+      "content": "Once you have the basic structure, focus on optimizing your solution. Can you reduce the time complexity by avoiding unnecessary calculations?"
+    },
+    {
+      "content": "Consider how you will return the final count of great partitions. The problem specifies to return the count modulo `10^9 + 7`, so ensure your return statement reflects this."
+    },
+    {
+      "content": "Before finalizing your implementation, test your code with edge cases and the provided examples to ensure it behaves as expected. Pay attention to the constraints."
+    },
+    {
+      "content": "You might want to create helper functions to handle the partitioning logic separately from the main function. This can make your code cleaner and easier to debug."
+    },
+    {
+      "content": "Finally, think about how you can iterate through all possible partitions efficiently. You may need to use recursion or backtracking to explore all configurations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length, k <= 1000",
+    "Constraints: 1 <= nums[i] <= 10^9",
+    "Return the result modulo 10^9 + 7.",
+    "Partitions are distinct if at least one element is in a different group."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the triangle. Each element in the triangle can be accessed using two indices: the row index and the column index. For example, the element at the second row and first column is accessed as `triangle[1][0]`."
+    },
+    {
+      "content": "Consider how you can move from one element to the next. From an element at `triangle[i][j]`, you can move to `triangle[i+1][j]` or `triangle[i+1][j+1]`. This adjacency is key to forming your path."
+    },
+    {
+      "content": "Think about how you can represent the minimum path sum at each position. You can create a 2D array to store the minimum path sums, but remember that the problem asks for a solution with O(n) space."
+    },
+    {
+      "content": "Instead of using a full 2D array, consider modifying the triangle array itself to store the minimum path sums. This way, you can use the same space for calculations."
+    },
+    {
+      "content": "Start from the second-to-last row of the triangle and work your way up. For each element, update it to be the sum of itself and the minimum of the two adjacent elements directly below it."
+    },
+    {
+      "content": "When processing an element, think about the formula: `triangle[i][j] += min(triangle[i+1][j], triangle[i+1][j+1])`. This updates the current element with the minimum path sum from below."
+    },
+    {
+      "content": "Make sure to handle negative numbers correctly. The minimum path sum can still be negative, so your logic should accommodate this without any special treatment."
+    },
+    {
+      "content": "After processing all rows, the top element of the triangle will contain the minimum path sum from top to bottom. Ensure you return this value as your result."
+    },
+    {
+      "content": "Consider edge cases such as a triangle with only one row or all elements being negative. How does your solution handle these scenarios?"
+    },
+    {
+      "content": "Finally, remember to test your solution with various triangle shapes and values to ensure it works correctly for all cases. The final result should be returned as a single integer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= triangle.length <= 200",
+    "triangle[0].length == 1",
+    "triangle[i].length == triangle[i - 1].length + 1",
+    "-10 <= triangle[i][j] <= 10"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic structure of a queue. A circular queue is similar to a regular queue but wraps around when it reaches the end. Think about how you can use an array to implement this behavior."
+    },
+    {
+      "content": "Consider how you will keep track of the front and rear indices of the queue. Remember that in a circular queue, these indices will wrap around when they reach the end of the array."
+    },
+    {
+      "content": "When implementing the `enQueue` method, check if the queue is full before adding an element. You can determine if the queue is full by comparing the next position of the rear index to the front index."
+    },
+    {
+      "content": "For the `deQueue` method, ensure that you check if the queue is empty before attempting to remove an element. This will prevent errors when trying to remove from an empty queue."
+    },
+    {
+      "content": "Implement the `isEmpty` and `isFull` methods. `isEmpty` can be determined by checking if the front and rear indices are equal, while `isFull` can be checked by seeing if moving the rear index forward would equal the front index."
+    },
+    {
+      "content": "Remember to handle the case when the queue wraps around. For example, if the rear index is at the last position of the array and you add another element, it should wrap around to the beginning of the array."
+    },
+    {
+      "content": "When implementing the `Front` and `Rear` methods, ensure that you return the correct values based on the current state of the queue. If the queue is empty, both methods should return -1."
+    },
+    {
+      "content": "Think about the size of the queue and how you will manage the array. You will need to allocate an array of size `k` and ensure that you handle the wrapping correctly when you add or remove elements."
+    },
+    {
+      "content": "Consider edge cases such as adding elements when the queue is full, removing elements when the queue is empty, and the behavior when the queue has only one element. These scenarios can help you identify potential bugs."
+    },
+    {
+      "content": "Now, try to sketch out the methods for `enQueue` and `deQueue`. For `enQueue`, you might have something like: `if (isFull()) return false; else { array[rear] = value; rear = (rear + 1) % k; return true; }`. Make sure to handle the indices correctly!"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= 1000; 0 <= value <= 1000; At most 3000 calls will be made to the methods.",
+    "The queue should operate on a FIFO basis and handle wrapping around correctly.",
+    "Ensure to return -1 for `Front` and `Rear` when the queue is empty.",
+    "Remember that the front and rear indices should be managed carefully to avoid overwriting elements."
+  ]
+}

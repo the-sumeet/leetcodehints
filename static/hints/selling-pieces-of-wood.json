@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to maximize the profit from selling pieces of wood of specific dimensions. Think about how you can cut the wood into smaller pieces and how those pieces can be sold."
+    },
+    {
+      "content": "Consider the base case: if you have a piece of wood with dimensions that exactly match one of the given prices, you can sell it directly for that price. What happens if the dimensions do not match?"
+    },
+    {
+      "content": "Think about how you can recursively cut the wood. If you cut a piece of wood vertically, you'll create two new pieces. Similarly, cutting horizontally will also yield two pieces. How can you represent this in your code?"
+    },
+    {
+      "content": "You might want to create a function that calculates the maximum profit for a given piece of wood of height `h` and width `w`. This function can utilize memoization to store results for previously computed dimensions."
+    },
+    {
+      "content": "As you explore cutting the wood, remember to check all possible heights and widths. For each possible cut, you can calculate the profit from the two resulting pieces and sum them up."
+    },
+    {
+      "content": "When calculating profit, don't forget to account for the prices array. You should check if a piece of wood of certain dimensions exists in the prices array and how much it can sell for."
+    },
+    {
+      "content": "Consider edge cases, such as when the dimensions of the wood are smaller than the smallest piece in the prices array. How will you handle these scenarios?"
+    },
+    {
+      "content": "Make sure to handle cases where a piece of wood can be sold in multiple ways. For example, if a piece of wood can be cut into two smaller pieces that can also be sold, you need to compare the profits from both approaches."
+    },
+    {
+      "content": "Think about how you can use dynamic programming to solve this problem efficiently. You can create a 2D array where each entry represents the maximum profit for a piece of wood of specific dimensions."
+    },
+    {
+      "content": "As you implement your solution, ensure that you are updating your maximum profit correctly after each cut. Use a nested loop to iterate through all possible cuts for each piece of wood."
+    },
+    {
+      "content": "Remember that the prices array contains distinct dimensions. This means that you won't have to worry about tie-breaking when determining the maximum profit for a specific dimension."
+    },
+    {
+      "content": "You may want to initialize your profit array with zeros. This will help you easily identify when a piece of wood has not been sold or cut yet."
+    },
+    {
+      "content": "When iterating through the prices array, make sure to convert the height and width into indices that correspond to your profit array. This will help you access the correct profit values."
+    },
+    {
+      "content": "As you finalize your solution, ensure that your function returns the maximum profit for the initial dimensions of the wood. This will be the value stored in your profit array for dimensions `m` and `n`."
+    },
+    {
+      "content": "Before submitting your solution, test it against various edge cases, such as the smallest and largest possible dimensions, and cases where no pieces can be sold."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 200; 1 <= prices.length <= 20,000; prices[i].length == 3; 1 <= h_i <= m; 1 <= w_i <= n; 1 <= price_i <= 1,000,000.",
+    "All shapes of wood (h_i, w_i) are pairwise distinct.",
+    "You cannot rotate pieces of wood; the height and width must remain as given.",
+    "You can sell multiple pieces of the same shape."
+  ]
+}

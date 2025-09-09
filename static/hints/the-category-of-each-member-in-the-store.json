@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have three main components: Members, Visits, and Purchases. Each component is represented as a list of lists, where each inner list corresponds to a record."
+    },
+    {
+      "content": "Identify how the Members, Visits, and Purchases are related. Each visit is linked to a member through 'member_id', and each purchase is linked to a visit through 'visit_id'. This means you'll need to join these datasets based on these IDs."
+    },
+    {
+      "content": "Consider how to categorize each member based on their purchase behavior. You might want to define categories such as 'Frequent Buyer', 'Occasional Buyer', and 'Non-Buyer'. Think about what criteria you will use for these categories."
+    },
+    {
+      "content": "Before diving into the logic, sketch out the categories you want to create. For example: \n- Frequent Buyer: 3 or more purchases \n- Occasional Buyer: 1-2 purchases \n- Non-Buyer: 0 purchases"
+    },
+    {
+      "content": "As you process the data, keep track of the number of purchases for each member. You can use a dictionary to map 'member_id' to a purchase count. Initialize this count to zero for all members."
+    },
+    {
+      "content": "When iterating through the Purchases, update the purchase count for the corresponding member using the visit_id. You may need to first create a mapping from visit_id to member_id using the Visits data."
+    },
+    {
+      "content": "After counting purchases for each member, you'll need to categorize them based on the criteria you defined earlier. This can be done in a simple loop where you check the count and assign the appropriate category."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as members who have never visited the store or those who have visited but made no purchases. They should be categorized as 'Non-Buyer'."
+    },
+    {
+      "content": "Once you have categorized all members, think about the output format. You might want to return a list of members with their corresponding categories, ensuring that the order matches the original list of members."
+    },
+    {
+      "content": "Finally, ensure that your solution efficiently handles the relationships and counts. You may want to consider the time complexity of your approach, especially if the number of members, visits, and purchases is large."
+    }
+  ],
+  "questionNotes": [
+    "The input data is structured as JSON with three main components: Members, Visits, and Purchases.",
+    "Each member is identified uniquely by 'member_id'.",
+    "Each visit is linked to a member through 'member_id' and to purchases through 'visit_id'.",
+    "Categories should be clearly defined based on the number of purchases.",
+    "Handle edge cases for members with no visits or purchases.",
+    "Ensure the output format matches the original order of members."
+  ]
+}

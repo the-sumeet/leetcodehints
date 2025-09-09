@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by splitting the string `s` into words. You can use the `split()` method in Python, which will give you a list of words. For example, `s.split()` will yield `['dog', 'cat', 'cat', 'dog']`."
+    },
+    {
+      "content": "Next, check if the length of the pattern matches the number of words in the string. If they don't match, you can immediately return `false` since there can't be a one-to-one mapping."
+    },
+    {
+      "content": "Create two dictionaries (or maps): one for mapping characters from the pattern to words, and another for mapping words back to characters. This will help you keep track of the bijection."
+    },
+    {
+      "content": "As you iterate through the characters of the pattern and the corresponding words, check if the character is already in the first dictionary. If it is, ensure that it maps to the current word."
+    },
+    {
+      "content": "Similarly, check if the current word is already in the second dictionary. If it is, ensure that it maps back to the current character in the pattern."
+    },
+    {
+      "content": "If a character or a word is found in the respective dictionary but does not match the expected value, you should return `false`."
+    },
+    {
+      "content": "Consider edge cases where the pattern has repeated characters. For example, in the pattern 'aaaa', all characters are the same, so they must all map to the same word."
+    },
+    {
+      "content": "Remember that the words in `s` cannot be empty and must be separated by a single space. Ensure your splitting logic accounts for this."
+    },
+    {
+      "content": "Think about how to handle cases where there are unique characters in the pattern but the words in `s` are not unique. This should also lead to a `false` result."
+    },
+    {
+      "content": "Finally, after processing all characters and words, if you have maintained the bijection throughout, return `true`. This means both dictionaries have successfully mapped all characters to words without conflict."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= pattern.length <= 300, 1 <= s.length <= 3000.",
+    "Pattern contains only lower-case English letters.",
+    "s contains only lowercase English letters and spaces, with no leading or trailing spaces.",
+    "All words in s are separated by a single space.",
+    "Each letter in pattern must map to exactly one unique word in s."
+  ]
+}

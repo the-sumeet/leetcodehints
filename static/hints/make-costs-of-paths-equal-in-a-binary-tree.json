@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the perfect binary tree. Each node has two children, where the left child is at index `2 * i` and the right child is at index `2 * i + 1`. This means you can easily navigate the tree using simple arithmetic based on the node indices."
+    },
+    {
+      "content": "Identify the leaf nodes in the tree. In a perfect binary tree with `n` nodes, the leaf nodes are located in the second half of the array. Specifically, they start from index `n/2` to `n-1`."
+    },
+    {
+      "content": "Calculate the path costs from the root to each leaf node. For each leaf node, trace back to the root and sum the costs of all nodes along that path. This will give you the total cost for each path."
+    },
+    {
+      "content": "After calculating the path costs, observe the maximum cost among these paths. The goal is to make all paths equal to this maximum cost by incrementing the costs of the nodes along the paths."
+    },
+    {
+      "content": "To equalize the path costs, for each leaf node's path cost, determine how much you need to increment the costs of the nodes in that path to reach the maximum path cost. This can be done by subtracting the current path cost from the maximum cost."
+    },
+    {
+      "content": "Consider using a loop to iterate through each leaf node and calculate the required increments. Keep a running total of the increments needed to equalize the costs of all paths."
+    },
+    {
+      "content": "Remember to account for each node's contribution to the total increment count. If a node is part of multiple paths (which it will be), ensure you only count the increments needed for its highest contribution to the maximum path cost."
+    },
+    {
+      "content": "Think about edge cases, such as when all path costs are already equal. In this case, no increments are needed, and your function should return 0."
+    },
+    {
+      "content": "As you implement your solution, pay attention to the constraints provided. Make sure your solution is efficient enough to handle the maximum input size, which can be up to `10^5`."
+    },
+    {
+      "content": "Finally, structure your solution to return the total number of increments required. Ensure that your final implementation correctly aggregates the increments from all paths to provide the minimum total."
+    }
+  ],
+  "questionNotes": [
+    "A perfect binary tree has nodes indexed from 1 to n.",
+    "Leaf nodes are located from index n/2 to n-1.",
+    "You can increment the cost of any node by 1 any number of times.",
+    "The output should be the minimum total increments needed to equalize all path costs."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to convert integers to their binary representation. For example, the binary representation of 1 is '1', of 2 is '10', and of 3 is '11'. This will help you visualize the concatenation process."
+    },
+    {
+      "content": "Consider how you can concatenate binary strings. You can use a loop to iterate from 1 to n, converting each integer to binary and appending it to a result string. Remember that Python has built-in functions like `bin()` to help with this."
+    },
+    {
+      "content": "Think about how to handle large numbers. The problem requires you to return the result modulo 10^9 + 7. Make sure you incorporate this step after calculating the final decimal value."
+    },
+    {
+      "content": "When converting the concatenated binary string back to a decimal number, consider using Python's `int()` function with base 2. For example, `int('11011', 2)` will give you the decimal equivalent."
+    },
+    {
+      "content": "While concatenating binary strings, keep track of the length of each binary number. This is important because you will need to shift the current result left by the length of the new binary number before adding it."
+    },
+    {
+      "content": "As you build your result, remember to apply the modulo operation at each step to prevent overflow. This means you should take `result = (result * (1 << length) + current_number) % (10**9 + 7)`."
+    },
+    {
+      "content": "Consider edge cases such as when n = 1 or n = 100000. Ensure your solution handles these efficiently, especially since n can be as large as 100,000."
+    },
+    {
+      "content": "You might want to optimize your solution by avoiding the creation of large strings. Instead of concatenating, think about how you can calculate the final result directly using bit manipulation."
+    },
+    {
+      "content": "Before finalizing your approach, review the constraints. Ensure your solution runs efficiently within the limits, especially since the operations involve potentially large numbers."
+    },
+    {
+      "content": "Finally, structure your solution to loop through the range from 1 to n, converting each number to binary, updating the result with bit shifts, and applying modulo at each step. This will lead you to the correct final answer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100000",
+    "Return the result modulo 10^9 + 7.",
+    "The output should be the decimal value of the concatenated binary string."
+  ]
+}

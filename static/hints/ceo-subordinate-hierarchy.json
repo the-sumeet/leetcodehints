@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of employees, each with an ID, name, manager ID, and salary. This forms a tree-like hierarchy where each employee can have one manager."
+    },
+    {
+      "content": "Consider how to represent this hierarchy in your code. A common approach is to use a dictionary where the key is the employee ID and the value is a list of subordinates."
+    },
+    {
+      "content": "When building the hierarchy, remember that the top-level employees will have a `manager_id` of `null`. This will help you identify the root(s) of your hierarchy."
+    },
+    {
+      "content": "As you process each employee, check if their `manager_id` exists in your dictionary. If it does, add the employee to the list of that manager's subordinates."
+    },
+    {
+      "content": "Think about how to traverse this hierarchy. A depth-first search (DFS) or breadth-first search (BFS) could be useful for exploring all subordinates of a given employee."
+    },
+    {
+      "content": "Make sure to handle employees with no subordinates. These employees should still be included in your final output, but their subordinate list will be empty."
+    },
+    {
+      "content": "When calculating total salaries, consider how you will aggregate the salaries of all subordinates. You may want to use recursion to sum up salaries from the bottom of the hierarchy up."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when there are no employees or when all employees report to a single manager. How will your code handle these scenarios?"
+    },
+    {
+      "content": "Consider how to format your output. You might want to return a list of employees along with their total subordinate salaries, or perhaps a nested structure showing the hierarchy."
+    },
+    {
+      "content": "Think about performance. If the hierarchy is very deep or wide, how will your approach scale? Consider using memoization if you find yourself recalculating totals for the same subordinates."
+    },
+    {
+      "content": "Remember to validate your input. Ensure that employee IDs are unique and that the `manager_id` references valid employee IDs where applicable."
+    },
+    {
+      "content": "You may need to handle ties in salaries if multiple employees have the same total salary. Decide on a consistent way to order or present these employees."
+    },
+    {
+      "content": "As you build your solution, write test cases that cover a variety of scenarios, including edge cases like circular references (though they shouldn't exist in a valid input)."
+    },
+    {
+      "content": "When implementing your final function, ensure it adheres to the expected output format. This may include specific fields or structures that need to be returned."
+    },
+    {
+      "content": "Finally, think about how to efficiently retrieve the total salary for any given employee. You might want to build a helper function that can be called with an employee ID."
+    }
+  ],
+  "questionNotes": [
+    "The input is a JSON object with headers and rows. Make sure to parse it correctly.",
+    "Employee IDs are unique and should be treated as such.",
+    "The `manager_id` can be `null`, indicating no manager.",
+    "Consider cases with no employees or all employees reporting to one manager."
+  ]
+}

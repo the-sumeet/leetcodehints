@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering the lengths of the two strings. If they are not the same length, they cannot be isomorphic. This is a quick check you can perform before diving into character mapping."
+    },
+    {
+      "content": "Think about how you can represent the mapping of characters from string `s` to string `t`. You might want to use a dictionary (or hash map) to keep track of which character in `s` maps to which character in `t`."
+    },
+    {
+      "content": "As you iterate through the characters of both strings, check if a character from `s` has already been mapped. If it has, ensure it maps to the same character in `t` as before."
+    },
+    {
+      "content": "Remember that no two characters from `s` can map to the same character in `t`. You will need a second mapping to keep track of characters in `t` that have already been used."
+    },
+    {
+      "content": "Consider using two dictionaries: one for mapping characters from `s` to `t`, and another for mapping characters from `t` back to `s`. This will help you enforce the one-to-one mapping requirement."
+    },
+    {
+      "content": "When iterating through the strings, pay attention to cases where a character in `s` has been seen before. Check both mappings to ensure consistency. If there's a mismatch, the strings are not isomorphic."
+    },
+    {
+      "content": "Think about edge cases, such as when both strings consist of the same character repeated (e.g., `s = 'aaa'`, `t = 'bbb'`). They should return true since each character can map to another distinct character."
+    },
+    {
+      "content": "Consider how you will handle characters that appear for the first time. When you encounter a new character in `s`, you need to add it to your mapping and ensure the corresponding character in `t` is also new."
+    },
+    {
+      "content": "As you work through the strings, remember to check both mappings after each character pair. If you find that a character in `s` is already mapped to a different character in `t`, you should return false immediately."
+    },
+    {
+      "content": "Finally, ensure that your function returns true only after checking all character pairs without any mapping conflicts. If you complete the iteration without issues, the strings are isomorphic."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 5 * 10^4, t.length == s.length",
+    "Both strings consist of any valid ASCII character.",
+    "Character mapping must be one-to-one and consistent."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input arrays: `startTime`, `endTime`, and `profit`. Each index corresponds to a job, where `startTime[i]` is when the job starts, `endTime[i]` is when it ends, and `profit[i]` is the profit gained from completing that job."
+    },
+    {
+      "content": "Consider the constraints of job scheduling. You cannot select two jobs that overlap in time. If a job ends at time X, you can start another job at time X."
+    },
+    {
+      "content": "Think about how you can represent a job. A job can be represented as a tuple or an object containing its start time, end time, and profit. This will help you manage the jobs more easily."
+    },
+    {
+      "content": "To maximize profit, you should consider sorting the jobs. Sorting by `endTime` can help you efficiently find compatible jobs that can be scheduled after a selected job."
+    },
+    {
+      "content": "After sorting, you can use a dynamic programming approach. Create an array `dp` where `dp[i]` represents the maximum profit that can be obtained by scheduling jobs up to the i-th job."
+    },
+    {
+      "content": "Initialize your `dp` array. The profit from the first job can be set as `dp[0] = profit[0]`, since if you only have one job, the maximum profit is simply the profit of that job."
+    },
+    {
+      "content": "For each job `i`, you need to decide whether to include it in your schedule or not. If you include it, you must find the last non-conflicting job that ends before `startTime[i]`."
+    },
+    {
+      "content": "To efficiently find the last non-conflicting job, consider using binary search. This can help you quickly locate the job that ends the latest before the current job starts."
+    },
+    {
+      "content": "When calculating `dp[i]`, you have two options: either take the profit of the current job plus the profit of the last non-conflicting job, or skip the current job and take the profit from the previous job (`dp[i-1]`)."
+    },
+    {
+      "content": "Your recurrence relation will look something like this: `dp[i] = max(dp[i-1], profit[i] + dp[lastNonConflictingJob])`. Make sure to handle the case where there is no non-conflicting job."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when all jobs overlap or when there is only one job. In these cases, your algorithm should still return the correct maximum profit."
+    },
+    {
+      "content": "Once you've filled out the `dp` array, the maximum profit will be found in `dp[n-1]`, where n is the number of jobs."
+    },
+    {
+      "content": "Consider the time complexity of your solution. Sorting the jobs takes O(n log n), and filling the `dp` array with binary search will take O(n log n) as well, leading to an overall complexity of O(n log n)."
+    },
+    {
+      "content": "Make sure to test your solution with different edge cases, such as jobs with the same start and end times, or jobs with varying profits but overlapping times."
+    },
+    {
+      "content": "Finally, ensure that your function returns the maximum profit as an integer, as specified in the problem statement. You may also want to validate your inputs to ensure they meet the constraints."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= startTime.length == endTime.length == profit.length <= 5 * 10^4",
+    "1 <= startTime[i] < endTime[i] <= 10^9",
+    "1 <= profit[i] <= 10^4",
+    "Return the maximum profit as an integer.",
+    "Ensure no two jobs in the subset overlap in time."
+  ]
+}

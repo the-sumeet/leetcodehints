@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to perform a certain number of operations on the array, where each operation allows you to modify a single element by adding a value between -k and k. Think about how this can affect the frequency of elements in the array."
+    },
+    {
+      "content": "Consider how the frequency of an element is defined. The frequency of an element is simply how many times it appears in the array. Your goal is to maximize the frequency of any single element after performing the allowed operations."
+    },
+    {
+      "content": "Note that you can only modify elements that haven't been modified in previous operations. This means that the selection of indices is crucial. Think about how you can strategically choose which elements to modify to achieve the highest frequency."
+    },
+    {
+      "content": "Think about which elements in the array are closest to each other. If you can increase the frequency of a number by modifying nearby numbers, that might be a good strategy. For example, if you have numbers like 4 and 5, modifying 5 to become 4 can increase the frequency of 4."
+    },
+    {
+      "content": "Consider edge cases where numOperations is zero. In such cases, the maximum frequency is simply the frequency of the most common element in the original array. How would you find that efficiently?"
+    },
+    {
+      "content": "When you perform operations, remember that the maximum value you can add or subtract is limited by k. This means that the range of possible values for each element is constrained. Think about how this range affects your choices."
+    },
+    {
+      "content": "You might want to sort the array first. Sorting can help you easily identify which elements are close to each other, allowing you to maximize the frequency of the most common number by bringing others closer to it."
+    },
+    {
+      "content": "As you think about which elements to modify, consider using a frequency map or a counting approach to keep track of how many times each number appears in the array. This will help you quickly assess the impact of your operations."
+    },
+    {
+      "content": "When implementing your solution, think about a sliding window approach or a two-pointer technique. This can help you efficiently calculate how many operations are needed to make elements equal within a certain range."
+    },
+    {
+      "content": "Finally, combine all your insights: iterate through the sorted array, and for each unique number, calculate how many operations it would take to make other numbers equal to it. Keep track of the maximum frequency you can achieve."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5, 1 <= nums[i] <= 10^5, 0 <= k <= 10^5, 0 <= numOperations <= nums.length.",
+    "You can only modify each index once during the operations.",
+    "The range of values you can add to an element is [-k, k].",
+    "Return the maximum frequency of any element after all operations."
+  ]
+}

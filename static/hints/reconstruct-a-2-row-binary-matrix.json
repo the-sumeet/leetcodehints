@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. You have 2 rows and 'n' columns, where each element can be either 0 or 1. The values of 'upper' and 'lower' represent the total number of 1s in the upper and lower rows, respectively."
+    },
+    {
+      "content": "Take a look at the 'colsum' array. Each element in 'colsum' indicates how many 1s should be present in that particular column. This means that for each column, the possible values for 'colsum[i]' can be 0, 1, or 2."
+    },
+    {
+      "content": "Consider the constraints on 'upper' and 'lower'. They must not exceed the total number of columns. Additionally, the sum of 'upper' and 'lower' must equal the total number of 1s specified by 'colsum'."
+    },
+    {
+      "content": "When processing each column, think about how to distribute the 1s between the upper and lower rows based on the value of 'colsum[i]'. For example, if 'colsum[i]' is 0, both rows must have 0 in that column."
+    },
+    {
+      "content": "If 'colsum[i]' is 1, you can place a 1 in either the upper row or the lower row, but not both. Make sure to keep track of the remaining counts of 'upper' and 'lower' as you assign values."
+    },
+    {
+      "content": "When 'colsum[i]' is 2, both rows must have a 1 in that column. This means you need to decrement both 'upper' and 'lower' by 1, so ensure that both have enough remaining count before doing this."
+    },
+    {
+      "content": "As you fill in the matrix, check after each column assignment if 'upper' or 'lower' becomes negative. If they do, it indicates that a valid solution is not possible."
+    },
+    {
+      "content": "At the end of processing all columns, verify that both 'upper' and 'lower' are exactly 0. If either is not, it means you couldn't use all the 1s as required, leading to an invalid solution."
+    },
+    {
+      "content": "Remember that the output format requires a 2D array. You need to return the matrix as `[[upper_row], [lower_row]]` where each row is an array of integers."
+    },
+    {
+      "content": "Consider edge cases such as when 'upper' or 'lower' is 0, or when all values in 'colsum' are 0. How would you handle these scenarios while ensuring the constraints are satisfied?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= colsum.length <= 10^5",
+    "0 <= upper, lower <= colsum.length",
+    "0 <= colsum[i] <= 2",
+    "The output must be a 2D array with two rows.",
+    "If no valid solution exists, return an empty 2D array."
+  ]
+}

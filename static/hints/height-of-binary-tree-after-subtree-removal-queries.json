@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node has a left and right child, and the height of the tree is defined by the longest path from the root to a leaf node."
+    },
+    {
+      "content": "Remember that the height of the tree is measured in edges, not nodes. For example, a tree with a single node has a height of 0."
+    },
+    {
+      "content": "When processing each query, you need to consider the tree's structure before and after the removal of the specified subtree. Think about how the removal affects the height."
+    },
+    {
+      "content": "Make sure to traverse the tree to find the node corresponding to each query. You can use a depth-first search (DFS) or breadth-first search (BFS) for this."
+    },
+    {
+      "content": "Once you locate the node to be removed, you need to determine its height. The height of the remaining tree will be the maximum height of the left and right subtrees of the root."
+    },
+    {
+      "content": "Consider how to efficiently compute the height of the tree after removing a subtree. You may want to precompute heights for all nodes in a single traversal."
+    },
+    {
+      "content": "If you remove a subtree, the height of the tree may change based on the deepest remaining subtree. Think about how to find the maximum height of the remaining nodes."
+    },
+    {
+      "content": "Given the constraints, ensure your solution is efficient. The number of nodes can be up to 100,000, so aim for a solution that is linear with respect to the number of nodes."
+    },
+    {
+      "content": "Remember that each query is independent. After processing one query, the tree structure resets to its original state for the next query."
+    },
+    {
+      "content": "Consider edge cases where the subtree being removed is a leaf node or a node with only one child. How does this affect the height of the remaining tree?"
+    },
+    {
+      "content": "You might want to store the heights of all nodes in a dictionary or array during your initial traversal. This way, you can quickly look up the height of any subtree."
+    },
+    {
+      "content": "When you remove a node, the height of the tree could be determined by the maximum height of the remaining left and right subtrees of the root node."
+    },
+    {
+      "content": "Make sure to handle the case where the node to be removed is the child of the root node. This can simplify the height calculation."
+    },
+    {
+      "content": "To get the height of the remaining tree after a subtree is removed, you can compare the heights of the left and right children of the root node."
+    },
+    {
+      "content": "As a final step, ensure your function returns an array of heights corresponding to each query, maintaining the order of the input queries."
+    }
+  ],
+  "questionNotes": [
+    "The height is defined as the number of edges from the root to the farthest leaf node.",
+    "Each query removes a subtree rooted at a node with a unique value from 1 to n.",
+    "The root node will not be part of any query.",
+    "The number of nodes in the tree is n, where 2 <= n <= 100000.",
+    "The number of queries m is such that 1 <= m <= min(n, 10000).",
+    "All node values are unique."
+  ]
+}

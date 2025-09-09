@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you will store the key-value pairs along with their timestamps. A dictionary (hash map) could be a good choice, where each key maps to a list of tuples containing (value, timestamp)."
+    },
+    {
+      "content": "Remember that timestamps are strictly increasing for each key. This means you can efficiently append new values to the list for each key without worrying about the order of timestamps."
+    },
+    {
+      "content": "When implementing the `get` method, you need to find the largest timestamp that is less than or equal to the given timestamp. Consider how you can utilize binary search to achieve this efficiently."
+    },
+    {
+      "content": "In your `get` method, if there is no valid timestamp found, you should return an empty string. Make sure to handle this case explicitly."
+    },
+    {
+      "content": "Think about edge cases, such as when a key has no values set yet, or when the requested timestamp is earlier than any stored timestamps. How will you handle these scenarios?"
+    },
+    {
+      "content": "When storing values, ensure that you are appending the new (value, timestamp) tuple correctly. You might want to use a list for each key in your dictionary to maintain the order of entries."
+    },
+    {
+      "content": "Make sure to test your implementation with boundary timestamps, such as the minimum and maximum possible values. This will help ensure your solution handles all edge cases correctly."
+    },
+    {
+      "content": "Consider the time complexity of your operations. The `set` operation should be O(1), but the `get` operation will depend on how you implement the search for the largest timestamp. A binary search can reduce this to O(log n)."
+    },
+    {
+      "content": "In the `get` method, after finding the right position using binary search, remember to extract the value associated with that timestamp. This is crucial for returning the correct result."
+    },
+    {
+      "content": "Finally, ensure that your data structure is initialized correctly and that you handle all possible inputs as described in the problem statement. Pay attention to the constraints and ensure your implementation adheres to them."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= key.length, value.length <= 100",
+    "Key and value consist of lowercase English letters and digits.",
+    "1 <= timestamp <= 10^7",
+    "All timestamps of set are strictly increasing.",
+    "At most 2 * 10^5 calls will be made to set and get.",
+    "Return an empty string if no valid value exists for the given timestamp."
+  ]
+}

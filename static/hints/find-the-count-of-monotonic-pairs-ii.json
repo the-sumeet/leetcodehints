@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of monotonic pairs. Recall that arr1 must be monotonically non-decreasing and arr2 must be monotonically non-increasing. This means that for any valid pair, the elements of arr1 should not decrease as you move from left to right, while the elements of arr2 should not increase."
+    },
+    {
+      "content": "Consider how you can construct arr1 and arr2 from the given nums array. For each index i, the elements of arr1 and arr2 must satisfy the condition: arr1[i] + arr2[i] = nums[i]. This gives you a direct relationship between the two arrays."
+    },
+    {
+      "content": "Think about the constraints on the values of arr1 and arr2. Since both arrays must consist of non-negative integers, this means that for each i, arr1[i] can range from 0 to nums[i], and consequently, arr2[i] will be determined by nums[i] - arr1[i]."
+    },
+    {
+      "content": "To count the valid pairs, you can iterate through all possible values for arr1[i] from 0 to nums[i]. For each value of arr1[i], calculate arr2[i]. Ensure that the resulting arrays maintain their respective monotonic properties."
+    },
+    {
+      "content": "Consider using dynamic programming to store intermediate results. You could maintain a count of valid configurations for arr1 and arr2 as you iterate through the nums array."
+    },
+    {
+      "content": "Remember that the arrays must be of the same length as nums. Ensure that you are consistently using the same index when accessing elements in nums, arr1, and arr2."
+    },
+    {
+      "content": "Think about how to efficiently count the number of ways to fill arr1 while keeping it non-decreasing. You might want to use combinatorial counting techniques or prefix sums to help with this."
+    },
+    {
+      "content": "As you build arr1, keep track of the maximum value you have placed so far. This will help ensure that arr1 remains non-decreasing as you progress through the indices."
+    },
+    {
+      "content": "For arr2, since it needs to be non-increasing, you can also keep track of the minimum value that has been placed so far. This will help you ensure that arr2 remains valid."
+    },
+    {
+      "content": "Consider edge cases, such as when nums contains only one element or when all elements are the same. How would your approach change in these scenarios?"
+    },
+    {
+      "content": "Since the final result can be very large, remember to take the result modulo 10^9 + 7 as specified in the problem statement. This is a common requirement in competitive programming."
+    },
+    {
+      "content": "You may want to precompute factorials and their modular inverses to help with combinatorial calculations. This can speed up your solution significantly when counting configurations."
+    },
+    {
+      "content": "As you implement your solution, pay close attention to the bounds of your loops. Make sure you are not exceeding the limits of the nums array or trying to access out-of-bounds indices."
+    },
+    {
+      "content": "After constructing your solution, test it against the provided examples and additional edge cases to ensure its correctness. Debug any issues that arise during testing."
+    },
+    {
+      "content": "Finally, think about how you can optimize your solution further. Are there any redundant calculations you can eliminate or any properties of the problem you can exploit to reduce complexity?"
+    }
+  ],
+  "questionNotes": [
+    "1 <= n == nums.length <= 2000",
+    "1 <= nums[i] <= 1000",
+    "Return the count of monotonic pairs modulo 10^9 + 7",
+    "Ensure both arr1 and arr2 are of length n",
+    "arr1 must be monotonically non-decreasing",
+    "arr2 must be monotonically non-increasing"
+  ]
+}

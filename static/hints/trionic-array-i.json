@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a trionic array. You need to find three segments in the array: the first must be strictly increasing, the second strictly decreasing, and the third strictly increasing. Make sure you are clear about the indices p and q."
+    },
+    {
+      "content": "Remember that the indices p and q must satisfy the condition 0 < p < q < n - 1. This means that p cannot be the first or last index, and q cannot be the first or last index either."
+    },
+    {
+      "content": "To check if a segment is strictly increasing, you can iterate through the array and compare each element with the next one. For example, for a segment nums[0...p], ensure that nums[i] < nums[i+1] for all i in that range."
+    },
+    {
+      "content": "Similarly, for a strictly decreasing segment, you need to check that nums[i] > nums[i+1] for all i in the range nums[p...q]. This will help you identify the correct segment."
+    },
+    {
+      "content": "You can use a loop to find the index p. Start from index 1 and keep moving forward until you find an index where the next element is not greater than the current element. This will give you the end of the first segment."
+    },
+    {
+      "content": "Once you have found p, you need to find q. Start from p and look for the first index where the next element is not less than the current element to find the end of the decreasing segment."
+    },
+    {
+      "content": "After identifying p and q, check if the remaining segment nums[q...n-1] is strictly increasing. This will confirm whether the array meets the trionic condition."
+    },
+    {
+      "content": "Consider edge cases where the array is already sorted or has duplicate values. These cases will help you ensure your logic correctly identifies strictly increasing or decreasing segments."
+    },
+    {
+      "content": "You may want to implement helper functions to check if a segment is strictly increasing or strictly decreasing. This will make your main logic cleaner and easier to follow."
+    },
+    {
+      "content": "Finally, put everything together. Iterate through the array to find potential p and q values, and use your helper functions to validate the segments. Return true if you find a valid configuration, otherwise return false."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= n <= 100",
+    "Value range: -1000 <= nums[i] <= 1000",
+    "Indices must satisfy: 0 < p < q < n - 1",
+    "Segments must be strictly increasing or decreasing (no equal values allowed)."
+  ]
+}

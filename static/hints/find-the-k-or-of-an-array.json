@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the K-or operation. Unlike a standard bitwise OR, a bit in the result is set to 1 only if at least k numbers in the input array have that bit set to 1."
+    },
+    {
+      "content": "Consider how to count the number of 1s in each bit position across all numbers in the array. You can use bitwise operations to check each bit of each number."
+    },
+    {
+      "content": "You can iterate through each bit position (from 0 to 30, since nums[i] < 2^31) and count how many numbers have that bit set. Use a loop to check each number's bit using bitwise AND."
+    },
+    {
+      "content": "To check if a specific bit is set in a number, you can use the expression: `num & (1 << bit_position)`. This will tell you if the bit at `bit_position` is 1."
+    },
+    {
+      "content": "Create a variable to keep track of the result of the K-or operation. Initialize it to 0, and for each bit position that meets the k condition, set that bit in the result."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when k is greater than the length of the array. In such cases, the result should be 0 since no bit can be set by k numbers."
+    },
+    {
+      "content": "Think about how to efficiently count the bits across the array. You might want to use an array or a list to store counts for each bit position."
+    },
+    {
+      "content": "Remember that the maximum number of bits you need to check is 31 (from 0 to 30) since the maximum value of nums[i] is less than 2^31."
+    },
+    {
+      "content": "After counting the bits, iterate through your counts and check if any count is greater than or equal to k. If it is, set that bit in your result."
+    },
+    {
+      "content": "Finally, ensure your implementation handles all possible input sizes and values correctly. Test with edge cases like all numbers being the same or k being 1."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 50",
+    "0 <= nums[i] < 2^31",
+    "1 <= k <= nums.length",
+    "K-or sets a bit if at least k numbers have that bit set."
+  ]
+}

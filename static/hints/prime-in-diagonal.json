@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the two main diagonals in the 2D array. The primary diagonal consists of elements where the row index equals the column index (i.e., nums[i][i]), while the secondary diagonal consists of elements where the row index and column index sum to the length of the array minus one (i.e., nums[i][n - i - 1])."
+    },
+    {
+      "content": "You will need to iterate through the array to collect the values from both diagonals. Consider using a loop that runs from 0 to the length of the array to access the elements of both diagonals."
+    },
+    {
+      "content": "As you collect values from the diagonals, think about how to store them. A set might be useful here to avoid duplicates, as the same number can appear on both diagonals."
+    },
+    {
+      "content": "Next, focus on identifying prime numbers from the collected diagonal values. Remember, a prime number is greater than 1 and has no divisors other than 1 and itself."
+    },
+    {
+      "content": "Implement a helper function to check if a number is prime. This function should return false for numbers less than 2 and check divisibility for numbers greater than 2."
+    },
+    {
+      "content": "Once you have the prime numbers, think about how to find the largest one. You can maintain a variable that tracks the maximum prime found as you check each diagonal number."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no prime numbers on either diagonal. In this case, you should return 0 as specified in the problem statement."
+    },
+    {
+      "content": "Make sure to handle the constraints properly. The maximum value in the array can be up to 4 million, so your prime-checking function should be efficient to handle larger numbers."
+    },
+    {
+      "content": "After collecting all prime numbers from the diagonals, you can use a simple comparison to find the largest prime. If no primes were found, ensure you return 0."
+    },
+    {
+      "content": "Finally, remember to return the result in the specified format. The function should return an integer representing the largest prime or 0 if no primes exist."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 300, nums.length == nums[i].length, 1 <= nums[i][j] <= 4 * 10^6.",
+    "Unique values may appear on both diagonals; consider using a set to avoid duplicates.",
+    "Return 0 if no prime numbers are found on either diagonal."
+  ]
+}

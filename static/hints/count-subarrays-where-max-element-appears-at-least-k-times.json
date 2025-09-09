@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous portion of the array, meaning that the elements are consecutive. For example, in the array [1, 2, 3], the subarrays include [1], [2], [3], [1, 2], [2, 3], and [1, 2, 3]."
+    },
+    {
+      "content": "Identify the maximum element in the array. The problem is centered around the maximum element and its frequency within the subarrays. Make sure you can find the maximum element efficiently."
+    },
+    {
+      "content": "Think about how to count occurrences of the maximum element in a subarray. You might want to maintain a count of how many times the maximum appears as you iterate through potential subarrays."
+    },
+    {
+      "content": "Consider using a sliding window approach. This technique allows you to expand and contract a window over the array to find valid subarrays without generating all possible subarrays explicitly."
+    },
+    {
+      "content": "When you find a valid subarray (where the maximum appears at least k times), think about how to count all possible subarrays that can be formed from it. Remember that if you have a valid subarray from index 'i' to 'j', any subarray starting from 'i' to any index up to 'j' is also valid."
+    },
+    {
+      "content": "Pay attention to edge cases. For instance, if k is greater than the total occurrences of the maximum element in the entire array, you can immediately return 0."
+    },
+    {
+      "content": "Use a hashmap or dictionary to keep track of the frequency of the maximum element as you expand your window. This will help you efficiently check if the count meets the requirement of at least k."
+    },
+    {
+      "content": "Make sure to handle cases where there are multiple maximum elements in the array. You want to ensure that you are counting the correct maximum for each subarray."
+    },
+    {
+      "content": "While iterating through the array, maintain two pointers to represent the start and end of your current subarray. Adjust these pointers based on the count of the maximum element."
+    },
+    {
+      "content": "Finally, when you've identified a valid subarray, calculate how many subarrays can be formed from it. If your current window is valid, all subarrays starting from the left pointer to the right pointer are valid. You can derive the count from the positions of your pointers."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^6",
+    "Constraints: 1 <= k <= 10^5",
+    "A subarray is a contiguous sequence of elements.",
+    "The maximum element must appear at least k times in the subarray."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. You have `n` nodes and `m` edges, where edges are represented as `[a, b, w]`. Make sure you can visualize the graph and how nodes are connected."
+    },
+    {
+      "content": "Remember that the graph is undirected. This means if there is an edge from node `a` to node `b`, you can also traverse from `b` to `a`. This property will be important when exploring paths."
+    },
+    {
+      "content": "Focus on the requirement to find shortest paths from node `0` to node `n-1`. Consider using Dijkstra's algorithm or the Bellman-Ford algorithm, as they are commonly used for finding shortest paths in weighted graphs."
+    },
+    {
+      "content": "When implementing the shortest path algorithm, keep track of the minimum distance to each node. This will help you determine which edges are part of the shortest paths."
+    },
+    {
+      "content": "After calculating the shortest distance, you need to identify which edges contribute to these shortest paths. Think about how you can backtrack from the destination node to the source."
+    },
+    {
+      "content": "Consider using a predecessor or parent array to keep track of the nodes that lead to each node on the shortest path. This will help you reconstruct the paths later."
+    },
+    {
+      "content": "You need to handle multiple shortest paths. If there are multiple ways to reach the destination with the same minimum distance, ensure your solution can account for all of them."
+    },
+    {
+      "content": "As you check each edge, remember to verify if using that edge maintains the shortest path condition. Specifically, check if the distance to the destination node through that edge equals the known shortest distance."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when the graph is not fully connected. Ensure your algorithm can handle scenarios where node `n-1` is unreachable from node `0`."
+    },
+    {
+      "content": "When constructing the answer array, initialize it with `false` values. As you identify edges that are part of any shortest path, update the corresponding indices to `true`."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Dijkstra's algorithm typically runs in O((n + m) log n) with a priority queue, which should be efficient enough for the given constraints."
+    },
+    {
+      "content": "Pay attention to the constraints provided in the problem. For instance, ensure that you handle cases where the number of edges `m` is less than `n-1`, which may lead to disconnected components."
+    },
+    {
+      "content": "In your final implementation, make sure to return the answer array in the specified format. The indices in the answer correspond directly to the edges provided in the input."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases, such as graphs with only two nodes, graphs with all edges having the same weight, or graphs where all nodes are connected in a linear fashion."
+    },
+    {
+      "content": "As a final step, ensure your code handles the input and output correctly, adhering to the expected data types and structures. This will help avoid common pitfalls in competitive programming."
+    }
+  ],
+  "questionNotes": [
+    "The graph is undirected and weighted.",
+    "Nodes are numbered from 0 to n-1.",
+    "Output is a boolean array indicating if each edge is part of at least one shortest path.",
+    "Graph may not be connected, so node n-1 may not be reachable from node 0.",
+    "Constraints: 2 <= n <= 5 * 10^4, 1 <= m <= min(5 * 10^4, n * (n - 1) / 2), 1 <= w <= 10^5."
+  ]
+}

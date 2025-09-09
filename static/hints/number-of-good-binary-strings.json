@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'good' binary string is. A good binary string is defined as one that does not contain two consecutive '1's. Think about how you can generate such strings."
+    },
+    {
+      "content": "Consider how many good binary strings can be formed for small values of n. For example, for n = 1, the good strings are '0' and '1'. For n = 2, the good strings are '00', '01', and '10'."
+    },
+    {
+      "content": "Identify a pattern in the number of good binary strings as n increases. You might notice that the number of good strings for a given n can be derived from the counts of previous values."
+    },
+    {
+      "content": "Think about using dynamic programming to solve this problem. You can define an array where each index i represents the number of good binary strings of length i."
+    },
+    {
+      "content": "Establish a base case for your dynamic programming approach. For instance, you might set dp[1] = 2 (for '0' and '1') and dp[2] = 3 (for '00', '01', '10')."
+    },
+    {
+      "content": "Now, consider how to fill in the dp array for larger values of n. If you look closely, you can derive a recurrence relation based on the last character of the string."
+    },
+    {
+      "content": "The recurrence relation can be expressed as: dp[i] = dp[i-1] + dp[i-2]. This is because a good binary string of length i can either end with '0' (which allows any good string of length i-1) or '10' (which allows any good string of length i-2)."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when n = 0. What should the output be in this case? Think about how your solution can gracefully handle this input."
+    },
+    {
+      "content": "Once you have your dp array filled, remember to return the correct value based on the input n. Ensure that your function can handle multiple test cases as given in the problem statement."
+    },
+    {
+      "content": "Finally, test your solution with various inputs, including edge cases like n = 0, n = 1, and larger values like n = 10. This will help you confirm the correctness and efficiency of your approach."
+    }
+  ],
+  "questionNotes": [
+    "A good binary string does not contain two consecutive '1's.",
+    "The input consists of multiple test cases; handle each case independently.",
+    "Ensure your solution handles edge cases, especially when n = 0.",
+    "The return format should be the count of good binary strings for each test case."
+  ]
+}

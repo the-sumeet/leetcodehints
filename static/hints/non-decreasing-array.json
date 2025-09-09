@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a non-decreasing array means. An array is non-decreasing if for every index `i`, `nums[i] <= nums[i + 1]`. Consider how this applies to the elements in the given array."
+    },
+    {
+      "content": "Think about how many modifications you are allowed to make. You can change at most one element in the array. This means you need to identify where the array is not non-decreasing."
+    },
+    {
+      "content": "As you traverse the array, keep track of how many times the condition `nums[i] > nums[i + 1]` fails. If this happens more than once, you can immediately conclude that it's impossible to make the array non-decreasing with just one modification."
+    },
+    {
+      "content": "When you find a pair where `nums[i] > nums[i + 1]`, consider the implications of changing either `nums[i]` or `nums[i + 1]`. Think about how changing one of these values affects the surrounding elements."
+    },
+    {
+      "content": "If you encounter a violation at `nums[i] > nums[i + 1]`, you have two options: either decrease `nums[i]` or increase `nums[i + 1]`. Determine which option is more feasible based on the previous and next elements."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when the violation occurs at the start or end of the array. For example, if the first element is too large, you may only need to modify it without worrying about previous elements."
+    },
+    {
+      "content": "Consider the scenario where the array has only one element or is already non-decreasing. These are special cases that should return true immediately without further checks."
+    },
+    {
+      "content": "You can use a single pass through the array to check for violations and count them. If you find more than one violation, return false. If you find one, you need to check if modifying one of the two elements involved can fix the problem."
+    },
+    {
+      "content": "When checking if modifying `nums[i]` or `nums[i + 1]` can resolve the issue, ensure that the modified value still maintains the non-decreasing property with its neighbors. This is crucial for correctness."
+    },
+    {
+      "content": "Finally, implement your logic in a loop that iterates through the array while keeping track of the number of modifications needed. Remember to handle the case where you only need to modify one element correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^4, -10^5 <= nums[i] <= 10^5",
+    "The array is 0-indexed.",
+    "You can modify at most one element.",
+    "Return true if the array can be made non-decreasing, otherwise return false."
+  ]
+}

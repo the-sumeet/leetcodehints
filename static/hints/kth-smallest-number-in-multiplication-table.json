@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "The multiplication table is defined as `mat[i][j] = i * j` for `1 <= i <= m` and `1 <= j <= n`. Make sure you understand how this table is structured."
+    },
+    {
+      "content": "Consider how the numbers in the multiplication table are distributed. The smallest number is always `1`, and the largest number is `m * n`. This gives you a range to work with."
+    },
+    {
+      "content": "Notice that the values in the multiplication table are not unique. For instance, `2` appears multiple times (e.g., `1*2`, `2*1`). How will this affect your approach to finding the k-th smallest number?"
+    },
+    {
+      "content": "Think about how you can efficiently count how many numbers in the multiplication table are less than or equal to a given value. This will be a key part of your solution."
+    },
+    {
+      "content": "To count the numbers less than or equal to a target value `x`, you can iterate through each row of the multiplication table and count how many elements in that row are less than or equal to `x`."
+    },
+    {
+      "content": "For a fixed row `i`, the maximum value in that row is `i * n`. If `x < i`, then there are no valid elements in that row. If `x >= i * n`, then all `n` elements in that row count."
+    },
+    {
+      "content": "You can calculate how many elements in the `i-th` row are less than or equal to `x` using the formula `min(x // i, n)`. This gives you the count of valid elements in that row."
+    },
+    {
+      "content": "Now, think about how you can use binary search to efficiently find the k-th smallest element. Your search space will be between `1` and `m * n`."
+    },
+    {
+      "content": "Set your binary search bounds: `low = 1` and `high = m * n`. In each iteration, calculate `mid = (low + high) // 2` and use it to count how many numbers are less than or equal to `mid`."
+    },
+    {
+      "content": "If the count of numbers less than or equal to `mid` is less than `k`, it means the k-th smallest number must be larger than `mid`. Adjust your search bounds accordingly."
+    },
+    {
+      "content": "Conversely, if the count is greater than or equal to `k`, it means the k-th smallest number could be `mid` or smaller, so adjust your bounds to search lower."
+    },
+    {
+      "content": "Continue this binary search until `low` equals `high`. At that point, `low` (or `high`) will be your k-th smallest number."
+    },
+    {
+      "content": "Remember to handle edge cases where `m` or `n` is `1`. The multiplication table will be a single row or column, making the problem simpler."
+    },
+    {
+      "content": "Consider the constraints: `1 <= m, n <= 3 * 10^4` and `1 <= k <= m * n`. Ensure your solution is efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Finally, make sure to test your solution with various inputs, including edge cases, to confirm its correctness and efficiency."
+    }
+  ],
+  "questionNotes": [
+    "The multiplication table is 1-indexed.",
+    "The values in the table are not unique.",
+    "You need to return the k-th smallest number.",
+    "Constraints are: 1 <= m, n <= 3 * 10^4 and 1 <= k <= m * n."
+  ]
+}

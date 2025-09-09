@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, understand that you need to sort the array of strings. Since each string represents an integer, you will need to sort them based on their numeric values, not lexicographically."
+    },
+    {
+      "content": "Consider how to handle the sorting. You might want to use a custom sorting function that compares the strings as integers. In Python, for example, you can use `sorted(nums, key=int)`."
+    },
+    {
+      "content": "Remember that the problem states that duplicates should be counted distinctly. This means if '2' appears twice, it will be treated as two separate entries when determining the k-th largest."
+    },
+    {
+      "content": "After sorting, the k-th largest integer can be found at the index `len(nums) - k`. Make sure to adjust for zero-based indexing when accessing the sorted list."
+    },
+    {
+      "content": "Consider edge cases where all numbers are the same, or where k equals the length of the array. Both cases should return the same number, but ensure your logic accommodates these situations."
+    },
+    {
+      "content": "Think about the constraints provided in the problem. The maximum length of the input array is 10,000 and each string can be up to 100 characters long. Plan your algorithm to handle these sizes efficiently."
+    },
+    {
+      "content": "When implementing your solution, ensure that the sorting operation is efficient. The time complexity of sorting is O(n log n), which should be acceptable given the constraints."
+    },
+    {
+      "content": "Consider using built-in functions for sorting to simplify your code. For example, in Python, you can use `sorted()` directly, but remember to convert the strings to integers for proper comparison."
+    },
+    {
+      "content": "Once you have the sorted list, remember to return the result as a string, as the output format specifies that you should return the k-th largest integer as a string."
+    },
+    {
+      "content": "Finally, make sure to test your solution with various inputs, including edge cases like all zeros or very large numbers, to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "1 <= k <= nums.length <= 10^4",
+    "1 <= nums[i].length <= 100",
+    "nums[i] consists of only digits.",
+    "nums[i] will not have any leading zeros.",
+    "Duplicates should be counted distinctly."
+  ]
+}

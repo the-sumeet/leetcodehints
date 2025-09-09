@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement constraints. You can only move right to cells that are strictly greater than the current cell. This means you'll need to compare values as you traverse the grid."
+    },
+    {
+      "content": "Consider how you can initiate your traversal. You can start from any cell in the first column. Think about how you might keep track of the maximum moves from each starting point."
+    },
+    {
+      "content": "Use a depth-first search (DFS) or dynamic programming approach to explore all possible paths from the starting cells. Each time you move, you should keep track of the number of moves made."
+    },
+    {
+      "content": "When implementing your search, be careful to avoid revisiting cells in the same path. You can use a visited set or a memoization technique to store results of previously computed paths."
+    },
+    {
+      "content": "Think about the base case for your recursion or dynamic programming. If you reach a cell where no further moves are possible, you should return the count of moves made so far."
+    },
+    {
+      "content": "Consider edge cases, such as when the grid has only two rows or columns. What happens if all values in the first column are the same? How would this affect your move count?"
+    },
+    {
+      "content": "As you explore the grid, keep track of the maximum number of moves you can make from each starting cell. You can initialize a variable to store the global maximum moves found."
+    },
+    {
+      "content": "Make sure to handle the grid boundaries properly. When moving to (row - 1, col + 1) or (row + 1, col + 1), ensure that you do not go out of bounds."
+    },
+    {
+      "content": "If you're using dynamic programming, consider how you might fill a DP table where each cell represents the maximum moves possible starting from that cell."
+    },
+    {
+      "content": "Finally, remember to return the maximum number of moves found from all possible starting points in the first column. You might want to iterate through each cell in the first column to find this."
+    }
+  ],
+  "questionNotes": [
+    "You can start at any cell in the first column.",
+    "You can only move to cells with strictly greater values.",
+    "The grid dimensions are m x n, with 2 <= m, n <= 1000.",
+    "The total number of cells is constrained by 4 <= m * n <= 10^5.",
+    "Each cell's value is between 1 and 10^6."
+  ]
+}

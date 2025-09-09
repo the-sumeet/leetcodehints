@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to identify consecutive rows in SQL. You can use the `LAG()` function to compare the current row's `num` with the previous row's `num`."
+    },
+    {
+      "content": "Consider how to keep track of the count of consecutive occurrences. You might want to create a running total or use a window function to help with this."
+    },
+    {
+      "content": "Think about how you can filter the rows after counting the consecutive numbers. You will need to check for counts of at least three."
+    },
+    {
+      "content": "Remember that the `num` column is of type varchar. This means you should be careful with any comparisons or aggregations you perform."
+    },
+    {
+      "content": "You might want to use a Common Table Expression (CTE) to simplify your query. This can help you separate the logic of counting consecutive numbers from the final selection."
+    },
+    {
+      "content": "When counting consecutive numbers, consider using a combination of `ROW_NUMBER()` and `LAG()` to group the numbers together. This will help you identify runs of the same number."
+    },
+    {
+      "content": "After grouping, you can use a `HAVING` clause to filter out groups that do not meet the requirement of appearing at least three times consecutively."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the table is empty or when no number appears three times consecutively. Your query should still run without errors in these cases."
+    },
+    {
+      "content": "Your final output should be a single column named `ConsecutiveNums`. Ensure that your SELECT statement reflects this requirement."
+    },
+    {
+      "content": "Combine all your logic into a single query. You will likely have a CTE or subquery that counts the occurrences, followed by a main query that selects the distinct numbers that meet the criteria."
+    }
+  ],
+  "questionNotes": [
+    "The `id` is an autoincrement column starting from 1.",
+    "The `num` column is of type varchar, so comparisons should be string-safe.",
+    "The result should be returned in a column named `ConsecutiveNums`.",
+    "The output can be in any order."
+  ]
+}

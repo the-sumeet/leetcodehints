@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the three actions you can take each day. You can always eat 1 orange. If the total number of oranges `n` is divisible by 2, you can eat `n / 2` oranges. If `n` is divisible by 3, you can eat `2 * (n / 3)` oranges."
+    },
+    {
+      "content": "Consider how the choice of action affects the number of oranges left. Eating 1 orange is straightforward, but the other two options can significantly reduce the number of oranges. Think about how to maximize the reduction in each step."
+    },
+    {
+      "content": "Think about the base case. If you have only 1 orange, how many days will it take to eat it? This can help you build your solution recursively or iteratively."
+    },
+    {
+      "content": "You might want to consider using a recursive approach to explore all possible paths of eating oranges. However, be careful of overlapping subproblems, as the same number of oranges can be reached through different sequences of actions."
+    },
+    {
+      "content": "To optimize your solution, consider using memoization to store results of previously computed states. This can help avoid recalculating the minimum days for the same number of oranges."
+    },
+    {
+      "content": "Think about the constraints: `1 <= n <= 2 * 10^9`. This indicates that your solution needs to be efficient. A simple recursive solution without optimization may lead to timeouts."
+    },
+    {
+      "content": "Try to derive a formula or a pattern from smaller values of `n`. For example, if you manually calculate the minimum days for values from 1 to 10, you might notice a pattern that can help in generalizing your approach."
+    },
+    {
+      "content": "Consider using a dynamic programming approach where you build up the solution from smaller values of `n` to larger ones. This way, you can use previously computed results to find the answer for larger `n`."
+    },
+    {
+      "content": "When implementing your solution, remember to check which action to take based on the divisibility of `n`. You will need to compare the results of each possible action to find the minimum days."
+    },
+    {
+      "content": "Think about edge cases, such as when `n` is very small (like 1 or 2) or when `n` is a large prime number. How do these cases affect your approach?"
+    },
+    {
+      "content": "If you're using recursion, consider the depth of your recursive calls. Each call should reduce the problem size significantly to avoid stack overflow issues, especially with large `n`."
+    },
+    {
+      "content": "You can represent the state of your problem as a function `days(n)` that returns the minimum number of days to eat `n` oranges. Your goal is to minimize this function."
+    },
+    {
+      "content": "As you implement your solution, make sure to handle the cases where `n` is divisible by both 2 and 3. You will need to choose the optimal action that results in the fewest days."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various inputs, especially edge cases. This will help ensure that your solution is robust and handles all scenarios correctly."
+    },
+    {
+      "content": "Finally, consider how you would implement this in code. You might want to start with a simple function that checks the three actions and recursively calls itself to find the minimum days."
+    }
+  ],
+  "questionNotes": [
+    "You can only choose one action per day.",
+    "The constraints are 1 <= n <= 2 * 10^9, meaning efficiency is crucial.",
+    "Make sure to handle cases where n is divisible by both 2 and 3.",
+    "Consider edge cases like n = 1 or n being a large prime number."
+  ]
+}

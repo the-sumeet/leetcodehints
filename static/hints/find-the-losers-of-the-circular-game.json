@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the circular arrangement of friends. They are numbered from 1 to n, and after friend n, you go back to friend 1. This means you need to handle the wrapping around when calculating the next friend to receive the ball."
+    },
+    {
+      "content": "Think about how to keep track of which friends have received the ball. You can use a set or a list to store the indices of friends who have already received the ball. This will help you identify when the game ends."
+    },
+    {
+      "content": "The first friend always starts with the ball (friend 1). On each turn, the next friend to receive the ball is determined by the formula: current_position + i * k, where i is the turn number starting from 1."
+    },
+    {
+      "content": "Since the friends are arranged in a circle, you need to use modulo operation to wrap around the index. For example, if you calculate a position that exceeds n, you can use (position - 1) % n + 1 to get the correct friend number."
+    },
+    {
+      "content": "Consider how you will loop through the turns. You will keep passing the ball until a friend receives it for the second time. Make sure to check if the current friend is already in your set of friends who have received the ball."
+    },
+    {
+      "content": "When a friend receives the ball for the second time, you should stop the game. At this point, you can determine the losers by checking which friends have not received the ball at all."
+    },
+    {
+      "content": "Remember to return the losers in ascending order. You can easily achieve this by sorting the list of friends who did not receive the ball before returning it."
+    },
+    {
+      "content": "Pay attention to edge cases. For example, if k equals n, the ball will always go back to the starting friend, and the game will end immediately. What will the losers be in this case?"
+    },
+    {
+      "content": "Make sure to handle the case when n = 1. In this case, the only friend will receive the ball and there will be no losers. Consider how your logic needs to adapt for this special case."
+    },
+    {
+      "content": "To summarize, you need to initialize your starting position, keep track of the friends who have received the ball, and use a loop to pass the ball according to the rules until you find the first repeat. After that, collect and return the losers."
+    }
+  ],
+  "questionNotes": [
+    "Friends are numbered from 1 to n in a circular manner.",
+    "The next friend to receive the ball is determined by the formula: current_position + i * k.",
+    "Use modulo operation to handle circular indexing.",
+    "The game ends when a friend receives the ball for the second time.",
+    "Return the losers in ascending order.",
+    "Consider edge cases like k = n and n = 1."
+  ]
+}

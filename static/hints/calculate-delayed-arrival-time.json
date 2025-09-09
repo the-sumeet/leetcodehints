@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the inputs: you have two integers, `arrivalTime` and `delayedTime`. `arrivalTime` represents the hour the train was originally scheduled to arrive, and `delayedTime` indicates how many hours late it will be."
+    },
+    {
+      "content": "Remember that the time is in a 24-hour format. This means that if the total hours exceed 24, you need to wrap around to the beginning of the day."
+    },
+    {
+      "content": "Consider how you would calculate the new arrival time. You can start by simply adding `arrivalTime` and `delayedTime` together: `newTime = arrivalTime + delayedTime`."
+    },
+    {
+      "content": "Since the result might exceed 24, think about how to handle this. You can use the modulo operator `%` to find the equivalent hour in a 24-hour format. For example: `newTime % 24`."
+    },
+    {
+      "content": "Make sure to account for cases where the result is exactly 24. In 24-hour format, this should be represented as 0. Check how the modulo operation behaves in such cases."
+    },
+    {
+      "content": "Think about edge cases. For example, if `arrivalTime` is 23 and `delayedTime` is 2, what will the output be? This will help you ensure your solution is robust."
+    },
+    {
+      "content": "You can also consider the constraints provided: `1 <= arrivalTime < 24` and `1 <= delayedTime <= 24`. This means you won't have to handle negative values or zero."
+    },
+    {
+      "content": "When you implement the solution, ensure that you are returning the correct type. The output should be an integer representing the hour in 24-hour format."
+    },
+    {
+      "content": "Before finalizing your solution, write out a few test cases manually. For instance, what happens when `arrivalTime` is 12 and `delayedTime` is 13? This will help verify your logic."
+    },
+    {
+      "content": "Finally, put everything together: calculate the new time using the formula `newTime = (arrivalTime + delayedTime) % 24`. This should give you the correct arrival hour."
+    }
+  ],
+  "questionNotes": [
+    "Time is in 24-hour format.",
+    "If total hours exceed 24, wrap around using modulo.",
+    "Return format should be an integer.",
+    "Constraints: 1 <= arrivalTime < 24, 1 <= delayedTime <= 24."
+  ]
+}

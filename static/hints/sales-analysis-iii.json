@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the date range you need to focus on. You are only interested in sales that occurred between '2019-01-01' and '2019-03-31'. Make sure to filter your sales data based on this date range."
+    },
+    {
+      "content": "You will need to join the `Product` and `Sales` tables. Consider how you can use the `product_id` as a foreign key to link these two tables together."
+    },
+    {
+      "content": "Think about how to identify products that were sold exclusively within the first quarter of 2019. You might need to look for products that have no sales records outside of the specified date range."
+    },
+    {
+      "content": "To find products sold only in Q1 2019, consider using a GROUP BY clause. This will help you aggregate sales data for each product and check the sale dates."
+    },
+    {
+      "content": "After grouping, you should check the minimum and maximum sale dates for each product. If both dates fall within the Q1 2019 range, that product qualifies."
+    },
+    {
+      "content": "Make sure to account for products that have no sales at all. They should not be included in your results since they do not meet the criteria of being sold in Q1 2019."
+    },
+    {
+      "content": "You may want to use a HAVING clause to filter out products that have sales outside of the specified date range. This is crucial to ensure that only products sold exclusively in Q1 2019 are returned."
+    },
+    {
+      "content": "Consider using COUNT to check the number of sales for each product. If a product has sales in Q1 2019 but also has sales outside of this range, it should be excluded from your results."
+    },
+    {
+      "content": "Remember to select the required columns from the `Product` table in your final output. You need to return both `product_id` and `product_name`."
+    },
+    {
+      "content": "Finally, ensure that your SQL query is structured correctly and that you handle any potential edge cases, such as products with no sales or products sold in multiple quarters."
+    }
+  ],
+  "questionNotes": [
+    "Focus on sales only in the date range from '2019-01-01' to '2019-03-31'.",
+    "Use `product_id` to join the Product and Sales tables.",
+    "Products with no sales should not be included in the output.",
+    "Return the output with columns `product_id` and `product_name`."
+  ]
+}

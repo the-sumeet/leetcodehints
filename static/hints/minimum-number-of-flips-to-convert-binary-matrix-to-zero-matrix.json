@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the flipping mechanism. When you flip a cell, it not only changes its value but also the values of its four neighbors (up, down, left, right). This means that flipping one cell can affect multiple cells in the matrix."
+    },
+    {
+      "content": "Consider the dimensions of the matrix. Since the constraints specify that the matrix can be at most 3x3, this allows for a brute-force approach. Think about how you could explore all possible combinations of flips."
+    },
+    {
+      "content": "Identify the base case: if the input matrix is already a zero matrix, you should return 0 immediately. This is an important edge case to handle before proceeding with any flips."
+    },
+    {
+      "content": "Visualize the problem with a small example. For instance, take a 2x2 matrix and manually perform flips to see how many steps it takes to turn it into a zero matrix. This will help solidify your understanding of the flipping process."
+    },
+    {
+      "content": "Think about how to represent the state of the matrix after a flip. You may want to create a function that takes the current matrix and a cell to flip, returning the new matrix state."
+    },
+    {
+      "content": "Consider using a breadth-first search (BFS) approach to explore all possible states of the matrix after flips. This will help you find the minimum number of flips needed to reach the zero matrix."
+    },
+    {
+      "content": "Remember to keep track of visited states to avoid cycles in your BFS. You can use a set to store the matrix states you've already encountered."
+    },
+    {
+      "content": "Think about how you can represent the matrix as a single integer or a string for easier comparison and storage in your visited set. This can simplify the process of checking if a state has been visited."
+    },
+    {
+      "content": "When implementing BFS, consider using a queue to manage the states to explore. Each entry in the queue can include the current matrix state and the number of flips taken to reach that state."
+    },
+    {
+      "content": "As you explore the matrix, ensure you're flipping only valid cells. Check the boundaries to avoid flipping out of the matrix's range."
+    },
+    {
+      "content": "When you reach a matrix state that is a zero matrix, you should return the number of flips taken to reach that state. This will be your answer."
+    },
+    {
+      "content": "What if you cannot reach a zero matrix? Make sure to handle this case by returning -1 if your BFS completes without finding a zero matrix state."
+    },
+    {
+      "content": "Consider the implications of the matrix's initial state. Some configurations may inherently prevent reaching a zero matrix due to the nature of flips. Think about how you can detect these scenarios early."
+    },
+    {
+      "content": "As a final thought, ensure your function handles all edge cases, including the smallest matrices (1x1) and those that are already zero matrices. Test thoroughly with different configurations."
+    },
+    {
+      "content": "You are very close to the solution! Start implementing your BFS with a queue and ensure you correctly flip the neighbors of each cell. Keep track of the number of flips as you explore."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == mat.length, n == mat[i].length, 1 <= m, n <= 3.",
+    "mat[i][j] is either 0 or 1.",
+    "Return -1 if it's impossible to convert the matrix to a zero matrix."
+  ]
+}

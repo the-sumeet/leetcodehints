@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the transformation that creates the arrays 'lower' and 'higher'. Remember, for each element in 'arr', we have 'lower[i] = arr[i] - k' and 'higher[i] = arr[i] + k'."
+    },
+    {
+      "content": "Notice that for each number in 'lower', there is a corresponding number in 'higher'. This relationship can help you identify potential values for 'k' when you look at pairs of numbers."
+    },
+    {
+      "content": "To find 'k', consider the differences between the elements in 'higher' and 'lower'. For any valid pair (l, h) from 'lower' and 'higher', we can derive 'k' using the formula: k = (h - l) / 2."
+    },
+    {
+      "content": "Since 'k' must be a positive integer, ensure that (h - l) is even. This means you should only consider pairs where the difference is divisible by 2."
+    },
+    {
+      "content": "You can utilize a frequency map (or dictionary) to keep track of how many times each number appears in 'nums'. This will help in efficiently pairing elements from 'lower' and 'higher'."
+    },
+    {
+      "content": "Iterate through the sorted 'nums' array. For each element, check if it can be part of 'lower' or 'higher' by considering potential values of 'k' derived from pairs."
+    },
+    {
+      "content": "When you find a valid pair (l, h), calculate the potential original value as arr[i] = (l + h) / 2. Make sure to track how many times you've used each number to avoid duplicates."
+    },
+    {
+      "content": "Remember that there are multiple valid solutions. If you find one valid 'arr', you can return it even if other combinations exist."
+    },
+    {
+      "content": "Edge cases to consider include when all elements in 'nums' are the same. This scenario can yield a unique solution for 'arr' depending on the value of 'k'."
+    },
+    {
+      "content": "Make sure to handle the constraints properly. Since n can be up to 1000, your solution should be efficient enough to handle up to 2000 elements in 'nums'."
+    },
+    {
+      "content": "If you encounter a situation where the pairing does not yield a valid 'arr', consider revisiting the frequency map and adjusting your pairs accordingly."
+    },
+    {
+      "content": "As you build the original array 'arr', ensure that you are only using numbers that have not been exhausted from your frequency map."
+    },
+    {
+      "content": "After constructing 'arr', verify that the elements in 'lower' and 'higher' can indeed be derived from it using the same 'k'. This will confirm the validity of your solution."
+    },
+    {
+      "content": "Consider edge cases where 'nums' has a very small range of values. This could lead to interesting scenarios for 'k' and the resulting 'arr'."
+    },
+    {
+      "content": "Finally, remember that the problem guarantees at least one valid solution exists. Use this to guide your pairing and construction strategy."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 * n == nums.length, 1 <= n <= 1000, 1 <= nums[i] <= 10^9.",
+    "Return any valid array 'arr', not necessarily unique.",
+    "Ensure 'k' is a positive integer.",
+    "The input 'nums' contains exactly n elements from 'lower' and n from 'higher'."
+  ]
+}

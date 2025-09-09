@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to traverse the matrix. You can move in 8 possible directions from each cell. Make sure to consider the boundaries of the matrix to avoid going out of bounds."
+    },
+    {
+      "content": "As you traverse, think about how to construct numbers from the digits in the cells. For example, if you start at cell (0, 0) with the value 1, moving east to (0, 1) with the value 1 would create the number 11."
+    },
+    {
+      "content": "Remember that you need to generate numbers at every step of your traversal. This means that from a path like (0,0) -> (0,1), you should capture both 1 and 11."
+    },
+    {
+      "content": "Once you have generated numbers from all possible paths, filter out the numbers that are greater than 10. This will help you focus on the relevant candidates for the most frequent prime."
+    },
+    {
+      "content": "To check if a number is prime, you can implement a simple function that checks divisibility from 2 up to the square root of the number. Primes are numbers greater than 1 that have no divisors other than 1 and themselves."
+    },
+    {
+      "content": "Store the frequency of each prime number in a dictionary or hash map. This will allow you to easily count how many times each prime appears among the generated numbers."
+    },
+    {
+      "content": "When determining the most frequent prime, remember to handle ties. If two primes have the same frequency, you should return the larger prime."
+    },
+    {
+      "content": "Take care of edge cases, such as when there are no valid prime numbers greater than 10. In such cases, you should return -1."
+    },
+    {
+      "content": "Consider the constraints of the problem: the matrix can be at most 6x6, and each cell contains a digit from 1 to 9. This means the maximum number you can form is limited, which could simplify your prime checking."
+    },
+    {
+      "content": "Finally, put together all the pieces: traverse the matrix, generate numbers, filter for primes, count frequencies, and determine the most frequent prime. Ensure your final output is either the prime or -1 if no valid prime exists."
+    }
+  ],
+  "questionNotes": [
+    "You can move in 8 directions: east, south-east, south, south-west, west, north-west, north, and north-east.",
+    "Numbers must be greater than 10 to be considered.",
+    "Return the most frequent prime number; if there's a tie, return the largest prime.",
+    "Return -1 if no prime numbers greater than 10 are found.",
+    "Matrix dimensions are constrained to 1 <= m, n <= 6.",
+    "Each cell contains a digit between 1 and 9."
+  ]
+}

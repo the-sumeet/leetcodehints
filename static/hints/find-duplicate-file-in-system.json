@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by parsing the input list. Each entry contains a directory path followed by file names and their contents. You can split each string by spaces to separate the directory from the files."
+    },
+    {
+      "content": "Remember that each file's content is enclosed in parentheses. You'll need to extract both the file name and its content. Consider using string manipulation methods to achieve this."
+    },
+    {
+      "content": "Use a data structure to store the files based on their content. A dictionary (or hashmap) can be useful here, where the key is the file content and the value is a list of file paths."
+    },
+    {
+      "content": "When adding file paths to your dictionary, ensure that you construct the full path by concatenating the directory path and the file name. For example: `full_path = directory + '/' + file_name`."
+    },
+    {
+      "content": "As you populate the dictionary, check if the content already exists. If it does, append the new file path to the existing list. If not, create a new list for that content."
+    },
+    {
+      "content": "After processing all paths, filter the dictionary to keep only those entries where the list of file paths has more than one item. This will give you the groups of duplicate files."
+    },
+    {
+      "content": "Consider edge cases where there might be only one file in a directory or where all files have unique contents. Ensure your solution handles these gracefully."
+    },
+    {
+      "content": "Think about the constraints provided, such as the maximum length of paths and the number of entries. This will help you optimize your solution for performance."
+    },
+    {
+      "content": "When returning the result, format it as a list of lists. Each inner list should contain the paths of files with the same content, in any order."
+    },
+    {
+      "content": "Finally, consider how you would handle very large files or a real file system scenario. You might need to read files in chunks and hash their contents to avoid loading everything into memory at once."
+    }
+  ],
+  "questionNotes": [
+    "Each directory info string is formatted as 'directory_path file_name(file_content)'.",
+    "A group of duplicate files must have at least two files with the same content.",
+    "Return format is a list of lists, where each inner list contains paths of duplicate files.",
+    "No two files in the same directory can have the same name.",
+    "Constraints include: 1 <= paths.length <= 20,000 and 1 <= sum(paths[i].length) <= 500,000."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a peak is in the context of the array. A peak is an element that is greater than its immediate neighbors. For example, in the array [1, 3, 2], the element 3 is a peak."
+    },
+    {
+      "content": "Remember that the first and last elements of the array cannot be peaks. This means you only need to check elements from index 1 to index length-2 when counting peaks."
+    },
+    {
+      "content": "When processing a query of type [1, l, r], you will need to count the peaks in the subarray nums[l..r]. Consider how you will iterate through this subarray."
+    },
+    {
+      "content": "For a query of type [2, index, val], you are required to update the element at nums[index] to val. Make sure to check if this change affects the peak status of the neighboring elements."
+    },
+    {
+      "content": "You might want to create a helper function to check if an element is a peak. This function could take an index and the array as input and return a boolean."
+    },
+    {
+      "content": "When updating an element, consider the peaks before and after the update. You may need to check the peak conditions for the updated element's neighbors."
+    },
+    {
+      "content": "Keep track of the count of peaks efficiently. Instead of recalculating the peaks from scratch for every query, think about how you can update the count incrementally."
+    },
+    {
+      "content": "For the counting of peaks in the subarray, remember to only check elements from l+1 to r-1, as the boundaries cannot be peaks."
+    },
+    {
+      "content": "Consider edge cases where the subarray might have no elements that can be peaks, such as when l and r are adjacent or equal."
+    },
+    {
+      "content": "When implementing the solution, pay attention to the constraints, especially the size of the input arrays. A naive O(n^2) solution might not work efficiently for the upper limits."
+    },
+    {
+      "content": "You can optimize the peak counting by maintaining a list or set of indices that currently hold peaks. This way, you can quickly check how many peaks exist in any given range."
+    },
+    {
+      "content": "Think about how to handle updates efficiently. If you change an element, you may need to check only the neighboring elements to see if they are still peaks."
+    },
+    {
+      "content": "Be cautious about the order of operations in your queries. Ensure that updates are applied before counting peaks in the affected range."
+    },
+    {
+      "content": "When processing multiple queries, consider how to structure your code to handle each query type distinctly but efficiently."
+    },
+    {
+      "content": "As a final step, ensure that your output matches the required format. You need to return an array containing the results of the peak count queries in the order they were received."
+    }
+  ],
+  "questionNotes": [
+    "A peak is defined as an element greater than its neighbors.",
+    "The first and last elements cannot be peaks.",
+    "Queries of type [1, l, r] require counting peaks in the subarray nums[l..r].",
+    "Queries of type [2, index, val] update nums[index] to val.",
+    "The output should be an array with results from type 1 queries in order.",
+    "Constraints: 3 <= nums.length <= 10^5, 1 <= queries.length <= 10^5."
+  ]
+}

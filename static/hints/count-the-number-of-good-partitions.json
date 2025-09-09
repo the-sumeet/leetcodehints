@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'good partition' means. A good partition is one where no two subarrays contain the same number. Think about how you would define a partition in an array."
+    },
+    {
+      "content": "Consider how you can represent a partition. A partition can be represented by its starting and ending indices. For example, in the array [1, 2, 3], the partitioning could be represented as (0, 0), (0, 1), (0, 2), etc."
+    },
+    {
+      "content": "Think about how you can iterate through the array to create partitions. You can use a nested loop where the outer loop represents the starting index and the inner loop represents the ending index of the subarrays."
+    },
+    {
+      "content": "While iterating through potential partitions, maintain a record of the numbers you have seen so far. Use a set or a dictionary to track which numbers are currently in the partition."
+    },
+    {
+      "content": "When you encounter a number that is already in your set of seen numbers, you cannot extend the current partition any further. This is where you would need to finalize the current partition and start a new one."
+    },
+    {
+      "content": "Consider using dynamic programming to store the number of good partitions up to each index. Let dp[i] represent the number of good partitions for the subarray nums[0...i]."
+    },
+    {
+      "content": "To update dp[i], you will need to consider all possible partitions ending at index i. Use the last occurrence of each number to determine where to start a new partition."
+    },
+    {
+      "content": "Remember to account for the modulo operation as specified in the problem. Since the results can be large, use modulo 10^9 + 7 at every step of your calculations."
+    },
+    {
+      "content": "Think about edge cases, such as when all elements in nums are the same. How many good partitions can you form in that case?"
+    },
+    {
+      "content": "Consider the case where nums has only one element. What would the output be? This can help clarify your understanding of partitions."
+    },
+    {
+      "content": "When updating your dp array, ensure you are adding the number of good partitions from previous indices correctly. This might involve subtracting counts from previous indices based on the last occurrence of the current number."
+    },
+    {
+      "content": "Make sure to initialize your dp array properly. What should dp[0] be? Think about the base case for your dynamic programming approach."
+    },
+    {
+      "content": "As you build your solution, keep track of the last occurrence of each number in a separate dictionary. This will help you efficiently determine where to start new partitions."
+    },
+    {
+      "content": "When finalizing your solution, ensure that you return the total number of good partitions modulo 10^9 + 7. This is crucial for passing the test cases."
+    },
+    {
+      "content": "Finally, think about how to combine all the parts you've worked on. You should be able to iterate through the array, update your dp array, and track the last occurrences of numbers all in one pass."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^9",
+    "Return the answer modulo 10^9 + 7.",
+    "A partition must be contiguous and cannot have duplicate numbers across subarrays."
+  ]
+}

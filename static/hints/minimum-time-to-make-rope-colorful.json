@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to ensure that no two consecutive balloons have the same color. This means you'll have to look for groups of consecutive balloons with the same color."
+    },
+    {
+      "content": "Consider how you can identify these groups. You can iterate through the `colors` string and compare each balloon with the next one. If they are the same, you have found a group."
+    },
+    {
+      "content": "As you find consecutive balloons of the same color, think about how you can decide which balloons to remove. The goal is to minimize the total removal time."
+    },
+    {
+      "content": "Remember that for each group of consecutive balloons of the same color, you only need to keep one balloon. This means you will need to sum up the removal times for the rest of the balloons in that group."
+    },
+    {
+      "content": "While iterating through the `colors`, maintain a variable to track the total time needed to remove balloons. You can initialize it to zero and update it as you identify groups."
+    },
+    {
+      "content": "When you find a group of consecutive balloons, determine the maximum removal time within that group. This is important because you want to keep the balloon with the highest removal time and remove the others."
+    },
+    {
+      "content": "For each group of consecutive balloons, calculate the total removal time by summing the needed times of all but the maximum. This will give you the time needed to make that group colorful."
+    },
+    {
+      "content": "As you implement this, be careful with edge cases, such as when the string has only one balloon or when all balloons are of different colors. These cases should require no removal time."
+    },
+    {
+      "content": "Make sure to handle the indexing correctly. Remember that the `neededTime` array is aligned with the `colors` string, so each index corresponds to the same balloon."
+    },
+    {
+      "content": "Finally, once you have iterated through all the balloons and calculated the total removal time, return this value. This will be your answer to the problem."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == colors.length == neededTime.length",
+    "1 <= n <= 10^5",
+    "1 <= neededTime[i] <= 10^4",
+    "colors contains only lowercase English letters.",
+    "Return the minimum time needed to make the rope colorful."
+  ]
+}

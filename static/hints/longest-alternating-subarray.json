@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an alternating subarray is. An alternating subarray of length m must have m > 1 and follow the pattern where each element alternates between two values, specifically, one value is always 1 greater than the previous one."
+    },
+    {
+      "content": "Remember that a subarray is a contiguous part of the array. This means that when you are checking for alternating subarrays, you should only consider sequences of numbers that are next to each other in the original array."
+    },
+    {
+      "content": "To identify an alternating pattern, consider how you can check pairs of adjacent elements. For two elements nums[i] and nums[i+1], check if nums[i+1] - nums[i] equals 1. This is the starting condition for an alternating subarray."
+    },
+    {
+      "content": "Once you find a valid starting pair, keep extending the subarray by checking the next element. For each new element nums[i+2], ensure it alternates correctly by checking if nums[i+2] equals nums[i+1] - 1."
+    },
+    {
+      "content": "You need to keep track of the maximum length of any alternating subarray you find. Initialize a counter for the current length of the alternating subarray and update a maximum length variable whenever you find a longer subarray."
+    },
+    {
+      "content": "Consider edge cases where the array might not contain any alternating subarrays. If you never find a valid pair that starts an alternating subarray, you should return -1 as specified in the problem."
+    },
+    {
+      "content": "When iterating through the array, make sure to handle the bounds correctly. Since you are checking pairs of elements, ensure you do not go out of bounds by stopping your loop at length - 1."
+    },
+    {
+      "content": "Think about how to reset your current length counter when the alternating condition fails. You might want to set it back to 2 when you find a new valid pair or restart it when the condition is broken."
+    },
+    {
+      "content": "Consider using a loop to traverse the array with an index. For each index, check the current and next element to see if they form a valid alternating pair, and if so, continue checking the next elements."
+    },
+    {
+      "content": "Finally, ensure that after your loop, you check if the maximum length found is greater than 1 before returning it. If no valid alternating subarray was found, return -1."
+    }
+  ],
+  "questionNotes": [
+    "A subarray is defined as contiguous elements within the array.",
+    "An alternating subarray must have a length greater than 1.",
+    "The elements must follow the pattern: s[i+1] = s[i] + 1 and s[i+2] = s[i+1] - 1, continuing this pattern.",
+    "Return -1 if no valid alternating subarray exists.",
+    "Constraints: 2 <= nums.length <= 100 and 1 <= nums[i] <= 10^4."
+  ]
+}

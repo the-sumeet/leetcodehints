@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. Each cell can either be land (0) or water (1). Initially, all cells are land, and they turn to water according to the `cells` array on specific days."
+    },
+    {
+      "content": "Remember that you can only move in four directions: up, down, left, and right. This means you need to check the connectivity of land cells to determine if you can cross from the top to the bottom."
+    },
+    {
+      "content": "Consider how to simulate the flooding of cells day by day. You might want to create a function that marks a cell as water based on the day and checks if you can still traverse from the top to the bottom."
+    },
+    {
+      "content": "Think about how to check if you can traverse the matrix. You could use a breadth-first search (BFS) or depth-first search (DFS) to explore the land cells starting from the top row."
+    },
+    {
+      "content": "Since the problem asks for the last day you can cross, consider using a binary search approach on the days. This will help you efficiently find the maximum day where crossing is still possible."
+    },
+    {
+      "content": "In your binary search, the mid-point represents a day where you will simulate flooding. You need to check if it's possible to traverse the matrix after flooding the cells up to that day."
+    },
+    {
+      "content": "When simulating the flooding, make sure to convert the 1-based coordinates from the `cells` array to 0-based indices for easier matrix manipulation."
+    },
+    {
+      "content": "Keep track of visited cells during your BFS/DFS to avoid cycles and unnecessary checks. This will optimize your traversal algorithm."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when all cells become water or when the matrix is very small. How will your algorithm handle these scenarios?"
+    },
+    {
+      "content": "Consider how to handle the case where you cannot start from any cell in the top row because they are all water. What should your function return in this case?"
+    },
+    {
+      "content": "Make sure to test your implementation with various configurations of the `cells` array, especially those that might lead to early flooding of critical paths."
+    },
+    {
+      "content": "As you implement the binary search, ensure that you correctly adjust the search bounds based on whether crossing is possible or not after each simulation."
+    },
+    {
+      "content": "Remember that the output should be the last day when crossing is possible, which means you need to keep track of the maximum valid day found during your binary search."
+    },
+    {
+      "content": "When implementing the BFS/DFS, you might want to use a queue or stack to manage the cells you need to explore. This will help you systematically check each land cell."
+    },
+    {
+      "content": "Finally, ensure your solution adheres to the constraints provided, especially regarding the size of the matrix and the number of days. This will help you avoid performance issues."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= row, col <= 2 * 10^4",
+    "4 <= row * col <= 2 * 10^4",
+    "cells.length == row * col",
+    "1 <= r_i <= row, 1 <= c_i <= col",
+    "All values in cells are unique."
+  ]
+}

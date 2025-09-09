@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a connected component. A connected component is a subset of a graph where there is a path between any two vertices. You need to identify all such components in the given graph."
+    },
+    {
+      "content": "To find connected components, you can use Depth First Search (DFS) or Breadth First Search (BFS). Begin traversing the graph from each unvisited vertex and mark all reachable vertices as part of the same component."
+    },
+    {
+      "content": "While traversing, keep track of the vertices you visit in each connected component. You can use a list or a set to store these vertices for each component."
+    },
+    {
+      "content": "Once you have identified a connected component, you need to check if it is complete. A complete component with 'k' vertices must have exactly 'k * (k - 1) / 2' edges."
+    },
+    {
+      "content": "To check the number of edges in a connected component, you can create an adjacency list from the edges provided. Count the edges for the vertices in the current component."
+    },
+    {
+      "content": "Remember to handle the case where there are no edges at all. If 'edges' is empty, each vertex is its own component. Thus, the number of complete components would be equal to 'n' in this case."
+    },
+    {
+      "content": "Consider the case where n is small (like 1 or 2). Make sure your solution correctly identifies complete components in these edge cases."
+    },
+    {
+      "content": "As you implement your solution, make sure to avoid counting the same component multiple times. Use a visited set to keep track of which vertices have already been processed."
+    },
+    {
+      "content": "After identifying all connected components, iterate through each component to check if it meets the criteria for being complete. If it does, increment your count of complete components."
+    },
+    {
+      "content": "Finally, return the count of complete components. Ensure your output format matches the requirements, which is simply an integer representing the number of complete components."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 50",
+    "0 <= edges.length <= n * (n - 1) / 2",
+    "edges[i].length == 2",
+    "0 <= a_i, b_i <= n - 1",
+    "a_i != b_i",
+    "There are no repeated edges."
+  ]
+}

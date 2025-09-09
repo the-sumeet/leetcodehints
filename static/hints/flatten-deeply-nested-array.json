@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array. It can contain integers and other arrays, which can themselves contain more arrays. Think about how you will traverse this structure recursively."
+    },
+    {
+      "content": "Consider how you will keep track of the current depth as you traverse the array. You might want to pass the current depth as a parameter to your recursive function."
+    },
+    {
+      "content": "Remember that the depth of the elements in the first array is considered to be 0. This means that when you encounter an array, you need to check if its depth (current depth) is less than the given depth n."
+    },
+    {
+      "content": "When flattening the array, you will need to differentiate between integers and sub-arrays. You can use a type check to determine whether an element is an array or not."
+    },
+    {
+      "content": "If the current depth is less than n, you should flatten the sub-array. If not, you should keep it as is. Think about how you will build the new flattened array."
+    },
+    {
+      "content": "Consider using a helper function that takes the current array and the current depth as parameters. This function should return a new array that is either flattened or contains the original sub-arrays based on the depth condition."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the input array is empty or when n is 0. In these cases, your output should reflect the expected behavior as described in the problem statement."
+    },
+    {
+      "content": "Think about how you will concatenate the results of flattening each element. You might want to use a loop to iterate through the elements of the array and build up your result array."
+    },
+    {
+      "content": "As you build your solution, test it with various inputs to ensure it behaves as expected. Pay attention to arrays with varying levels of nesting and different values of n."
+    },
+    {
+      "content": "Your final function should return the fully constructed flattened array. Make sure to return a new array rather than modifying the input array directly."
+    }
+  ],
+  "questionNotes": [
+    "The depth of the elements in the first array is considered to be 0.",
+    "If n = 0, the output should be the original array.",
+    "If n > 0, only sub-arrays with a depth less than n should be flattened.",
+    "The function should not use the built-in Array.flat method.",
+    "Constraints: 0 <= count of numbers in arr <= 10^5, 0 <= count of subarrays in arr <= 10^5, maxDepth <= 1000, -1000 <= each number <= 1000."
+  ]
+}

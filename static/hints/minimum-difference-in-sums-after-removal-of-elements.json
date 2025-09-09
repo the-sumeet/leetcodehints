@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem's requirements. You need to remove exactly `n` elements from the array `nums` of size `3 * n`."
+    },
+    {
+      "content": "After removing `n` elements, you will be left with `2 * n` elements. These will be split into two equal parts of `n` elements each."
+    },
+    {
+      "content": "The goal is to minimize the difference between the sums of these two parts: `sum_first - sum_second`."
+    },
+    {
+      "content": "Think about how the choice of elements to remove affects the sums of the remaining parts. Removing larger numbers may decrease `sum_first`."
+    },
+    {
+      "content": "Consider the implications of the sums. If you remove elements that are large from the first half, `sum_first` will decrease, potentially minimizing the difference."
+    },
+    {
+      "content": "You can use heaps or priority queues to efficiently manage the largest and smallest elements when deciding which to remove."
+    },
+    {
+      "content": "To explore combinations of removals, think about how to keep track of the largest `n` elements for `sum_first` and the smallest `n` elements for `sum_second`."
+    },
+    {
+      "content": "Consider the prefix and suffix sums of the array. This can help you calculate potential sums quickly after removing elements."
+    },
+    {
+      "content": "You can maintain two separate heaps: one for the smallest `n` elements and another for the largest `n` elements. This will facilitate quick access to the sums."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when all elements are the same or when there are extreme values in `nums`."
+    },
+    {
+      "content": "Remember that the order of elements matters when splitting into two parts. The first `n` elements and the next `n` elements must be contiguous."
+    },
+    {
+      "content": "Think about how to iterate through the possible combinations of removals. You might want to use a sliding window approach or dynamic programming."
+    },
+    {
+      "content": "You need to calculate the sums efficiently after each removal. Consider how to update the sums based on the elements you choose to remove."
+    },
+    {
+      "content": "The final result should be the minimum difference found after trying all valid combinations of removals. Keep track of the minimum difference as you iterate."
+    },
+    {
+      "content": "As a final hint, think about how to structure your code to test various scenarios, especially edge cases, to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: nums.length == 3 * n",
+    "1 <= n <= 10^5",
+    "1 <= nums[i] <= 10^5",
+    "You must remove exactly n elements.",
+    "Return the minimum difference as an integer."
+  ]
+}

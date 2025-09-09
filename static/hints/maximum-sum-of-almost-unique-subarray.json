@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an 'almost unique' subarray means. It requires at least `m` distinct elements within a contiguous subarray of length `k`. Think about how you can track distinct elements as you iterate through the array."
+    },
+    {
+      "content": "Consider using a sliding window approach to efficiently check each subarray of length `k`. As you slide the window, you can add the new element that comes into the window and remove the element that goes out."
+    },
+    {
+      "content": "To keep track of the distinct elements, you could use a hash map (or dictionary) to count the occurrences of each element in the current window. This will help you determine if you have at least `m` distinct elements."
+    },
+    {
+      "content": "Remember to calculate the sum of the elements in the current window. You can maintain a running sum that is updated as you slide the window, which will save you from recalculating the sum from scratch each time."
+    },
+    {
+      "content": "When you slide the window, if the count of distinct elements is at least `m`, compare the current sum to a variable that keeps track of the maximum sum found so far. Update this variable if the current sum is greater."
+    },
+    {
+      "content": "Think about edge cases, such as when `k` is larger than the length of the array or when `m` is greater than `k`. In these cases, you should immediately return 0 since it's impossible to have a valid subarray."
+    },
+    {
+      "content": "Consider what happens if all elements in the array are the same. If `m` is greater than 1, there won't be any almost unique subarrays, so you should return 0."
+    },
+    {
+      "content": "Make sure to handle the case where the maximum sum is not updated at all. If no valid subarray is found, you should return 0. This means initializing your maximum sum variable appropriately."
+    },
+    {
+      "content": "As you implement your solution, pay attention to the constraints. Since `1 <= nums.length <= 2 * 10^4`, your solution should ideally run in O(n) time to handle the upper limits efficiently."
+    },
+    {
+      "content": "Finally, ensure that your implementation correctly returns the maximum sum found. You can structure your code to return 0 if no valid subarray is found, and otherwise return the maximum sum variable."
+    }
+  ],
+  "questionNotes": [
+    "An almost unique subarray must contain at least `m` distinct elements.",
+    "Subarrays must be of length `k`.",
+    "Constraints: 1 <= nums.length <= 2 * 10^4, 1 <= m <= k <= nums.length, 1 <= nums[i] <= 10^9.",
+    "Return 0 if no valid subarray exists."
+  ]
+}

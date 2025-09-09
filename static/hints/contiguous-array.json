@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a contiguous subarray is. A contiguous subarray consists of elements that are next to each other in the array. For example, in the array [0, 1, 0], the subarrays [0, 1] and [1, 0] are both contiguous."
+    },
+    {
+      "content": "Remember that the goal is to find a subarray with an equal number of 0s and 1s. Think about how you might represent the counts of 0s and 1s. What if you converted all 0s to -1s? This could help in balancing the counts."
+    },
+    {
+      "content": "Consider using a prefix sum approach. You can maintain a running total that increases by 1 for each 1 and decreases by 1 for each 0 (or -1, as we discussed). This way, you can track the balance between 0s and 1s."
+    },
+    {
+      "content": "As you iterate through the array, store the first occurrence of each prefix sum in a hash map. If you encounter the same prefix sum again, it indicates that the subarray between these two occurrences has an equal number of 0s and 1s."
+    },
+    {
+      "content": "Pay attention to the initial case. What happens if the prefix sum is 0 at any point? This means that the subarray from the start to the current index has an equal number of 0s and 1s."
+    },
+    {
+      "content": "While iterating, calculate the length of the subarray whenever you find a previously seen prefix sum. Keep track of the maximum length found so far."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the array is very small (like length 1 or 2). What should you return in these cases? Consider the constraints provided."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Using a hash map for storing prefix sums allows you to achieve an efficient solution. What is the time complexity of iterating through the array and looking up values in a hash map?"
+    },
+    {
+      "content": "As a final step, ensure that your implementation correctly returns the maximum length found. What should you return if no valid subarray is found?"
+    },
+    {
+      "content": "Your implementation should be able to handle the maximum constraint of the input size efficiently. Test your solution with large arrays to ensure it performs well."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5; nums[i] is either 0 or 1.",
+    "Return the maximum length of the contiguous subarray with equal number of 0s and 1s.",
+    "Consider edge cases like arrays with all 0s or all 1s."
+  ]
+}

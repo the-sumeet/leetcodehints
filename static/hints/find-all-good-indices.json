@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the conditions that define a 'good' index. An index `i` is good if the `k` elements before it are in non-increasing order and the `k` elements after it are in non-decreasing order."
+    },
+    {
+      "content": "Consider how to check if a sequence of `k` elements is in non-increasing order. You can loop through the elements and compare each element to the next one to ensure that each one is greater than or equal to the next."
+    },
+    {
+      "content": "Similarly, for the non-decreasing order, check if each element in the sequence of `k` elements is less than or equal to the next one. Think about how you can implement these checks efficiently."
+    },
+    {
+      "content": "Remember that the index `i` must satisfy `k <= i < n - k`. This means you will only check indices from `k` to `n - k - 1`. Make sure your loop respects these boundaries."
+    },
+    {
+      "content": "You might want to create two helper arrays: one that tracks whether the last `k` elements are non-increasing and another for the next `k` elements being non-decreasing. This can help you avoid repeated checks."
+    },
+    {
+      "content": "As you iterate through the indices, store the good indices in a list. Make sure to initialize this list before you start checking the indices."
+    },
+    {
+      "content": "Think about edge cases, such as when `k` is at its minimum value or when all elements in `nums` are the same. What would the output be in these scenarios?"
+    },
+    {
+      "content": "After collecting all good indices, remember to return them in increasing order. Since you're adding them in order, you might not need to sort them again."
+    },
+    {
+      "content": "Consider the time complexity of your approach. The naive method could lead to O(n*k) complexity. Can you optimize it to O(n) by using the helper arrays mentioned earlier?"
+    },
+    {
+      "content": "Finally, ensure that your function handles the return format correctly. You should return a list of good indices, and if there are none, return an empty list."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 3 <= n <= 10^5, 1 <= nums[i] <= 10^6, 1 <= k <= n / 2.",
+    "Indexing: The indices are 0-based, and the good indices must satisfy k <= i < n - k.",
+    "Return format: The output should be a list of good indices in increasing order."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic requirements for making a bouquet. You need to gather `k` adjacent flowers that have bloomed on or before a certain day. Think about how you can represent the blooming of flowers over time."
+    },
+    {
+      "content": "Consider the constraints given in the problem. Specifically, if `m * k` is greater than the total number of flowers, it's impossible to create the required bouquets. Make sure to check this condition first."
+    },
+    {
+      "content": "Think about how you can use binary search to find the minimum number of days required. The search space will be between the minimum and maximum values in the `bloomDay` array."
+    },
+    {
+      "content": "When using binary search, your mid-point will represent a day. For each day, you need to check if it is possible to make `m` bouquets. How would you implement this check?"
+    },
+    {
+      "content": "To check if you can make `m` bouquets by a certain day, iterate through the `bloomDay` array. Count the number of adjacent flowers that have bloomed by that day and see if you can form enough bouquets."
+    },
+    {
+      "content": "As you iterate through the `bloomDay` array, maintain a count of consecutive flowers that have bloomed. When this count reaches `k`, you can form a bouquet and reset the count."
+    },
+    {
+      "content": "Remember to handle cases where you have leftover flowers that have bloomed but do not contribute to a complete bouquet. This can affect your total count of bouquets."
+    },
+    {
+      "content": "Think about edge cases, such as when all flowers bloom on the same day or when the `bloomDay` array has only one element. How would these scenarios affect your approach?"
+    },
+    {
+      "content": "Make sure to return -1 if it's impossible to create the required bouquets. This should be done after checking all possible days in your binary search."
+    },
+    {
+      "content": "Finally, ensure your binary search correctly narrows down to the minimum day by adjusting your left and right pointers based on whether you can make the required bouquets by the mid-point day."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: bloomDay.length == n, 1 <= n <= 10^5, 1 <= bloomDay[i] <= 10^9, 1 <= m <= 10^6, 1 <= k <= n.",
+    "If m * k > n, return -1 immediately.",
+    "You need to check if you can make m bouquets by a certain day using binary search.",
+    "The return value should be the minimum number of days or -1 if impossible."
+  ]
+}

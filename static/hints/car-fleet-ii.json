@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. Each car is represented as an array with two elements: position and speed. Make sure you can access these values correctly."
+    },
+    {
+      "content": "Consider how to determine when two cars will collide. A car at position `p1` with speed `s1` and another at `p2` with speed `s2` will collide if they reach the same position at the same time."
+    },
+    {
+      "content": "Think about the formula for time until collision: `time = (position2 - position1) / (speed1 - speed2)`. This will help you calculate the time it takes for one car to catch up to another."
+    },
+    {
+      "content": "Remember that a faster car can only collide with a slower car ahead of it. If `speed1 <= speed2`, the two cars will never collide. How will you handle this case in your code?"
+    },
+    {
+      "content": "As you process the cars from the back to the front, keep track of the last car's collision time. This will help you determine if the current car will collide with the next one or if it will form its own fleet."
+    },
+    {
+      "content": "When calculating the collision time, ensure that you handle cases where the collision time is negative or where cars are already at the same position."
+    },
+    {
+      "content": "Consider using a stack or an array to store the collision times. This will help you manage the relationship between the cars and their respective fleets."
+    },
+    {
+      "content": "Make sure to return -1 for cars that do not collide with the next car. This is important for the output format."
+    },
+    {
+      "content": "Pay attention to the precision required in the output. The problem states that answers within 10^-5 of the actual answers are accepted."
+    },
+    {
+      "content": "Think about edge cases, such as when all cars have the same speed or when the speeds vary significantly. How will these cases affect your calculations?"
+    },
+    {
+      "content": "You might want to create a helper function to calculate the time of collision between two cars. This can simplify your main logic."
+    },
+    {
+      "content": "As you implement your solution, consider how you will handle the loop through the cars. Will you iterate from the last car to the first car or vice versa?"
+    },
+    {
+      "content": "When you determine a collision, remember that the fleet's speed will be the speed of the slower car. This means you need to update the speed for the fleet correctly."
+    },
+    {
+      "content": "While testing your solution, use the provided examples and create additional test cases, especially edge cases, to ensure your code handles all scenarios."
+    },
+    {
+      "content": "Finally, ensure your solution is efficient enough to handle the upper limit of constraints, especially since n can be as large as 100,000."
+    }
+  ],
+  "questionNotes": [
+    "Input is an array of cars where each car is represented as [position, speed].",
+    "Positions are guaranteed to be strictly increasing.",
+    "Return an array where answer[i] is the time of collision or -1 if no collision occurs.",
+    "Collision time must be accurate within 10^-5.",
+    "Consider edge cases such as cars with the same speed or varying speeds."
+  ]
+}

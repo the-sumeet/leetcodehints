@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a convex polygon is. A polygon is convex if all its interior angles are less than 180 degrees, which means that any line segment connecting two points in the polygon lies entirely inside or on the polygon."
+    },
+    {
+      "content": "Consider the input format. You will receive a list of points representing the vertices of the polygon. Ensure that you handle the points as pairs of coordinates, e.g., [x, y]."
+    },
+    {
+      "content": "Think about how to determine if a polygon is convex. One approach is to check the orientation of the triplet of points (previous, current, next) as you iterate through the vertices."
+    },
+    {
+      "content": "You can use the cross product to determine the orientation of three points. If the cross product is positive, the points make a left turn; if negative, they make a right turn; and if zero, they are collinear."
+    },
+    {
+      "content": "When iterating through the points, remember to wrap around to the beginning of the list after reaching the last point. This ensures that you can check the last point with the first point."
+    },
+    {
+      "content": "Consider edge cases such as degenerate polygons (e.g., all points are collinear) or polygons with fewer than 3 points. A polygon must have at least 3 vertices to be considered valid."
+    },
+    {
+      "content": "You may want to sort the points first to ensure they are in a consistent order (e.g., counterclockwise) before checking for convexity. This can simplify the orientation checks."
+    },
+    {
+      "content": "As you check the orientation of the points, keep track of the direction (left or right) of the first triplet. If any subsequent triplet has a different orientation, the polygon is not convex."
+    },
+    {
+      "content": "Make sure to handle duplicates in the input points. If the input contains duplicate vertices, it can affect the convexity check and should be addressed beforehand."
+    },
+    {
+      "content": "Finally, after implementing your checks, ensure that your function returns a boolean indicating whether the polygon is convex. You might structure your function to return true if all checks pass, or false otherwise."
+    }
+  ],
+  "questionNotes": [
+    "Input is a list of points, each represented as [x, y].",
+    "A polygon is convex if all interior angles are < 180 degrees.",
+    "Must handle edge cases like collinear points and duplicates.",
+    "Return format is a boolean indicating convexity."
+  ]
+}

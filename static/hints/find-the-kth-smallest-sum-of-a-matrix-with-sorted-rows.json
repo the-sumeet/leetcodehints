@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. Each row is sorted in non-decreasing order, which means the smallest elements are at the beginning of each row."
+    },
+    {
+      "content": "Consider how you can form an array by picking one element from each row. The sum of these elements will be your target to find the k-th smallest."
+    },
+    {
+      "content": "Think about how many possible combinations you can create. If the matrix has m rows and n columns, the total combinations are n^m. However, you only need the k-th smallest sum."
+    },
+    {
+      "content": "You can use a min-heap (or priority queue) to efficiently track the smallest sums. Start by pushing the smallest sum (the sum of the first elements of each row) into the heap."
+    },
+    {
+      "content": "Each time you pop the smallest sum from the heap, you can generate new sums by replacing one of the elements with the next larger element from the corresponding row."
+    },
+    {
+      "content": "Be careful to avoid duplicates. When generating new sums, ensure that you only push unique combinations into the heap."
+    },
+    {
+      "content": "Think about how to represent the current indices of elements you have chosen from each row. This will help you in generating new sums."
+    },
+    {
+      "content": "When you pop an element from the heap, you'll need to push new sums formed by incrementing the index of one of the rows. For example, if you have chosen the first element from row 0, consider choosing the second element instead."
+    },
+    {
+      "content": "Keep track of how many sums you have popped from the heap. Once you pop the k-th sum, you can return it as your answer."
+    },
+    {
+      "content": "Consider edge cases such as when k is 1 or when the matrix has only one row. What would the output be in these scenarios?"
+    },
+    {
+      "content": "Remember that the constraints allow for a maximum of 200 sums to be considered, so your approach should be efficient enough to handle this within a reasonable time."
+    },
+    {
+      "content": "As you implement your solution, test it with the provided examples to ensure your logic holds. Pay attention to the output format as well."
+    },
+    {
+      "content": "You may also want to think about the time complexity of your approach. Using a min-heap will help keep it manageable as you only need to push and pop k elements."
+    },
+    {
+      "content": "Before finalizing your solution, consider edge cases like all elements being the same or very large values in the matrix."
+    },
+    {
+      "content": "To summarize your approach: use a min-heap to store the sums, track indices of chosen elements, and ensure to generate new sums without duplicates."
+    }
+  ],
+  "questionNotes": [
+    "Matrix rows are sorted in non-decreasing order.",
+    "You must choose exactly one element from each row.",
+    "Return the k-th smallest sum among all possible arrays.",
+    "Constraints: 1 <= m, n <= 40; 1 <= k <= min(200, n^m).",
+    "mat[i] is a non-decreasing array.",
+    "Be mindful of duplicates when generating new sums."
+  ]
+}

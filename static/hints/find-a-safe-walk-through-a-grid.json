@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. Each cell can either be safe (0) or unsafe (1). Your health decreases by 1 for every unsafe cell you step on. Make sure to visualize how your health changes as you move through the grid."
+    },
+    {
+      "content": "Consider how you can represent your current position and health. You might want to use a queue for exploring paths, especially if you think of this problem in terms of breadth-first search (BFS)."
+    },
+    {
+      "content": "Think about the possible movements from any cell. You can move up, down, left, or right. Ensure you stay within the bounds of the grid while checking for valid moves."
+    },
+    {
+      "content": "What happens if you reach a cell that is unsafe? Make sure to check if your health allows you to step into an unsafe cell. If your health drops to 0 or below, you cannot continue."
+    },
+    {
+      "content": "When exploring paths, keep track of the cells you've already visited. This will prevent you from getting stuck in cycles and help you avoid unnecessary computations."
+    },
+    {
+      "content": "Consider using a priority queue or a simple queue to explore paths based on remaining health. This can help you prioritize paths that allow you to maintain a higher health level."
+    },
+    {
+      "content": "Think about edge cases, such as when the grid is very small (e.g., 2x2) or when all cells are unsafe except for the start and end points. How would your algorithm handle these scenarios?"
+    },
+    {
+      "content": "You can implement a recursive depth-first search (DFS) or an iterative BFS. Both approaches can work, but remember to check your health after each move to ensure you don't exceed your limits."
+    },
+    {
+      "content": "As you implement your pathfinding algorithm, consider the health threshold. You only need to reach the bottom-right corner with at least 1 health point remaining. Keep this in mind when deciding whether to continue exploring a path."
+    },
+    {
+      "content": "Finally, ensure that your function returns a boolean value. It should return true if you can reach the target cell with sufficient health, and false otherwise. Be careful with your return conditions!"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == grid.length, n == grid[i].length, 1 <= m, n <= 50, 2 <= m * n, 1 <= health <= m + n.",
+    "grid[i][j] is either 0 (safe) or 1 (unsafe).",
+    "You start at (0, 0) and aim to reach (m - 1, n - 1).",
+    "Health must remain positive (>= 1) to continue moving."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find the maximum frequency of any element in the array after performing at most `k` increment operations on any of the elements."
+    },
+    {
+      "content": "Consider how you can utilize the allowed `k` operations. The goal is to make as many elements equal to the most frequently occurring element as possible. Think about how many increments are needed to turn one element into another."
+    },
+    {
+      "content": "Sort the array first. Sorting can help you easily identify the closest elements to increment and can simplify the calculation of the number of operations needed to equalize elements."
+    },
+    {
+      "content": "As you iterate through the sorted array, consider using a sliding window approach. This will allow you to efficiently calculate how many increments are needed to make all elements in the current window equal to the rightmost element of the window."
+    },
+    {
+      "content": "When using the sliding window, maintain a running sum of the elements in the current window. This will help you quickly calculate the total number of increments required to make all elements in the window equal to the maximum element in that window."
+    },
+    {
+      "content": "Remember to check if the total increments needed exceed `k`. If they do, you need to adjust the left boundary of your window to reduce the number of required increments."
+    },
+    {
+      "content": "Keep track of the maximum frequency found during your iterations. This will be your answer after you finish processing the array."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is very small compared to the differences between the elements. How might this affect the maximum frequency you can achieve?"
+    },
+    {
+      "content": "Make sure to handle cases where all elements are the same or when `k` is large enough to equalize all elements. What would the output be in these scenarios?"
+    },
+    {
+      "content": "Finally, your implementation should return the maximum frequency found. Ensure that your logic correctly handles the constraints, especially the limits on the size of `nums` and the values of `k`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^5",
+    "1 <= k <= 10^5",
+    "You can perform at most `k` operations.",
+    "Return the maximum possible frequency of any element."
+  ]
+}

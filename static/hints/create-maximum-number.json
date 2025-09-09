@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You need to create a number of length `k` from two arrays, `nums1` and `nums2`, while preserving the order of digits from each array."
+    },
+    {
+      "content": "Consider how many digits you can take from each array. If you take `i` digits from `nums1`, then you must take `k - i` digits from `nums2`. Make sure that `0 <= i <= min(k, m)` and `0 <= k - i <= n`."
+    },
+    {
+      "content": "Think about how to select the maximum digits from each array. You could use a greedy approach to pick digits that are larger and thus contribute to a larger final number."
+    },
+    {
+      "content": "To select the maximum `i` digits from `nums1`, you can use a stack. Iterate through `nums1`, and for each digit, decide whether to add it to the stack or pop smaller digits from the stack."
+    },
+    {
+      "content": "When using the stack to select digits, remember that you can only pop from the stack if there are enough remaining digits to reach `k` total digits."
+    },
+    {
+      "content": "Implement a helper function that takes an array and a number of digits to select, and returns the maximum possible sequence of that length."
+    },
+    {
+      "content": "After obtaining the maximum subsequences from both arrays, you'll need to merge them to form the final number. This merging should also maintain the order of digits."
+    },
+    {
+      "content": "When merging the two maximum subsequences, compare the leading digits of both sequences. Always choose the larger leading digit to maximize the result."
+    },
+    {
+      "content": "If the leading digits are the same, you need to look further into the sequences to decide which subsequence to take from. This is crucial for tie-breaking."
+    },
+    {
+      "content": "Consider edge cases where one of the arrays might be exhausted before the other. Ensure your merge logic can handle these scenarios gracefully."
+    },
+    {
+      "content": "Remember that the final output needs to be an array of integers. Be cautious about the format of your return value."
+    },
+    {
+      "content": "Make sure to test your solution with various inputs, including edge cases like when `k` equals the length of one of the arrays."
+    },
+    {
+      "content": "Think about the time complexity of your approach. The selection and merging processes should be efficient enough to handle the maximum constraints."
+    },
+    {
+      "content": "You might want to use a nested loop to try all possible combinations of digits taken from `nums1` and `nums2`, but ensure this doesn't lead to excessive runtime."
+    },
+    {
+      "content": "Finally, combine all the pieces: select the maximum digits from both arrays, merge them, and return the result. Keep your code modular for clarity."
+    }
+  ],
+  "questionNotes": [
+    "You must preserve the relative order of digits from each array.",
+    "The maximum length `k` can be at most `m + n`.",
+    "Constraints ensure `1 <= m, n <= 500` and `1 <= k <= m + n`.",
+    "No leading zeros are allowed in the input arrays."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a continuous subarray is. A continuous subarray is a contiguous sequence of elements within the array. For example, in the array [5, 4, 2, 4], the subarray [4, 2] is continuous."
+    },
+    {
+      "content": "Pay attention to the condition for continuity: the absolute difference between any two elements in the subarray must be at most 2. This means that for any two elements nums[i1] and nums[i2] in the subarray, |nums[i1] - nums[i2]| <= 2."
+    },
+    {
+      "content": "Consider how you can efficiently find all continuous subarrays. A brute force approach would involve checking all possible subarrays, but this can be inefficient. Think about using a sliding window or two-pointer technique to maintain a valid range."
+    },
+    {
+      "content": "When using a sliding window, you can maintain two pointers, `start` and `end`, that represent the current subarray. As you expand the `end` pointer to include new elements, check if the condition for continuity is still satisfied."
+    },
+    {
+      "content": "If the condition is violated (i.e., |nums[end] - nums[i]| > 2 for any i in the window), you will need to move the `start` pointer to shrink the window until the condition is satisfied again."
+    },
+    {
+      "content": "Count the number of valid subarrays as you adjust the `start` and `end` pointers. For each valid position of `end`, the number of valid subarrays ending at `end` can be calculated based on the current position of `start`."
+    },
+    {
+      "content": "Remember that if `end` is at position j and `start` is at position i, all subarrays from i to j are valid. The count of these subarrays is (j - i + 1)."
+    },
+    {
+      "content": "Consider edge cases, such as when the array has only one element. In this case, the only subarray is the element itself, which is also continuous."
+    },
+    {
+      "content": "Make sure to handle cases where all elements in the array are the same or differ by 1 or 2. These cases will yield the maximum number of continuous subarrays."
+    },
+    {
+      "content": "Finally, put together your approach in code. Use a loop to iterate through the array with the `end` pointer, and adjust the `start` pointer as needed while keeping track of the count of valid subarrays. Ensure to return the total count at the end."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "Subarrays must be contiguous and non-empty.",
+    "The absolute difference condition must hold for all pairs of indices in the subarray."
+  ]
+}

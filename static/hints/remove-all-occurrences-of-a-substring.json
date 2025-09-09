@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to find a substring within a string. You can use methods like `indexOf` in many programming languages to locate the first occurrence of `part` in `s`."
+    },
+    {
+      "content": "Once you find the index of the substring `part`, think about how to remove it from `s`. You can use string slicing or concatenation to create a new string without the found substring."
+    },
+    {
+      "content": "Remember that after removing a substring, the string may still contain other occurrences of `part`. You need to repeat the process until no occurrences are left."
+    },
+    {
+      "content": "Consider using a loop to repeatedly search for and remove `part` from `s`. Ensure that your loop continues until `part` is no longer found in `s`."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when `part` is longer than `s` or when `part` does not exist in `s` at all. What should your function return in these cases?"
+    },
+    {
+      "content": "Think about the performance of your solution. Since you may be modifying the string multiple times, consider how this affects time complexity. Are there ways to optimize the process?"
+    },
+    {
+      "content": "You might find it useful to use a stack-like approach to build the result string. As you iterate through `s`, you can push characters onto a stack and check if the top of the stack matches `part`."
+    },
+    {
+      "content": "When using a stack, remember to check the last few characters each time you add a new character. If they match `part`, pop them off the stack."
+    },
+    {
+      "content": "After processing all characters, convert your stack back to a string. This will be your final result after all occurrences of `part` have been removed."
+    },
+    {
+      "content": "Make sure to handle cases where the resulting string can be empty after all removals. Your function should still return a valid string, even if it's an empty one."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 1000, 1 <= part.length <= 1000.",
+    "Both s and part consist of lowercase English letters.",
+    "Return the final string after all occurrences of part have been removed.",
+    "Ensure to handle edge cases where part is not found or is longer than s."
+  ]
+}

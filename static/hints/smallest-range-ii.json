@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to minimize the score, which is defined as the difference between the maximum and minimum values of the modified array. Remember, for each element in the array, you can either add or subtract the integer k."
+    },
+    {
+      "content": "Consider the implications of the operations you can perform. For any number in the array, if you add k, it will increase the maximum potential value, while subtracting k will decrease the minimum potential value. Think about how these operations affect the overall range."
+    },
+    {
+      "content": "What happens if the array has only one element? The score will always be 0 because the maximum and minimum values are the same. This is a special case to keep in mind."
+    },
+    {
+      "content": "When you have multiple elements, sorting the array can help you visualize the maximum and minimum values clearly. Once sorted, consider how the largest and smallest elements can be modified by adding or subtracting k."
+    },
+    {
+      "content": "After sorting, focus on the new potential minimum and maximum values. The smallest possible maximum value can be derived from the original maximum minus k, and the largest possible minimum value can be derived from the original minimum plus k."
+    },
+    {
+      "content": "Think about edge cases where k is larger than the difference between the maximum and minimum values in the original array. In such cases, you may be able to make the score zero."
+    },
+    {
+      "content": "To find the minimum score, calculate the new maximum and minimum for all possible combinations of adding or subtracting k. This can be simplified by focusing on the sorted array and adjusting the extreme values."
+    },
+    {
+      "content": "Use the sorted array to define the new potential maximum as 'max(nums) - k' and the new potential minimum as 'min(nums) + k'. The minimum score can be computed as 'new_max - new_min'."
+    },
+    {
+      "content": "Remember to handle the case where the adjusted minimum exceeds the adjusted maximum. In such cases, the score should be zero, as all elements can be adjusted to fall within the same range."
+    },
+    {
+      "content": "Finally, implement the logic to compute the minimum score based on the sorted array and the adjustments. The formula will be: min(max(nums) - k - (min(nums) + k), 0)."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^4",
+    "0 <= nums[i] <= 10^4",
+    "0 <= k <= 10^4",
+    "The score is defined as max(nums) - min(nums).",
+    "You can change each nums[i] to nums[i] + k or nums[i] - k."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for a string of brackets to be balanced. A balanced string must have every opening bracket '[' matched with a closing bracket ']' in the correct order."
+    },
+    {
+      "content": "Consider how you can identify unbalanced sections of the string. You can maintain a counter that tracks the balance of brackets as you iterate through the string, incrementing for '[' and decrementing for ']'"
+    },
+    {
+      "content": "As you traverse the string, note when the balance goes negative. This indicates that there are more closing brackets than opening ones at that point, which contributes to the unbalance."
+    },
+    {
+      "content": "Count how many times the balance goes negative. Each time it does, it indicates a need for a swap to correct the imbalance at that point."
+    },
+    {
+      "content": "Remember that each swap can correct two imbalances. So, if you count the total number of times the balance goes negative, you may need to divide this count by 2 to get the minimum swaps needed."
+    },
+    {
+      "content": "Be careful with edge cases. For example, if the string is already balanced from the start, your algorithm should return 0 swaps."
+    },
+    {
+      "content": "Think about the efficiency of your solution. You need to ensure that your approach runs in linear time, O(n), since the maximum length of the string can be up to 10^6."
+    },
+    {
+      "content": "Consider how you will implement the counting of swaps. You can use a single pass to calculate the balance and the number of negative imbalances."
+    },
+    {
+      "content": "When implementing, remember that you only need to track the minimum number of swaps, not the actual swaps themselves. Focus on counting the necessary corrections."
+    },
+    {
+      "content": "Finally, ensure that your final calculation correctly reflects the number of swaps required. If you counted the negative balances, remember to divide by 2 to get the final answer."
+    }
+  ],
+  "questionNotes": [
+    "The string length n is always even.",
+    "The string consists of exactly n/2 opening brackets '[' and n/2 closing brackets ']'",
+    "Return the minimum number of swaps needed to balance the string.",
+    "Constraints: 2 <= n <= 10^6, s[i] is either '[' or ']'"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to select characters from the words list to form the target. You can only select a character from a word if it matches the current character in the target."
+    },
+    {
+      "content": "Remember that once you select a character from a word at index k, you can no longer use any character from that word at index k or to the left. This constraint is crucial for forming the target string."
+    },
+    {
+      "content": "Consider how you can iterate through the target string. You need to keep track of which characters you can still use from each word as you build the target from left to right."
+    },
+    {
+      "content": "Think about using dynamic programming to store the number of ways to form the target up to each character. This will help you build upon previous results."
+    },
+    {
+      "content": "Define a DP array where dp[i] represents the number of ways to form the target up to the i-th character. Initialize dp[0] to 1, as there is one way to form an empty target."
+    },
+    {
+      "content": "For each character in the target, you need to check all words to see if they can contribute to forming the target at that position. Keep a count of how many times each character appears at each index."
+    },
+    {
+      "content": "When checking each word, if the character at the current target index matches a character in the word, you need to update your DP array based on the previous valid states."
+    },
+    {
+      "content": "Make sure to account for the indices properly. If you select a character from a word at index k, the next character from that word must come from index k+1 or greater."
+    },
+    {
+      "content": "Consider edge cases, such as when the target string is longer than the total number of characters available in the words or when certain characters in the target are not present in any of the words."
+    },
+    {
+      "content": "When updating your DP array, remember to use modular arithmetic to avoid overflow. The problem specifies returning results modulo 10^9 + 7."
+    },
+    {
+      "content": "You might want to create a helper function that counts occurrences of each character at each index across all words. This will simplify the logic in your main loop."
+    },
+    {
+      "content": "As you build your solution, keep in mind the time complexity. You want to ensure that your approach can handle the upper limits of the input sizes efficiently."
+    },
+    {
+      "content": "Think about how you can optimize the selection process. Instead of checking every word for every character, can you pre-compute some information to speed up the process?"
+    },
+    {
+      "content": "Once you have your DP array filled, the final answer will be in dp[target.length]. Make sure to verify that you're correctly counting all valid combinations."
+    },
+    {
+      "content": "Consider edge cases like all characters in the target being the same or having multiple words that can contribute to the same character in the target. How does this affect your counts?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= words.length <= 1000, 1 <= words[i].length <= 1000, 1 <= target.length <= 1000.",
+    "All strings in words have the same length.",
+    "Return the number of ways modulo 10^9 + 7.",
+    "You can use multiple characters from the same string as long as the selection rules are followed."
+  ]
+}

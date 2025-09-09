@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input matrices. Both img1 and img2 are n x n binary matrices, meaning they contain only 0s and 1s. This will help you visualize how the images can overlap."
+    },
+    {
+      "content": "Consider how you can translate img1 over img2. You can move img1 in four directions: left, right, up, and down. Think about how many different translations you might need to check."
+    },
+    {
+      "content": "To calculate the overlap, you'll need to count how many positions have a 1 in both img1 and img2 after a translation. This means you'll need a way to check each position in the matrices for overlaps."
+    },
+    {
+      "content": "Remember that translations can move img1 outside the bounds of the matrix. Ensure that your counting logic only considers valid positions within the bounds of img2."
+    },
+    {
+      "content": "You can represent the translation of img1 by adjusting its indices. For example, moving img1 right by one unit can be represented by shifting all indices of img1 to the right."
+    },
+    {
+      "content": "Think about how to efficiently calculate the overlap for each translation. You might want to use nested loops to iterate over possible translations and another nested loop to count the overlaps."
+    },
+    {
+      "content": "Keep track of the maximum overlap found across all translations. You can initialize a variable to store this maximum and update it whenever you find a larger overlap."
+    },
+    {
+      "content": "Consider edge cases, such as when both images are completely filled with 0s. What should your function return in such scenarios? Make sure to handle these cases appropriately."
+    },
+    {
+      "content": "When checking for overlaps, you can use a helper function that takes the translated indices of img1 and compares them to the corresponding indices in img2. This will keep your main logic clean."
+    },
+    {
+      "content": "Finally, after iterating through all possible translations and calculating overlaps, ensure your function returns the maximum overlap found. You might want to return 0 if no overlaps exist."
+    }
+  ],
+  "questionNotes": [
+    "Both img1 and img2 are n x n matrices with binary values (0 or 1).",
+    "You can translate img1 in four directions: left, right, up, down.",
+    "Only count overlaps for positions that remain within the bounds of img2.",
+    "Return the largest possible overlap as an integer.",
+    "Constraints: 1 <= n <= 30."
+  ]
+}

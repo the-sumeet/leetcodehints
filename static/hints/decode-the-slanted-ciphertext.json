@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the original text is placed in the matrix. The text is filled from top-left to bottom-right in a zigzag pattern. Visualizing this can help you understand how to decode it."
+    },
+    {
+      "content": "Consider how many columns the matrix will have. The number of columns can be determined based on the length of `encodedText` and the number of `rows`. Remember, the last column should not be empty."
+    },
+    {
+      "content": "Think about how the characters are filled into the matrix. The first `rows` characters fill the first column, the next `rows` characters fill the second column, and so on. This means you will need to calculate the number of columns based on the length of `encodedText`."
+    },
+    {
+      "content": "As you fill the matrix, keep track of the characters' positions. You might want to create a 2D list (matrix) to represent the filled characters. Make sure to account for the spaces that are filled in the empty cells."
+    },
+    {
+      "content": "Once you have filled the matrix, think about how to read the characters back in the correct order. You will need to traverse the matrix in a specific order to reconstruct the original text."
+    },
+    {
+      "content": "When reconstructing the original text, remember that you need to read the characters column by column, but in the order of filling (blue cells first, then red, etc.). This means you will need to iterate through the columns and then through the rows."
+    },
+    {
+      "content": "Consider edge cases, such as when `encodedText` is empty or when there is only one row. In these cases, the output should be straightforward since there are fewer complexities in the encoding."
+    },
+    {
+      "content": "Make sure to handle spaces correctly. The original text does not have trailing spaces, but the encoded text may have spaces filling empty cells. This will affect how you read the characters back."
+    },
+    {
+      "content": "You can calculate the number of columns by dividing the length of `encodedText` by `rows`, rounding up if necessary. This will help you determine how to fill the matrix correctly."
+    },
+    {
+      "content": "Finally, once you have the filled matrix, you can start reconstructing the original text by concatenating the characters in the correct order. Keep in mind the zigzag pattern of filling to ensure you get the right sequence."
+    }
+  ],
+  "questionNotes": [
+    "The length of `encodedText` can be up to 10^6.",
+    "The `encodedText` consists of lowercase English letters and spaces only.",
+    "The original text does not have trailing spaces.",
+    "1 <= rows <= 1000.",
+    "The test cases are generated such that there is only one possible originalText."
+  ]
+}

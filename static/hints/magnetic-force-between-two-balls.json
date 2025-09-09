@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to place `m` balls into `n` baskets such that the minimum magnetic force between any two balls is maximized. The magnetic force is defined as the absolute difference in positions of the balls."
+    },
+    {
+      "content": "Consider the positions of the baskets as sorted. This is important because placing balls in sorted order can help you visualize the distances more clearly. For example, if the positions are [1, 2, 3, 4, 7], the distances between them are straightforward."
+    },
+    {
+      "content": "Think about the concept of binary search. You can use binary search to find the maximum possible minimum magnetic force. The search space will be between 0 and the difference between the maximum and minimum positions in the array."
+    },
+    {
+      "content": "Define a helper function that checks if it is possible to place `m` balls in the baskets with at least a certain minimum distance (force) between them. This function will help you determine if a mid-point in your binary search is valid."
+    },
+    {
+      "content": "In your helper function, start placing the first ball in the first basket. For each subsequent ball, only place it in a basket if the distance from the last placed ball is greater than or equal to the current minimum distance you are checking."
+    },
+    {
+      "content": "Make sure to handle edge cases. For instance, if `m` is equal to `n`, each ball must go into a separate basket, and the minimum force will be the smallest distance between any two adjacent baskets."
+    },
+    {
+      "content": "As you implement the binary search, remember to adjust your search bounds based on whether the current minimum distance is achievable. If it is, you can try for a larger distance; if not, reduce the distance."
+    },
+    {
+      "content": "Keep track of the best (maximum) minimum distance found during the binary search. This will be your answer once the search completes."
+    },
+    {
+      "content": "Double-check the constraints. Ensure that you are handling the case where `position` can have up to 100,000 elements and the values can be as large as 1 billion. Your solution should be efficient, ideally O(n log(max_distance))."
+    },
+    {
+      "content": "Finally, implement the binary search and the helper function together. You will need to call the helper function multiple times with different mid-values during the binary search to find the optimal solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == position.length, 2 <= n <= 10^5, 1 <= position[i] <= 10^9, all integers in position are distinct, 2 <= m <= position.length.",
+    "The output should be the maximum possible minimum magnetic force.",
+    "Be careful with the indexing and ensure that you account for all baskets when placing the balls."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a right shift means in this context. A right shift moves every element in the array one position to the right, and the last element wraps around to the front. For example, if nums = [1, 2, 3], after one right shift, it becomes [3, 1, 2]."
+    },
+    {
+      "content": "Consider how you can determine if the array is already sorted. You can check if each element is less than the next one, wrapping around to the first element after the last. This will help you identify if 0 shifts are needed."
+    },
+    {
+      "content": "Think about the properties of a sorted array. If you can find a single point where the order breaks (i.e., an element is greater than the next), that might indicate where the array can be rotated to become sorted."
+    },
+    {
+      "content": "When identifying the breaking point, remember that the array must be split into two sorted segments. For example, in nums = [3, 4, 5, 1, 2], the break occurs between 5 and 1."
+    },
+    {
+      "content": "Once you find the breaking point, you can calculate how many right shifts would be necessary to sort the array. This can be done by counting the number of elements after the break point, which will tell you how many shifts are needed."
+    },
+    {
+      "content": "Keep in mind the constraints: the array contains distinct positive integers. This means there won't be any duplicates, simplifying your checks for sorted order."
+    },
+    {
+      "content": "Consider edge cases, such as arrays of length 1 or 2. An array with one element is always sorted, while an array of two elements can only be sorted with at most one right shift."
+    },
+    {
+      "content": "If you find more than one break point in the array, it indicates that the array cannot be sorted by right shifts. Ensure you check for this condition as you analyze the array."
+    },
+    {
+      "content": "When calculating the number of shifts, ensure that your result is within the bounds of the array length. If the number of required shifts exceeds the length of the array, you might need to adjust your logic."
+    },
+    {
+      "content": "Finally, implement a way to return -1 if sorting is not possible. This will be the case if there are multiple breaks in the sorted order. Make sure to handle this condition before returning the number of shifts."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 100",
+    "1 <= nums[i] <= 100",
+    "nums contains distinct integers.",
+    "Return -1 if sorting is not possible."
+  ]
+}

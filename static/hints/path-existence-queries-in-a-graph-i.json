@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Consider how to represent the graph based on the given conditions. You need to create edges between nodes based on the absolute difference of their corresponding values in the `nums` array. Remember that an edge exists between nodes `i` and `j` if `|nums[i] - nums[j]| <= maxDiff`."
+    },
+    {
+      "content": "Since `nums` is sorted, think about how this can help you efficiently determine which nodes can be connected. You might not need to compare every pair of nodes directly."
+    },
+    {
+      "content": "Explore using a two-pointer technique or a sliding window approach to identify all nodes that can be connected to each other based on the `maxDiff` constraint. This can help in building the graph efficiently."
+    },
+    {
+      "content": "Once you determine the connected components of the graph, you can use a union-find (disjoint set) data structure. This will allow you to efficiently check if two nodes belong to the same connected component."
+    },
+    {
+      "content": "When processing the queries, remember that you need to return a boolean array indicating whether a path exists between the queried nodes. This means for each query, you should check if both nodes are in the same connected component."
+    },
+    {
+      "content": "Consider edge cases such as when `n` is 1. In this case, there is only one node, and any query involving this node should return true since a node can always reach itself."
+    },
+    {
+      "content": "Think about how to handle cases where `maxDiff` is 0. In this scenario, only nodes with the same value in `nums` can be connected. This can significantly affect the connectivity of the graph."
+    },
+    {
+      "content": "Make sure to analyze the time complexity of your approach. The constraints allow for up to 100,000 nodes and queries, so your solution should ideally be close to O(n log n) or O(n) for the main operations."
+    },
+    {
+      "content": "As you implement the union-find structure, remember to include path compression and union by rank to optimize the find and union operations, making your solution efficient for multiple queries."
+    },
+    {
+      "content": "Finally, implement the logic to process each query after you have built the connected components. For each query, simply check if the two nodes belong to the same component and return the result."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n == nums.length <= 100000",
+    "0 <= nums[i] <= 100000, nums is sorted in non-decreasing order.",
+    "0 <= maxDiff <= 100000",
+    "1 <= queries.length <= 100000, queries[i] == [u_i, v_i]",
+    "0 <= u_i, v_i < n"
+  ]
+}

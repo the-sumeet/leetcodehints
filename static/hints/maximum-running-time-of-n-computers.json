@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You have `n` computers and an array of batteries, each with a specific runtime. Your goal is to maximize the time all `n` computers can run simultaneously."
+    },
+    {
+      "content": "Consider how you can initially distribute the batteries among the computers. Each computer can start with one battery. Think about the implications of this initial setup on the total running time."
+    },
+    {
+      "content": "Remember that after the initial placement, you can swap batteries between computers. This means you need to think about how to manage battery usage over time to maximize running time."
+    },
+    {
+      "content": "Focus on the total energy available from all batteries. The sum of all battery runtimes gives you a baseline of how long you could run the computers if you could distribute the energy perfectly."
+    },
+    {
+      "content": "Calculate the total runtime of all batteries. If the total runtime is less than `n`, the maximum running time is limited by the total runtime divided by `n`."
+    },
+    {
+      "content": "Consider edge cases, such as when `n` is equal to the number of batteries. How does this affect your strategy for maximizing running time?"
+    },
+    {
+      "content": "Think about the scenario where the batteries have very different runtimes. How would you prioritize which batteries to use first to extend the running time?"
+    },
+    {
+      "content": "You might want to implement a binary search approach to find the maximum running time. The idea is to check if a certain time `T` is feasible for running all `n` computers."
+    },
+    {
+      "content": "When checking feasibility for a given time `T`, calculate how many total minutes you can gather from the batteries. For each battery, determine how many computers it can support for `T` minutes."
+    },
+    {
+      "content": "To check if `T` minutes is feasible, sum up the minimum of `batteries[i]` and `T` for each battery. This will give you the total minutes available from all batteries."
+    },
+    {
+      "content": "If the total minutes available from all batteries is greater than or equal to `n * T`, then `T` is feasible. Otherwise, it is not."
+    },
+    {
+      "content": "Make sure to handle large inputs efficiently. The constraints allow for up to `100,000` batteries, so your solution should be optimized to run within a reasonable time frame."
+    },
+    {
+      "content": "Consider edge cases where all batteries have the same runtime. How does this simplify your calculations for maximum running time?"
+    },
+    {
+      "content": "Remember that the batteries cannot be recharged, so once they are used, they are drained. This fact should influence your strategy on battery swapping."
+    },
+    {
+      "content": "Outline your approach before coding. Start with defining your binary search boundaries: the minimum is `0` and the maximum could be the total runtime divided by `n`."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n <= batteries.length <= 10^5",
+    "1 <= batteries[i] <= 10^9",
+    "You can swap batteries between computers any number of times.",
+    "Batteries cannot be recharged.",
+    "Return the maximum number of minutes all computers can run simultaneously."
+  ]
+}

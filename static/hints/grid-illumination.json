@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how lamps illuminate the grid. Each lamp affects its own cell, the entire row, the entire column, and the two diagonals. Think about how you can represent this illumination in a data structure."
+    },
+    {
+      "content": "Consider using sets or dictionaries to keep track of which rows, columns, and diagonals are illuminated. This will help you efficiently check if a cell is illuminated during the queries."
+    },
+    {
+      "content": "For the diagonal illumination, remember that there are two types: one where row and column indices increase together (\\) and one where one increases while the other decreases (/). You can derive the diagonal identifiers using simple math."
+    },
+    {
+      "content": "When processing the queries, remember that you need to check if the queried cell is illuminated. This involves checking your sets or dictionaries for the corresponding row, column, and diagonal."
+    },
+    {
+      "content": "After checking illumination for a query, you need to turn off the lamp at the queried position and its adjacent lamps. Think about how you can efficiently update your data structures to reflect this change."
+    },
+    {
+      "content": "An important detail is how to identify adjacent lamps. A lamp is adjacent if it shares a side or corner with the queried cell. You can represent this with relative coordinates."
+    },
+    {
+      "content": "When turning off lamps, ensure that you update your illumination tracking structures. If a lamp is turned off, check if it affects the illumination status of its row, column, or diagonals."
+    },
+    {
+      "content": "Consider edge cases where lamps are turned off that might not have illuminated any cells. Ensure your logic accounts for this to avoid unnecessary updates."
+    },
+    {
+      "content": "Pay attention to the constraints: n can be as large as 10^9, but the number of lamps and queries is limited to 20,000. This suggests that you need a solution that operates in a space-efficient manner."
+    },
+    {
+      "content": "You might want to use a sparse representation for the grid rather than a full 2D array, given the potential size of n. Think about how you can efficiently manage the lamps and their effects."
+    },
+    {
+      "content": "As you implement the solution, consider testing with edge cases such as no lamps, all lamps turned on, and queries that target different corners of the grid."
+    },
+    {
+      "content": "When turning off lamps, remember that the adjacent lamps are defined by a 3x3 area around the queried cell. Make sure your logic correctly identifies these positions."
+    },
+    {
+      "content": "For each query, after checking if the cell is illuminated, remember to return the result in the specified format. This will be an array of 0s and 1s."
+    },
+    {
+      "content": "While implementing the solution, keep track of the state of each lamp and the illumination status of rows, columns, and diagonals. This will help you efficiently answer the queries."
+    },
+    {
+      "content": "Finally, ensure your solution is optimized for both time and space. Consider the operations you perform on your data structures and how they scale with input size."
+    }
+  ],
+  "questionNotes": [
+    "Grid size n can be as large as 10^9, but the number of lamps and queries is limited to 20,000.",
+    "Each lamp can be turned on multiple times but only needs to be counted once.",
+    "Queries must return 1 if the cell is illuminated and 0 if it is not.",
+    "Adjacent lamps are defined as those sharing a side or corner with the queried cell."
+  ]
+}

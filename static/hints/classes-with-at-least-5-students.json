@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you can group the data in the `Courses` table. You will need to aggregate the number of students for each class. Consider using a SQL `GROUP BY` clause."
+    },
+    {
+      "content": "Once you group the data by class, you'll want to count the number of students in each class. Use the `COUNT()` function to achieve this."
+    },
+    {
+      "content": "Remember to filter the results to only include classes with at least five students. This can be done using the `HAVING` clause after your `GROUP BY`."
+    },
+    {
+      "content": "Make sure you understand the difference between `WHERE` and `HAVING`. `WHERE` filters rows before aggregation, while `HAVING` filters after aggregation."
+    },
+    {
+      "content": "Think about the output format. You only need to return the class names that meet the criteria. Your final selection should only include the `class` column."
+    },
+    {
+      "content": "Consider edge cases, such as classes with exactly 5 students. Ensure your query correctly counts these classes and includes them in the results."
+    },
+    {
+      "content": "Check if there are any duplicate entries in the `Courses` table. Since (student, class) is a primary key, each entry should be unique, but it's good to confirm."
+    },
+    {
+      "content": "Your SQL query should look something like this: `SELECT class, COUNT(student) ... GROUP BY class HAVING COUNT(student) >= 5`."
+    },
+    {
+      "content": "Make sure to test your query with different datasets. For instance, try cases where no class has five students or where multiple classes meet the criteria."
+    },
+    {
+      "content": "Finally, remember that the output can be in any order. You don't need to sort the results unless specified."
+    }
+  ],
+  "questionNotes": [
+    "The primary key is a combination of (student, class), ensuring unique entries.",
+    "You need to return only the class names that have at least five students.",
+    "The result can be returned in any order."
+  ]
+}

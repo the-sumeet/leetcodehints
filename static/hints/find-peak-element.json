@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "A peak element is defined as an element that is strictly greater than its neighbors. Start by visualizing the array and identifying potential peaks."
+    },
+    {
+      "content": "Remember that the array is 0-indexed. When checking neighbors, consider how you will handle the first and last elements, especially since they have only one neighbor."
+    },
+    {
+      "content": "Think about the constraints provided: the array length is between 1 and 1000, and elements are guaranteed to be unique. This means you won't have to deal with duplicate peaks."
+    },
+    {
+      "content": "To achieve O(log n) time complexity, consider using a binary search approach. This allows you to efficiently narrow down the search space for a peak."
+    },
+    {
+      "content": "In a binary search for a peak, compare the middle element with its neighbors. If the middle element is greater than both neighbors, you've found a peak."
+    },
+    {
+      "content": "If the middle element is less than the left neighbor, it indicates that a peak must exist on the left side. Therefore, adjust your search range to the left half."
+    },
+    {
+      "content": "Conversely, if the middle element is less than the right neighbor, then a peak must exist on the right side. Adjust your search range to the right half."
+    },
+    {
+      "content": "Consider edge cases, such as when the array has only one element. In this case, that single element is trivially a peak."
+    },
+    {
+      "content": "Make sure to handle the imaginary boundaries: nums[-1] and nums[n] are both considered -∞. This can help in determining peaks at the edges of the array."
+    },
+    {
+      "content": "Implement the binary search algorithm while keeping track of the left and right indices. The condition for finding a peak should guide your index adjustments."
+    }
+  ],
+  "questionNotes": [
+    "Array is 0-indexed.",
+    "A peak is strictly greater than its neighbors.",
+    "Multiple peaks can exist; return any peak's index.",
+    "Array length is between 1 and 1000.",
+    "Elements are unique (no duplicates).",
+    "Handle edge cases for first and last elements."
+  ]
+}

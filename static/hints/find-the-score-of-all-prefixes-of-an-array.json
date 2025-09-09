@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the conversion array. For each index `i`, the value `conver[i]` is calculated as `arr[i] + max(arr[0..i])`. Make sure to clarify how to find the maximum value in the prefix of the array."
+    },
+    {
+      "content": "Remember that the maximum value needs to be updated as you iterate through the array. You can maintain a variable to store the current maximum as you process each element."
+    },
+    {
+      "content": "Think about how you can calculate the score of the prefix efficiently. The score is the sum of all elements in the conversion array. You can maintain a running total for this score as you build the conversion array."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array has only one element. What should the output look like for `nums = [5]`? This will help you ensure your code handles small inputs correctly."
+    },
+    {
+      "content": "As you iterate through the array, update both the current maximum and the score for the prefix. This means that for each index `i`, you will compute `conver[i]`, update the score, and then move to the next index."
+    },
+    {
+      "content": "When constructing the final answer array, ensure that you are correctly storing the score for each prefix. The output should be an array of the same length as the input, where each element corresponds to the score of the prefix up to that index."
+    },
+    {
+      "content": "Pay attention to the constraints given in the problem. The maximum length of the array is 100,000, and each element can be as large as 1 billion. This means your solution should ideally be O(n) to handle the upper limits efficiently."
+    },
+    {
+      "content": "You might want to use a loop that runs from 0 to n-1, where `n` is the length of the input array. Inside this loop, calculate the maximum and the score incrementally."
+    },
+    {
+      "content": "To summarize your approach: Initialize a variable for the current maximum and another for the score. For each element in the array, update the maximum, calculate the conversion value, and add it to the score."
+    },
+    {
+      "content": "Finally, ensure that you return the answer in the correct format. The output should be an array containing the scores for each prefix, so make sure to append each score to the result array during your iteration."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "Return an array of scores for each prefix.",
+    "Ensure to maintain efficiency for large inputs."
+  ]
+}

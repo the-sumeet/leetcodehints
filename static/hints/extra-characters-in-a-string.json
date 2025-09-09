@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to break the string `s` into substrings that are present in the `dictionary`. Any characters that cannot be part of these substrings are considered extra characters."
+    },
+    {
+      "content": "Consider how you might identify substrings in `s` that match words in the `dictionary`. You could use a sliding window approach to check each possible substring of `s` against the `dictionary`."
+    },
+    {
+      "content": "Think about how to keep track of the characters that are not part of any valid substring. You could maintain a count of characters that do not match any words from the `dictionary` as you iterate through `s`."
+    },
+    {
+      "content": "You might want to use dynamic programming to solve this problem. Define a DP array where `dp[i]` represents the minimum number of extra characters in the substring `s[0:i]`."
+    },
+    {
+      "content": "Initialize your DP array with the maximum possible value, which is the length of the string `s`. The idea is to minimize this value as you find valid substrings."
+    },
+    {
+      "content": "When checking substrings, if you find a valid substring `s[j:i]` in the `dictionary`, you should update your DP array. For example, if `s[j:i]` is valid, then `dp[i]` can be updated to `min(dp[i], dp[j])`."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the entire string `s` is made up of characters that are not in the `dictionary`. In this case, the result would simply be the length of `s`."
+    },
+    {
+      "content": "You should also consider the scenario where the `dictionary` is empty. If there are no words to match, all characters in `s` will be extra characters."
+    },
+    {
+      "content": "Make sure to check all possible starting indices for substrings. For each index `i`, you should check all possible starting points `j` (0 to i) to find valid substrings."
+    },
+    {
+      "content": "Finally, once you have filled your DP array, the answer will be found in `dp[s.length]`, which gives you the minimum number of extra characters after processing the entire string."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 50, 1 <= dictionary.length <= 50, 1 <= dictionary[i].length <= 50.",
+    "Characters in dictionary and s consist of only lowercase English letters.",
+    "Words in the dictionary are distinct.",
+    "Return the minimum number of extra characters left over."
+  ]
+}

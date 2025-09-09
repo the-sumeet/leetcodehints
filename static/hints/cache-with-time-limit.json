@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by defining the class `TimeLimitedCache`. You will need to create a structure to hold the key-value pairs along with their expiration times. Consider using a dictionary for efficient lookups."
+    },
+    {
+      "content": "In the `set` method, you need to calculate the expiration time for the key based on the current time and the given duration. Remember to update this if the key already exists."
+    },
+    {
+      "content": "When checking if a key already exists in the `set` method, ensure you also check if it is still valid (not expired). You might want to store the expiration time alongside the value."
+    },
+    {
+      "content": "For the `get` method, you should return the value associated with the key only if it has not expired. If the key is expired or does not exist, return -1."
+    },
+    {
+      "content": "In the `count` method, iterate through your stored keys and count how many of them have not expired. This will require checking the current time against each key's expiration time."
+    },
+    {
+      "content": "Consider edge cases such as setting a key with a duration of zero. What should happen in this case? Think about how you will handle such scenarios in your logic."
+    },
+    {
+      "content": "Remember that the `set` method should return true if the key was already present and unexpired, and false otherwise. Make sure to track this state clearly."
+    },
+    {
+      "content": "When implementing the expiration check in both `get` and `count`, you might want to use a helper function to avoid code duplication. This function can check if a key is expired."
+    },
+    {
+      "content": "In your data structure, consider using a tuple or a custom object to store both the value and the expiration time together. This will simplify your logic in the `get` and `count` methods."
+    },
+    {
+      "content": "Finally, ensure your methods handle the timing correctly. Use a reliable way to get the current time (like `time.time()` in Python) and make sure you account for milliseconds."
+    }
+  ],
+  "questionNotes": [
+    "The first action is always 'TimeLimitedCache' and must be executed immediately with a 0-millisecond delay.",
+    "The duration can be zero, which may lead to immediate expiration.",
+    "The return format for methods is crucial: true/false for `set`, integer for `get`, and count for `count`.",
+    "Be mindful of edge cases like accessing expired keys or setting keys with overlapping durations."
+  ]
+}

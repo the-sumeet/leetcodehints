@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by filtering the movies based on their IDs. You only want to include movies with odd-numbered IDs. In SQL, you can use the modulo operator to check if an ID is odd: `id % 2 = 1`."
+    },
+    {
+      "content": "Next, you need to filter out the movies with a description that contains the word 'boring'. Use a `WHERE` clause to exclude any rows where the description is 'boring'."
+    },
+    {
+      "content": "Remember that string comparisons in SQL are case-sensitive by default. Ensure that you check for 'boring' in the exact case used in the table."
+    },
+    {
+      "content": "Once you have your filtered results, think about how to sort them. You need to order the final results by the rating in descending order. Use the `ORDER BY` clause for this."
+    },
+    {
+      "content": "When constructing your SQL query, make sure to select all the required columns: `id`, `movie`, `description`, and `rating`. This will ensure you return the correct format."
+    },
+    {
+      "content": "Consider edge cases where there might be no movies with odd IDs or all odd ID movies might be boring. Your query should handle these cases gracefully."
+    },
+    {
+      "content": "If you are using a SQL database that supports it, remember that you can use `DISTINCT` to ensure you are not returning duplicate rows, although in this case, IDs are unique."
+    },
+    {
+      "content": "As you write your SQL query, keep in mind the overall structure: start with the `SELECT` statement, then the `FROM` clause, followed by `WHERE`, and finally `ORDER BY`."
+    },
+    {
+      "content": "Make sure to test your query with various inputs to ensure it behaves as expected, especially with edge cases like all boring movies or no odd IDs."
+    },
+    {
+      "content": "Finally, your query should look something like this: `SELECT id, movie, description, rating FROM Cinema WHERE id % 2 = 1 AND description != 'boring' ORDER BY rating DESC;`. Ensure you have the correct syntax."
+    }
+  ],
+  "questionNotes": [
+    "The 'id' column is the primary key and contains unique values.",
+    "The 'rating' column is a float with 2 decimal places, within the range [0, 10].",
+    "Return the result ordered by 'rating' in descending order.",
+    "Ensure to exclude any movies with a description that is exactly 'boring'."
+  ]
+}

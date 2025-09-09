@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a bad pair. A pair (i, j) is bad if i < j and the condition j - i != nums[j] - nums[i] holds. Think about how you can check this condition for each pair of indices."
+    },
+    {
+      "content": "Consider how you can iterate through the array to find all pairs (i, j) where i < j. A nested loop could be a straightforward approach, but think about the time complexity of this method."
+    },
+    {
+      "content": "Remember that the indices i and j must satisfy i < j. This means when you're looping through the array, for a fixed i, j should start from i + 1 to the end of the array."
+    },
+    {
+      "content": "Instead of checking the condition for every possible pair, can you derive a formula or a transformation that simplifies the check? For example, rewrite the condition j - i != nums[j] - nums[i] in a way that might be easier to handle."
+    },
+    {
+      "content": "Notice that if you rearrange the condition j - i != nums[j] - nums[i], you can express it as j - nums[j] != i - nums[i]. This suggests that you might want to track the values of j - nums[j] and i - nums[i]."
+    },
+    {
+      "content": "Think about using a hashmap (or dictionary) to count occurrences of the values of j - nums[j]. This can help you quickly determine how many times a particular value has been seen as you iterate through the array."
+    },
+    {
+      "content": "As you loop through the array, for each index j, calculate the value of j - nums[j] and check how many times this value has appeared before (for indices i < j). This will allow you to count the number of bad pairs efficiently."
+    },
+    {
+      "content": "Don't forget to initialize your hashmap correctly. You might want to start with a count of zero for the value that corresponds to the first index, as there are no pairs with a single element."
+    },
+    {
+      "content": "Keep track of the total number of bad pairs you find as you iterate through the array. You can update this count each time you find a matching value in your hashmap."
+    },
+    {
+      "content": "Finally, ensure that you return the total count of bad pairs after processing the entire array. Remember to test your solution with edge cases, such as arrays with the minimum and maximum lengths."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^9",
+    "Ensure to handle 0-indexed arrays correctly.",
+    "Pairs (i, j) must satisfy i < j."
+  ]
+}

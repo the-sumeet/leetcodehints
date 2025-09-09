@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the two tables: Users and Register. Identify the primary keys and how they relate to each other. This will help you figure out how to join these tables."
+    },
+    {
+      "content": "Think about how to calculate the total number of users. You can use the Users table for this. Remember, you need to count all unique users to get an accurate percentage."
+    },
+    {
+      "content": "Next, consider how to find the number of users registered for each contest. You will need to group the data in the Register table by contest_id and count the distinct user_ids."
+    },
+    {
+      "content": "Once you have the counts, you can calculate the percentage of users registered for each contest. The formula is: (number of users registered for the contest / total number of users) * 100."
+    },
+    {
+      "content": "Be mindful of rounding. The problem specifies that the percentage should be rounded to two decimal places. You can use a rounding function in SQL to achieve this."
+    },
+    {
+      "content": "Remember to handle contests with no registrations. Make sure your query accounts for contests that might not have any users registered, as this could affect your percentage calculation."
+    },
+    {
+      "content": "Now, think about how to order your results. You need to sort by percentage in descending order and by contest_id in ascending order in case of ties."
+    },
+    {
+      "content": "You will likely need to use a JOIN operation to combine the Users and Register tables. Consider using a LEFT JOIN to ensure you include all contests, even those with no registrations."
+    },
+    {
+      "content": "As you construct your SQL query, ensure you select the correct columns: contest_id and the calculated percentage. Don't forget to alias your percentage column appropriately."
+    },
+    {
+      "content": "Finally, put together all the pieces. Your SQL query should include the necessary JOIN, GROUP BY, and ORDER BY clauses to achieve the desired output format."
+    }
+  ],
+  "questionNotes": [
+    "Users table has unique user_id as the primary key.",
+    "Register table has a composite primary key (contest_id, user_id).",
+    "The percentage must be rounded to two decimal places.",
+    "Results should be ordered by percentage (descending) and contest_id (ascending) in case of ties.",
+    "Consider contests with no registrations to avoid division by zero."
+  ]
+}

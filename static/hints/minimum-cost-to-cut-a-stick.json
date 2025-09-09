@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to cut a stick of length `n` at certain positions given by the `cuts` array. The cost of each cut is equal to the length of the stick being cut."
+    },
+    {
+      "content": "Consider the order of cuts. The cost can vary significantly based on the order in which you perform the cuts. Think about how cutting a longer stick first might reduce the overall cost."
+    },
+    {
+      "content": "You can think of the cuts as splitting the stick into smaller segments. Each cut creates two new segments, and you will need to keep track of these segments as you make further cuts."
+    },
+    {
+      "content": "To minimize the cost, you might want to focus on making cuts that will create the smallest segments first. This could lead to lower costs for subsequent cuts."
+    },
+    {
+      "content": "Try to visualize the stick and the cuts. For example, if you have cuts at positions `[1, 3, 4, 5]` on a stick of length `7`, how does each cut affect the remaining segments?"
+    },
+    {
+      "content": "Consider using dynamic programming to solve this problem. You can define a DP table where `dp[i][j]` represents the minimum cost to cut the stick between positions `i` and `j`."
+    },
+    {
+      "content": "Think about the base cases for your DP solution. If there are no cuts to make between two positions, the cost is `0`. What happens when there is only one cut to make?"
+    },
+    {
+      "content": "When filling in your DP table, you will need to iterate through all possible cuts that can be made between two positions. For each cut, calculate the cost and add it to the costs of the segments created."
+    },
+    {
+      "content": "Make sure to include the cost of the current stick length when you make a cut. This means that for each cut at position `cut[k]`, the cost will be the length of the stick being cut."
+    },
+    {
+      "content": "You might need to sort the cuts array first to simplify the problem. This way, you can easily determine the segments created after each cut."
+    },
+    {
+      "content": "Remember to account for the entire length of the stick when making cuts. The effective length of the stick changes after each cut, which affects the cost of subsequent cuts."
+    },
+    {
+      "content": "As you implement the DP approach, ensure that you are correctly calculating the minimum cost for each segment of the stick. You may need to use nested loops to explore all cut combinations."
+    },
+    {
+      "content": "Consider edge cases where the `cuts` array has the minimum or maximum number of elements. How does this affect your DP table and the overall cost?"
+    },
+    {
+      "content": "Don't forget to include the boundaries of the stick (0 and n) in your calculations. These boundaries are crucial for defining the segments correctly."
+    },
+    {
+      "content": "Finally, ensure that your solution returns the minimum total cost after all cuts have been made. This will be the value stored in your DP table for the full range of the stick."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^6",
+    "1 <= cuts.length <= min(n - 1, 100)",
+    "1 <= cuts[i] <= n - 1",
+    "All integers in cuts array are distinct.",
+    "The cuts must be performed in an order that you can determine, but the order can be rearranged."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an alternating permutation is. It is a permutation where no two adjacent elements are both odd or both even. For example, in the permutation [2, 1, 4, 3], the odd and even numbers alternate."
+    },
+    {
+      "content": "Consider the total number of odd and even integers in the range from 1 to n. For any n, there are (n + 1) // 2 odd numbers and n // 2 even numbers. This will help you understand how to construct valid permutations."
+    },
+    {
+      "content": "Think about how to generate permutations. You can use backtracking to create permutations of the numbers from 1 to n. However, remember to enforce the alternating condition during the generation."
+    },
+    {
+      "content": "When generating permutations, keep track of the last added number to ensure that the next number added does not violate the alternating condition. For example, if the last number was odd, the next must be even."
+    },
+    {
+      "content": "You can use a recursive function to build permutations. Pass the current permutation and the numbers left to choose from as parameters. This will allow you to explore all valid configurations."
+    },
+    {
+      "content": "As you generate permutations, store them in a list. Once you have generated all valid permutations, sort them lexicographically. This is crucial to ensure you can easily access the k-th permutation."
+    },
+    {
+      "content": "Consider edge cases where n is small, such as n = 1 or n = 2. What permutations can you generate? Ensure your function handles these cases correctly."
+    },
+    {
+      "content": "Pay attention to the value of k. If k is larger than the number of valid permutations, you should return an empty list. Make sure to check the length of your list of permutations before accessing the k-th element."
+    },
+    {
+      "content": "When sorting permutations, remember that Python's sort is stable and will maintain the order of equivalent elements. Ensure that your permutations are unique to avoid duplicates in the sorted list."
+    },
+    {
+      "content": "Think about the time complexity of generating permutations. Generating all permutations can be expensive, especially for larger n. You might need to optimize your approach to avoid unnecessary computations."
+    },
+    {
+      "content": "If you're stuck, consider writing a helper function to check if a given permutation is valid. This can simplify your main logic and help you debug more effectively."
+    },
+    {
+      "content": "You might want to use memoization to store results of previously computed permutations, especially if you find yourself generating the same permutations multiple times."
+    },
+    {
+      "content": "As you approach the final implementation, remember to handle the output format correctly. You need to return a list of integers representing the k-th permutation."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various inputs, including edge cases like n = 1, n = 2, and large values of k. This will help ensure your solution is robust."
+    },
+    {
+      "content": "Finally, remember that the k-th permutation is 1-based, meaning k = 1 refers to the first permutation in your sorted list. Adjust your indexing accordingly when accessing the list."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100; 1 <= k <= 10^15",
+    "Output should be an empty list if fewer than k valid permutations exist.",
+    "The permutations must be sorted in lexicographical order.",
+    "The k-th permutation is 1-based indexing."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to calculate the final price for each item in the prices array by applying a discount based on future prices. Make sure to note how discounts are determined."
+    },
+    {
+      "content": "Consider how you will iterate through the prices array. For each item, you need to find the next item that has a price less than or equal to the current item's price. Think about how you can efficiently find this next item."
+    },
+    {
+      "content": "Remember that the discount is only applicable if there exists an item with a lower or equal price at a higher index. If no such item exists, the final price remains the same as the original price."
+    },
+    {
+      "content": "You may want to use a nested loop to check each item against the ones that come after it. However, this could lead to a time complexity of O(n^2). Think about how you might optimize this."
+    },
+    {
+      "content": "Consider using a stack to keep track of indices of the prices. This data structure can help you efficiently find the next smaller or equal price for each item as you traverse the list."
+    },
+    {
+      "content": "As you iterate through the prices, think about how you can use the stack to help determine when to apply a discount. Push the current index onto the stack when you haven't found a discount yet."
+    },
+    {
+      "content": "When you find a price that is less than or equal to the price at the top of the stack, pop the stack and calculate the discounted price for that index. This way, you can maintain the correct final prices."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the prices array has only one item. In this case, the final price should simply be the same as the original price since there are no future items."
+    },
+    {
+      "content": "After processing all items, ensure that your final prices are stored in the correct format. You should return an array where each index corresponds to the final price for the respective item."
+    },
+    {
+      "content": "As a final step, consider how you will implement the logic to check for discounts and update the prices accordingly. You can use a loop to go through the prices and apply the discount logic using the stack you've built."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= prices.length <= 500",
+    "Constraints: 1 <= prices[i] <= 1000",
+    "Return an integer array where answer[i] is the final price after discount.",
+    "Discount applies only if there's a future price <= current price."
+  ]
+}

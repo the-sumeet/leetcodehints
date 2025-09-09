@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `statements` array. Each entry `statements[i][j]` indicates what person `i` thinks about person `j`. Remember that `statements[i][i]` will always be `2`, meaning no one makes statements about themselves."
+    },
+    {
+      "content": "Consider how to represent the two types of people: good and bad. A good person always tells the truth, while a bad person may lie or tell the truth. This distinction is crucial for evaluating the statements."
+    },
+    {
+      "content": "Think about the implications of a person's statement being true or false. If person `i` claims person `j` is good, and `i` is good, then `j` must be good. Conversely, if `i` is bad, their statement could be either true or false."
+    },
+    {
+      "content": "Since the maximum number of people is 15, consider using a bitmask to represent the state of each person (good or bad). This allows you to efficiently explore all possible combinations of good and bad people."
+    },
+    {
+      "content": "When iterating through possible combinations of good and bad people, ensure you check each person's statements against the assumed states. If a contradiction arises, that specific combination is invalid."
+    },
+    {
+      "content": "Remember that you need to maximize the number of good people. As you explore each combination, keep track of the highest count of good people found so far."
+    },
+    {
+      "content": "Consider edge cases where there are only two people. What happens if both claim the other is bad? How does this affect the maximum number of good people?"
+    },
+    {
+      "content": "When evaluating a combination, make sure to account for the fact that bad people can lie. This means their statements do not necessarily lead to a contradiction immediately."
+    },
+    {
+      "content": "Think about how to efficiently check the validity of each configuration. You may want to create a function that verifies if a given configuration of good and bad people is consistent with the statements."
+    },
+    {
+      "content": "While checking statements for a configuration, if a person claims another is bad, ensure that if the first person is good, the second must indeed be bad."
+    },
+    {
+      "content": "If a person claims another is good, and the first person is good, then the second must be good as well. Track these relationships carefully as you validate configurations."
+    },
+    {
+      "content": "Consider using recursion or backtracking to explore all combinations of good and bad people. This approach can help you systematically check each possible state."
+    },
+    {
+      "content": "You may also want to use memoization to avoid recalculating results for the same configurations, especially since the number of combinations can grow quickly."
+    },
+    {
+      "content": "When you find a valid configuration, count the number of good people and compare it to your current maximum. Update the maximum if this configuration has more good people."
+    },
+    {
+      "content": "Finally, ensure your function handles all edge cases, including the minimum and maximum values for `n`. Test with various configurations to validate your implementation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == statements.length == statements[i].length",
+    "2 <= n <= 15",
+    "statements[i][j] is either 0, 1, or 2",
+    "statements[i][i] == 2 for all 0 <= i < n",
+    "Return the maximum number of good people based on the statements."
+  ]
+}

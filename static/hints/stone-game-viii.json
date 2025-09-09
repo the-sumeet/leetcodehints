@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the game mechanics. Alice and Bob take turns removing stones, and the value of the removed stones is added to their score. Remember, the game continues until only one stone is left."
+    },
+    {
+      "content": "Consider how the score is calculated. When a player removes stones, they add the sum of those stones to their score and create a new stone with that sum. This affects the next player's options."
+    },
+    {
+      "content": "Think about the implications of the players playing optimally. Alice wants to maximize her score difference, while Bob wants to minimize it. This creates a strategic dynamic in their choices."
+    },
+    {
+      "content": "Notice that the first player (Alice) has a significant advantage since she can choose the initial number of stones to remove. How does this influence her strategy compared to Bob's?"
+    },
+    {
+      "content": "When deciding how many stones to remove, players can only choose x > 1. This means they cannot remove just one stone at a time. Consider how this restriction affects their decisions."
+    },
+    {
+      "content": "Think about how the game state changes after each turn. The array of stones is modified, and the new stone's value depends on the sum of the removed stones. How does this change future moves?"
+    },
+    {
+      "content": "Consider edge cases, such as when all stone values are negative. How would this affect the players' strategies? Would they still aim to maximize their scores, or simply minimize losses?"
+    },
+    {
+      "content": "You might want to simulate the game for a few turns to see how the scores evolve. This can help you understand the impact of each player's decisions on the final score difference."
+    },
+    {
+      "content": "Think about using dynamic programming or memoization to keep track of the optimal score differences at each step. This could help you avoid recalculating the same scenarios multiple times."
+    },
+    {
+      "content": "As you analyze the problem, consider how you can represent the state of the game. What variables would you need to keep track of Alice's and Bob's scores, as well as the current state of the stones?"
+    },
+    {
+      "content": "Remember that the game ends when only one stone is left. You need to ensure your logic accounts for this termination condition correctly in your implementation."
+    },
+    {
+      "content": "Think about how to iterate through possible moves for Alice and Bob. You might need to loop through possible values of x and calculate the resulting scores for each choice."
+    },
+    {
+      "content": "Consider how the score difference is calculated at the end of the game. You need to return the difference between Alice's and Bob's scores, so make sure you have a clear way to track both scores."
+    },
+    {
+      "content": "As you approach the implementation, consider edge cases with the constraints. For instance, how will you handle the maximum and minimum values of stones, as well as the length of the stones array?"
+    },
+    {
+      "content": "Finally, think about how to optimize your solution to handle the upper limits of input size efficiently. What data structures or algorithms could help you achieve this?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == stones.length, 2 <= n <= 10^5, -10^4 <= stones[i] <= 10^4.",
+    "Players can only remove x > 1 stones on each turn.",
+    "The game stops when only one stone is left.",
+    "Return the score difference as (Alice's score - Bob's score)."
+  ]
+}

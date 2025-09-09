@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by parsing the input string into individual fractions. You can split the string by the '+' and '-' operators to separate the fractions. Remember to keep track of the signs associated with each fraction."
+    },
+    {
+      "content": "When you split the string, consider how to handle the signs. For example, if you have '-1/2+1/3', you need to ensure that you associate the '-' sign with '1/2' and the '+' with '1/3'."
+    },
+    {
+      "content": "Each fraction can be represented as a numerator and a denominator. For example, '1/2' can be split into numerator = 1 and denominator = 2. Store these values in a way that allows you to easily perform arithmetic operations."
+    },
+    {
+      "content": "To perform addition and subtraction of fractions, you need a common denominator. The least common multiple (LCM) of the denominators of the fractions is a good candidate for this. Consider how to find the LCM of two numbers."
+    },
+    {
+      "content": "When you convert fractions to a common denominator, remember to adjust the numerators accordingly. For example, if you have fractions 'a/b' and 'c/d', and you find the LCM, you can convert them to (a * LCM/b) and (c * LCM/d)."
+    },
+    {
+      "content": "After performing the addition or subtraction, you will have a new numerator and denominator. Ensure that you can simplify the resulting fraction. You can use the greatest common divisor (GCD) to simplify the fraction."
+    },
+    {
+      "content": "To find the GCD, you can use the Euclidean algorithm. This will help you reduce the fraction to its simplest form, which is required for the final output."
+    },
+    {
+      "content": "Remember to handle the case where the final result is an integer. If the denominator is 1 after simplification, format the output as 'numerator/1'."
+    },
+    {
+      "content": "Consider edge cases, such as when the result is zero. Ensure that you return '0/1' for this case, as specified in the problem statement."
+    },
+    {
+      "content": "Finally, make sure to format the output correctly. The output should be a string in the format 'numerator/denominator', even if the result is an integer. Ensure you test your solution with various inputs to validate correctness."
+    }
+  ],
+  "questionNotes": [
+    "The input string contains valid irreducible fractions.",
+    "Each fraction is in the format ±numerator/denominator.",
+    "If the first fraction is positive, '+' will be omitted.",
+    "The output must be in the format 'numerator/denominator'.",
+    "If the result is an integer, return it as 'numerator/1'.",
+    "The numerator and denominator are guaranteed to be in the range of 32-bit int."
+  ]
+}

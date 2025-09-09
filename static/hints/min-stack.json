@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic operations of a stack: `push`, `pop`, and `top`. Make sure you can implement these operations efficiently."
+    },
+    {
+      "content": "Consider how you would keep track of the minimum element. You need a way to retrieve the minimum in constant time, so think about how to store this information alongside your stack elements."
+    },
+    {
+      "content": "One approach is to use an auxiliary stack to keep track of the minimum values. Every time you push a new value, you can compare it with the current minimum and push the smaller one onto the auxiliary stack."
+    },
+    {
+      "content": "Remember that the `pop` operation should also maintain the integrity of the minimum tracking. When you pop an element from the main stack, you should also pop from the auxiliary stack if the popped element is the current minimum."
+    },
+    {
+      "content": "Think about edge cases, such as what happens when you pop the last element from the stack. Ensure your implementation can handle this gracefully without errors."
+    },
+    {
+      "content": "When implementing the `getMin` function, it should return the top element of the auxiliary stack, which contains the minimum values. This allows you to retrieve the minimum in O(1) time."
+    },
+    {
+      "content": "Consider how you will initialize your stacks in the constructor. You will need both a main stack for the values and a secondary stack for the minimums."
+    },
+    {
+      "content": "Make sure to test your implementation with various sequences of operations, including pushing and popping multiple elements, to ensure that the minimum tracking is accurate throughout."
+    },
+    {
+      "content": "Your implementation should handle the constraints given in the problem statement, such as the value range and the maximum number of operations. Keep these in mind to avoid overflow or performance issues."
+    },
+    {
+      "content": "Finally, structure your class to include methods for `push`, `pop`, `top`, and `getMin`. Ensure each method adheres to the time complexity requirements of O(1). Here’s a hint for `push`: if the new value is less than or equal to the current minimum, push it onto the auxiliary stack."
+    }
+  ],
+  "questionNotes": [
+    "You must implement a solution with O(1) time complexity for each function.",
+    "The `pop`, `top`, and `getMin` operations will always be called on non-empty stacks.",
+    "At most 3 * 10^4 calls will be made to push, pop, top, and getMin."
+  ]
+}

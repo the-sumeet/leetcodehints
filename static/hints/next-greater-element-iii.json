@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering how to represent the integer n. You can convert the integer to a string or an array of digits to manipulate its digits easily."
+    },
+    {
+      "content": "Think about the properties of the digits in n. The goal is to find the next permutation of these digits that is greater than n. This involves understanding how to rearrange digits."
+    },
+    {
+      "content": "Identify the rightmost pair of consecutive digits where the left digit is less than the right digit. This is the point where you can make a change to increase the number."
+    },
+    {
+      "content": "Once you find that pair, look for the smallest digit to the right of this pair that is larger than the left digit of the pair. This will be the digit you swap."
+    },
+    {
+      "content": "After swapping, the digits to the right of the swapped position should be rearranged in ascending order to ensure you get the smallest possible number greater than n."
+    },
+    {
+      "content": "Consider edge cases where n is made up of digits in descending order, like 321. In such cases, no greater permutation exists, and you should return -1."
+    },
+    {
+      "content": "Remember to check if the resulting number after rearranging fits within the 32-bit signed integer range. If it exceeds this range, return -1."
+    },
+    {
+      "content": "You may want to implement a helper function to check if a number fits within the 32-bit signed integer limits, which are from -2^31 to 2^31 - 1."
+    },
+    {
+      "content": "As you implement your solution, keep track of the steps you take to rearrange the digits. This will help you debug if the output is incorrect."
+    },
+    {
+      "content": "Finally, put all the pieces together: find the pivot, swap the digits, sort the suffix, and check for the 32-bit constraint. This will lead you to the final solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 2^31 - 1",
+    "Return -1 if no greater permutation exists or if the result exceeds 32-bit integer limits.",
+    "The output must be a positive integer."
+  ]
+}

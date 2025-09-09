@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the conditions for a valid team. You need to select three indices (i, j, k) such that the ratings at these indices either form a strictly increasing or strictly decreasing sequence."
+    },
+    {
+      "content": "Remember that the indices must satisfy the condition `0 <= i < j < k < n`. This means that `i` must always be less than `j`, and `j` must be less than `k`."
+    },
+    {
+      "content": "Consider how you can iterate through the list of ratings. A triple nested loop could be one way to check all combinations of (i, j, k), but think about the efficiency of this approach given the constraints."
+    },
+    {
+      "content": "To optimize, try to count how many soldiers have a rating less than or greater than a given soldier's rating to the left and right of that soldier. This can help in determining the number of valid teams quickly."
+    },
+    {
+      "content": "For each soldier at index `j`, count how many soldiers with indices less than `j` have a lower rating (let's call this `leftLower`) and how many have a higher rating (let's call this `leftHigher`)."
+    },
+    {
+      "content": "Similarly, for the soldiers with indices greater than `j`, count how many have a lower rating (`rightLower`) and how many have a higher rating (`rightHigher`)."
+    },
+    {
+      "content": "The number of valid teams that can be formed with soldier `j` in the middle can be calculated as: `leftLower * rightHigher` for increasing teams and `leftHigher * rightLower` for decreasing teams."
+    },
+    {
+      "content": "Make sure to initialize your counts for `leftLower`, `leftHigher`, `rightLower`, and `rightHigher` correctly before starting your main loop. You may need to iterate through the array multiple times."
+    },
+    {
+      "content": "Consider edge cases where the list is very small (e.g., less than 3 soldiers). Ensure your solution handles these cases without errors."
+    },
+    {
+      "content": "Finally, sum up the valid teams from all possible middle soldiers to get your final answer. Don't forget to return the total count."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= n <= 1000",
+    "All ratings are unique integers between 1 and 10^5.",
+    "Return the total number of valid teams.",
+    "Indices must satisfy 0 <= i < j < k < n."
+  ]
+}

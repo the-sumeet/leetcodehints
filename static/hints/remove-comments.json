@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. The `source` is an array of strings, where each string represents a line of C++ code. Your goal is to process each line and remove comments while retaining the code structure."
+    },
+    {
+      "content": "Identify the two types of comments: line comments (starting with `//`) and block comments (starting with `/*` and ending with `*/`). Make sure you can differentiate between them as you parse through each line."
+    },
+    {
+      "content": "When you encounter a line comment, everything from `//` to the end of that line should be ignored. You can use string methods to find the index of `//` and truncate the string accordingly."
+    },
+    {
+      "content": "Block comments can span multiple lines. When you find `/*`, you need to keep track of when the block comment ends with `*/`. This requires you to maintain a state indicating whether you are currently inside a block comment."
+    },
+    {
+      "content": "Consider edge cases where comments might overlap or appear in unusual places. For example, if `/*` appears in a line comment, it should be ignored. Similarly, if `//` appears inside a block comment, it should also be ignored."
+    },
+    {
+      "content": "As you process each line, you need to build a new list that will hold the non-commented lines. Ensure that you only add lines that are non-empty after comments have been removed."
+    },
+    {
+      "content": "When handling block comments, remember that they can remove implicit newlines. This means that if a block comment starts at the beginning of a line, that line should be completely ignored until the block comment ends."
+    },
+    {
+      "content": "Pay attention to the order of operations. If you find both `//` and `/*` in the same line, the line comment takes precedence and should be processed first."
+    },
+    {
+      "content": "After processing all lines, ensure that your output format matches the requirements. The final output should be a list of strings, where each string is a line of code without comments, and no empty lines are included."
+    },
+    {
+      "content": "To finalize your approach, consider writing a function that iterates through each line, checks for comments, and constructs the output line by line. Remember to handle the state of being inside a block comment carefully."
+    }
+  ],
+  "questionNotes": [
+    "The input is an array of strings, where each string represents a line of code.",
+    "Line comments start with `//` and block comments start with `/*` and end with `*/`.",
+    "The first effective comment takes precedence over others.",
+    "Empty lines after removing comments should not be included in the output.",
+    "Every open block comment is guaranteed to be closed."
+  ]
+}

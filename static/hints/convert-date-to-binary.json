@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by breaking down the input string into its components: year, month, and day. You can use string slicing to extract these parts. For example, you can get the year using `date[:4]`, the month with `date[5:7]`, and the day with `date[8:10]`."
+    },
+    {
+      "content": "Once you have the year, month, and day as strings, remember that you'll need to convert them to integers before converting them to binary. Use the `int()` function for this step."
+    },
+    {
+      "content": "After converting to integers, you can use Python's built-in `bin()` function to get the binary representation of a number. Note that `bin()` returns a string that starts with '0b', so you'll need to slice that off."
+    },
+    {
+      "content": "When converting the year to binary, ensure that the result does not have any leading zeroes. The `bin()` function will handle this correctly for you since it returns the binary representation without leading zeroes for positive integers."
+    },
+    {
+      "content": "Remember that the month and day can be single-digit numbers. When converting these to binary, they will also not have leading zeroes, so you don't need to worry about formatting them differently."
+    },
+    {
+      "content": "Construct the final binary date string by concatenating the binary representations of the year, month, and day with hyphens in between. For example, if you have `year_bin`, `month_bin`, and `day_bin`, the final string would look like `year_bin + '-' + month_bin + '-' + day_bin`."
+    },
+    {
+      "content": "Consider edge cases such as the minimum and maximum dates allowed by the constraints. For instance, test with '1900-01-01' and '2100-12-31' to ensure your function handles the entire range correctly."
+    },
+    {
+      "content": "Make sure to handle invalid inputs gracefully. Although the problem guarantees valid dates, it's good practice to consider what would happen if the input format were incorrect."
+    },
+    {
+      "content": "As a final step, ensure your function returns the string in the expected format. The output should be exactly as specified in the problem statement, matching the year-month-day binary format."
+    },
+    {
+      "content": "Now, put everything together in a function. Start by defining the function, then implement the steps you've outlined. Make sure to test your function with the provided examples to verify its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Input date is guaranteed to be in the format yyyy-mm-dd.",
+    "The year will always be a valid Gregorian calendar year between 1900 and 2100.",
+    "The month and day will be valid integers, with months ranging from 01 to 12 and days appropriate to the month.",
+    "Output must be in the format of binary representations separated by hyphens, with no leading zeroes."
+  ]
+}

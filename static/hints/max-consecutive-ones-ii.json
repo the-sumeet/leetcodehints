@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find the maximum number of consecutive 1s in a binary array, where you are allowed to flip one 0 to a 1. Think about how flipping a 0 can affect the count of consecutive 1s."
+    },
+    {
+      "content": "Consider how you would approach counting consecutive 1s without any flips first. This will help you establish a baseline for your solution. You can use a simple loop to count the length of consecutive 1s."
+    },
+    {
+      "content": "When you think about flipping a 0, realize that it can connect two segments of 1s. For example, in the array [1,0,1,1], flipping the 0 connects the two segments of 1s. How can you keep track of these segments?"
+    },
+    {
+      "content": "You may want to use a sliding window technique to efficiently find the maximum length of consecutive 1s. Think about how you can expand and contract your window based on the number of 0s encountered."
+    },
+    {
+      "content": "As you implement the sliding window, remember to count the number of 0s in your current window. You can only have one 0 in your window if you are allowed to flip it. How will you adjust your window when you encounter more than one 0?"
+    },
+    {
+      "content": "Consider maintaining two pointers for your sliding window: one for the start and one for the end. As you move the end pointer to expand the window, check if the count of 0s exceeds one. If it does, move the start pointer to reduce the count."
+    },
+    {
+      "content": "Think about edge cases, such as when the array is entirely 1s or entirely 0s. How should your solution handle these scenarios? For instance, if the array has no 0s, the answer is simply the length of the array."
+    },
+    {
+      "content": "When implementing the sliding window, keep track of the maximum length of consecutive 1s found so far. Update this maximum whenever you find a valid window that meets the conditions."
+    },
+    {
+      "content": "Make sure to test your implementation with various test cases, including edge cases. For example, try arrays like [0,0,0] or [1,1,1,1] to ensure your solution handles all scenarios correctly."
+    },
+    {
+      "content": "Finally, your implementation should return the maximum length of consecutive 1s after considering one flip. Make sure that your final logic correctly accounts for the last segment of 1s in the window."
+    }
+  ],
+  "questionNotes": [
+    "You can flip only one 0 to a 1.",
+    "The input is a binary array (only 0s and 1s).",
+    "The output should be a single integer representing the maximum length of consecutive 1s.",
+    "Consider edge cases like empty arrays or arrays with all 0s or all 1s."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how to pair people together efficiently. You want to minimize the number of boats, so consider how the lightest and heaviest people can share a boat if their combined weight is within the limit."
+    },
+    {
+      "content": "Sort the `people` array. This will help you easily identify the lightest and heaviest individuals. After sorting, the lightest person will be at the start of the array, and the heaviest will be at the end."
+    },
+    {
+      "content": "Use two pointers to traverse the sorted array: one pointer at the start (lightest person) and another at the end (heaviest person). This way, you can check if the two can share a boat."
+    },
+    {
+      "content": "If the sum of the weights of the two people at the pointers is less than or equal to the limit, they can share a boat. In this case, move both pointers inward (i.e., increment the start pointer and decrement the end pointer)."
+    },
+    {
+      "content": "If the sum exceeds the limit, the heavier person must go alone. In this case, only move the end pointer inward and count that boat."
+    },
+    {
+      "content": "Continue this process until all people are assigned to boats. Keep a count of the number of boats used as you go along."
+    },
+    {
+      "content": "Consider edge cases such as when there is only one person or when all people can fit into one boat. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "Think about the time complexity of your solution. Sorting the array will take O(n log n), but how efficient is your pairing process with two pointers?"
+    },
+    {
+      "content": "Remember to handle the case where the limit is exactly equal to the weight of one or two people. This is important for ensuring that you don't miss valid pairings."
+    },
+    {
+      "content": "Your final implementation should return the total count of boats used. Make sure to test your code with different scenarios, including edge cases, to ensure it works correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= people.length <= 5 * 10^4",
+    "1 <= people[i] <= limit <= 3 * 10^4",
+    "Each boat can carry at most two people.",
+    "Return the minimum number of boats needed."
+  ]
+}

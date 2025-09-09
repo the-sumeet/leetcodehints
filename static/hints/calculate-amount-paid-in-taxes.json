@@ -1,0 +1,44 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `brackets` array. Each element represents a tax bracket with an upper limit and a tax percentage. For example, `brackets[i] = [upper_i, percent_i]` means that income up to `upper_i` is taxed at `percent_i`."
+    },
+    {
+      "content": "Remember that the brackets are sorted by their upper limits. This means you can process them in order without needing to sort them yourself. The first bracket applies to the lowest income range."
+    },
+    {
+      "content": "Consider how to calculate the income taxed in each bracket. For the first bracket, all income up to `upper_0` is taxed at `percent_0`. For subsequent brackets, only the income that exceeds the previous upper limit is taxed."
+    },
+    {
+      "content": "Think about how to handle the transition between brackets. For example, if your income is greater than `upper_0` but less than `upper_1`, you will only tax the amount between `upper_0` and your income at `percent_1`."
+    },
+    {
+      "content": "You will need a variable to keep track of the total tax paid. Initialize this variable to zero before you start processing the brackets."
+    },
+    {
+      "content": "As you iterate through the brackets, calculate the amount of income that falls within each bracket. Use the formula: `amount_in_bracket = min(income, upper_i) - previous_upper`, where `previous_upper` is the upper limit of the last bracket."
+    },
+    {
+      "content": "When calculating the tax for each bracket, multiply the amount of income in that bracket by the corresponding tax rate. Make sure to convert the percentage to a decimal by dividing by 100."
+    },
+    {
+      "content": "Don't forget to handle the case where the income is zero. If the income is zero, the tax should also be zero, regardless of the brackets."
+    },
+    {
+      "content": "Consider edge cases where the income exactly matches the upper limit of a bracket. You should still tax the income according to the bracket it falls into."
+    },
+    {
+      "content": "Finally, ensure your result is formatted to five decimal places. You can use formatting functions in your programming language to achieve this, such as `printf` in C/C++ or `format` in Python."
+    }
+  ],
+  "questionNotes": [
+    "1 <= brackets.length <= 100",
+    "1 <= upper_i <= 1000",
+    "0 <= percent_i <= 100",
+    "0 <= income <= 1000",
+    "upper_i is sorted in ascending order.",
+    "All values of upper_i are unique.",
+    "The upper bound of the last tax bracket is greater than or equal to income.",
+    "Return the result formatted to five decimal places."
+  ]
+}

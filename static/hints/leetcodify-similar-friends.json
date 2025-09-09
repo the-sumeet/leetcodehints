@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two tables: 'Listens' which records user song listens and 'Friendship' which records pairs of friends. Make sure you can access and iterate through these tables."
+    },
+    {
+      "content": "Think about how you can represent the friendships. A dictionary or set might be useful to quickly check if two users are friends. This will help you in determining similar friends later."
+    },
+    {
+      "content": "Focus on the 'Listens' table first. You need to group listens by user. Consider using a dictionary where the key is the user_id and the value is a list of song_ids they listened to."
+    },
+    {
+      "content": "Once you have the listens grouped by user, consider how to compare two users' song lists. What criteria will you use to determine if they have similar listening habits?"
+    },
+    {
+      "content": "Think about how to define 'similarity' between two users. You might consider users similar if they have listened to a certain percentage of the same songs."
+    },
+    {
+      "content": "Make sure to handle cases where users have no songs in common. This will be important when calculating similarity percentages."
+    },
+    {
+      "content": "As you compare users, keep track of the number of similar friends for each user. You may want to use a dictionary where the key is the user_id and the value is a set of similar friends."
+    },
+    {
+      "content": "Remember to only consider friendships when counting similar friends. If two users are not friends, they should not be counted as similar."
+    },
+    {
+      "content": "Consider edge cases, such as when a user has no listens or when all friends have different song lists. How will your solution handle these scenarios?"
+    },
+    {
+      "content": "Once you have identified similar friends for each user, think about how to format your output. You may need to return a list of users with their respective similar friends."
+    },
+    {
+      "content": "You might want to sort the similar friends list for each user before returning it. This could help in ensuring consistent output format."
+    },
+    {
+      "content": "When calculating the similarity percentage, make sure to use floating-point division to avoid integer division issues in Python."
+    },
+    {
+      "content": "Consider using a threshold for similarity. For example, you might define two users as similar if they have listened to at least 50% of the same songs."
+    },
+    {
+      "content": "As you build your solution, test it with the provided sample input to ensure it behaves as expected. Pay attention to the output format."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient, especially if the input size can be large. Consider the time complexity of your approach."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of two tables: 'Listens' and 'Friendship'.",
+    "Each user_id in 'Listens' represents a unique user.",
+    "Friendships are bidirectional; if user1 is friends with user2, user2 is friends with user1.",
+    "Output should list users along with their similar friends.",
+    "Consider edge cases like users with no listens or users with no friends."
+  ]
+}

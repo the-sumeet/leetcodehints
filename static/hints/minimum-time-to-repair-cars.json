@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the time taken by a mechanic to repair cars is calculated. For a mechanic with rank `r` repairing `n` cars, the time taken is `r * n^2`. This means the time grows quadratically with the number of cars repaired by that mechanic."
+    },
+    {
+      "content": "Consider how you can distribute the cars among the mechanics. Since they can work simultaneously, think about how to balance the workload so that the total time is minimized."
+    },
+    {
+      "content": "Think about the total number of cars and how many cars each mechanic can handle. If you have more mechanics than cars, some mechanics will not be used. How does this affect your calculations?"
+    },
+    {
+      "content": "To find the minimum time, you might want to use a binary search approach. Consider what the range of possible times could be. The minimum time could start from 1 minute, and the maximum time could be calculated based on the worst-case scenario."
+    },
+    {
+      "content": "Define a function that, given a time `t`, checks if it's possible to repair all cars within that time. For each mechanic, calculate the maximum number of cars they can repair in `t` minutes."
+    },
+    {
+      "content": "When checking if a time `t` is feasible, remember that for a mechanic with rank `r`, the number of cars they can repair is limited by the equation `n <= sqrt(t/r)`. This will help you determine how many cars can be repaired by each mechanic."
+    },
+    {
+      "content": "As you implement the feasibility check, sum up the total cars repaired by all mechanics. If this sum is greater than or equal to the total number of cars, then `t` is a feasible time."
+    },
+    {
+      "content": "Consider edge cases where there are very few cars compared to the number of mechanics. How does this affect your binary search range? Ensure your solution handles such scenarios gracefully."
+    },
+    {
+      "content": "Don't forget to handle the constraints provided. The maximum number of mechanics is 100,000 and the maximum number of cars is 1,000,000. Make sure your solution is efficient enough to handle these limits."
+    },
+    {
+      "content": "Finally, implement the binary search to find the minimum time. Start with the low bound at 1 and the high bound calculated from the maximum rank and number of cars. Adjust your bounds based on the feasibility check."
+    }
+  ],
+  "questionNotes": [
+    "1 <= ranks.length <= 100,000",
+    "1 <= ranks[i] <= 100",
+    "1 <= cars <= 1,000,000",
+    "All mechanics can work simultaneously.",
+    "The time taken by a mechanic is calculated as r * n^2.",
+    "Ensure to check for edge cases where the number of cars is less than or equal to the number of mechanics."
+  ]
+}

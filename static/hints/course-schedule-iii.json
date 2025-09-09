@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of each course: each course has a duration and a last day by which it must be completed. This means that if you start a course, you need to finish it within its allowed timeframe."
+    },
+    {
+      "content": "Think about how to prioritize which courses to take. Given that you cannot take courses simultaneously, you will need to decide which courses fit best within their respective deadlines."
+    },
+    {
+      "content": "Consider sorting the courses based on their last day. This way, you can ensure that you are always considering the courses that need to be completed sooner first."
+    },
+    {
+      "content": "After sorting, keep track of the total number of days you have spent on courses. You will need to ensure that this total does not exceed the last day of any course you decide to take."
+    },
+    {
+      "content": "Use a greedy approach: after sorting, iterate through the courses and add them to your schedule if you can complete them before their last day. Keep a running total of the days spent."
+    },
+    {
+      "content": "You may encounter situations where taking a longer course could prevent you from taking more courses overall. Think about how to handle this by possibly skipping some courses."
+    },
+    {
+      "content": "To manage the courses you decide to take, consider using a max-heap (or priority queue) to keep track of the durations of the courses you have taken. This will help you efficiently decide which course to drop if needed."
+    },
+    {
+      "content": "When you add a course to your schedule, check if the total duration exceeds the last day of that course. If it does, you may need to remove the longest course you have taken so far to make room for the new one."
+    },
+    {
+      "content": "Remember that the goal is to maximize the number of courses taken, not necessarily to minimize the total duration. This means you should focus on the number of courses rather than just the total days spent."
+    },
+    {
+      "content": "As you iterate through the sorted list of courses, maintain a count of how many courses you have successfully added to your schedule. This will ultimately be your answer."
+    },
+    {
+      "content": "Consider edge cases where courses might have the same last day but different durations. How will you decide which to take? Your strategy should handle this gracefully."
+    },
+    {
+      "content": "Make sure to test your solution against various input scenarios, including the minimum and maximum constraints. This will ensure your solution is robust."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Sorting the courses will take O(n log n), but how will you manage the heap operations? Aim for an efficient solution overall."
+    },
+    {
+      "content": "Before finalizing your approach, sketch out the algorithm step by step. This will help you visualize how the courses are being added and removed from your schedule."
+    },
+    {
+      "content": "Finally, implement your solution, making sure to return the maximum number of courses you can take as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= courses.length <= 10^4, 1 <= duration_i, lastDay_i <= 10^4.",
+    "Courses are represented as [duration_i, lastDay_i].",
+    "You cannot take two or more courses simultaneously.",
+    "Return the maximum number of courses that can be taken."
+  ]
+}

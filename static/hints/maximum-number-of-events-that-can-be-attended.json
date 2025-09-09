@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. Each event is represented as a pair of integers, where the first integer is the start day and the second is the end day. This means you can attend the event on any day within that range."
+    },
+    {
+      "content": "Consider how you might represent the days you can attend events. You could use a set or an array to keep track of which days are already occupied by an event that you have chosen to attend."
+    },
+    {
+      "content": "Think about sorting the events. Sorting them by their end day could be beneficial because it allows you to prioritize events that finish earlier, leaving more room for subsequent events."
+    },
+    {
+      "content": "After sorting, iterate through the events and for each event, check if you can attend it. Remember, you can only attend one event per day, so you'll need to mark days as occupied once you attend an event."
+    },
+    {
+      "content": "When checking if you can attend an event, consider all the days from its start day to its end day. You need to find the first available day within that range that hasn't been taken yet."
+    },
+    {
+      "content": "Keep track of the total number of events you can attend. Each time you successfully attend an event, increment your counter."
+    },
+    {
+      "content": "Edge cases are important! Consider scenarios where events overlap completely or where there are multiple events starting on the same day. How does your logic handle these cases?"
+    },
+    {
+      "content": "Make sure to handle the constraints properly. Since the maximum number of events can be 100,000, your solution should be efficient. Think about the time complexity of your approach."
+    },
+    {
+      "content": "Consider using a greedy approach. By always attending the earliest finishing event that you can, you maximize the number of events you can attend. This is a common strategy for interval scheduling problems."
+    },
+    {
+      "content": "Your final implementation should return the count of maximum events attended. Ensure that your logic correctly accounts for all scenarios and edge cases you've identified."
+    }
+  ],
+  "questionNotes": [
+    "1 <= events.length <= 10^5",
+    "events[i].length == 2",
+    "1 <= startDay_i <= endDay_i <= 10^5",
+    "You can attend an event at any day d where startDay_i <= d <= endDay_i.",
+    "You can only attend one event at any time d."
+  ]
+}

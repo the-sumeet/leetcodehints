@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the two tables: `books` and `reading_sessions`. You will need to join these tables to get the necessary data about each book's reading sessions."
+    },
+    {
+      "content": "Identify the criteria for a book to have polarized opinions. Specifically, a book must have at least one rating of 4 or higher and at least one rating of 2 or lower."
+    },
+    {
+      "content": "Remember to filter out books that have fewer than 5 reading sessions. This is a crucial requirement before you check for polarized opinions."
+    },
+    {
+      "content": "To calculate the rating spread, you will need to find the maximum and minimum ratings for each book. Use aggregation functions like `MAX()` and `MIN()`."
+    },
+    {
+      "content": "Next, count the number of extreme ratings (ratings ≤ 2 or ≥ 4) for each book. You can use a `CASE` statement to categorize ratings and then sum them up."
+    },
+    {
+      "content": "The polarization score is calculated as the number of extreme ratings divided by the total number of sessions. Ensure you handle this calculation correctly."
+    },
+    {
+      "content": "After calculating the polarization score, filter the results to only include books where the score is 0.6 or higher. This will help you identify the books with significant polarized opinions."
+    },
+    {
+      "content": "Pay attention to the ordering of the final results. You need to sort by polarization score in descending order first, and then by title in descending order if scores are tied."
+    },
+    {
+      "content": "When structuring your SQL query, consider using Common Table Expressions (CTEs) to break down the problem into manageable parts, like calculating ratings and filtering."
+    },
+    {
+      "content": "Finally, ensure your output matches the required format, including all specified columns: `book_id`, `title`, `author`, `genre`, `pages`, `rating_spread`, and `polarization_score`. Pay attention to data types and precision."
+    }
+  ],
+  "questionNotes": [
+    "A book must have at least one rating ≥ 4 and at least one rating ≤ 2 to be considered polarized.",
+    "Only consider books with at least 5 reading sessions.",
+    "Calculate the rating spread as (highest_rating - lowest_rating).",
+    "The polarization score is the number of extreme ratings divided by total sessions.",
+    "Include only books with a polarization score ≥ 0.6.",
+    "Order results by polarization score (descending) and title (descending).",
+    "Return the result format as specified in the example."
+  ]
+}

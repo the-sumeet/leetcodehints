@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a tree. A tree with n vertices has exactly n-1 edges and is connected without cycles. This means that there is exactly one path between any two nodes."
+    },
+    {
+      "content": "Focus on the definition of connectable servers. Remember that for servers a and b to be connectable through server c, both distances from c to a and c to b must be divisible by signalSpeed."
+    },
+    {
+      "content": "Consider how to represent the tree. You can use an adjacency list to store the edges, which will help you traverse the tree easily. For example, you might represent edges as a dictionary: `tree = {0: [(1, 1)], 1: [(0, 1), (2, 5)], ...}`."
+    },
+    {
+      "content": "Think about how to calculate the distances from a server c to all other servers. A Depth-First Search (DFS) or Breadth-First Search (BFS) can be useful here to explore all paths from c."
+    },
+    {
+      "content": "When using DFS or BFS, keep track of the distance from the server c to each other server. Store these distances in an array where `dist[i]` is the distance from c to server i."
+    },
+    {
+      "content": "After calculating distances, filter the servers based on whether their distances are divisible by signalSpeed. This will help you identify potential candidates for connectable pairs."
+    },
+    {
+      "content": "Remember that the pairs must satisfy the condition a < b. As you find pairs, ensure you only count those that meet this condition to avoid duplicates."
+    },
+    {
+      "content": "For each server c, you need to count how many servers are on the left and how many are on the right. This can be done by maintaining a count of servers that are reachable with valid distances."
+    },
+    {
+      "content": "Consider edge cases where all servers might be on one side of c. Make sure your counting logic correctly handles such scenarios to avoid incorrect counts."
+    },
+    {
+      "content": "Finally, after gathering all counts for each server, format your result as an integer array where each index corresponds to the server number. Ensure that you return the counts in the correct order."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 1000, edges.length == n - 1, edges[i].length == 3.",
+    "Indexing: Servers are numbered from 0 to n - 1.",
+    "Uniqueness: Ensure pairs (a, b) are counted only if a < b.",
+    "Return format: An integer array count of length n."
+  ]
+}

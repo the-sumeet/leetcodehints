@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Consider how performers can be assigned to stages. Each performer has 'x' choices for the stage they can perform on. What happens if you think about this choice for all 'n' performers?"
+    },
+    {
+      "content": "Think about how to represent the assignment of performers to stages. Each performer can be independently assigned to any of the 'x' stages, which suggests a combinatorial approach."
+    },
+    {
+      "content": "If there are 'n' performers and 'x' stages, how many ways can you assign performers to stages? This can be thought of as 'x' raised to the power of 'n', or x^n."
+    },
+    {
+      "content": "Now, consider the scoring of the bands. After assigning performers to stages, each band can receive a score from 1 to 'y'. How does this scoring factor into the total number of ways?"
+    },
+    {
+      "content": "For each unique assignment of performers to stages, there are 'y' possible scores for the bands. How can you combine the number of assignments and the scores mathematically?"
+    },
+    {
+      "content": "Combine the two components you've identified: the number of ways to assign performers to stages and the number of ways to score the bands. What is the final formula you can derive from these two parts?"
+    },
+    {
+      "content": "Remember to account for the large numbers involved in your calculations. Since the result can be very large, how will you ensure that your final answer is within the limits specified by the problem?"
+    },
+    {
+      "content": "You need to return the result modulo 10^9 + 7. How can you apply the modulo operation to your calculations to prevent overflow?"
+    },
+    {
+      "content": "As a first step, you might want to compute x^n using modular exponentiation. This will help you efficiently calculate large powers under a modulus."
+    },
+    {
+      "content": "Once you have x^n, multiply this by y to account for the scoring. How can you ensure that this multiplication also respects the modulo constraint?"
+    },
+    {
+      "content": "Consider edge cases, such as when n, x, or y is 1. What do you expect the output to be in these scenarios? How does this affect your understanding of the general case?"
+    },
+    {
+      "content": "Don't forget that stages can be empty. This means that even if some performers are assigned to a stage, it doesn't affect the count of other performers assigned to different stages."
+    },
+    {
+      "content": "Think about the uniqueness of the assignments. Two events are considered different if either the stage assignment or the scores differ. How does this uniqueness play into your calculations?"
+    },
+    {
+      "content": "Before finalizing your solution, review your approach to ensure that it handles all constraints properly. For example, what happens if n, x, or y are at their maximum values?"
+    },
+    {
+      "content": "You are close to the solution! Remember to structure your final calculation clearly, ensuring that you compute (x^n * y) % (10^9 + 7) correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n, x, y <= 1000",
+    "Return the answer modulo 10^9 + 7.",
+    "Two events are different if performer assignments or band scores differ.",
+    "Stages can be empty, meaning not all stages need to have performers."
+  ]
+}

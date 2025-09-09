@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'semi-repeating' subarray means. A semi-repeating subarray is one where the elements can repeat, but only up to a certain limit defined by the integer parameter provided. For instance, in the array [1, 2, 3, 1, 2, 3, 4] with a limit of 2, the subarray can have at most 2 occurrences of any element."
+    },
+    {
+      "content": "Consider how to iterate through the array. You will likely need to use a sliding window approach to keep track of the current subarray and its element counts. Think about how you can expand and contract this window based on the counts of the elements."
+    },
+    {
+      "content": "As you maintain your window, you'll need a way to count occurrences of each element. A dictionary or a hash map could be useful here. This will help you quickly check if adding a new element exceeds the allowed limit."
+    },
+    {
+      "content": "When you add a new element to your current window, check if it causes any element to exceed the allowed count. If it does, you will need to shrink your window from the left until all elements are within the allowed count."
+    },
+    {
+      "content": "Remember to keep track of the maximum length of valid subarrays you find during your iterations. Each time you adjust your window, compare its size to the maximum length you've recorded so far."
+    },
+    {
+      "content": "Consider edge cases such as an empty array or an array where all elements are the same. How would your approach handle these situations? Make sure your algorithm can handle these without errors."
+    },
+    {
+      "content": "Think about the return value of your function. You should return the length of the longest semi-repeating subarray found. Ensure that your implementation correctly returns this value."
+    },
+    {
+      "content": "Make sure to test your implementation with various inputs, including those with no valid subarrays (like [1,1,1,1,1] with a limit of 0) and those with multiple valid subarrays of the same length."
+    },
+    {
+      "content": "When implementing your sliding window, remember to update your counts efficiently. You might want to remove elements from the left side of the window and update your counts accordingly."
+    },
+    {
+      "content": "Finally, ensure your algorithm runs efficiently. Aim for a time complexity of O(n), where n is the length of the input array. This will likely involve careful management of your window and counts."
+    }
+  ],
+  "questionNotes": [
+    "The input is an array of integers and an integer limit.",
+    "The output should be the length of the longest semi-repeating subarray.",
+    "Consider edge cases like empty arrays or arrays with all identical elements.",
+    "Ensure your solution runs in O(n) time complexity."
+  ]
+}

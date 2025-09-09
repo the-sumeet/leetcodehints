@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary string. It consists of '0's and '1's, and you need to identify segments of '1's. A segment is defined as a contiguous sequence of '1's."
+    },
+    {
+      "content": "Consider what it means for a string to have at most one segment of '1's. This implies that there should not be any '0's separating two groups of '1's."
+    },
+    {
+      "content": "Think about how you can traverse the string. You might want to keep track of whether you've encountered a segment of '1's and if you've seen a '0' after that segment."
+    },
+    {
+      "content": "As you iterate through the string, look for transitions between '0's and '1's. You can count how many times you encounter '1's after '0's."
+    },
+    {
+      "content": "What happens when you encounter the first '1'? Make sure to set a flag indicating that you've found your first segment of '1's."
+    },
+    {
+      "content": "When you encounter a '0' after a segment of '1's, you should be cautious. If you see another '1' after this '0', it indicates a second segment."
+    },
+    {
+      "content": "Consider edge cases, such as strings that are entirely '1's or '0's. How would your logic handle these cases?"
+    },
+    {
+      "content": "You can simplify your checks by using a boolean variable to track whether you've already found a segment of '1's. If you find a second segment, you can immediately return false."
+    },
+    {
+      "content": "Think about the return value. You should return true if you find at most one segment of '1's and false otherwise. Ensure your logic accounts for the entire string."
+    },
+    {
+      "content": "As a final step, you could write a simple loop that goes through the string, checking for transitions and counting segments. Remember to return the appropriate boolean value based on your findings."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 100",
+    "s[i] is either '0' or '1'.",
+    "s[0] is '1', meaning the string cannot start with '0'.",
+    "You need to check for contiguous segments of '1's."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the two arrays, nums1 and nums2. For each index i in nums1, you need to find all indices j where nums1[j] < nums1[i]."
+    },
+    {
+      "content": "Think about how you can efficiently find the indices j for each i. A nested loop could work, but consider how you might avoid checking every pair if n is large."
+    },
+    {
+      "content": "When you find the valid indices j, remember that you should only consider the corresponding values in nums2. You need to select at most k values from these nums2[j] values."
+    },
+    {
+      "content": "To maximize the sum of selected nums2[j] values, you should focus on selecting the largest values. How might you efficiently retrieve the top k values from a list?"
+    },
+    {
+      "content": "Consider using a data structure that can help you maintain the largest k elements efficiently. A max-heap or a sorted list could be useful here."
+    },
+    {
+      "content": "As you iterate through nums1, keep track of the valid nums2 values for all previous indices. This way, you can avoid recalculating them for each i."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when k is larger than the number of valid indices j. How will you handle that situation?"
+    },
+    {
+      "content": "Make sure to initialize your answer array correctly. Each entry should start at 0, and only update it when you find valid indices."
+    },
+    {
+      "content": "Consider the time complexity of your approach. If you are using nested loops, how will that affect performance with the upper limit of n being 100,000?"
+    },
+    {
+      "content": "Finally, remember to return the answer in the specified format. It should be an array of size n, with each index corresponding to the result for that index in nums1."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums1.length == nums2.length",
+    "1 <= n <= 10^5",
+    "1 <= nums1[i], nums2[i] <= 10^6",
+    "1 <= k <= n",
+    "Indices are 0-based.",
+    "Return an array of size n."
+  ]
+}

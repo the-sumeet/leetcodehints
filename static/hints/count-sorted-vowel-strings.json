@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to count the number of strings of length `n` made up of the vowels 'a', 'e', 'i', 'o', and 'u'. Remember that the strings must be lexicographically sorted."
+    },
+    {
+      "content": "Consider how many choices you have for each character in the string. Since the strings must be sorted, if you choose a vowel, all subsequent vowels must be the same or come later in the alphabet."
+    },
+    {
+      "content": "Think about the combinations of vowels. For example, if you have a string of length 2, you can start with 'a' and then choose any vowel from 'a' to 'u'. This means you can have 'aa', 'ae', 'ai', etc."
+    },
+    {
+      "content": "Notice that for a string of length `n`, you can represent the problem using combinations. The number of ways to choose vowels can be thought of as distributing `n` indistinguishable items (the positions in the string) into `5` distinguishable bins (the vowels)."
+    },
+    {
+      "content": "This is a combinatorial problem. You can use the 'stars and bars' theorem to find the number of ways to distribute `n` indistinguishable objects into `k` distinguishable boxes. In this case, `k` is 5 (the vowels)."
+    },
+    {
+      "content": "Recall the formula for combinations: C(n + k - 1, k - 1). Here, `n` is the length of the string and `k` is the number of vowels (5). So you will calculate C(n + 5 - 1, 5 - 1)."
+    },
+    {
+      "content": "Make sure to handle the edge cases. For instance, if `n` is 1, the answer is simply the number of vowels, which is 5. Check how this formula behaves for small values of `n`."
+    },
+    {
+      "content": "You might want to implement a function to calculate combinations. Consider using a recursive approach or an iterative approach with a loop to compute factorial values efficiently."
+    },
+    {
+      "content": "When implementing the combination function, remember to handle large numbers carefully, especially since `n` can go up to 50. Python's integers can handle large values, but be mindful of performance."
+    },
+    {
+      "content": "Finally, put everything together. Calculate the number of sorted vowel strings using the combination formula derived earlier. Test your implementation with various values of `n` to ensure correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 50",
+    "The strings must consist only of the vowels: 'a', 'e', 'i', 'o', 'u'.",
+    "Strings must be lexicographically sorted.",
+    "Return the count of valid strings, not the strings themselves."
+  ]
+}

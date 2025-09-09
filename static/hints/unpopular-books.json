@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main tables: 'Books' and 'Orders'. Each table has specific columns that you will need to work with."
+    },
+    {
+      "content": "Focus on the 'Books' table first. You need to identify which books are considered 'unpopular'. Think about how you might define 'unpopular' in terms of order quantities."
+    },
+    {
+      "content": "Consider how you can aggregate the order data. You will likely need to sum the quantities of orders for each book to determine how many times each book has been ordered."
+    },
+    {
+      "content": "Make sure to handle cases where a book has not been ordered at all. These books should also be considered 'unpopular'. How will you include them in your results?"
+    },
+    {
+      "content": "As you aggregate the orders, think about how you can join the 'Books' and 'Orders' tables. You will need to match 'book_id' from both tables to get the necessary data."
+    },
+    {
+      "content": "After aggregating the order quantities, you will need to filter the results. Define a threshold for what constitutes 'unpopular'. For example, you might consider books with zero orders or very few orders."
+    },
+    {
+      "content": "Remember to consider the date when filtering. Books that have been available for a longer time might have different expectations for order quantities compared to newer books."
+    },
+    {
+      "content": "When you have your list of unpopular books, think about how to format your output. You may want to return specific fields from the 'Books' table, like 'book_id', 'name', and 'available_from'."
+    },
+    {
+      "content": "Check for edge cases, such as multiple books having the same low order quantity. How will you handle ties? Will you include all tied books in your final result?"
+    },
+    {
+      "content": "Finally, ensure your solution is efficient. Consider the size of the input data and how your approach will scale. Aim for a solution that minimizes unnecessary computations."
+    }
+  ],
+  "questionNotes": [
+    "The 'Books' table contains unique book IDs.",
+    "The 'Orders' table may have multiple entries for the same book.",
+    "Books with zero orders are also considered unpopular.",
+    "Be mindful of the date when determining the popularity of books."
+  ]
+}

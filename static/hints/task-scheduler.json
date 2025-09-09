@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the frequency of each task. Count how many times each task appears in the input array. This will help you determine how to schedule tasks while respecting the cooling interval."
+    },
+    {
+      "content": "Consider using a dictionary or a frequency array to track the counts of each task. For example, for tasks = ['A', 'A', 'A', 'B', 'B', 'B'], you would have counts: {'A': 3, 'B': 3}."
+    },
+    {
+      "content": "Identify the task with the maximum frequency. This task will dictate the minimum number of intervals needed because it will require the most careful scheduling to respect the cooling period."
+    },
+    {
+      "content": "Think about how many total intervals you need to schedule based on the maximum frequency of tasks. If a task appears 'k' times, you will need at least (k - 1) * (n + 1) + 1 intervals to fit them in."
+    },
+    {
+      "content": "After calculating the minimum required intervals based on the maximum frequency, consider the total number of tasks. If the total number of tasks is greater than the calculated minimum, you may need to add idle intervals."
+    },
+    {
+      "content": "Remember that if there are multiple tasks with the same maximum frequency, you will still need to ensure that they are spaced out according to the cooling interval. This may affect your total interval count."
+    },
+    {
+      "content": "When calculating the total intervals, ensure you account for any remaining tasks after placing the most frequent task. You may need to fill in these tasks in the schedule."
+    },
+    {
+      "content": "Consider edge cases, such as when n = 0. In this case, you can execute tasks back-to-back without any idle time, which simplifies your calculation."
+    },
+    {
+      "content": "If there are more idle slots than tasks to fill them, the total intervals will be the maximum of the calculated minimum intervals and the length of the tasks array. This ensures you don't undercount the time needed."
+    },
+    {
+      "content": "Finally, implement your logic to compute the total intervals needed. Make sure to return the computed value as the result. For example: `return max(totalIntervals, len(tasks));`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= tasks.length <= 10^4",
+    "tasks[i] is an uppercase English letter.",
+    "0 <= n <= 100",
+    "You must ensure a gap of at least n intervals between tasks of the same label.",
+    "Consider edge cases like n = 0, where no idle time is needed."
+  ]
+}

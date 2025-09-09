@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the game mechanics. Alice and Bob take turns removing stones from either end of the array. Each player scores points based on the sum of the remaining stones after their turn."
+    },
+    {
+      "content": "Consider the implications of choosing the leftmost or rightmost stone. Each choice not only affects the current score but also the future scores for both players. Think about how to represent this decision-making process."
+    },
+    {
+      "content": "Since both players play optimally, you can use a recursive approach to simulate the game. Each player's goal is to maximize their score while minimizing the opponent's score."
+    },
+    {
+      "content": "Think about how you can use dynamic programming to avoid recalculating scores for the same state. You can define a DP table where each entry represents the maximum score difference achievable from a subarray of stones."
+    },
+    {
+      "content": "Define your DP state. For example, let `dp[l][r]` represent the maximum score difference when considering the subarray from index `l` to `r`. This will help you efficiently calculate the scores based on the choices made."
+    },
+    {
+      "content": "When calculating `dp[l][r]`, consider the two choices: removing the leftmost stone (`stones[l]`) or the rightmost stone (`stones[r]`). The score difference will depend on the remaining stones after each choice."
+    },
+    {
+      "content": "For the leftmost choice, the score difference can be calculated as `stones[l] + sum(l+1, r) - dp[l+1][r]`. Similarly, for the rightmost choice, it would be `stones[r] + sum(l, r-1) - dp[l][r-1]`. Make sure to keep track of the sum of the stones."
+    },
+    {
+      "content": "Remember to initialize your DP table correctly. The base case will involve scenarios where there is only one stone left, allowing direct calculation of the score difference."
+    },
+    {
+      "content": "As you fill in your DP table, ensure you are considering all possible subarrays. The final answer will be stored in `dp[0][n-1]`, where `n` is the length of the stones array."
+    },
+    {
+      "content": "Before finalizing your solution, consider edge cases such as the minimum number of stones and all stones having the same value. These can help ensure your solution is robust."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 1000, 1 <= stones[i] <= 1000",
+    "Alice always starts first.",
+    "Both players play optimally.",
+    "Return the difference in scores between Alice and Bob."
+  ]
+}

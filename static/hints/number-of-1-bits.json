@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to convert a number to its binary representation. You can use the built-in function in many programming languages to get the binary string of a number. For example, in Python, you can use `bin(n)` which returns a string prefixed with '0b'."
+    },
+    {
+      "content": "Once you have the binary representation, think about how to count the '1's in that string. You can iterate through the string or use a built-in method to count occurrences of '1'."
+    },
+    {
+      "content": "Consider edge cases, such as the smallest possible input, which is 1. What does the binary representation look like, and how many set bits does it have?"
+    },
+    {
+      "content": "Remember that the problem states that n is always a positive integer. This means you won't have to handle negative numbers or zero."
+    },
+    {
+      "content": "Think about the efficiency of your solution. If this function is called many times, using a straightforward string conversion could become a bottleneck. Can you think of a way to count bits without converting to a string?"
+    },
+    {
+      "content": "One efficient way to count set bits is using bit manipulation. You can repeatedly check the least significant bit (LSB) of the number and then right-shift the number. This way, you can count bits without converting to binary."
+    },
+    {
+      "content": "You can also use a technique called Brian Kernighan's Algorithm, which repeatedly clears the lowest set bit and counts how many times you can do this until the number becomes zero."
+    },
+    {
+      "content": "Consider the maximum value for n, which is 2^31 - 1. This means your solution should handle large integers efficiently without running into performance issues."
+    },
+    {
+      "content": "If you decide to use bit manipulation, remember that you can use the bitwise AND operation to check if the least significant bit is set. For example, `n & 1` will tell you if the last bit is '1'."
+    },
+    {
+      "content": "To finalize your approach, think about how you would implement the counting logic in a loop or a recursive function. Make sure to return the count of set bits as the final output."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 2^31 - 1",
+    "Focus on counting the number of '1' bits in the binary representation.",
+    "The function should return an integer representing the count of set bits."
+  ]
+}

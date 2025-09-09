@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to move all zeros in the array to the end while keeping the order of non-zero elements intact. Think about how you can traverse the array and identify zero and non-zero elements."
+    },
+    {
+      "content": "Consider how you can achieve this in-place. This means you cannot use an additional array to store the result. Instead, think about how you can swap elements within the original array."
+    },
+    {
+      "content": "A good approach is to use two pointers: one for iterating through the array and another for tracking the position to place non-zero elements. This will help you maintain the order of non-zero elements."
+    },
+    {
+      "content": "As you iterate through the array, whenever you encounter a non-zero element, you should place it at the position indicated by your second pointer and then increment that pointer."
+    },
+    {
+      "content": "Make sure to handle the case where the array may contain only zeros. What should your function return in that case? Think about how your pointers will behave with such input."
+    },
+    {
+      "content": "After you have moved all non-zero elements to the front, you will need to fill the remaining positions in the array with zeros. This can be done by continuing from where your second pointer left off."
+    },
+    {
+      "content": "Remember that the order of non-zero elements must be preserved. This means that you should only overwrite positions that are already filled with zeros when placing non-zero elements."
+    },
+    {
+      "content": "Consider edge cases such as arrays with a single element or arrays that are already sorted with zeros at the end. How will your algorithm handle these cases?"
+    },
+    {
+      "content": "Think about the time complexity of your approach. You should aim for a solution that processes the array in a single pass, which would be O(n), where n is the length of the array."
+    },
+    {
+      "content": "To summarize, you will use a loop to find non-zero elements, place them in the correct order, and then fill the rest of the array with zeros. Start implementing this logic step by step."
+    }
+  ],
+  "questionNotes": [
+    "You must do this in-place without making a copy of the array.",
+    "The relative order of non-zero elements must be maintained.",
+    "Constraints: 1 <= nums.length <= 10^4 and -2^31 <= nums[i] <= 2^31 - 1.",
+    "Consider edge cases such as all elements being zero or the array being of length 1."
+  ]
+}

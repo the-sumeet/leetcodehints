@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how each character in the string affects your position on the grid. Each character corresponds to a movement: 'N' increases the y-coordinate, 'S' decreases it, 'E' increases the x-coordinate, and 'W' decreases it."
+    },
+    {
+      "content": "Consider how the Manhattan distance is calculated. It is the sum of the absolute differences of the x and y coordinates from the origin. For example, if you move to (2, 3), the Manhattan distance is |2 - 0| + |3 - 0| = 5."
+    },
+    {
+      "content": "Think about how changing a character can potentially increase the Manhattan distance. If you change 'S' to 'N', for instance, you are effectively moving one unit further north, which can increase the distance."
+    },
+    {
+      "content": "You are allowed to make up to k changes. Consider how you can prioritize which movements to change based on their impact on the distance. Changing movements that minimize your distance from the origin could be beneficial."
+    },
+    {
+      "content": "As you iterate through the string, keep track of your current position after each movement. This will help you compute the Manhattan distance at each step and identify the maximum distance achieved."
+    },
+    {
+      "content": "If you reach a point where you can no longer change movements (because you've reached k changes), ensure you still check the distance at that point. The maximum distance might occur just before you exhaust your changes."
+    },
+    {
+      "content": "Remember to account for edge cases where k is 0. In this situation, you cannot change any movements, so you should only calculate the distance based on the original string."
+    },
+    {
+      "content": "Consider how the order of movements affects the distance. The same set of movements can yield different distances depending on their sequence. You may want to simulate the movements step by step."
+    },
+    {
+      "content": "When making changes, think about the best strategy for maximizing the distance. For example, if you have multiple 'S' movements, changing them to 'N' might yield the highest increase in distance."
+    },
+    {
+      "content": "As a final step, after simulating the movements with the possible changes, remember to return the maximum Manhattan distance found during the process. Ensure your logic correctly keeps track of the maximum distance encountered."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5, 0 <= k <= s.length.",
+    "s consists only of 'N', 'S', 'E', and 'W'.",
+    "Be mindful of the fact that you can change at most k characters.",
+    "The Manhattan distance is calculated as |x| + |y| from the origin (0, 0).",
+    "Consider the order of movements as it affects the distance."
+  ]
+}

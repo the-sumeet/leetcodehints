@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider what a 'good' subsequence is. A good subsequence is one that contains at least one occurrence of each distinct character from the original string."
+    },
+    {
+      "content": "Think about how you can count the occurrences of each character in the string. You can use a frequency map or a dictionary to store the counts of each character."
+    },
+    {
+      "content": "Once you have the counts, remember that each character can either be included in a subsequence or not. This gives you a combinatorial aspect to the problem."
+    },
+    {
+      "content": "For each character with a count greater than zero, you can form subsequences by choosing to include it 1 to count times. This means you have (count + 1) choices for each character."
+    },
+    {
+      "content": "Calculate the total number of subsequences by multiplying the number of choices for each distinct character. However, you must subtract the empty subsequence from this total."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the input string is empty or contains only one character. What would the output be in these cases?"
+    },
+    {
+      "content": "Consider the implications of having multiple occurrences of the same character. How does this affect your calculations of subsequences?"
+    },
+    {
+      "content": "You might want to use a loop to iterate through your frequency map and calculate the total number of good subsequences based on the counts."
+    },
+    {
+      "content": "Remember to use modular arithmetic if the result can be large, as the problem might require you to return the result modulo some number."
+    },
+    {
+      "content": "Finally, ensure your final count excludes the empty subsequence. The formula you should arrive at is: total_good_subsequences = (product of (count + 1) for each character) - 1."
+    }
+  ],
+  "questionNotes": [
+    "A 'good' subsequence must include at least one of each distinct character.",
+    "The input string can contain lowercase letters.",
+    "Consider edge cases such as empty strings or strings with only one character.",
+    "Output should be the count of good subsequences modulo a certain number if specified."
+  ]
+}

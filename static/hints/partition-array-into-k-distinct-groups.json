@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, consider the constraints of the problem. You need to partition the array into groups of exactly `k` elements. This means that the total number of elements in `nums` must be divisible by `k` for a partition to be possible."
+    },
+    {
+      "content": "Next, think about the distinctness requirement. Each group must contain distinct elements. This implies that the maximum frequency of any element in `nums` should not exceed the number of groups you can form."
+    },
+    {
+      "content": "Count the frequency of each element in the array. You can use a hash map or a frequency array for this purpose. This will help you determine how many distinct elements you have and their counts."
+    },
+    {
+      "content": "Now, calculate how many distinct elements are in `nums`. If the number of distinct elements is less than `k`, then it's impossible to form even a single group of `k` distinct elements."
+    },
+    {
+      "content": "Consider the maximum frequency of any element. If this maximum frequency is greater than the number of groups you can create (which is `len(nums) / k`), then it's impossible to form the required groups."
+    },
+    {
+      "content": "Think about edge cases. For example, if `k` is equal to 1, every element can be its own group, so the answer should always be true unless the array is empty (which it won't be according to constraints)."
+    },
+    {
+      "content": "If `k` is equal to the length of `nums`, then all elements must be distinct. Check if there are any duplicates in `nums` to determine if the partition is possible."
+    },
+    {
+      "content": "As you analyze the frequencies, keep track of how many groups you can form with the available distinct elements. You might need to adjust your approach based on how many times each element appears."
+    },
+    {
+      "content": "Think about how to structure your logic. You might want to iterate through your frequency counts and determine how many full groups you can form based on the counts of each distinct element."
+    },
+    {
+      "content": "Finally, once you have all the necessary counts and checks in place, you can conclude whether the partitioning is possible by checking if all conditions regarding distinctness and group size are satisfied."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^5",
+    "1 <= k <= nums.length",
+    "Each group must contain exactly k distinct elements.",
+    "All elements in nums must be assigned to exactly one group."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the cities and roads. The problem describes a tree structure, which means there are no cycles and there is exactly one path between any two cities."
+    },
+    {
+      "content": "Consider how the roads are currently oriented. Each connection is directed, and you need to determine how many of these need to be reversed to ensure all cities can reach city 0."
+    },
+    {
+      "content": "Think about traversing the tree. A Depth First Search (DFS) or Breadth First Search (BFS) could be useful to explore the connections and count how many edges need to be reversed."
+    },
+    {
+      "content": "When traversing, keep track of the edges that point away from city 0. Each of these edges represents a road that you would need to reverse."
+    },
+    {
+      "content": "Remember that the input guarantees that every city can reach city 0 after reordering. This means you won't encounter any isolated nodes during your traversal."
+    },
+    {
+      "content": "As you traverse, increment a counter every time you find a road that goes in the opposite direction of what you want (i.e., away from city 0)."
+    },
+    {
+      "content": "Consider edge cases where the connections are already oriented correctly. What would your function return if no changes are needed?"
+    },
+    {
+      "content": "Make sure to handle the input format correctly. You're given a list of connections, and you need to ensure you interpret each connection as a directed edge."
+    },
+    {
+      "content": "After counting the edges that need to be reversed, remember to return the count as the final output. This is the minimum number of edges that need to be changed."
+    },
+    {
+      "content": "Finally, think about the efficiency of your solution. Given the constraints, aim for a solution that runs in linear time relative to the number of cities."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 50,000; connections.length == n - 1; connections[i].length == 2; 0 <= a_i, b_i <= n - 1; a_i != b_i.",
+    "The connections represent directed edges, and you need to count how many need to be reversed.",
+    "The output should be a single integer representing the minimum number of edges changed."
+  ]
+}

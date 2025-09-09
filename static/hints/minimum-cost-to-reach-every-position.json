@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem setup. You are at position n and can only swap with people in front of you by paying their respective costs. Think about how you can calculate the cost to reach each position from the end."
+    },
+    {
+      "content": "Consider the first position (index 0) and how you can reach it. You can only swap with person 0 directly, so the cost to reach position 0 is simply cost[0]."
+    },
+    {
+      "content": "For each position i, think about the minimum cost to reach there. You can reach position i either by swapping with person i directly or by swapping with someone in front of you and then moving forward for free."
+    },
+    {
+      "content": "When calculating the cost to reach position i, keep track of the minimum cost encountered so far. This will help you avoid unnecessary calculations and ensure you are always using the least expensive option."
+    },
+    {
+      "content": "Use a loop to iterate through the cost array. For each position i, maintain a variable to store the minimum cost to reach that position based on previous calculations."
+    },
+    {
+      "content": "Remember that if you swap with a person ahead of you, you need to add their cost to your current total. If you can reach a position for free by moving through previously swapped positions, ensure you account for that."
+    },
+    {
+      "content": "Consider edge cases, such as when all costs are the same. How would that affect your calculations? Would you still need to check each position, or could you optimize your approach?"
+    },
+    {
+      "content": "Think about how to store the results in the answer array. Each index in the answer array corresponds to the minimum cost to reach that position, so ensure you are updating the right index."
+    },
+    {
+      "content": "As you build your solution, remember to initialize your answer array properly. You might want to start with the maximum possible value for each position and then update it with the minimum costs as you calculate them."
+    },
+    {
+      "content": "Finally, once you have iterated through all positions, ensure that your result array is correctly populated. The last position (index n) should reflect the cost of reaching the end of the line, which is effectively zero since you start there."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == cost.length <= 100",
+    "Each cost[i] is between 1 and 100.",
+    "You are at position n and can only swap with people in front of you.",
+    "Return an array of size n, where answer[i] is the minimum total cost to reach position i."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `MagicDictionary`. You will need a way to store the words efficiently. Consider using a data structure that allows for quick lookups, such as a set or a trie."
+    },
+    {
+      "content": "When building the dictionary with `buildDict`, ensure that you are storing each word in a way that allows you to later check if a modified version of a word exists in the dictionary."
+    },
+    {
+      "content": "Focus on the `search` method. You need to check if you can change exactly one character in the `searchWord` to match any word in your dictionary. Consider how you can compare the characters of `searchWord` with each word in the dictionary."
+    },
+    {
+      "content": "Think about how to iterate through each word in the dictionary while checking the `searchWord`. You could use a loop to go through each character of the `searchWord` and compare it with the corresponding character in the dictionary word."
+    },
+    {
+      "content": "Remember that you need to account for the length of the words. If the `searchWord` and a dictionary word are not the same length, you can skip that word immediately."
+    },
+    {
+      "content": "While comparing characters, keep a count of how many characters differ. If you find exactly one character that differs, you can potentially return true. If you find more than one, break out of the loop early."
+    },
+    {
+      "content": "Consider edge cases where the `searchWord` is the same as a word in the dictionary. You must ensure that you are changing exactly one character, which means a direct match should return false."
+    },
+    {
+      "content": "Think about the efficiency of your solution. Since you may need to compare the `searchWord` with multiple words in the dictionary, how can you optimize the search? Consider the maximum number of comparisons you'll need to make."
+    },
+    {
+      "content": "You might want to create a helper function to encapsulate the logic for checking if a word can be formed by changing one character. This will make your code cleaner and easier to understand."
+    },
+    {
+      "content": "Finally, implement the logic to return true or false based on your character comparison results. Ensure that your function handles all edge cases correctly, especially with varying lengths and direct matches."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= dictionary.length <= 100",
+    "Constraints: 1 <= dictionary[i].length <= 100",
+    "All strings in dictionary are distinct.",
+    "1 <= searchWord.length <= 100",
+    "buildDict will be called only once before search.",
+    "At most 100 calls will be made to search."
+  ]
+}

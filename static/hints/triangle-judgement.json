@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "To determine if three segments can form a triangle, you need to apply the triangle inequality theorem. This theorem states that for any three sides, the sum of the lengths of any two sides must be greater than the length of the third side."
+    },
+    {
+      "content": "Start by writing down the conditions from the triangle inequality theorem. For segments x, y, and z, you need to check: \n- x + y > z \n- x + z > y \n- y + z > x"
+    },
+    {
+      "content": "Consider how you will structure your SQL query. You will need to select the columns x, y, and z from the Triangle table and then add a new column to indicate whether the segments can form a triangle."
+    },
+    {
+      "content": "When adding the new column for the triangle result, think about using a CASE statement in SQL. This allows you to return 'Yes' or 'No' based on the triangle inequality conditions."
+    },
+    {
+      "content": "Make sure to handle cases where the lengths are zero or negative. According to the triangle inequality, segments must have positive lengths to form a triangle."
+    },
+    {
+      "content": "Remember that the result table should include all original columns (x, y, z) along with the new 'triangle' column. Ensure your SELECT statement reflects this."
+    },
+    {
+      "content": "Consider the order of the output. The problem states that the result can be in any order, so you do not need to add an ORDER BY clause unless specified."
+    },
+    {
+      "content": "Check for edge cases where two or more sides are equal. For example, if x = y = z, they can still form a triangle. Make sure your conditions account for this."
+    },
+    {
+      "content": "You might want to test your SQL query with various combinations of inputs to ensure it behaves correctly. For instance, test with all sides equal, one side zero, and two sides equal."
+    },
+    {
+      "content": "Finally, structure your SQL query to implement the CASE logic for the triangle column. Your query might look something like this: \nSELECT x, y, z, CASE WHEN (x + y > z AND x + z > y AND y + z > x) THEN 'Yes' ELSE 'No' END AS triangle FROM Triangle;"
+    }
+  ],
+  "questionNotes": [
+    "The primary key for the table is (x, y, z), meaning each combination of x, y, and z is unique.",
+    "The output must include the columns x, y, z and an additional column named 'triangle'.",
+    "The 'triangle' column must return 'Yes' or 'No' based on whether the segments can form a triangle.",
+    "Input lengths must be positive integers for valid triangle formation."
+  ]
+}

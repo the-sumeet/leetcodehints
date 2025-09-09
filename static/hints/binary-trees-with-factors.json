@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of binary trees. Each non-leaf node's value must be the product of its children's values. This means that every number in the array can potentially be a leaf or contribute to a non-leaf node."
+    },
+    {
+      "content": "Consider the base case: how many trees can you create with just one number from the array? Each number can form a tree by itself, so that's at least one tree for each number."
+    },
+    {
+      "content": "Think about how you can combine two numbers to form a non-leaf node. For example, if you have numbers `a` and `b`, you can create a node with value `a * b`. Check if `a * b` exists in the array."
+    },
+    {
+      "content": "Use a map or dictionary to keep track of how many trees can be formed with each number. This will help you store intermediate results and avoid recalculating the same values."
+    },
+    {
+      "content": "When calculating the number of trees for a product `p`, iterate through all pairs of factors that can produce `p`. For each valid pair, multiply the number of trees that can be formed from each factor."
+    },
+    {
+      "content": "Remember to handle large numbers carefully. Since the result can be very large, use modulo `10^9 + 7` at every step of your calculations to keep the numbers manageable."
+    },
+    {
+      "content": "Consider the order of operations. When you find a product, ensure you are only considering pairs of factors that are both present in the array, as the problem specifies that all values must be unique and greater than 1."
+    },
+    {
+      "content": "To optimize your approach, sort the array first. This will help in efficiently checking for valid products and will allow you to break early in your loops when you exceed the maximum number in the array."
+    },
+    {
+      "content": "As you iterate through the array, for each number, check all possible pairs of factors that can yield that number. Keep a running total of the number of trees that can be constructed for each number."
+    },
+    {
+      "content": "Finally, after processing all numbers, sum up the counts of trees for each number in the array to get the total number of unique binary trees that can be formed."
+    }
+  ],
+  "questionNotes": [
+    "Each integer in arr is strictly greater than 1.",
+    "The integers in arr are unique.",
+    "The output should be returned modulo 10^9 + 7.",
+    "1 <= arr.length <= 1000.",
+    "2 <= arr[i] <= 10^9."
+  ]
+}

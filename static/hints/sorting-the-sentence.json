@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by splitting the input string `s` into individual words. You can use the `split()` method in Python to achieve this. For example, `words = s.split()` will give you a list of words."
+    },
+    {
+      "content": "Each word in the shuffled sentence contains a number at the end that indicates its original position. You can extract this number by accessing the last character of each word. Consider using string slicing or indexing to get the position."
+    },
+    {
+      "content": "Remember that the positions are 1-indexed. This means that the first word in the original sentence corresponds to the number '1', the second to '2', and so on. You will need to convert these string numbers to integers for sorting."
+    },
+    {
+      "content": "Once you have the position extracted from each word, you can create a list of tuples where each tuple contains the position and the word. This will help you sort the words based on their original positions."
+    },
+    {
+      "content": "To sort the words based on their original positions, use the `sorted()` function in Python. You can specify the key for sorting as the position you extracted earlier. For example: `sorted(words, key=lambda x: int(x[-1]))`."
+    },
+    {
+      "content": "After sorting the words, you will have them in the correct order, but they still contain the position numbers at the end. You can remove these numbers by slicing each word to exclude the last character."
+    },
+    {
+      "content": "Make sure to join the sorted words back into a single string with spaces between them. You can use the `join()` method for this purpose, like so: `' '.join(sorted_words).strip()`."
+    },
+    {
+      "content": "Consider edge cases such as sentences with all words having the same length or varying lengths. Ensure your code can handle these without errors."
+    },
+    {
+      "content": "Keep in mind that the input will always be valid as per the problem constraints, so you don’t need to handle any unexpected formats or characters."
+    },
+    {
+      "content": "Finally, remember to return the reconstructed sentence as the output of your function. Ensure that the output format matches the requirements specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "The sentence consists of words separated by a single space with no leading or trailing spaces.",
+    "Each word ends with a number (1-9) indicating its original position.",
+    "The words are 1-indexed, meaning the first word has position 1.",
+    "The maximum number of words in the sentence is 9.",
+    "The output should be the original sentence with words in their correct order."
+  ]
+}

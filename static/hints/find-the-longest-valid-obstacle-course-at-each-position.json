@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to find the longest valid obstacle course for each index in the array. Remember that the course must include the obstacle at the current index."
+    },
+    {
+      "content": "Consider the conditions for forming a valid obstacle course: the obstacles must be in non-decreasing order. Think about how you can maintain this order as you iterate through the array."
+    },
+    {
+      "content": "Notice that for each index `i`, you can only consider obstacles from index `0` to `i`. This means your solution needs to build upon previously calculated results."
+    },
+    {
+      "content": "You might want to use a dynamic programming approach or a variation of the longest increasing subsequence (LIS) algorithm. Think about how you can store the lengths of valid courses as you progress through the array."
+    },
+    {
+      "content": "To efficiently find the longest valid course ending at each index, consider using a data structure that allows you to quickly find the position of the current obstacle in a growing list of valid obstacles."
+    },
+    {
+      "content": "As you process each obstacle, keep track of the current valid sequence. You may want to use a list to store the heights of the obstacles in the current valid course."
+    },
+    {
+      "content": "When you encounter an obstacle, you need to decide where it fits in the current valid sequence. If it can extend the sequence, add it; if not, replace an existing value to maintain the sequence's validity."
+    },
+    {
+      "content": "Consider using binary search to find the appropriate position to insert or replace an obstacle in your current sequence. This will help maintain the order while keeping the operations efficient."
+    },
+    {
+      "content": "Remember to update the answer array for each index with the length of the longest valid course found so far. This should be done after processing each obstacle."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when all obstacles are of the same height or when they are in strictly decreasing order. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "Think about the time complexity of your approach. Since you need to process up to 100,000 obstacles, ensure that your solution is efficient, ideally O(n log n) due to the binary search."
+    },
+    {
+      "content": "As a next step, you might want to outline the structure of your solution. What variables will you need? How will you loop through the obstacles and update your sequence?"
+    },
+    {
+      "content": "When implementing the binary search, consider using Python's `bisect` module or a similar approach in your chosen language to simplify finding the insertion point."
+    },
+    {
+      "content": "Make sure to test your solution with a variety of inputs, including the provided examples and additional edge cases. This will help ensure your logic is robust."
+    },
+    {
+      "content": "Finally, remember to handle the output format correctly. You need to return an array where each element corresponds to the length of the longest valid obstacle course at each index."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == obstacles.length, 1 <= n <= 10^5, 1 <= obstacles[i] <= 10^7.",
+    "The output should be an array of the same length as the input, where each element represents the length of the longest valid course at that index.",
+    "You must include the obstacle at the current index in the course.",
+    "The obstacles must be in non-decreasing order."
+  ]
+}

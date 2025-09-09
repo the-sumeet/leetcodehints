@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find the shortest sequence of rolls that cannot be formed from the given array of rolls. This means you will be checking combinations of numbers."
+    },
+    {
+      "content": "Consider the constraints: the rolls can only contain integers from 1 to k. Make sure you understand how the values of k affect the possible sequences."
+    },
+    {
+      "content": "Think about the simplest case first. For k = 1, what is the shortest impossible sequence? This could help you build intuition."
+    },
+    {
+      "content": "Notice that the output should be the length of the shortest impossible sequence, not the sequence itself. This means you need to focus on lengths rather than specific values."
+    },
+    {
+      "content": "A good strategy might be to start with sequences of length 1, then check for length 2, and so on. Keep track of what sequences can be formed from the rolls."
+    },
+    {
+      "content": "When checking for sequences, remember that the order of rolls matters. For example, [1, 2] is different from [2, 1]."
+    },
+    {
+      "content": "Use a set to keep track of the sequences that can be formed from the rolls. This will allow for efficient lookup when checking for possible combinations."
+    },
+    {
+      "content": "For sequences of length 1, simply check if each number from 1 to k exists in the rolls. If any number is missing, that number is your answer."
+    },
+    {
+      "content": "For sequences of length 2, consider all pairs (i, j) where i and j range from 1 to k. Check if each pair exists in the rolls."
+    },
+    {
+      "content": "Think about how you can generate combinations of numbers for longer sequences. For example, you might use nested loops or recursion to generate these combinations."
+    },
+    {
+      "content": "As you increase the length of the sequences you are checking, the number of combinations grows exponentially. Be mindful of performance, especially with larger values of k."
+    },
+    {
+      "content": "Consider edge cases, such as when rolls contains all possible values from 1 to k. What would be the shortest impossible sequence in that case?"
+    },
+    {
+      "content": "You might want to implement a function that checks if a given sequence can be formed from the rolls. This function could take in a sequence and return a boolean."
+    },
+    {
+      "content": "As you approach the solution, remember that you need to return the length of the shortest impossible sequence. Ensure your final implementation reflects that."
+    },
+    {
+      "content": "Finally, think about how you will structure your loops or recursive calls to efficiently find the shortest impossible sequence. You might need to break out of loops early if you find a missing sequence."
+    }
+  ],
+  "questionNotes": [
+    "The output is the length of the shortest impossible sequence, not the sequence itself.",
+    "The rolls array can contain duplicates; focus on unique combinations.",
+    "The values in rolls range from 1 to k, and k can be as large as 100,000.",
+    "You must consider the order of rolls when checking for subsequences.",
+    "The maximum length of rolls is 100,000, so efficiency is key."
+  ]
+}

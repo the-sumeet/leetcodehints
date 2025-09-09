@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid layout. The grid contains walls, floors, the Cat, the Mouse, and the Food. Identify the positions of 'C', 'M', and 'F' in the grid."
+    },
+    {
+      "content": "Remember that the Cat and Mouse take turns moving, with the Mouse moving first. This means the Mouse has the opportunity to strategize based on the Cat's potential moves."
+    },
+    {
+      "content": "Consider the maximum jump lengths for both the Cat and Mouse. They can jump less than their maximum, which gives them flexibility in movement. Think about how this affects their ability to reach the Food."
+    },
+    {
+      "content": "Focus on the conditions for winning. The Cat wins if it reaches the Mouse or the Food first, while the Mouse wins by reaching the Food first. How can you track these conditions during the game?"
+    },
+    {
+      "content": "A critical aspect is the walls represented by '#'. They block movement, so consider how the Cat and Mouse can navigate around them. You may need to implement a way to check valid moves."
+    },
+    {
+      "content": "Plan to use a breadth-first search (BFS) or depth-first search (DFS) to explore possible moves for both the Cat and Mouse. This will help you determine the optimal paths they can take."
+    },
+    {
+      "content": "When implementing the search, keep track of the state of the game, including the positions of the Cat and Mouse, and whether either has reached the Food."
+    },
+    {
+      "content": "Think about how to handle the turn-based nature of the game. You might want to use a recursive function that alternates between the Cat's and Mouse's moves."
+    },
+    {
+      "content": "Consider the maximum number of turns (1000) allowed for the Mouse to reach the Food. If it cannot reach the Food within this limit, the Cat wins. How will you track the number of turns?"
+    },
+    {
+      "content": "You need to ensure that both players play optimally. This means that if the Cat can catch the Mouse or reach the Food first, it will do so. Conversely, the Mouse will try to avoid being caught while reaching the Food."
+    },
+    {
+      "content": "When implementing your search algorithm, consider memoization to avoid recalculating states that have already been evaluated. This can significantly improve performance."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the Cat and Mouse start next to each other or when the path to the Food is blocked by walls."
+    },
+    {
+      "content": "You may want to create a function that checks if a position is valid for movement (i.e., within bounds and not a wall). This will simplify your movement logic."
+    },
+    {
+      "content": "Think about how to represent the game state. You might use a tuple that includes the positions of the Cat, Mouse, and the number of turns taken."
+    },
+    {
+      "content": "Finally, consider how to return the result. The function should return true if the Mouse can win and false otherwise. Ensure your logic correctly implements the win conditions."
+    }
+  ],
+  "questionNotes": [
+    "Grid size is limited to 8x8, making brute force approaches feasible.",
+    "There is exactly one Cat, one Mouse, and one Food in the grid.",
+    "The game can end if the Mouse cannot reach the Food within 1000 turns.",
+    "Both players can jump less than their maximum jump length.",
+    "Walls block movement and must be accounted for in pathfinding."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of disjoint intervals. An interval is a range of numbers that can be represented as [start, end]. For example, if you have numbers 1, 2, and 3, they can be summarized as the interval [1, 3]."
+    },
+    {
+      "content": "Think about how you will store the intervals. A list of lists (or an array of arrays) could work well, where each inner list represents an interval. Consider how you will add new numbers and update this list."
+    },
+    {
+      "content": "When adding a new number, you need to check if it connects with existing intervals. For example, if you add 2 to the intervals [1, 3], it should merge into [1, 3]."
+    },
+    {
+      "content": "Consider edge cases, such as adding a number that is already included in an interval. How will your implementation handle duplicates?"
+    },
+    {
+      "content": "Think about how to efficiently merge intervals. You might want to sort the intervals first, then iterate through them to merge overlapping or contiguous intervals."
+    },
+    {
+      "content": "Remember that the intervals must be returned in sorted order by the start value. This means you should maintain the order whenever you add or merge intervals."
+    },
+    {
+      "content": "When implementing the `addNum` method, you might want to keep track of the current state of intervals. How will you determine where to insert a new number?"
+    },
+    {
+      "content": "Consider using a data structure that allows for efficient searching and insertion, such as a sorted list or a balanced binary search tree."
+    },
+    {
+      "content": "Think about the time complexity of your solution. You need to ensure that both `addNum` and `getIntervals` can handle the upper limits of the constraints efficiently."
+    },
+    {
+      "content": "What if the number added is less than the smallest start of the intervals or greater than the largest end? Make sure to handle these cases correctly."
+    },
+    {
+      "content": "When merging intervals, you should check both the start and end of the new number against existing intervals. If it falls within or directly next to an interval, you should merge."
+    },
+    {
+      "content": "You might want to maintain a sorted list of intervals after every addition. This way, you can easily find where to merge or insert the new number."
+    },
+    {
+      "content": "Remember to handle cases where multiple intervals are merged into one. For example, adding numbers 4, 5, and 6 should merge the intervals appropriately."
+    },
+    {
+      "content": "As a final step, ensure that your `getIntervals` method returns the correct format. It should return a 2D array where each interval is represented as [start, end]."
+    },
+    {
+      "content": "To summarize, as you add numbers, keep track of the intervals, merge them when necessary, and ensure that your output format is correct. Start implementing these ideas step by step."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= value <= 10^4",
+    "At most 3 * 10^4 calls will be made to addNum and getIntervals.",
+    "At most 10^2 calls will be made to getIntervals.",
+    "Ensure intervals are disjoint and sorted by start value.",
+    "Handle duplicates and edge cases where numbers are outside the current intervals."
+  ]
+}

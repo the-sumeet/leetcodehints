@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the meaning of 'I' and 'D' in the pattern. 'I' indicates that the next digit must be greater than the current one, while 'D' indicates that the next digit must be less. This will help you visualize how to construct the number."
+    },
+    {
+      "content": "Consider the length of the pattern. If the pattern has a length of n, the resulting number will have a length of n + 1. This is crucial for correctly indexing your result."
+    },
+    {
+      "content": "Think about the range of digits you can use. You can only use the digits from '1' to '9', and each digit can only be used once. This restriction is important when trying to form the smallest possible number."
+    },
+    {
+      "content": "To create the lexicographically smallest number, you might want to start with the smallest digits available. However, you need to respect the 'I' and 'D' constraints while doing so."
+    },
+    {
+      "content": "As you traverse the pattern, keep track of segments of consecutive 'D's. Each segment indicates a place where the digits need to be in decreasing order, which will affect how you choose digits."
+    },
+    {
+      "content": "When you encounter 'I', you can finalize the digits for the previous segment of 'D's. For example, if you have a segment of 'D's followed by an 'I', you should reverse the order of the digits used for that segment."
+    },
+    {
+      "content": "Consider using a stack or a list to temporarily hold digits for segments of 'D's. When you reach an 'I', you can pop from the stack to finalize the digits in the correct order."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the entire pattern is 'D' or 'I'. For example, if the pattern is 'DDD', you should directly use the largest digits in descending order."
+    },
+    {
+      "content": "Keep in mind the importance of the final number being lexicographically smallest. After processing the entire pattern, ensure that you have placed all digits correctly according to the rules."
+    },
+    {
+      "content": "Finally, think about how to construct the final number from the segments you have built. You will need to concatenate the segments you've processed to form the complete number."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= pattern.length <= 8",
+    "The pattern consists only of 'I' and 'D'.",
+    "The resulting number must use digits from '1' to '9' without repetition.",
+    "The length of the resulting number is n + 1, where n is the length of the pattern.",
+    "Ensure the final number is lexicographically smallest."
+  ]
+}

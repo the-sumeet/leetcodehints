@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input arrays. The `persons` array represents the votes, where `persons[i]` indicates the candidate voted for at time `times[i]`. The `times` array is strictly increasing, which means each vote corresponds to a unique time."
+    },
+    {
+      "content": "Think about how you can keep track of the votes for each candidate as you iterate through the `persons` array. You might want to use a dictionary or a list to count the votes for each candidate."
+    },
+    {
+      "content": "When processing the votes, consider how you will determine the 'leading' candidate at any given time. You should maintain the current leading candidate and their vote count as you process each vote."
+    },
+    {
+      "content": "Remember that in case of a tie, the candidate who received the most recent vote should be considered the leader. This means you need to update the leader whenever a candidate's vote count matches the current maximum."
+    },
+    {
+      "content": "As you build your solution, think about how you will handle the queries. You need to find the leader at a specific time `t`. This might involve searching for the largest time in the `times` array that is less than or equal to `t`."
+    },
+    {
+      "content": "Consider using binary search to efficiently find the correct index in the `times` array for each query. Python's `bisect` module can be helpful for this, as it allows you to quickly find insertion points."
+    },
+    {
+      "content": "Make sure to store the results of the leader at each time in a separate list or array as you process the votes. This will allow you to quickly return the result for each query without recalculating the leading candidate."
+    },
+    {
+      "content": "Think about edge cases, such as when all votes are for the same candidate or when there are multiple candidates with the same number of votes. Ensure your logic correctly handles these scenarios."
+    },
+    {
+      "content": "When implementing the `q` method, remember that you need to return the leading candidate based on the votes counted up to the time `t`. Ensure that your logic correctly retrieves the leader based on the stored results."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient enough to handle the upper limits of the constraints, such as 10^4 queries and 5000 votes. Aim for a time complexity that is manageable within these limits."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= persons.length <= 5000, times.length == persons.length",
+    "0 <= persons[i] < persons.length, 0 <= times[i] <= 10^9",
+    "times is sorted in strictly increasing order.",
+    "times[0] <= t <= 10^9",
+    "At most 10^4 calls will be made to q.",
+    "In case of a tie, the most recent vote among tied candidates wins."
+  ]
+}

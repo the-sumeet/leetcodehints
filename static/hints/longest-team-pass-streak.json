@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main components: 'Teams' and 'Passes'. Each team has a unique player ID and a team name, while each pass has a sender, a timestamp, and a receiver."
+    },
+    {
+      "content": "Consider how you will represent the relationships between players and their passes. You may want to use a dictionary to map player IDs to their team names for easy lookup."
+    },
+    {
+      "content": "Think about how to process the 'Passes' data. Each pass is defined by the player who made the pass, the time it occurred, and the player who received it. You need to track these connections."
+    },
+    {
+      "content": "Focus on the order of the passes. The timestamps indicate when each pass occurred, and you will need to ensure that you only consider passes that happen in chronological order."
+    },
+    {
+      "content": "As you iterate through the passes, check if the sender and receiver belong to the same team. You can skip passes that involve players from different teams."
+    },
+    {
+      "content": "Keep track of the current streak of passes for each team. You can use a counter that increments when a valid pass occurs and resets when a pass breaks the streak."
+    },
+    {
+      "content": "Consider what happens when a player passes to themselves. This should not count as a valid pass in your streak, so make sure to handle it appropriately."
+    },
+    {
+      "content": "Think about how to store the maximum streak for each team. You might want to use a dictionary where the keys are team names and the values are the longest streaks."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when there are no passes at all or when all players are from different teams. What should your function return in these cases?"
+    },
+    {
+      "content": "When you find a new maximum streak for a team, consider whether you need to update a global maximum streak that tracks the longest streak across all teams."
+    },
+    {
+      "content": "After processing all the passes, you will need to determine which team has the longest pass streak. Make sure to handle ties according to the problem's requirements."
+    },
+    {
+      "content": "Your final result should return the team name with the longest streak. Ensure that you format the output correctly as specified in the problem statement."
+    },
+    {
+      "content": "Consider using a sorting mechanism if needed, especially if you need to determine the team with the longest streak in case of ties. This could involve comparing lengths and team names."
+    },
+    {
+      "content": "Make sure to test your solution with various scenarios, including edge cases like all players being on the same team, no passes, or only one pass."
+    },
+    {
+      "content": "As a final step, review your code to ensure that you are not missing any edge cases, particularly with the timestamps and player connections."
+    }
+  ],
+  "questionNotes": [
+    "Each player has a unique player_id.",
+    "Timestamps are in 'HH:MM' format and indicate the order of passes.",
+    "Only passes between players on the same team count towards the streak.",
+    "Handle cases where there are no passes or all players are from different teams.",
+    "Return the team name with the longest pass streak, handling ties as specified."
+  ]
+}

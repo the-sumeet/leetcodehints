@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `NumArray` class. You need to store the initial array `nums` and be able to access its elements efficiently."
+    },
+    {
+      "content": "Think about how you'll handle the two types of operations: updating an element and calculating the sum of a range. Each operation should be efficient given the constraints."
+    },
+    {
+      "content": "When implementing the `update` method, remember to change the value at the specified index in the array. Consider how this might affect the sum calculations."
+    },
+    {
+      "content": "In the `sumRange` method, you need to iterate through the elements from `left` to `right`. Make sure to handle the inclusive nature of the range correctly."
+    },
+    {
+      "content": "Consider the time complexity of your solution. A naive approach might lead to O(n) for each sum query, which could be inefficient with the maximum constraints."
+    },
+    {
+      "content": "To optimize the range sum queries, think about using a data structure that allows for efficient updates and range queries, such as a Segment Tree or Binary Indexed Tree (Fenwick Tree)."
+    },
+    {
+      "content": "If you choose a Segment Tree, remember that you will need to build the tree based on the initial array and implement methods for both updating a value and querying the sum."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the `left` and `right` indices are the same in the `sumRange` method, which should return the single element at that index."
+    },
+    {
+      "content": "When updating an element, ensure that your update method correctly propagates changes in the data structure if you're using a tree-based approach."
+    },
+    {
+      "content": "Finally, implement your methods and test them with various inputs, including edge cases like the minimum and maximum values for `nums`, to ensure correctness and efficiency."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 3 * 10^4",
+    "-100 <= nums[i] <= 100",
+    "0 <= index < nums.length",
+    "-100 <= val <= 100",
+    "0 <= left <= right < nums.length",
+    "At most 3 * 10^4 calls will be made to update and sumRange.",
+    "Remember that indexing is zero-based."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have an array `nums` and a list of `queries`. Each query consists of an index and a count of how many additional elements to mark. Make sure you clearly differentiate between marking an element at the given index and marking the smallest unmarked elements."
+    },
+    {
+      "content": "Consider how to track which elements in `nums` are marked. You might want to use a boolean array or a set to keep track of marked indices. This will help you efficiently check if an element is already marked when processing each query."
+    },
+    {
+      "content": "When processing each query, remember that you need to mark the element at the specified index first. If it's already marked, you can skip marking it again. This will help you avoid unnecessary operations and maintain the correct state of the array."
+    },
+    {
+      "content": "After marking the specified index, focus on marking the `k_i` smallest unmarked elements. To find these efficiently, consider using a min-heap or sorting the unmarked elements. Think about how you can maintain the order of indices when there are ties in values."
+    },
+    {
+      "content": "When marking the smallest unmarked elements, ensure you respect the condition of marking elements with the smallest indices first in case of ties. This means you should keep track of the original indices of the elements while sorting or selecting them."
+    },
+    {
+      "content": "After each query, you need to compute the sum of all unmarked elements in the array. Consider maintaining a running total of the unmarked sum, which can be updated whenever you mark new elements."
+    },
+    {
+      "content": "Think about edge cases, such as when all elements are marked after a certain query. In this case, your sum of unmarked elements should return 0. Ensure your implementation can handle this scenario gracefully."
+    },
+    {
+      "content": "Pay attention to the constraints given in the problem. You will need to ensure your solution is efficient enough to handle the maximum input sizes, which could be up to 100,000 elements and queries."
+    },
+    {
+      "content": "As you implement your solution, consider the order of operations carefully. You might want to implement the marking of elements and the summation in a way that minimizes the number of passes through the data."
+    },
+    {
+      "content": "Finally, try to outline your approach in pseudocode before jumping into coding. This will help clarify the steps you need to take and ensure you don't miss any important details in the implementation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, m == queries.length, 1 <= m <= n <= 10^5, 1 <= nums[i] <= 10^5.",
+    "Each query is of the form [index_i, k_i].",
+    "0 <= index_i, k_i <= n - 1.",
+    "Return an array of size m, where answer[i] is the sum of unmarked elements after the i-th query.",
+    "If fewer than k_i unmarked elements exist, mark all of them."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the two types of triplets you need to find. Type 1 requires you to check if the square of an element from `nums1` equals the product of two distinct elements from `nums2`. Type 2 is similar but swaps the roles of the arrays."
+    },
+    {
+      "content": "Consider how you can iterate through the arrays. For Type 1, you will need to loop through `nums1` for `i`, and then use two nested loops for `j` and `k` in `nums2`. For Type 2, reverse the roles of the arrays."
+    },
+    {
+      "content": "When checking for Type 1 triplets, remember that `j` must be less than `k`. This means you should only consider pairs of indices in `nums2` where `j < k`. How will you enforce this in your loops?"
+    },
+    {
+      "content": "Think about how you can efficiently compute the products of pairs in `nums2`. You might want to use a hash map to store the frequency of each product, which can help you avoid redundant calculations."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when `nums1` or `nums2` contains duplicate values. How will duplicates affect the count of valid triplets?"
+    },
+    {
+      "content": "When calculating the square of an element from `nums1`, ensure that the result does not exceed the maximum possible product of two numbers in `nums2`. What constraints should you keep in mind while performing these calculations?"
+    },
+    {
+      "content": "For Type 2 triplets, apply the same logic as Type 1 but with the roles of the arrays reversed. This symmetry can help you structure your solution more efficiently."
+    },
+    {
+      "content": "Consider using a two-pointer technique or a nested loop to find pairs in `nums2` that multiply to the square of an element from `nums1`. This could reduce the time complexity of your solution."
+    },
+    {
+      "content": "As you implement your solution, keep track of the total count of valid triplets for both types. You might want to maintain a separate counter for each type and sum them at the end."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient enough to handle the upper limits of the input constraints. What is the time complexity of your current approach, and can it be optimized further?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums1.length, nums2.length <= 1000",
+    "Constraints: 1 <= nums1[i], nums2[i] <= 10^5",
+    "Ensure that j < k for Type 1 and i < j, i < k for Type 2.",
+    "Return the total count of valid triplets for both types combined."
+  ]
+}

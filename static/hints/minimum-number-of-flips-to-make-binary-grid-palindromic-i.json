@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for a row or column to be palindromic. A row is palindromic if the first half mirrors the second half. For example, [1, 0, 0] is not palindromic, but [0, 1, 0] is."
+    },
+    {
+      "content": "Consider how you can transform a non-palindromic row or column into a palindromic one. You can flip bits (0 to 1 or 1 to 0). Think about how many flips are needed for a single row or column."
+    },
+    {
+      "content": "To check if a row is palindromic, compare elements from the start and end moving towards the center. For a row `r`, check if `grid[r][j] == grid[r][n-1-j]` for all valid `j`."
+    },
+    {
+      "content": "You need to calculate the number of flips required for each row and column separately. Create a function that counts the flips needed to make a specific row or column palindromic."
+    },
+    {
+      "content": "Remember that you can either make all rows palindromic or all columns palindromic. After calculating the flips for all rows and columns, you will need to return the minimum of the two results."
+    },
+    {
+      "content": "When counting flips for a row, consider only the first half of the row. For each pair of elements that do not match, you will need one flip to make them equal."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the grid has only one row or one column. In these cases, the grid is already palindromic."
+    },
+    {
+      "content": "Think about how to efficiently iterate over the grid. You can use nested loops: the outer loop for rows/columns and the inner loop for comparing elements."
+    },
+    {
+      "content": "As you implement the counting function, keep track of the total flips required for all rows and all columns. You can maintain two separate counters for this purpose."
+    },
+    {
+      "content": "Finally, after calculating the total flips for rows and columns, return the smaller of the two values. This will give you the minimum number of flips needed to achieve the palindromic condition."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == grid.length, n == grid[i].length",
+    "1 <= m * n <= 2 * 10^5",
+    "0 <= grid[i][j] <= 1",
+    "Ensure to handle cases where the grid has only one row or one column."
+  ]
+}

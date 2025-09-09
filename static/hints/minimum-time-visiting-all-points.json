@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how you can move on the 2D plane. You can move vertically, horizontally, or diagonally. Each of these movements takes different amounts of time: vertical and horizontal movements take 1 second each, while diagonal movements take 1 second as well."
+    },
+    {
+      "content": "Consider how to calculate the time required to move between two points. For two points (x1, y1) and (x2, y2), think about the differences in their x and y coordinates. What would be the best way to minimize the time spent moving between these points?"
+    },
+    {
+      "content": "Remember that moving diagonally can be a more efficient way to cover both x and y differences simultaneously. If you can move diagonally, you should try to do that as much as possible to reduce the total time."
+    },
+    {
+      "content": "When moving from one point to another, calculate the absolute differences in the x and y coordinates: dx = |x2 - x1| and dy = |y2 - y1|. The maximum of these two values will give you the minimum time required to travel between the points."
+    },
+    {
+      "content": "Think about how you will iterate through the list of points. You need to visit each point in the order they are given. Set up a loop that goes from the first point to the last point, calculating the time for each segment."
+    },
+    {
+      "content": "Don't forget to initialize your total time variable before starting the loop. You will accumulate the time taken to move from one point to the next in this variable."
+    },
+    {
+      "content": "Consider edge cases, such as when there is only one point in the list. In this case, the minimum time should be 0 since no movement is required."
+    },
+    {
+      "content": "As you calculate the time between points, ensure that you are correctly handling negative coordinates. The logic for calculating differences should still hold true regardless of the sign of the coordinates."
+    },
+    {
+      "content": "After calculating the time for each segment, remember to sum these times to get the total minimum time required to visit all points. Make sure your loop correctly updates the total time variable."
+    },
+    {
+      "content": "Finally, ensure that your function returns the total time after processing all points. This should be a single integer representing the total seconds taken to visit all points in order."
+    }
+  ],
+  "questionNotes": [
+    "You can move vertically (1 sec), horizontally (1 sec), or diagonally (1 sec).",
+    "You must visit points in the order they appear in the input array.",
+    "The input consists of a list of points with integer coordinates.",
+    "Constraints: 1 <= n <= 100, -1000 <= points[i][0], points[i][1] <= 1000.",
+    "The output should be a single integer representing the total time."
+  ]
+}

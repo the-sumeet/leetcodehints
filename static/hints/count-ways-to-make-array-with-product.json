@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to fill an array of size `n` with positive integers such that their product equals `k`. Think about how the factors of `k` can be arranged in an array."
+    },
+    {
+      "content": "Consider the prime factorization of `k`. Each positive integer can be represented as a product of primes raised to certain powers. This means you can express `k` as `p1^e1 * p2^e2 * ... * pm^em`."
+    },
+    {
+      "content": "For each prime factor `pi`, you need to distribute `ei` identical items (the prime factors) into `n` distinct boxes (the positions in the array). This is a combinatorial problem."
+    },
+    {
+      "content": "Recall the combinatorial formula for distributing `x` identical items into `y` distinct boxes: it can be calculated using the stars and bars theorem, which gives you `C(x+y-1, y-1)`."
+    },
+    {
+      "content": "If `k` is `1`, the only way to fill the array is with all `1`s, so the answer for any `n` is `1`. This is a special case you should handle separately."
+    },
+    {
+      "content": "When `k` is a prime number, consider how many ways you can fill the array with `n` such that the product remains `k`. Think about the distribution of the prime factor."
+    },
+    {
+      "content": "If `k` is `0`, remember that the product of positive integers cannot be zero. Thus, you should return `0` for such cases, if they exist."
+    },
+    {
+      "content": "Make sure to handle large numbers carefully. Since the result can be very large, you should take results modulo `10^9 + 7` at every step of your calculations."
+    },
+    {
+      "content": "Consider edge cases where `n` is greater than the number of prime factors of `k`. In such cases, think about how you can still fill the array while maintaining the product requirement."
+    },
+    {
+      "content": "You might want to precompute factorials and their modular inverses to efficiently calculate combinations, especially since `n` can be as large as `10^4`."
+    },
+    {
+      "content": "When iterating through the queries, remember that each query is independent. You should compute the result for each query separately and store them in the result array."
+    },
+    {
+      "content": "Don't forget to account for the fact that the same prime factors can be used in different ways. Think about how many unique arrangements can be formed."
+    },
+    {
+      "content": "You may want to create a helper function to compute the number of ways to fill the array for a given `n` and `k`, which can be reused for each query."
+    },
+    {
+      "content": "As a final step, when you have your results for each query, ensure you return them in the correct format as specified in the problem statement."
+    },
+    {
+      "content": "Consider testing your solution with edge cases, such as very small values of `n` and `k`, to ensure your implementation handles all scenarios correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= queries.length <= 10^4",
+    "Constraints: 1 <= n_i, k_i <= 10^4",
+    "Return an integer array where answer[i] is the answer to the i-th query.",
+    "Handle large numbers using modulo 10^9 + 7.",
+    "Each query is independent; results should be computed separately."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "The array is sorted, which means that you can leverage binary search techniques. Think about how the properties of sorted arrays can help you find the single element more efficiently than a linear scan."
+    },
+    {
+      "content": "Notice that every element except one appears exactly twice. This means that pairs of elements will always be adjacent. If you can find a way to identify where the pairs break, you can isolate the single element."
+    },
+    {
+      "content": "Consider the indices of the elements. If you take a pair of elements, the first element of the pair will always be at an even index and the second at an odd index. Use this property to guide your search."
+    },
+    {
+      "content": "When using binary search, think about the mid index. If mid is even, check if the next element is the same. If it is, it means the single element must be on the right side; otherwise, it’s on the left."
+    },
+    {
+      "content": "If mid is odd, the logic is slightly different. Check if the previous element is the same. If it is, the single element must be on the right side; otherwise, it’s on the left."
+    },
+    {
+      "content": "Pay attention to the boundaries of your search. Ensure that your checks for adjacent elements do not go out of bounds, especially when mid is at the beginning or end of the array."
+    },
+    {
+      "content": "Consider edge cases such as arrays with only one element. What should your function return in that case? Make sure your solution handles this without errors."
+    },
+    {
+      "content": "Remember that your solution must run in O(log n) time. This means you should be halving the search space with each iteration. Keep track of your left and right pointers carefully."
+    },
+    {
+      "content": "As you implement the binary search, think about the condition that will allow you to narrow down to the single element. You should be able to determine which half of the array to discard based on the properties of the indices."
+    },
+    {
+      "content": "Your final implementation will look something like this: while left <= right, calculate mid, check the conditions for even/odd indices, and adjust left or right accordingly. Remember to return the single element once found."
+    }
+  ],
+  "questionNotes": [
+    "The array is sorted.",
+    "Every element appears exactly twice, except for one element which appears exactly once.",
+    "The solution must run in O(log n) time and O(1) space.",
+    "1 <= nums.length <= 10^5.",
+    "0 <= nums[i] <= 10^5."
+  ]
+}

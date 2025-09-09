@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find a string that contains all three input strings as substrings. Consider how substrings overlap and how you can minimize the length of the resulting string."
+    },
+    {
+      "content": "Think about how you can combine two strings first and then include the third one. Try to find the maximum overlap between the two strings to reduce the total length."
+    },
+    {
+      "content": "To find the overlap between two strings, you can compare the suffix of one string with the prefix of another. For example, for strings 'abc' and 'bca', the overlap is 'bc'."
+    },
+    {
+      "content": "Once you have a way to calculate overlaps, consider all possible pairs of the three strings. You will need to compute overlaps for each pair: (a, b), (a, c), and (b, c)."
+    },
+    {
+      "content": "Remember to concatenate the strings in different orders. For every pair of strings, you should check both concatenations: `first + second` and `second + first` to ensure you capture the correct overlaps."
+    },
+    {
+      "content": "When combining the third string, you should also consider the overlaps between the combined string and the third string. This means you will need to check overlaps for each combination of two strings with the third one."
+    },
+    {
+      "content": "Keep track of the minimum length found so far and also the lexicographically smallest string when lengths are equal. Use a variable to store your best result as you iterate through combinations."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when all three strings are identical or when one string is a substring of another. These cases can simplify the problem significantly."
+    },
+    {
+      "content": "Consider using a helper function to compute the maximum overlap between two strings. This function can return the length of the overlap and the combined string based on the overlap."
+    },
+    {
+      "content": "Finally, after you have generated all possible combinations and checked their lengths and lexicographical order, return the smallest result. Be careful to return the string in the correct format as specified."
+    }
+  ],
+  "questionNotes": [
+    "The resulting string must contain all three input strings as substrings.",
+    "If multiple strings have the same minimum length, return the lexicographically smallest one.",
+    "A substring is a contiguous sequence of characters.",
+    "Constraints: 1 <= a.length, b.length, c.length <= 100.",
+    "Input strings consist only of lowercase English letters."
+  ]
+}

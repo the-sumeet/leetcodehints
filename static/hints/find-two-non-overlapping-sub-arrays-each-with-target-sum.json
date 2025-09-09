@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a sub-array is. A sub-array is a contiguous part of an array. For example, in the array [1, 2, 3], the sub-arrays include [1], [1, 2], [2, 3], and [1, 2, 3]."
+    },
+    {
+      "content": "Consider how you can find sub-arrays that sum to the target. You might want to use a sliding window or a prefix sum approach to efficiently calculate the sum of sub-arrays."
+    },
+    {
+      "content": "Think about how to track the lengths of the sub-arrays that sum to the target. You can use a dictionary to store the minimum length of sub-arrays ending at each index."
+    },
+    {
+      "content": "Remember that the two sub-arrays must be non-overlapping. This means that once you find a valid sub-array, you should only consider sub-arrays that start after the end of the first one."
+    },
+    {
+      "content": "When you find a valid sub-array, store its length. As you iterate through the array, keep track of the minimum length of the first sub-array found so far."
+    },
+    {
+      "content": "As you find new sub-arrays, check if they can pair with the previously stored sub-arrays. Make sure to update the minimum sum of lengths only if the sub-arrays do not overlap."
+    },
+    {
+      "content": "Consider edge cases where the target sum cannot be formed by any sub-array. You should return -1 in such cases, so ensure you have a way to track this."
+    },
+    {
+      "content": "Think about the constraints of the problem. The maximum length of the array is 100,000, so your solution should ideally be O(n) or O(n log n) to handle larger inputs efficiently."
+    },
+    {
+      "content": "To implement the solution, you might want to iterate through the array twice: once to find all valid sub-arrays and store their lengths, and a second time to check for non-overlapping pairs."
+    },
+    {
+      "content": "Finally, ensure you return the minimum sum of lengths of the two sub-arrays. If no valid pairs are found, remember to return -1."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 10^5, 1 <= arr[i] <= 1000, 1 <= target <= 10^8",
+    "Sub-arrays must be contiguous and non-overlapping.",
+    "Return -1 if no two valid sub-arrays are found.",
+    "Multiple solutions may exist; return the one with the minimum sum of lengths."
+  ]
+}

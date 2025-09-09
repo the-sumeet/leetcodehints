@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a submatrix is. A submatrix is defined by its top-left and bottom-right corners. For example, in a 2D array, a submatrix can be represented as (x1, y1) to (x2, y2)."
+    },
+    {
+      "content": "Consider how to iterate through all possible submatrices. You will need to choose two rows and two columns to define a submatrix. This gives you a systematic way to explore all combinations."
+    },
+    {
+      "content": "To sum the elements of a submatrix efficiently, you can use a prefix sum array. This array allows you to calculate the sum of any submatrix in constant time after an initial preprocessing step."
+    },
+    {
+      "content": "Remember that the sum of the submatrix defined by corners (x1, y1) and (x2, y2) can be computed using the inclusion-exclusion principle with the prefix sums."
+    },
+    {
+      "content": "When calculating the sum of a submatrix, make sure to handle the boundaries correctly. Subtract the areas that are not included in the desired submatrix."
+    },
+    {
+      "content": "Think about how you can keep track of the number of times a certain sum has occurred as you explore different submatrices. This can help you identify when a submatrix sum equals the target."
+    },
+    {
+      "content": "You might want to use a hash map to store the frequency of sums you encounter. This can help you quickly find how many times a particular sum has been seen."
+    },
+    {
+      "content": "Consider edge cases, such as when the target is zero. How many submatrices can you find that sum to zero? This might involve counting individual zero elements as valid submatrices."
+    },
+    {
+      "content": "Think about the dimensions of the matrix. What happens if the matrix is very small (1x1) or very large (100x100)? Ensure your solution can handle these cases efficiently."
+    },
+    {
+      "content": "As you implement your solution, keep track of the total count of submatrices that meet the target sum. This will be your final output."
+    },
+    {
+      "content": "Make sure to check the constraints of the problem, such as the range of values in the matrix and the target. This can affect how you handle sums and what data structures you choose."
+    },
+    {
+      "content": "When testing your solution, include edge cases such as matrices filled with the same number or matrices that contain negative numbers. These can help validate the robustness of your approach."
+    },
+    {
+      "content": "Consider how you can optimize your solution. A brute force approach might be too slow, so think about how you can reduce the number of calculations needed."
+    },
+    {
+      "content": "You may want to implement a nested loop to choose the top and bottom rows, and within that, another loop to calculate the sums for each column pair. This can help you systematically cover all submatrices."
+    },
+    {
+      "content": "Finally, remember to return the count of valid submatrices as your output. Ensure that your function signature matches the expected format."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= matrix.length <= 100, 1 <= matrix[0].length <= 100",
+    "Matrix values range from -1000 to 1000.",
+    "Target can range from -10^8 to 10^8.",
+    "Submatrices are defined by (x1, y1) to (x2, y2) and must be non-empty.",
+    "Two submatrices are considered different if any coordinate differs."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the cost structure of the grid. The cost to enter a cell (i, j) is given by the formula (i + 1) * (j + 1). Make sure to calculate this correctly for any cell you visit."
+    },
+    {
+      "content": "Remember that the movement alternates between moving to an adjacent cell (right or down) and waiting in place. This means that your total cost will include both entry costs and wait costs."
+    },
+    {
+      "content": "Think about how you can represent the state of your path. You need to keep track of your current position in the grid, the total cost incurred so far, and whether you are at an odd or even second."
+    },
+    {
+      "content": "Consider using a priority queue (or min-heap) to explore paths with the minimum cost first. This will help you efficiently find the minimum cost to reach the target cell (m-1, n-1)."
+    },
+    {
+      "content": "When implementing your algorithm, ensure that you handle the boundaries of the grid correctly. You should not attempt to move outside the grid's dimensions when moving right or down."
+    },
+    {
+      "content": "Pay special attention to the waiting costs defined in the waitCost array. These costs are incurred only during even-numbered seconds, so your logic must account for this alternating pattern."
+    },
+    {
+      "content": "As you explore paths, keep track of visited cells and their corresponding costs to avoid unnecessary recalculations. This will help optimize your solution and prevent infinite loops."
+    },
+    {
+      "content": "In your implementation, ensure that you correctly calculate the total cost at each step, including both the entry cost and any waiting costs incurred during even seconds."
+    },
+    {
+      "content": "Consider edge cases such as the smallest grid size (1x1) or grids where all waiting costs are zero. How would your solution handle these scenarios?"
+    },
+    {
+      "content": "Finally, think about how to return the total minimum cost once you reach the bottom-right corner of the grid. You may want to keep track of the minimum cost found during your exploration."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 10^5; 2 <= m * n <= 10^5; waitCost.length == m; waitCost[0].length == n; 0 <= waitCost[i][j] <= 10^5.",
+    "The path must always start at cell (0, 0) and the first move incurs an entry cost.",
+    "Movement is restricted to right or down on odd seconds, and waiting costs are incurred on even seconds.",
+    "Ensure to handle grid boundaries correctly to avoid index errors."
+  ]
+}

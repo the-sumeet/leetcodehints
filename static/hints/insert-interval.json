@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a list of non-overlapping intervals sorted by their start times, and you need to insert a new interval while maintaining this order."
+    },
+    {
+      "content": "Consider how you can identify where the new interval fits in the existing list. You might want to iterate through the existing intervals to find the correct position for insertion."
+    },
+    {
+      "content": "Keep in mind that you need to merge intervals if the new interval overlaps with any of the existing intervals. Think about what it means for two intervals to overlap."
+    },
+    {
+      "content": "Define the conditions for merging intervals. Two intervals [a, b] and [c, d] overlap if 'c' is less than or equal to 'b'."
+    },
+    {
+      "content": "As you iterate through the intervals, you can maintain a new list of intervals. Add all intervals that end before the new interval starts directly to this list."
+    },
+    {
+      "content": "When you find an interval that overlaps with the new interval, you should merge them. The merged interval's start will be the minimum of the two starts, and the end will be the maximum of the two ends."
+    },
+    {
+      "content": "After merging overlapping intervals, you might still have intervals left to process. Continue adding intervals from the original list that start after the new interval ends."
+    },
+    {
+      "content": "Don't forget to add the merged interval to your new list. This is crucial to ensure that all intervals are accounted for in the final output."
+    },
+    {
+      "content": "Consider edge cases such as when the input list is empty or when the new interval is completely before or after all existing intervals."
+    },
+    {
+      "content": "Finally, ensure that your function returns the new list of intervals in the correct format, as specified in the problem statement. You should return a new array rather than modifying the input array."
+    }
+  ],
+  "questionNotes": [
+    "Intervals are non-overlapping and sorted by start time.",
+    "You need to merge overlapping intervals when inserting the new interval.",
+    "Return a new array; do not modify the input intervals in place.",
+    "Consider edge cases like empty intervals or intervals that do not overlap."
+  ]
+}

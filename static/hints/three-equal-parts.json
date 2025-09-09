@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by counting the total number of 1's in the array. If this count is not divisible by 3, it's impossible to split the array into three equal parts."
+    },
+    {
+      "content": "Remember that each part must be non-empty. This means that after finding the first part, there must be at least one element left for the second and third parts."
+    },
+    {
+      "content": "Consider the case where the array consists entirely of zeros. In this scenario, any split will yield equal parts since all parts represent the same value (0)."
+    },
+    {
+      "content": "When you find the positions of the 1's, you'll need to ensure that the segments formed by these positions are identical in terms of their binary representation."
+    },
+    {
+      "content": "To compare the segments, you may want to extract the parts of the array based on the indices you find and convert them to binary values for comparison."
+    },
+    {
+      "content": "Since leading zeros are allowed, ensure that you handle cases where parts might start with zeros correctly. For example, [0, 0] and [0] should be treated as equal."
+    },
+    {
+      "content": "After identifying the total number of 1's, you can find the positions of the last 1 in each of the three parts. This will help you define the boundaries of your segments."
+    },
+    {
+      "content": "When checking if the parts are equal, you may need to compare them from the end of the array backwards to ensure they align correctly."
+    },
+    {
+      "content": "Keep in mind that the indices returned must satisfy the condition i + 1 < j. This means the second part must have at least one element."
+    },
+    {
+      "content": "If you find valid indices, remember to return them in the format [i, j] as specified in the problem statement."
+    },
+    {
+      "content": "Consider edge cases where the array has a very small number of elements, such as three elements. What configurations can exist in such cases?"
+    },
+    {
+      "content": "Think about how to efficiently check for equality between the segments. You might want to create a helper function to compare two segments."
+    },
+    {
+      "content": "You can use a two-pointer technique to help navigate through the segments once you have identified the starting points of the three parts."
+    },
+    {
+      "content": "Make sure to account for cases where the last segment might have trailing zeros, as they can affect the binary value representation."
+    },
+    {
+      "content": "As a final step, ensure that you handle the return value correctly. If no valid indices are found, return [-1, -1]."
+    }
+  ],
+  "questionNotes": [
+    "The array must be split into three non-empty parts.",
+    "All parts must represent the same binary value.",
+    "Return format should be [i, j] with i + 1 < j.",
+    "Leading zeros are allowed in the binary representation.",
+    "If impossible, return [-1, -1].",
+    "Constraints: 3 <= arr.length <= 3 * 10^4, arr[i] is 0 or 1."
+  ]
+}

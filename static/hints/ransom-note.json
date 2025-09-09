@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering the lengths of the two strings. If the length of `ransomNote` is greater than `magazine`, then it's impossible to construct the ransom note. This is a quick check that can save time."
+    },
+    {
+      "content": "Think about how you can count the occurrences of each character in both `ransomNote` and `magazine`. You might want to use a data structure that allows you to easily count and compare these occurrences, such as a hash map or an array."
+    },
+    {
+      "content": "Consider using an array of size 26 (for each letter in the English alphabet) to count the occurrences of each letter in `magazine`. This will allow for efficient counting and comparison."
+    },
+    {
+      "content": "As you iterate through `magazine`, populate your count array for each character. For example, if you encounter 'a', you would increment the count at index 0 (for 'a')."
+    },
+    {
+      "content": "Once you have the counts for `magazine`, you need to check each character in `ransomNote`. For each character, see if the count in your array is greater than zero."
+    },
+    {
+      "content": "If you find a character in `ransomNote` that has a count of zero in your array, you can immediately return false, as it means that character cannot be constructed from `magazine`."
+    },
+    {
+      "content": "Make sure to decrement the count in your array each time you use a character from `magazine`. This ensures that each letter can only be used once."
+    },
+    {
+      "content": "After checking all characters in `ransomNote`, if you haven't returned false, then you can return true. This means all characters were successfully matched with enough occurrences in `magazine`."
+    },
+    {
+      "content": "Consider edge cases, such as when `ransomNote` or `magazine` are empty strings. How should your function behave in these scenarios?"
+    },
+    {
+      "content": "Finally, think about the time complexity of your solution. If you are using a single pass to count characters and another pass to check them, what will the overall complexity be?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= ransomNote.length, magazine.length <= 10^5",
+    "Both strings consist of lowercase English letters.",
+    "Each letter in magazine can only be used once in ransomNote."
+  ]
+}

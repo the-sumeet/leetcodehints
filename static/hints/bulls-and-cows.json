@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definitions of bulls and cows. Bulls are digits that are correct in both value and position, while cows are digits that are correct in value but not in position. Make sure you can identify these two categories from the guess."
+    },
+    {
+      "content": "To find the bulls, you can iterate through the characters of both the secret and the guess simultaneously. Keep a count of how many digits match in both value and position."
+    },
+    {
+      "content": "After counting bulls, you need to handle the remaining digits (non-bull digits) to count the cows. Create two separate lists or arrays to track the unmatched digits from both the secret and the guess."
+    },
+    {
+      "content": "When counting cows, remember that a digit can only be counted as a cow if it exists in both the unmatched digits of the secret and the guess. Use a frequency count to help with this."
+    },
+    {
+      "content": "You can use a dictionary or a list to count how many times each digit appears in the unmatched portions of both the secret and the guess. This will help you determine how many cows can be formed."
+    },
+    {
+      "content": "Consider edge cases where there are no bulls or cows. For example, if the guess is completely different from the secret, ensure your code correctly returns '0A0B'."
+    },
+    {
+      "content": "Make sure to format your output correctly as 'xAyB', where x is the number of bulls and y is the number of cows. Pay attention to the string formatting."
+    },
+    {
+      "content": "Think about the constraints given in the problem. Both secret and guess have the same length and consist of digits only. This simplifies some of your checks."
+    },
+    {
+      "content": "When counting cows, ensure you do not double-count any digit. For example, if you have two '1's in the guess and one '1' in the secret, only one can be counted as a cow."
+    },
+    {
+      "content": "You are almost there! After counting bulls and cows, combine the counts into the required string format. Ensure that your final output handles all edge cases correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= secret.length, guess.length <= 1000",
+    "Both secret and guess are of equal length and consist of digits only.",
+    "Return format must be 'xAyB', where x is bulls and y is cows.",
+    "Bulls are counted first, followed by cows from the unmatched digits."
+  ]
+}

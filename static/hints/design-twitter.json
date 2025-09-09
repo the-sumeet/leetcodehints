@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by defining the main components of your Twitter class. You will need to keep track of users, their tweets, and the relationships between users (who follows whom). Think about using a dictionary or hash map to store this information."
+    },
+    {
+      "content": "For the `postTweet` method, consider how you will store each tweet. You might want to use a list or a queue to keep track of the tweets for each user. Remember, each tweet must have a unique ID."
+    },
+    {
+      "content": "In the `getNewsFeed` method, you'll need to gather tweets from both the user and the users they follow. Consider how you will efficiently combine these tweets and ensure you only return the 10 most recent ones."
+    },
+    {
+      "content": "When implementing the `follow` and `unfollow` methods, think about how to maintain a list of followers for each user. A set could be useful here to avoid duplicate entries."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when a user tries to follow themselves or unfollow someone they are not following. Make sure to check these conditions before performing the actions."
+    },
+    {
+      "content": "Consider the time complexity of your methods. For example, retrieving the 10 most recent tweets should be efficient. You might want to look into data structures that allow for quick access to the most recent items, like a max-heap or a priority queue."
+    },
+    {
+      "content": "When combining tweets from the user and their followees, ensure that you are correctly sorting them by the time they were posted. You may want to store each tweet along with its timestamp."
+    },
+    {
+      "content": "Think about how you will represent the relationship between users. A dictionary where the key is the user ID and the value is a set of user IDs they follow could be an effective way to manage this."
+    },
+    {
+      "content": "As you implement the `getNewsFeed` method, remember to return the tweet IDs in the correct order. You can use a list to collect the tweets and then sort them before slicing to get the most recent 10."
+    },
+    {
+      "content": "Finally, make sure to test your implementation with various scenarios, including users with no tweets, users following multiple others, and edge cases like unfollowing non-followed users."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= userId, followerId, followeeId <= 500",
+    "0 <= tweetId <= 10^4; all tweets have unique IDs.",
+    "At most 3 * 10^4 calls will be made to postTweet, getNewsFeed, follow, and unfollow.",
+    "A user cannot follow themselves.",
+    "Return format for getNewsFeed is a list of tweet IDs ordered from most recent to least recent."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the starting point (1) and the ending point (2) in the grid. You can loop through the grid to find their coordinates. This is crucial as you'll need these positions to track your movements."
+    },
+    {
+      "content": "Count the number of non-obstacle squares (0s) that you need to traverse, including the starting and ending squares. This will help you understand how many steps you need to take in total."
+    },
+    {
+      "content": "Consider using Depth-First Search (DFS) for exploring possible paths from the starting square to the ending square. This approach allows you to explore all potential routes."
+    },
+    {
+      "content": "As you explore paths, make sure to mark squares as visited to avoid counting them multiple times. You can use a temporary marker or modify the grid during your DFS."
+    },
+    {
+      "content": "Remember to backtrack after exploring a path. This means you'll need to unmark the visited squares when you return from a recursive call."
+    },
+    {
+      "content": "When you reach the ending square, check if all non-obstacle squares have been visited. This is essential to ensure you are counting only valid paths."
+    },
+    {
+      "content": "Think about the base case for your recursive function. What should happen when you reach the ending square? You should increment a counter if all required squares have been visited."
+    },
+    {
+      "content": "Consider the boundaries of your grid. Make sure your DFS does not go out of bounds when exploring neighboring squares. You can use conditions to check if indices are valid."
+    },
+    {
+      "content": "You can optimize your search by stopping early if you find that you cannot reach the ending square from the current path. This can save unnecessary computations."
+    },
+    {
+      "content": "Pay attention to the order of movements. You can move up, down, left, or right, but ensure you respect the grid boundaries and obstacle placements."
+    },
+    {
+      "content": "Think about edge cases, such as when the grid has only the starting and ending squares, or when there are multiple paths but some are blocked by obstacles."
+    },
+    {
+      "content": "Consider using a helper function to encapsulate your DFS logic, which can take parameters like the current position, the count of visited squares, and the total number of required squares."
+    },
+    {
+      "content": "As you implement your DFS, keep track of the number of valid paths found. You can return this count at the end of your main function."
+    },
+    {
+      "content": "Finally, ensure that your function handles the case where no valid paths exist. You should return 0 in such scenarios."
+    },
+    {
+      "content": "Your final implementation should be able to handle various grid configurations, so test it with different inputs to validate its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == grid.length, n == grid[i].length, 1 <= m, n <= 20, 1 <= m * n <= 20.",
+    "There is exactly one starting cell (1) and one ending cell (2).",
+    "The grid can contain obstacles (-1) that cannot be traversed.",
+    "The output should be the number of unique paths that traverse every non-obstacle square exactly once."
+  ]
+}

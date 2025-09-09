@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. The robber cannot rob two adjacent houses, and he must rob at least `k` houses. This means you'll need to explore combinations of houses that are not next to each other."
+    },
+    {
+      "content": "Consider how you can represent the choices the robber has. You might want to think about using combinations or dynamic programming to keep track of which houses can be robbed together without violating the adjacency rule."
+    },
+    {
+      "content": "Think about the maximum capability of the robber, which is defined as the maximum amount of money in the houses he robs. This means you will need to track the maximum value of the houses selected in any valid combination."
+    },
+    {
+      "content": "When selecting houses, remember that you need to ensure that at least `k` houses are chosen. This adds a layer of complexity to your combination logic. How will you ensure that you have selected enough houses?"
+    },
+    {
+      "content": "Since the goal is to minimize the maximum capability, consider sorting the houses based on their values. This might help in efficiently finding combinations that yield a lower maximum value."
+    },
+    {
+      "content": "You can use a binary search approach on the possible maximum values. For each candidate maximum value, check if it's feasible to rob at least `k` houses without exceeding this value."
+    },
+    {
+      "content": "Create a helper function that checks if it's possible to rob at least `k` houses given a maximum capability. This function should iterate through the houses and count how many can be robbed without hitting the adjacency rule."
+    },
+    {
+      "content": "Think about edge cases, such as when `k` is equal to the total number of houses. In this case, you need to ensure that the houses can be selected without any adjacent selections."
+    },
+    {
+      "content": "Remember to handle cases where the maximum value of a house is very high. You should ensure that your algorithm can handle the upper limits of the constraints efficiently."
+    },
+    {
+      "content": "Finally, integrate your binary search with the helper function. Your main function should perform a binary search over the range of house values and use the helper to validate each midpoint."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "1 <= k <= (nums.length + 1)/2",
+    "Robber cannot rob adjacent houses.",
+    "Return the minimum capability of the robber after robbing at least k houses."
+  ]
+}

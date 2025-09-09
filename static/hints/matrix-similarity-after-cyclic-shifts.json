@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a cyclic shift means for a row in the matrix. A left cyclic shift moves each element to the left and wraps the first element to the end. For example, shifting [1, 2, 3] left results in [2, 3, 1]."
+    },
+    {
+      "content": "Remember that even-indexed rows are shifted left while odd-indexed rows are shifted right. Make sure to keep track of which rows need which type of shift during each of the k iterations."
+    },
+    {
+      "content": "Consider how many effective shifts you need to perform. Shifting a row of length n by n times results in the same row. Thus, you only need to perform k % n shifts for each row."
+    },
+    {
+      "content": "Think about how to handle the shifting operation. You can create a helper function that takes a row and the number of shifts as input and returns the modified row after the shifts."
+    },
+    {
+      "content": "When implementing the shifting logic, ensure you handle the edge cases where k is greater than the number of columns in the matrix. Use the modulo operator to simplify the number of shifts."
+    },
+    {
+      "content": "After performing the shifts, you need to compare the modified matrix with the original matrix. A simple way to do this is to iterate through both matrices and check if each corresponding element is equal."
+    },
+    {
+      "content": "Consider the scenario where all elements in the matrix are the same. In such cases, regardless of the shifts, the matrix will remain unchanged. This is a quick check that can save computation time."
+    },
+    {
+      "content": "Make sure to account for matrices that are not square. The number of rows and columns can differ, so your shifting logic must be flexible to handle any m x n configuration."
+    },
+    {
+      "content": "Before finalizing your solution, write out some test cases, especially edge cases like a single row or a single column matrix. This will help you ensure your logic works under all conditions."
+    },
+    {
+      "content": "Finally, implement the main function that puts everything together. Use a loop to apply the shifts k times and then compare the final matrix to the original one. Don't forget to return true or false based on the comparison."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= mat.length <= 25, 1 <= mat[i].length <= 25, 1 <= mat[i][j] <= 25, 1 <= k <= 50.",
+    "The matrix is indexed starting from 0.",
+    "Even-indexed rows shift left, odd-indexed rows shift right.",
+    "Return true if the final matrix is identical to the original, otherwise return false."
+  ]
+}

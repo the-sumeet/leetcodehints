@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an alternating subarray is. An alternating subarray is one where no two adjacent elements are the same. For example, in the array [0, 1, 0], both [0, 1] and [1, 0] are alternating."
+    },
+    {
+      "content": "Consider how to identify the boundaries of alternating subarrays. You can iterate through the array and check when the current element is different from the previous one. This will help you find the start and end of each alternating segment."
+    },
+    {
+      "content": "Think about how to count subarrays within a segment. If you have a segment of length `k`, you can form `k` single-element subarrays, and additional subarrays of length 2, 3, ..., up to `k`. The total number of subarrays can be calculated using the formula for the sum of the first `k` integers: `k * (k + 1) / 2`."
+    },
+    {
+      "content": "As you iterate through the array, keep track of the length of the current alternating segment. Reset this length whenever you encounter two adjacent elements that are the same."
+    },
+    {
+      "content": "Make sure to handle edge cases. For instance, if the array has only one element, there is only one alternating subarray. Similarly, consider what happens when the array is entirely made up of the same element."
+    },
+    {
+      "content": "When calculating the number of alternating subarrays, remember to add the counts from each segment to a total count variable. This way, you can accumulate the counts from all segments as you process the array."
+    },
+    {
+      "content": "Pay attention to the constraints given in the problem. The array length can be up to 100,000 elements, so your solution should ideally be O(n) in time complexity to handle the largest cases efficiently."
+    },
+    {
+      "content": "Consider how to handle the transition between segments. If you find an element that is the same as the previous one, you need to finalize the count for the current segment before moving on."
+    },
+    {
+      "content": "As you finalize the count for a segment, use the formula for the sum of the first `k` integers to update your total count. Don't forget to account for the last segment after the loop ends."
+    },
+    {
+      "content": "Finally, ensure that your function returns the total count of alternating subarrays. This will be the sum of counts from all detected segments."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100000",
+    "Elements in nums are either 0 or 1.",
+    "Return the total count of alternating subarrays.",
+    "Consider edge cases such as arrays with all identical elements."
+  ]
+}

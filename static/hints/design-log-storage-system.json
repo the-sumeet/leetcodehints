@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the logs you need to store. Each log entry consists of an ID and a timestamp formatted as 'YYYY:MM:DD:HH:MM:SS'. Consider how you will represent these logs in your system."
+    },
+    {
+      "content": "Think about how you will store the logs. A dictionary or a list could work, but consider the efficiency of retrieval based on the timestamp. What data structure would allow you to quickly retrieve logs within a specific time range?"
+    },
+    {
+      "content": "When implementing the 'put' method, ensure that you correctly parse the timestamp and associate it with the log ID. You might want to convert the timestamp into a comparable format, like a Unix timestamp or a datetime object."
+    },
+    {
+      "content": "For the 'retrieve' method, remember that you need to handle different granularity levels (Year, Month, Day, Hour, Minute, Second). This means you will need to adjust your timestamp comparisons based on the level of granularity specified."
+    },
+    {
+      "content": "Consider edge cases where the start and end timestamps might be the same. How will your system handle this? Ensure that your retrieval logic can handle inclusive ranges."
+    },
+    {
+      "content": "As you implement the retrieval logic, think about how to efficiently filter logs based on the granularity. You might need to create a way to truncate timestamps to the desired level for comparison."
+    },
+    {
+      "content": "Remember to account for the possibility of no logs being found within the specified range. What should your retrieve method return in this case? Consider returning an empty list or a specific message."
+    },
+    {
+      "content": "When dealing with timestamps, be aware of the potential for time zone issues, especially if you expand this system in the future. For now, you can assume all timestamps are in the same timezone, but document this assumption."
+    },
+    {
+      "content": "Before finalizing your implementation, write test cases that cover various scenarios, including edge cases. Test with logs that span different years, months, and days to ensure your retrieval logic is robust."
+    },
+    {
+      "content": "Finally, think about how you will structure your 'retrieve' method to handle the different levels of granularity. You might want to create a helper function that takes a timestamp and a granularity level to return the truncated timestamp for comparisons."
+    }
+  ],
+  "questionNotes": [
+    "Log entries consist of an ID and a timestamp formatted as 'YYYY:MM:DD:HH:MM:SS'.",
+    "The 'retrieve' method requires handling different granularity levels: Year, Month, Day, Hour, Minute, Second.",
+    "Ensure that the retrieval range is inclusive of both start and end timestamps.",
+    "Consider edge cases such as no logs found in the specified range.",
+    "All timestamps are assumed to be in the same timezone."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a complete binary tree. In a complete binary tree, all levels are fully filled except possibly the last one, which is filled from left to right."
+    },
+    {
+      "content": "Consider how you might traverse the tree. While a simple traversal (like in-order or level-order) would count nodes, it would take O(n) time, which is not efficient enough for this problem."
+    },
+    {
+      "content": "Think about the properties of the height of the tree. The height of a complete binary tree can be determined by traversing down to the leftmost node. How can you use this height to help count nodes?"
+    },
+    {
+      "content": "You can calculate the height of the tree by traversing from the root to the leftmost leaf node. This gives you a way to determine how many levels are in the tree."
+    },
+    {
+      "content": "Once you have the height, consider how many nodes are supposed to be in a complete tree of that height. For a tree of height h, the maximum number of nodes is 2^(h+1) - 1."
+    },
+    {
+      "content": "However, since the last level may not be fully filled, you need to check how many nodes are actually present in that last level. This can be done by checking the existence of nodes at specific positions."
+    },
+    {
+      "content": "To efficiently find nodes in the last level, you can use binary search. The last level can have nodes indexed from 0 to 2^h - 1. You can check if a node exists at a given index by traversing from the root."
+    },
+    {
+      "content": "Define a function that checks if a node exists at a specific index in the last level. This function will take the height of the tree and the index you want to check."
+    },
+    {
+      "content": "Combine the results from the height and the binary search to count the total nodes. You'll add the number of nodes from the full levels (2^h - 1) and the count of nodes in the last level."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the tree is empty. An empty tree should return 0. Test your function with various complete binary tree configurations."
+    }
+  ],
+  "questionNotes": [
+    "The tree is guaranteed to be complete, meaning it follows specific filling rules.",
+    "The number of nodes is in the range [0, 5 * 10^4].",
+    "Return the total count of nodes in the tree.",
+    "Consider the efficiency of your algorithm; it should run in less than O(n) time."
+  ]
+}

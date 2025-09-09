@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to construct the string `s` to match the `target` string using the provided `words` and their corresponding `costs`. Each word can be used multiple times, but the goal is to minimize the total cost."
+    },
+    {
+      "content": "Consider how you can break down the `target` string into segments that can be formed using the words in the `words` array. Think about the characters in `target` and how they can be covered by these words."
+    },
+    {
+      "content": "Make a note of the fact that the `target` string must be formed exactly. If any character in `target` cannot be matched by the available words, you should immediately return -1."
+    },
+    {
+      "content": "Think about using dynamic programming (DP) to solve this problem. You can create a DP array where each index represents the minimum cost to construct the substring of `target` up to that index."
+    },
+    {
+      "content": "Initialize your DP array with a size equal to `target.length + 1`. Set `dp[0]` to 0 (cost of constructing an empty string) and all other entries to infinity, as they represent uncomputed states."
+    },
+    {
+      "content": "Iterate through each character in the `target`. For each character, check all available words to see if they can extend the current substring of `target` you are trying to form."
+    },
+    {
+      "content": "When checking a word, ensure that it matches the substring of `target` starting from the current index. If it matches, calculate the new cost and update the DP array if this new cost is lower."
+    },
+    {
+      "content": "Remember to consider the lengths of the words. If a word is longer than the remaining part of `target`, it cannot be used to match that part."
+    },
+    {
+      "content": "Pay attention to overlapping characters. If a word can contribute to forming multiple characters in `target`, ensure that you are accounting for the cost correctly."
+    },
+    {
+      "content": "After filling out the DP array, check the last entry (`dp[target.length]`). If it remains infinity, it means the target string cannot be constructed, and you should return -1."
+    },
+    {
+      "content": "Consider edge cases, such as when `target` consists of a single character or when all words are longer than `target`. These scenarios can help you refine your approach."
+    },
+    {
+      "content": "Think about how to efficiently check if a word can match a segment of `target`. You might want to use a substring comparison to ensure that you are matching correctly."
+    },
+    {
+      "content": "Make sure to account for the costs properly when updating your DP array. You want to minimize the total cost, so always compare the current cost with the new cost you calculate."
+    },
+    {
+      "content": "As you implement your solution, consider using a hash map to store the words and their costs. This can help you quickly access the cost associated with each word."
+    },
+    {
+      "content": "Finally, ensure that your implementation handles large inputs efficiently. Given the constraints, your solution should ideally run in O(n * m) time, where n is the length of `target` and m is the number of words."
+    }
+  ],
+  "questionNotes": [
+    "1 <= target.length <= 5 * 10^4",
+    "1 <= words.length == costs.length <= 5 * 10^4",
+    "1 <= words[i].length <= target.length",
+    "The total sum of words[i].length is <= 5 * 10^4.",
+    "Return -1 if it's not possible to form the target string."
+  ]
+}

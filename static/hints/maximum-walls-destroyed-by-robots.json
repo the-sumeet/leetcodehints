@@ -1,0 +1,58 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input arrays: `robots`, `distance`, and `walls`. Each robot can fire bullets either to the left or right, and the distance it can cover is specified in the `distance` array."
+    },
+    {
+      "content": "Consider how to represent the range of each robot's fire. For a robot at position `robots[i]` with a distance `distance[i]`, it can affect positions from `robots[i] - distance[i]` to `robots[i] + distance[i]`."
+    },
+    {
+      "content": "Think about how to store the positions of walls. Since walls are unique, using a set or a dictionary can help you keep track of which walls have been destroyed without duplicates."
+    },
+    {
+      "content": "When a robot fires, it stops if it hits another robot. Make sure to account for the positions of robots when calculating the effective range of fire."
+    },
+    {
+      "content": "You might want to sort the `walls` array to make it easier to determine which walls can be destroyed by a robot's bullet as it travels in a specific direction."
+    },
+    {
+      "content": "Consider iterating through each robot and checking its left and right ranges separately. This way, you can systematically evaluate which walls are destroyed."
+    },
+    {
+      "content": "Remember that if a bullet hits a robot, it cannot continue. You will need to check for robots in the path of the bullet before checking for walls."
+    },
+    {
+      "content": "When checking the walls in the path of a robot's bullet, use binary search to quickly find the range of walls that fall within the robot's firing distance."
+    },
+    {
+      "content": "You can use two pointers or binary search to efficiently find the first wall that can be hit by a bullet traveling in either direction from a robot."
+    },
+    {
+      "content": "Ensure that you account for edge cases, such as when a robot's position is exactly at a wall's position. This should count as a destroyed wall."
+    },
+    {
+      "content": "As you process each robot, maintain a set of destroyed walls to avoid counting the same wall multiple times."
+    },
+    {
+      "content": "When implementing the logic, consider using a loop for each robot and then a nested loop or binary search for walls to ensure you cover all possible scenarios."
+    },
+    {
+      "content": "Think about the time complexity of your solution. You want to ensure it runs efficiently given the constraints, especially with up to 100,000 robots and walls."
+    },
+    {
+      "content": "After processing all robots, the final step is to return the size of the set containing destroyed walls, which gives you the total number of unique walls destroyed."
+    },
+    {
+      "content": "Before finalizing your solution, test your implementation with edge cases, such as when all robots are clustered together or when walls are positioned far apart."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= robots.length == distance.length <= 10^5",
+    "Constraints: 1 <= walls.length <= 10^5",
+    "Constraints: 1 <= robots[i], walls[j] <= 10^9",
+    "Constraints: 1 <= distance[i] <= 10^5",
+    "All values in robots are unique.",
+    "All values in walls are unique.",
+    "Return the maximum number of unique walls destroyed."
+  ]
+}

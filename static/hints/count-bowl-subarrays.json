@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a bowl subarray. It must have at least 3 elements and the minimum of the two ends must be strictly greater than the maximum of the elements in between."
+    },
+    {
+      "content": "Consider how you can iterate through the array to find all possible subarrays of length at least 3. You can use two nested loops to select the starting and ending points of the subarray."
+    },
+    {
+      "content": "When you have a subarray defined by indices l and r, remember to check the length condition first: ensure that r - l + 1 >= 3."
+    },
+    {
+      "content": "To check the bowl condition, you will need to compute the minimum of the two ends (nums[l] and nums[r]) and the maximum of the elements in between (nums[l + 1] to nums[r - 1])."
+    },
+    {
+      "content": "You can use a simple loop to find the maximum of the elements in between. For example: `max_in_between = max(nums[l + 1:r])`."
+    },
+    {
+      "content": "Since the elements in nums are distinct, you won't have to worry about ties when comparing the minimum and maximum values. This simplifies your comparisons."
+    },
+    {
+      "content": "Think about how you can efficiently count the valid bowl subarrays. You might want to keep a count variable that increments each time you find a valid bowl."
+    },
+    {
+      "content": "Consider edge cases, such as when all elements are in increasing or decreasing order. What will happen to the bowl condition in these scenarios?"
+    },
+    {
+      "content": "Make sure to test your solution with the provided examples and edge cases to ensure correctness. Pay attention to the constraints: 3 <= nums.length <= 100000 and 1 <= nums[i] <= 10^9."
+    },
+    {
+      "content": "You are close to the solution! Remember to iterate through all possible pairs of indices (l, r) and check the bowl condition for each valid subarray. Consider using a nested loop or a sliding window approach."
+    }
+  ],
+  "questionNotes": [
+    "Subarray must have length at least 3.",
+    "min(nums[l], nums[r]) > max(nums[l + 1], ..., nums[r - 1]) for a bowl.",
+    "Distinct elements in nums.",
+    "Constraints: 3 <= nums.length <= 100000, 1 <= nums[i] <= 10^9."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the cost formula for a subarray. The cost of a subarray is influenced by both the sum of its elements and the cumulative cost of the elements in that range, multiplied by a factor based on the order of the subarray."
+    },
+    {
+      "content": "Remember that the order of subarrays matters. The first subarray contributes less to the overall cost than subsequent subarrays due to the multiplication by 'i'. This means you might want to minimize the cost of later subarrays."
+    },
+    {
+      "content": "Consider how you can break down the problem. You might want to explore dynamic programming to keep track of the minimum cost for dividing the array at different points."
+    },
+    {
+      "content": "Think about how to calculate the sum of elements and the sum of costs efficiently. You can use prefix sums to compute these values quickly for any subarray."
+    },
+    {
+      "content": "When calculating costs, remember to account for the index of the subarray. The cost increases with each new subarray due to the factor 'k * i'."
+    },
+    {
+      "content": "What happens when you have only one element in the array? Make sure your solution handles this edge case correctly, as the cost will be straightforward."
+    },
+    {
+      "content": "Try to visualize the problem with small examples. For instance, with nums = [1, 2] and cost = [1, 1], calculate the cost for different subarray divisions."
+    },
+    {
+      "content": "Explore the idea of dynamic programming. You might want to create a DP array where dp[i] represents the minimum cost to partition the first i elements of nums."
+    },
+    {
+      "content": "When filling your DP array, consider all possible positions to split the array. For each position, calculate the cost of the new subarray formed and add it to the previously computed minimum cost."
+    },
+    {
+      "content": "Make sure to handle the transition correctly in your DP solution. The cost of the new subarray should be calculated based on the prefix sums you've prepared."
+    },
+    {
+      "content": "Pay attention to the constraints. The maximum size of nums is 1000, which suggests that an O(n^2) solution might be feasible, but you should aim for efficiency."
+    },
+    {
+      "content": "Consider edge cases where all elements in nums are the same. This might simplify the cost calculations and help you identify patterns in your approach."
+    },
+    {
+      "content": "As you implement the solution, ensure that you are correctly indexing into the nums and cost arrays. Off-by-one errors can easily occur in these types of problems."
+    },
+    {
+      "content": "After implementing your DP approach, test it with the provided examples and additional edge cases to ensure it behaves as expected."
+    },
+    {
+      "content": "Finally, think about how to return the result. The problem specifies to return the minimum total cost, so ensure your final output is correctly formatted."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000, cost.length == nums.length, 1 <= nums[i], cost[i] <= 1000, 1 <= k <= 1000.",
+    "The cost formula involves both the sum of the elements in the subarray and the cumulative cost of the elements, multiplied by the subarray index.",
+    "Be careful with indexing; ensure you correctly handle the boundaries of subarrays when calculating costs.",
+    "The order of subarrays significantly affects the total cost due to the multiplication by 'k * i'."
+  ]
+}

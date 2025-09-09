@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to ensure that the resulting string has at most `k` distinct characters. Think about how you can identify the distinct characters in the input string."
+    },
+    {
+      "content": "Consider using a data structure to keep track of the frequency of each character in the string. A dictionary or a frequency array can be useful for this purpose."
+    },
+    {
+      "content": "Once you have the frequency of each character, think about how to determine which characters to remove. If the number of distinct characters is less than or equal to `k`, then no deletions are needed."
+    },
+    {
+      "content": "If the number of distinct characters exceeds `k`, you will need to decide which characters to delete. Focus on removing characters that occur the least frequently to minimize the number of deletions."
+    },
+    {
+      "content": "You can sort the characters based on their frequencies. This will help you identify the least frequent characters quickly. Remember that you only need to remove enough characters to bring the distinct count down to `k`."
+    },
+    {
+      "content": "Think about how to calculate the total number of deletions required. For each character that you decide to remove, you will need to sum their frequencies."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is equal to the length of the string or when the string contains only one distinct character. How do these cases affect your approach?"
+    },
+    {
+      "content": "Remember that the constraints are relatively small (up to 16 characters). This allows you to use straightforward methods without worrying about performance too much."
+    },
+    {
+      "content": "As you implement your solution, ensure that you correctly handle the case when the number of distinct characters is already `k` or fewer. You should return 0 in this scenario."
+    },
+    {
+      "content": "Finally, think about how to structure your final solution. You might want to iterate through the sorted list of frequencies and keep a running total of deletions until you reach the desired number of distinct characters."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 16, 1 <= k <= 16",
+    "s consists only of lowercase English letters.",
+    "Return the minimum number of deletions required.",
+    "If the number of distinct characters is already <= k, return 0."
+  ]
+}

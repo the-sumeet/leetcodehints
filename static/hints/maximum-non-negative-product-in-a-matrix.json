@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering the movement options in the matrix. You can only move right or down from any cell. Think about how you can represent your current position in the grid."
+    },
+    {
+      "content": "When calculating the product of the path, remember that you need to track both the maximum product and the minimum product at each cell. Why would you need to track the minimum as well?"
+    },
+    {
+      "content": "Consider how negative numbers can affect the product. A negative product can become positive if you multiply it by another negative number. How will you handle this in your calculations?"
+    },
+    {
+      "content": "You need to return the maximum non-negative product modulo 10^9 + 7. Make sure to apply the modulo operation after calculating the final product, not during intermediate steps."
+    },
+    {
+      "content": "Think about edge cases, such as when the grid contains zeros. What happens to the product if you encounter a zero? How does that affect your path calculations?"
+    },
+    {
+      "content": "As you traverse the grid, consider using dynamic programming to store the maximum and minimum products up to each cell. This will help you efficiently compute the products for subsequent cells."
+    },
+    {
+      "content": "Remember to initialize your starting point (0, 0) correctly. The product at the starting point should be the value of grid[0][0]. What if this value is negative?"
+    },
+    {
+      "content": "While filling out your DP table, keep in mind that you should also check if the maximum product at any cell is negative. If the maximum product at the bottom-right corner is negative, you should return -1."
+    },
+    {
+      "content": "As you fill out the DP table, consider how you will handle the transition between cells. For each cell, you need to decide whether to come from the left or from above, and how that affects the products."
+    },
+    {
+      "content": "Finally, after computing the maximum product at the bottom-right corner, ensure you check if it is non-negative. If it is, return the product modulo 10^9 + 7; otherwise, return -1."
+    }
+  ],
+  "questionNotes": [
+    "You can only move right or down in the matrix.",
+    "Track both maximum and minimum products to handle negative numbers.",
+    "Return the maximum non-negative product modulo 10^9 + 7.",
+    "If the maximum product is negative, return -1.",
+    "The grid dimensions are constrained to 1 <= m, n <= 15.",
+    "Grid values range from -4 to 4."
+  ]
+}

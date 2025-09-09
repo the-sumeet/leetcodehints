@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence allows you to pick elements from the array without changing their order. For example, from ['a', 'b', 'c'], you can form subsequences like ['a'], ['b', 'c'], or ['a', 'c']."
+    },
+    {
+      "content": "Consider how to check if a concatenated string has all unique characters. You can use a set to track characters you've seen so far. If you encounter a character that's already in the set, then the string does not have all unique characters."
+    },
+    {
+      "content": "Think about how to explore all possible combinations of strings in the array. You can use recursion or backtracking to generate these combinations. Each time you add a new string, check if it maintains the uniqueness of characters."
+    },
+    {
+      "content": "Remember that the maximum length of a string formed will be limited by the total number of unique characters available, which is 26 for lowercase English letters. This can help you optimize your checks."
+    },
+    {
+      "content": "You might want to filter out strings that themselves contain duplicate characters before processing. For example, 'aa' should not be included in your combinations since it can't contribute to a unique character string."
+    },
+    {
+      "content": "When forming combinations, you can keep track of the current string and its length. If adding a new string causes duplicates, you should backtrack and try the next combination."
+    },
+    {
+      "content": "Consider using a bitmask to represent the characters in your current string. Each bit can represent whether a character (from 'a' to 'z') is included. This can make checking for duplicates efficient."
+    },
+    {
+      "content": "As you explore combinations, maintain a variable to track the maximum length found. After checking all combinations, this variable should hold the answer."
+    },
+    {
+      "content": "Be cautious with edge cases, such as when the input array contains strings with all unique characters or when it contains strings that are entirely duplicates. These can affect your final result."
+    },
+    {
+      "content": "Finally, ensure your function returns the maximum length found after exploring all valid combinations. You might want to summarize your findings in a return statement at the end of your exploration."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 16",
+    "Each string in arr has a length of 1 to 26.",
+    "Strings contain only lowercase English letters.",
+    "A subsequence can include any number of strings, including none (which results in an empty string).",
+    "The output should be the maximum length of a concatenated string with unique characters."
+  ]
+}

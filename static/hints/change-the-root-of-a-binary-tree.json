@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node has a value and pointers to its left and right children. For example, in the tree represented by [3,5,1,6,2,0,8,null,null,7,4], the root is 3, and it has left child 5 and right child 1."
+    },
+    {
+      "content": "Identify the node that you want to change to the new root. You will need to traverse the tree to find this node. Consider using a depth-first search (DFS) approach to locate the target node."
+    },
+    {
+      "content": "Once you find the target node, think about how you can detach it from its current parent. This involves adjusting the parent’s child pointer to null. Make sure you handle both left and right children of the target node."
+    },
+    {
+      "content": "After detaching the target node, you need to connect it to the original root. The target node will become the new root, and its children should remain intact. You may need to adjust the tree structure accordingly."
+    },
+    {
+      "content": "Consider edge cases such as when the target node is already the root. In this case, no changes are needed, and you can simply return the tree as is."
+    },
+    {
+      "content": "Think about what to do if the target node has children. You might need to make one of its children the new root's left or right child. Ensure that the tree remains a valid binary tree after this operation."
+    },
+    {
+      "content": "Remember to handle cases where the target node is a leaf node (it has no children). In this case, you can simply make it the new root without any additional adjustments."
+    },
+    {
+      "content": "When implementing your solution, consider using a helper function to perform the traversal and re-linking of nodes. This can help keep your code organized and easier to understand."
+    },
+    {
+      "content": "Make sure to return the new root of the tree after you have made the changes. The return type should be the node that represents the new root of the modified binary tree."
+    },
+    {
+      "content": "As a final step, ensure that you test your solution with various cases, including edge cases like an empty tree or a tree with only one node. This will help you verify the robustness of your implementation."
+    }
+  ],
+  "questionNotes": [
+    "The input tree is represented as an array where null indicates no child.",
+    "The target node value will always exist in the tree.",
+    "The output should be the new root of the modified tree."
+  ]
+}

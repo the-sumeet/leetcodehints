@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. The input is a list of integers, where each integer represents a value at a specific node in a binary tree. The position of the node can be inferred from its index in the list."
+    },
+    {
+      "content": "Consider how the binary tree is formed from the list. The root node is at index 0, and for any node at index `i`, its left child is at index `2*i + 1` and its right child is at index `2*i + 2`. This will help you visualize the tree structure."
+    },
+    {
+      "content": "Think about how you will traverse the tree to find paths from the root to the leaves. Each path will consist of the values of the nodes along the way, and you need to sum these values."
+    },
+    {
+      "content": "Remember that a leaf node is defined as a node that does not have any children. In the context of the input list, you can identify leaf nodes by checking if their corresponding indices for children are out of bounds."
+    },
+    {
+      "content": "As you traverse the tree, maintain a running sum of the values from the root to the current node. This will allow you to easily compute the total path sum when you reach a leaf node."
+    },
+    {
+      "content": "When you reach a leaf node, compare the computed path sum to the target sum you are checking against. You might want to keep track of how many paths equal this target sum."
+    },
+    {
+      "content": "Consider edge cases, such as when the input list is empty. How should your function handle this scenario? Think about what the expected output should be."
+    },
+    {
+      "content": "Make sure to handle cases where there are multiple leaf nodes. You should sum the path values for each leaf node independently and check if they meet the target sum."
+    },
+    {
+      "content": "You may want to implement a recursive function to handle the traversal of the tree. This function can take the current index, the current sum, and the target sum as parameters."
+    },
+    {
+      "content": "As a final step, ensure your function returns the correct count of paths that sum to the target value. You might want to return 0 if no paths meet the criteria."
+    }
+  ],
+  "questionNotes": [
+    "The input is a list of integers representing node values in a binary tree.",
+    "The tree structure is inferred from the index of the list: left child at 2*i + 1, right child at 2*i + 2.",
+    "Leaf nodes are those without children, which can be identified by their indices.",
+    "Consider edge cases, such as an empty input list, and define the expected output.",
+    "Return the count of paths that sum to the target value, or 0 if no paths exist."
+  ]
+}

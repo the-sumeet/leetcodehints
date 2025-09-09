@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. A tree with n nodes has n-1 edges and is connected with no cycles. Make sure you can visualize how the edges connect the nodes."
+    },
+    {
+      "content": "Consider how the weights assigned to edges (either 1 or 2) will affect the total cost of the path between any two nodes. Remember that the sum of weights will determine if the cost is odd or even."
+    },
+    {
+      "content": "For each query, you need to find the path between the two nodes. Think about how you can efficiently find this path in a tree structure. Depth-first search (DFS) or breadth-first search (BFS) could be useful here."
+    },
+    {
+      "content": "When calculating the number of valid assignments for edge weights, consider the parity of the total number of edges in the path. The total weight will be odd if an odd number of edges have a weight of 1."
+    },
+    {
+      "content": "Note that if the path has an even number of edges, then you must assign an odd number of edges a weight of 1 to achieve an odd total cost. Conversely, if the path has an odd number of edges, you can assign an even number of edges a weight of 1."
+    },
+    {
+      "content": "Count the number of edges in the path for each query. This will help you determine how many edges you can assign weight 1 to in order to achieve an odd total cost."
+    },
+    {
+      "content": "For a path with k edges, if k is even, the number of valid assignments is given by the combinations of assigning an odd number of weights 1. If k is odd, the valid assignments will be for even counts of weights 1."
+    },
+    {
+      "content": "Consider how to compute the number of ways to choose odd/even weights from k edges. You can use combinatorial mathematics or dynamic programming to handle large counts efficiently."
+    },
+    {
+      "content": "Remember to apply modulo 10^9 + 7 to your results, as the number of ways can grow large. This is a common requirement in competitive programming to prevent overflow."
+    },
+    {
+      "content": "When handling multiple queries, think about optimizing the path finding. You might want to preprocess the tree to quickly answer each query rather than recalculating paths each time."
+    },
+    {
+      "content": "Consider edge cases, such as when the two nodes in a query are the same. In this case, the path has no edges, and thus the cost is 0, which is even."
+    },
+    {
+      "content": "Also, think about scenarios where nodes are directly connected versus nodes that require traversing multiple edges. Ensure your solution handles both cases effectively."
+    },
+    {
+      "content": "If you are using DFS or BFS, keep track of the parent nodes to reconstruct the path between any two nodes. This will help you identify the edges involved in the cost calculation."
+    },
+    {
+      "content": "As you implement the solution, ensure that you are storing results for each query in the correct order as specified in the problem statement. The output should match the order of the input queries."
+    },
+    {
+      "content": "Finally, as you approach the implementation, think about edge cases like the minimum and maximum constraints for n and the number of queries. Ensure your solution is efficient enough to handle the upper limits."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5, edges.length == n - 1, 1 <= queries.length <= 10^5.",
+    "Each edge is represented as [u, v], indicating an undirected connection.",
+    "The result for each query must be modulo 10^9 + 7.",
+    "For the path from node u to v, disregard edges not in the path.",
+    "If u == v, the path has no edges and the cost is 0."
+  ]
+}

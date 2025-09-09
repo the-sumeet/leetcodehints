@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid and how you can move from one cell to another. You can move right to any cell in the same row up to a certain limit defined by the value in the current cell, or down to any cell in the same column up to a similar limit."
+    },
+    {
+      "content": "Consider how to represent your current position and the cells you can visit. You need to track your position as you move through the grid and the cells that have already been visited."
+    },
+    {
+      "content": "Think about using a queue to explore the grid. A breadth-first search (BFS) approach can be helpful for finding the shortest path in an unweighted grid like this."
+    },
+    {
+      "content": "When implementing BFS, you will need to keep track of the number of cells visited. This can be done by maintaining a count that increments each time you move to a new cell."
+    },
+    {
+      "content": "Don't forget to check for valid moves. Ensure that when you calculate the next cells to visit, they are within the bounds of the grid and have not been visited yet."
+    },
+    {
+      "content": "Consider edge cases where the grid is very small, such as 1x1 or 1xN. What would your function return in those scenarios?"
+    },
+    {
+      "content": "Remember that the destination cell (m-1, n-1) has a value of 0, which means you cannot move from it. This will affect how you plan your path."
+    },
+    {
+      "content": "As you explore the grid, keep track of the visited cells in a separate structure to avoid cycles and unnecessary revisits. A set or a 2D array can be useful for this."
+    },
+    {
+      "content": "Think about how to handle cases where no valid path exists. You should return -1 in such situations, so ensure your algorithm can detect this."
+    },
+    {
+      "content": "When exploring cells, prioritize those that lead to the destination with fewer total visits. This might involve sorting or using a priority queue."
+    },
+    {
+      "content": "Make sure to implement checks for the maximum number of cells you can jump to based on the current cell's value. This will significantly affect your movement options."
+    },
+    {
+      "content": "Consider how to efficiently explore all possible paths without redundantly checking the same cells. This is crucial for performance given the constraints."
+    },
+    {
+      "content": "As you develop your solution, test it with the provided examples and additional edge cases to ensure correctness and efficiency."
+    },
+    {
+      "content": "You might want to visualize the grid and the paths you can take. Drawing it out can help clarify your thought process and identify potential issues."
+    },
+    {
+      "content": "Finally, remember that your goal is to minimize the number of cells visited. Ensure your logic accounts for this in every step of your algorithm."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 10^5 and 1 <= m * n <= 10^5.",
+    "The value of each cell grid[i][j] indicates the maximum number of cells you can jump to from that cell.",
+    "The destination cell (m-1, n-1) is guaranteed to have a value of 0.",
+    "Return -1 if there is no valid path to the bottom-right cell."
+  ]
+}

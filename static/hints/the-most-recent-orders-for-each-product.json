@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the data provided. You have three tables: Customers, Orders, and Products. Each table has its own unique identifiers, which will be important for joining the data."
+    },
+    {
+      "content": "Focus on the Orders table first. You need to identify the most recent order for each product. How will you determine which order is the most recent? Consider using the order_date field."
+    },
+    {
+      "content": "Think about how you can group the orders by product_id. This will allow you to isolate the orders for each product and then find the most recent one. What SQL functions could help you with this?"
+    },
+    {
+      "content": "When grouping the orders, you might want to use the MAX function on the order_date to get the latest date. Remember that you will need to select other fields as well, such as product_id and order_id."
+    },
+    {
+      "content": "After identifying the most recent orders, consider how you will join this information back to the Products table to get the product names and prices. What type of join will you use?"
+    },
+    {
+      "content": "Make sure to handle cases where there might be multiple orders with the same most recent date for a product. How will you decide which order to return in such cases?"
+    },
+    {
+      "content": "Don't forget to include the customer information in your final output. You will need to join the Customers table with the Orders table to get the customer names associated with the most recent orders."
+    },
+    {
+      "content": "As you build your query, keep in mind the final output format. You should return the product_id, product_name, price, order_id, order_date, and customer name. How will you structure your SELECT statement to include all these fields?"
+    },
+    {
+      "content": "Consider using Common Table Expressions (CTEs) to break down your query into manageable parts. This can help you first isolate the most recent orders and then join them with the Products and Customers tables."
+    },
+    {
+      "content": "Finally, ensure that your query is efficient. Think about indexing on the order_date and product_id fields to speed up the retrieval of the most recent orders. How will you apply these indexes in your query?"
+    }
+  ],
+  "questionNotes": [
+    "You are working with three tables: Customers, Orders, and Products.",
+    "The Orders table contains multiple entries for each product, and you need to find the most recent order for each product.",
+    "The order_date field is crucial for determining the most recent order.",
+    "Handle potential ties in order dates appropriately.",
+    "The final output should include product_id, product_name, price, order_id, order_date, and customer name.",
+    "Consider using joins to combine data from different tables.",
+    "Efficiency is important; consider indexing relevant fields."
+  ]
+}

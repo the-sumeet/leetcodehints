@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A palindrome reads the same forwards and backwards, like 'racecar' or 'anna'. This property will be crucial in determining how to distribute characters."
+    },
+    {
+      "content": "Count the frequency of each character in the string. This can be done using a hashmap or an array of size 26 (for lowercase letters). For example, for 'annabelle', the counts would be: a: 2, n: 2, b: 1, e: 1, l: 1."
+    },
+    {
+      "content": "A palindrome can have at most one character with an odd frequency. This means that for k palindromes, the total number of characters with odd frequencies must be less than or equal to k."
+    },
+    {
+      "content": "Consider edge cases, such as when k is greater than the length of the string. If k > len(s), it's impossible to form k non-empty strings, hence the answer would be false."
+    },
+    {
+      "content": "After counting the odd frequency characters, check how many odd counts you have. If this number is less than or equal to k, you might be able to form k palindromes."
+    },
+    {
+      "content": "Think about how to handle even frequency characters. They can be split evenly among the k palindromes, while odd frequency characters may need special handling."
+    },
+    {
+      "content": "If you have more odd frequency characters than k, how will you distribute them? Each palindrome can take at most one odd character, so ensure you can accommodate all odd counts."
+    },
+    {
+      "content": "Write a simple function to count the characters and their frequencies. Then, implement the logic to check the number of odd frequencies against k."
+    },
+    {
+      "content": "Before finalizing your solution, consider testing it with edge cases, such as a string of length 1 with k = 1, or a string with all unique characters and k equal to the length of the string."
+    },
+    {
+      "content": "Finally, combine your findings: if the number of odd frequency characters is less than or equal to k, and k is less than or equal to the total number of characters, then return true; otherwise, return false."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length <= 10^5",
+    "s consists of lowercase English letters.",
+    "1 <= k <= 10^5",
+    "Return true if k non-empty palindromes can be formed using all characters."
+  ]
+}

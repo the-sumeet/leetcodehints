@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree required. Each non-leaf node's value is derived from the product of the largest leaf values in its left and right subtrees. This means you need to keep track of the maximum values as you build the tree."
+    },
+    {
+      "content": "Consider how you can represent the tree using the given array. Since the leaves are directly derived from the array, think about how to split the array into left and right subtrees recursively."
+    },
+    {
+      "content": "To minimize the cost, you might want to explore different ways to partition the array into left and right subtrees. Try to visualize how different splits affect the overall cost of the tree."
+    },
+    {
+      "content": "Remember that each non-leaf node's value is calculated as the product of the maximum values from its left and right subtrees. This means that the order of elements in the array can significantly affect the total cost."
+    },
+    {
+      "content": "Dynamic programming could be a useful approach here. Think about how you can store the minimum cost for subarrays of the input array to avoid recalculating costs for the same subproblems."
+    },
+    {
+      "content": "Define a function that takes two indices, `i` and `j`, representing the current subarray. This function should return the minimum cost to form a tree from `arr[i]` to `arr[j]`."
+    },
+    {
+      "content": "Within your function, iterate over possible split points between `i` and `j`. For each split, calculate the cost of the left and right subtrees and add the product of their maximum values."
+    },
+    {
+      "content": "Make sure to handle the base case where the subarray has only two elements. In this case, the cost is simply the product of those two values since they will be the only leaves."
+    },
+    {
+      "content": "Consider edge cases where the array has the minimum and maximum allowed values. Make sure your solution handles these cases efficiently without causing overflow."
+    },
+    {
+      "content": "Finally, ensure your implementation correctly returns the minimum cost for the entire array. You might want to call your function with the full range of the array, i.e., from 0 to `len(arr) - 1`."
+    }
+  ],
+  "questionNotes": [
+    "Each node must have either 0 or 2 children.",
+    "The value of each non-leaf node is the product of the largest leaf values in its left and right subtrees.",
+    "The input array will contain only positive integers.",
+    "The result must fit into a 32-bit signed integer.",
+    "The length of the input array will be between 2 and 40."
+  ]
+}

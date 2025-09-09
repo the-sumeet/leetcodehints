@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the magical string is generated. The first character is '1', and the subsequent characters are determined by the counts of the previous characters. For example, the first few characters are '1', '22', '11', '2', etc."
+    },
+    {
+      "content": "Notice that the magical string is built iteratively. The number of times a character appears determines how many characters to append next. For instance, if the last character is '1' and it appears once, the next character will be '2'."
+    },
+    {
+      "content": "You can represent the magical string as a list or an array where you can easily append new characters based on the counts. Think about how to keep track of the current position in the string as you generate new characters."
+    },
+    {
+      "content": "To count the number of '1's in the first n characters, you might want to maintain a counter that increments every time you encounter a '1' while generating the string."
+    },
+    {
+      "content": "Consider edge cases such as when n is very small (like 1 or 2). How does the magical string look in these cases? This will help you ensure your solution handles all possible values of n."
+    },
+    {
+      "content": "Remember that the problem states that n can be as large as 100,000. Think about the efficiency of your approach. Generating the string character by character could become slow if not handled properly."
+    },
+    {
+      "content": "You might want to use a while loop to generate the magical string until you reach the desired length n. Keep track of both the index in the magical string and the count of '1's."
+    },
+    {
+      "content": "As you generate the magical string, you will need to check the current character to decide how many times to append the next character. This will involve reading from the magical string itself."
+    },
+    {
+      "content": "When you reach n characters, you can simply return the count of '1's you've tracked. Make sure to test your implementation with various values of n to ensure correctness."
+    },
+    {
+      "content": "Here's a partial pseudocode to get you started: \n```\ncount_of_ones = 0\nmagical_string = ['1']\nindex = 0\nwhile length of magical_string < n:\n    next_count = magical_string[index]\n    append next_count of '1's or '2's based on current character\n    update count_of_ones if current character is '1'\n    index += 1\n```\nFill in the gaps to complete the logic!"
+    }
+  ],
+  "questionNotes": [
+    "The magical string consists only of '1' and '2'.",
+    "The first few elements are '1', '22', '11', '2', etc.",
+    "You need to return the count of '1's in the first n characters of the magical string.",
+    "Constraints: 1 <= n <= 100,000."
+  ]
+}

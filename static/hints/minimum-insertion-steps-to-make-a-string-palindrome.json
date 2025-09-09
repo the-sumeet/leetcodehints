@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A palindrome reads the same forwards and backwards, like 'racecar' or 'level'. Consider how you can modify a string to achieve this property."
+    },
+    {
+      "content": "Think about the simplest case: a string of length 1 is always a palindrome. What happens when the string is empty? How would you handle these edge cases?"
+    },
+    {
+      "content": "Consider how you can compare characters from the start and end of the string. If the characters match, you can move inward. If they don't match, you need to think about what insertion would be necessary."
+    },
+    {
+      "content": "When you find two characters that don't match, you have two options: insert a character before the left character or after the right character. This will help you form a palindrome."
+    },
+    {
+      "content": "Define a recursive function that calculates the minimum insertions needed for substrings. For a substring from index 'i' to 'j', you can check if s[i] == s[j]."
+    },
+    {
+      "content": "If s[i] == s[j], the characters are already matching, so you can reduce the problem to the substring s[i+1:j-1]. What do you do if they don't match?"
+    },
+    {
+      "content": "If s[i] != s[j], you would need to consider both options (inserting before or after) and take the minimum of the two. This leads to the recurrence relation: min(insert(s, i + 1, j), insert(s, i, j - 1)) + 1."
+    },
+    {
+      "content": "To avoid recalculating results for the same substring, consider using dynamic programming. Create a 2D array where dp[i][j] represents the minimum insertions needed for the substring s[i:j]."
+    },
+    {
+      "content": "Initialize your DP table. For substrings of length 1 (i.e., dp[i][i]), the value should be 0 since a single character is already a palindrome."
+    },
+    {
+      "content": "Fill in the DP table for substrings of increasing lengths. For each substring s[i:j], check if s[i] == s[j] to determine if you can use the previously computed values."
+    },
+    {
+      "content": "When filling the table, ensure you are considering all possible lengths. Start with length 2, then 3, and so forth, until you reach the full length of the string."
+    },
+    {
+      "content": "Pay attention to the indices while filling the DP table. Make sure that when you access dp[i + 1][j] and dp[i][j - 1], you are within bounds."
+    },
+    {
+      "content": "After filling the DP table, the answer will be found at dp[0][n-1], where n is the length of the string. This value represents the minimum insertions needed for the entire string."
+    },
+    {
+      "content": "Consider edge cases such as strings with all identical characters or strings that are already palindromes. How does your algorithm handle these cases?"
+    },
+    {
+      "content": "Finally, remember to analyze the time and space complexity of your solution. How efficient is your approach, especially given the constraints of the problem?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 500, s consists of lowercase English letters.",
+    "A palindrome reads the same forwards and backwards.",
+    "You can insert any character at any index of the string.",
+    "Return the minimum number of insertion steps needed."
+  ]
+}

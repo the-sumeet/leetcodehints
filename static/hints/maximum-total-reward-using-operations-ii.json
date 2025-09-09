@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation you can perform. You can only mark an index if the reward value at that index is greater than your current total reward. This means you need to keep track of your total reward as you mark indices."
+    },
+    {
+      "content": "Consider how the order in which you mark indices affects your total reward. If you mark a lower reward first, it might limit your ability to mark higher rewards later. Think about the implications of this on your strategy."
+    },
+    {
+      "content": "Notice that you can only mark an index once. This means that after marking an index, you cannot use that reward again. Plan your strategy to maximize the total reward by selecting indices wisely."
+    },
+    {
+      "content": "Try sorting the array of reward values. Sorting can help you easily identify which rewards you can pick based on your current total reward. This will help in devising a greedy approach."
+    },
+    {
+      "content": "When you sort the array, consider iterating through it from the smallest to the largest. This way, you can keep track of your total reward and see if you can mark the next index based on your current total."
+    },
+    {
+      "content": "As you iterate through the sorted array, maintain a variable for your total reward. Each time you find a reward value that is greater than your current total reward, add it to your total and mark that index."
+    },
+    {
+      "content": "Think about edge cases, such as when all reward values are the same. In this case, you will only be able to mark one index, so your total reward will simply be the value of that reward."
+    },
+    {
+      "content": "Consider what happens if your current total reward is very low compared to the reward values in the array. You might be able to mark several indices in one go if you start from the smallest reward."
+    },
+    {
+      "content": "Remember that the maximum total reward is cumulative. Each time you add a reward, it increases your ability to add even larger rewards later. This is the essence of the greedy approach."
+    },
+    {
+      "content": "Keep track of which indices you have marked. You can use a boolean array or simply work with the sorted indices to avoid marking the same index more than once."
+    },
+    {
+      "content": "If you encounter a reward value that is not greater than your current total reward, skip it and move to the next one. This will help you focus on maximizing your total reward efficiently."
+    },
+    {
+      "content": "After marking an index, update your total reward immediately before checking the next index. This ensures that you are always comparing against the most current total reward."
+    },
+    {
+      "content": "Think about how you can implement this logic in a loop. You will need to iterate through the sorted reward values, checking and updating your total reward as you go."
+    },
+    {
+      "content": "As a final step, ensure that your implementation handles the constraints efficiently. Given the maximum length of the array, aim for a solution that runs in O(n log n) time due to sorting."
+    },
+    {
+      "content": "Your final implementation should return the total reward after processing all possible indices. Make sure to test your solution with various edge cases to ensure its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= rewardValues.length <= 5 * 10^4",
+    "Constraints: 1 <= rewardValues[i] <= 5 * 10^4",
+    "All indices are initially unmarked.",
+    "You can perform operations any number of times until no more valid moves are possible.",
+    "Return the maximum total reward as an integer."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the grid. The main diagonal runs from the top-left to the bottom-right. To make the grid valid, all cells above this diagonal must be zeros."
+    },
+    {
+      "content": "Consider what it means for a row to be valid. A row is valid if the number of zeros at the end of the row is at least equal to its row index (0-based). For example, in a row at index 0, there must be at least n zeros."
+    },
+    {
+      "content": "To check if it's possible to make the grid valid, iterate through each row from the bottom to the top. Count the number of zeros from the end of each row and see if it meets the requirement for its index."
+    },
+    {
+      "content": "If any row does not have enough zeros, return -1 immediately. This indicates that it's impossible to achieve a valid grid configuration."
+    },
+    {
+      "content": "Once you confirm that it's possible to make the grid valid, think about how to count the number of swaps needed. You can maintain a list of valid row indices that can be moved to the top."
+    },
+    {
+      "content": "Use a greedy approach to minimize swaps. For each row, find the first valid row that can be moved to the current position and swap them. Count these swaps as you go."
+    },
+    {
+      "content": "When counting swaps, make sure to keep track of the current position of each row. You can use a simple array to represent the current order of rows."
+    },
+    {
+      "content": "Keep in mind that you can only swap adjacent rows. This means that if you need to move a row several positions up, you will need to perform multiple swaps."
+    },
+    {
+      "content": "Consider edge cases such as when n is 1. In this case, the grid is already valid, and you should return 0 without any swaps."
+    },
+    {
+      "content": "At the end of your approach, ensure that you return the total number of swaps made. This is your final answer, representing the minimum steps to achieve a valid grid."
+    }
+  ],
+  "questionNotes": [
+    "The grid is n x n, where n is between 1 and 200.",
+    "A grid is valid if all cells above the main diagonal are zeros.",
+    "Return -1 if it's impossible to make the grid valid.",
+    "The grid is indexed starting from (0,0) in programming terms."
+  ]
+}

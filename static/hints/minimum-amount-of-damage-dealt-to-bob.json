@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the power Bob has and the health of each enemy. Bob can deal a fixed amount of damage (power) per second to any enemy. This means the time it takes to defeat an enemy is determined by their health divided by Bob's power."
+    },
+    {
+      "content": "Calculate how many seconds it takes for Bob to defeat each enemy. For an enemy with health[i], the time taken is ceil(health[i] / power). This will help you understand the order in which Bob should attack the enemies."
+    },
+    {
+      "content": "Consider the damage dealt to Bob while he is attacking an enemy. The total damage dealt by an enemy during the time Bob is attacking them is their damage[i] multiplied by the time taken to defeat them."
+    },
+    {
+      "content": "Create a list of tuples containing each enemy's damage, health, and the time it takes to defeat them. This will help in sorting and prioritizing which enemy to attack first."
+    },
+    {
+      "content": "Think about the strategy for minimizing Bob's total damage. It may be beneficial to prioritize enemies that deal higher damage per second first, especially if they have low health."
+    },
+    {
+      "content": "Sort the enemies based on their damage per second in descending order. This way, you can ensure that Bob is dealing with the most threatening enemies first."
+    },
+    {
+      "content": "As you process each enemy, keep a running total of the damage Bob takes. For each enemy, calculate the damage taken while Bob is attacking them and add it to the total."
+    },
+    {
+      "content": "Remember to update the health of the enemies as Bob attacks them. If an enemy's health drops to zero or below, they are no longer a threat and should not contribute to further damage."
+    },
+    {
+      "content": "Consider edge cases where all enemies have the same damage or health. How would your approach change? Would the order of attacks affect the total damage taken?"
+    },
+    {
+      "content": "Ensure you handle large inputs efficiently. The constraints allow for up to 10^5 enemies, so your solution should ideally be better than O(n^2)."
+    },
+    {
+      "content": "After processing all enemies, make sure to return the total damage Bob has taken. This should be a single integer representing the minimum damage dealt to Bob."
+    },
+    {
+      "content": "Double-check your calculations for each enemy. It might help to write out a few examples manually to ensure your logic holds up under different scenarios."
+    },
+    {
+      "content": "Consider using a priority queue (min-heap or max-heap) to manage the enemies dynamically as Bob attacks them. This can help efficiently determine the next enemy to attack."
+    },
+    {
+      "content": "As you finalize your approach, think about how to implement the logic in a clean and modular way. Breaking down the problem into smaller functions can help with readability and debugging."
+    },
+    {
+      "content": "You're close to the solution! Focus on implementing the loop that processes each enemy based on the sorted order you've established, calculating the damage as you go."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= power <= 10^4, 1 <= n == damage.length == health.length <= 10^5, 1 <= damage[i], health[i] <= 10^4.",
+    "Bob chooses one enemy to attack each second; damage is dealt after Bob's attack.",
+    "Ensure the final output is the total damage dealt to Bob, which is a single integer."
+  ]
+}

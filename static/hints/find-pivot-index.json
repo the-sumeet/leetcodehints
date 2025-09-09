@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the pivot index. The pivot index is where the sum of elements on the left equals the sum of elements on the right. Think about how you can compute these sums efficiently."
+    },
+    {
+      "content": "Consider how you can keep track of the left sum as you iterate through the array. You can initialize a variable for the left sum and update it as you move through the indices."
+    },
+    {
+      "content": "Remember that the right sum can be derived from the total sum of the array. If you know the total sum and the left sum, you can calculate the right sum as: `right_sum = total_sum - left_sum - nums[i]`."
+    },
+    {
+      "content": "Before starting your loop, calculate the total sum of the array. This will help you avoid recalculating the right sum from scratch for each index."
+    },
+    {
+      "content": "As you iterate through the array, for each index, check if the left sum equals the right sum. If they are equal, you've found a pivot index."
+    },
+    {
+      "content": "Don't forget to update the left sum after checking the condition for the pivot index. This means adding the current element to the left sum before moving to the next index."
+    },
+    {
+      "content": "Consider edge cases such as arrays with only one element or arrays where all elements are the same. What would the pivot index be in these scenarios?"
+    },
+    {
+      "content": "If you find a pivot index, remember to return it immediately. However, if you finish the loop without finding one, you should return -1."
+    },
+    {
+      "content": "Make sure to handle the case where the array has negative numbers. The logic for calculating sums remains the same, but be mindful of potential pitfalls with negative values."
+    },
+    {
+      "content": "Finally, your loop should iterate through all indices of the array. Ensure that your implementation correctly handles the leftmost pivot index if multiple indices satisfy the condition."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^4",
+    "Element values: -1000 <= nums[i] <= 1000",
+    "Return the leftmost pivot index if it exists, otherwise return -1.",
+    "The left sum for the first index is 0, and for the last index, the right sum is 0."
+  ]
+}

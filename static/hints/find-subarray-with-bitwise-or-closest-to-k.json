@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of the bitwise OR operation. Remember that the result of a bitwise OR operation between two numbers will always be greater than or equal to the larger of the two numbers."
+    },
+    {
+      "content": "Consider how the bitwise OR operation accumulates values as you expand a subarray. For example, if you have a subarray [a, b], the OR result is a | b. Think about how adding another element affects the result."
+    },
+    {
+      "content": "Think about how you can represent subarrays. A subarray can be defined by two indices, `l` and `r`, where `l` is the start index and `r` is the end index. You will need to iterate through all possible pairs of `l` and `r`."
+    },
+    {
+      "content": "Keep in mind that the absolute difference you are trying to minimize is |k - (nums[l] OR nums[l + 1] ... OR nums[r])|. This means you need to calculate the OR for each subarray efficiently."
+    },
+    {
+      "content": "What happens if you have a single element in the array? Consider how you would handle the case when `l` and `r` are the same. This is a valid subarray and should be included in your calculations."
+    },
+    {
+      "content": "As you iterate through the array, think about using a nested loop to generate subarrays. The outer loop can fix the starting index `l`, while the inner loop expands the end index `r`."
+    },
+    {
+      "content": "Remember to track the minimum absolute difference you encounter as you evaluate each subarray. You can initialize a variable to hold the minimum difference and update it whenever you find a smaller value."
+    },
+    {
+      "content": "Consider the constraints of the problem. Since the length of `nums` can be up to 100,000, a brute-force solution that checks all subarrays could lead to O(n^2) time complexity, which may not be feasible."
+    },
+    {
+      "content": "Think about optimizing your approach. Can you calculate the OR in a way that avoids recalculating it from scratch for overlapping subarrays? This could significantly reduce the number of operations needed."
+    },
+    {
+      "content": "You might want to use a sliding window or two-pointer technique. This allows you to expand and contract the range of your subarray without having to restart the OR calculation from scratch."
+    },
+    {
+      "content": "As you implement your solution, keep an eye on edge cases. For example, what if all elements in the array are greater than `k`? How will that affect the absolute difference?"
+    },
+    {
+      "content": "Think about how to handle large values of `k` and `nums[i]`. Since both can go up to 10^9, ensure that your calculations do not lead to overflow issues."
+    },
+    {
+      "content": "When you find a subarray with an OR value that exactly matches `k`, you can immediately return 0 as the minimum absolute difference. This is the best possible outcome."
+    },
+    {
+      "content": "Make sure to test your solution against various edge cases, such as arrays with a single element, all elements being the same, and scenarios where the OR value fluctuates dramatically."
+    },
+    {
+      "content": "Finally, think about how to structure your return statement. You need to return the minimum possible value of the absolute difference, so ensure your implementation reflects this clearly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5, 1 <= nums[i] <= 10^9, 1 <= k <= 10^9.",
+    "A subarray is defined as a contiguous non-empty sequence of elements.",
+    "You must return the minimum possible value of the absolute difference.",
+    "Consider edge cases such as single-element arrays and all elements being the same."
+  ]
+}

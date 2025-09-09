@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what the score of the array means. The score is defined as the difference between the maximum and minimum elements in the array. So, you need to focus on how to minimize this difference."
+    },
+    {
+      "content": "Consider how the operation allows you to adjust each element in the array. You can increase or decrease each element by up to `k`, which means you can potentially change the maximum and minimum values of the array."
+    },
+    {
+      "content": "Think about how the maximum value in the array can be reduced. By adding `-k` to the maximum element, you can effectively lower its value. Similarly, you can increase the minimum element by adding `k` to it."
+    },
+    {
+      "content": "Formulate the new potential maximum and minimum values after applying the operations. The new maximum could be `max(nums) - k` and the new minimum could be `min(nums) + k`."
+    },
+    {
+      "content": "Now, consider the implications of these new maximum and minimum values. The new score can be calculated as `new_max - new_min`, which translates to `(max(nums) - k) - (min(nums) + k)`."
+    },
+    {
+      "content": "Simplify the expression for the new score. It can be rewritten as `max(nums) - min(nums) - 2k`. This gives you a direct way to compute the minimum score after the operations."
+    },
+    {
+      "content": "However, ensure that the result of `max(nums) - min(nums) - 2k` does not go below zero. If it does, the minimum score should be zero, since scores cannot be negative."
+    },
+    {
+      "content": "Consider edge cases such as when `nums` contains only one element. In this case, the score will always be zero regardless of the value of `k`."
+    },
+    {
+      "content": "Also, think about cases where `k` is zero. In this situation, you cannot change any elements, so the score will simply be the difference between the maximum and minimum of the original array."
+    },
+    {
+      "content": "Finally, implement the logic to calculate the score based on the derived formula. Remember to check the constraints and ensure your function handles arrays of varying lengths and values correctly."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 10^4",
+    "0 <= nums[i] <= 10^4",
+    "0 <= k <= 10^4",
+    "The score must be non-negative; return 0 if the calculated score is negative."
+  ]
+}

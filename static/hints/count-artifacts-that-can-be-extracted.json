@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. You have an n x n grid, and each artifact is defined by two corners: the top-left and bottom-right. Make sure to visualize how these corners define the rectangular area covered by each artifact."
+    },
+    {
+      "content": "Remember that the artifacts do not overlap. This means that each artifact will occupy a unique set of cells in the grid. Consider how this property can simplify the problem when checking if an artifact can be extracted."
+    },
+    {
+      "content": "When excavating, you will be given a list of cells to dig. Each cell you dig can potentially uncover parts of one or more artifacts. Think about how you can track which parts of the artifacts have been uncovered as you process the dig list."
+    },
+    {
+      "content": "You need to keep track of how many parts of each artifact are uncovered. Since each artifact can cover at most 4 cells, consider using a simple counter for each artifact that increments as you uncover its parts."
+    },
+    {
+      "content": "Create a mapping from each artifact to its respective cells in the grid. This can be done using a dictionary where the key is the artifact's index and the value is a list of the cells it occupies."
+    },
+    {
+      "content": "As you process each dig, check if the dug cell corresponds to any part of an artifact. If it does, update your counter for that artifact. Make sure to handle the case where a dug cell may not correspond to any artifact."
+    },
+    {
+      "content": "After processing all digs, check which artifacts have all their parts uncovered. An artifact is considered extractable if all parts have been uncovered, so you will need to compare the counter for each artifact to the number of cells it occupies."
+    },
+    {
+      "content": "Consider edge cases such as when there are no artifacts or when all digs correspond to cells that do not uncover any artifacts. How will your logic handle these scenarios?"
+    },
+    {
+      "content": "Think about the efficiency of your solution. Given the constraints, ensure that your approach can handle the maximum input sizes effectively. You may want to analyze the time complexity of your proposed solution."
+    },
+    {
+      "content": "Finally, implement the logic to return the count of extractable artifacts. This involves iterating over your artifact counters and counting how many have reached the required number of uncovered parts. Remember to consider the return format specified in the problem."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 1000, 1 <= artifacts.length, dig.length <= min(n^2, 10^5)",
+    "Each artifact covers at most 4 cells and no two artifacts overlap.",
+    "The entries in dig are unique, meaning you won't dig the same cell more than once.",
+    "Return the number of artifacts that can be extracted."
+  ]
+}

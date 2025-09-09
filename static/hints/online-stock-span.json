@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of 'span' for the stock price. The span is defined as the number of consecutive days (including today) for which the stock price was less than or equal to the price of today."
+    },
+    {
+      "content": "Consider how you will store the prices and their respective spans. You might want to use a list or an array to keep track of the prices and spans as you process each new price."
+    },
+    {
+      "content": "Think about how you can efficiently determine the span for the current day's price. A naive approach would be to iterate backward through the list of prices, but this could be inefficient if you have many prices."
+    },
+    {
+      "content": "Consider using a stack to help keep track of the prices and their spans. The stack can help you quickly find how many previous days had a price less than or equal to the current price."
+    },
+    {
+      "content": "When pushing a new price onto the stack, you should also maintain the span information. This means that when you pop from the stack, you need to calculate how many days you can count towards the span."
+    },
+    {
+      "content": "Remember to handle cases where the current price is higher than the previous prices. You will need to pop from the stack until you find a price that is greater than the current price."
+    },
+    {
+      "content": "Make sure to initialize your span correctly. If the stack is empty after popping, it means that all previous prices were less than or equal to the current price, and you can count all those days."
+    },
+    {
+      "content": "Consider edge cases such as when the stock price is the same as the previous day's price. How should your span calculation handle ties?"
+    },
+    {
+      "content": "Think about the constraints provided in the problem. You will have at most 10^4 calls to the next method, so your solution should ideally be O(1) on average for each call."
+    },
+    {
+      "content": "Finally, implement the `next` method to return the span for the current price. Ensure that you return the correct span value based on the logic you've developed using the stack."
+    }
+  ],
+  "questionNotes": [
+    "The span is defined as the maximum number of consecutive days with prices less than or equal to today's price.",
+    "You need to implement the StockSpanner class with a constructor and a next method.",
+    "The next method should return an integer representing the span for the given price.",
+    "Constraints: 1 <= price <= 10^5, and at most 10^4 calls to next will be made."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You have bags with certain capacities and current rocks. Your goal is to determine how many bags can be filled to their maximum capacity after distributing a limited number of additional rocks."
+    },
+    {
+      "content": "Calculate how many more rocks each bag needs to reach its full capacity. This can be done by subtracting the current rocks from the capacity for each bag: `needed[i] = capacity[i] - rocks[i]`."
+    },
+    {
+      "content": "Focus on the bags that require the least additional rocks first. This strategy will allow you to maximize the number of bags filled. Consider sorting the list of needed rocks."
+    },
+    {
+      "content": "Think about how you can efficiently use the additional rocks. After sorting the needed array, iterate through it and keep a count of how many bags you can fill until you run out of additional rocks."
+    },
+    {
+      "content": "When iterating through the sorted needed array, keep a running total of the additional rocks used. If at any point the total exceeds `additionalRocks`, stop counting."
+    },
+    {
+      "content": "Consider edge cases, such as when all bags are already full or when `additionalRocks` is very large compared to the needs of the bags. How would your approach change in these scenarios?"
+    },
+    {
+      "content": "Remember to handle cases where the number of bags is at its minimum (1). What happens if the only bag is already full, or if it needs more rocks?"
+    },
+    {
+      "content": "Think about the constraints given in the problem. The number of bags can be as large as 50,000, and the values for capacity and rocks can be very large. How will this affect the efficiency of your solution?"
+    },
+    {
+      "content": "As you implement your solution, ensure that you are maintaining the correct indices when sorting and counting. You may want to keep track of both the original indices and the needed values."
+    },
+    {
+      "content": "Finally, after you've counted how many bags can be filled, remember to return that count. Make sure your function signature matches the expected output format."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == capacity.length == rocks.length",
+    "1 <= n <= 5 * 10^4",
+    "1 <= capacity[i] <= 10^9",
+    "0 <= rocks[i] <= capacity[i]",
+    "1 <= additionalRocks <= 10^9",
+    "Return the maximum number of bags that can be filled to capacity."
+  ]
+}

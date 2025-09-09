@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to maintain a dynamic list of scores. You need to keep track of the k-th largest score as new scores are added. Think about how you would sort the scores to find the k-th largest."
+    },
+    {
+      "content": "Consider how to efficiently add new scores. If you simply added scores to a list and sorted it every time, it could become inefficient. Explore data structures that allow for efficient insertion and retrieval of the k-th largest element."
+    },
+    {
+      "content": "A min-heap is a great data structure for this problem. By maintaining a min-heap of size k, you can easily keep track of the k largest elements. The root of the min-heap will give you the k-th largest element."
+    },
+    {
+      "content": "When initializing your KthLargest class, you should populate the min-heap with the initial scores. If the number of initial scores is less than k, you may need to handle this case separately."
+    },
+    {
+      "content": "Remember to handle cases where the number of scores is less than k when adding new scores. You should still return the k-th largest element correctly, even if there are fewer than k scores in total."
+    },
+    {
+      "content": "When adding a new score, check if the size of the min-heap is less than k. If it is, simply add the new score to the heap. If the heap is already at size k, compare the new score with the root of the heap."
+    },
+    {
+      "content": "If the new score is greater than the root of the min-heap, you should replace the root with the new score. This ensures that the heap still contains the k largest scores."
+    },
+    {
+      "content": "After adding a new score, the k-th largest score will always be at the root of the min-heap. Make sure your add method returns this value after every insertion."
+    },
+    {
+      "content": "Consider edge cases such as duplicate scores. Your implementation should handle these gracefully, ensuring that the k-th largest score is still accurate."
+    },
+    {
+      "content": "Finally, think about the performance of your solution. The operations of adding an element and retrieving the k-th largest element should be efficient. Aim for O(log k) time complexity for adding elements."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= nums.length <= 10^4",
+    "1 <= k <= nums.length + 1",
+    "-10^4 <= nums[i] <= 10^4",
+    "-10^4 <= val <= 10^4",
+    "At most 10^4 calls will be made to add.",
+    "Return the k-th largest element after each add call.",
+    "Handle cases where the number of elements is less than k."
+  ]
+}

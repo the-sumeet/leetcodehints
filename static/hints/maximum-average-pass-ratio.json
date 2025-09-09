@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the pass ratio for each class. The pass ratio is calculated as `pass[i] / total[i]`. Make sure you can compute this for each class in the input array."
+    },
+    {
+      "content": "Consider how adding extra students to a class affects its pass ratio. Adding one student to a class will change the pass ratio from `pass[i] / total[i]` to `(pass[i] + 1) / (total[i] + 1)`."
+    },
+    {
+      "content": "Think about the impact of adding extra students on the average pass ratio across all classes. The goal is to maximize this average. You might want to prioritize classes where adding a student has the most significant effect on their pass ratio."
+    },
+    {
+      "content": "To determine which class to assign extra students, calculate the increase in pass ratio for each class when an extra student is added. This can help you identify the best classes to focus on."
+    },
+    {
+      "content": "Use a priority queue (or a max heap) to efficiently select the class that will benefit the most from an extra student. Each time you add a student, update the class's pass ratio and re-evaluate its priority."
+    },
+    {
+      "content": "Remember that you have a limited number of extra students. Plan how to distribute them across classes to ensure you are maximizing the overall average pass ratio."
+    },
+    {
+      "content": "Consider edge cases where some classes may already have a perfect pass ratio (e.g., `pass[i] == total[i]`). Adding students to these classes won't change their ratios, so prioritize those that can still improve."
+    },
+    {
+      "content": "After distributing all extra students, compute the final average pass ratio. Ensure that you sum the ratios of all classes and divide by the number of classes correctly."
+    },
+    {
+      "content": "When implementing your solution, be mindful of performance. Given the constraints, ensure that your approach can handle up to 100,000 classes efficiently."
+    },
+    {
+      "content": "Finally, remember to format your output correctly. The result should be a floating-point number rounded to five decimal places, and answers within `10^-5` of the actual answer will be accepted."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= classes.length <= 10^5, 1 <= pass[i] <= total[i] <= 10^5, 1 <= extraStudents <= 10^5.",
+    "Classes are indexed from 0, and the input is a 2D array where each sub-array represents a class.",
+    "The average pass ratio is the sum of individual class ratios divided by the number of classes.",
+    "Ensure to handle edge cases where classes have a perfect pass ratio."
+  ]
+}

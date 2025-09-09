@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input table. It has three columns: `id`, `revenue`, and `month`. The `id` represents the department, `revenue` is the amount earned, and `month` indicates the month of the revenue."
+    },
+    {
+      "content": "Consider how to transform the rows of this table into a format where each department has its own row with separate columns for each month's revenue. You'll need to pivot the data based on the `month` column."
+    },
+    {
+      "content": "Identify the unique department IDs from the `id` column. You can use a `GROUP BY` clause to get a list of all unique departments. This will help in creating the final output structure."
+    },
+    {
+      "content": "For each unique department, you will want to aggregate the revenue for each month. Think about how you can use conditional aggregation to achieve this. For example, you can use `SUM` with a `CASE` statement to get revenue for each month."
+    },
+    {
+      "content": "Remember that the months are in a specific order from January to December. You will need to ensure that your output columns reflect this order. Consider how to name the columns appropriately, like `Jan_Revenue`, `Feb_Revenue`, etc."
+    },
+    {
+      "content": "Consider edge cases where some departments may not have revenue for certain months. Ensure that your solution accounts for this by returning `NULL` for those months in the final output."
+    },
+    {
+      "content": "You might want to use a pivoting technique. In SQL, this can often be done with a combination of `CASE` statements or using the `PIVOT` function if your SQL dialect supports it."
+    },
+    {
+      "content": "Think about the SQL syntax you will use. You will likely need to write a `SELECT` statement that combines `GROUP BY` with conditional logic to create the monthly revenue columns."
+    },
+    {
+      "content": "As you write your query, ensure that you are returning all necessary columns: the department `id` and one column for each month from January to December."
+    },
+    {
+      "content": "Finally, make sure to test your query with different inputs, especially edge cases like departments with no revenue in any month or departments that only have revenue in a few months. This will help ensure your solution is robust."
+    }
+  ],
+  "questionNotes": [
+    "The primary key of the table is (id, month).",
+    "The months are represented as strings: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].",
+    "The output must have 13 columns: 1 for department id and 12 for each month’s revenue.",
+    "Revenue for months with no data should be represented as NULL."
+  ]
+}

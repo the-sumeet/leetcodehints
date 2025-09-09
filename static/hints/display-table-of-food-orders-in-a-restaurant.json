@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array `orders`. Each entry is a list containing a customer name, a table number, and a food item. Focus on how to extract the table number and food item from each order."
+    },
+    {
+      "content": "You will need to keep track of how many of each food item is ordered at each table. Consider using a dictionary (or hashmap) where the keys are table numbers and the values are another dictionary that maps food items to their counts."
+    },
+    {
+      "content": "When processing each order, make sure to update the count for the corresponding food item at the correct table. For example, if a customer at table 3 orders 'Ceviche', you should increment the count for 'Ceviche' under table 3."
+    },
+    {
+      "content": "Don't forget to collect all unique food items across all orders. You can use a set to ensure that you have each food item only once. This will help you later when constructing the header of the display table."
+    },
+    {
+      "content": "After processing all orders, sort the table numbers. This will ensure that the rows of your output are in increasing order of table numbers, as required by the problem statement."
+    },
+    {
+      "content": "Next, sort the food items alphabetically. This will help you create the correct header for the display table. You can convert your set of food items into a sorted list."
+    },
+    {
+      "content": "Construct the header of the display table first. The first element should be 'Table', followed by the sorted list of food items. This will be the first row of your output."
+    },
+    {
+      "content": "For each table in your sorted list, create a new row for the display table. Start with the table number, and then for each food item, retrieve the count from your dictionary. If a food item was not ordered at that table, use '0' as the count."
+    },
+    {
+      "content": "Make sure to handle cases where a table has no orders at all. If a table does not appear in your dictionary, it should not be included in the final output. Only include tables that have at least one order."
+    },
+    {
+      "content": "Finally, return the display table as a list of lists, ensuring that the first list is the header and subsequent lists represent each table's orders. The format should match the example outputs provided in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= orders.length <= 5 * 10^4",
+    "Each order has exactly 3 elements: customerName, tableNumber, foodItem.",
+    "tableNumber is a valid integer between 1 and 500.",
+    "Food items should be sorted alphabetically in the output.",
+    "Rows should be sorted by table number in increasing order."
+  ]
+}

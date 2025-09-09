@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the game mechanics. Alice can pick up a '1' from the array, and after that, she can make moves to either change '0's to '1's or swap adjacent '1's with '0's."
+    },
+    {
+      "content": "Consider the initial position of Alice. If she starts on a '1', she can immediately pick it up without any moves. Think about how this affects the total number of moves needed."
+    },
+    {
+      "content": "Identify the total number of '1's in the array. This will help you understand if it's even possible to pick up 'k' ones, given the constraints of `maxChanges`."
+    },
+    {
+      "content": "Remember that you can only change '0's to '1's up to `maxChanges` times. If you need more '1's than you can create from '0's, you'll need to rely on swapping."
+    },
+    {
+      "content": "Think about the positions of '1's and '0's. If there are clusters of '1's separated by '0's, you may need to plan your moves carefully to minimize the number of swaps."
+    },
+    {
+      "content": "When Alice picks up a '1', the next move should ideally bring her closer to another '1'. Evaluate the distance between '1's and how many moves it would take to reach them."
+    },
+    {
+      "content": "Consider edge cases where there are no '1's in the beginning or where `maxChanges` is zero. How would Alice adapt her strategy in these scenarios?"
+    },
+    {
+      "content": "If Alice starts on a '0', she must first change a '0' to '1' before picking it up. This adds an extra move to your total count. Keep track of these initial moves."
+    },
+    {
+      "content": "To optimize moves, prioritize picking up '1's that are closest to Alice's current position. This will help reduce the number of swaps needed."
+    },
+    {
+      "content": "Think about how many '1's you can pick up directly versus how many you will need to create. This will affect your move count significantly."
+    },
+    {
+      "content": "Create a plan for each possible starting position of Alice. For each position, calculate the moves needed to pick `k` ones, considering both changing and swapping."
+    },
+    {
+      "content": "Consider using a greedy approach where you always pick the nearest '1' and see how many additional ones you can pick up with the remaining moves."
+    },
+    {
+      "content": "You might want to implement a simulation of the moves Alice can make. Track the number of moves and adjust based on whether you need to change '0's or swap '1's."
+    },
+    {
+      "content": "Make sure to handle the case where `maxChanges` is less than the number of '0's needed to reach `k` ones. This could lead to a situation where it's impossible to achieve the goal."
+    },
+    {
+      "content": "As a final step, ensure your solution efficiently handles the upper limits of the constraints. Think about how to minimize time complexity while iterating through the array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5, 0 <= nums[i] <= 1, 1 <= k <= 10^5, 0 <= maxChanges <= 10^5.",
+    "Ensure that maxChanges + sum(nums) >= k to guarantee that it's possible to pick k ones.",
+    "Alice can start at any index, and the index must be within the bounds of the array.",
+    "The return value should be the minimum number of moves required."
+  ]
+}

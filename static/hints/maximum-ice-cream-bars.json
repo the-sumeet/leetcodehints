@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to determine how many ice cream bars the boy can buy given a list of costs and a total amount of coins he can spend."
+    },
+    {
+      "content": "Consider how you can sort the costs of the ice cream bars. Since the order of purchase doesn't matter, sorting the costs will help you buy the cheapest bars first, maximizing the number of bars purchased."
+    },
+    {
+      "content": "Remember that you can use counting sort for this problem. Since the costs are bounded between 1 and 100,000, counting sort can efficiently handle the sorting in linear time."
+    },
+    {
+      "content": "Implement counting sort by creating a frequency array that counts occurrences of each cost. This will allow you to reconstruct the sorted order of costs without using traditional sorting methods."
+    },
+    {
+      "content": "After sorting, initialize a counter for the number of bars bought and a variable to keep track of the total spent coins. Start iterating through the sorted costs."
+    },
+    {
+      "content": "As you iterate through the sorted costs, check if the current cost can be afforded with the remaining coins. If it can, subtract the cost from the coins and increment your counter."
+    },
+    {
+      "content": "Consider edge cases, such as when the costs array has only one element or when all bars are more expensive than the available coins. How will your solution handle these scenarios?"
+    },
+    {
+      "content": "Make sure to stop iterating once you can no longer afford the next ice cream bar. This will ensure that you only count bars that can actually be purchased."
+    },
+    {
+      "content": "At the end of your iteration, return the counter that tracks the number of bars bought. This will be your final answer."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases, including the minimum and maximum constraints provided in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: costs.length == n, 1 <= n <= 10^5, 1 <= costs[i] <= 10^5, 1 <= coins <= 10^8",
+    "The boy can buy ice cream bars in any order.",
+    "Return the maximum number of ice cream bars the boy can buy.",
+    "Consider edge cases where the boy cannot afford any bars or can afford all of them."
+  ]
+}

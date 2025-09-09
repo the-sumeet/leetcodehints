@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input array `favorite`. Each employee has a favorite person they want to sit next to, which creates a dependency between employees. Think about how these dependencies can affect the seating arrangement."
+    },
+    {
+      "content": "Consider the implications of the circular seating arrangement. Since the table is circular, the last employee can sit next to the first employee. This means that the arrangement needs to be continuous."
+    },
+    {
+      "content": "Identify the relationships between employees. For instance, if employee A's favorite is B, then A needs to be seated next to B. This creates a directed graph where each employee points to their favorite."
+    },
+    {
+      "content": "Look for cycles in the favorite relationships. If two employees are mutual favorites, they can definitely sit together. Think about how to find these cycles and their lengths."
+    },
+    {
+      "content": "Explore how to handle chains of dependencies. If employee A likes B, and B likes C, then A, B, and C can potentially sit together if arranged correctly. How do you track these chains?"
+    },
+    {
+      "content": "Consider edge cases, such as when all employees have a favorite that leads to a cycle. What happens in such scenarios? Can you invite all employees?"
+    },
+    {
+      "content": "Try to visualize the seating arrangement. Draw out examples with small arrays to see how the seating works and how many employees can be invited based on their favorites."
+    },
+    {
+      "content": "Think about using a graph traversal method like DFS or BFS to explore the relationships. You can start from each employee and see how far you can go in terms of inviting employees based on their favorites."
+    },
+    {
+      "content": "As you traverse the graph, keep track of visited employees to avoid counting them multiple times. This will help you determine the maximum number of unique employees that can be invited."
+    },
+    {
+      "content": "When you find a cycle, calculate the maximum number of employees that can be invited from that cycle. Remember that the seating arrangement must satisfy all employees' preferences."
+    },
+    {
+      "content": "Consider how to handle employees who are not part of any cycle. They may still be invited if their favorites are part of a cycle. How will you integrate them into your solution?"
+    },
+    {
+      "content": "Make sure to account for the constraints provided: `2 <= n <= 10^5` and `0 <= favorite[i] <= n - 1`. This means your solution should be efficient, ideally O(n)."
+    },
+    {
+      "content": "Think about how to implement your graph traversal efficiently. You might need to use an adjacency list or similar structure to represent the relationships between employees."
+    },
+    {
+      "content": "As you finalize your approach, ensure that you test your solution against various edge cases, such as all employees pointing to one person or a long chain of dependencies."
+    },
+    {
+      "content": "To wrap up, focus on the final implementation: how will you return the maximum number of employees that can be invited? Ensure your return statement reflects this correctly."
+    }
+  ],
+  "questionNotes": [
+    "The input is a 0-indexed integer array `favorite` where `favorite[i]` denotes the favorite person of employee `i`.",
+    "Employees can only attend if they sit next to their favorite person, and the table is circular.",
+    "Constraints: 2 <= n <= 10^5, 0 <= favorite[i] <= n - 1, and favorite[i] != i."
+  ]
+}

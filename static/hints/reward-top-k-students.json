@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to process the feedback reports. Each report is a string, and you'll need to split it into words to analyze them individually."
+    },
+    {
+      "content": "Create a way to track points for each student. You can use a dictionary where the key is the student ID and the value is their points."
+    },
+    {
+      "content": "Remember the scoring system: each positive word adds 3 points and each negative word subtracts 1 point. Think about how you can efficiently check if a word is in the positive or negative feedback lists."
+    },
+    {
+      "content": "As you process each report, iterate over the words and update the corresponding student's points based on the words found. Make sure to handle multiple reports for the same student correctly."
+    },
+    {
+      "content": "Consider using a set for both positive and negative feedback words. This allows for O(1) average time complexity when checking if a word is positive or negative."
+    },
+    {
+      "content": "After calculating the points for all students, you'll need to sort them. The sorting criteria should prioritize points in descending order and student IDs in ascending order in case of ties."
+    },
+    {
+      "content": "To sort the students, you can create a list of tuples where each tuple contains the negative of the points and the student ID. This way, Python's default tuple sorting will handle both conditions."
+    },
+    {
+      "content": "Once sorted, remember that you only need the top k students. You can slice the sorted list to get the first k elements after sorting."
+    },
+    {
+      "content": "Don't forget to return only the student IDs in the final output. You can achieve this by extracting the first element of each tuple in the sorted list."
+    },
+    {
+      "content": "Finally, pay attention to the constraints provided in the problem statement. Ensure your solution can handle the upper limits, such as the maximum number of reports and the length of each report."
+    }
+  ],
+  "questionNotes": [
+    "Each positive word increases points by 3; each negative word decreases points by 1.",
+    "Student IDs are unique and range from 1 to 10^9.",
+    "In case of ties in points, the student with the lower ID ranks higher.",
+    "Return format: a list of the top k student IDs."
+  ]
+}

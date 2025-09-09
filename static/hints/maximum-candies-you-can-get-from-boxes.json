@@ -1,0 +1,60 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input arrays. The `status` array indicates whether each box is open (1) or closed (0). This will affect which boxes you can access initially."
+    },
+    {
+      "content": "Take note of the `initialBoxes` array. This array contains the indices of the boxes you can start with. You should focus on these boxes first to gather candies and keys."
+    },
+    {
+      "content": "When you open a box, you can collect candies from it. Make sure to keep a running total of all the candies you collect as you progress through the boxes."
+    },
+    {
+      "content": "After collecting candies from an open box, check the `keys` array. The keys you find will allow you to open additional boxes that are currently closed."
+    },
+    {
+      "content": "You will also find `containedBoxes` in each box. These are additional boxes that you can access after opening the current box. Keep track of these to explore further."
+    },
+    {
+      "content": "Consider using a queue or stack to manage the boxes you can open. This will help you process boxes in an order that allows you to maximize your candy collection."
+    },
+    {
+      "content": "As you collect keys, update your ability to open new boxes. You might want to maintain a set of keys to avoid duplicates and ensure you can open all accessible boxes."
+    },
+    {
+      "content": "Pay attention to the constraints. For example, the number of boxes `n` can go up to 1000, so ensure your solution is efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Make sure to handle cases where you might not have any initial boxes to start with. What should your function return in that scenario?"
+    },
+    {
+      "content": "Consider edge cases where all boxes are closed or where there are no keys available. Think about how your logic will adapt to these situations."
+    },
+    {
+      "content": "While processing boxes, ensure you do not revisit boxes that you've already opened. This will prevent infinite loops and unnecessary calculations."
+    },
+    {
+      "content": "You might want to use a boolean array to track which boxes have already been opened. This will help you manage your state as you explore the boxes."
+    },
+    {
+      "content": "When you open a box, you can immediately collect candies and also check for new keys and contained boxes. This means your exploration can expand rapidly."
+    },
+    {
+      "content": "Think about how you will manage the order of processing boxes. You might want to prioritize opening boxes that provide keys to other boxes."
+    },
+    {
+      "content": "Finally, ensure that your function returns the total number of candies collected after exploring all possible boxes. This is your final goal."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == status.length == candies.length == keys.length == containedBoxes.length",
+    "1 <= n <= 1000",
+    "status[i] is either 0 or 1",
+    "1 <= candies[i] <= 1000",
+    "0 <= keys[i].length <= n",
+    "0 <= containedBoxes[i].length <= n",
+    "Each box is contained in one box at most.",
+    "0 <= initialBoxes.length <= n",
+    "All values of keys[i] and containedBoxes[i] are unique."
+  ]
+}

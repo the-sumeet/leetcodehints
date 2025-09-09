@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the original array `arr` and the encoded array. Remember that `encoded[i] = arr[i] XOR arr[i + 1]`. This means that each element in the encoded array is derived from two consecutive elements in `arr`."
+    },
+    {
+      "content": "Consider how you can use the first element of `arr` (which is given as `first`) to derive the rest of the elements in `arr`. The first element is `arr[0]`, and you can use it to find `arr[1]`."
+    },
+    {
+      "content": "To find `arr[1]`, you can rearrange the XOR operation. Recall that `a XOR b = c` can be rearranged to `b = a XOR c`. In this case, you can compute `arr[1]` as `arr[0] XOR encoded[0]`."
+    },
+    {
+      "content": "Once you have `arr[1]`, think about how you can compute `arr[2]`. You can use the same rearrangement of the XOR operation: `arr[2] = arr[1] XOR encoded[1]`."
+    },
+    {
+      "content": "Continue this pattern to derive a formula for each subsequent element in the array. You will find that for any index `i`, `arr[i] = arr[i-1] XOR encoded[i-1]`."
+    },
+    {
+      "content": "Keep in mind the constraints of the problem: the length of `encoded` is `n - 1`, which means you need to iterate through the `encoded` array to build the original array `arr` of length `n`."
+    },
+    {
+      "content": "Remember that the original array `arr` will always have a unique solution based on the given `first` value. This means you don't have to worry about multiple valid outputs."
+    },
+    {
+      "content": "As you implement your solution, consider initializing your `arr` array with the correct size and setting the first element to `first` right away."
+    },
+    {
+      "content": "When iterating through the `encoded` array, make sure to use a loop that runs `n - 1` times, where `n` is the length of the original array you want to construct."
+    },
+    {
+      "content": "Finally, ensure that your function returns the constructed `arr` array in the correct format. The output should be an array of integers that represents the original hidden array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^4, encoded.length == n - 1",
+    "0 <= encoded[i] <= 10^5, 0 <= first <= 10^5",
+    "The answer exists and is unique.",
+    "Return format: an array of integers representing the original array."
+  ]
+}

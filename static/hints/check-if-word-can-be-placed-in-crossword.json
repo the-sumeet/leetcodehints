@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the board. The board is a 2D matrix where each cell can be a letter, an empty space (' '), or a blocked cell ('#'). Familiarize yourself with how to access elements in a 2D array."
+    },
+    {
+      "content": "Consider the constraints for placing the word. A word can only be placed in an empty space (' ') or a cell that already contains the same letter. Make sure to check these conditions before attempting to place the word."
+    },
+    {
+      "content": "Think about the two possible orientations for placing the word: horizontally and vertically. You will need to check both orientations separately to determine if the word can fit."
+    },
+    {
+      "content": "For horizontal placement, iterate through each row of the board. For each row, check if there is a segment of continuous empty spaces (' ') that is long enough to fit the word, considering the boundaries and blocked cells ('#')."
+    },
+    {
+      "content": "When checking for a horizontal placement, ensure that there are no letters or empty spaces immediately adjacent to the segment where the word will be placed. This means checking the cells to the left and right of the segment."
+    },
+    {
+      "content": "For vertical placement, you will need to iterate through each column of the board. Similar to horizontal placement, check if there is a segment of continuous empty spaces (' ') that can accommodate the word."
+    },
+    {
+      "content": "When checking for vertical placement, ensure that there are no letters or empty spaces immediately above or below the segment where the word will be placed. This is crucial to maintain the crossword rules."
+    },
+    {
+      "content": "Consider edge cases where the word length is equal to the number of rows or columns. Make sure your checks handle these cases correctly, as they can easily lead to an out-of-bounds error."
+    },
+    {
+      "content": "Once you have identified potential placements, you can attempt to simulate placing the word on the board to verify if it fits. This involves temporarily marking the cells with the word and checking the surrounding cells."
+    },
+    {
+      "content": "Finally, remember to return true if you find at least one valid placement for the word, and false if no valid placements exist after checking all rows and columns."
+    }
+  ],
+  "questionNotes": [
+    "The board is represented as a 2D array with dimensions m x n.",
+    "Each cell can be a letter, ' ', or '#'.",
+    "A word can be placed horizontally or vertically.",
+    "Check for boundaries and adjacent cells to ensure valid placement.",
+    "Constraints: 1 <= m * n <= 200,000 and 1 <= word.length <= max(m, n)."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by initializing your score to 0 and a variable to keep track of the current instruction index, starting at 0. This will help you manage your position as you process the instructions."
+    },
+    {
+      "content": "You need to handle two types of instructions: 'add' and 'jump'. Make sure to differentiate between them in your logic. For example, if the instruction is 'add', you will modify the score."
+    },
+    {
+      "content": "When you encounter an 'add' instruction, remember to add the corresponding value from the values array to your score. Think about how you will access the value based on the current index."
+    },
+    {
+      "content": "For 'jump' instructions, you will need to calculate the new index by adding the current index to the value at that index. Ensure that you do not modify your score during this operation."
+    },
+    {
+      "content": "Keep track of the indices you have visited to avoid revisiting them. You could use a set or an array to store the indices that have already been executed."
+    },
+    {
+      "content": "Before moving to a new index, check if it is out of bounds (i.e., less than 0 or greater than or equal to n). If it is, you should terminate the process."
+    },
+    {
+      "content": "If you attempt to revisit an instruction, do not execute it again. Instead, you should exit the simulation and return the score you have accumulated up to that point."
+    },
+    {
+      "content": "Consider edge cases, such as when the first instruction is a 'jump' that leads you out of bounds immediately, or when all instructions lead you back to previously visited indices."
+    },
+    {
+      "content": "Make sure to handle cases where the values can be negative, especially when processing 'add' instructions. This can affect your final score significantly."
+    },
+    {
+      "content": "Finally, structure your loop carefully to ensure that you check for visited indices and bounds before executing any instruction. This will help prevent infinite loops or errors."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == instructions.length == values.length",
+    "1 <= n <= 10^5",
+    "instructions[i] is either 'add' or 'jump'.",
+    "-10^5 <= values[i] <= 10^5",
+    "Return the final score after the simulation ends."
+  ]
+}

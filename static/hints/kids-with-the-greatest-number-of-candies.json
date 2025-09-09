@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to determine if giving extra candies to each kid will allow them to have the greatest number of candies compared to others."
+    },
+    {
+      "content": "Consider how you can find the maximum number of candies any kid currently has. This will be your benchmark for comparison after distributing the extra candies."
+    },
+    {
+      "content": "Think about how to iterate through the `candies` array. For each kid, you will check if their candies plus the `extraCandies` is greater than or equal to the maximum candies found."
+    },
+    {
+      "content": "Remember that multiple kids can have the greatest number of candies. Therefore, your comparison should allow for equality (i.e., `>=` instead of just `>`)."
+    },
+    {
+      "content": "As you build your result array, ensure that it has the same length as the `candies` array. Each index in the result should correspond to whether that kid can have the greatest candies."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when all kids have the same number of candies or when `extraCandies` is zero. How would your logic handle these scenarios?"
+    },
+    {
+      "content": "Consider the constraints given in the problem. For example, the maximum length of the candies array is 100, which means your solution should efficiently handle this size without performance issues."
+    },
+    {
+      "content": "You might want to create a variable to store the maximum number of candies before the loop. This way, you avoid recalculating it for each kid."
+    },
+    {
+      "content": "As you implement your solution, think about how you will return the result. It should be a boolean array where each entry corresponds to whether that kid can have the most candies."
+    },
+    {
+      "content": "Finally, put together your logic in a loop that checks each kid's potential total candies. Your final check will look something like: `result[i] = (candies[i] + extraCandies) >= maxCandies;`"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == candies.length, 2 <= n <= 100, 1 <= candies[i] <= 100, 1 <= extraCandies <= 50.",
+    "Return a boolean array of the same length as candies, where each value indicates if that kid can have the greatest number of candies.",
+    "Multiple kids can have the greatest number of candies, so ensure your logic accounts for ties."
+  ]
+}

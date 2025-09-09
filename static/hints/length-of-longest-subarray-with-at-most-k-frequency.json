@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a 'good' subarray. A good subarray is one where the frequency of each element does not exceed the given integer k. This means you need to keep track of how many times each element appears as you explore potential subarrays."
+    },
+    {
+      "content": "Consider using a sliding window approach to efficiently find the longest good subarray. This involves maintaining a window defined by two pointers (start and end) that expands and contracts as you process the array."
+    },
+    {
+      "content": "As you expand your window by moving the 'end' pointer, keep a count of the frequency of each element within the window. You can use a dictionary or a hashmap for this purpose, where the keys are the elements and the values are their counts."
+    },
+    {
+      "content": "Once you detect that the frequency of any element exceeds k, you need to shrink the window from the 'start' side. This means incrementing the 'start' pointer until all elements are within the allowed frequency limit."
+    },
+    {
+      "content": "Make sure to keep track of the maximum length of valid subarrays you encounter during this process. This can be done by comparing the current window size (end - start + 1) to a previously stored maximum length."
+    },
+    {
+      "content": "Don’t forget to handle edge cases, such as when k is equal to 1. In this case, the longest good subarray will consist of alternating elements, and you should ensure your logic accommodates this scenario."
+    },
+    {
+      "content": "Think about the constraints provided in the problem. The length of the array can be as large as 100,000, so your solution should ideally work in linear time, O(n), to be efficient."
+    },
+    {
+      "content": "Consider how you will initialize your frequency count. You might want to start with an empty hashmap and add elements as you expand your window, ensuring you properly update counts when you move the 'start' pointer."
+    },
+    {
+      "content": "As you implement your sliding window, remember to check the condition for the frequency of elements after each adjustment. This will help you maintain the 'good' status of your current window."
+    },
+    {
+      "content": "Finally, ensure your implementation returns the correct value. The return should be the length of the longest good subarray found during your traversal of the input array."
+    }
+  ],
+  "questionNotes": [
+    "The frequency of each element in the good subarray must be <= k.",
+    "A subarray is contiguous and non-empty.",
+    "The input array can have up to 100,000 elements.",
+    "1 <= nums[i] <= 10^9, meaning elements can be large but are within a reasonable range.",
+    "1 <= k <= nums.length, ensuring k is always a valid frequency count."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operations. The logs can contain three types of commands: moving to a child folder ('x/'), moving to the parent folder ('../'), and staying in the same folder ('./')."
+    },
+    {
+      "content": "Consider how you would track your current position in the folder structure. You could use a counter to represent how many levels deep you are in the folder hierarchy."
+    },
+    {
+      "content": "Initialize a counter at zero. Each time you encounter a 'x/' operation, increase the counter by one. For a '../' operation, decrease the counter by one, but ensure it does not go below zero."
+    },
+    {
+      "content": "Remember that the './' operation does not change your position. You can safely ignore these operations when calculating your depth."
+    },
+    {
+      "content": "After processing all the logs, your counter will indicate how many levels deep you are in the folder structure. This value represents how many '../' operations are needed to return to the main folder."
+    },
+    {
+      "content": "Think about edge cases: What if the logs only contain '../' operations? Your counter should not go negative, so how will you handle that?"
+    },
+    {
+      "content": "Also consider logs that consist entirely of './' operations. How would your counter behave in this case?"
+    },
+    {
+      "content": "To summarize, you will loop through each log entry, adjust your counter based on the operation, and finally return the value of the counter as the number of operations needed to return to the main folder."
+    },
+    {
+      "content": "Make sure to test your implementation with various inputs, including edge cases like empty logs, only '../' commands, and only './' commands."
+    },
+    {
+      "content": "Finally, remember to return the counter as the result. This counter represents the minimum number of operations needed to return to the main folder after processing all the logs."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= logs.length <= 1000",
+    "Each logs[i] has a length of 2 to 10.",
+    "Each logs[i] follows the format described in the statement.",
+    "Folder names consist of lowercase English letters and digits."
+  ]
+}

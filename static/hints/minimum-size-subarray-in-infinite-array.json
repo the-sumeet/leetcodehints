@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the infinite array is constructed. The infinite array is created by repeatedly appending the given `nums` array to itself. This means that any subarray can wrap around the end of `nums` back to the beginning."
+    },
+    {
+      "content": "Consider how you would find a subarray in a finite array. You can use a sliding window or two-pointer technique to efficiently find subarrays that sum up to the target in a single pass."
+    },
+    {
+      "content": "Think about how to handle the wrapping nature of the infinite array. You can simulate this by extending the `nums` array by concatenating it with itself, but be cautious about the length of the resulting array."
+    },
+    {
+      "content": "Remember that the length of the subarray matters. You need to keep track of the minimum length of any subarray that sums to the target. Consider using a variable to store the minimum length found so far."
+    },
+    {
+      "content": "Before diving into the main logic, check if the sum of the entire `nums` array is less than the target. If it is, it is impossible to find a valid subarray, and you can return -1 immediately."
+    },
+    {
+      "content": "When iterating through the array, maintain a running sum and a dictionary to store the first occurrence of each cumulative sum. This can help you quickly determine if a subarray with the desired sum exists."
+    },
+    {
+      "content": "Utilize the properties of cumulative sums. If you have a cumulative sum up to index `j` and you want to find a subarray that sums to `target`, check if `cumulative_sum[j] - target` exists in your dictionary."
+    },
+    {
+      "content": "Consider the edge cases where the target is smaller than the smallest element in `nums`. In such cases, you can immediately return -1 since no subarray can achieve the target."
+    },
+    {
+      "content": "As you implement the solution, remember to account for the indices correctly. Since `infinite_nums` is conceptual, you need to map any index back to the original `nums` array using modulo operations."
+    },
+    {
+      "content": "Finally, when you find a valid subarray, check if its length is the shortest found so far. Be sure to return the minimum length after checking all possible subarrays, or -1 if none were found."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^5",
+    "Constraints: 1 <= target <= 10^9",
+    "The array is 0-indexed.",
+    "Return -1 if no subarray with sum equal to target exists."
+  ]
+}

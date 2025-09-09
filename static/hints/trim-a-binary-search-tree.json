@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary search tree (BST). In a BST, for any given node, all values in the left subtree are less than the node's value, and all values in the right subtree are greater. This property will help you decide which nodes to keep or discard based on the given boundaries."
+    },
+    {
+      "content": "Consider how you would traverse the tree. A depth-first search (DFS) approach is often useful for tree problems. You can use either recursion or an explicit stack to implement DFS."
+    },
+    {
+      "content": "Think about the conditions under which you would want to trim a node. If a node's value is less than the 'low' boundary, you should discard that node and consider its right subtree. Conversely, if a node's value is greater than the 'high' boundary, discard it and consider its left subtree."
+    },
+    {
+      "content": "When trimming the tree, remember that you need to maintain the structure of the remaining nodes. If you discard a node, you should return the appropriate child node that will replace it in the tree."
+    },
+    {
+      "content": "What will you return when you reach a leaf node? If a node is null (i.e., you have reached the end of a branch), you should return null. This will help in correctly linking the remaining nodes."
+    },
+    {
+      "content": "Make sure to handle the case where the root itself is out of bounds. If the root's value is less than 'low', you should start the trimming process from the right child. If it is greater than 'high', start from the left child."
+    },
+    {
+      "content": "As you implement your function, consider the base case for your recursive function. If the current node is null, you should return null immediately."
+    },
+    {
+      "content": "After trimming a node, if you still have a valid node to return, ensure you set its left and right children correctly. This is crucial for maintaining the BST properties."
+    },
+    {
+      "content": "Think about the return type of your function. You need to return the new root of the trimmed tree, which may be different from the original root depending on the values of 'low' and 'high'."
+    },
+    {
+      "content": "You are almost there! To finalize your implementation, write a recursive function that checks each node, trims it if necessary, and returns the appropriate child node or the node itself if it falls within the bounds. Remember to test your function with edge cases, such as when the entire tree is out of bounds."
+    }
+  ],
+  "questionNotes": [
+    "The tree is guaranteed to be a valid binary search tree.",
+    "The number of nodes is in the range [1, 10^4].",
+    "Node values are unique.",
+    "0 <= Node.val <= 10^4.",
+    "0 <= low <= high <= 10^4.",
+    "The root may change after trimming."
+  ]
+}

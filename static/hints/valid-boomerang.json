@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, consider the requirement for the points to be distinct. Make sure that all three points in the input array are unique before proceeding with any further checks."
+    },
+    {
+      "content": "Next, think about how to determine if three points are in a straight line. You can use the concept of the area of the triangle formed by the three points. If the area is zero, the points are collinear."
+    },
+    {
+      "content": "To find the area of the triangle formed by points A(x1, y1), B(x2, y2), and C(x3, y3), you can use the formula: Area = 0.5 * |x1(y2 - y3) + x2(y3 - y1) + x3(y1 - y2)|. If this area is zero, the points are on a straight line."
+    },
+    {
+      "content": "Remember to check the constraints of the input. You will always receive exactly three points, and the coordinates are guaranteed to be between 0 and 100."
+    },
+    {
+      "content": "As you implement your solution, ensure that you handle the input as an array of arrays, where each inner array represents a point. This means you'll be working with indices to access the x and y coordinates."
+    },
+    {
+      "content": "Consider edge cases where the points might have the same coordinates, such as [[1,1],[1,1],[1,1]]. In such cases, the output should be false since the points are not distinct."
+    },
+    {
+      "content": "When checking for collinearity, you can simplify the area calculation by omitting the 0.5 factor and the absolute value, as you only need to check if the area is zero."
+    },
+    {
+      "content": "Before returning the final result, ensure that you explicitly return 'true' if the points are distinct and not collinear, and 'false' otherwise."
+    },
+    {
+      "content": "You can summarize your checks into a single return statement that combines the distinctness and collinearity checks. For example: return distinct && !collinear;"
+    },
+    {
+      "content": "Finally, remember to test your function with various inputs, including edge cases and typical cases, to ensure it behaves as expected. For example, test with points that form a triangle and points that are collinear."
+    }
+  ],
+  "questionNotes": [
+    "points.length == 3",
+    "points[i].length == 2",
+    "0 <= x_i, y_i <= 100",
+    "All points must be distinct.",
+    "Points are not a boomerang if they are collinear."
+  ]
+}

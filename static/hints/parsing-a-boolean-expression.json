@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the different components of a boolean expression. You have single characters like 't' and 'f', and more complex structures like '!(subExpr)' and '&(subExpr1, subExpr2, ...)' or '|(subExpr1, subExpr2, ...)."
+    },
+    {
+      "content": "Consider how you would parse the expression. A stack could be useful to handle nested expressions, especially for the parentheses."
+    },
+    {
+      "content": "When you encounter a '!', it negates the result of the inner expression. Make sure to handle this case appropriately when you evaluate the expression."
+    },
+    {
+      "content": "For '&' and '|', remember that '&' requires all inner expressions to be true for the result to be true, while '|' requires at least one to be true."
+    },
+    {
+      "content": "Think about how to handle the commas in the '&' and '|' expressions. They separate multiple sub-expressions, so you need to correctly parse them."
+    },
+    {
+      "content": "You might want to create a function that evaluates a single sub-expression. This function can recursively call itself for nested expressions."
+    },
+    {
+      "content": "Keep track of the current position in the string as you parse. You'll need to know when you've reached the end of a sub-expression or the end of the entire expression."
+    },
+    {
+      "content": "Consider edge cases, such as expressions that contain only one sub-expression. For example, what should your function return for '!(t)' or '&(t)'?"
+    },
+    {
+      "content": "Remember to handle the base cases first. If you encounter 't' or 'f', return their respective boolean values immediately."
+    },
+    {
+      "content": "When dealing with '&' and '|', you will need to evaluate all sub-expressions before returning a final result. Think about how to aggregate these results."
+    },
+    {
+      "content": "Make sure to handle nested expressions correctly. For example, in the expression '!(|(t,f))', you need to evaluate '|(t,f)' first before applying the NOT."
+    },
+    {
+      "content": "As you parse, you might find it useful to maintain a stack for operators and another for operands. This can help you evaluate expressions in the correct order."
+    },
+    {
+      "content": "Consider using recursion for evaluating sub-expressions. Each time you encounter a '(', you can call your evaluation function on the substring that represents the inner expression."
+    },
+    {
+      "content": "Don't forget to handle the closing parentheses correctly. When you reach a ')', you should know that you've completed a sub-expression and can return its value."
+    },
+    {
+      "content": "Finally, think about how to return the final result of the entire expression after all evaluations are complete. You should have a single boolean value as your output."
+    }
+  ],
+  "questionNotes": [
+    "The expression is guaranteed to be valid and follows the specified rules.",
+    "Constraints: 1 <= expression.length <= 2 * 10^4.",
+    "Valid characters include '(', ')', '&', '|', '!', 't', 'f', and ','."
+  ]
+}

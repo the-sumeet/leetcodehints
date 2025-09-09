@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a 3D matrix. You will need to manage three dimensions: depth, rows, and columns. Think about how you can represent this in your data structure."
+    },
+    {
+      "content": "Consider how you will store the cells in the 3D matrix. You could use a 3D list (array) or a dictionary to represent the matrix, where keys are tuples of coordinates (depth, row, column)."
+    },
+    {
+      "content": "When implementing the `setCell` method, remember that you need to track which cells are set. Decide how you will mark a cell as occupied or unoccupied."
+    },
+    {
+      "content": "For the `largestMatrix` method, think about how you can efficiently calculate the size of the largest connected block of occupied cells. This might involve searching through the matrix in all three dimensions."
+    },
+    {
+      "content": "Consider edge cases such as when the matrix is empty or when all cells are unset. How should your methods handle these situations?"
+    },
+    {
+      "content": "When searching for the largest connected block, think about using a depth-first search (DFS) or breadth-first search (BFS) algorithm. This will help you explore all connected cells efficiently."
+    },
+    {
+      "content": "You might want to maintain a visited set to keep track of which cells you've already checked during your search for the largest block. This will prevent counting the same cell multiple times."
+    },
+    {
+      "content": "Make sure to handle the case where multiple largest blocks have the same size. Decide how you will return the result in such cases. Will you return the first found or all of them?"
+    },
+    {
+      "content": "Think about the performance of your solution. The `setCell` method should ideally be O(1), but the `largestMatrix` method may take longer depending on the number of cells set."
+    },
+    {
+      "content": "Finally, implement the logic for the `largestMatrix` method. You need to iterate through each cell in the matrix, and for each occupied cell, initiate a search to find the size of the connected block it belongs to."
+    }
+  ],
+  "questionNotes": [
+    "The 3D matrix is indexed as matrix[depth][row][column].",
+    "Ensure that your methods handle the case when cells are set multiple times.",
+    "The return format for the `largestMatrix` method should be the size of the largest connected block of occupied cells.",
+    "Consider the constraints on matrix dimensions; they may affect performance.",
+    "Handle edge cases such as empty matrices or fully unset matrices gracefully."
+  ]
+}

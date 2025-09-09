@@ -1,0 +1,46 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two arrays: `watchedVideos` which contains lists of videos watched by each person, and `friends` which contains lists of friends for each person. Make sure to visualize how these relationships form a social graph."
+    },
+    {
+      "content": "Consider how you will traverse the levels of friends. You need to find videos watched by friends at a specific level, which means you will likely need to use a breadth-first search (BFS) approach to explore the friends' network."
+    },
+    {
+      "content": "Remember that the level parameter indicates how far from the starting person (your id) you want to go. For level 1, you only look at direct friends, and for level 2, you look at friends of friends. Think about how you will track the current level during your traversal."
+    },
+    {
+      "content": "As you traverse, keep track of the videos watched by friends at the specified level. You might want to use a dictionary to count the frequency of each video. This will help you organize the results later."
+    },
+    {
+      "content": "Pay attention to the constraints regarding the uniqueness of ids and the relationships. Each person has a unique id, and if a friend is listed in one person's friends, they will also list the first person as a friend."
+    },
+    {
+      "content": "When counting the watched videos, ensure that you only include videos from the correct level. You may need to maintain a set of visited people to avoid counting the same person multiple times."
+    },
+    {
+      "content": "After gathering the video counts, you will need to sort them. First, sort by frequency, and then alphabetically for videos with the same frequency. Consider using a sorting function that can handle tuples for this."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when there are no friends at the specified level or when all friends at that level have not watched any videos. Ensure your code handles these scenarios gracefully."
+    },
+    {
+      "content": "Once you have your sorted list of videos, remember to return them in the specified format. You should return a list of video names, not a dictionary or any other structure."
+    },
+    {
+      "content": "Finally, think about how you will implement the BFS. You can use a queue to manage the current level of friends and a set to track visited ids. This will help you efficiently explore the network."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == watchedVideos.length == friends.length",
+    "2 <= n <= 100",
+    "1 <= watchedVideos[i].length <= 100",
+    "1 <= watchedVideos[i][j].length <= 8",
+    "0 <= friends[i].length < n",
+    "0 <= friends[i][j] < n",
+    "0 <= id < n",
+    "1 <= level < n",
+    "If friends[i] contains j, then friends[j] contains i.",
+    "Return the list of videos ordered by their frequencies (increasing) and alphabetically for ties."
+  ]
+}

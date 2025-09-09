@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider the constraints of the problem. The array `nums` contains integers in the range [1, n], and each integer appears at most twice. This means that the values in the array can be used as indices for tracking occurrences."
+    },
+    {
+      "content": "Think about how you might use the input array itself to track which numbers you've seen. Since the numbers are in the range [1, n], you can use the indices of the array to mark numbers as seen."
+    },
+    {
+      "content": "One approach is to iterate through the array and for each number, use its value to determine an index. You can then negate the value at that index to mark it as seen. If you encounter a negative value at that index, it means the number has been seen before."
+    },
+    {
+      "content": "Remember that you need to return the result as an array of integers that appear twice. Make sure to collect these duplicates as you find them during your iteration."
+    },
+    {
+      "content": "When marking a number as seen by negating the value at the corresponding index, ensure that you restore the original value after processing if you need to maintain the integrity of the original array for further operations."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array has only one element or when there are no duplicates at all. What should your function return in these cases?"
+    },
+    {
+      "content": "Think about the time complexity. You need to ensure that your solution runs in O(n) time. This means you should only be making a single pass through the array for efficient processing."
+    },
+    {
+      "content": "You are also required to use constant auxiliary space. This means you cannot use additional data structures like arrays or hash maps to store counts. Instead, leverage the input array for tracking."
+    },
+    {
+      "content": "As you implement your solution, keep track of the duplicates you find in a separate list. You can append to this list whenever you encounter a negative value at an index you are checking."
+    },
+    {
+      "content": "Finally, after processing the entire array, make sure to return the collected duplicates. You can return them in any order, as the problem does not specify a particular order for the output."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, 1 <= nums[i] <= n",
+    "Each element in nums appears at most twice.",
+    "Return format: an array of integers that appear twice.",
+    "Consider edge cases, such as empty arrays or arrays with no duplicates."
+  ]
+}

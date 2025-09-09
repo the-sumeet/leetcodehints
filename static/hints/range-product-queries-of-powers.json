@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to represent the number `n` as a sum of powers of 2. Each power of 2 corresponds to a bit in the binary representation of `n`. For example, if `n = 15`, the binary representation is `1111`, which corresponds to the powers of 2: `[1, 2, 4, 8]`."
+    },
+    {
+      "content": "You need to create an array called `powers` that contains the powers of 2 that sum to `n`. To find these powers, iterate through the bits of `n` and collect the powers of 2 for each bit that is set (i.e., equal to 1)."
+    },
+    {
+      "content": "Remember that the array `powers` should be sorted in non-decreasing order. Since powers of 2 are inherently sorted, you can simply add them as you find them. For instance, if you find the bit at position 0 is set, you add `2^0`, and so on."
+    },
+    {
+      "content": "Once you have the `powers` array, you need to handle the queries. Each query specifies a range within the `powers` array, and you need to calculate the product of the elements in that range."
+    },
+    {
+      "content": "When calculating the product for a range, be mindful of the modulo operation. Since the product can grow large, use the modulo `10^9 + 7` during your calculations to prevent overflow and to meet the problem's requirements."
+    },
+    {
+      "content": "To efficiently compute the product for multiple queries, consider precomputing the prefix products of the `powers` array. This way, you can quickly calculate the product for any range by dividing two prefix products."
+    },
+    {
+      "content": "Make sure to handle the case where the left index of a query is 0 correctly. The product for such a query will simply be the prefix product at the right index."
+    },
+    {
+      "content": "When implementing the prefix product, remember that the product of an empty range should be treated as 1, since multiplying by 1 does not change the product."
+    },
+    {
+      "content": "As you implement the solution, keep an eye on edge cases, such as when `n` is a power of 2 itself. In such cases, the `powers` array will contain only one element."
+    },
+    {
+      "content": "Finally, ensure that your function returns the results in the correct format, which is an array of integers corresponding to each query's result. Each result should be computed modulo `10^9 + 7`."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n <= 10^9",
+    "1 <= queries.length <= 10^5",
+    "0 <= left_i <= right_i < powers.length",
+    "The powers array is unique and sorted in non-decreasing order."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to distribute cookie bags among children such that the maximum cookies received by any child is minimized. Think about how to represent the distribution of cookies."
+    },
+    {
+      "content": "Consider the constraints: the number of cookie bags is small (2 to 8), which suggests that a backtracking or recursive approach might be feasible. How can you explore different distributions of the cookie bags?"
+    },
+    {
+      "content": "Think about the unfairness metric. It is defined as the maximum total cookies received by any child. This means that if you can minimize this maximum value, you have found an optimal distribution."
+    },
+    {
+      "content": "You might want to use a recursive function to try distributing the cookie bags to each child. Keep track of the total cookies each child has received so far. How would you represent the state of distribution?"
+    },
+    {
+      "content": "When distributing cookies, consider using an array to store the current total cookies for each child. For example, if you have an array `totals` where `totals[i]` is the total for child `i`, how would you update this as you distribute cookies?"
+    },
+    {
+      "content": "As you explore different distributions, you will need to check the maximum cookies received by any child after each distribution. How can you efficiently keep track of this maximum value?"
+    },
+    {
+      "content": "Think about the base case for your recursion. When do you know that you have finished distributing all the cookie bags? What should you do in that case?"
+    },
+    {
+      "content": "Consider how to prune your search space. If at any point the maximum cookies for a child exceeds the current minimum unfairness found, you can stop exploring that path. How will you implement this check?"
+    },
+    {
+      "content": "You will need to return the minimum unfairness found across all possible distributions. How will you keep track of the minimum value as you explore different distributions?"
+    },
+    {
+      "content": "Finally, ensure that you handle edge cases, such as when the number of children equals the number of cookie bags. What does this imply for the distribution? Can you think of a simple case to test your approach?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= cookies.length <= 8",
+    "1 <= cookies[i] <= 10",
+    "2 <= k <= cookies.length",
+    "All cookies in the same bag must go to the same child.",
+    "The unfairness is defined as the maximum total cookies obtained by a single child."
+  ]
+}

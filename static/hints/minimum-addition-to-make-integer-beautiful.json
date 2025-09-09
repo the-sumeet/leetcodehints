@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of the digit sum. The digit sum of a number is simply the sum of all its individual digits. For example, the digit sum of 467 is 4 + 6 + 7 = 17."
+    },
+    {
+      "content": "Identify what it means for a number to be 'beautiful'. A number is beautiful if its digit sum is less than or equal to the target. Make sure to keep this definition in mind as you work through the problem."
+    },
+    {
+      "content": "Consider how adding a non-negative integer x to n affects its digit sum. When you add a number, you might change the digits of n, especially when carrying occurs. For instance, adding 4 to 16 gives you 20, which changes the digit sum."
+    },
+    {
+      "content": "Think about how to determine the current digit sum of n. You can create a function that calculates the digit sum by converting the number to a string and summing its digits, or by using arithmetic operations."
+    },
+    {
+      "content": "To find the minimum x, you need to incrementally check values of x starting from 0. After each addition, calculate the new digit sum and compare it to the target."
+    },
+    {
+      "content": "Keep in mind that when n is close to a round number (like 100, 200, etc.), adding a small x can drastically change the digit sum. This is due to the carry effect in decimal addition."
+    },
+    {
+      "content": "You might want to think about how to efficiently find the next number that will have a digit sum less than or equal to the target. This could involve rounding n up to the nearest 'beautiful' number."
+    },
+    {
+      "content": "Consider edge cases where n is already beautiful. In such cases, x should be 0. Make sure your solution can handle this scenario without unnecessary calculations."
+    },
+    {
+      "content": "When implementing your solution, ensure that you keep track of the minimum x found. You can use a loop to test values of x until you find a beautiful number."
+    },
+    {
+      "content": "Try to sketch out the logic in pseudocode. For example: \n```\nwhile (digitSum(n + x) > target) {\n    x++;\n}\nreturn x;\n``` \nThis will help you visualize the flow of your solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^12, 1 <= target <= 150.",
+    "The input will always be such that it is possible to make n beautiful.",
+    "Ensure to return a non-negative integer x."
+  ]
+}

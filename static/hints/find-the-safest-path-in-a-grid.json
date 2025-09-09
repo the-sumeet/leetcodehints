@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. You have a 2D matrix where 1 represents a thief and 0 represents an empty cell. Your goal is to navigate from the top-left corner (0, 0) to the bottom-right corner (n-1, n-1)."
+    },
+    {
+      "content": "Consider how the Manhattan distance is calculated. The distance between two cells (a, b) and (x, y) is given by |a - x| + |b - y|. This will be crucial when determining the safeness factor of your path."
+    },
+    {
+      "content": "Think about how to traverse the grid. You can move to adjacent cells (up, down, left, right). This means you should consider all four possible directions when exploring paths."
+    },
+    {
+      "content": "The safeness factor of a path is defined as the minimum distance from any cell in the path to any thief. This means you will need to track distances to thieves as you explore paths."
+    },
+    {
+      "content": "To efficiently find the minimum distance to a thief from any cell, consider using a breadth-first search (BFS) starting from all thief locations. This can help you calculate the distance to the nearest thief for every cell in the grid."
+    },
+    {
+      "content": "Once you have the distances to the nearest thieves, you can explore paths from (0, 0) to (n-1, n-1). Keep track of the minimum distance encountered along each path to determine the safeness factor."
+    },
+    {
+      "content": "As you explore paths, remember to prioritize paths that maintain a higher minimum distance to the nearest thief. This will help you maximize the safeness factor."
+    },
+    {
+      "content": "Consider edge cases where the grid is filled with thieves, such as when grid[0][0] and grid[n-1][n-1] both contain thieves. How would this affect your pathfinding?"
+    },
+    {
+      "content": "You might want to implement a priority queue or a max-heap to always explore the path with the highest safeness factor first. This can optimize your search for the best path."
+    },
+    {
+      "content": "Finally, ensure that your implementation correctly returns the maximum safeness factor. This is the highest minimum distance to a thief along any valid path from (0, 0) to (n-1, n-1)."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= grid.length == n <= 400",
+    "grid[i].length == n",
+    "grid[i][j] is either 0 or 1.",
+    "There is at least one thief in the grid.",
+    "Return the maximum safeness factor of all paths leading to cell (n - 1, n - 1)."
+  ]
+}

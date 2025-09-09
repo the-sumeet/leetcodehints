@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic mechanics of rolling a die. With no constraints, how many outcomes are there for n rolls? Think about the total combinations when rolling a die 2 times."
+    },
+    {
+      "content": "Consider how the constraints from the rollMax array affect the sequences. For example, if rollMax[i] = 1, you cannot have two consecutive rolls of the number i."
+    },
+    {
+      "content": "Break down the problem. How can you represent the sequences of rolls? A recursive approach or dynamic programming might help in keeping track of previous rolls."
+    },
+    {
+      "content": "Think about the base case for your recursive function or dynamic programming table. What happens when n = 1? How many valid sequences can you generate?"
+    },
+    {
+      "content": "When rolling the die, you need to keep track of the last rolled number and how many times it has been rolled consecutively. This will help you enforce the constraints from rollMax."
+    },
+    {
+      "content": "Consider using a 2D array or a dictionary to store the number of valid sequences for each roll count and the last number rolled. This will help you avoid recalculating results."
+    },
+    {
+      "content": "Think about how to transition from one state to another in your dynamic programming solution. If the last number rolled is i, how can you roll again without violating the rollMax constraint?"
+    },
+    {
+      "content": "You might want to iterate through all possible last rolls (1 to 6) and calculate the valid sequences based on the previous rolls. This means considering all rolls that aren't the same as the last one."
+    },
+    {
+      "content": "Remember to apply the modulo operation (10^9 + 7) at appropriate steps to prevent overflow. This is crucial for large numbers of sequences."
+    },
+    {
+      "content": "Consider edge cases like when n is small (e.g., n = 1) or when all values in rollMax are the same. How do these cases simplify your calculations?"
+    },
+    {
+      "content": "Make sure to account for the uniqueness of sequences. Two sequences are different if at least one element differs. How will your implementation ensure this?"
+    },
+    {
+      "content": "As you build your solution, think about how to optimize it. Can you reduce the number of calculations by storing results of previous computations?"
+    },
+    {
+      "content": "You may need to iterate through the rollMax array to determine how many times you can roll each number consecutively. Keep this in mind when defining your transitions."
+    },
+    {
+      "content": "When implementing your solution, consider using memoization or tabulation to store results of subproblems, which can significantly improve performance."
+    },
+    {
+      "content": "Finally, ensure your function returns the result in the correct format, specifically the number of distinct sequences modulo 10^9 + 7. How will you structure your return statement?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 5000",
+    "rollMax.length == 6",
+    "1 <= rollMax[i] <= 15",
+    "Return the number of distinct sequences modulo 10^9 + 7.",
+    "Two sequences are considered different if at least one element differs."
+  ]
+}

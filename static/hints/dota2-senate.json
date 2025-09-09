@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. The input is a string where each character represents a senator from either the Radiant ('R') or Dire ('D') party. This string can be of varying lengths, but always between 1 and 10,000 characters."
+    },
+    {
+      "content": "Consider how the voting rounds work. Each senator can either ban another senator or announce victory. Think about the implications of banning a senator's right and how it affects the remaining senators."
+    },
+    {
+      "content": "Notice that the order of senators matters. The first senator in the string has the first chance to act, and this continues in a round-robin fashion. How does this order influence the outcome?"
+    },
+    {
+      "content": "When a senator bans another, that senator can no longer participate in future rounds. Keep track of which senators are still active and can vote. You may want to use a queue or a list to manage active senators."
+    },
+    {
+      "content": "Think about how to efficiently determine when one party has completely banned the other. If all remaining senators belong to one party, that party can declare victory. How can you check for this condition?"
+    },
+    {
+      "content": "Consider edge cases where there might be only one senator or where all senators belong to one party. What happens in these scenarios? Ensure your solution handles these cases correctly."
+    },
+    {
+      "content": "You may want to simulate the rounds of voting. For each senator, decide whether to ban another senator or declare victory. Keep track of the indices of the senators who are still active."
+    },
+    {
+      "content": "Think about using two counters to keep track of the number of active senators from each party. This can help you determine when one party has won without needing to simulate every single round."
+    },
+    {
+      "content": "As you simulate the rounds, remember to update your counters or lists to reflect the bans. This will help you keep track of who can still vote and when one party can declare victory."
+    },
+    {
+      "content": "Consider how you would implement the final check for victory. Once you know the counts of active senators from both parties, you can easily determine which party has won by comparing these counts."
+    }
+  ],
+  "questionNotes": [
+    "The input string consists of characters 'R' and 'D' only.",
+    "The length of the string is between 1 and 10,000.",
+    "The order of senators in the string is crucial for determining the outcome.",
+    "A senator can only ban another senator's rights, not their own.",
+    "Victory can only be declared when all remaining senators belong to one party."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirements of the function. You need to create a cancellable function that will call another function `fn` with given arguments `args` at specified intervals `t`."
+    },
+    {
+      "content": "Remember that the first call to `fn` happens immediately when the cancel function is created. Make sure to handle this initial invocation separately from the interval calls."
+    },
+    {
+      "content": "Think about how you can use `setTimeout` to schedule the repeated calls to `fn`. You will need to store the timeout ID so that you can clear it later when cancelling."
+    },
+    {
+      "content": "You need to ensure that the function continues to call `fn` every `t` milliseconds until the cancel function is invoked. Consider using a recursive approach with `setTimeout` for this."
+    },
+    {
+      "content": "When implementing the cancel function, ensure it stops the repeated calls to `fn`. You can use `clearTimeout` to stop the interval when the cancel function is invoked."
+    },
+    {
+      "content": "Keep track of the time of each call to `fn`. You will need to create a data structure to store these calls and their return values, formatted as specified in the problem statement."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the cancel time is reached before the first interval call. Your implementation should be robust against such scenarios."
+    },
+    {
+      "content": "Consider how you will format the output. Each entry in the result should include the time of the call and the returned value from `fn`. Think about how to structure this data."
+    },
+    {
+      "content": "Before you finalize your implementation, test your function with various inputs to ensure that it handles different scenarios correctly, including varying `t` values and argument lengths."
+    },
+    {
+      "content": "Your final implementation should look something like this: Create the cancellable function, call `fn`, set up the interval using `setTimeout`, and ensure to return the cancel function that stops the process."
+    }
+  ],
+  "questionNotes": [
+    "The function `fn` is guaranteed to be a valid function.",
+    "The `args` array is a valid JSON array with a length between 1 and 10.",
+    "The interval `t` is between 30 and 100 milliseconds.",
+    "The cancellation time must be between 10 and 500 milliseconds."
+  ]
+}

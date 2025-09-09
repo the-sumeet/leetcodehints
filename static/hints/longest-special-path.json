@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a tree represented as a list of edges, and each edge connects two nodes with a specific length. This means you will need to build an adjacency list to represent the tree."
+    },
+    {
+      "content": "Remember that a tree is a connected acyclic graph. You can use Depth First Search (DFS) or Breadth First Search (BFS) to traverse the tree and explore paths from the root to its descendants."
+    },
+    {
+      "content": "As you traverse the tree, keep track of the unique values encountered in the current path. You can use a set to ensure that all values in the path are unique."
+    },
+    {
+      "content": "Consider how to manage the lengths of the paths. As you move from one node to its child, you should accumulate the length of the edges traversed."
+    },
+    {
+      "content": "When you reach a node, check if the value at that node is already in your set of unique values. If it is, you need to stop exploring that path further."
+    },
+    {
+      "content": "If you find a valid special path (where all values are unique), compare its length to the longest special path found so far. Update your maximum length accordingly."
+    },
+    {
+      "content": "You also need to keep track of the minimum number of nodes in all longest special paths. This means you should maintain a count of nodes for each valid path you find."
+    },
+    {
+      "content": "Think about edge cases, such as when all node values are the same. In this case, the longest special path will be of length 0, and the minimum number of nodes will be 1."
+    },
+    {
+      "content": "When you reach a leaf node, check if the current path length is the longest found so far. If it is, update both the longest path length and the minimum node count."
+    },
+    {
+      "content": "Make sure to backtrack properly after exploring a path. This means removing the current node's value from your set of unique values before returning to the parent node."
+    },
+    {
+      "content": "Consider using a recursive DFS function that takes the current node, the parent node (to avoid going back), the current path length, and the set of unique values as parameters."
+    },
+    {
+      "content": "While traversing, keep track of the maximum length and the corresponding count of nodes. If you find a path of equal length, compare the node counts to find the minimum."
+    },
+    {
+      "content": "Remember to account for the starting node in your path length and node count. A path can start and end at the same node, so this should be included in your calculations."
+    },
+    {
+      "content": "The final output should be an array of size 2. Ensure that you return the longest path length and the minimum number of nodes in the correct format."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases, such as trees with only two nodes, or trees where all nodes have the same value, to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "The tree is undirected and represented by edges in the format [u, v, length].",
+    "Node values are given in the nums array, where nums[i] corresponds to the value at node i.",
+    "A special path must have unique values; if a value repeats, the path is invalid.",
+    "The output should be an array of size 2: [longest_path_length, min_nodes_in_longest_paths].",
+    "Consider edge cases like all nodes having the same value or very few nodes."
+  ]
+}

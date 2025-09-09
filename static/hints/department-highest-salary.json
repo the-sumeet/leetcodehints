@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you can group the employees by their department. You will need to use a SQL `GROUP BY` clause to achieve this."
+    },
+    {
+      "content": "Once you have grouped the employees by department, consider how you can find the maximum salary within each group. The SQL function `MAX()` will be useful here."
+    },
+    {
+      "content": "Remember that you need to join the Employee and Department tables to get the department names. Think about using an `INNER JOIN` based on the `departmentId`."
+    },
+    {
+      "content": "When you join the tables, make sure to select the relevant columns: the department name, employee name, and salary."
+    },
+    {
+      "content": "After finding the maximum salary for each department, you will need to filter the employees to only include those who have this maximum salary. Consider using a `WHERE` clause or a subquery."
+    },
+    {
+      "content": "Be mindful of potential ties in salaries. If multiple employees have the highest salary in a department, your query should return all of them."
+    },
+    {
+      "content": "To ensure you are only getting the employees with the highest salary, you might need a subquery that retrieves the maximum salary for each department first."
+    },
+    {
+      "content": "Think about how to structure your final query. You might want to use a Common Table Expression (CTE) or a derived table to simplify your logic."
+    },
+    {
+      "content": "Make sure to format your output correctly. The result should include the department name, employee name, and salary in the specified order."
+    },
+    {
+      "content": "Your final query should look something like this: SELECT department.name, employee.name, employee.salary FROM ... WHERE employee.salary = ... . Make sure to fill in the gaps with your logic."
+    }
+  ],
+  "questionNotes": [
+    "The Employee table has unique IDs for each employee.",
+    "The Department table has unique IDs for each department.",
+    "The department name in the Department table is guaranteed to be non-NULL.",
+    "You need to handle ties in salaries correctly by returning all employees with the highest salary in each department.",
+    "The output format must include the columns: Department, Employee, and Salary."
+  ]
+}

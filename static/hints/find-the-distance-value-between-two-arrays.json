@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the distance value. You need to count how many elements in `arr1` do not have any corresponding elements in `arr2` that are within a distance `d`."
+    },
+    {
+      "content": "Consider how you can check the condition |arr1[i] - arr2[j]| <= d. You will need to iterate through both arrays to compare each element of `arr1` with all elements of `arr2`."
+    },
+    {
+      "content": "Think about using a nested loop structure: for each element in `arr1`, loop through `arr2` to check the distance condition. This will help you identify if any element in `arr2` is within the specified distance for each element in `arr1`."
+    },
+    {
+      "content": "Remember to initialize a counter to track how many elements in `arr1` meet the criteria. You will increment this counter when you find an element in `arr1` that does not satisfy the distance condition with any element in `arr2`."
+    },
+    {
+      "content": "Consider edge cases, such as when either `arr1` or `arr2` is empty. What should the function return in such cases? Think about how to handle these scenarios gracefully."
+    },
+    {
+      "content": "To optimize your solution, consider sorting `arr2`. This will allow you to use more efficient searching techniques, like binary search, to quickly find elements within the distance `d`."
+    },
+    {
+      "content": "If you sort `arr2`, you can determine the range of values that are within distance `d` of a given `arr1[i]`. This can help you avoid unnecessary comparisons with every element in `arr2`."
+    },
+    {
+      "content": "When implementing the binary search, remember that you need to find the first index in `arr2` such that the difference with `arr1[i]` exceeds `d`. This will help you quickly determine if there are any valid elements in `arr2`."
+    },
+    {
+      "content": "Ensure that your final count accounts for all elements in `arr1`. After checking each element against `arr2`, return the total count of elements that do not have a corresponding element in `arr2` within the distance `d`."
+    },
+    {
+      "content": "As a final step, make sure to test your solution with various inputs, including edge cases like negative numbers, large values, and maximum constraints to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "1 <= arr1.length, arr2.length <= 500",
+    "-1000 <= arr1[i], arr2[j] <= 1000",
+    "0 <= d <= 100",
+    "Return the count of elements in arr1 that do not have any corresponding elements in arr2 within distance d."
+  ]
+}

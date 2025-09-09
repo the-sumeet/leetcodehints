@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a mountain triplet. A triplet (i, j, k) is valid if it satisfies the conditions: i < j < k, nums[i] < nums[j], and nums[k] < nums[j]."
+    },
+    {
+      "content": "Consider how you can iterate through the array to find potential candidates for j, the peak of the mountain. For each j, you need to find suitable i and k."
+    },
+    {
+      "content": "To efficiently find valid i and k for a given j, you may want to use two separate loops: one for the left side (i) and one for the right side (k)."
+    },
+    {
+      "content": "When searching for i, ensure that you only consider indices that are less than j and check if nums[i] < nums[j]. Similarly, for k, ensure that k > j and nums[k] < nums[j]."
+    },
+    {
+      "content": "Think about how you can store the minimum values of nums[i] and nums[k] as you iterate through potential j values. This will help you compute the sum efficiently."
+    },
+    {
+      "content": "Remember to handle edge cases where there might not be any valid triplet. If you finish checking all possible j without finding a valid triplet, you should return -1."
+    },
+    {
+      "content": "While iterating, keep track of the minimum sum of valid triplets found so far. You can initialize a variable to a large number and update it whenever you find a valid triplet."
+    },
+    {
+      "content": "Consider the time complexity of your approach. A naive solution could lead to O(n^3) complexity, but you can optimize it by reducing unnecessary checks."
+    },
+    {
+      "content": "When you find a valid triplet (i, j, k), calculate the sum and compare it with the current minimum sum. Make sure to update the minimum sum accordingly."
+    },
+    {
+      "content": "Finally, ensure that your implementation correctly handles the return value. If no valid triplet is found, return -1; otherwise, return the minimum sum found."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= nums.length <= 10^5, 1 <= nums[i] <= 10^8",
+    "Indices are 0-based.",
+    "The triplet must satisfy i < j < k.",
+    "The values must satisfy nums[i] < nums[j] and nums[k] < nums[j].",
+    "Return -1 if no valid triplet exists."
+  ]
+}

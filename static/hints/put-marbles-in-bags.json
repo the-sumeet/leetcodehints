@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You have 'k' bags and the weights array, which represents the weights of the marbles. Remember that each bag must contain at least one marble."
+    },
+    {
+      "content": "Consider how the cost of each bag is calculated. The cost is determined by the first and last marble in the bag: cost = weights[i] + weights[j]. This means that the arrangement of marbles in the bags is crucial."
+    },
+    {
+      "content": "Think about how to divide the weights array into 'k' segments. Each segment will correspond to a bag. You cannot leave any bag empty, so ensure that each segment has at least one marble."
+    },
+    {
+      "content": "To find the maximum score, you want to maximize the costs of the bags. This can be achieved by placing the highest weights at the ends of the segments. How might you arrange the weights to achieve this?"
+    },
+    {
+      "content": "For the minimum score, you should aim to minimize the costs. This could mean placing the smallest weights at the ends of the segments. Consider how you might group the weights to achieve this."
+    },
+    {
+      "content": "Think about edge cases, such as when the number of bags 'k' equals the number of weights. In this case, each weight will be in its own bag, and the score will be the sum of all weights."
+    },
+    {
+      "content": "You may want to use a greedy approach to maximize the score. Try to place the largest weights in the outer positions of the segments. What would that look like in practice?"
+    },
+    {
+      "content": "For the minimum score, consider iterating through the weights and calculating the costs for different segmentations. Keep track of the minimum score you can achieve."
+    },
+    {
+      "content": "When calculating the maximum and minimum scores, you might want to maintain two separate calculations as you iterate through potential segmentations of the weights array."
+    },
+    {
+      "content": "Remember to handle the case where 'k' is larger than the number of unique weights. How does this affect your segmentation strategy?"
+    },
+    {
+      "content": "You can use a dynamic programming approach to store the minimum and maximum scores for different segments of the weights array. Think about how you would define your state."
+    },
+    {
+      "content": "As you implement your solution, ensure that you are correctly indexing the weights array. Remember that the indices are 0-based, which might affect how you calculate costs."
+    },
+    {
+      "content": "Consider using a helper function to calculate the cost of a segment given its start and end indices. This will help keep your code organized and easier to debug."
+    },
+    {
+      "content": "You might want to initialize your maximum and minimum scores to extreme values (like negative and positive infinity) to ensure that any valid score will update these values."
+    },
+    {
+      "content": "Finally, after calculating both the maximum and minimum scores, remember to return the difference between them. This is the final result you need to output."
+    }
+  ],
+  "questionNotes": [
+    "1 <= k <= weights.length <= 10^5",
+    "1 <= weights[i] <= 10^9",
+    "No bag can be empty.",
+    "The cost of a bag is calculated as weights[i] + weights[j].",
+    "Return the difference between the maximum and minimum scores."
+  ]
+}

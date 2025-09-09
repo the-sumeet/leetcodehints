@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of a circle. A circle is defined by its center and radius. The equation of a circle can help you visualize how points are distributed within it."
+    },
+    {
+      "content": "Consider how to generate a random point within the bounds of the circle. You need to ensure that the point lies within the radius, including the boundary."
+    },
+    {
+      "content": "To generate a random point uniformly, think about using polar coordinates. You can generate a random angle and a random radius that is scaled appropriately."
+    },
+    {
+      "content": "Remember that when generating a random radius, it should not be uniformly random in the range [0, radius]. Instead, use the square root of a uniform random number to ensure uniformity in the area."
+    },
+    {
+      "content": "When generating the random angle, you can use a random number multiplied by 2π (2 * Math.PI) to cover the full circle."
+    },
+    {
+      "content": "After generating the random radius and angle, convert these polar coordinates back to Cartesian coordinates using the formulas: x = r * cos(theta) and y = r * sin(theta)."
+    },
+    {
+      "content": "Don't forget to translate the generated point by adding the center coordinates (x_center, y_center) to the calculated (x, y) coordinates."
+    },
+    {
+      "content": "Consider edge cases where the radius is very small or very large. Ensure your random point generation logic still works correctly in these scenarios."
+    },
+    {
+      "content": "Make sure to test the randPoint function multiple times to verify that points are uniformly distributed within the circle. You might want to visualize the points to check for uniformity."
+    },
+    {
+      "content": "Finally, implement the randPoint method by combining all the steps: generate a random angle, generate a random radius, convert to Cartesian coordinates, and adjust for the center."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 < radius <= 10^8",
+    "-10^7 <= x_center, y_center <= 10^7",
+    "At most 3 * 10^4 calls will be made to randPoint.",
+    "Return format: The output should be an array [x, y]."
+  ]
+}

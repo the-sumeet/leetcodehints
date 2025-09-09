@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a matching subarray. A subarray matches the pattern if it follows the conditions specified for each element in the pattern array. For example, if the pattern is [1, 0], then the first element of the subarray must be less than the second, and the second must be equal to the third."
+    },
+    {
+      "content": "Consider how you will iterate through the `nums` array. You will need to check subarrays of size `m + 1`, where `m` is the length of the pattern. This means that you will need to loop through `nums` up to `n - m - 1` to ensure you have enough elements for comparison."
+    },
+    {
+      "content": "Think about how to compare elements in `nums` based on the values in `pattern`. You can use a nested loop where the outer loop iterates over the starting index of the subarrays and the inner loop checks the conditions defined by `pattern`."
+    },
+    {
+      "content": "Remember to handle the different cases defined by the values in `pattern`. You can use conditional statements to check if `pattern[k]` is 1, 0, or -1 and compare the corresponding elements in `nums` accordingly."
+    },
+    {
+      "content": "When checking conditions, make sure to keep track of whether all conditions for a given subarray are satisfied. You can use a boolean flag or a counter to help with this. If all conditions are met, increment your count of matching subarrays."
+    },
+    {
+      "content": "Consider edge cases where the elements in `nums` are all the same or where `pattern` has only one type of condition (e.g., all 1s or all -1s). How would these cases affect your matching logic?"
+    },
+    {
+      "content": "Think about the time complexity of your solution. Since you will be checking multiple subarrays and potentially multiple conditions for each, consider how you can optimize your approach to avoid unnecessary comparisons."
+    },
+    {
+      "content": "Make sure to test your implementation with various patterns and `nums` arrays, especially those that are at the boundaries of the constraints, such as the smallest and largest possible values."
+    },
+    {
+      "content": "You might want to create a helper function that checks if a specific subarray matches the given pattern. This can help keep your code organized and make it easier to debug."
+    },
+    {
+      "content": "Finally, after implementing your logic, ensure that your final count of matching subarrays is returned correctly. The return value should be an integer representing the total count."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n == nums.length <= 100",
+    "1 <= nums[i] <= 10^9",
+    "1 <= m == pattern.length < n",
+    "-1 <= pattern[i] <= 1",
+    "Subarrays are defined as contiguous segments of the array.",
+    "The output should be an integer count of matching subarrays."
+  ]
+}

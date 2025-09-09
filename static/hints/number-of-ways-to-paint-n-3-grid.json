@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You have a grid of size n x 3, and you can use three colors. Remember that adjacent cells cannot have the same color."
+    },
+    {
+      "content": "Consider the base case when n = 1. How many ways can you paint a single row of three cells? Think about the combinations available when you have three colors."
+    },
+    {
+      "content": "For n = 1, you can paint the first cell in 3 ways. The second cell can be painted in 2 ways (it can't be the same as the first), and the third cell can also be painted in 2 ways. Calculate this to confirm your understanding."
+    },
+    {
+      "content": "Now, think about how to extend this to n = 2. You'll have to consider the previous row's colors when painting the next row. How does the choice of colors in the first row affect the second?"
+    },
+    {
+      "content": "Notice a pattern in how the choices for each row depend on the previous row. You can build a recursive relationship based on the colors chosen for the last row."
+    },
+    {
+      "content": "Define a function that calculates the number of ways to paint the grid for a given n. You might want to break this down into smaller subproblems."
+    },
+    {
+      "content": "Consider using dynamic programming to store the results of previous computations. This will help you avoid recalculating the number of ways for the same n multiple times."
+    },
+    {
+      "content": "You can define two states in your DP approach: one for the last row having two different colors and one for having all three colors. Think about how these states transition."
+    },
+    {
+      "content": "When calculating the number of ways to paint the grid for n rows, remember to apply the modulo operation (10^9 + 7) to avoid overflow."
+    },
+    {
+      "content": "To optimize further, consider that you only need the results from the last two rows to compute the current row. This can help reduce space complexity."
+    },
+    {
+      "content": "Write down the recursive relations for both states clearly. For instance, if you denote the number of ways to paint the grid of size n as dp[n], how does dp[n] relate to dp[n-1] and dp[n-2]?"
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when n = 1 or n = 2, separately. These base cases will help you initialize your dynamic programming table."
+    },
+    {
+      "content": "As you implement your solution, keep track of the current state of your DP array. You might find it useful to print intermediate values to debug your approach."
+    },
+    {
+      "content": "Once you have your DP table filled out, the final answer will be in dp[n]. Ensure you return this value modulo (10^9 + 7) as specified in the problem."
+    },
+    {
+      "content": "Finally, review your code for correctness. Check that all transitions between states are valid and that your base cases are correctly initialized."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 5000",
+    "Return the result modulo 10^9 + 7.",
+    "Ensure that no two adjacent cells (horizontally or vertically) have the same color.",
+    "Consider the base cases carefully for small values of n."
+  ]
+}

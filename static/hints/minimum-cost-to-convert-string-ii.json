@@ -1,0 +1,58 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem's requirements. You need to convert the `source` string to the `target` string using specified operations that have associated costs. Each operation can change a substring from `original` to `changed`."
+    },
+    {
+      "content": "Consider how to represent the operations. You can use a mapping from `original` substrings to their corresponding `changed` substrings and costs. This will help you quickly look up the cost of any transformation."
+    },
+    {
+      "content": "Make sure to handle cases where the `source` and `target` strings are identical. In this case, the minimum cost should be 0 since no operations are needed."
+    },
+    {
+      "content": "Think about the constraints on operations. You can only change disjoint substrings or identical substrings in separate operations. This means you'll need to track which indices of the `source` string you've already modified."
+    },
+    {
+      "content": "When considering the transformations, pay attention to the lengths of the substrings in `original` and `changed`. They must match, and the transformation must fit within the bounds of the `source` string."
+    },
+    {
+      "content": "Create a function to calculate the cost of converting a specific substring of `source` to `target`. This function should check if the substring exists in `original` and return the corresponding cost."
+    },
+    {
+      "content": "Use a dynamic programming approach to keep track of the minimum costs at each position in the `source` string. This will help you build the solution incrementally."
+    },
+    {
+      "content": "Consider edge cases where parts of the `source` string cannot be transformed into the `target`. If you encounter an unmatched character in `source` that cannot be converted, you should return -1."
+    },
+    {
+      "content": "You may want to create a mapping of all possible transformations and their costs upfront. This could be a dictionary where the keys are the substrings from `original` and the values are lists of tuples containing the corresponding `changed` substrings and costs."
+    },
+    {
+      "content": "As you iterate through the `source` string, check for all possible substrings that can be transformed. For each valid transformation, update your dynamic programming table with the minimum cost found so far."
+    },
+    {
+      "content": "Be mindful of overlapping transformations. If you choose to transform a substring, ensure that subsequent transformations do not overlap with the indices of the previously transformed substring."
+    },
+    {
+      "content": "Implement a way to backtrack or keep track of the transformations you've made. This will help you ensure that you are not trying to transform the same part of the string multiple times."
+    },
+    {
+      "content": "When calculating costs, remember to accumulate the total cost of all transformations needed to convert `source` to `target`. This will be your final output."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases, such as when `source` and `target` are of length 1, and when there are no available transformations."
+    },
+    {
+      "content": "Finally, ensure that your function returns -1 if the conversion is impossible, and the total minimum cost otherwise. This will be crucial for passing all test cases."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= source.length == target.length <= 1000",
+    "source, target consist only of lowercase English characters.",
+    "1 <= cost.length == original.length == changed.length <= 100",
+    "1 <= original[i].length == changed[i].length <= source.length",
+    "original[i], changed[i] consist only of lowercase English characters.",
+    "original[i] != changed[i]",
+    "1 <= cost[i] <= 10^6"
+  ]
+}

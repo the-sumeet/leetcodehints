@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for two hours to form a complete day. Recall that a complete day is a multiple of 24 hours. Therefore, you need to find pairs (i, j) such that the sum of hours[i] and hours[j] is divisible by 24."
+    },
+    {
+      "content": "Consider how you can efficiently check if a sum of two elements is a multiple of 24. One approach is to use the modulo operator. For example, if (hours[i] + hours[j]) % 24 == 0, then they form a complete day."
+    },
+    {
+      "content": "Think about the constraints of the problem. You have at most 100 elements in the array, which suggests that a nested loop approach could be feasible. However, you should still aim for an efficient solution."
+    },
+    {
+      "content": "When iterating through the array, ensure you only consider pairs where i < j. This will prevent counting the same pair twice and will also avoid counting pairs where i == j."
+    },
+    {
+      "content": "To simplify the problem, you might want to consider the remainders when each hour is divided by 24. For example, if hours[i] % 24 = r1 and hours[j] % 24 = r2, then r1 + r2 should equal 24 (or 0 if both are 0) for the pair to form a complete day."
+    },
+    {
+      "content": "Create a frequency array to count how many times each remainder (0 to 23) appears in the hours array. This can help you quickly find how many pairs can be formed with specific remainders."
+    },
+    {
+      "content": "For each unique remainder, calculate how many pairs can be formed. For example, if you have k elements with remainder r1, the number of pairs among them is k * (k - 1) / 2."
+    },
+    {
+      "content": "Don't forget to handle the special case when both remainders are 0. You can form pairs from these elements separately since their sum will always be a multiple of 24."
+    },
+    {
+      "content": "Consider edge cases, such as when all elements are the same or when there is only one element in the array. What should your function return in these scenarios?"
+    },
+    {
+      "content": "Finally, put together the logic you've developed. Loop through the frequency array, calculate the number of valid pairs for each combination of remainders, and sum them up to get your final answer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= hours.length <= 100",
+    "Constraints: 1 <= hours[i] <= 10^9",
+    "Return the number of pairs (i, j) where i < j.",
+    "A complete day is defined as a duration that is an exact multiple of 24 hours."
+  ]
+}

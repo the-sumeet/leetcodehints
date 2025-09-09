@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "First, ensure you understand the input structure. You are given a list of edges in the form of triplets [u, v, length], where u and v are nodes and length is the distance between them."
+    },
+    {
+      "content": "Think about how you would represent the graph in memory. An adjacency list or a matrix could be useful. Which representation would make it easier to check for paths?"
+    },
+    {
+      "content": "Consider how you will handle the queries. Each query asks whether a path exists between two nodes with a distance limit. How can you efficiently check this?"
+    },
+    {
+      "content": "You might want to use a graph traversal algorithm like Depth-First Search (DFS) or Breadth-First Search (BFS). Which one do you think is more suitable for this problem?"
+    },
+    {
+      "content": "Remember that the distance limit is crucial. You need to ensure that the total distance of the path does not exceed the limit provided in each query."
+    },
+    {
+      "content": "Think about how to prune your search. If you reach a node and the current path length exceeds the distance limit, can you stop exploring that path further?"
+    },
+    {
+      "content": "You may want to preprocess the graph to make query handling faster. What data structure could help you store the nodes and their connections efficiently?"
+    },
+    {
+      "content": "Consider using a Union-Find (Disjoint Set Union) structure to manage connected components. How would this help in answering the queries?"
+    },
+    {
+      "content": "When processing the edges, consider sorting them by length. How does this help you in efficiently checking the distance limits during queries?"
+    },
+    {
+      "content": "For each query, after determining the relevant edges, think about how to traverse them. Would a modified DFS or BFS work here?"
+    },
+    {
+      "content": "Ensure you handle edge cases, such as queries where the start and end nodes are the same. What should the output be in such cases?"
+    },
+    {
+      "content": "Take care of the indexing of nodes. Are the nodes zero-indexed or one-indexed in your implementation? This can lead to off-by-one errors."
+    },
+    {
+      "content": "When you find a valid path, remember to return the correct boolean value. What should you return if no path exists under the distance limit?"
+    },
+    {
+      "content": "Consider the time complexity of your approach. How will the number of edges and queries affect the performance, and can you optimize it?"
+    },
+    {
+      "content": "As a final step, review your code to ensure that it handles all possible inputs correctly. What tests can you run to validate your solution?"
+    }
+  ],
+  "questionNotes": [
+    "The graph is undirected, meaning that if there's an edge from u to v, there's also an edge from v to u.",
+    "The distance limit in queries is inclusive; a path with a total length equal to the limit is valid.",
+    "The input edges may contain duplicates; ensure your implementation accounts for this.",
+    "The nodes are indexed from 0 to n-1, where n is the number of nodes in the graph.",
+    "The return format for each query is a boolean indicating whether a valid path exists under the given distance limit."
+  ]
+}

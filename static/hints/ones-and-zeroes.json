@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You need to form a subset of binary strings where the total number of '0's does not exceed `m` and the total number of '1's does not exceed `n`. Consider how you can keep track of these counts as you build your subset."
+    },
+    {
+      "content": "Consider how to count the number of '0's and '1's in each string. You might want to create a helper function that takes a binary string and returns the count of '0's and '1's. For example:\n\n```python\ndef count_zeros_ones(s):\n    return s.count('0'), s.count('1')\n```"
+    },
+    {
+      "content": "Think about how you can use a dynamic programming approach to solve this problem. You can create a 2D DP table where `dp[i][j]` represents the maximum size of the subset you can form with `i` '0's and `j` '1's."
+    },
+    {
+      "content": "Initialize your DP table with zeros. The dimensions of the table should be `(m + 1) x (n + 1)` to account for all possible counts of '0's and '1's from 0 up to `m` and `n` respectively."
+    },
+    {
+      "content": "Iterate through each string in the input array. For each string, calculate the number of '0's and '1's it contains, and then update the DP table in reverse order to avoid overwriting values that you still need to use."
+    },
+    {
+      "content": "When updating the DP table, ensure that you only update `dp[i][j]` if the current string can fit within the current counts of '0's and '1's. This means checking if `i` is greater than or equal to the count of '0's and `j` is greater than or equal to the count of '1's for that string."
+    },
+    {
+      "content": "Pay attention to how you handle the DP updates. For each string, you should check all combinations of `i` and `j` from the maximum down to the counts of '0's and '1's in the current string. This prevents you from using the same string multiple times in the same iteration."
+    },
+    {
+      "content": "After processing all strings, the answer will be found in `dp[m][n]`, which represents the largest subset size that can be formed with at most `m` '0's and `n` '1's."
+    },
+    {
+      "content": "Consider edge cases, such as when `m` or `n` is zero. What should your function return in these scenarios? Make sure your implementation correctly handles these cases."
+    },
+    {
+      "content": "Now, you are almost there! Make sure to test your implementation with various test cases, including edge cases, to ensure it behaves as expected. Remember to check if the final DP table is being filled correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= strs.length <= 600",
+    "1 <= strs[i].length <= 100",
+    "strs[i] consists only of digits '0' and '1'.",
+    "1 <= m, n <= 100",
+    "Return the size of the largest subset, not the subset itself."
+  ]
+}

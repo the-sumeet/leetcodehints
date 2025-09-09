@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the image matrix. Each cell in the matrix can be accessed using two indices: img[i][j] where 'i' is the row index and 'j' is the column index."
+    },
+    {
+      "content": "Remember that the filter is a 3x3 grid centered on each cell. For each cell, you need to consider the values of the cell itself and its surrounding cells. Think about how to iterate through the matrix to achieve this."
+    },
+    {
+      "content": "When calculating the average, you need to account for the edges and corners of the matrix where fewer than eight surrounding cells exist. How will you handle these cases?"
+    },
+    {
+      "content": "To calculate the average, you can maintain a sum of the valid neighboring cells and a count of how many cells you included in the average. This will help you avoid including out-of-bound indices."
+    },
+    {
+      "content": "Use nested loops to iterate through each cell in the image. For each cell, use another loop to explore its neighbors. Make sure to check the bounds of the indices to avoid accessing invalid cells."
+    },
+    {
+      "content": "When calculating the sum of neighboring cells, consider using a list of relative positions to simplify the process of accessing neighboring indices. For example, you can define offsets like: `[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 0], [0, 1], [1, -1], [1, 0], [1, 1]`."
+    },
+    {
+      "content": "After calculating the sum and count of valid cells for a given cell, remember to perform integer division to get the floored average. In Python, you can use `sum // count` for this."
+    },
+    {
+      "content": "Make sure to create a new matrix to store the results, as modifying the original matrix while iterating can lead to incorrect calculations."
+    },
+    {
+      "content": "Consider edge cases such as a single cell matrix or a matrix where all values are the same. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "Finally, implement the logic to return the new smoothed image matrix after processing all cells. Ensure your output format matches the expected structure."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == img.length, n == img[i].length",
+    "1 <= m, n <= 200",
+    "0 <= img[i][j] <= 255",
+    "Output should be a new matrix of the same dimensions as the input."
+  ]
+}

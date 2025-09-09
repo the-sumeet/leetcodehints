@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the two types of jumps you can make: adjacent steps and prime teleportation. Make sure you can identify when you can use each type of jump based on the value at the current index."
+    },
+    {
+      "content": "Remember that you can only teleport from an index where the value is a prime number. Make sure you have a way to check if a number is prime. You might want to precompute the primes up to the maximum possible value in the array."
+    },
+    {
+      "content": "When considering teleportation, you can jump to any index where the value is divisible by the prime number. Think about how you can efficiently find all indices that satisfy this condition for each prime number."
+    },
+    {
+      "content": "Consider using a breadth-first search (BFS) approach to explore the jumps. BFS is suitable here as it explores all possible positions layer by layer, ensuring that you find the minimum number of jumps to reach the end."
+    },
+    {
+      "content": "While implementing BFS, keep track of visited indices to avoid cycles and unnecessary computations. You can use a boolean array to mark indices that have already been visited."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the array has only one element. In this case, you are already at the end, and the number of jumps required is zero."
+    },
+    {
+      "content": "When you reach an index that allows teleportation, remember to check all other indices to see if they are reachable via the prime number. You may want to maintain a mapping of primes to their corresponding indices for quick access."
+    },
+    {
+      "content": "Think about how to efficiently check divisibility for teleportation. You might want to store indices of all numbers in a dictionary keyed by their prime factors to quickly find all possible teleportation targets."
+    },
+    {
+      "content": "As you implement the BFS, ensure you correctly enqueue adjacent indices and teleportation targets. Each time you jump, increment your jump count to track the number of jumps taken."
+    },
+    {
+      "content": "Finally, ensure your BFS stops when you reach the last index. If you exhaust all options without reaching the end, consider how to handle that case, although it should not occur based on the problem constraints."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums.length <= 10^5",
+    "Each nums[i] is between 1 and 10^6.",
+    "You can only teleport from indices where nums[i] is a prime number.",
+    "You can jump to any index j != i such that nums[j] % p == 0.",
+    "The return value should be the minimum number of jumps to reach the last index."
+  ]
+}

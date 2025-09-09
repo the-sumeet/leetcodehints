@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `Patients` table. You need to extract specific columns: `patient_id`, `patient_name`, and `conditions`. Make sure you are familiar with how to select these columns in SQL."
+    },
+    {
+      "content": "Next, focus on the `conditions` column. It contains codes separated by spaces. You will need to check if any of these codes start with the prefix 'DIAB1'."
+    },
+    {
+      "content": "Consider using the SQL `LIKE` operator to identify conditions that start with 'DIAB1'. This operator allows you to match patterns in strings. For example, `conditions LIKE 'DIAB1%'` can help you filter the rows."
+    },
+    {
+      "content": "Remember to handle cases where the `conditions` field might be empty. Ensure that your query does not exclude patients who have valid conditions simply because of an empty string."
+    },
+    {
+      "content": "You may want to use the `WHERE` clause to filter your results. Think about how you can combine conditions to only include patients with the specific condition you are looking for."
+    },
+    {
+      "content": "Make sure your query returns the correct columns in the specified order. You should select `patient_id`, `patient_name`, and `conditions` in that exact sequence."
+    },
+    {
+      "content": "Test your query with different datasets to ensure it works correctly. For instance, check how it behaves with patients who have multiple conditions, or none at all."
+    },
+    {
+      "content": "Consider edge cases such as patients with conditions that are similar but do not start with 'DIAB1'. You need to ensure your filtering logic is precise."
+    },
+    {
+      "content": "Think about the performance of your query. If the table is large, consider indexing the `conditions` column to speed up the search for the 'DIAB1' prefix."
+    },
+    {
+      "content": "Finally, your SQL query should look something like this: `SELECT patient_id, patient_name, conditions FROM Patients WHERE conditions LIKE 'DIAB1%'`. Make sure to test this query to confirm it returns the expected results."
+    }
+  ],
+  "questionNotes": [
+    "The `patient_id` column is the primary key, meaning it has unique values.",
+    "The `conditions` column can contain multiple codes separated by spaces.",
+    "You need to check for conditions that start with 'DIAB1'.",
+    "Return the result in any order, but include all specified columns."
+  ]
+}

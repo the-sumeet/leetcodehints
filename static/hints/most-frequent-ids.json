@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the `nums` and `freq` arrays interact. Each index `i` in `freq` tells you how many IDs to add or remove based on the corresponding value in `nums`. Make sure you can visualize this process step by step."
+    },
+    {
+      "content": "Consider how to maintain a count of each ID as you process the `freq` array. You might want to use a dictionary or a hashmap to keep track of the current counts of each ID."
+    },
+    {
+      "content": "When updating the counts, remember to check if the frequency is positive or negative. For example, if `freq[i]` is positive, you need to increase the count for `nums[i]`, and if it's negative, you decrease it."
+    },
+    {
+      "content": "Keep in mind that after each step, you need to determine the most frequent ID. You can do this by keeping track of the maximum frequency found so far and the corresponding ID."
+    },
+    {
+      "content": "What will you do if there are multiple IDs with the same maximum frequency? Think about how you can handle ties. You may need to decide on a rule for which ID to consider in such cases."
+    },
+    {
+      "content": "Don't forget to handle the case where the collection becomes empty. You should return 0 for that step in your result array. Make sure your logic accounts for this scenario."
+    },
+    {
+      "content": "As you iterate through the `nums` and `freq` arrays, update your counts and check for the maximum frequency after each step. Consider using a variable to keep track of the current maximum frequency and the ID associated with it."
+    },
+    {
+      "content": "You might want to create a helper function that returns the most frequent ID based on your current counts. This could simplify your main loop where you process the `freq` array."
+    },
+    {
+      "content": "Make sure to test your implementation with edge cases, such as when all frequencies are negative or when all IDs are the same. This will help ensure your solution is robust."
+    },
+    {
+      "content": "Finally, remember to construct the result array `ans` correctly, ensuring that it reflects the most frequent ID count after each step. Pay attention to the indexing to avoid off-by-one errors."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length == freq.length <= 10^5",
+    "1 <= nums[i] <= 10^5",
+    "-10^5 <= freq[i] <= 10^5, freq[i] != 0",
+    "The occurrences of an ID will not be negative at any step.",
+    "Return an array ans of length n, where ans[i] is the count of the most frequent ID after step i.",
+    "If the collection is empty at any step, ans[i] should be 0."
+  ]
+}

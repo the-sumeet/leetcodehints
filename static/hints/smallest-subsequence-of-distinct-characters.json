@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider what it means for a subsequence to be 'lexicographically smallest'. This means that when comparing two subsequences, the one that comes first in dictionary order is preferred. Think about how you can build such a subsequence from the given string."
+    },
+    {
+      "content": "Start by identifying the distinct characters in the string. You can use a set to keep track of which characters have been included in your subsequence. Remember that the order of characters in the final result matters."
+    },
+    {
+      "content": "As you iterate through the string, think about how you can maintain the order of characters while ensuring that each character appears only once in the final result. You might need to keep track of the last occurrence of each character."
+    },
+    {
+      "content": "When you encounter a character, decide if you should add it to your result. If it is already included, skip it. If not, consider whether the last character in your current result can be removed to make room for a smaller character."
+    },
+    {
+      "content": "Use a stack to build your result. The stack allows you to efficiently manage the characters you want to keep while still being able to remove characters that are larger than the current one if they appear later in the string."
+    },
+    {
+      "content": "While processing each character, check if the current character is smaller than the character at the top of the stack. If it is, and if the character at the top of the stack appears later in the string, you can pop the stack."
+    },
+    {
+      "content": "Make sure to keep track of how many times each character appears in the remaining part of the string. This will help you decide if you can safely remove a character from the stack."
+    },
+    {
+      "content": "After processing all characters, the stack will contain the characters of your result in the correct order. You can then convert the stack into a string to get your final result."
+    },
+    {
+      "content": "Remember to handle edge cases, such as strings with all identical characters or strings that are already in sorted order. These cases should still return the correct subsequence."
+    },
+    {
+      "content": "To summarize, use a stack to build the result, track the last occurrences of characters, and ensure that each character is only added once. The final result should be the concatenation of characters in the stack."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 1000",
+    "s consists of lowercase English letters.",
+    "Return the lexicographically smallest subsequence containing all distinct characters exactly once.",
+    "Consider the order of characters and how to manage duplicates efficiently."
+  ]
+}

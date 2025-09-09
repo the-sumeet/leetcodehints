@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic operations of a stack: push, pop, and peek. Remember that a stack is a Last In First Out (LIFO) structure, while a queue is First In First Out (FIFO). Think about how you can use two stacks to simulate this behavior."
+    },
+    {
+      "content": "Consider how you can use one stack for input (pushing elements) and another stack for output (popping elements). When you need to pop an element, you can transfer elements from the input stack to the output stack if the output stack is empty."
+    },
+    {
+      "content": "When implementing the `push` operation, simply push the element onto the input stack. This operation is straightforward and takes O(1) time."
+    },
+    {
+      "content": "For the `pop` operation, check if the output stack is empty. If it is, you'll need to transfer all elements from the input stack to the output stack to maintain the correct order."
+    },
+    {
+      "content": "In the `peek` operation, you should also check if the output stack is empty. If it is, transfer elements from the input stack to the output stack, then return the top element of the output stack."
+    },
+    {
+      "content": "Remember to handle the case where both stacks are empty. This will help you avoid errors when trying to pop or peek from an empty queue."
+    },
+    {
+      "content": "The `empty` operation can be implemented by checking if both stacks are empty. If both are empty, then the queue is empty; otherwise, it is not."
+    },
+    {
+      "content": "Think about the time complexity of your operations. The `push` operation is O(1), but `pop` and `peek` could be O(n) in the worst case if you have to transfer elements. However, this is amortized O(1) over a series of operations."
+    },
+    {
+      "content": "Consider edge cases, like when you push elements but never pop them, or when you pop all elements and then try to peek or pop again. Make sure your implementation handles these gracefully."
+    },
+    {
+      "content": "Finally, put all the pieces together. Implement the `MyQueue` class with the four methods: `push`, `pop`, `peek`, and `empty`, ensuring that you use the two stacks correctly to maintain FIFO order."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= x <= 9",
+    "At most 100 calls will be made to push, pop, peek, and empty.",
+    "All the calls to pop and peek are valid, meaning you won't call them on an empty queue."
+  ]
+}

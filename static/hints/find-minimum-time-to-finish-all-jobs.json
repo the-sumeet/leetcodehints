@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to distribute jobs among workers such that the worker with the maximum workload has the least possible workload. Think about how you can measure the workload of each worker."
+    },
+    {
+      "content": "Consider the constraints given: the number of workers (k) can be less than or equal to the number of jobs. What happens when k is greater than or equal to the number of jobs? How would you handle such cases?"
+    },
+    {
+      "content": "Think about the total time required to complete all jobs. The minimum possible maximum working time cannot be less than the maximum time of a single job. Why is that?"
+    },
+    {
+      "content": "You may want to sort the jobs in descending order. This way, you can allocate the largest jobs first, which can help in balancing the workload among workers."
+    },
+    {
+      "content": "Consider using a backtracking approach. You can try assigning jobs to workers one by one and keep track of the current workload of each worker."
+    },
+    {
+      "content": "When assigning jobs, you can use a recursive function to explore different distributions of jobs among workers. Make sure to keep track of the maximum workload at each step."
+    },
+    {
+      "content": "Think about how to prune your search space. If at any point the maximum workload of a worker exceeds a certain threshold, you can stop exploring that path."
+    },
+    {
+      "content": "You may want to implement a helper function that checks if a given maximum workload is feasible with the current job assignments. This could help in optimizing your approach."
+    },
+    {
+      "content": "Consider using binary search on the possible maximum workload values. The search range will be between the maximum job time and the total time of all jobs."
+    },
+    {
+      "content": "For the binary search, your mid-point will represent a candidate for the maximum workload. You'll need to check if it's possible to assign jobs such that no worker exceeds this mid-point."
+    },
+    {
+      "content": "When checking if a certain maximum workload is achievable, you can iterate through the jobs and assign them to workers while keeping track of their current workloads."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there are more workers than jobs. In such cases, the maximum workload will simply be the time of the longest job."
+    },
+    {
+      "content": "As you implement the solution, remember to account for the fact that workers can take on jobs in any order. The order of job assignments may affect the maximum workload."
+    },
+    {
+      "content": "Think about how to efficiently manage the state of each worker's workload during your recursive or iterative approach. You might want to use an array to represent each worker's current workload."
+    },
+    {
+      "content": "Your final implementation should return the minimum possible maximum working time. Ensure that your return statement reflects this correctly after all calculations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= jobs.length <= 12",
+    "Constraints: 1 <= jobs[i] <= 10^7",
+    "Each job must be assigned to exactly one worker.",
+    "The goal is to minimize the maximum working time of any worker."
+  ]
+}

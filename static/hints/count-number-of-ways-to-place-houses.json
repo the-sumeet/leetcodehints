@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem's constraints. You have a street with n * 2 plots, where n plots are on each side. Remember that no two houses can be adjacent on the same side."
+    },
+    {
+      "content": "Consider the base cases for smaller values of n. For n = 1, you can place houses in 4 different ways. This will help you identify a pattern as you increase n."
+    },
+    {
+      "content": "Think about how to represent the arrangements of houses. You can use dynamic programming to keep track of the number of valid arrangements for each side of the street."
+    },
+    {
+      "content": "Define a function that calculates the number of ways to place houses on one side of the street. For a given plot, you have two choices: place a house or leave it empty."
+    },
+    {
+      "content": "When placing a house on the i-th plot, you cannot place a house on the (i-1)-th plot. This gives rise to a recursive relationship that you can use in your dynamic programming approach."
+    },
+    {
+      "content": "Consider how the choices on one side of the street affect the other side. If you can place a house on one side, you can independently decide for the other side."
+    },
+    {
+      "content": "Let dp[i] represent the number of ways to arrange houses on one side of the street up to the i-th plot. You can derive dp[i] based on dp[i-1] and dp[i-2]."
+    },
+    {
+      "content": "Remember to take the modulo 10^9 + 7 for your results to handle large numbers. This is a common requirement in competitive programming."
+    },
+    {
+      "content": "After calculating the arrangements for one side, remember that the total arrangements for both sides will be the square of the arrangements for one side: (dp[n])^2."
+    },
+    {
+      "content": "Combine all your findings into a single function. Make sure to handle edge cases, such as n = 1, and return the final result modulo 10^9 + 7."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^4",
+    "Return format: The result should be returned modulo 10^9 + 7.",
+    "Important: No two houses can be adjacent on the same side of the street."
+  ]
+}

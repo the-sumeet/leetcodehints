@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the initial sum of the array. This will help you determine the target value you need to reach, which is half of the initial sum."
+    },
+    {
+      "content": "Consider how the operation affects the sum. Each time you halve a number, you reduce the total sum by that number minus its half. This means the larger the number you halve, the more significant the reduction in the total sum."
+    },
+    {
+      "content": "Think about using a max-heap (or priority queue) to efficiently get the largest number to halve. This structure allows you to always access the largest number in logarithmic time."
+    },
+    {
+      "content": "When you halve a number, remember to push the new halved value back into the max-heap. This allows you to use the halved value in subsequent operations."
+    },
+    {
+      "content": "Keep track of the number of operations you perform. Each time you halve a number, increment your operation count."
+    },
+    {
+      "content": "You need to continue halving numbers until the sum of the array is reduced by at least half. Maintain a running total of the current sum as you perform operations."
+    },
+    {
+      "content": "Consider edge cases where the array has only one element. What happens if you halve that element? Make sure your solution handles this correctly."
+    },
+    {
+      "content": "As you halve numbers, check if the current sum has dropped below the target (half of the initial sum). If it has, you can stop the process."
+    },
+    {
+      "content": "Think about how to efficiently manage the operations. You might need to perform a loop that continues until the sum is halved, checking the max-heap for the largest number each time."
+    },
+    {
+      "content": "Finally, ensure your implementation returns the correct number of operations. This is the count of how many times you halved numbers to achieve the required reduction in sum."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^7",
+    "Ensure to handle cases where the array has only one element.",
+    "Return the minimum number of operations needed to reduce the sum by at least half."
+  ]
+}

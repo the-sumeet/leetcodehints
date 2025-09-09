@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. Since the edges form a tree when made bi-directional, think about how nodes are connected and how reversing edges can affect reachability."
+    },
+    {
+      "content": "Consider the implications of reversing an edge. When you reverse an edge from u to v, you are changing the direction of the connection. How does this affect the ability to reach other nodes?"
+    },
+    {
+      "content": "For each node, you need to determine how many edges need to be reversed to ensure that all other nodes are reachable. Think about how you can traverse the graph to find this out."
+    },
+    {
+      "content": "A good approach is to use a breadth-first search (BFS) or depth-first search (DFS) starting from each node. This will help you explore all reachable nodes without reversing any edges initially."
+    },
+    {
+      "content": "As you traverse the graph, keep track of the edges you encounter. If you reach a node through a directed edge, it counts as a valid path. If you encounter an edge that goes the opposite way, consider it a candidate for reversal."
+    },
+    {
+      "content": "Think about how to represent the graph in code. An adjacency list could be useful here, where each node points to a list of nodes it can reach directly."
+    },
+    {
+      "content": "Remember that each node has a unique index from 0 to n-1. Ensure that your algorithm correctly handles these indices when accessing nodes and edges."
+    },
+    {
+      "content": "You will need to calculate the minimum reversals for each node independently. Consider storing results in an array where the index corresponds to the node number."
+    },
+    {
+      "content": "When you perform BFS or DFS, maintain a count of reversals needed to reach each node. This will help you determine the minimum reversals for each starting node."
+    },
+    {
+      "content": "Edge cases are important. For example, if there are only two nodes, what happens if you reverse the only edge? Make sure to consider small graphs."
+    },
+    {
+      "content": "Since the graph is a tree when edges are bi-directional, every node should ideally be reachable from any other node with some edge reversals. Think about how this property can simplify your calculations."
+    },
+    {
+      "content": "You might want to implement a helper function to count reversals needed for a single starting node. This can help keep your main function cleaner and easier to understand."
+    },
+    {
+      "content": "When you reverse an edge, think about how it affects the reachability of other nodes. You may need to update your traversal logic to account for these changes dynamically."
+    },
+    {
+      "content": "After calculating the reversals for all nodes, ensure that your output format matches the requirements. You need to return an array where each index corresponds to the node number."
+    },
+    {
+      "content": "Finally, consider the time complexity of your approach. Since you need to calculate for each node, ensure that your algorithm is efficient enough to handle the upper limit of n (up to 100,000)."
+    }
+  ],
+  "questionNotes": [
+    "The graph is directed but can be treated as a tree if edges are bi-directional.",
+    "Each node is uniquely indexed from 0 to n-1.",
+    "You need to return an array of minimum reversals for each node.",
+    "The input guarantees that the number of edges is n-1, ensuring a tree structure."
+  ]
+}

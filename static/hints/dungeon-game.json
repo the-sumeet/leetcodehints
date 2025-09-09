@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid layout of the dungeon. The knight starts at the top-left corner (0,0) and must reach the bottom-right corner (m-1,n-1)."
+    },
+    {
+      "content": "Remember that the knight can only move right or down. This restriction simplifies the pathfinding aspect of the problem."
+    },
+    {
+      "content": "Consider how health points are affected by the values in the dungeon grid. Negative values decrease health, while positive values increase it."
+    },
+    {
+      "content": "Think about what happens when the knight enters a room with a negative value. How does this affect the knight's remaining health?"
+    },
+    {
+      "content": "Note that the knight's health must always be greater than zero to survive. If his health drops to zero or below, he dies."
+    },
+    {
+      "content": "The goal is to find the minimum initial health required for the knight to reach the princess. This means you need to calculate health at each step."
+    },
+    {
+      "content": "You can use dynamic programming to solve this problem. Start from the princess's position and work your way back to the knight's starting position."
+    },
+    {
+      "content": "Create a 2D array (let's call it `dp`) where `dp[i][j]` represents the minimum health required to reach the princess from room (i,j)."
+    },
+    {
+      "content": "Initialize the bottom-right corner of the `dp` array. The knight needs at least 1 health point to survive, so calculate it based on the dungeon value."
+    },
+    {
+      "content": "Fill in the `dp` array from the bottom-right to the top-left. For each room, calculate the health needed based on the minimum health required from the room below or to the right."
+    },
+    {
+      "content": "When calculating `dp[i][j]`, consider the health lost or gained from the current room. You can use the formula: `dp[i][j] = max(1, min(dp[i+1][j], dp[i][j+1]) - dungeon[i][j])`."
+    },
+    {
+      "content": "Make sure to handle the edges of the grid properly. The knight can only move down or right, so ensure you don't access out-of-bounds indices."
+    },
+    {
+      "content": "Consider edge cases, such as when the dungeon consists of only one room. How does the knight's health requirement change in this scenario?"
+    },
+    {
+      "content": "After filling the `dp` array, the value at `dp[0][0]` will give you the minimum initial health needed for the knight to reach the princess."
+    },
+    {
+      "content": "Finally, ensure that your implementation handles all possible values in the dungeon, including negative, zero, and positive values correctly."
+    }
+  ],
+  "questionNotes": [
+    "The knight can only move right or down.",
+    "The knight's health must always be greater than zero.",
+    "The output should be the minimum initial health required.",
+    "Dungeons can contain both negative and positive integers, including the first and last rooms."
+  ]
+}

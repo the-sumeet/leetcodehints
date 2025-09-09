@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of an axis-aligned square. An axis-aligned square has its sides parallel to the x-axis and y-axis, meaning the coordinates of its corners can be expressed in terms of a single point and a side length."
+    },
+    {
+      "content": "When adding a point, consider how you will store it. Since duplicate points are allowed and should be treated differently, think about using a data structure that can handle multiple entries for the same coordinates."
+    },
+    {
+      "content": "For the `count` method, remember that you need to find three points that, together with the query point, will form a square. Think about how the coordinates of these three points relate to the query point."
+    },
+    {
+      "content": "To form a square with the query point at (qx, qy), if you denote the side length of the square as 's', the other three points must be positioned at: (qx, qy + s), (qx + s, qy), and (qx + s, qy + s)."
+    },
+    {
+      "content": "Consider how to efficiently count the occurrences of points. You might want to use a dictionary (or hash map) where the key is the point (x, y) and the value is the count of how many times that point has been added."
+    },
+    {
+      "content": "Think about the constraints of the problem. You will have at most 3000 calls to `add` and `count`, so your solution should efficiently handle these operations, ideally in constant time for `add` and linear time for `count`."
+    },
+    {
+      "content": "When counting the number of valid squares, iterate through possible side lengths. For each valid side length, check if the required points exist in your data structure."
+    },
+    {
+      "content": "Remember that the points you are counting must form a square with positive area. This means you need to ensure that your side length 's' is greater than zero."
+    },
+    {
+      "content": "Consider edge cases, such as when no points have been added yet or when the query point does not have any corresponding points to form a square. Make sure your `count` method can handle these scenarios gracefully."
+    },
+    {
+      "content": "Finally, implement the logic in the `count` method to calculate the total number of squares. You should sum the products of the counts of the required points for each valid configuration of the square."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: point.length == 2, 0 <= x, y <= 1000, at most 3000 calls in total.",
+    "Duplicate points are allowed and treated as different entries.",
+    "The square must have a positive area, meaning the side length must be greater than zero."
+  ]
+}

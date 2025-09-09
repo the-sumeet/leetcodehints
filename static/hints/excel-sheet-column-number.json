@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Think about how Excel columns are structured. Each column title is a string that represents a number in a base-26 numeral system, where 'A' is 1, 'B' is 2, ..., and 'Z' is 26."
+    },
+    {
+      "content": "Consider how to convert each character in the string to its corresponding numeric value. For example, 'A' corresponds to 1, 'B' to 2, and so on. You can use the ASCII value of the characters to help with this."
+    },
+    {
+      "content": "Remember that the column titles can have multiple letters, which means you will need to account for the position of each letter. The rightmost letter contributes the least to the overall value, similar to how digits work in the decimal system."
+    },
+    {
+      "content": "As you process each character from left to right, think about how to calculate its contribution to the final column number. Each character's contribution can be calculated as its value times 26 raised to the power of its position from the right."
+    },
+    {
+      "content": "To clarify, if you have a column title 'AB', you would calculate its value as: A contributes 1 * 26^1 and B contributes 2 * 26^0. Make sure to sum these contributions correctly."
+    },
+    {
+      "content": "Consider using a loop to iterate through the characters of the string. You can keep a running total of the column number as you process each character."
+    },
+    {
+      "content": "Don't forget to handle the conversion from character to its respective number. For a character `c`, you can use: `value = ord(c) - ord('A') + 1` to get its 1-based index."
+    },
+    {
+      "content": "Make sure to initialize your total column number to zero before you start adding contributions from each character in the string."
+    },
+    {
+      "content": "As a final check, ensure your loop correctly handles the length of the string, and that you are correctly calculating the power of 26 based on the character's position."
+    },
+    {
+      "content": "Now, try to implement the logic where you iterate through the string, calculate the contribution of each character, and sum them up to get the final column number. Remember to reverse the order of processing if you start from the leftmost character."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= columnTitle.length <= 7",
+    "columnTitle consists only of uppercase English letters.",
+    "columnTitle is in the range ['A', 'FXSHRXW']."
+  ]
+}

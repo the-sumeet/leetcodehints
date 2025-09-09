@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You have two eggs and need to find the critical floor f in a building with n floors. If an egg breaks, you lose that egg, so you'll want to minimize the number of drops needed to find f."
+    },
+    {
+      "content": "Consider the worst-case scenario for your egg drops. Each drop can provide you with information about the range of floors where f might be located. Think about how to balance the number of drops between the two eggs."
+    },
+    {
+      "content": "With two eggs, if the first egg breaks, you can only use the second egg to check the floors below. This means you need a strategy that allows you to maximize the information gained from each drop."
+    },
+    {
+      "content": "A common approach is to use a decreasing step strategy. For example, if you drop the first egg from floor x and it breaks, you can then use the second egg to check all floors below x. How would you choose x to minimize the total drops?"
+    },
+    {
+      "content": "Think about the mathematical relationship between the number of drops and the floors you can check. If you drop from floor x and it breaks, you can check x-1 floors with the second egg. If it doesn't break, you can check the remaining floors above x."
+    },
+    {
+      "content": "You might want to set up a recursive approach or a dynamic programming table to keep track of the minimum number of drops needed for each number of floors. This can help you build up a solution incrementally."
+    },
+    {
+      "content": "Consider the equation for the total number of floors you can check with a given number of drops. For example, if you drop from floor x and it breaks, you can check (x-1) floors with the second egg, and if it doesn't break, you can check the remaining floors above."
+    },
+    {
+      "content": "Try to formulate a relationship between the number of drops (d) and the floors (n). For example, if you drop from floor 1, then 2, then 3, etc., how does that relate to the total number of floors you can check?"
+    },
+    {
+      "content": "You can use a binary search approach on the number of drops to find the minimum number of drops required. Start with a guess and adjust based on whether the number of floors can be covered with that many drops."
+    },
+    {
+      "content": "Finally, think about how to optimize your approach. You want to find the minimum number of moves, so ensure that your strategy accounts for both eggs effectively. You might end up with a formula that combines the drops from both eggs to cover all floors."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 1000",
+    "You have exactly two identical eggs.",
+    "The goal is to minimize the number of drops in the worst-case scenario.",
+    "The floors are labeled from 1 to n, and f can be 0 (no floors) to n (all floors).",
+    "If an egg breaks, it cannot be reused."
+  ]
+}

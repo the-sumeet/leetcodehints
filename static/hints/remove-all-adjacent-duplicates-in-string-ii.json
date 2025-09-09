@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the process of removing duplicates. When you find 'k' adjacent characters that are the same, you need to remove them from the string. Think about how you can identify these groups of characters."
+    },
+    {
+      "content": "Consider using a stack to help manage the characters in the string. You can push characters onto the stack and keep track of how many times each character appears consecutively."
+    },
+    {
+      "content": "As you iterate through the string, if the current character is the same as the one on top of the stack, increment a count. If it differs, reset the count and push the new character onto the stack."
+    },
+    {
+      "content": "Remember to check the count of the characters. If it reaches 'k', you should pop the character from the stack, effectively removing it from the current sequence."
+    },
+    {
+      "content": "After processing the entire string, you will have a stack that represents the modified string without any adjacent duplicates. You can then build the final string from this stack."
+    },
+    {
+      "content": "Consider edge cases, such as when 'k' is larger than the length of the string. In such cases, no characters will be removed, and the original string should be returned."
+    },
+    {
+      "content": "Think about how to handle multiple rounds of removals. After one pass through the string, you may need to check again if any new groups of 'k' duplicates have formed."
+    },
+    {
+      "content": "You might want to implement a loop that continues to process the string until no more removals can be made. This could involve checking the stack after each full pass."
+    },
+    {
+      "content": "When constructing the final string from the stack, ensure that you are concatenating the characters correctly. The order of characters in the stack should reflect their order in the original string."
+    },
+    {
+      "content": "Finally, ensure your solution handles the constraints effectively. The maximum length of the string is 100,000, so your solution should be efficient, ideally O(n) in time complexity."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length <= 10^5",
+    "2 <= k <= 10^4",
+    "s only contains lowercase English letters.",
+    "The answer is guaranteed to be unique."
+  ]
+}

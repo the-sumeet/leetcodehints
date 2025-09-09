@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the binary string is updated at each step. Each element in `arr` corresponds to an index in the binary string that will be set to '1'."
+    },
+    {
+      "content": "Remember that the binary string starts with all bits set to '0'. As you iterate through `arr`, you'll be flipping bits from '0' to '1'. Keep track of the current state of the binary string."
+    },
+    {
+      "content": "Consider how to identify groups of contiguous '1's in the binary string. A group of size `m` means there should be exactly `m` consecutive '1's without any '0's interrupting them."
+    },
+    {
+      "content": "Think about how to efficiently check for groups of size `m` after each update. You might want to maintain a count of consecutive '1's as you modify the binary string."
+    },
+    {
+      "content": "When checking for groups of '1's, ensure that you are considering only groups of exactly size `m`. Groups larger than `m` should not be counted."
+    },
+    {
+      "content": "You will need to return the latest step at which a group of size `m` exists. This means you should keep track of the last step where you found such a group."
+    },
+    {
+      "content": "Consider edge cases, such as when `m` is equal to `1` or when `m` is equal to `n`. How does the behavior of your function change in these scenarios?"
+    },
+    {
+      "content": "As you iterate through the steps, if you find a valid group of size `m`, update a variable to store the current step. If no valid group is found by the end, return `-1`."
+    },
+    {
+      "content": "Keep in mind the constraints: `n` can be as large as 100,000. Your solution needs to be efficient, ideally O(n), to handle the upper limits of input size."
+    },
+    {
+      "content": "You might want to use a sliding window approach to efficiently track the size of groups of '1's as you update the binary string. This can help you avoid re-scanning the entire string."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == arr.length, 1 <= m <= n <= 10^5, 1 <= arr[i] <= n",
+    "All integers in arr are distinct.",
+    "Return the latest step at which there exists a group of ones of length exactly m.",
+    "If no such group exists, return -1.",
+    "Both binary string and arr are 1-indexed."
+  ]
+}

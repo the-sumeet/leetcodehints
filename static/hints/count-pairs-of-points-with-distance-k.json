@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to compute the distance between two points using the given formula: (x1 XOR x2) + (y1 XOR y2). Make sure you know how the XOR operation works."
+    },
+    {
+      "content": "Consider how to iterate through all pairs of points. You will need to use a nested loop to check each unique pair (i, j) where i < j."
+    },
+    {
+      "content": "Remember that the problem asks for the number of pairs with a specific distance k. Think about how you can count these pairs efficiently instead of just printing them."
+    },
+    {
+      "content": "Since the maximum number of coordinates can be 50,000, a brute force solution with O(n^2) complexity may be too slow. Look for ways to optimize your approach."
+    },
+    {
+      "content": "You might want to use a hash map (or dictionary) to store previously seen points and their coordinates. This can help you quickly find pairs that match the distance criteria."
+    },
+    {
+      "content": "Consider the properties of XOR. For example, if you know the result of (x1 XOR x2), you can derive conditions for x2 based on x1 and the desired distance k."
+    },
+    {
+      "content": "Think about edge cases, such as when k = 0. How many pairs would have a distance of 0? This could help you simplify your logic for that specific case."
+    },
+    {
+      "content": "When counting pairs, ensure you only count each pair once. You can do this by enforcing the condition i < j in your iteration."
+    },
+    {
+      "content": "You might want to preprocess the coordinates into a more manageable structure, such as a list of tuples or a custom class, to make your distance calculations clearer."
+    },
+    {
+      "content": "Finally, consider how you will return the result. The problem specifies returning the count of valid pairs, so ensure your final implementation accurately reflects this."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= coordinates.length <= 50000",
+    "Coordinates range: 0 <= x_i, y_i <= 10^6",
+    "Distance k range: 0 <= k <= 100",
+    "Return the number of valid pairs (i, j) such that i < j.",
+    "Ensure to handle cases where multiple points have the same coordinates."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to maximize the number of distinct elements in the array after modifying each element by adding a value in the range [-k, k]."
+    },
+    {
+      "content": "Consider the range of possible values for each element after the operation. For any element `num`, it can be transformed to any value between `num - k` and `num + k`."
+    },
+    {
+      "content": "Think about how to handle duplicates. If you have multiple occurrences of the same number, you will need to modify them to different values to increase the count of distinct elements."
+    },
+    {
+      "content": "A good first step is to sort the array. Sorting can help you easily identify duplicates and manage the transformations to maximize distinct values."
+    },
+    {
+      "content": "After sorting, iterate through the array and keep track of the distinct numbers you can achieve. Use a set or a similar structure to store the distinct values."
+    },
+    {
+      "content": "When encountering a duplicate, consider the closest available numbers that can be reached by adding or subtracting from the original number. This helps in determining the best transformation."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when `k` is 0. In this case, no modifications can be made, and the result is simply the count of distinct elements in the original array."
+    },
+    {
+      "content": "If there are gaps between the numbers in the sorted array, you might be able to fill those gaps by adjusting the numbers within the allowed range. Think about how to utilize `k` effectively."
+    },
+    {
+      "content": "As you implement your logic, keep track of how many distinct elements you have at any point. This can be done by maintaining a counter or by checking the size of your set."
+    },
+    {
+      "content": "Finally, ensure that you are considering all possible transformations for each element. The final count of distinct elements will be the maximum you can achieve after considering all operations."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "0 <= k <= 10^9",
+    "You can modify each element at most once.",
+    "Return the maximum possible number of distinct elements."
+  ]
+}

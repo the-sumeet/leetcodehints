@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input arrays. Each event is represented as an array of two strings, where the first string is the start time and the second string is the end time."
+    },
+    {
+      "content": "Remember that the times are in a 24-hour format (HH:MM). Consider how you might compare two time strings to determine which one comes first."
+    },
+    {
+      "content": "To determine if two events conflict, think about the conditions under which two time intervals overlap. Specifically, if one event starts before the other ends, they may overlap."
+    },
+    {
+      "content": "Consider the edge case where one event ends exactly when the other starts. Does this count as a conflict? Think about how you define 'non-empty intersection'."
+    },
+    {
+      "content": "You can convert the time strings into a comparable format. For example, converting 'HH:MM' into minutes since midnight could simplify your comparisons."
+    },
+    {
+      "content": "Once you convert the times, you can represent the events as intervals: event1 = [start1, end1] and event2 = [start2, end2]. Focus on the conditions for overlap: start1 < end2 and start2 < end1."
+    },
+    {
+      "content": "Write out the conditions for a conflict in terms of the converted time values. For example, if start1 < end2 and start2 < end1, then there is a conflict."
+    },
+    {
+      "content": "Make sure to handle the conversion of time strings to integers correctly. For instance, '01:15' should be converted to 75 (1 hour * 60 + 15 minutes)."
+    },
+    {
+      "content": "Consider edge cases where the events might start or end at the same time. Ensure your logic accounts for these scenarios correctly."
+    },
+    {
+      "content": "Finally, implement the logic to check for conflicts using the conditions discussed. Remember to return true if there is a conflict and false otherwise."
+    }
+  ],
+  "questionNotes": [
+    "Each event is represented as an array of two strings: [startTime, endTime].",
+    "Times are in 24-hour format (HH:MM).",
+    "A conflict occurs if there is a non-empty intersection between the two events.",
+    "Consider edge cases where events start or end at the same time."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what non-decreasing digits mean. A number has non-decreasing digits if each digit is less than or equal to the next one when read from left to right. For example, 123 and 233 are valid, but 321 and 132 are not."
+    },
+    {
+      "content": "Remember that the range of numbers you are examining is from l to r, inclusive. This means you need to check every integer between these two bounds, including both endpoints."
+    },
+    {
+      "content": "You need to convert the numbers from base 10 to base b. Make sure you understand how to convert a number into a different base. For example, to convert 10 to base 2, you would get '1010'."
+    },
+    {
+      "content": "Consider how to efficiently iterate through the range from l to r. Since l and r can be very large (up to 100 digits), directly iterating through every integer may not be feasible."
+    },
+    {
+      "content": "Think about how you can represent numbers in base b. You might want to write a function that converts a number from base 10 to base b and returns the digits as an array or string."
+    },
+    {
+      "content": "When checking for non-decreasing digits, you can compare each digit to the previous one. If any digit is less than the previous one, the number does not have non-decreasing digits."
+    },
+    {
+      "content": "Consider edge cases, such as when l and r are the same. In this case, you only need to check one number."
+    },
+    {
+      "content": "You will need to keep track of the count of valid numbers that meet the criteria. Initialize a counter at the start of your loop through the range."
+    },
+    {
+      "content": "Since the result can be very large, remember to take the result modulo 10^9 + 7 as specified in the problem statement. This helps prevent overflow and keeps the number manageable."
+    },
+    {
+      "content": "To optimize, think about how you can skip numbers that are guaranteed not to have non-decreasing digits. For example, if you know the first digit is greater than the next, you can skip further checks for that number."
+    },
+    {
+      "content": "You can use a recursive or iterative approach to generate all valid non-decreasing digit combinations in base b. This might help you count valid numbers without checking every single integer."
+    },
+    {
+      "content": "Make sure to handle leading zeros correctly when converting numbers. In base b, leading zeros do not count, so ensure your conversion logic accounts for this."
+    },
+    {
+      "content": "When counting valid numbers, consider using a dynamic programming approach to build up counts of valid numbers based on previously calculated values."
+    },
+    {
+      "content": "Think about how you can break down the problem. For example, instead of checking each number one by one, can you find a formula or pattern for counting non-decreasing numbers directly?"
+    },
+    {
+      "content": "Finally, remember to thoroughly test your solution with edge cases, such as very small ranges or ranges where all numbers are guaranteed to have non-decreasing digits."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= l.length <= r.length <= 100",
+    "2 <= b <= 10",
+    "l and r consist only of digits and do not contain leading zeros.",
+    "The value represented by l is less than or equal to the value represented by r.",
+    "Return the count modulo 10^9 + 7."
+  ]
+}

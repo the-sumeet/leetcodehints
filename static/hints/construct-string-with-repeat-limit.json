@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by counting the frequency of each character in the string `s`. This will help you understand which characters are available and how many times they can be used."
+    },
+    {
+      "content": "Consider using a max heap (or priority queue) to keep track of the characters based on their lexicographical order. This will allow you to always access the largest character available."
+    },
+    {
+      "content": "When constructing the result string, remember to respect the `repeatLimit`. You can only use a character up to `repeatLimit` times consecutively."
+    },
+    {
+      "content": "If you reach the `repeatLimit` for a character, you need to switch to the next largest character. Think about how to handle the case where the next character is also the same as the current one."
+    },
+    {
+      "content": "If you can't use the next character because it would violate the `repeatLimit`, consider using a different character temporarily to break the sequence. This will help you maintain the lexicographical order."
+    },
+    {
+      "content": "Make sure to handle the case where you might run out of characters to use. If you can't add any more characters without exceeding the `repeatLimit`, you should stop constructing the string."
+    },
+    {
+      "content": "While constructing the string, keep track of how many times you've used each character and update your counts accordingly. This will help you manage the remaining characters effectively."
+    },
+    {
+      "content": "When you have multiple characters available, always choose the largest one to maintain the lexicographically largest string. This is crucial for the solution."
+    },
+    {
+      "content": "Consider edge cases, such as when all characters are the same or when the `repeatLimit` is very high. How would your approach need to change in those scenarios?"
+    },
+    {
+      "content": "Finally, think about how to implement the logic in a loop that continues until you can no longer add characters to the result string. You might need to check conditions after each addition to ensure validity."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= repeatLimit <= s.length <= 10^5",
+    "s consists of lowercase English letters.",
+    "The result string must not exceed the repeatLimit for any character.",
+    "Return the lexicographically largest string possible, not necessarily using all characters from s."
+  ]
+}

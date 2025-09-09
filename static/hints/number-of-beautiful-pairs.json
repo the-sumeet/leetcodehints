@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what makes a pair beautiful. A pair of indices (i, j) is beautiful if the first digit of nums[i] and the last digit of nums[j] are coprime. Make sure you know how to extract these digits from the numbers."
+    },
+    {
+      "content": "To find the first digit of a number, you can repeatedly divide by 10 until the number is less than 10. For example, for `nums[i] = 234`, the first digit is `2`."
+    },
+    {
+      "content": "For the last digit, you can simply use the modulo operation. The last digit of any number can be found using `nums[j] % 10`. For instance, for `nums[j] = 567`, the last digit is `7`."
+    },
+    {
+      "content": "Remember that you need to check pairs where `0 <= i < j < nums.length`. This means you will be comparing elements in a way that avoids duplicates and ensures the correct order."
+    },
+    {
+      "content": "To determine if two numbers are coprime, you can use the greatest common divisor (gcd) function. If `gcd(firstDigit, lastDigit) == 1`, then the numbers are coprime."
+    },
+    {
+      "content": "Consider using a nested loop structure where the outer loop iterates through `i` and the inner loop iterates through `j`, starting from `i + 1`. This will help you check all valid pairs."
+    },
+    {
+      "content": "Keep track of a count variable to accumulate the number of beautiful pairs you find. Each time you find a pair that meets the coprime condition, increment this count."
+    },
+    {
+      "content": "Think about edge cases, such as when all numbers have the same first and last digits. How would this affect the count of beautiful pairs? Ensure your logic accounts for such scenarios."
+    },
+    {
+      "content": "You might want to create a helper function to determine if two digits are coprime. This will make your main logic cleaner and more readable."
+    },
+    {
+      "content": "Finally, remember to return the count of beautiful pairs at the end of your function. Ensure your return statement is correctly placed after all pairs have been evaluated."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 100",
+    "Each number in nums is between 1 and 9999, and no number ends with 0.",
+    "Indices are 0-based, and the pair must satisfy 0 <= i < j < nums.length.",
+    "Coprime condition is checked using gcd(firstDigit, lastDigit) == 1."
+  ]
+}

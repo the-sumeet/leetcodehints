@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input structure. You will be given an array of strings `words` and a stream of characters that you will process one at a time."
+    },
+    {
+      "content": "Focus on the method `query(char letter)`. This method should return `true` if any non-empty suffix of the current stream matches any string from the `words` array."
+    },
+    {
+      "content": "Consider how you will maintain the current stream of characters. You might want to use a list or a string to keep track of the characters received so far."
+    },
+    {
+      "content": "Think about how to efficiently check if a suffix of the current stream matches any word in the `words` array. A naive approach would involve checking each suffix against all words, which could be slow."
+    },
+    {
+      "content": "A Trie (prefix tree) could be a useful data structure here. You can insert all words into the Trie and then check for suffix matches efficiently."
+    },
+    {
+      "content": "When inserting words into the Trie, consider inserting them in reverse order. This allows you to check for suffixes by traversing the Trie from the last character of the stream."
+    },
+    {
+      "content": "Make sure to handle the case where the stream is empty. The first call to `query` should not return `true` unless a matching suffix is formed."
+    },
+    {
+      "content": "Keep track of the current position in the stream. You may want to use a pointer or an index to indicate how many characters you have processed."
+    },
+    {
+      "content": "Remember that the words can have different lengths. You should only check suffixes that are as long as the words you inserted into the Trie."
+    },
+    {
+      "content": "Consider edge cases where the stream is shorter than the longest word in `words`. Ensure your logic handles these cases without errors."
+    },
+    {
+      "content": "Think about the performance implications of your solution. You may need to optimize your Trie traversal to ensure that it runs efficiently within the constraints."
+    },
+    {
+      "content": "When checking for suffixes, you can start from the end of the current stream and move backwards, checking against the Trie for matches."
+    },
+    {
+      "content": "If you find a match while traversing the Trie, you should return `true`. If you reach the beginning of the stream without finding a match, return `false`."
+    },
+    {
+      "content": "Make sure to test your implementation with various inputs, especially edge cases like repeated characters or very long words."
+    },
+    {
+      "content": "Finally, ensure your implementation adheres to the constraints provided in the problem statement, particularly regarding the maximum number of queries and the length of words."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= words.length <= 2000",
+    "1 <= words[i].length <= 200",
+    "letter is a lowercase English letter.",
+    "At most 4 * 10^4 calls will be made to query."
+  ]
+}

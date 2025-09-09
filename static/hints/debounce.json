@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what debouncing means. It involves delaying the execution of a function until after a certain period has passed since it was last invoked. This is useful in scenarios like handling user input events."
+    },
+    {
+      "content": "Consider how you will store the state of the debounced function. You will need a variable to keep track of the timeout and the last invocation time to determine when to execute the function."
+    },
+    {
+      "content": "When the debounced function is called, check if there is an existing timeout. If there is, you should clear it to cancel the previous execution. This ensures that only the latest call is executed after the delay."
+    },
+    {
+      "content": "Think about how to handle the timing of the function calls. You can use `setTimeout` to delay the execution of the function. Remember to pass the correct parameters to the function when it finally executes."
+    },
+    {
+      "content": "Make sure to account for the time at which each call is made. You can calculate the delay based on the current time and the time of the last function call. This will help you determine when to execute the function."
+    },
+    {
+      "content": "Consider edge cases, such as when multiple calls are made at the same timestamp. You need to ensure that only the last call within the debounce period is executed."
+    },
+    {
+      "content": "As you implement the logic, remember to format the output correctly. The result should be an array of objects, each containing the time the function was executed and the inputs that were passed."
+    },
+    {
+      "content": "You might want to create a helper function to manage the timing logic. This function can be responsible for determining when to execute the debounced function based on the provided delay."
+    },
+    {
+      "content": "When testing your implementation, consider various scenarios including rapid successive calls, calls spaced out beyond the debounce time, and calls with different input values."
+    },
+    {
+      "content": "Finally, implement the core logic where you manage the timeout and track the last inputs. Your function should look something like this: \n\n```javascript\nlet timeout;\nfunction debouncedFunction(...args) {\n  clearTimeout(timeout);\n  timeout = setTimeout(() => { /* execute function with args */ }, t);\n}\n```"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= t <= 1000, 1 <= calls.length <= 10, 0 <= calls[i].t <= 1000, 0 <= calls[i].inputs.length <= 10.",
+    "Output format: An array of objects, each containing 't' (the time of execution) and 'inputs' (the parameters passed).",
+    "Ensure to handle calls made at the same time correctly, focusing on the last call within the debounce window."
+  ]
+}

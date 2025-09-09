@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to determine if a point is inside a rectangle. A point (x, y) is contained in a rectangle defined by (l, h) if 0 <= x <= l and 0 <= y <= h."
+    },
+    {
+      "content": "Consider iterating through each point and checking how many rectangles can contain it. This will help you understand the basic structure of your solution."
+    },
+    {
+      "content": "Think about the efficiency of your approach. A naive solution would involve a nested loop, checking each point against all rectangles, which could lead to a time complexity of O(n * m)."
+    },
+    {
+      "content": "Since the maximum constraints are large, consider sorting the rectangles based on their dimensions. This could help in optimizing the search for containing rectangles."
+    },
+    {
+      "content": "You can use binary search to find how many rectangles can contain a point. If you sort the rectangles by their lengths and heights, you can quickly find valid rectangles for each point."
+    },
+    {
+      "content": "Remember to handle edge cases where points lie exactly on the edges of rectangles. These points should still be counted as being within the rectangle."
+    },
+    {
+      "content": "When implementing the solution, ensure that you maintain the original order of points in your result array. You might want to store the indices of points while processing them."
+    },
+    {
+      "content": "After sorting the rectangles, consider using a two-pointer technique or a single pass through the rectangles for each point to count the number of containing rectangles efficiently."
+    },
+    {
+      "content": "Make sure to account for the constraints where the height of rectangles is capped at 100. This could simplify your checks for the y-coordinate of points."
+    },
+    {
+      "content": "Finally, when you have your counts for each point, return them in the order corresponding to the original points array. This is crucial for meeting the problem's requirements."
+    }
+  ],
+  "questionNotes": [
+    "1 <= rectangles.length, points.length <= 5 * 10^4",
+    "rectangles[i].length == points[j].length == 2",
+    "1 <= l_i, x_j <= 10^9",
+    "1 <= h_i, y_j <= 100",
+    "All rectangles and points are unique."
+  ]
+}

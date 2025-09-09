@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the elements in the grid. You have empty cells ('.'), walls ('#'), the starting point ('@'), keys (lowercase letters), and locks (uppercase letters). Make sure you understand how to navigate through these elements."
+    },
+    {
+      "content": "Consider how you can represent the state of your search. You might need to keep track of your current position, the keys you have collected, and the grid boundaries to avoid going out of bounds."
+    },
+    {
+      "content": "Think about how to move in the grid. You can move in four directions: up, down, left, and right. Make sure to check for walls and the boundaries of the grid before making a move."
+    },
+    {
+      "content": "When you encounter a key, you should update your state to reflect that you now possess that key. However, remember that you cannot pass through locks unless you have the corresponding key."
+    },
+    {
+      "content": "You need to determine how to track the keys you have collected. A bitmask can be an efficient way to represent the keys you have, especially since there are at most 6 keys."
+    },
+    {
+      "content": "Consider using a breadth-first search (BFS) approach. BFS is suitable here because you want to find the shortest path to collect all keys, exploring all possible paths equally."
+    },
+    {
+      "content": "When implementing BFS, use a queue to manage your current position and the state of keys collected. Each entry in the queue can represent a tuple of (current position, keys collected, steps taken)."
+    },
+    {
+      "content": "As you explore the grid, check if the current position contains a key or a lock. If it's a key, update your keys bitmask. If it's a lock, ensure you have the corresponding key before proceeding."
+    },
+    {
+      "content": "Keep track of visited states to avoid processing the same state multiple times. A state can be defined by both your current position and the keys you have collected."
+    },
+    {
+      "content": "Remember that the goal is to collect all keys. You can determine when you have all keys by checking if your keys bitmask matches the expected bitmask for all keys present in the grid."
+    },
+    {
+      "content": "Consider edge cases where walls completely block access to keys or locks. Ensure your algorithm can handle these situations gracefully and return -1 when necessary."
+    },
+    {
+      "content": "When you reach a position with a lock, ensure that you check your keys bitmask to see if you can pass through. This check is crucial to avoid getting stuck."
+    },
+    {
+      "content": "Make sure to return the number of steps taken once you have collected all keys. If you exhaust all possibilities without collecting all keys, return -1."
+    },
+    {
+      "content": "To summarize your approach: Use BFS to explore the grid, track your position and keys using a queue, and ensure you validate moves against walls and locks."
+    },
+    {
+      "content": "Finally, think about how you will construct the bitmask for the keys. You can use bitwise operations to set and check keys efficiently."
+    }
+  ],
+  "questionNotes": [
+    "The grid can contain walls, which cannot be traversed.",
+    "You can only pass through locks if you have the corresponding key.",
+    "There is exactly one key and one lock for each of the first k letters of the alphabet.",
+    "The number of keys is between 1 and 6, which allows for a bitmask representation.",
+    "If it is impossible to collect all keys, return -1."
+  ]
+}

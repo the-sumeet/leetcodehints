@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of preorder and inorder traversals. In preorder, the first element is always the root of the tree. For example, in the array [3,9,20,15,7], 3 is the root."
+    },
+    {
+      "content": "Next, look at the inorder traversal. This traversal gives you the elements in the left subtree, followed by the root, and then the elements in the right subtree. In [9,3,15,20,7], 3 is the root, and everything to the left (9) is in the left subtree, while everything to the right (15, 20, 7) is in the right subtree."
+    },
+    {
+      "content": "To construct the tree, you can use recursion. The base case for your recursive function will be when the preorder or inorder array is empty, which means you've reached a leaf node."
+    },
+    {
+      "content": "When you identify the root from the preorder array, you need to find its index in the inorder array. This index will help you determine the size of the left and right subtrees."
+    },
+    {
+      "content": "Once you have the index of the root in the inorder array, you can split the inorder array into left and right subtrees. The left subtree will be everything to the left of the root's index, and the right subtree will be everything to the right."
+    },
+    {
+      "content": "Similarly, you can split the preorder array. After the root, the next elements corresponding to the left subtree will be the same number as the size of the left subtree derived from the inorder array."
+    },
+    {
+      "content": "Remember to keep track of the indices you are working with in both the preorder and inorder arrays as you make recursive calls. You can pass these indices as parameters to your recursive function."
+    },
+    {
+      "content": "Consider edge cases such as when the tree has only one node or when the left or right subtree is empty. Your function should handle these cases gracefully."
+    },
+    {
+      "content": "When constructing the binary tree, ensure that you are creating new TreeNode instances for each node. This is crucial for building the tree structure correctly."
+    },
+    {
+      "content": "Finally, your recursive function should return the constructed TreeNode for the root of the subtree. This will eventually lead to the complete tree being constructed from the root down."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= preorder.length <= 3000, inorder.length == preorder.length",
+    "Values in preorder and inorder are unique.",
+    "Each value in inorder appears in preorder.",
+    "Preorder is guaranteed to be the preorder traversal of the tree.",
+    "Inorder is guaranteed to be the inorder traversal of the tree."
+  ]
+}

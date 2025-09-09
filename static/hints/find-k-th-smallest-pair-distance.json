@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to calculate the distance between two numbers. The distance between two integers `a` and `b` is defined as `|a - b|`. Make sure you can compute this for any two elements in the array."
+    },
+    {
+      "content": "Consider the constraints of the problem. You need to find the k-th smallest distance among all pairs. Remember that the pairs are defined as `(i, j)` where `0 <= i < j < nums.length`."
+    },
+    {
+      "content": "Think about how many pairs you can form from the array. For an array of size `n`, the total number of pairs is `n * (n - 1) / 2`. This is important for understanding the size of your output."
+    },
+    {
+      "content": "To find the k-th smallest distance, you might want to first sort the array. Sorting can help you easily calculate the distances between pairs."
+    },
+    {
+      "content": "Once the array is sorted, consider how you would generate all pairs. You can use a nested loop to iterate through the array and calculate the distances."
+    },
+    {
+      "content": "As you calculate distances, store them in a list or a set. Using a set can help you avoid duplicate distances, which is useful if you want unique distances."
+    },
+    {
+      "content": "You need to return the k-th smallest distance. After collecting all distances, sort them and access the k-1 index (since indexing starts at 0)."
+    },
+    {
+      "content": "Think about edge cases, such as when all elements in the array are the same. What would the distances look like in this case?"
+    },
+    {
+      "content": "If the array is large, generating all pairs and sorting their distances might be inefficient. Consider using a more optimal approach, like binary search on the distance values."
+    },
+    {
+      "content": "To apply binary search, you need to define the search space. The minimum distance is `0` (when pairs are equal), and the maximum distance is `max(nums) - min(nums)`."
+    },
+    {
+      "content": "Within your binary search, you will need a helper function to count how many pairs have a distance less than or equal to a given value. This will help you determine if you need to search higher or lower."
+    },
+    {
+      "content": "When counting pairs for a specific distance, consider using a two-pointer technique on the sorted array. This can help you efficiently count pairs without generating all of them explicitly."
+    },
+    {
+      "content": "Remember to handle the case where `k` is equal to the total number of unique distances. Make sure your implementation can return the correct distance in this scenario."
+    },
+    {
+      "content": "As you implement your solution, keep track of edge cases such as arrays with duplicate values and very small or very large values of `k`."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct format. You should return a single integer representing the k-th smallest distance."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 2 <= n <= 10^4",
+    "0 <= nums[i] <= 10^6",
+    "1 <= k <= n * (n - 1) / 2",
+    "Pairs are defined as (i, j) where 0 <= i < j < nums.length",
+    "Consider cases with duplicate values in nums"
+  ]
+}

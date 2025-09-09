@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of an n-ary tree. Each node can have multiple children, and the traversal you need to perform is postorder, which means you should visit all children before visiting the parent node."
+    },
+    {
+      "content": "In postorder traversal, the order of visiting nodes is: left children first, then right children, and finally the parent node. For an n-ary tree, this means visiting all children before the parent."
+    },
+    {
+      "content": "Consider how you would represent the n-ary tree in code. Each node could be represented with a class that has a value and a list of children. For example: `class Node { int val; List<Node> children; }`."
+    },
+    {
+      "content": "Think about how you might implement a recursive solution first. You can define a helper function that processes each node, recursively calling itself for each child before adding the node's value to the result list."
+    },
+    {
+      "content": "When implementing the recursive solution, ensure to handle the base case where the node is null. This will help avoid null pointer exceptions."
+    },
+    {
+      "content": "Now, let's consider an iterative approach. One common way to perform postorder traversal iteratively is to use a stack. You can push nodes onto the stack and then process them in reverse order."
+    },
+    {
+      "content": "In your iterative solution, you might want to first push the root node onto the stack, then while the stack is not empty, pop a node and push its children onto the stack. Remember to reverse the result at the end to achieve postorder."
+    },
+    {
+      "content": "Don't forget to handle edge cases such as an empty tree (where the root is null). Your function should return an empty list in this case."
+    },
+    {
+      "content": "As you build your solution, consider the constraints: the number of nodes can be up to 10,000, and the height can be up to 1000. Make sure your solution is efficient and can handle these limits."
+    },
+    {
+      "content": "Finally, ensure your output format matches the requirements. You need to return a list of node values in the order they were visited during the postorder traversal. You can start with a list and append values as you process nodes."
+    }
+  ],
+  "questionNotes": [
+    "The input is represented in level order, with null values separating groups of children.",
+    "The number of nodes can be in the range [0, 10^4].",
+    "Node values are between 0 and 10^4.",
+    "The height of the tree is less than or equal to 1000.",
+    "The output should be a list of node values in postorder."
+  ]
+}

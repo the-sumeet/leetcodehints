@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the graph structure. Each vertex is connected by edges, and you can represent this graph using an adjacency list or matrix. Think about how you can traverse this graph to find paths."
+    },
+    {
+      "content": "Consider how the traffic signal affects your movement. You can only leave a vertex when the signal is green, which changes every 'change' minutes. This means you need to track the time spent waiting at each vertex."
+    },
+    {
+      "content": "Focus on finding the shortest path from vertex 1 to vertex n. You can use Dijkstra's algorithm or a modified BFS to explore paths while considering the time taken to traverse edges."
+    },
+    {
+      "content": "Remember that you can enter a vertex at any time, but you must wait for the green signal to leave. Think about how you can calculate the waiting time based on the current time and the signal change interval."
+    },
+    {
+      "content": "When calculating the time to leave a vertex, consider the formula: if 'current_time' is the time you arrive, the next green signal time can be calculated as `next_green_time = current_time + (change - (current_time % change)) % change`."
+    },
+    {
+      "content": "As you explore paths, keep track of both the minimum and second minimum times to reach vertex n. You can use a priority queue to efficiently manage the times you encounter."
+    },
+    {
+      "content": "Make sure to handle cases where you might encounter the same vertex multiple times. You need to ensure that you are considering the second minimum time correctly, so avoid revisiting paths that do not lead to a better time."
+    },
+    {
+      "content": "Think about edge cases, such as when there are only two vertices. How does the signal timing affect the second minimum time in such a scenario?"
+    },
+    {
+      "content": "Consider the implications of the graph being connected. This guarantees that there is always a path from vertex 1 to vertex n, but it also means you need to account for all possible paths."
+    },
+    {
+      "content": "When implementing your solution, be careful with the data structures you choose for storing times. A min-heap can help you efficiently retrieve the smallest times."
+    },
+    {
+      "content": "As you implement the algorithm, remember to update the second minimum time only when you find a time that is strictly greater than the current minimum. This requires careful comparison."
+    },
+    {
+      "content": "You might need to maintain a list or set to track the unique times you've encountered. This will help you ensure that your second minimum calculation is correct."
+    },
+    {
+      "content": "When you reach vertex n, check both the minimum and second minimum times you have recorded. Make sure to return the second minimum time as your final answer."
+    },
+    {
+      "content": "Before finalizing your code, test it with various scenarios, including edge cases with minimal vertices and maximum edges. This will help ensure that your logic holds under different conditions."
+    },
+    {
+      "content": "Finally, think about how you would handle input and output. Ensure your function signature matches the expected format and that you return the correct value."
+    }
+  ],
+  "questionNotes": [
+    "The graph is bi-directional and connected, meaning every vertex can be reached from any other vertex.",
+    "You can enter a vertex at any time, but you can only leave when the signal is green.",
+    "The second minimum value is defined as the smallest value strictly larger than the minimum value.",
+    "Constraints: 2 <= n <= 10^4, edges.length <= min(2 * 10^4, n * (n - 1) / 2), 1 <= time, change <= 10^3.",
+    "Each vertex has a traffic signal that changes at the same time, and all signals start green at the beginning."
+  ]
+}

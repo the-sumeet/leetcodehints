@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the initial state of the string `s`. It begins as all zeros, so your first step should be to identify where `target` has '1's that need to be flipped."
+    },
+    {
+      "content": "Consider how flipping at index `i` affects the bits from `i` to the end of the string. For example, if you flip at index 2 in the string '00000', it will change to '00111'."
+    },
+    {
+      "content": "Notice that every time you encounter a change in the bit from `0` to `1` or from `1` to `0` as you traverse `target`, it indicates a potential flip operation."
+    },
+    {
+      "content": "As you iterate through `target`, keep track of the current state of `s` as you would expect it to be after each flip. This will help you determine when a flip is necessary."
+    },
+    {
+      "content": "Think about how many times you need to flip based on the transitions between segments of '0's and '1's in `target`. Each transition might require a flip."
+    },
+    {
+      "content": "When counting flips, remember that consecutive segments of the same bit can be handled with a single flip. For example, '000111' can be flipped in one operation."
+    },
+    {
+      "content": "Try to visualize the process: if `target` starts with '1', you will need to flip at the start. If it starts with '0', you may not need to flip until you encounter the first '1'."
+    },
+    {
+      "content": "Keep an eye on edge cases: if `target` is all '0's, you don't need any flips at all. This can save you from unnecessary operations."
+    },
+    {
+      "content": "When you reach the end of the string, check if the last bit of `s` matches the last bit of `target`. If they don't match, it may indicate one final flip is required."
+    },
+    {
+      "content": "To summarize your approach, iterate through `target`, count the transitions between '0' and '1', and that count will give you the minimum number of flips needed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == target.length, 1 <= n <= 10^5.",
+    "The string `target` consists only of '0's and '1's.",
+    "The operations can flip all bits from index `i` to the end of the string.",
+    "You need to return the minimum number of operations required to make `s` equal to `target`."
+  ]
+}

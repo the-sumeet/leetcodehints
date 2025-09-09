@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two tables: 'Accounts' and 'Transactions'. Each account has an 'account_id' and a 'max_income', while each transaction has a 'transaction_id', 'account_id', 'type', 'amount', and 'day'."
+    },
+    {
+      "content": "Identify how to relate the two tables. Each transaction is linked to an account via the 'account_id'. You will need to join these two tables to analyze the transactions for each account."
+    },
+    {
+      "content": "Focus on the 'Creditor' transactions first. You need to sum up the amounts of all 'Creditor' transactions for each account. This will help you determine if any account exceeds its 'max_income'."
+    },
+    {
+      "content": "When summing the 'Creditor' transactions, ensure you are only considering transactions that are associated with the correct account. You might want to use a loop or a mapping structure to achieve this."
+    },
+    {
+      "content": "Don't forget to check for edge cases. For example, what if an account has no 'Creditor' transactions? Make sure your solution can handle accounts with zero transactions gracefully."
+    },
+    {
+      "content": "After calculating the total 'Creditor' amounts for each account, compare these totals against the 'max_income' for each account. Create a list of accounts that exceed their maximum income."
+    },
+    {
+      "content": "Remember to check the transaction types carefully. You only want to sum amounts from 'Creditor' transactions, so ensure your filtering logic is correct."
+    },
+    {
+      "content": "Consider the output format. You may need to return a list of 'account_id's that are considered suspicious. Think about how you will structure this output."
+    },
+    {
+      "content": "As you finalize your logic, think about how to handle accounts with the same 'max_income' but different transaction totals. You may need to clarify how to treat these cases in your output."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient. If you have a large number of transactions or accounts, consider how you can minimize the number of passes through the data."
+    }
+  ],
+  "questionNotes": [
+    "Each account is uniquely identified by 'account_id'.",
+    "Transaction types are either 'Creditor' or 'Debtor'. Only 'Creditor' transactions affect the income total.",
+    "The output should be a list of 'account_id's that exceed their 'max_income'.",
+    "Handle cases where accounts have no transactions or only 'Debtor' transactions."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the game mechanics. The Mouse starts at node 1 and aims to reach the Hole at node 0, while the Cat starts at node 2 and tries to catch the Mouse. Think about how the players can move and what their goals are."
+    },
+    {
+      "content": "Consider the implications of optimal play. Both the Mouse and the Cat will make moves that maximize their chances of winning. What strategies would each player employ to either escape or capture?"
+    },
+    {
+      "content": "Identify the end conditions of the game. The Cat wins if it occupies the same node as the Mouse, the Mouse wins if it reaches the Hole, and the game is a draw if a position is repeated with the same player's turn."
+    },
+    {
+      "content": "Visualize the graph structure. Since the graph is undirected, each edge can be traversed in both directions. This can influence the movement options available to both players."
+    },
+    {
+      "content": "Think about the implications of the Cat not being able to move to the Hole (node 0). This restriction can affect the Cat's strategy significantly. How does this limitation change the dynamics of the game?"
+    },
+    {
+      "content": "Consider using a recursive approach with memoization to explore the game states. Each state can be represented by the current positions of the Mouse and Cat, as well as whose turn it is."
+    },
+    {
+      "content": "When implementing the recursive function, define the base cases clearly. For example, if the Cat and Mouse are on the same node, the Cat wins. If the Mouse reaches the Hole, it wins."
+    },
+    {
+      "content": "Think about how to handle the draw condition. If a state has been visited before with the same player's turn, you should return a draw. You may want to use a set to track visited states."
+    },
+    {
+      "content": "Consider the order of moves. The Mouse moves first, which gives it an initial advantage. How can you leverage this in your recursive exploration?"
+    },
+    {
+      "content": "Pay attention to the graph's constraints. The graph is guaranteed to be valid with unique edges, and the number of nodes is between 3 and 50. This can help you optimize your solution."
+    },
+    {
+      "content": "Think about the potential for pruning your search space. If the Cat is in a position where it cannot catch the Mouse regardless of its move, can you skip exploring those paths?"
+    },
+    {
+      "content": "Consider how to represent the state of the game. A tuple containing the Mouse's position, the Cat's position, and a turn indicator (0 for Mouse, 1 for Cat) could be useful."
+    },
+    {
+      "content": "Remember to check all possible moves for both the Mouse and the Cat. Each player's turn should explore all adjacent nodes from their current position."
+    },
+    {
+      "content": "Ensure that your function returns the correct values based on the game's outcome. You need to return 1 for Mouse win, 2 for Cat win, and 0 for a draw."
+    },
+    {
+      "content": "As a final step, think about edge cases. For example, what happens if the Mouse is one move away from the Hole? Or if the Cat is one move away from the Mouse? How should these scenarios be handled?"
+    }
+  ],
+  "questionNotes": [
+    "The Mouse starts at node 1, the Cat starts at node 2, and the Hole is at node 0.",
+    "The game ends when the Cat catches the Mouse, the Mouse reaches the Hole, or a position is repeated.",
+    "The Cat cannot move to the Hole (node 0).",
+    "The graph is undirected, and each edge is unique.",
+    "Return 1 if the Mouse wins, 2 if the Cat wins, or 0 if it's a draw."
+  ]
+}

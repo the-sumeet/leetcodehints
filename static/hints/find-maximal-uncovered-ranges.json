@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. You are given a total range (an integer) and a list of intervals. Each interval represents a range of numbers that are covered. Make sure you can visualize this with a number line."
+    },
+    {
+      "content": "Think about how to represent the covered ranges on a number line. You can use a boolean array or a set to keep track of which numbers are covered by the intervals. This will help you identify the uncovered ranges later."
+    },
+    {
+      "content": "Consider how to iterate through the list of intervals. You might want to sort the intervals first based on their starting values to make it easier to determine which parts of the range are covered."
+    },
+    {
+      "content": "When you process each interval, think about how to merge overlapping intervals. If an interval starts before the current one ends, they overlap and should be considered as a single covered range."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when the covered intervals completely overlap the total range or when there are no intervals at all. How should your solution handle these scenarios?"
+    },
+    {
+      "content": "After determining the covered ranges, the next step is to find the gaps. Iterate through the total range and check for any numbers that are not covered by the intervals."
+    },
+    {
+      "content": "When you find uncovered numbers, think about how to group them into ranges. For example, if you find gaps at indices 1, 2, and 4, you should represent them as ranges [1, 2] and [4, 4]."
+    },
+    {
+      "content": "Remember to handle the edges of the total range. If the first number (0) is uncovered, it should start a new range, and similarly for the last number in the total range."
+    },
+    {
+      "content": "As you prepare to return the uncovered ranges, ensure that they are formatted correctly. You might want to return them as a list of lists, where each inner list represents a range."
+    },
+    {
+      "content": "Finally, review your logic for any potential off-by-one errors, especially when dealing with the start and end of the ranges. Make sure your final output includes all uncovered ranges without any duplicates."
+    }
+  ],
+  "questionNotes": [
+    "The total range is defined by a single integer.",
+    "Intervals are given as a list of lists, where each inner list has two integers representing the start and end of the interval.",
+    "Intervals may overlap, and you should merge them before finding uncovered ranges.",
+    "Consider edge cases such as no intervals or complete coverage of the total range.",
+    "Return format should be a list of lists, where each inner list represents an uncovered range."
+  ]
+}

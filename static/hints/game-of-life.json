@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the rules of the Game of Life. Each cell's next state depends on its current state and the number of live neighbors it has. Make sure you can identify how many live neighbors each cell has."
+    },
+    {
+      "content": "Consider how you will count the live neighbors for each cell. You can iterate through the 8 possible directions (up, down, left, right, and the four diagonals) to check the state of neighboring cells."
+    },
+    {
+      "content": "Since you need to update the board simultaneously, think about how you can store the next state of each cell without affecting the current state. One approach is to use temporary states, like using -1 for live cells that will die and 2 for dead cells that will become live."
+    },
+    {
+      "content": "When counting neighbors, remember to check the boundaries of the board to avoid index errors. Ensure that your neighbor-checking logic accounts for cells at the edges and corners of the grid."
+    },
+    {
+      "content": "You can use a nested loop to traverse the board. For each cell, count its live neighbors and determine its next state based on the rules provided. Keep track of the counts in a separate variable."
+    },
+    {
+      "content": "After determining the next states using temporary markers, you will need a second pass to convert these markers back to 0s and 1s. This is where you will finalize the state of the board."
+    },
+    {
+      "content": "Think about edge cases, such as when all cells are dead or all cells are alive. What should the output look like in these scenarios? Ensure your code handles these cases correctly."
+    },
+    {
+      "content": "If you want to optimize space, consider modifying the board in-place. You can use a bit manipulation technique where you encode the next state in the current state using two bits."
+    },
+    {
+      "content": "Remember that the board is finite in this problem, but the concept can be applied to an infinite board. For this problem, focus on the given constraints and ensure your solution works within the bounds of the provided grid."
+    },
+    {
+      "content": "Finally, implement the logic to update the board based on your temporary states. After marking the next states, iterate through the board to apply the changes. Make sure to test your implementation with various test cases."
+    }
+  ],
+  "questionNotes": [
+    "The board is an m x n grid where m and n can range from 1 to 25.",
+    "Each cell can either be 0 (dead) or 1 (live).",
+    "You must update the board in-place without using additional space for another grid.",
+    "The next state is determined simultaneously for all cells based on the current state."
+  ]
+}

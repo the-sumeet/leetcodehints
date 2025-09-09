@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the array. You have `n` elements where `n - 2` are special numbers, one is their sum, and one is the outlier. This means you need to identify which elements can be grouped as special numbers."
+    },
+    {
+      "content": "Consider a way to iterate through the array to identify potential candidates for the sum. You can use a nested loop to check pairs of numbers and see if their sum exists in the array."
+    },
+    {
+      "content": "As you identify pairs that could potentially be the special numbers, keep track of the sum and check if it exists in the array. Remember, the indices of these elements must be distinct."
+    },
+    {
+      "content": "While checking for the sum in the array, also maintain a list of elements that could be considered as outliers. An outlier is any number that is not part of the identified special numbers or their sum."
+    },
+    {
+      "content": "Make sure to handle cases where the special numbers may have the same value. For example, in the array [1, 1, 1, 1, 1, 5, 5], the special numbers can still be chosen from the same value."
+    },
+    {
+      "content": "Once you have identified potential sums and their corresponding special numbers, filter out those numbers from the array to find the outlier candidates."
+    },
+    {
+      "content": "You need to find the maximum outlier from the candidates. Keep track of the largest number that is not part of the special numbers or their sum."
+    },
+    {
+      "content": "Consider edge cases where the outlier might be negative or zero. Ensure your logic accounts for all possible values within the given constraints."
+    },
+    {
+      "content": "Remember that the problem guarantees at least one potential outlier exists. This means you won't have to handle cases where no outlier is found."
+    },
+    {
+      "content": "To finalize your solution, after filtering out the special numbers and their sum, simply return the maximum value from your list of outlier candidates."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= nums.length <= 10^5",
+    "-1000 <= nums[i] <= 1000",
+    "There are exactly n - 2 special numbers.",
+    "Indices of special numbers, their sum, and the outlier must be distinct.",
+    "At least one potential outlier exists in the input."
+  ]
+}

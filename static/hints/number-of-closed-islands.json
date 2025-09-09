@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the grid. Each cell can either be land (0) or water (1). Your goal is to find groups of land (0s) that are completely surrounded by water (1s)."
+    },
+    {
+      "content": "Consider how you will traverse the grid. You can use Depth-First Search (DFS) or Breadth-First Search (BFS) to explore connected components of land. Think about how you will mark cells as visited."
+    },
+    {
+      "content": "When you encounter a land cell (0), you need to check if it is part of a closed island. A closed island must not touch the grid's edges. How will you handle the edges of the grid?"
+    },
+    {
+      "content": "As you traverse, keep track of whether the island touches any edges of the grid. If it does, it cannot be a closed island. You may want to use a flag to indicate this."
+    },
+    {
+      "content": "Remember to count each closed island only once. After marking all cells of a closed island as visited, increment your closed island count."
+    },
+    {
+      "content": "Pay attention to the constraints given. The grid can be as large as 100x100. Ensure your solution is efficient enough to handle the upper limits without timing out."
+    },
+    {
+      "content": "Think about edge cases, such as grids that are entirely water or entirely land. What should your function return in these cases?"
+    },
+    {
+      "content": "When implementing your DFS or BFS, be careful with the directions you explore. You should only move in four directions: up, down, left, and right."
+    },
+    {
+      "content": "As you explore each island, if you find that any part of it touches the grid boundary, you should immediately stop and mark it as not a closed island."
+    },
+    {
+      "content": "Finally, ensure that your function returns the count of closed islands. You might want to return this count after processing the entire grid."
+    }
+  ],
+  "questionNotes": [
+    "Grid dimensions: 1 <= grid.length, grid[0].length <= 100",
+    "Cell values: 0 (land) or 1 (water)",
+    "An island is a maximal 4-directionally connected group of 0s.",
+    "A closed island is completely surrounded by 1s.",
+    "Return the number of closed islands."
+  ]
+}

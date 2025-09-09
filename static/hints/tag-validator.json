@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the overall structure of the input string. It should begin with a start tag and end with a corresponding end tag. For example, in `<DIV>...</DIV>`, `<DIV>` is the start tag and `</DIV>` is the end tag."
+    },
+    {
+      "content": "Extract the start tag and end tag from the input string. Ensure that the start tag is followed by content and the end tag is at the end of the string. You can use string manipulation functions to isolate these components."
+    },
+    {
+      "content": "Check if the start tag and end tag have the same TAG_NAME. The TAG_NAME should be a sequence of uppercase letters and must be between 1 and 9 characters long."
+    },
+    {
+      "content": "Implement a function to validate the TAG_NAME. It should only allow uppercase letters and check the length constraint. For example, `isValidTagName('DIV')` should return true, while `isValidTagName('div')` should return false."
+    },
+    {
+      "content": "Next, focus on the TAG_CONTENT between the start and end tags. This content can include text, other valid closed tags, and CDATA sections. Make sure to handle these cases distinctly."
+    },
+    {
+      "content": "Identify CDATA sections in the TAG_CONTENT. They start with `<![CDATA[` and end with `]]>`. Any content within these markers should be treated as plain text and not parsed for tags."
+    },
+    {
+      "content": "When parsing TAG_CONTENT, keep track of nested tags. Use a stack to manage opened tags and ensure that every opened tag has a corresponding closed tag."
+    },
+    {
+      "content": "For every start tag you encounter, push it onto the stack. When you find an end tag, pop from the stack and check if the popped tag matches the end tag's TAG_NAME."
+    },
+    {
+      "content": "Handle unmatched tags carefully. If you encounter an end tag for which there is no matching start tag in the stack, the code is invalid."
+    },
+    {
+      "content": "Consider edge cases such as empty TAG_CONTENT or multiple consecutive tags. Ensure that your implementation can handle these scenarios without errors."
+    },
+    {
+      "content": "Be cautious of unmatched `<` or `>` characters. If you find a `<` without a corresponding `>`, it should invalidate the entire code snippet."
+    },
+    {
+      "content": "Remember to validate that there are no invalid TAG_NAMES in the TAG_CONTENT. If you encounter a tag that does not conform to the rules, the code should be deemed invalid."
+    },
+    {
+      "content": "As you build your solution, write unit tests for various scenarios, including valid and invalid cases. This will help ensure your implementation is robust."
+    },
+    {
+      "content": "Make sure to check for any extra characters outside of the expected format. For example, characters after the end tag should not be present."
+    },
+    {
+      "content": "Finally, ensure your function returns a boolean value indicating whether the code is valid or not. Use clear and concise return statements to reflect the validity of the input."
+    }
+  ],
+  "questionNotes": [
+    "The TAG_NAME must only contain uppercase letters and be between 1 and 9 characters long.",
+    "The code must start and end with a valid closed tag.",
+    "CDATA sections should not be parsed for tags and should be treated as plain text.",
+    "Unmatched tags and invalid TAG_NAMES will render the code invalid.",
+    "The input string length is constrained between 1 and 500 characters."
+  ]
+}

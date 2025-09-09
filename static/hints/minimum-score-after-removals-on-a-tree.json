@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Understand the structure of a tree. A tree with n nodes has exactly n-1 edges, and it is connected and acyclic. Make sure you visualize the tree based on the edges provided."
+    },
+    {
+      "content": "The goal is to remove two distinct edges to create three separate components. Think about how removing edges affects the connectivity of the tree."
+    },
+    {
+      "content": "Each component formed after removing the edges will have its own set of nodes. You will need to calculate the XOR of the values of these nodes for each component."
+    },
+    {
+      "content": "Remember that the XOR operation has properties such as commutativity and associativity. This means the order in which you calculate the XOR does not matter."
+    },
+    {
+      "content": "When you remove two edges, you will have to explore combinations of edges to find the best pair that minimizes the score. Consider how many edges you have to choose from."
+    },
+    {
+      "content": "For each pair of removed edges, you will need to traverse the tree to determine the nodes in each of the three components. Think about how to efficiently traverse the tree."
+    },
+    {
+      "content": "Use Depth-First Search (DFS) or Breadth-First Search (BFS) to explore the components after removing edges. This will help you gather the nodes in each component."
+    },
+    {
+      "content": "As you compute the XOR for each component, keep track of the maximum and minimum XOR values. You will need these to calculate the score."
+    },
+    {
+      "content": "The score is defined as the difference between the largest and smallest XOR values from the three components. Make sure to implement this calculation correctly."
+    },
+    {
+      "content": "Consider edge cases such as when all node values are the same or when the tree is very small. How would these cases affect your score calculation?"
+    },
+    {
+      "content": "When iterating through pairs of edges to remove, ensure that you do not remove the same edge twice. Use a nested loop to explore all unique pairs."
+    },
+    {
+      "content": "You need to return the minimum score found after testing all pairs of edge removals. Keep a variable to track the minimum score as you iterate."
+    },
+    {
+      "content": "Make sure to handle the constraints properly, especially the size of the input. You should aim for an efficient solution since n can be as large as 1000."
+    },
+    {
+      "content": "Think about the time complexity of your approach. With n nodes, how can you ensure that your solution runs efficiently within the limits?"
+    },
+    {
+      "content": "Before finalizing your solution, write test cases to validate your logic. Consider edge cases and typical cases to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 3 <= n <= 1000, 1 <= nums[i] <= 10^8, edges.length == n - 1.",
+    "The tree is undirected and connected, meaning there is a path between any two nodes.",
+    "You must return the minimum score after testing all pairs of edge removals.",
+    "Ensure that the edges removed are distinct and consider all unique pairs.",
+    "The score is defined as the difference between the maximum and minimum XOR values from the three components."
+  ]
+}

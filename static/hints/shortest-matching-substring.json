@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the two '*' characters in the pattern string `p`. These '*' characters can match any sequence of characters in the string `s`, including an empty sequence."
+    },
+    {
+      "content": "Consider how the '*' characters divide the pattern `p` into three parts: the substring before the first '*', the substring between the two '*', and the substring after the second '*'."
+    },
+    {
+      "content": "Think about how you can find the first part of `p` in `s`. You can use a simple search method to locate the starting index of the first substring that matches the part before the first '*'."
+    },
+    {
+      "content": "Once you find the first part, remember that the substring after the first '*' can be matched by any sequence of characters. Focus on finding the second part of `p` after the first '*' has been matched."
+    },
+    {
+      "content": "After matching the first part, you will need to find the second part of `p` after the second '*'. This means you will need to continue searching in `s` from the position where the first part ended."
+    },
+    {
+      "content": "Consider using two pointers or indices: one to track where you are in `s` and another to track your position in `p`. This will help you manage the matching process effectively."
+    },
+    {
+      "content": "Don't forget that the '*' can match zero characters. This means that if the part before the first '*' can be matched at the start of `s`, you should also consider this case."
+    },
+    {
+      "content": "When you find a match for the second part of `p`, calculate the length of the substring in `s` that matches the entire pattern `p`. Keep track of the minimum length found so far."
+    },
+    {
+      "content": "If you find multiple valid substrings in `s` that match `p`, make sure to return the length of the shortest one. You might want to initialize a variable to keep track of the minimum length."
+    },
+    {
+      "content": "Edge cases include scenarios where `s` is very short or where the parts of `p` are very sparse. Ensure your implementation can handle these gracefully."
+    },
+    {
+      "content": "Consider what to return if no valid substring is found. The problem states that you should return -1 in this case, so be sure to implement this check."
+    },
+    {
+      "content": "Remember that the empty substring is considered valid. If `p` consists only of '*' characters, the shortest matching substring in `s` is of length 0."
+    },
+    {
+      "content": "As you implement your solution, think about how you can optimize the search process. For example, you might want to skip unnecessary comparisons once you find a match."
+    },
+    {
+      "content": "You can use regular expressions to simplify the matching process. However, be cautious about performance, especially given the constraints on the length of `s` and `p`."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases, such as when `s` is the same as `p` or when `p` contains only '*' characters. This will help ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5, 2 <= p.length <= 10^5",
+    "p contains exactly two '*' characters.",
+    "The empty substring is considered valid.",
+    "Return -1 if no matching substring is found."
+  ]
+}

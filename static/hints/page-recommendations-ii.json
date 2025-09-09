@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the data structure provided in the input. You have two main entities: Friendship and Likes. Each entity has a specific format that you need to parse correctly."
+    },
+    {
+      "content": "Identify the relationships between users based on the Friendship data. Each user can have multiple friends, and this will be crucial for determining which pages to recommend."
+    },
+    {
+      "content": "Next, focus on the Likes data. Each user can like multiple pages. Consider how you will store this information, perhaps using a dictionary where the key is the user ID and the value is a list of liked pages."
+    },
+    {
+      "content": "Think about how to find recommendations for a specific user. You might want to gather all the pages liked by their friends first, as this will form the basis of your recommendations."
+    },
+    {
+      "content": "Consider how to handle duplicate page likes. If a friend likes the same page multiple times, you should only count it once when generating recommendations."
+    },
+    {
+      "content": "You need to ensure that you do not recommend pages that the user has already liked. This means you will need to keep track of the pages liked by the user themselves."
+    },
+    {
+      "content": "When aggregating likes from friends, think about using a frequency count. This will help you determine which pages are the most liked among the friends."
+    },
+    {
+      "content": "After gathering the pages liked by friends, sort them based on the frequency of likes. You might want to use a max-heap or simply sort the list after counting."
+    },
+    {
+      "content": "Make sure to consider edge cases, such as when a user has no friends or when none of their friends have liked any pages. How will your solution handle these situations?"
+    },
+    {
+      "content": "As you prepare to return the recommendations, remember to limit the number of recommendations to a specific count. Decide how you will handle ties in the frequency count."
+    },
+    {
+      "content": "Think about the return format. You might want to return a list of page IDs, but ensure that they are unique and sorted as per the requirements."
+    },
+    {
+      "content": "Consider the performance of your solution. If there are many users and pages, how will you ensure that your solution runs efficiently? Look into the time complexity of your approach."
+    },
+    {
+      "content": "You might want to create helper functions to modularize your code. For example, one function could handle parsing the input, while another could handle the recommendation logic."
+    },
+    {
+      "content": "As you finalize your logic, think through the entire flow of data from input parsing to output generation. Ensure that each part of your code connects logically."
+    },
+    {
+      "content": "Before coding, sketch out a plan or pseudocode that outlines the main steps of your algorithm. This will help clarify your approach and make implementation smoother."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of two tables: Friendship and Likes.",
+    "Friendship table contains pairs of user IDs indicating friendships.",
+    "Likes table contains user IDs and the pages they liked.",
+    "Ensure to handle duplicate likes and avoid recommending pages the user already likes.",
+    "Return a list of unique page IDs sorted by the number of likes from friends."
+  ]
+}

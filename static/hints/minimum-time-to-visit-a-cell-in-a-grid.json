@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. Each cell has a time value that indicates when you can enter that cell. You begin at the top-left corner (0, 0) at time 0."
+    },
+    {
+      "content": "Consider the movement options available to you. You can move up, down, left, or right. Think about how you would track your position and the time taken to move."
+    },
+    {
+      "content": "Remember that you can only visit a cell if the current time is greater than or equal to the value in that cell. This constraint is crucial for determining valid moves."
+    },
+    {
+      "content": "Think about how to represent the state of your traversal. You might want to keep track of the current position and the time at which you arrive at that position."
+    },
+    {
+      "content": "Consider using a priority queue or a min-heap to always expand the least time-consuming path first. This can help you efficiently find the minimum time to reach the bottom-right cell."
+    },
+    {
+      "content": "You will need to explore all possible paths from the starting cell to the destination cell. Use a breadth-first search (BFS) or Dijkstra's algorithm approach to explore these paths."
+    },
+    {
+      "content": "When you move to a new cell, calculate the time it would take to reach that cell and check if it is valid. If it is valid, add it to your exploration queue."
+    },
+    {
+      "content": "Make sure to keep track of the minimum time required to reach each cell. You can use a 2D array to store the minimum time for each cell as you explore."
+    },
+    {
+      "content": "Consider edge cases where the grid has cells with very high values or where paths are blocked. Ensure your algorithm can handle these scenarios gracefully."
+    },
+    {
+      "content": "Think about how to handle cells that you cannot reach. If you finish exploring and have not reached the bottom-right cell, you should return -1."
+    },
+    {
+      "content": "As you implement your algorithm, ensure that you do not revisit cells unnecessarily. You can mark cells as visited or only explore them if you find a quicker route."
+    },
+    {
+      "content": "Pay attention to the constraints of the problem. The grid can be quite large, so make sure your solution is efficient enough to handle the maximum input sizes."
+    },
+    {
+      "content": "When implementing your priority queue, ensure that you are correctly handling the time comparison. The priority should be based on the time at which you can enter the cell."
+    },
+    {
+      "content": "After implementing the core logic, test your solution with various edge cases, including grids where the bottom-right cell is unreachable."
+    },
+    {
+      "content": "Finally, ensure that your return statement is correctly implemented. If you reach the bottom-right cell, return the time; otherwise, return -1."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == grid.length, n == grid[i].length, 2 <= m, n <= 1000, 4 <= m * n <= 10^5, 0 <= grid[i][j] <= 10^5, grid[0][0] == 0.",
+    "You can only visit a cell if the current time is >= grid[row][col].",
+    "You must return -1 if the bottom-right cell cannot be visited."
+  ]
+}

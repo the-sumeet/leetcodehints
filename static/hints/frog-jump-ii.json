@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the frog's movement. The frog can jump to any stone at most once, which means that the order of jumps matters. Think about how to represent the frog's journey from the first stone to the last and back."
+    },
+    {
+      "content": "Consider the definition of the 'cost' of a path. The cost is determined by the maximum jump length in the path. This means you need to keep track of the longest jump the frog makes during its journey."
+    },
+    {
+      "content": "Since the stones are sorted in strictly increasing order, the maximum jump will always be between the first and last stone, or between two stones that the frog jumps over. How can you leverage this property to minimize the maximum jump?"
+    },
+    {
+      "content": "Think about possible paths the frog can take. A simple path is jumping directly to the last stone and then returning. What is the maximum jump in this case? Can you think of other paths that might yield a smaller maximum jump?"
+    },
+    {
+      "content": "To find the minimum possible cost, you might want to use a binary search approach on the possible maximum jump lengths. What range of jump lengths will you consider, and how will you check if a certain maximum jump is feasible?"
+    },
+    {
+      "content": "When implementing the binary search, consider a helper function that checks if a given maximum jump length allows the frog to reach the last stone and return to the first stone. What conditions must be satisfied for the frog to make the jumps?"
+    },
+    {
+      "content": "As you implement the helper function, ensure that you track the current position of the frog and the maximum jump length used so far. If at any point the frog cannot jump to the next stone without exceeding the maximum jump, that path is invalid."
+    },
+    {
+      "content": "Remember to handle edge cases. For example, if there are only two stones, the only possible jump is directly between them. What would be the cost in this scenario?"
+    },
+    {
+      "content": "Think about the constraints given in the problem. The number of stones can be quite large (up to 100,000), so your solution needs to be efficient. How will you ensure your binary search and jump checking are optimal?"
+    },
+    {
+      "content": "Finally, put together your binary search logic and the jump checking function. Ensure that you return the minimum maximum jump length found during your search. What will the final return statement look like?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= stones.length <= 10^5",
+    "0 <= stones[i] <= 10^9",
+    "stones[0] == 0",
+    "stones is sorted in strictly increasing order.",
+    "The frog can jump to any stone at most once."
+  ]
+}

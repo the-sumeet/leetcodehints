@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `Products` table. You have three columns: `product_id`, `low_fats`, and `recyclable`. Pay attention to the data types, especially the ENUM types for `low_fats` and `recyclable`."
+    },
+    {
+      "content": "Remember that you need to filter products based on two conditions: they must be low fat and recyclable. Think about how you can combine these conditions in your query."
+    },
+    {
+      "content": "Consider which SQL clause you will use for filtering the rows in the `Products` table. The `WHERE` clause is typically used for this purpose."
+    },
+    {
+      "content": "When filtering for low fat products, you will check if `low_fats` equals 'Y'. Similarly, for recyclable products, check if `recyclable` equals 'Y'."
+    },
+    {
+      "content": "You can combine conditions in the `WHERE` clause using the `AND` operator. For example: `WHERE low_fats = 'Y' AND recyclable = 'Y'`."
+    },
+    {
+      "content": "Don't forget to select the correct column in your output. You only need to return the `product_id` of the products that meet both conditions."
+    },
+    {
+      "content": "Think about the return format of your result. You should return a table with just one column, `product_id`, and no additional columns."
+    },
+    {
+      "content": "Consider edge cases, such as what happens if there are no products that meet both criteria. Your query should still run without errors in such cases."
+    },
+    {
+      "content": "Make sure to account for the possibility of multiple products meeting the criteria. Your query should be able to handle returning multiple rows."
+    },
+    {
+      "content": "Now, put it all together in a SQL query. Start with `SELECT product_id FROM Products` and then add the `WHERE` clause with both conditions to filter the results."
+    }
+  ],
+  "questionNotes": [
+    "The `product_id` is the primary key, ensuring uniqueness in the table.",
+    "The `low_fats` and `recyclable` columns use ENUM types with values 'Y' or 'N'.",
+    "Return the result in any order, as specified in the problem statement."
+  ]
+}

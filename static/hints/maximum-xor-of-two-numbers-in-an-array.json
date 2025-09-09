@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the XOR operation. Remember that `a XOR a = 0` and `a XOR 0 = a`. This means that the XOR of two identical numbers is zero, and XORing a number with zero returns the number itself."
+    },
+    {
+      "content": "Consider the brute force approach first. You could iterate through all pairs of numbers in the array and calculate their XOR values. This would involve a nested loop, leading to a time complexity of O(n^2)."
+    },
+    {
+      "content": "Think about the properties of XOR. The maximum XOR value tends to occur between numbers that differ significantly in their binary representation. This means you might want to focus on the most significant bits."
+    },
+    {
+      "content": "Instead of checking all pairs, consider using a trie (prefix tree) to store the binary representations of the numbers. This structure can help you efficiently find the number that produces the maximum XOR with a given number."
+    },
+    {
+      "content": "When inserting numbers into the trie, represent each number in binary form. Since the maximum value of `nums[i]` is `2^31 - 1`, you can represent each number using 31 bits."
+    },
+    {
+      "content": "While traversing the trie to find the maximum XOR for a number, try to take the opposite path at each bit level. For example, if the current bit is 0, try to go to the '1' branch in the trie to maximize the XOR result."
+    },
+    {
+      "content": "Keep track of the maximum XOR value found during the traversal. You will need to compare the current XOR result with the maximum found so far and update it accordingly."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when the array contains only one element. In this case, the maximum XOR would be 0 since there are no two different indices to compare."
+    },
+    {
+      "content": "Consider the constraints carefully. The input size can be quite large (up to 200,000), so your solution should be efficient, ideally O(n) or O(n log n)."
+    },
+    {
+      "content": "As a final step, ensure that your implementation correctly returns the maximum XOR value as an integer. Pay attention to the input format and constraints to avoid off-by-one errors."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 2 * 10^5",
+    "Values: 0 <= nums[i] <= 2^31 - 1",
+    "Indices: 0 <= i <= j < n",
+    "Return format: Maximum XOR result as an integer"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the cake. You have an m x n cake, which means it has m horizontal sections and n vertical sections. Each cut can be made either horizontally or vertically."
+    },
+    {
+      "content": "Remember that the cost of cutting is defined by the arrays `horizontalCut` and `verticalCut`. Each element in these arrays represents the cost of making a cut at that specific line."
+    },
+    {
+      "content": "Note that you need to make m - 1 horizontal cuts and n - 1 vertical cuts to completely divide the cake into 1 x 1 pieces. Think about how the number of pieces changes with each cut."
+    },
+    {
+      "content": "Consider the order of cuts. The cost of a cut depends on how many pieces it will create. For instance, if you cut a piece into two, the cost of that cut will be multiplied by the number of pieces it affects."
+    },
+    {
+      "content": "Think about a greedy approach. You might want to always perform the cut that has the highest cost first, as it will affect the most pieces. This is because more pieces will be created after a cut, leading to potentially higher costs for subsequent cuts."
+    },
+    {
+      "content": "You can use a max-heap (or priority queue) to keep track of the costs of the cuts. This way, you can always access the highest cost cut efficiently."
+    },
+    {
+      "content": "When you perform a cut, you should also keep track of how many pieces you have created. This will help you determine how the cost of future cuts will accumulate."
+    },
+    {
+      "content": "Make sure to combine the costs of horizontal and vertical cuts effectively. You will need to process both `horizontalCut` and `verticalCut` arrays to get the total cost."
+    },
+    {
+      "content": "As you process the cuts, remember to update the number of horizontal and vertical segments after each cut. This will affect the cost of future cuts."
+    },
+    {
+      "content": "Consider edge cases such as when m or n is 1. In these scenarios, you will only need to make cuts in one direction."
+    },
+    {
+      "content": "When implementing your solution, ensure that you handle the indexing correctly. The indices of `horizontalCut` and `verticalCut` start from 0, but they represent cuts between the pieces."
+    },
+    {
+      "content": "Keep in mind that the total cost should be returned as a single integer. Make sure your final calculation sums up all the costs correctly."
+    },
+    {
+      "content": "You might want to sort the `horizontalCut` and `verticalCut` arrays in descending order to facilitate the greedy approach of picking the highest cost cuts first."
+    },
+    {
+      "content": "As you sum up the costs, remember to multiply the cost of each cut by the current number of pieces that will be affected by that cut."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient, especially given the constraints where m and n can be as large as 100,000. Think about the time complexity of your approach."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 10^5",
+    "horizontalCut.length == m - 1",
+    "verticalCut.length == n - 1",
+    "1 <= horizontalCut[i], verticalCut[i] <= 10^3",
+    "The final output should be a single integer representing the minimum total cost."
+  ]
+}

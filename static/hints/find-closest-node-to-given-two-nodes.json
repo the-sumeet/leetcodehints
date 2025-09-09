@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph given by the `edges` array. Each index represents a node, and the value at that index represents the node it points to. If the value is -1, it indicates no outgoing edge from that node."
+    },
+    {
+      "content": "Consider how to traverse the graph from both `node1` and `node2`. You can use a simple loop to follow the edges until you reach a node with no outgoing edge (i.e., where `edges[i] == -1`)."
+    },
+    {
+      "content": "As you traverse from `node1`, keep track of the distance to each node you visit. You can use a dictionary or an array to store these distances, where the key is the node index and the value is the distance from `node1`."
+    },
+    {
+      "content": "Repeat the traversal process for `node2`, but this time calculate the distances from `node2` to each reachable node. Again, store these distances in a separate dictionary or array."
+    },
+    {
+      "content": "Now that you have the distances from both `node1` and `node2`, identify the nodes that can be reached from both. This can be done by checking which nodes exist in both distance dictionaries."
+    },
+    {
+      "content": "For each common node, calculate the maximum distance from both `node1` and `node2`. This is the value you want to minimize when selecting the closest node."
+    },
+    {
+      "content": "Keep track of the minimum maximum distance found so far and the corresponding node index. If you find a node with a smaller maximum distance, update your result."
+    },
+    {
+      "content": "Remember to handle tie-breaking correctly. If multiple nodes have the same minimum maximum distance, return the one with the smallest index."
+    },
+    {
+      "content": "Consider edge cases, such as when `node1` and `node2` point to nodes that are not connected to any common nodes, or when they point to the same node."
+    },
+    {
+      "content": "Finally, ensure that your function returns -1 if no common node exists. This is crucial as it indicates that there is no node reachable from both starting points."
+    }
+  ],
+  "questionNotes": [
+    "The graph is represented by an array where each index corresponds to a node and its value indicates the node it points to.",
+    "If a node points to -1, it means there is no outgoing edge from that node.",
+    "You need to find a node reachable from both `node1` and `node2` that minimizes the maximum distance from either starting node.",
+    "In case of multiple nodes with the same maximum distance, return the node with the smallest index.",
+    "If no common node exists, return -1."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the function rev(x). It reverses the digits of the number. For example, rev(123) = 321 and rev(120) = 21. Make sure you can implement this function correctly."
+    },
+    {
+      "content": "Focus on the conditions for a nice pair (i, j). You need to ensure that 0 <= i < j < nums.length. This means you are always looking at pairs where the first index is less than the second."
+    },
+    {
+      "content": "Rearranging the condition nums[i] + rev(nums[j]) == nums[j] + rev(nums[i]) can help you understand the relationship between the elements. Try rewriting it to see if it simplifies your approach."
+    },
+    {
+      "content": "Consider how you can efficiently count pairs. A brute force approach would involve checking all pairs, which could be too slow for the upper limit of the constraints. Think about using a hash map to store values."
+    },
+    {
+      "content": "When using a hash map, think about what keys you might want to store. Since you need to check for pairs, consider storing the values of nums[i] - rev(nums[i]) as keys, and count how many times each occurs."
+    },
+    {
+      "content": "Remember to handle the modulo operation. Since the result can be very large, ensure that you apply the modulo 10^9 + 7 at each step when counting pairs to avoid overflow."
+    },
+    {
+      "content": "Consider edge cases, such as when the array has only one element. In this case, there can be no pairs, so the result should be 0."
+    },
+    {
+      "content": "Think about how you can iterate through the array while checking for nice pairs. You might want to use a nested loop but optimize it using the hash map you created."
+    },
+    {
+      "content": "Make sure to test your implementation with various inputs, including those with leading zeros after reversal, like rev(100) = 1. This can affect the equality condition."
+    },
+    {
+      "content": "Finally, ensure your solution runs efficiently within the constraints. Aim for a time complexity better than O(n^2) to handle the maximum input size of 10^5."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Values: 0 <= nums[i] <= 10^9",
+    "Return the number of nice pairs modulo 10^9 + 7.",
+    "Indices must satisfy 0 <= i < j < nums.length."
+  ]
+}

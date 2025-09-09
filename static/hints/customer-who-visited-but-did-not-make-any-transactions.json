@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the two tables: `Visits` and `Transactions`. Focus on how they relate to each other through the `visit_id` column. This relationship is key to solving the problem."
+    },
+    {
+      "content": "Consider which customers you need to focus on. You want to find customers who have visits but no corresponding transactions. Think about how you can filter out customers based on the `Transactions` table."
+    },
+    {
+      "content": "You might want to use a `LEFT JOIN` between the `Visits` and `Transactions` tables. This will help you identify visits that do not have transactions associated with them."
+    },
+    {
+      "content": "When performing the `LEFT JOIN`, pay attention to how you can identify visits without transactions. Look for `NULL` values in the `Transactions` table after the join."
+    },
+    {
+      "content": "As you filter for customers with no transactions, remember to group the results by `customer_id`. This will allow you to count the number of visits without transactions for each customer."
+    },
+    {
+      "content": "Use the `COUNT` function in your SQL query to tally the number of visits without transactions for each customer. Ensure that you are counting only the relevant visits."
+    },
+    {
+      "content": "Don't forget to include a `WHERE` clause to filter out only those visits that have no corresponding transactions. This is crucial for getting the correct count."
+    },
+    {
+      "content": "Consider edge cases, such as customers who have no visits at all or customers who have only made transactions. Ensure your query accounts for these scenarios."
+    },
+    {
+      "content": "After you have your counts, format your result to include `customer_id` and `count_no_trans`. Ensure you are returning the results in the correct format as specified in the problem statement."
+    },
+    {
+      "content": "Finally, remember that the output can be sorted in any order. You may not need an `ORDER BY` clause unless specified, but think about how you would implement it if needed."
+    }
+  ],
+  "questionNotes": [
+    "The `visit_id` in the Visits table is unique.",
+    "The `transaction_id` in the Transactions table is unique.",
+    "You need to count visits without transactions for each customer.",
+    "Return the result with columns: `customer_id` and `count_no_trans`."
+  ]
+}

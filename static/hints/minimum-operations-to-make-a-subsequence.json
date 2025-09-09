@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a subsequence. A subsequence can be formed by deleting some elements from an array without changing the order of the remaining elements. For example, from [1, 2, 3], you can form [1, 3] or [2] but not [3, 1]."
+    },
+    {
+      "content": "Consider the relationship between the two arrays, `target` and `arr`. You need to ensure that all elements of `target` appear in `arr` in the same order. This means that the elements of `target` must be present in `arr` to form a valid subsequence."
+    },
+    {
+      "content": "Think about how you can track the positions of elements in `arr` that match those in `target`. You might want to create a mapping from the elements of `target` to their indices in `arr` to facilitate this."
+    },
+    {
+      "content": "Remember that `target` contains distinct integers, while `arr` can have duplicates. This means you only need to worry about the presence of each unique element in `target` when checking if it can be a subsequence."
+    },
+    {
+      "content": "A useful approach is to iterate through `target` and check if each element can be found in `arr`. You can maintain a pointer to track your position in `arr` as you search for elements of `target`."
+    },
+    {
+      "content": "If an element from `target` is not found in the remaining part of `arr`, you will need to perform an operation to insert it. Count how many such insertions are necessary."
+    },
+    {
+      "content": "Consider using a two-pointer technique: one pointer for `target` and another for `arr`. This can help you efficiently find matches while keeping track of how many elements you need to insert."
+    },
+    {
+      "content": "Think about edge cases, such as when `arr` is empty or when `target` has elements that are not present in `arr` at all. How would these scenarios affect the number of operations needed?"
+    },
+    {
+      "content": "You might want to preprocess `arr` to create a list of indices for each element. This way, when you look for an element from `target`, you can quickly find where it appears in `arr`."
+    },
+    {
+      "content": "If you find that an element from `target` is present in `arr`, update your pointer in `arr` to the next position after the found element. This will help you maintain the order required for subsequences."
+    },
+    {
+      "content": "Keep track of the total number of insertions you need to make. Each time you cannot find the next element of `target` in `arr`, increment this count."
+    },
+    {
+      "content": "Consider the time complexity of your approach. You want to ensure that your solution can handle the upper limits of the input sizes efficiently."
+    },
+    {
+      "content": "As you approach the final solution, think about how you can encapsulate the logic of finding matches and counting insertions into a single function or loop structure."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct count of operations as specified in the problem statement. This will be the minimum number of insertions needed to make `target` a subsequence of `arr`."
+    },
+    {
+      "content": "To summarize, your goal is to iterate through `target`, check for its elements in `arr`, and count how many insertions are needed when elements are missing. Consider edge cases and the efficiency of your solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= target.length, arr.length <= 10^5",
+    "1 <= target[i], arr[i] <= 10^9",
+    "target contains no duplicates.",
+    "Return the minimum number of operations needed to make target a subsequence of arr."
+  ]
+}

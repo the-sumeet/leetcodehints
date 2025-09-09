@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by filtering the logins to only include those that occurred in the year 2020. You can use a date filter in your SQL query to achieve this."
+    },
+    {
+      "content": "Remember that the `time_stamp` column is of type `datetime`. You can extract the year from it to filter your results effectively."
+    },
+    {
+      "content": "Consider how you can group the logins by `user_id`. Grouping will allow you to aggregate the login times for each user."
+    },
+    {
+      "content": "After grouping by `user_id`, think about how to select the maximum `time_stamp` for each user. This will give you the latest login time for users who logged in during 2020."
+    },
+    {
+      "content": "Use the SQL `MAX()` function to find the latest login time for each user. This function will return the maximum value from the specified column."
+    },
+    {
+      "content": "Don't forget to select both the `user_id` and the latest `time_stamp` in your final output. You may need to alias the `MAX(time_stamp)` result to match the expected output format."
+    },
+    {
+      "content": "Ensure that you are excluding users who did not log in at all in 2020. This means your query should only return users who have at least one login entry in that year."
+    },
+    {
+      "content": "Consider edge cases, such as users with multiple logins on the same day. The `MAX()` function will handle this, but it's good to be aware of how it works."
+    },
+    {
+      "content": "Make sure to check that your result set is in the correct format as specified in the problem statement. Specifically, the output should contain columns named `user_id` and `last_stamp`."
+    },
+    {
+      "content": "Finally, structure your SQL query to ensure it runs efficiently. Using proper indexing on `user_id` and `time_stamp` can help improve performance, especially with larger datasets."
+    }
+  ],
+  "questionNotes": [
+    "The primary key is a combination of (user_id, time_stamp), ensuring uniqueness.",
+    "Only include users who have logged in at least once in 2020.",
+    "Return the result in any order, but ensure the column names match the output format: user_id and last_stamp."
+  ]
+}

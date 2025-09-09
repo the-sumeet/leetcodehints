@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. Each edge can be subdivided into a series of new nodes. For an edge [u, v, cnt], you will create cnt new nodes between u and v."
+    },
+    {
+      "content": "Consider how to represent the new graph after subdivision. Each edge will effectively create a chain of nodes, so think about how you can store these connections efficiently."
+    },
+    {
+      "content": "Remember that the original graph is undirected. This means that if you can reach from u to v, you can also reach from v to u. Keep this in mind while traversing the graph."
+    },
+    {
+      "content": "You need to determine how many nodes are reachable from node 0 within a distance of maxMoves. This suggests using a graph traversal method like BFS or DFS."
+    },
+    {
+      "content": "When performing the traversal, keep track of the cumulative distance traveled from node 0. If this distance exceeds maxMoves, you should stop exploring that path."
+    },
+    {
+      "content": "Think about how to handle the case where cnt is 0. In this case, the edge does not create any new nodes, so you should treat it as a direct connection between u and v."
+    },
+    {
+      "content": "As you traverse the graph, maintain a set or a boolean array to keep track of which nodes have already been visited to avoid counting them multiple times."
+    },
+    {
+      "content": "Consider edge cases such as when there are no edges in the graph. In this case, only node 0 should be reachable regardless of maxMoves."
+    },
+    {
+      "content": "Pay attention to the constraints, especially the maximum values for cnt and maxMoves. You may need to optimize your graph traversal to handle large inputs efficiently."
+    },
+    {
+      "content": "When counting reachable nodes, remember to include node 0 itself. Your final count should reflect all unique nodes that can be reached from node 0."
+    },
+    {
+      "content": "If the graph has isolated nodes (nodes that do not connect to node 0), ensure that your traversal logic correctly identifies and excludes them from the reachable count."
+    },
+    {
+      "content": "You may want to use a priority queue to explore the nodes based on the distance traveled, especially if you want to ensure you are exploring the closest nodes first."
+    },
+    {
+      "content": "Think about how to efficiently calculate the distance to each new node created by subdividing edges. You might want to keep a running total of the distance as you traverse."
+    },
+    {
+      "content": "Consider implementing a BFS that tracks the total distance for each node as you explore. This will help you determine when to stop exploring further nodes."
+    },
+    {
+      "content": "Remember to handle large values of maxMoves carefully. If maxMoves is very large, you might be able to reach all nodes, so ensure your logic accounts for that."
+    }
+  ],
+  "questionNotes": [
+    "The graph is undirected, and edges can be subdivided into new nodes.",
+    "Each edge [u, v, cnt] creates cnt new nodes between u and v.",
+    "You must count how many nodes are reachable from node 0 within maxMoves.",
+    "Handle edge cases like cnt == 0 and disconnected nodes.",
+    "Constraints include 0 <= edges.length <= min(n * (n - 1) / 2, 10^4) and 0 <= maxMoves <= 10^9."
+  ]
+}

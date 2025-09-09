@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of an email address. Each email consists of a local name and a domain name, separated by an '@' sign. For example, in 'alice@leetcode.com', 'alice' is the local name and 'leetcode.com' is the domain."
+    },
+    {
+      "content": "Remember that the local name can contain periods ('.') and plus ('+') signs. The periods can be ignored, and everything after the first plus sign in the local name is also ignored when processing the email."
+    },
+    {
+      "content": "To process the emails, you'll need to split each email at the '@' sign to separate the local name from the domain name. This will allow you to focus on transforming the local name according to the given rules."
+    },
+    {
+      "content": "When handling the local name, first remove all periods. For example, 'test.email' becomes 'testemail'. This is a crucial step because multiple emails can map to the same address once periods are removed."
+    },
+    {
+      "content": "Next, locate the first plus sign ('+') in the local name, if it exists. You should truncate the local name at this point, ignoring everything that follows the plus sign. For instance, 'test.email+alex' would become 'testemail'."
+    },
+    {
+      "content": "After processing the local name, you'll need to combine it back with the domain name to form the normalized email address. This means you'll be creating a new email in the format 'processed_local_name@domain'."
+    },
+    {
+      "content": "To keep track of unique email addresses, consider using a set data structure. Sets automatically handle duplicates, so you can simply add each normalized email to the set as you process the list of emails."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as emails that do not contain a plus sign or periods. Ensure that your logic still correctly identifies these emails as unique."
+    },
+    {
+      "content": "Once you have processed all the emails and added them to the set, the final step is to return the size of the set. This will give you the count of unique email addresses that receive mail."
+    },
+    {
+      "content": "As a final note, ensure that your solution efficiently handles the constraints provided. The maximum number of emails is 100, and each email can be up to 100 characters long, so your approach should be efficient enough to handle the upper limits."
+    }
+  ],
+  "questionNotes": [
+    "Each email consists of a local name and a domain name, separated by '@'.",
+    "Local names can contain '.', which can be ignored, and '+' which truncates the local name.",
+    "Domain names are not affected by '.' or '+'.",
+    "You need to return the count of unique email addresses after processing.",
+    "Constraints: 1 <= emails.length <= 100, 1 <= emails[i].length <= 100."
+  ]
+}

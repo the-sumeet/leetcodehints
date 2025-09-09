@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem clearly. You need to sort an array containing only the integers 0, 1, and 2, which represent colors. The goal is to rearrange them in the order of 0s (red), 1s (white), and 2s (blue)."
+    },
+    {
+      "content": "Consider how many different colors you have. Since there are only three colors, think about how you can take advantage of this limited range to sort the array more efficiently than using a general sorting algorithm."
+    },
+    {
+      "content": "Think about the constraints. You need to sort the array in-place, which means you can't use additional data structures that grow with the input size. What strategies can you use to rearrange elements within the same array?"
+    },
+    {
+      "content": "A common approach is to use a two-pointer technique. You can maintain two pointers to track the positions of the colors as you iterate through the array. Consider what each pointer will represent."
+    },
+    {
+      "content": "You can initialize one pointer for the next position of 0s (red) and another pointer for the next position of 2s (blue). As you traverse the array, you will swap elements to ensure that all 0s are on the left and all 2s are on the right."
+    },
+    {
+      "content": "When you encounter a 0, swap it with the position of the next 0 pointer and move both pointers forward. When you encounter a 2, swap it with the position of the next 2 pointer, but be careful not to move the next 2 pointer forward immediately."
+    },
+    {
+      "content": "Remember to handle the case when you encounter a 1 (white). You will just move forward without swapping, as 1s should be in the middle. This is crucial for maintaining the order."
+    },
+    {
+      "content": "Consider edge cases such as when the input array is already sorted or when it contains only one color. How will your algorithm handle these scenarios?"
+    },
+    {
+      "content": "Make sure to test your algorithm with different input sizes and distributions of colors. For example, what happens if you have an array with all 0s followed by all 1s and then all 2s?"
+    },
+    {
+      "content": "Finally, implement your algorithm in a single pass. You should be able to achieve this with a time complexity of O(n) and a space complexity of O(1). Think about how you can ensure that you only traverse the array once."
+    }
+  ],
+  "questionNotes": [
+    "You must sort the array in-place.",
+    "The array contains only the integers 0, 1, and 2.",
+    "The output should have all 0s first, followed by all 1s, and then all 2s.",
+    "Constraints: 1 <= n <= 300 and nums[i] is either 0, 1, or 2."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of a square. A square has four equal sides and four right angles. This means that all sides must be the same length, and the diagonals must also be equal."
+    },
+    {
+      "content": "To determine if the points form a square, calculate the distances between each pair of points. You can use the distance formula: `distance = sqrt((x2 - x1)^2 + (y2 - y1)^2)`. However, to avoid floating-point precision issues, consider using squared distances instead."
+    },
+    {
+      "content": "Remember that a square has four sides and two diagonals. When calculating the distances, you should find that there are exactly four equal side lengths and two equal diagonal lengths."
+    },
+    {
+      "content": "Since the input points can be given in any order, ensure that your solution does not depend on the order of the points. You may want to store the calculated distances in a list or set to check for uniqueness."
+    },
+    {
+      "content": "When you calculate the distances, you should end up with six distances in total (since there are six pairs of points). Make sure to check the counts of the unique distances: you should have four of one value (the sides) and two of another value (the diagonals)."
+    },
+    {
+      "content": "Consider edge cases where points might be collinear or where all points are the same. In such cases, the distances will not satisfy the conditions for forming a square."
+    },
+    {
+      "content": "To efficiently check the distances, you can use a dictionary to count occurrences of each squared distance. This will help you verify if you have the correct number of sides and diagonals."
+    },
+    {
+      "content": "When implementing the distance calculation, remember that the squared distance between points `p1` and `p2` can be computed as `(p1[0] - p2[0])^2 + (p1[1] - p2[1])^2`. This avoids the need for square roots."
+    },
+    {
+      "content": "After calculating the squared distances, sort the unique distances. The first four should be equal (the sides), and the last two should be equal (the diagonals)."
+    },
+    {
+      "content": "Finally, ensure that the length of the side (the first unique distance) is greater than zero to confirm that the points do not collapse into a single point."
+    }
+  ],
+  "questionNotes": [
+    "The input points are provided in any order.",
+    "A valid square must have four equal sides and two equal diagonals.",
+    "Ensure that the distances are positive; zero distances indicate overlapping points.",
+    "Use squared distances to avoid floating-point precision issues."
+  ]
+}

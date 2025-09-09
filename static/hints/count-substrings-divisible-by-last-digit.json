@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a substring is. A substring is any contiguous sequence of characters within a string. For example, in the string '12936', '29', '129', and '36' are all valid substrings."
+    },
+    {
+      "content": "Consider how to generate all possible substrings from the given string. You can use two nested loops: the outer loop to choose the starting index and the inner loop to choose the ending index of the substring."
+    },
+    {
+      "content": "Remember that the problem specifies the last digit of the substring must be non-zero for it to be considered. This means you need to check the last character of each substring before performing any divisibility checks."
+    },
+    {
+      "content": "To check if a number is divisible by its last digit, convert the substring into an integer and use the modulo operator. For example, if the substring is '36', check if 36 % 6 == 0."
+    },
+    {
+      "content": "Keep in mind that the last digit of a substring can be easily accessed using indexing. For a substring `s[i:j]`, the last digit can be found with `s[j-1]`."
+    },
+    {
+      "content": "Consider edge cases where substrings may contain leading zeros. For instance, '012' should be treated as '12' when checking divisibility by its last digit."
+    },
+    {
+      "content": "Count all valid substrings that meet the criteria, but also remember to account for single-digit substrings. Every non-zero digit is considered valid on its own."
+    },
+    {
+      "content": "Think about the efficiency of your approach. Generating all substrings has a time complexity of O(n^2), which could be too slow for the upper limit of n = 100,000."
+    },
+    {
+      "content": "Instead of generating all substrings, consider iterating through the string and checking substrings that end at each character. This can help reduce redundancy."
+    },
+    {
+      "content": "As you iterate, maintain a count of valid substrings. You can increment this count each time you find a substring that meets the divisibility condition."
+    },
+    {
+      "content": "When checking divisibility, make sure to handle the conversion from string to integer carefully to avoid errors, especially with leading zeros."
+    },
+    {
+      "content": "You may want to create a helper function to check if a number is divisible by its last digit. This function can take a substring as input and return a boolean."
+    },
+    {
+      "content": "Remember to handle cases where the last digit is zero. These should be skipped since division by zero is undefined."
+    },
+    {
+      "content": "As you implement your solution, consider using a list to store valid substrings for debugging purposes. This can help you verify your results."
+    },
+    {
+      "content": "Finally, ensure your final count is returned correctly. The output should be the total number of valid substrings found."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5, s consists of digits only.",
+    "Substrings may contain leading zeros.",
+    "Only substrings with a non-zero last digit are considered for divisibility."
+  ]
+}

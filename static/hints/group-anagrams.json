@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an anagram is. An anagram of a string is another string that contains the same characters, only the order of characters can be different. For example, 'eat' and 'tea' are anagrams."
+    },
+    {
+      "content": "Think about how you can identify if two strings are anagrams. One approach is to sort the characters in each string and compare the sorted results. If they are the same, the strings are anagrams."
+    },
+    {
+      "content": "Consider how you would group the anagrams. You might want to use a data structure like a dictionary (or hashmap) where the key is the sorted string and the value is a list of strings that are anagrams of that key."
+    },
+    {
+      "content": "Remember to handle edge cases. For example, what happens if the input array is empty? Or if it contains strings of varying lengths, including empty strings?"
+    },
+    {
+      "content": "When constructing your dictionary, you can iterate over each string in the input array. For each string, sort it and use the sorted string as a key in your dictionary."
+    },
+    {
+      "content": "Make sure to initialize your dictionary properly. If the sorted string key doesn't exist in the dictionary, you will need to create a new entry with an empty list."
+    },
+    {
+      "content": "As you add strings to the dictionary, append them to the list associated with the sorted string key. This way, all anagrams will be grouped together under the same key."
+    },
+    {
+      "content": "After processing all strings, you will have a dictionary where each key corresponds to a list of anagrams. You can extract these lists to form your final output."
+    },
+    {
+      "content": "Remember that the output can be in any order. You can simply return the values of the dictionary as a list of lists."
+    },
+    {
+      "content": "Here’s a near-complete outline: Create a dictionary, loop through each string, sort it, and use it as a key to group anagrams. Finally, return the values of the dictionary. Think about how you will handle the return format."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= strs.length <= 10^4",
+    "0 <= strs[i].length <= 100",
+    "strs[i] consists of lowercase English letters.",
+    "Return format: A list of lists, where each inner list contains grouped anagrams."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. You have `n` nodes and an edge list that represents connections between these nodes. Each connection has a success probability associated with it."
+    },
+    {
+      "content": "Consider how you can represent the graph in code. An adjacency list might be a good choice, where each node points to its neighbors and their corresponding success probabilities."
+    },
+    {
+      "content": "Think about how you can traverse the graph to find the maximum probability path. A priority queue can help you explore paths based on their probabilities efficiently."
+    },
+    {
+      "content": "Review Dijkstra's algorithm. While it's typically used for shortest paths, you can adapt it to maximize probabilities by treating probabilities as weights."
+    },
+    {
+      "content": "Remember that the probability of success for a path is the product of the probabilities of each edge. If you have a path with edges having probabilities `p1`, `p2`, and `p3`, the total probability is `p1 * p2 * p3`."
+    },
+    {
+      "content": "Consider edge cases such as when there is no path between the start and end nodes. Ensure your algorithm can return `0` in such cases."
+    },
+    {
+      "content": "When implementing the algorithm, keep track of the maximum probability found for each node as you explore paths. You can use a dictionary or an array for this purpose."
+    },
+    {
+      "content": "Be mindful of floating-point precision. The problem states that your answer should be accepted if it differs from the correct answer by at most `1e-5`."
+    },
+    {
+      "content": "As you implement the graph traversal, ensure that you are not revisiting nodes unnecessarily. You can maintain a set of visited nodes to avoid cycles."
+    },
+    {
+      "content": "Finally, when you reach the end node, return the maximum probability found. If you never reach the end node, return `0`. Make sure your return value is formatted correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^4",
+    "0 <= start, end < n, start != end",
+    "0 <= a, b < n, a != b",
+    "0 <= succProb.length == edges.length <= 2*10^4",
+    "There is at most one edge between every two nodes.",
+    "Return 0 if there is no path from start to end.",
+    "Answer accepted if differs from correct answer by at most 1e-5."
+  ]
+}

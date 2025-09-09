@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, understand that the bus stops are arranged in a circular manner. This means that after the last stop, the next stop is the first one again. This circular arrangement will affect how you calculate distances."
+    },
+    {
+      "content": "Identify the two possible directions to travel between the start and destination stops: clockwise and counterclockwise. Think about how you can calculate the distance for each direction."
+    },
+    {
+      "content": "To calculate the clockwise distance from a stop 'start' to a stop 'destination', you can sum the distances from 'start' to 'destination' directly. Remember to handle the circular nature of the stops."
+    },
+    {
+      "content": "For the counterclockwise distance, you can think of it as going from 'destination' back to 'start'. This can also be calculated by summing the distances in the reverse direction."
+    },
+    {
+      "content": "Consider using modular arithmetic to handle the circular indexing of the bus stops. For example, when calculating distances, use `(i + 1) % n` to wrap around when you reach the end of the list."
+    },
+    {
+      "content": "Make sure to handle cases where the start stop is greater than the destination stop. This will affect how you calculate the clockwise and counterclockwise distances."
+    },
+    {
+      "content": "Remember to compute both distances (clockwise and counterclockwise) and then return the minimum of the two. This is crucial to ensure you find the shortest path."
+    },
+    {
+      "content": "As a sanity check, think about edge cases such as when the start and destination are the same. What should the distance be in that case?"
+    },
+    {
+      "content": "When implementing your solution, consider using a loop to iterate through the distance array for calculating both distances. You can use a simple for loop for this purpose."
+    },
+    {
+      "content": "Finally, ensure your function returns the correct type. The output should be a single integer representing the shortest distance between the two stops."
+    }
+  ],
+  "questionNotes": [
+    "The bus stops are indexed from 0 to n-1.",
+    "The distances are given in a circular manner, meaning distance[i] is the distance between stop i and (i + 1) % n.",
+    "You must consider both clockwise and counterclockwise distances.",
+    "The constraints specify that 1 <= n <= 10^4 and 0 <= distance[i] <= 10^4."
+  ]
+}

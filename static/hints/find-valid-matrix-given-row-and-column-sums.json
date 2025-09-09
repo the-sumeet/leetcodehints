@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the dimensions of the matrix you need to create. The matrix will have a number of rows equal to the length of the `rowSum` array and a number of columns equal to the length of the `colSum` array."
+    },
+    {
+      "content": "Consider how the sums of the rows and columns relate to the elements of the matrix. Each element at position (i, j) in the matrix contributes to both `rowSum[i]` and `colSum[j]`."
+    },
+    {
+      "content": "You can iterate through each cell of the matrix. For each cell at position (i, j), you need to determine how much you can allocate based on the remaining sums in `rowSum` and `colSum`."
+    },
+    {
+      "content": "When filling in the matrix, ensure that you do not exceed the remaining `rowSum[i]` or `colSum[j]`. This means you should take the minimum of the two when deciding how much to place in the matrix at (i, j)."
+    },
+    {
+      "content": "After placing a value in the matrix, update the corresponding `rowSum` and `colSum` by subtracting the value you just placed. This keeps track of how much is left to allocate."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when either `rowSum[i]` or `colSum[j]` is zero. In such cases, the corresponding cell in the matrix should be zero."
+    },
+    {
+      "content": "Consider the constraints: the sum of all elements in `rowSum` must equal the sum of all elements in `colSum`. This guarantees that a solution exists, but you should still validate this before proceeding."
+    },
+    {
+      "content": "Think about the order in which you fill the matrix. You might want to fill row by row or column by column. Both approaches can work, but ensure you consistently update the sums."
+    },
+    {
+      "content": "As you fill the matrix, remember that there can be multiple valid matrices. Your solution does not need to be unique, just valid according to the given sums."
+    },
+    {
+      "content": "Finally, once you have filled the matrix, ensure you return it in the correct format: a 2D array, where each inner array represents a row of the matrix."
+    }
+  ],
+  "questionNotes": [
+    "The matrix size is determined by the lengths of `rowSum` and `colSum`.",
+    "All elements in the matrix must be non-negative integers.",
+    "The problem guarantees that a valid matrix exists for the given sums.",
+    "The sum of `rowSum` must equal the sum of `colSum`."
+  ]
+}

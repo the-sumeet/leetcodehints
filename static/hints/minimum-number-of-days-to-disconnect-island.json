@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the structure of the grid. Each cell can either be land (1) or water (0). Identify how to traverse the grid to find connected components of land."
+    },
+    {
+      "content": "Consider using Depth-First Search (DFS) or Breadth-First Search (BFS) to explore the grid. This will help you identify and count the number of islands."
+    },
+    {
+      "content": "Remember that an island is defined as a group of 1's that are connected either horizontally or vertically. Think about how you can mark visited cells to avoid counting them multiple times."
+    },
+    {
+      "content": "Before trying to disconnect the island, check if there is already more than one island or if the grid is already disconnected. This will help you understand if any changes are needed."
+    },
+    {
+      "content": "If the grid is fully water (all 0's), you can return 0 immediately since it is already disconnected."
+    },
+    {
+      "content": "If there is only one island, you need to consider how many land cells you need to change to water to create at least two separate islands."
+    },
+    {
+      "content": "Think about the minimum number of land cells you need to change to disconnect the island. Can you disconnect it by removing just one land cell?"
+    },
+    {
+      "content": "Try to visualize how removing certain cells affects the connectivity of the island. For example, if you remove a cell that is a bridge between two parts of the island, it will create two islands."
+    },
+    {
+      "content": "Consider edge cases where the island is very small (like a single cell). What happens if you remove that cell?"
+    },
+    {
+      "content": "You might need to change more than one cell in some cases. Think about scenarios where you have to remove two or more cells to achieve disconnection."
+    },
+    {
+      "content": "Implement a function to count the number of islands after each potential removal of a land cell. This will help you determine how many days are needed."
+    },
+    {
+      "content": "Remember that you can only change one cell per day. Keep track of the number of days required to achieve disconnection."
+    },
+    {
+      "content": "If you find that changing one cell is not enough, consider combinations of two cells that, when changed, will result in disconnection."
+    },
+    {
+      "content": "Pay attention to the grid boundaries when implementing your solution. Ensure that your algorithm does not go out of bounds when checking neighboring cells."
+    },
+    {
+      "content": "Finally, when you think you've found a solution, test it against various grid configurations to ensure it works for different sizes and shapes of islands."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 30",
+    "Grid cells are either 0 (water) or 1 (land).",
+    "An island is a maximal connected group of 1's.",
+    "Return the minimum number of days to disconnect the grid.",
+    "If the grid is already disconnected, return 0."
+  ]
+}

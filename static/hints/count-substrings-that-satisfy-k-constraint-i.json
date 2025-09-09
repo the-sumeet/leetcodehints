@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a substring is. A substring is any contiguous sequence of characters within a string. For example, in the string '101', the substrings are '1', '0', '1', '10', '01', and '101'."
+    },
+    {
+      "content": "Consider how to generate all possible substrings of the given binary string. You can use two nested loops: the outer loop to select the starting index and the inner loop to select the ending index of the substring."
+    },
+    {
+      "content": "While generating substrings, keep track of the counts of '0's and '1's in each substring. You can maintain two counters that increment as you extend the substring."
+    },
+    {
+      "content": "Remember the k-constraint conditions: a substring is valid if it has at most k '0's or at most k '1's. Think about how you can check these conditions efficiently after generating each substring."
+    },
+    {
+      "content": "Instead of checking the counts from scratch for each substring, consider using a sliding window approach. This allows you to adjust the counts incrementally as you expand or contract the window."
+    },
+    {
+      "content": "When using a sliding window, maintain two pointers: one for the start of the substring and one for the end. As you move the end pointer to include more characters, update your counts accordingly."
+    },
+    {
+      "content": "If the substring violates the k-constraint, move the start pointer to the right until the substring becomes valid again. This helps in efficiently counting valid substrings."
+    },
+    {
+      "content": "Think about edge cases, such as when k is equal to the length of the string. In this case, all substrings will satisfy the k-constraint since the maximum count of '0's or '1's will never exceed k."
+    },
+    {
+      "content": "Consider how to count the valid substrings. Each time you find a valid substring, you can add the number of valid starting positions for that end index to your total count."
+    },
+    {
+      "content": "Finally, remember to return the total count of valid substrings. Make sure your implementation handles all edge cases and adheres to the constraints provided in the problem."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 50",
+    "1 <= k <= s.length",
+    "s[i] is either '0' or '1'.",
+    "Return the total count of valid substrings that satisfy the k-constraint."
+  ]
+}

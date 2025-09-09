@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array. Each element is a match represented by a winner and a loser. This means you need to track wins and losses for each player."
+    },
+    {
+      "content": "Create a data structure to store the number of losses for each player. A dictionary (or hashmap) can be useful here, where the keys are player IDs and the values are the counts of losses."
+    },
+    {
+      "content": "As you iterate through the matches, for each match, increment the loss count for the loser. Remember to also keep track of players who have won matches."
+    },
+    {
+      "content": "Consider using a set to track players who have won. This will help you easily identify players who have never lost any matches later on."
+    },
+    {
+      "content": "After processing all matches, you will have two pieces of information: the loss counts for each player and the set of players who have won. Use these to determine the two lists you need to return."
+    },
+    {
+      "content": "To find players with zero losses, filter the set of winners by checking their loss count. For players with exactly one loss, filter the loss count dictionary accordingly."
+    },
+    {
+      "content": "Don't forget to sort the resulting lists before returning them. The problem specifies that the output should be in increasing order."
+    },
+    {
+      "content": "Pay attention to the constraints: players are numbered from 1 to 10^5. Ensure your solution handles this range efficiently, especially when counting losses."
+    },
+    {
+      "content": "Consider edge cases where all players have lost at least one match or where only one match exists. How would your logic handle these scenarios?"
+    },
+    {
+      "content": "Finally, remember to return the result in the specified format: a list containing two lists, where the first list is for players with zero losses and the second for players with exactly one loss."
+    }
+  ],
+  "questionNotes": [
+    "Input is an array of matches where each match is represented as [winner, loser].",
+    "You need to track both winners and losers to determine the final lists.",
+    "Players are numbered from 1 to 10^5, so ensure your solution can handle this range.",
+    "Return format is a list of two lists: answer[0] for zero losses, answer[1] for one loss.",
+    "Players that have not played any matches should not be included in the output."
+  ]
+}

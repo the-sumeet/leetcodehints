@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the initial state of the game. Alice begins with the string `word = 'a'`. This is the base case from which all operations will evolve."
+    },
+    {
+      "content": "Consider the two types of operations: `0` and `1`. The operation `0` duplicates the current string, while operation `1` modifies each character to its next character in the alphabet before appending. Make sure you grasp how these operations affect the length of the string."
+    },
+    {
+      "content": "Think about how the length of the string changes after each operation. For example, after one `0` operation, the length doubles. After one `1` operation, the length also doubles, but the content changes."
+    },
+    {
+      "content": "When performing operations, keep track of how many times each operation type is applied. You may want to simulate the operations on a smaller scale to see the pattern of growth in the string."
+    },
+    {
+      "content": "Notice that the operations can create very large strings quickly. For example, three consecutive `0` operations will yield a string of length `8`. Consider how you can avoid explicitly constructing the entire string."
+    },
+    {
+      "content": "Instead of building the entire string, think about the final length after all operations. You can calculate the length based on the number of `0` and `1` operations. This will help you determine if `k` is within bounds."
+    },
+    {
+      "content": "Use a recursive or iterative approach to determine how the string evolves. For example, if you know the length of the string after certain operations, you can backtrack to find which operation produced the `k-th` character."
+    },
+    {
+      "content": "When you encounter an operation, consider how it affects the character at position `k`. For a `0` operation, if `k` is less than half the length of the string, it will map to the first half; otherwise, it maps to the second half."
+    },
+    {
+      "content": "For a `1` operation, remember that each character is shifted. If you determine the character's position after all operations, you need to account for this shift when finding the `k-th` character."
+    },
+    {
+      "content": "Keep in mind that the character 'z' wraps around to 'a' when incremented. This is crucial for correctly determining the result after a `1` operation."
+    },
+    {
+      "content": "You might want to create a helper function to find the character at position `k` without constructing the entire string. This function can recursively determine where `k` falls after each operation."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is very small or very large relative to the string's growth. How does this affect your approach to finding the `k-th` character?"
+    },
+    {
+      "content": "As you simulate the operations, keep a running total of the string length. This will help you decide which operation to apply when tracing back from `k`."
+    },
+    {
+      "content": "Remember that the operations are applied in sequence. The order of operations matters, and you need to respect that when determining the final character."
+    },
+    {
+      "content": "Finally, as you approach the solution, think about how to effectively combine the logic for both types of operations. You will need to differentiate between them while tracing back to find the `k-th` character."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= 10^14, 1 <= operations.length <= 100.",
+    "Operations are either 0 (duplicate) or 1 (increment characters).",
+    "The input is guaranteed such that the final string has at least k characters.",
+    "Indexing is 1-based for k, meaning k=1 refers to the first character."
+  ]
+}

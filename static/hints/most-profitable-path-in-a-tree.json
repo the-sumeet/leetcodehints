@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. Each node is connected by edges, and the tree is rooted at node 0. Consider how you can represent this tree in code, perhaps using an adjacency list."
+    },
+    {
+      "content": "Think about how Alice and Bob will traverse the tree. Alice moves towards leaf nodes, while Bob moves towards the root. How will you keep track of their paths?"
+    },
+    {
+      "content": "Pay attention to the `amount` array. It contains both costs (negative values) and rewards (positive values). How will you handle these values differently when calculating net income?"
+    },
+    {
+      "content": "Consider the scenario where Alice and Bob reach the same node at the same time. You'll need a way to split the cost or reward. How will you implement this sharing mechanism in your calculations?"
+    },
+    {
+      "content": "When Alice reaches a leaf node, she stops moving. Make sure your algorithm can identify leaf nodes effectively. A leaf node is characterized by having only one connection in a tree."
+    },
+    {
+      "content": "Bob's path is straightforward as he always moves towards node 0. What data structure can help you trace Bob's path efficiently? You might want to consider a simple traversal method like BFS or DFS."
+    },
+    {
+      "content": "As you simulate the movement of Alice and Bob, keep a running total of Alice's net income. How will you update this total based on the gates they open or rewards they collect?"
+    },
+    {
+      "content": "Think about edge cases, such as when Alice and Bob have to share a gate at the root or when Alice's path leads her to a leaf node without any rewards. How will these situations affect her final income?"
+    },
+    {
+      "content": "To maximize Alice's net income, you may need to explore all possible leaf nodes she can reach. Consider using a recursive function or depth-first search (DFS) to explore these paths thoroughly."
+    },
+    {
+      "content": "Finally, ensure your solution returns the maximum net income Alice can achieve. You might want to keep track of the best income found during your exploration of the tree."
+    }
+  ],
+  "questionNotes": [
+    "The tree is undirected and rooted at node 0.",
+    "Alice starts at node 0, and Bob starts at node bob.",
+    "Alice moves towards leaf nodes, while Bob moves towards node 0.",
+    "If they reach a node simultaneously, they share the cost/reward.",
+    "Node indices range from 0 to n-1, and the amount array contains even integers.",
+    "Constraints: 2 <= n <= 100,000; -10,000 <= amount[i] <= 10,000."
+  ]
+}

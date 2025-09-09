@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input arrays. You have `arr1`, which contains the elements to be sorted, and `arr2`, which defines the order of some of those elements. Remember that all elements in `arr2` are distinct and present in `arr1`."
+    },
+    {
+      "content": "Think about how you can track the order of elements in `arr2`. You might want to create a mapping from each element in `arr2` to its index. This will help you determine how to sort elements from `arr1` that are also in `arr2`."
+    },
+    {
+      "content": "Consider how to handle the elements in `arr1` that are not in `arr2`. These elements should be sorted in ascending order and placed at the end of the result. You will need to separate these elements from those that are in `arr2`."
+    },
+    {
+      "content": "You can use a dictionary to map elements from `arr2` to their indices. For example: `order_map = {value: index for index, value in enumerate(arr2)}`. This will allow you to sort `arr1` based on the indices of its elements in `arr2`."
+    },
+    {
+      "content": "To sort `arr1` according to the order defined in `arr2`, you'll need to create a custom sorting function. This function should return the index of the element in `arr2` if it exists, or a large number if it doesn't (to push it to the end)."
+    },
+    {
+      "content": "When implementing the sorting, be mindful of the fact that elements in `arr1` that are not in `arr2` should be sorted in ascending order. You can achieve this by using a two-step sorting process: first sort by the index from `arr2`, then sort the remaining elements."
+    },
+    {
+      "content": "As you implement the sorting, remember to handle cases where `arr1` might have duplicates. Ensure that your sorting logic preserves the relative order of duplicates as they appear in `arr1`."
+    },
+    {
+      "content": "Make sure to test your implementation with edge cases, such as when `arr1` contains all elements from `arr2`, or when there are many elements in `arr1` that are not in `arr2`. These scenarios can help verify the robustness of your solution."
+    },
+    {
+      "content": "After sorting, you should have a combined list that starts with the elements from `arr1` in the order defined by `arr2`, followed by the remaining elements sorted in ascending order. Think about how you will concatenate these two lists."
+    },
+    {
+      "content": "Finally, ensure your function returns the result in the correct format. You should return a single list that contains the sorted elements as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr1.length, arr2.length <= 1000",
+    "0 <= arr1[i], arr2[i] <= 1000",
+    "All elements of arr2 are distinct.",
+    "Each arr2[i] is guaranteed to be in arr1."
+  ]
+}

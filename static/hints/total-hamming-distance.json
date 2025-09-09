@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of Hamming distance. It measures how many bits differ between two numbers when expressed in binary. For example, the Hamming distance between 4 (0100) and 14 (1110) is 2 because they differ in the second and third bits."
+    },
+    {
+      "content": "Consider how many pairs of integers you need to compare in the array. For an array of length n, you will have to compare each integer with every other integer. This means you will be calculating the Hamming distance for n choose 2 pairs."
+    },
+    {
+      "content": "Think about how you can efficiently calculate the Hamming distance for each pair. A naive approach would involve iterating through each pair and checking each bit, but this could be optimized."
+    },
+    {
+      "content": "Instead of comparing each pair directly, consider counting how many numbers have a '1' or '0' in each bit position. This way, you can calculate the contribution to the Hamming distance from each bit position separately."
+    },
+    {
+      "content": "For each bit position (0 to 31, since the maximum number is 10^9), count how many numbers have that bit set (1) and how many do not (0). The contribution to the Hamming distance from that bit position can be calculated as: count_ones * count_zeros."
+    },
+    {
+      "content": "Remember to iterate over each bit position from 0 to 31. You can use bit manipulation to check if a specific bit is set. For example, you can use the bitwise AND operation: if (num & (1 << bit_position)) != 0, then the bit is set."
+    },
+    {
+      "content": "Once you have the contributions from all bit positions, sum them up to get the total Hamming distance. This approach reduces the time complexity significantly compared to the naive pairwise comparison."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array has only one element. In this case, the total Hamming distance should be zero since there are no pairs to compare."
+    },
+    {
+      "content": "Think about the constraints given in the problem. The input array can have up to 10,000 elements, and each element can be as large as 1 billion. Make sure your solution is efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Finally, ensure your function returns the correct format as specified in the problem statement. The return value should be a single integer representing the total Hamming distance."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 10^4",
+    "0 <= nums[i] <= 10^9",
+    "The answer will fit in a 32-bit integer."
+  ]
+}

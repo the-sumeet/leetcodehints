@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the grid. Each rectangle is defined by its bottom-left and top-right corners. Visualizing the grid and the rectangles can help you grasp how they occupy space."
+    },
+    {
+      "content": "Consider the requirement for making cuts. You need to make either two horizontal cuts or two vertical cuts. Think about how these cuts would divide the grid into three sections."
+    },
+    {
+      "content": "When making horizontal cuts, the y-coordinates of the cuts must be chosen such that each resulting section contains at least one rectangle. Similarly, for vertical cuts, the x-coordinates must ensure that each section has at least one rectangle."
+    },
+    {
+      "content": "To find potential cut positions, compile a list of unique y-coordinates (for horizontal cuts) and x-coordinates (for vertical cuts) from the rectangles. This will help you identify where cuts can be made."
+    },
+    {
+      "content": "Sort the unique cut positions. This will allow you to easily evaluate potential cut pairs. Remember, you need to select two distinct cut positions from the sorted list."
+    },
+    {
+      "content": "For each pair of horizontal cut positions, check if there are rectangles in each of the three sections formed by those cuts. You can do this by iterating through the rectangles and counting how many fall into each section."
+    },
+    {
+      "content": "Similarly, apply the same logic for vertical cuts. Ensure that for each pair of vertical cut positions, each section contains at least one rectangle."
+    },
+    {
+      "content": "Keep in mind the constraints of the problem, especially regarding the dimensions of the grid and the number of rectangles. This will help you optimize your approach and avoid unnecessary computations."
+    },
+    {
+      "content": "Consider edge cases where rectangles are tightly packed or where they span the entire height or width of the grid. These scenarios can affect the feasibility of making the required cuts."
+    },
+    {
+      "content": "Finally, once you have verified both horizontal and vertical cuts, return true if any valid configuration exists. If neither configuration works, return false. Make sure to handle cases where no rectangles are present in a section."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= n <= 10^9, 3 <= rectangles.length <= 10^5",
+    "Rectangles do not overlap.",
+    "Return true if valid cuts can be made, otherwise return false.",
+    "Consider edge cases such as tightly packed rectangles or those spanning the entire grid."
+  ]
+}

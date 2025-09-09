@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to group your data. You will need to group transactions by both month and country. Consider using the `DATE_FORMAT` function or equivalent to extract the month from the `trans_date` column."
+    },
+    {
+      "content": "Next, think about how to count transactions. You can use the `COUNT` function to get the total number of transactions for each group. Remember that you will need to do this for both total transactions and approved transactions."
+    },
+    {
+      "content": "Don't forget to calculate the total amount of transactions. Use the `SUM` function to get the total amount for all transactions and a separate sum for approved transactions. You will need to conditionally sum based on the state."
+    },
+    {
+      "content": "When filtering for approved transactions, consider using a `CASE` statement within your `SUM` function. This will allow you to sum amounts conditionally based on the `state` column."
+    },
+    {
+      "content": "Ensure that your query handles the date formatting correctly. You may want to format the month as 'YYYY-MM' to match the output format specified in the problem statement."
+    },
+    {
+      "content": "Think about how to structure your SQL query. You will likely need a `SELECT` statement that includes your grouping, counting, and summing logic, followed by a `GROUP BY` clause."
+    },
+    {
+      "content": "Remember to include all necessary columns in your `SELECT` statement. You need to return the month, country, total transaction count, approved transaction count, total amounts, and approved amounts."
+    },
+    {
+      "content": "Consider edge cases such as months with no transactions at all. Your query should still return results for months that have transactions, but ensure that you handle the counts and sums correctly."
+    },
+    {
+      "content": "Make sure to test your query with different datasets, especially with varying numbers of approved and declined transactions. This will help ensure that your conditional logic is working correctly."
+    },
+    {
+      "content": "Finally, structure your `ORDER BY` clause if you want to ensure a specific order in your results. While the problem states 'any order', having a consistent order can help with readability."
+    }
+  ],
+  "questionNotes": [
+    "The `state` column is an enum with values 'approved' and 'declined'.",
+    "You need to return results grouped by month and country.",
+    "The output format requires specific columns: month, country, transaction counts, and total amounts.",
+    "The month should be formatted as 'YYYY-MM'.",
+    "Ensure your query handles months with no transactions appropriately."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirements for the subsets. You need to create `k` subsets of equal size, which means each subset must have exactly `n/k` elements, where `n` is the length of `nums`."
+    },
+    {
+      "content": "Check if it's possible to create these subsets. If any number appears more than `k` times in `nums`, it's impossible to create the subsets without duplicates. Consider using a frequency count to validate this."
+    },
+    {
+      "content": "Think about the concept of incompatibility. The incompatibility of a subset is defined by the difference between its maximum and minimum values. This means you need to focus on the range of numbers in each subset."
+    },
+    {
+      "content": "Sort the array first. This will help in easily finding the minimum and maximum values when forming subsets. A sorted array allows you to efficiently calculate incompatibility."
+    },
+    {
+      "content": "Consider using a backtracking approach. You can try to build subsets one by one, keeping track of the current incompatibility sum and the elements already included in subsets."
+    },
+    {
+      "content": "As you build subsets, maintain a set of used elements to ensure no duplicates are included in the same subset. This will help you adhere to the problem's constraints."
+    },
+    {
+      "content": "Think about how to calculate the incompatibility for each subset as you form them. You can keep track of the minimum and maximum values in the current subset to calculate the incompatibility efficiently."
+    },
+    {
+      "content": "Remember to handle edge cases. For example, if `k` equals `1`, the entire array is one subset, and the incompatibility is simply the difference between the maximum and minimum values in `nums`."
+    },
+    {
+      "content": "Consider memoization or dynamic programming to store results of previously calculated incompatibilities for subsets. This can help avoid redundant calculations and improve efficiency."
+    },
+    {
+      "content": "When forming subsets, you may want to prioritize smaller ranges first. This could potentially lead to a lower total incompatibility sum."
+    },
+    {
+      "content": "After forming a subset, recursively attempt to form the next subset with the remaining numbers. If at any point you can't form a valid subset, backtrack and try a different combination."
+    },
+    {
+      "content": "Keep track of the minimum sum of incompatibilities found during your backtracking. If you find a valid configuration that yields a lower incompatibility sum, update your result."
+    },
+    {
+      "content": "Make sure to return `-1` if you cannot form the required subsets. This includes cases where the frequency of any number exceeds `k` or if you exhaust all combinations without forming valid subsets."
+    },
+    {
+      "content": "As a final step, ensure your function handles the return format correctly. You should return the minimum incompatibility sum or `-1` as specified in the problem statement."
+    },
+    {
+      "content": "Consider edge cases like when all elements in `nums` are the same or when `k` equals `n`. These can help you validate the robustness of your solution."
+    }
+  ],
+  "questionNotes": [
+    "1 <= k <= nums.length <= 16",
+    "nums.length is divisible by k",
+    "1 <= nums[i] <= nums.length",
+    "No two equal elements in the same subset",
+    "Return -1 if distribution is impossible"
+  ]
+}

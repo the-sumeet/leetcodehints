@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem constraints. You need to schedule jobs over 'd' days, and you must complete at least one job each day. If the number of jobs is less than 'd', it's impossible to create a valid schedule."
+    },
+    {
+      "content": "Consider the case where the number of jobs equals 'd'. Each job must be done on a separate day, which means the total difficulty will simply be the sum of the difficulties of each job."
+    },
+    {
+      "content": "Think about how to define the difficulty of a day. The difficulty for a day is determined by the maximum difficulty job completed on that day. This means you need to track the maximum job difficulty for each day."
+    },
+    {
+      "content": "You can use a dynamic programming approach. Define a DP array where dp[i][j] represents the minimum difficulty to schedule the first 'i' jobs in 'j' days."
+    },
+    {
+      "content": "Initialize your DP array carefully. If 'j' is greater than 'i', set dp[i][j] to infinity since you can't schedule more days than jobs."
+    },
+    {
+      "content": "For each job, you will need to iterate over possible previous days to find the minimum difficulty. Think about how to calculate the maximum job difficulty for the current day."
+    },
+    {
+      "content": "When scheduling jobs, you can use a nested loop. For each day, iterate through the jobs to find the maximum difficulty job for that day and update the DP array accordingly."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when there are not enough jobs to fill the required days. If 'd' is greater than the number of jobs, return -1 immediately."
+    },
+    {
+      "content": "Consider how to efficiently find the maximum difficulty job for a range of jobs. You might want to maintain a temporary maximum as you iterate through the jobs for each day."
+    },
+    {
+      "content": "Remember that the DP solution will involve calculating the minimum difficulty for previous jobs and adding the maximum difficulty of the current day's jobs."
+    },
+    {
+      "content": "You might want to keep track of the starting job index for each day. This will help you manage which jobs have already been scheduled."
+    },
+    {
+      "content": "As you fill your DP table, ensure that you are correctly transitioning from one day to the next. The transition will depend on the maximum job difficulty of the jobs scheduled for that day."
+    },
+    {
+      "content": "After populating the DP table, your answer will be found in dp[n][d], where 'n' is the total number of jobs. If this value is still infinity, it indicates that scheduling is impossible."
+    },
+    {
+      "content": "Finally, think about the time complexity of your solution. You will need to ensure that your approach runs efficiently within the provided constraints, especially since the maximum number of jobs is 300."
+    },
+    {
+      "content": "Your final implementation should return the minimum difficulty of the job schedule or -1 if it's not possible to schedule the jobs according to the given constraints."
+    }
+  ],
+  "questionNotes": [
+    "You must complete at least one job each day.",
+    "If the number of jobs is less than 'd', return -1.",
+    "The difficulty of a day is the maximum difficulty of jobs done that day.",
+    "The DP array dp[i][j] represents the minimum difficulty to schedule the first 'i' jobs in 'j' days.",
+    "If 'j' > 'i', set dp[i][j] to infinity.",
+    "Return -1 if the final DP value is infinity."
+  ]
+}

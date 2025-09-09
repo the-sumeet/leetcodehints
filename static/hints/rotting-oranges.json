@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. Each cell can be empty (0), have a fresh orange (1), or a rotten orange (2). Your task is to track how the fresh oranges become rotten over time."
+    },
+    {
+      "content": "Consider how the rotting process works. A fresh orange will rot if it is adjacent (up, down, left, right) to a rotten orange. Think about how you can simulate this process over time."
+    },
+    {
+      "content": "You may want to use a queue to keep track of the rotten oranges. This will allow you to process each rotten orange and check its neighbors efficiently. Consider using a breadth-first search (BFS) approach."
+    },
+    {
+      "content": "Before starting the BFS, count the total number of fresh oranges. This will help you determine if all fresh oranges can be rotten by the end of your process."
+    },
+    {
+      "content": "As you perform the BFS, keep track of the number of minutes that have passed. Each time you process a layer of rotten oranges, you should increment your minute counter."
+    },
+    {
+      "content": "Remember to mark fresh oranges as rotten when they become rotten. This will prevent them from being counted multiple times. You can change their value from 1 to 2 in the grid."
+    },
+    {
+      "content": "After the BFS completes, check if there are any fresh oranges left. If there are, it means some oranges are unreachable and you should return -1."
+    },
+    {
+      "content": "Think about edge cases, such as when the grid has no fresh oranges at the start (return 0) or when all oranges are rotten initially (also return 0)."
+    },
+    {
+      "content": "Consider the constraints of the problem, such as the maximum grid size (10x10). This allows for a straightforward BFS implementation without performance concerns."
+    },
+    {
+      "content": "Finally, ensure your function returns the correct value. If all fresh oranges are rotten, return the total minutes counted; otherwise, return -1. Make sure to handle the grid indexing correctly."
+    }
+  ],
+  "questionNotes": [
+    "The grid can contain values 0 (empty), 1 (fresh orange), or 2 (rotten orange).",
+    "You must return -1 if not all fresh oranges can rot.",
+    "The function should return 0 if there are no fresh oranges initially.",
+    "The grid size is limited to 1 <= m, n <= 10."
+  ]
+}

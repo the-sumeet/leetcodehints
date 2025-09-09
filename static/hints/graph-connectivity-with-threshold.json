@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem's requirement for connectivity. Two cities are connected if they share a common divisor greater than the threshold. Think about how you can represent the cities and their connections."
+    },
+    {
+      "content": "Consider how you would find common divisors for two numbers. A good approach is to iterate through potential divisors and check if they divide both numbers. What would be the implications of the threshold on this?"
+    },
+    {
+      "content": "Remember that the divisor must be strictly greater than the threshold. This means you need to filter out any divisors that are less than or equal to the threshold when checking for connections."
+    },
+    {
+      "content": "Think about how you can represent the connections between cities. A graph representation might be useful. Each city can be a node, and a direct connection can be an edge between two nodes."
+    },
+    {
+      "content": "You may want to use a union-find (disjoint set) data structure to efficiently manage and query the connectivity between cities. This structure can help you group cities that are directly or indirectly connected."
+    },
+    {
+      "content": "Before implementing the union-find, consider how to initialize it. Each city will start as its own component, and you'll need to connect components based on shared divisors."
+    },
+    {
+      "content": "When processing each city, iterate through potential divisors starting from the threshold + 1 to n. For each divisor, find all cities that can be connected by it and union them in the union-find structure."
+    },
+    {
+      "content": "Take note of the performance implications. The constraints allow for n up to 10,000 and queries up to 100,000. Ensure your solution is efficient, especially in how you find and union connected components."
+    },
+    {
+      "content": "As you process the queries, remember that the order of cities in each query does not matter. If city a is connected to city b, then city b is also connected to city a."
+    },
+    {
+      "content": "Consider edge cases, such as when the threshold is 0. In this case, all cities will be connected since they all share 1 as a divisor."
+    },
+    {
+      "content": "Also, think about the scenario where the threshold is greater than or equal to n. In this case, no cities can be connected since no divisor can exceed n."
+    },
+    {
+      "content": "After building the union-find structure, you can efficiently answer each query by checking if the two cities belong to the same component."
+    },
+    {
+      "content": "Ensure your final output matches the required format: an array of boolean values indicating whether each pair of cities in the queries is connected."
+    },
+    {
+      "content": "As a final step, test your solution with various edge cases, such as the smallest and largest values for n and threshold, to ensure robustness."
+    },
+    {
+      "content": "Remember to handle multiple queries for the same pairs correctly. The union-find structure will help manage this efficiently."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^4",
+    "0 <= threshold <= n",
+    "1 <= queries.length <= 10^5",
+    "queries[i].length == 2",
+    "1 <= a_i, b_i <= n, a_i != b_i",
+    "Output should be an array of booleans indicating connectivity."
+  ]
+}

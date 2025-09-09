@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the coins are calculated when bursting a balloon. When you burst the i-th balloon, the coins you earn depend on the values of the balloons immediately adjacent to it."
+    },
+    {
+      "content": "Consider the edge cases where the balloon you are bursting is at the beginning or the end of the array. Remember that if you burst the first or last balloon, you should treat the out-of-bounds index as 1."
+    },
+    {
+      "content": "Think about the order in which you burst the balloons. The maximum coins you can collect may depend heavily on the sequence of bursts."
+    },
+    {
+      "content": "You might want to explore a dynamic programming approach. Create a DP table where each entry dp[i][j] represents the maximum coins obtainable by bursting all balloons between indices i and j."
+    },
+    {
+      "content": "When filling the DP table, consider the last balloon to burst in the range [i, j]. This choice will affect the coins collected from the balloons adjacent to it."
+    },
+    {
+      "content": "Remember to account for the boundaries by initializing your DP table with base cases. For example, when only one balloon is left, the coins collected will be based on the adjacent 'virtual' balloons."
+    },
+    {
+      "content": "The DP transition can be expressed as: dp[i][j] = max(dp[i][j], dp[i][k] + dp[k][j] + nums[i-1] * nums[k] * nums[j+1]) for all k in (i, j)."
+    },
+    {
+      "content": "Make sure to handle the case where i and j are adjacent. In this case, you can directly calculate the coins without needing to consider further balloons."
+    },
+    {
+      "content": "Consider the overall range of the balloons. You might want to add 'virtual' balloons (with value 1) at both ends of the nums array to simplify your calculations."
+    },
+    {
+      "content": "Think about the time complexity of your approach. A naive recursive solution might lead to exponential time complexity, while a well-structured DP solution can reduce it significantly."
+    },
+    {
+      "content": "When initializing your DP table, ensure that you properly set the values for cases where only two balloons are present. This will help in building up to larger subproblems."
+    },
+    {
+      "content": "As you implement your solution, keep track of the maximum coins collected for each subproblem in your DP table. This will help you in constructing the final answer."
+    },
+    {
+      "content": "Don't forget to return the value from dp[0][n-1] after filling out your DP table, as this represents the maximum coins obtainable from bursting all balloons."
+    },
+    {
+      "content": "Consider edge cases such as when nums contains zeros or when it has only one balloon. How do these scenarios affect your DP initialization and calculations?"
+    },
+    {
+      "content": "Finally, ensure your implementation handles the balloon indices correctly, especially when accessing adjacent values in the nums array during calculations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 1 <= n <= 300, 0 <= nums[i] <= 100.",
+    "Indexing: Balloons are indexed from 0 to n-1.",
+    "Edge cases: Treat out-of-bounds indices as balloons with value 1.",
+    "Return format: Return the maximum coins collected as an integer."
+  ]
+}

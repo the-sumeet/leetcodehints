@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the jump rules. You can jump to a higher index only if the value is less than the current index, and to a lower index only if the value is greater. This creates a directional constraint on your jumps."
+    },
+    {
+      "content": "Consider how you might represent the maximum value reachable from each index. You could initialize an answer array with the same values as `nums`, since the maximum reachable value from an index could be at least the value at that index."
+    },
+    {
+      "content": "Think about how you might traverse the array. You could use a nested loop where for each index `i`, you check all possible indices `j` to see if a jump is valid based on the rules."
+    },
+    {
+      "content": "As you check possible jumps, keep track of the maximum value found. For each index `i`, update the answer array if you find a valid jump that leads to a higher value."
+    },
+    {
+      "content": "Consider the efficiency of your approach. A naive solution with nested loops might lead to O(n^2) time complexity. Think about how you could optimize this, perhaps by using a stack or sorting the indices."
+    },
+    {
+      "content": "Pay attention to the constraints. The size of `nums` can be up to 100,000, so your solution should ideally be linear or logarithmic in complexity. How can you reduce the number of comparisons?"
+    },
+    {
+      "content": "Think about using a data structure that helps you efficiently find the maximum reachable value as you traverse the array. A stack could help you manage the indices and their corresponding values."
+    },
+    {
+      "content": "When processing the array, consider processing it in both directions: from left to right and right to left. This way, you can ensure that you explore all potential jumps for each index."
+    },
+    {
+      "content": "As you implement your solution, be mindful of edge cases such as arrays with all identical elements or strictly increasing/decreasing sequences. How would your approach handle these cases?"
+    },
+    {
+      "content": "Finally, ensure your implementation correctly populates the answer array and returns it in the expected format. The output should be an array where each element corresponds to the maximum value reachable from that index."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5 and 1 <= nums[i] <= 10^9.",
+    "You can only jump to a higher index if the value is less, and to a lower index if the value is greater.",
+    "Return an array where ans[i] is the maximum value reachable starting from index i."
+  ]
+}

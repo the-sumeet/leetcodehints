@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the game mechanics. Alice and Bob take turns playing levels from the binary array. If a level is marked with 0, it cannot be cleared by either player, which means it cannot contribute to their scores."
+    },
+    {
+      "content": "Remember that both players aim to maximize their points. Think about how the score is calculated: +1 for clearing a level and -1 for failing to clear it. This means that the strategy will depend on the levels each player chooses to play."
+    },
+    {
+      "content": "Consider the implications of Alice needing to play at least one level. If she plays a level that is impossible (0), she will lose a point immediately, which could affect her chances of gaining more points than Bob."
+    },
+    {
+      "content": "Iterate through the possible levels Alice can play. For each level she considers playing, calculate her potential score and Bob's potential score based on the remaining levels. This will help you determine if she can gain more points."
+    },
+    {
+      "content": "When calculating scores, remember that Bob will also play optimally. This means he will choose the levels that maximize his score after Alice has played her chosen levels."
+    },
+    {
+      "content": "Think about edge cases. For example, if all levels are impossible (0), Alice cannot gain more points than Bob since both will end up with equal scores. Make sure to handle this scenario explicitly."
+    },
+    {
+      "content": "As you iterate through the levels, keep track of Alice's score and Bob's score dynamically. This way, you can determine the minimum number of levels Alice needs to play to ensure her score exceeds Bob's."
+    },
+    {
+      "content": "When you find a configuration where Alice's score is greater than Bob's, note the number of levels she has played. Your goal is to find the minimum number of levels that allows this condition to hold."
+    },
+    {
+      "content": "If you reach the end of the array without finding a valid configuration where Alice's score exceeds Bob's, remember to return -1, as specified in the problem statement."
+    },
+    {
+      "content": "Finally, ensure you consider all possible configurations of Alice playing from 1 level up to n-1 levels (since Bob must play at least one level). This will help you find the optimal solution efficiently."
+    }
+  ],
+  "questionNotes": [
+    "Alice and Bob must play at least one level each.",
+    "If possible[i] == 0, the i-th level is impossible to clear.",
+    "Return -1 if Alice cannot gain more points than Bob.",
+    "The output should be the minimum number of levels Alice needs to play."
+  ]
+}

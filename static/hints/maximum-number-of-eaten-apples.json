@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the `apples` and `days` arrays. Each entry in `apples[i]` tells you how many apples are available on day `i`, while `days[i]` indicates how many days those apples will last before rotting."
+    },
+    {
+      "content": "Consider how you can keep track of the apples that are available to eat on any given day. You might want to use a data structure that allows you to efficiently manage the apples based on their rot days."
+    },
+    {
+      "content": "Think about how you can simulate each day. For each day, you should check if there are any apples available to eat and if they are still good (not rotten)."
+    },
+    {
+      "content": "Remember that you can eat at most one apple per day. This means you need to prioritize which apples to eat based on their availability and their rotting time."
+    },
+    {
+      "content": "You might want to use a max-heap (or priority queue) to keep track of the apples that are available to eat. This way, you can always eat the apple that will rot the soonest first."
+    },
+    {
+      "content": "As you iterate through the days, make sure to account for the apples that rot on that day. You will need to remove these from your data structure."
+    },
+    {
+      "content": "When processing each day, check if there are any new apples added to your tracking structure. If there are, add them to your heap."
+    },
+    {
+      "content": "Don't forget to handle the case where `apples[i]` and `days[i]` are both zero, which means no apples are available on that day."
+    },
+    {
+      "content": "After the initial `n` days, you can continue to eat apples as long as there are still apples available in your heap. This means your loop should not necessarily stop after `n` iterations."
+    },
+    {
+      "content": "Finally, ensure that your solution properly counts the total number of apples eaten. You will need to increment a counter each time you successfully eat an apple."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == apples.length == days.length",
+    "1 <= n <= 2 * 10^4",
+    "0 <= apples[i], days[i] <= 2 * 10^4",
+    "days[i] = 0 if and only if apples[i] = 0",
+    "You can eat at most one apple per day."
+  ]
+}

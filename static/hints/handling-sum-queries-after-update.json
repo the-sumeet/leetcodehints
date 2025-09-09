@@ -1,0 +1,59 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the structure of the queries. Each query has a type that determines what action to take on the arrays nums1 and nums2. Make sure you can identify the type of each query before processing it."
+    },
+    {
+      "content": "For type 1 queries, remember that you need to flip the values of nums1 between indices l and r. This means changing 0s to 1s and 1s to 0s. Think about how you can iterate through that range efficiently."
+    },
+    {
+      "content": "When flipping values in nums1, consider using a loop to go from l to r. You can use a simple conditional statement to check the current value and flip it accordingly."
+    },
+    {
+      "content": "For type 2 queries, you are modifying nums2 based on the values in nums1 multiplied by a given value p. Make sure to iterate through all elements of nums1 and nums2 to apply this transformation correctly."
+    },
+    {
+      "content": "Keep in mind that for type 2 queries, the operation is cumulative. This means if you perform multiple type 2 queries, you need to keep adding to the existing values in nums2."
+    },
+    {
+      "content": "Type 3 queries require you to calculate the sum of all elements in nums2. After processing all previous queries, you can use a simple summation loop or a built-in function to achieve this."
+    },
+    {
+      "content": "Consider edge cases where nums1 might be all 0s or all 1s. How would your queries affect nums2 in these scenarios? Think about initializing nums2 and how it changes with different p values."
+    },
+    {
+      "content": "Remember that the lengths of nums1 and nums2 are guaranteed to be the same. This means you can safely access elements by the same index in both arrays."
+    },
+    {
+      "content": "When processing multiple queries, think about how to maintain the state of nums1 and nums2. You may want to keep track of changes separately to avoid re-computing values unnecessarily."
+    },
+    {
+      "content": "For performance, consider the constraints: both nums1 and nums2 can have lengths up to 100,000, and there can be up to 100,000 queries. Ensure your solution is efficient enough to handle the worst-case scenario."
+    },
+    {
+      "content": "You might want to use a prefix sum approach for type 3 queries if you find that calculating the sum directly is too slow after many updates. This can help you get the sum in constant time after an initial setup."
+    },
+    {
+      "content": "As you implement the solution, keep track of the results for type 3 queries in a separate list to return at the end. This will help you maintain clarity in your code."
+    },
+    {
+      "content": "When flipping values in nums1, consider whether you need to handle any edge cases where l equals r. Ensure your implementation correctly handles single-element flips."
+    },
+    {
+      "content": "If you encounter performance issues, review your loops and ensure you are not performing unnecessary computations, especially in the type 2 queries where you modify nums2."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases, such as all queries being of the same type or having the maximum limits of input sizes. This can help identify any potential issues."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums1.length, nums2.length <= 100000",
+    "nums1.length = nums2.length",
+    "1 <= queries.length <= 100000",
+    "0 <= l <= r <= nums1.length - 1",
+    "0 <= p <= 1000000",
+    "0 <= nums1[i] <= 1",
+    "0 <= nums2[i] <= 1000000000",
+    "Return an array containing all the answers to the third type queries."
+  ]
+}

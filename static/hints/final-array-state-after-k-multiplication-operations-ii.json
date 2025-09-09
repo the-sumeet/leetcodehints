@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have an integer array `nums`, an integer `k`, and a `multiplier`. Make sure you know how to access elements in the array and the meaning of each parameter."
+    },
+    {
+      "content": "Remember that you need to perform exactly `k` operations. Each operation consists of finding the minimum value in the array and replacing it with its product with the `multiplier`."
+    },
+    {
+      "content": "When searching for the minimum value, if there are multiple occurrences, you should select the first one. This is crucial for maintaining the correct order of operations."
+    },
+    {
+      "content": "Think about how to efficiently find the minimum value in the array. A simple linear search could work, but consider the performance implications if `k` is very large."
+    },
+    {
+      "content": "After performing all `k` operations, remember to apply modulo `10^9 + 7` to each element in the array. This ensures that your results fit within the required limits."
+    },
+    {
+      "content": "Consider edge cases such as when `k` is larger than the length of `nums`. How will this affect your operations? Think about the implications of repeatedly multiplying the same minimum value."
+    },
+    {
+      "content": "When performing the multiplication, be mindful of integer overflow. Since `nums[i]` can be as large as `10^9`, multiplying by `multiplier` could exceed typical integer limits."
+    },
+    {
+      "content": "Plan how you will implement the loop for `k` operations. You might want to create a function that handles finding and replacing the minimum value."
+    },
+    {
+      "content": "Use a loop to iterate `k` times, but make sure to check if the array has changed after each operation. If the minimum value is the same, you might be multiplying the same number repeatedly."
+    },
+    {
+      "content": "Think about using a priority queue or a min-heap to efficiently manage the minimum value selection. This could significantly reduce the time complexity of finding the minimum."
+    },
+    {
+      "content": "As you implement your solution, keep track of the indices of the elements you modify. This will help ensure that you are correctly replacing the first occurrence of the minimum value."
+    },
+    {
+      "content": "After all operations, remember to iterate through the array again to apply the modulo operation. This can be done in a simple loop after your main logic."
+    },
+    {
+      "content": "Ensure that your final output is in the correct format: an integer array. Pay attention to the return statement in your function."
+    },
+    {
+      "content": "Consider testing your solution with edge cases, such as having `k` equal to 1, or `k` being equal to the length of `nums`. This will help you ensure robustness."
+    },
+    {
+      "content": "Finally, think about the performance of your solution. If `k` can be as large as `10^9`, you might need to optimize your approach to avoid unnecessary computations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^4",
+    "Constraints: 1 <= nums[i] <= 10^9",
+    "Constraints: 1 <= k <= 10^9",
+    "Constraints: 1 <= multiplier <= 10^6",
+    "Return format: An integer array after k operations and modulo 10^9 + 7.",
+    "Tie-breaking: Select the first occurrence of the minimum value."
+  ]
+}

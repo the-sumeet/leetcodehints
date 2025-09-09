@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. Each node has a value, and the edges define the connections between these nodes. You need to focus on how to form a star graph centered around a specific node."
+    },
+    {
+      "content": "Remember that a star graph can have a center node with multiple neighbors. The maximum star sum will involve the center node's value plus the values of its neighbors, but you can only choose a limited number of neighbors based on the value of k."
+    },
+    {
+      "content": "Consider how to represent the graph using the edges. You might want to use an adjacency list to keep track of which nodes are connected to which. This will help you easily access the neighbors of any given node."
+    },
+    {
+      "content": "When calculating the star sum for a node, don't forget to include the value of the center node itself. The sum will be the center node's value plus the values of the selected neighbors."
+    },
+    {
+      "content": "You need to sort the values of the neighbors for each center node. This way, you can easily pick the top k values that will maximize the star sum. Think about how you can efficiently do this."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when there are no edges or when k is 0. In these scenarios, the star graph can only consist of the center node itself, and you should return its value."
+    },
+    {
+      "content": "As you iterate through each node to consider it as a potential center, ensure you handle the case where a node has fewer than k neighbors. You should only sum the available neighbors."
+    },
+    {
+      "content": "Consider using a loop to go through each node as a potential center, and for each node, gather its neighbors. Then, sort the neighbor values and sum the top k values along with the center node's value."
+    },
+    {
+      "content": "When summing the values, make sure to check if the neighbor values are positive. If they are negative, including them might decrease the overall star sum, so you should only include positive values when possible."
+    },
+    {
+      "content": "Finally, after calculating the star sums for all potential center nodes, return the maximum star sum you found. Make sure to handle the return format correctly, as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == vals.length, 1 <= n <= 10^5, -10^4 <= vals[i] <= 10^4, 0 <= edges.length <= min(n * (n - 1) / 2, 10^5).",
+    "Edges are undirected, meaning if there's an edge from a to b, there's also an edge from b to a.",
+    "k represents the maximum number of edges (neighbors) you can include in your star graph.",
+    "If k is 0, only the center node's value should be returned.",
+    "If there are no edges, the only possible star graph is the node itself."
+  ]
+}

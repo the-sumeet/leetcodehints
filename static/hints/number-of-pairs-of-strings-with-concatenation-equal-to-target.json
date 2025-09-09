@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find pairs of indices (i, j) such that the concatenation of `nums[i]` and `nums[j]` equals `target`. Remember, i must not equal j."
+    },
+    {
+      "content": "Consider how you can iterate through the `nums` array. You will likely need a nested loop to check each pair of strings. Think about how you can avoid counting the same pair twice."
+    },
+    {
+      "content": "When checking pairs, ensure that you are concatenating the strings correctly. For example, if `nums[i]` is '777' and `nums[j]` is '7', you should check if '7777' equals '777' + '7'."
+    },
+    {
+      "content": "Pay attention to the constraints. The length of `nums` can be up to 100, and each string can be up to 100 characters long. This means your solution should be efficient enough to handle potentially large inputs."
+    },
+    {
+      "content": "Think about using a counter to keep track of how many times each string appears in `nums`. This might help you quickly find pairs that concatenate to the target."
+    },
+    {
+      "content": "You can use a dictionary to store the counts of each string. For each string `num` in `nums`, calculate the required complement string that, when concatenated with `num`, would equal `target`."
+    },
+    {
+      "content": "Make sure to handle cases where the same string can form pairs with itself. For example, if `target` is '11' and `nums` contains '1', you need to count pairs like (0, 1) and (1, 0)."
+    },
+    {
+      "content": "As you iterate through each string in `nums`, check if the complement exists in your dictionary. If it does, you can calculate how many valid pairs can be formed with the current string."
+    },
+    {
+      "content": "Remember to avoid double counting pairs. If you find a valid pair (i, j), ensure that you only count it once, and consider how to handle pairs where i and j are the same string."
+    },
+    {
+      "content": "Finally, think about how you will return the count of valid pairs. You should initialize a counter at the start and increment it whenever you find a valid pair. Don't forget to consider all edge cases."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 100",
+    "1 <= nums[i].length <= 100",
+    "2 <= target.length <= 100",
+    "nums[i] and target consist of digits.",
+    "nums[i] and target do not have leading zeros.",
+    "Return the number of pairs (i, j) where i != j."
+  ]
+}

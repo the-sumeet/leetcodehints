@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the goal: you want to delete columns from the given array of strings so that each string remains lexicographically sorted. Think about what it means for a string to be in order."
+    },
+    {
+      "content": "Consider how you can represent the columns of the strings. Each string can be thought of as a series of characters indexed by their position. For example, in 'abc', 'a' is at index 0, 'b' at index 1, and 'c' at index 2."
+    },
+    {
+      "content": "You need to identify which columns can be deleted. If a column at index `j` causes any string to be out of order when compared to the next string, it might be a candidate for deletion."
+    },
+    {
+      "content": "Think about how to compare two strings. For two strings `strs[i]` and `strs[i+1]`, you need to ensure that for every character, `strs[i][k] <= strs[i+1][k]` for the remaining characters after deletions."
+    },
+    {
+      "content": "Consider using dynamic programming. You can keep track of the minimum number of deletions needed to ensure that all strings up to the `i-th` string are sorted."
+    },
+    {
+      "content": "Define a DP array where `dp[i]` represents the minimum deletions needed for the first `i` strings to be sorted. Initialize `dp[0]` to 0 since no deletions are needed for one string."
+    },
+    {
+      "content": "When evaluating the `i-th` string against the previous one, check for each character index if the string remains sorted. If it doesn't, you may need to increase your deletion count."
+    },
+    {
+      "content": "Think about how to efficiently determine if a column is sorted. You might want to iterate through the characters of the strings and compare them at each index."
+    },
+    {
+      "content": "Consider edge cases where all strings are already sorted. In such cases, you should return 0 since no deletions are needed."
+    },
+    {
+      "content": "What if there's only one string? In this case, you also need to return 0, as a single string is trivially sorted."
+    },
+    {
+      "content": "Remember that you can only delete entire columns, not individual characters. This means that if you decide to delete a column, it affects all strings equally."
+    },
+    {
+      "content": "As you implement the solution, keep track of the number of deletions you are making. You need to return the total count of deletions required."
+    },
+    {
+      "content": "You might want to use a greedy approach to determine which columns to delete. For each column, check if it maintains the order; if it doesn't, mark it for deletion."
+    },
+    {
+      "content": "Consider using a bitmask to represent which columns are kept. This can help in visualizing which columns are still in play as you iterate through the strings."
+    },
+    {
+      "content": "Finally, once you have a strategy for determining deletions, ensure you test your implementation with various edge cases, such as strings of maximum length or strings that are already sorted."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == strs.length, 1 <= n <= 100, 1 <= strs[i].length <= 100.",
+    "All strings consist of lowercase English letters.",
+    "You need to return the minimum number of deletion indices.",
+    "The final array must have every string in lexicographic order."
+  ]
+}

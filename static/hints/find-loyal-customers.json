@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by grouping the transactions by `customer_id`. This will allow you to analyze each customer's transactions separately. You can use SQL's `GROUP BY` clause to achieve this."
+    },
+    {
+      "content": "Count the number of purchase transactions for each customer. You can use the `COUNT()` function with a `WHERE` clause to filter for only 'purchase' transaction types."
+    },
+    {
+      "content": "Next, calculate the total number of refund transactions for each customer. Similar to counting purchases, use `COUNT()` with a `WHERE` clause for 'refund' transactions."
+    },
+    {
+      "content": "To determine the refund rate, you need to compute the ratio of refund transactions to the total number of transactions (both purchases and refunds) for each customer. Remember to handle cases where there might be zero transactions."
+    },
+    {
+      "content": "You also need to find the active period for each customer. This can be done by finding the minimum and maximum transaction dates for each customer and calculating the difference."
+    },
+    {
+      "content": "Make sure to check if the active period is at least 30 days. You can use the `DATEDIFF()` function to calculate the difference between the maximum and minimum transaction dates."
+    },
+    {
+      "content": "Combine all the conditions for loyalty: at least 3 purchases, an active period of at least 30 days, and a refund rate of less than 20%. You can use a `HAVING` clause to filter customers based on these criteria."
+    },
+    {
+      "content": "When calculating the refund rate, ensure you handle the case where a customer may have made no transactions at all. This will prevent division by zero errors."
+    },
+    {
+      "content": "Don't forget to order the final results by `customer_id` in ascending order. You can achieve this using the `ORDER BY` clause in your final query."
+    },
+    {
+      "content": "Your final SQL query should include all the necessary joins, aggregations, and conditions to filter out loyal customers. Make sure to test your query with various datasets to ensure it handles edge cases correctly."
+    }
+  ],
+  "questionNotes": [
+    "A customer is considered loyal if they have made at least 3 purchase transactions.",
+    "The active period must be at least 30 days.",
+    "The refund rate must be less than 20%.",
+    "Ensure to handle cases with zero transactions to avoid division by zero.",
+    "Return the result ordered by `customer_id` in ascending order."
+  ]
+}

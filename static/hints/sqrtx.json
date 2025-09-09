@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering the properties of square roots. Remember that the square root of a number x is a value y such that y * y = x. This means that for any non-negative integer x, the square root will also be non-negative."
+    },
+    {
+      "content": "Think about edge cases. What happens when x is 0? What is the square root of 0? Make sure your solution correctly handles this case."
+    },
+    {
+      "content": "Since you cannot use built-in exponent functions, consider how you might find the square root using other methods. One approach is to use a binary search algorithm to efficiently narrow down the potential values for the square root."
+    },
+    {
+      "content": "In a binary search, you typically define a range to search within. For this problem, what would be the minimum and maximum values for your search range when looking for the square root of x?"
+    },
+    {
+      "content": "When implementing binary search, you will need to check the middle value of your current range. If the square of this middle value is less than x, you should search the upper half. If it's greater, search the lower half."
+    },
+    {
+      "content": "Make sure to keep track of the floor value of the square root as you narrow down your search. If you find a perfect square, that is your answer, but if not, you should return the last value that squared to a number less than x."
+    },
+    {
+      "content": "Consider how you will handle the condition where the middle value squared is equal to x. In this case, you can immediately return the middle value as the result."
+    },
+    {
+      "content": "Don't forget to account for the case where x is 1. What should your function return when x is 1? Make sure your implementation handles this correctly."
+    },
+    {
+      "content": "As you implement the binary search, remember to update your search bounds correctly. If the middle squared is less than x, move your lower bound up; if it's greater, move your upper bound down."
+    },
+    {
+      "content": "Your final implementation should return the integer part of the square root. Make sure to test your function with various values of x, including edge cases like 0, 1, and very large numbers close to the upper constraint."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= x <= 2^31 - 1",
+    "Return format: The function should return a non-negative integer.",
+    "Do not use any built-in exponent function or operator."
+  ]
+}

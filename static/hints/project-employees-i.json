@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the Project and Employee tables. Each project can have multiple employees, and each employee can work on multiple projects. This suggests you will need to join these two tables based on the employee_id."
+    },
+    {
+      "content": "When joining the tables, consider which columns you need from each table. You will need the project_id from the Project table and the experience_years from the Employee table to calculate the average experience."
+    },
+    {
+      "content": "Remember to group your results by project_id. This will allow you to calculate the average experience for each project separately. Use the SQL GROUP BY clause for this purpose."
+    },
+    {
+      "content": "To calculate the average experience, you can use the AVG() function in SQL. This function will compute the average of the experience_years for each group of project_id."
+    },
+    {
+      "content": "Make sure to round the average experience to two decimal places. You can use the ROUND() function in SQL to achieve this. The syntax is ROUND(column_name, number_of_decimal_places)."
+    },
+    {
+      "content": "Consider what happens if a project has no employees assigned to it. In such cases, you might want to decide how to handle the average calculation. Will you include it in the results or exclude it?"
+    },
+    {
+      "content": "Check how to handle the output format. The result should include project_id and the rounded average experience years. Ensure that the column names in your SELECT statement match the expected output."
+    },
+    {
+      "content": "Keep in mind that the output can be returned in any order. You don’t need to apply any specific sorting to the results unless explicitly required."
+    },
+    {
+      "content": "After writing your SQL query, run it against the provided sample data to verify that it produces the expected results. Pay attention to edge cases, such as projects with varying numbers of employees."
+    },
+    {
+      "content": "Finally, your SQL query should look something like this: SELECT project_id, ROUND(AVG(experience_years), 2) AS average_years FROM ... GROUP BY project_id. Make sure to fill in the correct JOIN and FROM clauses."
+    }
+  ],
+  "questionNotes": [
+    "The primary key for the Project table is (project_id, employee_id).",
+    "employee_id in the Project table is a foreign key referencing the Employee table.",
+    "experience_years is guaranteed to be non-NULL.",
+    "The output must include project_id and the average_years rounded to 2 decimal places.",
+    "The results can be returned in any order."
+  ]
+}

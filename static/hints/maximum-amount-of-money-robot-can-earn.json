@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. The robot begins at the top-left corner (0, 0) and can only move right or down. Make sure you visualize the possible paths the robot can take."
+    },
+    {
+      "content": "Consider how the robot's coin total changes as it moves. Positive values increase the total, while negative values decrease it. Keep track of the total coins at each cell."
+    },
+    {
+      "content": "Remember that the robot can neutralize robbers in at most 2 cells. Think about how you can keep track of these neutralizations as the robot moves through the grid."
+    },
+    {
+      "content": "You might want to use dynamic programming to store the maximum coins the robot can collect at each cell. Consider a 3D DP array where the third dimension tracks the number of neutralizations used."
+    },
+    {
+      "content": "When defining your DP state, think about how to transition from the previous cells. For example, if you're at cell (i, j), you can come from (i-1, j) or (i, j-1)."
+    },
+    {
+      "content": "As you fill in the DP table, remember to account for the effect of robbers. If you encounter a robber, decide whether to neutralize or not based on the maximum coins collected so far."
+    },
+    {
+      "content": "Consider edge cases where the grid is very small, such as 1x1 or 1xN. What happens if all values are negative? Ensure your solution handles these gracefully."
+    },
+    {
+      "content": "Think about how many neutralizations are left as you traverse the grid. You may want to store the maximum coins for each cell with 0, 1, and 2 neutralizations left."
+    },
+    {
+      "content": "When you reach the bottom-right corner of the grid, make sure to check the maximum coins collected across all possible neutralization states. This will give you the final answer."
+    },
+    {
+      "content": "Finally, ensure your solution is efficient enough to handle the upper limits of the constraints, specifically the grid size up to 500x500. Aim for a time complexity around O(m * n * k) where k is the number of neutralizations."
+    }
+  ],
+  "questionNotes": [
+    "The robot can only move right or down.",
+    "The grid may contain both positive and negative values.",
+    "The robot can neutralize robbers in at most 2 cells.",
+    "Return the maximum profit the robot can gain on its route.",
+    "Constraints: 1 <= m, n <= 500; -1000 <= coins[i][j] <= 1000."
+  ]
+}

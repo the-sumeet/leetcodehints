@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the nature of combinations. Combinations are selections of items where the order does not matter. For example, from 'abc', the combinations of length 2 are 'ab', 'ac', and 'bc'."
+    },
+    {
+      "content": "Consider how to generate combinations in lexicographical order. You can use a recursive approach or an iterative method to build combinations. Think about how you would build combinations step by step."
+    },
+    {
+      "content": "Remember that the input string is guaranteed to be sorted and contains distinct characters. This simplifies your task since you won't need to handle duplicates or sort the results."
+    },
+    {
+      "content": "You need to implement two main methods: `next()` and `hasNext()`. `hasNext()` should check if there are more combinations to return, while `next()` should return the next combination."
+    },
+    {
+      "content": "Think about how to keep track of the current position in the combinations. You might want to use an index or a stack to remember which characters you've included in the current combination."
+    },
+    {
+      "content": "When implementing `next()`, ensure that you update your state to point to the next combination after returning the current one. This is crucial for maintaining the correct order."
+    },
+    {
+      "content": "Consider edge cases, such as when `combinationLength` equals the length of the input string. In this case, there will only be one combination: the entire string."
+    },
+    {
+      "content": "You could use a helper function to generate combinations recursively. This function could take parameters for the current combination being built and the starting index for the next character."
+    },
+    {
+      "content": "Make sure to handle the case where there are no more combinations left. In `hasNext()`, you should return false when you've exhausted all possible combinations."
+    },
+    {
+      "content": "Finally, think about how to efficiently generate combinations without recalculating them. You might want to precompute all combinations and store them in a list or generate them on-the-fly while ensuring you track your position correctly."
+    }
+  ],
+  "questionNotes": [
+    "1 <= combinationLength <= characters.length <= 15",
+    "All characters in 'characters' are unique and sorted.",
+    "At most 10^4 calls will be made to next and hasNext.",
+    "It is guaranteed that all calls to next are valid."
+  ]
+}

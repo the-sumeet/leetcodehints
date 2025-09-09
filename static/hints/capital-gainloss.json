@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `Stocks` table. You have four columns: `stock_name`, `operation`, `operation_day`, and `price`. Each stock can have multiple buy and sell operations, and the operations are guaranteed to be paired correctly."
+    },
+    {
+      "content": "Remember that the `operation` column can either be 'Buy' or 'Sell'. You'll need to differentiate between these two operations when calculating the capital gain or loss."
+    },
+    {
+      "content": "Consider how to store the prices of the stocks when buying. You might want to use a data structure to keep track of the buy prices until you find a corresponding sell price."
+    },
+    {
+      "content": "Think about the order of operations. Since you must calculate the gain/loss from the buy price to the sell price, ensure you process the operations in the order of `operation_day`."
+    },
+    {
+      "content": "You can use a dictionary to map each `stock_name` to a list of its buy prices. When you encounter a 'Sell' operation, pop the last buy price from the list to calculate the gain/loss."
+    },
+    {
+      "content": "As you calculate the capital gain/loss for each sell operation, keep a running total for each stock. You can store these totals in another dictionary where the keys are stock names."
+    },
+    {
+      "content": "Consider edge cases where a stock may have multiple buy and sell operations. Ensure your logic correctly handles multiple transactions for the same stock."
+    },
+    {
+      "content": "Make sure to return the results in the specified format with two columns: `stock_name` and `capital_gain_loss`. The output can be in any order, so you don’t need to worry about sorting."
+    },
+    {
+      "content": "Pay attention to the data types. The `capital_gain_loss` should be an integer, so ensure your calculations result in the correct type without any type conversion issues."
+    },
+    {
+      "content": "Finally, think about how you will implement the logic to iterate through the operations, calculate gains/losses, and prepare the final output. You might want to use SQL-like pseudocode to visualize how you would approach this."
+    }
+  ],
+  "questionNotes": [
+    "The primary key is a combination of `stock_name` and `operation_day`, ensuring unique entries.",
+    "Each 'Sell' operation has a corresponding 'Buy' operation in a previous day, and vice versa.",
+    "The result can be returned in any order, but must include `stock_name` and `capital_gain_loss`."
+  ]
+}

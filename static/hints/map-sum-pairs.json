@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you can store the key-value pairs. A simple dictionary (or hash map) could work, but consider how you will efficiently sum values based on prefixes."
+    },
+    {
+      "content": "Remember that you need to handle cases where a key is inserted multiple times. If a key already exists, you should update its value instead of adding a new entry."
+    },
+    {
+      "content": "When implementing the `sum` function, think about how you can traverse the keys that start with the given prefix. This could involve iterating through all keys, but that might not be efficient."
+    },
+    {
+      "content": "Consider using a Trie (prefix tree) to store the keys. This data structure allows you to efficiently find all keys with a given prefix and can help you sum their values."
+    },
+    {
+      "content": "In your Trie implementation, each node could store the cumulative sum of all values for keys that pass through that node. This way, you can retrieve the sum quickly when searching for a prefix."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the prefix does not match any keys. In such cases, the sum should return 0."
+    },
+    {
+      "content": "Think about how you will insert a new key-value pair into the Trie. You will need to update the nodes along the path of the inserted key and adjust the sums accordingly."
+    },
+    {
+      "content": "When updating the value of an existing key, ensure that you subtract the old value from the cumulative sums of the nodes in the Trie before adding the new value."
+    },
+    {
+      "content": "Consider the constraints of the problem. You are guaranteed that the key and prefix will only contain lowercase letters and will not exceed 50 characters in length."
+    },
+    {
+      "content": "To summarize, your final implementation should allow for efficient insertion and summation based on prefixes. Think about how to structure your classes and methods to achieve this efficiently."
+    }
+  ],
+  "questionNotes": [
+    "1 <= key.length, prefix.length <= 50",
+    "key and prefix consist of only lowercase English letters.",
+    "1 <= val <= 1000",
+    "At most 50 calls will be made to insert and sum."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the current sum of the array `nums`. This will help you determine how far off you are from the `goal`. For example, if `nums = [1, -1, 1]`, the current sum is `1`."
+    },
+    {
+      "content": "Next, find the difference between the `goal` and the current sum. This difference will tell you how much you need to adjust the sum to reach the `goal`. For instance, if your current sum is `1` and your goal is `-4`, the difference is `-5`."
+    },
+    {
+      "content": "Remember that you can only add numbers within the range of `-limit` to `limit`. This means that the maximum adjustment you can make in one step is `limit` or `-limit` depending on whether you need to increase or decrease the sum."
+    },
+    {
+      "content": "To minimize the number of elements added, think about how many times you need to add `limit` or `-limit` to cover the difference. If the difference is `-5` and `limit` is `3`, you can add `-3` and `-2` in two steps."
+    },
+    {
+      "content": "Consider the absolute value of the difference. You can calculate the number of elements needed to cover the difference using the formula: `number_of_elements = ceil(abs(difference) / limit)`. This will give you the minimum number of elements needed."
+    },
+    {
+      "content": "Be cautious about edge cases, such as when the `goal` is already equal to the current sum. In this case, you don't need to add any elements, and the answer should be `0`."
+    },
+    {
+      "content": "When implementing your solution, ensure that you handle cases where the `goal` is less than the current sum and where it is greater. The logic will slightly differ based on whether you need to increase or decrease the sum."
+    },
+    {
+      "content": "Think about how to efficiently compute the number of elements needed without iterating unnecessarily through the array. You can focus directly on the difference rather than modifying the array."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases, such as when all elements of `nums` are at their limits, or when `goal` is at its extreme values (like `-10^9` or `10^9`)."
+    },
+    {
+      "content": "Finally, ensure your solution returns the correct type as specified in the problem statement, which is the minimum number of elements needed to reach the `goal`. You should avoid returning negative numbers or any non-integer values."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 10^5",
+    "1 <= limit <= 10^6",
+    "-limit <= nums[i] <= limit",
+    "-10^9 <= goal <= 10^9"
+  ]
+}

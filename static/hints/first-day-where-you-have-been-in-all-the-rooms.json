@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the rules for visiting rooms. On day 0, you always start by visiting room 0. From there, your next room depends on how many times you've visited the current room."
+    },
+    {
+      "content": "Keep track of how many times you've visited each room. You can use an array to store the count of visits for each room. This will help you determine the next room to visit based on whether the count is odd or even."
+    },
+    {
+      "content": "Remember that if you've visited room `i` an odd number of times, you will visit `nextVisit[i]` the next day. If it's even, you'll visit `(i + 1) % n`. Make sure to implement this logic correctly."
+    },
+    {
+      "content": "Consider how you will determine when you have visited all rooms. You can keep a set or an array to track which rooms have been visited at least once."
+    },
+    {
+      "content": "Think about the stopping condition for your loop. You need to return the first day when all rooms have been visited. This means you should check your visited rooms after each day's visit."
+    },
+    {
+      "content": "Since the number of days can be large, remember to return your final answer modulo 10^9 + 7. This will prevent overflow and ensure your answer fits within the required constraints."
+    },
+    {
+      "content": "Consider edge cases, such as the smallest possible input where `n = 2`. How would your logic handle this? Test your solution with small inputs to verify correctness."
+    },
+    {
+      "content": "As you implement the logic, make sure to update the visit counts correctly. After visiting a room, increment the count for that room before determining the next room to visit."
+    },
+    {
+      "content": "You may want to use a while loop to simulate each day until all rooms are visited. Inside the loop, check the visit counts and update your next room accordingly."
+    },
+    {
+      "content": "Your final implementation should look something like this: Initialize your visit counts and a variable for the current room. Loop until all rooms are visited, updating counts and determining the next room based on the rules."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nextVisit.length, 2 <= n <= 10^5, 0 <= nextVisit[i] <= i.",
+    "Return the first day where you have been in all the rooms, modulo 10^9 + 7.",
+    "Make sure to track the number of visits for each room correctly."
+  ]
+}

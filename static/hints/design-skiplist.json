@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic structure of a Skiplist. It consists of multiple layers of linked lists, where each layer acts as an express lane for the layer below it. The bottom layer contains all elements, while higher layers contain a subset of elements."
+    },
+    {
+      "content": "Consider how you will represent each node in the Skiplist. Each node should have pointers to the next node in the same layer and potentially to the next node in higher layers. Think about how you can structure this using a class."
+    },
+    {
+      "content": "When adding a new number, you need to determine where it fits in the Skiplist. This involves traversing the layers from top to bottom and left to right until you find the appropriate position."
+    },
+    {
+      "content": "Think about how to handle the randomization aspect of the Skiplist. You will need a way to decide how many layers a new node should have. A common approach is to use a random number generator."
+    },
+    {
+      "content": "Remember that the Skiplist allows for duplicate values. Your implementation should account for this when adding and erasing elements. You might consider maintaining a count of occurrences for each value."
+    },
+    {
+      "content": "For the search operation, you will also traverse the layers. Start from the highest layer and move downwards, only advancing to the next layer if the current node's value is less than the target."
+    },
+    {
+      "content": "When implementing the erase operation, you need to find the node containing the value and remove it from all layers where it exists. Ensure that you update the pointers correctly to maintain the list structure."
+    },
+    {
+      "content": "Consider edge cases, such as trying to erase a number that does not exist in the Skiplist. Your erase function should return false in this case without altering the structure."
+    },
+    {
+      "content": "Think about how you will initialize the Skiplist. You might want to create a head node that serves as a starting point for all layers, with pointers initialized to null."
+    },
+    {
+      "content": "Keep in mind the constraints provided in the problem statement. You will need to ensure that your implementation can handle up to 50,000 operations efficiently."
+    },
+    {
+      "content": "For the add operation, after determining the position of the new node, you need to insert it into all layers where it should appear. Make sure to handle the links correctly."
+    },
+    {
+      "content": "When searching for a number, if you reach a node with a value greater than the target, you should stop searching in that layer and move down to the next layer."
+    },
+    {
+      "content": "You should also think about the time complexity of each operation. Aim for O(log(n)) on average for add, erase, and search by leveraging the multiple layers."
+    },
+    {
+      "content": "To ensure that your Skiplist remains balanced, you might want to implement a mechanism to control the height of the Skiplist as you add new elements."
+    },
+    {
+      "content": "Finally, when you are ready to implement the methods, start with the search method first. It will give you a good understanding of how to traverse the Skiplist."
+    }
+  ],
+  "questionNotes": [
+    "The Skiplist must support duplicates, and any instance of a duplicate can be removed.",
+    "The operations (search, add, erase) should all operate in O(log(n)) time on average.",
+    "The Skiplist should be able to handle up to 50,000 operations efficiently.",
+    "Ensure that the erase operation returns false if the number does not exist."
+  ]
+}

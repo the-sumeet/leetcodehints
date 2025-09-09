@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of bitwise XOR. The XOR of two identical numbers is 0, and the XOR of any number with 0 is the number itself. This property is crucial in determining the winning and losing conditions."
+    },
+    {
+      "content": "Consider the initial XOR of the entire array. If the XOR is already 0 at the start of Alice's turn, she wins immediately. Make sure to compute the XOR of all elements before diving into strategies."
+    },
+    {
+      "content": "Think about the implications of erasing a number. When a player erases a number, the new XOR of the remaining numbers will determine the next player's options. Analyze how each possible move affects the game state."
+    },
+    {
+      "content": "Remember that both players are playing optimally. This means they will make moves that maximize their chances of winning, while minimizing the opponent's chances. Consider how each player would respond to a given move."
+    },
+    {
+      "content": "If Alice erases a number and the resulting XOR is 0, she loses. Therefore, she should avoid moves that leave the XOR as 0 after her turn. Explore how she can maintain a non-zero XOR."
+    },
+    {
+      "content": "Examine the case where the array has only one element. In this scenario, Alice will erase that element, leaving the board empty, and she will lose because the XOR of no elements is 0."
+    },
+    {
+      "content": "Consider the parity of the number of elements in the array. If the XOR of the entire array is non-zero and the number of elements is odd, Alice has a strategic advantage. Why does the parity matter?"
+    },
+    {
+      "content": "If the XOR is non-zero and the number of elements is even, Bob can always mirror Alice's moves to maintain an advantage. Analyze how this mirroring strategy plays out in different scenarios."
+    },
+    {
+      "content": "Think about how to represent the game state. You might want to keep track of the current XOR and the number of elements left on the chalkboard as you simulate the game."
+    },
+    {
+      "content": "Consider special cases, such as when all elements are the same. How does this affect the XOR and the outcome of the game? Can you find a pattern?"
+    },
+    {
+      "content": "You might want to implement a function to compute the XOR of an array. This will help you quickly evaluate the game state after each move. Remember to handle edge cases."
+    },
+    {
+      "content": "As you simulate the game, keep track of whose turn it is. This will help you determine if a player has won or lost based on the current state of the chalkboard."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various inputs, especially edge cases like arrays with maximum length or maximum values. How does your solution handle these cases?"
+    },
+    {
+      "content": "Now, think about how to encapsulate your logic into a function. You will need to return a boolean indicating whether Alice wins based on the initial state of the chalkboard."
+    },
+    {
+      "content": "To summarize, focus on the initial XOR and the number of elements. If the initial XOR is 0, Alice wins. If it's non-zero, consider the number of elements to determine the winner."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "Values: 0 <= nums[i] < 2^16",
+    "Alice starts first, followed by Bob.",
+    "If a player's turn starts with XOR = 0, they win.",
+    "Erasing a number that leads to XOR = 0 results in a loss for that player."
+  ]
+}

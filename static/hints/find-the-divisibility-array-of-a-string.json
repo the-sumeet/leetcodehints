@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a prefix of the string means. A prefix is any substring that starts at the beginning of the string and goes up to a certain index. For example, for the string 'abc', the prefixes are '', 'a', 'ab', and 'abc'."
+    },
+    {
+      "content": "Remember that to check if a number is divisible by another number, you can use the modulo operator. If `x % m == 0`, then `x` is divisible by `m`. Think about how you can apply this to the numeric value of the prefixes of the string."
+    },
+    {
+      "content": "Since the string consists of digits, you can convert a substring to its numeric value. You can use the built-in function to convert a string to an integer. For example, `int('123')` gives you the number 123."
+    },
+    {
+      "content": "Instead of converting the entire prefix to an integer every time, consider keeping track of the current numeric value as you build each prefix. This can help avoid unnecessary computations and improve efficiency."
+    },
+    {
+      "content": "When constructing the current numeric value from the prefix, you can use the formula: `current_value = current_value * 10 + int(word[i])`. This shifts the current value left by one decimal place and adds the new digit."
+    },
+    {
+      "content": "As you iterate through the string, initialize an empty list to store the results. For each index, check if the current numeric value is divisible by `m` and append 1 or 0 to your results list accordingly."
+    },
+    {
+      "content": "Consider the initial case where you start with an empty prefix. The numeric value of an empty string is 0, which is divisible by any positive integer. Think about how to handle this in your implementation."
+    },
+    {
+      "content": "Be mindful of the constraints: the length of the string can be up to 100,000 characters. Ensure your solution is efficient and runs in linear time relative to the length of the string."
+    },
+    {
+      "content": "Don't forget to return the results in the specified format: an integer array. Make sure you construct the array correctly before returning it."
+    },
+    {
+      "content": "Finally, ensure you test your solution with edge cases, such as when `m` is 1 (which should make all prefixes divisible) or when `word` consists of the same digit (like '0000')."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n <= 100000",
+    "word consists of digits from 0 to 9",
+    "1 <= m <= 1000000000",
+    "Return format is an integer array of length n"
+  ]
+}

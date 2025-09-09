@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of immutability. In this problem, you need to ensure that the original object is not modified directly. Think about how you can create a new object or structure that reflects the changes instead."
+    },
+    {
+      "content": "Consider how JavaScript handles objects and arrays. When you pass an object to a function, you are passing a reference to that object. This means that any changes you make to the object inside the function will affect the original object."
+    },
+    {
+      "content": "Look into using a proxy in JavaScript. A proxy can intercept operations on an object, allowing you to define custom behavior for fundamental operations like property lookup, assignment, enumeration, and function invocation."
+    },
+    {
+      "content": "Think about how you can use the proxy to track changes without modifying the original object. You might want to create a deep copy of the object before applying any changes."
+    },
+    {
+      "content": "When defining the proxy handler, consider which traps you need. For example, the 'set' trap can be useful for intercepting property assignments and ensuring that you are not directly mutating the original object."
+    },
+    {
+      "content": "Remember to handle nested objects or arrays carefully. If your object contains other objects or arrays, you may need to recursively apply the proxy to those nested structures."
+    },
+    {
+      "content": "Check how to manage state changes. Each operation should ideally return a new state rather than modifying the existing state. This is crucial for maintaining immutability."
+    },
+    {
+      "content": "Consider edge cases where the object might be empty or contain unexpected data types. How will your proxy handle these situations? Make sure to validate the input before processing."
+    },
+    {
+      "content": "Think about how to structure your functions that will be passed to the proxy. They should be pure functions that take the proxy as an argument and return a new state without side effects."
+    },
+    {
+      "content": "As you implement the proxy, test it with simple operations first. For example, try incrementing or decrementing a single value before moving on to more complex nested structures."
+    },
+    {
+      "content": "Make sure to return the modified state from your proxy functions. This will be essential for chaining multiple operations together in a way that maintains immutability."
+    },
+    {
+      "content": "Consider using Object.assign or the spread operator to create shallow copies of objects. This can help you maintain immutability when updating properties."
+    },
+    {
+      "content": "When dealing with arrays, remember that methods like push and pop will modify the array in place. Instead, look for methods that return new arrays, such as map, filter, or concat."
+    },
+    {
+      "content": "Pay attention to the return format of your function. Ensure that the final output matches the expected structure, especially if you are returning nested objects or arrays."
+    },
+    {
+      "content": "Finally, think about how to combine multiple proxy functions. You might want to create a utility that applies an array of functions to the proxy in sequence, returning the final state."
+    }
+  ],
+  "questionNotes": [
+    "Ensure that the original object is not modified directly.",
+    "Understand how JavaScript handles references to objects.",
+    "Use proxies to intercept and manage changes to the object.",
+    "Handle nested objects or arrays carefully.",
+    "Return a new state from operations, maintaining immutability.",
+    "Test with simple cases before moving to complex structures."
+  ]
+}

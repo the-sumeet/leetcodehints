@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the range of integers you're working with. You need to pick a number from the range [0, n - 1]."
+    },
+    {
+      "content": "Take note of the blacklist array. This array contains unique integers that you need to avoid when picking a random number."
+    },
+    {
+      "content": "Consider how you can efficiently check if a number is in the blacklist. Using a set for the blacklist can help with O(1) average time complexity for lookups."
+    },
+    {
+      "content": "Think about the total count of valid numbers you can pick from. This will be n minus the size of the blacklist."
+    },
+    {
+      "content": "When you pick a random number, you need to ensure that it is not in the blacklist. How can you efficiently skip over these blacklisted numbers?"
+    },
+    {
+      "content": "Instead of picking from the entire range [0, n - 1], you can map the valid range to a smaller range by excluding the blacklisted numbers."
+    },
+    {
+      "content": "Consider using a mapping technique where you can keep track of valid numbers and their indices. This allows you to pick from a reduced set."
+    },
+    {
+      "content": "You might want to sort the blacklist first. This can help you quickly find the next valid number when you randomly select an index."
+    },
+    {
+      "content": "Think about how you can handle the case where the random number you pick is actually in the blacklist. What adjustments can you make?"
+    },
+    {
+      "content": "When generating a random index, remember that it should correspond to the valid numbers, not the entire range. How will you translate this back to the original range?"
+    },
+    {
+      "content": "Consider edge cases where the blacklist might be empty. How does this affect your logic for picking a random number?"
+    },
+    {
+      "content": "You will need to ensure that your pick method is efficient, especially since it could be called up to 20,000 times. Think about minimizing calls to the random function."
+    },
+    {
+      "content": "As you implement the pick method, ensure that every valid number has an equal probability of being chosen. How can you guarantee this?"
+    },
+    {
+      "content": "Remember to handle cases where the random number you pick might exceed the valid range after accounting for the blacklist."
+    },
+    {
+      "content": "Finally, consider how you will store the valid numbers or their indices. A combination of a set for fast lookups and an array for valid picks could be useful."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^9",
+    "0 <= blacklist.length <= min(10^5, n - 1)",
+    "0 <= blacklist[i] < n",
+    "All values in blacklist are unique.",
+    "At most 20,000 calls will be made to pick."
+  ]
+}

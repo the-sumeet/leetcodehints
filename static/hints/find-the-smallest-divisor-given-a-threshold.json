@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the division and rounding work. When you divide a number by the divisor, you need to round up to the nearest integer. For example, if you divide 7 by 3, the result is 3 because you round up from 2.33."
+    },
+    {
+      "content": "Consider how the choice of divisor affects the sum of the rounded results. A smaller divisor will yield a larger sum, while a larger divisor will yield a smaller sum. Think about how you can control this relationship."
+    },
+    {
+      "content": "The problem requires you to find the smallest divisor such that the sum of the rounded divisions is less than or equal to the threshold. This suggests that you might want to use a search strategy to efficiently find this divisor."
+    },
+    {
+      "content": "Given the constraints, a brute force approach of checking every possible divisor from 1 to the maximum number in the array could be inefficient. Instead, consider using binary search to narrow down the possible divisors."
+    },
+    {
+      "content": "When implementing binary search, define your search space. The minimum divisor can start at 1, and the maximum can be the largest number in the array. This will help you efficiently find the smallest valid divisor."
+    },
+    {
+      "content": "In your binary search, for each midpoint divisor, calculate the sum of the rounded divisions. You will need a helper function to perform this calculation for a given divisor."
+    },
+    {
+      "content": "Make sure your helper function correctly implements the rounding logic. You can use the formula: `ceil(num / divisor)` for each number in the array to get the rounded result."
+    },
+    {
+      "content": "When adjusting your binary search bounds, remember that if the sum of rounded divisions is less than or equal to the threshold, you can try smaller divisors (move left). If it's greater, move right to larger divisors."
+    },
+    {
+      "content": "Consider edge cases, such as when all elements in `nums` are the same or when the threshold is very close to the sum of the original numbers. This can affect how your binary search converges."
+    },
+    {
+      "content": "Finally, ensure that your function returns the smallest divisor that meets the condition. You might want to keep track of the best valid divisor found during your search."
+    }
+  ],
+  "questionNotes": [
+    "The divisor must be a positive integer.",
+    "The division result is rounded up to the nearest integer.",
+    "The sum of the rounded results must be less than or equal to the threshold.",
+    "Constraints: 1 <= nums.length <= 5 * 10^4, 1 <= nums[i] <= 10^6, nums.length <= threshold <= 10^6.",
+    "There is guaranteed to be an answer for the given test cases."
+  ]
+}

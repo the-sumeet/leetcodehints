@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of triangulation. A convex polygon can be divided into triangles by drawing diagonals between non-adjacent vertices. Each triangle will have a weight calculated from the product of its vertex values."
+    },
+    {
+      "content": "Consider the base case of the problem. If the polygon has exactly three vertices, the only triangle you can form is the triangle itself, and the score is simply the product of the three vertex values."
+    },
+    {
+      "content": "Think about how you can recursively break down the problem. For a polygon with more than three vertices, you can choose a vertex and form a triangle with two other vertices, then recursively triangulate the remaining polygon."
+    },
+    {
+      "content": "Define a recursive function that calculates the minimum score for a polygon defined by two indices (i and j) that represent the current vertices being considered. This function should return the minimum score of triangulating the polygon formed by vertices from index i to j."
+    },
+    {
+      "content": "Use dynamic programming to store results of subproblems. Create a 2D array `dp` where `dp[i][j]` represents the minimum score for triangulating the polygon from vertex i to vertex j. This will help avoid recalculating scores for the same subproblems."
+    },
+    {
+      "content": "When filling in your `dp` table, consider all possible pairs of vertices (k) that can form a triangle with vertices i and j. The score for each triangle formed by (i, k, j) should be added to the scores of the two sub-polygons formed by (i, k) and (k, j)."
+    },
+    {
+      "content": "Ensure you handle the indices correctly. Remember that the vertices are indexed from 0 to n-1, and when forming triangles, you need to ensure that k is strictly between i and j."
+    },
+    {
+      "content": "Think about the base cases for your dynamic programming solution. For any two vertices (i, j) that are adjacent or the same, the score should be 0 since no triangles can be formed."
+    },
+    {
+      "content": "Don't forget to initialize your DP table correctly. You will need to set up the dimensions based on the number of vertices and ensure that you are iterating through the correct ranges when calculating scores."
+    },
+    {
+      "content": "Finally, after filling up your DP table, the result for the minimum score triangulation of the entire polygon will be stored in `dp[0][n-1]`, where n is the number of vertices in your polygon."
+    }
+  ],
+  "questionNotes": [
+    "The input is an integer array `values` representing the vertex values in clockwise order.",
+    "The polygon is guaranteed to be convex.",
+    "The minimum score must be calculated for triangulations, returning the smallest possible score.",
+    "Constraints: 3 <= n <= 50 and 1 <= values[i] <= 100.",
+    "The result should be a single integer representing the minimum score of the triangulation."
+  ]
+}

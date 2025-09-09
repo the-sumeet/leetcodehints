@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what the median is. The median is the middle value of a sorted list. If the list has an even number of elements, the median is the average of the two middle numbers."
+    },
+    {
+      "content": "Consider how you will store the numbers added to the data stream. Think about how to keep track of the order of the numbers so that you can efficiently find the median."
+    },
+    {
+      "content": "You might want to use two heaps (a max-heap and a min-heap) to maintain the lower half and upper half of the numbers. This way, you can efficiently add numbers and retrieve the median."
+    },
+    {
+      "content": "The max-heap will store the lower half of the numbers, while the min-heap will store the upper half. Make sure to balance the heaps after each insertion."
+    },
+    {
+      "content": "When adding a number, decide whether it should go into the max-heap or the min-heap based on its value compared to the current maximum of the max-heap."
+    },
+    {
+      "content": "After adding a number, check the sizes of both heaps. The max-heap can have one more element than the min-heap at most. If it has more, you need to rebalance."
+    },
+    {
+      "content": "To find the median, check the sizes of the heaps. If they are of equal size, the median is the average of the roots of both heaps. If the max-heap has one more element, the median is the root of the max-heap."
+    },
+    {
+      "content": "Think about edge cases, such as when only one number has been added. The median should simply return that number."
+    },
+    {
+      "content": "Consider the constraints: the input numbers can range from -10^5 to 10^5, and there will be at least one number before calling findMedian. Ensure your implementation can handle this range."
+    },
+    {
+      "content": "Remember that the output of findMedian must be a double, and it should be accurate within 10^-5. Consider how you will format your return value."
+    },
+    {
+      "content": "If you encounter a situation where the heaps are not balanced after adding a number, think about how to move the root of one heap to the other to restore balance."
+    },
+    {
+      "content": "In the follow-up, if all numbers are in the range [0, 100], consider using a counting array to store the frequency of each number instead of heaps, which can make finding the median faster."
+    },
+    {
+      "content": "For the follow-up case where 99% of numbers are in [0, 100], think about how you can combine the counting array approach with a dynamic structure for numbers outside this range."
+    },
+    {
+      "content": "Make sure to test your implementation with various cases, including those with an odd number of elements, an even number of elements, and repeated numbers."
+    },
+    {
+      "content": "Finally, outline the methods you need to implement: the constructor, addNum, and findMedian. Ensure each method is efficient and correctly interacts with your data structures."
+    }
+  ],
+  "questionNotes": [
+    "The median is the middle value of a sorted list; for an even number of elements, it is the average of the two middle values.",
+    "You need to implement a class with methods: MedianFinder(), addNum(int num), and findMedian().",
+    "The constraints specify that there will be at least one element before calling findMedian and at most 5 * 10^4 calls.",
+    "The return value of findMedian must be a double and accurate within 10^-5."
+  ]
+}

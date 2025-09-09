@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the game's mechanics. Alice divides the stones into two non-empty parts, and Bob discards the part with the higher sum. Think about how this division affects Alice's score."
+    },
+    {
+      "content": "Consider how Alice's score accumulates over multiple rounds. Each time she divides the stones, she gains the sum of the remaining part. How can you keep track of her total score?"
+    },
+    {
+      "content": "Think about how to represent the current state of the game. You might want to use a recursive approach or dynamic programming to explore the different ways Alice can split the stones."
+    },
+    {
+      "content": "When splitting the stones, remember that both parts must be non-empty. This means you can only split between indices 0 and n-2 for an array of size n."
+    },
+    {
+      "content": "Consider the base case for your recursive function. What happens when there is only one stone left? How should your function handle that scenario?"
+    },
+    {
+      "content": "Pay attention to how Alice can choose which row to discard when their sums are equal. This decision could affect the outcome of the game."
+    },
+    {
+      "content": "As you think about the recursive solution, consider memoization to avoid recalculating scores for the same state. What parameters will you need to store in your memoization table?"
+    },
+    {
+      "content": "You can calculate the sum of stones in a range efficiently. Use prefix sums to quickly get the sum of any subarray. This will help in calculating the values of the left and right rows."
+    },
+    {
+      "content": "When implementing the recursive function, iterate through possible split points. For each split, calculate the scores based on Bob's decision and Alice's potential score."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when all stones have the same value. How will this affect the score calculation and the choices Alice has?"
+    },
+    {
+      "content": "Consider the time complexity of your solution. If you are using recursion, how can you ensure that it runs efficiently given the constraints?"
+    },
+    {
+      "content": "Think about how to return the final score after all rounds are completed. Your function should return Alice's maximum score once there are no more valid splits."
+    },
+    {
+      "content": "You might want to explore a bottom-up dynamic programming approach. How would you structure your DP table to keep track of scores based on different splits?"
+    },
+    {
+      "content": "As you finalize your approach, ensure that your solution correctly implements the tie-breaking rule where Alice can choose which row to discard."
+    },
+    {
+      "content": "Before coding, outline the steps of your algorithm clearly. Define how you will handle the recursion or dynamic programming transitions based on the game rules."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= stoneValue.length <= 500",
+    "Each stone value is between 1 and 10^6.",
+    "Alice's initial score is zero.",
+    "The game ends when only one stone remains.",
+    "Bob discards the row with the maximum value; if equal, Alice chooses."
+  ]
+}

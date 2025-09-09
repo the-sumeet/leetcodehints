@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the h-index. It is the maximum value of 'h' such that the researcher has published at least 'h' papers that have each been cited at least 'h' times."
+    },
+    {
+      "content": "Consider sorting the citations array. Sorting will help you easily determine how many papers meet the citation requirement for each potential h-index."
+    },
+    {
+      "content": "After sorting, think about how to iterate through the citations. For each paper, you can check if the number of citations meets the criteria for being part of the h-index."
+    },
+    {
+      "content": "Remember that the h-index must be less than or equal to the total number of papers. If there are 'n' papers, the maximum h-index can be 'n'."
+    },
+    {
+      "content": "Consider edge cases. For example, if all citations are zero, what would the h-index be? What if all papers have the same number of citations?"
+    },
+    {
+      "content": "Use a loop to check each possible h-index from the highest (number of papers) down to zero. For each index, count how many papers have at least that many citations."
+    },
+    {
+      "content": "As you check each index, you can maintain a count of how many papers meet the citation requirement. If you find 'h' papers with at least 'h' citations, you may have found a candidate for the h-index."
+    },
+    {
+      "content": "Think about the condition to stop your search. Once you find the first h-index that meets the criteria, you can return that value immediately."
+    },
+    {
+      "content": "Consider using a binary search approach on the sorted array to optimize the search for the h-index. This could reduce the time complexity compared to a linear search."
+    },
+    {
+      "content": "Finally, make sure to return the h-index in the correct format. The problem specifies that the output should be a single integer representing the h-index."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 5000, 0 <= citations[i] <= 1000",
+    "The citations array is zero-indexed.",
+    "The h-index can be at most equal to the number of papers.",
+    "All citations are non-negative integers."
+  ]
+}

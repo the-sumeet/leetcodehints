@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the board is structured. The cells are filled in a Boustrophedon style, meaning the rows alternate direction. For example, the first row (bottom) goes left to right, and the second row goes right to left."
+    },
+    {
+      "content": "Remember that you begin at square 1, which corresponds to the position `board[n-1][0]`. Your goal is to reach square `n^2`, located at `board[0][n-1]`."
+    },
+    {
+      "content": "When you roll the dice, you can move to squares in the range from `curr + 1` to `min(curr + 6, n^2)`. Make sure to handle the bounds correctly to avoid going out of the board's limits."
+    },
+    {
+      "content": "If you land on a square that has a snake or ladder (i.e., `board[r][c] != -1`), you must move to that square instead. This means you need to check the destination square after each move."
+    },
+    {
+      "content": "Consider using a breadth-first search (BFS) approach to explore the board. BFS is suitable here as it finds the shortest path in an unweighted graph, which aligns with your goal of minimizing dice rolls."
+    },
+    {
+      "content": "As you perform BFS, maintain a queue to track your current position and the number of moves taken to reach there. Also, keep a set of visited squares to avoid processing the same square multiple times."
+    },
+    {
+      "content": "While processing each square, remember to handle the case where you land on a snake or ladder. You might need to update your position again based on the board's value at that square."
+    },
+    {
+      "content": "Don't forget to check if you can reach square `n^2`. If you exhaust all possibilities without reaching it, you should return -1."
+    },
+    {
+      "content": "Pay attention to edge cases, such as very small boards (like 2x2) or boards with no snakes or ladders. These can help ensure your solution is robust."
+    },
+    {
+      "content": "Finally, ensure your BFS implementation correctly tracks the number of moves and updates the current position based on the rules of snakes and ladders. This will be key to getting the correct output."
+    }
+  ],
+  "questionNotes": [
+    "The board is n x n, with 2 <= n <= 20.",
+    "Cells labeled 1 and n^2 do not have snakes or ladders.",
+    "You can only move to squares in the range [curr + 1, min(curr + 6, n^2)].",
+    "If you land on a snake or ladder, you must move to its destination but not follow any subsequent snakes or ladders.",
+    "Return -1 if it's not possible to reach square n^2."
+  ]
+}

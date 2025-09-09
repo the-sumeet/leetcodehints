@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the cost of changing a single character in `s` to the corresponding character in `t`. The cost is calculated as the absolute difference of their ASCII values: `cost = |s[i] - t[i]|`."
+    },
+    {
+      "content": "Consider how you would iterate through both strings. You need to compare characters at the same index and calculate the total cost of changing a substring of `s` to `t`."
+    },
+    {
+      "content": "Think about how to keep track of the total cost while expanding a substring. You might want to use a sliding window approach where you maintain a start and end index."
+    },
+    {
+      "content": "As you expand your window (by increasing the end index), keep adding the cost of the new character to your total cost. If the total cost exceeds `maxCost`, you will need to shrink your window from the start."
+    },
+    {
+      "content": "Make sure to update the maximum length of the valid substring whenever the total cost is within the budget. This means you will need a variable to store the maximum length found so far."
+    },
+    {
+      "content": "Remember to handle the case where the cost is exactly equal to `maxCost`. This means that the substring is still valid, so you should include it in your maximum length calculation."
+    },
+    {
+      "content": "Consider edge cases such as when `maxCost` is 0. In this case, you can only count substrings where no changes are made, so you'll need to check for characters that are already equal."
+    },
+    {
+      "content": "Think about the constraints of the problem. The strings can be up to 100,000 characters long, so your solution should ideally be O(n) to handle the largest inputs efficiently."
+    },
+    {
+      "content": "You may want to use a two-pointer technique to manage the start and end of your substring efficiently. This way, you can adjust the window size dynamically based on the cost."
+    },
+    {
+      "content": "Finally, ensure that you return the maximum length of the valid substring found. If no valid substring exists, remember to return 0."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5, t.length == s.length, 0 <= maxCost <= 10^6.",
+    "Both strings consist of only lowercase English letters.",
+    "Return the maximum length of a substring that can be changed within the given cost."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a tree. A tree with n nodes has n-1 edges and is acyclic, meaning there is exactly one path between any two nodes."
+    },
+    {
+      "content": "Consider how you might represent the tree using the edges array. You can use an adjacency list to map each node to its connected nodes."
+    },
+    {
+      "content": "Think about how to traverse the tree. Depth-First Search (DFS) or Breadth-First Search (BFS) are common techniques for exploring nodes in a tree."
+    },
+    {
+      "content": "Remember that you need to avoid visiting restricted nodes. You can use a set or a hash map to keep track of these restricted nodes for quick look-up."
+    },
+    {
+      "content": "Before starting your traversal, convert the restricted array into a set for O(1) average time complexity when checking if a node is restricted."
+    },
+    {
+      "content": "When performing DFS/BFS, start from node 0 and check each adjacent node. If an adjacent node is not restricted, continue the traversal."
+    },
+    {
+      "content": "Count the number of nodes you visit during your traversal. This will give you the total number of reachable nodes from node 0."
+    },
+    {
+      "content": "Consider edge cases, such as when all nodes except node 0 are restricted. What will your function return in this scenario?"
+    },
+    {
+      "content": "Make sure to handle the input constraints properly. For instance, ensure that you are not trying to access nodes outside the valid range (0 to n-1)."
+    },
+    {
+      "content": "Finally, ensure that your function returns the count of reachable nodes as an integer. Double-check that you are not including restricted nodes in your count."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5, edges.length == n - 1, edges[i].length == 2, 0 <= a_i, b_i < n, a_i != b_i.",
+    "The tree is valid, meaning it is connected and acyclic.",
+    "1 <= restricted.length < n, and all values in restricted are unique.",
+    "Node 0 is guaranteed not to be restricted."
+  ]
+}

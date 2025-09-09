@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by counting the number of 'S' characters in the corridor. Each section must have exactly two 'S' characters, so the total number of 'S' must be even for any valid division."
+    },
+    {
+      "content": "If the count of 'S' is odd, immediately return 0, as it's impossible to form sections with an odd number of seats."
+    },
+    {
+      "content": "Next, consider the positions of the 'S' characters. You need to group them into pairs. For example, if you have indices of 'S' at [0, 1, 3, 5], you can form pairs (0, 1) and (3, 5)."
+    },
+    {
+      "content": "Identify the total number of pairs of 'S'. If you have k pairs, you will need to find ways to place dividers between these pairs."
+    },
+    {
+      "content": "Each pair of 'S' can be separated by any number of 'P' characters. This means that the number of 'P' characters between them can influence the number of ways to place dividers."
+    },
+    {
+      "content": "Count the number of plants 'P' between each pair of 'S'. This will help you determine how many dividers can be placed."
+    },
+    {
+      "content": "If you have k pairs of 'S', you will need to place (k-1) dividers to separate them. Ensure that there are enough 'P' characters to allow for these dividers."
+    },
+    {
+      "content": "Consider the gaps between the pairs of 'S'. The number of ways to place dividers is influenced by the number of 'P' between these pairs."
+    },
+    {
+      "content": "Use combinatorial mathematics to calculate the number of ways to choose dividers based on the number of 'P' characters available."
+    },
+    {
+      "content": "Remember to take modulo 10^9 + 7 for your final answer to handle large numbers."
+    },
+    {
+      "content": "Be cautious about edge cases, such as when there are no 'P' characters at all or when all 'S' are adjacent."
+    },
+    {
+      "content": "If there are no valid pairs of 'S' (i.e., not enough 'S' to form pairs), return 0."
+    },
+    {
+      "content": "Think about how the arrangement of 'P' can affect the placement of dividers. You might need to calculate combinations based on the gaps."
+    },
+    {
+      "content": "Once you've identified the number of pairs and the gaps, you can start formulating a way to compute the total arrangements."
+    },
+    {
+      "content": "Finally, ensure your algorithm runs efficiently, ideally in O(n) time, given the constraints of the problem."
+    }
+  ],
+  "questionNotes": [
+    "The input string consists of 'S' (seats) and 'P' (plants).",
+    "You must return the number of unique ways to divide the corridor into sections with exactly two 'S'.",
+    "If there are an odd number of 'S', return 0.",
+    "The result should be given modulo 10^9 + 7.",
+    "Constraints: 1 <= n <= 10^5."
+  ]
+}

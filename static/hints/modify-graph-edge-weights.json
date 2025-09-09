@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. Each edge is represented as [a, b, w] where 'w' can be -1 or a positive integer. Focus on how negative weights can be modified to achieve the desired shortest path."
+    },
+    {
+      "content": "Identify the source and destination nodes in the graph. You need to calculate the shortest path from the source to the destination, taking into account the weights of the edges."
+    },
+    {
+      "content": "Consider using Dijkstra's algorithm or a similar approach to find the shortest path from the source to the destination. This will help you understand the current distance without modifying any edges."
+    },
+    {
+      "content": "When you encounter an edge with a weight of -1, think about how you can adjust its weight to help achieve the target distance. Remember, you can only assign it a positive weight."
+    },
+    {
+      "content": "Calculate the current shortest distance from the source to the destination. Let's call this distance 'currentDistance'. You need to determine how much you need to adjust the weights of the -1 edges to reach the target distance."
+    },
+    {
+      "content": "Define a variable 'neededIncrease' as the difference between the target distance and the current distance: `neededIncrease = target - currentDistance`. This will help you understand how much weight you need to add."
+    },
+    {
+      "content": "If 'neededIncrease' is less than or equal to 0, check if the current distance is already equal to the target. If so, you can return the edges as is. If not, it's impossible to achieve the target."
+    },
+    {
+      "content": "If 'neededIncrease' is positive, consider how many edges with -1 weights you have. The total weight you can assign to these edges must sum up to 'neededIncrease' to achieve the target distance."
+    },
+    {
+      "content": "Think about how to distribute the 'neededIncrease' across the edges with -1 weights. You can assign each edge a weight of 1 initially and then adjust the last edge to absorb any remaining weight needed."
+    },
+    {
+      "content": "Make sure to check the constraints while assigning weights. The maximum weight you can assign to any edge is 2 * 10^9, so ensure your assignments do not exceed this limit."
+    },
+    {
+      "content": "Be cautious about the uniqueness of the solution. There may be multiple valid configurations of edge weights that satisfy the condition, so any valid configuration is acceptable."
+    },
+    {
+      "content": "After modifying the weights, recheck the shortest path from the source to the destination to ensure it equals the target. If it does, prepare the final output."
+    },
+    {
+      "content": "Remember to return all edges in any order, including the modified ones. The format should be an array of edges, where each edge is represented as [a, b, w]."
+    },
+    {
+      "content": "Consider edge cases where there are no -1 weights or where the target distance is unreachable due to existing positive weights. These cases should return an empty array."
+    },
+    {
+      "content": "Finally, ensure that your solution handles the maximum constraints efficiently. The graph can be large, so your approach should be optimized for performance."
+    }
+  ],
+  "questionNotes": [
+    "The graph is undirected and connected.",
+    "Edges with initial positive weights cannot be modified.",
+    "The target distance must be achievable by modifying only the edges with -1 weights.",
+    "Return an empty array if it's impossible to achieve the target distance.",
+    "The output must include all edges, modified or unmodified, in any order."
+  ]
+}

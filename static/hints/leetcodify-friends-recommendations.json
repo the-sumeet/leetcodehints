@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the data structure. You have two main tables: 'Listens' which records who listened to which song on what day, and 'Friendship' which indicates pairs of users who are friends."
+    },
+    {
+      "content": "Think about how you can represent friendships. You might want to use a set or a dictionary to easily check if two users are friends."
+    },
+    {
+      "content": "Consider how to aggregate song listening data. You need to track which songs each user has listened to, so a dictionary mapping user IDs to a set of song IDs could be useful."
+    },
+    {
+      "content": "When processing the 'Listens' data, ensure that you are correctly populating your data structure for each user. For example, for user 1, you would add songs 10, 11, and 12 to their list."
+    },
+    {
+      "content": "Don't forget to handle the case where a user has no friends. You should return an empty list for recommendations if the user has no friends."
+    },
+    {
+      "content": "Next, focus on how to generate recommendations. For each friend of the user, look at the songs they have listened to that the user has not."
+    },
+    {
+      "content": "You may want to keep track of how many times each song has been listened to by friends. A dictionary where the key is the song ID and the value is the count can help with this."
+    },
+    {
+      "content": "Consider the case where multiple songs have the same count. You need to decide how to handle ties. A common approach is to sort by song ID after counting."
+    },
+    {
+      "content": "As you build your recommendation list, remember to only include songs that the user has not listened to yet. This will require checking against the user's own listening history."
+    },
+    {
+      "content": "Think about the output format. You will need to return a list of song IDs, sorted in descending order based on the number of listens by friends."
+    },
+    {
+      "content": "When implementing your recommendation logic, ensure that you're iterating through friends correctly. You might want to use a loop to go through each friend and their listened songs."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when a user has no songs listened to or when all friends have listened to the same songs as the user."
+    },
+    {
+      "content": "To optimize, consider using a priority queue or a max-heap to efficiently retrieve the top recommended songs based on listen counts."
+    },
+    {
+      "content": "Make sure to test your implementation with various scenarios, including users with different numbers of friends and song lists."
+    },
+    {
+      "content": "Finally, ensure that your final list of recommendations is unique. You might want to convert your list to a set before returning it to avoid duplicates."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: Ensure you handle users with no friends or no listened songs gracefully.",
+    "Indexing: User IDs and song IDs are assumed to be unique.",
+    "Uniqueness: Recommendations should only include songs not already listened to by the user.",
+    "Tie-breaking: If multiple songs have the same listen count, sort them by song ID in ascending order."
+  ]
+}

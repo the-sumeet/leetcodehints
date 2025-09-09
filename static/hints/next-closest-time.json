@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the time format. The time is represented as 'HH:MM', where 'HH' is the hour (00 to 23) and 'MM' is the minutes (00 to 59). This means you need to consider the valid ranges for hours and minutes."
+    },
+    {
+      "content": "Think about how you can generate the next closest time using the digits available in the original time. You can extract the digits from the input string and store them in a set to ensure uniqueness."
+    },
+    {
+      "content": "Consider how to iterate through the possible times. You might want to start from the given time and increment minute by minute. Remember to wrap around to the next hour after 59 minutes and to the next day after 23:59."
+    },
+    {
+      "content": "When generating the next time, ensure that you only use the digits from the original time. This means that your next valid time should only contain the digits in the set you created earlier."
+    },
+    {
+      "content": "Think about how to handle edge cases, such as when the next closest time is actually the same as the input time. You should be able to identify when you've cycled through all possible combinations of the digits."
+    },
+    {
+      "content": "You might want to create a helper function to check if a given time is valid based on the digits you have. This function should return true if the time can be formed using the original digits."
+    },
+    {
+      "content": "As you iterate through the times, keep track of the next closest time found. You can use a variable to store the minimum difference in time from the original input to help you find the closest time."
+    },
+    {
+      "content": "Consider using a loop that runs for a maximum of 1440 iterations (the total number of minutes in a day) to ensure you cover all possible times. This will help you avoid infinite loops."
+    },
+    {
+      "content": "When you find a valid next closest time, format it back into 'HH:MM' format before returning it. Ensure that you maintain leading zeros where necessary."
+    },
+    {
+      "content": "Finally, think about edge cases like when all digits are the same (e.g., '22:22'). In such cases, the next closest time should still be valid and different from the input time."
+    }
+  ],
+  "questionNotes": [
+    "Input is a string in the format 'HH:MM'.",
+    "HH must be between 00 and 23, and MM must be between 00 and 59.",
+    "Return the next closest time as a string in the same format.",
+    "The next closest time must be formed using the same digits as the input time.",
+    "If no valid time is found, wrap around to the beginning of the day."
+  ]
+}

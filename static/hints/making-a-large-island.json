@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of an island in the grid. An island is defined as a group of 1s that are connected either vertically or horizontally."
+    },
+    {
+      "content": "You need to identify all the islands in the grid before making any changes. Consider using Depth-First Search (DFS) or Breadth-First Search (BFS) to explore and mark each island."
+    },
+    {
+      "content": "While exploring each island, keep track of the size of each island. You can use a dictionary to map each island's identifier to its size."
+    },
+    {
+      "content": "Remember that you can change at most one 0 to a 1. Think about how changing a 0 might connect two or more islands together."
+    },
+    {
+      "content": "When you find a 0, check its four neighboring cells. If any of them belong to an island (i.e., they are 1s), you can potentially connect those islands by changing this 0 to a 1."
+    },
+    {
+      "content": "For each 0 you consider changing, calculate the total size of the new island formed by adding the sizes of all connected islands."
+    },
+    {
+      "content": "Don't forget to account for the 1 that you are adding when calculating the new island size. The formula would be: new_size = 1 + sum_of_sizes_of_connected_islands."
+    },
+    {
+      "content": "As you iterate through the grid, maintain a variable to keep track of the maximum island size found after considering each 0."
+    },
+    {
+      "content": "Edge cases include grids that are entirely filled with 1s or entirely filled with 0s. Consider how these cases will affect your output."
+    },
+    {
+      "content": "Make sure to handle the case where no 0s are present. In this situation, the largest island size is simply the size of the largest island already present."
+    },
+    {
+      "content": "When calculating the sizes of the islands, ensure that you do not count the same island multiple times. Use a visited set or similar structure to avoid this."
+    },
+    {
+      "content": "Think about the performance of your solution. Since n can be as large as 500, aim for an efficient solution, ideally O(n^2) or better."
+    },
+    {
+      "content": "You might want to implement a helper function to perform the DFS/BFS that returns the size of the island and marks the cells as visited."
+    },
+    {
+      "content": "Consider how to structure your code for clarity. Breaking down the problem into smaller functions can help manage complexity."
+    },
+    {
+      "content": "Finally, ensure that your final output is the maximum size of the island found after considering all possible 0 to 1 changes."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 500, grid[i][j] is either 0 or 1.",
+    "An island is a group of 1s connected 4-directionally.",
+    "You can change at most one 0 to a 1.",
+    "Return the size of the largest island after the change."
+  ]
+}

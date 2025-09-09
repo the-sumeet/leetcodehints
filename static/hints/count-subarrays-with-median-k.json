@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a median is. For a sorted array, the median is the middle element. If the size of the array is even, the median is the left middle element. For example, the median of [1, 2, 3, 4] is 2."
+    },
+    {
+      "content": "Remember that the problem specifies that the input array consists of distinct integers from 1 to n. This means that you won't have to deal with duplicates, which simplifies some aspects of your solution."
+    },
+    {
+      "content": "Consider how to identify subarrays. A subarray is a contiguous segment of the original array. You can use two nested loops to generate all possible subarrays, but think about how to optimize this."
+    },
+    {
+      "content": "When checking if a subarray has a median of k, you'll need to sort the subarray first. However, sorting each subarray can be inefficient. Think about how you could avoid sorting by keeping track of the counts of elements relative to k."
+    },
+    {
+      "content": "To find the median, you need to know how many elements are less than and greater than k in the subarray. This will help you determine if k is the median based on the size of the subarray."
+    },
+    {
+      "content": "If you have a subarray of size m, the median will be k if the number of elements less than k is equal to m // 2 (for odd m) or (m // 2) - 1 (for even m). This is crucial for checking the median condition."
+    },
+    {
+      "content": "Think about using a prefix sum or a similar technique to efficiently count how many elements are less than or greater than k as you iterate through subarrays. This can help reduce the time complexity."
+    },
+    {
+      "content": "You might want to maintain a count of how many elements are less than k and how many are greater than k as you expand your subarray. This will allow you to quickly check the median condition."
+    },
+    {
+      "content": "Consider edge cases where k is the smallest or largest element in the array. How does that affect the possible subarrays that can have k as the median?"
+    },
+    {
+      "content": "Make sure to handle the case where k is not present in the array. If k is not in nums, the result should be 0 since no subarray can have a median of k."
+    },
+    {
+      "content": "When counting valid subarrays, ensure you are not counting empty subarrays. Your count should only include non-empty subarrays that satisfy the median condition."
+    },
+    {
+      "content": "As you implement your solution, test it with small arrays first to validate your logic. For example, try arrays of size 1, 2, and 3 to see how the median behaves."
+    },
+    {
+      "content": "After generating subarrays, you can optimize your checks by using a sliding window approach. This way, you can incrementally build your subarrays instead of starting from scratch each time."
+    },
+    {
+      "content": "Finally, think about the overall time complexity of your approach. Given the constraints (up to 100,000 elements), ensure your solution runs efficiently, ideally in O(n log n) or O(n) time."
+    },
+    {
+      "content": "To finalize your approach, consider writing a helper function that checks if a given subarray has a median of k. This will help modularize your code and make it easier to debug."
+    }
+  ],
+  "questionNotes": [
+    "The input array nums consists of distinct integers from 1 to n.",
+    "The median of an array is the middle element after sorting; for even lengths, it's the left middle element.",
+    "Subarrays must be contiguous and non-empty.",
+    "If k is not present in nums, return 0.",
+    "Constraints: 1 <= n <= 100000, 1 <= nums[i], k <= n."
+  ]
+}

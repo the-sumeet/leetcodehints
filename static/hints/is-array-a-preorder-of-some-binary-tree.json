@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array. Each element in the array is a pair where the first value represents a node and the second value represents its parent. This means that the second value can be -1, indicating that the node is the root."
+    },
+    {
+      "content": "Think about how you would represent a binary tree. Each node can have at most two children. Consider how you can keep track of the children for each parent node while processing the input array."
+    },
+    {
+      "content": "As you process the array, you should create a mapping from parent nodes to their children. This could be done using a dictionary where the key is the parent node and the value is a list of its children."
+    },
+    {
+      "content": "Pay attention to how many children each node has. If any node has more than two children, then the array cannot represent a binary tree. Make sure to check this condition while building your tree structure."
+    },
+    {
+      "content": "After building the tree structure, you need to ensure that there is only one root node (the one with a parent of -1). If there are multiple nodes with -1 as a parent, the input cannot represent a valid binary tree."
+    },
+    {
+      "content": "Consider how you can traverse the tree to verify the preorder property. A preorder traversal visits the root first, then the left subtree, followed by the right subtree. Make sure your traversal respects this order."
+    },
+    {
+      "content": "While traversing, keep track of the order of nodes visited. You can compare this order to the expected preorder sequence to determine if the input array represents a valid preorder traversal of a binary tree."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the input array is empty or contains only the root node. These cases should still return true, as they represent valid binary trees."
+    },
+    {
+      "content": "Ensure that your solution efficiently handles the input size. You might need to consider the time complexity of your tree construction and traversal methods."
+    },
+    {
+      "content": "Finally, think about how you would implement the logic to return true or false based on your findings. You might want to return false immediately if you find any discrepancies during your checks."
+    }
+  ],
+  "questionNotes": [
+    "The input is an array of pairs, where each pair consists of a node and its parent.",
+    "A parent value of -1 indicates that the node is the root of the tree.",
+    "Each node can have at most two children; check for this constraint.",
+    "There should be exactly one root node in the input.",
+    "Consider edge cases like empty arrays or arrays with only the root node."
+  ]
+}

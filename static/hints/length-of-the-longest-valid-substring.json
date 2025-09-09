@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a valid substring. A substring is valid if it does not contain any of the strings from the 'forbidden' list as a substring."
+    },
+    {
+      "content": "Consider how to efficiently check if a substring contains any of the forbidden strings. A naive approach would be to check each substring individually, but this can be inefficient."
+    },
+    {
+      "content": "Think about using a sliding window approach. This allows you to expand and contract a window of characters in 'word' while checking for forbidden substrings."
+    },
+    {
+      "content": "You can maintain two pointers (start and end) to represent the current window of characters. As you move the end pointer to expand the window, check if the substring formed is valid."
+    },
+    {
+      "content": "When checking for forbidden substrings, you might want to use a set for quick lookups. This will allow you to check if a substring exists in 'forbidden' in constant time."
+    },
+    {
+      "content": "Remember to handle overlapping substrings. If you find a forbidden substring within your current window, you need to move the start pointer to ensure the substring is valid again."
+    },
+    {
+      "content": "Consider edge cases where the forbidden list is empty. In such cases, the longest valid substring would be the entire string 'word'."
+    },
+    {
+      "content": "Also, think about the case where all characters in 'word' are part of the forbidden substrings. This would result in a longest valid substring of length zero."
+    },
+    {
+      "content": "As you implement your solution, keep track of the maximum length of valid substrings found so far. This will help you return the correct result at the end."
+    },
+    {
+      "content": "When you encounter a forbidden substring, you will need to adjust the start pointer. You can do this by moving it to the right of the last occurrence of the forbidden substring."
+    },
+    {
+      "content": "If you find a forbidden substring, you can use the index of its first appearance to help determine where to move the start pointer. This will help you skip over invalid parts of the string."
+    },
+    {
+      "content": "Consider using a hash map to store the last seen index of each character. This can help you quickly find the start position when you encounter a forbidden substring."
+    },
+    {
+      "content": "As you implement the solution, ensure you are not missing any edge cases, like when 'word' is very short or when 'forbidden' contains substrings of varying lengths."
+    },
+    {
+      "content": "At this point, you should be able to outline your approach in pseudocode. Focus on the sliding window technique and how you will check for forbidden substrings."
+    },
+    {
+      "content": "Finally, make sure you test your implementation with various cases, including edge cases, to ensure it handles all scenarios correctly. Pay attention to performance given the constraints."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= word.length <= 10^5",
+    "word consists only of lowercase English letters.",
+    "1 <= forbidden.length <= 10^5",
+    "1 <= forbidden[i].length <= 10",
+    "forbidden[i] consists only of lowercase English letters.",
+    "A substring is a contiguous sequence of characters in a string, possibly empty."
+  ]
+}

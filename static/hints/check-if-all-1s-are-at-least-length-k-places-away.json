@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by iterating through the binary array `nums`. You need to identify the indices where the value is `1`. This will help you determine the distances between the `1`s."
+    },
+    {
+      "content": "As you find each `1`, keep track of its index. You can use a variable to store the index of the last `1` you encountered. This will help you calculate the distance to the next `1`."
+    },
+    {
+      "content": "Remember that the distance between two `1`s is calculated as the difference between their indices. If you find two `1`s, check if the difference is at least `k`."
+    },
+    {
+      "content": "Consider edge cases where there are no `1`s in the array. In such cases, the function should return `true` since there are no violations of the distance condition."
+    },
+    {
+      "content": "Think about what happens if `k` is `0`. In this case, any configuration of `1`s should return `true` since they are considered to be 'at least 0 places away' from each other."
+    },
+    {
+      "content": "Make sure to handle the case where `k` is greater than the length of the array. If `k` is greater than the number of `1`s, the function should also return `true`."
+    },
+    {
+      "content": "You can use a loop to traverse the array and a simple condition to check the distance between consecutive `1`s. If you find a pair that does not satisfy the distance condition, return `false` immediately."
+    },
+    {
+      "content": "Consider using a list to store the indices of `1`s as you iterate through the array. This will allow you to easily calculate distances between them later."
+    },
+    {
+      "content": "Before returning the final result, ensure that you've checked all pairs of `1`s in the array. If all pairs satisfy the distance condition, return `true`."
+    },
+    {
+      "content": "Your final implementation should efficiently handle the constraints of the problem, especially since the length of `nums` can be large (up to 100,000). Aim for a time complexity of O(n)."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 100,000",
+    "0 <= k <= nums.length",
+    "nums[i] is either 0 or 1",
+    "Return true if all 1's are at least k places away from each other."
+  ]
+}

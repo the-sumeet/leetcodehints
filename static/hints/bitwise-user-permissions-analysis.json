@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of user permissions represented as pairs of user IDs and their corresponding permission values. Each permission value is an integer that can be interpreted in binary form."
+    },
+    {
+      "content": "Consider how to extract the user ID and permissions from the input. You will need to iterate through the rows of the data to access each user's permissions. Think about how you can access elements in a nested structure."
+    },
+    {
+      "content": "Remember that permissions are represented as integers, and you can use bitwise operations to analyze them. Each bit in the integer can represent a different permission. For example, if the integer is 5 (which is 101 in binary), it indicates certain permissions are granted."
+    },
+    {
+      "content": "Identify the specific permissions you want to analyze. Are there predefined permission values you are checking against? For instance, if you are looking for read (1), write (2), and execute (4) permissions, how would you represent those in binary?"
+    },
+    {
+      "content": "Think about how to check if a specific permission is granted to a user. You can use the bitwise AND operator (`&`) to determine if a particular bit is set in the permissions integer. For example, to check if the read permission is granted, you can do: `permissions & 1`."
+    },
+    {
+      "content": "Consider edge cases where users may have no permissions (e.g., a permissions value of 0). How will you handle these cases in your analysis? Make sure to account for users with no permissions when processing the data."
+    },
+    {
+      "content": "If you need to aggregate or summarize the permissions across users, think about how you can use loops or data structures to collect this information. You might want to store results in a dictionary or a list."
+    },
+    {
+      "content": "When analyzing multiple users, consider how to handle users with overlapping permissions. If two users have the same permissions, how will you represent or differentiate their results? Will you return unique user IDs or aggregate their permissions?"
+    },
+    {
+      "content": "As you work towards a solution, consider what your output should look like. Are you returning a list of users with their permissions, or do you need to summarize the permissions in some way? Clarify the expected format of your output."
+    },
+    {
+      "content": "Finally, think about how you will implement the logic to iterate through user permissions and apply the bitwise checks. You can start with a loop that processes each user and checks for specific permissions based on the bitwise operations discussed."
+    }
+  ],
+  "questionNotes": [
+    "Input is structured as a list of user IDs and their permissions in integer format.",
+    "Permissions are represented as bits in an integer; each bit corresponds to a different permission.",
+    "Consider edge cases such as users with no permissions (permissions value of 0).",
+    "Output format should be clarified: Are you returning user IDs with their permissions or a summary?",
+    "Handle potential overlaps in permissions among users."
+  ]
+}

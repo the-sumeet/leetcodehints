@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `Activity` table. You need to focus on the `activity_date` and `user_id` columns to determine daily active users."
+    },
+    {
+      "content": "Consider how you can group the data by `activity_date`. This will allow you to count distinct users for each day. Think about using SQL's `GROUP BY` clause."
+    },
+    {
+      "content": "Remember that a user is considered active on a given day if they have any activity recorded on that day. You might want to use the `COUNT(DISTINCT user_id)` function to get the unique users."
+    },
+    {
+      "content": "You need to filter the results to only include the last 30 days up to '2019-07-27'. Think about how you can use a date range in your SQL query."
+    },
+    {
+      "content": "To filter by date, consider using the `WHERE` clause with conditions. You can check if `activity_date` is between '2019-06-28' and '2019-07-27'."
+    },
+    {
+      "content": "Make sure to handle duplicate rows in the `Activity` table. Since you are counting distinct users, duplicates won't affect your count, but it's good to keep in mind."
+    },
+    {
+      "content": "Your final result should have two columns: `day` and `active_users`. Ensure you are selecting these correctly in your final `SELECT` statement."
+    },
+    {
+      "content": "Don't forget to sort your result by `day`. This will help in presenting the data in a chronological order, which is often expected in reports."
+    },
+    {
+      "content": "Consider edge cases, such as days where no users were active. You should not include these days in your final output, so ensure your query logic reflects this."
+    },
+    {
+      "content": "Your final SQL query should look something like this: `SELECT activity_date AS day, COUNT(DISTINCT user_id) AS active_users ...` followed by the necessary `GROUP BY` and `WHERE` clauses."
+    }
+  ],
+  "questionNotes": [
+    "Focus on the `activity_date` and `user_id` columns to determine daily active users.",
+    "A user is active on a day if they have any activity on that day.",
+    "Filter results to include only the last 30 days up to '2019-07-27'.",
+    "Ensure the output format has columns named `day` and `active_users`.",
+    "Sort the results by `day` and exclude days with zero active users."
+  ]
+}

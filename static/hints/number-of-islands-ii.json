@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to track the number of islands in a grid as you add land cells. An island is defined as a group of connected land cells (1s) surrounded by water cells (0s)."
+    },
+    {
+      "content": "Consider how you will represent the grid. A 2D array is a common choice. Each cell can either be land (1) or water (0). Make sure to initialize your grid correctly based on the input dimensions."
+    },
+    {
+      "content": "Think about the input format. You will receive a list of coordinates where land will be added. Each coordinate is a pair of integers representing the row and column in the grid."
+    },
+    {
+      "content": "When you add a new land cell, check if it connects to any existing land cells. If it does, you may need to merge islands. Consider how you will keep track of connected components."
+    },
+    {
+      "content": "You might want to use a Union-Find (Disjoint Set Union) data structure to efficiently manage and merge islands. This will help you keep track of which cells belong to which island."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as adding land to a cell that is already land. In such cases, the number of islands should not change."
+    },
+    {
+      "content": "When merging islands, remember to decrease the island count. Each time you successfully connect a new land cell to an existing island, you should update your count."
+    },
+    {
+      "content": "Consider the four possible directions to check for adjacent land cells: up, down, left, and right. You will need to implement a method to explore these directions."
+    },
+    {
+      "content": "You can use Depth-First Search (DFS) or Breadth-First Search (BFS) to explore the grid and find connected components. Think about how you would implement this search."
+    },
+    {
+      "content": "When implementing the Union-Find structure, ensure you have methods for 'find' and 'union'. The 'find' method will help determine which island a cell belongs to, while 'union' will merge two islands."
+    },
+    {
+      "content": "As you process each coordinate, maintain a list to record the number of islands after each addition. This will be your output."
+    },
+    {
+      "content": "Remember to check the bounds of the grid when adding land. Ensure that the coordinates provided are within the valid range of the grid dimensions."
+    },
+    {
+      "content": "Think about how to optimize your solution. Union-Find with path compression and union by rank can significantly improve the efficiency of your algorithm."
+    },
+    {
+      "content": "After processing all coordinates, your output should be a list of integers, where each integer represents the number of islands after each land addition."
+    },
+    {
+      "content": "Finally, make sure to test your solution with various edge cases, such as adding land to a single cell or adding land in a pattern that creates multiple islands."
+    }
+  ],
+  "questionNotes": [
+    "The grid dimensions are given as two integers, representing the number of rows and columns.",
+    "The input list of coordinates may contain duplicates; handle this case appropriately.",
+    "Output should be a list of integers, with each integer representing the number of islands after each land addition."
+  ]
+}

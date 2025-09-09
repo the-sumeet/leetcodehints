@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between position and speed. Each car will reach the target at a different time based on its starting position and speed. Calculate the time it takes for each car to reach the target using the formula: `time = (target - position[i]) / speed[i]`."
+    },
+    {
+      "content": "Remember that cars cannot pass each other. If a faster car starts behind a slower car, it will catch up to it and form a fleet. Think about how you can determine which cars will catch up to each other based on their calculated times."
+    },
+    {
+      "content": "Consider sorting the cars by their starting positions. This will help you process them in the order they will reach the target. After sorting, you can calculate the time to reach the target for each car in that order."
+    },
+    {
+      "content": "As you process each car from the furthest position to the closest, keep track of the time it takes for the last car in the fleet to reach the target. If a car reaches the target in the same time or longer than the previous car, it will join the fleet."
+    },
+    {
+      "content": "Think about using a stack or a counter to keep track of the number of fleets. Each time you encounter a car that forms a new fleet, increment your fleet count."
+    },
+    {
+      "content": "Edge cases are important! Consider scenarios where all cars start at the same position but have different speeds. How would that affect the number of fleets? Or what if all cars have the same speed but start at different positions?"
+    },
+    {
+      "content": "Make sure to handle the case where there is only one car. This should directly return a fleet count of 1, as a single car always forms its own fleet."
+    },
+    {
+      "content": "Be mindful of the constraints: all positions are unique, and speeds are positive. This means you won't have to handle cases where two cars start at the same position, which simplifies your logic."
+    },
+    {
+      "content": "When implementing your solution, remember to return the final count of fleets. Ensure that your logic correctly identifies when cars form fleets and when they do not."
+    },
+    {
+      "content": "As a final step, after calculating the times and determining the fleets, consider how you will return the result. You should return the total number of fleets formed as an integer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == position.length == speed.length",
+    "1 <= n <= 10^5",
+    "0 < target <= 10^6",
+    "0 <= position[i] < target",
+    "All position values are unique.",
+    "0 < speed[i] <= 10^6"
+  ]
+}

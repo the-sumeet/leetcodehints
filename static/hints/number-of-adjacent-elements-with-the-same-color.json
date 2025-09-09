@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `colors` array. Initially, all elements are set to 0, which represents uncolored elements. Your goal is to track how many adjacent elements share the same color after each query."
+    },
+    {
+      "content": "Consider how to handle the queries. Each query updates a specific index in the `colors` array with a new color. Think about how this change might affect the count of adjacent pairs."
+    },
+    {
+      "content": "When processing a query, you should check the adjacent elements of the updated index. Specifically, look at the element to the left (if it exists) and the element to the right (if it exists) to see if they match the new color."
+    },
+    {
+      "content": "Keep track of the number of adjacent pairs with the same color. You might want to maintain a separate counter that increments or decrements based on whether the adjacent elements match before and after the update."
+    },
+    {
+      "content": "Think about edge cases, such as when the index being updated is at the start or the end of the array. In these cases, you only have one adjacent element to check."
+    },
+    {
+      "content": "You will need to return an array of results, where each entry corresponds to the count of adjacent pairs after each query. Make sure to initialize this result array properly."
+    },
+    {
+      "content": "Consider the efficiency of your solution. Since both `n` and the number of queries can be as large as 100,000, your approach should ideally be linear or close to linear with respect to the number of queries."
+    },
+    {
+      "content": "As you implement the solution, remember to update your adjacent pair count correctly. If changing a color causes a new pair to form or an existing pair to break, you need to adjust your count accordingly."
+    },
+    {
+      "content": "When updating the color at a specific index, make sure to check the previous color at that index. If the color is the same as the new color, you don't need to change the count of adjacent pairs."
+    },
+    {
+      "content": "Finally, think about how you will iterate through the queries. You might use a loop to process each query and update the `colors` array and the count of adjacent pairs accordingly. Ensure that you return the results in the correct format."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, 1 <= queries.length <= 10^5",
+    "Each query is of the form [index, color].",
+    "Colors are represented by integers, and you need to count adjacent pairs with the same color.",
+    "Return an array where each entry corresponds to the count after each query."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the goal: you want to ensure that every integer from 1 to n can be formed using the elements of the array. Think about how the current elements can help form these integers."
+    },
+    {
+      "content": "Notice that the array is sorted. This property can help you efficiently determine which numbers can be formed with the current elements."
+    },
+    {
+      "content": "Consider the smallest number you need to form, which starts at 1. If you can form 1, you can then think about forming 2, and so on."
+    },
+    {
+      "content": "If the smallest number you need to form (let's call it 'currentSum') is less than or equal to the first element of the array, you will need to patch it. Why is that?"
+    },
+    {
+      "content": "When you add a patch, it effectively increases the range of sums you can form. Think about how adding a number can help cover gaps in the range."
+    },
+    {
+      "content": "As you iterate through the array, keep track of the currentSum. If the currentSum is greater than the next number in the array, you can use that number to form new sums."
+    },
+    {
+      "content": "If you encounter a number in the array that is greater than currentSum, this means you cannot form currentSum yet. You will need to add a patch."
+    },
+    {
+      "content": "When you add a patch, it should be equal to currentSum. This allows you to form currentSum and potentially higher sums in the future."
+    },
+    {
+      "content": "Keep a counter for the number of patches you add. Each time you add a patch, increment this counter."
+    },
+    {
+      "content": "Continue this process until currentSum exceeds n. At that point, you can stop, as you've ensured all numbers up to n can be formed."
+    },
+    {
+      "content": "Consider edge cases, such as when the array is empty or when n is very small (like 1). How would these cases affect your logic?"
+    },
+    {
+      "content": "Remember that the elements of nums can only help form sums up to the maximum element in nums. If n is larger than this, you will definitely need to add patches."
+    },
+    {
+      "content": "Think about the efficiency of your approach. You want to minimize the number of patches, so focus on the smallest numbers you cannot form."
+    },
+    {
+      "content": "As you implement your logic, make sure to handle the case where you exhaust the elements in nums but still have numbers left to form up to n."
+    },
+    {
+      "content": "Finally, make sure to return the count of patches you've added as your result. This is the key output of the problem."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "1 <= nums[i] <= 10",
+    "nums is sorted in ascending order.",
+    "1 <= n <= 2^31 - 1"
+  ]
+}

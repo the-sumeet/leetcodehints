@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `Tweets` table. You have two columns: `tweet_id` and `content`. Remember that `tweet_id` is unique for each tweet."
+    },
+    {
+      "content": "Focus on the requirement for identifying invalid tweets. A tweet is considered invalid if the length of its `content` exceeds 15 characters. Think about how you can measure the length of a string in SQL."
+    },
+    {
+      "content": "Consider which SQL function can help you determine the length of the `content`. The `LENGTH()` function is commonly used for this purpose in SQL databases."
+    },
+    {
+      "content": "You will need to filter the tweets based on their content length. Use a `WHERE` clause to specify the condition that the length of `content` must be greater than 15."
+    },
+    {
+      "content": "Remember to select only the `tweet_id` of the invalid tweets in your query. You can do this by using the `SELECT` statement to specify the column you want to return."
+    },
+    {
+      "content": "Think about how you would structure your SQL query. It should include a `SELECT` statement, a `FROM` clause to specify the table, and a `WHERE` clause to filter the results."
+    },
+    {
+      "content": "Consider edge cases, such as tweets that are exactly 15 characters long. Make sure your condition strictly checks for 'greater than' to exclude these tweets."
+    },
+    {
+      "content": "Ensure that your query handles all possible tweets in the table. You don't need to worry about ordering the results, as the problem states that the output can be in any order."
+    },
+    {
+      "content": "You might want to test your query with different lengths of tweet content to ensure it correctly identifies invalid tweets. Think about how you can simulate this with sample data."
+    },
+    {
+      "content": "Finally, put together your SQL query. It should look something like this: `SELECT tweet_id FROM Tweets WHERE LENGTH(content) > 15;` Make sure to check for any syntax errors before running it."
+    }
+  ],
+  "questionNotes": [
+    "The `tweet_id` is a primary key and must be unique.",
+    "A tweet is invalid if the content length is strictly greater than 15 characters.",
+    "Return only the `tweet_id` of invalid tweets.",
+    "The result can be returned in any order."
+  ]
+}

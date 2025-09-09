@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node has a value, and you need to find paths where all nodes have the same value. Remember that the path can go through any node, not just the root."
+    },
+    {
+      "content": "Think about how you can traverse the tree. A depth-first search (DFS) approach is often useful for tree problems. You will need to explore both left and right children of each node."
+    },
+    {
+      "content": "As you traverse, keep track of the current node's value and compare it with the values of its children. If they match, you can extend the path; if not, you need to reset the count for that path."
+    },
+    {
+      "content": "Consider how to keep track of the maximum length of the univalue path found so far. You might want to use a variable that gets updated whenever you find a longer path."
+    },
+    {
+      "content": "When calculating the path length, remember that the length is defined by the number of edges, not the number of nodes. This means if you have two nodes connected, the length is 1."
+    },
+    {
+      "content": "Handle edge cases, such as when the tree is empty (i.e., the root is null). In this case, the longest univalue path should return 0."
+    },
+    {
+      "content": "You will need to return the maximum length found across all paths in the tree. Think about how to aggregate the lengths from both left and right subtrees."
+    },
+    {
+      "content": "As you explore each node, you can return the length of the longest univalue path that can be extended from that node to its parent. This will help in calculating the maximum path length."
+    },
+    {
+      "content": "Remember to use a helper function for your DFS that returns the length of the longest univalue path starting from the current node. This function can also update the global maximum length."
+    },
+    {
+      "content": "Finally, ensure that your function handles the return values correctly. You might want to return 0 for null nodes and 1 for leaf nodes, adjusting for the path lengths of their children."
+    }
+  ],
+  "questionNotes": [
+    "The path can start and end at any node in the tree.",
+    "The length of the path is defined by the number of edges.",
+    "An empty tree (null root) should return 0.",
+    "Constraints: 0 <= number of nodes <= 10^4, -1000 <= Node.val <= 1000."
+  ]
+}

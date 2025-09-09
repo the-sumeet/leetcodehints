@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of an alternating subsequence. You need to pick elements from the `words` array such that the corresponding elements in the `groups` array are different for any two consecutive selected elements."
+    },
+    {
+      "content": "Consider how you can iterate through the `words` array while checking the `groups` array. You will want to maintain a list to store your selected words as you find valid pairs."
+    },
+    {
+      "content": "Remember that the elements in `words` are distinct. This means you won't have to worry about duplicate entries in your subsequence, which simplifies your selection process."
+    },
+    {
+      "content": "Think about how you can use a simple loop to compare adjacent elements in the `groups` array. If `groups[i]` is different from `groups[i+1]`, you can include `words[i]` in your subsequence."
+    },
+    {
+      "content": "What happens if you encounter a sequence of the same group? You may need to skip these elements to maintain the alternating property. Keep track of the last added word's index to avoid consecutive selections from the same group."
+    },
+    {
+      "content": "Consider edge cases where all elements in `groups` are the same. In such cases, your longest subsequence will only include one element from `words`."
+    },
+    {
+      "content": "To handle multiple valid subsequences, focus on building a valid subsequence without worrying about which one is the longest. Any valid subsequence that meets the criteria is acceptable."
+    },
+    {
+      "content": "As you build your subsequence, ensure that you are not adding adjacent indices that correspond to the same group. This will help you maintain the alternating condition."
+    },
+    {
+      "content": "You may want to initialize your subsequence with the first word and then iterate through the rest, checking if you can add each word based on the group conditions."
+    },
+    {
+      "content": "Finally, once you have iterated through the `words` array and constructed your subsequence, return it. Ensure that your return format matches the requirements specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == words.length == groups.length <= 100",
+    "Each words[i] consists of distinct strings and lowercase English letters.",
+    "groups[i] is either 0 or 1.",
+    "If there are multiple valid subsequences, return any of them."
+  ]
+}

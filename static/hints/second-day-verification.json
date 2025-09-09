@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main components: 'emails' and 'texts'. Each contains lists of records with specific fields. Make sure you can access these fields easily."
+    },
+    {
+      "content": "Identify the key fields in both 'emails' and 'texts'. For 'emails', the 'email_id' and 'signup_date' are crucial. For 'texts', focus on 'email_id', 'signup_action', and 'action_date'."
+    },
+    {
+      "content": "Consider how you will match records from the 'emails' and 'texts' sections. The 'email_id' in 'texts' corresponds to the 'email_id' in 'emails'. Think about how to efficiently pair these records."
+    },
+    {
+      "content": "Think about the criteria for verifying if a user signed up on the second day. You will need to compare the 'signup_date' from 'emails' with the 'action_date' from 'texts'. What date calculations will you need to perform?"
+    },
+    {
+      "content": "When comparing dates, remember to convert them into a comparable format. You might want to use a date library or function to handle this. How will you check if the action happened exactly one day after the signup date?"
+    },
+    {
+      "content": "Pay attention to the potential for multiple actions for a single email. How will you handle cases where there are multiple entries in 'texts' for the same 'email_id'? Consider filtering or aggregating these entries."
+    },
+    {
+      "content": "Think about the output format. What do you need to return? Is it a list of user_ids, or do you need to include additional information? Clarifying this will help you structure your final output correctly."
+    },
+    {
+      "content": "Consider edge cases, such as users who signed up on the last day of the month or year. How will you handle date transitions in these scenarios? Make sure your date calculations account for these cases."
+    },
+    {
+      "content": "As you implement your solution, ensure you are checking the conditions properly. You want to filter for users who have a 'Verified' status on the second day. How will you ensure this status is checked correctly?"
+    },
+    {
+      "content": "Finally, your solution should loop through the 'emails' and check against the 'texts' for each email_id. Make sure to collect the user_ids of those who meet the criteria and return them in the required format."
+    }
+  ],
+  "questionNotes": [
+    "Ensure you understand the structure of the 'emails' and 'texts' arrays.",
+    "Focus on 'email_id' for matching records between 'emails' and 'texts'.",
+    "Date comparisons need to be accurate; consider using a date library.",
+    "Handle multiple entries in 'texts' for the same 'email_id' appropriately.",
+    "The output should include user_ids of users who signed up and verified on the second day."
+  ]
+}

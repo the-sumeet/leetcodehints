@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `OrderedStream` class. You need to store the incoming pairs of `(idKey, value)` in a way that allows you to retrieve them in order. Think about how you might use an array or a list to achieve this."
+    },
+    {
+      "content": "Consider how you will handle the insertion of the pairs. Each pair comes with a unique `idKey`, which means you can use this `idKey` to directly index into your storage structure. How will you initialize your storage for `n` values?"
+    },
+    {
+      "content": "When inserting a new pair, you need to check if it is the next expected `idKey`. This means you should keep track of the last inserted `idKey` to determine the starting point for returning values. What variable could you use for this?"
+    },
+    {
+      "content": "Remember that the output of the `insert` method should be a list of values that are contiguous and in the correct order. After inserting a new value, you may need to collect all the values starting from the last inserted position up to the next gaps. How will you iterate through your storage to achieve this?"
+    },
+    {
+      "content": "Think about edge cases, such as inserting values out of order. For example, if you insert an `idKey` that is not the next expected one, you should not return any values. How will you handle this situation in your logic?"
+    },
+    {
+      "content": "The return value of the `insert` method should be a list of strings. Make sure that when you collect the values, you format them correctly before returning. How will you convert the collected values into the required output format?"
+    },
+    {
+      "content": "You need to ensure that your implementation efficiently handles the insertion and retrieval of values. Consider the time complexity of your approach. What data structures could help you maintain efficient access and insertion times?"
+    },
+    {
+      "content": "As you build your solution, keep in mind that the constraints specify that `1 <= n <= 1000`. This means your solution should be efficient enough to handle the upper limit without performance issues. How will you ensure that your solution scales well?"
+    },
+    {
+      "content": "When implementing the `insert` method, make sure to update your tracking variables correctly after each insertion. You should keep track of the next expected `idKey` and adjust it as you return chunks. What logic will you use to update this variable?"
+    },
+    {
+      "content": "Finally, think about how you will test your implementation. Create a few test cases that cover different scenarios, such as inserting values in order, out of order, and inserting the last value. What edge cases can you think of that might break your implementation?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 1000",
+    "1 <= id <= n; each id is unique.",
+    "The `value` is a string of length 5 consisting of lowercase letters.",
+    "The `insert` method should return a list of values in order of their IDs.",
+    "The concatenation of all returned chunks should yield a sorted list of values."
+  ]
+}

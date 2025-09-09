@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a wiggle sequence. A wiggle sequence has differences that strictly alternate between positive and negative. For example, if you have two consecutive numbers, they should either be increasing followed by decreasing, or vice versa."
+    },
+    {
+      "content": "Consider the simplest cases first. A single element or two different elements can always form a wiggle sequence. Think about how you would handle sequences with repeated elements."
+    },
+    {
+      "content": "When iterating through the array, you should focus on the differences between consecutive elements. Keep track of the last difference to determine if the current difference is positive or negative."
+    },
+    {
+      "content": "You can use two pointers or variables to keep track of the length of the current wiggle subsequence. One pointer could track the last 'up' and the other the last 'down'."
+    },
+    {
+      "content": "As you iterate through the array, update your wiggle length only when you find a valid wiggle (i.e., when the current difference is different from the last one). This will help you avoid counting consecutive numbers that do not contribute to the wiggle property."
+    },
+    {
+      "content": "Remember to handle edge cases where the array length is 1 or 2. For a single element, the length is 1, and for two elements, if they are different, the length is 2."
+    },
+    {
+      "content": "To optimize your solution, think about how you can achieve O(n) time complexity. You should only need a single pass through the array to determine the wiggle lengths."
+    },
+    {
+      "content": "Consider using a variable to store the last direction of the wiggle (up or down). This will help you decide when to increment your wiggle length."
+    },
+    {
+      "content": "You may want to initialize your wiggle length to 1 or 2 depending on the first two elements of the array. This will set a solid foundation for your counting logic."
+    },
+    {
+      "content": "Finally, implement the logic to check the differences as you iterate, and ensure you are correctly updating your wiggle length based on the last direction. For example, if lastDiff > 0 and currentDiff < 0, increment the wiggle length."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "Values: 0 <= nums[i] <= 1000",
+    "A sequence with one element is a wiggle sequence.",
+    "A sequence with two non-equal elements is also a wiggle sequence.",
+    "Return the length of the longest wiggle subsequence."
+  ]
+}

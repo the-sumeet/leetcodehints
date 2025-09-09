@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the range of possible numbers. The number you need to guess is between 1 and n. Make sure to account for both ends of this range."
+    },
+    {
+      "content": "Think about how you can narrow down the possible numbers with each guess. After each guess, you receive feedback indicating whether the actual number is higher or lower."
+    },
+    {
+      "content": "Consider using a binary search approach. This method will allow you to efficiently halve the search space with each guess based on the feedback you receive."
+    },
+    {
+      "content": "Initialize two pointers: one for the lower bound (let's call it `low` set to 1) and another for the upper bound (`high` set to n). This will help you track the current range of numbers."
+    },
+    {
+      "content": "In each iteration of your guessing loop, calculate the midpoint of the current range. This will be your next guess. Use the formula: `mid = low + (high - low) / 2`."
+    },
+    {
+      "content": "After making a guess, call the `guess(mid)` function to get feedback. Depending on the result, adjust your `low` or `high` pointers accordingly."
+    },
+    {
+      "content": "Remember the possible outcomes of the `guess` function: -1 means your guess is too high, 1 means it's too low, and 0 means you've found the correct number."
+    },
+    {
+      "content": "If the guess is too high (result is -1), you should set `high = mid - 1`. If it's too low (result is 1), set `low = mid + 1`."
+    },
+    {
+      "content": "Make sure to handle the case where `low` equals `high`. This indicates that you've narrowed it down to one possible number, which is your answer."
+    },
+    {
+      "content": "Finally, return the value of `low` (or `high`, since they will be equal) as the picked number after the loop ends. This will be your final answer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 2^31 - 1",
+    "The number picked (pick) will always be in the range [1, n].",
+    "The guess function returns -1, 1, or 0 based on the comparison.",
+    "You need to return the exact number that was picked."
+  ]
+}

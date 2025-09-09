@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a Toeplitz matrix is. A matrix is Toeplitz if every diagonal from the top-left to the bottom-right has the same elements. For example, in a 2x2 matrix, if the top-left and bottom-right elements are the same, that diagonal is valid."
+    },
+    {
+      "content": "Consider how you can identify the diagonals in the matrix. Each diagonal can be represented by the difference between the row and column indices (i - j). This means all elements with the same (i - j) value belong to the same diagonal."
+    },
+    {
+      "content": "Think about how you would iterate through the matrix. You might want to use a nested loop where the outer loop goes through each row and the inner loop goes through each column."
+    },
+    {
+      "content": "As you iterate through the matrix, keep track of the first element of each diagonal. You can use a dictionary to map each unique (i - j) value to the first element encountered in that diagonal."
+    },
+    {
+      "content": "When you encounter an element in the matrix, check if it matches the first element of its diagonal. If it doesn't match, you can immediately return false, as the matrix cannot be Toeplitz."
+    },
+    {
+      "content": "Consider edge cases, such as when the matrix has only one row or one column. In these cases, the matrix is trivially Toeplitz since there are no diagonals to compare."
+    },
+    {
+      "content": "You may also want to handle the case where the matrix is empty. An empty matrix should return true, as there are no elements to contradict the Toeplitz property."
+    },
+    {
+      "content": "If you're thinking of optimizing for memory, remember that you can check diagonals as you load each row. You do not need to store the entire matrix in memory at once."
+    },
+    {
+      "content": "When implementing your solution, ensure that you are correctly managing the indices. Remember that matrix indices start from 0, which might affect how you calculate (i - j)."
+    },
+    {
+      "content": "Finally, implement the logic to check the diagonals based on the (i - j) mapping. You can loop through the matrix and compare each element with the first element of its respective diagonal, returning false if any mismatch occurs."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 20; 0 <= matrix[i][j] <= 99.",
+    "A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same elements.",
+    "Return true if the matrix is Toeplitz, otherwise return false.",
+    "Consider edge cases like single row/column matrices and empty matrices."
+  ]
+}

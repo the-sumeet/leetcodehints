@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to execute multiple promises in parallel. You can use `Promise.all()` to wait for all promises to resolve. This method returns an array of results in the same order as the promises were passed in."
+    },
+    {
+      "content": "Consider how you will handle the results of the promises. Each promise will resolve to a value, so think about how to collect these values after all promises have completed."
+    },
+    {
+      "content": "Remember that promises can also reject. You should think about how to handle errors gracefully. If one promise fails, `Promise.all()` will reject immediately."
+    },
+    {
+      "content": "You might want to implement a way to handle partial success. If one or more promises fail, consider whether you want to return the results of the successful promises or throw an error."
+    },
+    {
+      "content": "When working with asynchronous operations, ensure that your function is declared as `async` if you plan to use `await` to handle promises. This can make your code cleaner and easier to read."
+    },
+    {
+      "content": "Think about using `Promise.allSettled()` if you want to wait for all promises to settle, regardless of whether they are fulfilled or rejected. This will give you an array of objects indicating the status and value of each promise."
+    },
+    {
+      "content": "Consider edge cases, such as an empty array of functions. What should your function return if there are no promises to execute?"
+    },
+    {
+      "content": "Make sure to validate the input. The array should only contain functions that return promises. You might want to check if each element is a function before executing it."
+    },
+    {
+      "content": "When you collect results, remember to maintain the order of the original promises. If you are using `Promise.all()`, the results will naturally be in order, but if you handle them individually, you need to ensure you map them correctly."
+    },
+    {
+      "content": "Finally, think about what your function should return. Should it return an array of results, or should it handle errors in a specific way? You might want to return an object that contains both results and any errors encountered."
+    }
+  ],
+  "questionNotes": [
+    "The input is an array of functions that return promises.",
+    "Ensure that the order of results matches the order of the input functions.",
+    "Handle both fulfilled and rejected promises appropriately.",
+    "Consider edge cases such as empty input arrays and input validation."
+  ]
+}

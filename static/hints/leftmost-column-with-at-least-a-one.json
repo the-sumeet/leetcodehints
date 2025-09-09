@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input matrix. It's a binary matrix, meaning it only contains 0s and 1s. Each row is sorted in non-decreasing order."
+    },
+    {
+      "content": "Consider how the properties of the matrix can help you. Since each row is sorted, if you find a 1 in a row, all columns to the right will also be 1s."
+    },
+    {
+      "content": "Think about the goal: you need to find the leftmost column that contains at least one '1'. This implies you should be looking for the smallest column index that meets this condition."
+    },
+    {
+      "content": "You might want to iterate through the matrix to find the 1s, but consider whether there are more efficient ways to traverse the matrix given its sorted nature."
+    },
+    {
+      "content": "A common approach is to start from the top-right corner of the matrix. If you find a 1, you can move left; if you find a 0, you can move down. This can help you narrow down your search efficiently."
+    },
+    {
+      "content": "Keep track of the leftmost column index where you find a 1. You can initialize it to a value that indicates 'not found' and update it whenever you encounter a 1."
+    },
+    {
+      "content": "Consider edge cases such as when the matrix is empty or when all elements are 0. Make sure your code can handle these scenarios gracefully."
+    },
+    {
+      "content": "If you reach the end of your traversal without finding a 1, you should return a specific value to indicate that there is no column with at least one 1."
+    },
+    {
+      "content": "Remember to account for the case where all columns have at least one 1. In such cases, your leftmost index should be updated accordingly."
+    },
+    {
+      "content": "Finally, ensure your function returns the correct format as specified in the problem statement. If you find a valid column index, return it; otherwise, return -1."
+    }
+  ],
+  "questionNotes": [
+    "The input is a binary matrix with rows sorted in non-decreasing order.",
+    "You need to find the leftmost column with at least one '1'.",
+    "Return -1 if no such column exists.",
+    "Consider edge cases like empty matrices or matrices filled with 0s."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by defining the `BrowserHistory` class and its constructor. The constructor should take a `homepage` string and initialize the browser's current state. Think about how you will store the history of visited URLs."
+    },
+    {
+      "content": "Consider using a list or an array to keep track of the history. You will need to maintain an index to represent the current position in the history. This will help you easily move back and forth."
+    },
+    {
+      "content": "When implementing the `visit` method, remember that visiting a new URL should clear any forward history. This means you need to truncate the list from the current index to the end."
+    },
+    {
+      "content": "In the `back` method, you need to check how many steps you can actually move back. If the requested steps exceed the current index, you should only move back to the beginning of the history."
+    },
+    {
+      "content": "For the `forward` method, similarly check how many steps you can move forward. If you are already at the end of the history, you cannot move forward at all."
+    },
+    {
+      "content": "Think about edge cases, such as what happens if you try to go back or forward when there are no more pages in that direction. Ensure your methods handle these scenarios gracefully."
+    },
+    {
+      "content": "When moving back or forward, make sure to update the current index accordingly. This index will determine the current URL after the operation."
+    },
+    {
+      "content": "Remember to return the current URL after each `back` or `forward` operation. This is an important part of the method's contract."
+    },
+    {
+      "content": "Consider the constraints given in the problem. For example, ensure that your implementation can handle up to 5000 calls efficiently, which might influence your choice of data structures."
+    },
+    {
+      "content": "Finally, start implementing the methods step by step. Begin with `visit`, then move on to `back`, and finally implement `forward`. Make sure to test each method individually to ensure correctness."
+    }
+  ],
+  "questionNotes": [
+    "The homepage is the starting point of the browser history.",
+    "Visiting a new URL clears all forward history.",
+    "The back and forward methods should return the current URL after moving.",
+    "If steps exceed the available history, only move as far as possible.",
+    "Constraints: 1 <= homepage.length <= 20, 1 <= url.length <= 20, 1 <= steps <= 100, at most 5000 calls to visit, back, and forward."
+  ]
+}

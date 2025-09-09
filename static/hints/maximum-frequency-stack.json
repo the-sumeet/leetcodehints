@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic operations of a stack: 'push' adds an element to the top, and 'pop' removes the top element. In this problem, you'll need to modify the pop operation to account for frequency."
+    },
+    {
+      "content": "Consider how you will keep track of the frequency of each element. A dictionary (or hashmap) can be useful to map each element to its frequency count."
+    },
+    {
+      "content": "You need to maintain the order of elements in the stack based on their frequency. Think about how you can use a secondary data structure to help with this, such as a list of stacks."
+    },
+    {
+      "content": "When you push an element, you should increment its frequency count. Ensure that you also update the stack that corresponds to this frequency."
+    },
+    {
+      "content": "Think about how to handle ties in frequency when popping elements. You should always pop the element that was pushed most recently among those with the highest frequency."
+    },
+    {
+      "content": "Consider using a list of stacks, where each index corresponds to a frequency count. For example, index 3 could hold a stack of elements that each have a frequency of 3."
+    },
+    {
+      "content": "When implementing the pop operation, you will need to check which stack to pop from. This means you should keep track of the maximum frequency as well."
+    },
+    {
+      "content": "Make sure to handle the case when an element's frequency drops to zero after popping. You may need to remove it from your frequency count dictionary."
+    },
+    {
+      "content": "Think about the constraints given in the problem, such as the maximum number of calls to push and pop. Your solution should be efficient enough to handle these limits."
+    },
+    {
+      "content": "Remember that the elements pushed onto the stack can be as large as 10^9. Ensure your data structures can handle this range without issues."
+    },
+    {
+      "content": "When implementing the push method, remember to check if the frequency of the element has increased and update your data structures accordingly."
+    },
+    {
+      "content": "The pop method should return the most frequent element and also update the frequency count. Make sure to return the correct value as specified."
+    },
+    {
+      "content": "Consider edge cases, such as what happens when you pop from a stack that has only one element left. Your implementation should gracefully handle this."
+    },
+    {
+      "content": "Think about how you will initialize your data structures in the constructor. You will likely need at least a frequency map and a list of stacks."
+    },
+    {
+      "content": "As you finalize your implementation, ensure that your push and pop operations are efficient. Aim for O(1) time complexity for both operations if possible."
+    }
+  ],
+  "questionNotes": [
+    "The FreqStack must support push and pop operations efficiently.",
+    "When popping, return the most frequent element; in case of a tie, return the one closest to the top.",
+    "You may need to handle large integers (up to 10^9) and a high number of operations (up to 20,000).",
+    "Ensure to manage the frequency counts and the stacks properly to maintain the correct order of elements."
+  ]
+}

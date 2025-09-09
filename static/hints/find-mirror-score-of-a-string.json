@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'mirror' letter is. For example, the mirror of 'a' is 'z', 'b' is 'y', and so on. Consider creating a mapping of letters to their mirrors."
+    },
+    {
+      "content": "Think about how you will iterate through the string. You need to check each character and find its mirror in the unmarked characters to the left. How will you keep track of which characters are marked?"
+    },
+    {
+      "content": "You will need to maintain a score that starts at zero. Each time you find a valid pair of indices (i, j) where j < i and s[j] is the mirror of s[i], you will update this score."
+    },
+    {
+      "content": "Consider using a data structure to store the indices of unmarked characters. A list or a stack could be useful for keeping track of the indices as you iterate through the string."
+    },
+    {
+      "content": "When you find a valid pair, remember to mark both indices. Think about how you will mark them and ensure they are not considered for future iterations."
+    },
+    {
+      "content": "As you iterate through the string, you need to check for the closest unmarked index j for each index i. This means you might need to look back through your data structure of unmarked indices."
+    },
+    {
+      "content": "Pay attention to edge cases, such as strings that contain no mirror pairs at all. What should your function return in such cases?"
+    },
+    {
+      "content": "When calculating the score, ensure that you are correctly computing the difference i - j. This value should be added to your total score each time you find a valid pair."
+    },
+    {
+      "content": "You might want to create a helper function to determine if two characters are mirrors of each other. This can simplify your main loop logic."
+    },
+    {
+      "content": "Finally, think about the efficiency of your solution. You need to ensure that your approach can handle the upper limit of the input size, which is 100,000 characters."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "s consists only of lowercase English letters.",
+    "Indices are 0-based.",
+    "You must find the closest unmarked index j such that j < i.",
+    "Return the total score after processing the entire string."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what the median is. The median is the middle value in a sorted list of numbers. If the list has an even number of elements, the median is the average of the two middle numbers."
+    },
+    {
+      "content": "Given two sorted arrays, think about how you might merge them to find the median. However, directly merging them would lead to a time complexity of O(m+n), which is not efficient enough for this problem."
+    },
+    {
+      "content": "Consider the properties of sorted arrays. You can use binary search to help you find the median without merging the arrays. This is key to achieving the O(log(min(m, n))) time complexity."
+    },
+    {
+      "content": "Focus on partitioning the two arrays. You want to find a point where the left side of the partition contains all elements less than or equal to the elements on the right side."
+    },
+    {
+      "content": "Define your two arrays as nums1 and nums2. Without loss of generality, assume nums1 is the smaller array. This will simplify your binary search."
+    },
+    {
+      "content": "When partitioning, you will have two partitions: one for nums1 and one for nums2. Let’s denote the partition indices as i for nums1 and j for nums2."
+    },
+    {
+      "content": "The key conditions for a valid partition are: nums1[i-1] <= nums2[j] and nums2[j-1] <= nums1[i]. Ensure you check edge cases where i or j could be 0 or the length of the array."
+    },
+    {
+      "content": "If the combined length of the arrays is odd, the median is the maximum of the left partitions. If it's even, the median is the average of the maximum of the left partitions and the minimum of the right partitions."
+    },
+    {
+      "content": "Remember to handle edge cases where one of the arrays is empty. In such cases, the median will simply be the median of the non-empty array."
+    },
+    {
+      "content": "You will need to adjust your binary search based on the conditions of the partitions. If nums1[i-1] > nums2[j], move your search to the left in nums1; otherwise, move to the right."
+    },
+    {
+      "content": "Make sure to keep track of the lengths of the partitions. The left partition will include elements from both arrays, while the right partition will also include elements from both."
+    },
+    {
+      "content": "When calculating the median, ensure you correctly identify the maximum of the left partitions and the minimum of the right partitions based on the indices i and j."
+    },
+    {
+      "content": "Consider using a while loop for your binary search, and ensure you update your midpoints correctly based on the conditions you’ve established."
+    },
+    {
+      "content": "Pay attention to the return format. The median should be returned as a floating-point number, so ensure that you perform any necessary conversions."
+    },
+    {
+      "content": "You are very close! After partitioning correctly and checking the conditions, you will need to compute the median based on the maximum of the left and minimum of the right partitions."
+    }
+  ],
+  "questionNotes": [
+    "The overall run time complexity should be O(log(min(m, n))).",
+    "If the combined length of the arrays is odd, return the middle element; if even, return the average of the two middle elements.",
+    "Consider edge cases where one or both arrays may be empty.",
+    "Ensure to handle the cases where partition indices can go out of bounds."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the difference between positive and negative integers. Positive integers are greater than zero, while negative integers are less than zero. Remember that zero is neither positive nor negative."
+    },
+    {
+      "content": "Since the array is sorted in non-decreasing order, you can leverage this property to efficiently count positive and negative integers. Think about how you could determine the transition point from negative to positive numbers."
+    },
+    {
+      "content": "To count the number of positive integers, you can find the index of the first positive integer in the array. This can help you determine how many positive integers exist by using the length of the array."
+    },
+    {
+      "content": "Similarly, to count negative integers, you can find the index of the last negative integer. Consider how you can use the length of the array and the index of the first positive integer to calculate the count of negative integers."
+    },
+    {
+      "content": "When counting, remember that the total count of integers is the length of the array. Use this to derive the counts of positive and negative integers based on the indices you find."
+    },
+    {
+      "content": "Consider edge cases, such as arrays that contain only positive integers, only negative integers, or a mix of both with zeros. How would your method handle these scenarios?"
+    },
+    {
+      "content": "Think about the time complexity requirements. The problem hints at a solution in O(log(n)) time complexity. This suggests that you might want to use binary search to find the transition points."
+    },
+    {
+      "content": "You can use binary search to find the first positive integer's index. If you find it at index 'i', then the count of positive integers is 'length - i'."
+    },
+    {
+      "content": "To find the count of negative integers, you could also use binary search to find the last negative integer. If the first positive integer is at index 'i', then the count of negative integers is 'i' (the index itself)."
+    },
+    {
+      "content": "Finally, return the maximum of the counts of positive and negative integers. Make sure to handle cases where one of the counts could be zero."
+    }
+  ],
+  "questionNotes": [
+    "The array is sorted in non-decreasing order.",
+    "0 is neither positive nor negative.",
+    "Return the maximum count between positive and negative integers.",
+    "Constraints: 1 <= nums.length <= 2000 and -2000 <= nums[i] <= 2000."
+  ]
+}

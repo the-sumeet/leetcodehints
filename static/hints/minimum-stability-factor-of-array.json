@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a stable subarray. A subarray is stable if the highest common factor (HCF) of all its elements is at least 2. This means that all elements in that subarray share a common divisor greater than 1."
+    },
+    {
+      "content": "Consider how to compute the HCF of a subarray. You can use the Euclidean algorithm to find the HCF of two numbers, and extend this to an array using a loop or recursion."
+    },
+    {
+      "content": "Think about how to identify subarrays in the given array. You can use a nested loop to generate all possible subarrays, but remember that this could be inefficient for larger arrays."
+    },
+    {
+      "content": "Since you can modify at most `maxC` elements, consider how changing elements might affect the HCF of subarrays. What values would you change to maximize the effect on the HCF?"
+    },
+    {
+      "content": "Explore edge cases where `maxC` is 0. In this scenario, you cannot modify any elements. What would be the minimum stability factor in such cases?"
+    },
+    {
+      "content": "When `maxC` is equal to or greater than the length of the array, you can change all elements. What would the minimum stability factor be in this case?"
+    },
+    {
+      "content": "To minimize the stability factor, you need to ensure that the largest stable subarray remains as small as possible. Consider how to systematically reduce the HCF of the longest stable subarrays."
+    },
+    {
+      "content": "Think about the implications of the HCF being 2. If you can ensure that no subarray has an HCF of 2 or more, what would be the resulting stability factor?"
+    },
+    {
+      "content": "You might want to keep track of the lengths of stable subarrays as you iterate through possible modifications. How can you efficiently store and compare these lengths?"
+    },
+    {
+      "content": "Consider using a sliding window approach to find stable subarrays. This might help in efficiently calculating the HCF of elements as you expand or contract the window."
+    },
+    {
+      "content": "When modifying elements, think about the prime factors of the numbers in the array. Changing elements to prime numbers might help in reducing the HCF of certain subarrays."
+    },
+    {
+      "content": "You can also consider the frequency of numbers in your array. If a number appears frequently and contributes to a high HCF, changing some of those instances might be beneficial."
+    },
+    {
+      "content": "Before finalizing your approach, ensure you have accounted for all possible subarrays. Are there any patterns or properties of the numbers that could help simplify your calculations?"
+    },
+    {
+      "content": "As a final step, think about how to implement your logic efficiently to handle the upper constraint of the input size. What data structures or algorithms could help you achieve this?"
+    },
+    {
+      "content": "You are close to the solution! Consider writing a function that calculates the HCF for each subarray and checks the number of modifications needed to reduce the stability factor. How would you structure this function?"
+    }
+  ],
+  "questionNotes": [
+    "The input array can have at most 100,000 elements.",
+    "Each element in the array can be as large as 1 billion.",
+    "You can modify at most `maxC` elements, which can be 0.",
+    "A subarray of length 1 is stable if its only element is >= 2.",
+    "Return 0 if no stable subarray remains."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a `limit` that defines the range of ball labels from `0` to `limit`, and a list of `queries` where each query marks a specific ball with a color."
+    },
+    {
+      "content": "Remember that each ball can only have one color at a time, and if a ball is marked again, it will lose its previous color. This means you need to keep track of the most recent color assigned to each ball."
+    },
+    {
+      "content": "Consider using a dictionary or an array to map each ball's label to its current color. This will allow you to efficiently update and check colors as you process each query."
+    },
+    {
+      "content": "After processing each query, you need to count the number of distinct colors. Think about how you can efficiently keep track of the colors that have been assigned to any ball."
+    },
+    {
+      "content": "When counting distinct colors, remember that a color is only counted if at least one ball has that color. You may want to use a set to store the colors for easy counting."
+    },
+    {
+      "content": "Consider edge cases where a ball might be assigned the same color multiple times. How will you ensure that your distinct color count remains accurate in such cases?"
+    },
+    {
+      "content": "As you process each query, update your color mapping and then check how many unique colors are present. This might involve iterating through the current color mapping."
+    },
+    {
+      "content": "To improve efficiency, you might want to avoid counting colors from scratch after every query. Instead, maintain a running count of distinct colors that updates as you process each query."
+    },
+    {
+      "content": "Think about the constraints of the problem. The `limit` can be very large (up to 10^9), but the number of queries is manageable (up to 10^5). This suggests that you should focus on optimizing how you store and access color information."
+    },
+    {
+      "content": "Finally, ensure that your output format is correct. You need to return an array where each element corresponds to the number of distinct colors after each query. Make sure to initialize your result array properly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= limit <= 10^9, 1 <= n == queries.length <= 10^5, queries[i].length == 2, 0 <= queries[i][0] <= limit, 1 <= queries[i][1] <= 10^9.",
+    "Each ball can only have one color at a time, and reassigning a color will overwrite the previous one.",
+    "Count distinct colors only when at least one ball has that color.",
+    "Output should be an array of length n, where each entry corresponds to the number of distinct colors after each query."
+  ]
+}

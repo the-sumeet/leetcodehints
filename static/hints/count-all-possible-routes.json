@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the problem statement clearly. You need to count all possible routes from a starting city to a finishing city using a given amount of fuel. Remember that you can revisit cities multiple times."
+    },
+    {
+      "content": "Consider the implications of the fuel constraint. The absolute difference in positions between cities determines how much fuel is consumed during a move. Ensure you keep track of the remaining fuel after each move."
+    },
+    {
+      "content": "Think about how you can represent the cities and their connections. Since you can move from any city to any other city (except itself), this could be visualized as a complete graph where nodes are cities."
+    },
+    {
+      "content": "You may want to use recursion or dynamic programming to explore all possible routes. Each time you move to a new city, you should check if you have enough fuel to make that move."
+    },
+    {
+      "content": "Consider using memoization to store results of subproblems. This can help avoid recalculating the number of routes from a city with a certain amount of fuel."
+    },
+    {
+      "content": "When calculating the number of routes, ensure you check if you've reached the finish city. If you do, that counts as a valid route."
+    },
+    {
+      "content": "Think about the base cases for your recursive function. For example, if you run out of fuel, you should return 0 since you can't make any more moves."
+    },
+    {
+      "content": "Make sure to handle the modulo operation correctly. Since the answer can be large, every time you count a valid route, apply modulo 10^9 + 7."
+    },
+    {
+      "content": "Pay attention to the constraints provided. The locations array has distinct positive integers, which means you won't have to deal with duplicate cities."
+    },
+    {
+      "content": "Consider edge cases, such as when the starting city is the same as the finishing city. In this case, you can return 1 if you have enough fuel to stay there or move back and forth."
+    },
+    {
+      "content": "Remember that the maximum fuel you can have is 200, which is relatively small compared to the potential number of cities (up to 100). This suggests that a dynamic programming approach could be efficient."
+    },
+    {
+      "content": "When implementing your solution, ensure that you check all possible cities to move to from the current city. This means iterating over the locations array but skipping the current city."
+    },
+    {
+      "content": "Think about how you can structure your recursive calls. For each city, after moving to a new city, you would call your function again with the updated city and remaining fuel."
+    },
+    {
+      "content": "As a hint towards the final solution, consider how you can use a depth-first search (DFS) approach combined with memoization to explore all paths efficiently."
+    },
+    {
+      "content": "Before finalizing your implementation, write down the recursive function signature you plan to use. It should take the current city, remaining fuel, and potentially a memoization structure as parameters."
+    }
+  ],
+  "questionNotes": [
+    "The locations array contains distinct positive integers.",
+    "You can visit any city multiple times, including the start and finish cities.",
+    "Fuel cannot become negative; ensure to check this after each move.",
+    "Return the result modulo 10^9 + 7.",
+    "Constraints: 2 <= locations.length <= 100, 1 <= locations[i] <= 10^9, 0 <= start, finish < locations.length, 1 <= fuel <= 200."
+  ]
+}

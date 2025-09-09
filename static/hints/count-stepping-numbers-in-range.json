@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a stepping number is. A stepping number is defined as a number where the absolute difference between every two adjacent digits is exactly 1. For example, 123 and 321 are stepping numbers, but 135 is not."
+    },
+    {
+      "content": "Consider the range defined by the strings `low` and `high`. Since these can be very large (up to 100 digits), think about how you can represent and compare these numbers without converting them to integers directly."
+    },
+    {
+      "content": "You might want to generate stepping numbers systematically. A good approach is to use a breadth-first search (BFS) or depth-first search (DFS) starting from each digit from 1 to 9 (since stepping numbers cannot have leading zeros)."
+    },
+    {
+      "content": "When generating stepping numbers, remember that if you are at a digit `d`, you can potentially move to `d-1` or `d+1` for the next digit, provided they are within the range of valid digits (0-9)."
+    },
+    {
+      "content": "Keep in mind that you should only consider numbers that fall within the range [low, high]. As you generate numbers, check if they are valid stepping numbers and also if they are within the specified range."
+    },
+    {
+      "content": "Since the range can be very large, it might be inefficient to generate all stepping numbers up to `high` and then filter them. Instead, generate stepping numbers only up to the length of `high`."
+    },
+    {
+      "content": "Consider edge cases where `low` and `high` are very close to each other, or where they have different lengths. Ensure your solution can handle these scenarios efficiently."
+    },
+    {
+      "content": "When counting the stepping numbers, be mindful of the modulo operation. Since the result can be very large, remember to return the count modulo 10^9 + 7."
+    },
+    {
+      "content": "You can create a helper function to check if a number is a stepping number. This function can be used to validate the numbers you generate during your search."
+    },
+    {
+      "content": "As you generate stepping numbers, it might be useful to store them in a set or list to avoid duplicates, especially if you are generating numbers from multiple starting points."
+    },
+    {
+      "content": "Think about how to efficiently compare the generated stepping numbers with `low` and `high`. You might need to convert them back to strings for comparison."
+    },
+    {
+      "content": "Consider implementing a queue for BFS or a stack for DFS to manage the numbers you are generating. This will help you systematically explore all possible stepping numbers."
+    },
+    {
+      "content": "Remember to handle cases where the generated stepping number has more digits than `high`. You can stop generating further numbers once you exceed the length of `high`."
+    },
+    {
+      "content": "Make sure to test your solution with various input cases, including edge cases like `low` being '1' and `high` being '1', or `low` being '10' and `high` being '100'."
+    },
+    {
+      "content": "Finally, ensure that your implementation is efficient enough to handle the upper limits of the constraints. You may need to optimize your number generation process to avoid excessive computations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= int(low) <= int(high) < 10^100",
+    "low and high consist of only digits and do not have leading zeros.",
+    "Return the count modulo 10^9 + 7."
+  ]
+}

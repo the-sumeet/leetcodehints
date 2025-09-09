@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the performance formula: it is the sum of selected engineers' speeds multiplied by the minimum efficiency among them. This means that both high speed and high efficiency are crucial for maximizing performance."
+    },
+    {
+      "content": "Consider how you can prioritize engineers based on their efficiency. Since the performance is multiplied by the minimum efficiency, selecting engineers with higher efficiency first might be beneficial."
+    },
+    {
+      "content": "Think about sorting the engineers. How would sorting them by efficiency help? If you sort by efficiency in descending order, you can focus on the most efficient engineers first."
+    },
+    {
+      "content": "Once sorted, you can iterate through the engineers. For each engineer, consider using a data structure to maintain the top k speeds seen so far. What structure could you use to efficiently keep track of the top k speeds?"
+    },
+    {
+      "content": "A min-heap is a good choice for maintaining the top k speeds. As you iterate through the sorted engineers, you can add the current engineer's speed to the heap and remove the smallest speed if the heap exceeds size k."
+    },
+    {
+      "content": "Remember to calculate the current performance after adding an engineer's speed to the heap. The performance at each step is the sum of speeds in the heap multiplied by the current engineer's efficiency."
+    },
+    {
+      "content": "Consider edge cases such as when k is equal to 1. What would the performance be in that case? It would simply be the speed of the most efficient engineer."
+    },
+    {
+      "content": "While calculating the performance, keep track of the maximum performance encountered so far. You can use a variable to store this maximum performance and update it as needed."
+    },
+    {
+      "content": "Don't forget to take the result modulo 10^9 + 7 as specified in the problem statement. This is crucial to avoid overflow and meet the problem's requirements."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Sorting the engineers takes O(n log n), and maintaining the heap for k elements takes O(log k) for each engineer. What is the overall complexity?"
+    },
+    {
+      "content": "Make sure to handle the input constraints carefully. The constraints specify that n can be as large as 100,000. Your solution should be efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Think about how you can efficiently sum the speeds in the heap. Instead of recalculating the sum every time, maintain a running total that you update as you add or remove speeds from the heap."
+    },
+    {
+      "content": "When implementing the heap operations, ensure that you correctly manage the addition and removal of speeds. What happens if you add a speed that is larger than the smallest speed in the heap?"
+    },
+    {
+      "content": "As a final step, review your algorithm to ensure it correctly handles all edge cases, such as when all engineers have the same efficiency or speed. What would be the expected performance in such cases?"
+    },
+    {
+      "content": "You're almost there! Make sure your final implementation returns the maximum performance found during the iterations, ensuring it is modulo 10^9 + 7."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= n <= 10^5; speed.length == n; efficiency.length == n; 1 <= speed[i] <= 10^5; 1 <= efficiency[i] <= 10^8.",
+    "Return the maximum performance modulo 10^9 + 7.",
+    "The performance is defined as (sum of speeds) * (minimum efficiency).",
+    "You can select at most k engineers, but not fewer than 1.",
+    "The engineers are indexed from 1 to n."
+  ]
+}

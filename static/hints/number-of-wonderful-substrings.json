@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a wonderful string. A wonderful string has at most one character that appears an odd number of times. For example, in 'aba', both 'a' and 'b' appear an odd number of times, but since 'b' appears once, 'aba' is wonderful."
+    },
+    {
+      "content": "Consider how you can generate all possible substrings from the given string. A substring is defined as a contiguous sequence of characters, so you can use two nested loops to extract each substring from the string."
+    },
+    {
+      "content": "When checking if a substring is wonderful, you will need to count the occurrences of each character. You can use a frequency array or a dictionary to keep track of how many times each character appears in the substring."
+    },
+    {
+      "content": "Think about how to efficiently check if a substring is wonderful. You can iterate through your frequency count and maintain a count of how many characters have odd occurrences. If this count exceeds one, the substring is not wonderful."
+    },
+    {
+      "content": "Remember that the input string only consists of the first ten lowercase letters ('a' to 'j'). This limitation can help optimize your solution, as you only need to track a fixed number of characters."
+    },
+    {
+      "content": "Consider edge cases such as strings with all identical characters (e.g., 'aaaa'). In this case, every substring will be wonderful since only one character appears an odd number of times."
+    },
+    {
+      "content": "You can also optimize your solution by using a bitmask to represent the odd/even counts of characters. Each bit in the bitmask can represent whether the count of a character is odd (1) or even (0)."
+    },
+    {
+      "content": "As you generate substrings, maintain a count of how many times each bitmask configuration has been seen. This will help you quickly determine how many wonderful substrings can be formed with the current substring."
+    },
+    {
+      "content": "When you encounter a bitmask, you can check how many times it has appeared before. If it has appeared 'n' times, it contributes 'n' wonderful substrings. Additionally, check for all possible single-bit flips to account for substrings with one odd character."
+    },
+    {
+      "content": "Finally, ensure that you correctly handle the counting of substrings. You should return the total count of wonderful substrings found, including duplicates, as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= word.length <= 10^5",
+    "The string consists of lowercase English letters from 'a' to 'j'.",
+    "Count each occurrence of the same substring separately.",
+    "A substring is a contiguous sequence of characters."
+  ]
+}

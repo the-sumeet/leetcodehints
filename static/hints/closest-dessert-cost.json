@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of your inputs. You have two arrays: `baseCosts` for the ice cream bases and `toppingCosts` for the toppings. Each base can be chosen once, but toppings can be chosen 0, 1, or 2 times."
+    },
+    {
+      "content": "Consider how to calculate the total cost of a dessert. The total cost is the sum of one base cost and the costs of the toppings you choose. Make sure to account for the number of toppings you can select."
+    },
+    {
+      "content": "Remember that the goal is to get as close to the `target` price as possible. Start by calculating the cost of each base and how toppings can modify that cost. Think about how to systematically explore all combinations."
+    },
+    {
+      "content": "You can use a nested loop to go through each base and then explore topping combinations. For each topping, you can choose to add it 0, 1, or 2 times. This creates multiple potential total costs for each base."
+    },
+    {
+      "content": "To manage the topping combinations, consider using a recursive function or a loop that explores all possible topping counts. For example, for each topping, you could iterate through 0, 1, and 2 to calculate the costs."
+    },
+    {
+      "content": "When calculating the total costs, keep track of the closest cost to the target. You can initialize a variable to store the closest cost found and update it whenever you find a new total that is closer to the target."
+    },
+    {
+      "content": "Be careful with tie-breaking. If you find two costs that are equally close to the target, you should return the lower one. This requires a comparison whenever you update your closest cost."
+    },
+    {
+      "content": "Consider edge cases, such as when the base costs are all greater than the target or when the toppings are not sufficient to reach the target. Ensure your logic handles these scenarios gracefully."
+    },
+    {
+      "content": "Think about the limits of your inputs. With n and m both being at most 10, the number of combinations you need to evaluate is manageable. You can afford to explore all combinations without performance concerns."
+    },
+    {
+      "content": "Finally, implement a function that iterates through each base cost, calculates all possible total costs with toppings, and finds the closest cost to the target. Make sure to return this value as the final output."
+    }
+  ],
+  "questionNotes": [
+    "You must select exactly one ice cream base.",
+    "You can select each topping 0, 1, or 2 times.",
+    "If multiple costs are equally close to the target, return the lower one.",
+    "Constraints: 1 <= n, m <= 10 and 1 <= baseCosts[i], toppingCosts[i] <= 10.",
+    "1 <= target <= 10^4."
+  ]
+}

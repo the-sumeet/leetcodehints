@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an alternating binary string looks like. An alternating string has no two adjacent characters that are the same. For example, '010101' is alternating, while '001' is not."
+    },
+    {
+      "content": "Consider the length of the input string. If the string has only one character, it is already alternating. Think about how the length of the string affects the number of changes needed."
+    },
+    {
+      "content": "Identify the two possible patterns for an alternating string based on the first character: one starting with '0' (e.g., '010101') and the other starting with '1' (e.g., '101010')."
+    },
+    {
+      "content": "You can iterate through the string and compare each character to the expected character in both patterns. Count how many characters do not match the expected pattern."
+    },
+    {
+      "content": "As you iterate, maintain two counters: one for the number of changes needed to match the '0' starting pattern and another for the '1' starting pattern."
+    },
+    {
+      "content": "When you encounter a character, check if it matches the expected character for both patterns. If it does not match, increment the respective counter for that pattern."
+    },
+    {
+      "content": "Remember to consider edge cases, such as strings that are already alternating or strings that consist entirely of one character. How would these cases affect your counters?"
+    },
+    {
+      "content": "After you finish iterating through the string, you will have two counts: one for each pattern. The result will be the minimum of these two counts."
+    },
+    {
+      "content": "Think about how you will return the result. The problem asks for the minimum number of operations needed, so ensure you are returning the correct value."
+    },
+    {
+      "content": "Before finalizing your solution, test it with different inputs, including the edge cases. For example, what happens with an empty string or a string of length 1? Ensure your function handles these cases correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^4, s[i] is either '0' or '1'.",
+    "The string is considered alternating if no two adjacent characters are equal.",
+    "You can change any '0' to '1' or vice versa in one operation.",
+    "Return the minimum number of operations needed to make the string alternating."
+  ]
+}

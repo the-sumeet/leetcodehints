@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic structure of the city. Each house is connected linearly, meaning house 1 connects to house 2, house 2 connects to house 3, and so on. This creates a straightforward path between consecutive houses."
+    },
+    {
+      "content": "Consider the additional street that connects house x to house y. This connection can create shortcuts between certain houses, which may affect the minimum distance between them. Think about how this street changes the distances for pairs of houses."
+    },
+    {
+      "content": "For each k from 1 to n, you need to count the pairs of houses (i, j) such that the minimum distance from house i to house j is exactly k. Start by identifying pairs where the distance is 1, then build up to larger distances."
+    },
+    {
+      "content": "When calculating distances, remember that the distance between two consecutive houses is 1. For example, the distance between house 1 and house 3 is 2, while the distance between house 1 and house 2 is 1. Use this to help categorize pairs."
+    },
+    {
+      "content": "Don't forget to account for both directions of travel. If (i, j) is a valid pair for distance k, then (j, i) is also valid. Ensure your counting method reflects this symmetry."
+    },
+    {
+      "content": "Think about edge cases, such as when x and y are the same. This means the additional street does not create a shortcut. How does this affect the distances between houses?"
+    },
+    {
+      "content": "You can create a distance function that returns the minimum distance between any two houses based on their positions and the additional street. This function will be crucial for counting the valid pairs."
+    },
+    {
+      "content": "As you count pairs for each distance k, consider using a loop to iterate through all possible pairs of houses. For each pair, use your distance function to determine if the distance matches k."
+    },
+    {
+      "content": "Remember to initialize your result array with zeros for each distance k. As you find valid pairs, increment the corresponding index in the result array to keep track of counts."
+    },
+    {
+      "content": "Finally, ensure your result array is 1-indexed as specified in the problem statement. This means that result[0] should not be used, and your counts should start from result[1]."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 100, 1 <= x, y <= n.",
+    "Return a 1-indexed array where result[k] represents the count of pairs with distance k.",
+    "Consider both directions for each pair (i, j) and (j, i).",
+    "Account for the special case where x equals y."
+  ]
+}

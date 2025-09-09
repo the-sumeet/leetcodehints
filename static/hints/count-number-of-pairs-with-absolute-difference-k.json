@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the absolute difference condition. Recall that for two numbers, |a - b| = k means that either a - b = k or b - a = k. This means you need to consider both possibilities when forming pairs."
+    },
+    {
+      "content": "Consider how to iterate through the array to form pairs. Since you need pairs (i, j) where i < j, a nested loop structure might be useful. Think about how to avoid counting the same pair multiple times."
+    },
+    {
+      "content": "Remember that the absolute difference can also be expressed in terms of addition. Specifically, |nums[i] - nums[j]| = k can be rewritten as two equations: nums[j] = nums[i] + k and nums[j] = nums[i] - k. This can help you simplify your search for valid pairs."
+    },
+    {
+      "content": "To efficiently find pairs, consider using a hash map (or dictionary) to store the frequency of each number in the array. This way, you can quickly check how many times a number that satisfies the condition appears."
+    },
+    {
+      "content": "When using a hash map, remember to only count pairs where i < j. You can achieve this by ensuring that you only look for nums[j] after you have processed nums[i]."
+    },
+    {
+      "content": "Think about edge cases, such as when k is 0. In this case, you would be looking for pairs of equal numbers. How would that change your approach?"
+    },
+    {
+      "content": "Make sure to handle duplicate numbers in the array correctly. If there are multiple occurrences of the same number, you need to count all valid pairs formed by these duplicates."
+    },
+    {
+      "content": "Consider the constraints of the problem, such as the maximum length of the array (200) and the maximum value of k (99). This can help you determine if a brute force solution is feasible or if you should aim for a more optimized approach."
+    },
+    {
+      "content": "As you implement your solution, keep track of the count of valid pairs. You might want to initialize a counter variable and increment it every time you find a valid pair."
+    },
+    {
+      "content": "Finally, think about how you will return the result. The problem asks for the total count of pairs, so ensure your final output is just a single integer representing this count."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 200",
+    "Constraints: 1 <= nums[i] <= 100",
+    "Constraints: 1 <= k <= 99",
+    "Return the total number of pairs (i, j) where i < j.",
+    "Consider edge cases such as k = 0 or duplicate numbers."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the linked list. Each node has a value and a pointer to the next node. You will need to traverse this list to check each node's value against the values in the nums array."
+    },
+    {
+      "content": "Consider how to efficiently check if a node's value is in the nums array. Using a set to store the values from nums can provide O(1) average time complexity for lookups."
+    },
+    {
+      "content": "Think about how to handle the head of the linked list. If the head node's value is in nums, you will need to update the head to the next node and potentially repeat this process."
+    },
+    {
+      "content": "As you traverse the linked list, you will need to maintain a reference to the previous node. This will allow you to skip over nodes that need to be deleted by adjusting the previous node's next pointer."
+    },
+    {
+      "content": "Be careful when you reach the end of the list. Ensure that your loop correctly handles the case where the last node needs to be deleted."
+    },
+    {
+      "content": "Consider edge cases where all nodes might need to be deleted or none at all. Your code should handle these scenarios gracefully."
+    },
+    {
+      "content": "When constructing your final linked list, ensure you return the modified head. If the head itself is deleted, the new head should be the first non-deleted node."
+    },
+    {
+      "content": "Remember to check for the case where the linked list has only one node. This is a simple case but important to handle correctly."
+    },
+    {
+      "content": "As you implement your solution, think about the time complexity. You should aim for O(n) where n is the number of nodes in the linked list, since you are traversing it once."
+    },
+    {
+      "content": "Finally, put together your logic: Initialize a dummy node to simplify edge cases, iterate through the list, and adjust pointers based on whether the current node's value is in the set of nums."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^5",
+    "All elements in nums are unique.",
+    "The number of nodes in the linked list is in the range [1, 10^5].",
+    "1 <= Node.val <= 10^5",
+    "There is at least one node in the linked list that has a value not present in nums."
+  ]
+}

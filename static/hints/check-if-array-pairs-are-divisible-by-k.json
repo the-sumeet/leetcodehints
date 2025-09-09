@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to form pairs from the array such that the sum of each pair is divisible by a given integer k. Remember, the length of the array is always even."
+    },
+    {
+      "content": "Consider how to determine if two numbers can form a valid pair. The key point is that if you take two numbers, their sum should satisfy the condition: (num1 + num2) % k == 0."
+    },
+    {
+      "content": "Think about how you can utilize the modulo operation. For each number in the array, calculate its remainder when divided by k. This will help you group numbers based on their remainders."
+    },
+    {
+      "content": "Create a frequency count of the remainders. For example, if you have a number that gives a remainder of r when divided by k, keep track of how many times this remainder occurs in the array."
+    },
+    {
+      "content": "Remember that pairs can be formed if the remainders complement each other. For instance, if one number has a remainder r, you need another number with a remainder (k - r) to form a valid pair."
+    },
+    {
+      "content": "Pay special attention to the case where r = 0. You can only pair these numbers with each other, so the count of numbers with remainder 0 must be even."
+    },
+    {
+      "content": "Consider the case where k is even. If you have a remainder of k/2, similar to the remainder 0 case, you can only pair these numbers with each other, so their count must also be even."
+    },
+    {
+      "content": "Now, iterate through the possible remainders from 1 to k/2. For each remainder r, check if the count of numbers with remainder r matches the count of numbers with remainder (k - r)."
+    },
+    {
+      "content": "Make sure to handle all edge cases. For instance, if the array contains negative numbers, the modulo operation can yield negative results. Adjust these to ensure they are always non-negative."
+    },
+    {
+      "content": "Finally, ensure that you return true only if all pairs can be formed according to the rules discussed. If any condition fails, return false. Think about how you will structure your final checks."
+    }
+  ],
+  "questionNotes": [
+    "The length of the array is always even.",
+    "You need to form exactly n/2 pairs.",
+    "The sum of each pair must be divisible by k.",
+    "Consider negative numbers when calculating remainders.",
+    "Counts of certain remainders must be even to form valid pairs."
+  ]
+}

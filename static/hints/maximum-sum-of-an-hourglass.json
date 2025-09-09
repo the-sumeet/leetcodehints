@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of an hourglass in the matrix. An hourglass consists of seven elements: three in the top row, one in the middle, and three in the bottom row. For example, in a 3x3 section of the matrix, the hourglass looks like this:\n```\nA B C\n  D\nE F G\n```"
+    },
+    {
+      "content": "To find the maximum sum of an hourglass, you will need to iterate through potential hourglass starting points in the matrix. Remember that the top-left corner of the hourglass must fit within the bounds of the matrix. This means you can only start an hourglass from indices where both row and column indices are less than `m-2` and `n-2` respectively."
+    },
+    {
+      "content": "Consider using a nested loop to traverse the matrix. The outer loop can iterate over the rows, while the inner loop iterates over the columns. For each valid starting point, calculate the sum of the hourglass. Here's a pseudocode snippet:\n```\nfor i in range(m-2):\n    for j in range(n-2):\n        sum = grid[i][j] + grid[i][j+1] + grid[i][j+2] + grid[i+1][j+1] + grid[i+2][j] + grid[i+2][j+1] + grid[i+2][j+2]\n```"
+    },
+    {
+      "content": "As you calculate the sum for each hourglass, keep track of the maximum sum found so far. You can initialize a variable `max_sum` to a very small number (like negative infinity) before starting your calculations. Update this variable whenever you find a new maximum."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when the matrix is at the minimum size (3x3). In this case, there is only one hourglass to consider. Ensure your code correctly identifies this and computes the sum without errors."
+    },
+    {
+      "content": "Pay attention to the constraints: the values in the grid can go up to 10^6, so ensure your solution can handle large sums without overflow. In Python, this is less of a concern, but in other languages, you may need to consider data types."
+    },
+    {
+      "content": "Think about how you will return the result. The problem states to return the maximum sum of the hourglass. Make sure your final implementation correctly returns this value, and consider how you will structure your return statement."
+    },
+    {
+      "content": "As you implement your solution, test it with the provided examples and additional edge cases, such as matrices filled with zeros or all maximum values. This will help ensure your solution is robust and handles all scenarios."
+    },
+    {
+      "content": "Remember that the hourglass shape is fixed and cannot be rotated. Ensure your implementation strictly adheres to the defined structure when calculating sums. This is crucial for correctness."
+    },
+    {
+      "content": "Finally, your code should look something like this:\n```\nmax_sum = -float('inf')\nfor i in range(m-2):\n    for j in range(n-2):\n        current_sum = ... // calculate the hourglass sum\n        max_sum = max(max_sum, current_sum)\nreturn max_sum\n```"
+    }
+  ],
+  "questionNotes": [
+    "An hourglass consists of 7 elements: three in the top row, one in the middle, and three in the bottom row.",
+    "You can only start an hourglass from indices (i, j) where i < m-2 and j < n-2.",
+    "The maximum value in the grid can be 10^6, so ensure your solution handles large sums.",
+    "Return the maximum sum of the hourglass as the final output."
+  ]
+}

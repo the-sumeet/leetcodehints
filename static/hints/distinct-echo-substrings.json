@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for a substring to be an echo substring. An echo substring can be represented as `a + a`, where `a` is a non-empty string. This means that the substring must have an even length."
+    },
+    {
+      "content": "Consider how you can identify substrings in the given text. A substring can be defined by its starting and ending indices. For a substring of length `2k`, the starting index can range from `0` to `n - 2k`."
+    },
+    {
+      "content": "Think about how to check if a substring can be formed by concatenating a string with itself. For a substring `s[i:j]` to be an echo substring, it must satisfy the condition that `s[i:j]` is equal to `s[i:i+k] + s[i:i+k]`."
+    },
+    {
+      "content": "You can use a loop to iterate through potential lengths of `a` (the base string) and check for each starting position if the substring is an echo substring. Remember to only consider lengths that are even."
+    },
+    {
+      "content": "Consider using a set to store the distinct echo substrings. Sets automatically handle uniqueness, which is crucial since you need to count distinct substrings."
+    },
+    {
+      "content": "When generating substrings, ensure that you are checking for all possible starting indices and lengths. You might want to use a nested loop where the outer loop iterates through starting indices and the inner loop checks lengths."
+    },
+    {
+      "content": "Pay attention to the constraints of the problem. The maximum length of the input string is 2000, which means that a naive solution that checks all substrings could be inefficient. Think about optimizing the substring checks."
+    },
+    {
+      "content": "You can optimize the search for echo substrings by only checking even lengths. For example, if you find a substring of length `2`, you can then check for `4`, `6`, and so on, up to the maximum length."
+    },
+    {
+      "content": "To check if a substring is an echo substring, you can compare the first half of the substring with the second half. If they are equal, you have found an echo substring."
+    },
+    {
+      "content": "Consider edge cases, such as strings that are too short to form any echo substrings. For example, a string of length `1` cannot have any echo substrings."
+    },
+    {
+      "content": "Remember to account for overlapping substrings. For instance, in the string `abcabc`, the substrings `abcabc` and `bcabca` are distinct echo substrings despite sharing characters."
+    },
+    {
+      "content": "Think about how to efficiently store and retrieve substrings. You might want to use a hash set to store the substrings as you find them, which allows for O(1) average time complexity for insertions and lookups."
+    },
+    {
+      "content": "As you implement your solution, keep track of the count of distinct echo substrings. You can simply return the size of the set at the end of your processing."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various inputs, including edge cases and longer strings. This will help ensure that your implementation is robust and handles all scenarios."
+    },
+    {
+      "content": "You are close to the solution! Focus on implementing the nested loops to generate substrings and check for equality between the two halves. Make sure to add valid echo substrings to your set."
+    }
+  ],
+  "questionNotes": [
+    "1 <= text.length <= 2000",
+    "text has only lowercase English letters.",
+    "Return the count of distinct non-empty echo substrings.",
+    "An echo substring is defined as a + a, where a is a non-empty string."
+  ]
+}

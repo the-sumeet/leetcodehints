@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid representation. Each cell can be grass (0), fire (1), or a wall (2). Your goal is to move from the top-left corner (0, 0) to the bottom-right corner (m - 1, n - 1)."
+    },
+    {
+      "content": "Consider how fire spreads. Every minute, fire will move to all adjacent grass cells that are not walls. This means you need to account for fire's movement when planning your path."
+    },
+    {
+      "content": "Think about the implications of starting your movement immediately versus waiting. If you wait too long, fire might reach you before you can escape."
+    },
+    {
+      "content": "You can use a breadth-first search (BFS) to simulate fire spreading. Start from all fire locations and mark the time it takes for fire to reach each grass cell."
+    },
+    {
+      "content": "While simulating fire spread, keep track of the time it takes for fire to reach each cell in a separate grid. This will help you determine safe paths later."
+    },
+    {
+      "content": "After simulating fire spread, perform another BFS from your starting position (0, 0) to find the shortest path to the safehouse (m - 1, n - 1)."
+    },
+    {
+      "content": "During your BFS from (0, 0), check if you can reach the safehouse before fire reaches that cell. If you can reach it safely, note the time taken."
+    },
+    {
+      "content": "If you find a path to the safehouse, consider how long you can wait before moving. The maximum wait time will be determined by the earliest time fire reaches the cells along your path."
+    },
+    {
+      "content": "Handle edge cases where fire is contained by walls. If fire cannot reach the safehouse, you can wait indefinitely, so return 10^9."
+    },
+    {
+      "content": "If fire reaches the safehouse before you can, or if you cannot find a path to the safehouse at all, return -1."
+    },
+    {
+      "content": "Pay attention to the constraints of the problem. The grid size can be large, so ensure your BFS implementations are efficient to handle the maximum input size."
+    },
+    {
+      "content": "When implementing BFS, make sure to mark visited cells to avoid infinite loops and unnecessary computations."
+    },
+    {
+      "content": "Consider the order of operations: simulate fire spread first, then calculate your path. This will ensure you have the most up-to-date information on fire locations."
+    },
+    {
+      "content": "As you implement your solution, test with various grid configurations to ensure that edge cases are handled, such as walls completely surrounding fire or the safehouse."
+    },
+    {
+      "content": "Finally, ensure your return values are correct based on the conditions specified: -1 for impossible paths, 10^9 for always safe paths, and the maximum wait time otherwise."
+    }
+  ],
+  "questionNotes": [
+    "Grid cells can be either 0 (grass), 1 (fire), or 2 (wall).",
+    "You start at (0, 0) and need to reach (m - 1, n - 1).",
+    "Fire spreads every minute; you must account for this in your path planning.",
+    "Return -1 if reaching the safehouse is impossible.",
+    "Return 10^9 if you can always reach the safehouse regardless of waiting time."
+  ]
+}

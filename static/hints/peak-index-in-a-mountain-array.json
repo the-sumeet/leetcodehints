@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "The problem specifies that the array is a mountain array. This means it first strictly increases to a peak and then strictly decreases. Keep this structure in mind as you think about how to find the peak."
+    },
+    {
+      "content": "Since the peak is guaranteed to exist, you can use a binary search approach. Think about how you can divide the array into two halves and determine which half contains the peak."
+    },
+    {
+      "content": "In a binary search, you typically have a left and right pointer. Start by initializing these pointers to the beginning and end of the array respectively."
+    },
+    {
+      "content": "During each iteration of your search, calculate the middle index. You can use this index to compare the middle element with its neighbors to determine the direction to search next."
+    },
+    {
+      "content": "If the middle element is greater than its right neighbor, it indicates that you are on the decreasing side of the mountain. Therefore, the peak must be to the left or could be the middle element itself."
+    },
+    {
+      "content": "Conversely, if the middle element is less than its right neighbor, it indicates you are on the increasing side of the mountain. This means the peak is to the right of the middle element."
+    },
+    {
+      "content": "Make sure to handle the edge cases where the middle element is at the boundaries of the array. Specifically, you should avoid accessing out-of-bounds indices when checking neighbors."
+    },
+    {
+      "content": "Remember that the peak is defined as the highest point, and it is guaranteed to be unique in the context of a mountain array. This helps simplify your search logic."
+    },
+    {
+      "content": "As you implement the binary search, remember to update your left and right pointers based on the comparisons you make. This will help you narrow down the search space effectively."
+    },
+    {
+      "content": "Your final implementation should return the index of the peak element. Ensure that your return statement is correctly placed after the loop that performs the binary search."
+    }
+  ],
+  "questionNotes": [
+    "The array is guaranteed to be a mountain array, meaning it has a single peak.",
+    "The length of the array is between 3 and 100,000.",
+    "The values in the array are between 0 and 1,000,000.",
+    "The peak is unique, and you must return its index."
+  ]
+}

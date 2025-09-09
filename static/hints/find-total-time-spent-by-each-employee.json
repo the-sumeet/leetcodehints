@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `Employees` table. Each row contains an employee's ID, the day of the event, the entry time, and the exit time. Make sure you note how to group this data effectively."
+    },
+    {
+      "content": "Consider how you would calculate the time spent by an employee in the office for a single entry. The formula is simple: `out_time - in_time`. Think about how you would apply this for multiple entries in a day."
+    },
+    {
+      "content": "Remember that an employee can have multiple entries and exits on the same day. You will need to aggregate the total time spent for each employee on each day. How would you structure your query to achieve that?"
+    },
+    {
+      "content": "Think about how to group your results. You will need to group by both `event_day` and `emp_id` to get the total time spent by each employee on each day. Consider using SQL's `GROUP BY` clause."
+    },
+    {
+      "content": "As you aggregate the time spent, you can use the `SUM` function to add up the total time for each employee per day. How would you incorporate this into your SQL query?"
+    },
+    {
+      "content": "Don't forget to handle the case where an employee may not have any entries for a particular day. Ensure your query accounts for only those days where there is data."
+    },
+    {
+      "content": "Pay attention to the output format. You need to return a table with the columns `day`, `emp_id`, and `total_time`. Make sure you alias your calculated columns correctly in your SQL query."
+    },
+    {
+      "content": "Consider edge cases such as employees who only have one entry for a day. The calculation should still work correctly and return a valid total time."
+    },
+    {
+      "content": "Think about the order of the results. While the problem states that the output can be in any order, you might want to consider sorting by `event_day` and `emp_id` for clarity."
+    },
+    {
+      "content": "Finally, put everything together in a SQL query. Start by selecting the necessary columns, then calculate the total time using `SUM(out_time - in_time)` and group by `event_day` and `emp_id`."
+    }
+  ],
+  "questionNotes": [
+    "The primary key is (emp_id, event_day, in_time), ensuring unique entries for each employee on a given day.",
+    "in_time and out_time are guaranteed to be between 1 and 1440, and in_time < out_time.",
+    "No two events on the same day intersect in time, simplifying the calculation of total time spent."
+  ]
+}

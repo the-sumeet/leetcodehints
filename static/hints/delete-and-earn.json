@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about the implications of deleting a number. When you delete a number `x`, you also have to delete `x-1` and `x+1`. What does this mean for your choices?"
+    },
+    {
+      "content": "Consider how you can represent the points you earn from each number. If you delete all instances of `x`, how many points do you get? This could be calculated as `count[x] * x`, where `count[x]` is the number of times `x` appears in the array."
+    },
+    {
+      "content": "Create a frequency map (or array) to store how many times each number appears in `nums`. This will help you quickly calculate the points for each unique number."
+    },
+    {
+      "content": "Once you have the frequency map, think about how to maximize your points. If you choose to delete `x`, you cannot choose `x-1` or `x+1`. How can you structure your choices to avoid this conflict?"
+    },
+    {
+      "content": "This problem can be thought of as a dynamic programming problem. Define a state that represents the maximum points you can earn up to a certain number. How would you express this mathematically?"
+    },
+    {
+      "content": "Consider the dynamic programming relation: if you choose to take `x`, the maximum points would be the points from `x` plus the maximum points from `x-2`. If you skip `x`, it would be the maximum points from `x-1`."
+    },
+    {
+      "content": "Make sure to handle the case when `nums` contains only one unique number. What would the maximum points be in that scenario?"
+    },
+    {
+      "content": "Think about edge cases, such as when `nums` contains consecutive numbers. How does that affect your choices and the points you can earn?"
+    },
+    {
+      "content": "Remember to initialize your dynamic programming array correctly. You might need to handle the first few indices separately to avoid out-of-bounds errors."
+    },
+    {
+      "content": "Your final dynamic programming formula could look something like this: `dp[x] = max(dp[x-1], dp[x-2] + points[x])`. Make sure to implement this correctly to get the maximum points."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 20,000",
+    "Constraints: 1 <= nums[i] <= 10,000",
+    "The result should be the maximum points you can earn, not the modified array.",
+    "Consider the frequency of each number rather than the unique numbers directly."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the structure of the graph. You are given a list of edges that represent an undirected graph, which initially was a tree. Remember that a tree with n nodes has exactly n-1 edges."
+    },
+    {
+      "content": "Since you have one extra edge, this means there is a cycle in the graph. Your goal is to identify which edge can be removed to restore the tree structure."
+    },
+    {
+      "content": "To find the edge that can be removed, consider using a Union-Find (Disjoint Set Union) data structure. This will help you efficiently manage and detect cycles as you process each edge."
+    },
+    {
+      "content": "As you iterate through the edges, for each edge, check if the two nodes it connects are already in the same set. If they are, this edge creates a cycle."
+    },
+    {
+      "content": "When you find an edge that creates a cycle, keep track of it. Since the problem states to return the edge that appears last in case of multiple answers, you should update your result each time you find a cycle."
+    },
+    {
+      "content": "Remember to union the two nodes of the edge that does not create a cycle. This way, you can continue processing the remaining edges without losing track of the connected components."
+    },
+    {
+      "content": "Consider edge cases such as the minimum number of nodes (n=3) and how the extra edge can connect any two nodes. Ensure your approach works for different configurations of edges."
+    },
+    {
+      "content": "After processing all edges, the last edge that caused a cycle is your answer. Ensure you are returning it in the correct format as specified in the problem statement."
+    },
+    {
+      "content": "When implementing the Union-Find structure, remember to include path compression and union by rank to optimize your operations."
+    },
+    {
+      "content": "Finally, think about the time complexity of your solution. The Union-Find operations are nearly constant time, so your overall complexity should be efficient enough for the input constraints."
+    }
+  ],
+  "questionNotes": [
+    "The graph started as a tree with n nodes and has one additional edge.",
+    "The graph is connected and has no repeated edges.",
+    "Return the edge that can be removed to restore the tree structure, prioritizing the last occurring edge in case of ties.",
+    "Constraints: 3 <= n <= 1000, edges[i].length == 2, 1 <= ai < bi <= edges.length, ai != bi."
+  ]
+}

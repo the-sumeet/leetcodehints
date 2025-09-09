@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to find the k most frequent elements in the given array. Think about how you can count the occurrences of each element efficiently."
+    },
+    {
+      "content": "Consider using a hash map (or dictionary) to store the frequency of each element. This will allow you to count occurrences in O(n) time, where n is the length of the array."
+    },
+    {
+      "content": "Once you have the frequency of each element stored, think about how to extract the top k elements. What data structure could help you efficiently retrieve the most frequent elements?"
+    },
+    {
+      "content": "A min-heap (or priority queue) could be a good choice here. By maintaining a heap of size k, you can efficiently keep track of the k most frequent elements as you iterate through the frequency map."
+    },
+    {
+      "content": "Remember to handle cases where multiple elements have the same frequency. Since the problem states that the answer is unique, you don't need to worry about tie-breaking beyond ensuring you only return k elements."
+    },
+    {
+      "content": "Think about the time complexity of your approach. The counting step is O(n), and inserting into a heap of size k is O(log k). Thus, your overall complexity should be O(n + k log k)."
+    },
+    {
+      "content": "Before implementing, consider edge cases such as when the input array has only one element or when k equals the number of unique elements in the array."
+    },
+    {
+      "content": "When constructing your result, ensure that you return the elements in any order as specified in the problem statement. You can simply convert your heap to a list."
+    },
+    {
+      "content": "If you want to improve your solution further, think about using bucket sort based on frequency. You can create an array of lists where the index represents the frequency."
+    },
+    {
+      "content": "Finally, remember to test your solution with various inputs, including edge cases, to ensure it behaves as expected. Consider inputs with negative numbers and large k values."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "-10^4 <= nums[i] <= 10^4",
+    "k is in the range [1, the number of unique elements in the array].",
+    "The answer is guaranteed to be unique.",
+    "Return format: Any order of the k most frequent elements."
+  ]
+}

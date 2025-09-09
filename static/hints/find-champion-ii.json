@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a number of teams (nodes) and directed edges that indicate which team is stronger than which. Think about how you can represent this graphically."
+    },
+    {
+      "content": "Consider how to determine the champion. A champion is defined as a team that has no other team stronger than it. This means you need to find a team with no incoming edges in the DAG."
+    },
+    {
+      "content": "To find the champion, you can use an array to count the number of incoming edges for each team. The team with zero incoming edges is a candidate for the champion."
+    },
+    {
+      "content": "Remember that there can only be one unique champion. If you find more than one team with zero incoming edges, you should return -1. Think about how you can track the count of these candidates."
+    },
+    {
+      "content": "When processing the edges, iterate through the `edges` array and update the incoming edge count for each team. Use a simple loop to do this efficiently."
+    },
+    {
+      "content": "After counting the incoming edges, check how many teams have zero incoming edges. If exactly one team has zero incoming edges, that team is the champion."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there are no edges at all. In this case, every team has zero incoming edges, leading to multiple candidates."
+    },
+    {
+      "content": "Consider the constraints provided in the problem. The maximum number of teams is 100, which means your solution should be efficient but does not need to be overly complex."
+    },
+    {
+      "content": "Before returning the result, ensure that the team you found as a champion is indeed the only team with no stronger opponents. If you find more than one candidate, return -1."
+    },
+    {
+      "content": "Finally, implement the logic to return the index of the champion team or -1 if there is no unique champion. Remember to check your conditions carefully."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100, m == edges.length, 0 <= m <= n * (n - 1) / 2.",
+    "Each edge is directed, indicating the strength relationship between teams.",
+    "Return the index of the unique champion or -1 if there is no unique champion.",
+    "Be cautious about cases with no edges, as multiple teams could potentially be champions."
+  ]
+}

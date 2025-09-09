@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. Each element in the matrix represents a potential choice for the falling path. The goal is to select one element from each row while ensuring that no two elements from adjacent rows are in the same column."
+    },
+    {
+      "content": "Consider how you would approach this problem if it were a simpler case, such as only one row or two rows. This can help you build intuition about how to handle multiple rows and the shifting requirement."
+    },
+    {
+      "content": "Think about how you can keep track of the minimum sums as you progress through the rows. You might want to maintain a record of the minimum values from the previous row to help you compute the current row's minimum falling path sum."
+    },
+    {
+      "content": "Remember that the problem requires non-zero shifts, meaning that for any element chosen in row `i`, you cannot choose the element in the same column from row `i-1`. This adds a layer of complexity to your selection process."
+    },
+    {
+      "content": "To efficiently find the minimum values from the previous row while respecting the column restrictions, consider how you can identify the two smallest values and their respective columns."
+    },
+    {
+      "content": "As you iterate through each row, calculate the minimum falling path sum by adding the current element to the minimum sum from the previous row, ensuring that you do not select the same column."
+    },
+    {
+      "content": "You might find it helpful to create a helper function that returns the two smallest values and their indices from a given row. This can simplify your logic when processing each row."
+    },
+    {
+      "content": "Be mindful of edge cases, such as a grid size of 1x1. In this case, the only element is the minimum falling path sum."
+    },
+    {
+      "content": "Consider how you will handle negative numbers in the grid. Since the range of grid values is from -99 to 99, ensure that your logic correctly accommodates the potential for negative sums."
+    },
+    {
+      "content": "When calculating the sum for the current row, ensure you are correctly skipping the column of the previously selected minimum value. This will require careful indexing."
+    },
+    {
+      "content": "Think about how you can store the results of your calculations. You might want to use a dynamic programming approach to build up your results row by row."
+    },
+    {
+      "content": "After processing all rows, you will need to return the minimum sum calculated. Make sure your final return statement correctly reflects this."
+    },
+    {
+      "content": "Visualize the problem with an example grid. Trace through your algorithm step by step to ensure that it correctly computes the falling path sums."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases, such as grids filled with the same number or alternating negative and positive values, to ensure robustness."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Aim for a solution that efficiently processes the grid, ideally in O(n^2) time, given the constraints."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 200, -99 <= grid[i][j] <= 99",
+    "Ensure that no two elements chosen in adjacent rows are in the same column.",
+    "Return the minimum sum of a falling path with non-zero shifts."
+  ]
+}

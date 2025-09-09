@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Remember that a mountain array has a peak, which is the highest point. The elements before the peak are strictly increasing, and the elements after the peak are strictly decreasing."
+    },
+    {
+      "content": "You can find the peak of the mountain array using a modified binary search. This will help you identify the point where the array transitions from increasing to decreasing."
+    },
+    {
+      "content": "When searching for the target, you will need to perform two binary searches: one on the increasing part of the array and another on the decreasing part."
+    },
+    {
+      "content": "Make sure to handle the case where the target might appear in both the increasing and decreasing parts of the array. You need to return the minimum index."
+    },
+    {
+      "content": "The `MountainArray` interface has two methods: `get(k)` and `length()`. Use `length()` to determine the size of the array before performing any searches."
+    },
+    {
+      "content": "Keep in mind that you should not exceed 100 calls to `get()`. Plan your approach to minimize the number of calls, especially during the peak search."
+    },
+    {
+      "content": "When performing binary search, remember to adjust your mid-point calculation to avoid infinite loops. Use integer division to calculate the mid index."
+    },
+    {
+      "content": "Consider edge cases where the target is less than the first element or greater than the last element of the mountain array. These cases can be handled early to avoid unnecessary searches."
+    },
+    {
+      "content": "If the target is found in the increasing part of the mountain array, make sure to check if it appears earlier in the array before returning the index."
+    },
+    {
+      "content": "For the decreasing part, if you find the target, check if it appears later in the array as well. You want the minimum index of the target."
+    },
+    {
+      "content": "When you find the peak, you can split the search into two parts: one for the increasing section (from 0 to peak) and one for the decreasing section (from peak to end)."
+    },
+    {
+      "content": "Use a helper function for binary search that takes the start and end indices as parameters. This will help you keep your code organized and reusable."
+    },
+    {
+      "content": "Remember to return -1 if the target is not found in either part of the mountain array. This is an important part of the return format."
+    },
+    {
+      "content": "As you implement the binary search, consider using a variable to track the minimum index found for the target. This will help you manage the tie-breaking condition."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases, such as targets at the beginning or end of the array, or targets that do not exist in the array."
+    }
+  ],
+  "questionNotes": [
+    "Mountain array must have at least 3 elements.",
+    "You can only access the array through the MountainArray interface.",
+    "You cannot exceed 100 calls to MountainArray.get.",
+    "Return the minimum index of the target if found, otherwise return -1.",
+    "The target may appear in both the increasing and decreasing parts of the array."
+  ]
+}

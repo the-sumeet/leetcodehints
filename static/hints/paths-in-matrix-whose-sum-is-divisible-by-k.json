@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement constraints. You can only move down or right in the matrix. This means any path will consist of a series of moves that eventually lead you from the top-left to the bottom-right corner."
+    },
+    {
+      "content": "Think about how to represent the current sum of the path. As you traverse the grid, you will accumulate a sum of the elements. This sum will be critical in determining if the path's total is divisible by k."
+    },
+    {
+      "content": "Consider using dynamic programming to store the number of ways to reach each cell in the grid. You might maintain a 3D array where each entry represents the number of ways to reach that cell with a specific sum modulo k."
+    },
+    {
+      "content": "Remember to initialize your starting point. At the top-left corner (0, 0), the initial sum is simply the value of grid[0][0]. You can also initialize the count for this position based on its modulo with k."
+    },
+    {
+      "content": "As you iterate through the grid, calculate the current sum and its modulo k for each path leading to a cell. This will help you determine if the sum of the path is divisible by k."
+    },
+    {
+      "content": "When moving to the right or down, update the number of ways to reach the new cell based on the previous cell's counts. Make sure to account for the modulo k of the current sum."
+    },
+    {
+      "content": "Consider edge cases where the grid has only one cell or where all elements are zero. Both scenarios can affect the count of valid paths significantly."
+    },
+    {
+      "content": "Keep in mind the constraints of the problem. The maximum size of the grid is 5 * 10^4 elements, so your solution should be efficient. Aim for a solution that runs in O(m * n)."
+    },
+    {
+      "content": "You might want to use a dictionary or an array to keep track of counts for each possible modulo value (0 to k-1) at each cell. This will help manage the sums effectively."
+    },
+    {
+      "content": "As you build your dynamic programming solution, make sure to apply the modulo operation to avoid overflow. The final answer should be returned modulo 10^9 + 7."
+    },
+    {
+      "content": "When you reach the bottom-right corner of the grid, check the count of paths that result in a sum divisible by k. This will be your final result."
+    },
+    {
+      "content": "Don't forget to consider the path's uniqueness. Each path is defined by its sequence of moves, so ensure that you account for all possible paths leading to the same cell."
+    },
+    {
+      "content": "Make sure to test your solution against edge cases, such as grids filled with the maximum possible values or grids where k is the maximum value (50)."
+    },
+    {
+      "content": "Think about the initialization of your DP table. You may need to set the starting point (0, 0) correctly before you start populating the rest of the table."
+    },
+    {
+      "content": "Finally, consider how you will handle the transitions from one cell to another. You will need to sum the current cell's value and the paths leading to it, updating the counts accordingly."
+    }
+  ],
+  "questionNotes": [
+    "You can only move down or right in the matrix.",
+    "The sum of the path must be divisible by k.",
+    "Return the result modulo 10^9 + 7.",
+    "Constraints: 1 <= m, n <= 5 * 10^4, 1 <= k <= 50.",
+    "Grid values are between 0 and 100.",
+    "The starting point is (0, 0) and the ending point is (m - 1, n - 1)."
+  ]
+}

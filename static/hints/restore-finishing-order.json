@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input arrays: `order` contains the finishing order of all participants, while `friends` contains the IDs of your friends who participated in the race."
+    },
+    {
+      "content": "Remember that both arrays are guaranteed to have valid values according to the problem constraints. Specifically, `order` contains every integer from 1 to n exactly once."
+    },
+    {
+      "content": "Since `friends` is sorted in strictly increasing order, you can leverage this property when searching for their positions in the `order` array."
+    },
+    {
+      "content": "Consider creating a mapping from each participant's ID to their finishing position. This can help you quickly find where each friend finished."
+    },
+    {
+      "content": "You can use a dictionary or a simple array to store the indices of each participant based on their finishing order. For example, if `order[i] = x`, then `position[x] = i`."
+    },
+    {
+      "content": "Once you have the positions of all participants, iterate through the `friends` array and collect their finishing positions using the mapping you created."
+    },
+    {
+      "content": "While collecting the finishing positions of your friends, ensure you maintain the order they appear in the `friends` array."
+    },
+    {
+      "content": "Think about edge cases where `friends` contains only one participant or where all friends finish at the beginning or end of the race."
+    },
+    {
+      "content": "After gathering the finishing positions, you will need to return them in the order specified by the `friends` array."
+    },
+    {
+      "content": "Finally, remember to format your output correctly as an array of IDs corresponding to your friends' finishing order. You might end up with something like: `return [position[friends[0]], position[friends[1]], ...];` but ensure you adjust it to match the IDs."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == order.length <= 100",
+    "order contains every integer from 1 to n exactly once.",
+    "1 <= friends.length <= min(8, n)",
+    "1 <= friends[i] <= n",
+    "friends is strictly increasing."
+  ]
+}

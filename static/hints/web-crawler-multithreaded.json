@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a list of URLs and a list of edges that define the relationships between these URLs. Each edge is represented as a pair of indices pointing to the URLs in the list."
+    },
+    {
+      "content": "Think about how you can represent the graph formed by the URLs and their connections. An adjacency list or adjacency matrix could be useful here. Consider how you would build this structure from the given edges."
+    },
+    {
+      "content": "When implementing the web crawler, consider using multithreading to improve efficiency. Each thread can handle a different URL, allowing you to fetch data concurrently. Make sure to manage thread safety if you are sharing data between threads."
+    },
+    {
+      "content": "Remember to handle the case where a URL might not have any outgoing edges. You should ensure that your crawler can terminate gracefully when it reaches such URLs."
+    },
+    {
+      "content": "Consider how you will keep track of which URLs you have already visited. A set data structure could be helpful for this, as it allows for O(1) average time complexity for lookups."
+    },
+    {
+      "content": "When processing each URL, think about how you will extract the content you need. You might want to define a function that takes a URL and returns the relevant data, such as the page title or links to other pages."
+    },
+    {
+      "content": "Pay attention to the base case for your crawler. What should happen when it reaches a URL with no further links? Ensure that your algorithm can handle this scenario without running into infinite loops."
+    },
+    {
+      "content": "Consider implementing a depth-first search (DFS) or breadth-first search (BFS) strategy for traversing the graph of URLs. Each strategy has its own advantages depending on the structure of the links."
+    },
+    {
+      "content": "Think about how to handle errors when fetching URLs. Network issues or invalid URLs could cause your threads to fail. Implement error handling to ensure your crawler continues running smoothly."
+    },
+    {
+      "content": "Finally, ensure your output format matches the requirements. You may need to return the results in a specific order or structure, so double-check the expected output format before finalizing your implementation."
+    }
+  ],
+  "questionNotes": [
+    "The input list of URLs may contain duplicates; ensure your crawler handles uniqueness.",
+    "The edges are directed; the order of indices matters.",
+    "You may need to consider the maximum depth of crawling to avoid infinite recursion.",
+    "Ensure thread safety when accessing shared resources.",
+    "The output should be in a specific format; clarify if order matters."
+  ]
+}

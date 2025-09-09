@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a linked list. Each node has a value and a pointer to the next node. In this problem, you will traverse the list and modify the pointers to remove duplicates."
+    },
+    {
+      "content": "Since the list is sorted, duplicates will be adjacent to each other. This property can be leveraged to simplify the removal process. Think about how you can compare the current node's value with the next node's value."
+    },
+    {
+      "content": "Consider using a pointer to traverse the list. You can maintain a 'current' pointer that starts at the head of the list and moves through each node. You'll need to check if the current node's value is the same as the next node's value."
+    },
+    {
+      "content": "When you find a duplicate (i.e., current node's value equals the next node's value), you should remove the next node from the list. This can be done by changing the 'next' pointer of the current node to skip the duplicate node."
+    },
+    {
+      "content": "Make sure to handle the edge case where the list is empty (head is null). Your function should return null in this case, as there are no nodes to process."
+    },
+    {
+      "content": "Remember to keep moving the 'current' pointer forward after handling duplicates. If you remove a node, you should not advance the 'current' pointer; instead, you should only move it forward if no duplicates were found."
+    },
+    {
+      "content": "Think about what happens when you reach the end of the list. Your loop should terminate when the 'current' pointer reaches the second last node, as it needs to check the last node against it."
+    },
+    {
+      "content": "After you finish processing the list, ensure that you return the modified head of the list. This is important because the original head might not be the same if you removed the first node."
+    },
+    {
+      "content": "Consider writing test cases for edge scenarios, such as when the list contains all duplicates, or when there are no duplicates at all. This will help ensure your solution is robust."
+    },
+    {
+      "content": "Finally, try to implement the logic in a single pass through the list. Aim for a time complexity of O(n) and a space complexity of O(1). This is achievable by modifying the pointers directly without using extra data structures."
+    }
+  ],
+  "questionNotes": [
+    "The linked list is guaranteed to be sorted in ascending order.",
+    "You need to return the linked list with duplicates removed.",
+    "The number of nodes in the list is in the range [0, 300].",
+    "-100 <= Node.val <= 100."
+  ]
+}

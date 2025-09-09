@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. Each number can only be used a limited number of times as defined in the `usageLimits` array. This means you need to keep track of how many times each number is used across all groups."
+    },
+    {
+      "content": "Remember that each group must consist of distinct numbers. This means you cannot repeat any number within a single group. Think about how you can structure your groups to maintain this uniqueness."
+    },
+    {
+      "content": "Notice that each subsequent group must be strictly larger than the previous one. This means if your first group has a size of 1, the second group must have at least 2 members, and so on."
+    },
+    {
+      "content": "Consider starting with the largest possible group size and working your way down. This might help you maximize the number of groups you can create."
+    },
+    {
+      "content": "You should think about how to distribute the usage limits across the groups. For example, if you have a number that can be used multiple times, it can potentially contribute to multiple groups."
+    },
+    {
+      "content": "Try sorting the `usageLimits` array. This might help you visualize how many times you can use each number and how to create groups more effectively."
+    },
+    {
+      "content": "When creating groups, keep a counter for the current group size that you are trying to form. Start with 1 for the first group and increment it for each subsequent group."
+    },
+    {
+      "content": "As you form each group, remember to decrease the usage limits for the numbers that you include in that group. This will ensure you don't exceed the allowed usage for any number."
+    },
+    {
+      "content": "Consider edge cases where the `usageLimits` array has only one element. How would that affect the number of groups you can form?"
+    },
+    {
+      "content": "Think about scenarios where all elements in `usageLimits` are the same. How does this uniformity impact the number of groups you can create?"
+    },
+    {
+      "content": "You may want to implement a greedy approach where you always try to use the maximum available numbers for the current group size. This could help you optimize the number of groups."
+    },
+    {
+      "content": "Keep track of how many groups you have formed so far. This will be your return value at the end of the function."
+    },
+    {
+      "content": "As you iterate through the groups, ensure that you are checking the remaining usage limits to see if you can form the next group with the required size."
+    },
+    {
+      "content": "Before finalizing your solution, consider testing it with various edge cases, such as very high limits or very low limits, to ensure it handles all scenarios correctly."
+    },
+    {
+      "content": "Your final implementation should efficiently calculate the maximum number of groups without exceeding the constraints of the problem. Think about the time complexity of your approach."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= usageLimits.length <= 10^5",
+    "Constraints: 1 <= usageLimits[i] <= 10^9",
+    "Each group must consist of distinct numbers.",
+    "Each group (except the first one) must have a length strictly greater than the previous group.",
+    "Return the maximum number of groups that can be formed."
+  ]
+}

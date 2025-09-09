@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what makes a substring 'awesome'. An awesome substring can be rearranged to form a palindrome. Recall that a palindrome reads the same forwards and backwards."
+    },
+    {
+      "content": "Consider the properties of palindromes: for a string to be rearranged into a palindrome, at most one character can have an odd frequency. All other characters must have even frequencies."
+    },
+    {
+      "content": "To solve this problem, think about how you can track the frequency of digits in the substring. You might want to use a frequency array or a hash map to count occurrences of each digit (0-9)."
+    },
+    {
+      "content": "As you iterate through the string, maintain a count of the current substring's character frequencies. This will help you determine if the substring can be rearranged into a palindrome."
+    },
+    {
+      "content": "You can use a bitmask to represent the parity (even or odd count) of each digit's frequency. Each bit in the bitmask can represent whether the count of a digit is odd or even."
+    },
+    {
+      "content": "For a string of digits, you can create a bitmask of size 10 (for digits 0-9). Initialize it to zero and update it as you process each character in the string."
+    },
+    {
+      "content": "As you process each character, toggle the corresponding bit in the bitmask. For example, if you encounter '2', you would toggle the second bit of the bitmask."
+    },
+    {
+      "content": "Keep track of the first occurrence of each bitmask in a dictionary. This will help you determine the longest substring that can be rearranged into a palindrome."
+    },
+    {
+      "content": "When you encounter the same bitmask again, it means the substring between the two occurrences can be rearranged into a palindrome. Calculate its length and update your maximum length if necessary."
+    },
+    {
+      "content": "Don't forget to check for substrings that can be formed by changing one digit's parity. To do this, you can try toggling each bit of the current bitmask and checking for its existence in your dictionary."
+    },
+    {
+      "content": "Consider edge cases, such as strings with all unique digits or strings that are already palindromes. These cases can help you validate your solution."
+    },
+    {
+      "content": "Make sure to handle the case where the input string has a length of 1. The longest awesome substring in this case is simply 1, since a single character is always a palindrome."
+    },
+    {
+      "content": "As you implement your solution, remember to optimize for performance. The solution should ideally run in linear time, O(n), given the constraints of the problem."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various inputs, including edge cases like strings of length 1, strings with all characters the same, and strings with alternating characters."
+    },
+    {
+      "content": "Now, think about how you would structure your code. You might want to use a single pass through the string while maintaining a bitmask and a dictionary to track the first occurrences."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "s consists only of digits (0-9).",
+    "An awesome substring must be non-empty.",
+    "Return the length of the longest awesome substring."
+  ]
+}

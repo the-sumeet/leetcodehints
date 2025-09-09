@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to generate the fractions from the given array. Remember, you will be forming fractions of the form arr[i] / arr[j] where i < j. This means you will need to iterate through pairs of indices in the array."
+    },
+    {
+      "content": "Since the array is sorted, the fractions will also be in a specific order. The smallest fraction will always be formed by the smallest numerator and the largest denominator. Think about how you can leverage the sorted property of the array."
+    },
+    {
+      "content": "Consider how many fractions you can generate. For an array of length n, you can form n(n-1)/2 fractions. This is important because it gives you an upper limit for k, which is guaranteed to be valid according to the problem constraints."
+    },
+    {
+      "content": "Instead of generating all fractions and sorting them, think about using a priority queue (min-heap) to efficiently track the smallest fractions. You can push fractions into the heap and pop the smallest fraction k times to find the k-th smallest."
+    },
+    {
+      "content": "When using a min-heap, you need to keep track of not just the fraction but also the indices of the numerator and denominator. This way, you can easily reconstruct the fraction when you pop it from the heap."
+    },
+    {
+      "content": "To initialize the heap, you can start by pushing fractions formed by the first element with all subsequent elements. For example, you would push (arr[0], arr[1]), (arr[0], arr[2]), ..., (arr[0], arr[n-1])."
+    },
+    {
+      "content": "After initializing the heap, you need to pop the smallest fraction and then consider the next fraction that can be formed with the current numerator. This means if you popped arr[i] / arr[j], you should consider arr[i+1] / arr[j] next."
+    },
+    {
+      "content": "Make sure to handle the case where you reach the end of the array for a particular numerator. You should only push new fractions if the numerator index is still within bounds."
+    },
+    {
+      "content": "As you pop from the heap, keep a count of how many fractions you've popped. Once you reach k, you will have your answer. Remember to return the fraction in the specified format: an array of two integers."
+    },
+    {
+      "content": "Finally, ensure you are correctly managing the indices and fractions in the heap. You can use a tuple to store the fraction value along with its indices. For example, you might store (arr[i] / arr[j], i, j) in the heap."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= arr.length <= 1000",
+    "arr[0] == 1 and arr[i] is a prime number for i > 0",
+    "All numbers in arr are unique and sorted in strictly increasing order.",
+    "1 <= k <= arr.length * (arr.length - 1) / 2",
+    "Return format: An array of size 2, where answer[0] == arr[i] and answer[1] == arr[j]."
+  ]
+}

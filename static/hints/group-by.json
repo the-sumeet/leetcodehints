@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array and the callback function. The callback function will take an item from the array and return a string that will be used as a key in the output object."
+    },
+    {
+      "content": "Consider how you will iterate over the array. You can use a simple loop or the `forEach` method to go through each item in the array."
+    },
+    {
+      "content": "Think about how to store the results. You will need an object where each key corresponds to the result of the callback function, and each value is an array of items that produced that key."
+    },
+    {
+      "content": "As you iterate, check if the key already exists in your result object. If it does, you will want to push the current item into the existing array; if it doesn't, you will need to create a new array for that key."
+    },
+    {
+      "content": "Remember to maintain the order of items as they appear in the original array. The order of the items in the output arrays should match their order in the input array."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array is empty. What should your function return in that case? Think about returning an empty object."
+    },
+    {
+      "content": "Make sure to handle cases where the callback function returns the same key for multiple items. Your implementation should group these items correctly."
+    },
+    {
+      "content": "You can use `Object.keys()` to check if a key exists in your result object. This will help you determine whether to initialize a new array or to push to an existing one."
+    },
+    {
+      "content": "When defining your function, remember to attach it to the Array prototype so that it can be called on any array. You can do this by defining the function as `Array.prototype.groupBy = function(fn) { ... }`."
+    },
+    {
+      "content": "Here's a near-complete structure for your function: start with an empty object, loop through the array, use the callback to get keys, and group items accordingly. Don't forget to return the final object at the end."
+    }
+  ],
+  "questionNotes": [
+    "The output should be an object where keys are the results of fn(arr[i]) and values are arrays of items.",
+    "The order of items in each value array should match their order in the original array.",
+    "The input array can be of any type and can be empty.",
+    "The callback function must return a string key for each item."
+  ]
+}

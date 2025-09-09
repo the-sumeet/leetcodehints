@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to split the string `s` into valid words from the `wordDict`. Think about how you can identify valid prefixes in `s` that match words in `wordDict`."
+    },
+    {
+      "content": "Consider using a recursive approach. You can try to build sentences by checking each prefix of `s` against the `wordDict`. If a prefix is found, you can recursively solve for the rest of the string."
+    },
+    {
+      "content": "Think about how you would store the valid sentences. You might want to use a list to collect the results as you find valid combinations."
+    },
+    {
+      "content": "Make sure to handle the base case in your recursion. When the string `s` is empty, you should return the current sentence you've built so far."
+    },
+    {
+      "content": "Remember that the same word from `wordDict` can be reused. This means your recursive function should not restrict itself from using previously used words in different segments."
+    },
+    {
+      "content": "Consider using memoization to optimize your solution. You can store results for already computed substrings to avoid redundant calculations."
+    },
+    {
+      "content": "When checking prefixes, you can use a set for `wordDict` for O(1) average time complexity lookups. This will speed up your checks significantly."
+    },
+    {
+      "content": "Think about how you will construct the sentences. You might want to build a list of words and join them with spaces at the end of the recursion."
+    },
+    {
+      "content": "Consider edge cases, such as when `s` cannot be segmented into valid words at all. Your function should return an empty list in such cases."
+    },
+    {
+      "content": "Make sure to handle the input constraints properly. The length of `s` is at most 20, and the number of words in `wordDict` can be up to 1000."
+    },
+    {
+      "content": "Think about how to iterate through the string `s` to check all possible prefixes. You can use a loop to check substrings of increasing lengths."
+    },
+    {
+      "content": "As you build your recursive function, consider the return type. You should return a list of sentences for each valid segmentation found."
+    },
+    {
+      "content": "Pay attention to the output format. You need to return all valid sentences in any order, so ensure your list is properly constructed."
+    },
+    {
+      "content": "If you're stuck, try writing out the recursive function on paper with a small example. This can help clarify the flow of your algorithm."
+    },
+    {
+      "content": "Finally, think about how you can combine the results from recursive calls. You will need to concatenate the current word with results from the recursive call for the remaining substring."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 20, 1 <= wordDict.length <= 1000, 1 <= wordDict[i].length <= 10.",
+    "All strings in wordDict are unique.",
+    "The same word in the dictionary may be reused.",
+    "Output format: return all valid sentences in any order."
+  ]
+}

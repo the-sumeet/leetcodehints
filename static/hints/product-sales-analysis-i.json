@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the Sales and Product tables. You will need to join these two tables based on the product_id to get the product_name for each sale."
+    },
+    {
+      "content": "Consider what information you need to extract from the Sales table. You need the product_name, year, and price for each sale_id. Make sure you know which columns to select in your query."
+    },
+    {
+      "content": "Remember that the primary key in the Sales table is a combination of sale_id and year. This means each sale_id is unique, but it’s important to ensure that you are correctly joining the tables without losing any data."
+    },
+    {
+      "content": "Think about the SQL JOIN operation you'll use. A LEFT JOIN or INNER JOIN could be appropriate here. Which one would ensure you get all the sales data along with the corresponding product names?"
+    },
+    {
+      "content": "When writing your SQL query, make sure to alias your columns appropriately. This will help in making your output more readable and ensure you meet the required output format."
+    },
+    {
+      "content": "Pay attention to the output format. You need to return the results in any order, but ensure that the column names in your SELECT statement match those specified in the problem."
+    },
+    {
+      "content": "Consider edge cases such as sales with no corresponding product. How will your JOIN handle such cases? Think about whether you need to filter out any results."
+    },
+    {
+      "content": "As you construct your query, remember to test it with the provided sample data. This will help ensure that your logic is sound and that you're retrieving the correct information."
+    },
+    {
+      "content": "Your final SQL query should look something like this: `SELECT product_name, year, price FROM Sales JOIN Product ON Sales.product_id = Product.product_id`. Make sure to adjust it to fit your needs."
+    },
+    {
+      "content": "Finally, ensure that your SQL syntax is correct and that you are selecting the right columns. Double-check your JOIN conditions and the overall structure of your query before executing it."
+    }
+  ],
+  "questionNotes": [
+    "The Sales table has a composite primary key (sale_id, year).",
+    "product_id is a foreign key referencing the Product table.",
+    "You need to return product_name, year, and price for each sale_id.",
+    "The result can be returned in any order."
+  ]
+}

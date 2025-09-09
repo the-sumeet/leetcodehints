@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of the permutation. Each number in the array is unique and ranges from 0 to n-1. This means that for an array of length n, every integer in that range must appear exactly once."
+    },
+    {
+      "content": "Consider what it means for the array to be sorted. A sorted array in this context is simply the sequence from 0 to n-1. Check if the input array is already sorted; if so, you can return 0 immediately."
+    },
+    {
+      "content": "Think about the bitwise AND operation. The condition for swapping elements at indices i and j is that nums[i] AND nums[j] must equal k. This means that both nums[i] and nums[j] must share certain bits in their binary representation."
+    },
+    {
+      "content": "To find the maximum k, consider the binary representations of the numbers in the array. The value of k must be such that it allows the necessary swaps to sort the array. Start by examining pairs of elements that are out of order."
+    },
+    {
+      "content": "Identify the pairs of indices (i, j) where nums[i] > nums[j]. For each of these pairs, calculate the AND of the two numbers. This will give you potential values for k that might allow swaps to sort the array."
+    },
+    {
+      "content": "Create a set to track all possible k values obtained from the AND operation of the pairs you identified. This will help you narrow down the candidates for the maximum k."
+    },
+    {
+      "content": "Once you have a list of potential k values, consider testing each k in descending order. For each k, check if you can sort the array using the allowed swaps. This can be done using a union-find structure or a similar approach to track connected components."
+    },
+    {
+      "content": "Remember that for a given k, the swaps are only allowed between elements that share the bits corresponding to k. This means that you need to ensure that all elements that can be swapped together can eventually reach their correct positions."
+    },
+    {
+      "content": "As you test each k, if you find that the array can be sorted with that k, you can stop and return it as the maximum k. If you reach k = 0 without finding a valid k, return 0."
+    },
+    {
+      "content": "Ensure that you handle edge cases, such as when n = 1 or when the array is already sorted. These cases should be straightforward but must be accounted for in your logic."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums.length <= 10^5",
+    "0 <= nums[i] <= n - 1",
+    "nums is a permutation of integers from 0 to n - 1.",
+    "Return the maximum k such that the array can be sorted using the allowed swaps.",
+    "If the array is already sorted, return 0."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to determine if the string 'sub' can be transformed into a substring of 's' using the provided mappings. Focus on how the mappings work and how they affect the characters in 'sub'."
+    },
+    {
+      "content": "Consider the constraints carefully. The lengths of 's' and 'sub' are up to 5000, and there can be up to 1000 mappings. This means your solution needs to be efficient, possibly around O(n * m) where n is the length of 's' and m is the length of 'sub'."
+    },
+    {
+      "content": "Remember that each character in 'sub' can only be replaced once. This means that if a character in 'sub' can be transformed into multiple characters, you need to track which transformations have already been applied."
+    },
+    {
+      "content": "Think about how you can generate all possible versions of 'sub' using the mappings. You might want to create a function that takes 'sub' and applies all possible transformations based on the mappings."
+    },
+    {
+      "content": "Before diving into generating all possible versions of 'sub', consider how you would check if a given version of 'sub' is a substring of 's'. You can use Python's 'in' keyword or similar methods in other languages."
+    },
+    {
+      "content": "You might want to build a mapping dictionary from the 2D array for easier access. For example, if mappings = [['e', '3'], ['t', '7']], you could create a dictionary like {'e': ['3'], 't': ['7']}. This will help you apply transformations more easily."
+    },
+    {
+      "content": "When generating variations of 'sub', ensure that you handle characters that do not have any mappings. They should remain unchanged in all generated versions."
+    },
+    {
+      "content": "Consider edge cases, such as when 'mappings' is empty. In this case, 'sub' must exactly match a substring of 's' for the function to return true."
+    },
+    {
+      "content": "You may want to implement a backtracking approach to explore all possible transformations of 'sub'. This would involve recursively trying each mapping for each character in 'sub'."
+    },
+    {
+      "content": "As you generate variations of 'sub', keep track of which characters have been replaced to avoid replacing them again. This can be managed by passing a set of used characters to your recursive function."
+    },
+    {
+      "content": "While checking if any generated version of 'sub' is a substring of 's', consider using a sliding window approach to efficiently check all possible substrings of 's' that match the length of 'sub'."
+    },
+    {
+      "content": "When implementing the substring check, remember that you need to compare the generated version of 'sub' with each substring of 's' of the same length. Use a loop to iterate through 's' and check each substring."
+    },
+    {
+      "content": "If you find a match, you can return true immediately. If you exhaust all possibilities without finding a match, return false at the end of your function."
+    },
+    {
+      "content": "Consider using memoization to cache results of previously computed transformations of 'sub' to optimize your solution. This can help avoid redundant computations."
+    },
+    {
+      "content": "Finally, make sure to test your solution with various edge cases, including cases with no mappings, cases where all characters can be transformed, and cases where no transformations lead to a match."
+    }
+  ],
+  "questionNotes": [
+    "1 <= sub.length <= s.length <= 5000",
+    "0 <= mappings.length <= 1000",
+    "Each character in sub cannot be replaced more than once.",
+    "Return true if sub can be made a substring of s, otherwise return false.",
+    "s and sub consist of uppercase and lowercase English letters and digits."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what is meant by the 'absolute difference' between two elements. For any two elements `a` and `b`, the absolute difference is calculated as `|a - b|`. This will be crucial for evaluating the subarrays."
+    },
+    {
+      "content": "Consider how to efficiently check the absolute difference condition for all elements in a subarray. A brute-force approach would involve checking each pair, but that could be inefficient for larger arrays."
+    },
+    {
+      "content": "Think about using a sliding window technique. This approach allows you to maintain a subarray and expand or contract it while checking the condition on the absolute differences."
+    },
+    {
+      "content": "As you slide the window, you need to keep track of the minimum and maximum values in the current window. This will help you quickly determine if the absolute difference exceeds the limit."
+    },
+    {
+      "content": "You can utilize data structures like a deque or a balanced binary search tree to efficiently manage the minimum and maximum values within the current window. Consider how these structures can help you keep track of values as you expand or contract your window."
+    },
+    {
+      "content": "Remember to update the size of the longest valid subarray each time you find a valid window. If the current window exceeds the limit, you need to adjust the start of the window."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when the `limit` is 0. In this case, the only valid subarrays will consist of identical elements."
+    },
+    {
+      "content": "Make sure to handle cases where the array has only one element. The longest subarray in such cases will always be of size 1."
+    },
+    {
+      "content": "Think about the time complexity of your approach. The sliding window technique should ideally allow you to achieve a linear time complexity, O(n), by processing each element a limited number of times."
+    },
+    {
+      "content": "To finalize your approach, outline how you will implement the sliding window: maintain pointers for the start and end of the window, update the minimum and maximum values, and check the condition for the absolute difference as you iterate through the array."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "0 <= limit <= 10^9",
+    "Return the size of the longest non-empty subarray."
+  ]
+}

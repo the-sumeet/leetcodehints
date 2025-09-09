@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by converting the time strings 'current' and 'correct' into total minutes since midnight. This will make it easier to calculate the difference in time. For example, '02:30' can be converted to 150 minutes (2 * 60 + 30)."
+    },
+    {
+      "content": "Calculate the difference in minutes between 'correct' and 'current'. This difference will tell you how many minutes you need to add to 'current' to reach 'correct'. Remember, the difference will always be non-negative since 'current' is guaranteed to be less than or equal to 'correct'."
+    },
+    {
+      "content": "Consider the available operations: you can add 1, 5, 15, or 60 minutes. Think about how you can use these operations to minimize the number of steps. For example, if the difference is 70 minutes, you can add 60 minutes and then 10 minutes (using 1 and 5)."
+    },
+    {
+      "content": "To minimize operations, always try to use the largest possible operation first. For instance, if you need to add 90 minutes, start with the 60-minute operation, then see how many 15, 5, or 1-minute operations you need."
+    },
+    {
+      "content": "Create a loop or a greedy approach that checks how many times you can apply each operation until you reach the required difference. Maintain a count of operations performed. For example, you might have a loop that subtracts 60 from the difference while counting operations."
+    },
+    {
+      "content": "Think about edge cases, such as when the difference is exactly 60, 15, or 5 minutes. In these cases, you should only need one operation. Ensure your logic correctly handles these scenarios."
+    },
+    {
+      "content": "You might find it helpful to break down the difference into components that can be covered by the available operations. For instance, if the difference is 70 minutes, you can express it as 60 + 10, where 10 can be further broken down into 5 + 5."
+    },
+    {
+      "content": "Consider how to handle the remaining minutes after using the largest operations. For example, if you have 10 minutes left after using a 60-minute operation, you can use two 5-minute operations or one 5-minute and five 1-minute operations."
+    },
+    {
+      "content": "Make sure to keep track of the total number of operations as you apply each operation. This will be your return value once you reach the correct time. You might want to use a variable to accumulate this count."
+    },
+    {
+      "content": "Finally, ensure your implementation accounts for all possible combinations of operations to find the minimum. You can use a greedy approach or even dynamic programming if you want to explore all possibilities. The final step is to return the count of operations needed."
+    }
+  ],
+  "questionNotes": [
+    "The input times are guaranteed to be in the format 'HH:MM'.",
+    "The current time will always be less than or equal to the correct time.",
+    "Operations can be performed any number of times, and you need to return the minimum number of operations."
+  ]
+}

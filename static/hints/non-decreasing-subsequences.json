@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence can be derived from the original array by deleting some elements without changing the order of the remaining elements. For example, from the array [4, 6, 7], you can form subsequences like [4, 6], [4, 7], and [6, 7]."
+    },
+    {
+      "content": "Remember that you need to find non-decreasing subsequences. This means that each element in the subsequence should be less than or equal to the next element. For instance, in [4, 6, 7], the subsequence [4, 6, 7] is valid, but [6, 4] is not."
+    },
+    {
+      "content": "Consider how to generate all possible subsequences from the input array. You can use a backtracking approach where you explore including or excluding each element. Keep in mind that you only want subsequences of length at least 2."
+    },
+    {
+      "content": "As you generate subsequences, make sure to check if the current subsequence is non-decreasing. You can maintain a temporary list to build your current subsequence and validate it as you go."
+    },
+    {
+      "content": "To avoid duplicates in your output, consider using a set to store the subsequences. This way, even if you generate the same subsequence multiple times, it will only be stored once."
+    },
+    {
+      "content": "When implementing your backtracking function, think about how to handle the current index. You can either include the current element in your subsequence or skip it and move to the next element."
+    },
+    {
+      "content": "Be aware of the constraints: the input array length is at most 15. This means that a solution with a time complexity of O(2^n) is feasible, as it would result in at most 32768 subsequences."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when all elements are the same (e.g., [4, 4, 4]). In this case, you should still be able to generate valid subsequences like [4, 4]."
+    },
+    {
+      "content": "As you build your subsequences, ensure that you only add those that have at least two elements to your final result. You might want to check the length of your temporary list before adding it to the result."
+    },
+    {
+      "content": "Finally, think about how you will return your result. You can convert your set of subsequences back to a list before returning, ensuring that it meets the required output format."
+    }
+  ],
+  "questionNotes": [
+    "Return all different non-decreasing subsequences with at least two elements.",
+    "The output can be in any order.",
+    "Constraints: 1 <= nums.length <= 15, -100 <= nums[i] <= 100.",
+    "Ensure uniqueness in subsequences to avoid duplicates in the output."
+  ]
+}

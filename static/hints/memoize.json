@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what memoization is. It involves caching the results of expensive function calls and returning the cached result when the same inputs occur again."
+    },
+    {
+      "content": "Consider how you will store the cached results. A good approach is to use a JavaScript object or a Map where the keys are the function arguments and the values are the results."
+    },
+    {
+      "content": "Remember that for the `sum` function, the order of the arguments matters. For example, `sum(2, 3)` is different from `sum(3, 2)`. Make sure your cache accounts for this."
+    },
+    {
+      "content": "Think about how to handle the call count. You will need a variable to track how many times the original function has been called, regardless of whether the result was cached or not."
+    },
+    {
+      "content": "When implementing the memoized function, check if the arguments are already in the cache before calling the original function. If they are, return the cached result."
+    },
+    {
+      "content": "For the `getCallCount` action, ensure you return the total number of calls made to the original function. This count should include all calls, whether they were cached or not."
+    },
+    {
+      "content": "Consider edge cases, such as calling the function with the same arguments multiple times. Your cache should efficiently handle these cases without redundant calculations."
+    },
+    {
+      "content": "When handling the `fib` and `factorial` functions, remember that they are recursive. Ensure that your memoization works correctly with these recursive calls."
+    },
+    {
+      "content": "Make sure to handle the input types correctly. For example, `sum` expects two integers, while `fib` and `factorial` expect a single integer. Validate inputs if necessary."
+    },
+    {
+      "content": "Finally, implement the memoization logic. Create a function that checks the cache, updates the call count, and handles the original function calls. This is where you will put together all the pieces you've thought about."
+    }
+  ],
+  "questionNotes": [
+    "The function can be one of 'sum', 'factorial', or 'fib'.",
+    "The actions can be 'call' or 'getCallCount'.",
+    "For 'sum', inputs (a, b) and (b, a) are treated as distinct.",
+    "The call count should include all calls to the original function.",
+    "Constraints: 0 <= a, b <= 10^5 for sum; 1 <= n <= 10 for fib and factorial."
+  ]
+}

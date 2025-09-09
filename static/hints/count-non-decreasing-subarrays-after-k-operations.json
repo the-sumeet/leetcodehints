@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a non-decreasing array is. An array is non-decreasing if each element is greater than or equal to the previous one. For example, [1, 2, 2, 3] is non-decreasing, while [3, 2, 1] is not."
+    },
+    {
+      "content": "Consider the operations you can perform. You can increment any element of a subarray by 1, up to k times. This means you can effectively 'raise' elements to help form a non-decreasing sequence."
+    },
+    {
+      "content": "Think about how many subarrays exist in an array. For an array of length n, the total number of subarrays is n * (n + 1) / 2. This is an important number to keep in mind as you analyze the problem."
+    },
+    {
+      "content": "When evaluating a subarray, focus on the differences between consecutive elements. If the difference between two elements is negative, you will need to perform operations to make them non-decreasing."
+    },
+    {
+      "content": "You can represent the required operations to make a subarray non-decreasing as a sum of differences. For a subarray starting at index i and ending at index j, calculate the total increments needed to fix any negative differences."
+    },
+    {
+      "content": "To efficiently calculate the number of operations needed for each subarray, consider using a sliding window approach. This allows you to expand or contract the subarray while keeping track of the operations needed."
+    },
+    {
+      "content": "As you slide the window, maintain a running total of the operations required. If this total exceeds k, you will need to adjust the starting index of the subarray to reduce the operations."
+    },
+    {
+      "content": "Remember to count how many valid subarrays you find. Each time you find a valid subarray (where operations needed ≤ k), you can add to your count of non-decreasing subarrays."
+    },
+    {
+      "content": "Consider edge cases such as when k is very large compared to the differences in the array. For instance, if k is larger than the total possible increments needed for any subarray, all subarrays can be made non-decreasing."
+    },
+    {
+      "content": "Pay attention to the constraints of the problem. The length of the array can be up to 100,000, which means your solution needs to be efficient, ideally O(n) or O(n log n)."
+    },
+    {
+      "content": "Think about how to handle cases where the array is already non-decreasing. You should count these subarrays as valid without needing any operations."
+    },
+    {
+      "content": "Consider how to track the start and end of your current subarray. You may want to use two pointers: one for the start and one for the end of the subarray."
+    },
+    {
+      "content": "When you find a valid subarray, remember to count all possible subarrays that can be formed with the current end pointer. For example, if the end pointer is at j and the start pointer is at i, then all subarrays from i to j are valid."
+    },
+    {
+      "content": "You may want to keep a separate count of the total increments needed as you expand your window. This will help you quickly determine if you need to shrink the window from the left."
+    },
+    {
+      "content": "Finalize your approach by ensuring that you correctly handle the counting of valid subarrays. Make sure to test your implementation with various edge cases, including arrays of length 1 and arrays where all elements are the same."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "1 <= k <= 10^9",
+    "Return the number of subarrays that can be made non-decreasing after at most k operations."
+  ]
+}

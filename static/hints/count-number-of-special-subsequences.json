@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a special subsequence is. A special subsequence must contain at least one '0', followed by at least one '1', and then at least one '2'."
+    },
+    {
+      "content": "Consider the order of elements in the subsequence. The elements must appear in the order of '0's, then '1's, and finally '2's. This means you can't have '2's before '1's or '1's before '0's."
+    },
+    {
+      "content": "Think about how you can form subsequences from the array. Each subsequence can be formed by choosing certain indices from the original array while maintaining their order."
+    },
+    {
+      "content": "You might want to count the occurrences of '0's, '1's, and '2's in the array first. This will help you understand how many choices you have for each digit."
+    },
+    {
+      "content": "When you find a '2', you should consider how many valid pairs of '0's and '1's can precede it. This means you need to keep track of how many '0's and '1's you've seen so far."
+    },
+    {
+      "content": "Use a variable to keep track of the number of '0's seen as you iterate through the array. This will help you calculate the number of valid subsequences as you encounter '1's and '2's."
+    },
+    {
+      "content": "Similarly, maintain a count of valid subsequences that can be formed with '0's and '1's before you encounter a '2'. This will be crucial for counting special subsequences."
+    },
+    {
+      "content": "Consider using dynamic programming or combinatorial counting to efficiently calculate the number of subsequences. You can use modular arithmetic to handle large numbers."
+    },
+    {
+      "content": "Remember to apply the modulo operation (10^9 + 7) at each step to avoid overflow and ensure your results fit within the required limits."
+    },
+    {
+      "content": "As you process the array, when you encounter a '1', you can multiply the current count of '0's by the count of '1's to get the number of new subsequences that can be formed."
+    },
+    {
+      "content": "When you encounter a '2', you should consider all the valid subsequences formed by the pairs of '0's and '1's that can precede it. This will give you the total count of special subsequences."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the array consists of only '0's or '1's or '2's. In these cases, there will be no valid special subsequences."
+    },
+    {
+      "content": "You may want to use a loop to iterate through the array while maintaining counts of '0's, '1's, and special subsequences dynamically."
+    },
+    {
+      "content": "Consider the implications of the order of elements in your counting. Each time you find a '2', you should calculate how many subsequences can end with that '2'."
+    },
+    {
+      "content": "Finally, ensure that your algorithm runs efficiently, ideally in O(n) time complexity, to handle the upper limit of the input size."
+    }
+  ],
+  "questionNotes": [
+    "The input array can only contain integers 0, 1, and 2.",
+    "The length of the input array is between 1 and 100,000.",
+    "A subsequence is defined by the indices chosen, so different index selections lead to different subsequences.",
+    "Return the count of special subsequences modulo 10^9 + 7."
+  ]
+}

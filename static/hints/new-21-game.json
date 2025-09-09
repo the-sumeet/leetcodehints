@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the game mechanics. Alice draws points until she reaches or exceeds 'k'. If she reaches 'k', she stops. Think about how the range of points she can draw influences her total score."
+    },
+    {
+      "content": "Consider the outcomes of each draw. Alice can draw any integer from 1 to 'maxPts'. This means that for each draw, there are 'maxPts' possible outcomes. How does this affect the probability of her total score?"
+    },
+    {
+      "content": "Think about the stopping condition: Alice stops drawing when her score reaches 'k'. This means that any score she can achieve above 'k' is irrelevant to the probability we need to calculate."
+    },
+    {
+      "content": "To simplify the problem, consider the scenarios where Alice can draw points and how many draws she can make before she reaches or exceeds 'k'. How many points can she have after each draw?"
+    },
+    {
+      "content": "You can use dynamic programming to keep track of the probabilities of reaching each score from 0 to 'n'. Create an array where each index represents the score and the value at that index represents the probability of achieving that score."
+    },
+    {
+      "content": "Initialize your probability array. Set the probability of having 0 points to 1 (since she starts with 0 points) and all other probabilities to 0. This will serve as your base case."
+    },
+    {
+      "content": "For each score from 0 to 'n', calculate the probability of reaching that score based on the previous scores. Remember, if Alice draws a card that takes her to or above 'k', she stops drawing."
+    },
+    {
+      "content": "When calculating the probabilities, consider the contributions from scores that are within the range of the last 'maxPts' draws. Use a sliding window approach to efficiently sum these contributions."
+    },
+    {
+      "content": "Make sure to handle edge cases: what if 'k' is 0? In this case, Alice doesn't draw any cards, and her score is 0. The probability of having 'n' or fewer points should be 1 if 'n' is also 0."
+    },
+    {
+      "content": "Finally, after filling your probability array, sum the probabilities from index 0 to 'n' to get the final answer. Remember to format the result to 5 decimal places before returning."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= k <= n <= 10^4; 1 <= maxPts <= 10^4.",
+    "Alice stops drawing when she reaches or exceeds 'k' points.",
+    "Return the probability that Alice has 'n' or fewer points.",
+    "Answers within 10^-5 of the actual answer are accepted."
+  ]
+}

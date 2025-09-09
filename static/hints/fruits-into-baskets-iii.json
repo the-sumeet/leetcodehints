@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input arrays: `fruits` and `baskets`. Each element in `fruits` represents a quantity of a specific fruit type, while each element in `baskets` represents the capacity of a basket. Your goal is to allocate fruits to baskets based on their capacities."
+    },
+    {
+      "content": "Remember that each fruit type must go into the leftmost available basket that can accommodate its quantity. This means you need to iterate through the `baskets` from left to right for each fruit type."
+    },
+    {
+      "content": "Consider how you will track which baskets have been filled. You might want to use a boolean array or a set to keep track of the indices of baskets that have already been used."
+    },
+    {
+      "content": "Think about how to handle the situation where a fruit type cannot be placed in any basket. You need to count how many fruit types remain unplaced after attempting to allocate all of them."
+    },
+    {
+      "content": "When iterating through the `baskets`, if a basket's capacity is less than the current fruit type's quantity, you should skip to the next basket. This is a key part of the allocation logic."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when all baskets are too small to accommodate any fruits or when all fruits can be placed successfully. How will your code behave in these scenarios?"
+    },
+    {
+      "content": "You may want to sort the `baskets` array to ensure you are always trying to place fruits in the smallest available basket that can fit them. This can help maximize the number of fruits placed."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Since `n` can be as large as 100,000, an O(n^2) solution might be too slow. Think about how you can optimize your solution to be more efficient."
+    },
+    {
+      "content": "As you implement your solution, remember to keep track of the index of the last used basket for each fruit type. This will help you avoid rechecking baskets that have already been filled."
+    },
+    {
+      "content": "Finally, once you have attempted to place all fruit types, you need to return the count of unplaced fruit types. This can be done by subtracting the number of successfully placed fruits from the total number of fruit types."
+    }
+  ],
+  "questionNotes": [
+    "Each fruit type must be placed in the leftmost available basket with sufficient capacity.",
+    "Each basket can hold only one type of fruit.",
+    "If a fruit type cannot be placed in any basket, it remains unplaced.",
+    "Return the number of fruit types that remain unplaced after all possible allocations.",
+    "Constraints: n == fruits.length == baskets.length, 1 <= n <= 10^5, 1 <= fruits[i], baskets[i] <= 10^9."
+  ]
+}

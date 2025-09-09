@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the scoring system between Alice and Bob. Alice's points depend on the creature she summons compared to Bob's. Make sure you can clearly outline the winning conditions for Bob."
+    },
+    {
+      "content": "Consider the possible outcomes for each round. For every creature Alice summons, identify which creature Bob can summon to score a point against her."
+    },
+    {
+      "content": "Remember that Bob cannot summon the same creature in consecutive rounds. This constraint will affect how you count the valid sequences."
+    },
+    {
+      "content": "Break down the problem by analyzing smaller substrings of Alice's sequence. For example, how would Bob's options change if Alice's sequence was just 'F' or 'W'?"
+    },
+    {
+      "content": "Think about how to represent Bob's possible sequences. You could use a dynamic programming approach to keep track of valid sequences that lead to Bob winning."
+    },
+    {
+      "content": "Define a recursive function or a dynamic programming table that calculates the number of winning sequences for Bob given Alice's sequence up to a certain index."
+    },
+    {
+      "content": "When calculating the winning sequences, ensure you account for the previous creature Bob summoned to adhere to the constraint of not repeating."
+    },
+    {
+      "content": "Consider edge cases, such as when Alice's sequence consists entirely of one type of creature. How does this simplify Bob's options?"
+    },
+    {
+      "content": "Ensure you handle the modulo operation correctly. Since the result can be large, every time you update your count of winning sequences, apply the modulo 10^9 + 7."
+    },
+    {
+      "content": "Implement a way to track points for both Alice and Bob as you iterate through Alice's sequence. This will help in determining when Bob has a winning sequence."
+    },
+    {
+      "content": "Use a loop to iterate through Alice's sequence, and for each character, calculate the possible winning moves for Bob based on the previous move he made."
+    },
+    {
+      "content": "Think about how to efficiently count the number of winning sequences without generating all possible sequences explicitly. This can save time and memory."
+    },
+    {
+      "content": "Consider using a 2D array to store the number of ways Bob can win at each round, depending on the last creature he summoned."
+    },
+    {
+      "content": "Remember to initialize your data structures correctly. The base case should reflect the first round's possibilities based on Alice's first summon."
+    },
+    {
+      "content": "As you approach the final implementation, ensure your logic correctly differentiates between winning and non-winning sequences for Bob."
+    }
+  ],
+  "questionNotes": [
+    "Bob cannot summon the same creature in two consecutive rounds.",
+    "Bob beats Alice if his total points are strictly greater than Alice's.",
+    "The answer should be returned modulo 10^9 + 7.",
+    "Constraints: 1 <= s.length <= 1000; s[i] is one of 'F', 'W', or 'E'."
+  ]
+}

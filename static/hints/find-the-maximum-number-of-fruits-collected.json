@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement rules for each child. Each child has specific directions they can move in the grid. Make sure to diagram these movements to visualize the paths they can take."
+    },
+    {
+      "content": "Consider how many moves each child can make. Each child will make exactly n - 1 moves to reach the bottom-right corner. This means they will each traverse a unique path through the grid."
+    },
+    {
+      "content": "Think about how to track the fruits collected by each child. You will need to keep a running total of the fruits collected as they move through the grid."
+    },
+    {
+      "content": "Remember that if multiple children enter the same room, only one collects the fruits. You’ll need a way to handle this situation to avoid double counting."
+    },
+    {
+      "content": "Consider using a 3D dynamic programming table to store the maximum fruits collected by the three children at each step. The dimensions could represent the positions of the three children."
+    },
+    {
+      "content": "When setting up your DP table, think about how to represent the positions of each child. For example, you could use indices for the first and second children, and derive the third child's position from the grid size."
+    },
+    {
+      "content": "As you fill in the DP table, make sure to account for the fruits collected from each child's current position. You'll need to add the fruits from the grid cell they are in."
+    },
+    {
+      "content": "To avoid counting fruits multiple times, consider a mechanism to track which rooms have already been collected from. You could use a set to store the coordinates of rooms that have been visited."
+    },
+    {
+      "content": "When calculating the maximum fruits collected, ensure you are considering all possible combinations of paths for the three children. This may require iterating over the possible positions of the first two children and determining the position of the third."
+    },
+    {
+      "content": "Think about edge cases, such as the smallest grid size (2x2). How will the children move, and what will the total fruits collected be? Test your logic with this simple case."
+    },
+    {
+      "content": "Consider the implications of the grid size constraints. Given that n can be as large as 1000, make sure your solution is efficient. Aim for a time complexity that is manageable within these limits."
+    },
+    {
+      "content": "As you implement your solution, remember to check for boundary conditions. Ensure that the children's movements do not go out of the grid's bounds."
+    },
+    {
+      "content": "When you think you have a working solution, test it with various grid configurations, including ones with all zeros and ones. This will help you verify that your logic handles different scenarios correctly."
+    },
+    {
+      "content": "To finalize your approach, focus on the last step of your DP table. This should give you the maximum fruits collected by the three children when they reach the bottom-right corner."
+    },
+    {
+      "content": "Remember to return the total number of fruits collected as your final output. Make sure your return statement is correctly formatted to match the expected output."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 1000, 0 <= fruits[i][j] <= 1000",
+    "Children start at (0, 0), (0, n - 1), and (n - 1, 0).",
+    "Each child moves to (n - 1, n - 1) in exactly n - 1 moves.",
+    "Only one child collects fruits if multiple enter the same room."
+  ]
+}

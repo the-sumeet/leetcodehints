@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the rotated sorted array. The array is sorted but then rotated, which means that there are two sorted subarrays within it. For example, in [4,5,6,6,7,0,1,2], [4,5,6,6,7] and [0,1,2] are both sorted."
+    },
+    {
+      "content": "Consider how you would normally search in a sorted array using binary search. Think about how the rotation affects the mid-point and how you can determine which half of the array is sorted."
+    },
+    {
+      "content": "When examining the mid-point, you need to compare it with the left and right boundaries. This will help you decide which side to search next. For example, if nums[mid] is greater than nums[left], the left half is sorted."
+    },
+    {
+      "content": "Take note of the presence of duplicates in the array. This can complicate the decision-making process when determining which side to search. If nums[mid] equals nums[left] or nums[right], you might need to increment the left or decrement the right pointer to skip duplicates."
+    },
+    {
+      "content": "If the left side is sorted, check if the target lies within that range. If it does, adjust your search to that side; otherwise, search the other side. For example, if nums[left] <= target < nums[mid], search left."
+    },
+    {
+      "content": "Similarly, if the right side is sorted, check if the target is in that range. Adjust your search accordingly. If nums[mid] < target <= nums[right], search right."
+    },
+    {
+      "content": "Consider edge cases where the array has all identical elements. For example, in [2,2,2,2,2], how would you determine if the target is present? This can lead to multiple iterations of checking."
+    },
+    {
+      "content": "Remember that the search must return a boolean value. You should return true if the target is found and false if it is not. Ensure that your function handles both cases correctly."
+    },
+    {
+      "content": "Think about the time complexity of your approach. The presence of duplicates can lead to a worst-case scenario of O(n) in some cases, but you should aim for O(log n) when possible by effectively using binary search."
+    },
+    {
+      "content": "As a final step, implement the logic for adjusting pointers based on the sorted halves and the target. Make sure to handle duplicates carefully to avoid infinite loops or missing the target."
+    }
+  ],
+  "questionNotes": [
+    "The input array nums is guaranteed to be rotated at some pivot.",
+    "The array may contain duplicates, which affects the search strategy.",
+    "Return true if the target is found, otherwise return false.",
+    "Consider the constraints: 1 <= nums.length <= 5000 and -10^4 <= nums[i], target <= 10^4."
+  ]
+}

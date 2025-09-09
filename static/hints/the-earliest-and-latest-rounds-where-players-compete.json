@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the tournament rounds are structured. In each round, players compete in pairs: the first player competes against the last, the second against the second last, and so on. If there's an odd number of players, the middle player automatically advances."
+    },
+    {
+      "content": "Identify the positions of `firstPlayer` and `secondPlayer`. Their positions will determine how quickly they can meet in the tournament. Remember that they can only compete against each other if they are both still in the tournament."
+    },
+    {
+      "content": "Consider how players are eliminated in each round. When two players compete, one advances and the other is eliminated. This means that the total number of players decreases each round, which affects when `firstPlayer` and `secondPlayer` can meet."
+    },
+    {
+      "content": "Think about the scenario where `firstPlayer` and `secondPlayer` are positioned closest together. This will likely lead to the earliest meeting round. How can you arrange the other players to achieve this?"
+    },
+    {
+      "content": "For the latest possible round, consider how to keep `firstPlayer` and `secondPlayer` apart for as long as possible. You might need to manipulate the outcomes of other matches to ensure they do not meet until the last possible moment."
+    },
+    {
+      "content": "When calculating the rounds, keep track of how many players are left after each round. The number of players can be calculated as `ceil(n / 2)` for each round, especially when `n` is odd."
+    },
+    {
+      "content": "Use a loop to simulate the rounds. In each iteration, determine the winners based on the current player positions. Update the list of players for the next round accordingly."
+    },
+    {
+      "content": "Remember to handle the case where `firstPlayer` and `secondPlayer` are in positions that allow them to meet immediately in the first round. This is a special case that should return [1, 1]."
+    },
+    {
+      "content": "To calculate the earliest round, you can use a binary-like approach. Each time you halve the number of players, check if `firstPlayer` and `secondPlayer` are in the same competing pair."
+    },
+    {
+      "content": "For the latest round, consider the order of players. You may want to keep as many players as possible between `firstPlayer` and `secondPlayer` until the final rounds."
+    },
+    {
+      "content": "Keep in mind that the players are renumbered after each round. This means you need to track their original positions and how they change after each round."
+    },
+    {
+      "content": "To optimize your solution, think about how the positions of `firstPlayer` and `secondPlayer` change over rounds. You can derive their new positions based on the current number of players."
+    },
+    {
+      "content": "Consider edge cases, such as when `n` is very small (like 2 or 3). How do these cases affect the output? Make sure your solution handles these gracefully."
+    },
+    {
+      "content": "As you approach the final solution, think about how you can encapsulate the logic for determining the rounds into functions or methods for clarity and reusability."
+    },
+    {
+      "content": "Finally, ensure that your output format matches the requirements: an array containing two integers representing the earliest and latest rounds. Double-check your logic to confirm that both values are calculated correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 28, 1 <= firstPlayer < secondPlayer <= n",
+    "Players are numbered from 1 to n based on their initial standing.",
+    "In each round, players compete in pairs, with the middle player advancing automatically if the count is odd.",
+    "Return format: An array with two integers [earliestRound, latestRound]."
+  ]
+}

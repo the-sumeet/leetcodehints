@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of both tables: Employees and EmployeeUNI. You need to join these tables based on the 'id' column, which is common in both."
+    },
+    {
+      "content": "Remember that the goal is to return the 'unique_id' from the EmployeeUNI table along with the employee's name from the Employees table. If there is no matching 'unique_id', you should return null."
+    },
+    {
+      "content": "Consider using a LEFT JOIN for this operation. This will allow you to include all records from the Employees table and only the matching records from the EmployeeUNI table."
+    },
+    {
+      "content": "Make sure to select the correct columns in your final output. You need to return 'unique_id' and 'name' in your result set."
+    },
+    {
+      "content": "Think about how to handle cases where an employee does not have a corresponding entry in the EmployeeUNI table. This is where the LEFT JOIN will help by returning null for those employees."
+    },
+    {
+      "content": "As you construct your SQL query, pay attention to the order of your SELECT statement. The order should match the required output format: 'unique_id' first, followed by 'name'."
+    },
+    {
+      "content": "Don't forget about the possibility of duplicate entries in the EmployeeUNI table. However, since 'id' is a primary key in the Employees table, each employee will only appear once."
+    },
+    {
+      "content": "Consider edge cases such as when the Employees table is empty or when all employees have unique IDs. How would your query handle these scenarios?"
+    },
+    {
+      "content": "When writing your SQL query, ensure you are using the correct syntax for the JOIN operation and that you are handling null values appropriately in your SELECT statement."
+    },
+    {
+      "content": "Finally, your SQL query should look something like this: SELECT e.name, u.unique_id FROM Employees e LEFT JOIN EmployeeUNI u ON e.id = u.id. Make sure to test your query with the provided sample data."
+    }
+  ],
+  "questionNotes": [
+    "The 'id' column in Employees is the primary key, ensuring uniqueness.",
+    "The combination of 'id' and 'unique_id' in EmployeeUNI forms a composite primary key.",
+    "If an employee does not have a unique ID, the output should show null for that employee.",
+    "The result should include both 'unique_id' and 'name' columns in any order."
+  ]
+}

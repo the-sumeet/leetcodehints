@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input matrix. Each entry `grid[i][j]` indicates whether team `i` is stronger than team `j`. If `grid[i][j] == 1`, then team `i` is stronger."
+    },
+    {
+      "content": "Remember that for each team, there will be exactly one other team that is stronger. This means that if team `a` is stronger than team `b`, then team `b` cannot be stronger than team `a`."
+    },
+    {
+      "content": "Consider how you can determine the champion by checking each team against all others. If a team is never found to be weaker than any other team, it could be the champion."
+    },
+    {
+      "content": "You might want to keep track of the number of teams that are stronger than each team. If a team has no stronger opponents, then it is the champion."
+    },
+    {
+      "content": "Think about initializing a variable to track the potential champion. You can start with the first team and iterate through the matrix to compare it with others."
+    },
+    {
+      "content": "As you iterate, if you find a team that is stronger than your current champion candidate, update your champion to this new team."
+    },
+    {
+      "content": "Pay attention to the constraints: the matrix is always `n x n`, and `n` ranges from 2 to 100. This means your solution should efficiently handle the maximum size."
+    },
+    {
+      "content": "Remember that the input guarantees that there will be a unique champion. This means you don't need to handle ties or multiple champions."
+    },
+    {
+      "content": "After identifying your potential champion, you should verify that no other team is stronger than it. This can be done by checking the corresponding row in the matrix."
+    },
+    {
+      "content": "Finally, make sure to return the index of the champion team. The output should be a single integer representing the champion's index."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == grid.length, n == grid[i].length, 2 <= n <= 100.",
+    "grid[i][j] is either 0 or 1.",
+    "For all i, grid[i][i] is 0.",
+    "For all i, j that i != j, grid[i][j] != grid[j][i].",
+    "The input guarantees a unique champion."
+  ]
+}

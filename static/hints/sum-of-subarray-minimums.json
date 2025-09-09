@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "To solve this problem, start by understanding what a subarray is. A subarray is any contiguous part of the array. For example, in the array [3, 1, 2, 4], the subarrays include [3], [1], [2, 4], and many others."
+    },
+    {
+      "content": "Think about how you can find the minimum value of each subarray. A brute force approach would involve iterating through all possible subarrays and calculating their minimums, but this could be inefficient for larger arrays."
+    },
+    {
+      "content": "Consider using a stack to help keep track of the minimum values efficiently. This is a common technique for problems involving subarrays or ranges, as it allows you to manage the elements in a way that can reduce time complexity."
+    },
+    {
+      "content": "When using a stack, think about how you can determine how many subarrays a particular element is the minimum for. This involves finding the nearest smaller elements to the left and right of each element."
+    },
+    {
+      "content": "To find the nearest smaller elements, you can iterate through the array twice: once from left to right and once from right to left. This will help you identify the boundaries of the subarrays for which each element is the minimum."
+    },
+    {
+      "content": "For each element, calculate how many subarrays it contributes to as the minimum. If an element is at index 'i', and the nearest smaller elements are at indices 'left' and 'right', then the contribution can be calculated as (i - left) * (right - i)."
+    },
+    {
+      "content": "Don't forget to take the modulo of your results at each step to avoid overflow, as the final answer needs to be returned modulo 10^9 + 7."
+    },
+    {
+      "content": "As you implement your solution, consider edge cases such as arrays with only one element or arrays where all elements are the same. How does your approach handle these scenarios?"
+    },
+    {
+      "content": "While iterating through the array, maintain a running total of the contributions from each element. This will give you the final sum of all subarray minimums."
+    },
+    {
+      "content": "Finally, ensure that your implementation is efficient, ideally O(n), to handle the upper constraint of the input size (up to 30,000 elements). Think carefully about how you manage the stack and the iterations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 30,000",
+    "Values: 1 <= arr[i] <= 30,000",
+    "Return the answer modulo 10^9 + 7.",
+    "Consider edge cases such as single-element arrays and arrays with duplicate values."
+  ]
+}

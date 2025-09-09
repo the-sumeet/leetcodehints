@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You can only choose integers from the range [1, n], and any integers in the 'banned' list cannot be selected."
+    },
+    {
+      "content": "Consider how to efficiently check if an integer is banned. A set data structure can be useful here since it allows for O(1) average time complexity for lookups."
+    },
+    {
+      "content": "Think about how to iterate through the range of integers from 1 to n. You will want to check each integer against the banned list and also keep track of the sum of the chosen integers."
+    },
+    {
+      "content": "Remember that you can only choose each integer once. This means you need to maintain a count of how many integers you have chosen and ensure their sum does not exceed maxSum."
+    },
+    {
+      "content": "Before you start choosing integers, consider sorting the banned list. This can help you quickly identify which integers are available to choose."
+    },
+    {
+      "content": "As you iterate through the range, maintain a running total of the sum of chosen integers. If adding the current integer exceeds maxSum, you should stop choosing further integers."
+    },
+    {
+      "content": "Think about edge cases, such as when 'banned' contains all integers from 1 to n, or when maxSum is very low (like 1). How would these affect your ability to choose integers?"
+    },
+    {
+      "content": "You might want to keep a counter to track how many integers you have successfully chosen. This will be your final answer."
+    },
+    {
+      "content": "When checking if an integer can be chosen, ensure to check both its presence in the banned list and whether adding it to your current total would exceed maxSum."
+    },
+    {
+      "content": "Finally, consider how you will return the result. You need to return the maximum number of integers chosen, so ensure your counter reflects this correctly by the end of your loop."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= banned.length <= 10^4, 1 <= banned[i], n <= 10^4, 1 <= maxSum <= 10^9",
+    "Integers in the banned list cannot be chosen.",
+    "You can only choose integers from the range [1, n].",
+    "The sum of chosen integers must not exceed maxSum.",
+    "Return the maximum number of integers that can be chosen."
+  ]
+}

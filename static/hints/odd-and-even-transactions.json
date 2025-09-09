@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the transactions table. You need to work with three columns: transaction_id, amount, and transaction_date. Focus on how you can group these transactions by date."
+    },
+    {
+      "content": "Consider how you can differentiate between odd and even transaction_ids. You can use the modulus operator to determine if a transaction_id is odd or even: `transaction_id % 2 == 0` for even and `transaction_id % 2 != 0` for odd."
+    },
+    {
+      "content": "Think about how to aggregate the amounts based on the odd and even transaction_ids. You will likely need to use a conditional aggregation approach, such as `SUM(CASE WHEN ... THEN amount ELSE 0 END)`."
+    },
+    {
+      "content": "Make sure to group your results by transaction_date. This will allow you to calculate the sums for each date separately. Use `GROUP BY transaction_date` in your query."
+    },
+    {
+      "content": "Don't forget to handle cases where there are no odd or even transactions for a specific date. You should return 0 for those cases. This may require using `COALESCE` or a similar function."
+    },
+    {
+      "content": "Remember to order your final results by transaction_date in ascending order. This is crucial for the output format specified in the problem statement."
+    },
+    {
+      "content": "Consider edge cases, such as when all transactions are odd or all are even. Make sure your logic can handle these scenarios and still return the correct sums."
+    },
+    {
+      "content": "You might want to create two separate sums in your query: one for odd transactions and another for even transactions. Think about how you can structure your SQL to achieve this."
+    },
+    {
+      "content": "As you write your SQL query, ensure that you are selecting the correct columns for your final output: transaction_date, odd_sum, and even_sum. Pay attention to the naming conventions used in the output."
+    },
+    {
+      "content": "Your final SQL query should look something like this: `SELECT transaction_date, SUM(CASE WHEN transaction_id % 2 != 0 THEN amount ELSE 0 END) AS odd_sum, SUM(CASE WHEN transaction_id % 2 = 0 THEN amount ELSE 0 END) AS even_sum FROM transactions GROUP BY transaction_date ORDER BY transaction_date;` Make sure to test it with various inputs."
+    }
+  ],
+  "questionNotes": [
+    "The transaction_id column uniquely identifies each row in the table.",
+    "If there are no odd or even transactions for a specific date, display as 0.",
+    "The result table must be ordered by transaction_date in ascending order."
+  ]
+}

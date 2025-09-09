@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for `p` to be a subsequence of `s`. A subsequence can be formed by deleting some characters from `s` without changing the order of the remaining characters. For example, in `s = 'abcacb'` and `p = 'ab'`, you can form `p` by removing certain characters from `s`."
+    },
+    {
+      "content": "Consider the role of the `removable` array. Each index in this array indicates a character in `s` that can be removed. Your task is to determine how many characters you can remove while still ensuring that `p` remains a subsequence of `s`."
+    },
+    {
+      "content": "Think about how you might check if `p` is still a subsequence of `s` after removing characters. You could implement a function that checks for subsequence status by iterating through both strings and ensuring that all characters of `p` can be found in `s` in the correct order."
+    },
+    {
+      "content": "To efficiently find the maximum number of characters you can remove, consider using a binary search approach. The idea is to test different values of `k` (from 0 to the length of `removable`) and check if `p` remains a subsequence after removing the first `k` characters."
+    },
+    {
+      "content": "When implementing the binary search, you need a helper function that takes `k` as an argument. This function will mark the characters in `s` based on the first `k` indices from `removable` and then check if `p` is still a subsequence."
+    },
+    {
+      "content": "Pay attention to edge cases. For instance, if `removable` is empty, the maximum `k` is simply 0 since no characters can be removed. Also, consider what happens when `p` is exactly equal to `s`."
+    },
+    {
+      "content": "Remember to handle the indices in `removable` carefully, especially since they are 0-indexed. Make sure that when you mark characters for removal, you are correctly accessing `s` using these indices."
+    },
+    {
+      "content": "As you implement the binary search, keep track of the left and right pointers. The left pointer can start at 0, and the right pointer can start at the length of `removable`. Your mid-point will help you decide whether to check a larger or smaller `k`."
+    },
+    {
+      "content": "When checking if `p` is a subsequence after removals, you can use two pointers: one for `s` and one for `p`. Move through `s`, skipping characters that have been marked for removal, and see if you can match all characters in `p`."
+    },
+    {
+      "content": "Finally, ensure that your binary search correctly narrows down to the maximum valid `k`. If `p` remains a subsequence for a certain `k`, you can try a larger `k`, otherwise, reduce your search space."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= p.length <= s.length <= 10^5",
+    "0 <= removable.length < s.length",
+    "0 <= removable[i] < s.length",
+    "p is guaranteed to be a subsequence of s.",
+    "s and p consist of lowercase English letters.",
+    "All elements in removable are distinct."
+  ]
+}

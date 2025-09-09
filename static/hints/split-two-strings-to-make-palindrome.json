@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A string is a palindrome if it reads the same forwards and backwards. For example, 'racecar' and 'level' are palindromes."
+    },
+    {
+      "content": "Consider how you can split the strings 'a' and 'b'. You can split them at any index, including the start or the end of the strings. For instance, if 'a' is 'abc', valid splits include: '', 'abc', 'a', 'bc', 'ab', 'c'."
+    },
+    {
+      "content": "Think about the two possible combinations of the splits. You can form a palindrome by checking if 'a prefix + b suffix' or 'b prefix + a suffix' results in a palindrome."
+    },
+    {
+      "content": "Remember that either prefix or suffix can be empty. This means that you should consider cases where one of the strings contributes nothing to the concatenation."
+    },
+    {
+      "content": "To check if a string is a palindrome, you can compare the string to its reverse. For example, in Python, you can check if 's' is a palindrome using 's == s[::-1]'."
+    },
+    {
+      "content": "Think about how to iterate through all possible split indices. Since the strings are of the same length, you can loop from index 0 to the length of the strings to create all possible splits."
+    },
+    {
+      "content": "When constructing the concatenated strings, remember to handle the cases where either prefix or suffix is empty. This will require careful indexing in your loops."
+    },
+    {
+      "content": "Consider edge cases, such as when both strings are of length 1. In this case, any combination of splits will yield a single character, which is always a palindrome."
+    },
+    {
+      "content": "After generating the concatenated strings from the splits, check each combination for being a palindrome. You might want to create a helper function to simplify this check."
+    },
+    {
+      "content": "Finally, ensure you return the correct boolean value based on whether any of the combinations resulted in a palindrome. If at least one combination is a palindrome, return true; otherwise, return false."
+    }
+  ],
+  "questionNotes": [
+    "1 <= a.length, b.length <= 10^5",
+    "a.length == b.length",
+    "a and b consist of lowercase English letters",
+    "You can split at any index, including at the start or end of the strings."
+  ]
+}

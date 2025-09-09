@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a star graph. In a star graph with n nodes, there is one central node connected to all other n-1 nodes. This means that the center node will appear in multiple edges."
+    },
+    {
+      "content": "Consider how many times each node appears in the edges array. The center node will be the one that appears most frequently, specifically in n-1 edges."
+    },
+    {
+      "content": "You can use a simple counting mechanism. Create a dictionary or a counter to track the frequency of each node's appearance in the edges."
+    },
+    {
+      "content": "As you iterate through the edges, for each edge [u, v], increment the count for both u and v in your counter. This will help you identify which node is the center."
+    },
+    {
+      "content": "Remember that the center node must be connected to all other nodes. If you find a node that has a count of n-1, that is your center node."
+    },
+    {
+      "content": "Think about edge cases. What if there are only three nodes? The logic still holds, but ensure your counting mechanism can handle the minimum constraints."
+    },
+    {
+      "content": "While iterating through the edges, you can stop early if you find a node that already has a count of n-1. This can optimize your solution."
+    },
+    {
+      "content": "Consider the constraints given: 3 <= n <= 10^5. Your solution should be efficient, ideally O(n), since you might deal with a large number of edges."
+    },
+    {
+      "content": "After counting the appearances of each node, you will need to find the node with the maximum count. This is straightforward if you maintain a simple check during the counting process."
+    },
+    {
+      "content": "Finally, remember to return the center node as an integer. Ensure your function adheres to the expected output format."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= n <= 10^5",
+    "edges.length == n - 1",
+    "edges[i].length == 2",
+    "1 <= u_i, v_i <= n",
+    "u_i != v_i",
+    "The graph is guaranteed to be a valid star graph."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the function `isPrefixAndSuffix(str1, str2)`. It checks if `str1` is both a prefix and a suffix of `str2`. For example, `isPrefixAndSuffix('a', 'ababa')` should return true."
+    },
+    {
+      "content": "Consider how to iterate through the list of words. You need to check pairs of words where the index of the first word is less than the index of the second word. This means you will need a nested loop."
+    },
+    {
+      "content": "When iterating, remember that for each word at index `i`, you need to check it against all words at indices `j` where `j > i`. This will help you avoid counting the same pair twice."
+    },
+    {
+      "content": "Think about how to implement the check for prefix and suffix. You can use string slicing in Python. For example, `str2.startswith(str1)` checks if `str1` is a prefix of `str2`."
+    },
+    {
+      "content": "Don't forget to check if `str1` can actually be a prefix and suffix of `str2`. The length of `str1` should not be greater than the length of `str2`."
+    },
+    {
+      "content": "As you count valid pairs, maintain a counter that increments every time you find a valid pair. Initialize this counter to zero before the loops."
+    },
+    {
+      "content": "Consider edge cases, such as when all words are the same or when there are very short words. How will your logic handle these scenarios?"
+    },
+    {
+      "content": "Make sure to test your solution with the provided examples to ensure correctness. For instance, check the output for `['a', 'aba', 'ababa', 'aa']`."
+    },
+    {
+      "content": "Think about the time complexity of your solution. With a maximum of 50 words, a nested loop approach will have a complexity of O(n^2), which is acceptable for this problem size."
+    },
+    {
+      "content": "Finally, ensure that your function returns the count of pairs as specified. You should return an integer that represents the number of valid index pairs."
+    }
+  ],
+  "questionNotes": [
+    "1 <= words.length <= 50",
+    "1 <= words[i].length <= 10",
+    "words[i] consists only of lowercase English letters.",
+    "Return the count of pairs (i, j) where i < j and isPrefixAndSuffix(words[i], words[j]) is true."
+  ]
+}

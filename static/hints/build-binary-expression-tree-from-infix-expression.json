@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of an infix expression. Infix notation places operators between operands, like '3 + 4'. Your goal is to convert this into a binary expression tree where each node represents an operator and its children represent operands."
+    },
+    {
+      "content": "Familiarize yourself with operator precedence and associativity. For example, multiplication and division have higher precedence than addition and subtraction. This will affect how you construct your tree."
+    },
+    {
+      "content": "Consider using the Shunting Yard algorithm by Edsger Dijkstra to convert the infix expression to postfix notation. This will help you easily build the binary expression tree."
+    },
+    {
+      "content": "Identify the operators and operands in the expression. You can use a stack to keep track of operators and a list to store operands as you parse the expression."
+    },
+    {
+      "content": "When you encounter an operator, check the stack for operators with higher or equal precedence. This will help you determine when to pop operators off the stack and create tree nodes."
+    },
+    {
+      "content": "Remember to handle parentheses correctly. When you see a '(', push it onto the stack. When you see a ')', pop from the stack until you find the matching '('."
+    },
+    {
+      "content": "As you build the tree, each time you pop an operator from the stack, create a new tree node. The popped operator becomes the parent node, and the two most recent operands become its children."
+    },
+    {
+      "content": "Ensure you handle unary operators correctly. For example, in expressions like '-3 + 4', you need to differentiate between unary minus and binary subtraction."
+    },
+    {
+      "content": "After processing the entire expression, there may still be operators left in the stack. These should be popped and used to create additional tree nodes."
+    },
+    {
+      "content": "Consider edge cases such as empty strings or invalid expressions. Your implementation should handle these gracefully, perhaps by returning null or throwing an error."
+    },
+    {
+      "content": "Think about how you will represent the binary expression tree. Each node should have a value for the operator and pointers to the left and right children for the operands."
+    },
+    {
+      "content": "Make sure to test your implementation with various expressions, including those with different levels of nesting and combinations of operators."
+    },
+    {
+      "content": "When constructing the tree, consider using a recursive approach for clarity. This can simplify the process of building subtrees from the operators and operands."
+    },
+    {
+      "content": "After building the tree, think about how you will traverse it for evaluation or printing. In-order traversal can be useful for displaying the expression in infix form."
+    },
+    {
+      "content": "Finally, ensure that your implementation is efficient. Aim for a time complexity of O(n) where n is the length of the input expression, as you will need to process each character."
+    }
+  ],
+  "questionNotes": [
+    "The input expression will contain single-digit integers and operators (+, -, *, /).",
+    "You need to handle operator precedence and associativity correctly.",
+    "Parentheses can be used to alter the normal precedence of operators.",
+    "The output should be a binary expression tree, where each node represents an operator or operand."
+  ]
+}

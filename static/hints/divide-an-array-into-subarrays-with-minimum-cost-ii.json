@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the cost of a subarray. The cost is simply the first element of the subarray. For example, in the subarray [3, 4, 1], the cost is 3."
+    },
+    {
+      "content": "Remember that you need to divide the array into exactly `k` contiguous subarrays. Think about how you can represent the starting indices of these subarrays."
+    },
+    {
+      "content": "The constraint `i_k-1 - i_1 <= dist` means that the starting index of the last subarray must not be too far from the starting index of the second subarray. This is crucial for determining valid splits."
+    },
+    {
+      "content": "Consider using dynamic programming to keep track of the minimum cost of dividing the array up to each index with a certain number of subarrays. This approach can help you build the solution incrementally."
+    },
+    {
+      "content": "Define a DP table where `dp[j][i]` represents the minimum cost to divide the first `i` elements into `j` subarrays. Think about the base cases for when `j = 1`."
+    },
+    {
+      "content": "When filling out the DP table, you will need to consider all possible previous subarray endings. For each possible starting point of the last subarray, calculate the cost and update the DP table."
+    },
+    {
+      "content": "Pay attention to the range of indices you can use for the last subarray. You need to ensure that the starting index of the last subarray is within the `dist` constraint from the starting index of the second subarray."
+    },
+    {
+      "content": "To optimize the search for valid starting points, consider maintaining a sliding window or deque to efficiently find the minimum cost in the previous subarrays."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when `k` is equal to `n`. In this case, each element would be its own subarray."
+    },
+    {
+      "content": "Think about how to initialize your DP table. The first row (for `j = 1`) should be straightforward since it only involves taking the first element as the cost."
+    },
+    {
+      "content": "As you implement the DP transitions, ensure that you are correctly updating the minimum costs based on the valid indices that respect the `dist` constraint."
+    },
+    {
+      "content": "After filling the DP table, the answer will be found in `dp[k][n]`, where `n` is the length of the array. This will give you the minimum cost of dividing the entire array into `k` subarrays."
+    },
+    {
+      "content": "Consider the time complexity of your approach. The naive implementation might be too slow, so look for ways to reduce the number of checks you perform when updating the DP table."
+    },
+    {
+      "content": "Make sure to test your solution with edge cases, such as the smallest and largest possible values for `n`, `k`, and `dist`, and arrays with identical elements."
+    },
+    {
+      "content": "Finally, as you approach the end of your implementation, ensure that your code handles all possible input sizes efficiently and adheres to the constraints provided in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "The cost of a subarray is defined as the first element of that subarray.",
+    "You must divide the array into exactly `k` contiguous subarrays.",
+    "The difference between the starting indices of the second and last subarrays must be less than or equal to `dist`.",
+    "Constraints: 3 <= n <= 100000, 1 <= nums[i] <= 10^9, 3 <= k <= n, k - 2 <= dist <= n - 2."
+  ]
+}

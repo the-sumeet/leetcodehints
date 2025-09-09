@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the operation you need to perform: removing floor(piles[i] / 2) stones from any pile. This means that the number of stones removed is always half of the current pile size, rounded down."
+    },
+    {
+      "content": "Consider how many times you can apply the operation on the same pile. If you apply it repeatedly on the same pile, the number of stones will keep decreasing, but at a diminishing rate."
+    },
+    {
+      "content": "Think about the effect of choosing different piles for each operation. If you always choose the pile with the maximum stones, you will likely minimize the total stones remaining more effectively."
+    },
+    {
+      "content": "To efficiently find the pile with the maximum stones, consider using a max-heap (or priority queue). This data structure allows you to quickly access and modify the largest element."
+    },
+    {
+      "content": "When you remove stones from a pile, you need to update the heap with the new number of stones in that pile. Make sure to push the updated value back into the heap after each operation."
+    },
+    {
+      "content": "Remember to keep track of how many operations you have performed. You need to apply the operation exactly k times, so ensure your loop or recursive structure reflects this."
+    },
+    {
+      "content": "After performing k operations, you will need to calculate the total number of stones remaining. This can be done by summing up the values in your piles array or heap."
+    },
+    {
+      "content": "Consider edge cases such as when k is larger than the number of stones in all piles combined. How would your logic handle such situations? Ensure your solution can handle these scenarios gracefully."
+    },
+    {
+      "content": "Make sure to account for the constraints given in the problem, especially the maximum size of the piles array and the values within it. This will impact your choice of data structures and algorithms."
+    },
+    {
+      "content": "As a final step, think about how you can implement the max-heap operations efficiently. You might want to look into the time complexity of inserting and removing elements from the heap."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= piles.length <= 10^5",
+    "1 <= piles[i] <= 10^4",
+    "1 <= k <= 10^5",
+    "You must apply the operation exactly k times.",
+    "The return value should be the total number of stones remaining after k operations."
+  ]
+}

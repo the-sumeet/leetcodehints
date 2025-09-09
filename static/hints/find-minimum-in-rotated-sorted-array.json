@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of a rotated sorted array. The array is originally sorted in ascending order, and then it has been rotated. This means that there is a point where the order is disrupted. Can you identify where this disruption occurs?"
+    },
+    {
+      "content": "Consider how you would normally find the minimum in a sorted array. In a rotated sorted array, the minimum element is the point where the next element is smaller than the current element. Think about how you can leverage this property."
+    },
+    {
+      "content": "You should use a binary search approach to achieve O(log n) time complexity. Remember that in binary search, you typically maintain two pointers: one for the left end and one for the right end of the search space."
+    },
+    {
+      "content": "As you perform the binary search, compare the middle element with the rightmost element. This will help you determine which half of the array is sorted and where to search next. What can you infer if the middle element is greater than the rightmost element?"
+    },
+    {
+      "content": "If the middle element is less than the rightmost element, it indicates that the minimum must be in the left half, including the middle element. Conversely, if the middle element is greater, the minimum must be in the right half. How would you adjust your pointers based on these comparisons?"
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when the array is not rotated at all. In this case, the first element is the minimum. How will you check if the left pointer equals the right pointer?"
+    },
+    {
+      "content": "Consider the scenario where the array has only one element. What should your function return in this case? How does this affect your implementation of the binary search?"
+    },
+    {
+      "content": "Make sure to account for the constraints given in the problem. For example, the array contains unique elements and is guaranteed to be non-empty. How does this simplify your checks for duplicates?"
+    },
+    {
+      "content": "As you implement the binary search, remember to update your left and right pointers correctly based on the comparisons you've made. What would your loop condition look like?"
+    },
+    {
+      "content": "Finally, once your binary search completes, you should return the minimum element found. What will your return statement look like, and how will you ensure it captures the minimum correctly?"
+    }
+  ],
+  "questionNotes": [
+    "The array is sorted and rotated between 1 and n times.",
+    "All elements in the array are unique.",
+    "The length of the array is between 1 and 5000.",
+    "The values in the array range from -5000 to 5000.",
+    "You need to return the minimum element from the array."
+  ]
+}

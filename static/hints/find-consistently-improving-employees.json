@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tables. You have two tables: `employees` and `performance_reviews`. Each employee can have multiple performance reviews, and you need to focus on the last three reviews for each employee."
+    },
+    {
+      "content": "Make sure to filter employees who have at least three reviews. This is crucial because only those employees can be considered for the 'consistently improving' criteria."
+    },
+    {
+      "content": "To find the last three reviews for each employee, consider using a common table expression (CTE) or a subquery that ranks the reviews by date. Use `ROW_NUMBER()` to assign a rank based on `review_date`."
+    },
+    {
+      "content": "Once you have the last three reviews, check if the ratings are strictly increasing. This means that for each review, the rating should be greater than the previous one."
+    },
+    {
+      "content": "You can use a `CASE` statement or a simple conditional check to determine if the ratings are strictly increasing. For example, if you have ratings `r1`, `r2`, and `r3`, check if `r1 < r2 < r3`."
+    },
+    {
+      "content": "Calculate the improvement score as the difference between the highest and lowest ratings among the last three reviews. This can be done using the `MAX()` and `MIN()` functions."
+    },
+    {
+      "content": "Remember to return the results in the specified format. You need to include `employee_id`, `name`, and `improvement_score` in your final output."
+    },
+    {
+      "content": "Sort the results first by `improvement_score` in descending order, and then by `name` in ascending order. This will ensure that the employees with the highest improvement scores appear first."
+    },
+    {
+      "content": "Consider edge cases such as employees with exactly three reviews that have the same rating, or employees who have more than three reviews but the last three do not show improvement."
+    },
+    {
+      "content": "Finally, put all the pieces together. You will need to join the `employees` table with your derived table of last three reviews, apply the necessary filters, and format the output correctly."
+    }
+  ],
+  "questionNotes": [
+    "Employees must have at least 3 reviews to be considered.",
+    "The last 3 reviews must show strictly increasing ratings.",
+    "Return the results ordered by improvement score (descending) and name (ascending).",
+    "The improvement score is the difference between the highest and lowest ratings among the last three reviews."
+  ]
+}

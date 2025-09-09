@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence can be formed by deleting some elements of the array while maintaining the order of the remaining elements. For example, from [1, 2, 3], you can form [1, 3] or [2] or even [1, 2, 3] itself."
+    },
+    {
+      "content": "Consider the constraints given in the problem. The condition j - i <= k means that the indices of the selected elements in the subsequence must not be too far apart. Think about how this might limit your choices for forming the subsequence."
+    },
+    {
+      "content": "Identify the maximum sum of a non-empty subsequence. This means you should at least include one element from the array. What would be your approach if the array contained only negative numbers?"
+    },
+    {
+      "content": "Think about how you can use dynamic programming to keep track of the maximum sum at each index. You might want to maintain an array `dp` where `dp[i]` represents the maximum sum of a valid subsequence ending at index `i`."
+    },
+    {
+      "content": "As you build your `dp` array, remember to consider the last `k` elements before the current index `i`. You can only add `nums[i]` to the sum of these previous elements if they are within the distance constraint."
+    },
+    {
+      "content": "To efficiently find the maximum sum from the last `k` elements, consider using a data structure that allows you to quickly get the maximum value, such as a deque or a sliding window approach."
+    },
+    {
+      "content": "Initialize your `dp` array with the values from `nums`, since the minimum valid subsequence at each index is the element itself. This also helps in handling edge cases where all elements might be negative."
+    },
+    {
+      "content": "When iterating through the array to fill your `dp` array, ensure that you handle the case where `i < k`. For these indices, you can only consider the elements before `i` that are valid according to the subsequence rules."
+    },
+    {
+      "content": "As you compute the maximum sums, keep track of the overall maximum sum found in the `dp` array. This will be your final result."
+    },
+    {
+      "content": "Remember to handle edge cases such as when all numbers are negative. In such cases, your result should be the largest single element, which is still a valid subsequence."
+    },
+    {
+      "content": "Think about the time complexity of your solution. Since you are iterating through the array and potentially checking up to `k` previous elements, how can you optimize this to ensure it runs efficiently for large input sizes?"
+    },
+    {
+      "content": "Consider how you might implement the sliding window technique to maintain the maximum value of the last `k` elements. This could help reduce the time complexity of your solution."
+    },
+    {
+      "content": "Before finalizing your approach, write down the pseudocode for your dynamic programming solution. This will help you visualize how the data flows and ensure you don't miss any edge cases."
+    },
+    {
+      "content": "Make sure to test your solution with various edge cases, including arrays of size 1, arrays with all negative numbers, and arrays where `k` is equal to the length of the array."
+    },
+    {
+      "content": "You are very close! Your final implementation should compute the maximum sum of valid subsequences while adhering to the constraints. Focus on maintaining the current maximum and updating it as you iterate through the array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= nums.length <= 10^5",
+    "Element range: -10^4 <= nums[i] <= 10^4",
+    "The subsequence must be non-empty.",
+    "Return the maximum sum as an integer."
+  ]
+}

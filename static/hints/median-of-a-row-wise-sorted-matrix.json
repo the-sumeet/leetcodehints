@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider the properties of the matrix. Each row is sorted in non-decreasing order. This means that for any given row, the elements are arranged from smallest to largest."
+    },
+    {
+      "content": "Think about how to find the median in a sorted array. The median is the middle element if the number of elements is odd, and the average of the two middle elements if it is even."
+    },
+    {
+      "content": "Since the matrix is sorted row-wise, you can leverage this property to efficiently find the median without flattening the entire matrix. Consider how you might combine the rows to find the overall median."
+    },
+    {
+      "content": "To find the median, you need to determine the total number of elements in the matrix. This is simply the number of rows multiplied by the number of columns."
+    },
+    {
+      "content": "Keep in mind that the median's position depends on whether the total number of elements is odd or even. If odd, the median is at index (n // 2), and if even, it is the average of elements at indices (n // 2 - 1) and (n // 2)."
+    },
+    {
+      "content": "You might want to use a binary search approach to find the median. Consider how you could apply binary search across the possible values in the matrix rather than the indices."
+    },
+    {
+      "content": "When using binary search, define a range based on the smallest and largest elements in the matrix. This will help you narrow down the potential median values."
+    },
+    {
+      "content": "As you perform the binary search, count how many numbers are less than or equal to the mid value. This can help you determine if you need to adjust your search range."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the matrix has only one row or one column. Also, consider what happens if all elements are the same."
+    },
+    {
+      "content": "Once you have the count of elements less than or equal to the mid value, check if this count corresponds to the median's position. Adjust your search range accordingly until you converge on the median."
+    }
+  ],
+  "questionNotes": [
+    "The matrix is guaranteed to be non-empty and sorted row-wise.",
+    "The median is defined as the middle element or the average of the two middle elements.",
+    "Ensure you handle both odd and even total element counts correctly.",
+    "Consider edge cases such as single-row or single-column matrices."
+  ]
+}

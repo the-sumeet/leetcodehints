@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the base case of the sequence. The first term of the count-and-say sequence is simply '1'. This means that countAndSay(1) = '1'."
+    },
+    {
+      "content": "Consider how to generate the next term from the previous one. For example, if you have countAndSay(2) = '11', think about how you would describe this term in terms of counts."
+    },
+    {
+      "content": "The key operation is run-length encoding (RLE). For a given string, you need to count consecutive identical characters and then form a new string based on these counts and characters."
+    },
+    {
+      "content": "When implementing the RLE, keep track of the current character and a count of how many times it appears consecutively. For example, in the string '222', you would count '3' occurrences of '2'."
+    },
+    {
+      "content": "Think about how to transition from one term to the next. You can use a loop to iterate through the characters of the current term and apply the RLE process."
+    },
+    {
+      "content": "Make sure to handle the end of the string correctly. After finishing the loop, you may still have a count to append for the last character you were counting."
+    },
+    {
+      "content": "Consider edge cases, such as when n = 1. Ensure your function correctly returns '1' without attempting to process further."
+    },
+    {
+      "content": "You can implement this both recursively and iteratively. If you're aiming for an iterative solution, think about using a loop to build the sequence up to n."
+    },
+    {
+      "content": "Remember that the constraints specify 1 <= n <= 30. This means your solution should be efficient enough to handle up to the 30th term without performance issues."
+    },
+    {
+      "content": "To get closer to a solution, start by writing a function that takes a string and returns its RLE. Then, use this function to build the count-and-say sequence iteratively."
+    }
+  ],
+  "questionNotes": [
+    "The sequence starts with countAndSay(1) = '1'.",
+    "Each term is derived from the previous term using run-length encoding.",
+    "Constraints: 1 <= n <= 30.",
+    "Output must be a string representing the nth term of the sequence."
+  ]
+}

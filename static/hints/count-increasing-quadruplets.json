@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of an increasing quadruplet. You need to find indices (i, j, k, l) such that they satisfy the conditions: 0 <= i < j < k < l < n, and nums[i] < nums[k] < nums[j] < nums[l]."
+    },
+    {
+      "content": "Remember that the array contains unique integers from 1 to n. This means every number appears exactly once, which can simplify some comparisons."
+    },
+    {
+      "content": "Consider the constraints of the problem. With n being as large as 4000, a brute force solution that checks all quadruplets would be inefficient. Think about how you can reduce the number of checks."
+    },
+    {
+      "content": "You might want to fix the indices j and l first, since they are the outer indices in the quadruplet. This can help you focus on finding suitable i and k."
+    },
+    {
+      "content": "For fixed j and l, iterate through possible values of i and k. Ensure that i < j and k < l to maintain the required order."
+    },
+    {
+      "content": "When iterating for i, count how many valid indices exist for k such that nums[k] is greater than nums[i] and less than nums[j]. You can use a nested loop for this."
+    },
+    {
+      "content": "To efficiently count valid k's for each i, consider using a data structure that allows you to quickly query how many numbers fall within a specific range."
+    },
+    {
+      "content": "Think about using a Fenwick Tree (Binary Indexed Tree) or a Segment Tree to maintain counts of numbers that can be valid k's as you iterate through j and l."
+    },
+    {
+      "content": "As you loop through j and l, update your data structure with the current value of nums[k] when you find a valid k, so you can use it for future i's."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when n is at its minimum (4). There should be no quadruplets if the numbers are in strictly increasing order."
+    },
+    {
+      "content": "Consider the time complexity of your approach. The goal is to reduce the overall complexity to something manageable, ideally O(n^2 log n) or better."
+    },
+    {
+      "content": "After fixing j and l, your inner loop should efficiently count valid pairs (i, k) that satisfy the quadruplet conditions. Think about how to combine counts."
+    },
+    {
+      "content": "You will need to return the total count of valid quadruplets found. Keep a running total as you iterate through the possible indices."
+    },
+    {
+      "content": "Make sure to test your solution with edge cases, such as reversed arrays or arrays with the minimum number of elements, to ensure it handles all scenarios."
+    },
+    {
+      "content": "Finally, think about how you can structure your loops to avoid unnecessary checks and ensure that you are only counting valid quadruplets."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 4 <= nums.length <= 4000",
+    "1 <= nums[i] <= nums.length",
+    "All integers in nums are unique.",
+    "nums is a permutation of numbers from 1 to n.",
+    "Return the count of valid quadruplets."
+  ]
+}

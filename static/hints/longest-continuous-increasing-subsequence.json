@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a continuous increasing subsequence is. It means that the elements must be adjacent in the array and must be in strictly increasing order. For example, in the array [1, 3, 5, 4, 7], the subsequence [1, 3, 5] is valid, but [1, 3, 5, 7] is not because of the 4 in between."
+    },
+    {
+      "content": "Think about how you can traverse the array to identify these increasing sequences. You will need to compare each element with the next one to see if the sequence continues to increase."
+    },
+    {
+      "content": "Consider using a variable to keep track of the current length of the increasing subsequence as you iterate through the array. Reset this length whenever you encounter a non-increasing pair of elements."
+    },
+    {
+      "content": "Don't forget to maintain a variable to store the maximum length found so far. This will help you keep track of the longest increasing subsequence as you go through the array."
+    },
+    {
+      "content": "When you find that the current element is not less than the next one, you should compare the current length of the increasing sequence with the maximum length and update it if necessary."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the input array has only one element. In that case, the longest increasing subsequence is simply that single element, so the length should be 1."
+    },
+    {
+      "content": "Remember that the problem specifies a strict increase, meaning that two equal elements do not count as part of an increasing sequence. For example, in [2, 2, 2, 2, 2], the longest increasing subsequence is just one of the 2s."
+    },
+    {
+      "content": "As you iterate through the array, you can use a simple loop to check each pair of adjacent elements. If `nums[i] < nums[i + 1]`, you can increase your current length counter."
+    },
+    {
+      "content": "At the end of your loop, don't forget to check the last counted increasing sequence against the maximum length. This ensures that if the longest sequence ends at the last element, it is accounted for."
+    },
+    {
+      "content": "Your final step should be to return the maximum length found. Make sure your function adheres to the expected return format, which is just an integer representing the length of the longest increasing subsequence."
+    }
+  ],
+  "questionNotes": [
+    "The subsequence must be strictly increasing.",
+    "Only continuous elements in the array count towards the subsequence.",
+    "Constraints: 1 <= nums.length <= 10^4 and -10^9 <= nums[i] <= 10^9.",
+    "Return the length of the longest continuous increasing subsequence as an integer."
+  ]
+}

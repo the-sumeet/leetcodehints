@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to search for a node in a Binary Search Tree (BST). Recall that in a BST, for any given node, all values in the left subtree are less than the node's value, and all values in the right subtree are greater."
+    },
+    {
+      "content": "Implement a function to find the node with the given key. You can use a simple recursive or iterative approach to traverse the tree. Remember to handle cases where the key is not found."
+    },
+    {
+      "content": "Once you find the node to delete, consider the three possible cases for deletion: 1) The node is a leaf (no children), 2) The node has one child, and 3) The node has two children. Each case will require a different approach to maintain the properties of the BST."
+    },
+    {
+      "content": "For the case where the node has two children, you need to find the node's in-order predecessor or successor. The in-order predecessor is the maximum value in the left subtree, while the in-order successor is the minimum value in the right subtree."
+    },
+    {
+      "content": "When deleting a node with two children, replace the node's value with its in-order predecessor or successor's value, and then delete that predecessor or successor node. This ensures the BST properties are maintained."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the tree is empty (root is null) or when the key to delete does not exist in the tree. In these cases, you should return the original tree."
+    },
+    {
+      "content": "Consider the return type of your function. You need to return the updated root of the BST after deletion. If the root itself is deleted, ensure that you return the new root."
+    },
+    {
+      "content": "Think about the time complexity of your solution. The goal is to achieve O(height of tree) time complexity, which is efficient for balanced trees. This means you should avoid unnecessary traversals."
+    },
+    {
+      "content": "As you implement your solution, use test cases to validate your logic. For example, test with a tree that has only one node, a tree with multiple nodes, and a tree where the node to delete is a leaf, has one child, or has two children."
+    },
+    {
+      "content": "Finally, put everything together in your function. Start with finding the node, then handle the deletion based on the cases discussed. Remember to return the updated root at the end of your function."
+    }
+  ],
+  "questionNotes": [
+    "The number of nodes in the tree is in the range [0, 10^4].",
+    "Node values are unique and within the range [-10^5, 10^5].",
+    "The function should return the root of the updated BST after deletion.",
+    "If the key does not exist, return the original tree.",
+    "Consider edge cases such as an empty tree or deleting the root node."
+  ]
+}

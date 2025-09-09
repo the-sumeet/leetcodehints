@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Consider how the array is structured: it is sorted but rotated. This means that there is a point of rotation where the order is disrupted. Your goal is to find this point to identify the minimum value."
+    },
+    {
+      "content": "Remember that the array can contain duplicates. This means that elements can repeat, which may affect how you decide to narrow down your search space."
+    },
+    {
+      "content": "Think about how you would normally find the minimum in a sorted array. In a non-rotated sorted array, the minimum is simply the first element. However, in a rotated array, the minimum will be somewhere between the rotation point and the end of the array."
+    },
+    {
+      "content": "You can use a binary search approach to find the minimum. Start by defining two pointers, `left` and `right`, to represent the bounds of your search space."
+    },
+    {
+      "content": "In each iteration of your binary search, calculate the middle index. Compare the middle element with the rightmost element to determine which half of the array is sorted."
+    },
+    {
+      "content": "If the middle element is less than the rightmost element, it means the minimum must be in the left half, so you can adjust your `right` pointer. Conversely, if the middle element is greater, the minimum is in the right half."
+    },
+    {
+      "content": "When the middle element is equal to the rightmost element, you cannot determine which half is sorted. In this case, decrement the `right` pointer to skip the duplicate."
+    },
+    {
+      "content": "Keep in mind that the loop will continue until `left` is less than `right`. At that point, `left` should point to the minimum element."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the array has only one element or when all elements are the same. In these cases, the minimum is simply the only element present."
+    },
+    {
+      "content": "Consider the time complexity of your approach. The binary search method should ideally run in O(log n) time, but due to duplicates, it may degrade to O(n) in the worst case."
+    },
+    {
+      "content": "Think about how you will return the result. You need to return the minimum element found in the array, so ensure your function has a return statement that outputs this value."
+    },
+    {
+      "content": "As you implement your solution, remember to test it against various scenarios, including arrays with duplicates, arrays that are not rotated, and edge cases with a single element."
+    },
+    {
+      "content": "You may want to create a helper function to encapsulate the binary search logic, which can help keep your code organized and easier to read."
+    },
+    {
+      "content": "Before finalizing your solution, review the constraints provided in the problem statement. Ensure your solution adheres to the limits on array size and element values."
+    },
+    {
+      "content": "Now, try to write out the binary search logic in pseudocode. Focus on how you will adjust the `left` and `right` pointers based on the comparisons you make."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 5000, -5000 <= nums[i] <= 5000.",
+    "The array is sorted and rotated between 1 and n times.",
+    "The array may contain duplicates, which can affect the search strategy.",
+    "Return the minimum element from the array."
+  ]
+}

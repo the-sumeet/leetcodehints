@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to traverse a linked list. You will need to iterate through the list to access each digit of the number represented by the linked list."
+    },
+    {
+      "content": "Remember that the linked list represents a number in reverse order. For example, the linked list [1,8,9] represents the number 189. This means you must process the digits from the least significant to the most significant."
+    },
+    {
+      "content": "Think about how to double a number. When you double a digit, it can result in a carry if the result is 10 or greater. For example, doubling 9 results in 18, which means you'll have to carry over 1 to the next digit."
+    },
+    {
+      "content": "As you traverse the linked list, maintain a variable to keep track of any carry from the previous digit. This will help you correctly calculate the new value for each node."
+    },
+    {
+      "content": "When doubling a digit, if you encounter a carry, add it to the doubled value. For instance, if you're doubling 9 and have a carry of 1, you would calculate (9 * 2) + 1."
+    },
+    {
+      "content": "Consider the case where the last digit results in a carry. You might need to add a new node to the linked list to accommodate this carry. This is particularly important if the final result has more digits than the original number."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the input linked list represents a single digit like [0]. Doubling zero should still result in zero."
+    },
+    {
+      "content": "As you build the new linked list, think about how to construct it. You may want to use a dummy head node to simplify the process of adding new nodes."
+    },
+    {
+      "content": "After processing all nodes, ensure that you return the correct head of the new linked list. If you've used a dummy node, return the next node of the dummy head."
+    },
+    {
+      "content": "Finally, consider the overall time complexity of your solution. You should aim for O(n), where n is the length of the linked list, since you will be traversing the list once."
+    }
+  ],
+  "questionNotes": [
+    "The linked list represents a non-negative integer without leading zeroes.",
+    "The number of nodes in the list is in the range [1, 10^4].",
+    "Each node's value is between 0 and 9.",
+    "The result must also be represented as a linked list, with no leading zeroes."
+  ]
+}

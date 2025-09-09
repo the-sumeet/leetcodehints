@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a substring is. A substring is any contiguous sequence of characters within the string. For example, from the string 'abc', the substrings include 'a', 'ab', 'abc', 'b', 'bc', and 'c'."
+    },
+    {
+      "content": "Consider how many substrings can be generated from a string of length n. The total number of substrings is given by the formula n * (n + 1) / 2. This can help you understand the scale of the problem."
+    },
+    {
+      "content": "Identify the vowels in the string. The vowels are 'a', 'e', 'i', 'o', and 'u'. You will need to check each character in the string to see if it is a vowel."
+    },
+    {
+      "content": "Think about how to efficiently count the vowels in all substrings. Instead of generating all substrings, consider how many times each character contributes to the total count of vowels in the substrings that include it."
+    },
+    {
+      "content": "For a character at index i in the string, determine how many substrings include this character. This can be calculated as (i + 1) * (n - i), where n is the length of the string."
+    },
+    {
+      "content": "Now, if the character at index i is a vowel, you can multiply its contribution by the number of substrings that include it. This will allow you to sum the contributions of all vowels in the string."
+    },
+    {
+      "content": "Consider edge cases, such as strings with no vowels at all. Ensure your solution handles these cases correctly, returning a sum of 0 when there are no vowels."
+    },
+    {
+      "content": "Keep in mind the constraints of the problem. The string length can be up to 100,000, so your solution should be efficient, ideally O(n), to handle the upper limits within a reasonable time."
+    },
+    {
+      "content": "Be cautious with the data types you use for the sum of vowels. Since the result may not fit in a signed 32-bit integer, consider using a larger data type or a language feature that can handle big integers."
+    },
+    {
+      "content": "Finally, implement your logic step by step: first, iterate through the string to check for vowels, then calculate their contributions based on their positions, and sum these contributions to get the final result."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= word.length <= 10^5",
+    "Vowels are defined as 'a', 'e', 'i', 'o', and 'u'.",
+    "A substring is a contiguous sequence of characters.",
+    "The result may not fit in a signed 32-bit integer."
+  ]
+}

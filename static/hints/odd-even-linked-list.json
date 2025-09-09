@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a singly linked list. Each node has a value and a pointer to the next node. For this problem, you will need to traverse the list and keep track of the indices of the nodes."
+    },
+    {
+      "content": "Remember that the first node is considered at index 0 (even), the second node at index 1 (odd), and so on. This means that you will need to separate nodes based on their indices."
+    },
+    {
+      "content": "Think about how you can maintain two separate lists: one for odd-indexed nodes and another for even-indexed nodes. You can do this by using pointers to track the heads and tails of these two lists."
+    },
+    {
+      "content": "As you traverse the original list, you can append nodes to the odd or even list based on their index. Make sure to update the next pointers accordingly to maintain the order."
+    },
+    {
+      "content": "Consider edge cases such as an empty list or a list with only one node. In these cases, the output should simply be the input list itself."
+    },
+    {
+      "content": "Once you have separated the odd and even nodes, you will need to connect the last node of the odd list to the head of the even list. This is crucial for forming the final reordered list."
+    },
+    {
+      "content": "Pay attention to how you handle the pointers. After separating the lists, ensure that the last node of the odd list points to `null` to avoid any potential cycles."
+    },
+    {
+      "content": "You will need to keep track of the current node as you traverse the list. Use a loop to go through the original list while maintaining a counter to determine the index."
+    },
+    {
+      "content": "When implementing your solution, ensure that you are not using any additional data structures that would increase space complexity beyond O(1). You should only use a few pointers."
+    },
+    {
+      "content": "To finalize your solution, remember to return the head of the reordered list, which will be the head of the odd indexed nodes. Make sure to test your implementation with various test cases."
+    }
+  ],
+  "questionNotes": [
+    "The first node is considered odd (index 1), the second is even (index 2), and so forth.",
+    "The relative order of nodes in both odd and even groups must remain the same as in the input.",
+    "Constraints: The number of nodes is in the range [0, 10^4].",
+    "Node values can range from -10^6 to 10^6."
+  ]
+}

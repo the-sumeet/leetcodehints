@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. Since both dimensions are even, the matrix can be divided into concentric layers. Each layer can be thought of as a ring of elements that can be rotated independently."
+    },
+    {
+      "content": "Identify how many layers your grid has. For an m x n matrix, you can find the number of layers by calculating `min(m, n) / 2`. Each layer will be rotated separately."
+    },
+    {
+      "content": "For each layer, extract its elements into a list. This will make it easier to perform the cyclic rotation. You can traverse the layer starting from the top-left corner and moving counter-clockwise."
+    },
+    {
+      "content": "When rotating the layer, remember that rotating it k times is equivalent to rotating it `k % length_of_layer` times. This optimization prevents unnecessary full rotations."
+    },
+    {
+      "content": "Implement the rotation logic for a single layer first. You can use a list to store the elements of the layer, then shift the elements based on the rotation count."
+    },
+    {
+      "content": "Once you have the rotated layer, you need to place the elements back into their original positions in the grid. Make sure to carefully map the indices from your list back to the grid."
+    },
+    {
+      "content": "Consider edge cases where k is larger than the number of elements in the layer. Using the modulo operation helps handle this without extra computations."
+    },
+    {
+      "content": "Test your function with various grid sizes and rotation counts. Pay attention to grids that are small (like 2x2) and larger grids (like 4x4 or 6x6) to ensure your solution works in all scenarios."
+    },
+    {
+      "content": "After implementing the rotation for one layer, extend your logic to handle all layers in the matrix. Loop through each layer and apply the rotation sequentially."
+    },
+    {
+      "content": "Finally, ensure that your function returns the modified grid in the correct format. Double-check that the output matches the expected structure of a 2D list."
+    }
+  ],
+  "questionNotes": [
+    "Both m and n are even integers.",
+    "The matrix can be divided into concentric layers.",
+    "Cyclic rotation should be done counter-clockwise.",
+    "k can be very large; use k % length_of_layer to optimize.",
+    "Return format must be a 2D list representing the rotated grid."
+  ]
+}

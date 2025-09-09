@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a 2D array `flowers` where each sub-array contains two integers representing the start and end times of when a flower is in bloom."
+    },
+    {
+      "content": "Next, note that the `people` array contains the times at which each person arrives. Your task is to determine how many flowers are blooming at each of these times."
+    },
+    {
+      "content": "Consider how you might represent the blooming intervals of the flowers. You could think of each flower's blooming period as a range on a timeline."
+    },
+    {
+      "content": "One approach is to iterate through each person's arrival time and check how many flowers are blooming at that specific time. This could be done with a nested loop."
+    },
+    {
+      "content": "However, a nested loop could lead to a time complexity of O(n * m), where n is the number of people and m is the number of flowers. This may be inefficient for large inputs."
+    },
+    {
+      "content": "To optimize, consider sorting the `flowers` intervals and the `people` arrival times. This could allow you to efficiently count the number of flowers in bloom using a two-pointer technique."
+    },
+    {
+      "content": "When sorting, remember to keep track of the original indices of the `people` array so you can return the results in the correct order."
+    },
+    {
+      "content": "You may want to create a list of events. For each flower, create two events: one for when it starts blooming and one for when it stops blooming."
+    },
+    {
+      "content": "As you process the `people` array, you can maintain a count of currently blooming flowers by updating this count based on the events you've created."
+    },
+    {
+      "content": "Consider edge cases, such as when all flowers bloom before the earliest person arrives or when no flowers are blooming at the time of a person's arrival."
+    },
+    {
+      "content": "Make sure to handle the inclusive nature of the blooming periods correctly. A flower that blooms from start to end is considered blooming at both times."
+    },
+    {
+      "content": "Think about using a binary search approach to quickly find how many flowers are blooming at each person's arrival time after sorting the events."
+    },
+    {
+      "content": "Remember to account for the constraints given in the problem, such as the maximum size of the `flowers` and `people` arrays, and the range of their values."
+    },
+    {
+      "content": "When constructing your final answer array, ensure that you are placing the counts in the same order as the original `people` array."
+    },
+    {
+      "content": "As a final step, review your logic for counting the blooming flowers. You might want to visualize or trace through a few examples to ensure correctness."
+    }
+  ],
+  "questionNotes": [
+    "1 <= flowers.length <= 5 * 10^4",
+    "flowers[i].length == 2",
+    "1 <= start_i <= end_i <= 10^9",
+    "1 <= people.length <= 5 * 10^4",
+    "1 <= people[i] <= 10^9",
+    "Return an integer array where answer[i] corresponds to the count of blooming flowers at people[i]'s arrival time."
+  ]
+}

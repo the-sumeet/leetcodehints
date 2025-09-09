@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the structure of the encoded string. Notice that it consists of numbers followed by square brackets containing the string to be repeated. For example, in '3[a]', '3' is the number of times 'a' should be repeated."
+    },
+    {
+      "content": "Think about how you can parse through the string. You may want to use a stack to handle the nested structure of the encoded strings, especially when you have multiple layers of brackets."
+    },
+    {
+      "content": "When you encounter a digit, you need to determine the full number it represents. Remember that a number can have more than one digit, so you should keep reading until you hit a non-digit character."
+    },
+    {
+      "content": "As you parse the string, push the current string and the repeat count onto the stack when you encounter an opening bracket '['. This will help you keep track of where to return after processing the enclosed string."
+    },
+    {
+      "content": "When you find a closing bracket ']', you should pop from the stack to get the last repeat count and the last string. Then, repeat the current string as needed and concatenate it back to the previous string."
+    },
+    {
+      "content": "Consider edge cases such as nested brackets. For example, in '3[a2[c]]', you need to decode 'a2[c]' first before repeating it three times. Make sure your logic can handle this correctly."
+    },
+    {
+      "content": "Keep in mind the constraints of the problem. The length of the output will never exceed 100,000 characters, so ensure your solution is efficient in both time and space."
+    },
+    {
+      "content": "As you build the final decoded string, think about how to manage memory. You might want to use a list to collect parts of the string and join them at the end for efficiency."
+    },
+    {
+      "content": "When implementing your solution, ensure that you handle all characters correctly, including letters outside of brackets. They should be added to the current string as you parse through the input."
+    },
+    {
+      "content": "Finally, put all the pieces together. You should have a loop that processes each character in the string, using a stack to manage repeat counts and strings, and a mechanism to build the final result as you decode."
+    }
+  ],
+  "questionNotes": [
+    "The input string is guaranteed to be valid with well-formed brackets.",
+    "Only positive integers are used for repeat counts, and they will not exceed 300.",
+    "The output length will not exceed 100,000 characters.",
+    "The original data does not contain any digits or nested brackets beyond the specified format."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem: you need to create the shortest string that contains all the given strings as substrings. Think about how the strings can overlap with each other."
+    },
+    {
+      "content": "Consider the concept of string overlap. For two strings, you can find how much one string can overlap with another. This will help you minimize the length of the resulting superstring."
+    },
+    {
+      "content": "To compute the overlap between two strings, you can create a function that checks how many characters from the end of one string match the beginning of another. This can be done using a simple loop."
+    },
+    {
+      "content": "Remember that the order of strings matters. The same set of strings can produce different superstrings depending on the order in which they are concatenated."
+    },
+    {
+      "content": "Since the number of strings is relatively small (up to 12), think about generating all possible permutations of the strings. Each permutation will give you a different order to concatenate the strings."
+    },
+    {
+      "content": "When generating permutations, consider using a backtracking approach or the built-in permutations function in your programming language of choice. This will help you explore all possible combinations."
+    },
+    {
+      "content": "For each permutation, compute the superstring by concatenating the strings while taking overlaps into account. Keep track of the shortest superstring you find."
+    },
+    {
+      "content": "When concatenating strings in a permutation, use the overlap function to determine how much of the next string to include, avoiding duplication of characters."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when there is only one string in the input array. In this case, the shortest superstring is the string itself."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Generating all permutations is O(n!), and for each permutation, you will need to compute the superstring, which could add to the overall complexity."
+    },
+    {
+      "content": "As you implement your solution, ensure that you are correctly keeping track of the minimum length of the superstring found so far. You can use a variable to store this."
+    },
+    {
+      "content": "Consider edge cases where strings may have no overlap at all. In such cases, the superstring will simply be the concatenation of all strings."
+    },
+    {
+      "content": "If you find multiple superstrings of the same minimum length, remember that the problem states you can return any of them. This gives you some flexibility in your implementation."
+    },
+    {
+      "content": "As a final step, ensure that your function returns the correct format. You should return the shortest superstring as a single string."
+    },
+    {
+      "content": "To summarize, focus on generating permutations, calculating overlaps, and concatenating strings intelligently to minimize length. Start implementing these ideas step-by-step."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= words.length <= 12",
+    "Each string's length is between 1 and 20 characters.",
+    "All strings are unique and consist of lowercase English letters.",
+    "No string is a substring of another string in the input array.",
+    "If multiple shortest superstrings exist, return any of them."
+  ]
+}

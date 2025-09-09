@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the problem by visualizing the gene strings. Each gene string is made up of 8 characters from the set {'A', 'C', 'G', 'T'}. A mutation occurs when one character in the gene string is changed to another character."
+    },
+    {
+      "content": "Consider how you can represent the connections between gene strings. You can think of each valid gene string as a node in a graph, where an edge exists between two nodes if one can be mutated into the other by changing a single character."
+    },
+    {
+      "content": "Make sure to check if the endGene is present in the bank. If it is not, you can immediately return -1 since you cannot mutate to a gene that is not valid."
+    },
+    {
+      "content": "You will need a way to track the number of mutations. A breadth-first search (BFS) approach is suitable here, as it explores all possible mutations level by level, ensuring that you find the shortest path to the endGene."
+    },
+    {
+      "content": "In your BFS implementation, start from the startGene and explore all possible mutations. For each gene string, generate all possible single-character mutations and check if they exist in the bank."
+    },
+    {
+      "content": "Use a queue to facilitate the BFS. Enqueue the startGene along with a mutation count of 0. As you dequeue, generate mutations and enqueue any valid mutations that haven't been visited yet."
+    },
+    {
+      "content": "Remember to keep track of visited gene strings to avoid cycles and redundant work. You can use a set to store the visited genes."
+    },
+    {
+      "content": "When you find the endGene during your BFS, return the current mutation count. This will be the minimum number of mutations needed."
+    },
+    {
+      "content": "Consider edge cases such as when the bank is empty or when the startGene is the same as the endGene. In these cases, think about what your function should return."
+    },
+    {
+      "content": "Finally, ensure your BFS handles all possible mutations correctly. You can iterate over each character in the gene string and replace it with 'A', 'C', 'G', or 'T', checking for valid mutations in the bank."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= bank.length <= 10",
+    "startGene.length == endGene.length == bank[i].length == 8",
+    "startGene, endGene, and bank[i] consist of only the characters ['A', 'C', 'G', 'T']",
+    "If endGene is not in the bank, return -1.",
+    "The starting point (startGene) is assumed valid and might not be included in the bank."
+  ]
+}

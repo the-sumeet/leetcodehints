@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how multiplication works at a digit level. When multiplying two numbers, each digit of the first number is multiplied by each digit of the second number. Consider how you would do this manually on paper."
+    },
+    {
+      "content": "Think about how to represent the result of multiplying two strings. The maximum length of the product of two numbers can be at most the sum of their lengths. For example, multiplying a number with 3 digits by a number with 2 digits can yield a result with up to 5 digits."
+    },
+    {
+      "content": "You will need to create an array to hold the results of each multiplication step. The size of this array should be `num1.length + num2.length` to accommodate all possible carries and results."
+    },
+    {
+      "content": "When multiplying two digits, remember to account for the position of each digit. For example, multiplying `num1[i]` by `num2[j]` should affect the positions `i + j` and `i + j + 1` in your result array."
+    },
+    {
+      "content": "After filling in the result array with the products of each digit multiplication, you need to handle carries. Iterate through the result array from the last index to the first, adjusting each position based on any carry from the previous position."
+    },
+    {
+      "content": "Remember to skip any leading zeros in your final result. If your result array is filled with zeros (e.g., when multiplying by zero), you should return '0'."
+    },
+    {
+      "content": "Consider how to convert characters to integers and vice versa. You can convert a character digit to its integer value by subtracting the character '0' from it. For example, `digit = num1[i] - '0'` gives you the integer value of the character."
+    },
+    {
+      "content": "As you build the result string, be mindful of the order of digits. You might want to build the result in reverse order and then reverse it at the end for the correct representation."
+    },
+    {
+      "content": "Think about edge cases, such as when either num1 or num2 is '0'. The product should immediately return '0' without further computation."
+    },
+    {
+      "content": "You are almost there! Implement the multiplication logic, ensuring you handle the indexing correctly. After constructing the result array, convert it to a string, taking care to remove any leading zeros."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= num1.length, num2.length <= 200",
+    "Both num1 and num2 consist of digits only.",
+    "Do not use any built-in BigInteger library or convert inputs to integers directly.",
+    "Return the product as a string."
+  ]
+}

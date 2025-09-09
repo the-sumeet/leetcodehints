@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to trim the strings in the `nums` array. Trimming to the rightmost `x` digits means you should keep only the last `x` characters of each string. For example, trimming '102' to 1 digit results in '2'."
+    },
+    {
+      "content": "Remember that after trimming, you need to sort the trimmed numbers. When sorting, ensure that you maintain the original indices of the numbers in `nums` to handle tie-breaking correctly."
+    },
+    {
+      "content": "Pay attention to the queries array. Each query consists of two values: `k` and `trim`. `k` tells you which smallest number to find after trimming, and `trim` specifies how many digits to keep."
+    },
+    {
+      "content": "When processing a query, first trim all numbers in `nums` according to the `trim` value. Then, create a list of tuples where each tuple contains the trimmed number and its original index for sorting."
+    },
+    {
+      "content": "After sorting the trimmed numbers, you can easily access the `k`th smallest number by indexing into your sorted list. Remember that `k` is 1-indexed, so you need to convert it to 0-indexed when accessing the list."
+    },
+    {
+      "content": "Consider edge cases, such as when all numbers are the same after trimming or when `trim` equals the length of the numbers. In these cases, ensure your sorting and indexing logic still holds."
+    },
+    {
+      "content": "You might want to implement a helper function to handle the trimming and sorting logic for each query. This can help keep your main logic clean and focused on processing the queries."
+    },
+    {
+      "content": "Make sure to reset the `nums` array back to its original state after processing each query. This is crucial because each query should operate on the unmodified `nums`."
+    },
+    {
+      "content": "Think about the time complexity of your solution. Sorting can be expensive, especially if you're doing it repeatedly for each query. Consider if there are ways to optimize this, like caching results."
+    },
+    {
+      "content": "As a final step, ensure that your output format matches the requirements. You should return an array of indices corresponding to each query, so make sure your final results are collected correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100, 1 <= nums[i].length <= 100, 1 <= queries.length <= 100.",
+    "All strings in nums are of equal length and consist only of digits.",
+    "Indexing is 0-based, but k is 1-based in the queries.",
+    "If two trimmed numbers are equal, the one with the lower index in the original array is considered smaller."
+  ]
+}

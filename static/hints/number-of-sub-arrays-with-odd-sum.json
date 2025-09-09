@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous part of an array. For example, in the array [1, 2, 3], the subarrays are [1], [2], [3], [1, 2], [2, 3], and [1, 2, 3]."
+    },
+    {
+      "content": "Next, consider how to calculate the sum of a subarray. You can do this by iterating through the array and summing elements. However, this can be inefficient if you check every possible subarray."
+    },
+    {
+      "content": "Instead of calculating the sum for each subarray individually, think about how you can keep track of the cumulative sum as you iterate through the array. This will help you calculate the sum of any subarray in constant time."
+    },
+    {
+      "content": "Remember that a sum is odd if it is not divisible by 2. You can use the modulo operator to check if a sum is odd. For example, `sum % 2 != 0` indicates that the sum is odd."
+    },
+    {
+      "content": "As you calculate the cumulative sum, keep track of how many times you encounter odd and even sums. This will help you determine how many subarrays have an odd sum."
+    },
+    {
+      "content": "You can use the fact that the sum of two odd numbers is even, and the sum of two even numbers is also even, while the sum of an odd and an even number is odd. This can help you derive the number of odd-sum subarrays from the counts of odd and even cumulative sums."
+    },
+    {
+      "content": "Initialize two counters: one for even sums and one for odd sums. Start with the even counter set to 1 (to account for the empty subarray) and the odd counter set to 0."
+    },
+    {
+      "content": "As you iterate through the array, update the cumulative sum and check if it is odd or even. Depending on the result, you will update your odd or even counter and also calculate the number of new odd-sum subarrays formed."
+    },
+    {
+      "content": "Don't forget to take the result modulo 10^9 + 7, as specified in the problem statement. This is important to prevent overflow and to meet the problem's requirements."
+    },
+    {
+      "content": "Finally, ensure that you return the total count of subarrays with odd sums after processing the entire array. Consider edge cases, such as when all elements are even, which should yield 0 odd-sum subarrays."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 10^5",
+    "Each element in arr is between 1 and 100.",
+    "Return the result modulo 10^9 + 7."
+  ]
+}

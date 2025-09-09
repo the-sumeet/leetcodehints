@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input structure. You have a list of purchases with each purchase containing a purchase ID, user ID, and purchase date. Make sure you can access these fields correctly."
+    },
+    {
+      "content": "Think about how you can group the purchases by user ID. This will allow you to analyze each user's purchase behavior individually. You might want to use a dictionary or a similar data structure for this."
+    },
+    {
+      "content": "Once you have grouped the purchases by user ID, you need to sort the purchases of each user by date. This will help you check for purchases made within a specific time frame."
+    },
+    {
+      "content": "Consider how to convert the purchase dates from strings to a date format that allows for easy comparison. You might use a date library or built-in functions to handle this."
+    },
+    {
+      "content": "After sorting the purchases by date, iterate through each user's purchases to check if there are any two purchases made within a 7-day window. You can use a nested loop or a sliding window approach for this."
+    },
+    {
+      "content": "When checking for purchases within 7 days, remember to check the difference between the dates. If the difference is less than or equal to 7 days, you should keep track of that user."
+    },
+    {
+      "content": "Think about how to store the users who meet the criteria. You might want to use a set or a list to avoid duplicates since a user can have multiple pairs of purchases within the time frame."
+    },
+    {
+      "content": "Remember to handle edge cases, such as users with only one purchase or no purchases at all. Ensure your solution can handle these scenarios without errors."
+    },
+    {
+      "content": "Once you have identified the users with two purchases within seven days, consider how you will return this list. You might need to format it in a specific way, such as a list of user IDs."
+    },
+    {
+      "content": "Finally, implement your solution by combining all the steps. Start by grouping purchases, then sorting, checking the date differences, and collecting the qualifying users. Make sure to test with the provided sample case."
+    }
+  ],
+  "questionNotes": [
+    "Input is a list of purchases with fields: purchase_id, user_id, purchase_date.",
+    "Purchases are not guaranteed to be unique by user_id or purchase_date.",
+    "Dates are in 'YYYY-MM-DD' format and need to be compared as dates.",
+    "The output should be a list of user IDs who made at least two purchases within a 7-day period."
+  ]
+}

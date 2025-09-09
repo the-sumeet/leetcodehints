@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "To solve this problem without using the '+' or '-' operators, think about how addition works at the bit level. You can use bitwise operations to achieve the same result."
+    },
+    {
+      "content": "Recall the two main operations that can help you with addition: bitwise XOR and bitwise AND. The XOR operation can be used to add two numbers without carrying, while AND can help you identify where carries occur."
+    },
+    {
+      "content": "The XOR operation, `a ^ b`, will give you the sum of `a` and `b` without considering the carry. For example, `1 ^ 2` results in `3`, which is the sum without carry."
+    },
+    {
+      "content": "Next, consider how to calculate the carry. The carry can be found using the AND operation: `a & b`. This will give you the bits that need to be carried over to the next higher bit."
+    },
+    {
+      "content": "After calculating the carry, you need to shift it left by one position to add it to the next higher bit. This can be done using the left shift operator: `carry << 1`."
+    },
+    {
+      "content": "Now, combine the results of the XOR operation and the shifted carry. This will give you a new sum that includes the carry. Repeat this process until there is no carry left."
+    },
+    {
+      "content": "You should use a loop to repeatedly calculate the new sum and carry until the carry becomes zero. This will ensure that all bits are added correctly."
+    },
+    {
+      "content": "Consider edge cases where one or both integers are negative. The bitwise operations will still work, but think about how negative numbers are represented in binary (two's complement)."
+    },
+    {
+      "content": "Make sure to handle the constraints given in the problem. The integers are limited to the range of -1000 to 1000, so your implementation should work efficiently within this range."
+    },
+    {
+      "content": "Your final implementation should return the computed sum. Remember to test your function with various inputs to ensure it handles all edge cases correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: -1000 <= a, b <= 1000",
+    "Do not use '+' or '-' operators.",
+    "Return the sum of the two integers."
+  ]
+}

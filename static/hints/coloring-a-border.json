@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of connected components in the grid. A connected component consists of cells that share the same color and are adjacent to each other. Think about how you can identify these components."
+    },
+    {
+      "content": "Consider using a depth-first search (DFS) or breadth-first search (BFS) approach to explore the grid. This will help you traverse the connected component starting from the cell at (row, col)."
+    },
+    {
+      "content": "While traversing, keep track of the cells that belong to the connected component. You can use a set or a list to store these coordinates."
+    },
+    {
+      "content": "Remember to check for the border conditions. A cell is part of the border if it is adjacent to a cell with a different color or if it is on the edge of the grid."
+    },
+    {
+      "content": "As you identify border cells, you may want to store their positions separately. This will allow you to color them after you finish exploring the entire connected component."
+    },
+    {
+      "content": "After identifying all the border cells, you will need to update their colors in the grid. Make sure to only change the color of the cells that are part of the border."
+    },
+    {
+      "content": "Consider edge cases where the entire grid is filled with the same color. In such cases, all cells will be part of the border if you start from any cell."
+    },
+    {
+      "content": "Take care when checking for adjacent cells to ensure you stay within the bounds of the grid. Use conditions to prevent accessing out-of-bounds indices."
+    },
+    {
+      "content": "When coloring the border, ensure that you do not overwrite the cells that are already part of the connected component. You should only change the color of the border cells."
+    },
+    {
+      "content": "Finally, implement your solution step by step, testing each part as you go. Start with the DFS/BFS to find the connected component, then identify the borders, and finally apply the color change."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 50; 1 <= grid[i][j], color <= 1000; 0 <= row < m; 0 <= col < n.",
+    "Make sure to handle the grid boundaries correctly to avoid index errors.",
+    "The return format should be the updated grid after coloring the borders."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main components: 'Tasks' which lists tasks and their corresponding subtasks count, and 'Executed' which lists the tasks and the subtasks that were executed."
+    },
+    {
+      "content": "Consider how you can represent the subtasks for each task. For example, if a task has a `subtasks_count` of 3, the subtasks can be represented as a list of numbers from 1 to 3."
+    },
+    {
+      "content": "Think about how you can track which subtasks have been executed. You might want to use a set to store executed subtask IDs for quick lookup."
+    },
+    {
+      "content": "Remember that task IDs and subtask IDs are unique within their respective contexts. Ensure that you are correctly associating subtasks with their parent tasks."
+    },
+    {
+      "content": "Before diving into coding, outline the steps you'll take. A good approach might be to iterate through each task and check against the executed subtasks."
+    },
+    {
+      "content": "When iterating through the 'Tasks', keep track of the expected subtasks for each task. You can create a list or a set for this purpose."
+    },
+    {
+      "content": "As you process the 'Executed' list, make sure to mark the executed subtasks in your tracking structure. This will help you identify which subtasks were not executed."
+    },
+    {
+      "content": "Consider edge cases such as tasks with zero subtasks. How will you handle these? Make sure your logic accounts for tasks that may not have any executed subtasks."
+    },
+    {
+      "content": "Think about how you will format the output. You need to return a list of subtasks that did not execute, grouped by task ID."
+    },
+    {
+      "content": "While building your output, ensure that you maintain the order of tasks as presented in the input. This might require careful handling of your data structures."
+    },
+    {
+      "content": "You might want to use a nested loop: the outer loop for tasks and the inner loop for checking executed subtasks against the expected subtasks."
+    },
+    {
+      "content": "Remember to consider the case where all subtasks for a task are executed. In such cases, your output for that task should be an empty list."
+    },
+    {
+      "content": "When you construct your final output, ensure that it is formatted as a list of lists, where each inner list corresponds to the missing subtasks for a task."
+    },
+    {
+      "content": "Be careful with indexing. Subtasks are typically 1-indexed based on the problem statement, so ensure your logic reflects this."
+    },
+    {
+      "content": "As a final step, review your logic to ensure that it handles all possible scenarios, including tasks with varying numbers of subtasks and no executed subtasks."
+    }
+  ],
+  "questionNotes": [
+    "Tasks contain a 'task_id' and 'subtasks_count'.",
+    "Executed contains 'task_id' and 'subtask_id'.",
+    "Subtasks are 1-indexed based on the subtasks_count.",
+    "Output should be a list of lists, with each sublist containing missing subtasks for each task.",
+    "Consider edge cases such as tasks with zero subtasks."
+  ]
+}

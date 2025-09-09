@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the planet's mass and the asteroids. The planet can only destroy an asteroid if its mass is greater than or equal to the asteroid's mass."
+    },
+    {
+      "content": "Consider how the order of asteroid collisions might affect the outcome. If the planet encounters a very large asteroid too early, it might not be able to destroy it later."
+    },
+    {
+      "content": "Think about sorting the array of asteroids. By sorting them in ascending order, you can ensure that the planet always tries to destroy the smallest asteroid it can handle first."
+    },
+    {
+      "content": "After sorting, iterate through the array of asteroids. For each asteroid, check if the planet's mass is sufficient to destroy it. If it is, update the planet's mass."
+    },
+    {
+      "content": "Make sure to handle cases where the planet's mass is exactly equal to an asteroid's mass. This should still allow the planet to destroy the asteroid and gain its mass."
+    },
+    {
+      "content": "Consider edge cases, such as when the planet's mass is very small compared to the smallest asteroid. What should happen in that scenario?"
+    },
+    {
+      "content": "Think about the constraints provided: mass ranges from 1 to 100,000, and the number of asteroids can be as large as 100,000. This suggests that your solution should be efficient, ideally O(n log n) due to the sorting step."
+    },
+    {
+      "content": "As you iterate through the sorted asteroids, if you encounter an asteroid that the planet cannot destroy, you should immediately return false. This can save unnecessary checks."
+    },
+    {
+      "content": "If you successfully iterate through all asteroids without the planet being destroyed, then you should return true. Make sure your return statements are correctly placed."
+    },
+    {
+      "content": "Finally, remember to test your solution with various cases, especially edge cases like having only one asteroid or all asteroids being larger than the planet's initial mass."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= mass <= 100,000",
+    "Constraints: 1 <= asteroids.length <= 100,000",
+    "Constraints: 1 <= asteroids[i] <= 100,000",
+    "The order of asteroid collisions can be chosen freely.",
+    "Return true if all asteroids can be destroyed, otherwise return false."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a sparse matrix. A sparse matrix is one where most of the elements are zero. This means you can optimize your multiplication by only considering non-zero elements."
+    },
+    {
+      "content": "Think about how matrix multiplication works in general. For two matrices A (of size m x n) and B (of size n x p), the resulting matrix C will be of size m x p, where each element C[i][j] is computed as the dot product of the ith row of A and the jth column of B."
+    },
+    {
+      "content": "When implementing the multiplication, focus on iterating through the non-zero elements of the first matrix. This will help you avoid unnecessary computations with zero elements."
+    },
+    {
+      "content": "Consider using a dictionary or a list of tuples to store the non-zero elements of the sparse matrices. This will make it easier to access and multiply only the relevant elements."
+    },
+    {
+      "content": "Remember to handle the case where either of the matrices is empty or consists entirely of zeros. What should your function return in such cases?"
+    },
+    {
+      "content": "As you multiply the non-zero elements, keep track of the indices of the resulting elements. You may need to initialize your result matrix with zeros before you start populating it."
+    },
+    {
+      "content": "Think about how to efficiently compute the dot product for each non-zero element. You can iterate through the columns of the second matrix and accumulate the results for the corresponding row in the first matrix."
+    },
+    {
+      "content": "Make sure to handle cases where the resulting matrix might have non-zero elements that need to be summed up if multiple non-zero entries from the first matrix contribute to the same position in the result."
+    },
+    {
+      "content": "When constructing the result matrix, ensure you are correctly indexing into the result matrix using the appropriate row and column indices derived from the non-zero elements of the input matrices."
+    },
+    {
+      "content": "Finally, review your implementation to ensure it handles all edge cases, such as matrices of different dimensions and matrices that are completely empty. Your final output should be formatted as a 2D list."
+    }
+  ],
+  "questionNotes": [
+    "The input matrices can be of different dimensions, but the number of columns in the first matrix must equal the number of rows in the second matrix for multiplication to be valid.",
+    "The output should be a 2D list representing the resulting matrix after multiplication.",
+    "Consider the case where both input matrices are empty or consist entirely of zeros; the output should also reflect that."
+  ]
+}

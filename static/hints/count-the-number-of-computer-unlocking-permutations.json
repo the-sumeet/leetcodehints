@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the unlocking condition: you can only unlock computer `i` if there exists a computer `j` (where `j < i`) that has a lower complexity. This means you need to build a dependency graph based on the complexities."
+    },
+    {
+      "content": "Consider how the complexity values affect the possible orderings. If two computers have the same complexity, they cannot be unlocked in any order relative to each other unless one is already unlocked."
+    },
+    {
+      "content": "Think about how to represent the valid permutations. You might want to use a recursive approach or dynamic programming to keep track of which computers can be unlocked at each step."
+    },
+    {
+      "content": "Remember that computer `0` is always unlocked first. This means that the unlocking process can be thought of as a tree where each unlocked computer can unlock others based on the complexity condition."
+    },
+    {
+      "content": "When counting valid permutations, consider using combinatorial mathematics. The number of ways to arrange computers can be influenced by the number of computers that can be unlocked at each stage."
+    },
+    {
+      "content": "Pay attention to edge cases: if all computers have the same complexity, it will be impossible to unlock any computer except for the root. This should directly lead to a result of `0`."
+    },
+    {
+      "content": "Think about how to efficiently calculate the number of valid sequences. You might need to use factorials and modular arithmetic to handle large numbers and prevent overflow."
+    },
+    {
+      "content": "You can maintain a count of how many computers can be unlocked at each step, and use this information to calculate the total permutations dynamically."
+    },
+    {
+      "content": "Consider using a data structure like a Fenwick Tree or Segment Tree to efficiently manage and query the number of unlockable computers as you iterate through the complexities."
+    },
+    {
+      "content": "Finally, remember to return your result modulo `10^9 + 7`. This is a common requirement in competitive programming to prevent overflow and ensure results fit within standard data types."
+    }
+  ],
+  "questionNotes": [
+    "The length of the complexity array is between 2 and 100,000.",
+    "Complexity values are unique and range from 1 to 1,000,000,000.",
+    "Computer 0 is always unlocked first and serves as the root.",
+    "If there are no valid permutations, return 0."
+  ]
+}

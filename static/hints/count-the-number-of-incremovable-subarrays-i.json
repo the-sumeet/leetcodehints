@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an 'incremovable' subarray is. A subarray is incremovable if, when removed, the remaining elements form a strictly increasing sequence. Think about how to identify such subarrays."
+    },
+    {
+      "content": "Consider the properties of strictly increasing sequences. For an array to be strictly increasing, each element must be less than the next. This can help you determine valid subarrays."
+    },
+    {
+      "content": "Try to visualize the array and the subarrays. For example, in the array [1, 2, 3, 4], every possible subarray is incremovable because removing any of them leaves a strictly increasing sequence."
+    },
+    {
+      "content": "Think about how to iterate through the array to find all possible subarrays. You can use two nested loops: one for the starting index and one for the ending index of the subarray."
+    },
+    {
+      "content": "As you check each subarray, you need to verify if removing it results in a strictly increasing sequence. This could involve checking the elements before and after the subarray."
+    },
+    {
+      "content": "When checking if the remaining elements are strictly increasing, you only need to check the boundaries. If `nums[start - 1] < nums[end + 1]`, then the removal could potentially be valid."
+    },
+    {
+      "content": "Don't forget about edge cases, such as when the subarray is at the beginning or end of the array. Make sure your checks handle these scenarios correctly."
+    },
+    {
+      "content": "You may want to maintain a count of all valid incremovable subarrays you find. Initialize a counter before your nested loops and increment it whenever you find a valid subarray."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Since the maximum length of `nums` is 50, a solution with a time complexity of O(n^3) might still be feasible, but aim for O(n^2) if possible."
+    },
+    {
+      "content": "Finally, remember to return the total count of incremovable subarrays. Ensure your function correctly returns this count after evaluating all possible subarrays."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 50",
+    "1 <= nums[i] <= 50",
+    "A subarray must be contiguous and non-empty.",
+    "An empty array is considered strictly increasing.",
+    "The output should be the total number of incremovable subarrays."
+  ]
+}

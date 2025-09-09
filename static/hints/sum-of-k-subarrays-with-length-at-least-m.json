@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You need to find k non-overlapping subarrays, each with a minimum length of m. This means that the total number of elements used in these subarrays must be at least k * m."
+    },
+    {
+      "content": "Consider how you would calculate the sum of a subarray. You might want to use a sliding window approach to efficiently calculate the sums of all possible subarrays of length at least m."
+    },
+    {
+      "content": "Think about how to store the sums of the subarrays. You can create an array that holds the maximum sum of subarrays ending at each index, ensuring that each subarray is at least of length m."
+    },
+    {
+      "content": "When calculating the maximum sum for k subarrays, remember that these subarrays cannot overlap. You will need to track the end of each subarray to ensure you do not include elements from previously selected subarrays."
+    },
+    {
+      "content": "You might want to use dynamic programming to keep track of the maximum sums. Define a DP array where dp[i][j] represents the maximum sum of j non-overlapping subarrays using the first i elements."
+    },
+    {
+      "content": "Consider how to initialize your DP array. For the base case, if you have not selected any subarrays (j=0), the sum is 0. Also, think about how to handle cases where you cannot form j subarrays with the first i elements."
+    },
+    {
+      "content": "As you fill in the DP table, for each subarray starting at index `start` and ending at `end`, update your DP state by considering the maximum sum that can be achieved by including this new subarray."
+    },
+    {
+      "content": "Ensure to account for the minimum length constraint m when determining valid subarrays. The starting index for the next subarray should be at least `end + 1` to maintain non-overlapping."
+    },
+    {
+      "content": "When iterating through the elements, keep track of the maximum sums for previous subarrays efficiently. You can use a variable to store the maximum sum found so far as you iterate through possible subarray ends."
+    },
+    {
+      "content": "Finally, after filling your DP table, the answer will be found in the last row of your DP array, specifically at the position that corresponds to k subarrays. Remember to consider edge cases where k is larger than the number of valid subarrays."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 2000",
+    "Subarray length must be at least m.",
+    "1 <= k <= floor(nums.length / m)",
+    "1 <= m <= 3",
+    "Subarrays must not overlap."
+  ]
+}

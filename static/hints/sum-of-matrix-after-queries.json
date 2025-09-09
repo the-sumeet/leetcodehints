@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. You have an n x n matrix initialized with zeros. Each query modifies either a row or a column in this matrix."
+    },
+    {
+      "content": "Focus on the two types of queries: type 0 modifies a row, while type 1 modifies a column. Make sure you keep track of which rows and columns have been modified."
+    },
+    {
+      "content": "Consider how to efficiently apply the queries. Instead of updating the entire row or column for each query, think about storing the latest value set for each row and column."
+    },
+    {
+      "content": "To keep track of the latest values, you can use two arrays: one for the rows and one for the columns. Each index in these arrays will represent the last value assigned to that row or column."
+    },
+    {
+      "content": "When processing a query, if it's a row update (type 0), update the corresponding row's value in your row array. If it's a column update (type 1), do the same for the column array."
+    },
+    {
+      "content": "You need to handle overlapping updates correctly. If a row and a column are updated, the value in the intersection should reflect the last update that occurred."
+    },
+    {
+      "content": "After processing all queries, calculate the final sum of the matrix. You can derive this from the values in your row and column arrays, considering the overlaps."
+    },
+    {
+      "content": "When calculating the sum, iterate through each row and multiply the row value by n (the number of columns), then add the column values. Be careful to subtract any overlaps where both a row and a column were updated."
+    },
+    {
+      "content": "Remember to handle edge cases such as when n is 1 or when there are multiple updates to the same row or column. Ensure your final calculation reflects the most recent updates."
+    },
+    {
+      "content": "Finally, think about how you will implement the final sum calculation. You may need to check which rows and columns were last updated to ensure you're not double counting any values."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^4, 1 <= queries.length <= 5 * 10^4",
+    "Each query is of the form [type, index, val] where type is either 0 (row) or 1 (column).",
+    "Return the sum of the matrix after all queries are applied.",
+    "Consider how to efficiently keep track of the latest updates to rows and columns."
+  ]
+}

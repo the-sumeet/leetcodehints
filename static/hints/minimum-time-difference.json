@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by converting the time points from the 'HH:MM' format into a more manageable format. Consider converting each time into the total number of minutes since midnight. For example, '23:59' would be converted to 1439 minutes."
+    },
+    {
+      "content": "Once you have the time points in minutes, sort the list of time points. Sorting will help you easily find the minimum difference between consecutive time points in the list."
+    },
+    {
+      "content": "Remember that the time points are on a 24-hour clock. After sorting, you need to consider the difference between the last time point and the first time point as well, since they are adjacent in a circular manner."
+    },
+    {
+      "content": "When calculating the differences, make sure to handle the wrap-around case correctly. For example, if the last time point is 23:59 and the first is 00:00, the difference should be calculated as 1 minute."
+    },
+    {
+      "content": "To find the minimum difference, initialize a variable to store the minimum difference found so far. As you iterate through the sorted time points, update this variable whenever you find a smaller difference."
+    },
+    {
+      "content": "Consider edge cases where there are duplicate time points in the input list. If two time points are the same, the minimum difference will be zero. Make sure your solution handles this correctly."
+    },
+    {
+      "content": "You can use a simple loop to compute the differences between consecutive time points after sorting. For each pair of consecutive time points, calculate the difference and compare it with the current minimum difference."
+    },
+    {
+      "content": "Don't forget to check the difference between the last and first time point after sorting. This is crucial for ensuring you capture the minimum difference correctly in a circular time format."
+    },
+    {
+      "content": "As you implement your solution, keep track of the time complexity. Sorting the time points will take O(n log n), and finding the minimum difference will take O(n), making your overall complexity O(n log n)."
+    },
+    {
+      "content": "Finally, ensure that your function returns the minimum difference in minutes as an integer. This is the expected output format for the problem."
+    }
+  ],
+  "questionNotes": [
+    "Input format: timePoints[i] is in 'HH:MM' format.",
+    "Constraints: 2 <= timePoints.length <= 2 * 10^4.",
+    "Consider the circular nature of time when calculating differences.",
+    "Handle duplicate time points correctly, as they lead to a minimum difference of 0."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Employee table. Each employee can belong to multiple departments, and the primary_flag indicates which department is the primary one. Remember that if an employee only has one department, it should be treated as their primary department."
+    },
+    {
+      "content": "Focus on how to identify the primary department for each employee. You will need to filter the rows based on the primary_flag. Consider using a WHERE clause to select only those rows where primary_flag is 'Y'."
+    },
+    {
+      "content": "Think about what to do for employees who do not have a primary department marked with 'Y'. For these cases, you need to find a way to select their only department if they belong to just one."
+    },
+    {
+      "content": "Consider using GROUP BY to aggregate data. This could help you identify employees with multiple departments and those with only one department. Remember to count the number of departments for each employee."
+    },
+    {
+      "content": "You might want to use a LEFT JOIN or a subquery to handle employees who have multiple departments. This way, you can ensure that you still get the employees who do not have a primary department marked."
+    },
+    {
+      "content": "Make sure to handle the case where an employee has multiple departments but none are marked as primary. In such cases, you should select the department they belong to, as long as they only belong to one."
+    },
+    {
+      "content": "When constructing your final output, ensure that you select both the employee_id and the department_id. The output should contain only these two columns, as specified in the problem statement."
+    },
+    {
+      "content": "Consider edge cases such as employees with no departments or multiple departments but no primary flag. How will your query handle these scenarios? Think about using COALESCE or similar functions to manage null values."
+    },
+    {
+      "content": "Remember that the output can be in any order, so you don't need to worry about sorting the results. Focus on getting the correct employee_id and department_id pairs."
+    },
+    {
+      "content": "Ultimately, you will want to write a query that combines the logic of filtering for primary departments and selecting a fallback department when necessary. Think about how to structure your SQL query to achieve this."
+    }
+  ],
+  "questionNotes": [
+    "The primary_key is a combination of employee_id and department_id.",
+    "The primary_flag indicates the primary department: 'Y' for yes, 'N' for no.",
+    "If an employee has only one department, it should be treated as primary, even if marked 'N'.",
+    "The output must include employee_id and department_id only.",
+    "The result can be returned in any order."
+  ]
+}

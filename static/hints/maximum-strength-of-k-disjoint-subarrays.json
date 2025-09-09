@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the strength formula. The strength is a weighted sum of the sums of the selected subarrays, with alternating signs based on their order. This means that the choice of subarrays will heavily influence the total strength."
+    },
+    {
+      "content": "Consider how to efficiently calculate the sum of any subarray. You might want to use a prefix sum array to quickly compute the sum of any subarray in constant time."
+    },
+    {
+      "content": "Remember that the subarrays must be disjoint. This means that once you select a subarray, you cannot include any elements from it in subsequent subarrays."
+    },
+    {
+      "content": "Think about how to iterate through the array to find potential subarrays. You might want to use a nested loop where the outer loop selects the starting point of a subarray and the inner loop selects the endpoint."
+    },
+    {
+      "content": "Since k is odd, the last subarray will always have a positive contribution to the strength. This might influence how you choose your subarrays."
+    },
+    {
+      "content": "Consider edge cases where k is equal to n. In this scenario, you will have to select every single element as its own subarray."
+    },
+    {
+      "content": "When calculating the strength, be careful with the signs. The contribution of each subarray alternates based on its position, so ensure that you keep track of whether you're adding or subtracting."
+    },
+    {
+      "content": "Pay attention to how you handle negative numbers in the array. Selecting subarrays that contain negative sums can still be beneficial depending on their position in the strength formula."
+    },
+    {
+      "content": "Think about dynamic programming. You could maintain a DP table where each entry represents the maximum strength obtainable by selecting a certain number of subarrays up to a certain index."
+    },
+    {
+      "content": "You might want to keep track of the best subarray sums for each possible count of selected subarrays. This can help you build up the solution iteratively."
+    },
+    {
+      "content": "Consider how to efficiently update your potential maximum strength as you iterate through the array. You might need to keep track of the best sums found so far."
+    },
+    {
+      "content": "When selecting subarrays, consider their lengths. Longer subarrays might provide higher sums, but they also consume more of your available selections."
+    },
+    {
+      "content": "Make sure to handle cases where the input array contains only negative numbers. The best strategy might still yield a negative strength, but you want to maximize it as much as possible."
+    },
+    {
+      "content": "As you build your solution, test it with small arrays and known outputs to ensure your logic is sound. Debugging with simple cases can help clarify your approach."
+    },
+    {
+      "content": "Finally, think about the overall complexity of your solution. You want to ensure that it runs efficiently within the constraints provided, especially since n * k can be as large as 10^6."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^4, -10^9 <= nums[i] <= 10^9, 1 <= k <= n, 1 <= n * k <= 10^6, k is odd.",
+    "The chosen subarrays don't need to cover the entire array.",
+    "Ensure to handle cases with negative numbers carefully.",
+    "The last subarray always has a positive contribution to the strength."
+  ]
+}

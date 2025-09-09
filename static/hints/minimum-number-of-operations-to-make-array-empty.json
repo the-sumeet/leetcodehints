@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by counting the occurrences of each number in the array. This will help you understand how many pairs or triplets you can form. You can use a dictionary or a Counter from the collections module in Python."
+    },
+    {
+      "content": "Remember that you can only remove elements in pairs (2 at a time) or triplets (3 at a time). Think about how the counts of each number can influence the number of operations needed."
+    },
+    {
+      "content": "Consider edge cases where a number appears only once. If any number has an odd count, it will be impossible to remove all elements, leading to a return value of -1."
+    },
+    {
+      "content": "When you have counts of elements, try to maximize the use of triplet removals first, as they are more efficient. For example, if a number appears 7 times, you can remove 2 triplets and 1 pair."
+    },
+    {
+      "content": "For each unique number, calculate how many operations are needed based on its count. You might want to use integer division and modulus to determine how many pairs and triplets you can form."
+    },
+    {
+      "content": "If you have a count 'c' for a number, you can derive the number of operations needed as follows: Let 'x' be the number of triplets and 'y' be the number of pairs. You can set up equations based on the total count 'c = 3x + 2y'."
+    },
+    {
+      "content": "After calculating the operations for each unique number, sum them up to get the total number of operations. Make sure to check for any leftover elements that cannot be paired or grouped."
+    },
+    {
+      "content": "Be careful with the return value. If you find that any number cannot be fully removed due to odd counts, ensure you return -1 immediately."
+    },
+    {
+      "content": "Consider testing your solution with edge cases, such as all elements being the same or having a mix of even and odd counts. This can help ensure your logic holds in all scenarios."
+    },
+    {
+      "content": "Finally, think about how you will structure your code. You might want to create a function that takes the array as input and returns the minimum number of operations required, or -1 if impossible."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 10^5",
+    "Elements: 1 <= nums[i] <= 10^6",
+    "Return -1 if it's impossible to make the array empty.",
+    "Operations can be performed any number of times.",
+    "Focus on pairs and triplets for removal."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the serialized string. Each non-null node is represented by its value, while null nodes are represented by '#'. This means that for every node you encounter, you will need to account for its children."
+    },
+    {
+      "content": "Think about how many children a node can have in a binary tree. Each non-null node contributes two potential child nodes, which means you'll need to manage a count of available slots for nodes as you parse the string."
+    },
+    {
+      "content": "As you iterate through the serialized string, keep track of how many valid child slots you have. When you see a non-null node, you can fill two slots (one for each child), and when you see a null node, you fill one slot."
+    },
+    {
+      "content": "Consider using a counter to represent the number of available slots for children. Initialize it to 1 (the root node), and update it as you process each value in the string."
+    },
+    {
+      "content": "For every non-null node you encounter, increase your available slots by 1 (for the new node) and decrease it by 2 (for its two children). For every '#' you encounter, simply decrease the available slots by 1."
+    },
+    {
+      "content": "Make sure to check your available slots after processing each value. If at any point your available slots drop below zero, it indicates an invalid serialization."
+    },
+    {
+      "content": "Remember to check the final count of available slots after processing the entire string. A valid serialization should leave you with exactly zero available slots."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when the string is just a single '#'. This should return true, as it represents a valid tree with only a null root."
+    },
+    {
+      "content": "Consider how you will handle the input string. You can split the string by commas to process each value individually. This will help you manage the serialization step by step."
+    },
+    {
+      "content": "Finally, ensure that your logic accounts for all nodes and their relationships correctly. If you can maintain the slot count accurately through the entire string, you should be able to determine if the serialization is valid."
+    }
+  ],
+  "questionNotes": [
+    "The input string is guaranteed to be valid in format (no consecutive commas).",
+    "Each value in the string is either an integer (0-100) or a '#' representing a null node.",
+    "The length of the input string can range from 1 to 10^4 characters.",
+    "You are not allowed to reconstruct the tree; focus on counting available slots."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by defining the `ATM` class and its constructor. You will need an internal representation to store the count of each banknote denomination. Consider using an array of size 5 to represent the counts for $20, $50, $100, $200, and $500."
+    },
+    {
+      "content": "In the `deposit` method, you will receive an array of integers representing the number of banknotes for each denomination. Make sure to update your internal banknote counts accordingly. Remember to validate the input as per the constraints."
+    },
+    {
+      "content": "When implementing the `withdraw` method, think about how to prioritize larger denominations first. You will need to loop through the denominations starting from the largest ($500) down to the smallest ($20) to fulfill the withdrawal request."
+    },
+    {
+      "content": "Calculate the total amount of money available in the ATM before attempting to withdraw. If the requested amount exceeds this total, return [-1] immediately. This will help you avoid unnecessary calculations."
+    },
+    {
+      "content": "As you attempt to withdraw the requested amount, keep track of how much you have dispensed and how many banknotes of each denomination you have used. You can maintain a temporary array to store the counts of banknotes being dispensed."
+    },
+    {
+      "content": "If at any point you cannot fulfill the withdrawal request after using some banknotes, you need to revert the counts back to their original state. This means you should have a way to track whether the withdrawal was successful or not."
+    },
+    {
+      "content": "Consider edge cases where the ATM is empty or where the withdrawal amount is exactly equal to the total money available. Make sure your logic handles these cases correctly."
+    },
+    {
+      "content": "When calculating how many banknotes to dispense for each denomination, you can use integer division to determine how many of a particular denomination can be used without exceeding the remaining amount."
+    },
+    {
+      "content": "Remember to check if the amount can be completely dispensed using the banknotes available. If you can dispense part of the amount but not all of it, you should return [-1] and not dispense any banknotes."
+    },
+    {
+      "content": "Finally, once you have successfully dispensed the banknotes, update your internal counts and return the array representing the number of each denomination dispensed. Make sure the order of the returned array matches the deposit order."
+    }
+  ],
+  "questionNotes": [
+    "The ATM stores banknotes of 5 denominations: $20, $50, $100, $200, and $500.",
+    "Indexing for banknotesCount: 0 -> $20, 1 -> $50, 2 -> $100, 3 -> $200, 4 -> $500.",
+    "Withdrawals must prioritize larger denominations first.",
+    "If a withdrawal cannot be completed, return [-1] without modifying banknote counts.",
+    "The sum of banknotesCount[i] in all deposits does not exceed 10^9."
+  ]
+}

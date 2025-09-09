@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence is a sequence derived from another sequence where some elements may be deleted without changing the order of the remaining elements. For example, in 'LMCT', 'LCT' is a subsequence."
+    },
+    {
+      "content": "Consider how many 'L', 'C', and 'T' characters are in the string. The number of 'LCT' subsequences you can form depends on the counts of these letters in the string."
+    },
+    {
+      "content": "Think about how inserting a letter can affect the counts of subsequences. Specifically, inserting an 'L' can potentially double the number of 'LCT' subsequences since each existing subsequence can now be paired with the new 'L'."
+    },
+    {
+      "content": "Before inserting a letter, calculate the number of 'LCT' subsequences in the original string. You can do this by iterating through the string and counting occurrences of 'L', 'C', and 'T' in a way that respects their order."
+    },
+    {
+      "content": "When counting subsequences, keep track of how many 'L's you have seen so far as you iterate through the string. This will help you calculate how many valid 'LCT' subsequences can be formed when you encounter 'C' and 'T'."
+    },
+    {
+      "content": "After counting the subsequences in the original string, consider the effect of inserting an 'L' at each possible position. For each position, recalculate how many subsequences can be formed with the new string."
+    },
+    {
+      "content": "Remember to consider edge cases, such as when the string is very short (like 'L' or 'C'). Think about how inserting a letter might create new opportunities for subsequences."
+    },
+    {
+      "content": "You might want to create a function that counts the number of 'LCT' subsequences in a given string. This function can be reused when you simulate the insertion of a letter."
+    },
+    {
+      "content": "As you simulate the insertion of 'L', you should also consider inserting 'C' or 'T' at various positions. Each insertion might lead to different counts of 'LCT' subsequences."
+    },
+    {
+      "content": "Finally, after calculating the counts for all possible insertions, return the maximum count found. This will be your answer to the problem. Ensure you handle all edge cases correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "s consists of uppercase English letters.",
+    "You can insert at most one letter at any position, including the beginning or end.",
+    "Return the maximum number of 'LCT' subsequences possible after one insertion."
+  ]
+}

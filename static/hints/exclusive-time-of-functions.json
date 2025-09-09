@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the logs. Each log entry contains a function ID, a status (either 'start' or 'end'), and a timestamp. This will help you parse the logs correctly."
+    },
+    {
+      "content": "Consider using a stack data structure to keep track of the currently executing functions. When a function starts, you push its ID onto the stack, and when it ends, you pop from the stack."
+    },
+    {
+      "content": "You need to maintain a variable to track the current time as you process the logs. This will help you calculate the duration for which each function is active."
+    },
+    {
+      "content": "When a function starts, if there is already a function on the stack, it means the current function is paused. You need to account for the time that the current function was running before the new function started."
+    },
+    {
+      "content": "When processing an 'end' log, you should calculate the time spent by the function that is ending. This time is the difference between the current timestamp and the last recorded timestamp."
+    },
+    {
+      "content": "Make sure to update the last recorded timestamp whenever a function starts or ends. This is crucial for calculating the exclusive time correctly."
+    },
+    {
+      "content": "Remember to handle the case where functions are called recursively. The stack will help you manage nested function calls, ensuring that you track time for each function separately."
+    },
+    {
+      "content": "After processing all logs, you will have a list of exclusive times for each function. Ensure that your output format matches the requirement: an array where the index corresponds to the function ID."
+    },
+    {
+      "content": "Consider edge cases, such as when there is only one function or when functions are called in quick succession. Test your implementation with these scenarios to ensure accuracy."
+    },
+    {
+      "content": "Finally, think about how to initialize your data structures. You will need an array to store the exclusive times for each function and a stack for managing the function calls. Start with an empty stack and an array initialized to zero."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100, 2 <= logs.length <= 500, 0 <= function_id < n, 0 <= timestamp <= 10^9.",
+    "Each function has a unique ID and will have an 'end' log for each 'start' log.",
+    "No two start events or end events will happen at the same timestamp."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for one interval to cover another. An interval [c, d) covers [a, b) if c <= a and b <= d. Make sure to visualize this with some examples."
+    },
+    {
+      "content": "Consider how you can represent the intervals. Since they are unique, you can store them in a list or array. Think about what properties you need to check for coverage."
+    },
+    {
+      "content": "Before removing covered intervals, you might want to sort the intervals. What would be a good way to sort them? Consider sorting by the starting point, and if they are the same, by the ending point in descending order."
+    },
+    {
+      "content": "Once sorted, you can iterate through the intervals. Keep track of the 'last' interval you have added to your result list. This will help you determine if the current interval is covered by the last one."
+    },
+    {
+      "content": "As you iterate, compare the current interval with the last added interval. If the current interval is covered by the last one, you can skip it. Otherwise, add it to your result list."
+    },
+    {
+      "content": "Think about edge cases. What if all intervals are overlapping or if none are? How will your approach handle these situations? Make sure your logic is robust for all possible configurations."
+    },
+    {
+      "content": "Remember to count the number of remaining intervals after processing. You will need to return this count as your final answer. How will you keep track of this count?"
+    },
+    {
+      "content": "Consider how you will handle the return value. You need to return the count of intervals that are not covered. Make sure your final implementation reflects this."
+    },
+    {
+      "content": "As a final step, review your code for efficiency. The sorting step will take O(n log n) time, and the iteration will take O(n). Ensure that your solution is optimal given the constraints."
+    },
+    {
+      "content": "To summarize, your approach should involve sorting the intervals, iterating through them while checking for coverage, and counting the non-covered intervals. Start implementing this step-by-step."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= intervals.length <= 1000",
+    "Each interval is unique.",
+    "Intervals are in the format [l_i, r_i) where 0 <= l_i < r_i <= 10^5.",
+    "Return the count of remaining intervals after removing covered ones."
+  ]
+}

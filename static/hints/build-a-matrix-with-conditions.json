@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. You need to create a k x k matrix where each number from 1 to k appears exactly once, and the remaining cells are filled with 0."
+    },
+    {
+      "content": "Review the rowConditions and colConditions. These conditions define a partial ordering of the numbers, where some numbers must appear above or to the left of others."
+    },
+    {
+      "content": "Consider how to represent the constraints. You can use a directed graph where an edge from `a` to `b` means `a` must be above `b` in the matrix."
+    },
+    {
+      "content": "Think about how to handle the rowConditions. For each condition [above, below], create a directed edge from `above` to `below`."
+    },
+    {
+      "content": "Similarly, for colConditions, create edges that represent the left-right relationships. For each condition [left, right], create an edge from `left` to `right`."
+    },
+    {
+      "content": "To check if the constraints can be satisfied, consider using topological sorting. If you can perform a topological sort on the graph, it means the constraints are satisfiable."
+    },
+    {
+      "content": "Remember to handle cycles in your graph. If there's a cycle, it means the constraints are contradictory, and you should return an empty matrix."
+    },
+    {
+      "content": "Implement a function to perform topological sorting. You can use Kahn's algorithm or Depth-First Search (DFS) to achieve this."
+    },
+    {
+      "content": "Once you have the topological order for the rowConditions, place the numbers in the matrix accordingly. Do the same for colConditions to determine the column placements."
+    },
+    {
+      "content": "Think about how to fill the matrix. After placing the numbers according to the constraints, ensure that all remaining cells are filled with 0."
+    },
+    {
+      "content": "Consider edge cases where k is small, like k = 2. Make sure your solution handles the minimum constraints correctly."
+    },
+    {
+      "content": "Check if there are multiple valid outputs. The problem states that any valid matrix can be returned, so your algorithm should not be overly rigid."
+    },
+    {
+      "content": "Be mindful of the indexing. The problem uses 1-based indexing for the numbers, but you will likely work with 0-based indexing in your matrix."
+    },
+    {
+      "content": "When constructing the final matrix, ensure that you respect the order determined by the topological sort for both rows and columns."
+    },
+    {
+      "content": "Finally, ensure your function returns the matrix in the correct format: a 2D array with the appropriate dimensions, or an empty array if no valid matrix can be constructed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= k <= 400, 1 <= rowConditions.length, colConditions.length <= 10",
+    "Each rowConditions[i] and colConditions[i] has a length of 2.",
+    "Numbers in conditions are 1-based, while matrix indexing will typically be 0-based.",
+    "If no valid matrix exists, return an empty matrix."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a subarray. A subarray is a contiguous part of an array. For instance, in the array [1, -2, 0, 3], the subarrays include [1], [1, -2], [0, 3], and many others."
+    },
+    {
+      "content": "Consider how you would calculate the maximum sum of a subarray without any deletions first. You might want to use Kadane's algorithm, which efficiently finds the maximum sum of a contiguous subarray in linear time."
+    },
+    {
+      "content": "Now, think about how deleting one element from a subarray can affect the sum. You need to ensure that after deletion, the subarray remains non-empty. This means you need to handle cases where the deletion happens at the beginning, middle, or end of the subarray."
+    },
+    {
+      "content": "You can maintain two values while iterating through the array: one for the maximum sum without deletion and another for the maximum sum with one deletion. This will help you keep track of the best possible sums as you process each element."
+    },
+    {
+      "content": "When iterating through the array, for each element, consider two scenarios: one where you include the current element in the maximum sum without deletion, and another where you include it in the maximum sum with one deletion."
+    },
+    {
+      "content": "To compute the maximum sum with one deletion, you can use the maximum sum without deletion up to the previous element. You can also consider the current element as the one to delete, which means you would take the maximum sum without deletion up to two elements before."
+    },
+    {
+      "content": "Make sure to handle edge cases where the array has only one element. In such cases, the maximum sum with deletion is simply the value of that element, since deleting it would leave you with an empty subarray."
+    },
+    {
+      "content": "As you implement the logic, remember to update your maximum sums at each step. After processing all elements, the result will be the maximum of the two values you are tracking: with and without deletion."
+    },
+    {
+      "content": "Don't forget to consider negative numbers in the array. They can affect the maximum sum calculations significantly, especially if they are the only elements present in the subarray."
+    },
+    {
+      "content": "Finally, ensure that you return the maximum of the two computed sums after iterating through the entire array. This will give you the desired maximum sum for a non-empty subarray with at most one deletion."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 10^5",
+    "Element values: -10^4 <= arr[i] <= 10^4",
+    "The subarray must remain non-empty after deletion.",
+    "Consider edge cases with all negative numbers or a single element."
+  ]
+}

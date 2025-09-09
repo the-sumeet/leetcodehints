@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a linked list. Each node has a value and a pointer to the next node. Visualize how reversing nodes in groups of k will affect the pointers."
+    },
+    {
+      "content": "Consider how you will traverse the linked list. You will need to keep track of the current node and the next node to reverse the links correctly."
+    },
+    {
+      "content": "Think about how to identify groups of k nodes. You can use a loop to count nodes until you reach k or the end of the list."
+    },
+    {
+      "content": "What should you do if the remaining nodes at the end of the list are fewer than k? They should remain unchanged. Plan how to handle this case."
+    },
+    {
+      "content": "You will need to maintain a reference to the previous group's tail and the new head of the reversed group. This will help you connect the reversed groups together."
+    },
+    {
+      "content": "When reversing a group of nodes, you can use three pointers: previous, current, and next. This allows you to reverse the links without losing track of the rest of the list."
+    },
+    {
+      "content": "Before starting the reversal, ensure that there are at least k nodes available. If not, simply return the head of the list as is."
+    },
+    {
+      "content": "After reversing a group of k nodes, you need to connect the last node of the reversed group to the head of the next group. Ensure your pointers are correctly updated."
+    },
+    {
+      "content": "Consider edge cases, such as when k equals 1. In this case, the list should remain unchanged since reversing a single node does not alter the list."
+    },
+    {
+      "content": "Think about how to return the new head of the linked list after all possible reversals. You may need to keep track of the new head during the first reversal."
+    },
+    {
+      "content": "Make sure to handle the case where the list is empty (head is null). Your function should return null in this scenario."
+    },
+    {
+      "content": "As you implement the reversal logic, remember to update the next pointers carefully to avoid creating cycles or losing parts of the list."
+    },
+    {
+      "content": "Consider the time complexity of your solution. You should aim for O(n) since you are processing each node a limited number of times."
+    },
+    {
+      "content": "To achieve O(1) extra space, avoid using additional data structures like arrays or lists. Instead, manipulate pointers directly."
+    },
+    {
+      "content": "As a final step, ensure that your function handles different values of k correctly, especially when k is equal to the length of the list."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= n <= 5000; 0 <= Node.val <= 1000.",
+    "If the number of nodes is not a multiple of k, the remaining nodes should remain unchanged.",
+    "You may not alter the values in the nodes, only the nodes themselves.",
+    "Return the modified list, not just the head."
+  ]
+}

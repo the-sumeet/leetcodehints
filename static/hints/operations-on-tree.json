@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree represented by the parent array. Each index represents a node, and the value at that index indicates its parent. For example, if parent[3] = 1, then node 3 is a child of node 1."
+    },
+    {
+      "content": "Think about how to maintain the state of each node (locked or unlocked) and which user has locked it. You can use an array to store the user ID of the locked nodes or a special value (like -1) for unlocked nodes."
+    },
+    {
+      "content": "Consider how to check if a node is locked or unlocked. This will be essential when implementing the lock and unlock functions. You might want to create a helper function that checks the locking status of a node."
+    },
+    {
+      "content": "When implementing the lock function, remember that a node can only be locked if it is currently unlocked. Make sure to return false if the node is already locked."
+    },
+    {
+      "content": "For the unlock function, ensure that the user attempting to unlock the node is the same user who locked it. This is a crucial condition that must be checked before unlocking."
+    },
+    {
+      "content": "The upgrade function has multiple conditions to check: the node must be unlocked, it must have at least one locked descendant, and it cannot have any locked ancestors. Think about how to traverse the tree to verify these conditions."
+    },
+    {
+      "content": "To check for locked descendants, you can perform a depth-first search (DFS) starting from the node's children. If you find any locked nodes during this traversal, you can confirm that the upgrade condition is met."
+    },
+    {
+      "content": "While checking for locked ancestors, you should traverse up the tree from the current node to the root. If you encounter any locked nodes along the way, the upgrade cannot proceed."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as trying to lock or unlock the root node. Since the root has no parent, it may have unique conditions compared to other nodes."
+    },
+    {
+      "content": "Finally, when implementing the upgrade function, if successful, remember to lock the current node and unlock all its descendants. This will require another traversal to unlock all the children nodes."
+    }
+  ],
+  "questionNotes": [
+    "The tree is represented as a parent array where parent[0] = -1 indicates the root.",
+    "Each node can only be locked by one user at a time.",
+    "A node can only be unlocked by the user who locked it.",
+    "The upgrade function requires checking for locked descendants and ancestors.",
+    "Constraints specify that n (number of nodes) can be up to 2000 and user IDs range from 1 to 10."
+  ]
+}

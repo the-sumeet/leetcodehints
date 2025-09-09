@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a Directed Acyclic Graph (DAG). Since the graph is acyclic, you won't have to worry about cycles, which simplifies the pathfinding process."
+    },
+    {
+      "content": "Focus on the constraints: you need to find paths with exactly `k` edges. This means you will have to keep track of the number of edges used in your paths."
+    },
+    {
+      "content": "Remember that the sum of the weights of the edges in the path must be strictly less than `t`. This is crucial when considering potential paths and their weights."
+    },
+    {
+      "content": "Consider using a dynamic programming approach. You might want to define a DP table where `dp[i][j]` represents the maximum weight sum achievable using exactly `i` edges ending at node `j`."
+    },
+    {
+      "content": "When initializing your DP table, think about how to handle paths that start from various nodes. You might initialize the paths from the starting node(s) with zero edges."
+    },
+    {
+      "content": "As you iterate through edges, ensure you only update your DP table if the new path's weight is less than `t`. This will help you avoid invalid paths."
+    },
+    {
+      "content": "Pay attention to the edge cases: what if there are no edges? Or if `k` is zero? Make sure your solution handles these scenarios correctly."
+    },
+    {
+      "content": "While iterating through edges, you might want to keep track of the maximum weight found that meets the conditions. This could be a separate variable that gets updated during your DP calculations."
+    },
+    {
+      "content": "After filling your DP table, you need to check the last row (for exactly `k` edges) to find the maximum weight that is still less than `t`. If none exist, remember to return -1."
+    },
+    {
+      "content": "Finally, ensure your solution is efficient. Given the constraints, aim for a time complexity that can handle up to 300 nodes and edges. Think about how you can optimize your DP transitions."
+    }
+  ],
+  "questionNotes": [
+    "The graph is a Directed Acyclic Graph (DAG).",
+    "You must find paths with exactly `k` edges.",
+    "The sum of the weights must be strictly less than `t`.",
+    "If no valid path exists, return -1.",
+    "Constraints: 1 <= n <= 300, 0 <= edges.length <= 300, 1 <= w_i <= 10, 0 <= k <= 300, 1 <= t <= 600.",
+    "There are no duplicate edges and u_i != v_i."
+  ]
+}

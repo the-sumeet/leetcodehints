@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for two characters to be 'consecutive in the alphabet'. For example, 'a' and 'b' are consecutive, as are 'y' and 'z'. Remember that the alphabet is circular, meaning 'a' and 'z' are also considered consecutive."
+    },
+    {
+      "content": "Consider how you would identify pairs of adjacent characters in the string that can be removed. You could iterate through the string and check each character against the next one."
+    },
+    {
+      "content": "Think about how you can efficiently remove pairs of characters from the string. You might want to use a data structure that allows for easy addition and removal of characters, such as a stack."
+    },
+    {
+      "content": "When you find a pair of consecutive characters, think about how removing them affects the remaining string. You will need to shift the remaining characters left, which is trivial with a stack."
+    },
+    {
+      "content": "As you remove pairs, keep track of the characters that remain. Remember, your goal is to find the lexicographically smallest string possible after all possible removals."
+    },
+    {
+      "content": "Consider edge cases, such as when the string has no removable pairs. What should your function return in such cases? It should return the original string."
+    },
+    {
+      "content": "You may want to handle the string in a single pass while using a stack to keep track of the characters. Push characters onto the stack, and check the top of the stack for possible removals."
+    },
+    {
+      "content": "When checking for removals, compare the current character with the top character of the stack. If they are consecutive, pop the stack and do not push the current character."
+    },
+    {
+      "content": "After processing the entire string, the stack will contain the characters that couldn't be removed. Construct the result string from the stack."
+    },
+    {
+      "content": "Make sure to handle the case where the stack might be empty after processing the string. What should you return in that case?"
+    },
+    {
+      "content": "Think about how to ensure that your final string is the lexicographically smallest. If you have multiple characters left in the stack, their order will determine the final result."
+    },
+    {
+      "content": "Test your approach with different strings, including edge cases like a string of the same character or a string with no removable pairs, to ensure your solution is robust."
+    },
+    {
+      "content": "Consider how the constraints of the problem (1 <= s.length <= 250) affect your choice of algorithms. A solution that is O(n) or O(n log n) would be efficient enough."
+    },
+    {
+      "content": "If you find that your implementation is not producing the correct lexicographically smallest string, revisit the logic for how you are determining which characters to remove."
+    },
+    {
+      "content": "Finally, ensure that your function returns the result in the correct format. If the string is empty after all removals, return an empty string."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 250",
+    "String consists only of lowercase English letters.",
+    "The alphabet is circular: 'a' and 'z' are consecutive.",
+    "Return the lexicographically smallest string after all possible removals."
+  ]
+}

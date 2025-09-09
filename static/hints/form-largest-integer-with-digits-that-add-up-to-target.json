@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the digits (1 to 9) and their associated costs. Each digit has a cost that corresponds to its index in the `cost` array, where the cost of digit 'i' is `cost[i-1]`."
+    },
+    {
+      "content": "Remember that the goal is to maximize the integer formed by the digits while ensuring that the total cost equals the target. This means you should focus on using the digits with the lowest cost to maximize the number of digits you can use."
+    },
+    {
+      "content": "Consider how you can use a greedy approach. You might want to start with the digit that has the lowest cost and see how many times you can use it within the target cost."
+    },
+    {
+      "content": "Think about the constraints: you need to ensure that the total cost of the digits used equals the target. If you can't reach the target cost with the available digits, you should return '0'."
+    },
+    {
+      "content": "You should also keep track of the digits you choose to ensure that you are forming the largest possible integer. This means that if two digits have the same cost, you should prefer the larger digit."
+    },
+    {
+      "content": "Consider using a dynamic programming approach where you maintain an array that tracks the maximum number you can form for each possible cost up to the target. This can help you build the solution incrementally."
+    },
+    {
+      "content": "When filling your DP array, think about how you can update the maximum number for each cost by considering adding each digit. You may want to iterate over the costs from the highest to the lowest to avoid overwriting results from the same iteration."
+    },
+    {
+      "content": "Make sure to convert the numbers you store in your DP array back to strings when you are constructing the final answer. The final result must be returned as a string."
+    },
+    {
+      "content": "Consider edge cases, such as when the target is less than the minimum cost of any digit. In such cases, you should directly return '0'."
+    },
+    {
+      "content": "Also, think about how you will handle cases where multiple digits can be used to reach the same cost. You need to ensure that you are always forming the largest number possible."
+    },
+    {
+      "content": "As you build your solution, keep in mind that you should not have leading zeros in your final answer. Since the digits must be from 1 to 9, this shouldn't be an issue, but it's good to remember."
+    },
+    {
+      "content": "If you find that you can reach the target cost but are not able to form any valid integer, ensure that you are checking your logic for constructing the number correctly."
+    },
+    {
+      "content": "When you are ready to construct the final answer, consider sorting or prioritizing the digits based on their cost and value to ensure that you are maximizing the integer."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases, such as the minimum and maximum values for `target` and `cost`, to ensure it behaves as expected."
+    },
+    {
+      "content": "Finally, remember that your output should be a string. Ensure that you convert any integer results into a string format before returning."
+    }
+  ],
+  "questionNotes": [
+    "The cost of painting digit 'i' is given by cost[i-1] for digits 1 to 9.",
+    "You must use the total cost exactly equal to the target.",
+    "Return '0' if no valid integer can be formed.",
+    "The answer must be returned as a string, without leading zeros."
+  ]
+}

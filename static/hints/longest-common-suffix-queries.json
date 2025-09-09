@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a suffix. A suffix is a substring that appears at the end of a string. For example, in the string 'abcd', 'cd' is a suffix."
+    },
+    {
+      "content": "For each query in wordsQuery, you need to compare it against all strings in wordsContainer to find the longest common suffix. Think about how you can extract the suffix from both the query and the words in the container."
+    },
+    {
+      "content": "Consider using a nested loop where the outer loop iterates over wordsQuery and the inner loop iterates over wordsContainer. This will allow you to compare each query with every string in the container."
+    },
+    {
+      "content": "When comparing the suffixes, remember to check if the suffix of the query matches the suffix of the word in the container. You can do this by using string slicing in Python or similar methods in other languages."
+    },
+    {
+      "content": "Keep track of the longest common suffix found for each query. You may want to use a variable to store the maximum length of the suffix and the corresponding index of the word in wordsContainer."
+    },
+    {
+      "content": "If you find multiple words with the same longest suffix, you need to apply the tie-breaking rules: choose the shortest word first, and if there's still a tie, choose the one that appears first in wordsContainer."
+    },
+    {
+      "content": "To efficiently compare suffixes, you might want to reverse the strings in both wordsContainer and wordsQuery. This way, you can directly compare prefixes instead of suffixes."
+    },
+    {
+      "content": "Consider edge cases where the query might not match any suffix in wordsContainer. In such cases, the longest common suffix is an empty string, and you should still return an index based on the tie-breaking rules."
+    },
+    {
+      "content": "Make sure to initialize your result array with the same length as wordsQuery, as you will be storing the index of the best match for each query."
+    },
+    {
+      "content": "Pay attention to the constraints provided. The maximum length of strings and the number of strings can lead to performance issues if not handled properly. Think about the time complexity of your solution."
+    },
+    {
+      "content": "When implementing the logic to find the longest common suffix, you can use a helper function that takes two strings and returns the length of their longest common suffix."
+    },
+    {
+      "content": "Remember to handle cases where the wordsContainer is empty or the wordsQuery is empty. These edge cases should return an empty result or an appropriate response."
+    },
+    {
+      "content": "As you iterate through each word in wordsContainer for a query, keep a record of the longest suffix length and the corresponding index. Update these values whenever you find a longer suffix."
+    },
+    {
+      "content": "Once you have processed all queries, ensure that your result array is returned in the correct format, which is an array of indices corresponding to the best matches."
+    },
+    {
+      "content": "Finally, consider writing test cases to validate your implementation. Include edge cases such as identical strings, completely different strings, and varying lengths of suffixes."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= wordsContainer.length, wordsQuery.length <= 10^4",
+    "1 <= wordsContainer[i].length <= 5 * 10^3",
+    "1 <= wordsQuery[i].length <= 5 * 10^3",
+    "Sum of lengths of wordsContainer and wordsQuery is at most 5 * 10^5.",
+    "Return an array of indices corresponding to the best matches for each query.",
+    "If no common suffix exists, return the index of the shortest word in wordsContainer."
+  ]
+}

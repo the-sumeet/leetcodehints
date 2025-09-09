@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a circular array. In a circular array, after the last element, you can wrap around to the first element. This means that when considering subarrays, you can include elements from both the end and the beginning of the array."
+    },
+    {
+      "content": "Consider how you would find the maximum sum of a non-circular subarray first. You can use Kadane's algorithm, which efficiently computes the maximum sum of a contiguous subarray in linear time."
+    },
+    {
+      "content": "Kadane's algorithm works by maintaining a running sum and a maximum sum found so far. If the running sum becomes negative, you reset it to zero. Make sure you handle cases where all numbers are negative."
+    },
+    {
+      "content": "Think about how you can adapt your approach to handle the circular nature of the array. One way is to consider the maximum sum that includes wrapping around from the end of the array back to the beginning."
+    },
+    {
+      "content": "To find the maximum circular subarray sum, you can compute the total sum of the array and then subtract the minimum subarray sum from it. This works because the maximum circular subarray can be thought of as the total sum minus a non-circular subarray."
+    },
+    {
+      "content": "Remember that you need to handle edge cases where all elements might be negative. In such cases, the maximum sum should just be the largest single element, as you cannot have an empty subarray."
+    },
+    {
+      "content": "When implementing the solution, make sure to compute both the maximum subarray sum using Kadane's algorithm and the minimum subarray sum. You will need both to determine the maximum circular sum."
+    },
+    {
+      "content": "After calculating the maximum sum from Kadane's algorithm and the total sum minus the minimum subarray sum, compare these two values. The result will be the maximum of these two sums."
+    },
+    {
+      "content": "Ensure that you handle the case where the entire array is negative correctly. In this scenario, the maximum sum should be the maximum single element, which can be found using Kadane's algorithm."
+    },
+    {
+      "content": "Finally, structure your solution to handle both cases: the maximum sum from a non-circular subarray and the maximum circular subarray sum. Return the greater of the two as your final answer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 1 <= n <= 3 * 10^4, -3 * 10^4 <= nums[i] <= 3 * 10^4.",
+    "A subarray may only include each element at most once.",
+    "Consider edge cases where all elements are negative.",
+    "Return the maximum possible sum of a non-empty subarray."
+  ]
+}

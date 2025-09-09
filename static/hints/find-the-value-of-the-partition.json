@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the goal of the partition. You need to split the array into two non-empty parts, nums1 and nums2, such that the absolute difference between the maximum of nums1 and the minimum of nums2 is minimized."
+    },
+    {
+      "content": "Consider how you might efficiently find the maximum and minimum values of the two partitions. Sorting the array could be a helpful first step, as it allows you to easily access the largest and smallest elements."
+    },
+    {
+      "content": "Think about the implications of sorting. Once the array is sorted, the maximum of nums1 will be the last element of nums1, and the minimum of nums2 will be the first element of nums2 if you choose a split point."
+    },
+    {
+      "content": "Identify potential split points in the sorted array. If the array is sorted as [a1, a2, ..., an], valid split points are between elements, meaning you can split after any element except the last one."
+    },
+    {
+      "content": "When you choose a split point at index i in the sorted array, nums1 will contain elements from index 0 to i, and nums2 will contain elements from index i+1 to the end. This ensures both arrays are non-empty."
+    },
+    {
+      "content": "Calculate the value of the partition for each split point. For a split at index i, the value is |sorted[i] - sorted[i + 1]|. Keep track of the minimum value encountered."
+    },
+    {
+      "content": "Consider edge cases. What happens if there are duplicate values in the array? How does that affect the maximum and minimum calculations?"
+    },
+    {
+      "content": "Make sure to handle the constraints properly. Given that the length of nums can be up to 100,000, your solution should ideally be O(n log n) or O(n) to handle larger inputs efficiently."
+    },
+    {
+      "content": "Think about how to implement the logic in code. You will need to sort the array first, then iterate through it to find the minimum partition value."
+    },
+    {
+      "content": "Finally, ensure that your solution returns the correct format. You should return the minimum value of the partition as an integer, which represents the minimized absolute difference."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 10^5",
+    "Values: 1 <= nums[i] <= 10^9",
+    "Both nums1 and nums2 must be non-empty.",
+    "The output should be an integer representing the minimized partition value."
+  ]
+}

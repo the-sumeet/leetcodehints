@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the string is built. Each new character is prepended to the front of the string. This means that the first character of the final string becomes the last character of the first substring."
+    },
+    {
+      "content": "Consider how to find the longest common prefix (LCP) between two strings. You can compare characters one by one until they differ. This will be a key operation in calculating the scores."
+    },
+    {
+      "content": "The score for each string `s_i` is determined by how many characters from the start of `s_i` match with the start of the final string `s_n`. Think about how to efficiently compare these two strings."
+    },
+    {
+      "content": "You can iterate over the length of the string `s` and for each `i`, calculate the LCP between `s_i` and `s_n`. However, this may lead to a time complexity of O(n^2), which is not optimal for large strings."
+    },
+    {
+      "content": "Instead of recalculating the LCP from scratch for each `s_i`, consider using the result of the previous LCP calculation. If the current character of `s_i` matches the corresponding character in `s_n`, you can increment the LCP count."
+    },
+    {
+      "content": "Remember that the string is built from the last character to the first. Thus, when calculating the LCP, you should be careful about the indices you are comparing."
+    },
+    {
+      "content": "To avoid recalculating the LCP for every substring, maintain a variable to track the current LCP length. Update it based on whether the next character matches the corresponding character in `s_n`."
+    },
+    {
+      "content": "When you reach a character that does not match, reset the LCP count for that substring. This will help you efficiently sum the scores without redundant comparisons."
+    },
+    {
+      "content": "Consider edge cases, such as when the string is of length 1. The score for `s_1` should be 1 since it matches itself."
+    },
+    {
+      "content": "Think about the constraints given in the problem. The length of the string can go up to 100,000, so your solution needs to be linear in complexity to handle the largest cases efficiently."
+    },
+    {
+      "content": "You may find it useful to create a helper function to calculate the LCP between two strings. This will keep your main logic clean and focused."
+    },
+    {
+      "content": "As you implement your solution, keep track of the total score in a variable and add the scores from each substring as you calculate them."
+    },
+    {
+      "content": "Remember that the final output should be a single integer representing the sum of all scores. Ensure your function returns this value correctly."
+    },
+    {
+      "content": "Consider using a single loop that iterates from the end of the string to the beginning. This way, you can build the substrings and calculate their scores in one pass."
+    },
+    {
+      "content": "Finally, think about how to handle cases where there are no matches at all. Ensure that your logic correctly accounts for these scenarios without errors."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length <= 10^5",
+    "s consists of lowercase English letters.",
+    "The score is based on the longest common prefix between s_i and s_n.",
+    "The output should be a single integer representing the sum of all scores."
+  ]
+}

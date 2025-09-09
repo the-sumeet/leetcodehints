@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `bookings` array. Each element represents a range of flights and the number of seats reserved. For example, `bookings[i] = [first_i, last_i, seats_i]` means that `seats_i` are reserved for all flights from `first_i` to `last_i`."
+    },
+    {
+      "content": "Consider how you will store the total number of seats reserved for each flight. You will need an array `answer` of length `n` initialized to zero, where `answer[i]` will eventually hold the total seats for flight `i+1` (keeping in mind that array indexing starts at 0)."
+    },
+    {
+      "content": "Think about how you can efficiently apply the bookings to the `answer` array. A naive approach would involve looping through each booking and updating the range directly, which can be inefficient for large inputs."
+    },
+    {
+      "content": "Explore the concept of a difference array to handle range updates efficiently. You can increment the start of the range and decrement just after the end of the range. This allows you to later compute the total seats with a single pass."
+    },
+    {
+      "content": "When using a difference array, remember that after marking the increments and decrements, you will need to compute the prefix sum to get the actual number of reserved seats for each flight."
+    },
+    {
+      "content": "Ensure you handle the edge cases where `first_i` and `last_i` are the same, meaning that only one flight is being booked. Your logic should still work seamlessly in such cases."
+    },
+    {
+      "content": "Pay attention to the constraints given in the problem. The maximum value for `n` is 20,000, so your solution should ideally operate in linear time to handle the upper limits efficiently."
+    },
+    {
+      "content": "Make sure to validate the input data. Check that `first_i` and `last_i` are within the bounds of `1` to `n`, and that the number of seats is a positive integer."
+    },
+    {
+      "content": "As you implement the difference array, remember to initialize your `answer` array with zeros. After processing all bookings, you will need to convert the difference array back to the actual seat counts."
+    },
+    {
+      "content": "Finally, after applying the prefix sum to your `answer` array, ensure that you return the result in the correct format as specified in the problem statement. The output should be an array of total seats for each flight from `1` to `n`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 20,000; 1 <= bookings.length <= 20,000; 1 <= first_i <= last_i <= n; 1 <= seats_i <= 10,000.",
+    "Indexing: Remember that flight numbers are 1-based, while arrays in most programming languages are 0-based.",
+    "Output format: Return an array of total reserved seats for each flight from 1 to n."
+  ]
+}

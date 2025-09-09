@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a 2D array where each element contains three integers: the start and end of a range of bags, and the number of coins in those bags. Make sure you can access and interpret this data correctly."
+    },
+    {
+      "content": "Consider how to represent the bags on the number line. Since the ranges are non-overlapping, you can treat each range as a segment. Think about how to efficiently compute the number of coins in any given range of k consecutive bags."
+    },
+    {
+      "content": "Think about the constraints. The values of l_i and r_i can be very large (up to 10^9), but the number of ranges is limited to 10^5. This suggests that a direct approach using an array to represent all bags might not be feasible."
+    },
+    {
+      "content": "You might want to use a sliding window technique to keep track of the maximum coins collected from k consecutive bags. Start by calculating the total coins for the first k bags and then slide the window across the number line."
+    },
+    {
+      "content": "When sliding the window, remember to update the total coins based on the coins in the bags that are entering and leaving the window. This means you need to keep track of the current range of bags you are considering."
+    },
+    {
+      "content": "Think about how to efficiently find the number of coins in the bags that overlap with your current window. You may need to iterate through the ranges to check how many coins are in the current window of bags."
+    },
+    {
+      "content": "Consider edge cases where k is larger than the total number of bags available in the ranges. You should handle these cases gracefully, possibly by returning the maximum coins you can gather from the available bags."
+    },
+    {
+      "content": "Make sure to account for the fact that some bags may contain zero coins. When calculating the total for k bags, ensure that you correctly sum the coins even if some bags are empty."
+    },
+    {
+      "content": "As you implement your solution, keep track of the maximum coins found so far. Update this maximum whenever you calculate a new total for a window of k bags."
+    },
+    {
+      "content": "Finally, ensure your solution is efficient enough to handle the upper limits of the constraints. Aim for a time complexity that is close to O(n) or O(n log n) to manage the potentially large input size."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= coins.length <= 10^5, 1 <= k <= 10^9, coins[i] == [l_i, r_i, c_i], 1 <= l_i <= r_i <= 10^9, 1 <= c_i <= 1000.",
+    "The segments are non-overlapping, which simplifies the problem.",
+    "Ensure to handle cases where k is larger than the total number of bags available.",
+    "Return the maximum number of coins obtainable from k consecutive bags."
+  ]
+}

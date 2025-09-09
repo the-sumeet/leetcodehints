@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the forest matrix. Each cell can represent either an empty space (1), an impassable cell (0), or a tree (height > 1). Make sure to visualize how these elements interact."
+    },
+    {
+      "content": "Identify the starting point, which is (0, 0). You will need to traverse the forest from this point to cut down the trees. Consider how you can represent your current position and the trees you need to cut."
+    },
+    {
+      "content": "Remember that you can only cut down trees in order of their height. First, extract the positions and heights of all the trees in the forest. This will help you plan your path."
+    },
+    {
+      "content": "To find the trees, you can iterate through the matrix and store their coordinates along with their heights in a list. Sort this list based on the heights to determine the order of cutting."
+    },
+    {
+      "content": "Think about how to implement a pathfinding algorithm. You might want to use Breadth-First Search (BFS) or Dijkstra's algorithm to find the shortest path to each tree from your current position."
+    },
+    {
+      "content": "When implementing your pathfinding, consider the cells that are walkable. Remember that you cannot walk through cells with a value of 0, as they are impassable."
+    },
+    {
+      "content": "As you move from tree to tree, update your current position after cutting down a tree. The cell where the tree was should now be marked as an empty cell (1)."
+    },
+    {
+      "content": "If at any point you cannot reach the next tree, you should return -1. Make sure to handle this case in your pathfinding logic."
+    },
+    {
+      "content": "Consider edge cases where there are no trees or when trees are completely isolated by impassable cells. Ensure your function can handle these scenarios gracefully."
+    },
+    {
+      "content": "You will need to keep track of the total number of steps taken to reach each tree. Accumulate these steps as you progress from one tree to the next."
+    },
+    {
+      "content": "After cutting down a tree, ensure that you are recalculating the path to the next tree based on the updated forest matrix. This is crucial for maintaining the correct state."
+    },
+    {
+      "content": "Implement a helper function to perform the BFS or Dijkstra's search. This function should return the number of steps required to reach a specific tree from your current position."
+    },
+    {
+      "content": "While implementing the BFS, use a queue to explore each direction (north, east, south, west) from the current cell. Keep track of visited cells to avoid cycles."
+    },
+    {
+      "content": "Make sure to handle the return value of your pathfinding function properly. If you can't reach a tree, it should indicate that with a specific return value (like -1)."
+    },
+    {
+      "content": "Finally, once you have implemented the logic for cutting down all the trees in order, test your function with the provided examples to ensure it works as expected."
+    }
+  ],
+  "questionNotes": [
+    "The input matrix can have dimensions up to 50x50.",
+    "Each tree has a unique height, which simplifies the sorting process.",
+    "You must return -1 if not all trees can be cut down.",
+    "The starting point is always (0, 0), and you need to account for cells with value 0 as impassable."
+  ]
+}

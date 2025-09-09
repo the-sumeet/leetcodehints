@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "To implement a stack using queues, remember that a stack follows the LIFO (Last In, First Out) principle. Think about how you can use the two queues to mimic this behavior."
+    },
+    {
+      "content": "Consider how you can use one queue to hold the elements while the other queue can be used to reverse the order. This reversal is key to achieving the stack's behavior."
+    },
+    {
+      "content": "When you push an element onto the stack, you can enqueue it into one of the queues. After that, you may need to transfer all elements from the other queue to maintain the correct order."
+    },
+    {
+      "content": "For the `pop` operation, you can simply dequeue from the front of the queue that holds the elements in stack order. This will give you the last pushed element."
+    },
+    {
+      "content": "The `top` operation should also dequeue the front element without removing it permanently. You might need to store it temporarily to return it later."
+    },
+    {
+      "content": "Make sure to handle the `empty` operation correctly. It should check if both queues are empty to determine if the stack is empty."
+    },
+    {
+      "content": "Think about the time complexity of your operations. The `push` operation might take longer due to the need to transfer elements between queues."
+    },
+    {
+      "content": "Consider edge cases, such as what happens when you try to pop or access the top of an empty stack. Your implementation should handle these gracefully."
+    },
+    {
+      "content": "In your implementation, ensure that both queues are used effectively. You might want to designate one queue as the primary for storage and the other for manipulation."
+    },
+    {
+      "content": "For the follow-up question, think about how you can achieve stack behavior using only one queue. You may need to use a clever approach to re-order the elements during a push operation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= x <= 9",
+    "At most 100 calls will be made to push, pop, top, and empty.",
+    "All calls to pop and top are valid, meaning you won't encounter an empty stack during these operations."
+  ]
+}

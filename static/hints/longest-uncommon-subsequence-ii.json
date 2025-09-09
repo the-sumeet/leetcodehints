@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a subsequence. A subsequence can be formed by deleting some characters from a string without changing the order of the remaining characters. For example, from the string 'abc', you can form 'ab', 'ac', 'bc', and 'a', 'b', 'c', as well as the empty string."
+    },
+    {
+      "content": "Consider what an 'uncommon subsequence' means in this context. It refers to a subsequence that is present in one string but not in any of the others in the array. This is crucial for determining the longest uncommon subsequence."
+    },
+    {
+      "content": "Think about how to identify subsequences. You can generate all possible subsequences for a given string. However, generating all subsequences for all strings might be inefficient, so consider how to optimize this process."
+    },
+    {
+      "content": "Notice the constraints: the maximum length of each string is 10 and the number of strings is at most 50. This means that while brute-forcing all subsequences might seem daunting, it may be feasible given the limits."
+    },
+    {
+      "content": "You should also think about how to compare subsequences among the strings. If a subsequence appears in more than one string, it cannot be considered uncommon. This means you need a method to check the presence of subsequences across all strings."
+    },
+    {
+      "content": "Consider edge cases where all strings are the same or where one string is a subsequence of all others. In such cases, there might not be any uncommon subsequences, leading to a return value of -1."
+    },
+    {
+      "content": "To find the longest uncommon subsequence, you might want to first sort the strings by their lengths. This can help you quickly identify potential candidates for the longest uncommon subsequence, as longer strings are more likely to have unique subsequences."
+    },
+    {
+      "content": "When checking for uncommon subsequences, you can maintain a set of all subsequences found in the other strings. This allows you to efficiently check if a candidate subsequence is uncommon."
+    },
+    {
+      "content": "As you iterate through the strings, keep track of the lengths of the uncommon subsequences you find. The maximum length you find will be your answer, unless you find none, in which case you should return -1."
+    },
+    {
+      "content": "Finally, remember to return the length of the longest uncommon subsequence. If no such subsequence exists, return -1. Make sure your implementation correctly handles all edge cases discussed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= strs.length <= 50",
+    "1 <= strs[i].length <= 10",
+    "Each string consists of lowercase English letters.",
+    "Return -1 if no uncommon subsequence exists."
+  ]
+}

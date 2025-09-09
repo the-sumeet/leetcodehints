@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the jumps. You can only jump from index `i` to index `j` if `nums[j] - nums[i]` is within the range of `0` to `target`. This means you need to check the values of `nums` at both indices."
+    },
+    {
+      "content": "Consider how to represent the maximum number of jumps. You might want to maintain a count of jumps taken to reach each index, possibly using an array where each index corresponds to the maximum jumps to reach that index."
+    },
+    {
+      "content": "Think about how to traverse the `nums` array. A nested loop could be useful where for each index `i`, you check all possible indices `j` that can be jumped to. This will help you explore all valid jumps."
+    },
+    {
+      "content": "Remember to handle the base case where the length of `nums` is 2. If you cannot jump directly to the last index, you should return -1 immediately."
+    },
+    {
+      "content": "When checking for valid jumps, ensure that you only consider indices `j` that are greater than `i` and also within the bounds of the array. This is crucial to prevent out-of-bounds errors."
+    },
+    {
+      "content": "You may want to use a dynamic programming approach. Store the maximum jumps to reach each index in an array, and update it as you find valid jumps to new indices."
+    },
+    {
+      "content": "Consider edge cases where `target` is 0. In this case, if you cannot jump at all, you should return -1 since you cannot reach the last index."
+    },
+    {
+      "content": "As you implement your solution, think about how to efficiently find the next valid index `j` to jump to. You might want to use a two-pointer technique or binary search to optimize this step."
+    },
+    {
+      "content": "Make sure to check if you can reach the last index at all before returning the count of jumps. If the maximum jumps to reach the last index is still its initial value, it means you cannot reach it."
+    },
+    {
+      "content": "Finally, ensure your function handles the return value correctly. If you successfully reach the last index, return the maximum number of jumps; otherwise, return -1 if it's not possible."
+    }
+  ],
+  "questionNotes": [
+    "You can only jump from index i to j if 0 <= i < j < n - target and 0 <= nums[j] - nums[i] <= target.",
+    "Return the maximum number of jumps to reach index n - 1 or -1 if it's not possible.",
+    "Constraints: 2 <= nums.length <= 1000, -10^9 <= nums[i] <= 10^9, 0 <= target <= 2 * 10^9."
+  ]
+}

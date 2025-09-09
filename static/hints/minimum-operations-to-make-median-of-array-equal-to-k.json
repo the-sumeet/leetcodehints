@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, make sure you understand what the median is. For an odd-length array, it's the middle element when sorted. For an even-length array, it's the larger of the two middle elements."
+    },
+    {
+      "content": "Consider how the median changes when you increase or decrease elements in the array. Think about how many elements you need to adjust to influence the median."
+    },
+    {
+      "content": "Identify the position of the median in the sorted array. For an array of length n, if n is odd, the median is at index n // 2. If n is even, it is at index n // 2, but remember to take the larger value."
+    },
+    {
+      "content": "Sort the array first. This will help you easily access the median and understand which elements need to be changed to reach the desired median value k."
+    },
+    {
+      "content": "Think about the number of operations needed to change the median to k. If the current median is less than k, you'll need to increase some elements; if it's greater, you'll need to decrease some elements."
+    },
+    {
+      "content": "Count how many elements are less than k and how many are greater than k. This will help you determine how many operations you might need to perform."
+    },
+    {
+      "content": "Consider edge cases where the current median is already equal to k. In such cases, the minimum number of operations required is zero."
+    },
+    {
+      "content": "When adjusting elements, remember that you can only change one element at a time by either increasing or decreasing it. Plan your operations carefully to minimize the total number."
+    },
+    {
+      "content": "To efficiently calculate the number of operations, you might want to iterate through the sorted array from the median position and adjust the elements towards k, counting the operations as you go."
+    },
+    {
+      "content": "Finally, ensure you handle both odd and even length arrays correctly when determining the median and the necessary adjustments. You may need to adjust multiple elements to ensure the median becomes k."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 2 * 10^5",
+    "Constraints: 1 <= nums[i] <= 10^9",
+    "Constraints: 1 <= k <= 10^9",
+    "The median is defined as the middle element when sorted; if two middle elements exist, take the larger one.",
+    "Return the minimum number of operations needed to make the median equal to k."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by splitting both version strings by the dot ('.') character. This will give you a list of revisions for each version. For example, '1.2' becomes ['1', '2']."
+    },
+    {
+      "content": "Remember to convert each revision from a string to an integer. This will help you ignore any leading zeros. For instance, '01' should be treated as 1."
+    },
+    {
+      "content": "Consider the case where the two version strings have a different number of revisions. You should treat missing revisions as 0. For example, '1.0' should be compared to '1.0.0.0' as if it were '1.0' vs '1.0'."
+    },
+    {
+      "content": "When comparing the integer values of the revisions, iterate through the list of revisions of both versions simultaneously. If one version has fewer revisions, assume the missing ones are 0."
+    },
+    {
+      "content": "Pay attention to the return values: -1 if version1 < version2, 1 if version1 > version2, and 0 if they are equal. Make sure your comparison logic correctly implements this."
+    },
+    {
+      "content": "Consider edge cases such as when both version strings are identical or when they only differ in leading zeros. Both '1.01' and '1.001' should return 0."
+    },
+    {
+      "content": "Think about how to handle the conversion from string to integer. You can use Python's built-in `int()` function, which automatically handles leading zeros."
+    },
+    {
+      "content": "While iterating through the revisions, ensure that you handle cases where one version has more revisions than the other. Use a loop that runs for the maximum length of the two lists."
+    },
+    {
+      "content": "You may want to create a helper function to compare individual revisions, which can streamline your comparison logic. This function can return -1, 1, or 0 based on the comparison."
+    },
+    {
+      "content": "Finally, make sure to test your solution with various edge cases, including versions with leading zeros, different lengths, and identical versions to ensure your logic is robust."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= version1.length, version2.length <= 500",
+    "Both version1 and version2 only contain digits and '.'",
+    "All revisions can be stored in a 32-bit integer.",
+    "Treat missing revisions as 0.",
+    "Return -1 if version1 < version2, 1 if version1 > version2, and 0 if they are equal."
+  ]
+}

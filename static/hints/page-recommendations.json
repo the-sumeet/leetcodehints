@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input structure. You have two main components: 'Friendship' and 'Likes'. Each component is represented as a list of pairs, where 'Friendship' indicates connections between users and 'Likes' shows which pages users have liked."
+    },
+    {
+      "content": "Consider how you will represent the data in your code. You might want to use dictionaries or sets to store friendships and likes for efficient lookups. For example, you could have a dictionary where keys are user IDs and values are sets of liked page IDs."
+    },
+    {
+      "content": "Think about how to find recommendations for a user. A good starting point is to identify their friends and then aggregate the pages that those friends have liked. This way, you can suggest pages that the user hasn't liked yet but their friends have."
+    },
+    {
+      "content": "When processing the friendships, remember that the relationship is bidirectional. If user A is friends with user B, then B is also friends with A. Make sure your data structure reflects this."
+    },
+    {
+      "content": "As you gather liked pages from friends, ensure you are not recommending pages that the user has already liked. You can maintain a set of pages that the user has liked for quick checks."
+    },
+    {
+      "content": "Consider how to handle cases where a user has no friends or where their friends have not liked any pages. You might want to return an empty list or a specific message in these cases."
+    },
+    {
+      "content": "Think about how to rank the recommended pages. A simple approach could be to count how many friends liked each page and recommend the most popular ones. You might want to use a dictionary to count likes."
+    },
+    {
+      "content": "Be cautious about edge cases, such as multiple friends liking the same page. How will you handle ties? You might decide to recommend pages in a sorted order based on the number of likes, and then by page ID."
+    },
+    {
+      "content": "Make sure to define the output format clearly. You need to return a list of recommended page IDs. Think about whether you need to sort this list before returning it and how to handle duplicates."
+    },
+    {
+      "content": "Finally, implement the logic step by step. Start by extracting friendships and likes, then build the recommendation logic incrementally. For example, first, gather the friends of the user, then collect the pages they liked, and finally filter and sort the recommendations."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of two lists: 'Friendship' and 'Likes'. Each list contains pairs of user IDs.",
+    "Friendships are bidirectional; if user A is friends with user B, then B is also friends with A.",
+    "Ensure to avoid recommending pages that the user has already liked.",
+    "Handle edge cases like users with no friends or friends with no likes appropriately.",
+    "The output should be a list of recommended page IDs, possibly sorted and without duplicates."
+  ]
+}

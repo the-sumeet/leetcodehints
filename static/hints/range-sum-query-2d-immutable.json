@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to handle multiple queries that calculate the sum of elements in a specified rectangular region of a 2D matrix. Think about how you would calculate this sum using a naive approach."
+    },
+    {
+      "content": "Consider the naive solution where you iterate through the specified rectangle for each query. This would take O((row2-row1+1)*(col2-col1+1)) time for each query. How can you improve this time complexity?"
+    },
+    {
+      "content": "To achieve O(1) time complexity for the sumRegion method, think about preprocessing the matrix. What kind of preprocessing can help you quickly retrieve the sum of any rectangular area?"
+    },
+    {
+      "content": "A common approach is to use a prefix sum array. This array will allow you to store cumulative sums, which can be used to compute the sum of any sub-rectangle efficiently. How would you define this prefix sum array for a 2D matrix?"
+    },
+    {
+      "content": "When creating the prefix sum array, remember that each entry at (i, j) in this array should represent the sum of all elements from the top-left corner (0, 0) to (i, j). Can you write the formula to compute this?"
+    },
+    {
+      "content": "Make sure to account for the boundaries when calculating the prefix sums. You need to avoid double counting areas. What adjustments would you make to the formula to handle the edges of the matrix?"
+    },
+    {
+      "content": "After constructing the prefix sum array, think about how you can use it to compute the sum of elements in the rectangle defined by (row1, col1) and (row2, col2). What values from the prefix sum array will you need to combine?"
+    },
+    {
+      "content": "To retrieve the sum of the rectangle, you will need to use an inclusion-exclusion principle. Specifically, you will add and subtract certain prefix sums based on the corners of the rectangle. Can you outline the steps for this calculation?"
+    },
+    {
+      "content": "Consider edge cases, such as when the rectangle is just a single cell or when it covers the entire matrix. How will your implementation handle these cases?"
+    },
+    {
+      "content": "Finally, ensure that your code correctly initializes the NumMatrix class and handles multiple calls to sumRegion efficiently. Remember to test your implementation with various input sizes and configurations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 200",
+    "Matrix values range: -10^4 <= matrix[i][j] <= 10^4",
+    "0 <= row1 <= row2 < m, 0 <= col1 <= col2 < n",
+    "At most 10^4 calls to sumRegion will be made.",
+    "Ensure to account for 0-based indexing in the matrix."
+  ]
+}

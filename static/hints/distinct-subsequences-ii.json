@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence can be formed by deleting some characters from the string without changing the order of the remaining characters."
+    },
+    {
+      "content": "Consider how many subsequences can be formed from a string of length n. Each character can either be included or excluded, leading to a total of 2^n subsequences, including the empty subsequence."
+    },
+    {
+      "content": "Remember that the problem asks for distinct non-empty subsequences. This means you need to account for duplicates that may arise from repeated characters in the string."
+    },
+    {
+      "content": "Think about how you can use dynamic programming to solve this problem. You can maintain a count of distinct subsequences up to each character in the string."
+    },
+    {
+      "content": "Create an array `dp` where `dp[i]` represents the number of distinct subsequences that can be formed using the first `i` characters of the string."
+    },
+    {
+      "content": "Initialize `dp[0]` to 1, representing the empty subsequence. Then, for each character in the string, update the `dp` array based on previous values."
+    },
+    {
+      "content": "When processing a character, the new distinct subsequences can be derived from all previous subsequences. So, `dp[i] = dp[i-1] * 2` initially."
+    },
+    {
+      "content": "However, if the current character has appeared before, you need to subtract the count of subsequences that were formed before its last occurrence to avoid counting duplicates."
+    },
+    {
+      "content": "Maintain a last occurrence index for each character. This will help you identify the last position where a character was seen."
+    },
+    {
+      "content": "To avoid overflow, since the result can be very large, remember to take the result modulo 10^9 + 7 at each step."
+    },
+    {
+      "content": "After processing all characters, you will have the total count of distinct subsequences in `dp[n]`, where n is the length of the string."
+    },
+    {
+      "content": "Don't forget to subtract 1 from the final result to exclude the empty subsequence, as the problem specifies only non-empty subsequences."
+    },
+    {
+      "content": "Consider edge cases, such as strings with all identical characters. For example, 'aaa' should yield only 3 distinct subsequences: 'a', 'aa', and 'aaa'."
+    },
+    {
+      "content": "Make sure to handle cases where the input string length is at its minimum (1 character) or maximum (2000 characters) efficiently."
+    },
+    {
+      "content": "Finally, ensure your implementation is optimized to run within time limits, especially given the constraints of the problem."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 2000",
+    "Return the number of distinct non-empty subsequences modulo 10^9 + 7.",
+    "Subsequences must be distinct, meaning you should not count duplicates.",
+    "The input string consists only of lowercase English letters."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `DailySales` table. Each row contains a `date_id`, `make_name`, `lead_id`, and `partner_id`. You will need to group your results by `date_id` and `make_name`."
+    },
+    {
+      "content": "Consider how to count distinct values in SQL. The `COUNT(DISTINCT column_name)` function will be useful for counting unique `lead_id` and `partner_id` values for each group."
+    },
+    {
+      "content": "Think about how to group your data. You can use a `GROUP BY` clause in your SQL query to achieve this. Remember, you will group by both `date_id` and `make_name`."
+    },
+    {
+      "content": "Make sure to select the correct columns in your final output. You will need to include `date_id`, `make_name`, and the counts of unique leads and partners in your result."
+    },
+    {
+      "content": "Consider edge cases where there might be no leads or partners for a particular combination of `date_id` and `make_name`. How would your query handle these situations?"
+    },
+    {
+      "content": "Check if there are any duplicate entries in the `DailySales` table. Since the problem states there are no unique identifiers, ensure your counting logic accounts for duplicates."
+    },
+    {
+      "content": "Remember that the output can be in any order. You do not need to sort the results unless specified. Focus on getting the correct counts first."
+    },
+    {
+      "content": "As you write your SQL query, think about the order of operations. You might want to start with a subquery that counts distinct `lead_id` and `partner_id` before aggregating the results."
+    },
+    {
+      "content": "You can use a common table expression (CTE) or a subquery to first calculate the distinct counts and then select from that result set. This can help in organizing your logic."
+    },
+    {
+      "content": "Finally, put together your SQL query. Make sure to include the necessary `SELECT`, `FROM`, `GROUP BY`, and `COUNT(DISTINCT ...)` clauses to achieve the desired output."
+    }
+  ],
+  "questionNotes": [
+    "No primary key exists in the `DailySales` table; it may contain duplicates.",
+    "You need to return counts of distinct `lead_id` and `partner_id` for each combination of `date_id` and `make_name`.",
+    "Output format must include columns: `date_id`, `make_name`, `unique_leads`, `unique_partners`.",
+    "The result can be returned in any order."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the `this` context works in JavaScript functions. When you call a function normally, `this` refers to the global object or is undefined in strict mode. You need to create a way to set `this` to a specific object."
+    },
+    {
+      "content": "Consider how you can define a method on the Function prototype. This will allow all function instances to have access to your custom method, which you will call `callPolyfill`."
+    },
+    {
+      "content": "The `callPolyfill` method should accept at least one parameter, which will be the object that becomes the `this` context. You can use the `arguments` object to handle the additional parameters that will be passed to the function."
+    },
+    {
+      "content": "Remember that the first argument of `callPolyfill` is the object for `this`. The remaining arguments should be passed to the original function. You may want to use the `apply` method for this, but since you are not allowed to use `Function.call`, think about how to invoke the function directly."
+    },
+    {
+      "content": "You can use a combination of the `Function.prototype.bind` method or the `new Function` constructor to create a new function with the desired context. However, be cautious as these methods might not be allowed based on your constraints."
+    },
+    {
+      "content": "To call the function with the correct `this` context, you can create a closure or use an arrow function to maintain the context. This will allow you to invoke the original function while binding it to the specified object."
+    },
+    {
+      "content": "Make sure to handle cases where no additional arguments are provided. Your implementation should still work correctly if the function does not expect any parameters beyond the `this` context."
+    },
+    {
+      "content": "Consider edge cases where the object passed as `this` might not have the expected properties. You may want to add some error handling or default values to ensure your function behaves predictably."
+    },
+    {
+      "content": "When implementing the function, ensure that you return the result of the original function call. This is important for the function to behave as expected, especially when it is used in expressions."
+    },
+    {
+      "content": "Finally, your `callPolyfill` method should look something like this: `function callPolyfill(obj, ...args) { /* implementation */ }`. Focus on correctly binding `this` and passing the `args` to the function."
+    }
+  ],
+  "questionNotes": [
+    "The first parameter of `callPolyfill` must be an object, which will become the `this` context.",
+    "The method should handle any number of additional arguments and pass them to the function.",
+    "Ensure that your implementation does not use the built-in Function.call method.",
+    "The function should return the result of the invoked function."
+  ]
+}

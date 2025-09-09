@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of a Binary Search Tree (BST). In a BST, for any given node, all values in its left subtree must be less than the node's value, and all values in its right subtree must be greater."
+    },
+    {
+      "content": "Consider how the BST properties are violated when two nodes are swapped. Identify the nodes that are out of order when performing an in-order traversal of the tree."
+    },
+    {
+      "content": "An in-order traversal of a BST should yield a sorted list of values. As you traverse, keep track of the previous node to identify the first and second nodes that are out of order."
+    },
+    {
+      "content": "During the in-order traversal, if you find a node that is less than the previous node, it indicates a violation of the BST property. You need to identify both nodes involved in the swap."
+    },
+    {
+      "content": "Remember that there are two cases for the swapped nodes: adjacent nodes and non-adjacent nodes. Make sure your logic accounts for both situations when identifying the nodes to swap."
+    },
+    {
+      "content": "To implement the in-order traversal, you can use recursion or an iterative approach with a stack. Choose the method that you are most comfortable with."
+    },
+    {
+      "content": "As you identify the two nodes that need to be swapped, store references to these nodes. You will need to swap their values to recover the BST."
+    },
+    {
+      "content": "Ensure that your solution uses O(1) space. This means you should not use any additional data structures that grow with the size of the input, such as arrays or lists."
+    },
+    {
+      "content": "After identifying the two nodes, swapping their values is straightforward. Just remember to handle the case where the nodes are adjacent carefully."
+    },
+    {
+      "content": "Once you have swapped the values of the two identified nodes, perform a final in-order traversal to verify that the tree is now a valid BST."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The number of nodes in the tree is in the range [2, 1000].",
+    "Node values are in the range of -2^31 to 2^31 - 1.",
+    "The tree structure must remain unchanged; only the values of the swapped nodes should be modified.",
+    "Ensure to handle edge cases where the swapped nodes are adjacent in the in-order traversal."
+  ]
+}

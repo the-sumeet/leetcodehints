@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node has a value, and it can have up to two children. Familiarize yourself with how to traverse a binary tree, as you'll need to calculate sums of subtrees."
+    },
+    {
+      "content": "Consider how to calculate the sum of all nodes in the tree. You can use a depth-first search (DFS) approach to traverse the tree and accumulate the sum of node values."
+    },
+    {
+      "content": "When you split the tree by removing an edge, you create two separate subtrees. Think about how you can compute the sum of one subtree given the total sum of the tree and the sum of the other subtree."
+    },
+    {
+      "content": "Remember that the product of the sums of the two subtrees is what you need to maximize. If the total sum of the tree is `totalSum`, and one subtree has a sum of `subtreeSum`, the other subtree's sum is `totalSum - subtreeSum`."
+    },
+    {
+      "content": "The product of the sums can be expressed as `subtreeSum * (totalSum - subtreeSum)`. To maximize this product, consider how varying `subtreeSum` affects the product."
+    },
+    {
+      "content": "You will need to explore every edge in the tree to find the optimal split. This means that during your DFS traversal, you should calculate the sum of each subtree and evaluate the product for that split."
+    },
+    {
+      "content": "Keep in mind the constraints of the problem. The number of nodes can be as large as 50,000, so your solution needs to be efficient, ideally O(n), where n is the number of nodes."
+    },
+    {
+      "content": "As you calculate the product for each possible split, remember to track the maximum product found. You can use a variable to store this maximum value during your traversal."
+    },
+    {
+      "content": "Since the result can be very large, ensure that you apply the modulo operation (10^9 + 7) to the maximum product before returning it. This should be done after calculating the maximum product."
+    },
+    {
+      "content": "Finally, make sure to handle edge cases, such as trees with only two nodes, where the split is straightforward. Consider how your logic applies to these simpler cases."
+    }
+  ],
+  "questionNotes": [
+    "The answer must be returned modulo 10^9 + 7.",
+    "You need to maximize the product before taking the modulo, not after.",
+    "The number of nodes in the tree is guaranteed to be at least 2.",
+    "Node values are between 1 and 10^4."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of the integers in the set. Each integer must end with the digit `k`. For example, if `k = 2`, valid integers include 2, 12, 22, etc."
+    },
+    {
+      "content": "Consider the relationship between `num` and `k`. The sum of the integers must equal `num`, and since each integer contributes a units digit of `k`, think about how this affects the total sum."
+    },
+    {
+      "content": "Notice that if `num` is less than `k`, it is impossible to form such a set, except when `num` is 0. For instance, if `num = 1` and `k = 2`, you cannot form a valid set."
+    },
+    {
+      "content": "If `num` is 0, the only valid set is the empty set, which has a size of 0. This is a special case that you should handle explicitly."
+    },
+    {
+      "content": "To find the minimum size of the set, think about how many times you need to add integers ending in `k` to reach `num`. Each integer contributes at least `k` to the sum."
+    },
+    {
+      "content": "Calculate how many times you can use the smallest integer with a units digit of `k`. This integer is `k` itself. For example, if `k = 9`, the smallest integer is 9."
+    },
+    {
+      "content": "Consider the equation: `num = x * k + y`, where `x` is the number of integers used and `y` is some remainder. The remainder `y` must also be a valid integer that ends with `k`."
+    },
+    {
+      "content": "To determine if a valid set exists, check if `num - k` is non-negative and divisible by 10. This will help ensure that the remaining sum can be achieved with integers ending in `k`."
+    },
+    {
+      "content": "Think about the modular arithmetic involved. Specifically, check if `(num - k) % 10 == 0`. This condition will help you confirm whether you can form the required sum."
+    },
+    {
+      "content": "Finally, if you find a valid configuration, calculate the size of the set. The size can be calculated as `1 + (num - k) / 10` if `num >= k` and the condition from the previous hint is satisfied."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= num <= 3000, 0 <= k <= 9.",
+    "The sum of an empty set is considered 0.",
+    "Return -1 if no valid set can be formed.",
+    "The integers can repeat in the set."
+  ]
+}

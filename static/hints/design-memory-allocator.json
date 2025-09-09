@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by initializing a memory array of size `n` with all units marked as free. You can use a list or an array to represent this memory. For example, `memory = [0] * n` indicates that all memory units are free."
+    },
+    {
+      "content": "Think about how to represent allocated memory blocks. You can use a dictionary to map `mID` to a list of indices where memory has been allocated. This will help you track which indices to free later."
+    },
+    {
+      "content": "When allocating memory, you need to find the leftmost block of size `size` that is free. Consider iterating through the memory array and checking for consecutive free units. You can use a counter to keep track of the number of consecutive free units."
+    },
+    {
+      "content": "Remember to handle the case where the requested size exceeds the available free memory. If you reach the end of the array without finding a suitable block, return `-1`."
+    },
+    {
+      "content": "In the `freeMemory` function, you need to iterate through the memory array and free all units associated with the given `mID`. Make sure to count how many units you free and return that count."
+    },
+    {
+      "content": "Consider edge cases such as freeing an `mID` that has not been allocated any memory. Your implementation should return `0` in this case, as there are no units to free."
+    },
+    {
+      "content": "Think about how to efficiently manage the memory state. For example, when you free memory, you should ensure that the corresponding indices in the memory array are reset to indicate they are free again."
+    },
+    {
+      "content": "When allocating multiple blocks to the same `mID`, make sure your data structure allows for this. You might want to store the start indices of all allocations for each `mID` in your dictionary."
+    },
+    {
+      "content": "While implementing the allocation logic, ensure that you check for the full size of the requested block before marking the indices as allocated. This prevents partial allocations from occurring."
+    },
+    {
+      "content": "Finally, make sure to test your implementation with various scenarios, including allocating the maximum size, freeing memory that has not been allocated, and allocating after freeing to ensure the memory state is consistent."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n, size, mID <= 1000",
+    "At most 1000 calls will be made to allocate and freeMemory.",
+    "Return -1 if no suitable block is found during allocation.",
+    "Freeing memory should reset the indices to indicate they are free.",
+    "Multiple blocks can be allocated to the same mID."
+  ]
+}

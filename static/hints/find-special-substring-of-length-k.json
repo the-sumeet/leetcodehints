@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a substring. A substring is a contiguous sequence of characters within a string. For example, in the string 'abc', the substrings of length 2 are 'ab' and 'bc'."
+    },
+    {
+      "content": "Focus on the requirement that the substring must consist of only one distinct character. This means that for any valid substring of length k, all characters must be the same, like 'aaa' or 'bbb'."
+    },
+    {
+      "content": "Consider how to check for the character before and after the substring. If your substring starts at index i, you should check the character at index i-1 (if it exists) and the character at index i+k (if it exists)."
+    },
+    {
+      "content": "Remember to handle edge cases where the substring might be at the beginning or the end of the string. For example, if the substring starts at index 0, there is no character before it to check."
+    },
+    {
+      "content": "You can iterate through the string, checking each possible starting index for a substring of length k. For each starting index, check if the substring consists of one distinct character."
+    },
+    {
+      "content": "To check if all characters in a substring are the same, you can compare the first character of the substring with the rest. For example, in pseudocode: `if substring[0] == substring[1] == ... == substring[k-1]`."
+    },
+    {
+      "content": "When checking the characters before and after the substring, ensure that you do not go out of bounds of the string. Use conditions to check if indices are valid before accessing them."
+    },
+    {
+      "content": "Think about how to efficiently check for the conditions. You can create a loop that goes from index 0 to `s.length - k`, checking each substring of length k and its surrounding characters."
+    },
+    {
+      "content": "After identifying a valid substring, make sure to return true immediately. If you finish checking all possible substrings and find none that meet the criteria, return false."
+    },
+    {
+      "content": "Before finalizing your solution, consider edge cases such as when k is equal to the length of the string or when the string contains only one type of character. These can help you ensure your solution is robust."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= s.length <= 100",
+    "s consists of lowercase English letters only.",
+    "The substring must be of length exactly k.",
+    "The substring must consist of only one distinct character.",
+    "Characters immediately before and after the substring must be different from the substring's character."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the sequence requirements. You need to include the integer 1 exactly once and each integer from 2 to n exactly twice. Think about how you can structure the sequence to meet these conditions."
+    },
+    {
+      "content": "Consider the distance condition for integers between 2 and n. For a number i, its two occurrences in the sequence must be exactly i indices apart. This means if you place the first occurrence at index j, the second must be at index j + i."
+    },
+    {
+      "content": "Remember that the sequence must be lexicographically largest. This means you should prioritize placing larger numbers earlier in the sequence whenever possible. Think about how to place the largest numbers first while respecting the distance requirement."
+    },
+    {
+      "content": "Visualize the sequence as a list of indices. For example, if n=3, you will have a sequence of length 2*n - 1, which is 5. This is because you have 1 occurrence of 1 and 2 occurrences of each number from 2 to n."
+    },
+    {
+      "content": "Try starting with the largest number n and placing it in the sequence. After placing n, think about where you can place its second occurrence while ensuring the distance condition is met."
+    },
+    {
+      "content": "After placing n, consider how the placement of the next largest number (n-1) can affect the sequence. You may need to backtrack if placing a number violates the distance condition or if it prevents you from placing subsequent numbers."
+    },
+    {
+      "content": "As you build the sequence, keep track of the indices that are already filled. This will help you determine valid positions for the next numbers. You can use a boolean array to mark filled indices."
+    },
+    {
+      "content": "When placing each number, ensure that the two occurrences do not overlap with any previously placed numbers. This is crucial for maintaining the validity of the sequence."
+    },
+    {
+      "content": "Consider edge cases, such as when n=1. The sequence should simply be [1]. This will help you confirm that your solution handles the smallest input correctly."
+    },
+    {
+      "content": "Finally, think about how to finalize the sequence. Once you have placed all numbers, ensure that the sequence meets all conditions before returning it. You might want to print or log the sequence at each step to verify its correctness."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n <= 20",
+    "The sequence must contain 1 exactly once and each integer from 2 to n exactly twice.",
+    "The distance between the two occurrences of each integer i must be exactly i.",
+    "The sequence should be lexicographically largest."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree. Each node has a position defined by (row, col). The root is at (0, 0), and children are positioned at (row + 1, col - 1) for the left child and (row + 1, col + 1) for the right child."
+    },
+    {
+      "content": "Consider how you will traverse the tree. A breadth-first search (BFS) can be useful here since you want to process nodes level by level, which corresponds to their rows."
+    },
+    {
+      "content": "As you traverse, keep track of each node's (row, col) position. You might want to use a queue to facilitate the BFS and a map or dictionary to store nodes based on their column index."
+    },
+    {
+      "content": "Remember that nodes can share the same (row, col) position. You need a way to handle these cases, such as storing nodes in a list for each column."
+    },
+    {
+      "content": "When processing nodes in the same column and row, sort them by their values. This will ensure that the output meets the requirement for tie-breaking."
+    },
+    {
+      "content": "Think about how to determine the range of columns you will need to output. You should track the minimum and maximum column indices encountered during the traversal."
+    },
+    {
+      "content": "Once you have collected all nodes in their respective columns, you can prepare the final output. The output should be a list of lists, where each inner list corresponds to a column."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree has only one node. The output in this case should simply be a list containing one list with that single node's value."
+    },
+    {
+      "content": "Make sure to handle trees that are skewed (either left or right). This will help you ensure that your solution works for all shapes of binary trees."
+    },
+    {
+      "content": "When you sort the nodes in the same (row, col), remember to sort them by their values. You can use a simple sorting function after populating the lists for each column."
+    },
+    {
+      "content": "After you have your columns sorted and prepared, iterate from the minimum column index to the maximum column index to construct the final output list."
+    },
+    {
+      "content": "Consider how you will handle the output format. You need to return a list of lists, where each inner list contains the values of nodes in the same vertical column."
+    },
+    {
+      "content": "You can use a data structure like a defaultdict from the collections module in Python to simplify the process of grouping nodes by their column index."
+    },
+    {
+      "content": "When implementing the BFS, ensure that you enqueue the left and right children of each node along with their updated (row, col) positions."
+    },
+    {
+      "content": "Finally, ensure your function handles the input correctly and returns the output in the specified format. Pay attention to the constraints and edge cases."
+    }
+  ],
+  "questionNotes": [
+    "The root of the tree is at (0, 0).",
+    "Left child is at (row + 1, col - 1) and right child is at (row + 1, col + 1).",
+    "Nodes in the same row and column should be sorted by their values.",
+    "Return format should be a list of lists, each inner list representing a vertical column.",
+    "Constraints: 1 <= number of nodes <= 1000, 0 <= Node.val <= 1000."
+  ]
+}

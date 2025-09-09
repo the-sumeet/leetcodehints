@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the game's rules. Alice can choose either all single-digit numbers (1-9) or all double-digit numbers (10-99) from the array. Think about how you can separate these two categories from the input array."
+    },
+    {
+      "content": "Consider how you would calculate the sum of the numbers Alice chooses. You will need to iterate through the array and keep track of the sums for both single-digit and double-digit numbers separately."
+    },
+    {
+      "content": "Remember that Alice wins if her sum is strictly greater than Bob's sum. This means you also need to calculate Bob's sum, which is simply the total sum of the array minus Alice's chosen sum."
+    },
+    {
+      "content": "Before diving into coding, think about edge cases. What happens if all numbers are single-digit? What if all numbers are double-digit? How does that affect the sums?"
+    },
+    {
+      "content": "You can calculate the total sum of the array first. This will help you easily compute Bob's sum after determining Alice's chosen sum. Use a variable to store the total sum."
+    },
+    {
+      "content": "As you iterate through the array, use conditional statements to add numbers to Alice's sum based on whether they are single-digit or double-digit. You can use the length of the number to determine its category."
+    },
+    {
+      "content": "Once you have both sums (Alice's and Bob's), compare them. If Alice's sum is greater than Bob's, return true. Otherwise, return false."
+    },
+    {
+      "content": "Consider the situation where Alice's chosen numbers are empty. If Alice chooses single-digit numbers and there are none, what will be the outcome? Make sure to handle such scenarios."
+    },
+    {
+      "content": "When calculating sums, ensure that you are not counting any number more than once. Each number should only contribute to one player's sum."
+    },
+    {
+      "content": "Finally, write out the logic in pseudocode before implementing it. This will help you visualize the flow of the program and ensure you haven't missed any steps. For example:\n\n```\ntotal_sum = sum(nums)\nfor num in nums:\n    if num < 10:\n        alice_sum += num\n    else:\n        bob_sum += num\n```\nNow think about how to finalize the comparison."
+    }
+  ],
+  "questionNotes": [
+    "Alice can choose either all single-digit or all double-digit numbers.",
+    "Bob gets the remaining numbers after Alice's choice.",
+    "Alice wins if her sum is strictly greater than Bob's sum.",
+    "Constraints: 1 <= nums.length <= 100, 1 <= nums[i] <= 99."
+  ]
+}

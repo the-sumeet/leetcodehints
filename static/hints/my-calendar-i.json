@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of half-open intervals. The interval [startTime, endTime) includes startTime but excludes endTime. This means that if an event ends at time 'endTime', it does not overlap with another event starting at 'endTime'."
+    },
+    {
+      "content": "Think about how you will store the events in your calendar. A simple list or array could work, but consider how you will check for overlaps efficiently. What data structure would allow you to quickly determine if a new event intersects with existing events?"
+    },
+    {
+      "content": "When checking for overlaps, remember that two intervals [a, b) and [c, d) overlap if and only if a < d and c < b. You will need to implement this logic in your 'book' method."
+    },
+    {
+      "content": "Consider edge cases where the new event starts exactly at the end of an existing event. For example, if you have an event [10, 20) and you try to book [20, 30), should that be allowed? Think about the implications of half-open intervals."
+    },
+    {
+      "content": "You may want to sort the events based on their start times for easier overlap checking. This could help you quickly find the relevant intervals to check against when a new event is proposed."
+    },
+    {
+      "content": "As you implement the 'book' method, ensure that you return 'true' only if the event can be added without causing a double booking. If any overlap is found, return 'false' immediately."
+    },
+    {
+      "content": "Consider how you will handle multiple bookings. If you have a list of events, how will you iterate through them to check for overlaps? A loop might suffice, but think about the efficiency of your checks."
+    },
+    {
+      "content": "You should also think about the constraints given in the problem. For instance, you will only receive at most 1000 calls to 'book'. How can you optimize your solution to handle this efficiently?"
+    },
+    {
+      "content": "Remember to handle the case where the start time and end time are the same. According to the constraints, this should not happen, but ensure your code does not break if it does."
+    },
+    {
+      "content": "Finally, when implementing the solution, make sure to test it against the provided sample test case as well as additional edge cases you identify. For instance, what happens if you try to book overlapping events in quick succession?"
+    }
+  ],
+  "questionNotes": [
+    "The events are represented as half-open intervals [startTime, endTime).",
+    "A double booking occurs if two events have a non-empty intersection.",
+    "Return true if the event can be added successfully, otherwise return false.",
+    "Constraints: 0 <= start < end <= 10^9 and at most 1000 calls will be made."
+  ]
+}

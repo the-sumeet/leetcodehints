@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between workers and jobs. Each worker can only take a job if their ability is greater than or equal to the job's difficulty. Make sure to keep this in mind when iterating through the workers."
+    },
+    {
+      "content": "Consider how to pair jobs with workers. You might want to create a mapping of jobs to their respective profits based on their difficulties. This can help you quickly determine the maximum profit a worker can earn."
+    },
+    {
+      "content": "Think about sorting the jobs by difficulty. This way, you can efficiently find the best job a worker can take based on their ability. Sorting will help you avoid unnecessary comparisons."
+    },
+    {
+      "content": "After sorting the jobs, create a list of maximum profits that can be achieved for each difficulty level. This will allow you to quickly reference the maximum profit available for any worker's ability."
+    },
+    {
+      "content": "When processing each worker, you should check their ability against the sorted job difficulties. Use a binary search approach to find the highest difficulty job that the worker can handle, which will lead to the maximum profit."
+    },
+    {
+      "content": "Don't forget that multiple workers can take the same job, leading to cumulative profits. Ensure your profit calculation accounts for how many workers can take the same job."
+    },
+    {
+      "content": "Consider edge cases where workers may not be able to handle any job at all. In such cases, their profit should be zero. Make sure your solution handles these scenarios gracefully."
+    },
+    {
+      "content": "As you implement your solution, keep track of the total profit. You will need to sum the profits of all workers based on the jobs they can complete."
+    },
+    {
+      "content": "When calculating the total profit, ensure that you are accessing the correct profit values for the jobs that the workers can handle. This may involve using an index or a mapping strategy."
+    },
+    {
+      "content": "Finally, once you have computed the total profit from all workers, return this value as the output of your function. Make sure to check that your implementation handles all constraints and edge cases correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n, m <= 10^4; 1 <= difficulty[i], profit[i], worker[i] <= 10^5.",
+    "Each worker can complete at most one job.",
+    "One job can be completed multiple times by different workers.",
+    "If a worker cannot complete any job, their profit is 0.",
+    "Return the total maximum profit achievable."
+  ]
+}

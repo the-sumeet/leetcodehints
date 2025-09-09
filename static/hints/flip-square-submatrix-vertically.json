@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. Remember that the matrix is composed of rows and columns, and you'll need to manipulate specific rows based on the provided indices x and y."
+    },
+    {
+      "content": "Identify the boundaries of the square submatrix. Given x, y, and k, the submatrix will span from (x, y) to (x + k - 1, y + k - 1). Make sure to visualize this area."
+    },
+    {
+      "content": "Consider how to access the rows of the submatrix. You can loop through the range from x to x + k to get the rows that need to be flipped."
+    },
+    {
+      "content": "Think about how to reverse the order of rows. You can create a temporary list to store the rows of the submatrix and then replace them in the original matrix in reverse order."
+    },
+    {
+      "content": "When you extract the rows for the submatrix, remember to maintain their original structure. You might use a loop like this: `for i in range(x, x + k)` to collect rows."
+    },
+    {
+      "content": "After reversing the rows, you'll need to place them back into the original grid. Make sure you replace the correct rows in the original matrix."
+    },
+    {
+      "content": "Pay attention to the constraints provided. Ensure that your implementation handles the edge cases where the submatrix is at the borders of the grid."
+    },
+    {
+      "content": "Consider the case where k is 1. This means you're flipping a single row, which should remain unchanged after the operation. Think about how this affects your logic."
+    },
+    {
+      "content": "Remember that the indices in Python are zero-based. Double-check your calculations to ensure you're accessing the correct elements in the matrix."
+    },
+    {
+      "content": "Finally, to implement the flipping, you might use slicing. For example, if `submatrix` is your list of rows, you can reverse it with `submatrix[::-1]` before placing it back."
+    }
+  ],
+  "questionNotes": [
+    "The matrix is m x n, where 1 <= m, n <= 50.",
+    "The values in the matrix are between 1 and 100.",
+    "Indices x and y are zero-based, meaning they start from 0.",
+    "k must be such that 1 <= k <= min(m - x, n - y), ensuring the submatrix fits within the grid."
+  ]
+}

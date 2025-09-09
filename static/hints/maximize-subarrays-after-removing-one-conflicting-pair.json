@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have an integer `n` which defines an array `nums` containing integers from 1 to `n`. This means that `nums` is simply `[1, 2, ..., n]`."
+    },
+    {
+      "content": "Take a closer look at the `conflictingPairs` array. Each pair `[a, b]` indicates that you cannot have both `a` and `b` in the same subarray. This is crucial for determining valid subarrays."
+    },
+    {
+      "content": "Consider how many subarrays can be formed from an array of length `n`. The total number of subarrays is given by the formula: `n * (n + 1) / 2`. This will be your baseline for comparison."
+    },
+    {
+      "content": "When you have conflicting pairs, you need to determine how many subarrays contain both elements of each pair. This will help you understand the impact of each conflicting pair on the total count of valid subarrays."
+    },
+    {
+      "content": "To find the number of subarrays containing both `a` and `b`, identify the positions of `a` and `b` in the array. The subarrays containing both will start from the left of the minimum index of `a` or `b` and end at the right of the maximum index."
+    },
+    {
+      "content": "Think about how to calculate the number of subarrays that can be formed between the indices of `a` and `b`. If `a` is at index `i` and `b` is at index `j`, the number of subarrays containing both is `(i + 1) * (n - j)`, where `n` is the length of the array."
+    },
+    {
+      "content": "As you iterate through each conflicting pair, keep track of the total number of subarrays that are invalidated by the presence of both elements in that pair."
+    },
+    {
+      "content": "Next, consider the effect of removing one conflicting pair. For each pair, calculate the number of valid subarrays if that specific pair is removed from `conflictingPairs`."
+    },
+    {
+      "content": "When you remove a pair, the number of invalid subarrays will decrease. Therefore, for each pair you consider removing, subtract the count of invalid subarrays caused by that pair from the total subarrays."
+    },
+    {
+      "content": "Keep a running maximum of the valid subarrays count as you evaluate the effect of removing each conflicting pair. This will help you determine the best pair to remove."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when all pairs conflict with each other or when there are only two elements in `nums`. How does this affect your calculations?"
+    },
+    {
+      "content": "Remember, the goal is to maximize the number of valid subarrays after removing one pair. This means that you should focus on pairs that, when removed, lead to the largest increase in valid subarrays."
+    },
+    {
+      "content": "As a final step, ensure that your solution is efficient enough to handle the upper limits of the constraints, particularly with `n` being as large as 100,000."
+    },
+    {
+      "content": "Consider using a loop to iterate through each conflicting pair, calculating the number of valid subarrays dynamically. This will help you avoid recalculating from scratch each time."
+    },
+    {
+      "content": "Your final implementation should return the maximum count of valid subarrays after evaluating the removal of each conflicting pair. Make sure to test your solution with various edge cases."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5",
+    "1 <= conflictingPairs.length <= 2 * n",
+    "conflictingPairs[i].length == 2",
+    "1 <= conflictingPairs[i][j] <= n",
+    "conflictingPairs[i][0] != conflictingPairs[i][1]",
+    "Return the maximum number of valid subarrays after removing exactly one conflicting pair."
+  ]
+}

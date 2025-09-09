@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to find two distinct indices in the array such that the numbers at those indices add up to the given target. Think about how you can iterate through the array to check pairs."
+    },
+    {
+      "content": "Consider using a brute force approach first. This would involve two nested loops to check every possible pair of numbers in the array. What is the time complexity of this approach?"
+    },
+    {
+      "content": "Remember that you cannot use the same element twice. This means when you are checking pairs, ensure that the indices are different. How would you handle this in your loops?"
+    },
+    {
+      "content": "Think about how you can reduce the time complexity. Instead of checking all pairs, can you use a data structure to keep track of the numbers you've seen so far? This could help you find the complement of the current number quickly."
+    },
+    {
+      "content": "Consider using a hash map (or dictionary) to store the numbers and their corresponding indices as you iterate through the array. This way, for each number, you can check if its complement (target - current number) exists in the map."
+    },
+    {
+      "content": "When you iterate through the array, for each number, calculate its complement. If the complement is found in the hash map, you have found your answer. What should you do if it’s not found?"
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the array has only two elements. What will happen in this case? Can you still apply your hash map approach?"
+    },
+    {
+      "content": "Remember the constraints: you are guaranteed that there is exactly one solution. This means once you find the two indices, you can return them immediately without needing to continue checking."
+    },
+    {
+      "content": "Consider the return format. You need to return the indices as an array. Ensure that your solution adheres to the expected output format, which is typically a list of two integers."
+    },
+    {
+      "content": "Finally, put everything together. As you iterate through the array, update the hash map with the current number and its index, and check for the complement. Make sure to return the indices in the correct order."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 10^4",
+    "Value range: -10^9 <= nums[i], target <= 10^9",
+    "Only one valid answer exists.",
+    "Indices must be distinct.",
+    "Return format: an array of two integers."
+  ]
+}

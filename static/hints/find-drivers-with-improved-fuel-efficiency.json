@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to calculate fuel efficiency. Fuel efficiency can be defined as `distance_km / fuel_consumed`. Make sure to handle cases where `fuel_consumed` might be zero to avoid division by zero errors."
+    },
+    {
+      "content": "You need to separate the trips into two halves of the year: January to June for the first half, and July to December for the second half. Consider using date functions to filter the trips based on `trip_date`."
+    },
+    {
+      "content": "Think about how to group the trips by `driver_id` and then by the date range. You can use SQL's `GROUP BY` clause to aggregate the data for each driver."
+    },
+    {
+      "content": "Once you have the trips grouped, calculate the average fuel efficiency for each half of the year. You can use the `AVG()` function in SQL to compute these averages."
+    },
+    {
+      "content": "Remember to only include drivers who have trips in both halves of the year. You can achieve this by using a `HAVING` clause after grouping to filter out drivers who do not meet this criterion."
+    },
+    {
+      "content": "When calculating the efficiency improvement, use the formula: `second_half_avg - first_half_avg`. Ensure you round the results to two decimal places using a rounding function."
+    },
+    {
+      "content": "After calculating the averages and improvements, you need to format your result set correctly. Make sure to include `driver_id`, `driver_name`, `first_half_avg`, `second_half_avg`, and `efficiency_improvement` in your final output."
+    },
+    {
+      "content": "Pay attention to the ordering of your results. You should order the output by `efficiency_improvement` in descending order, and then by `driver_name` in ascending order."
+    },
+    {
+      "content": "Consider edge cases where drivers might have very few trips, or trips that fall entirely within one half of the year. Ensure your query accounts for these scenarios."
+    },
+    {
+      "content": "Finally, write your SQL query to combine all these steps. Start by selecting from the `trips` table, join it with the `drivers` table, and implement the calculations and filters you've outlined."
+    }
+  ],
+  "questionNotes": [
+    "Calculate fuel efficiency as `distance_km / fuel_consumed`.",
+    "Only include drivers with trips in both halves of the year.",
+    "Round results to 2 decimal places.",
+    "Return the output ordered by `efficiency_improvement` (desc) and `driver_name` (asc).",
+    "Ensure to handle potential division by zero when calculating efficiency."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what makes a string a palindrome. A string is a palindrome if it reads the same forwards and backwards. For example, 'abba' and 'racecar' are palindromes."
+    },
+    {
+      "content": "Consider how many characters in a substring need to be changed to make it a palindrome. For a string of even length, all characters must appear in pairs. For a string of odd length, only one character can appear an odd number of times."
+    },
+    {
+      "content": "For each query, extract the substring defined by the indices [left, right]. You can use slicing in Python to do this: `substring = s[left:right + 1]`."
+    },
+    {
+      "content": "Count the frequency of each character in the substring. You can use a dictionary or a list of size 26 (for each lowercase letter) to keep track of character counts."
+    },
+    {
+      "content": "After counting the characters, determine how many characters have an odd frequency. This will help you figure out how many changes are necessary to form a palindrome."
+    },
+    {
+      "content": "Remember that you can replace up to k characters. If the number of odd frequency characters is less than or equal to k, then it is possible to rearrange the substring into a palindrome."
+    },
+    {
+      "content": "Consider edge cases where the substring length is 1 or 0. A single character is always a palindrome, while an empty substring is also considered a palindrome."
+    },
+    {
+      "content": "Think about how to efficiently handle multiple queries. You may want to precompute character frequencies for the entire string to quickly access them for each query."
+    },
+    {
+      "content": "When implementing your solution, ensure that you handle the indices correctly, especially since they are zero-based. Double-check the ranges you are using."
+    },
+    {
+      "content": "Finally, structure your return value as a boolean array where each element corresponds to the result of each query. Make sure to maintain the order of the queries."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length, queries.length <= 10^5",
+    "0 <= left_i <= right_i < s.length",
+    "0 <= k_i <= s.length",
+    "s consists of lowercase English letters.",
+    "Each query does not modify the initial string."
+  ]
+}

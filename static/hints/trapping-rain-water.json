@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by visualizing the problem. Consider how water is trapped between the bars of different heights. Think about how the height of the bars on either side of a given bar determines how much water can be trapped above it."
+    },
+    {
+      "content": "Identify the key variables you need to track. For any given bar, you need to know the maximum height of the bars to its left and the maximum height of the bars to its right."
+    },
+    {
+      "content": "Consider creating two arrays: one to store the maximum height to the left of each bar and another for the maximum height to the right. This will help you calculate the trapped water for each bar."
+    },
+    {
+      "content": "Think about how to fill these two arrays. You can traverse the height array from left to right to fill the left maximum heights, and from right to left for the right maximum heights."
+    },
+    {
+      "content": "As you fill the left maximum heights array, remember that the maximum height at each index is either the height at that index or the maximum height from the previous index."
+    },
+    {
+      "content": "When filling the right maximum heights array, apply the same logic: the maximum height at each index is the greater of the height at that index or the maximum height from the next index."
+    },
+    {
+      "content": "Once you have both maximum height arrays, you can calculate the water trapped above each bar. The water trapped at each index is the minimum of the left and right maximum heights minus the height at that index."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the height array has fewer than three elements. In such cases, no water can be trapped."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Filling the left and right maximum height arrays requires O(n) time, and calculating the trapped water also requires O(n) time."
+    },
+    {
+      "content": "Think about space complexity as well. The two arrays you created will use O(n) space. Can you come up with a more space-efficient solution?"
+    },
+    {
+      "content": "Explore the two-pointer technique as an alternative solution. This approach uses two pointers to traverse the height array from both ends towards the center, maintaining the maximum heights encountered so far."
+    },
+    {
+      "content": "In the two-pointer approach, decide which pointer to move based on the current maximum heights. If the left maximum is less than the right maximum, move the left pointer."
+    },
+    {
+      "content": "As you move the pointers in the two-pointer approach, calculate the trapped water based on the current pointer's height and the maximum height seen so far."
+    },
+    {
+      "content": "Remember to reset your maximum heights as you move the pointers. This ensures you always have the correct maximum height for calculating trapped water."
+    },
+    {
+      "content": "Finally, ensure your solution handles all edge cases, such as heights that are all the same or heights that are strictly increasing or decreasing."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == height.length, 1 <= n <= 2 * 10^4, 0 <= height[i] <= 10^5",
+    "The width of each bar is 1.",
+    "The output should be a single integer representing the total units of trapped rainwater."
+  ]
+}

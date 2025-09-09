@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input matrix. It is a binary matrix, meaning each element is either '0' or '1'. Focus on how the presence of '1's can form rectangles."
+    },
+    {
+      "content": "Consider how you can represent the height of consecutive '1's in each column. For each row, you can compute a 'height' array where each entry represents the number of consecutive '1's up to that row."
+    },
+    {
+      "content": "Think about how to calculate the area of a rectangle given its height. The area can be calculated as width multiplied by height. You will need to determine the maximum width for each height."
+    },
+    {
+      "content": "To find the maximum rectangle, you can iterate through each row and update the height array. For each row, treat the height array as a histogram and find the largest rectangle that can be formed."
+    },
+    {
+      "content": "Remember that the height array should be reset to zero whenever you encounter a '0' in the matrix. This is crucial for accurately calculating the heights of rectangles."
+    },
+    {
+      "content": "Consider using a stack to efficiently compute the largest rectangle in a histogram. This will help you manage the indices of the heights and calculate the maximum area."
+    },
+    {
+      "content": "When using a stack, remember to push the index of the current height onto the stack when it is greater than the height at the index stored at the top of the stack."
+    },
+    {
+      "content": "If the current height is less than the height at the index stored at the top of the stack, you should pop from the stack and calculate the area using the popped height as the smallest height."
+    },
+    {
+      "content": "While calculating the area after popping from the stack, ensure you correctly determine the width of the rectangle. The width is determined by the distance between the current index and the index of the new top of the stack."
+    },
+    {
+      "content": "Edge cases are important! Consider what happens when the matrix is empty or when it contains only '0's. Your algorithm should handle these cases gracefully."
+    },
+    {
+      "content": "Make sure to keep track of the maximum area found as you iterate through each row of the matrix. This will be your final output."
+    },
+    {
+      "content": "Think about the time complexity of your solution. A naive approach might lead to O(n^2) complexity, but with the stack approach, you can achieve O(n) for each row, leading to O(n * m) overall."
+    },
+    {
+      "content": "As you implement your solution, test it against various scenarios, including matrices with varying dimensions and configurations of '1's and '0's to ensure robustness."
+    },
+    {
+      "content": "Finally, remember to return the area as an integer. This is important since the problem specifies the output format clearly."
+    },
+    {
+      "content": "You are almost there! To summarize, you need to maintain a height array, use a stack to calculate the maximal rectangle for each row's histogram, and keep track of the maximum area found."
+    }
+  ],
+  "questionNotes": [
+    "The input matrix is binary, containing only '0's and '1's.",
+    "The output should be the area of the largest rectangle containing only '1's.",
+    "Constraints: 1 <= rows, cols <= 200.",
+    "Ensure to handle edge cases such as empty matrices or matrices filled with '0's."
+  ]
+}

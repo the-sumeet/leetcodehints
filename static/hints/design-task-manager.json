@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how to store tasks associated with each user. You might want to use a data structure that allows you to efficiently access tasks by userId and also manage priorities."
+    },
+    {
+      "content": "Consider using a map (or dictionary) where the key is the userId and the value is a priority queue (or max-heap) that holds the tasks for that user. This will help you manage tasks efficiently."
+    },
+    {
+      "content": "When adding a task, ensure that you insert it into the correct user's priority queue. Remember that each task is represented by a tuple of (priority, taskId) to help with sorting."
+    },
+    {
+      "content": "For the `edit` method, you need to locate the taskId in the appropriate user's priority queue. Once found, you can remove it and insert a new task with the updated priority."
+    },
+    {
+      "content": "In the `rmv` method, you will also need to find the taskId in the relevant user's priority queue and remove it. Make sure to handle cases where the task might not be found."
+    },
+    {
+      "content": "The `execTop` method should look through all users' priority queues to find the task with the highest priority. If there are ties, remember to select the task with the highest taskId."
+    },
+    {
+      "content": "To efficiently find the highest priority task, consider maintaining a global max-heap that keeps track of the highest priority tasks across all users. This can simplify the `execTop` method."
+    },
+    {
+      "content": "When executing a task, after retrieving it, make sure to remove it from both the global heap and the respective user's queue to maintain data integrity."
+    },
+    {
+      "content": "Think about edge cases, such as when there are no tasks available to execute. Ensure that your `execTop` method returns -1 in such cases."
+    },
+    {
+      "content": "Finally, remember to handle the constraints given in the problem, such as the maximum number of tasks and the ranges for userId, taskId, and priority. This will help ensure your implementation is efficient."
+    }
+  ],
+  "questionNotes": [
+    "Each task is represented as [userId, taskId, priority].",
+    "TaskId is unique across all users.",
+    "In case of ties in priority, the task with the higher taskId should be executed.",
+    "Return -1 if no tasks are available in execTop.",
+    "At most 2 * 10^5 calls will be made to add, edit, rmv, and execTop methods."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of a binary search tree (BST). In a BST, for any given node, all values in the left subtree are less than the node's value, and all values in the right subtree are greater. This property will guide how you construct the tree from the preorder array."
+    },
+    {
+      "content": "Remember that the first element in the preorder array is always the root of the BST. For example, in the array [8,5,1,7,10,12], 8 is the root."
+    },
+    {
+      "content": "As you traverse the preorder array, you can determine which values belong to the left and right subtrees based on the root's value. Values less than the root go to the left, and values greater go to the right."
+    },
+    {
+      "content": "Consider using a recursive approach to build the tree. You can create a helper function that takes the current bounds (min and max) for the node values. This will help you decide where to place the next node as you traverse the array."
+    },
+    {
+      "content": "When implementing the recursive function, check if the current index is within the bounds. If the next value is within the bounds, create a new node and recursively build its left and right children."
+    },
+    {
+      "content": "Be careful with the index management. You might want to use a global or non-local index variable to keep track of your position in the preorder array as you recursively build the tree."
+    },
+    {
+      "content": "Think about the base case for your recursion. If the current index exceeds the length of the preorder array, or if the value at the current index does not fit the bounds, you should return null."
+    },
+    {
+      "content": "As you construct the tree, remember that the values in the preorder array are guaranteed to be unique. This simplifies some checks, as you won't need to handle duplicate values."
+    },
+    {
+      "content": "Consider edge cases, such as when the preorder array has only one element. In this case, the tree will simply consist of a single node."
+    },
+    {
+      "content": "Finally, once you have built the tree, ensure that you understand the expected return format. You should return the root of the constructed BST, which can be a node object with left and right pointers."
+    }
+  ],
+  "questionNotes": [
+    "1 <= preorder.length <= 100",
+    "1 <= preorder[i] <= 1000",
+    "All values in preorder are unique.",
+    "The first element in preorder is the root of the BST."
+  ]
+}

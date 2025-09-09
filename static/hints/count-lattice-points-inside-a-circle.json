@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a lattice point is. A lattice point is a point with integer coordinates, which means both x and y must be integers."
+    },
+    {
+      "content": "Consider how to determine if a point (px, py) is inside a circle defined by (x, y, r). Remember that a point is inside or on the circle if the distance from the center to the point is less than or equal to the radius."
+    },
+    {
+      "content": "The formula to check if a point is inside a circle is: (px - x)² + (py - y)² <= r². This avoids computing the square root and keeps calculations in integer space."
+    },
+    {
+      "content": "Think about the range of x and y values for potential lattice points. For a circle centered at (x, y) with radius r, the x-coordinates of lattice points can range from (x - r) to (x + r) and similarly for y-coordinates."
+    },
+    {
+      "content": "You need to iterate through all possible lattice points within the bounding box defined by the circle's center and radius. This means two nested loops: one for x and one for y."
+    },
+    {
+      "content": "Since multiple circles can overlap, use a set to store unique lattice points. This will help you avoid counting the same point multiple times."
+    },
+    {
+      "content": "Make sure to handle edge cases such as circles that are very small or very large relative to their center positions. Ensure your loops do not go out of bounds."
+    },
+    {
+      "content": "As you iterate through potential lattice points, check if each point is inside any of the circles. If it is, add it to your set of unique points."
+    },
+    {
+      "content": "After processing all circles, the size of your set will give you the count of unique lattice points inside at least one circle. Remember to return this count."
+    },
+    {
+      "content": "Before finalizing your solution, consider testing with edge cases such as circles with maximum radius or overlapping circles to ensure your logic holds in all scenarios."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= circles.length <= 200",
+    "Each circle is defined by three integers: [x_i, y_i, r_i]",
+    "1 <= x_i, y_i <= 100",
+    "1 <= r_i <= min(x_i, y_i)",
+    "Points on the circumference are considered inside the circle."
+  ]
+}

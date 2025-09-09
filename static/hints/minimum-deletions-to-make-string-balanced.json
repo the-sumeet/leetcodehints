@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "To make the string balanced, we need to ensure that all 'a's come before any 'b's. Start by identifying what it means for a string to be unbalanced."
+    },
+    {
+      "content": "Consider the positions of 'a's and 'b's in the string. If you find an 'a' after a 'b', that indicates a potential imbalance. Count how many 'b's appear before 'a's."
+    },
+    {
+      "content": "Think about the deletions needed. If 'b's are present before any 'a's, you'll need to remove some of those 'b's or 'a's to achieve balance."
+    },
+    {
+      "content": "You can count the total number of 'a's and 'b's in the string. This will help you understand how many characters you might need to delete."
+    },
+    {
+      "content": "As you traverse the string, maintain a count of 'b's seen so far. Each time you encounter an 'a', the number of 'b's counted so far indicates how many deletions are needed."
+    },
+    {
+      "content": "Create a variable to keep track of the minimum deletions required. Update this variable as you process each character in the string."
+    },
+    {
+      "content": "Consider edge cases, such as strings that are already balanced (e.g., 'aaa' or 'bbb'). In such cases, the minimum deletions should be zero."
+    },
+    {
+      "content": "Make sure to handle strings that consist entirely of one character (e.g., 'aaaa' or 'bbbb'). These cases should also return zero deletions."
+    },
+    {
+      "content": "Remember that the final answer should be the total minimum deletions needed to ensure no 'b' appears before an 'a'. Keep track of your deletions as you iterate."
+    },
+    {
+      "content": "To summarize your approach: Traverse the string, count 'b's, and for each 'a', add the count of 'b's to your deletion tally. Return this total as your result."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "Characters in s are only 'a' or 'b'.",
+    "The string is balanced if there are no indices (i, j) such that i < j, s[i] = 'b', and s[j] = 'a'.",
+    "Return the minimum number of deletions needed to make the string balanced."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the abbreviation. The abbreviation can contain letters and digits, where digits represent the number of characters to skip in the original word. For example, in 'i12iz4n', '12' means to skip 12 characters after 'i'."
+    },
+    {
+      "content": "Consider how you will iterate through both the original word and the abbreviation. You will need to maintain two pointers: one for the original word and one for the abbreviation. This will help you track your position in both strings."
+    },
+    {
+      "content": "Remember to handle the digits in the abbreviation correctly. You may encounter multi-digit numbers, so you should convert the substring of digits into an integer. For instance, if you see '12', you need to treat it as the number 12, not as separate characters '1' and '2'."
+    },
+    {
+      "content": "As you process the abbreviation, check if the current character is a digit or a letter. If it’s a digit, you will need to skip the corresponding number of characters in the original word. If it’s a letter, you should compare it directly with the character at the current position in the original word."
+    },
+    {
+      "content": "Make sure to handle edge cases where the abbreviation might end before the original word does or vice versa. For example, if the abbreviation is longer than the word, that should immediately return false."
+    },
+    {
+      "content": "When you encounter a letter in the abbreviation, ensure it matches the current character in the original word. If it doesn’t match, you should return false. Keep in mind that both strings must be fully traversed for a valid match."
+    },
+    {
+      "content": "Consider what happens when you reach the end of either string. If both pointers reach the end at the same time, the abbreviation is valid. If one pointer reaches the end before the other, it indicates an invalid abbreviation."
+    },
+    {
+      "content": "Think about how to handle multiple consecutive digits in the abbreviation. You need to keep reading until you encounter a non-digit character to form the complete number to skip."
+    },
+    {
+      "content": "Don’t forget to validate the characters after processing all digits. If you are at a letter in the abbreviation, ensure that the corresponding character in the original word matches."
+    },
+    {
+      "content": "Finally, ensure that you are correctly managing the indices of both the original word and the abbreviation throughout the process. For example, after processing 'i12', you should move the index of the original word by 13 positions (1 for 'i' and 12 for the digits) and proceed accordingly."
+    }
+  ],
+  "questionNotes": [
+    "The abbreviation can contain letters and digits, where digits represent the number of characters to skip.",
+    "Both the original word and abbreviation must be fully traversed for a valid match.",
+    "Handle multi-digit numbers correctly when reading from the abbreviation.",
+    "Return false immediately if the abbreviation is longer than the original word."
+  ]
+}

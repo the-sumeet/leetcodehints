@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a permutation is. A permutation of a set is a specific arrangement of its elements. For example, the permutations of [1, 2, 3] include '123', '132', '213', '231', '312', and '321'."
+    },
+    {
+      "content": "Notice that the total number of permutations for a set of size n is n!. This means that for n = 3, there are 3! = 6 permutations. Make sure you can calculate factorials for small values of n."
+    },
+    {
+      "content": "The permutations are generated in lexicographic order. This means that '123' comes before '132', and so on. Think about how you can systematically generate these permutations."
+    },
+    {
+      "content": "The problem asks for the k-th permutation. Remember that the indexing starts from 1, so the first permutation corresponds to k = 1. Make sure to adjust your indexing accordingly."
+    },
+    {
+      "content": "Consider how you can determine which number should be in each position of the k-th permutation. For the first position, you can calculate how many permutations start with each number."
+    },
+    {
+      "content": "To find the first digit of the k-th permutation, calculate (k-1) // (n-1)!. This gives you the index of the first digit in the current set of available digits."
+    },
+    {
+      "content": "After determining the first digit, remove it from the list of available digits. Then, update k to find the position of the next digit using k % (n-1)!."
+    },
+    {
+      "content": "Repeat the process for the remaining positions. Each time you fix a digit, the problem reduces to finding the permutation of the remaining digits."
+    },
+    {
+      "content": "Make sure to handle the case where k becomes 0 after the modulus operation. This indicates that you should select the last available digit in that step."
+    },
+    {
+      "content": "Think about edge cases, such as when n = 1. The only permutation is '1', and k should be 1. This will help you ensure your logic is robust."
+    },
+    {
+      "content": "You can use a list to maintain the available digits and another variable to keep track of the current permutation result as you build it step by step."
+    },
+    {
+      "content": "Remember that the maximum value for n is 9, which means you will need to handle up to 9! = 362880 permutations. Make sure your solution is efficient."
+    },
+    {
+      "content": "Consider how you can optimize your solution to avoid generating all permutations. Instead, focus on calculating the required indices directly."
+    },
+    {
+      "content": "As you build the permutation string, ensure you are appending digits in the correct order. The final result should be a string representation of the k-th permutation."
+    },
+    {
+      "content": "Test your implementation with various values of n and k, especially the edge cases like n = 1, n = 9, and k = 1, k = n!."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 9, 1 <= k <= n!",
+    "Indexing is 1-based; adjust k accordingly.",
+    "Permutations are in lexicographic order.",
+    "Ensure to handle edge cases, especially for small n."
+  ]
+}

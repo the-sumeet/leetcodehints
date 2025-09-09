@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input arrays: `aliceValues` and `bobValues`. Each index represents a stone, and the values indicate how much Alice and Bob value that stone. Remember, they will choose stones based on their own valuations."
+    },
+    {
+      "content": "Consider the game dynamics: Alice goes first, followed by Bob. Think about how each player's choice affects the other player's potential score. This is a turn-based game where both players play optimally."
+    },
+    {
+      "content": "To decide which stone to take, both players will consider not just their own score but also the potential score of their opponent. This means they will prioritize stones that maximize their score while minimizing the opponent's score."
+    },
+    {
+      "content": "You can create a combined value for each stone by considering both players' valuations. For example, for each stone `i`, calculate a score like `aliceValues[i] + bobValues[i]`. This can help prioritize which stones are more valuable overall."
+    },
+    {
+      "content": "Sort the stones based on the combined values calculated in the previous hint. This will help you determine the order in which stones should be picked. The player with the higher combined value for a stone will likely want to take it."
+    },
+    {
+      "content": "After sorting, simulate the game by alternating turns between Alice and Bob. Keep track of their scores as they pick stones based on the sorted order. Remember, Alice picks first, so she will take the first stone in the sorted list."
+    },
+    {
+      "content": "While simulating, make sure to update the scores correctly based on whose turn it is. If Alice picks a stone, add its value to her score; if Bob picks, add to his score. This will help you keep track of the game state."
+    },
+    {
+      "content": "Consider edge cases where there is only one stone. What happens in this scenario? How does the game outcome change if both players have identical values for all stones?"
+    },
+    {
+      "content": "After all stones are picked, compare the final scores of Alice and Bob. You will need to return 1 if Alice wins, -1 if Bob wins, or 0 if it's a draw. Ensure your comparisons are clear and correctly implemented."
+    },
+    {
+      "content": "Finally, remember to handle the return format correctly. You should return 1, -1, or 0 based on the scores. Ensure your function encapsulates all the logic discussed and adheres to the problem constraints."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == aliceValues.length == bobValues.length",
+    "1 <= n <= 10^5",
+    "1 <= aliceValues[i], bobValues[i] <= 100",
+    "Alice starts first, followed by Bob.",
+    "Players play optimally and know each other's values.",
+    "Return 1 if Alice wins, -1 if Bob wins, or 0 for a draw."
+  ]
+}

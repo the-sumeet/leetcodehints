@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a valid IP address. It consists of four parts, each ranging from 0 to 255. Remember that each part cannot have leading zeros unless it is '0' itself."
+    },
+    {
+      "content": "Consider how you can split the string into four parts. You will need to insert three dots in the string, which means you will be iterating through the string to find valid positions for these dots."
+    },
+    {
+      "content": "Think about how to iterate through the string. You can use three nested loops to place the dots at different positions. The outer loop can represent the end of the first segment, the second loop for the second segment, and the third loop for the third segment."
+    },
+    {
+      "content": "When you extract each segment, ensure that it is a valid integer. Check if the integer is between 0 and 255 and does not have leading zeros. For example, '01' is invalid, but '0' is valid."
+    },
+    {
+      "content": "As you extract segments, keep track of how many segments you have created. You should only consider a combination valid if you end up with exactly four segments."
+    },
+    {
+      "content": "Remember to handle edge cases. For instance, if the input string has fewer than 4 or more than 12 characters, it cannot form a valid IP address. This will help you avoid unnecessary computations."
+    },
+    {
+      "content": "When creating the final IP addresses, use a list to store valid combinations. Each time you find a valid combination of segments, join them with dots and add them to the list."
+    },
+    {
+      "content": "Consider using a backtracking approach to explore all possible placements of dots. This way, you can easily backtrack if a certain placement does not lead to a valid IP address."
+    },
+    {
+      "content": "As you implement the backtracking, ensure to prune paths that cannot lead to valid IP addresses early. For example, if a segment exceeds 255 or has leading zeros, you can skip further exploration from that path."
+    },
+    {
+      "content": "Finally, once you have all valid combinations, return them as a list. Make sure the format matches the requirements: a list of strings representing the valid IP addresses."
+    }
+  ],
+  "questionNotes": [
+    "An IP address consists of exactly four integers separated by dots.",
+    "Each integer must be between 0 and 255 and cannot have leading zeros.",
+    "Input string 's' contains only digits and its length is between 1 and 20.",
+    "Return the valid IP addresses in any order."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering how you can identify duplicates in the array. A simple way to do this is to sort the array first. Sorting will help you easily see which elements are the same and how many moves you might need to make them unique."
+    },
+    {
+      "content": "After sorting the array, think about how you can compare adjacent elements. If two adjacent elements are the same or the first is greater than or equal to the second, you will need to increment one of them to ensure uniqueness."
+    },
+    {
+      "content": "As you iterate through the sorted array, keep a counter for the total number of moves required. Whenever you find a duplicate or a non-unique situation, calculate how much you need to increment the current element to make it unique."
+    },
+    {
+      "content": "Consider edge cases where the array has only one element or all elements are the same. How would your approach handle these situations? For example, if nums = [1, 1, 1], how many moves do you need?"
+    },
+    {
+      "content": "Think about how to efficiently keep track of the last unique number you've placed in the array. This will help you decide how much to increment the current number when you find a duplicate."
+    },
+    {
+      "content": "When you find a duplicate, you can set the current number to be one more than the last unique number. This ensures that it becomes unique while minimizing the number of increments."
+    },
+    {
+      "content": "Remember to keep a running total of all the increments you make. This will be your result at the end. Make sure you update the last unique number after each increment."
+    },
+    {
+      "content": "As you implement your solution, consider the time complexity. Sorting the array takes O(n log n), but how can you ensure that your subsequent operations are efficient?"
+    },
+    {
+      "content": "After sorting, your loop through the array should only require a single pass to determine the necessary increments. Think about how you can maintain a simple counter for the total moves needed."
+    },
+    {
+      "content": "Finally, ensure that you are returning the correct value as specified in the problem statement. The output should be the total number of moves made to achieve uniqueness in the array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Values: 0 <= nums[i] <= 10^5",
+    "Goal: Make every value in nums unique with minimum increments.",
+    "Return format: An integer representing the total number of moves."
+  ]
+}

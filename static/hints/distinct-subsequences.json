@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Consider what a subsequence is. A subsequence is formed by deleting some characters from a string without changing the order of the remaining characters. For example, from 'abc', you can form 'ab', 'ac', 'bc', and 'a', 'b', 'c'."
+    },
+    {
+      "content": "Think about how you would approach counting these subsequences. You might want to use a dynamic programming approach to keep track of the counts of subsequences that match parts of the target string."
+    },
+    {
+      "content": "Start by creating a 2D array (or table) where the rows represent characters from string `s` and the columns represent characters from string `t`. This table will help you store the number of ways to form the subsequences."
+    },
+    {
+      "content": "Initialize your table. The first row can be initialized to 0s, and the first column should be initialized to 1 because there is one way to form an empty subsequence."
+    },
+    {
+      "content": "When filling out the table, consider two cases for each character in `s` and `t`: when the characters match and when they don't. This will guide how you update your counts."
+    },
+    {
+      "content": "If the characters match (i.e., `s[i] == t[j]`), you should add the counts from the previous character in both strings. This accounts for both using the match and not using it."
+    },
+    {
+      "content": "If the characters do not match (i.e., `s[i] != t[j]`), you should carry forward the count from the previous character in `t` without using the current character in `s`."
+    },
+    {
+      "content": "Make sure to handle the base cases correctly. For example, if `t` is empty, then there is always one way to form it from `s`, which is to take no characters."
+    },
+    {
+      "content": "Pay attention to the dimensions of your DP table. It should be of size `(s.length + 1) x (t.length + 1)` to accommodate the base cases."
+    },
+    {
+      "content": "Consider edge cases where either `s` or `t` is very short. For instance, if `t` is longer than `s`, the result should be 0 since you can't form a longer string from a shorter one."
+    },
+    {
+      "content": "As you iterate through the characters of `s` and `t`, remember to update your table in a way that avoids overwriting values that you still need to reference. This might involve careful indexing."
+    },
+    {
+      "content": "Once you've filled the table, the answer will be found in the bottom-right cell of your DP table. This cell represents the number of distinct subsequences of `s` that match `t`."
+    },
+    {
+      "content": "Remember that the constraints specify that the lengths of `s` and `t` can go up to 1000. Ensure your approach is efficient enough to handle the maximum input sizes."
+    },
+    {
+      "content": "Think about the time complexity of your solution. With a 2D DP table, you will likely be looking at O(m * n) time complexity, where m is the length of `s` and n is the length of `t`."
+    },
+    {
+      "content": "Finally, review your code for off-by-one errors, especially in how you handle the indices of `s` and `t` in your DP table. A small mistake here can lead to incorrect counts."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length, t.length <= 1000",
+    "s and t consist of English letters.",
+    "The answer fits in a 32-bit signed integer.",
+    "A subsequence can be formed by deleting characters without changing the order of the remaining characters."
+  ]
+}

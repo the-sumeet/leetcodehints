@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to identify groups of consecutive characters in the string. You can iterate through the string and keep track of the current character and its count. For example, in 'abbxxxxzzy', you would recognize 'a', 'bb', 'xxxx', 'z', and 'yy' as groups."
+    },
+    {
+      "content": "Consider using a loop to traverse the string. You can maintain a start index for each group and check when the character changes to identify the end of a group. Remember to handle the last group after the loop finishes."
+    },
+    {
+      "content": "As you identify groups, keep track of their lengths. You will need to check if the length of a group is 3 or more to classify it as a large group. This is key to filtering out the groups you want to return."
+    },
+    {
+      "content": "Think about how to store the intervals of large groups. You can use a list to collect the start and end indices of each large group. Each interval can be represented as a list or tuple of two elements: [start, end]."
+    },
+    {
+      "content": "When you find a group that is large, make sure to add its start and end indices to your list. For example, if you find 'xxxx' from index 3 to 6, you would add [3, 6] to your results list."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when the string has no large groups at all. In such cases, your output should be an empty list. Make sure to test your function with strings of various lengths."
+    },
+    {
+      "content": "Pay attention to the constraints given in the problem. The string length can be between 1 and 1000, and it only contains lowercase English letters. This means you don't need to handle special characters or uppercase letters."
+    },
+    {
+      "content": "Consider the case where the string consists of only one character repeated multiple times. For example, 'aaaaa' should return [[0, 4]] since it forms one large group. Think about how your logic will handle such scenarios."
+    },
+    {
+      "content": "As you implement your solution, ensure that you are correctly updating the start index whenever you encounter a new character. This is crucial for accurately capturing the intervals of each group."
+    },
+    {
+      "content": "Finally, after you have collected all the large group intervals, return them in the required format. Your final output should be a list of lists, where each inner list contains the start and end indices of a large group."
+    }
+  ],
+  "questionNotes": [
+    "Groups are defined by consecutive identical characters.",
+    "A group is large if it has 3 or more characters.",
+    "Return the intervals as a list of lists, sorted by start index.",
+    "Handle edge cases where no large groups exist by returning an empty list.",
+    "The string length can be from 1 to 1000, containing only lowercase letters."
+  ]
+}

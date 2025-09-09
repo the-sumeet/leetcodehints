@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'good' subsequence means in this context. A good subsequence allows for at most `k` changes in value between consecutive elements. This means that if you have a sequence of the same number, you can keep it without adding to the count of changes."
+    },
+    {
+      "content": "Consider how many times each number appears in the array. You can use a frequency map (or dictionary) to count occurrences of each number. This will help you understand how many 'blocks' of the same number you can form."
+    },
+    {
+      "content": "Think about the implications of `k`. If `k` is 0, your subsequence can only consist of the same number repeated. If `k` is greater than 0, you can introduce new numbers, but you need to manage the number of changes carefully."
+    },
+    {
+      "content": "Try to find the maximum frequency of any single number in the array. This will help you determine the base length of your good subsequence, as you can always include all instances of this number."
+    },
+    {
+      "content": "Once you have the maximum frequency, consider how many different numbers can be included in the subsequence. You can include other numbers as long as the number of changes does not exceed `k`. Think about how to track the changes as you build your subsequence."
+    },
+    {
+      "content": "When you include a new number in your subsequence, it counts as a change. Make sure you keep track of how many different numbers you've included and how many changes that has caused. You can use a loop to iterate through the unique numbers in your frequency map."
+    },
+    {
+      "content": "If you have `m` unique numbers and you want to include them in your subsequence, you can only include `m - 1` changes if you want to keep it good. Therefore, if `m - 1` exceeds `k`, you will need to limit the number of unique numbers you include."
+    },
+    {
+      "content": "Consider edge cases, such as when `k` is larger than the number of unique numbers. In this case, you can include all unique numbers without exceeding the change limit. Also, think about what happens when `k` is 0."
+    },
+    {
+      "content": "To maximize the length of your good subsequence, combine the maximum frequency of the most common number with the number of unique numbers you can afford to include based on `k`. The formula could look something like: `max_length = max_frequency + min(k, unique_count - 1)`."
+    },
+    {
+      "content": "Finally, implement your logic in code. Start by counting the frequencies, then determine the maximum frequency and the number of unique numbers. Use the insights from the previous hints to calculate the maximum length of the good subsequence."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 500",
+    "1 <= nums[i] <= 10^9",
+    "0 <= k <= min(nums.length, 25)",
+    "A good subsequence allows at most k changes between consecutive elements.",
+    "Return the maximum length of the good subsequence."
+  ]
+}

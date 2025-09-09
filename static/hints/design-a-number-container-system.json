@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic structure of the `NumberContainers` class. It needs to maintain a mapping between indices and the numbers stored at those indices. Think about how you would represent this mapping."
+    },
+    {
+      "content": "Consider using a dictionary (or hash map) to store the index-number pairs. This will allow for efficient insertion and replacement of numbers at specific indices."
+    },
+    {
+      "content": "Remember that the `change` method needs to handle both inserting a new number at an index and replacing an existing number. You will need to update your data structure accordingly when a number is replaced."
+    },
+    {
+      "content": "For the `find` method, you need to return the smallest index associated with a given number. Think about how you can efficiently retrieve this information. You might need another data structure to keep track of which indices are associated with each number."
+    },
+    {
+      "content": "Consider maintaining a second dictionary where the keys are numbers and the values are sets (or lists) of indices. This will help you quickly find the smallest index for a given number."
+    },
+    {
+      "content": "When implementing the `change` method, if you replace a number at an index, make sure to remove the old index from the set of indices associated with the old number. This will ensure your `find` method remains accurate."
+    },
+    {
+      "content": "Edge cases are important. What happens if you call `find` for a number that has never been added? Ensure your method returns -1 in such cases."
+    },
+    {
+      "content": "Think about the constraints given in the problem. With indices and numbers going up to 10^9, ensure your data structures can handle this without excessive memory usage."
+    },
+    {
+      "content": "When returning the smallest index for a number in the `find` method, ensure that if multiple indices exist, you are indeed returning the smallest one. You might want to use a sorted structure for this."
+    },
+    {
+      "content": "Finally, implement the `find` method to check if the number exists in your second dictionary. If it does, return the minimum index from the associated indices; if not, return -1. Remember to handle the data structures efficiently!"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= index, number <= 10^9",
+    "At most 10^5 calls will be made in total to change and find.",
+    "The `change` method replaces the number at the given index.",
+    "The `find` method returns the smallest index for a given number or -1 if it doesn't exist."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of 'total strength' for a contiguous group of wizards. It is the product of the strength of the weakest wizard and the sum of all the strengths in that group."
+    },
+    {
+      "content": "Consider how you would generate all possible contiguous subarrays from the given array. You can use two nested loops to achieve this. For example, for an array of length n, you can iterate with an outer loop from 0 to n-1 and an inner loop from the current index to n."
+    },
+    {
+      "content": "When iterating through subarrays, remember to calculate both the minimum strength and the sum of strengths for each subarray. You can keep track of the minimum strength using a variable that updates as you expand your subarray."
+    },
+    {
+      "content": "Think about how to efficiently compute the sum of strengths for each subarray. Instead of recalculating the sum from scratch for each subarray, you can maintain a running total that adds the next element as you expand the subarray."
+    },
+    {
+      "content": "Consider the constraints of the problem. The length of the strength array can be up to 100,000, which means your solution needs to be efficient. O(n^2) solutions may not be feasible."
+    },
+    {
+      "content": "To optimize your approach, think about how you can use a stack to keep track of the minimum strengths and their contributions. This can help reduce the number of comparisons needed."
+    },
+    {
+      "content": "You can maintain a prefix sum array to quickly compute the sum of any subarray. This allows you to get the sum in constant time after an initial O(n) preprocessing step."
+    },
+    {
+      "content": "As you compute the total strength for each subarray, remember to take the modulo 10^9 + 7 to prevent overflow and meet the problem's requirements."
+    },
+    {
+      "content": "When calculating the contributions of each wizard's strength to the total strength, consider how many subarrays a particular strength is the minimum for. This can drastically reduce the number of calculations."
+    },
+    {
+      "content": "Think about using a two-pointer technique or a monotonic stack to efficiently find the range of subarrays where a particular wizard's strength is the minimum."
+    },
+    {
+      "content": "As you implement your solution, be cautious about edge cases, such as the smallest input size (1 wizard) and large values for strengths (up to 10^9)."
+    },
+    {
+      "content": "Make sure to handle the modulo operation correctly throughout your calculations to avoid integer overflow. This is particularly important when summing large numbers."
+    },
+    {
+      "content": "You might want to create helper functions for calculating the minimum and sum of strengths for a given range, which can make your main logic cleaner and easier to understand."
+    },
+    {
+      "content": "Remember that the final result should be returned as a single integer. Ensure your function signature matches the expected output format."
+    },
+    {
+      "content": "Before finalizing your code, review your logic for any potential off-by-one errors, especially when dealing with array indices and subarray boundaries."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= strength.length <= 10^5",
+    "1 <= strength[i] <= 10^9",
+    "Return the result modulo 10^9 + 7.",
+    "The answer must be a single integer.",
+    "Consider the efficiency of your solution due to large input sizes."
+  ]
+}

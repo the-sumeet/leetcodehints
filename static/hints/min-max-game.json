@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array. The length of the array `nums` is always a power of 2. This means you can safely divide the array in half repeatedly without worrying about odd lengths."
+    },
+    {
+      "content": "Remember that you need to create a new array `newNums` that will hold the results of applying the min-max operations. The length of `newNums` will be half of the length of `nums`."
+    },
+    {
+      "content": "When you're iterating through `nums`, pay attention to the indices. For every even index `i`, you will take the minimum of the two corresponding elements, and for every odd index, you will take the maximum."
+    },
+    {
+      "content": "Make sure to correctly access elements in pairs. For an index `i` in `newNums`, the corresponding elements in `nums` are `nums[2 * i]` and `nums[2 * i + 1]`. This is crucial for the min-max operations."
+    },
+    {
+      "content": "Consider how you will update `nums` with `newNums`. After each pass, `nums` should be replaced entirely with `newNums`, and the process should repeat until only one element remains."
+    },
+    {
+      "content": "Think about the base case of your recursion or loop. If `nums` has only one element, that is your result. You can check this condition at the beginning of your function."
+    },
+    {
+      "content": "Edge cases to consider: What happens if `nums` has the minimum length of 1? Ensure your function handles this case without unnecessary computations."
+    },
+    {
+      "content": "Keep in mind that the values in `nums` can be large (up to 10^9), but the operations you perform (min and max) will not change the overall time complexity of your solution."
+    },
+    {
+      "content": "As you implement the algorithm, consider using a loop to repeatedly apply the min-max transformation until you reach a single element. This will help you avoid deep recursion."
+    },
+    {
+      "content": "Finally, ensure that your function returns the last remaining number in `nums` after all transformations. This is the key output of your function."
+    }
+  ],
+  "questionNotes": [
+    "The length of `nums` is always a power of 2.",
+    "The operations performed are min for even indices and max for odd indices.",
+    "The return value is the last remaining number in `nums` after all transformations.",
+    "Handle edge cases where `nums` has a length of 1."
+  ]
+}

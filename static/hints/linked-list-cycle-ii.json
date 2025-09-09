@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the structure of a linked list and how nodes are connected. Each node has a value and a pointer to the next node. If a node points back to a previous node, a cycle is formed."
+    },
+    {
+      "content": "Consider how you can detect a cycle in a linked list. A common technique is to use two pointers moving at different speeds (Floyd's Tortoise and Hare algorithm). This can help identify if a cycle exists."
+    },
+    {
+      "content": "When using two pointers, one moves one step at a time (slow), while the other moves two steps at a time (fast). If they meet, a cycle is confirmed. Think about how you can determine the entry point of the cycle from this point."
+    },
+    {
+      "content": "If a cycle is detected, you will need to find the starting node of the cycle. Reset one pointer to the head of the list and keep the other at the meeting point. Move both pointers one step at a time until they meet again."
+    },
+    {
+      "content": "Remember to handle edge cases: what if the linked list is empty? What if there is only one node? Consider how these scenarios affect your cycle detection logic."
+    },
+    {
+      "content": "Pay attention to the constraints provided in the problem. The number of nodes can range from 0 to 10,000, and the value of nodes can be negative or positive. Ensure your solution is efficient given these constraints."
+    },
+    {
+      "content": "Your solution should not modify the linked list. Think about how you can achieve cycle detection and finding the start of the cycle without changing any node's pointers."
+    },
+    {
+      "content": "Consider the return format: you need to return the node where the cycle begins or null if there is no cycle. Make sure your function handles both cases correctly."
+    },
+    {
+      "content": "As you implement your solution, keep in mind that the time complexity should be O(n) and the space complexity should be O(1). This means you should not use extra data structures to store node references."
+    },
+    {
+      "content": "To finalize your approach, remember that once you find the meeting point of the two pointers, moving one pointer back to the head and both pointers at the same speed will lead you to the cycle's starting node. This is a crucial step in your implementation."
+    }
+  ],
+  "questionNotes": [
+    "The linked list can be empty or contain up to 10,000 nodes.",
+    "Node values can range from -10^5 to 10^5.",
+    "The 'pos' parameter indicates the index of the node where the cycle begins (0-indexed) or -1 if there is no cycle.",
+    "Do not modify the linked list during your solution."
+  ]
+}

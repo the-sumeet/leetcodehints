@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the key tables involved in the problem. You have three tables: Customer, Orders, and Seller. Understanding the relationships between these tables is crucial."
+    },
+    {
+      "content": "Focus on the 'Seller' table, which contains the sellers' information. Your goal is to find sellers who have not made any sales recorded in the 'Orders' table."
+    },
+    {
+      "content": "Consider how you can relate the 'Seller' and 'Orders' tables. Each order has a 'seller_id' that links to the 'Seller' table. Think about how you can find sellers that do not appear in the 'Orders' table."
+    },
+    {
+      "content": "You might want to use a LEFT JOIN operation between the 'Seller' and 'Orders' tables. This will allow you to see all sellers and their corresponding orders, including those without any orders."
+    },
+    {
+      "content": "After performing the LEFT JOIN, look for sellers where the order information is NULL. This indicates that those sellers have no associated sales."
+    },
+    {
+      "content": "Remember to include all relevant seller details in your final output. This means you'll want to select seller_id and seller_name from the 'Seller' table."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no sellers or when all sellers have made sales. Your solution should handle these scenarios gracefully."
+    },
+    {
+      "content": "When constructing your query, ensure that you are filtering out only the sellers with no sales. This might involve using a WHERE clause to check for NULL values in the order fields."
+    },
+    {
+      "content": "Think about the expected output format. You should return the seller_id and seller_name for each seller with no sales. Make sure your output matches the required structure."
+    },
+    {
+      "content": "As a final step, ensure that your query is efficient. You may want to consider the performance implications of your JOIN operations, especially with larger datasets."
+    }
+  ],
+  "questionNotes": [
+    "You need to find sellers with no sales recorded in the Orders table.",
+    "Focus on the relationships between the Seller and Orders tables using seller_id.",
+    "Use LEFT JOIN to include all sellers and identify those without orders.",
+    "Ensure to handle edge cases like no sellers or all sellers having sales.",
+    "Return seller_id and seller_name for sellers with no sales."
+  ]
+}

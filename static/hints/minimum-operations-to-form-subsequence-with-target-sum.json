@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input array `nums`. Each element is a non-negative power of 2. This means that the elements can be represented as `2^k` for some integer `k`."
+    },
+    {
+      "content": "Consider the goal: you need to form a subsequence that sums up to the `target`. A subsequence can be formed by selecting elements from `nums` while maintaining their order."
+    },
+    {
+      "content": "Think about how the operations affect the array. When you choose an element `nums[i] > 1`, you replace it with two occurrences of `nums[i] / 2`. This effectively increases the number of smaller elements in the array."
+    },
+    {
+      "content": "Before diving into operations, check if the sum of all elements in `nums` is less than the `target`. If it is, immediately return -1 since it's impossible to form the target."
+    },
+    {
+      "content": "Count how many of each power of 2 you have in `nums`. This will help you determine how many of each element you can use to reach the `target`."
+    },
+    {
+      "content": "You might want to use a greedy approach to try to form the `target` by starting from the largest powers of 2 available in `nums` and working your way down."
+    },
+    {
+      "content": "Keep track of the number of operations performed. Each time you split a number, you increase the operation count by 1."
+    },
+    {
+      "content": "When considering which number to split, prioritize larger numbers first, as they can produce more smaller numbers that can contribute to the `target`."
+    },
+    {
+      "content": "Remember that you can only split numbers greater than 1. This means that once you reach 1s in your array, they cannot be split further."
+    },
+    {
+      "content": "If you reach a point where you cannot split any more numbers and still haven't met the `target`, you should return -1."
+    },
+    {
+      "content": "Consider edge cases where the `target` is exactly equal to the sum of existing numbers in `nums`. In this case, no operations are needed."
+    },
+    {
+      "content": "You can also think about using a priority queue (or max-heap) to efficiently get the largest element to split at each step."
+    },
+    {
+      "content": "As you process the numbers, keep a running total of the current sum you can achieve with the available numbers. This will help you know when you've reached or exceeded the `target`."
+    },
+    {
+      "content": "If you ever find that the current sum equals the `target`, you can immediately return the number of operations performed up to that point."
+    },
+    {
+      "content": "Finally, ensure that your solution efficiently handles the constraints, especially since `nums` can have up to 1000 elements."
+    }
+  ],
+  "questionNotes": [
+    "The input array `nums` consists only of non-negative powers of 2.",
+    "The target is guaranteed to be less than 2^31 and at least 1.",
+    "The output should be -1 if it's impossible to form the target sum.",
+    "Remember that a subsequence maintains the original order of elements."
+  ]
+}

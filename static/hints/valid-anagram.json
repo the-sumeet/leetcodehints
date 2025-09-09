@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an anagram is. An anagram of a string is another string that contains the same characters, only the order of characters can be different. For example, 'listen' and 'silent' are anagrams."
+    },
+    {
+      "content": "Consider the lengths of the two strings. If the lengths of `s` and `t` are not the same, you can immediately return false, as they cannot be anagrams."
+    },
+    {
+      "content": "Think about how you can count the occurrences of each character in both strings. You might want to use a data structure that allows you to keep track of these counts efficiently."
+    },
+    {
+      "content": "You can use a hash map (or dictionary) to count the frequency of each character in string `s`. For each character in `s`, increase its count in the hash map."
+    },
+    {
+      "content": "Next, iterate through string `t`. For each character in `t`, decrease its count in the hash map. If you encounter a character that is not in the hash map or its count goes below zero, return false."
+    },
+    {
+      "content": "After processing both strings, check if all counts in the hash map are zero. If they are, it means both strings have the same characters with the same frequency, so you can return true."
+    },
+    {
+      "content": "Consider edge cases, such as when one or both strings are empty. An empty string can be considered an anagram of another empty string."
+    },
+    {
+      "content": "What if the strings contain Unicode characters? You would still use a similar counting approach, but ensure your data structure can handle a wider range of characters beyond just lowercase English letters."
+    },
+    {
+      "content": "Think about the time complexity of your solution. Counting characters and checking frequencies should ideally be done in linear time, O(n), where n is the length of the strings."
+    },
+    {
+      "content": "To summarize, you need to implement a function that counts characters in `s`, decrements counts based on `t`, and checks if all counts return to zero. This will confirm whether `t` is an anagram of `s`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length, t.length <= 5 * 10^4",
+    "Both strings consist of lowercase English letters.",
+    "If lengths of s and t are different, return false immediately.",
+    "Consider Unicode characters for the follow-up question."
+  ]
+}

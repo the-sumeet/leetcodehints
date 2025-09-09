@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the problem statement clearly. You need to maximize the number of partitions of the string after changing at most one character. Think about how changing a character can influence the distinct characters in the string."
+    },
+    {
+      "content": "Consider how the partitioning works. You can only partition the string by taking the longest prefix with at most `k` distinct characters. What happens if the string already has more than `k` distinct characters?"
+    },
+    {
+      "content": "Try to visualize the string as you perform the partitioning. For instance, if `s = 'abcde'` and `k = 2`, the longest prefix you can take is 'ab'. What would happen if you changed one character?"
+    },
+    {
+      "content": "Remember that changing a character can help reduce the number of distinct characters in the prefix. Think about the characters that appear most frequently in the string. How can changing a less frequent character help?"
+    },
+    {
+      "content": "When you change a character, it’s important to consider the impact on the entire string. For example, if you change a character that is part of the longest prefix, how does that affect the next partitions?"
+    },
+    {
+      "content": "You can iterate through each character in the string and simulate changing it to every other lowercase letter. This brute force approach will help you understand the impact of each change."
+    },
+    {
+      "content": "As you simulate changes, keep track of the maximum number of partitions you can achieve. Use a helper function to calculate the number of partitions for a given string."
+    },
+    {
+      "content": "Consider edge cases where the string is already optimal or where `k` is greater than or equal to the number of distinct characters in the string. What would the output be in those cases?"
+    },
+    {
+      "content": "Think about the constraints: the string length can be up to 10^4, and you need an efficient solution. How can you optimize the simulation of character changes?"
+    },
+    {
+      "content": "You might want to use a sliding window technique to count distinct characters efficiently. This can help you quickly evaluate the longest prefix with at most `k` distinct characters."
+    },
+    {
+      "content": "When implementing the sliding window, maintain a count of characters in the current window. If the count exceeds `k`, shrink the window from the left until it is valid again."
+    },
+    {
+      "content": "As you check each character for potential changes, think about how many partitions you can create with the modified string. You can store the results of each modification."
+    },
+    {
+      "content": "Consider using a hash map or an array to count the frequency of characters in the current window. This will help you quickly determine when to shrink the window."
+    },
+    {
+      "content": "After simulating all possible character changes, compare the results and return the maximum number of partitions found. Make sure to handle the case where no changes are made."
+    },
+    {
+      "content": "Finally, ensure that your solution handles all edge cases, such as strings with all identical characters or strings where `k` is very small. What will your function return in these scenarios?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^4, s consists only of lowercase English letters, 1 <= k <= 26.",
+    "You can change at most one index in the string to any lowercase letter.",
+    "The output should be an integer representing the maximum number of partitions.",
+    "Consider the impact of changing characters on the distinct character count."
+  ]
+}

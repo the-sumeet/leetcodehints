@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous part of the array. For example, in the array [1, 2, 1], the subarrays include [1], [2], [1], [1, 2], [2, 1], and [1, 2, 1]."
+    },
+    {
+      "content": "Next, focus on how to calculate the distinct count of a subarray. For a given subarray, you need to determine how many unique elements it contains. You can use a set to help with this."
+    },
+    {
+      "content": "Consider how many subarrays can be formed from an array of length n. The total number of subarrays is given by the formula n * (n + 1) / 2. This is important for understanding the scale of your solution."
+    },
+    {
+      "content": "Think about how to iterate through all possible subarrays. You can use two nested loops: the outer loop to fix the starting index and the inner loop to extend the subarray to the end."
+    },
+    {
+      "content": "As you iterate through the subarrays, keep track of the distinct elements. You can maintain a frequency map or a set to count distinct elements as you expand the subarray."
+    },
+    {
+      "content": "Remember to calculate the square of the distinct count for each subarray and accumulate this value. Use a variable to keep a running total of the sum of squares."
+    },
+    {
+      "content": "Since the result can be very large, make sure to take the sum modulo 10^9 + 7 at each step to prevent overflow and to meet the problem's requirements."
+    },
+    {
+      "content": "Consider edge cases, such as when the array has only one element or when all elements are the same. How do these cases affect the distinct counts?"
+    },
+    {
+      "content": "Think about optimizing your solution. A naive O(n^3) approach (iterating through all subarrays and counting distinct elements each time) may not be efficient enough for larger arrays."
+    },
+    {
+      "content": "Explore using a sliding window technique combined with a hashmap to keep track of the counts of elements in the current subarray. This can help you efficiently update the distinct count as you expand or contract the window."
+    },
+    {
+      "content": "When using the sliding window, remember to adjust the left pointer when the right pointer moves and an element is added that already exists in the current subarray."
+    },
+    {
+      "content": "Make sure to test your solution with various inputs, especially edge cases like arrays with all identical elements, arrays with maximum length, and arrays with maximum distinct values."
+    },
+    {
+      "content": "Keep in mind that you need to return the final result after processing all subarrays, so ensure your return statement is correctly placed after the accumulation of the sum of squares."
+    },
+    {
+      "content": "Consider the time complexity of your approach. A well-optimized solution should ideally run in O(n) or O(n log n) time to handle the upper constraint efficiently."
+    },
+    {
+      "content": "Finally, before finalizing your code, review the problem statement to ensure you are adhering to all constraints and requirements, especially regarding indexing and the return format."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^5",
+    "Return the result modulo 10^9 + 7.",
+    "A subarray is a contiguous non-empty sequence of elements within an array.",
+    "The distinct count of a subarray is the number of unique elements in that subarray."
+  ]
+}

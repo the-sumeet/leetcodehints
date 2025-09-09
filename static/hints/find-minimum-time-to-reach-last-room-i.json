@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. You have a 2D array `moveTime` where each cell represents the time you must wait before moving into that room. Your goal is to navigate from the top-left corner (0, 0) to the bottom-right corner (n-1, m-1)."
+    },
+    {
+      "content": "Consider how you will keep track of the time as you move through the grid. You need to account for both the time it takes for a room to open and the time it takes to move to adjacent rooms."
+    },
+    {
+      "content": "Think about using a priority queue (min-heap) to explore rooms in the order of the time it takes to reach them. This will help you efficiently find the next room to move to based on the minimum time."
+    },
+    {
+      "content": "You can represent the state of each room with a tuple containing the current time and the room's coordinates. For example, when you reach room (i, j) at time t, you might store `(t, (i, j))` in your priority queue."
+    },
+    {
+      "content": "Make sure to explore all four possible directions (up, down, left, right) from the current room. For each direction, calculate the time it would take to move to the adjacent room and update the state accordingly."
+    },
+    {
+      "content": "Remember to check if you've already found a quicker way to reach a room before updating its state. You can maintain a 2D array to keep track of the minimum time to reach each room."
+    },
+    {
+      "content": "Consider edge cases, such as when all rooms have a `moveTime` of zero. In this case, the only time spent will be the movement time, which is straightforward to calculate."
+    },
+    {
+      "content": "Take note of the constraints: `moveTime` can have values up to 10^9, so ensure your solution handles large integers properly. Also, the grid size is limited to 50x50, which is manageable for most algorithms."
+    },
+    {
+      "content": "When you reach the bottom-right corner (n-1, m-1), return the total time taken to get there. Ensure your return value is the minimum time calculated through your exploration."
+    },
+    {
+      "content": "Finally, think about how you will implement the priority queue. You might use Python's `heapq` or a similar data structure in other languages. Ensure you handle the time updates correctly to maintain the minimum time property."
+    }
+  ],
+  "questionNotes": [
+    "The grid is represented by a 2D array `moveTime` of size n x m.",
+    "You start at (0, 0) and aim to reach (n-1, m-1).",
+    "Moving to an adjacent room takes exactly 1 second.",
+    "You cannot move to a room until its `moveTime` has passed.",
+    "Constraints: 2 <= n, m <= 50 and 0 <= moveTime[i][j] <= 10^9."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "To form a valid triangle with three sides of lengths a, b, and c, they must satisfy the triangle inequality theorem. Specifically, for any three sides, the sum of the lengths of any two sides must be greater than the length of the third side."
+    },
+    {
+      "content": "Consider sorting the array first. Once sorted, if you have three sides a, b, and c (where a <= b <= c), the only condition you need to check is whether a + b > c."
+    },
+    {
+      "content": "Think about how you can iterate through the sorted array to check combinations of three sides. A nested loop could help, but consider the efficiency of your approach given the constraints."
+    },
+    {
+      "content": "You might want to fix the largest side (c) and then use two pointers to find valid pairs (a, b) that can form a triangle with c. This could reduce the time complexity significantly."
+    },
+    {
+      "content": "When using two pointers, start one pointer at the beginning of the array and the other just before the fixed largest side. Adjust the pointers based on the triangle inequality condition."
+    },
+    {
+      "content": "Keep track of the count of valid triplets you find. Remember that if you find a valid pair (a, b) for a fixed c, all pairs between the two pointers are also valid."
+    },
+    {
+      "content": "Consider edge cases where the array might have fewer than three elements. In such cases, it is impossible to form any triangle, so the result should be 0."
+    },
+    {
+      "content": "Also, think about duplicate values in the array. How will they affect your counting of unique triplets? Ensure your counting logic accounts for duplicates appropriately."
+    },
+    {
+      "content": "As you implement your logic, remember to test your function with various inputs, including edge cases like all elements being the same or having zeros in the array."
+    },
+    {
+      "content": "Finally, your function should return the total count of valid triplets. Make sure to handle the return format correctly, as the problem statement specifies returning an integer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "Constraints: 0 <= nums[i] <= 1000",
+    "The output should be an integer representing the count of valid triangle triplets."
+  ]
+}

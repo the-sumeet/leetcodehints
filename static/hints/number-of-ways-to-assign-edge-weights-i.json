@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a tree. A tree with n nodes has exactly n-1 edges, and each edge connects two nodes. In this problem, you will need to traverse the tree to determine the maximum depth."
+    },
+    {
+      "content": "Focus on how to find the maximum depth of the tree. You can use Depth-First Search (DFS) or Breadth-First Search (BFS) to explore the tree starting from the root node (node 1). Keep track of the depth as you traverse."
+    },
+    {
+      "content": "Once you find the maximum depth, identify all nodes that are at this maximum depth. These nodes are potential candidates for your selection of node x."
+    },
+    {
+      "content": "Remember that the cost of a path is determined by the weights assigned to the edges along that path. Each edge can have a weight of either 1 or 2, leading to a variety of combinations."
+    },
+    {
+      "content": "Analyze how the sum of weights can be odd. The sum of weights will be odd if there is an odd number of edges assigned a weight of 1. Consider how many edges are in the path from node 1 to your selected node x."
+    },
+    {
+      "content": "Count the number of edges in the path from the root (node 1) to the maximum depth nodes. Let's denote this count as k. The total number of ways to assign weights will depend on k."
+    },
+    {
+      "content": "If k is the number of edges in the path, you need to determine how many ways you can assign weights such that the total weight is odd. This can be calculated using combinations of weights assigned to the edges."
+    },
+    {
+      "content": "Consider the cases when k is even and when k is odd. If k is even, you can have an odd sum by assigning an odd number of edges a weight of 1, and vice versa for odd k."
+    },
+    {
+      "content": "To compute the number of valid assignments, you can use the formula: 2^(k-1) for the total combinations, and then select the appropriate combinations that yield an odd sum based on the parity of k."
+    },
+    {
+      "content": "Finally, make sure to return the result modulo 10^9 + 7, as the problem states that the answer may be large. This is a common requirement in competitive programming to avoid overflow."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5, edges.length == n - 1.",
+    "Each edge connects two nodes u_i and v_i, indicating an undirected connection.",
+    "The tree is rooted at node 1, which is the starting point for finding paths.",
+    "The result should be returned modulo 10^9 + 7.",
+    "Focus on paths from node 1 to nodes at maximum depth to determine valid weight assignments."
+  ]
+}

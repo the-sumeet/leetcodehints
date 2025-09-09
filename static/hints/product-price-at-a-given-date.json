@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the initial condition: all products have a price of 10 before any changes are made. This is crucial for determining the price of products that do not have any price changes before the specified date."
+    },
+    {
+      "content": "Consider how you will filter the price changes based on the date. You need to find all price changes that occurred on or before '2019-08-16'."
+    },
+    {
+      "content": "Think about how to group the price changes by 'product_id'. You will need to identify the most recent price change for each product before or on '2019-08-16'."
+    },
+    {
+      "content": "You can use SQL's window functions to help with this. For instance, using `ROW_NUMBER()` can allow you to rank the price changes for each product by date."
+    },
+    {
+      "content": "Remember to handle cases where a product has no price changes before the specified date. In such cases, the price should default to 10."
+    },
+    {
+      "content": "As you write your query, ensure you are selecting the correct columns: you need 'product_id' and the final 'price' for each product."
+    },
+    {
+      "content": "Consider using a Common Table Expression (CTE) to first select the relevant price changes and then filter for the latest price for each product."
+    },
+    {
+      "content": "You may want to use a LEFT JOIN to combine your results with a subquery that retrieves the most recent price change for each product."
+    },
+    {
+      "content": "When constructing your final output, ensure that the result table includes the correct column names: 'product_id' and 'price'."
+    },
+    {
+      "content": "Finally, remember to test your query with edge cases, such as products that have multiple price changes on the same date or products with no price changes at all."
+    }
+  ],
+  "questionNotes": [
+    "Initial price for all products is 10.",
+    "Filter price changes based on the date '2019-08-16'.",
+    "Use (product_id, change_date) as the primary key.",
+    "Handle cases where no price change exists before the date.",
+    "Return format must include 'product_id' and 'price'."
+  ]
+}

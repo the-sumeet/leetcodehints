@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to represent the segments on a number line. Each segment is defined by a start point, an end point, and a color. Make sure to visualize how these segments can overlap."
+    },
+    {
+      "content": "Consider how to handle overlapping segments. When two segments overlap, they will contribute to a mixed color. Think about how you might track which colors are present in overlapping regions."
+    },
+    {
+      "content": "You can use a data structure like a dictionary to map each point on the number line to the set of colors that cover that point. This will help you keep track of mixed colors efficiently."
+    },
+    {
+      "content": "When processing the segments, iterate through each segment and for every point in the range, add the color to the corresponding entry in your dictionary. Remember that the segments are half-closed, meaning the end point is not included."
+    },
+    {
+      "content": "After populating your dictionary with colors for each point, you will need to convert this into non-overlapping segments. Start by sorting the keys of your dictionary and iterating through them to identify continuous ranges."
+    },
+    {
+      "content": "As you identify continuous ranges, calculate the sum of the colors for each range. You can use a set to keep track of unique colors and then sum them to get the mixed color value."
+    },
+    {
+      "content": "Pay attention to the case where there are gaps between segments. Ensure that your final output only includes painted segments and does not include any unpainted gaps."
+    },
+    {
+      "content": "Consider edge cases where segments may be entirely contained within another segment. Ensure your logic correctly handles these scenarios without duplicating segments in the output."
+    },
+    {
+      "content": "When constructing the final output, remember to format it correctly as a list of segments, each defined by a start point, end point, and the sum of mixed colors."
+    },
+    {
+      "content": "Finally, before returning your result, check if your output meets the problem's requirements. Ensure that the segments are non-overlapping and that you have not missed any painted areas."
+    }
+  ],
+  "questionNotes": [
+    "Segments are half-closed: [start, end).",
+    "The output must consist of non-overlapping segments.",
+    "Each color in the segments is unique.",
+    "The sum of mixed colors should be calculated for overlapping segments.",
+    "The output can be returned in any order."
+  ]
+}

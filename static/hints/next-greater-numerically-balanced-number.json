@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for a number to be numerically balanced. A number is balanced if for each digit `d`, it appears exactly `d` times in the number. For example, in the number 22, the digit 2 appears 2 times."
+    },
+    {
+      "content": "Consider the range of digits that can be used in a numerically balanced number. The digits can only be from 0 to 9, but remember that a digit `d` cannot appear more than `d` times. For instance, you cannot have the digit 3 appearing more than 3 times."
+    },
+    {
+      "content": "Think about how to generate candidates for numerically balanced numbers. You might want to start from `n + 1` and check each number sequentially to see if it meets the balanced criteria."
+    },
+    {
+      "content": "When checking if a number is balanced, you can convert the number to a string and count the occurrences of each digit. Use a dictionary or an array to keep track of these counts."
+    },
+    {
+      "content": "While checking the counts, remember to validate that for each digit `d` in the number, the count of `d` matches `d`. If any digit fails this condition, the number is not balanced."
+    },
+    {
+      "content": "Consider edge cases where `n` is very close to a numerically balanced number. For example, if `n = 9`, the next balanced number would be 22, so make sure your approach can handle jumps in values."
+    },
+    {
+      "content": "You might need to implement a loop that continues checking numbers until you find the next balanced one. Be cautious of performance; ensure your checks are efficient."
+    },
+    {
+      "content": "As you iterate through numbers greater than `n`, keep track of the smallest balanced number found. This will help you return the correct result once you find a valid candidate."
+    },
+    {
+      "content": "If you reach a number that has a digit greater than 9, it cannot be balanced. This is because no digit can appear more than 9 times, so you can skip such numbers."
+    },
+    {
+      "content": "Finally, focus on constructing a function that encapsulates the logic of checking for balanced numbers and iterating through candidates. Make sure to return the first valid balanced number you find."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= n <= 10^6",
+    "The output must be the smallest numerically balanced number strictly greater than n.",
+    "A digit d cannot appear more than d times in a numerically balanced number.",
+    "Ensure to handle edge cases where n is very close to a balanced number."
+  ]
+}

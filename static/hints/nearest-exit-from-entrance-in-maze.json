@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the maze. Each cell is either empty ('.') or a wall ('+'). Make sure you can differentiate between these two types of cells."
+    },
+    {
+      "content": "Identify the entrance in the maze. Remember that the entrance is given as a pair of coordinates [row, col]. This will be your starting point for searching for exits."
+    },
+    {
+      "content": "Exits are defined as empty cells on the border of the maze. Make a plan to check the cells on the edges of the maze to see if they are empty and count them as potential exits."
+    },
+    {
+      "content": "Consider how you will navigate through the maze. You can move up, down, left, or right, but you cannot move through walls or go outside the maze boundaries."
+    },
+    {
+      "content": "A breadth-first search (BFS) is a suitable approach for this problem since it explores all possible paths layer by layer. Think about how you can implement BFS starting from the entrance."
+    },
+    {
+      "content": "As you perform BFS, keep track of the number of steps taken from the entrance to each cell. This will help you determine the shortest path to an exit."
+    },
+    {
+      "content": "When you find an exit during your BFS, check if it's the nearest one. Remember that the entrance itself is not considered an exit, so ensure you skip it if you reach it."
+    },
+    {
+      "content": "Make sure to mark cells as visited once you explore them to avoid cycles and unnecessary re-exploration. You can use a separate matrix or modify the maze temporarily."
+    },
+    {
+      "content": "Handle edge cases carefully, such as when there are no exits at all. In such cases, your function should return -1."
+    },
+    {
+      "content": "Finally, ensure your function returns the correct number of steps to the nearest exit or -1 if no exit is reachable. Consider testing your implementation with various maze configurations."
+    }
+  ],
+  "questionNotes": [
+    "The entrance is guaranteed to be an empty cell.",
+    "Exits must be on the border of the maze and cannot include the entrance cell.",
+    "Return -1 if no exit is reachable.",
+    "The maze can be up to 100x100 in size."
+  ]
+}

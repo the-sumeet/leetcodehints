@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to determine the minimum number of semesters required to complete all courses, given that some courses have prerequisites. Think about how you can represent the courses and their dependencies."
+    },
+    {
+      "content": "Consider using a graph representation for the courses. Each course can be a node, and a directed edge from course A to course B indicates that A must be completed before B. How would you construct this graph from the input?"
+    },
+    {
+      "content": "Remember that the input consists of a list of prerequisites. Each prerequisite is a pair [A, B], meaning A is a prerequisite for B. Make sure to handle the input correctly and build your graph accordingly."
+    },
+    {
+      "content": "Think about how to perform a topological sort on the graph. This will help you determine the order in which courses can be taken. What data structures might you use to implement this?"
+    },
+    {
+      "content": "Consider the concept of in-degrees for each node in the graph. The in-degree of a node represents how many prerequisites it has. How can you use this information to decide which courses can be taken in the current semester?"
+    },
+    {
+      "content": "As you process the courses, keep track of the number of semesters needed. Each time you take a set of courses that have no remaining prerequisites, you should increment your semester count. How will you manage this counting?"
+    },
+    {
+      "content": "Think about edge cases, such as cycles in the graph. If there is a cycle, it means that it's impossible to complete all courses. How will you detect cycles while performing the topological sort?"
+    },
+    {
+      "content": "Consider the scenario where there are no prerequisites at all. What should your function return in this case? Make sure to handle such edge cases in your solution."
+    },
+    {
+      "content": "As you build your solution, remember to return the total number of semesters as the final output. Ensure that your function adheres to the expected return type and format."
+    },
+    {
+      "content": "Finally, think about how to implement the topological sort efficiently. You could use a queue to process nodes with zero in-degrees. How would you update the in-degrees of the neighboring nodes after processing a course?"
+    }
+  ],
+  "questionNotes": [
+    "The input consists of an integer n (number of courses) and a list of prerequisite pairs.",
+    "Courses are indexed from 1 to n.",
+    "The output should be an integer representing the minimum number of semesters required.",
+    "Handle cases with cycles where it's impossible to complete all courses."
+  ]
+}

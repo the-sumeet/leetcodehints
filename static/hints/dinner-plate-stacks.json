@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the stacks. You need to maintain a list of stacks where each stack can hold a maximum number of plates defined by the capacity."
+    },
+    {
+      "content": "When implementing the `push` method, think about how to find the leftmost stack that has space. You might want to iterate through your list of stacks until you find one that is not full."
+    },
+    {
+      "content": "Remember that the stacks are indexed starting from 0. Ensure that your logic correctly handles the case when the leftmost stack is full and you need to move to the next one."
+    },
+    {
+      "content": "For the `pop` method, you need to find the rightmost stack that has plates. This requires checking the last stack and moving left until you find a non-empty stack."
+    },
+    {
+      "content": "Consider how you will keep track of the current size of each stack. You might want to use a list of lists or a similar data structure to represent the stacks."
+    },
+    {
+      "content": "In the `popAtStack` method, ensure that you check if the specified index is valid and that the stack at that index is not empty before trying to pop a value."
+    },
+    {
+      "content": "Pay attention to the return values. If a stack is empty or if an index is invalid, you should return -1. Make sure to handle these cases gracefully."
+    },
+    {
+      "content": "Think about edge cases, such as what happens when all stacks are empty and a pop operation is called. Your implementation should return -1 in this scenario."
+    },
+    {
+      "content": "You may want to maintain a separate list to track which stacks are currently non-empty. This can help optimize the search for the leftmost and rightmost stacks."
+    },
+    {
+      "content": "When pushing a value, if you find that all existing stacks are full, consider how you will create a new stack dynamically. This is crucial for handling an infinite number of stacks."
+    },
+    {
+      "content": "Ensure that your implementation is efficient. The problem states that you may have up to 200,000 operations, so aim for a solution that minimizes the time complexity of your methods."
+    },
+    {
+      "content": "Think about how you will manage the maximum capacity of each stack. You should check the size of a stack before pushing a new value to avoid exceeding the capacity."
+    },
+    {
+      "content": "For the `popAtStack` method, remember that if the specified stack becomes empty after popping, you might want to mark it as empty in your tracking structure."
+    },
+    {
+      "content": "Consider using a deque or a list to efficiently manage your stacks, especially for operations that require frequent additions and removals from both ends."
+    },
+    {
+      "content": "As a final step, ensure that your class maintains the integrity of the stacks after each operation. Each method should leave the data structure in a valid state."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= capacity <= 20,000; 1 <= val <= 20,000; 0 <= index <= 100,000.",
+    "At most 200,000 calls will be made to push, pop, and popAtStack.",
+    "Ensure to return -1 for invalid operations such as popping from an empty stack or accessing an empty index."
+  ]
+}

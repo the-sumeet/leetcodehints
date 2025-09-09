@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of Hamming distance. It measures how many positions two arrays differ in. For example, if `source = [1, 2, 3]` and `target = [1, 3, 2]`, the Hamming distance is 2 because they differ at indices 1 and 2."
+    },
+    {
+      "content": "Consider the allowed swaps carefully. Each swap operation allows you to exchange the elements at two specified indices in the `source` array. This means you can rearrange the elements of `source` in ways that may help reduce the Hamming distance."
+    },
+    {
+      "content": "Think about how to represent the allowed swaps. You can view the indices as nodes in a graph where an edge exists between two nodes if a swap is allowed. This can help you identify connected components of indices that can be freely rearranged."
+    },
+    {
+      "content": "Once you identify connected components, you can gather all the elements in `source` that belong to the same component. You can then check how many of these can match the corresponding elements in `target` to minimize the Hamming distance."
+    },
+    {
+      "content": "To efficiently find connected components, consider using a Union-Find (Disjoint Set Union) data structure. This will help you group indices that can be swapped with each other, allowing you to process them together."
+    },
+    {
+      "content": "After forming the connected components, extract the values from `source` and `target` corresponding to these components. You can then count how many of these values can be matched directly."
+    },
+    {
+      "content": "Remember that the order of elements in the connected components does not matter. You can sort both the component values from `source` and `target` and then compare them to find the number of matches."
+    },
+    {
+      "content": "As you compare the sorted values from `source` and `target`, keep track of how many matches you find. The number of matches will help you calculate the minimum Hamming distance by subtracting the number of matches from the total number of elements in that component."
+    },
+    {
+      "content": "Consider edge cases such as when `allowedSwaps` is empty. In this case, you cannot swap any elements, and the Hamming distance is simply the count of differing positions between `source` and `target`."
+    },
+    {
+      "content": "Finally, ensure your implementation handles all indices correctly and returns the minimum Hamming distance after considering all allowed swaps. You should return the final count of differing positions after maximizing the matches."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == source.length == target.length",
+    "1 <= n <= 10^5",
+    "1 <= source[i], target[i] <= 10^5",
+    "0 <= allowedSwaps.length <= 10^5",
+    "allowedSwaps[i].length == 2",
+    "0 <= ai, bi <= n - 1",
+    "ai != bi"
+  ]
+}

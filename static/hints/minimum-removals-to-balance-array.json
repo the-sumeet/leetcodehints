@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the condition for a balanced array: the maximum element must be at most k times the minimum element. This means you need to find pairs of maximum and minimum values in the array that satisfy this condition."
+    },
+    {
+      "content": "Consider the simplest case where the array has only one element. An array of size 1 is always balanced. What happens if you have two elements? Think about how to compare them."
+    },
+    {
+      "content": "To solve the problem, you might want to sort the array first. Sorting can help you easily access the minimum and maximum elements in any subarray you consider."
+    },
+    {
+      "content": "Once sorted, consider using a two-pointer technique. One pointer can represent the start of the subarray (potential minimum), and the other can represent the end (potential maximum)."
+    },
+    {
+      "content": "As you move the right pointer to expand the window, check if the current maximum (right pointer) satisfies the condition with the current minimum (left pointer). If it does not, you may need to adjust the left pointer."
+    },
+    {
+      "content": "Think about how to count the number of elements that need to be removed. If you have a valid subarray from the left to the right pointer, the number of removals is the total length of the array minus the length of this valid subarray."
+    },
+    {
+      "content": "Consider edge cases where all elements are the same or where k is very large. How would these cases affect the number of removals needed to achieve a balanced array?"
+    },
+    {
+      "content": "While iterating with the two pointers, keep track of the maximum number of elements you can keep in a balanced subarray. This will help you determine the minimum removals needed."
+    },
+    {
+      "content": "Remember to handle the case where no elements need to be removed. If your two-pointer approach finds a valid subarray covering the entire array, the result should be zero removals."
+    },
+    {
+      "content": "Finally, ensure your solution efficiently handles the constraints, especially since the array can be quite large (up to 100,000 elements). Aim for a time complexity of O(n log n) due to sorting and O(n) for the two-pointer traversal."
+    }
+  ],
+  "questionNotes": [
+    "An array of size 1 is considered balanced.",
+    "The maximum element must be at most k times the minimum element.",
+    "You may remove any number of elements from nums without making it empty.",
+    "Constraints: 1 <= nums.length <= 10^5, 1 <= nums[i] <= 10^9, 1 <= k <= 10^5."
+  ]
+}

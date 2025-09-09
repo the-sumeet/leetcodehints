@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. The `parent` array indicates the parent-child relationships. For example, if `parent[1] == 0`, then node 1 is a child of node 0."
+    },
+    {
+      "content": "Remember that the tree is rooted at node 0. This means that all nodes can be reached from node 0, and you can traverse the tree starting from this root."
+    },
+    {
+      "content": "The string `s` provides a character for each node. When you traverse the tree using DFS, you will build a string by appending characters corresponding to the nodes visited."
+    },
+    {
+      "content": "When implementing DFS, ensure that you visit child nodes in increasing order. This is crucial for consistent string formation across different starting nodes."
+    },
+    {
+      "content": "Before starting the DFS for each node, you will need to clear the `dfsStr` to ensure it starts empty for each new traversal."
+    },
+    {
+      "content": "After constructing the string `dfsStr` for a node, check if it is a palindrome. A string is a palindrome if it reads the same forwards and backwards."
+    },
+    {
+      "content": "You can check if a string is a palindrome by comparing it to its reverse. For example, `dfsStr == dfsStr[::-1]` in Python."
+    },
+    {
+      "content": "Consider edge cases, such as when `n = 1`. In this case, the only node will always form a palindrome since it consists of a single character."
+    },
+    {
+      "content": "Think about how to efficiently store the children of each node. You might want to create an adjacency list from the `parent` array to facilitate DFS traversal."
+    },
+    {
+      "content": "As you build the adjacency list, remember that each node can have multiple children, and you will need to iterate through them in order."
+    },
+    {
+      "content": "When you call DFS on each node, ensure that you are correctly handling the return of the string, appending characters only after visiting all children."
+    },
+    {
+      "content": "Keep track of the results in a boolean array `answer`. Each index `i` should reflect whether the string formed by DFS starting from node `i` is a palindrome."
+    },
+    {
+      "content": "Pay attention to the constraints. The maximum size of `n` can be up to 100,000, so your solution should be efficient, ideally O(n) in time complexity."
+    },
+    {
+      "content": "Consider using a stack or recursion for the DFS implementation. Both approaches can work, but ensure you manage the string correctly in either case."
+    },
+    {
+      "content": "Finally, think about how to optimize your palindrome check. Instead of reversing the string, you could check characters from both ends moving towards the center."
+    }
+  ],
+  "questionNotes": [
+    "The tree is represented by the `parent` array where `parent[i]` is the parent of node `i`. Node 0 is the root.",
+    "The string `s` has a length equal to the number of nodes in the tree.",
+    "You need to return a boolean array `answer` where each index indicates if the DFS string from that node is a palindrome.",
+    "Constraints: 1 <= n <= 100,000; s consists only of lowercase English letters."
+  ]
+}

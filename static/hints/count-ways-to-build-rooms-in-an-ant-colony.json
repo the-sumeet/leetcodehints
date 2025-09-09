@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `prevRoom` array. Each index represents a room, and the value at that index indicates which room must be built before it. For example, if `prevRoom[2] = 0`, room 0 must be built before room 2."
+    },
+    {
+      "content": "Consider how the rooms are connected. Since room 0 is already built, you can only build rooms that have their prerequisite room already constructed. This creates a dependency graph."
+    },
+    {
+      "content": "Visualize the dependencies. You can represent the rooms and their connections as a directed graph where an edge from room A to room B means A must be built before B."
+    },
+    {
+      "content": "Think about how many ways you can build the rooms once you have built a certain room. For each room, if it has multiple dependent rooms, their order of construction can vary."
+    },
+    {
+      "content": "You can use Depth First Search (DFS) or Breadth First Search (BFS) to explore the order of building rooms. This will help you understand the possible sequences of construction."
+    },
+    {
+      "content": "Keep track of the number of ways to build each room after you build its prerequisite. This can be done using dynamic programming or combinatorial counting."
+    },
+    {
+      "content": "Consider using a factorial approach to calculate the number of permutations of the rooms that can be built after a certain room is constructed. This will help in counting the different orders."
+    },
+    {
+      "content": "Remember to account for the modular arithmetic since the output needs to be returned modulo 10^9 + 7. This is important for preventing overflow and ensuring the result fits within standard data types."
+    },
+    {
+      "content": "Think about edge cases, such as when there are only two rooms. How would the construction order look in that case? This can help clarify your understanding of the problem."
+    },
+    {
+      "content": "Make sure to handle the case where multiple rooms depend on the same previous room. The order of these rooms can vary, leading to different construction sequences."
+    },
+    {
+      "content": "Consider how you would implement a function to calculate the number of ways to build the rooms. You might need to use recursion with memoization or an iterative approach with a stack."
+    },
+    {
+      "content": "As you implement your solution, ensure you are correctly updating the number of ways to build each room based on the number of ways to build its prerequisite rooms."
+    },
+    {
+      "content": "Once you have a working algorithm, test it against the provided examples and some edge cases to ensure it behaves as expected across different scenarios."
+    },
+    {
+      "content": "To finalize your approach, think about how you can combine the results of building different rooms into a single total count of ways to build all rooms."
+    },
+    {
+      "content": "Consider the final steps of your solution. You will need to return the total number of ways modulo 10^9 + 7, so ensure your final result is computed correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5, prevRoom[0] == -1, 0 <= prevRoom[i] < n for all 1 <= i < n.",
+    "Every room must be reachable from room 0 once all rooms are built.",
+    "Return the number of different orders to build the rooms modulo 10^9 + 7."
+  ]
+}

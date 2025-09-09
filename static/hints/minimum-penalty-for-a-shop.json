@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the penalty calculation. The penalty increases by 1 for each hour the shop is open without customers and by 1 for each hour the shop is closed with customers. This means you need to account for both scenarios based on the closing hour."
+    },
+    {
+      "content": "Consider the implications of closing the shop at each hour. For each potential closing hour, you will need to sum up the penalties based on the rules provided. Think about how to iterate through the string to calculate these penalties."
+    },
+    {
+      "content": "When calculating penalties, remember that if the shop closes at hour `j`, it means it is open from hour `0` to `j-1` and closed from hour `j` onwards. Make sure to differentiate between these two segments when calculating penalties."
+    },
+    {
+      "content": "You can use a loop to iterate through the possible closing hours from `0` to `n`, where `n` is the length of the customers string. For each hour, maintain a running total of the penalties."
+    },
+    {
+      "content": "As you calculate the penalties, keep track of the minimum penalty found and the corresponding closing hour. If you encounter a penalty equal to the current minimum, remember to prefer the earlier hour due to the tie-breaking rule."
+    },
+    {
+      "content": "To optimize your calculations, consider how you can update the penalty dynamically as you move from one closing hour to the next. For instance, when moving from closing at hour `j` to hour `j+1`, you can adjust the penalty based on the character at `j`."
+    },
+    {
+      "content": "Think about edge cases, such as when all characters are 'N' or all are 'Y'. How would these affect the penalty calculations? Ensure your solution handles these cases correctly."
+    },
+    {
+      "content": "Remember that the penalty for closing at hour `j` includes contributions from both open and closed hours. Make sure to correctly differentiate between the two when summing penalties."
+    },
+    {
+      "content": "As you implement your solution, consider using a variable to track the current penalty as you iterate through the hours. This will help you avoid recalculating the penalty from scratch for each closing hour."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct closing hour as an integer. This should be the earliest hour that results in the minimum penalty. Pay attention to the indexing and the return format."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= customers.length <= 10^5",
+    "The string consists only of characters 'Y' and 'N'.",
+    "Return the earliest hour at which the shop must be closed to incur a minimum penalty.",
+    "If multiple closing hours yield the same minimum penalty, return the smallest index."
+  ]
+}

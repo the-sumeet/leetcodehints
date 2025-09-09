@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the problem statement clearly. You need to determine if a list of words is sorted according to a custom order of the alphabet. Make sure to note how this order affects the comparison of characters."
+    },
+    {
+      "content": "Consider how you would compare two words in the alien language. You will need to look at the characters in both words one by one until you find a difference. Think about how to handle cases where one word is a prefix of another."
+    },
+    {
+      "content": "To facilitate comparisons, create a mapping of each character in the alien order to its index. This will allow you to easily compare characters based on their positions in the custom alphabet."
+    },
+    {
+      "content": "For example, if the order is 'hlabcdefgijkmnopqrstuvwxyz', you can create a dictionary where 'h' maps to 0, 'l' maps to 1, and so on. This will help you convert characters to their respective ranks."
+    },
+    {
+      "content": "When comparing two words, iterate through their characters up to the length of the shorter word. Use your mapping to compare the characters at each position. If you find a character that differs, you can determine which word should come first."
+    },
+    {
+      "content": "Remember to handle the case where the two words are identical up to the length of the shorter word. If one word is shorter, it should come first if the longer word starts with the shorter word."
+    },
+    {
+      "content": "Make sure to loop through all adjacent pairs of words in the list. If any pair is found to be out of order, you should return false immediately."
+    },
+    {
+      "content": "Consider edge cases, such as when the list contains only one word or when all words are the same. Both cases should return true, as they are trivially sorted."
+    },
+    {
+      "content": "Also, think about the constraints provided. The maximum number of words is 100, and each word can be up to 20 characters long. This means your solution should efficiently handle up to 2000 character comparisons."
+    },
+    {
+      "content": "Finally, implement the logic to compare each pair of words using the mapping you created. If all pairs are in order, return true; otherwise, return false. Make sure to test with various examples to validate your implementation."
+    }
+  ],
+  "questionNotes": [
+    "1 <= words.length <= 100",
+    "1 <= words[i].length <= 20",
+    "order.length == 26",
+    "All characters in words[i] and order are English lowercase letters.",
+    "Handle cases where one word is a prefix of another correctly."
+  ]
+}

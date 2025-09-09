@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. You have a binary matrix where '1' represents land and '0' represents sea. Your goal is to find land cells that cannot reach the boundary of the grid."
+    },
+    {
+      "content": "Consider how you can traverse the grid. You can move in four directions (up, down, left, right) from a land cell. Think about how you might explore these connections."
+    },
+    {
+      "content": "Identify the boundary cells of the grid. Cells in the first and last row, as well as the first and last column, are part of the boundary. Any land cell connected to these should not be counted."
+    },
+    {
+      "content": "You might want to use a depth-first search (DFS) or breadth-first search (BFS) to explore the land cells. Start from the boundary land cells and mark all reachable land cells."
+    },
+    {
+      "content": "As you traverse, keep track of the cells you visit. You can use a visited array or modify the grid itself to mark cells that can reach the boundary."
+    },
+    {
+      "content": "After marking the reachable land cells, iterate through the grid again. Count the land cells that remain unvisited, as these are the enclaves."
+    },
+    {
+      "content": "Consider edge cases where the grid is very small, like 1x1 or 1xN. Ensure your solution handles these cases without errors."
+    },
+    {
+      "content": "Think about the time complexity of your approach. A DFS or BFS will generally run in O(m * n), where m is the number of rows and n is the number of columns."
+    },
+    {
+      "content": "Remember to handle the input constraints carefully. The grid can be as large as 500x500, so your solution needs to be efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Finally, ensure that your function returns the count of enclaved land cells as an integer. Pay attention to the return format and any potential off-by-one errors."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 500",
+    "Grid values: grid[i][j] is either 0 or 1.",
+    "Return format: An integer representing the number of enclaved land cells."
+  ]
+}

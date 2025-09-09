@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous section of an array. For example, in the array [1, 2, 3], the subarrays include [1], [1, 2], [1, 2, 3], [2], [2, 3], and [3]."
+    },
+    {
+      "content": "Identify the conditions for a fixed-bound subarray. It must have the minimum value equal to `minK` and the maximum value equal to `maxK`. This means you need to track both the minimum and maximum values as you explore subarrays."
+    },
+    {
+      "content": "Consider how you can iterate through the array. You might want to use a sliding window or two-pointer technique to efficiently explore potential subarrays."
+    },
+    {
+      "content": "Think about how to keep track of the positions of `minK` and `maxK`. You can maintain two pointers or indices that mark the last seen positions of these values."
+    },
+    {
+      "content": "As you traverse the array, when you encounter a value that is less than `minK` or greater than `maxK`, you should reset your tracking. This is because such values cannot be part of a valid fixed-bound subarray."
+    },
+    {
+      "content": "When you find both `minK` and `maxK` in the current subarray, count the number of valid subarrays that can be formed. This can be determined by the distance between the last seen positions of `minK` and `maxK`."
+    },
+    {
+      "content": "Consider edge cases where all elements are the same as `minK` or `maxK`. For example, in an array like [1, 1, 1, 1] with `minK` and `maxK` both equal to 1, every subarray is valid."
+    },
+    {
+      "content": "You can calculate the number of subarrays ending at the current index by determining how many valid starting points exist before it. This can be derived from the last occurrences of `minK` and `maxK`."
+    },
+    {
+      "content": "Make sure to handle scenarios where `minK` is greater than `maxK`. In such cases, there cannot be any valid subarrays, so you can return 0 immediately."
+    },
+    {
+      "content": "Use a variable to keep track of the count of valid subarrays as you iterate through the array. Update this count whenever you identify a valid fixed-bound subarray."
+    },
+    {
+      "content": "Think about how to efficiently count the number of valid subarrays. You might want to use a mathematical approach to calculate the number of combinations of starting and ending indices."
+    },
+    {
+      "content": "Be mindful of the constraints: the length of `nums` can be as large as 100,000. Your solution should ideally have a linear time complexity to handle large inputs efficiently."
+    },
+    {
+      "content": "Consider using a hash map or array to store the last seen indices of `minK` and `maxK` to make your tracking more efficient."
+    },
+    {
+      "content": "When implementing your solution, ensure that you account for all possible subarrays that can be formed between the last occurrences of `minK` and `maxK`."
+    },
+    {
+      "content": "Finally, remember to return the total count of valid fixed-bound subarrays after you have processed the entire array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 100000",
+    "1 <= nums[i], minK, maxK <= 1000000",
+    "A subarray must contain at least one occurrence of minK and maxK to be considered fixed-bound."
+  ]
+}

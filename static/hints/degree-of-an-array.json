@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of the 'degree' of an array. The degree is defined as the maximum frequency of any element in the array. For example, in the array [1, 2, 2, 3, 1], the degree is 2 because both 1 and 2 appear twice."
+    },
+    {
+      "content": "To find the degree of the array, you'll need to count how many times each element appears. Consider using a hash map (or dictionary) to store each element and its frequency."
+    },
+    {
+      "content": "While counting frequencies, also track the first and last occurrence of each element. This will help you later to determine the length of the subarray that contains the elements contributing to the degree."
+    },
+    {
+      "content": "Once you have the frequency of each element, identify the maximum frequency (the degree). You can iterate through your frequency map to find this value."
+    },
+    {
+      "content": "After determining the degree, focus on the elements that have this maximum frequency. You will need to find the smallest subarray that contains all occurrences of at least one of these elements."
+    },
+    {
+      "content": "For each element that has the maximum frequency, calculate the length of the subarray from its first occurrence to its last occurrence. This can be done using the indices you tracked earlier."
+    },
+    {
+      "content": "Store the lengths of these subarrays and keep track of the minimum length found. This will be your answer for the smallest subarray with the same degree as the original array."
+    },
+    {
+      "content": "Consider edge cases, such as when the array has only one element. In this case, the degree is 1, and the length of the subarray is also 1."
+    },
+    {
+      "content": "Remember to handle cases where multiple elements have the same maximum frequency. You need to evaluate the lengths of the subarrays for each of these elements."
+    },
+    {
+      "content": "Finally, ensure that your function returns the smallest length correctly. You might want to return a value of 0 or -1 if no valid subarray is found, but this shouldn't happen with the given constraints."
+    }
+  ],
+  "questionNotes": [
+    "The degree of the array is defined as the maximum frequency of any element.",
+    "You need to find the smallest contiguous subarray that has the same degree as the original array.",
+    "Constraints: nums.length will be between 1 and 50,000. nums[i] will be an integer between 0 and 49,999.",
+    "Consider edge cases such as arrays with a single element or all unique elements."
+  ]
+}

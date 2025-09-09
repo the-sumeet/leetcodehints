@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Customer table. You need to focus on the columns: 'visited_on' for the date, 'amount' for the total paid, and 'customer_id' which is unique for each customer."
+    },
+    {
+      "content": "Remember that you're calculating a moving average over a 7-day window. This means for each day, you need to consider the total amount paid by customers from that day and the six days prior."
+    },
+    {
+      "content": "To compute the total amount for each day, you might want to use a `GROUP BY` clause on the 'visited_on' column. This will allow you to sum the 'amount' for each day."
+    },
+    {
+      "content": "Think about how you can join or filter the data to only include the relevant 7-day window for each date. You may need to use a subquery or a window function to achieve this."
+    },
+    {
+      "content": "When calculating the moving average, remember to divide the total amount by 7. Make sure to round the result to two decimal places using the appropriate SQL function."
+    },
+    {
+      "content": "Consider edge cases such as the first few days where there might not be a full 7 days of data. How will you handle these cases in your moving average calculation?"
+    },
+    {
+      "content": "You should return the results ordered by 'visited_on'. This is crucial for ensuring that the moving averages are presented in the correct chronological order."
+    },
+    {
+      "content": "Make sure to include all required columns in your final output: 'visited_on', 'amount', and 'average_amount'. Each of these needs to be correctly calculated and formatted."
+    },
+    {
+      "content": "Think about using a Common Table Expression (CTE) or a derived table to simplify your main query. This can help you break down the problem into manageable parts."
+    },
+    {
+      "content": "Finally, ensure that your SQL query is efficient. Consider indexing the 'visited_on' column if the dataset is large, as this can speed up your calculations significantly."
+    }
+  ],
+  "questionNotes": [
+    "The primary key for the table is (customer_id, visited_on).",
+    "You must compute the moving average for every day starting from the 7th day onward.",
+    "The average_amount should be rounded to two decimal places.",
+    "The result must be ordered by 'visited_on' in ascending order."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of 'bursty behavior'. This typically refers to a scenario where there are sudden spikes in activity within a short time frame. Think about how you can define what constitutes a 'burst'."
+    },
+    {
+      "content": "Consider how you will represent the posts in your data structure. You have post IDs, user IDs, and post dates. How can you leverage these attributes to identify bursts? A good starting point is to parse the dates into a more manageable format."
+    },
+    {
+      "content": "Focus on the time intervals between the posts. You need to determine how many posts occur within a specific time frame. A common approach is to sort the posts by date and then iterate through the sorted list."
+    },
+    {
+      "content": "As you iterate through the posts, think about how to maintain a count of posts within a sliding window of time. You could use two pointers or indices to track the start and end of your time window."
+    },
+    {
+      "content": "Define what your time window will be. For example, if you're looking for bursts within a day, you'll need to check if the difference between the earliest and latest post dates in your window exceeds that threshold."
+    },
+    {
+      "content": "When counting posts in your time window, ensure that you account for edge cases, such as posts that occur exactly at the start or end of your defined window. You may want to include or exclude these based on your burst definition."
+    },
+    {
+      "content": "Think about how you will store and return the results of your burst detection. Will you return the user IDs that exhibited bursty behavior, or the specific time frames? Consider what makes the most sense for your output."
+    },
+    {
+      "content": "As you implement your solution, keep in mind the performance implications of your approach. Sorting the posts will take O(n log n), but how efficient is your sliding window check? Aim for a linear pass after sorting."
+    },
+    {
+      "content": "You may need to handle multiple bursts for the same user. Think about how you can aggregate these results. Will you return all bursts, or just the most significant ones? Consider how to prioritize or filter your results."
+    },
+    {
+      "content": "Finally, ensure you test your solution against various edge cases, such as no posts, all posts from a single user, or posts with the same timestamp. This will help you verify that your burst detection logic is robust."
+    }
+  ],
+  "questionNotes": [
+    "Ensure to parse post dates correctly; they are in 'YYYY-MM-DD' format.",
+    "Consider the time window for bursts (e.g., 1 day, 1 hour) and how to define it.",
+    "Handle cases with multiple posts at the same timestamp carefully.",
+    "Decide on the output format: user IDs with bursts, timestamps, or both.",
+    "Performance is key; aim for O(n log n) due to sorting, with O(n) for the burst detection."
+  ]
+}

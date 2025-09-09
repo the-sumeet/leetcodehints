@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the maximum values in both arrays, `nums1` and `nums2`. Remember that the last elements of both arrays need to match these maximum values after performing swaps."
+    },
+    {
+      "content": "Consider the index of the last element in both arrays. You need to ensure that `nums1[n - 1]` becomes equal to `max(nums1)` and `nums2[n - 1]` becomes equal to `max(nums2)`. Think about how you can achieve this through swapping."
+    },
+    {
+      "content": "Check if the last elements of both arrays are already the maximum values. If so, no operations are needed, and you can return 0 immediately."
+    },
+    {
+      "content": "If the last element of `nums1` is not the maximum value, you need to find an index `i` such that swapping `nums1[i]` with `nums2[i]` will help make `nums1[n - 1]` the maximum. Look for candidates where `nums2[i]` is greater than `nums1[n - 1]`."
+    },
+    {
+      "content": "Similarly, if the last element of `nums2` is not the maximum value, find an index `j` where swapping `nums1[j]` with `nums2[j]` can help make `nums2[n - 1]` the maximum. Look for candidates where `nums1[j]` is greater than `nums2[n - 1]`."
+    },
+    {
+      "content": "You may need to perform multiple swaps. Keep track of how many swaps you need to perform to satisfy both conditions. Consider the possibility of needing to swap multiple times if the maximum values are not in the last position."
+    },
+    {
+      "content": "Think about edge cases where it might be impossible to achieve the desired state. For example, if the maximum values cannot be swapped into the last positions due to their current locations."
+    },
+    {
+      "content": "To minimize operations, prioritize swaps that can simultaneously help both arrays. If you find an index that can help both `nums1` and `nums2`, that will reduce the total number of operations."
+    },
+    {
+      "content": "As you implement your logic, ensure you handle cases where the maximum values are tied. You might need to check the indices of these maximum values to determine if a swap is possible."
+    },
+    {
+      "content": "Finally, ensure that your function returns -1 if it's impossible to satisfy both conditions after considering all possible swaps. Think about how you will check for this condition in your code."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums1.length == nums2.length <= 1000",
+    "1 <= nums1[i] <= 10^9, 1 <= nums2[i] <= 10^9",
+    "The last elements of both arrays must be the maximum values of their respective arrays after swaps.",
+    "Return -1 if it's impossible to satisfy both conditions."
+  ]
+}

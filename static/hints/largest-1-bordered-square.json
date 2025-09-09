@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the grid. You have a 2D array filled with 0s and 1s. Your goal is to find the largest square subgrid where all the border elements are 1s."
+    },
+    {
+      "content": "Consider how to identify a square subgrid. A square subgrid is defined by its top-left corner and its size. For example, a square of size 2 starting at (i, j) includes the elements from (i, j) to (i+1, j+1)."
+    },
+    {
+      "content": "Think about how to check if the border of a square subgrid is made up entirely of 1s. You need to check all four sides of the square: the top row, bottom row, left column, and right column."
+    },
+    {
+      "content": "To optimize your search, consider iterating over each possible top-left corner of a square in the grid. For each position, you can then try increasing sizes of squares until the borders are invalid."
+    },
+    {
+      "content": "Remember to handle edge cases where the grid is small. For example, if the grid is only 1x1, the only possible square is the single element itself. Check if it is 1."
+    },
+    {
+      "content": "When checking the borders, be careful with indexing. Ensure you do not go out of bounds when checking the edges of your square subgrid."
+    },
+    {
+      "content": "You can keep track of the maximum size of valid squares found during your iterations. Initialize a variable to store this maximum size and update it whenever you find a larger valid square."
+    },
+    {
+      "content": "Consider using a nested loop where the outer loop iterates through each cell as a potential top-left corner and the inner loop checks for increasing sizes of squares."
+    },
+    {
+      "content": "As you check each square size, if you find that a square of size `k` has all 1s on its border, you can then check for a square of size `k+1` at the same top-left corner."
+    },
+    {
+      "content": "Finally, remember that the output should be the number of elements in the largest valid square found. If no valid square exists, return 0. The number of elements in a square of size `k` is `k * k`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= grid.length <= 100",
+    "Constraints: 1 <= grid[0].length <= 100",
+    "grid[i][j] is either 0 or 1",
+    "Return the number of elements in the largest square subgrid with all 1s on the border, or 0 if none exists."
+  ]
+}

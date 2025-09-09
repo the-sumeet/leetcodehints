@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to count the number of soldiers (1's) in each row of the matrix. You can iterate through each row and use a simple count operation to determine the number of 1's."
+    },
+    {
+      "content": "Remember that the soldiers are positioned to the left of the civilians in each row. This means you can stop counting as soon as you encounter a 0 in a row."
+    },
+    {
+      "content": "Once you have the count of soldiers for each row, consider how you will store these counts along with their respective row indices. A list of tuples could be useful, where each tuple contains (count, index)."
+    },
+    {
+      "content": "Think about how to sort the rows based on the number of soldiers. You need to sort primarily by the count of soldiers and secondarily by the row index in case of ties."
+    },
+    {
+      "content": "When sorting, Python’s built-in sort function can take a key argument. You can use a lambda function to sort by the first element (soldier count) and then by the second element (row index)."
+    },
+    {
+      "content": "After sorting, you will need to extract the indices of the first k weakest rows. Make sure to handle the case where k is equal to the total number of rows in the matrix."
+    },
+    {
+      "content": "Consider edge cases, such as when all rows have the same number of soldiers. How will you ensure that the indices are returned in the correct order in such scenarios?"
+    },
+    {
+      "content": "Make sure to validate the input constraints: the matrix dimensions and the value of k. Ensure that k is always less than or equal to the number of rows in the matrix."
+    },
+    {
+      "content": "As a final step, ensure that your output is formatted correctly. You need to return a list of indices, so make sure your final output matches the expected format."
+    },
+    {
+      "content": "Now, you are close to the solution! Start implementing the counting, sorting, and extracting of indices in a structured manner. Remember to test with the provided examples to validate your approach."
+    }
+  ],
+  "questionNotes": [
+    "The matrix is m x n, where 2 <= n, m <= 100.",
+    "The value of k is between 1 and m, inclusive.",
+    "The matrix contains only 0's and 1's.",
+    "Rows are indexed starting from 0.",
+    "In case of a tie in the number of soldiers, the row with the smaller index is considered weaker."
+  ]
+}

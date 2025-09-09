@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the string. You need to identify both digits and their closest non-digit character to the left. Consider how you can traverse the string while keeping track of these characters."
+    },
+    {
+      "content": "Think about how you can iterate through the string from left to right. You can use a stack or a list to help you keep track of the characters as you go. This will allow you to easily access the last non-digit character when you encounter a digit."
+    },
+    {
+      "content": "When you encounter a digit, you need to remove it along with the closest non-digit character to its left. Make sure to check if there is a non-digit character available before attempting to remove anything."
+    },
+    {
+      "content": "Remember that the operation can only be performed on a digit that has a non-digit character to its left. This means that if a digit is at the start of the string, it cannot be removed."
+    },
+    {
+      "content": "Consider using a loop to process each character of the string. You might want to maintain a list that represents the current state of the string after each operation."
+    },
+    {
+      "content": "As you iterate through the string, when you find a digit, check the last character in your list (if it exists) to remove it along with the digit. This will require careful management of your list."
+    },
+    {
+      "content": "Once you finish iterating through the string, the list should contain only the characters that were not removed. You can then convert this list back into a string to return your result."
+    },
+    {
+      "content": "Consider edge cases, such as strings that start with digits or strings that contain multiple consecutive digits. Make sure your logic handles these cases correctly."
+    },
+    {
+      "content": "After processing the string, ensure that you return the final result as a string. You can use the `join` method in Python to convert your list back to a string."
+    },
+    {
+      "content": "Your final implementation should efficiently handle the constraints given (1 <= s.length <= 100). Think about the time complexity of your approach and how it scales with the input size."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 100",
+    "The string consists only of lowercase English letters and digits.",
+    "You can only remove a digit if it has a non-digit character to its left.",
+    "The input is guaranteed such that it is possible to delete all digits."
+  ]
+}

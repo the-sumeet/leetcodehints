@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid representation. Each cell can have three values: 1 (building), 0 (empty land), or 2 (obstacle). You need to find the shortest distance from all buildings to each empty land cell."
+    },
+    {
+      "content": "Consider how you will traverse the grid. A breadth-first search (BFS) might be a good approach to explore the distances from each building to the empty lands. Think about how BFS explores nodes layer by layer."
+    },
+    {
+      "content": "Remember that you need to calculate distances from multiple buildings. You might want to maintain a distance sum for each empty land cell as you perform BFS from each building."
+    },
+    {
+      "content": "Think about how to handle multiple BFS traversals. You can either run BFS from each building separately or combine them in a single BFS pass. What are the pros and cons of each approach?"
+    },
+    {
+      "content": "As you perform BFS, keep track of the number of buildings that can reach each empty land cell. This will help you determine if a cell is reachable from all buildings."
+    },
+    {
+      "content": "When updating distances, ensure that you are only updating the distance for empty cells (0). What happens if you encounter a building (1) or an obstacle (2)?"
+    },
+    {
+      "content": "Consider edge cases, such as grids with no buildings or all cells being buildings. How should your function behave in these scenarios?"
+    },
+    {
+      "content": "After BFS completes for all buildings, you need to find the minimum distance among all empty cells that are reachable from all buildings. How will you keep track of this minimum distance?"
+    },
+    {
+      "content": "Make sure to handle cases where some empty cells are not reachable from all buildings. You might need to return a specific value (like -1) if no such cell exists."
+    },
+    {
+      "content": "Think about the return format. You should return the shortest distance from all buildings to an empty land cell, not the distances themselves. What should you return if no valid cell exists?"
+    },
+    {
+      "content": "As you implement your solution, consider the time complexity. BFS runs in O(V + E) where V is the number of vertices and E is the number of edges. How does this relate to your grid?"
+    },
+    {
+      "content": "You may want to use a queue to facilitate your BFS. Ensure you understand how to enqueue and dequeue cells as you explore the grid."
+    },
+    {
+      "content": "During BFS, you will need to mark cells as visited. How will you keep track of which cells have been visited to avoid processing them multiple times?"
+    },
+    {
+      "content": "After implementing BFS, test your solution with various grid configurations. Pay attention to edge cases, such as grids with varying sizes and shapes."
+    },
+    {
+      "content": "Finally, ensure your solution is efficient and handles the maximum constraints smoothly. What optimizations can you think of to improve performance?"
+    }
+  ],
+  "questionNotes": [
+    "Grid cells can contain 1 (building), 0 (empty land), or 2 (obstacle).",
+    "You need to find the shortest distance from all buildings to empty land cells.",
+    "If no empty land cell can reach all buildings, return -1.",
+    "Consider edge cases like no buildings or all buildings.",
+    "The solution should focus on finding distances efficiently, possibly using BFS."
+  ]
+}

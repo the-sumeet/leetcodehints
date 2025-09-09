@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `products` table. Each product has a unique `product_id`, a `product_name`, and a `description`. You'll need to focus on the `description` column to find valid serial numbers."
+    },
+    {
+      "content": "Recall the format of a valid serial number: it starts with 'SN', followed by exactly 4 digits, a hyphen, and then exactly 4 more digits. Make sure you can identify this pattern in a string."
+    },
+    {
+      "content": "Consider using regular expressions (regex) to match the serial number pattern. A regex pattern can help you find the specific structure of 'SNxxxx-yyyy', where 'x' and 'y' represent digits."
+    },
+    {
+      "content": "When constructing your regex, remember to escape the hyphen since it has special meaning in regex. The pattern could look something like: `^SN\\d{4}-\\d{4}$` but you'll need to adjust it to search within the description."
+    },
+    {
+      "content": "Think about how to filter the products based on the regex match. You will likely need to use a SQL `WHERE` clause that incorporates your regex to check if the description contains a valid serial number."
+    },
+    {
+      "content": "Don't forget to consider edge cases, such as descriptions that might contain invalid serial numbers or other text that resembles a serial number but does not meet the criteria."
+    },
+    {
+      "content": "Ensure that your final result is ordered by `product_id` in ascending order. You can achieve this by using an `ORDER BY` clause in your SQL query."
+    },
+    {
+      "content": "Remember that the output should include all columns from the `products` table for the valid entries. Your SELECT statement should reflect this."
+    },
+    {
+      "content": "As you finalize your query, make sure to test it against various inputs, especially those that might include edge cases, such as descriptions without any serial numbers or with extra digits."
+    },
+    {
+      "content": "You are very close! Your SQL query should select the relevant columns from the `products` table where the description matches the regex for a valid serial number, and then order the results by `product_id`."
+    }
+  ],
+  "questionNotes": [
+    "The `product_id` is a unique key for the table.",
+    "A valid serial number must be case-sensitive and strictly follow the format 'SNxxxx-yyyy'.",
+    "The results must be ordered by `product_id` in ascending order.",
+    "Make sure to return all columns: `product_id`, `product_name`, and `description`."
+  ]
+}

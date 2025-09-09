@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between recipes and ingredients. Each recipe requires a specific set of ingredients, and you can only create a recipe if you have all of its required ingredients."
+    },
+    {
+      "content": "Think about how to represent the recipes and their ingredients. You can use a dictionary to map each recipe to its corresponding list of ingredients for easy access."
+    },
+    {
+      "content": "Consider the supplies you have. You can create recipes that require only the supplies you already possess. Make sure to keep track of these supplies as you progress."
+    },
+    {
+      "content": "You may need to handle cases where recipes can be made from other recipes. This creates a dependency graph. How will you manage these dependencies?"
+    },
+    {
+      "content": "A good approach to solve this problem is to use a breadth-first search (BFS) or depth-first search (DFS) strategy. Start with the supplies you have and explore which recipes can be created from them."
+    },
+    {
+      "content": "Think about using a queue (for BFS) or a stack (for DFS) to manage the recipes you can create. Each time you create a recipe, you should check if it unlocks any new recipes."
+    },
+    {
+      "content": "Keep a set of created recipes to avoid duplicates. This will help you ensure that you only return unique recipes in your final list."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when a recipe's ingredients are not in the supplies or if there are circular dependencies among recipes."
+    },
+    {
+      "content": "As you implement your solution, remember to check if all ingredients for a recipe are available before adding it to the list of creatable recipes. You can use a simple check like: `if all(ingredient in supplies for ingredient in ingredients[i])`."
+    },
+    {
+      "content": "Finally, after you've iterated through all recipes and their dependencies, return the list of created recipes. Ensure that the output format matches the requirements: it should be a list of strings."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == recipes.length == ingredients.length",
+    "1 <= n <= 100; 1 <= ingredients[i].length, supplies.length <= 100",
+    "Each ingredient must be present in supplies to create a recipe.",
+    "Recipes and supplies are unique across the input.",
+    "Return format: list of strings, can be in any order."
+  ]
+}

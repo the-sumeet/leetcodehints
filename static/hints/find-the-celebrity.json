@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a celebrity in this context. A celebrity is someone who is known by everyone else but does not know anyone. This means that in a matrix representation, the celebrity's row should contain all zeros except for their own column."
+    },
+    {
+      "content": "Consider how you can use the properties of the matrix to eliminate potential candidates for the celebrity. If person A knows person B, then A cannot be a celebrity. How might you track potential candidates as you iterate through the matrix?"
+    },
+    {
+      "content": "Think about using a two-pointer approach or a stack to help narrow down the candidates. You can start with two pointers at the beginning and end of the list and eliminate candidates based on their relationships."
+    },
+    {
+      "content": "As you narrow down to one candidate, remember to verify that this candidate is indeed the celebrity. You need to check both that everyone knows them and that they know no one else."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there are no people at all (an empty matrix) or when there is only one person. What should your function return in these scenarios?"
+    },
+    {
+      "content": "Consider the size of the input matrix. If the matrix is n x n, think about the time complexity of your approach. Can you achieve this in O(n) time, and if so, how?"
+    },
+    {
+      "content": "When checking if the candidate is a celebrity, ensure you are checking both conditions: that the candidate's row is all zeros and that their column contains all ones (except for the diagonal). How will you implement this check efficiently?"
+    },
+    {
+      "content": "Remember that the problem states there is at most one celebrity. How does this affect your logic when you find a candidate? You can stop checking as soon as you confirm a celebrity."
+    },
+    {
+      "content": "Think about the return value of your function. If a celebrity exists, you should return their index; if not, return -1. How will you implement this in your final checks?"
+    },
+    {
+      "content": "You are close! After identifying a candidate, implement the final verification step. This involves iterating through the matrix one last time to confirm the candidate's celebrity status."
+    }
+  ],
+  "questionNotes": [
+    "The input is an n x n binary matrix where 1 indicates that person A knows person B, and 0 indicates they do not.",
+    "A celebrity is known by everyone else but does not know anyone.",
+    "There is at most one celebrity in the group.",
+    "Return the index of the celebrity or -1 if no celebrity exists.",
+    "Consider edge cases such as an empty matrix or a matrix with only one person."
+  ]
+}

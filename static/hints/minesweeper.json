@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by checking the value of the square at the click position. If it's 'M', you need to change it to 'X' and return the board immediately, as the game ends."
+    },
+    {
+      "content": "If the clicked square is 'E', you will need to determine how many mines are adjacent to it. Consider using a helper function to count the mines in the surrounding squares."
+    },
+    {
+      "content": "Remember that the board is a 2D array, so you'll need to check all eight possible directions (up, down, left, right, and the four diagonals) from the clicked square."
+    },
+    {
+      "content": "When counting adjacent mines, be careful to stay within the bounds of the board to avoid index errors. Use conditions to check if your indices are valid."
+    },
+    {
+      "content": "If the clicked square has no adjacent mines, change it to 'B' and recursively reveal all its adjacent unrevealed squares. Think about how you will implement this recursion."
+    },
+    {
+      "content": "If the clicked square has adjacent mines, change it to the corresponding digit ('1' to '8') based on the count of adjacent mines you calculated earlier."
+    },
+    {
+      "content": "You will need a way to keep track of which squares have already been revealed to avoid infinite recursion. Consider using a set or modifying the board in place."
+    },
+    {
+      "content": "Make sure to handle edge cases where the clicked square is on the edge or corner of the board, as these will have fewer adjacent squares."
+    },
+    {
+      "content": "Think about how you will structure your function. You might want to start with a main function that handles the click and then delegate the recursive revealing to another function."
+    },
+    {
+      "content": "Finally, ensure your function returns the modified board after all necessary squares have been revealed. This includes returning the board in the same format as it was received."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 50; board[i][j] can be 'M', 'E', 'B', or a digit from '1' to '8'.",
+    "Indexing: The click coordinates are zero-based.",
+    "Return format: The modified board must be returned as a 2D array.",
+    "Game rules: Revealing 'M' results in 'X', while 'E' can become 'B' or a digit based on adjacent mines."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation allowed: you can replace either nums[i] or nums[i+1] with their gcd. This means you can gradually reduce the values in the array. Consider how gcd works and how it can help lower values towards 1."
+    },
+    {
+      "content": "Think about the properties of gcd. If the gcd of the entire array is greater than 1, it is impossible to make all elements equal to 1. Check if the overall gcd of the array is 1 before proceeding."
+    },
+    {
+      "content": "To find the minimum number of operations, consider how many times you would need to apply the operation to reduce each element to 1. Each operation can potentially reduce two adjacent elements, so think about how to leverage this."
+    },
+    {
+      "content": "You can represent the process of making elements equal to 1 as a graph where each element can connect to its adjacent elements. Explore how many edges (operations) you need to traverse to reach all nodes (elements) being equal to 1."
+    },
+    {
+      "content": "Consider edge cases, such as when the array contains only prime numbers. If the gcd of any two adjacent numbers is greater than 1, think about how that affects your ability to reach 1."
+    },
+    {
+      "content": "Keep track of the number of operations you perform. Each time you replace a number with the gcd, it counts as one operation. Make sure to count all operations until every element is 1."
+    },
+    {
+      "content": "You may want to simulate the process for small arrays to get a feel for how the operations can be applied. Try to visualize or write down the steps taken to reduce an example array."
+    },
+    {
+      "content": "Consider using a loop to iterate through the array, applying the gcd operation to adjacent pairs. You will need to keep track of how many operations you perform during this process."
+    },
+    {
+      "content": "Once you have a plan for how to reduce the numbers, think about how to implement a function that checks if the overall gcd is 1 and counts the operations needed to achieve the goal."
+    },
+    {
+      "content": "Before finalizing your solution, ensure that you handle all edge cases properly, such as arrays where all elements are the same or where the gcd of adjacent pairs never reaches 1."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 50",
+    "Values: 1 <= nums[i] <= 10^6",
+    "Return -1 if it's impossible to make all elements equal to 1.",
+    "The gcd operation can only be applied between adjacent elements."
+  ]
+}

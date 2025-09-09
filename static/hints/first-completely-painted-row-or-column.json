@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to map the values in `arr` to their positions in the `mat`. You can create a dictionary to store the positions of each number in `mat` for quick access."
+    },
+    {
+      "content": "Remember that both `arr` and `mat` contain all integers in the range [1, m * n]. This means you can directly use the values in `arr` to find their corresponding positions in `mat`."
+    },
+    {
+      "content": "As you paint the cells in `mat`, keep track of how many cells in each row and each column have been painted. You can use two arrays, one for rows and one for columns, initialized to zero."
+    },
+    {
+      "content": "For each number in `arr`, when you paint a cell, increment the count for the respective row and column in your tracking arrays. This will help you determine when a row or column is completely painted."
+    },
+    {
+      "content": "To check if a row or column is completely painted, compare the counts in your tracking arrays to the number of columns or rows, respectively. If a count matches the number of columns for a row or the number of rows for a column, that row or column is fully painted."
+    },
+    {
+      "content": "Pay attention to the order of painting. The problem asks for the smallest index `i` where a row or column becomes completely painted. So, you should return as soon as you find a fully painted row or column."
+    },
+    {
+      "content": "Consider edge cases where `m` or `n` is 1. In such cases, any painted cell will immediately result in a fully painted row or column."
+    },
+    {
+      "content": "Make sure to handle the constraints properly. The maximum size for `m * n` is 100,000, so your solution should be efficient. Aim for a time complexity of O(m * n) or better."
+    },
+    {
+      "content": "When implementing the solution, ensure that you are correctly managing the indices, especially since `arr` is 0-indexed while the values in `mat` are 1-indexed."
+    },
+    {
+      "content": "Finally, once you've implemented the logic to track painted rows and columns, remember to return the index as soon as a row or column is fully painted. You can use a simple return statement within your loop."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == mat.length, n == mat[i].length, arr.length == m * n",
+    "All integers in arr and mat are unique and within the range [1, m * n].",
+    "Return the smallest index i where a row or column is completely painted.",
+    "Consider edge cases with single row or column matrices."
+  ]
+}

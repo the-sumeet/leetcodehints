@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A palindrome reads the same forwards and backwards, like 'aba' or 'racecar'. In this problem, you're tasked with finding the longest palindrome that can be formed by concatenating substrings from two given strings."
+    },
+    {
+      "content": "Consider the simplest case where either string is empty. If one string is empty, the longest palindrome you can form is simply the longest palindrome from the other string. Think about how you would find the longest palindrome in a single string."
+    },
+    {
+      "content": "Remember that you can select substrings from both strings. A substring can be any continuous sequence of characters from the string, including the possibility of selecting no characters (an empty substring). How might this affect the length of the palindrome?"
+    },
+    {
+      "content": "Focus on the characters in both strings. A single character is always a palindrome. If both strings have the same character, you can form a longer palindrome. Consider how many times each character appears in both strings."
+    },
+    {
+      "content": "Think about how to efficiently count the occurrences of each character in both strings. You can use a frequency array or a hash map to keep track of how many times each character appears in `s` and `t`."
+    },
+    {
+      "content": "After counting the characters, identify pairs of characters that can form palindromes. For each character that appears in both strings, you can use the minimum count from both strings to determine how many pairs you can form."
+    },
+    {
+      "content": "Consider the case where you can add a single character from either string to the center of the palindrome. If any character appears in both strings, you can potentially add one of those characters to the center of your palindrome."
+    },
+    {
+      "content": "Now think about how to combine the counts from both strings. If you have a character that appears `x` times in `s` and `y` times in `t`, the maximum contribution to the palindrome length from that character would be `2 * min(x, y)`, plus possibly one more if at least one of them is greater than zero."
+    },
+    {
+      "content": "As you calculate the total length of the palindrome, remember to check if you can add a single character from either string to the center. This can increase the palindrome length by 1 if you have any characters left after pairing."
+    },
+    {
+      "content": "Finally, put together all the pieces: calculate the total length from pairs and consider adding a center character. This will give you the length of the longest palindrome you can form from substrings of `s` and `t`. Make sure to handle edge cases where either string is empty or contains unique characters."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length, t.length <= 30",
+    "Both strings consist of lowercase English letters.",
+    "You can select empty substrings from either string.",
+    "The return value should be the length of the longest palindrome."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the champagne tower. The first row has 1 glass, the second has 2 glasses, and so on. This means that the number of glasses in row `i` is `i + 1`."
+    },
+    {
+      "content": "When champagne is poured into the top glass, if it overflows, it spills equally into the two glasses directly below it. Think about how you can represent this overflow mathematically."
+    },
+    {
+      "content": "Consider using a 2D array to represent the glasses. Each element can hold the amount of champagne in that glass. For example, `tower[i][j]` could represent the amount of champagne in the glass at row `i` and column `j`."
+    },
+    {
+      "content": "Remember that when a glass overflows, it distributes the excess champagne equally to the two glasses below it. If a glass has more than 1 cup, only the amount over 1 cup should be distributed."
+    },
+    {
+      "content": "Think about how to handle the base case when no champagne is poured (i.e., `poured = 0`). What should your function return in this case?"
+    },
+    {
+      "content": "Consider edge cases where the `query_row` is at the maximum limit (99) or where `poured` is very large (close to 10^9). How will you ensure your solution handles these cases efficiently?"
+    },
+    {
+      "content": "You can use a loop to simulate pouring champagne into the glasses. After pouring, check each glass to see if it overflows and distribute the excess to the glasses below."
+    },
+    {
+      "content": "When implementing the pouring logic, ensure you only process glasses that are filled. You might want to iterate through the rows and check for overflow after each pour."
+    },
+    {
+      "content": "As you implement the solution, pay attention to the indexing of the glasses. Remember that both `query_row` and `query_glass` are 0-indexed."
+    },
+    {
+      "content": "Finally, after simulating the pouring process, make sure to return the amount of champagne in the specified glass. If the glass is full, return 1.0; if it's empty, return 0.0; otherwise, return the actual amount."
+    }
+  ],
+  "questionNotes": [
+    "The tower has a triangular structure with the i-th row containing i + 1 glasses.",
+    "Champagne overflows equally to the left and right glasses below.",
+    "The function should return the amount of champagne in the specified glass, formatted to five decimal places.",
+    "Constraints: 0 <= poured <= 10^9, 0 <= query_glass <= query_row < 100.",
+    "Both query_row and query_glass are 0-indexed."
+  ]
+}

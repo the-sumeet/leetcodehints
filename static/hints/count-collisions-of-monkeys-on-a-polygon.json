@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement of the monkeys. Each monkey can either move clockwise or counterclockwise. This gives each monkey 2 options, leading to a total of `2^n` possible movements."
+    },
+    {
+      "content": "Consider what constitutes a collision. A collision occurs if at least two monkeys end up on the same vertex or if they cross paths on an edge. Think about how to count these scenarios effectively."
+    },
+    {
+      "content": "To find the number of ways to have at least one collision, it might be easier to first calculate the total number of movements (which is `2^n`) and then subtract the number of movements where no collisions occur."
+    },
+    {
+      "content": "When calculating non-collision movements, think about the arrangement of monkeys. If no two monkeys collide, they must all move in the same direction (either all clockwise or all counterclockwise)."
+    },
+    {
+      "content": "For `n` monkeys, if they all move in the same direction, there are exactly 2 non-collision scenarios (all clockwise or all counterclockwise). This means the number of non-collision movements is 2."
+    },
+    {
+      "content": "Now, you can set up the equation: total movements - non-collision movements. This gives you `2^n - 2` as the number of ways to have at least one collision."
+    },
+    {
+      "content": "Since `n` can be very large (up to 10^9), directly calculating `2^n` may lead to overflow. Use modular arithmetic to compute `2^n % (10^9 + 7)` efficiently."
+    },
+    {
+      "content": "To compute `2^n % (10^9 + 7)`, consider using modular exponentiation, which allows you to compute powers in logarithmic time. This will help you avoid overflow and keep your calculations manageable."
+    },
+    {
+      "content": "After calculating `2^n % (10^9 + 7)`, subtract 2 from this result to get the number of collision scenarios. Remember to apply the modulo operation again to ensure your result stays within bounds."
+    },
+    {
+      "content": "Finally, ensure that your final answer is non-negative. If the subtraction leads to a negative result, you can adjust it by adding `10^9 + 7` to your result before returning it."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= n <= 10^9",
+    "Return the result modulo 10^9 + 7.",
+    "Each vertex has exactly one monkey.",
+    "Monkeys can only move to neighboring vertices.",
+    "Count collisions when at least two monkeys reside on the same vertex or intersect on an edge."
+  ]
+}

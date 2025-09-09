@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the first login date for each player. You can use a `GROUP BY` clause to group the records by `player_id` and then select the minimum `event_date` for each player."
+    },
+    {
+      "content": "Once you have the first login date for each player, create a new table or subquery that contains these first login dates along with the corresponding player IDs."
+    },
+    {
+      "content": "Next, think about how to find the login records for the day after each player's first login. You can join the original table with the subquery on the `player_id` and the `event_date` being one day after the first login."
+    },
+    {
+      "content": "Remember to handle the date manipulation correctly. In SQL, you can often use functions like `DATE_ADD` or `DATE_ADD(..., INTERVAL 1 DAY)` to calculate the next day."
+    },
+    {
+      "content": "Count the number of distinct players who logged in on the day after their first login. You can use the `COUNT(DISTINCT player_id)` function for this."
+    },
+    {
+      "content": "Now, calculate the total number of distinct players from the original table. This can also be done using `COUNT(DISTINCT player_id)` on the entire Activity table."
+    },
+    {
+      "content": "To find the fraction of players who logged in again the day after their first login, divide the count of players who logged in again by the total count of players."
+    },
+    {
+      "content": "Make sure to round the resulting fraction to two decimal places. In SQL, you can use the `ROUND()` function to achieve this."
+    },
+    {
+      "content": "Consider edge cases, such as players who only logged in once and did not log in again. Ensure that your logic correctly handles these scenarios."
+    },
+    {
+      "content": "Finally, format your output correctly. You should return the result as a single column named `fraction` with the rounded value."
+    }
+  ],
+  "questionNotes": [
+    "The primary key is a combination of (player_id, event_date), ensuring unique records for each player on each day.",
+    "You need to round the final fraction to 2 decimal places.",
+    "The output must be formatted as a single column named 'fraction'.",
+    "Consider players who may have logged in multiple times on the same day; only the first login counts for your analysis."
+  ]
+}

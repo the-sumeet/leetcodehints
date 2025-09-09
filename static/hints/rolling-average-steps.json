@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the data structure provided. You have a list of steps with user IDs, step counts, and dates. Think about how you can group this data by user ID and date."
+    },
+    {
+      "content": "Consider how to handle the dates. You will need to sort the data by date for each user to compute the rolling average correctly. What data structure would help you keep track of steps per user over time?"
+    },
+    {
+      "content": "To calculate a rolling average, you need to define the window size. For example, you might want to calculate the average steps over the last 7 days for each user. How would you implement this logic?"
+    },
+    {
+      "content": "Remember to handle cases where a user may not have entries for every day. You might need to account for missing days when calculating the rolling average. How could you fill in these gaps?"
+    },
+    {
+      "content": "Think about how you will store the rolling averages. You might want to create a new list or dictionary to hold the results. What format will you use to store the user ID, date, and the calculated average?"
+    },
+    {
+      "content": "As you compute the rolling average, consider the edge cases: what happens if there are fewer than 7 days of data for a user? You might want to return an average based on the available data."
+    },
+    {
+      "content": "When iterating through the data, make sure to keep track of the current date and the corresponding steps for the last 7 days. A sliding window approach could be useful here."
+    },
+    {
+      "content": "You can use a deque (double-ended queue) to efficiently manage the last 7 days of steps for each user. This will allow you to add new steps and remove old steps in constant time."
+    },
+    {
+      "content": "After calculating the rolling averages, ensure that you format the output correctly. You might want to return a list of dictionaries or tuples containing user ID, date, and average steps."
+    },
+    {
+      "content": "Finally, implement the logic to iterate through each user and their corresponding steps, applying the rolling average calculation, and prepare the final output structure. Be cautious with the date format and ensure consistency."
+    }
+  ],
+  "questionNotes": [
+    "Ensure to group data by user ID and sort by date.",
+    "Define the window size for the rolling average (e.g., 7 days).",
+    "Handle missing days when calculating averages.",
+    "Consider edge cases for users with fewer than 7 days of data.",
+    "Output format should include user ID, date, and average steps."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A string is a palindrome if it reads the same forwards and backwards. For example, 'abba' and 'racecar' are palindromes."
+    },
+    {
+      "content": "Consider how you can concatenate two strings from the array. You need to check if the concatenated result forms a palindrome. For two strings 'a' and 'b', you will check if 'ab' is a palindrome."
+    },
+    {
+      "content": "Remember that the pairs (i, j) must satisfy the condition i != j. This means you cannot pair a string with itself."
+    },
+    {
+      "content": "Think about how you can efficiently check if a string is a palindrome. You can do this by comparing characters from the start and the end moving towards the center."
+    },
+    {
+      "content": "You need to find all pairs of indices (i, j) such that words[i] + words[j] is a palindrome. This requires nested loops to check each possible pair."
+    },
+    {
+      "content": "Consider edge cases such as empty strings. An empty string concatenated with any palindrome will still be a palindrome."
+    },
+    {
+      "content": "Since the problem requires a solution with O(sum of words[i].length) complexity, think about how you can avoid checking all pairs explicitly. Can you use a hash map?"
+    },
+    {
+      "content": "A hash map can help you store the words and their indices. This way, you can quickly check if a reversed version of a substring exists in your map."
+    },
+    {
+      "content": "When checking for palindrome pairs, consider splitting the strings into two parts. For example, if you have a word 'abc', think of splitting it into 'a' and 'bc'."
+    },
+    {
+      "content": "For each word, check if the prefix or suffix is a palindrome. If it is, look for the reverse of the other part in the hash map."
+    },
+    {
+      "content": "You can also consider the case where one string is empty. An empty string combined with any palindrome will yield a palindrome."
+    },
+    {
+      "content": "Don't forget to handle cases where the words are of different lengths. A longer word can still create a palindrome with a shorter one."
+    },
+    {
+      "content": "As you build your solution, ensure that you are collecting the pairs in the required format: a list of lists containing the indices of the palindrome pairs."
+    },
+    {
+      "content": "To finalize your solution, make sure to test it against the provided examples and edge cases, such as words with different lengths and empty strings."
+    },
+    {
+      "content": "Your final implementation should efficiently find all palindrome pairs without explicitly checking every possible pair, leveraging the properties of palindromes and hash maps."
+    }
+  ],
+  "questionNotes": [
+    "1 <= words.length <= 5000",
+    "0 <= words[i].length <= 300",
+    "words[i] consists of lowercase English letters.",
+    "Return format should be an array of arrays, with each inner array containing two indices.",
+    "The pairs must be unique and ordered as per the indices."
+  ]
+}

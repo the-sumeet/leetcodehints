@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to identify all unique 10-letter-long sequences in the DNA string that appear more than once. Make sure you know how to extract substrings from a string."
+    },
+    {
+      "content": "Consider the constraints: the length of the string can be up to 100,000 characters. This suggests that a brute-force approach might be inefficient. Think about how you can reduce the time complexity of your solution."
+    },
+    {
+      "content": "Think about using a sliding window approach. You can maintain a window of size 10 and slide it across the string to extract each substring. This way, you can ensure you check every possible 10-letter sequence."
+    },
+    {
+      "content": "As you slide the window, you can use a data structure to keep track of the sequences you encounter. A hash map (or dictionary) can be useful here to count occurrences of each substring."
+    },
+    {
+      "content": "When you add a new substring to your map, check if it has already been seen. If it has, and it's the second time you're seeing it, you can add it to your results list. This way, you only store sequences that occur more than once."
+    },
+    {
+      "content": "Remember to handle edge cases. For example, if the input string has fewer than 10 characters, you should return an empty list because there can't be any 10-letter sequences."
+    },
+    {
+      "content": "Think about how to efficiently manage the sliding window. As you move the window one character to the right, you can remove the character that is no longer in the window and add the new character that has entered the window."
+    },
+    {
+      "content": "Make sure to convert your results list to a set before returning it, to ensure all sequences are unique. This will help you avoid duplicates in your final output."
+    },
+    {
+      "content": "Consider how you will return the results. The problem states that the output can be in any order, so you don't need to worry about sorting the results."
+    },
+    {
+      "content": "Finally, put together your logic. You'll need to iterate through the string, maintain a count of each 10-letter sequence, and then filter those that occur more than once. Pseudocode might look like this: \n\n```python\nfor i in range(len(s) - 9):\n    seq = s[i:i + 10]\n    # update count in map\n    # check for duplicates\n```\n\nMake sure to finalize your logic before coding."
+    }
+  ],
+  "questionNotes": [
+    "The input string can be up to 100,000 characters long.",
+    "Only sequences of exactly 10 letters should be considered.",
+    "Return all unique sequences that occur more than once.",
+    "The output can be in any order."
+  ]
+}

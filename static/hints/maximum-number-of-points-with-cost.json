@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Consider how you can represent the score you can achieve from each cell in the matrix. You start with 0 points, and each cell contributes positively to your score. Think about how to calculate the total score based on the cells you choose."
+    },
+    {
+      "content": "Remember that the score is affected not only by the points in the cells but also by the distance between the cells you select in adjacent rows. This means you need to account for both the points gained and the penalties incurred from choosing cells in different columns."
+    },
+    {
+      "content": "To maximize your score, you might want to think about dynamic programming. Consider defining a DP array where each entry represents the maximum score obtainable up to that row, given the choices made in previous rows."
+    },
+    {
+      "content": "When filling your DP table, remember that for each cell in the current row, you need to consider all cells in the previous row. You will be calculating the score based on the points from the current cell and the maximum score from the previous row minus the penalty for column distance."
+    },
+    {
+      "content": "Think about how to efficiently calculate the maximum score from the previous row for each cell in the current row. You might want to maintain a running maximum or use a sliding window approach to avoid recalculating scores for every possible pair of cells."
+    },
+    {
+      "content": "Consider edge cases, such as when the matrix has only one row or one column. How would your approach handle these scenarios? Make sure your solution works for the smallest and largest possible matrices."
+    },
+    {
+      "content": "As you implement your solution, ensure that you are correctly handling the penalties for column distances. Pay attention to the absolute difference function and how it affects your total score."
+    },
+    {
+      "content": "You should also think about the constraints given in the problem. With m and n being as large as 10^5, your solution needs to be efficient in both time and space. Aim for a solution that runs in O(m * n) or better."
+    },
+    {
+      "content": "When you reach the last row, the maximum score will be the highest value in your DP array for that row. Make sure to return this value as your final score."
+    },
+    {
+      "content": "To summarize, your approach should involve filling a DP table based on the scores from the previous row while accounting for penalties. Ensure you are efficiently calculating the maximum possible scores as you progress through the rows."
+    }
+  ],
+  "questionNotes": [
+    "You must pick one cell in each row.",
+    "The score is affected by both the points of the cell and the column distance penalty.",
+    "Constraints: 1 <= m, n <= 10^5, 1 <= m * n <= 10^5.",
+    "0 <= points[r][c] <= 10^5.",
+    "Return the maximum number of points as an integer."
+  ]
+}

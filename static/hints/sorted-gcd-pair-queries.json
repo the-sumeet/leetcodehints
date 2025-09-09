@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to calculate the GCD of two numbers. You can use the Euclidean algorithm to find the GCD efficiently. For example, `gcd(a, b) = gcd(b, a % b)`."
+    },
+    {
+      "content": "Remember that you need to compute the GCD for all unique pairs `(i, j)` where `0 <= i < j < n`. Think about how to iterate through the array to generate these pairs."
+    },
+    {
+      "content": "The total number of pairs you need to consider is given by the formula `n * (n - 1) / 2`. Make sure you understand how this formula is derived and how it relates to the number of combinations."
+    },
+    {
+      "content": "As you compute the GCD for each pair, store the results in a list. This will help you sort the GCD values later. For instance, you could initialize an empty list and append each GCD result."
+    },
+    {
+      "content": "After calculating all GCD values, sort the list of GCDs in ascending order. Sorting is crucial as the final result relies on the order of these values."
+    },
+    {
+      "content": "Pay attention to the queries array. Each query gives you an index to retrieve from the sorted GCD list. Ensure you handle the indices correctly, especially since they are zero-based."
+    },
+    {
+      "content": "Consider edge cases where all numbers in `nums` are the same. What will the GCD values look like in this scenario? This can help you verify your solution against potential pitfalls."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Calculating GCD for all pairs results in `O(n^2)` operations, which might be too slow for large `n`. Can you optimize this?"
+    },
+    {
+      "content": "When dealing with large inputs, consider using a more efficient way to compute GCDs or to manage the pairs. For instance, using a frequency map of the numbers could help reduce the number of GCD calculations."
+    },
+    {
+      "content": "Make sure to handle the maximum constraints properly. The maximum size for `nums` is `10^5`, meaning your solution should ideally run in `O(n log n)` or better after the GCD calculations."
+    },
+    {
+      "content": "As you prepare your final output, ensure that you are returning the correct values based on the queries. Each entry in the answer array should correspond to the index specified in the queries array."
+    },
+    {
+      "content": "Remember that the GCD of two numbers can never exceed the smallest of the two numbers. This property might help you in optimizing your GCD calculations."
+    },
+    {
+      "content": "If you encounter duplicate GCD values, ensure that your sorting and indexing still work correctly. The output should reflect the sorted order, including duplicates."
+    },
+    {
+      "content": "Before finalizing your code, write test cases that cover edge cases, such as when `nums` contains the maximum possible values or when all elements are the same."
+    },
+    {
+      "content": "Finally, think about how you can structure your code to be clean and maintainable. Consider breaking down the solution into smaller functions, such as one for calculating GCDs and another for handling queries."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n == nums.length <= 10^5",
+    "1 <= nums[i] <= 5 * 10^4",
+    "1 <= queries.length <= 10^5",
+    "0 <= queries[i] < n * (n - 1) / 2",
+    "GCD values may not be unique, and sorting must handle duplicates correctly.",
+    "Return format: answer[i] should correspond to gcdPairs[queries[i]]."
+  ]
+}

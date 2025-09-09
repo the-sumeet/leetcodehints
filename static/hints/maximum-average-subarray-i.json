@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find a contiguous subarray of length `k` within the array `nums` that has the maximum average value."
+    },
+    {
+      "content": "Consider how you can calculate the average of a subarray. The average is simply the sum of the elements in the subarray divided by `k`. Think about how you can efficiently calculate the sum of subarrays."
+    },
+    {
+      "content": "To find the maximum average, you will need to iterate through the array. However, instead of recalculating the sum for every possible subarray, think about how you can use a sliding window approach."
+    },
+    {
+      "content": "With the sliding window technique, you can maintain a running sum of the current subarray of length `k`. When you move the window one element to the right, you can adjust the sum by subtracting the element that is left behind and adding the new element that comes into the window."
+    },
+    {
+      "content": "Make sure to initialize your first window correctly. Calculate the sum of the first `k` elements in the array to set your initial maximum average."
+    },
+    {
+      "content": "As you slide the window across the array, keep track of the maximum sum you encounter. You can then compute the average from this maximum sum once you finish iterating."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the array length `n` is equal to `k`. In this case, the only subarray is the entire array itself."
+    },
+    {
+      "content": "Consider the constraints given in the problem. Ensure that your solution can handle the maximum limits efficiently, especially since `n` can be as large as 10^5."
+    },
+    {
+      "content": "When returning the result, ensure that the average is formatted correctly. The problem states that any answer with a calculation error less than 10^-5 will be accepted."
+    },
+    {
+      "content": "Finally, implement the sliding window approach and ensure you are returning the maximum average found, formatted to five decimal places. Here's a hint for the final step: `return maxSum / k;` after you've found the maximum sum."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= n <= 10^5",
+    "Element range: -10^4 <= nums[i] <= 10^4",
+    "Return format: Ensure the result is a floating-point number with precision up to five decimal places.",
+    "Edge case: If n == k, the entire array is the only subarray to consider."
+  ]
+}

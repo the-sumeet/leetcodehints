@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the password. The password is a sequence of 'n' digits, where each digit can range from 0 to 'k - 1'. This means if n = 2 and k = 2, the possible digits are 0 and 1."
+    },
+    {
+      "content": "Think about how the safe checks the password. It only looks at the most recent 'n' digits entered. For example, if n = 2, after entering '012', the safe checks '12'."
+    },
+    {
+      "content": "Consider the total number of possible combinations for the password. There are k^n possible passwords. For n = 2 and k = 2, there are 2^2 = 4 combinations: '00', '01', '10', '11'."
+    },
+    {
+      "content": "To unlock the safe, you need to ensure that every possible combination of the password appears as a substring in your input sequence. This means your input must be long enough to include all combinations."
+    },
+    {
+      "content": "Think about how to generate a sequence that includes all combinations efficiently. A common approach is to use a De Bruijn sequence, which is a cyclic sequence that contains every possible substring of a given length."
+    },
+    {
+      "content": "When generating a sequence, remember that it should be of length k^n + n - 1. This accounts for the overlap of combinations when typing the digits."
+    },
+    {
+      "content": "Start building the sequence by recursively adding digits. Ensure that you keep track of the last 'n' digits entered to maintain the correct combinations."
+    },
+    {
+      "content": "You may want to use backtracking to explore all possible sequences. If a sequence doesn't lead to a valid combination, backtrack and try a different digit."
+    },
+    {
+      "content": "Consider edge cases where n = 1 or k = 1. For n = 1, you simply need to enter each digit once. For k = 1, the only digit is 0."
+    },
+    {
+      "content": "Make sure to avoid duplicate entries in your sequence. Each digit should only be added if it leads to new combinations that haven't been used yet."
+    },
+    {
+      "content": "As you build your sequence, you can check if the last 'n' digits form a valid password. If they do, you can proceed to add the next digit."
+    },
+    {
+      "content": "Keep in mind that the order of digits matters. The sequence must be constructed in such a way that it respects the constraints of the password checking mechanism."
+    },
+    {
+      "content": "You can use a set to keep track of which combinations have already been included in your sequence. This can help ensure you don't miss any combinations."
+    },
+    {
+      "content": "Once you have a valid sequence, remember to return it as a string. The sequence should be of minimum length, so optimize your approach to avoid unnecessary characters."
+    },
+    {
+      "content": "Finally, consider implementing a function that generates the De Bruijn sequence for your specific values of n and k. This will give you the desired output efficiently."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 4, 1 <= k <= 10, 1 <= k^n <= 4096.",
+    "The output should be a string of minimum length that unlocks the safe.",
+    "The password is a sequence of n digits, each digit in the range [0, k - 1].",
+    "The safe checks the most recent n digits entered each time a digit is typed."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a happy string is. A happy string is made up of the characters 'a', 'b', and 'c', and no two adjacent characters can be the same. For example, 'abc' is happy, but 'aa' is not."
+    },
+    {
+      "content": "Think about how to generate happy strings of a specific length. You can use a recursive approach or backtracking to build strings character by character while ensuring the happy string condition is met."
+    },
+    {
+      "content": "Consider the base case for your generation function. For strings of length 1, the happy strings are simply 'a', 'b', and 'c'. How would you extend this to length n?"
+    },
+    {
+      "content": "When generating happy strings, remember to ensure that the last character added is not the same as the character being added next. This is crucial for maintaining the happy string property."
+    },
+    {
+      "content": "As you generate happy strings, store them in a list or array. After generating all possible happy strings of length n, sort them to prepare for retrieving the k-th string."
+    },
+    {
+      "content": "Pay attention to the value of k. If k is greater than the number of happy strings generated, you should return an empty string. How will you check the count of generated strings?"
+    },
+    {
+      "content": "Think about the lexicographical order of strings. When generating happy strings, you can start with 'a', then 'b', and finally 'c'. This will help you maintain the correct order without needing to sort later."
+    },
+    {
+      "content": "To efficiently generate strings, consider using a helper function that takes the current string and its length, adding characters recursively until the desired length n is reached."
+    },
+    {
+      "content": "Remember that the problem specifies a 1-indexed return value for k. This means that if you retrieve the k-th element from a 0-indexed list, you'll need to adjust the index accordingly."
+    },
+    {
+      "content": "Finally, once you have all happy strings of length n sorted, return the string at index k-1 if it exists. If k is greater than the length of your list, return an empty string."
+    }
+  ],
+  "questionNotes": [
+    "Happy strings consist of ['a', 'b', 'c'] with no adjacent characters being the same.",
+    "1-indexed k means the first string corresponds to k=1.",
+    "If there are fewer than k happy strings of length n, return an empty string.",
+    "Constraints: 1 <= n <= 10, 1 <= k <= 100."
+  ]
+}

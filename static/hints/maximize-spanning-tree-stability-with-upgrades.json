@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a spanning tree. A spanning tree connects all nodes with exactly n-1 edges and has no cycles. Make sure you can identify mandatory edges and how they affect the tree structure."
+    },
+    {
+      "content": "Identify the edges with `must[i] == 1`. These edges are critical to your spanning tree and cannot be upgraded. Consider how many nodes these edges connect and if they lead to cycles."
+    },
+    {
+      "content": "Check if the mandatory edges form a valid spanning tree. If they create a cycle or do not connect all nodes, return -1 immediately. You can use a union-find data structure to help with cycle detection."
+    },
+    {
+      "content": "Count the number of mandatory edges and the number of nodes they connect. If the number of mandatory edges is less than n-1, you will need to add optional edges to complete the spanning tree."
+    },
+    {
+      "content": "Consider the optional edges with `must[i] == 0`. These edges can be upgraded, which means you can potentially increase their strength. Think about how many upgrades you have available (k) and how to best use them."
+    },
+    {
+      "content": "Sort the optional edges based on their strength in descending order. This helps you decide which edges to upgrade first, as upgrading stronger edges will likely yield a higher minimum strength in the final tree."
+    },
+    {
+      "content": "When selecting edges to include in your spanning tree, prioritize the mandatory edges first. Then, add optional edges while considering the upgrades. Ensure that you do not exceed the limit of k upgrades."
+    },
+    {
+      "content": "As you build the spanning tree, keep track of the minimum strength of the edges included. This is crucial because the goal is to maximize this minimum strength."
+    },
+    {
+      "content": "If you reach the maximum number of edges (n-1) and still have upgrades left, consider if you can improve the minimum strength by upgrading some of the optional edges you have included."
+    },
+    {
+      "content": "Remember that each optional edge can only be upgraded once. Plan your upgrades strategically to maximize the minimum strength of the spanning tree."
+    },
+    {
+      "content": "If you find that you cannot connect all nodes even after using all upgrades, return -1. This indicates that the graph is not fully connected."
+    },
+    {
+      "content": "Consider edge cases where all edges are mandatory and form a cycle. In such cases, it is impossible to form a valid spanning tree, so you should return -1."
+    },
+    {
+      "content": "Think about how to handle cases where k is 0. In this scenario, you can only use the mandatory edges. If they do not form a valid spanning tree, return -1."
+    },
+    {
+      "content": "Keep in mind that the edges are undirected, which means that the direction of traversal does not matter. Ensure your union-find structure accounts for this."
+    },
+    {
+      "content": "You might want to implement a binary search on the possible minimum strength values. This can help you efficiently determine the maximum stability you can achieve with the given upgrades."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 100000, 1 <= edges.length <= 100000.",
+    "must[i] is either 0 or 1, indicating if the edge is mandatory.",
+    "Each edge can only be upgraded once if must[i] == 0.",
+    "If it's impossible to connect all nodes, return -1.",
+    "Ensure no cycles are formed in the spanning tree."
+  ]
+}

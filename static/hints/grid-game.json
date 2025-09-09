@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement of the robots. Each robot can only move right or down, which means their paths will always be constrained to a specific set of cells in the grid."
+    },
+    {
+      "content": "Consider how the first robot's path affects the second robot. The first robot will collect points and set the cells it traverses to 0, which will impact the points available for the second robot."
+    },
+    {
+      "content": "Think about the possible paths the first robot can take. Since it starts at (0, 0) and ends at (1, n-1), it has a limited number of moves. Try to visualize or list these paths."
+    },
+    {
+      "content": "When the first robot moves, it can either go down to (1, 0) or continue right. Explore how these choices affect the total points collected by the second robot."
+    },
+    {
+      "content": "Keep in mind that the first robot wants to minimize the points for the second robot. This means it should choose a path that leaves the least valuable cells for the second robot."
+    },
+    {
+      "content": "The second robot will always try to maximize its points. After the first robot's path is chosen, think about how the second robot will navigate through the remaining cells."
+    },
+    {
+      "content": "Consider using dynamic programming to keep track of the maximum points the second robot can collect based on the first robot's path. You might want to create a function that calculates the maximum points for any given path."
+    },
+    {
+      "content": "When implementing the solution, ensure that you account for all possible paths of the first robot. You can use a loop to iterate through the grid and evaluate each potential path."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the grid has minimal size (e.g., 2 x 1). What should the robots do in this scenario, and how does it affect the outcome?"
+    },
+    {
+      "content": "Finally, after simulating the first robot's optimal path, calculate the maximum points the second robot can collect from the remaining cells. This will involve summing the values in the cells that were not visited by the first robot."
+    }
+  ],
+  "questionNotes": [
+    "The grid is always of size 2 x n, where n can be as large as 50,000.",
+    "Both robots start at (0, 0) and end at (1, n-1).",
+    "The first robot's path directly influences the second robot's available points.",
+    "Robots can only move right or down.",
+    "The first robot aims to minimize the second robot's score, while the second robot aims to maximize its score.",
+    "Ensure to handle edge cases, especially when n is at its minimum."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. You are given a list of intervals, where each interval represents a meeting time with a start and end time. For example, the interval [0, 30] means a meeting starts at time 0 and ends at time 30."
+    },
+    {
+      "content": "Think about how to represent the start and end times of meetings. You might want to create two separate lists: one for start times and another for end times. This will help you manage the allocation of meeting rooms."
+    },
+    {
+      "content": "Consider sorting the intervals. Sorting the meetings by their start times can help you process them in the order they occur. Remember that sorting is key to managing overlapping meetings."
+    },
+    {
+      "content": "After sorting, you need to track how many meeting rooms are in use at any given time. You could use a min-heap (priority queue) to keep track of end times of meetings. This allows you to efficiently find the earliest available room."
+    },
+    {
+      "content": "When processing each meeting, check if the earliest ending meeting (the root of the min-heap) ends before the current meeting starts. If it does, you can reuse that room."
+    },
+    {
+      "content": "If the current meeting cannot reuse a room, you will need to add a new room. This means pushing the current meeting's end time onto the heap. Keep track of the maximum size of the heap, as this will represent the maximum number of rooms needed."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when there are no meetings at all. In such cases, the number of meeting rooms required should be zero."
+    },
+    {
+      "content": "Consider the scenario where all meetings overlap completely. In this case, you will need as many rooms as there are meetings. This will help you understand the upper limit of room requirements."
+    },
+    {
+      "content": "Think about the return value. You need to return a single integer representing the minimum number of meeting rooms required. Ensure that your logic correctly updates the count of rooms needed as you process each meeting."
+    },
+    {
+      "content": "Finally, implement your logic step-by-step, ensuring to test with various cases including edge cases, such as meetings that start and end at the same time. This will help ensure your solution is robust."
+    }
+  ],
+  "questionNotes": [
+    "Input is a list of intervals, where each interval is represented as [start, end].",
+    "Intervals can overlap, and you need to find the minimum number of meeting rooms required.",
+    "Return a single integer representing the number of rooms needed.",
+    "Consider edge cases like empty input or all meetings overlapping."
+  ]
+}

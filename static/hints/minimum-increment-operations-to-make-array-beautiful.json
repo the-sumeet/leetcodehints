@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what makes an array 'beautiful'. An array is beautiful if every subarray of size 3 or more has a maximum element that is at least `k`. Think about how you can identify these subarrays."
+    },
+    {
+      "content": "Consider how many subarrays of size 3 or more can be formed from the array. For an array of length `n`, how many such subarrays exist? This will help you determine how many elements you might need to adjust."
+    },
+    {
+      "content": "Focus on the maximum elements within each subarray of size 3 or more. If the maximum of any of these subarrays is less than `k`, you will need to perform increment operations on the elements within that subarray."
+    },
+    {
+      "content": "Think about how to efficiently find the maximum element in each subarray. You might want to iterate through the array and check each triplet of elements to see if their maximum meets the requirement."
+    },
+    {
+      "content": "When you find a subarray where the maximum is less than `k`, consider which elements you would need to increment to make the maximum at least `k`. Keep track of the number of increments needed."
+    },
+    {
+      "content": "Remember that overlapping subarrays share elements. If you increment an element to satisfy one subarray, it might also satisfy others. Consider how this can minimize the total number of increments."
+    },
+    {
+      "content": "You can maintain a count of how many increments each element needs to contribute to making the array beautiful. Use a loop to traverse the array and a data structure to store these counts."
+    },
+    {
+      "content": "Think about edge cases, such as when all elements are already greater than or equal to `k`. How will your solution handle this scenario? Ensure that your solution can return 0 in such cases."
+    },
+    {
+      "content": "As you implement your solution, ensure that you are efficiently calculating the total number of increments. You might want to sum the increments needed for each element that falls short of `k`."
+    },
+    {
+      "content": "Finally, consider how to return the result. You need to return the total number of increment operations performed. Make sure your code clearly reflects this intention."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= n == nums.length <= 100000",
+    "0 <= nums[i] <= 10^9",
+    "0 <= k <= 10^9",
+    "An array is beautiful if all subarrays of size 3 or more have a maximum element >= k.",
+    "Return the minimum number of increment operations needed."
+  ]
+}

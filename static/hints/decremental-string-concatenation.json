@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the join operation defined in the problem. Remember that if the last character of the first string matches the first character of the second string, one of them gets deleted in the concatenation."
+    },
+    {
+      "content": "Consider how the order of concatenation affects the final string length. You can join strings in two ways: str[i-1] + words[i] or words[i] + str[i-1]. Think about which option might be better in different scenarios."
+    },
+    {
+      "content": "To minimize the length of the final string, you should keep track of the lengths of the strings as you perform join operations. Make sure to account for the potential character deletion when the last and first characters match."
+    },
+    {
+      "content": "When you join two strings, the effective length can be calculated as: length(x) + length(y) - overlap, where overlap is 1 if the last character of x equals the first character of y, otherwise it is 0."
+    },
+    {
+      "content": "As you iterate through the words, maintain two possible lengths at each step: one for joining str[i-1] + words[i] and another for words[i] + str[i-1]. This will help you track the minimum length effectively."
+    },
+    {
+      "content": "Consider edge cases where a word is entirely made of the same character, such as 'aaa'. Think about how this might affect the join operations and the resulting string length."
+    },
+    {
+      "content": "You may want to create a helper function that calculates the effective length of two strings when joined. This function should handle the character overlap logic."
+    },
+    {
+      "content": "Remember to initialize your first string properly. The first string in the array is your starting point, and you will build upon it with the subsequent words."
+    },
+    {
+      "content": "As you compute the lengths, keep track of the minimum length after each join operation. This will allow you to ensure that you are always working towards the optimal solution."
+    },
+    {
+      "content": "Finally, think about how to return the result. You need to return the minimum possible length of str[n-1] after all join operations. Make sure your final implementation reflects this."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= words.length <= 1000, 1 <= words[i].length <= 50.",
+    "The join operation may delete one of the strings based on character matching.",
+    "You can join in two different orders, which can lead to different lengths.",
+    "Return the minimum possible length of the resulting string after n-1 join operations."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering the constraints of the problem. You need to find substrings of a given string `s` that meet specific criteria regarding their length and the number of unique characters."
+    },
+    {
+      "content": "Remember that the substring length must be between `minSize` and `maxSize`. This means you should focus on substrings of lengths that fall within this range."
+    },
+    {
+      "content": "Pay special attention to the `maxLetters` constraint. This limits the number of unique characters in any valid substring. You might want to use a frequency count to track the number of unique characters in each substring."
+    },
+    {
+      "content": "Consider using a sliding window approach to efficiently generate and check substrings of the required lengths. This can help you avoid generating all possible substrings separately."
+    },
+    {
+      "content": "As you generate substrings, keep a count of their occurrences. A dictionary (or hashmap) could be useful here to map each substring to its count."
+    },
+    {
+      "content": "When checking the number of unique characters, you can maintain a set or a simple array to track character counts. This will help you quickly determine if a substring meets the `maxLetters` condition."
+    },
+    {
+      "content": "Don't forget to consider overlapping substrings. The problem states that occurrences can overlap, so make sure your algorithm accounts for this when counting."
+    },
+    {
+      "content": "Once you have counted the occurrences of all valid substrings, you need to determine the maximum count. This will be your final answer."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when `s` is very short or when all characters are the same. These can impact your substring generation and counting logic."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient enough to handle the upper limits of the input constraints. Think about the time complexity of your approach and how you can optimize it."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "1 <= maxLetters <= 26",
+    "1 <= minSize <= maxSize <= min(26, s.length)",
+    "s consists of only lowercase English letters.",
+    "Substrings can overlap.",
+    "Return the maximum count of occurrences of any valid substring."
+  ]
+}

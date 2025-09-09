@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You know that both strings `s` and `t` are anagrams of each other, which means they contain the exact same characters with the same frequency."
+    },
+    {
+      "content": "Consider how to split the string `s` into `k` equal-sized substrings. The length of each substring will be `len(s) / k`. Make sure that this length is an integer."
+    },
+    {
+      "content": "Think about how the rearrangement of substrings can affect the final order. Since you can rearrange the substrings freely, the order in which you form the substrings does not matter as long as the characters match."
+    },
+    {
+      "content": "Check if the frequency of characters in the substrings formed from `s` can be rearranged to match the frequency of characters in `t`. You may want to use a frequency counter or a hashmap for this."
+    },
+    {
+      "content": "When forming substrings, remember that each substring must be of equal length. If `len(s) % k != 0`, then it's impossible to split `s` into `k` equal parts, and you can return false immediately."
+    },
+    {
+      "content": "Consider the example where `s = 'abcd'` and `t = 'cdab'`. If you split `s` into two substrings of length 2, what are the possible combinations? Try to list them out."
+    },
+    {
+      "content": "You can use a sorting approach to simplify the comparison. If you sort the substrings and the target string `t`, you can directly compare if they are equal."
+    },
+    {
+      "content": "Think about edge cases, such as when `k` is equal to the length of `s`. In this case, each character in `s` would be its own substring. How does this affect your approach?"
+    },
+    {
+      "content": "Remember to handle cases where `k` is 1. In this scenario, you don't need to split `s` at all; just check if `s` is equal to `t`."
+    },
+    {
+      "content": "To bring it all together, after forming the substrings, check if the frequency of characters in the concatenated result matches that of `t`. You are close to the solution!"
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length == t.length <= 2 * 10^5",
+    "1 <= k <= s.length",
+    "s.length is divisible by k",
+    "s and t consist only of lowercase English letters."
+  ]
+}

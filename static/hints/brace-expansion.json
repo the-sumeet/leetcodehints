@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input string. The braces `{}` indicate groups of characters that can be expanded. For example, in `{a,b}`, you can choose either 'a' or 'b'."
+    },
+    {
+      "content": "Think about how to split the string into segments. You can separate the parts of the string that are outside the braces from those that are inside. This can help you manage the expansions more easily."
+    },
+    {
+      "content": "Consider using a stack or a list to keep track of the current segments as you parse through the string. Whenever you encounter an opening brace `{`, you can start collecting characters until you find the closing brace `}`."
+    },
+    {
+      "content": "When you encounter a closing brace `}`, you need to combine the collected characters inside the braces. Don't forget to handle multiple options correctly; for example, `{a,b}` should lead to both 'a' and 'b'."
+    },
+    {
+      "content": "Think about how to handle characters that are not within braces. These characters should be appended to the current results as you build your final output."
+    },
+    {
+      "content": "Remember that the output should be in lexicographical order. After generating all possible combinations, you may need to sort them before returning the final result."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no braces at all. For example, the input 'abcd' should simply return ['abcd'] without any modifications."
+    },
+    {
+      "content": "Also, think about nested braces. For example, in the input `{a,{b,c}}`, you need to handle the inner braces first before combining them with the outer options."
+    },
+    {
+      "content": "You might want to implement a recursive function to handle the parsing and expansion. The recursion can help you manage the depth of nested braces easily."
+    },
+    {
+      "content": "Finally, ensure that your function returns the results in the correct format, which is typically a list of strings. Make sure to test your function with various inputs to confirm it handles all cases correctly."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of lowercase letters and braces.",
+    "The output must be sorted in lexicographical order.",
+    "Handle edge cases like no braces or nested braces.",
+    "Return format should be a list of strings."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "First, remember the triangle inequality theorem. For three sides to form a triangle, the sum of any two sides must be greater than the third side."
+    },
+    {
+      "content": "Check if the sides can form a triangle by verifying the three conditions of the triangle inequality. For example, if `a`, `b`, and `c` are the sides, you need to check: `a + b > c`, `a + c > b`, and `b + c > a`."
+    },
+    {
+      "content": "If the sides do not satisfy the triangle inequality, you should return 'none'. This is an important edge case to handle before checking for triangle types."
+    },
+    {
+      "content": "Next, consider the types of triangles. An equilateral triangle has all three sides equal. You can check this condition using a simple comparison: `nums[0] == nums[1] && nums[1] == nums[2]`."
+    },
+    {
+      "content": "For an isosceles triangle, check if exactly two sides are equal. You can use conditions like: `nums[0] == nums[1] || nums[0] == nums[2] || nums[1] == nums[2]`."
+    },
+    {
+      "content": "If none of the sides are equal, then the triangle is scalene. You can conclude this by checking if all three sides are different: `nums[0] != nums[1] && nums[0] != nums[2] && nums[1] != nums[2]`."
+    },
+    {
+      "content": "Remember to handle the return types correctly. You need to return a string that describes the triangle type or 'none' if it cannot form a triangle."
+    },
+    {
+      "content": "Be careful with the input constraints. The array will always have exactly three elements, and each side length will be between 1 and 100. This simplifies some of your checks."
+    },
+    {
+      "content": "Consider edge cases where two sides are equal and the third is different, such as `[3, 3, 4]`. This should help you practice distinguishing between isosceles and scalene triangles."
+    },
+    {
+      "content": "Finally, combine your checks into a logical flow. Start with the triangle inequality check, then check for equilateral, isosceles, and scalene in that order. Make sure to return the correct string based on your findings."
+    }
+  ],
+  "questionNotes": [
+    "The input array will always have exactly three integers.",
+    "Each integer will be in the range of 1 to 100.",
+    "Return 'none' if the sides cannot form a triangle.",
+    "Return 'equilateral' if all sides are equal.",
+    "Return 'isosceles' if exactly two sides are equal.",
+    "Return 'scalene' if all sides are different."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a tree. A tree with n nodes has exactly n-1 edges and is a connected acyclic graph. Make sure you visualize how nodes are connected."
+    },
+    {
+      "content": "Consider how marking works based on the node's parity (odd or even). This will influence the timing of when adjacent nodes can be marked."
+    },
+    {
+      "content": "When marking a node at time t=0, think about how the marking propagates to its neighbors. For odd nodes, neighbors can be marked at t=1, while for even nodes, they can be marked at t=2."
+    },
+    {
+      "content": "To keep track of the marking times for each node, you may want to create an array initialized to zero or a large number. This will store the time each node gets marked."
+    },
+    {
+      "content": "Consider using a breadth-first search (BFS) or depth-first search (DFS) approach to explore the tree. This will help you propagate the marking times correctly."
+    },
+    {
+      "content": "When implementing BFS/DFS, remember to keep track of the current time as you explore each node. Adjust the time based on whether the node is odd or even."
+    },
+    {
+      "content": "You will need to handle the marking of nodes in a way that respects the timing rules based on their adjacency to previously marked nodes. Think carefully about how to manage this in your traversal."
+    },
+    {
+      "content": "Make sure to consider all nodes when marking them. You will need a way to ensure that all nodes are marked before finalizing the time for each starting node."
+    },
+    {
+      "content": "Think about edge cases, such as trees that are essentially a straight line or a star configuration. How would the marking times differ in these scenarios?"
+    },
+    {
+      "content": "As you implement the marking logic, ensure that you are not marking the same node multiple times unnecessarily. This can lead to incorrect timing results."
+    },
+    {
+      "content": "After marking a node, check its neighbors to see if they can be marked next. Use the correct timing based on the node's parity."
+    },
+    {
+      "content": "When returning the result, remember that the output should be an array where each index corresponds to the starting node. Ensure that your final array is populated correctly."
+    },
+    {
+      "content": "Consider how to optimize your solution, especially given the constraints (n can be up to 100,000). Look for ways to minimize redundant calculations."
+    },
+    {
+      "content": "You might want to create a helper function to calculate the marking time for a specific starting node. This can help keep your code organized."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases to ensure correctness. Pay attention to how marking propagates in different tree structures."
+    }
+  ],
+  "questionNotes": [
+    "The input is a valid tree with n nodes (0 to n-1) and n-1 edges.",
+    "Each node's marking time depends on its adjacency to previously marked nodes based on its parity.",
+    "Return an array where times[i] indicates the marking time for node i when marked at t=0.",
+    "Consider edge cases like linear trees and star configurations."
+  ]
+}

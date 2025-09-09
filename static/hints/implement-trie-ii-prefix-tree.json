@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic structure of a Trie (Prefix Tree). A Trie consists of nodes where each node represents a character of a string. Each node can have multiple children, corresponding to the next characters in the strings stored in the Trie."
+    },
+    {
+      "content": "Think about how you will represent each node in the Trie. Each node needs to store its children and possibly a count of how many times a word ends at that node. Consider using a dictionary for children where keys are characters."
+    },
+    {
+      "content": "For the `insert` function, you need to traverse the Trie according to the characters of the word being inserted. Create new nodes as necessary when you encounter characters that do not exist in the Trie."
+    },
+    {
+      "content": "When implementing `countWordsEqualTo`, you should traverse the Trie according to the characters of the input word. At the end of the traversal, check if the current node indicates the end of a word."
+    },
+    {
+      "content": "For `countWordsStartingWith`, you will similarly traverse the Trie, but instead of checking for the end of a word, you need to count all words that descend from the current node."
+    },
+    {
+      "content": "The `erase` function needs to handle the removal of a word from the Trie. This involves traversing to the end of the word and then potentially removing nodes if they are no longer needed (i.e., if they do not lead to any other words)."
+    },
+    {
+      "content": "Consider edge cases, such as inserting the same word multiple times. You may want to maintain a count of how many times each word has been inserted to handle this correctly."
+    },
+    {
+      "content": "Think about how you will handle the situation where a word is erased. You need to ensure that you do not remove nodes that are still part of other words. This requires careful checking of child nodes."
+    },
+    {
+      "content": "Make sure to test your implementation with various scenarios, such as inserting, counting, and erasing words with common prefixes. This will help ensure your Trie handles all cases correctly."
+    },
+    {
+      "content": "You're almost there! For the final implementation, ensure that your `countWordsStartingWith` method counts all words that share the given prefix by traversing from the node corresponding to the last character of the prefix."
+    }
+  ],
+  "questionNotes": [
+    "Each word is a lowercase string.",
+    "The `insert` method should allow duplicate words, but `countWordsEqualTo` should return the count of that specific word.",
+    "The `erase` method should only remove the word if it exists and should handle cases where the word is a prefix of other words.",
+    "Ensure the Trie can handle edge cases like empty strings or very long words."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem constraints. You have a total amount of money and two costs for pens and pencils. You need to determine how many distinct combinations of these items can be purchased without exceeding the total."
+    },
+    {
+      "content": "Consider the scenario where you buy 0 pens. How many pencils can you buy with the total amount? This gives you a base case to work from."
+    },
+    {
+      "content": "Now, think about what happens when you buy 1 pen. Calculate how many pencils you can still afford with the remaining money. This pattern will help you generalize the solution."
+    },
+    {
+      "content": "Notice that the number of pencils you can buy decreases as you buy more pens. If you buy 'p' pens, the remaining money can be used to buy pencils. How would you express this mathematically?"
+    },
+    {
+      "content": "You can express the total money spent as: total = (number of pens * cost1) + (number of pencils * cost2). Rearranging this can help you find the maximum number of pencils for a given number of pens."
+    },
+    {
+      "content": "Consider a loop that iterates over the possible number of pens you can buy. For each pen count, calculate the maximum number of pencils you can buy with the remaining money."
+    },
+    {
+      "content": "Remember to account for the case where neither pens nor pencils can be bought due to their costs being higher than the total. This is an important edge case."
+    },
+    {
+      "content": "As you calculate the number of ways to buy items, keep track of the total combinations. You can use a counter to accumulate the valid combinations for each iteration."
+    },
+    {
+      "content": "Think about the efficiency of your approach. If you are looping through all possible numbers of pens, how can you ensure that you don't exceed the total amount?"
+    },
+    {
+      "content": "Finally, consider how to return the result. You should return the total number of distinct ways to buy pens and pencils, including the option of buying none."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= total, cost1, cost2 <= 10^6",
+    "You can buy multiple quantities of each item or none.",
+    "Return the number of distinct ways to buy pens and pencils.",
+    "Edge case: If both costs exceed the total, the only way is to buy 0 of each."
+  ]
+}

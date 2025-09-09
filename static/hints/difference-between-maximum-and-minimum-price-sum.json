@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "First, understand the structure of a tree. A tree with n nodes has n-1 edges and is acyclic. This means there is exactly one path between any two nodes."
+    },
+    {
+      "content": "Remember that the tree is undirected and initially unrooted. You can choose any node as the root, which will affect the paths and their price sums."
+    },
+    {
+      "content": "The price sum of a path is the sum of the prices of all nodes on that path. Make sure you can calculate the price sum for any given path in the tree."
+    },
+    {
+      "content": "Consider how to traverse the tree. Depth-first search (DFS) or breadth-first search (BFS) are common algorithms to explore all paths from a given root."
+    },
+    {
+      "content": "When you root the tree at a certain node, you will need to compute the maximum and minimum price sums for all paths starting from that root."
+    },
+    {
+      "content": "Think about how to efficiently calculate the maximum and minimum price sums for all paths from a given root. You might want to keep track of the current path's sum as you traverse."
+    },
+    {
+      "content": "When calculating the incurred cost for a root, remember it is defined as the difference between the maximum and minimum price sums. This means you need both values for each root."
+    },
+    {
+      "content": "For each node you choose as a root, you will need to perform a traversal of the tree. This could lead to a high time complexity if not optimized."
+    },
+    {
+      "content": "Consider memoization or dynamic programming to store results of subproblems, especially if you find yourself recalculating paths for multiple roots."
+    },
+    {
+      "content": "Think about edge cases, such as when all node prices are the same. What would the maximum cost be in that scenario?"
+    },
+    {
+      "content": "Make sure to handle the case when n = 1 separately, as there are no edges and thus only one node to consider."
+    },
+    {
+      "content": "You will want to iterate through all nodes as potential roots. Consider storing the results of the incurred costs and keeping track of the maximum found."
+    },
+    {
+      "content": "Remember that the input constraints specify that n can be as large as 100,000. Your solution must be efficient, ideally O(n) or O(n log n)."
+    },
+    {
+      "content": "As you implement your solution, ensure that you are correctly updating the maximum and minimum sums during your traversal."
+    },
+    {
+      "content": "Finally, after calculating the incurred costs for all possible roots, return the maximum value found. Ensure your return format matches the expected output."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, edges.length == n - 1, 0 <= ai, bi <= n - 1, price.length == n, 1 <= price[i] <= 10^5.",
+    "The tree is undirected and acyclic, meaning there is exactly one path between any two nodes.",
+    "The incurred cost is defined as the difference between the maximum and minimum price sums from the chosen root.",
+    "Handle the case where n = 1 separately, as it has no edges.",
+    "The solution must be efficient due to the upper limit of n."
+  ]
+}

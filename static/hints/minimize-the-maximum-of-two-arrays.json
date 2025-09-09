@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to fill two arrays, arr1 and arr2, with distinct positive integers that are not divisible by their respective divisors. Think about how to generate numbers that meet these criteria."
+    },
+    {
+      "content": "Consider the constraints of the problem. You need to ensure that the integers in arr1 are unique and not divisible by divisor1, while those in arr2 are unique and not divisible by divisor2. This means you will have to filter out certain numbers from your selections."
+    },
+    {
+      "content": "Think about how to find the smallest maximum integer that can be used in either array. You might want to use a binary search approach to efficiently find this minimum maximum value."
+    },
+    {
+      "content": "When using binary search, define your search space. The minimum possible value is 1 (the smallest positive integer), and the maximum can initially be set to a reasonable upper bound based on the counts of unique integers you need to fill."
+    },
+    {
+      "content": "As you conduct the binary search, for a mid-point value, check if you can fill both arrays with the required unique counts. You will need a helper function to verify if you can achieve the counts without violating the divisibility conditions."
+    },
+    {
+      "content": "To check if you can fill the arrays for a given maximum value, iterate through the numbers from 1 to that maximum. Count how many valid integers you can assign to arr1 and arr2 based on the divisibility constraints."
+    },
+    {
+      "content": "Remember that the integers in arr1 and arr2 must be distinct. This means if you assign a number to arr1, you cannot assign it to arr2, so keep track of the numbers you have already used."
+    },
+    {
+      "content": "Consider edge cases where the counts required (uniqueCnt1 and uniqueCnt2) are very large. You may need to ensure that your algorithm efficiently handles large inputs without running into performance issues."
+    },
+    {
+      "content": "Think about how to handle the situation where there are not enough valid integers to fill both arrays. You will need to ensure that your algorithm can return a proper result even in these scenarios."
+    },
+    {
+      "content": "Finally, implement the binary search logic to find the minimum possible maximum integer. Ensure that your helper function correctly validates the counts against the given maximum value."
+    }
+  ],
+  "questionNotes": [
+    "Ensure that arr1 and arr2 contain unique integers.",
+    "Integers in arr1 must not be divisible by divisor1, and those in arr2 must not be divisible by divisor2.",
+    "No integer should be present in both arrays.",
+    "The output should be the minimum possible maximum integer that can be present in either array.",
+    "Constraints: 2 <= divisor1, divisor2 <= 10^5; 1 <= uniqueCnt1, uniqueCnt2 < 10^9; 2 <= uniqueCnt1 + uniqueCnt2 <= 10^9."
+  ]
+}

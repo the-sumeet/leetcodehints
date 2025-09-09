@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a JSON object containing headers and rows. Focus on how to access the 'UserActivity' data."
+    },
+    {
+      "content": "Remember that you need to extract the activities for each user. You might want to group the activities by username first."
+    },
+    {
+      "content": "Consider how you will determine the most recent activities. You can convert the 'startDate' or 'endDate' strings into a date format for easier comparison."
+    },
+    {
+      "content": "Think about how you can sort the activities for each user based on their dates. Sorting will help you easily access the most recent and the second most recent activities."
+    },
+    {
+      "content": "When sorting, be mindful of the date format. You might need to parse the dates into a format that can be compared correctly."
+    },
+    {
+      "content": "After sorting, consider how you will handle cases where a user has fewer than two activities. What should you return in such cases?"
+    },
+    {
+      "content": "If a user has exactly two activities, the second most recent will be the first after sorting. Ensure your logic accounts for this scenario."
+    },
+    {
+      "content": "Think about how to handle multiple users. You will need a way to store and retrieve the second most recent activity for each user individually."
+    },
+    {
+      "content": "As you implement your solution, consider edge cases such as users with the same activity dates. How will you determine which activity is second most recent?"
+    },
+    {
+      "content": "You might want to create a data structure to hold the results. A dictionary or map could be useful to associate usernames with their second most recent activities."
+    },
+    {
+      "content": "When returning results, ensure you format the output correctly. What structure will your final output need to have?"
+    },
+    {
+      "content": "Consider how you will handle ties in activity dates. If two activities have the same end date, which one should be considered second most recent?"
+    },
+    {
+      "content": "Make sure to test your solution with various scenarios, including users with no activities, one activity, and multiple activities with the same dates."
+    },
+    {
+      "content": "As you finalize your logic, remember to check if you are returning the correct fields for the second most recent activity, such as 'activity' and 'startDate'."
+    },
+    {
+      "content": "Before concluding, review your code for efficiency. Sorting can be costly, so ensure you are optimizing where possible, especially with larger datasets."
+    }
+  ],
+  "questionNotes": [
+    "Input is a JSON object with 'UserActivity' as a key containing an array of activities.",
+    "Each activity has four fields: 'username', 'activity', 'startDate', and 'endDate'.",
+    "You need to return the second most recent activity for each user.",
+    "Handle edge cases where users may have fewer than two activities.",
+    "Consider how to manage ties in activity dates."
+  ]
+}

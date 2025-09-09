@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the difference between the two arrays, `nums` and `target`. For each index, calculate the difference: `diff[i] = target[i] - nums[i]`. This will help you see how much each element needs to be incremented or decremented."
+    },
+    {
+      "content": "Consider how you can group consecutive elements in `nums` that require the same operation (either all increments or all decrements). This can help you minimize the number of operations needed."
+    },
+    {
+      "content": "Think about how you can track changes in the `diff` array. When the difference changes from positive to negative (or vice versa), it indicates a new operation is needed."
+    },
+    {
+      "content": "What happens if two consecutive elements in `diff` are both positive? You can handle them in a single operation. Try to visualize this with an example."
+    },
+    {
+      "content": "Remember that you can only operate on subarrays. This means that if you have a long stretch of positive differences followed by a stretch of negative differences, you will need at least two operations."
+    },
+    {
+      "content": "Consider edge cases where all elements in `nums` are already equal to `target`. How many operations would you need in this case? This can help ensure your solution handles this scenario efficiently."
+    },
+    {
+      "content": "When calculating the number of operations, keep track of the number of transitions between positive and negative differences in the `diff` array. Each transition represents a new operation."
+    },
+    {
+      "content": "You might want to create a function that counts the number of transitions in the `diff` array. This could be a key part of your solution."
+    },
+    {
+      "content": "If `diff[i] > 0`, it means you need to decrement, while if `diff[i] < 0`, you need to increment. How can you consolidate these operations to minimize the total count?"
+    },
+    {
+      "content": "Think about how to handle cases where `nums` and `target` are very large. The constraints allow for up to 100,000 elements, so your solution should be efficient, ideally O(n)."
+    },
+    {
+      "content": "Consider using a single pass through the `diff` array to count the number of operations needed. This will help you avoid unnecessary iterations."
+    },
+    {
+      "content": "You may want to keep track of the current operation state (incrementing or decrementing) as you iterate through the `diff` array. This can help simplify your logic."
+    },
+    {
+      "content": "As you implement your solution, remember to test it against edge cases, such as when `nums` and `target` are identical or when they have the maximum allowed values."
+    },
+    {
+      "content": "Finally, think about what your return value should be. You need to return the total number of operations required to make `nums` equal to `target`. Ensure your final count is accurate."
+    },
+    {
+      "content": "You are very close! To finalize your approach, consider how you will implement the counting of transitions and ensure that your logic correctly reflects the operations needed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length == target.length <= 10^5",
+    "1 <= nums[i], target[i] <= 10^8",
+    "Return the minimum number of operations required.",
+    "Operations can be performed on any subarray."
+  ]
+}

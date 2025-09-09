@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a subsequence. A subsequence can be formed by deleting some elements from the array without changing the order of the remaining elements."
+    },
+    {
+      "content": "Remember that you need to select exactly `k` indices from `nums1`. Think about how you can iterate through the possible combinations of indices to form subsequences."
+    },
+    {
+      "content": "The score is calculated as the sum of the selected elements from `nums1` multiplied by the minimum of the selected elements from `nums2`. Make sure you keep track of both the sum and the minimum as you explore subsequences."
+    },
+    {
+      "content": "Consider using a max-heap or priority queue to efficiently manage the largest sums of `nums1` while keeping track of the minimum values from `nums2` for the selected indices."
+    },
+    {
+      "content": "Think about how to efficiently find the minimum value from `nums2` for a given selection of indices. You might want to sort or maintain a data structure that allows you to quickly retrieve the minimum."
+    },
+    {
+      "content": "When selecting indices, ensure that you are also considering the contribution of `nums2` to the score. The minimum value from `nums2` will significantly impact the final score."
+    },
+    {
+      "content": "Edge cases to consider include when `k` is equal to 1, where the score will simply be the maximum value of `nums1[i] * nums2[i]` for all `i`."
+    },
+    {
+      "content": "You should also consider cases where all elements in `nums2` are the same. How would that affect your choice of indices from `nums1`?"
+    },
+    {
+      "content": "As you implement your solution, keep track of the maximum score found so far. Each time you calculate a score from a chosen subsequence, compare it to the current maximum."
+    },
+    {
+      "content": "Finally, think about how to efficiently generate combinations of indices. You might want to use recursion or backtracking to explore different subsequences of length `k`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums1.length == nums2.length",
+    "1 <= n <= 10^5",
+    "0 <= nums1[i], nums2[j] <= 10^5",
+    "1 <= k <= n",
+    "Return the maximum possible score as a single integer."
+  ]
+}

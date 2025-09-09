@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an inverse pair is. An inverse pair [i, j] exists when nums[i] > nums[j] and i < j. Think about how the arrangement of numbers affects the count of these pairs."
+    },
+    {
+      "content": "Consider the base cases. For n = 1, there are no possible inverse pairs since there's only one number. What happens when n = 2?"
+    },
+    {
+      "content": "Think about how you can build the array incrementally. If you have an array of size n-1, how can you add the nth number to potentially create inverse pairs?"
+    },
+    {
+      "content": "If you add the number n to the end of the array, it will not create any new inverse pairs. How does this affect the count of pairs when you add n to different positions?"
+    },
+    {
+      "content": "Explore the concept of dynamic programming. You can define a DP table where dp[i][j] represents the number of ways to arrange the first i numbers with exactly j inverse pairs."
+    },
+    {
+      "content": "What are the dimensions of your DP table? You will need dimensions (n+1) x (k+1) to accommodate all possible numbers and inverse pairs."
+    },
+    {
+      "content": "Initialize your DP table. Start with dp[0][0] = 1, which represents the empty array having zero inverse pairs."
+    },
+    {
+      "content": "When filling in the DP table, consider how adding a new number affects the count of inverse pairs. You can add the new number in various positions."
+    },
+    {
+      "content": "For each position where you can place the new number, calculate how many new inverse pairs it creates. This can be done using a cumulative sum to optimize the calculations."
+    },
+    {
+      "content": "Think about how to handle the modulo operation. Since the result can be very large, remember to apply the modulo 10^9 + 7 at each step of your calculations."
+    },
+    {
+      "content": "Consider edge cases, such as when k is 0. What should your DP table look like in this case? How many configurations can you have?"
+    },
+    {
+      "content": "As you fill in the DP table, remember that the number of new inverse pairs created by placing the new number can vary based on its position."
+    },
+    {
+      "content": "You may need to sum values from previous rows of the DP table to get the current count. Think about how to efficiently calculate this sum using a prefix sum array."
+    },
+    {
+      "content": "Once your DP table is filled, how do you extract the final answer? The answer will be found at dp[n][k]. Ensure you understand why this is the case."
+    },
+    {
+      "content": "Finally, double-check your implementation against the constraints. Make sure it runs efficiently within the limits of n and k, both up to 1000."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 1000, 0 <= k <= 1000.",
+    "Return the result modulo 10^9 + 7.",
+    "The answer may involve large numbers due to combinatorial nature.",
+    "Understand the relationship between the arrangement of numbers and the count of inverse pairs."
+  ]
+}

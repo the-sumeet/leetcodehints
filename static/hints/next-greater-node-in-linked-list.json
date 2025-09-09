@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the linked list. Each node has a value and a pointer to the next node. You need to traverse this list to find the next greater value for each node."
+    },
+    {
+      "content": "Consider how you will store the results. Since you need to return an array where each index corresponds to a node in the linked list, think about how you can maintain the order of the nodes while you process them."
+    },
+    {
+      "content": "You can use a stack to help keep track of the nodes as you traverse the list. The stack will allow you to efficiently find the next greater node for each node you encounter."
+    },
+    {
+      "content": "As you traverse the linked list, push the current node's value onto the stack. When you encounter a node with a value greater than the value at the top of the stack, you can pop from the stack and set the corresponding index in your result array."
+    },
+    {
+      "content": "Remember to initialize your result array with zeros. This will help you handle cases where a node does not have a next greater value."
+    },
+    {
+      "content": "Think about the edge cases, such as when the linked list has only one node. In this case, the result should simply be [0] since there are no other nodes to compare."
+    },
+    {
+      "content": "When processing the nodes, ensure that you are only setting the next greater value for nodes that have been fully processed. This means you should only pop from the stack when you find a greater value."
+    },
+    {
+      "content": "Make sure to handle the case where multiple nodes have the same value. The next greater node should be strictly greater, so you need to ensure that you are not mistakenly assigning a value that is equal."
+    },
+    {
+      "content": "As you implement your solution, consider the time complexity. Using a stack allows you to traverse the linked list in O(n) time, which is efficient given the constraints."
+    },
+    {
+      "content": "Your final implementation should look something like this: Traverse the linked list, use a stack to keep track of indices, and for each node, check if it has a greater node ahead. Don't forget to return the result array at the end!"
+    }
+  ],
+  "questionNotes": [
+    "The result array should be 1-indexed, meaning the first node corresponds to index 1.",
+    "If a node does not have a next greater node, its corresponding value in the result should be 0.",
+    "Constraints: 1 <= n <= 10^4 and 1 <= Node.val <= 10^9."
+  ]
+}

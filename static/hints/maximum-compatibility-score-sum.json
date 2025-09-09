@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to calculate the compatibility score between a student and a mentor. For each pair, iterate through their answers and count how many answers are the same. You can use a simple loop for this."
+    },
+    {
+      "content": "Remember that each student can only be paired with one mentor, and each mentor can only be paired with one student. This means you will need to consider all possible pairings without repetition."
+    },
+    {
+      "content": "Given that both students and mentors have a maximum of 8 entries, consider using a bitmasking technique to represent the pairing of students to mentors. This will help you manage the combinations efficiently."
+    },
+    {
+      "content": "Think about how you can use recursion or backtracking to explore all possible pairings of students and mentors. You can maintain a visited array to keep track of which mentors have already been assigned."
+    },
+    {
+      "content": "As you explore the pairings, keep a running total of the compatibility scores. Make sure to update your maximum score whenever you find a new pairing that yields a higher score."
+    },
+    {
+      "content": "Consider edge cases, such as when all students or mentors have identical answers. How would this affect the compatibility scores? What would the maximum score be in such cases?"
+    },
+    {
+      "content": "When calculating the compatibility score, ensure that you are correctly indexing into the student and mentor arrays. Remember that both arrays are 0-indexed."
+    },
+    {
+      "content": "You might want to define a helper function that takes a student and a mentor as input and returns their compatibility score. This will keep your main logic cleaner and more readable."
+    },
+    {
+      "content": "To optimize your solution, think about memoization. If you find that certain pairings yield the same score repeatedly, you can store these results to avoid recalculating them."
+    },
+    {
+      "content": "Finally, once you have implemented the recursive pairing logic, ensure to test your solution with various cases, including edge cases like all answers being the same or all being different. This will help confirm the robustness of your solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == students.length == mentors.length",
+    "Constraints: n == students[i].length == mentors[j].length",
+    "1 <= m, n <= 8",
+    "students[i][k] is either 0 or 1",
+    "mentors[j][k] is either 0 or 1",
+    "Each student and mentor can only be paired once."
+  ]
+}

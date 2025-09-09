@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the concert hall. You need to represent the rows and seats in a way that allows you to track which seats are occupied. Consider using a 2D array or a list of lists for this purpose."
+    },
+    {
+      "content": "Remember that the rows are indexed from 0 to n - 1 and the seats from 0 to m - 1. This means that you need to ensure that your indexing does not go out of bounds when accessing rows and seats."
+    },
+    {
+      "content": "For the `gather` method, you need to find a contiguous block of k seats in a row. Think about how you can check if a range of seats is available in a specific row."
+    },
+    {
+      "content": "When implementing the `gather` method, consider using a sliding window approach to efficiently check for k consecutive empty seats in a row."
+    },
+    {
+      "content": "In the `scatter` method, you need to allocate k seats, but they do not have to be consecutive. You should prioritize filling seats from the smallest row number and then the smallest seat number."
+    },
+    {
+      "content": "You will need to keep track of the number of available seats in each row. A simple way to do this is to maintain a count of free seats for each row."
+    },
+    {
+      "content": "Make sure to handle cases where the requested number of seats k is larger than the total number of available seats in the specified rows. You should return false in such cases."
+    },
+    {
+      "content": "When checking for available seats in the `scatter` method, iterate through the rows up to maxRow and keep track of how many seats you have allocated."
+    },
+    {
+      "content": "Consider edge cases where k is 1. This is a simpler case where you only need to find a single available seat."
+    },
+    {
+      "content": "Think about what happens when all seats in a row are occupied. Your algorithm should be able to skip over such rows when searching for available seats."
+    },
+    {
+      "content": "In the `gather` method, if you find a suitable row, make sure to mark those seats as occupied after returning their indices."
+    },
+    {
+      "content": "For the `scatter` method, if you manage to allocate all k seats, ensure that you return true and also update the seat availability accordingly."
+    },
+    {
+      "content": "Consider the performance of your solution. Since the constraints allow for a large number of rows and seats, ensure that your solution is efficient and avoids unnecessary computations."
+    },
+    {
+      "content": "You may want to create helper functions to check for available seats in a row for both `gather` and `scatter`. This will help keep your code organized."
+    },
+    {
+      "content": "Finally, ensure that your return formats are correct. For `gather`, return an array of length 2 or an empty array, and for `scatter`, return a boolean value."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 50,000; 1 <= m, k <= 10^9; 0 <= maxRow <= n - 1.",
+    "Indexing starts from 0 for both rows and seats.",
+    "Return format for gather: an array of length 2 or an empty array if not possible.",
+    "Return format for scatter: a boolean value indicating success or failure.",
+    "Ensure to update seat availability after each booking."
+  ]
+}

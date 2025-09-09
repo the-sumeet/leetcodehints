@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a list of intervals and a list of queries. Each interval is defined by a start and an end, and the queries are single integers that you need to check against these intervals."
+    },
+    {
+      "content": "Remember that the size of an interval is calculated as `right - left + 1`. This means that if an interval is [2, 5], its size is `5 - 2 + 1 = 4`."
+    },
+    {
+      "content": "For each query, you need to find the smallest interval that contains the query value. This means checking if the query falls within the bounds of each interval."
+    },
+    {
+      "content": "To check if a query `q` is contained in an interval `[left, right]`, you can use the condition: `left <= q <= right`. If this condition is true, the interval contains the query."
+    },
+    {
+      "content": "Consider how you will track the minimum size of the intervals that contain each query. You might want to initialize a variable to keep track of the smallest size found."
+    },
+    {
+      "content": "Think about the efficiency of your approach. Given the constraints, a naive O(n * m) solution (where n is the number of intervals and m is the number of queries) might be too slow. Can you optimize this?"
+    },
+    {
+      "content": "One way to optimize is to sort the intervals based on their size. This way, when you find an interval that contains a query, you can immediately know if it is the smallest one."
+    },
+    {
+      "content": "After sorting, you can use binary search to quickly find which intervals might contain a given query. This can significantly reduce the number of comparisons you need to make."
+    },
+    {
+      "content": "When processing the queries, remember to handle cases where no intervals contain the query. In such cases, you should return -1 for that query."
+    },
+    {
+      "content": "Make sure to keep track of the original indices of the queries if you need to return the results in the order of the input queries. This is important for maintaining the correct output format."
+    },
+    {
+      "content": "As you implement your solution, consider edge cases like queries that are less than the smallest left value or greater than the largest right value of the intervals."
+    },
+    {
+      "content": "You might also want to consider how to handle overlapping intervals. If multiple intervals contain the same query, your goal is to find the smallest one, so keep track of the minimum size as you check each interval."
+    },
+    {
+      "content": "When you find an interval that contains a query, calculate its size and compare it with the current minimum size. Update the minimum size if the found interval is smaller."
+    },
+    {
+      "content": "Finally, ensure that your output is structured correctly. You need to return an array where each entry corresponds to the result of each query in the order they were provided."
+    },
+    {
+      "content": "As a final step, review your code for efficiency and correctness. Test it with various edge cases, especially with maximum constraints, to ensure it performs well."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= intervals.length <= 10^5, 1 <= queries.length <= 10^5.",
+    "Each interval is defined as [left_i, right_i] with 1 <= left_i <= right_i <= 10^7.",
+    "Queries are single integers with 1 <= queries[j] <= 10^7.",
+    "Return -1 if no interval contains a query.",
+    "The output should maintain the order of the input queries."
+  ]
+}

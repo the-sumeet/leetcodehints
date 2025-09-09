@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a substring is. A substring is a contiguous sequence of characters within a string. For example, in the string 'abc', the substrings include 'a', 'ab', 'abc', 'b', 'bc', and 'c'."
+    },
+    {
+      "content": "Next, focus on the conditions for a substring to be considered 'complete'. Each character in the substring must appear exactly k times. For instance, if k = 2, the substring 'aa' is complete, but 'aaa' is not."
+    },
+    {
+      "content": "Pay attention to the second condition: the absolute difference between adjacent characters must be at most 2. For example, in the substring 'abc', the difference between 'a' and 'b' is 1, and between 'b' and 'c' is also 1, so it meets this condition."
+    },
+    {
+      "content": "Consider using a sliding window approach to efficiently find all substrings. You can maintain a window defined by two pointers to explore substrings of varying lengths."
+    },
+    {
+      "content": "As you explore substrings, maintain a frequency count of characters within the current window. This will help you quickly check if each character appears exactly k times."
+    },
+    {
+      "content": "Remember to check the adjacency condition as you expand or contract your sliding window. If you encounter characters that violate the adjacency condition, you may need to adjust your window."
+    },
+    {
+      "content": "Think about how to efficiently count the number of complete substrings. You might want to use a nested loop to iterate through all possible starting points of substrings."
+    },
+    {
+      "content": "When checking if a substring is complete, ensure that you verify both conditions: character frequency and adjacency. You can use a dictionary or an array to keep track of character counts."
+    },
+    {
+      "content": "Consider edge cases, such as when k is greater than the length of the string. In such cases, it is impossible to have any complete substrings."
+    },
+    {
+      "content": "Also consider cases where all characters in the string are the same. For example, in 'aaaaaa' with k = 3, you can form multiple complete substrings."
+    },
+    {
+      "content": "Make sure to handle overlapping substrings correctly. For example, in 'aaabbb', both 'aaabbb' and 'aabbb' should be counted if they meet the conditions."
+    },
+    {
+      "content": "While iterating through the string, keep track of the maximum character and minimum character in the current window to efficiently check the adjacency condition."
+    },
+    {
+      "content": "If you find a substring that meets the criteria, increment a counter. This counter will ultimately represent the number of complete substrings."
+    },
+    {
+      "content": "Consider using a set to store unique complete substrings if the problem requires uniqueness in the output. However, the current problem only asks for the count."
+    },
+    {
+      "content": "As a final step, ensure you return the count of complete substrings as specified in the problem statement. This is typically done with a simple return statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= word.length <= 10^5",
+    "word consists only of lowercase English letters.",
+    "1 <= k <= word.length",
+    "A substring is a non-empty contiguous sequence of characters in a string.",
+    "Return the number of complete substrings."
+  ]
+}

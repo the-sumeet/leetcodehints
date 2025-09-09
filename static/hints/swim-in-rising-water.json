@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. Each cell in the grid represents an elevation, and the goal is to determine the minimum time required to reach the bottom-right corner from the top-left corner as water rises."
+    },
+    {
+      "content": "Consider how the water level affects movement. You can only move to adjacent cells if both the current cell and the target cell have elevations less than or equal to the current water level, t."
+    },
+    {
+      "content": "Think about the traversal method. Since you need to find the minimum time, a breadth-first search (BFS) or a priority queue (like Dijkstra's algorithm) may be suitable for exploring reachable cells based on the elevation constraint."
+    },
+    {
+      "content": "Remember that the water level, t, increases over time. You will need to determine the smallest t at which you can reach the destination cell (n-1, n-1)."
+    },
+    {
+      "content": "Keep in mind the constraints on the grid size (1 <= n <= 50) and the unique elevations. This uniqueness can simplify some checks since you won’t have to deal with ties in elevation."
+    },
+    {
+      "content": "When implementing your solution, consider using a min-heap or priority queue to always expand the least elevation cell first, which corresponds to the minimum water level required to swim to that cell."
+    },
+    {
+      "content": "As you explore the grid, maintain a visited set to avoid revisiting cells, which can lead to infinite loops or unnecessary computations."
+    },
+    {
+      "content": "Think about edge cases, such as when the grid is of size 1x1. In such a case, you are already at the destination, so the minimum time is 0."
+    },
+    {
+      "content": "Consider the scenario where the grid is filled with increasing elevations. How would this affect your traversal? It might help to visualize the path you would take as the water level rises."
+    },
+    {
+      "content": "You might want to implement a function that checks whether you can reach the destination cell at a given water level t. This function can be called repeatedly with increasing values of t."
+    },
+    {
+      "content": "To find the minimum time, you can use binary search on the possible values of t, ranging from the elevation at (0, 0) to the elevation at (n-1, n-1). This can help optimize your search."
+    },
+    {
+      "content": "Think about how to represent the grid and the elevation levels. A 2D list is a straightforward representation, but ensure you handle the indices correctly when accessing neighbors."
+    },
+    {
+      "content": "When implementing your search algorithm, remember to update the minimum time whenever you find a valid path to the destination cell. This will be your final output."
+    },
+    {
+      "content": "Consider how you will handle the output. The problem asks for the minimum time, which corresponds to the maximum elevation of the path taken to reach (n-1, n-1)."
+    },
+    {
+      "content": "Finally, ensure you test your solution with various grid configurations, including edge cases like the smallest grid and grids with steep elevation changes."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == grid.length, n == grid[i].length, 1 <= n <= 50, 0 <= grid[i][j] < n^2.",
+    "Each value grid[i][j] is unique, which simplifies elevation comparisons.",
+    "Return format: The minimum time until you can reach the bottom right square (n - 1, n - 1)."
+  ]
+}

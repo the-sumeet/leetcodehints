@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the power grid. Each power station is connected to others via bidirectional cables, forming a graph. Consider how you might represent this graph using an adjacency list or matrix."
+    },
+    {
+      "content": "Think about how you can efficiently keep track of which stations are online and which are offline. A simple boolean array could work, where `true` indicates online and `false` indicates offline."
+    },
+    {
+      "content": "When processing a query of type [1, x], you need to check if station x is online. If it is, the answer is simply x. If not, you need to find the smallest online station in the same connected component as x."
+    },
+    {
+      "content": "To find connected components in the graph, consider using Depth-First Search (DFS) or Breadth-First Search (BFS). This will help you explore all stations connected to x, even if they are offline."
+    },
+    {
+      "content": "Remember that when a station goes offline (query type [2, x]), it does not change the connectivity of the graph. You still need to consider all stations in the same component for future queries."
+    },
+    {
+      "content": "For the maintenance check, if the station x is offline, you need to find the smallest online station in its component. You might want to maintain a sorted list of online stations in each component for efficient retrieval."
+    },
+    {
+      "content": "Consider edge cases, such as when there are no connections at all. Each station would be its own component, and you should handle queries accordingly when they refer to offline stations."
+    },
+    {
+      "content": "Pay attention to the constraints of the problem. With up to 100,000 stations and queries, your solution needs to be efficient. Think about how to minimize the time complexity of your operations."
+    },
+    {
+      "content": "When implementing your solution, ensure that you correctly handle the return format. The output should be an array of results corresponding to the maintenance check queries, in the order they were received."
+    },
+    {
+      "content": "As a final step, after processing all queries, make sure to test your solution against various scenarios, especially edge cases such as all stations going offline or queries being made on isolated stations."
+    }
+  ],
+  "questionNotes": [
+    "1-based indexing for station identifiers.",
+    "Each station has a unique identifier from 1 to c.",
+    "Queries can be of two types: maintenance check or going offline.",
+    "Return -1 if no operational station exists in the same grid.",
+    "Maintain connectivity even when stations go offline."
+  ]
+}

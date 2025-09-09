@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Employee and Department tables. You need to join these tables to get the department names alongside employee details."
+    },
+    {
+      "content": "Remember that you need to find the top three unique salaries for each department. Consider how you can extract unique salaries from the Employee table."
+    },
+    {
+      "content": "Think about using a subquery to first identify the top three unique salaries for each department. This will simplify your main query."
+    },
+    {
+      "content": "To get unique salaries, you can use the DISTINCT keyword in SQL. For example: `SELECT DISTINCT salary FROM Employee WHERE departmentId = ?`."
+    },
+    {
+      "content": "Once you have the unique salaries, you can use the `LIMIT` clause to restrict the results to the top three salaries. However, remember that you might need to order them in descending order first."
+    },
+    {
+      "content": "Consider using a Common Table Expression (CTE) to create a temporary result set that holds the unique salaries for each department."
+    },
+    {
+      "content": "When you retrieve the top three salaries, ensure you handle cases where there are fewer than three unique salaries gracefully."
+    },
+    {
+      "content": "After identifying the top salaries, you'll need to join this result back to the Employee table to get the names of the employees earning those salaries."
+    },
+    {
+      "content": "Make sure to join on both the salary and the departmentId to ensure you are associating the correct employees with their respective departments."
+    },
+    {
+      "content": "Consider how to handle ties in salaries. If two employees have the same salary, they should both be included in the results if they fall within the top three."
+    },
+    {
+      "content": "Your final output should include the department name, employee name, and salary. Think about how to format your SELECT statement to achieve this."
+    },
+    {
+      "content": "Remember to alias your columns in the final SELECT statement to match the required output format: `Department`, `Employee`, and `Salary`."
+    },
+    {
+      "content": "Ensure that your query returns results in any order, as specified in the problem statement. You don't need to add an ORDER BY clause at the end."
+    },
+    {
+      "content": "Be mindful of the constraints provided in the problem. For instance, there are no employees with the exact same name, salary, and department."
+    },
+    {
+      "content": "As you construct your SQL query, test it with edge cases such as departments with no employees or departments with fewer than three unique salaries."
+    }
+  ],
+  "questionNotes": [
+    "The Employee table has unique ids for each employee.",
+    "The departmentId in Employee is a foreign key referencing the Department table.",
+    "You need to find the top three unique salaries for each department.",
+    "Handle cases where there are fewer than three unique salaries gracefully.",
+    "The final output should include Department, Employee, and Salary, in any order."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying all unique characters in the words and the result. This will help you understand how many different digits you need to map to characters. Remember, there can be at most 10 different characters since we only have digits 0-9."
+    },
+    {
+      "content": "Consider the constraints regarding leading zeros. A word cannot start with a character that maps to zero. This is crucial for ensuring valid number formation."
+    },
+    {
+      "content": "Think about how you would represent the words as numbers. You will need to convert each character in the words and the result according to the mapping you create."
+    },
+    {
+      "content": "To check if the equation holds, you will need to sum the numeric values of the words and compare it with the numeric value of the result. Make sure your mapping is consistent throughout."
+    },
+    {
+      "content": "A backtracking approach could be useful here. You can try assigning digits to characters one by one and check for validity at each step. If you reach a contradiction, backtrack and try a different assignment."
+    },
+    {
+      "content": "When assigning digits, ensure that you do not assign the same digit to different characters. This uniqueness constraint is key to solving the puzzle."
+    },
+    {
+      "content": "Use a set to keep track of the digits that have already been assigned. This will help you quickly check if a digit is already used before assigning it to a character."
+    },
+    {
+      "content": "As you explore different mappings, consider the total length of the words and the result. This can give you insights into possible carry overs during addition."
+    },
+    {
+      "content": "Remember to handle the case where the result may have more digits than the sum of the words. This could indicate that a carry occurred during the addition."
+    },
+    {
+      "content": "You might want to create a helper function that converts a list of words into their corresponding numeric value based on the current character-to-digit mapping."
+    },
+    {
+      "content": "When implementing backtracking, ensure your function can return early if it determines that the current mapping cannot possibly lead to a valid solution."
+    },
+    {
+      "content": "Consider edge cases such as when the number of unique characters exceeds 10, or when the words and result contain characters that could lead to invalid leading zeros."
+    },
+    {
+      "content": "Think about how you can optimize your search. If a character appears in the leading position of any word, it cannot be assigned the digit 0."
+    },
+    {
+      "content": "As you approach a solution, ensure that you are checking the total sum of the words against the result after each complete mapping. This is the crux of validating your solution."
+    },
+    {
+      "content": "Finally, remember to return false if you exhaust all possibilities without finding a valid mapping. Your function should handle this gracefully."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= words.length <= 5",
+    "1 <= words[i].length, result.length <= 7",
+    "All characters are uppercase English letters.",
+    "Each character must map to a unique digit (0-9).",
+    "No leading zeros are allowed for any word."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of an IPv4 address. An IPv4 address consists of four octets separated by dots, where each octet is a number between 0 and 255."
+    },
+    {
+      "content": "Remember that each octet must be a valid integer. You should check if each octet can be converted to an integer without errors."
+    },
+    {
+      "content": "Consider how to split the IP address string into its individual octets. You can use the `split` function on the dot character ('.') to achieve this."
+    },
+    {
+      "content": "After splitting the IP address, check the number of octets. An IP address must have exactly four octets to be valid."
+    },
+    {
+      "content": "For each octet, ensure that it does not contain any leading zeros. You can compare the string representation of the octet with its integer conversion."
+    },
+    {
+      "content": "Check if any octet exceeds the value of 255. This can be done by converting the string to an integer and comparing it."
+    },
+    {
+      "content": "You will need to count how many times each invalid IP appears in the logs. Consider using a data structure to keep track of counts."
+    },
+    {
+      "content": "Think about how to aggregate the invalid count for each unique IP address. You might want to use a `GROUP BY` clause in SQL."
+    },
+    {
+      "content": "When counting invalid IPs, ensure you are only counting the invalid ones according to the criteria you've established."
+    },
+    {
+      "content": "As you prepare your final output, remember to sort the results first by `invalid_count` in descending order and then by `ip` in descending order."
+    },
+    {
+      "content": "Consider edge cases such as IPs with fewer than four octets or octets that are empty strings. These should also be counted as invalid."
+    },
+    {
+      "content": "Don't forget to handle duplicate IP addresses in the logs. You should only count the invalidity of each unique IP once."
+    },
+    {
+      "content": "Make sure to format your output correctly, with the columns named `ip` and `invalid_count` as specified in the problem statement."
+    },
+    {
+      "content": "You may want to test your solution with various IP formats, including valid ones, to ensure your invalidity checks are robust."
+    },
+    {
+      "content": "Finally, remember to review the SQL syntax for your queries, especially for `GROUP BY` and `ORDER BY` clauses to ensure they are correctly implemented."
+    }
+  ],
+  "questionNotes": [
+    "An IPv4 address must have exactly 4 octets.",
+    "Each octet must be a number between 0 and 255.",
+    "Leading zeros in octets are not allowed.",
+    "Count invalid IPs based on the number of times they appear, even if they are duplicates.",
+    "Return the result ordered by invalid_count and then by IP in descending order."
+  ]
+}

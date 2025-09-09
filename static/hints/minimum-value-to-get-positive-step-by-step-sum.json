@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a 'step by step sum'. This is the cumulative sum of your `startValue` and the elements in `nums` as you iterate through the array. For example, if `startValue` is 3 and `nums` is [1, -1, 2], the step by step sums would be 3, 4, 3, and 5."
+    },
+    {
+      "content": "Consider the requirement that the step by step sum must never be less than 1. This means that at every point in your iteration, the cumulative sum must be at least 1. Think about how negative numbers in `nums` can affect this sum."
+    },
+    {
+      "content": "To find the minimum `startValue`, you can simulate the step by step sums while keeping track of the lowest point reached. This will help you determine how high `startValue` must be to ensure the sum never drops below 1."
+    },
+    {
+      "content": "As you iterate through `nums`, maintain a variable to track the current sum. If this sum drops below 1 at any point, you will need to adjust your `startValue` accordingly. You can calculate how much you need to increase `startValue` based on the lowest sum encountered."
+    },
+    {
+      "content": "Think about edge cases, such as when all elements in `nums` are positive. In this case, `startValue` could simply be 1, since the sum will always remain positive. What happens if `nums` contains only negative values?"
+    },
+    {
+      "content": "When you encounter a negative number in `nums`, it reduces the current sum. If the current sum goes below 1, you can calculate the deficit and adjust `startValue` to compensate for this deficit."
+    },
+    {
+      "content": "You can initialize `startValue` to 1 and then iterate through `nums`, updating `startValue` whenever the current sum goes below 1. This way, you ensure that `startValue` is always positive."
+    },
+    {
+      "content": "Keep in mind that you need to return the minimum `startValue`. If you find that you need to adjust `startValue` multiple times during your iteration, make sure to keep track of the maximum adjustment needed."
+    },
+    {
+      "content": "Consider how you can use a single pass through the `nums` array to calculate both the current sum and the minimum required `startValue`. This could involve keeping a variable for the minimum sum encountered during the iteration."
+    },
+    {
+      "content": "Finally, after determining the minimum necessary adjustment to `startValue`, ensure that it is greater than or equal to 1 before returning it. This is crucial since `startValue` must always be positive."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100",
+    "-100 <= nums[i] <= 100",
+    "startValue must be a positive integer.",
+    "Return the minimum positive value of startValue."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to rearrange the characters in the string such that no two adjacent characters are the same. Think about the implications of having characters that appear too frequently."
+    },
+    {
+      "content": "Consider the frequency of each character in the string. You can use a hashmap or an array to count how many times each character appears. This will help you determine if a valid rearrangement is possible."
+    },
+    {
+      "content": "Think about the maximum frequency of any character. If any character appears more than (length of string + 1) / 2 times, it is impossible to rearrange the string to meet the requirements."
+    },
+    {
+      "content": "Once you have the character frequencies, think about how you can place the most frequent characters first. This can help reduce the chances of having two adjacent characters being the same."
+    },
+    {
+      "content": "You might want to use a max heap (priority queue) to always place the character with the highest remaining frequency next. This way, you can ensure that you are optimally filling the string."
+    },
+    {
+      "content": "When placing characters, after placing the most frequent character, consider keeping track of the last placed character. This is to ensure that you don't place the same character consecutively."
+    },
+    {
+      "content": "As you build the result string, if you reach a point where you cannot place any character without violating the adjacency rule, you should return an empty string."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the input string is of length 1. In this case, the string is already valid since there are no adjacent characters."
+    },
+    {
+      "content": "Think about how you will construct the final string from the characters you have placed. You may need to use a temporary storage for characters that are not currently being used to avoid adjacency issues."
+    },
+    {
+      "content": "Finally, ensure that your final string meets the requirements by checking if the length of the result matches the original string length. If it does not, return an empty string."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 500",
+    "s consists of lowercase English letters.",
+    "If rearrangement is not possible, return an empty string."
+  ]
+}

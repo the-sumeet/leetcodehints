@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Consider the turn-based nature of the game. Player 1 always goes first, which gives them a slight advantage. Think about how the choice of numbers from either end affects the game's outcome."
+    },
+    {
+      "content": "Both players are playing optimally. This means that each player will make the choice that maximizes their score while minimizing the opponent's potential score. How can you model this decision-making process?"
+    },
+    {
+      "content": "You might want to use a recursive approach to explore all possible outcomes of the game. For each turn, consider both choices (the first and last elements of the array)."
+    },
+    {
+      "content": "When making a choice, if Player 1 picks an element, Player 2 will respond by picking the best possible option for themselves. Think about how to calculate the scores after each choice."
+    },
+    {
+      "content": "Memoization can help optimize your recursive solution. Store results of previously computed states to avoid redundant calculations. What parameters could you use to uniquely identify a game state?"
+    },
+    {
+      "content": "Consider the base case for your recursion. When there are no elements left in the array, how do you determine the scores of both players? This will help you establish the end of your recursive calls."
+    },
+    {
+      "content": "Think about how to represent the current state of the game in your recursive function. You might need to pass the current indices of the array (start and end) along with the current scores."
+    },
+    {
+      "content": "When evaluating the scores after both players have made their choices, remember that Player 1 wins if their score is greater than or equal to Player 2's score. How will you implement this comparison?"
+    },
+    {
+      "content": "As you implement your recursive function, ensure that you account for both choices at each step. For example, if Player 1 picks the first element, what would the new scores and available numbers look like?"
+    },
+    {
+      "content": "To finalize your approach, think about how you will return the result of whether Player 1 can guarantee a win. You might end up returning a boolean value based on the scores calculated from the recursive calls."
+    }
+  ],
+  "questionNotes": [
+    "Players take turns picking numbers from either end of the array.",
+    "Player 1 starts first, and both players play optimally.",
+    "Player 1 wins if their score is greater than or equal to Player 2's score.",
+    "Array length constraints: 1 <= nums.length <= 20.",
+    "Array values constraints: 0 <= nums[i] <= 10^7."
+  ]
+}

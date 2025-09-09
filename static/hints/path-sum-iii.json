@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree. Each node can have up to two children, and the paths you're looking for can start and end at any node, not just the root or leaves."
+    },
+    {
+      "content": "Consider how you will traverse the tree. Depth-first search (DFS) is a common approach for tree problems. Think about how you can explore all paths from each node downwards."
+    },
+    {
+      "content": "Remember that a path can start from any node, not just the root. This means you will need to initiate a search from every node in the tree."
+    },
+    {
+      "content": "As you traverse the tree, keep track of the current sum of the path. If the current sum equals the targetSum at any point, you have found a valid path."
+    },
+    {
+      "content": "You might want to use a helper function that takes the current node and the current sum as parameters. This function can be called recursively to explore each child node."
+    },
+    {
+      "content": "Don't forget to handle the case where the tree is empty. If the root is null, you should immediately return 0 since there are no paths to consider."
+    },
+    {
+      "content": "Consider using a hashmap (or dictionary) to keep track of the cumulative sums you've seen so far. This can help you efficiently check if there exists a previous sum that would lead to the targetSum."
+    },
+    {
+      "content": "When exploring paths, ensure that you backtrack correctly. After exploring a node, you should remove it from the current path to avoid counting it in other paths."
+    },
+    {
+      "content": "Think about how you can count paths that may overlap. For instance, if you find a valid path from a child node, you should also check paths from the parent node downwards."
+    },
+    {
+      "content": "To summarize your approach: Use DFS to explore each node, maintain a running sum, and use a hashmap to track the number of times each cumulative sum has been seen to identify valid paths leading to targetSum."
+    }
+  ],
+  "questionNotes": [
+    "Paths can start and end at any node in the tree.",
+    "The traversal must go downwards from parent to child nodes.",
+    "Return the total number of valid paths that sum to targetSum.",
+    "The tree can have up to 1000 nodes, and node values can be large (up to ±10^9).",
+    "Consider edge cases like an empty tree (null root)."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the problem. You have a hierarchy of employees, where each employee can buy stock at a present price and sell it at a future price. Focus on how the hierarchy affects the buying prices."
+    },
+    {
+      "content": "Consider how the discount works. If an employee's direct boss buys their stock, they can buy it at half the present price. Make sure you understand how to apply this discount correctly."
+    },
+    {
+      "content": "Think about how to represent the hierarchy. You can use an adjacency list to map each employee to their direct reports. This will help you navigate the relationships between employees."
+    },
+    {
+      "content": "Calculate the profit for each employee. The profit can be calculated as `future[i] - present[i]` for each employee. Don't forget to account for the discount when applicable."
+    },
+    {
+      "content": "Remember that you can only buy each stock once. This means you need to decide whether to buy a stock at full price or let the employee buy it at a discounted price based on the hierarchy."
+    },
+    {
+      "content": "Consider the budget constraint. You need to ensure that the total cost of all stock purchases does not exceed the budget. This adds a layer of complexity to your decision-making."
+    },
+    {
+      "content": "Think about a strategy for maximizing profit. You might want to prioritize purchases that yield the highest profit relative to their cost. This could involve sorting employees by profit-to-cost ratio."
+    },
+    {
+      "content": "Explore the use of a depth-first search (DFS) or breadth-first search (BFS) to traverse the hierarchy. This will help you determine the order in which employees can buy stocks and apply discounts."
+    },
+    {
+      "content": "As you implement your solution, keep track of the total cost and total profit. You can use variables to accumulate these values as you decide which stocks to buy."
+    },
+    {
+      "content": "Consider edge cases, such as when the budget is too low to buy any stocks or when all stocks are too expensive. How will your algorithm handle these situations?"
+    },
+    {
+      "content": "Make sure to test your solution with various scenarios, including those where multiple employees can buy stocks. Check if your implementation correctly handles the hierarchy and budget constraints."
+    },
+    {
+      "content": "Think about how to structure your code for clarity. You might want to create helper functions to calculate profit, apply discounts, and manage the budget."
+    },
+    {
+      "content": "Remember that the profit from one stock purchase cannot be used to fund another. This means your budget management must be strict and based solely on the initial budget provided."
+    },
+    {
+      "content": "As you approach the final implementation, consider how you will store and retrieve the necessary information about each employee's buying options and profits."
+    },
+    {
+      "content": "Finally, ensure that your solution efficiently handles the maximum constraints. With n up to 160, your algorithm should ideally be better than O(n^2) to perform well."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 160, present.length == n, future.length == n, hierarchy.length == n - 1.",
+    "Hierarchy is a tree structure with no cycles; Employee 1 is the root.",
+    "Each employee can buy stock at most once, and profit from one stock cannot be used for another purchase.",
+    "Return the maximum total profit achievable without exceeding the budget."
+  ]
+}

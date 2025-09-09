@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirements for a string to be counted. A string must start and end with a vowel. The vowels in this problem are 'a', 'e', 'i', 'o', and 'u'."
+    },
+    {
+      "content": "Consider how you can efficiently check if a string starts and ends with a vowel. You can use string indexing to access the first and last characters of each string."
+    },
+    {
+      "content": "Think about how to handle the queries. Each query specifies a range [l, r]. You need to count the valid strings within this range. How will you extract the relevant strings from the array?"
+    },
+    {
+      "content": "Before processing the queries, it might be useful to preprocess the `words` array. You could create a new array that keeps a cumulative count of valid strings up to each index."
+    },
+    {
+      "content": "When preprocessing, iterate through the `words` array and maintain a count of strings that start and end with a vowel. Store these counts at each index."
+    },
+    {
+      "content": "For each query [l, r], you can then quickly calculate the number of valid strings by using the cumulative count array. The result for a query can be computed as: `count[r] - count[l-1]`."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when l is 0. In such cases, you should directly return the count at index r."
+    },
+    {
+      "content": "Remember to consider the constraints given in the problem. The maximum length of `words` is 100,000 and the sum of lengths of all strings is limited to 300,000. This means your solution should be efficient."
+    },
+    {
+      "content": "When implementing the final solution, ensure that your output matches the required format: an array of counts corresponding to each query."
+    },
+    {
+      "content": "Finally, think about how you can test your solution. Create a few test cases, including edge cases like a single character string or strings with no vowels."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= words.length <= 10^5",
+    "1 <= words[i].length <= 40",
+    "sum(words[i].length) <= 3 * 10^5",
+    "1 <= queries.length <= 10^5",
+    "0 <= l_i <= r_i < words.length",
+    "Return an array of counts for each query."
+  ]
+}

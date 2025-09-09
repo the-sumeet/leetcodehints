@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `FooBar` class. You have two methods: `foo()` and `bar()`. Each method prints a string a certain number of times, controlled by the variable `n`."
+    },
+    {
+      "content": "Consider how threading works in this context. You will need to ensure that `foo()` and `bar()` are called alternately. This means that after `foo()` prints 'foo', `bar()` should print 'bar' before the next call to `foo()`."
+    },
+    {
+      "content": "Think about synchronization between the two threads. You can use synchronization primitives like `wait()` and `notify()` or `Lock` objects to control the access to the methods."
+    },
+    {
+      "content": "You might want to create a shared state or flag that indicates whether it's currently `foo`'s or `bar`'s turn to print. This will help you manage the alternation between the two methods."
+    },
+    {
+      "content": "Remember to handle the case where both threads are running simultaneously. You need to ensure that one thread waits for the other to finish its print operation before proceeding."
+    },
+    {
+      "content": "Consider using a `CountDownLatch` or a similar construct to coordinate the two threads. This will help you ensure that they print in the correct order."
+    },
+    {
+      "content": "Make sure to test your implementation with different values of `n`, especially edge cases like `n = 1` and `n = 1000`, to see if the output is correct and in the expected format."
+    },
+    {
+      "content": "You can outline the flow of your program: when `foo()` is called, it should print 'foo' and then signal `bar()` to print 'bar'. This signaling can be done using `notify()` after printing."
+    },
+    {
+      "content": "Consider how to structure your threads. You can create two separate threads for `foo` and `bar`. Ensure that they both share the same instance of `FooBar`."
+    },
+    {
+      "content": "As a final step, think about how you will implement the logic to repeat the 'foobar' output `n` times. You might need to use a loop inside each method to achieve this, but remember to manage the alternation correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 1000",
+    "Ensure that 'foo' and 'bar' are printed alternately.",
+    "The output should be 'foobar' repeated n times."
+  ]
+}

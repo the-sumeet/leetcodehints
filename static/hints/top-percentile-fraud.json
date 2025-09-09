@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of fraud records, each containing a `policy_id`, `state`, and `fraud_score`. Make sure you can access these values correctly."
+    },
+    {
+      "content": "Think about how you can group the records by `state`. You will need to calculate the top percentile fraud scores for each state separately. Consider using a dictionary or a similar structure to organize this data."
+    },
+    {
+      "content": "Once you have grouped the records by state, focus on calculating the percentile. Remember that the top percentile means you are interested in the highest scores. You might want to sort the fraud scores in descending order."
+    },
+    {
+      "content": "Consider how you will determine the cutoff for the top percentile. For example, if you are looking for the top 10%, you will need to find the index that corresponds to this percentile based on the total number of records in each state."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when a state has very few records. For instance, if a state has only one record, that record would automatically be in the top percentile."
+    },
+    {
+      "content": "When calculating the top percentile, remember to handle ties appropriately. If multiple fraud scores are equal and fall on the boundary of your top percentile, decide how you will include them in your results."
+    },
+    {
+      "content": "After determining the top percentile scores for each state, think about how you will format your output. You may want to return a list of `policy_id`s that correspond to these scores."
+    },
+    {
+      "content": "As you implement your solution, make sure to test with various scenarios, such as states with no records, states with all records having the same fraud score, and states with varying numbers of records."
+    },
+    {
+      "content": "Consider using a sorting algorithm to help you find the top scores efficiently. You might want to explore built-in functions that can help with sorting and slicing lists."
+    },
+    {
+      "content": "Finally, you should be close to your solution. After calculating the top percentile for each state, ensure you compile the results correctly. You might end up with a list of policy IDs that you can return as your final output."
+    }
+  ],
+  "questionNotes": [
+    "Input data is structured as a list of records with `policy_id`, `state`, and `fraud_score`.",
+    "You need to group records by `state` before calculating percentiles.",
+    "Handle edge cases for states with few records (e.g., one record).",
+    "Decide how to handle ties in fraud scores when determining the top percentile.",
+    "Output should be a list of `policy_id`s corresponding to the top percentile scores."
+  ]
+}

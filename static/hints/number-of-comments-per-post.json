@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of submissions, each with a unique 'sub_id' and an optional 'parent_id'. This means that some submissions are comments on others, while some are top-level posts."
+    },
+    {
+      "content": "Think about how you can differentiate between posts and comments. Posts will have a 'parent_id' of null, while comments will have a 'parent_id' that corresponds to a 'sub_id' of a post."
+    },
+    {
+      "content": "You will need to count the number of comments for each post. Consider using a dictionary (or hashmap) where the keys are the 'sub_id' of the posts and the values are the counts of comments."
+    },
+    {
+      "content": "As you iterate through the submissions, check if the 'parent_id' is not null. If it is not, increment the count for the corresponding 'sub_id' in your dictionary."
+    },
+    {
+      "content": "Remember to initialize your dictionary with each post's 'sub_id' before counting comments. This way, you ensure that every post is represented in the final output, even if it has zero comments."
+    },
+    {
+      "content": "After processing all submissions, you will have a dictionary with post IDs as keys and the number of comments as values. Think about how you will format this output."
+    },
+    {
+      "content": "Consider what to do with posts that have no comments. You might want to include them in your final output with a count of zero."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there are no submissions at all or when all submissions are comments without any posts."
+    },
+    {
+      "content": "Your output should be a list of tuples or a similar structure that pairs each post's 'sub_id' with its comment count. Ensure that the order of posts in your output matches the order they first appeared in the input."
+    },
+    {
+      "content": "Finally, think about how you will return the results. Will you return the list directly, or do you need to format it in a specific way (like JSON)? Make sure to clarify the expected return format."
+    }
+  ],
+  "questionNotes": [
+    "Each submission has a unique 'sub_id'.",
+    "Top-level posts have 'parent_id' as null.",
+    "Comments reference their parent post through 'parent_id'.",
+    "Output should include all posts, even those with zero comments.",
+    "Maintain the order of posts as they appear in the input."
+  ]
+}

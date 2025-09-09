@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem: you need to find a number composed solely of the digit '1' that is divisible by k. This means you will be looking for numbers like 1, 11, 111, etc."
+    },
+    {
+      "content": "Consider how you can generate these numbers. You can think of them as a sequence where each number is formed by appending another '1' to the previous number. How would you represent this in code?"
+    },
+    {
+      "content": "Remember that the problem asks for the length of the smallest such number. So, instead of storing the actual number, you might want to keep track of the count of '1's you have appended."
+    },
+    {
+      "content": "Think about how you can check for divisibility by k. Instead of constructing large numbers, you can use the property of modular arithmetic to keep your calculations manageable."
+    },
+    {
+      "content": "You can maintain a variable to keep track of the current number's value modulo k. This way, you can avoid dealing with large integers directly. For example: `current_mod = (current_mod * 10 + 1) % k`."
+    },
+    {
+      "content": "You will need to loop until you either find a number that is divisible by k or determine that it is impossible. How can you avoid infinite loops? Consider using a set to track remainders you've seen."
+    },
+    {
+      "content": "When you reach a remainder of zero, that means the number formed so far (of '1's) is divisible by k. Make sure to return the count of '1's appended at that point."
+    },
+    {
+      "content": "What if k is even? Think about the properties of numbers made up of only the digit '1'. Can you find any patterns or rules that would help you quickly determine if a solution is possible?"
+    },
+    {
+      "content": "If you exhaust all possible remainders without finding a solution, you should return -1. Make sure your logic accounts for this edge case."
+    },
+    {
+      "content": "As a final touch, ensure your implementation handles the constraints efficiently. You need to be careful with the maximum value of k (up to 100,000) and ensure your algorithm runs in a reasonable time."
+    }
+  ],
+  "questionNotes": [
+    "The number n must only contain the digit '1'.",
+    "You are to return the length of n, not the number itself.",
+    "If no such n exists, return -1.",
+    "Consider edge cases where k is even, as they may lead to no valid n."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a pyramid and an inverse pyramid. A pyramid has an apex at (r, c) and expands downwards, while an inverse pyramid has its apex at (r, c) and expands upwards."
+    },
+    {
+      "content": "Consider the constraints of the problem. Each pyramid must consist of more than one cell, meaning the minimum height h must be at least 2."
+    },
+    {
+      "content": "Remember that the cells must be fertile (1) for any pyramid or inverse pyramid to be valid. You can start by iterating through the grid to find the fertile cells."
+    },
+    {
+      "content": "When checking for pyramids, think about how to determine the height h based on the apex cell. You need to ensure that all cells in the range are also fertile."
+    },
+    {
+      "content": "For a pyramid with apex (r, c) and height h, the range of cells can be calculated. For each row i from r to r + h - 1, ensure that the cells from c - (i - r) to c + (i - r) are all 1."
+    },
+    {
+      "content": "Implement a helper function that checks if a given range of cells in the grid is fertile. This will help simplify your main logic when counting pyramids."
+    },
+    {
+      "content": "Now, think about how to count the number of pyramids. For each fertile cell, you can attempt to build a pyramid of increasing height until you hit a barren cell."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when the apex is near the edges of the grid. You must ensure that you do not go out of bounds when checking for fertile cells."
+    },
+    {
+      "content": "Once you have counted the pyramids, you can apply a similar logic for inverse pyramids. The apex is at (r, c) and the height h expands upwards."
+    },
+    {
+      "content": "For an inverse pyramid, the range of cells is defined differently. For each row i from r - h + 1 to r, check the cells from c - (r - i) to c + (r - i)."
+    },
+    {
+      "content": "You might want to create a separate function for counting inverse pyramids, similar to the one you created for pyramids. This will keep your code organized."
+    },
+    {
+      "content": "As you implement the counting logic, consider using a nested loop: the outer loop for each cell in the grid and the inner loop for possible heights."
+    },
+    {
+      "content": "Make sure to maintain a counter for both pyramids and inverse pyramids separately, and sum them up at the end to get the final result."
+    },
+    {
+      "content": "After implementing the counting logic, test your code with various edge cases, such as grids with no fertile cells or grids that are entirely fertile."
+    },
+    {
+      "content": "Finally, ensure your solution is efficient, as the maximum grid size can be 1000 x 1000. Aim for a solution that is better than O(m * n^2) for counting plots."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 1000; 1 <= m * n <= 10^5.",
+    "Grid cells are indexed from (0, 0) to (m-1, n-1).",
+    "A plot must consist of more than 1 cell.",
+    "Return the total number of pyramidal and inverse pyramidal plots."
+  ]
+}

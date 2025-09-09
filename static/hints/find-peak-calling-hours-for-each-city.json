@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by parsing the input data. You have a list of calls with attributes like `caller_id`, `recipient_id`, `call_time`, and `city`. Focus on extracting the relevant fields, particularly `call_time` and `city`."
+    },
+    {
+      "content": "Convert the `call_time` from string format to a datetime object. This will allow you to easily manipulate and analyze the time data, such as extracting the hour of each call."
+    },
+    {
+      "content": "Group the calls by `city`. You can use a dictionary where the key is the city name and the value is a list of call times. This will help you analyze calling patterns city by city."
+    },
+    {
+      "content": "For each city, create a way to count the number of calls made during each hour of the day. You can use a list of size 24 (for each hour) initialized to zero, where the index corresponds to the hour."
+    },
+    {
+      "content": "As you process each call for a city, extract the hour from the `call_time` and increment the corresponding index in your hour count list. For example, if the call time is '2021-08-24 22:46:07', you should increment the count at index 22."
+    },
+    {
+      "content": "After counting calls for each hour in a city, determine the maximum number of calls made in any hour. This will help you identify the peak hour(s) for that city."
+    },
+    {
+      "content": "Consider how to handle ties. If multiple hours have the same maximum number of calls, you should include all such hours in your result for that city."
+    },
+    {
+      "content": "Prepare the output format. You need to return a list of peak calling hours for each city. Ensure you maintain the order of cities as they appear in the input."
+    },
+    {
+      "content": "Think about edge cases, such as cities with no calls at all or cities with calls only during a single hour. Your solution should gracefully handle these scenarios."
+    },
+    {
+      "content": "Finally, implement the logic to compile the results. For each city, create a list of peak hours and format your output as specified. Make sure to test your solution with various inputs to validate its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Input is a JSON object with headers and rows.",
+    "Ensure to handle multiple cities and peak hours correctly.",
+    "Output should be a list of peak calling hours for each city.",
+    "Consider edge cases like cities with no calls or all calls in a single hour."
+  ]
+}

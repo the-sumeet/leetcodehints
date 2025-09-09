@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for two ranges to overlap. Two ranges [a, b] and [c, d] overlap if they share at least one integer. Can you think of a way to determine if two ranges overlap?"
+    },
+    {
+      "content": "Consider how you might represent the ranges in a way that makes it easy to check for overlaps. Sorting the ranges by their starting points could be a good first step."
+    },
+    {
+      "content": "After sorting, you can iterate through the ranges and check for overlaps. If a range overlaps with the previous one, they should belong to the same group. How would you keep track of these groups?"
+    },
+    {
+      "content": "Think about how you can identify all the overlapping groups. You might want to use a union-find (disjoint set) data structure to efficiently manage and merge overlapping ranges."
+    },
+    {
+      "content": "Once you have identified all the groups of overlapping ranges, consider how many distinct groups you have. Each group can either be placed in group 1 or group 2. What does this imply about the number of ways to split the groups?"
+    },
+    {
+      "content": "If you have 'k' groups of overlapping ranges, how many ways can you assign these groups to two different groups? Remember that each group can independently be assigned to either group 1 or group 2."
+    },
+    {
+      "content": "The total number of ways to assign 'k' groups is 2^k. However, make sure to account for the case when k = 0. What should the output be in that case?"
+    },
+    {
+      "content": "While calculating 2^k, remember to return the result modulo 10^9 + 7 as specified in the problem statement. How can you efficiently compute powers with a modulus?"
+    },
+    {
+      "content": "When implementing your solution, be mindful of the constraints, especially the maximum number of ranges (up to 100,000) and the range of values (up to 10^9). How can you ensure your solution is efficient?"
+    },
+    {
+      "content": "Finally, ensure that your function handles edge cases, such as when there are no ranges or when all ranges are distinct. What should your function return in these scenarios?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= ranges.length <= 10^5",
+    "Each range is represented as [start, end] where 0 <= start <= end <= 10^9",
+    "Return the total number of ways to split ranges into two groups modulo 10^9 + 7.",
+    "Two ranges overlap if they share at least one integer.",
+    "Each range must belong to exactly one group."
+  ]
+}

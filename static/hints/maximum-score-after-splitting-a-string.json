@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means to split the string into two non-empty substrings. You can split the string at any index from 1 to the length of the string minus one. For example, if the string is '011101', you could split it at indices 1, 2, 3, 4, etc."
+    },
+    {
+      "content": "Remember that the score is calculated as the number of zeros in the left substring plus the number of ones in the right substring. This means you need to keep track of both counts as you consider different split points."
+    },
+    {
+      "content": "To efficiently calculate the score for different splits, consider using a prefix sum approach. You can maintain a count of zeros in the left substring as you iterate through the string."
+    },
+    {
+      "content": "As you iterate through the string to find possible split points, keep a running total of the number of zeros in the left substring. For the right substring, you can derive the number of ones from the total number of ones in the string."
+    },
+    {
+      "content": "Before starting your iterations, it might be helpful to calculate the total number of ones in the entire string. This will allow you to quickly compute the number of ones in the right substring during each split."
+    },
+    {
+      "content": "When you split the string at index i, the left substring is 's[0:i]' and the right substring is 's[i:]'. Make sure to update your counts correctly as you move the split point."
+    },
+    {
+      "content": "Consider edge cases such as strings that are all zeros or all ones. How would your logic handle these cases? What would the expected output be?"
+    },
+    {
+      "content": "As you calculate scores for each split, keep track of the maximum score found so far. You can initialize a variable to store this maximum score and update it whenever you find a higher score."
+    },
+    {
+      "content": "Don't forget that the split must result in two non-empty substrings. This means you should not consider the last index of the string as a valid split point."
+    },
+    {
+      "content": "Finally, after iterating through all possible split points, return the maximum score you have found. Ensure that your solution runs efficiently, ideally in linear time O(n)."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= s.length <= 500",
+    "The string s consists of characters '0' and '1' only.",
+    "The split must result in two non-empty substrings.",
+    "Return the maximum score as an integer."
+  ]
+}

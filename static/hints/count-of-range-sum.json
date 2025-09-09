@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a range sum is. A range sum S(i, j) is the sum of elements from index i to j in the array. For example, for nums = [-2, 5, -1], S(0, 2) = -2 + 5 - 1 = 2."
+    },
+    {
+      "content": "Consider how you can compute the range sums efficiently. A naive approach would involve nested loops to calculate sums for all possible pairs (i, j), but this can be inefficient for large arrays."
+    },
+    {
+      "content": "Think about using prefix sums. A prefix sum array allows you to compute the sum of any subarray in constant time. How would you define the prefix sum for your array?"
+    },
+    {
+      "content": "Remember that the range sums you are interested in are those that fall within the bounds defined by 'lower' and 'upper'. You will need to count how many of these sums satisfy this condition."
+    },
+    {
+      "content": "Consider how you can maintain a running count of prefix sums as you iterate through the array. You can use a data structure to keep track of these sums efficiently."
+    },
+    {
+      "content": "You might want to explore using a sorted data structure, such as a balanced binary search tree or a sorted list, to help you count the number of valid sums within the specified range."
+    },
+    {
+      "content": "When you compute a new prefix sum, you will need to determine how many previous prefix sums fall within the range [current_prefix_sum - upper, current_prefix_sum - lower]."
+    },
+    {
+      "content": "Think about how you can efficiently count the number of prefix sums in a specific range. This is where your choice of data structure will play a crucial role."
+    },
+    {
+      "content": "Consider edge cases, such as when the array contains only one element or when all elements are negative. How would these cases affect your counting logic?"
+    },
+    {
+      "content": "Make sure to handle the case where the prefix sum itself falls within the range [lower, upper]. This means you need to count it as a valid range sum."
+    },
+    {
+      "content": "You may want to implement a merge sort-like approach to count the range sums as you build up your prefix sums. This can help keep the time complexity manageable."
+    },
+    {
+      "content": "As you implement the solution, ensure you are updating your data structure correctly after each prefix sum calculation. This will be key to maintaining the correct counts."
+    },
+    {
+      "content": "Think about the overall time complexity of your approach. Can you achieve a complexity better than O(n^2)? Aim for O(n log n) or O(n) if possible."
+    },
+    {
+      "content": "Before finalizing your solution, write down the steps you will take to initialize your prefix sums, update your counts, and return the final result."
+    },
+    {
+      "content": "Your final implementation should return the total count of range sums that fall within the specified bounds. Make sure to test your code with various edge cases to validate its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Value range: -2^31 <= nums[i] <= 2^31 - 1",
+    "-10^5 <= lower <= upper <= 10^5",
+    "The answer is guaranteed to fit in a 32-bit integer."
+  ]
+}

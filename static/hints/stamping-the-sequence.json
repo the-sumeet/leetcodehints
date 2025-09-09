@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the initial state of the string `s`. It is filled with '?' characters, which means it can be transformed by stamping. Think about how you can replace '?' with characters from `stamp`."
+    },
+    {
+      "content": "Consider how the `stamp` can be placed over `s`. You can only place it in positions where it fully fits within the bounds of `s`. This means if `stamp` has a length of `m`, you can place it from index `0` to `len(s) - m`."
+    },
+    {
+      "content": "When you place the `stamp`, think about how it modifies `s`. For example, if `stamp = 'abc'` and you place it at index `1`, the first character of `s` at index `1` becomes 'a', the next becomes 'b', and so on."
+    },
+    {
+      "content": "You need to keep track of the indices where you place the `stamp`. Consider using a list to collect these indices as you make each stamp."
+    },
+    {
+      "content": "Before you start stamping, check how many times you can stamp. The problem states you can do this at most `10 * target.length` times. This will help you set a limit on your loop."
+    },
+    {
+      "content": "Think about how to identify when a stamp can be placed. You can only place it if the substring of `target` matches the `stamp` or if the substring has '?' in positions where the `stamp` would go."
+    },
+    {
+      "content": "You might want to create a function that checks if you can place the stamp at a given index. This function should return true if the substring of `target` matches or can be matched with `stamp`."
+    },
+    {
+      "content": "As you modify `s`, remember to replace characters with '?' if they match the `stamp`. This will help you keep track of what has been stamped."
+    },
+    {
+      "content": "Consider using a set to track which indices have been stamped. This will help you avoid stamping the same index multiple times."
+    },
+    {
+      "content": "When you reach the end of your stamping process, check if `s` has been fully transformed into `target`. If it has, return the list of indices."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when `stamp` is longer than `target` or when `stamp` and `target` have no matching characters."
+    },
+    {
+      "content": "Think about the order of the indices in your output. The problem specifies to return the left-most index first, so ensure your algorithm respects this order."
+    },
+    {
+      "content": "If you find that you cannot transform `s` into `target` within the allowed number of turns, make sure to return an empty array as specified in the problem."
+    },
+    {
+      "content": "As a final check, ensure that your solution adheres to the constraints of the problem. For example, both `stamp` and `target` consist of lowercase English letters and their lengths are within the specified bounds."
+    },
+    {
+      "content": "You are close to a solution! Focus on implementing the loop that will allow you to iterate through `target`, checking for possible placements of `stamp`, and updating `s` accordingly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= stamp.length <= target.length <= 1000",
+    "Both stamp and target consist of lowercase English letters.",
+    "You must return an array of indices where the stamp was placed.",
+    "If transformation is impossible within the allowed turns, return an empty array.",
+    "Ensure that the output respects the order of stamping, with the left-most index first."
+  ]
+}

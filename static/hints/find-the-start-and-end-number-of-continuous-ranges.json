@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input structure. You are given a list of logs, each containing a single log ID. Make sure you can access the log IDs correctly from the provided input format."
+    },
+    {
+      "content": "Consider how to identify continuous ranges in the list of log IDs. A continuous range means that each number in the range follows the previous one by exactly 1. Think about how you can compare each log ID to the next one."
+    },
+    {
+      "content": "You might want to sort the log IDs first if they are not guaranteed to be in order. Sorting will make it easier to identify continuous sequences. Remember, sorting can be done in O(n log n) time."
+    },
+    {
+      "content": "As you iterate through the sorted log IDs, keep track of the start of a potential range. When you find a gap (i.e., the difference between consecutive log IDs is greater than 1), you will need to finalize the current range."
+    },
+    {
+      "content": "When you finalize a range, think about how you want to store the output. You could use a list of tuples or a list of lists, where each tuple/list contains the start and end of a range."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there are no logs or when all logs are continuous. What should your output look like in these scenarios?"
+    },
+    {
+      "content": "Consider how you will handle the last range after finishing the loop. If the last log ID is part of a continuous range, you need to ensure that it gets added to your output."
+    },
+    {
+      "content": "Think about the time complexity of your solution. You want to ensure that your solution is efficient, ideally O(n log n) due to sorting, and O(n) for the iteration."
+    },
+    {
+      "content": "Before finalizing your solution, consider writing test cases to validate your logic. Test cases should include various scenarios such as empty lists, single elements, and multiple ranges."
+    },
+    {
+      "content": "Finally, implement the logic to return the ranges. Your output should be in the format of a list of lists or tuples, where each list/tuple contains two numbers: the start and end of each continuous range."
+    }
+  ],
+  "questionNotes": [
+    "Input is a list of log IDs, each represented as a single-element array.",
+    "Log IDs may not be sorted, so consider sorting them first.",
+    "Continuous ranges are defined by consecutive integers.",
+    "Handle edge cases like empty input or single log IDs carefully.",
+    "Output format should be a list of lists or tuples, each representing a range."
+  ]
+}

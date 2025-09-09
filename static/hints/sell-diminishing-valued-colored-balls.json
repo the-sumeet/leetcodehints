@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the value of selling a ball. The value of each ball is determined by how many of that color you have left in your inventory. For example, if you have 6 balls of a color, the first one sold is worth 6, the next one is worth 5, and so on."
+    },
+    {
+      "content": "Consider how to maximize the total value when selling the balls. You want to sell the balls with the highest current value first. Think about how you can keep track of the highest valued balls as you sell them."
+    },
+    {
+      "content": "You can use a max-heap (priority queue) to efficiently retrieve the color with the highest number of balls left. This allows you to always sell the ball with the highest value first."
+    },
+    {
+      "content": "When selling a ball, you need to decrease the count of that color in your inventory. Make sure to handle the case when you sell the last ball of a certain color."
+    },
+    {
+      "content": "As you sell balls, keep a running total of the value. Remember to apply the modulo operation with 10^9 + 7 to prevent integer overflow."
+    },
+    {
+      "content": "Think about edge cases, such as when the number of orders exceeds the total number of balls available. How would you handle this situation? Ensure that you do not attempt to sell more balls than you have."
+    },
+    {
+      "content": "When you sell a ball, if the count of that color reaches zero, you should stop considering it for future sales. This means you need to manage the heap accordingly."
+    },
+    {
+      "content": "Consider a loop that continues until you have fulfilled all orders. Each iteration should involve extracting the maximum from the heap, selling a ball, and then updating the heap."
+    },
+    {
+      "content": "After selling a ball, if there are still balls of that color left, push the new value back into the heap. This keeps your heap updated with the current values of the remaining balls."
+    },
+    {
+      "content": "Finally, ensure that your implementation can handle the upper limits of the constraints, particularly with large inventories and orders. Test your solution with edge cases to confirm its robustness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= inventory.length <= 10^5",
+    "1 <= inventory[i] <= 10^9",
+    "1 <= orders <= min(sum(inventory[i]), 10^9)",
+    "Return the result modulo 10^9 + 7."
+  ]
+}

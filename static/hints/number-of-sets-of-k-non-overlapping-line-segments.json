@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. Each line segment must cover at least two points, which means the minimum length of any segment is 1 (e.g., from point i to point i+1)."
+    },
+    {
+      "content": "Consider how many points are available for each segment. If you choose a segment that starts at point i and ends at point j, you cannot choose points i through j for another segment. This introduces the concept of non-overlapping segments."
+    },
+    {
+      "content": "Think about how to represent the segments. You can represent a segment from point i to point j as a tuple (i, j). Make sure to account for the fact that segments can share endpoints."
+    },
+    {
+      "content": "When calculating the number of ways to form k segments, consider using dynamic programming. Define a state that represents the number of ways to form segments up to a certain point with a certain number of segments."
+    },
+    {
+      "content": "Consider the base case for your dynamic programming solution. For example, if k = 0, there is exactly one way to select 0 segments, regardless of n. Think about how to build from this base case."
+    },
+    {
+      "content": "When forming your DP transition, think about how you can extend the current segments. If you have already formed j segments, how can you add another segment without overlapping the previous ones?"
+    },
+    {
+      "content": "You may want to iterate through all possible starting points for the new segment and then iterate through all possible ending points, ensuring that you maintain the non-overlapping condition."
+    },
+    {
+      "content": "Remember to apply the modulo operation (10^9 + 7) to your results at every step of the computation to prevent overflow and meet the problem's requirements."
+    },
+    {
+      "content": "Consider edge cases, such as when n is at its minimum value (2) or when k is at its maximum value (n-1). What do these cases imply for the number of segments that can be formed?"
+    },
+    {
+      "content": "Finally, structure your dynamic programming table carefully. You might want to use a 2D array where dp[i][j] represents the number of ways to form j segments using the first i points. Think about how to fill this table based on your earlier insights."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 1000, 1 <= k <= n-1",
+    "Each segment must cover at least two points.",
+    "The segments do not have to cover all points.",
+    "Segments can share endpoints.",
+    "Return the result modulo 10^9 + 7."
+  ]
+}

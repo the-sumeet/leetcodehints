@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of the min-product for a subarray. The min-product is defined as the minimum value in the subarray multiplied by the sum of all elements in that subarray."
+    },
+    {
+      "content": "Consider how to identify all possible subarrays in the given array. Remember that a subarray is a contiguous segment of the array, which means you can use nested loops to explore all possible starting and ending indices."
+    },
+    {
+      "content": "Think about how to efficiently compute the minimum value and the sum of elements for each subarray. You might want to use a sliding window approach or maintain a running sum to avoid recalculating sums repeatedly."
+    },
+    {
+      "content": "Keep in mind the constraints of the problem, particularly the size of the input. With up to 100,000 elements in the array, a naive O(n^2) approach may be too slow. Look for ways to reduce the complexity."
+    },
+    {
+      "content": "One efficient strategy could involve using a stack to help find the next smaller element for each element in the array. This can help you determine the boundaries of subarrays where each element is the minimum."
+    },
+    {
+      "content": "As you find the boundaries for each element, calculate the sum of elements within these boundaries. You can maintain a prefix sum array to quickly compute the sum of any subarray."
+    },
+    {
+      "content": "After determining the minimum for each subarray, calculate the min-product for that subarray. Remember to keep track of the maximum min-product found so far."
+    },
+    {
+      "content": "Don't forget to apply the modulo operation with 10^9 + 7 to the final result to ensure it fits within the required limits."
+    },
+    {
+      "content": "Consider edge cases, such as when the array has only one element. Ensure your solution handles this gracefully and returns the correct min-product."
+    },
+    {
+      "content": "Finally, think about how to structure your code. You might want to define functions for calculating the sum and minimum of subarrays, and then use those functions in your main logic to find the maximum min-product."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Each element in nums is between 1 and 10^7.",
+    "The result should be returned modulo 10^9 + 7.",
+    "Ensure to maximize the min-product before applying the modulo.",
+    "A subarray is defined as a contiguous segment of the array."
+  ]
+}

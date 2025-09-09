@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic structure of the Bitset. You need to initialize a fixed-size array or a similar data structure to represent the bits (0s and 1s). Consider how you will store the bits efficiently."
+    },
+    {
+      "content": "Think about the operations you need to implement. Each operation like `fix`, `unfix`, and `flip` will modify the state of your Bitset. Make a list of these operations and their expected behaviors."
+    },
+    {
+      "content": "When implementing `fix(int idx)`, remember that you only need to change the bit at the specified index to 1 if it isn't already. Ensure you handle the index correctly, keeping in mind that it starts at 0."
+    },
+    {
+      "content": "For the `unfix(int idx)` method, similar logic applies. You should only change the bit to 0 if it is currently 1. Think about how you will check the current state of the bit."
+    },
+    {
+      "content": "The `flip()` method will require you to iterate through all bits and switch their values. Consider how you can do this efficiently, possibly using a loop or a more compact representation of the bits."
+    },
+    {
+      "content": "When implementing `all()`, you need to check if every bit in your Bitset is 1. This could be done by counting the bits or by iterating through them. Think about the best way to achieve this without unnecessary computations."
+    },
+    {
+      "content": "For the `one()` method, you're checking if at least one bit is set to 1. You can stop checking as soon as you find a 1, which can save time compared to checking all bits."
+    },
+    {
+      "content": "The `count()` method should return the total number of bits that are set to 1. You might want to maintain a counter that updates every time you call `fix` or `unfix` to make this operation efficient."
+    },
+    {
+      "content": "In the `toString()` method, you'll need to construct a string representation of the Bitset. Make sure that the string accurately reflects the current state of the bits, using '0' and '1' to represent the respective values."
+    },
+    {
+      "content": "Finally, consider edge cases such as calling `fix` or `unfix` on an index that is out of bounds. Ensure your implementation handles these gracefully, possibly by throwing an exception or ignoring the call."
+    }
+  ],
+  "questionNotes": [
+    "The Bitset is initialized with all bits set to 0.",
+    "Indexing for bits starts from 0.",
+    "The `flip` method toggles all bits, which can affect the results of `all`, `one`, and `count`.",
+    "The `toString` method must return a string representation where each character corresponds to the bit value at that index.",
+    "Constraints indicate that the size of the Bitset can be up to 100,000, and the total number of operations will not exceed this limit."
+  ]
+}

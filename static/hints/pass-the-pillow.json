@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the flow of the pillow passing. The pillow starts with person 1 and moves to person 2, then to person 3, and so on until it reaches person n. After that, it reverses direction."
+    },
+    {
+      "content": "Consider how the pillow's position changes over time. For the first n seconds, the pillow will simply move to the next person in line. After reaching person n, it will start moving back to person 1."
+    },
+    {
+      "content": "Think about how many complete cycles the pillow makes. A full cycle consists of passing the pillow from person 1 to person n and back to person 1, which takes 2n - 2 seconds."
+    },
+    {
+      "content": "To find the effective time after accounting for full cycles, you can use the modulo operation. Calculate `time % (2 * (n - 1))` to determine how many seconds are left after completing full cycles."
+    },
+    {
+      "content": "After calculating the effective time, consider two cases: if the effective time is less than n, the pillow is still moving forward. If it is greater than or equal to n, the pillow has started moving backward."
+    },
+    {
+      "content": "If the effective time is less than n, the position can be directly calculated as `position = effective_time + 1` since it starts from person 1. For example, if effective_time is 3, the pillow is with person 4."
+    },
+    {
+      "content": "If the effective time is greater than or equal to n, you need to calculate how far back the pillow has moved. The formula for the backward movement is `position = n - (effective_time - n)`, which accounts for the reverse direction."
+    },
+    {
+      "content": "Make sure to handle the edge cases where n is the minimum value (2). This will ensure your solution is robust against the smallest inputs."
+    },
+    {
+      "content": "Consider the constraints provided in the problem. Ensure your solution works efficiently within the limits of 2 <= n <= 1000 and 1 <= time <= 1000."
+    },
+    {
+      "content": "Combine all your findings into a single function. Start by calculating the effective time, then determine the position based on whether the pillow is moving forward or backward."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 1000, 1 <= time <= 1000.",
+    "The pillow starts with person 1 and moves to person n before reversing direction.",
+    "Return the index of the person holding the pillow after the specified time."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to generate the coordinates of all cells in a matrix based on their distance from a center cell. The distance is calculated using the Manhattan distance formula: |r1 - r2| + |c1 - c2|."
+    },
+    {
+      "content": "Consider how you can represent the matrix. You can use a nested loop to iterate through all the possible coordinates (i, j) in the matrix, where i ranges from 0 to rows-1 and j ranges from 0 to cols-1."
+    },
+    {
+      "content": "As you iterate through the matrix, calculate the distance from each cell (i, j) to the center cell (rCenter, cCenter). Store these distances along with their coordinates in a list."
+    },
+    {
+      "content": "Remember to use the absolute value function to calculate the distance correctly. You can use Python's built-in abs() function for this purpose: `distance = abs(i - rCenter) + abs(j - cCenter)`."
+    },
+    {
+      "content": "Once you have a list of distances and their corresponding coordinates, you need to sort this list. You can use the sorted function in Python, specifying the distance as the key for sorting."
+    },
+    {
+      "content": "Think about how to structure your list. You might want to create a list of tuples or lists where each element contains the distance and the coordinates, like this: `[(distance, [i, j]), ...]`."
+    },
+    {
+      "content": "Consider edge cases, such as when the matrix is very small (1x1) or when the center is at one of the corners. Ensure your solution handles these cases without errors."
+    },
+    {
+      "content": "After sorting the list by distance, extract just the coordinates from the sorted list to return as your final result. You can do this using a list comprehension."
+    },
+    {
+      "content": "Make sure to return the coordinates in the correct format as specified in the problem statement: a list of lists. For example, `[[0, 0], [0, 1]]`."
+    },
+    {
+      "content": "Finally, implement your solution step by step, testing with the provided examples to ensure it works correctly. Pay attention to the constraints to avoid out-of-bounds errors."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= rows, cols <= 100",
+    "0 <= rCenter < rows",
+    "0 <= cCenter < cols",
+    "Return format: List of coordinates in any order that satisfies distance sorting.",
+    "Distance is calculated using Manhattan distance: |r1 - r2| + |c1 - c2|."
+  ]
+}

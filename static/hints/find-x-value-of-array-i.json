@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation you can perform on the array. You can remove any non-overlapping prefix and suffix, but the remaining array must be non-empty. This means you need to leave at least one element in the middle."
+    },
+    {
+      "content": "Consider the implications of removing prefixes and suffixes. For each possible remaining subarray, you will need to compute the product of its elements. Think about how you can efficiently calculate the product for multiple subarrays."
+    },
+    {
+      "content": "Remember that the product of the remaining elements needs to be evaluated modulo k. This means you should focus on how the product behaves under modulo operations, especially since the product can grow large."
+    },
+    {
+      "content": "Think about how you can iterate through the array to consider all possible prefixes and suffixes. You can use two pointers or nested loops to explore different combinations of prefixes and suffixes."
+    },
+    {
+      "content": "As you compute the products of the remaining elements, maintain a count of how many times each remainder (from 0 to k-1) occurs. This will help you build the result array."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when the array has only one element or when all elements are the same. How would these cases affect the product and the possible remainders?"
+    },
+    {
+      "content": "Consider using a prefix product array to help with calculating the product of the remaining elements efficiently. This can reduce the time complexity of your solution."
+    },
+    {
+      "content": "When calculating the product of the remaining elements, remember to handle the modulo operation correctly to avoid overflow. You can use properties of modulo to simplify your calculations."
+    },
+    {
+      "content": "After calculating the products and their remainders for all valid subarrays, construct the result array. Make sure to initialize it correctly and update the counts based on the remainders you found."
+    },
+    {
+      "content": "Finally, ensure your result array is formatted correctly, with each index corresponding to the remainder values from 0 to k-1. Double-check your logic to ensure you haven’t missed any possible combinations."
+    }
+  ],
+  "questionNotes": [
+    "The input array `nums` consists of positive integers.",
+    "The integer `k` is also positive and defines the range of remainders.",
+    "The result array must have a size of `k`, where each index corresponds to the count of ways to achieve that remainder.",
+    "You can remove empty prefixes and suffixes, but at least one element must remain.",
+    "Constraints: 1 <= nums[i] <= 10^9, 1 <= nums.length <= 10^5, 1 <= k <= 5."
+  ]
+}

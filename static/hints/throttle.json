@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of throttling. Throttling is a technique used to limit the number of times a function is executed over a certain period. Think about how you can implement this in your code."
+    },
+    {
+      "content": "Consider how you will store the time and inputs for each call. You might want to use a list or a dictionary to keep track of the timestamps and their corresponding inputs."
+    },
+    {
+      "content": "When processing the inputs, think about how you will handle the timing. You need to check if the current time minus the last recorded time exceeds a certain threshold to determine if the function can be executed."
+    },
+    {
+      "content": "Make sure to handle edge cases where multiple inputs might come in at the same time. How will you prioritize or process these inputs? Consider if you need to queue them."
+    },
+    {
+      "content": "Think about how you will structure your main function. You might want to create a loop that iterates over the input events and processes them based on their timestamps."
+    },
+    {
+      "content": "Remember to account for the time intervals correctly. For example, if an input comes in at time `t` and the last input was processed at time `t-20`, you should allow processing if `t` is at least 20 seconds after the last processed time."
+    },
+    {
+      "content": "Consider how you will return the results. Will you return a list of all processed inputs, or just the most recent ones? Think about the format that would be most useful."
+    },
+    {
+      "content": "You might need to sort the inputs based on their timestamps before processing them. This ensures that you handle them in the correct order. How will you implement this sorting?"
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases, such as inputs arriving at the same timestamp or very close together. Ensure your logic holds in these scenarios."
+    },
+    {
+      "content": "Your final implementation should ensure that you do not process inputs that arrive too soon after the last processed input. Make sure to track the last processed time accurately and compare it with the current input's time."
+    }
+  ],
+  "questionNotes": [
+    "Inputs are provided as a list of dictionaries with keys 't' for timestamp and 'inputs' for the input values.",
+    "Ensure to handle cases where multiple inputs may arrive at the same timestamp.",
+    "The return format should be clear on what outputs are expected after processing the inputs."
+  ]
+}

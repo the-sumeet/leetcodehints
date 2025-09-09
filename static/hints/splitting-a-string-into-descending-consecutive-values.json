@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by considering the properties of the substrings you need to create. Remember that they must be in descending order and differ by exactly 1. Think about how you can extract substrings from the original string."
+    },
+    {
+      "content": "When you extract a substring, consider how leading zeros might affect the numerical value. For example, '01' is numerically 1, but '1' is also 1. How will you handle these cases when comparing values?"
+    },
+    {
+      "content": "Try to identify the first substring you might extract. What are the possible lengths for this substring? Keep in mind that you need at least two substrings, so the first substring can't take up the entire string."
+    },
+    {
+      "content": "As you extract substrings, think about how you can recursively check the remaining part of the string. You might want to create a helper function that takes the current substring and the remaining string to validate the descending order."
+    },
+    {
+      "content": "Consider using a loop to iterate through possible lengths of the first substring. For each length, convert the substring into its numerical value and check if you can form valid subsequent substrings."
+    },
+    {
+      "content": "When checking subsequent substrings, ensure that the next substring's numerical value is exactly one less than the previous substring. How will you implement this check in your code?"
+    },
+    {
+      "content": "Think about edge cases, such as strings with leading zeros or very short strings. For example, how would '01' be treated differently than '1'? What about strings like '000'? They might have multiple valid splits."
+    },
+    {
+      "content": "You will need to keep track of the last numerical value you validated. How will you pass this value through your recursive calls or iterations to ensure the descending order condition is maintained?"
+    },
+    {
+      "content": "As you build your solution, consider using backtracking. If you find a valid split at any point, you can return true immediately. If you exhaust all options without finding a valid split, return false."
+    },
+    {
+      "content": "Finally, remember to handle the base case of your recursion or loop. If you reach the end of the string and have successfully formed valid substrings, ensure you return true. If not, return false."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 20",
+    "s consists only of digits.",
+    "Substrings must be non-empty.",
+    "Return true if a valid split is possible, false otherwise."
+  ]
+}

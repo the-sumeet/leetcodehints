@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to implement a class that can store a list of words and efficiently search for a word based on a given prefix and suffix."
+    },
+    {
+      "content": "Consider how you will store the words. A simple list could work, but think about how you will search through it for both a prefix and a suffix."
+    },
+    {
+      "content": "Remember that the search function should return the largest index of the word that matches the prefix and suffix. This means you need to keep track of the indices of the words."
+    },
+    {
+      "content": "What data structures could help you efficiently check for prefixes and suffixes? Consider using a Trie for prefixes, but think about how to handle suffixes as well."
+    },
+    {
+      "content": "For suffixes, one approach is to reverse the words and use a Trie-like structure. This way, you can treat suffix searches as prefix searches on the reversed words."
+    },
+    {
+      "content": "When implementing the `f` function, iterate through the list of words and check if each word starts with the given prefix and ends with the given suffix."
+    },
+    {
+      "content": "Make sure to keep track of the largest index found during your search. You can initialize a variable to store this index and update it whenever you find a match."
+    },
+    {
+      "content": "Consider edge cases, such as when the prefix or suffix is longer than the words in the list. What should your function return in those cases?"
+    },
+    {
+      "content": "Think about the constraints given in the problem. You have a maximum of 10,000 words and each word can have a maximum length of 7. This means your solution should be efficient enough to handle multiple queries."
+    },
+    {
+      "content": "When returning the index, remember to return -1 if no matches are found. This is important for handling cases where the prefix and suffix do not match any words."
+    },
+    {
+      "content": "You might want to preprocess the words when initializing the `WordFilter` class. This could help speed up the search function later."
+    },
+    {
+      "content": "If you decide to use a Trie for prefixes, consider how you will structure it. Each node could represent a character, and you might store the indices of words that pass through each node."
+    },
+    {
+      "content": "For the suffix part, if you reverse the words, you can use the same Trie structure to check for suffix matches. Just remember to reverse the input suffix as well."
+    },
+    {
+      "content": "As you implement the `f` function, ensure that you are checking both the prefix and suffix conditions correctly. Use string methods to check for startsWith and endsWith."
+    },
+    {
+      "content": "Finally, make sure to test your implementation with various cases, including edge cases like empty strings, very short words, and cases with no valid matches."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= words.length <= 10^4",
+    "1 <= words[i].length <= 7",
+    "1 <= pref.length, suff.length <= 7",
+    "Return the largest index if multiple matches are found, otherwise return -1."
+  ]
+}

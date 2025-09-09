@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A palindrome reads the same forwards and backwards, like '121' or '1331'. Think about how you can construct such numbers based on their length."
+    },
+    {
+      "content": "Notice that the length of the palindrome, `intLength`, affects how you generate them. For odd lengths, the middle digit can vary, while for even lengths, the first half determines the second half."
+    },
+    {
+      "content": "Consider the range of numbers that can form palindromes of a specific length. For example, for `intLength = 3`, the smallest palindrome is 101 and the largest is 999."
+    },
+    {
+      "content": "Think about how to generate palindromes efficiently. You can construct them by taking the first half of the number and mirroring it. For example, for the first half '12' in a 3-digit palindrome, the full palindrome would be '121'."
+    },
+    {
+      "content": "Remember that leading zeros are not allowed. This means that the first digit of the first half must be non-zero. For instance, if you are generating a 4-digit palindrome, the first half should start from 10 (for 1001) and not from 00."
+    },
+    {
+      "content": "Keep in mind the number of palindromes that can be generated with a given length. For `intLength`, the total number of palindromes is determined by the range of valid first halves. For example, for 3 digits, the first half can range from 10 to 99."
+    },
+    {
+      "content": "When processing the `queries`, ensure you handle cases where the requested palindrome index exceeds the total number of palindromes available for that length. In such cases, return -1."
+    },
+    {
+      "content": "To implement your solution, you might want to precompute all possible palindromes of the given length up to the maximum query value. Store these in a list so you can quickly access them based on the queries."
+    },
+    {
+      "content": "Consider using a loop to generate palindromes based on the first half of the number. For each valid first half, create the full palindrome by mirroring it. For example, if `firstHalf = 12`, then `palindrome = 121`."
+    },
+    {
+      "content": "Finally, ensure your solution efficiently handles up to 50,000 queries. Think about the time complexity of your palindrome generation and how you can minimize repeated calculations."
+    }
+  ],
+  "questionNotes": [
+    "1 <= queries.length <= 5 * 10^4",
+    "1 <= queries[i] <= 10^9",
+    "1 <= intLength <= 15",
+    "Palindromes cannot have leading zeros.",
+    "Return -1 if no palindrome exists for the given query."
+  ]
+}

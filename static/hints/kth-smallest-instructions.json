@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement options. Bob can only move 'H' (right) or 'V' (down). This means that for a destination at (row, column), Bob will make exactly 'row' vertical moves and 'column' horizontal moves."
+    },
+    {
+      "content": "Consider how many total moves Bob needs to make. The total number of moves is the sum of the row and column values, which is 'row + column'."
+    },
+    {
+      "content": "Think about how to represent the sequence of moves. You can represent the moves as a string composed of 'H's and 'V's, where the number of 'H's is equal to 'column' and the number of 'V's is equal to 'row'."
+    },
+    {
+      "content": "To find the k-th lexicographically smallest instruction set, you need to generate all possible combinations of 'H' and 'V'. However, generating all combinations can be inefficient for larger inputs."
+    },
+    {
+      "content": "Instead of generating all combinations, consider using combinatorial counting. You can count how many combinations start with 'H' or 'V' to decide which prefix to use for the k-th instruction."
+    },
+    {
+      "content": "Use the binomial coefficient to calculate how many valid sequences can be formed with a certain number of 'H's and 'V's left. This will help you determine if the k-th sequence starts with 'H' or 'V'."
+    },
+    {
+      "content": "The binomial coefficient nCr(a, b) gives you the number of ways to choose b elements from a elements. In this case, it will help you calculate how many sequences can be formed with the remaining moves."
+    },
+    {
+      "content": "Remember that k is 1-indexed. Adjust your calculations accordingly when determining whether to use 'H' or 'V' based on the counts of combinations."
+    },
+    {
+      "content": "As you build the instruction string, reduce the counts of 'H' and 'V' appropriately after each decision. This will allow you to construct the sequence step by step."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when k exceeds the total number of possible combinations. This can happen if k is too large for the given destination."
+    },
+    {
+      "content": "Keep track of the current position and the remaining moves as you construct the instruction string. This will ensure you don't exceed the destination coordinates."
+    },
+    {
+      "content": "If you reach a point where you can only move in one direction (either all 'H's or all 'V's left), then you can directly append those moves to your instruction string."
+    },
+    {
+      "content": "Consider using a loop or recursion to build the instruction string. Each iteration should decide whether to append 'H' or 'V' based on the remaining counts and the value of k."
+    },
+    {
+      "content": "When appending 'H', reduce the count of 'H' and calculate the number of combinations possible with the remaining moves. If this number is greater than or equal to k, append 'H'. Otherwise, append 'V' and adjust k."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient, especially since the maximum values for row and column are 15, leading to potentially many combinations. Optimize your binomial coefficient calculations."
+    }
+  ],
+  "questionNotes": [
+    "Bob can only move right ('H') or down ('V').",
+    "The destination is given as (row, column).",
+    "k is 1-indexed, meaning the first instruction is k=1.",
+    "You need to return the k-th lexicographically smallest instruction string.",
+    "Constraints: 1 <= row, column <= 15; 1 <= k <= nCr(row + column, row)."
+  ]
+}

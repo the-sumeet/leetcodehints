@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input structure. You have three arrays: `creators`, `ids`, and `views`. Each index `i` corresponds to a video created by `creators[i]`, with ID `ids[i]` and `views[i]` views."
+    },
+    {
+      "content": "You need to calculate the popularity of each creator. This means summing up the views for all videos created by each creator. Consider using a dictionary to map each creator to their total views."
+    },
+    {
+      "content": "As you calculate the popularity, keep track of the most viewed video for each creator. You can use another dictionary to store the maximum views and the corresponding video ID for each creator."
+    },
+    {
+      "content": "Remember to handle cases where a creator has multiple videos with the same maximum views. You should store the lexicographically smallest ID in such cases."
+    },
+    {
+      "content": "Once you have the total popularity for each creator, determine the maximum popularity value. You can find this by iterating through your popularity dictionary."
+    },
+    {
+      "content": "After identifying the highest popularity, gather all creators who have this maximum value. This may involve another loop through your popularity dictionary."
+    },
+    {
+      "content": "For each of the most popular creators, retrieve their most viewed video ID. Make sure to check if there are ties in the view counts and apply the lexicographical order rule."
+    },
+    {
+      "content": "Your output should be a 2D array where each entry is a pair of creator and their most viewed video ID. Ensure you format this correctly before returning."
+    },
+    {
+      "content": "Consider edge cases, such as when all videos have zero views, or when all creators are the same. How should your function behave in these scenarios?"
+    },
+    {
+      "content": "Finally, make sure to test your solution with various inputs to validate correctness. Pay attention to the constraints provided in the problem statement, especially regarding the lengths of the arrays."
+    }
+  ],
+  "questionNotes": [
+    "The input arrays `creators`, `ids`, and `views` are all of the same length, denoted as n.",
+    "Creators can have multiple videos, and IDs are not unique.",
+    "If multiple creators have the same highest popularity, include all of them in the result.",
+    "If a creator has multiple videos with the same highest views, return the lexicographically smallest ID.",
+    "The output format is a 2D array where each entry is [creator, id]."
+  ]
+}

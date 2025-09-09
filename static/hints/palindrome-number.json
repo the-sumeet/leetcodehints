@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindrome is. A palindrome reads the same forwards and backwards. For example, 121 is a palindrome, but -121 is not."
+    },
+    {
+      "content": "Consider the constraints provided: the integer x can range from -2^31 to 2^31 - 1. What implications does this have for negative numbers?"
+    },
+    {
+      "content": "Think about how you can check if a number is a palindrome without converting it to a string. What properties of numbers can you leverage?"
+    },
+    {
+      "content": "If x is negative, you can immediately return false. Why is that the case? Think about the structure of negative numbers."
+    },
+    {
+      "content": "For positive numbers, consider how you can reverse the digits of the number mathematically. What operations can you use to extract the last digit?"
+    },
+    {
+      "content": "As you reverse the number, keep track of the original number. You will need to compare the reversed number to the original number at the end."
+    },
+    {
+      "content": "To reverse the number, repeatedly take the last digit using modulus operation (x % 10) and build the reversed number. How would you do this in a loop?"
+    },
+    {
+      "content": "Remember to remove the last digit from x after extracting it. You can do this using integer division (x //= 10). What will happen when x becomes 0?"
+    },
+    {
+      "content": "Consider edge cases like single-digit numbers. Are all single-digit numbers palindromes? What about numbers that end with zero?"
+    },
+    {
+      "content": "Finally, once you have the reversed number, compare it to the original number. If they are equal, return true; otherwise, return false. How will you implement this final check?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: -2^31 <= x <= 2^31 - 1",
+    "Negative numbers cannot be palindromes.",
+    "Single-digit numbers are always palindromes.",
+    "Numbers that end with zero (except 0 itself) cannot be palindromes."
+  ]
+}

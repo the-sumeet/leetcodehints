@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input matrix. It's a 2D array where each element represents a non-negative integer. Make sure to visualize how squares can be formed within this matrix."
+    },
+    {
+      "content": "Consider how to calculate the sum of elements in a square submatrix. You will need to determine the top-left corner of the square and its side length to compute the sum efficiently."
+    },
+    {
+      "content": "Think about how you can optimize the sum calculation. Instead of recalculating the sum for every square from scratch, consider using a prefix sum array to store cumulative sums."
+    },
+    {
+      "content": "A prefix sum array allows you to compute the sum of any submatrix in constant time after an initial preprocessing step. Remember, the sum of a square can be derived using the prefix sums."
+    },
+    {
+      "content": "When checking for the maximum side length, you should iterate through potential side lengths starting from the largest possible down to 1. This way, you can return the first valid side length you find."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when the matrix is very small (1x1) or when the threshold is very low (e.g., 0). What should you return in these situations?"
+    },
+    {
+      "content": "Make sure to consider the constraints given in the problem. The maximum dimensions of the matrix are 300x300, which means your solution needs to be efficient enough to handle up to 90,000 elements."
+    },
+    {
+      "content": "Think about the implications of the threshold. If all elements in the matrix are larger than the threshold, what should your function return? How can you quickly determine this?"
+    },
+    {
+      "content": "As you implement your solution, ensure that you are checking the sum of each square against the threshold correctly. You may want to include debug statements to verify your sums during development."
+    },
+    {
+      "content": "Finally, consider edge cases where the maximum square size might be larger than any valid square. You need to ensure that your function correctly identifies the largest square that meets the threshold criteria."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == mat.length, n == mat[i].length, 1 <= m, n <= 300",
+    "Each mat[i][j] is between 0 and 10^4.",
+    "Threshold is between 0 and 10^5.",
+    "Return 0 if no valid square exists.",
+    "The maximum side length should be returned, not the area or sum."
+  ]
+}

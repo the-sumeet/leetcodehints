@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'special substring' is. A substring is special if all characters in it do not appear anywhere else in the string. For example, in 'abcdbaefab', 'cd' is special because 'c' and 'd' only appear there."
+    },
+    {
+      "content": "Consider how to identify characters that are unique to certain substrings. You might want to create a frequency map of characters to see where they appear in the string. This will help you determine which characters can form special substrings."
+    },
+    {
+      "content": "Remember that the special substrings must be disjoint. This means once you select a substring, you cannot select another substring that shares any characters with it. Think about how you can track used characters."
+    },
+    {
+      "content": "Take into account the condition that the special substring cannot be the entire string. This means your substrings must be at least one character long, but less than the length of the string."
+    },
+    {
+      "content": "Try to find all possible special substrings in the string first. You can do this by iterating through the string and checking for segments where characters do not repeat outside of that segment."
+    },
+    {
+      "content": "As you find special substrings, keep a count of how many you have found. If at any point you find k or more special substrings, you can immediately return true."
+    },
+    {
+      "content": "Consider edge cases such as when k = 0. In this case, you should return true immediately since selecting zero substrings is always possible."
+    },
+    {
+      "content": "Think about how to efficiently check for overlaps between substrings. You might want to keep track of the indices of the characters used in the selected substrings to ensure they do not overlap."
+    },
+    {
+      "content": "Once you have identified potential special substrings, you can use a backtracking approach to explore combinations of these substrings. This will help you check if you can select exactly k disjoint substrings."
+    },
+    {
+      "content": "Finally, after exploring combinations, if you have not found k disjoint special substrings, return false. Make sure to consider all possible combinations to ensure accuracy."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n == s.length <= 5 * 10^4",
+    "0 <= k <= 26",
+    "s consists only of lowercase English letters.",
+    "Special substrings cannot overlap and cannot be the entire string."
+  ]
+}

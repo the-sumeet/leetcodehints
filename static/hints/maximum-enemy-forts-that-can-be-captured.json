@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the positions of your forts (where forts[i] == 1). You need to move from these positions to capture enemy forts. Make sure to store these indices in a list for easy access."
+    },
+    {
+      "content": "Next, consider the positions of enemy forts (where forts[i] == 0). You will need to check the range between your fort and any empty position to see if you can capture enemy forts in between."
+    },
+    {
+      "content": "Remember that you can only move your army over enemy forts. This means that the path between your fort and the target position must only contain enemy forts (0s) and cannot include any positions with -1 or 1."
+    },
+    {
+      "content": "When moving from one of your forts to an empty position, count how many enemy forts are captured. You can do this by iterating through the indices between your fort and the empty position and counting the zeros."
+    },
+    {
+      "content": "Consider both directions for moving your army: left and right. For each of your forts, check both possible target positions (to the left and to the right) to ensure you capture the maximum number of enemy forts."
+    },
+    {
+      "content": "Edge cases are important! If there are no forts under your command (no 1s in the array), immediately return 0 since you cannot move your army."
+    },
+    {
+      "content": "Make sure to handle cases where there are no enemy forts between your fort and the target position. If the path contains any -1s, you cannot capture any forts."
+    },
+    {
+      "content": "As you implement the solution, keep track of the maximum number of captured forts across all possible moves. Use a variable to store this maximum count and update it whenever you find a larger count."
+    },
+    {
+      "content": "Think about how to efficiently iterate through the array. You might want to use nested loops: one for your forts and one for potential empty positions, but ensure you only check valid ranges."
+    },
+    {
+      "content": "Finally, return the maximum count of captured enemy forts after checking all possible moves. If no moves were possible, ensure your function returns 0."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= forts.length <= 1000",
+    "Values in forts can be -1 (no fort), 0 (enemy fort), or 1 (your fort).",
+    "The output should be the maximum number of enemy forts captured, or 0 if no moves are possible.",
+    "Indexing is 0-based, so ensure to handle indices correctly."
+  ]
+}

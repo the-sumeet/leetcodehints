@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. Each node has a parent, and you can represent the tree using an adjacency list. This will help you traverse the tree easily."
+    },
+    {
+      "content": "Focus on how to determine the subtree for each node. A subtree rooted at node `u` includes `u` and all its descendants. You can use a Depth-First Search (DFS) to explore each subtree."
+    },
+    {
+      "content": "Consider how to evaluate whether a subset of nodes is 'good'. A subset is good if no digit from 0 to 9 appears more than once in the decimal representations of the selected nodes."
+    },
+    {
+      "content": "Think about how to track the digits used in the values of the nodes. You could use a bitmask to represent the digits, where each bit corresponds to a digit from 0 to 9."
+    },
+    {
+      "content": "When calculating the score for a good subset, remember that the score is the sum of the values of the nodes in that subset. Keep track of the maximum score for each subtree."
+    },
+    {
+      "content": "As you traverse the tree, you need to combine the results of child nodes into the parent node's score. This requires careful management of the digit counts."
+    },
+    {
+      "content": "Consider edge cases where a node's value might have repeated digits. For example, if a node has the value 22, it can't be part of a good subset with any other node that uses the digit 2."
+    },
+    {
+      "content": "Make sure to handle the modulo operation correctly, as the final answer should be returned modulo 10^9 + 7. This is important to prevent overflow."
+    },
+    {
+      "content": "While calculating the maxScore for each node, ensure that you include the node itself in the score calculation. The score of a node is not just from its descendants."
+    },
+    {
+      "content": "You can use a recursive function to compute the maxScore for each node. In this function, pass the current node's digit mask and value to its children."
+    },
+    {
+      "content": "Remember to initialize the digit mask and score for each node before processing its children. This ensures that you start with a clean state for each subtree."
+    },
+    {
+      "content": "When merging results from child nodes, check if adding a child's value would violate the 'good' condition. If it does, you need to skip that child or adjust the mask."
+    },
+    {
+      "content": "Consider how to efficiently check if adding a new node's value would cause a digit conflict. You can use bitwise operations to check if the digits overlap."
+    },
+    {
+      "content": "After calculating maxScore for all nodes, sum them up carefully. Ensure that you apply the modulo operation to this final sum to get the correct result."
+    },
+    {
+      "content": "Finally, test your implementation with edge cases, such as a tree with only one node or nodes with maximum values to ensure your solution handles all scenarios."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == vals.length <= 500",
+    "1 <= vals[i] <= 10^9",
+    "par.length == n, par[0] == -1, 0 <= par[i] < n for i in [1, n - 1]",
+    "The input is generated such that the parent array par represents a valid tree.",
+    "Return the answer modulo 10^9 + 7."
+  ]
+}

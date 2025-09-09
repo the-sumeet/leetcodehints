@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the rectangles. Each rectangle is defined by two points: the bottom-left and the top-right corners. Make sure you can extract these coordinates correctly from the input array."
+    },
+    {
+      "content": "Consider how to calculate the area of a single rectangle. The area can be computed as: `area = (x2 - x1) * (y2 - y1)`, where (x1, y1) is the bottom-left corner and (x2, y2) is the top-right corner."
+    },
+    {
+      "content": "Think about how to handle overlapping rectangles. Simply summing the areas of all rectangles will count overlapping regions multiple times. You'll need a strategy to account for this."
+    },
+    {
+      "content": "One approach to manage overlaps is to use a sweep line algorithm. This involves processing events (like the start and end of rectangles) in a sorted order along one axis."
+    },
+    {
+      "content": "When using the sweep line technique, you can maintain a data structure to keep track of active rectangles. Consider using a balanced binary search tree or an interval tree for this purpose."
+    },
+    {
+      "content": "As you process each event from the sweep line, you will need to calculate the union of the active intervals. This will help you determine the total height covered by the rectangles at any given vertical position."
+    },
+    {
+      "content": "Remember to handle the vertical positions carefully. You should sort the events by their x-coordinates, and for each unique x-coordinate, calculate the area covered by the active rectangles."
+    },
+    {
+      "content": "When calculating the area for a segment, multiply the width (difference in x-coordinates) by the total height covered by the active intervals. This will give you the area for that segment."
+    },
+    {
+      "content": "Don't forget to take the modulo of the area with `10^9 + 7` as specified in the problem statement. This is essential to avoid overflow and meet the requirements."
+    },
+    {
+      "content": "Consider edge cases such as rectangles that are completely contained within others. Make sure your algorithm can handle these without double counting the area."
+    },
+    {
+      "content": "Also think about the case where rectangles touch at the edges but do not overlap. Ensure that your logic correctly identifies these situations to avoid incorrect area calculations."
+    },
+    {
+      "content": "As you implement the solution, keep track of the total area computed so far. Make sure to accumulate the areas correctly as you process each event in the sweep line."
+    },
+    {
+      "content": "Be mindful of the constraints given in the problem. With up to 200 rectangles and coordinates up to `10^9`, your solution should be efficient in both time and space."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various inputs, including edge cases like rectangles with the same coordinates or very large rectangles that cover a significant area."
+    },
+    {
+      "content": "Finally, once you have a working implementation, review your code for clarity and efficiency. Ensure that it adheres to the problem constraints and handles all specified cases."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= rectangles.length <= 200",
+    "rectangles[i].length == 4",
+    "0 <= x1, y1, x2, y2 <= 10^9",
+    "x1 <= x2 and y1 <= y2 for all rectangles",
+    "All rectangles have non-zero area.",
+    "Return the total area modulo 10^9 + 7."
+  ]
+}

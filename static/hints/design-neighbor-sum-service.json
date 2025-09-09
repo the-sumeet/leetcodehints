@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the grid. It is a 2D array of size n x n, where n is between 3 and 10. Each element in the grid is distinct and falls within the range from 0 to n^2 - 1."
+    },
+    {
+      "content": "When implementing the NeighborSum class, you need to store the grid in an instance variable. This will allow you to access it in both the adjacentSum and diagonalSum methods."
+    },
+    {
+      "content": "For the adjacentSum method, remember that you are looking for neighbors directly above, below, left, and right of the specified value. Think about how you can determine the row and column of the value to find these neighbors."
+    },
+    {
+      "content": "Consider edge cases when the value is located at the edges or corners of the grid. For example, if the value is at (0, 0), it won't have a neighbor above or to the left."
+    },
+    {
+      "content": "You can use a list of direction vectors to simplify the neighbor lookup. For adjacent neighbors, the directions can be represented as: `[(0, 1), (1, 0), (0, -1), (-1, 0)]`."
+    },
+    {
+      "content": "In the diagonalSum method, the diagonal neighbors are located at the corners adjacent to the value. The direction vectors for diagonal neighbors can be: `[(1, 1), (1, -1), (-1, 1), (-1, -1)]`."
+    },
+    {
+      "content": "Make sure to validate that the calculated neighbor indices are within the bounds of the grid before accessing them. This will prevent index out-of-bounds errors."
+    },
+    {
+      "content": "When calculating the sums, initialize a variable to accumulate the total. Iterate through the valid neighbor indices and add their values to this variable."
+    },
+    {
+      "content": "Don't forget to handle the case where the provided value does not exist in the grid. You can use a dictionary to map values to their coordinates for quick lookup."
+    },
+    {
+      "content": "In your final implementation, ensure that both methods return the correct sums based on the neighbors found. You might want to test with various grid configurations to ensure accuracy."
+    }
+  ],
+  "questionNotes": [
+    "Grid size n is between 3 and 10.",
+    "Elements in the grid are distinct and range from 0 to n^2 - 1.",
+    "Ensure to handle edge cases for elements at the borders of the grid.",
+    "Return format for methods is an integer sum.",
+    "At most 2 * n^2 calls will be made to adjacentSum and diagonalSum."
+  ]
+}

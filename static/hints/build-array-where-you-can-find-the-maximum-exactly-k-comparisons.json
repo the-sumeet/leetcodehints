@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the array. You need to create an array of size `n` where each element is between `1` and `m`. This means the values in your array are limited to a specific range."
+    },
+    {
+      "content": "Consider how the search cost `k` relates to the maximum element in the array. The search cost is defined as the number of comparisons needed to find the maximum element. Think about how the maximum element's position affects this count."
+    },
+    {
+      "content": "Remember that if `k` is `0`, the only valid array is one where all elements are the same. This is because no comparisons would be needed if there is no variation in the values."
+    },
+    {
+      "content": "If `k` is greater than `n`, it is impossible to find the maximum with that many comparisons. This is because you can make at most `n-1` comparisons in an array of size `n`."
+    },
+    {
+      "content": "Identify the maximum value in the array. The maximum element will be the one that is compared the most. How many times can you place this maximum element in the array while still achieving exactly `k` comparisons?"
+    },
+    {
+      "content": "Think about the distribution of the maximum element in the array. If you have `x` occurrences of the maximum element, how does that affect the number of comparisons needed to determine it as the maximum?"
+    },
+    {
+      "content": "If the maximum element appears `x` times, the number of comparisons needed to find it is `k = n - x`. This means you should set up an equation based on the value of `k` to find valid values of `x`."
+    },
+    {
+      "content": "Next, consider how many ways you can fill the remaining `n - x` positions in the array with values less than the maximum. This will help you calculate the total combinations."
+    },
+    {
+      "content": "Use combinatorial mathematics to count the arrangements. For example, if you have `x` maximum elements and `n - x` other elements, how can you arrange them in the array?"
+    },
+    {
+      "content": "Make sure to account for the fact that the values in the array must be between `1` and `m`. This limits the choices you have for the non-maximum values."
+    },
+    {
+      "content": "Consider edge cases where `m` is `1`. In this case, the only array possible is an array of all `1`s, and you need to check if that matches the required `k` comparisons."
+    },
+    {
+      "content": "When calculating the number of combinations, remember to use modular arithmetic to keep your results manageable, as the answer can grow large."
+    },
+    {
+      "content": "Think about how to implement a loop or recursive function to iterate through possible values of `x` (the count of the maximum) and calculate valid configurations for each."
+    },
+    {
+      "content": "Finally, ensure that your final count of valid arrays respects the modulo constraint of `10^9 + 7`. This is crucial for the final output."
+    },
+    {
+      "content": "You are close to the solution! Set up your calculations based on the derived values of `x` and the remaining positions. Count the valid configurations and return the result modulo `10^9 + 7`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 50, 1 <= m <= 100, 0 <= k <= n.",
+    "The array must contain positive integers only.",
+    "The search cost k represents the exact number of comparisons needed to find the maximum.",
+    "If k = 0, all elements must be the same.",
+    "If k > n, return 0 since it's impossible to have that many comparisons."
+  ]
+}

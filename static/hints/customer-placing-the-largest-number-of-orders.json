@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you can count the number of orders placed by each customer. You might want to group the data by `customer_number` and then count the `order_number` for each group."
+    },
+    {
+      "content": "Consider using an aggregate function in SQL, such as `COUNT()`, to help you tally the orders for each customer. This function will return the total number of orders for each `customer_number`."
+    },
+    {
+      "content": "Remember that you need to group your results by `customer_number`. This can be done using the `GROUP BY` clause in your SQL query."
+    },
+    {
+      "content": "Once you have the counts of orders for each customer, you need to identify the maximum count. Think about how you can use the `MAX()` function to achieve this."
+    },
+    {
+      "content": "After finding the maximum count of orders, you will need to filter your results to return only the customer(s) who match this maximum count. This can be done using a `HAVING` clause."
+    },
+    {
+      "content": "Consider the case where you might have multiple customers with the same maximum number of orders. Your solution should be able to handle this scenario gracefully."
+    },
+    {
+      "content": "Make sure to pay attention to the output format. You need to return the `customer_number` in a specific format, so ensure your final result matches the expected structure."
+    },
+    {
+      "content": "You can use a subquery to first calculate the counts of orders per customer, and then select the customer(s) with the maximum count from that result."
+    },
+    {
+      "content": "Think about edge cases, such as when there are no orders at all. How will your query handle such situations? Ensure that your logic accounts for the possibility of an empty result set."
+    },
+    {
+      "content": "Finally, put all the pieces together: Write a SQL query that counts orders, finds the maximum, and retrieves the corresponding `customer_number`. Remember to test your query with the provided sample data."
+    }
+  ],
+  "questionNotes": [
+    "The `order_number` is the primary key, ensuring unique values.",
+    "The problem guarantees that exactly one customer will have placed more orders than any other.",
+    "If multiple customers have the same maximum number of orders, consider how to modify your query to return all of them.",
+    "The output format requires only the `customer_number` in the result."
+  ]
+}

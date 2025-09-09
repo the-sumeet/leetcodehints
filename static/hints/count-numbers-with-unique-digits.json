@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, consider the range of numbers we need to count. The problem states that we need to count numbers from 0 to 10^n - 1. What does this mean for n = 0?"
+    },
+    {
+      "content": "When n = 0, the only number in the range is 0 itself. So, what should your output be for this case? Think about how to handle this edge case."
+    },
+    {
+      "content": "For n = 1, you need to count numbers from 0 to 9. How many of these numbers have unique digits? Can you list them out?"
+    },
+    {
+      "content": "Now, consider n = 2. You need to count numbers from 0 to 99. Remember that numbers like 11, 22, etc., have repeating digits. How can you systematically exclude these?"
+    },
+    {
+      "content": "Think about how to construct numbers with unique digits. For a number with d digits, the first digit can't be 0 (unless it's just 0). How does this affect your counting?"
+    },
+    {
+      "content": "For a 2-digit number, the first digit can be chosen from 1 to 9 (9 options), and the second digit can be chosen from the remaining digits (0-9 excluding the first digit). How would you calculate the total combinations?"
+    },
+    {
+      "content": "You can generalize this counting method for any n. For each digit position, how many choices do you have based on the digits already chosen?"
+    },
+    {
+      "content": "Consider using a loop or recursion to calculate the count of unique digit numbers for each value of d from 1 to n. How would you accumulate these counts?"
+    },
+    {
+      "content": "Don't forget to include the count for the case when n = 0. How will you incorporate this into your final count?"
+    },
+    {
+      "content": "As a final step, ensure your function handles the maximum constraint of n = 8 efficiently. What optimizations or considerations might you need for larger values of n?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= n <= 8",
+    "Return the count of all numbers with unique digits in the range 0 <= x < 10^n.",
+    "Handle the edge case when n = 0 separately.",
+    "Unique digits mean no digit can repeat in a number."
+  ]
+}

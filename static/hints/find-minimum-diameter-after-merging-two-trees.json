@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the diameter of a tree. The diameter is the longest path between any two nodes in the tree. Consider how this concept applies to both trees you have."
+    },
+    {
+      "content": "Remember that each tree is defined by its edges. You need to represent both trees using the given edge lists. Think about how you can use an adjacency list or a similar structure to represent the trees."
+    },
+    {
+      "content": "To compute the diameter of each tree, you can use a two-pass BFS (Breadth-First Search) or DFS (Depth-First Search). The first pass finds the farthest node from an arbitrary starting node, and the second pass finds the farthest node from that node."
+    },
+    {
+      "content": "Consider the implications of merging the two trees. When you add an edge between a node from the first tree and a node from the second tree, think about how this affects the overall diameter."
+    },
+    {
+      "content": "The new diameter will depend on the longest paths in both trees and the distance between the nodes you choose to connect. Keep track of the maximum distances from the root nodes of both trees."
+    },
+    {
+      "content": "When you calculate the distances from the root of each tree, remember to store these distances in a way that allows you to easily access the longest paths for each node."
+    },
+    {
+      "content": "Consider the scenario where you connect the farthest node from tree 1 to the farthest node from tree 2. This might yield a significant increase in diameter, but you should explore other combinations as well."
+    },
+    {
+      "content": "You can optimize your search for the best connection by maintaining the longest distance from each node in both trees. This will help you quickly evaluate potential edges to add."
+    },
+    {
+      "content": "Think about edge cases where one of the trees has only one node. How would the diameter change in such cases when connecting to the other tree?"
+    },
+    {
+      "content": "Make sure to consider all possible pairs of nodes from both trees when evaluating potential edges to add. This brute-force approach may seem inefficient, but it will help you understand the problem better."
+    },
+    {
+      "content": "After calculating the potential diameters for each connection, you will need to find the minimum among them. This will be your result."
+    },
+    {
+      "content": "Remember that the input constraints allow for a large number of nodes in each tree. Think about how you can ensure your solution is efficient enough to handle the upper limits."
+    },
+    {
+      "content": "When implementing your solution, be mindful of the indexing used in the edges. Ensure that you correctly reference nodes based on the problem's indexing conventions."
+    },
+    {
+      "content": "As you finalize your approach, consider how you will handle cases where multiple connections yield the same diameter. You should still return the minimum diameter found."
+    },
+    {
+      "content": "Before you finalize your solution, test it with various edge cases, including trees with varying structures (e.g., skewed trees, balanced trees) to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n, m <= 10^5; edges1.length == n - 1; edges2.length == m - 1.",
+    "Both edges1 and edges2 represent valid trees.",
+    "Return the minimum possible diameter after merging the two trees.",
+    "Consider edge cases with trees having only one node."
+  ]
+}

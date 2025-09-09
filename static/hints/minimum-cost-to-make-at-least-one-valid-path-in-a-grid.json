@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid's structure and how the signs dictate movement. Each cell has a specific direction to move, which can lead you outside the grid. Identify how these movements can form a path."
+    },
+    {
+      "content": "Consider the starting point (0, 0) and the target point (m - 1, n - 1). Your goal is to find a way to reach the target while following the signs. Think about what happens if the sign points out of bounds."
+    },
+    {
+      "content": "Since you can change the sign of a cell at a cost of 1, think about how many signs you might need to change to create a valid path. Start by exploring paths that require no changes."
+    },
+    {
+      "content": "Use a breadth-first search (BFS) or Dijkstra’s algorithm to explore the grid. This will help you track the cost of changing signs as you navigate through the grid."
+    },
+    {
+      "content": "When implementing BFS, consider using a priority queue to always expand the least costly option first. This will help you find the minimum cost to create a valid path."
+    },
+    {
+      "content": "Remember to mark cells as visited to prevent cycles and unnecessary processing. You can also keep track of the cost associated with reaching each cell."
+    },
+    {
+      "content": "Think about edge cases, such as when the grid is very small (1x1 or 1xN). How does the movement work in those scenarios? Can you reach the target without any changes?"
+    },
+    {
+      "content": "Consider the implications of changing a sign. If you change a sign to point in a direction that allows you to reach the target, how does that affect your overall path and cost?"
+    },
+    {
+      "content": "When changing a sign, ensure that the new direction is valid and does not lead to an infinite loop or out of bounds. Validate the new position after each change."
+    },
+    {
+      "content": "As you explore paths, keep track of the minimum cost encountered. If you find a valid path, compare its cost with previously found paths to ensure you have the minimum."
+    },
+    {
+      "content": "If you reach the bottom-right corner, check if the current path is valid. If it is valid, record the cost. If not, continue exploring other options."
+    },
+    {
+      "content": "Consider implementing a visited array or set to track which cells have been processed with a specific cost. This can help avoid redundant calculations."
+    },
+    {
+      "content": "Think about how to handle cells that point to themselves or create cycles. You may need to implement additional checks to ensure these cases are handled correctly."
+    },
+    {
+      "content": "As you approach a solution, ensure that your algorithm efficiently handles the grid size limits (up to 100x100). Optimize your pathfinding to minimize unnecessary checks."
+    },
+    {
+      "content": "Finally, once you have a working implementation, test it against various edge cases and sample inputs to ensure it handles all scenarios correctly, including those that require multiple changes."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == grid.length, n == grid[i].length, 1 <= m, n <= 100.",
+    "Each cell's sign can point outside the grid, which may lead to invalid paths.",
+    "You can change each cell's sign only once at a cost of 1.",
+    "The goal is to return the minimum cost to create at least one valid path from (0, 0) to (m - 1, n - 1)."
+  ]
+}

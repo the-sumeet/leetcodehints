@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a safe node is. A safe node is one from which all paths lead to terminal nodes. Terminal nodes are those without outgoing edges."
+    },
+    {
+      "content": "Consider how you might represent the graph. You have a list of lists, where each index represents a node and the inner list contains its adjacent nodes. Think about how you can traverse this structure."
+    },
+    {
+      "content": "You may want to use Depth-First Search (DFS) or Breadth-First Search (BFS) to explore the graph. Both methods can help you determine whether a node leads to a terminal node."
+    },
+    {
+      "content": "Think about how to keep track of visited nodes during your traversal. You can use a set or an array to mark nodes as visited, which will help prevent cycles from causing infinite loops."
+    },
+    {
+      "content": "Consider the implications of cycles in the graph. If a node is part of a cycle, it cannot be a safe node since it can lead back to itself, thus failing to reach a terminal node."
+    },
+    {
+      "content": "You can use a reverse approach: start from terminal nodes and mark them as safe. Then, propagate this information backward through the graph to find all safe nodes."
+    },
+    {
+      "content": "When marking nodes as safe, think about how you can determine if all adjacent nodes are safe. If all neighbors of a node are safe, then that node is also safe."
+    },
+    {
+      "content": "Remember to sort the final list of safe nodes before returning it, as the problem specifies that the output should be in ascending order."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when the graph has only one node or when all nodes form a cycle. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "As a final step, consider how to structure your function to return the result. You should return an array of safe nodes, ensuring it is sorted. Think about how you will collect and return these nodes."
+    }
+  ],
+  "questionNotes": [
+    "The graph is represented as a 0-indexed 2D array.",
+    "A node is terminal if it has no outgoing edges.",
+    "Safe nodes lead to terminal nodes or other safe nodes.",
+    "Return the list of safe nodes sorted in ascending order.",
+    "Constraints: 1 <= n <= 10^4, 0 <= graph[i].length <= n, 0 <= graph[i][j] <= n - 1."
+  ]
+}

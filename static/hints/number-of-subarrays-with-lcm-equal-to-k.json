@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a subarray. A subarray is a contiguous part of the array. For example, in the array [1, 2, 3], the subarrays include [1], [2], [3], [1, 2], [2, 3], and [1, 2, 3]."
+    },
+    {
+      "content": "Remember that the least common multiple (LCM) of a set of numbers is the smallest number that all the numbers divide into without a remainder. For instance, LCM(2, 3) = 6."
+    },
+    {
+      "content": "Consider how you can calculate the LCM of a subarray. You can use the relationship between LCM and the greatest common divisor (GCD): LCM(a, b) = (a * b) / GCD(a, b). This will be useful for calculating the LCM iteratively."
+    },
+    {
+      "content": "Think about how to iterate through all possible subarrays. You can use a nested loop where the outer loop picks the starting index and the inner loop picks the ending index of the subarray."
+    },
+    {
+      "content": "When calculating the LCM for each subarray, keep in mind that if at any point the LCM exceeds k, you can break out of the inner loop early. This will save time and unnecessary calculations."
+    },
+    {
+      "content": "Pay attention to the constraints: both nums[i] and k are between 1 and 1000. This means that the LCM will also be manageable in size, but you should still handle cases where the LCM might exceed k."
+    },
+    {
+      "content": "Consider edge cases where k is less than the smallest element in nums. In such cases, no subarray can have an LCM equal to k."
+    },
+    {
+      "content": "You should also consider cases where k is equal to 1. The only subarray that can have an LCM of 1 is a subarray containing only the number 1."
+    },
+    {
+      "content": "As you implement your solution, keep a count of how many subarrays have an LCM equal to k. You can initialize a counter at the start and increment it whenever you find a valid subarray."
+    },
+    {
+      "content": "Finally, remember to return the count of valid subarrays after you finish checking all possible subarrays. Make sure your return statement is correctly formatted to match the expected output."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 1000",
+    "1 <= nums[i], k <= 1000",
+    "Subarrays must be contiguous and non-empty.",
+    "The output should be the count of subarrays whose LCM equals k."
+  ]
+}

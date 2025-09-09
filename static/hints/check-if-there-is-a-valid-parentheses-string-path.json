@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic properties of valid parentheses strings. A valid string must have matching '(' and ')' characters, and at no point in the string should there be more ')' than '('."
+    },
+    {
+      "content": "Consider the matrix as a grid where you can only move down or right. This means you will be forming a string by concatenating the characters you encounter on your path."
+    },
+    {
+      "content": "Think about how you can keep track of the balance of parentheses as you traverse the grid. You can use a counter to represent the balance, where '(' increases the counter and ')' decreases it."
+    },
+    {
+      "content": "Initialize your balance counter at 0. As you move through the grid, update this counter based on whether you encounter '(' or ')'."
+    },
+    {
+      "content": "Remember that for a string to be valid at any point, the balance must never be negative. This means that at any step, if you encounter a ')', you should check if the balance is greater than 0."
+    },
+    {
+      "content": "Consider using Depth-First Search (DFS) or Breadth-First Search (BFS) to explore all possible paths from the top-left to the bottom-right of the grid."
+    },
+    {
+      "content": "While exploring paths, keep track of the current balance of parentheses. If you reach the bottom-right corner, check if the balance is 0 to determine if the path is valid."
+    },
+    {
+      "content": "Think about how to handle the grid's boundaries. Ensure that your path does not go out of bounds when moving down or right."
+    },
+    {
+      "content": "Consider the base case for your recursive or iterative approach. If you reach the end of the grid, check if the balance is zero. If it is, return true; otherwise, return false."
+    },
+    {
+      "content": "If you reach a cell and the balance is negative, you can prune that path early. There's no need to explore further from that point."
+    },
+    {
+      "content": "As you explore the grid, you may want to use a visited set to avoid revisiting cells, which can lead to infinite loops or unnecessary computations."
+    },
+    {
+      "content": "Think about edge cases, such as very small grids (1x1) or grids that are completely filled with one type of parentheses. What would those cases return?"
+    },
+    {
+      "content": "Remember that the final answer should be a boolean value. You need to return true if any valid path exists, and false otherwise."
+    },
+    {
+      "content": "Before implementing your solution, sketch out a few paths on paper to visualize how the balance changes as you move through the grid."
+    },
+    {
+      "content": "Finally, consider how to optimize your search. If you find a valid path early, you can stop searching and return true immediately."
+    }
+  ],
+  "questionNotes": [
+    "The grid is m x n with 1 <= m, n <= 100.",
+    "The grid contains only '(' and ')'.",
+    "The path must start at (0, 0) and end at (m - 1, n - 1).",
+    "You can only move down or right.",
+    "A valid parentheses string must have balanced parentheses."
+  ]
+}

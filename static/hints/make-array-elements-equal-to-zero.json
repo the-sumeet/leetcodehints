@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the positions of all zeros in the array. These positions are your potential starting points (curr) for the movement."
+    },
+    {
+      "content": "Remember that you can choose to move either left or right from your starting position. Think about how this choice affects the way you can decrement the values in the array."
+    },
+    {
+      "content": "When you move to a position where nums[curr] > 0, you need to decrement that value by 1 and then reverse your direction. Make sure to keep track of your current direction."
+    },
+    {
+      "content": "Consider the edge cases where moving left from the first element or right from the last element would cause you to go out of bounds. Ensure your code handles these cases."
+    },
+    {
+      "content": "To ensure every element in nums becomes zero, think about how many times you can decrement each element based on its initial value. This will help you determine if a valid path exists."
+    },
+    {
+      "content": "As you simulate the movement, keep track of the total number of decrements needed for each non-zero element. This will help you understand if it's possible to reach a state where all elements are zero."
+    },
+    {
+      "content": "You may want to implement a helper function that simulates the movement process from a given starting position and direction, returning whether it can zero out the array."
+    },
+    {
+      "content": "Consider using a loop to try each zero position as a starting point and both directions. Count how many of these trials successfully lead to all elements being zero."
+    },
+    {
+      "content": "Keep in mind that the order of operations is crucial. After reversing direction, if you land on a zero, you should move again immediately, which could lead to different outcomes."
+    },
+    {
+      "content": "Finally, think about edge cases such as multiple zeros in a row or zeros at the boundaries of the array. How do these affect your movement and the ability to zero out other elements?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100",
+    "Values: 0 <= nums[i] <= 100",
+    "At least one element in nums is guaranteed to be zero.",
+    "Return the count of valid selections of (curr, direction)."
+  ]
+}

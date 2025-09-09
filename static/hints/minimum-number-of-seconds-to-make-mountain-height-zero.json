@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the time taken by each worker increases with the height they reduce. The time taken by worker i to reduce the mountain height by x is a summation of a series. Try to express this mathematically."
+    },
+    {
+      "content": "Consider how the work is distributed among the workers. Since they work simultaneously, the total time to reduce the mountain height will be determined by the worker who takes the longest time. Think about how you can represent this using a max function."
+    },
+    {
+      "content": "For a single worker, the time to reduce the mountain height can be calculated directly using a formula. For example, if a worker has a time of t and reduces the height by h, the total time is t * (1 + 2 + ... + h). Can you simplify this?"
+    },
+    {
+      "content": "When multiple workers are involved, you need to consider all possible distributions of the mountain height reduction. A good approach might be to use a loop to simulate the height reduction for each worker and calculate the time taken."
+    },
+    {
+      "content": "Think about how to iterate through the workers and assign different heights to them. You might want to create a function that calculates the time for a specific worker given the height they are assigned to reduce."
+    },
+    {
+      "content": "Remember to account for edge cases, such as when there is only one worker or when all workers have the same work time. How would these cases affect your calculations?"
+    },
+    {
+      "content": "You can optimize your approach by using a priority queue to manage which worker should take on the next reduction task based on their current workload. This can help minimize the total time taken."
+    },
+    {
+      "content": "Consider using a binary search approach to find the minimum time required to reduce the mountain height to zero. You can set a range for the time and check if it's possible to achieve the height reduction within that time."
+    },
+    {
+      "content": "As you implement your solution, ensure that you are correctly calculating the time for each worker based on the height they are reducing. Pay close attention to how you accumulate the time for each worker's tasks."
+    },
+    {
+      "content": "Finally, make sure to test your solution with various edge cases, such as maximum height and minimum worker times, to ensure it handles all scenarios correctly. What will you do if the mountain height is at its maximum?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= mountainHeight <= 10^5",
+    "Constraints: 1 <= workerTimes.length <= 10^4",
+    "Constraints: 1 <= workerTimes[i] <= 10^6",
+    "Workers work simultaneously, so the total time is determined by the worker who takes the longest.",
+    "The return format is an integer representing the minimum number of seconds."
+  ]
+}

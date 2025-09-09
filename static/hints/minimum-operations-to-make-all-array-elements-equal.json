@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation allowed on the elements of the array. You can either increase or decrease any element by 1. This means that for any target value in the queries, you need to calculate how far each element in `nums` is from that target."
+    },
+    {
+      "content": "Consider how to calculate the number of operations needed for each element in `nums` to reach a specific query value. For an element `num[i]` and a query `q`, the operations needed can be calculated as `|num[i] - q|`."
+    },
+    {
+      "content": "To handle multiple queries efficiently, think about how you can reset the array to its original state after each query. This means you will need to compute the operations for each query independently."
+    },
+    {
+      "content": "Since the maximum size for `nums` and `queries` can be quite large (up to 100,000), consider the time complexity of your approach. A naive solution that checks each element for every query might lead to a time complexity of O(n * m), which could be inefficient."
+    },
+    {
+      "content": "Instead of recalculating the total operations for each query from scratch, think about pre-computing some values. For instance, if you sort the `nums` array, you can leverage this sorted order to make calculations more efficient."
+    },
+    {
+      "content": "When the `nums` array is sorted, you can use binary search to find the closest elements to the query value. This can help in quickly determining how many operations are needed for elements less than and greater than the query."
+    },
+    {
+      "content": "Remember to handle edge cases where the query value might be less than the minimum or greater than the maximum value in `nums`. This will affect the total number of operations needed significantly."
+    },
+    {
+      "content": "As you prepare to implement your solution, consider using a prefix sum array. This can help you quickly calculate the total number of operations needed for ranges of elements in the sorted `nums` array."
+    },
+    {
+      "content": "When calculating the total operations for each query, think about how to combine the operations needed for elements below the query and those above it. You will need to sum these contributions effectively."
+    },
+    {
+      "content": "Finally, ensure that your result array matches the expected output format. Each index in the result should correspond to the respective query, and you should return the total operations for each query in the same order."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, m == queries.length",
+    "1 <= n, m <= 10^5",
+    "1 <= nums[i], queries[i] <= 10^9",
+    "After each query, the array resets to its original state.",
+    "The output should be an array of size m where each element corresponds to the minimum operations for the respective query."
+  ]
+}

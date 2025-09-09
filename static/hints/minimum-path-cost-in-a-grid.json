@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the grid and the moveCost matrix. The grid contains distinct integers from 0 to m * n - 1, which means each cell has a unique value. This uniqueness will be important when calculating costs."
+    },
+    {
+      "content": "Consider how you can traverse the grid. You can only move from one row to the next, and from any cell in the current row to any cell in the next row. This gives you flexibility in choosing your path."
+    },
+    {
+      "content": "Think about how to calculate the total cost of a path. The cost is made up of the sum of the values of the cells visited plus the sum of the movement costs. Make sure you keep track of both aspects as you explore paths."
+    },
+    {
+      "content": "To find the minimum path cost, consider using a dynamic programming approach. You can maintain a DP table where each entry represents the minimum cost to reach a cell in the current row from any cell in the previous row."
+    },
+    {
+      "content": "Initialize your DP table with the values of the first row of the grid. Since you can start from any cell in the first row, the initial costs are simply the values of those cells."
+    },
+    {
+      "content": "When filling in the DP table for subsequent rows, remember to calculate the cost of moving from each cell in the previous row to each cell in the current row. Use the moveCost matrix to get the movement costs."
+    },
+    {
+      "content": "For each cell in the current row, you will need to consider all cells in the previous row to find the minimum cost path leading to that cell. This means you might have a nested loop structure."
+    },
+    {
+      "content": "Pay attention to the constraints of the problem, especially the dimensions of the grid and the moveCost matrix. Ensure your solution efficiently handles the maximum limits, which are 50x50 for the grid."
+    },
+    {
+      "content": "Once you have filled the DP table for all rows, the minimum path cost will be the minimum value in the last row of your DP table. This represents the cheapest way to reach any cell in the last row."
+    },
+    {
+      "content": "Finally, make sure to test your solution with edge cases, such as the smallest grid sizes and varying movement costs. Consider how your algorithm behaves with different configurations of the grid and moveCost."
+    }
+  ],
+  "questionNotes": [
+    "The grid consists of distinct integers from 0 to m * n - 1.",
+    "You can move from any cell in row x to any cell in row x + 1.",
+    "The last row cannot be moved from, so no costs apply there.",
+    "The moveCost matrix is sized (m * n) x n, and each entry is the cost of moving from a cell with value i to column j in the next row.",
+    "The output should be the minimum total cost of a path starting from any cell in the first row and ending at any cell in the last row."
+  ]
+}

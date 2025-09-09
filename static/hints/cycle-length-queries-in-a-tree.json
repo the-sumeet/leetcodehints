@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by visualizing the complete binary tree structure for the given value of n. Remember that the root is 1, and the children of any node with value `val` are `2 * val` (left) and `2 * val + 1` (right)."
+    },
+    {
+      "content": "For each query, you need to add an edge between two nodes. Think about how this edge affects the existing tree structure and the paths between nodes."
+    },
+    {
+      "content": "To find the cycle length after adding an edge, you need to determine the path from each node in the query to their lowest common ancestor (LCA). The cycle will include both paths to the LCA and the new edge."
+    },
+    {
+      "content": "The length of the path from a node to the root can be calculated by counting the number of edges traversed. For a node `val`, this is simply the number of times you can divide `val` by 2 until you reach 1."
+    },
+    {
+      "content": "Consider how to efficiently find the LCA of two nodes in a complete binary tree. You can do this by repeatedly moving up the tree until both nodes converge."
+    },
+    {
+      "content": "When calculating the cycle length, remember to include the edges from both nodes to their LCA and the new edge you just added. The formula for cycle length is: `length(a to LCA) + length(b to LCA) + 1`."
+    },
+    {
+      "content": "Don't forget to remove the edge after calculating the cycle length for each query. This ensures that the tree structure remains unchanged for subsequent queries."
+    },
+    {
+      "content": "Consider edge cases where the nodes in the query are direct siblings. The cycle length will be particularly short in such cases, just involving the edge between them and their parent."
+    },
+    {
+      "content": "Make sure to handle the constraints carefully. The maximum number of nodes can be `2^30 - 1`, so your solution should be efficient in terms of time complexity, especially with up to `10^5` queries."
+    },
+    {
+      "content": "You may want to implement a helper function to calculate the depth of a node, as this will be useful for finding the path lengths to the LCA."
+    },
+    {
+      "content": "Think about the data structure you will use to store the results of the cycle lengths. An array of size `m` will suffice to store the answers for each query."
+    },
+    {
+      "content": "As you implement your solution, keep track of the indices of the queries to ensure you return the results in the correct order."
+    },
+    {
+      "content": "If you find yourself stuck, consider writing out the paths for a few manual examples to see how the cycle lengths are formed. This can help clarify the logic."
+    },
+    {
+      "content": "When testing your solution, consider edge cases such as the smallest possible tree (n = 2) and scenarios where nodes are at different levels in the tree."
+    },
+    {
+      "content": "Remember to optimize your LCA finding approach. Using properties of binary trees can help you avoid unnecessary computations and improve performance."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 30, m == queries.length, 1 <= m <= 10^5, queries[i].length == 2, 1 <= a_i, b_i <= 2^n - 1, a_i != b_i.",
+    "The tree is a complete binary tree, and the node values are structured based on their position in the tree.",
+    "The answer for each query must be returned in the order of the queries provided."
+  ]
+}

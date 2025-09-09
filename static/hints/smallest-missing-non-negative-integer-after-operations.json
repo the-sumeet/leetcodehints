@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of MEX (minimum excluded value). The MEX of an array is the smallest non-negative integer that is not present in the array. For example, the MEX of [0, 1, 2] is 3."
+    },
+    {
+      "content": "Consider how the operations (adding or subtracting 'value') can affect the elements in the array. Each element can be transformed into various values based on how many times you apply the operation."
+    },
+    {
+      "content": "Think about the range of possible values for each element after applying the operations. An element 'num' can be transformed into values like 'num + k * value' or 'num - k * value' for any integer k."
+    },
+    {
+      "content": "Focus on the non-negative integers that you want to achieve. You need to find a way to create a sequence of non-negative integers starting from 0 up to the maximum MEX."
+    },
+    {
+      "content": "To maximize the MEX, you should be able to cover all integers from 0 up to some maximum value. Think about how you can represent each integer in this range using the operations allowed."
+    },
+    {
+      "content": "Consider using a set to track which non-negative integers can be achieved after performing the allowed operations on each element of the array. This will help you visualize which integers are present."
+    },
+    {
+      "content": "When iterating through the possible non-negative integers, check if each integer can be formed using the transformed values of the elements in 'nums'. Keep a count of how many consecutive integers you can form."
+    },
+    {
+      "content": "Remember to handle negative numbers in the array. They can be transformed into non-negative integers by adding 'value' multiple times. Ensure your logic accounts for this."
+    },
+    {
+      "content": "As you check for the maximum MEX, keep track of the largest integer you can form consecutively starting from 0. If you encounter a gap, that will be your MEX."
+    },
+    {
+      "content": "Finally, think about edge cases where all elements are negative or very large. How would you ensure that you still find the MEX correctly in those scenarios?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length, value <= 10^5",
+    "-10^9 <= nums[i] <= 10^9",
+    "You can perform operations any number of times on any element.",
+    "Return the maximum MEX as a single integer."
+  ]
+}

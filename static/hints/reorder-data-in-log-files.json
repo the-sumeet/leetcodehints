@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the two types of logs: letter-logs and digit-logs. The first word in each log is the identifier, and the rest of the words determine the log type. Make sure to differentiate between these two types before proceeding."
+    },
+    {
+      "content": "You will need to separate the letter-logs from the digit-logs. Consider using two lists to store these logs as you iterate through the input array. This will help you manage the logs more easily."
+    },
+    {
+      "content": "When you extract the letter-logs, remember that they need to be sorted. The sorting criteria is first based on the contents of the log (everything after the identifier), and if those are the same, then by the identifier itself."
+    },
+    {
+      "content": "To sort the letter-logs, you can use a custom sorting function. This function should return a tuple where the first element is the content of the log and the second element is the identifier. This will ensure that Python's built-in sort handles the tie-breaking correctly."
+    },
+    {
+      "content": "Don't forget that the digit-logs should maintain their original relative order. This means that once you separate the logs, you should not sort the digit-logs at all; they should remain in the order they were found."
+    },
+    {
+      "content": "As you prepare to return the final list, you will concatenate the sorted letter-logs with the original order of digit-logs. Think about how to combine these two lists effectively."
+    },
+    {
+      "content": "Consider edge cases such as when all logs are letter-logs or all are digit-logs. How would your solution handle these scenarios? Ensure that the output format remains consistent regardless of the input."
+    },
+    {
+      "content": "Remember to account for the constraints given in the problem statement. For example, the maximum length of logs and the number of logs can affect your approach. Be mindful of performance, especially with larger inputs."
+    },
+    {
+      "content": "When implementing the sorting, ensure that you are not modifying the original logs. Instead, create new lists for the sorted letter-logs and the preserved digit-logs. This will help you avoid unintended side effects."
+    },
+    {
+      "content": "Finally, when you return the result, make sure it is in the correct format as specified in the problem statement. You should return a single list that combines the sorted letter-logs followed by the digit-logs."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= logs.length <= 100, 3 <= logs[i].length <= 100.",
+    "The first word in each log is the identifier.",
+    "Letter-logs contain only lowercase letters, while digit-logs contain only digits.",
+    "Letter-logs must be sorted by content, then by identifier if contents are the same.",
+    "Digit-logs must maintain their original order.",
+    "Return format: A single list with letter-logs followed by digit-logs."
+  ]
+}

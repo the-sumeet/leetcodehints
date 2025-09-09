@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to count all the substrings that consist solely of '1's in the given binary string. Remember that a substring is a contiguous sequence of characters."
+    },
+    {
+      "content": "Consider how you can identify segments of '1's in the string. For instance, in the string '0110111', the segments of '1's are '1', '11', and '111'."
+    },
+    {
+      "content": "Think about how many substrings can be formed from a segment of consecutive '1's. If you have a segment of length `n`, how many substrings can you form from it? Consider counting substrings of lengths 1 to n."
+    },
+    {
+      "content": "For a segment of '1's of length `n`, the number of substrings can be calculated using the formula: `n * (n + 1) / 2`. This accounts for all possible lengths of substrings that can be formed."
+    },
+    {
+      "content": "As you iterate through the string, keep track of the length of the current segment of '1's. Reset this count whenever you encounter a '0'."
+    },
+    {
+      "content": "Don't forget to handle the case where the string ends with a segment of '1's. After finishing the loop, you may need to add the count for the last segment."
+    },
+    {
+      "content": "Make sure to apply the modulo operation with `10^9 + 7` whenever you update your total count of substrings to prevent integer overflow."
+    },
+    {
+      "content": "Consider edge cases, such as when the string contains no '1's at all. What should your function return in this case?"
+    },
+    {
+      "content": "Remember that the input string can be as long as 100,000 characters. Your solution should be efficient, ideally O(n), to handle the upper limits of the constraints."
+    },
+    {
+      "content": "To summarize, you will need to loop through the string, count segments of '1's, calculate the number of substrings for each segment, and maintain a running total, applying the modulo operation as necessary."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "Characters in s are either '0' or '1'.",
+    "Return the result modulo 10^9 + 7."
+  ]
+}

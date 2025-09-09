@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the layout of the field. The field is defined by its dimensions (m - 1) x (n - 1). The corners of the field are at (1, 1) and (m, n), and the fences are placed within this area."
+    },
+    {
+      "content": "Consider the effect of the horizontal and vertical fences on the field. Each horizontal fence at hFences[i] blocks the entire row, and each vertical fence at vFences[i] blocks the entire column. Think about how these fences limit the area available for a square."
+    },
+    {
+      "content": "To find the maximum square area, you need to determine the largest possible side length of a square that can fit without being blocked by fences. This means you should calculate the gaps between the fences."
+    },
+    {
+      "content": "Remember that the field is surrounded by two additional fences at the boundaries. This means you have to consider the edges of the field when calculating the maximum gaps. For example, the gap before the first horizontal fence and after the last one."
+    },
+    {
+      "content": "Sort the hFences and vFences arrays. This will help you easily find the maximum gaps between consecutive fences, as well as the edges of the field. Use the sorted arrays to compute the distance between fences."
+    },
+    {
+      "content": "Calculate the maximum gap between the horizontal fences. This can be done by checking the differences between consecutive elements in the sorted hFences array, as well as the gaps from the edges of the field."
+    },
+    {
+      "content": "Similarly, calculate the maximum gap between the vertical fences. Again, check the differences between consecutive elements in the sorted vFences array and the edges of the field."
+    },
+    {
+      "content": "The maximum side length of the square that can be formed is the minimum of the maximum gaps found for horizontal and vertical fences. If either gap is less than 1, it means a square cannot be formed."
+    },
+    {
+      "content": "If a square can be formed, compute its area by squaring the side length. Remember to return the area modulo 10^9 + 7 as specified in the problem statement."
+    },
+    {
+      "content": "Finally, if no square can be formed (i.e., if the maximum side length is less than 1), return -1 as indicated in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= m, n <= 10^9",
+    "1 <= hFences.length, vFences.length <= 600",
+    "1 < hFences[i] < m and 1 < vFences[i] < n",
+    "hFences and vFences are unique.",
+    "Return the area modulo 10^9 + 7.",
+    "Return -1 if it is impossible to create a square field."
+  ]
+}

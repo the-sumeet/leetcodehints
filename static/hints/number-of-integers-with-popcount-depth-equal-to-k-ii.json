@@ -1,0 +1,60 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of popcount. The popcount of a number is simply the number of 1's in its binary representation. For example, the popcount of 7 (which is '111' in binary) is 3."
+    },
+    {
+      "content": "Next, focus on how to compute the popcount-depth of a number. You need to repeatedly apply the popcount function until you reach 1. Keep track of how many times you apply this function."
+    },
+    {
+      "content": "Consider how to implement the popcount function efficiently. You can use Python's built-in function `bin(x).count('1')` to get the popcount of x. Think about how you would apply this in a loop."
+    },
+    {
+      "content": "Remember that the queries can be of two types: one for counting indices with a specific popcount-depth and another for updating an element in the array. Make sure to handle both types appropriately."
+    },
+    {
+      "content": "When processing the counting query, you'll need to iterate through a specified range of the nums array. Ensure you correctly implement the bounds given by l and r in the query."
+    },
+    {
+      "content": "Pay attention to the constraints, especially the size of nums and the values it can hold. With n up to 100,000 and nums[i] up to 10^15, your solution needs to be efficient."
+    },
+    {
+      "content": "Consider using a dictionary or a list to cache the popcount-depth results for numbers that have already been computed. This can save time when the same number is queried multiple times."
+    },
+    {
+      "content": "For the update query, remember to recalculate the popcount-depth for the updated number. This is crucial since the depth may change after the update."
+    },
+    {
+      "content": "Think about how you can structure your solution to handle multiple queries efficiently. You might want to use a loop to process each query and maintain the state of nums."
+    },
+    {
+      "content": "When counting the number of indices with a specific popcount-depth, ensure that you check against the correct depth value as specified in the query."
+    },
+    {
+      "content": "Consider edge cases, such as when all elements in nums are the same or when k is larger than the possible maximum depth for any number in nums."
+    },
+    {
+      "content": "Make sure to return the results in the correct format as specified in the problem statement. You need to return an array of integers corresponding to the count of valid indices for each query of type [1, l, r, k]."
+    },
+    {
+      "content": "As you implement your solution, test it with small examples to ensure that both types of queries are handled correctly. Check how updates affect the subsequent queries."
+    },
+    {
+      "content": "Before finalizing your solution, review the performance of your approach. An O(n) solution for each query could lead to time limits being exceeded, so aim for a more efficient strategy."
+    },
+    {
+      "content": "Finally, consider how you can optimize the counting of indices with a specific popcount-depth. Perhaps a precomputed list of depths for all possible values in nums could help."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums.length <= 10^5",
+    "1 <= nums[i] <= 10^15",
+    "1 <= queries.length <= 10^5",
+    "queries[i].length == 3 or 4",
+    "queries[i] == [1, l, r, k] or [2, idx, val]",
+    "0 <= l <= r <= n - 1",
+    "0 <= k <= 5",
+    "0 <= idx <= n - 1",
+    "1 <= val <= 10^15"
+  ]
+}

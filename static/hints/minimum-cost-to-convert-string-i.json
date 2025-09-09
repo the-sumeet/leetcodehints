@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by comparing the `source` and `target` strings. Identify which characters need to be changed. For each character in `source`, check if it matches the corresponding character in `target`."
+    },
+    {
+      "content": "Create a mapping from `original` characters to their corresponding `changed` characters along with their costs. This will help you quickly find the cost of changing one character to another."
+    },
+    {
+      "content": "When you identify a character in `source` that needs to be changed to match `target`, check if there is a valid transformation available in your mapping. If no transformation exists, it is impossible to convert the string."
+    },
+    {
+      "content": "Consider using a graph representation where each character is a node, and edges represent valid transformations with their associated costs. This will help you visualize the problem as finding the shortest path in a weighted graph."
+    },
+    {
+      "content": "For each character in `source`, if it needs to be changed, you can either change it directly to the target character if possible or use intermediate transformations. Keep track of the total cost incurred for each transformation."
+    },
+    {
+      "content": "Use a priority queue or a similar structure to always explore the cheapest transformation first. This is similar to Dijkstra's algorithm for finding the shortest path in a graph."
+    },
+    {
+      "content": "Remember to handle cases where the same character can be transformed in multiple ways. You should always choose the transformation with the lowest cost to minimize the total cost."
+    },
+    {
+      "content": "As you process transformations, maintain a record of the total cost for each character change. If you need to change a character multiple times, ensure you account for the cumulative cost."
+    },
+    {
+      "content": "Before returning the total cost, check if all characters in `target` can be achieved from `source`. If any character in `target` cannot be formed from `source`, return -1."
+    },
+    {
+      "content": "Finally, ensure your implementation efficiently handles the constraints, particularly the lengths of the strings and the costs. Aim for a solution that runs in linear time relative to the length of the strings."
+    }
+  ],
+  "questionNotes": [
+    "Both `source` and `target` strings are of equal length.",
+    "The `cost` array must be indexed correctly to match `original` and `changed` arrays.",
+    "If a character in `target` cannot be formed from `source`, return -1.",
+    "The transformation must consider all possible paths to ensure the minimum cost is calculated."
+  ]
+}

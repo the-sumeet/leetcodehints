@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Think about how you can efficiently find the two heaviest stones in the array. A simple approach would be to sort the array, but this can be inefficient. Consider using a data structure that allows you to quickly access and remove the largest elements."
+    },
+    {
+      "content": "Remember that after smashing two stones, you need to update the array. If the two stones have the same weight, both are removed. If they are different, one stone's weight is reduced. How will you represent this in your data structure?"
+    },
+    {
+      "content": "Consider using a max-heap (or priority queue) to keep track of the stones. This will allow you to efficiently retrieve and remove the two heaviest stones in logarithmic time."
+    },
+    {
+      "content": "When you extract the two heaviest stones, ensure you handle the case where they are equal correctly. If they are equal, you simply discard both. If they are not, you need to push the difference back into the heap."
+    },
+    {
+      "content": "Think about the stopping condition for your game. When will you stop smashing stones? You should stop when there are no stones left or only one stone remains."
+    },
+    {
+      "content": "Consider edge cases such as when the input array has only one stone. What should your function return in that case? Ensure your function handles this scenario correctly."
+    },
+    {
+      "content": "What will you do if the input array is empty? Make sure to return 0 in this case, as specified in the problem statement."
+    },
+    {
+      "content": "As you implement your solution, keep track of how the size of the heap changes with each operation. This will help you ensure that your logic is correct and efficient."
+    },
+    {
+      "content": "Once you've implemented the main logic, consider testing your solution with various inputs, including edge cases like all stones being the same weight or very large weights."
+    },
+    {
+      "content": "Finally, make sure your function returns the correct value as specified: the weight of the last remaining stone or 0 if no stones are left. You may want to add some print statements to debug your final output."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= stones.length <= 30, 1 <= stones[i] <= 1000",
+    "Return 0 if no stones are left.",
+    "If there is one stone left, return its weight.",
+    "Handle cases where two stones have the same weight carefully."
+  ]
+}

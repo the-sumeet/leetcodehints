@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the lock. It has 4 wheels, each with 10 positions (0-9). The initial state is '0000', and you need to reach a target state by turning the wheels."
+    },
+    {
+      "content": "Consider how you can represent the lock's state. A string like '0000' can be treated as a node in a graph where each valid move to another state is an edge."
+    },
+    {
+      "content": "Think about the possible moves you can make from any given state. For each wheel, you can either increase or decrease its value by 1, which means you have 8 possible moves from any state."
+    },
+    {
+      "content": "Remember to account for deadends. If the lock reaches any of these states, you cannot continue. Use a set to efficiently check if a state is a deadend."
+    },
+    {
+      "content": "Since you need the minimum number of turns, consider using a breadth-first search (BFS) approach. BFS is ideal for finding the shortest path in an unweighted graph."
+    },
+    {
+      "content": "When implementing BFS, maintain a queue to explore each state and a set to track visited states. This prevents cycles and redundant checks."
+    },
+    {
+      "content": "As you explore states, always check if the current state is the target. If it is, return the number of turns taken to reach that state."
+    },
+    {
+      "content": "Don't forget to handle edge cases. For example, if the initial state '0000' is a deadend, you should immediately return -1."
+    },
+    {
+      "content": "Consider how to generate the next possible states from the current state. For each digit, you can either increment or decrement it, wrapping around when necessary."
+    },
+    {
+      "content": "Finally, ensure your BFS implementation correctly tracks the number of turns. Each time you move to a new state, increment the turn count by 1."
+    }
+  ],
+  "questionNotes": [
+    "The lock starts at '0000'.",
+    "Each wheel can be turned up or down, wrapping around (e.g., '0' to '9').",
+    "Deadends are states where the lock cannot proceed.",
+    "The target will not be in the list of deadends.",
+    "Return -1 if the target cannot be reached."
+  ]
+}

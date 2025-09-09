@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a reverse pair is. A reverse pair (i, j) is defined such that 0 <= i < j < nums.length and nums[i] > 2 * nums[j]."
+    },
+    {
+      "content": "Consider how you would iterate through the array to find pairs. A naive approach would involve two nested loops, but think about the efficiency given the constraints."
+    },
+    {
+      "content": "Remember that the constraints allow for up to 50,000 elements in the array. A brute force O(n^2) solution will likely be too slow."
+    },
+    {
+      "content": "Think about how you can use sorting or a modified merge sort to count the reverse pairs more efficiently. This can help reduce the time complexity."
+    },
+    {
+      "content": "While iterating through the array, for each element nums[j], you need to find how many previous elements nums[i] satisfy the condition nums[i] > 2 * nums[j]."
+    },
+    {
+      "content": "You might want to use a binary search approach to quickly find the count of nums[i] that satisfy the reverse pair condition for each nums[j]."
+    },
+    {
+      "content": "Consider maintaining a sorted list of the elements you have seen so far as you iterate through nums. This will help in efficiently counting valid pairs."
+    },
+    {
+      "content": "When you encounter nums[j], you can calculate the threshold value (2 * nums[j]) and count how many elements in your sorted list are greater than this threshold."
+    },
+    {
+      "content": "Utilize a data structure that allows for efficient insertion and querying, such as a balanced binary search tree or a Fenwick Tree (Binary Indexed Tree)."
+    },
+    {
+      "content": "As you process each element, remember to insert it into your sorted structure after counting the valid pairs. This ensures that you are always comparing against previously seen elements."
+    },
+    {
+      "content": "Consider edge cases, such as when the array has only one element or when all elements are the same. How does this affect the count of reverse pairs?"
+    },
+    {
+      "content": "Make sure to handle negative numbers correctly, as the problem allows for values from -2^31 to 2^31 - 1. This could affect your comparisons."
+    },
+    {
+      "content": "Think about the overall time complexity of your approach. Aim for O(n log n) to handle the maximum constraints efficiently."
+    },
+    {
+      "content": "You may want to implement a helper function to manage the sorted list and perform the necessary operations like insertion and counting efficiently."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct count of reverse pairs as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 50,000",
+    "Value range: -2^31 <= nums[i] <= 2^31 - 1",
+    "Return the number of reverse pairs, not the pairs themselves.",
+    "Ensure to follow the indexing: 0 <= i < j < nums.length."
+  ]
+}

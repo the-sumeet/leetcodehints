@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. You have 'n' nodes and directed edges represented as arrays. Each edge consists of a 'from' node, a 'to' node, and a 'cost'."
+    },
+    {
+      "content": "When initializing the graph, ensure you correctly store the edges in a way that allows for efficient access. Consider using an adjacency list or a dictionary to map nodes to their edges."
+    },
+    {
+      "content": "Remember that the graph is directed. This means that if there is an edge from node A to node B, it does not imply there is an edge from B to A."
+    },
+    {
+      "content": "The `addEdge` method should simply append a new edge to your data structure. Make sure to handle the input correctly and update your graph representation."
+    },
+    {
+      "content": "For the `shortestPath` method, think about how you can find the minimum cost path between two nodes. Dijkstra's algorithm is a common choice for graphs with non-negative weights."
+    },
+    {
+      "content": "Consider edge cases where there may be no path between the two nodes. You should return -1 in such cases. Make sure to check for this condition in your pathfinding logic."
+    },
+    {
+      "content": "When implementing Dijkstra's algorithm, you will need a priority queue to efficiently get the next node with the smallest cost. This will help you explore paths in order of their cost."
+    },
+    {
+      "content": "As you explore paths, maintain a record of the minimum cost to reach each node. This will help you avoid revisiting nodes with a higher cost."
+    },
+    {
+      "content": "Don't forget to handle the case where the starting node is the same as the destination node. The cost should be zero in this case."
+    },
+    {
+      "content": "Make sure to account for the constraints given in the problem, such as the maximum number of nodes and edges. This will help you optimize your solution."
+    },
+    {
+      "content": "When adding edges, ensure that no duplicate edges are created. The problem states that it is guaranteed there are no edges between the two nodes before adding a new one."
+    },
+    {
+      "content": "Consider the complexity of your solution. Dijkstra's algorithm runs in O((V + E) log V) time complexity, where V is the number of vertices and E is the number of edges."
+    },
+    {
+      "content": "When implementing the `shortestPath` method, remember to return the total cost of the path if it exists, or -1 if no path is found. Be careful with your return statements."
+    },
+    {
+      "content": "Think about how you will represent the graph internally. An adjacency list is often a good choice for space efficiency and ease of traversal."
+    },
+    {
+      "content": "As you implement the `shortestPath` function, ensure you are correctly updating the costs of reaching each node as you explore the graph. This is crucial for finding the shortest path."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100; 0 <= edges.length <= n * (n - 1); 1 <= edgeCost <= 10^6.",
+    "No repeated edges and no self-loops are allowed.",
+    "Return -1 if no path exists between the two nodes.",
+    "Ensure to handle the case where the start node is the same as the destination node."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the circular arrangement of the typewriter. The letters 'a' to 'z' are arranged in a circle, meaning after 'z', it goes back to 'a'. This affects how you calculate the distance between letters."
+    },
+    {
+      "content": "Consider how to calculate the distance between two letters. You can find the distance by determining the positions of the letters in the alphabet (e.g., 'a' = 0, 'b' = 1, ..., 'z' = 25) and using modular arithmetic."
+    },
+    {
+      "content": "When moving from one letter to another, you have two possible paths: clockwise and counterclockwise. Make sure to calculate both distances and choose the smaller one for efficiency."
+    },
+    {
+      "content": "Remember that you need to account for the time spent typing each character. Each character takes 1 second to type, so you will need to add this to your total time."
+    },
+    {
+      "content": "To implement the solution, you can initialize a variable to keep track of the total time. Start from the initial position (pointing at 'a') and iterate through each character in the input word."
+    },
+    {
+      "content": "As you iterate through the word, update the total time with the time taken to move to the next character and the time taken to type it. Be careful to update the current position of the pointer after each move."
+    },
+    {
+      "content": "Consider edge cases, such as when the input word consists of the same character repeated. In this case, the time taken to type will be equal to the length of the word since no movement is needed."
+    },
+    {
+      "content": "Make sure to handle the wrap-around correctly when calculating distances. For example, moving from 'z' to 'a' should be calculated as a distance of 1."
+    },
+    {
+      "content": "To summarize your approach: Loop through each character in the word, calculate the minimal move time to that character, add 1 for typing, and update the pointer position accordingly."
+    },
+    {
+      "content": "Finally, remember to return the total time after processing the entire word. This will give you the minimum time required to type the word using the special typewriter."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= word.length <= 100",
+    "The word consists only of lowercase English letters.",
+    "The pointer starts at 'a'.",
+    "Each character takes 1 second to type."
+  ]
+}

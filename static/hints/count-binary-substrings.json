@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a valid substring looks like. A valid substring must have an equal number of consecutive '0's and '1's. For example, in '0011', the '00' and '11' are grouped together."
+    },
+    {
+      "content": "Consider how you can identify groups of '0's and '1's in the string. You might want to iterate through the string and count consecutive characters. For instance, in '00110011', you can identify groups as: 2 '0's, 2 '1's, 2 '0's, and 2 '1's."
+    },
+    {
+      "content": "Think about how you can store the counts of these groups. A list or an array can be useful to keep track of the length of consecutive '0's and '1's. For example, for '00110011', you would store [2, 2, 2, 2]."
+    },
+    {
+      "content": "Once you have the counts of consecutive '0's and '1's, consider how to calculate the number of valid substrings. The number of valid substrings between two groups is determined by the minimum of the two counts. For example, between '00' and '11', you can form 2 valid substrings."
+    },
+    {
+      "content": "Don't forget to handle the case where the string starts or ends with a group of '0's or '1's. Ensure that your logic accounts for the entire string and doesn't miss any valid substrings."
+    },
+    {
+      "content": "As you iterate through the list of counts, you can sum up the minimum of adjacent pairs. For example, if your counts are [2, 2, 2, 2], you would compute min(2, 2) + min(2, 2) + min(2, 2) to get the total number of valid substrings."
+    },
+    {
+      "content": "Think about edge cases, such as when the string is very short (like '0' or '1'). What should your function return in these cases? Make sure your solution can handle strings of length 1."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Aim for an O(n) solution since the input string can be as long as 100,000 characters. Avoid nested loops that would increase the time complexity."
+    },
+    {
+      "content": "Make sure to test your solution with various inputs, including strings with alternating characters like '010101' and long sequences of the same character like '000000'. What do you expect the output to be for these cases?"
+    },
+    {
+      "content": "Finally, implement the logic to count valid substrings using the minimum counts of adjacent groups. This will be the core of your solution. For example, if you have counts [2, 3], you would add min(2, 3) to your total count."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "s[i] is either '0' or '1'.",
+    "Substrings that occur multiple times are counted each time.",
+    "Ensure that all '0's and '1's in valid substrings are grouped consecutively."
+  ]
+}

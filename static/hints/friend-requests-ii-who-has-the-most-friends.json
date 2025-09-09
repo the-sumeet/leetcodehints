@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `RequestAccepted` table. It contains pairs of user IDs representing friendships. Each user can be both a requester and an accepter, so consider how to count friendships from both perspectives."
+    },
+    {
+      "content": "Think about how you can represent friendships. Each user can be friends with others in two ways: as a requester and as an accepter. You will need to count both sides of the relationship."
+    },
+    {
+      "content": "To count the total number of friends for each user, you can use a `UNION` of requester and accepter IDs. This will help you create a complete list of friends for each user."
+    },
+    {
+      "content": "Consider using a `GROUP BY` clause to aggregate the counts of friends for each user. You will need to group by both `requester_id` and `accepter_id` to get a complete count."
+    },
+    {
+      "content": "When counting friends, remember that you want to count unique friends only. Use a method to ensure that duplicates are not counted, such as using `DISTINCT` in your count."
+    },
+    {
+      "content": "After calculating the number of friends for each user, you will need to find the maximum count. Think about how you can use a `HAVING` clause to filter out users who do not have the maximum number of friends."
+    },
+    {
+      "content": "Make sure to handle the case where multiple users may have the same maximum number of friends. Your final query should be able to return all users who meet this maximum count."
+    },
+    {
+      "content": "Consider the output format specified in the problem. You need to return the user ID and the number of friends in a specific structure. Ensure your final result matches the required output format."
+    },
+    {
+      "content": "Don't forget to test your query against edge cases, such as when there are no friendships at all or when all users are friends with each other. Think about how these cases might affect your results."
+    },
+    {
+      "content": "Finally, write your SQL query to implement all the steps you've thought through. Start with selecting the data, then count the friends, and finally filter to find the user(s) with the most friends."
+    }
+  ],
+  "questionNotes": [
+    "The primary key is a combination of `requester_id` and `accepter_id`, ensuring unique friendships.",
+    "Only one person will have the most friends in the provided test cases.",
+    "Output format must include two columns: `id` for user ID and `num` for the number of friends.",
+    "Consider edge cases such as no friendships or multiple friendships between the same users."
+  ]
+}

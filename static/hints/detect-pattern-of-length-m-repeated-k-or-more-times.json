@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'pattern' is in this context. A pattern is a subarray of length `m` that appears consecutively in the array. For example, if `m = 1`, the pattern could be any single element that appears multiple times."
+    },
+    {
+      "content": "Think about how you can extract subarrays of length `m` from the array. You can use a sliding window approach to iterate through the array and capture these subarrays."
+    },
+    {
+      "content": "Consider how to check for repetitions of the extracted subarrays. You need to ensure that the same subarray appears consecutively without overlapping. This means you should keep track of the last position where a pattern was found."
+    },
+    {
+      "content": "Remember to check if the length of the array is sufficient to contain at least `k` repetitions of a pattern of length `m`. If the total length of the array is less than `m * k`, you can immediately return false."
+    },
+    {
+      "content": "When you find a potential pattern, count how many times it repeats. You can maintain a counter that increments each time you find the same pattern and resets if a different pattern is encountered."
+    },
+    {
+      "content": "Be careful with the boundaries of your array when extracting subarrays. Ensure that your indices do not go out of range when checking for patterns."
+    },
+    {
+      "content": "Think about how to handle cases where the pattern might be at the end of the array. Ensure your logic accounts for patterns that could potentially start near the end."
+    },
+    {
+      "content": "Consider using a loop that goes from the start of the array to the point where there are enough elements left to form a pattern of length `m`. This will help you avoid unnecessary checks."
+    },
+    {
+      "content": "Once you identify a pattern, check if it meets the requirement of being repeated `k` or more times. You might want to return true as soon as you find a valid pattern to optimize your solution."
+    },
+    {
+      "content": "Finally, structure your code to return false if no valid pattern is found after checking all possible starting points. This ensures you cover all cases."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= arr.length <= 100",
+    "1 <= arr[i] <= 100",
+    "1 <= m <= 100",
+    "2 <= k <= 100",
+    "Patterns must be consecutive and non-overlapping."
+  ]
+}

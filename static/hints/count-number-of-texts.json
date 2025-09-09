@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the mapping of digits to letters on a typical phone keypad. For example, '2' maps to 'a', 'b', 'c', and '3' maps to 'd', 'e', 'f'. This mapping is crucial for calculating the possible combinations."
+    },
+    {
+      "content": "Consider how many times each digit appears consecutively in the `pressedKeys` string. For instance, in '22233', '2' appears three times and '3' appears twice. This will help you determine how many letters can be formed from each digit."
+    },
+    {
+      "content": "For each digit, calculate the number of letters that can be formed based on its count. For example, if '2' appears 3 times, it can form 'a', 'b', or 'c' depending on how many times each letter is pressed."
+    },
+    {
+      "content": "Remember that the number of ways to form letters from a digit is based on the formula: `number of letters = count of presses // position of letter`. For example, '2' can form 'a' (1 press), 'b' (2 presses), or 'c' (3 presses)."
+    },
+    {
+      "content": "Think about how to handle consecutive digits. If the same digit appears multiple times, you need to consider the combinations of letters that can be formed from those presses. For instance, '222' can yield combinations of 'aaa', 'aab', 'aba', etc."
+    },
+    {
+      "content": "You will need to multiply the number of combinations for each group of consecutive digits. For example, if '2' appears 3 times and '3' appears 2 times, calculate the combinations for '2' and '3' separately and then multiply them."
+    },
+    {
+      "content": "Keep in mind the modulo operation. Since the result can be very large, you should apply modulo 10^9 + 7 at every step of your calculations to avoid overflow."
+    },
+    {
+      "content": "Consider edge cases, such as when `pressedKeys` consists of only one digit repeated, like '222'. How many unique messages can be formed in that case?"
+    },
+    {
+      "content": "When implementing your solution, think about using a loop to traverse the `pressedKeys` string and maintain a count of consecutive digits. This will help you easily calculate the combinations for each segment of digits."
+    },
+    {
+      "content": "Finally, ensure that your implementation efficiently handles the maximum constraint of `pressedKeys.length` up to 100,000. You may want to optimize your approach to avoid excessive computations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= pressedKeys.length <= 10^5",
+    "pressedKeys only consists of digits from '2' - '9'.",
+    "Return the answer modulo 10^9 + 7.",
+    "Consider the mapping of digits to letters carefully, as it affects the combination counts."
+  ]
+}

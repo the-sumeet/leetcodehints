@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. Each row can be seen as a binary string. For example, the row [0, 1] can be interpreted as '01'."
+    },
+    {
+      "content": "Think about what it means to flip a column. Flipping a column changes every 0 to 1 and every 1 to 0 in that column. Consider how this affects the rows."
+    },
+    {
+      "content": "Identify that after flipping, a row can match another row if they are identical or can be made identical through column flips. What does this imply about the rows' relationships?"
+    },
+    {
+      "content": "Consider how you can represent each row in a way that makes it easier to compare them after potential flips. What if you normalized each row based on the first element?"
+    },
+    {
+      "content": "When normalizing a row, you can choose to flip it if the first element is 1. For example, [1, 0] could be flipped to [0, 1]. How would you implement this normalization?"
+    },
+    {
+      "content": "After normalizing the rows, think about how to count the occurrences of each unique row. You can use a dictionary or hashmap for this purpose."
+    },
+    {
+      "content": "The maximum number of rows that can be made equal will be the count of the most frequent normalized row. How would you find this maximum count?"
+    },
+    {
+      "content": "Consider edge cases, such as when all rows are already equal or when all rows are different. How would your approach handle these cases?"
+    },
+    {
+      "content": "Remember to consider the constraints: the matrix can be as large as 300x300. Ensure that your solution is efficient enough to handle this size."
+    },
+    {
+      "content": "Finally, think about the return format. You need to return a single integer representing the maximum number of equal rows after flips. What will your final function look like?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: m == matrix.length, n == matrix[i].length",
+    "1 <= m, n <= 300",
+    "matrix[i][j] is either 0 or 1",
+    "Return format: a single integer representing the maximum number of equal rows."
+  ]
+}

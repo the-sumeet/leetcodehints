@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a subsequence. A subsequence is formed by deleting some elements from the array without changing the order of the remaining elements. This means that any combination of coins can be used to form different sums."
+    },
+    {
+      "content": "Consider the smallest coin in your array. If you have a coin of value 1, you can create every integer from 1 up to the target. If not, think about how you can fill in the gaps for smaller integers."
+    },
+    {
+      "content": "Sort the coins array. This will help you systematically check which integers from 1 to the target can be formed using the available coins. It’s easier to see what’s missing when the coins are in order."
+    },
+    {
+      "content": "Initialize a variable, say `current_sum`, to track the maximum value that can be formed with the current coins. Start with `current_sum = 0`, and iterate through the sorted coins."
+    },
+    {
+      "content": "During the iteration, if the next coin is less than or equal to `current_sum + 1`, you can use it to extend the range of obtainable sums. Update `current_sum` accordingly by adding the coin's value."
+    },
+    {
+      "content": "If you encounter a coin that is greater than `current_sum + 1`, it means there’s a gap. You need to add coins to fill this gap. Specifically, you should add a coin of value `current_sum + 1` to ensure all integers up to that point are obtainable."
+    },
+    {
+      "content": "After adding a coin, update `current_sum` by adding the value of the new coin. Continue this process until `current_sum` reaches or exceeds the target."
+    },
+    {
+      "content": "Keep track of how many coins you have added. This will be your answer once you have ensured that all integers from 1 to the target are obtainable."
+    },
+    {
+      "content": "Consider edge cases such as when the coins array is empty or when all coins are larger than the target. How would you handle these scenarios to ensure all integers can still be formed?"
+    },
+    {
+      "content": "Finally, remember to return the count of coins added. Your function should return this count after you have iterated through all necessary coins and ensured every integer up to the target can be formed."
+    }
+  ],
+  "questionNotes": [
+    "1 <= target <= 100000",
+    "1 <= coins.length <= 100000",
+    "1 <= coins[i] <= target",
+    "The array is 0-indexed.",
+    "A subsequence is formed by deleting some elements without changing the order of the remaining elements."
+  ]
+}

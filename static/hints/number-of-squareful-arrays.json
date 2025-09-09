@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a squareful array is. A squareful array requires that the sum of every pair of adjacent elements is a perfect square. For example, if you have two elements, `a` and `b`, their sum `a + b` must equal some perfect square like 1, 4, 9, 16, etc."
+    },
+    {
+      "content": "Consider how you can check if a number is a perfect square. You can use the integer square root function to find the square root and check if squaring it returns the original number. For example, for a number `x`, check if `sqrt(x)^2 == x`."
+    },
+    {
+      "content": "Think about how to generate permutations of the array. Since the array can contain duplicates, ensure that you handle those correctly to avoid counting the same permutation multiple times."
+    },
+    {
+      "content": "When generating permutations, you can use backtracking. This approach allows you to build the permutations step by step and check for the squareful condition at each step."
+    },
+    {
+      "content": "Remember to sort the array first. Sorting helps in managing duplicates and can simplify the logic when checking adjacent elements for the squareful condition."
+    },
+    {
+      "content": "While generating permutations, keep track of which elements have been used. This will help you avoid reusing elements in the current permutation and ensure that you only create valid permutations."
+    },
+    {
+      "content": "As you build each permutation, check if the current permutation is squareful by validating the sum of adjacent elements. If at any point the sum is not a perfect square, you can stop further exploration down that path."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array has only one element. A single element array is trivially squareful since there are no adjacent pairs to check."
+    },
+    {
+      "content": "Think about how to efficiently store and count valid permutations. You might want to use a set to keep track of unique permutations or a counter to track how many valid squareful arrays you've found."
+    },
+    {
+      "content": "When checking for perfect squares, precompute all possible perfect squares that can be formed with the sums of the largest possible pairs in the array. This can speed up your checks during permutation generation."
+    },
+    {
+      "content": "When implementing backtracking, ensure that you have a base case that counts a valid permutation when you reach the end of the array. This is where you will increment your count of squareful arrays."
+    },
+    {
+      "content": "Be mindful of the constraints, especially the maximum length of the array (12). This means that the maximum number of permutations you might need to consider is 12!, which is manageable with an efficient backtracking approach."
+    },
+    {
+      "content": "Consider using memoization to store results of previously computed states if you find yourself recalculating the same permutations multiple times."
+    },
+    {
+      "content": "Think about how to handle duplicates in the input array. You might want to skip over duplicate elements in your permutation generation to avoid counting the same permutation multiple times."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct count of valid squareful permutations as specified in the problem statement. You need to return an integer, which is the total count of unique squareful permutations."
+    }
+  ],
+  "questionNotes": [
+    "An array is squareful if the sum of every pair of adjacent elements is a perfect square.",
+    "Return the number of unique permutations of the array that are squareful.",
+    "Consider edge cases like single-element arrays.",
+    "Handle duplicates in the input array to avoid counting the same permutation multiple times.",
+    "Constraints: 1 <= nums.length <= 12, 0 <= nums[i] <= 10^9."
+  ]
+}

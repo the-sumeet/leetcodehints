@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to count subsequences in a string. A subsequence can be formed by removing some characters without changing the order of the remaining characters. For example, in the string 'abc', the subsequences that include 'ab' are 'ab', 'a', 'b', and 'abc'."
+    },
+    {
+      "content": "Consider how the addition of a single character can affect the count of subsequences. You will need to analyze the positions where you can insert the new character from the pattern, either `pattern[0]` or `pattern[1]`, into the `text`."
+    },
+    {
+      "content": "Think about the two characters in the pattern. For each character, you will have to count how many subsequences of the form `pattern[0] + pattern[1]` can be formed. This involves counting occurrences of `pattern[0]` before `pattern[1]` in the string."
+    },
+    {
+      "content": "To count the subsequences efficiently, you can use a two-pass approach. In the first pass, count occurrences of `pattern[0]` up to each index. In the second pass, count how many times `pattern[1]` can be formed with the previously counted `pattern[0]` occurrences."
+    },
+    {
+      "content": "When inserting `pattern[0]`, you will want to consider how many `pattern[1]` can be formed after the insertion. Similarly, when inserting `pattern[1]`, consider how many `pattern[0]` can be formed before it. This dual consideration is key to maximizing the subsequences."
+    },
+    {
+      "content": "Keep in mind that the insertion can occur at any index, including the start and end of the string. You may want to simulate this by iterating through all possible insertion points and recalculating the subsequence count each time."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the text is very short or when the characters in the pattern are the same. For instance, if `pattern = 'aa'`, inserting either character will not change the count of subsequences."
+    },
+    {
+      "content": "As you calculate the maximum subsequences for each insertion, maintain a variable to track the highest count found. This will be your final answer after checking all possible insertion points."
+    },
+    {
+      "content": "You might want to create helper functions to encapsulate the logic for counting subsequences for a given string. This will help keep your main logic clean and focused on the insertion logic."
+    },
+    {
+      "content": "Finally, ensure your solution runs efficiently within the constraints. Since the length of `text` can be up to 100,000, aim for a solution that operates in linear time relative to the length of `text`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= text.length <= 10^5, pattern.length == 2.",
+    "Both text and pattern consist only of lowercase English letters.",
+    "You can add either pattern[0] or pattern[1] exactly once.",
+    "The character can be added anywhere in text, including the beginning or end.",
+    "Return the maximum number of times the pattern can occur as a subsequence."
+  ]
+}

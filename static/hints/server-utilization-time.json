@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of server events, each with a server ID, a timestamp, and a session status (either 'start' or 'stop'). Make sure you can parse this data correctly."
+    },
+    {
+      "content": "Consider how you will store the start and stop times for each server. A dictionary or a similar data structure can be useful, where the key is the server ID and the value is a list of timestamps."
+    },
+    {
+      "content": "As you process each event, check if the session status is 'start' or 'stop'. If it's 'start', you should record the timestamp. If it's 'stop', you need to calculate the duration from the last 'start' timestamp."
+    },
+    {
+      "content": "Think about how to handle multiple 'start' and 'stop' events for the same server. You should ensure that each 'stop' event corresponds to the most recent 'start' event. This may require a stack or a queue."
+    },
+    {
+      "content": "When calculating the total utilization time for each server, consider edge cases where a 'stop' event might not have a corresponding 'start' event. You should decide how to handle these situations."
+    },
+    {
+      "content": "Make sure to convert the timestamps from strings to a datetime format. This will allow you to easily calculate the difference between two timestamps to find the duration."
+    },
+    {
+      "content": "After processing all events, you will need to sum the utilization times for each server. Consider how you will store these totals and what data structure will allow you to do this efficiently."
+    },
+    {
+      "content": "Remember to handle time zones if applicable, as timestamps may not always be in the same timezone. For simplicity, you may assume all timestamps are in UTC."
+    },
+    {
+      "content": "Once you have the total utilization times, think about how to format your output. You might want to return a list of server IDs along with their corresponding utilization times."
+    },
+    {
+      "content": "Finally, ensure that your solution accounts for any potential performance issues, especially if the number of events is large. You may need to optimize your approach to handle larger datasets efficiently."
+    }
+  ],
+  "questionNotes": [
+    "Input data consists of server events with server ID, timestamp, and session status.",
+    "Ensure each 'stop' corresponds to the most recent 'start' for the same server.",
+    "Handle cases where there are unmatched 'start' and 'stop' events.",
+    "Convert timestamp strings to datetime objects for duration calculations.",
+    "Output format should include server IDs and their total utilization times."
+  ]
+}

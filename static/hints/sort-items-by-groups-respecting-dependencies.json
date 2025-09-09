@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input structure. You have `n` items, each associated with a group or no group (indicated by -1). Make sure you can differentiate between items that belong to groups and those that don't."
+    },
+    {
+      "content": "Take a closer look at the `beforeItems` array. This array indicates dependencies between items, meaning that certain items must appear before others in the final sorted list. Make sure to visualize these dependencies."
+    },
+    {
+      "content": "Consider how to represent the items and their groups. You might want to create a mapping from items to their respective groups to easily access group information."
+    },
+    {
+      "content": "Think about how to handle items that belong to the same group. You need to ensure that items from the same group are adjacent in the final sorted list. How will you achieve this?"
+    },
+    {
+      "content": "You will likely need to perform a topological sort to respect the dependencies defined in `beforeItems`. Familiarize yourself with how topological sorting works, especially in the context of directed graphs."
+    },
+    {
+      "content": "Remember that there could be multiple valid outputs. Your solution should not only find one valid ordering but also handle cases where no valid ordering exists due to circular dependencies."
+    },
+    {
+      "content": "Consider the case where some groups have no items. You need to ensure that these groups are still accounted for in your final output, even if they don't contribute any items."
+    },
+    {
+      "content": "When processing groups, it might be useful to first collect all items belonging to each group. This way, you can sort items within each group after resolving their dependencies."
+    },
+    {
+      "content": "After performing a topological sort for items in each group, remember to concatenate the results of each group in the order of their group IDs. This ensures that groups are sorted correctly."
+    },
+    {
+      "content": "Be mindful of the constraints: `1 <= m <= n <= 3 * 10^4`. This means your solution should be efficient, ideally O(n + m), to handle the upper limits of input sizes."
+    },
+    {
+      "content": "Check for edge cases, such as when all items belong to the same group or when there are no dependencies at all. How would your solution handle these scenarios?"
+    },
+    {
+      "content": "Make sure to handle the case where a valid ordering is impossible due to cycles in the dependency graph. You may need to implement a mechanism to detect cycles during the topological sort."
+    },
+    {
+      "content": "As you implement your solution, consider using a queue or stack to manage the items as you perform the topological sort. This will help you keep track of which items can be added to the sorted list next."
+    },
+    {
+      "content": "Once you have sorted the items within each group, think about how to merge these results. The final output should be a single list that respects both the group order and the item dependencies."
+    },
+    {
+      "content": "Finally, ensure that your function returns an empty list when no valid ordering is possible. This is a crucial part of the problem statement that must be handled correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m <= n <= 3 * 10^4",
+    "Group array length must match the number of items.",
+    "Group[i] = -1 indicates no group.",
+    "beforeItems[i] can be empty, indicating no dependencies.",
+    "Return an empty list if no valid ordering exists.",
+    "Multiple valid outputs are acceptable."
+  ]
+}

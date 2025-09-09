@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Think about how you can represent the problem of partitioning the array. You need to find a way to divide `nums` into `k` non-empty subarrays. Consider how you might use dynamic programming to keep track of the best scores for different partitions."
+    },
+    {
+      "content": "Remember that the average of a subarray can be calculated as the sum of its elements divided by the number of elements. You will need to compute the sum of elements for any subarray you consider."
+    },
+    {
+      "content": "You can use a prefix sum array to help calculate the sum of any subarray efficiently. For an array `nums`, the prefix sum at index `i` gives you the sum of all elements from the start up to index `i`."
+    },
+    {
+      "content": "Consider how you would set up a dynamic programming table. You might want to define `dp[i][j]` as the maximum score achievable by partitioning the first `i` elements of `nums` into `j` subarrays."
+    },
+    {
+      "content": "When filling in your DP table, think about the last subarray you would create. If you are considering the last subarray to end at index `i`, you need to decide where this last subarray starts, which could be anywhere from the start to index `i`."
+    },
+    {
+      "content": "To calculate the average of the last subarray efficiently, use the prefix sum array. If you are considering the last subarray from index `p` to `i`, the average can be computed as: `prefixSum[i] - prefixSum[p-1] / (i - p + 1)`."
+    },
+    {
+      "content": "Make sure to handle the base case for your DP table correctly. For example, if you are only allowed one subarray (i.e., `k = 1`), the score is simply the average of the entire array."
+    },
+    {
+      "content": "Think about edge cases, such as when `k` is equal to the length of `nums`. In this case, each element would be its own subarray, and the score would simply be the sum of all elements."
+    },
+    {
+      "content": "As you implement your solution, be cautious with floating-point precision. The problem states that answers within `10^-6` of the actual answer will be accepted, so consider how you will format your final return value."
+    },
+    {
+      "content": "Finally, ensure that your implementation efficiently computes the maximum score for all possible partitions. You may need to iterate through possible partition points and update your DP table accordingly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100",
+    "1 <= nums[i] <= 10^4",
+    "1 <= k <= nums.length",
+    "The partition must use every integer in nums.",
+    "The score is the sum of averages of each subarray.",
+    "Answers within 10^-6 of the actual answer will be accepted."
+  ]
+}

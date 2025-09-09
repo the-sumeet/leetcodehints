@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the `Followers` table. Each row represents a relationship where `follower_id` follows `user_id`. This means that for each user, we need to count how many unique `follower_id`s are associated with them."
+    },
+    {
+      "content": "Think about how you can group the data by `user_id`. This will help you aggregate the follower counts for each user. You might want to consider using a SQL `GROUP BY` clause for this purpose."
+    },
+    {
+      "content": "When counting followers, remember that you need to count distinct `follower_id`s for each `user_id`. This is crucial because a follower might follow the same user multiple times, but you only want to count them once."
+    },
+    {
+      "content": "Consider the SQL function `COUNT()` to count the number of followers. Pair it with `DISTINCT` to ensure you are counting unique followers only. Your SQL query might start looking like this: `SELECT user_id, COUNT(DISTINCT follower_id) ...`."
+    },
+    {
+      "content": "Don't forget to include the `FROM` clause to specify the `Followers` table in your query. After grouping by `user_id`, you will need to add a `HAVING` clause if you want to filter results, but that's not necessary for this problem."
+    },
+    {
+      "content": "After constructing your query to count followers, think about how you will order the results. The problem specifies that the output should be ordered by `user_id` in ascending order. You can achieve this with an `ORDER BY user_id ASC` clause."
+    },
+    {
+      "content": "Make sure to handle cases where a user might not have any followers. In such cases, the count should be zero. Your query should still return a row for each user even if they have no followers."
+    },
+    {
+      "content": "Remember to check for any potential duplicates in your `Followers` table. While the problem states that (user_id, follower_id) is a primary key, it's good practice to ensure your query logic accounts for this."
+    },
+    {
+      "content": "As you finalize your SQL query, ensure that you are selecting both the `user_id` and the computed `followers_count`. Your final SELECT statement should look something like: `SELECT user_id, COUNT(DISTINCT follower_id) AS followers_count ...`."
+    },
+    {
+      "content": "Your final SQL query should resemble this structure: `SELECT user_id, COUNT(DISTINCT follower_id) AS followers_count FROM Followers GROUP BY user_id ORDER BY user_id ASC;`. Test this query with the provided sample input to verify its correctness."
+    }
+  ],
+  "questionNotes": [
+    "The primary key is a combination of (user_id, follower_id), ensuring unique follower relationships.",
+    "The output must include each user_id even if they have zero followers.",
+    "Results should be ordered by user_id in ascending order."
+  ]
+}

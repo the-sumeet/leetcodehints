@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, identify the structure of the input data. You have a list of survey actions, each associated with a question. Focus on how to iterate through these actions."
+    },
+    {
+      "content": "Next, separate the actions into two types: 'show' and 'answer'. You will need to keep track of how many times each question was shown and how many times it received an answer."
+    },
+    {
+      "content": "Consider using a dictionary or a similar data structure to store the counts. For each question, you can maintain two counters: one for shows and one for answers."
+    },
+    {
+      "content": "As you process the actions, remember that only the 'show' actions increase the show count, while 'answer' actions increase the answer count for the corresponding question."
+    },
+    {
+      "content": "Think about how to calculate the answer rate. The answer rate can be defined as the number of answers divided by the number of shows for each question."
+    },
+    {
+      "content": "When calculating the answer rates, be cautious of division by zero. If a question has never been shown, it should not contribute to the answer rate."
+    },
+    {
+      "content": "After calculating the answer rates, you need to determine which question has the highest rate. Consider how you will handle ties. Will you return the first question with the highest rate or all questions that share the highest rate?"
+    },
+    {
+      "content": "Once you have the highest answer rate, think about how to format your output. Do you need to return just the question ID or any additional information?"
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases such as: no questions shown, all questions shown but none answered, and multiple questions with the same highest answer rate."
+    },
+    {
+      "content": "Finally, implement the logic to iterate through your dictionary of counts, calculate the rates, and determine the question with the highest answer rate. Remember to consider how to handle cases where there are no valid questions."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of a list of survey actions with various fields.",
+    "You need to track 'show' and 'answer' actions separately.",
+    "Ensure to handle division by zero when calculating answer rates.",
+    "Decide how to handle ties for the highest answer rate.",
+    "Output should include the question ID with the highest answer rate."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a k-radius average. For an index `i`, you need to consider the elements from `i - k` to `i + k`. Make sure you account for cases where these indices go out of bounds."
+    },
+    {
+      "content": "Remember that if there are not enough elements on either side of index `i`, the result should be -1. Specifically, check if `i < k` or `i + k >= n`."
+    },
+    {
+      "content": "To compute the average, you will need to sum the elements in the range `[i - k, i + k]`. Think about how you can efficiently calculate this sum for each index without recalculating it from scratch."
+    },
+    {
+      "content": "Consider using a sliding window technique. You can maintain a running sum of the current window and update it as you move the center index `i` from left to right."
+    },
+    {
+      "content": "When you move from index `i` to `i + 1`, you can adjust your sum by subtracting the element that is left out and adding the new element that comes into the window. This will help in optimizing your solution."
+    },
+    {
+      "content": "Make sure to handle the edge cases where `k` is 0. In this case, the average for each index should simply be the value at that index."
+    },
+    {
+      "content": "Consider the constraints carefully: the length of `nums` can be up to 100,000. Your solution should ideally be O(n) to handle the largest inputs efficiently."
+    },
+    {
+      "content": "As you implement the sliding window, ensure that you are using integer division correctly to truncate the average. Remember that in Python, `//` operator performs integer division."
+    },
+    {
+      "content": "Before finalizing your implementation, test your function with edge cases, such as when `k` is larger than the length of `nums` or when `nums` contains only one element."
+    },
+    {
+      "content": "Now, you can start implementing the sliding window logic. Initialize an output array of size `n` with all elements set to -1, and then fill in the valid averages as you compute them."
+    }
+  ],
+  "questionNotes": [
+    "The k-radius average is defined for indices where there are enough elements on both sides.",
+    "If there are fewer than k elements before or after index i, return -1 for that index.",
+    "Use integer division to compute the average, truncating towards zero.",
+    "The output array should have the same length as the input array nums."
+  ]
+}

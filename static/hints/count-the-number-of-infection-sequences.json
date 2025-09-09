@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the infection process. Infected people can only infect their adjacent uninfected neighbors. This means that the infection spreads in a wave from the initially infected positions."
+    },
+    {
+      "content": "Consider the positions of the infected people in the array. Each infected person can only infect their immediate left and right neighbors, provided they are uninfected."
+    },
+    {
+      "content": "Think about the gaps between the infected positions. For example, if `sick = [0, 4]`, the uninfected positions are in the ranges [1, 2, 3]. How many uninfected people are there in each gap?"
+    },
+    {
+      "content": "Identify the segments of uninfected people between the infected ones. For `sick = [0, 4]`, the uninfected segment is from index 1 to index 3, which has 3 uninfected people."
+    },
+    {
+      "content": "Each segment of uninfected people can be infected in various orders. The number of valid sequences depends on how many uninfected people are in each segment and their adjacency to infected people."
+    },
+    {
+      "content": "Use combinatorial mathematics to calculate the number of ways to arrange the uninfected people in each segment. For a segment of length `k`, the number of ways to arrange them is `k!`."
+    },
+    {
+      "content": "Remember to account for the constraints. The first person to get infected must be adjacent to an infected person. This limits the choices for the first infection in each segment."
+    },
+    {
+      "content": "Consider how to combine the valid sequences from multiple segments. If you have multiple segments of uninfected people, the total valid sequences can be calculated using the product of the arrangements from each segment."
+    },
+    {
+      "content": "Don’t forget about the modulo operation. Since the result can be large, you need to return the answer modulo `10^9 + 7`."
+    },
+    {
+      "content": "Think about edge cases: What if there are only two infected people? How does that change the number of uninfected people and their arrangements?"
+    },
+    {
+      "content": "When calculating factorial values for large numbers, consider using precomputation or caching to optimize your solution. This will help in calculating `k!` efficiently."
+    },
+    {
+      "content": "Make sure to handle the cases where segments of uninfected people are adjacent to the ends of the array. For example, if `sick = [0]`, then the left segment is empty and the right segment includes all remaining people."
+    },
+    {
+      "content": "As you build your solution, ensure that you are correctly identifying and counting the uninfected segments. Each segment's contribution to the final count is crucial."
+    },
+    {
+      "content": "Finally, think about how to structure your final calculation. You will need to multiply the number of valid sequences from each segment and apply the modulo operation."
+    },
+    {
+      "content": "You are very close! To finalize your approach, outline how you will iterate through the `sick` array, calculate the lengths of uninfected segments, and compute the total valid sequences."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 100000, 1 <= sick.length <= n - 1, 0 <= sick[i] <= n - 1.",
+    "The `sick` array is sorted in increasing order.",
+    "Return the number of different infection sequences modulo 10^9 + 7.",
+    "Infection can only spread to adjacent uninfected people."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "First, consider what it means for one string to be a rotation of another. A rotation involves shifting characters in a specific order. For example, 'abcde' can become 'bcdea' after one shift."
+    },
+    {
+      "content": "Think about the length of both strings. If the lengths of `s` and `goal` are not equal, then it's impossible for `s` to become `goal` through any number of shifts."
+    },
+    {
+      "content": "Check if both strings contain the same characters with the same frequency. This is a necessary condition for one string to be a rotation of another. You can use a frequency count or sorting for this."
+    },
+    {
+      "content": "Consider how you can simulate the shifting process. One way is to concatenate the string `s` with itself. For example, if `s = 'abcde'`, then `s + s = 'abcdeabcde'`."
+    },
+    {
+      "content": "After concatenating `s` with itself, think about how you can check if `goal` is a substring of this new string. This will help you determine if `goal` can be formed by shifting `s`."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when `s` and `goal` are both empty strings. According to the constraints, this won't happen, but it's good practice to consider all possibilities."
+    },
+    {
+      "content": "When checking if `goal` is a substring of `s + s`, make sure to use the appropriate string methods available in your programming language. For example, in Python, you can use the `in` keyword."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Concatenating two strings and checking for a substring can both be done efficiently, but it's good to be aware of how this affects performance."
+    },
+    {
+      "content": "Before finalizing your solution, write out test cases that cover various scenarios, such as identical strings, completely different strings, and strings that are rotations of each other."
+    },
+    {
+      "content": "Finally, implement the logic to check if `goal` is in `s + s`. If it is, return true; otherwise, return false. This is the core of your solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length, goal.length <= 100",
+    "Both s and goal consist of lowercase English letters.",
+    "If lengths of s and goal are not equal, return false immediately."
+  ]
+}

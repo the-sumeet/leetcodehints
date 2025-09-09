@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for an array to be 'special'. An array is special if every adjacent pair of elements has different parity (one is odd and the other is even)."
+    },
+    {
+      "content": "Consider how you can determine the parity of a number. You can use the modulo operator: a number is even if `num % 2 == 0`, and odd if `num % 2 != 0`."
+    },
+    {
+      "content": "Think about how to iterate through a subarray defined by the indices in the `queries`. You will need to access elements in `nums` using the indices provided in each query."
+    },
+    {
+      "content": "When checking the pairs in the subarray, remember that you only need to check adjacent pairs. If you find a pair with the same parity, the subarray is not special."
+    },
+    {
+      "content": "You can optimize your checks by stopping early if you find any adjacent pair with the same parity. This will save time, especially for larger subarrays."
+    },
+    {
+      "content": "Consider edge cases, such as subarrays of length 1. A single element is trivially special since there are no adjacent pairs to compare."
+    },
+    {
+      "content": "Think about how to handle multiple queries efficiently. You might want to precompute some information about the array to avoid redundant checks for overlapping queries."
+    },
+    {
+      "content": "You can create a helper function that checks if a given subarray is special. This function will take the start and end indices and return a boolean."
+    },
+    {
+      "content": "As you implement your solution, remember to construct the result array according to the format specified in the problem. Each result should correspond to the queries in the order they were given."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases, such as when all elements are the same parity, or when the array length is at its minimum or maximum limits."
+    }
+  ],
+  "questionNotes": [
+    "The array is considered special if every pair of adjacent elements has different parity.",
+    "Queries are provided as pairs of indices, and you need to check the subarray defined by these indices.",
+    "The output should be an array of booleans, where each boolean corresponds to whether the respective subarray is special.",
+    "Constraints: 1 <= nums.length <= 10^5, 1 <= nums[i] <= 10^5, 1 <= queries.length <= 10^5, 0 <= queries[i][0] <= queries[i][1] <= nums.length - 1."
+  ]
+}

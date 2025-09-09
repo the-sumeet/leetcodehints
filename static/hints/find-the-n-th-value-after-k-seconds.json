@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the initial state of the array. For any given n, the array a is initialized such that a[i] = 1 for all indices 0 <= i < n. This means that the initial array looks like this: [1, 1, 1, ..., 1]."
+    },
+    {
+      "content": "Consider how the array updates after each second. Each element a[i] is updated to be the sum of all preceding elements plus itself. For example, a[1] becomes a[0] + a[1]."
+    },
+    {
+      "content": "Notice that the first element a[0] remains unchanged throughout the process. This means that a[0] = 1 at all times, which can simplify your calculations."
+    },
+    {
+      "content": "For the second element a[1], after one second, it will be a[0] + a[1], which translates to 1 + 1 = 2. Think about how this pattern continues for other elements."
+    },
+    {
+      "content": "As you progress through the seconds, each element's value depends on the cumulative sum of all previous elements. This indicates that the array is building a form of triangular number sequence."
+    },
+    {
+      "content": "Try to derive a formula or a pattern for how a[n-1] evolves over time. For instance, after two seconds, you can see that a[2] becomes 6, which is the sum of a[0], a[1], and a[2] from the previous second."
+    },
+    {
+      "content": "Consider using dynamic programming to store the values of the array after each second. This way, you can avoid recalculating sums repeatedly and optimize your solution."
+    },
+    {
+      "content": "Remember to apply the modulo operation (10^9 + 7) to your results to prevent overflow, as the numbers can grow very large with increasing n and k."
+    },
+    {
+      "content": "Think about edge cases, such as when n or k is 1. What would the output be in these scenarios? How does the array behave with minimal input?"
+    },
+    {
+      "content": "Finally, try to implement a loop that runs for k seconds, updating the array accordingly. After k iterations, return a[n - 1] as your final answer, ensuring to apply the modulo operation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n, k <= 1000",
+    "Return the result modulo 10^9 + 7.",
+    "The array is 0-indexed, meaning the last element is a[n - 1].",
+    "Each element's update depends on all previous elements, which leads to cumulative sums."
+  ]
+}

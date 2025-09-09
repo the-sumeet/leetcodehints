@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Remember that a binary search tree (BST) has a property where for any given node, all values in the left subtree are less than the node's value, and all values in the right subtree are greater. This property can help you decide which direction to traverse the tree."
+    },
+    {
+      "content": "Start by checking if the current node is null. If it is, that means you've reached a leaf node without finding the value, so you should return null."
+    },
+    {
+      "content": "Next, compare the value you're searching for (`val`) with the current node's value. If they are equal, you've found the node you're looking for, and you should return this node."
+    },
+    {
+      "content": "If `val` is less than the current node's value, you should traverse to the left child of the current node. Conversely, if `val` is greater, you should move to the right child."
+    },
+    {
+      "content": "Consider the base case where the tree has only one node. How would you handle this case? Ensure your function can handle trees with minimal nodes."
+    },
+    {
+      "content": "Think about how you will structure your function. You might want to use a recursive approach, but an iterative approach is also valid. Which do you think would be easier to implement?"
+    },
+    {
+      "content": "When returning the subtree rooted at the found node, make sure you are returning the entire subtree and not just the value. This means returning the node itself, which includes its left and right children."
+    },
+    {
+      "content": "Consider edge cases where the value might be at the very left or right of the tree. Make sure your traversal logic correctly handles these scenarios."
+    },
+    {
+      "content": "Keep in mind that the input tree is guaranteed to be a BST. This allows you to optimize your search without needing to check every node."
+    },
+    {
+      "content": "Your final function should return null if the node with the specified value does not exist in the tree. Ensure you have a clear path to return null when necessary."
+    }
+  ],
+  "questionNotes": [
+    "The number of nodes in the tree is in the range [1, 5000].",
+    "1 <= Node.val <= 10^7.",
+    "The input tree is guaranteed to be a binary search tree.",
+    "Return the subtree rooted at the found node, or null if not found."
+  ]
+}

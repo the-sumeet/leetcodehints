@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the preorder traversal is structured. Each node's value is preceded by a number of dashes that indicate its depth in the tree. For example, in '1-2--3', '1' is the root, '2' is a child at depth 1, and '3' is a child of '2' at depth 2."
+    },
+    {
+      "content": "Identify how to parse the input string. You can split the string into segments by recognizing the number of dashes preceding each number. The number of dashes tells you the depth of the corresponding node."
+    },
+    {
+      "content": "Consider how to maintain the current depth while parsing the string. You can use a counter to track the depth and compare it to the depth of the last node added to your tree."
+    },
+    {
+      "content": "When you encounter a new node, check if its depth is greater than the last node's depth. If it is, that means it is a child of the last node. If it's less, you'll need to backtrack up the tree to find the correct parent."
+    },
+    {
+      "content": "Think about how to represent the tree. You may want to create a simple TreeNode class that holds a value and references to left and right children."
+    },
+    {
+      "content": "As you parse through the string, maintain a stack to help with backtracking. The stack can hold nodes as you go deeper into the tree, allowing you to easily find the parent when you need to backtrack."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when there are multiple dashes indicating the same depth. This means you may need to add siblings at the same level."
+    },
+    {
+      "content": "While constructing the tree, ensure that you properly assign left and right children. Since the problem guarantees that if a node has only one child, it will be the left child, you can simplify your logic."
+    },
+    {
+      "content": "After parsing the input, check if your tree structure matches the expected output format. You may need to implement a function to serialize the tree back into the expected output format."
+    },
+    {
+      "content": "Consider how to handle null values in the output. If a node does not have a right child, you should still represent that in the output format."
+    },
+    {
+      "content": "As you build the tree, keep track of the depth of each node. This will help you ensure that you are correctly placing each node in relation to its parent."
+    },
+    {
+      "content": "Think about the time complexity of your solution. You should aim for a linear time complexity, O(n), since you will be processing each character in the string once."
+    },
+    {
+      "content": "Test your solution with various inputs, especially edge cases like a tree with only one node or a tree that is skewed to the left or right."
+    },
+    {
+      "content": "Before finalizing your solution, review the constraints provided in the problem statement. Ensure that your implementation adheres to the limits on node values and the number of nodes."
+    },
+    {
+      "content": "To summarize your approach, you will parse the string, build the tree using a stack for depth management, and ensure that you account for nulls in the output format. Start implementing this step by step."
+    }
+  ],
+  "questionNotes": [
+    "The depth of the root node is 0.",
+    "Each node's immediate child is guaranteed to be the left child if only one child exists.",
+    "Output format should represent null children explicitly.",
+    "Constraints: 1 <= Node.val <= 10^9 and the number of nodes is in the range [1, 1000]."
+  ]
+}

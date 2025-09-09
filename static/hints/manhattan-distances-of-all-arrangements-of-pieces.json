@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of Manhattan distance. It is defined as the sum of the absolute differences of their Cartesian coordinates. For two points (x1, y1) and (x2, y2), the distance is |x1 - x2| + |y1 - y2|."
+    },
+    {
+      "content": "Consider how to calculate the Manhattan distance for two pieces placed on the grid. If you have two pieces at positions (x1, y1) and (x2, y2), how would you express their distance?"
+    },
+    {
+      "content": "Think about how many valid arrangements of k pieces can be made on an m x n grid. This involves combinatorial calculations. What formula can you use to determine the number of ways to choose k positions from m*n?"
+    },
+    {
+      "content": "Remember that for each arrangement of pieces, you need to compute the distance for every pair of pieces. How can you efficiently sum these distances across all arrangements?"
+    },
+    {
+      "content": "Consider the symmetry in the grid. The Manhattan distance will be the same for pieces placed in symmetrical positions. How can you leverage this symmetry to reduce calculations?"
+    },
+    {
+      "content": "You might want to break down the problem by looking at the contributions of each piece's position to the total distance. How does the position of one piece affect the distances to all other pieces?"
+    },
+    {
+      "content": "Think about the contribution of a single piece to the total Manhattan distance. If you fix one piece, how can you calculate its distance to all other pieces in the grid?"
+    },
+    {
+      "content": "Consider how to handle the modular arithmetic since the result can be very large. Make sure to apply the modulo operation at each step of your calculations to avoid overflow."
+    },
+    {
+      "content": "What happens if k is equal to m*n? In this case, all cells will be filled. How does this affect the calculation of distances?"
+    },
+    {
+      "content": "Explore how the distances can be grouped. For instance, distances can be categorized based on the relative positions of the pieces. How can you express these groups mathematically?"
+    },
+    {
+      "content": "You may need to precompute some values, such as factorials or combinations, to efficiently calculate the number of arrangements. Which values would be most beneficial to precompute?"
+    },
+    {
+      "content": "As you calculate the sum of distances, consider using a nested loop structure where you iterate over all pairs of pieces. How can you optimize this to avoid recalculating distances?"
+    },
+    {
+      "content": "Think about edge cases, such as when k is 2. How does this simplify the problem? Can you derive a general formula for small values of k?"
+    },
+    {
+      "content": "Consider the contribution of each coordinate separately. How can you sum the contributions of the x-coordinates and y-coordinates independently to get the total distance?"
+    },
+    {
+      "content": "Finally, how would you implement the logic to calculate the total Manhattan distance across all arrangements? Start with a function that computes the distance for a given arrangement and iterate through all valid arrangements."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 10^5; 2 <= m * n <= 10^5; 2 <= k <= m * n.",
+    "The answer must be returned modulo 10^9 + 7.",
+    "Ensure that you consider unique arrangements and the impact of piece positions on distances."
+  ]
+}

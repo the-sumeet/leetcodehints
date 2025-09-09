@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation you can perform: selecting two distinct indices `i` and `j` where `nums[i] > 0` and `nums[j] > 0`, and then inserting `nums[i] % nums[j]` at the end of the array. This operation reduces the number of elements in the array."
+    },
+    {
+      "content": "Consider the properties of the modulo operation. The result of `a % b` is always less than `b`. This means that the new element you add to the array will always be smaller than at least one of the two elements you removed."
+    },
+    {
+      "content": "Think about the implications of the modulo operation when both numbers are the same. For example, if you take `5 % 5`, the result is `0`. What happens to the array if you keep performing operations with equal values?"
+    },
+    {
+      "content": "Notice that if you have multiple elements with the same value, they can repeatedly produce zeros. This could lead to a situation where the remaining elements are all zeros, effectively reducing the length of the array to a minimum."
+    },
+    {
+      "content": "Examine edge cases where the array consists of only one element. What would happen if the array was `[1]`, or `[10^9]`? How does this affect the minimum length of the array?"
+    },
+    {
+      "content": "To minimize the length of the array, you should focus on the largest and second largest elements. By repeatedly applying the modulo operation on these, you can generate smaller numbers until you reach a point where no further reduction is possible."
+    },
+    {
+      "content": "Consider sorting the array first. By sorting, you can easily identify the largest elements and apply the operation in a structured way. How might sorting help you visualize the operations more clearly?"
+    },
+    {
+      "content": "Think about the final state of the array. If you can reduce the array to a single unique value, what would that value be? How does the presence of different values affect the outcome?"
+    },
+    {
+      "content": "After performing operations, you may end up with zeros in the array. Consider how zeros can affect the length of the array. When can you stop performing operations, and how do you determine if further operations are futile?"
+    },
+    {
+      "content": "Finally, focus on the implementation. You need to keep track of the active elements in the array and ensure that you only perform operations on elements greater than zero. What data structure might help you efficiently manage this?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^9",
+    "Indices i and j must be distinct.",
+    "Both nums[i] and nums[j] must be greater than zero for the operation to be valid.",
+    "The return value should be the minimum length of the array after all possible operations."
+  ]
+}

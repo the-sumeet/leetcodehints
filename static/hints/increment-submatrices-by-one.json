@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. You will be working with a 2D array of size n x n, which is initially filled with zeroes. Make sure to visualize how the indices work in a 0-indexed matrix."
+    },
+    {
+      "content": "Take a closer look at the queries. Each query specifies a submatrix defined by two corners: the top left (row1, col1) and the bottom right (row2, col2). Make sure you understand how to interpret these indices correctly."
+    },
+    {
+      "content": "When processing a query, you need to increment all elements within the specified submatrix. Think about how you can iterate through the rows and columns defined by the query to perform the increment operation."
+    },
+    {
+      "content": "Consider the constraints of the problem. The maximum size of n is 500, and the number of queries can be up to 10^4. This suggests that a naive approach iterating through each element for every query might be inefficient."
+    },
+    {
+      "content": "To improve efficiency, think about using a technique that minimizes the number of updates you need to make to the matrix. For example, you could use a difference array or a prefix sum approach."
+    },
+    {
+      "content": "If you decide to use a difference array, remember that you can mark the corners of the submatrix to indicate where increments start and stop. This way, you can later compute the final values with a single pass."
+    },
+    {
+      "content": "After applying the difference array technique, you'll need to convert it back to the actual matrix values. This typically involves a cumulative sum process across both dimensions of the matrix."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the submatrix defined by a query is the entire matrix or when it is just a single cell. These cases should still work seamlessly with your approach."
+    },
+    {
+      "content": "As you implement your solution, keep an eye on the indexing. Since the matrix is 0-indexed, ensure that your loops and conditions correctly reflect this to avoid off-by-one errors."
+    },
+    {
+      "content": "Finally, once you have processed all queries and updated the matrix, ensure that you return the matrix in the correct format. The output should be a 2D list representing the final state of the matrix after all increments."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 500",
+    "Queries length: 1 <= queries.length <= 10^4",
+    "Indices are 0-indexed.",
+    "Each query specifies a valid submatrix with row1 <= row2 and col1 <= col2."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to maximize the minimum score in the gameScore array after making at most m moves. Remember, you can move both forward and backward in the points array."
+    },
+    {
+      "content": "Consider how the moves affect the gameScore. Each time you move to a new index, you add the corresponding points to gameScore. Think about how to balance your moves to achieve a high minimum score."
+    },
+    {
+      "content": "Notice that the gameScore starts from all zeros. Therefore, the minimum score will initially be 0. Your goal is to increase this minimum value as much as possible through your moves."
+    },
+    {
+      "content": "Think about the implications of moving to the left or right. If you move to the right, you can only increase gameScore for indices you reach. Conversely, moving left can allow you to revisit previous indices."
+    },
+    {
+      "content": "Since you can make at most m moves, consider how many times you can add points to each index. For example, if you can only make a limited number of moves, you might need to prioritize which indices to visit."
+    },
+    {
+      "content": "To find the maximum possible minimum score, you might want to use a binary search approach. This involves defining a range for the minimum score and checking if a certain score can be achieved with the given moves."
+    },
+    {
+      "content": "When implementing binary search, think about how to check if a given minimum score is achievable. This could involve simulating the moves and keeping track of how many moves are used."
+    },
+    {
+      "content": "As you simulate the moves, keep in mind that you can only move to valid indices (0 to n-1). Make sure to handle boundary conditions properly during your simulation."
+    },
+    {
+      "content": "You might want to create a helper function that checks if a certain minimum score can be achieved. This function would iterate through the points array and calculate the required moves."
+    },
+    {
+      "content": "Consider edge cases, such as when m is very small compared to n. In such cases, you may not be able to reach all indices, so focus on maximizing the scores of the closest indices."
+    },
+    {
+      "content": "Remember that the maximum score for any index is limited by the number of moves you can make. If you have more moves than necessary to reach an index, you can distribute the moves to increase the score further."
+    },
+    {
+      "content": "Think about how to efficiently distribute your moves. If you can reach an index multiple times, you might want to calculate how many times to return to that index to maximize its contribution to the minimum score."
+    },
+    {
+      "content": "When implementing your solution, keep track of both the current index and the number of moves left. This will help you decide whether to move left or right based on potential score increases."
+    },
+    {
+      "content": "As you approach your solution, ensure that you are correctly updating the gameScore array and checking the minimum value after each simulation. This is crucial for determining if your current guess for the minimum score is valid."
+    },
+    {
+      "content": "Finally, ensure that your binary search converges correctly. You should stop when the lower bound meets the upper bound, which will give you the maximum possible minimum score achievable."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 50000, 1 <= points[i] <= 1000000, 1 <= m <= 1000000000.",
+    "You start at index -1 and must remain within bounds after the first move.",
+    "The result should be the maximum possible minimum value in gameScore.",
+    "Consider how to handle ties when multiple configurations yield the same minimum score."
+  ]
+}

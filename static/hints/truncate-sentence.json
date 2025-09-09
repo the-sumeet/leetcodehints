@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to split the sentence into words. You can use the `split` method in many programming languages to divide the string by spaces. For example, in Python: `words = s.split(' ')`."
+    },
+    {
+      "content": "Remember that the problem specifies that there are no leading or trailing spaces. This means you can safely split the string without worrying about empty strings in the resulting list."
+    },
+    {
+      "content": "Take note of the parameter `k`. It represents the number of words you need to keep from the beginning of the sentence. Ensure that you only access indices that exist in the list of words."
+    },
+    {
+      "content": "After splitting the sentence into words, you can slice the list to obtain the first `k` words. In Python, this can be done using list slicing: `truncated_words = words[:k]`."
+    },
+    {
+      "content": "Once you have the truncated list of words, you need to join them back into a single string. Use the `join` method to concatenate the words with a space in between: `result = ' '.join(truncated_words)`."
+    },
+    {
+      "content": "Consider edge cases where `k` is equal to the total number of words in the sentence. In such cases, the entire sentence should be returned without any truncation."
+    },
+    {
+      "content": "Think about how to handle the input constraints. The problem guarantees that `k` will always be less than or equal to the number of words in the sentence, so you don't need to check for out-of-bounds errors."
+    },
+    {
+      "content": "Make sure to test your solution with various inputs, including sentences that have only one word and sentences where `k` is 1. This will help ensure your solution is robust."
+    },
+    {
+      "content": "When implementing your solution, keep an eye on the return format. The output should be a single string containing the truncated sentence, with words separated by a single space."
+    },
+    {
+      "content": "Finally, combine all the steps: split the sentence, slice the list of words to get the first `k`, and join them back together. Ensure your final output is in the correct format."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 500",
+    "k is in the range [1, the number of words in s]",
+    "s consists of only lowercase and uppercase English letters and spaces.",
+    "Words in s are separated by a single space, with no leading or trailing spaces."
+  ]
+}

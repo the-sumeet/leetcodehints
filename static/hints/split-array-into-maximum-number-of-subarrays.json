@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the bitwise AND operation works. The result of ANDing two numbers is influenced by their binary representation, where a '1' in the result occurs only if both corresponding bits are '1'. This means that adding more numbers to a subarray can potentially decrease the score."
+    },
+    {
+      "content": "Consider what happens when you encounter a zero in the array. The AND operation with zero will always yield zero. This suggests that whenever you find a zero, it could be a natural point to split the array into subarrays, as it guarantees a score of zero for that segment."
+    },
+    {
+      "content": "Think about how to approach the problem of minimizing the sum of scores. The goal is to maximize the number of subarrays while keeping the total score low. What strategies can you employ to identify segments of the array that yield a score of zero?"
+    },
+    {
+      "content": "When you iterate through the array, keep track of the current AND result. If at any point the AND result becomes zero, you can finalize that subarray and start a new one. This is crucial for maximizing the number of splits."
+    },
+    {
+      "content": "As you traverse the array, maintain a count of the number of subarrays formed. Each time you finalize a subarray (when the AND result is zero), increment your subarray count. Ensure you also handle the last segment of the array after the loop."
+    },
+    {
+      "content": "Be mindful of edge cases, such as an array consisting entirely of zeros. In this case, every element can be its own subarray, leading to a maximum count equal to the length of the array."
+    },
+    {
+      "content": "Consider how the presence of larger numbers affects the AND operation. If you have a segment with a high number, it might be beneficial to split earlier if you encounter a zero, as it can help in achieving the minimum score."
+    },
+    {
+      "content": "Remember that the constraints allow for a maximum length of 100,000 for the array. This means your solution should ideally be linear in time complexity to handle the largest cases efficiently."
+    },
+    {
+      "content": "When implementing your solution, use a single pass through the array to maintain efficiency. Keep updating the AND result and checking if it reaches zero, which indicates a split point."
+    },
+    {
+      "content": "Finally, ensure your implementation returns the count of the maximum number of subarrays. This is the primary output you need, so make sure to return it correctly after processing the entire array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Values: 0 <= nums[i] <= 10^6",
+    "Each element must belong to exactly one subarray.",
+    "Subarrays must be contiguous.",
+    "The score is defined as the AND of all elements in the subarray."
+  ]
+}

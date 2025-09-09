@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to divide the string into substrings. Given a string `s` of length `n`, and an integer `k`, you will create `n/k` substrings, each of length `k`. For example, if `s = 'abcd'` and `k = 2`, the substrings will be 'ab' and 'cd'."
+    },
+    {
+      "content": "Next, think about how to calculate the hash value of each character. The hash value is simply the index of the character in the alphabet, where 'a' is 0, 'b' is 1, ..., and 'z' is 25. You can use `ord(char) - ord('a')` to get this index."
+    },
+    {
+      "content": "For each substring, you will need to compute the sum of the hash values of its characters. Make sure to iterate through each character of the substring and accumulate their hash values."
+    },
+    {
+      "content": "After calculating the sum of hash values for a substring, you need to find the remainder when this sum is divided by 26. This will give you the `hashedChar`, which corresponds to a character in the alphabet."
+    },
+    {
+      "content": "Remember that the final result string will be built by appending the characters corresponding to each `hashedChar`. Initialize an empty string for `result` before processing the substrings."
+    },
+    {
+      "content": "Consider edge cases where `k` is equal to the length of the string `s`. In this case, there will only be one substring to process. Ensure your logic handles this scenario correctly."
+    },
+    {
+      "content": "Pay attention to the constraints provided in the problem statement. Ensure that the length of `s` is always a multiple of `k`, as this will simplify how you handle the substrings."
+    },
+    {
+      "content": "When you calculate the index of the character from `hashedChar`, remember that you will need to convert the index back to a character. You can do this using `chr(hashedChar + ord('a'))`."
+    },
+    {
+      "content": "As you implement your solution, consider using a loop to process all substrings in one go. You can use a range based on `n/k` to iterate through the starting indices of each substring."
+    },
+    {
+      "content": "Finally, remember to return the `result` string after processing all substrings. Make sure your function's return type matches the expected output format."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k <= 100, k <= s.length <= 1000, s.length is divisible by k.",
+    "s consists only of lowercase English letters.",
+    "The output must be a string built from the hashed characters."
+  ]
+}

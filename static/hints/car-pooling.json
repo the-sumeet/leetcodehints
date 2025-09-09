@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. Each trip is represented as an array of three integers: `[numPassengers, from, to]`. Make sure you can extract these values correctly from the input array."
+    },
+    {
+      "content": "Consider how the trips overlap in terms of time and space. Since the car can only drive east, think about how you can track the number of passengers in the car at any given point along the route."
+    },
+    {
+      "content": "You might find it helpful to create an array that represents the change in the number of passengers at each point along the route. For instance, when a passenger is picked up, you would increase the count, and when they are dropped off, you would decrease it."
+    },
+    {
+      "content": "To implement the above idea, you can use an array of size equal to the maximum distance (1000 in this case) to record the number of passengers picked up and dropped off at each location. Initialize this array to zero."
+    },
+    {
+      "content": "Loop through each trip and update your passenger change array. For each trip, increment the count at the 'from' index and decrement it at the 'to' index. This will help you track how many passengers are in the car at each point."
+    },
+    {
+      "content": "After updating the change array for all trips, you will need to compute the cumulative number of passengers in the car at each point. This can be done with a running total that iterates through your passenger change array."
+    },
+    {
+      "content": "As you calculate the running total of passengers, check against the car's capacity. If at any point the total exceeds the capacity, you can immediately return false."
+    },
+    {
+      "content": "Don't forget to consider edge cases, such as when there are no trips or when all trips have the same start and end points. How would your solution handle these cases?"
+    },
+    {
+      "content": "Make sure to test your implementation with various scenarios, including the maximum limits of the constraints. For instance, what happens if you have the maximum number of trips with the maximum number of passengers?"
+    },
+    {
+      "content": "Finally, ensure that your function returns true only if all passengers can be accommodated throughout the entire route. After processing all trips, if the capacity is never exceeded, return true."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= trips.length <= 1000",
+    "Each trip consists of 3 integers: [numPassengers, from, to]",
+    "1 <= numPassengers <= 100",
+    "0 <= from < to <= 1000",
+    "1 <= capacity <= 1000"
+  ]
+}

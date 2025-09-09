@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node can have up to two children, and you need to traverse the tree to check each subtree."
+    },
+    {
+      "content": "Consider how you can use a depth-first search (DFS) approach to explore each node and its children. This will help you determine if a subtree should be pruned."
+    },
+    {
+      "content": "Think about the base case for your recursive function. What should you return when you reach a leaf node? Remember, leaf nodes can be either 0 or 1."
+    },
+    {
+      "content": "As you traverse the tree, keep track of whether the current subtree contains a 1. You can return a boolean value from your recursive function to indicate this."
+    },
+    {
+      "content": "When you check a node, if both of its children return false (indicating they do not contain a 1), you should prune that node by returning null."
+    },
+    {
+      "content": "Don't forget to check the current node's value as well. If it is 1, it should always be kept, regardless of its children."
+    },
+    {
+      "content": "Make sure to handle the case where the root itself might need to be pruned. If the root node is null after processing, you should return null."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree consists of only one node, or when all nodes are 0. How will your algorithm handle these cases?"
+    },
+    {
+      "content": "As you implement your function, remember that you will need to modify the tree in place, so ensure you are correctly updating the left and right pointers of each node."
+    },
+    {
+      "content": "Finally, your function should return the modified tree. Make sure to test your implementation with the provided examples to verify correctness."
+    }
+  ],
+  "questionNotes": [
+    "The number of nodes in the tree is in the range [1, 200].",
+    "Node.val is either 0 or 1.",
+    "Return the same tree structure with pruned subtrees.",
+    "A subtree is defined as a node and all its descendants."
+  ]
+}

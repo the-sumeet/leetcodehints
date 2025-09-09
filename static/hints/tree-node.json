@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. Each node has an 'id' and a 'p_id' (parent id). The root node will have a 'p_id' of null, while leaf nodes will not have any child nodes."
+    },
+    {
+      "content": "Identify how to differentiate between a root, inner, and leaf node. A root node is the only node with a null parent, while leaf nodes have no children, and inner nodes have both a parent and children."
+    },
+    {
+      "content": "Consider how you can track which nodes have children. You might want to create a set or a dictionary to keep track of all the ids that are present as parents."
+    },
+    {
+      "content": "Think about how you can iterate through the tree data. You will need to check each node's 'p_id' to determine if it has children or if it is the root."
+    },
+    {
+      "content": "Remember that the output format requires both the 'id' and the 'type' of each node. You will need to construct a result table that includes these columns."
+    },
+    {
+      "content": "When processing the nodes, you can use a two-pass approach: first, identify all nodes and their types, and then construct the output table based on this information."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when there is only one node in the tree. This node should be classified as a root."
+    },
+    {
+      "content": "You may want to use a dictionary to map each node's id to its type. For example, if you find a node with no children, you can mark it as a leaf."
+    },
+    {
+      "content": "As you determine each node's type, make sure to handle the relationships correctly. For instance, if a node is found to have children, it should be marked as an inner node."
+    },
+    {
+      "content": "Finally, ensure that your output includes all nodes in any order, but maintains the required format. You might end up with a structure similar to: [{id: 1, type: 'Root'}, {id: 2, type: 'Inner'}, ...]."
+    }
+  ],
+  "questionNotes": [
+    "The 'id' column contains unique values for each node.",
+    "The 'p_id' column can be null for the root node.",
+    "Each node can be classified as 'Root', 'Inner', or 'Leaf'.",
+    "The output format should include both 'id' and 'type'.",
+    "The result can be returned in any order."
+  ]
+}

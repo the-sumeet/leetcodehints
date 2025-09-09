@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the unknown array and the subset sums. Remember that for an array of length n, there are 2^n possible subsets, which means you will have 2^n subset sums."
+    },
+    {
+      "content": "Notice that the smallest element in the 'sums' array should be 0, as the sum of the empty subset is always 0. This will help you identify valid elements of the unknown array."
+    },
+    {
+      "content": "The largest element in the 'sums' array should be the sum of all elements in the unknown array. This gives you a clue about the potential values in your unknown array."
+    },
+    {
+      "content": "Think about how you can reconstruct the unknown array from the subset sums. You might want to use a multiset or a frequency map to keep track of the counts of each sum."
+    },
+    {
+      "content": "When you extract an element from the sums array to form part of your unknown array, you need to consider how this affects the remaining subset sums. Each time you add an element, you are effectively generating new subset sums."
+    },
+    {
+      "content": "Consider sorting the 'sums' array. This can help you systematically pick elements starting from the smallest, making it easier to manage which sums have already been accounted for."
+    },
+    {
+      "content": "Use a recursive backtracking approach to explore possible candidates for the unknown array. This will allow you to test combinations and backtrack when necessary."
+    },
+    {
+      "content": "As you build your unknown array, keep track of the sums that you can generate with the current elements. You can use a set to efficiently check if the required sums are available."
+    },
+    {
+      "content": "Remember that the problem allows for multiple valid outputs. If you find one valid array that satisfies the condition, you can return it immediately."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when all elements in the unknown array are zero. In this case, all subset sums will also be zero."
+    },
+    {
+      "content": "After selecting an element from 'sums', you need to remove all the newly formed subset sums that include this element from your sums array. Think about how to efficiently manage this removal."
+    },
+    {
+      "content": "Consider using a priority queue or a similar structure to manage the subset sums dynamically as you build your unknown array. This can help you efficiently retrieve the next smallest sum."
+    },
+    {
+      "content": "When you pick an element from the sums, ensure that you also account for all combinations of previously chosen elements and the new element to update the subset sums correctly."
+    },
+    {
+      "content": "If you find that you cannot form a valid array with your current selection, backtrack and try a different combination of elements from the sums array."
+    },
+    {
+      "content": "Finally, remember that the output should be an array of length n, and you should ensure that your solution adheres to this constraint. Once you have a candidate array, validate it against the original subset sums."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 15, sums.length == 2^n.",
+    "The sum of the empty array is considered to be 0.",
+    "Multiple valid outputs are acceptable; return any of them.",
+    "The input array can contain duplicates, and the order of the output array does not matter."
+  ]
+}

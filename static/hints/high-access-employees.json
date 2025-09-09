@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. Each entry in the `access_times` array consists of an employee's name and their access time in 24-hour format. Make sure you can parse this data correctly."
+    },
+    {
+      "content": "Consider how to group access times by employee. You might want to use a dictionary where the keys are employee names and the values are lists of their access times."
+    },
+    {
+      "content": "When dealing with times, remember that they are represented as strings in 'HHMM' format. You may need to convert these strings into a more manageable format, such as integers or minutes since midnight, for easier calculations."
+    },
+    {
+      "content": "To check if an employee is high-access, you need to count how many access times fall within any one-hour window. Think about how you can efficiently check this condition for each employee's access times."
+    },
+    {
+      "content": "An efficient way to check for access times within a one-hour period is to sort the access times first. Once sorted, you can use a sliding window approach to count the number of accesses within any hour."
+    },
+    {
+      "content": "Keep in mind that times exactly one hour apart should not be included in the same period. For example, if you have access times at '0800' and '0900', they should not be counted together."
+    },
+    {
+      "content": "As you implement the sliding window, remember to check the start and end of the day. Access times at the very beginning (like '0000') and the very end (like '2359') should not be counted in the same hour."
+    },
+    {
+      "content": "Make sure to handle cases where an employee has fewer than three access times. If an employee has only one or two access times, they cannot be considered high-access."
+    },
+    {
+      "content": "After identifying high-access employees, remember that the order of names in the output does not matter. You can return them in any order, but ensure you do not include duplicates."
+    },
+    {
+      "content": "Finally, consider edge cases such as when all employees have unique access times or when multiple employees have access times that overlap in a way that qualifies them as high-access. Think through how your solution will handle these scenarios."
+    }
+  ],
+  "questionNotes": [
+    "1 <= access_times.length <= 100",
+    "access_times[i].length == 2",
+    "1 <= access_times[i][0].length <= 10",
+    "access_times[i][0] consists only of English small letters.",
+    "access_times[i][1] is in 24-hour time format.",
+    "access_times[i][1] consists only of '0' to '9'.",
+    "Return a list of unique high-access employee names in any order."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the score of a subarray. The score is calculated as the minimum value in that subarray multiplied by the length of the subarray. This means both the minimum value and the length are crucial for maximizing the score."
+    },
+    {
+      "content": "Consider how the position of 'k' affects the subarrays you can form. A good subarray must include the index 'k', so think about how to expand from 'k' to both the left and right to find potential subarrays."
+    },
+    {
+      "content": "When expanding to the left or right, keep track of the minimum value in the current subarray. You can use a variable to store the minimum as you extend the subarray."
+    },
+    {
+      "content": "Think about how to efficiently find the minimum value while expanding the subarray. You might want to use a loop to check values as you expand, but consider how this could lead to inefficiencies."
+    },
+    {
+      "content": "To optimize the search for the minimum, you could use a stack or a deque to maintain the indices of the elements in a way that allows you to quickly find the minimum when expanding the subarray."
+    },
+    {
+      "content": "Remember that the score is dependent on both the minimum value and the size of the subarray. As you expand the subarray, calculate the score at each step and keep track of the maximum score found."
+    },
+    {
+      "content": "Consider edge cases, such as when 'k' is at the beginning or the end of the array. How would this affect the possible subarrays you can form?"
+    },
+    {
+      "content": "You might want to implement a two-pointer technique where one pointer starts at 'k' and the other expands to the left and right. This can help you systematically explore all possible good subarrays."
+    },
+    {
+      "content": "As you explore subarrays, ensure that you are not going out of bounds of the array. Always check the indices when expanding your pointers."
+    },
+    {
+      "content": "Think about how to handle duplicates in the array. If multiple elements have the same minimum value, how will this affect the score calculation?"
+    },
+    {
+      "content": "When calculating the score for each subarray, make sure to update your maximum score only if the current score exceeds the previously recorded maximum."
+    },
+    {
+      "content": "If you find a subarray that gives you a score, consider if there are larger subarrays that might include that one and yield a higher score. This could lead to a more comprehensive solution."
+    },
+    {
+      "content": "You can use a nested loop to explore all possible subarrays, but remember that this could lead to a time complexity of O(n^2). Think about how to reduce this complexity."
+    },
+    {
+      "content": "Before finalizing your approach, write down the steps you will take to implement the solution. This will help you clarify your logic and identify any potential pitfalls."
+    },
+    {
+      "content": "Finally, ensure that your implementation correctly handles all constraints given in the problem statement, including the range of values for 'nums' and the index 'k'."
+    }
+  ],
+  "questionNotes": [
+    "The score of a subarray is defined as min(nums[i], ..., nums[j]) * (j - i + 1).",
+    "A good subarray must include the index 'k'.",
+    "Constraints: 1 <= nums.length <= 10^5, 1 <= nums[i] <= 2 * 10^4, 0 <= k < nums.length.",
+    "The return format should be a single integer representing the maximum score."
+  ]
+}

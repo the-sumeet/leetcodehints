@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the desired output pattern: you want to create a sequence where the elements alternate between smaller and larger values. This means every even index should be less than the next odd index."
+    },
+    {
+      "content": "Consider the properties of the input array. Notice that the input array can contain duplicates, and you need to ensure that the wiggle pattern holds true even when there are repeated numbers."
+    },
+    {
+      "content": "Think about sorting the array first. By sorting, you can easily access the smallest and largest elements, which can help you construct the desired wiggle pattern."
+    },
+    {
+      "content": "After sorting, try to visualize how you can fill the output array. You might want to fill the even indices with smaller elements and the odd indices with larger elements from the sorted array."
+    },
+    {
+      "content": "When filling the output array, remember that you will need to alternate between the two halves of the sorted array. This means you might need to split the sorted array into two parts."
+    },
+    {
+      "content": "Consider how you can achieve this in O(n) time. One approach is to use a counting sort technique since the values are bounded (0 to 5000). This will help you avoid the O(n log n) time complexity of regular sorting."
+    },
+    {
+      "content": "To ensure you are using O(1) extra space, think about how you can rearrange the elements in the original array itself instead of using an additional array to store the result."
+    },
+    {
+      "content": "You might want to use a two-pointer technique to fill the original array in-place. Start one pointer at the beginning (for even indices) and another at the end (for odd indices) of the sorted values."
+    },
+    {
+      "content": "Be mindful of the edge cases, such as when the array has only one element or when all elements are the same. How would your approach handle these scenarios?"
+    },
+    {
+      "content": "Finally, ensure that your final implementation respects the wiggle condition: nums[0] < nums[1] > nums[2] < nums[3]... . Test your solution with various inputs to validate that it meets the requirements."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 5 * 10^4",
+    "0 <= nums[i] <= 5000",
+    "There is guaranteed to be a valid answer for the given input.",
+    "The output does not need to be unique; multiple valid outputs are acceptable."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for points to be on a straight line. You can visualize this by plotting the points on a graph. If all points lie on the same line, the slope between any two points should be the same."
+    },
+    {
+      "content": "Recall the formula for the slope between two points, (x1, y1) and (x2, y2): slope = (y2 - y1) / (x2 - x1). However, be careful about division by zero when x1 equals x2."
+    },
+    {
+      "content": "Instead of calculating the slope directly, consider using the concept of cross multiplication to avoid division. This can help you determine if the slopes are equal without dealing with fractions."
+    },
+    {
+      "content": "For three points A(x1, y1), B(x2, y2), and C(x3, y3) to be collinear, the following condition must hold: (y2 - y1) * (x3 - x2) == (y3 - y2) * (x2 - x1). This avoids division and is useful for checking multiple points."
+    },
+    {
+      "content": "You only need to check the slope condition for the first two points against all subsequent points. This can reduce the number of calculations you need to perform."
+    },
+    {
+      "content": "Make sure to handle the case where the x-coordinates of the first two points are the same. This would indicate a vertical line, and you should adjust your checks accordingly."
+    },
+    {
+      "content": "Think about how to iterate through the coordinates array. You can use a loop to check each point against the first two points to see if they maintain the same slope."
+    },
+    {
+      "content": "Consider edge cases such as when all points are vertical or horizontal. Ensure your solution can handle these scenarios without errors."
+    },
+    {
+      "content": "Remember that the input guarantees no duplicate points, which simplifies your checks since you don't need to worry about repeated coordinates."
+    },
+    {
+      "content": "To conclude, your final implementation should return true if all points are collinear and false otherwise. Use the slope condition derived earlier to perform this check efficiently."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= coordinates.length <= 1000",
+    "coordinates[i].length == 2",
+    "-10^4 <= coordinates[i][0], coordinates[i][1] <= 10^4",
+    "coordinates contains no duplicate points."
+  ]
+}

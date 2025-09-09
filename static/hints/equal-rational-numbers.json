@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input strings. Each string can represent a rational number in different formats: just an integer, a decimal, or a decimal with a repeating part. Make sure to identify these parts correctly."
+    },
+    {
+      "content": "Consider how to parse the strings. You might want to split the string into three components: IntegerPart, NonRepeatingPart, and RepeatingPart. Use regular expressions or string manipulation to extract these parts."
+    },
+    {
+      "content": "When dealing with the repeating part, remember that it can be represented as an infinite series. For example, the repeating decimal '0.1(6)' can be expanded into '0.166666...'. Think about how you can represent this mathematically."
+    },
+    {
+      "content": "Pay attention to edge cases, such as when the NonRepeatingPart is empty. For example, '1.' should be treated as '1.0' for comparison purposes. Ensure your parsing handles these cases correctly."
+    },
+    {
+      "content": "You may want to convert the rational numbers into a common format for comparison. One approach is to convert both numbers into a fraction or a decimal representation. This will help you avoid issues with floating-point precision."
+    },
+    {
+      "content": "When converting to a decimal, consider the length of the NonRepeatingPart and RepeatingPart. You may need to repeat the RepeatingPart enough times to ensure a fair comparison with the NonRepeatingPart."
+    },
+    {
+      "content": "Think about how to handle leading zeros. For example, '0.0(1)' and '0.00(1)' should be considered equal. Ensure your implementation normalizes these cases appropriately."
+    },
+    {
+      "content": "Consider using a loop to construct the decimal representation by repeating the RepeatingPart a sufficient number of times. This will allow you to compare the two numbers directly."
+    },
+    {
+      "content": "Remember that the maximum length of the IntegerPart, NonRepeatingPart, and RepeatingPart is limited (up to 4 digits). This constraint can simplify your implementation since you won't need to handle very large numbers."
+    },
+    {
+      "content": "You might want to implement a function that takes a parsed number and converts it into a decimal string. This function should handle both finite and infinite decimals."
+    },
+    {
+      "content": "When comparing the two numbers, ensure that both are in the same format. If one is a decimal string and the other is a fraction, convert them to a common format before comparison."
+    },
+    {
+      "content": "Consider using a precision threshold when comparing floating-point numbers to avoid issues with rounding errors. This is particularly important when dealing with repeating decimals."
+    },
+    {
+      "content": "After parsing both strings and converting them to a common format, you can directly compare the two representations. If they are equal, return true; otherwise, return false."
+    },
+    {
+      "content": "Before finalizing your solution, test it against various edge cases, including very small numbers, large integers, and cases with different repeating patterns."
+    },
+    {
+      "content": "Make sure to handle cases where one number is a whole number and the other is a decimal representation of that number. For example, '1' and '1.' should be considered equal."
+    }
+  ],
+  "questionNotes": [
+    "Each part consists only of digits.",
+    "The IntegerPart does not have leading zeros (except for the zero itself).",
+    "1 <= IntegerPart.length <= 4.",
+    "0 <= NonRepeatingPart.length <= 4.",
+    "1 <= RepeatingPart.length <= 4."
+  ]
+}

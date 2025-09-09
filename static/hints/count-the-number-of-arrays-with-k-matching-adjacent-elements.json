@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the array. Each element can take any value from 1 to m, and you need to ensure that exactly k pairs of adjacent elements are equal."
+    },
+    {
+      "content": "Consider how many ways you can place the k matching pairs in the array. Remember that the pairs can overlap, which can affect your counting."
+    },
+    {
+      "content": "Think about the number of segments in the array. If there are k pairs of adjacent elements that are equal, how many distinct segments of different values can you have?"
+    },
+    {
+      "content": "Identify the number of ways to choose which indices will have matching elements. You can use combinatorial methods to choose k indices from n-1."
+    },
+    {
+      "content": "Remember that the first element can be any of the m values. How does this affect the total count of valid arrays?"
+    },
+    {
+      "content": "For each segment created by the matching pairs, consider how many choices you have for the values. If you have a segment of length 1, you can choose any of the m values. If it's longer, think about how many distinct values you can use."
+    },
+    {
+      "content": "To avoid overcounting, consider the transitions between segments. Each time you transition from one segment to another, you have m-1 choices (since you can't repeat the last value)."
+    },
+    {
+      "content": "Make sure to account for edge cases, such as when k = 0. In this case, how would you arrange the elements to ensure no adjacent elements are equal?"
+    },
+    {
+      "content": "For k = n-1, all elements must be the same. How many arrays can you form in this case?"
+    },
+    {
+      "content": "Think about the mathematical representation of your counting strategy. You might need to use dynamic programming or combinatorial formulas to efficiently calculate the number of valid arrays."
+    },
+    {
+      "content": "Consider using modular arithmetic for your calculations to handle large numbers, as the result needs to be returned modulo 10^9 + 7."
+    },
+    {
+      "content": "Break down the problem into smaller parts. You might want to first calculate the number of ways to arrange the segments and then multiply this by the choices for the values in each segment."
+    },
+    {
+      "content": "When calculating the total number of good arrays, ensure you are correctly combining the counts from the different segments while respecting the constraints of adjacent elements."
+    },
+    {
+      "content": "Write out a few small examples by hand to see how the number of segments and choices interact. This can help clarify your counting method."
+    },
+    {
+      "content": "Finally, consider edge cases where m = 1 or k is at its maximum. How do these affect the structure of your solution?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, 1 <= m <= 10^5, 0 <= k <= n - 1.",
+    "Return the result modulo 10^9 + 7.",
+    "Indices are 1-based for the matching condition.",
+    "Consider overlapping pairs and how they affect the total count."
+  ]
+}

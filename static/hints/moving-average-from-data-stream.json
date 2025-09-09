@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a moving average. It calculates the average of a fixed number of recent values from a data stream. For example, if your window size is 3, and your incoming values are [1, 10, 3], the moving averages would be calculated as follows: average of [1], average of [1, 10], and then average of [1, 10, 3]."
+    },
+    {
+      "content": "Think about how you will store the incoming values. You need to keep track of the last 'n' values where 'n' is the size of the moving average window. A queue or a circular buffer could be useful here."
+    },
+    {
+      "content": "Consider how to handle the case when you have fewer values than your window size. For instance, if your window size is 3 and you only receive 2 values, how should the moving average be calculated?"
+    },
+    {
+      "content": "You will need to maintain a running sum of the last 'n' values to efficiently compute the moving average. This way, when a new value comes in, you can add it to the sum and subtract the oldest value that is no longer in the window."
+    },
+    {
+      "content": "Make sure to implement a method to add a new value and calculate the moving average. This method should update both the sum and the stored values accordingly."
+    },
+    {
+      "content": "Think about the data structure you will use to store the last 'n' values. A list or a deque (double-ended queue) could be suitable, but remember that a deque allows for efficient popping from both ends."
+    },
+    {
+      "content": "Consider edge cases, such as what happens when the stream is empty or when the window size is zero. Define how your class should behave in these scenarios."
+    },
+    {
+      "content": "When implementing the 'next' method, ensure that it properly handles the addition of new values and updates the average. You may want to check if the current number of stored values is less than the window size."
+    },
+    {
+      "content": "Remember to return the moving average as a floating-point number. If you're using integer division, ensure that you convert to float to avoid truncation errors."
+    },
+    {
+      "content": "Your final implementation should look something like this: After adding a new value, you update the sum, adjust the list of stored values, and then return the average. Make sure to test your implementation with different window sizes and input sequences."
+    }
+  ],
+  "questionNotes": [
+    "The window size is defined when initializing the MovingAverage class.",
+    "The next method should return the moving average after adding the new value.",
+    "Handle cases where the number of inputs is less than the window size gracefully.",
+    "Ensure to return the moving average as a floating-point number."
+  ]
+}

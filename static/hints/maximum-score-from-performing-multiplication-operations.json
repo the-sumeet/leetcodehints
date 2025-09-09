@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the operations work. You can choose elements from either the start or the end of the `nums` array, and each choice affects your score based on the corresponding `multipliers` value."
+    },
+    {
+      "content": "Consider the implications of choosing an element from the start versus the end of the `nums` array. Think about how this choice impacts the remaining elements for subsequent operations."
+    },
+    {
+      "content": "Note that the number of operations `m` is less than or equal to the length of `nums`. This means you will always have enough elements to choose from, but you need to make strategic choices."
+    },
+    {
+      "content": "You can use dynamic programming to keep track of the maximum score obtainable after each operation. Define a DP table where `dp[i][j]` represents the maximum score after `i` operations, with `j` elements taken from the start."
+    },
+    {
+      "content": "Think about the base case for your DP table. What should `dp[0][0]` be? This will help you establish a starting point for your calculations."
+    },
+    {
+      "content": "When filling in your DP table, consider the two choices you have at each step: taking from the start or taking from the end. How do you update your score based on these choices?"
+    },
+    {
+      "content": "Remember that if you take an element from the start, you will have one less element to choose from the start in future operations. Similarly, taking from the end reduces the available elements from the end."
+    },
+    {
+      "content": "Your DP transition might look something like this: `dp[i][j] = max(dp[i-1][j-1] + multipliers[i-1] * nums[j], dp[i-1][j] + multipliers[i-1] * nums[n-1-(i-j)])` where `n` is the length of `nums`."
+    },
+    {
+      "content": "Consider edge cases where `m` equals 1 or when all elements in `nums` and `multipliers` are negative. How would your approach change in these scenarios?"
+    },
+    {
+      "content": "Make sure to handle the bounds correctly. When accessing `nums`, ensure that you do not go out of bounds, especially when calculating indices for the start and end selections."
+    },
+    {
+      "content": "After constructing your DP table, the answer will be in `dp[m][j]` for all valid `j`. You may need to iterate through these values to find the maximum score."
+    },
+    {
+      "content": "Think about the time complexity of your approach. With `m` operations and a DP table of size `m x m`, what is the overall time complexity? Can it be optimized further?"
+    },
+    {
+      "content": "Consider memoization if you find that you are recalculating the same states multiple times. This could help improve the efficiency of your solution."
+    },
+    {
+      "content": "Finally, ensure that your solution handles large inputs efficiently, given the constraints. Test your implementation with edge cases and large arrays to confirm its performance."
+    },
+    {
+      "content": "To summarize, focus on building a dynamic programming solution that tracks the maximum score based on your choices at each step. Pay attention to the transitions and ensure you cover all possible paths."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, m == multipliers.length, 1 <= m <= 300, m <= n <= 10^5, -1000 <= nums[i], multipliers[i] <= 1000.",
+    "You must perform exactly m operations.",
+    "The score is calculated based on the product of chosen numbers and the corresponding multipliers.",
+    "You can only choose numbers from the start or the end of the nums array."
+  ]
+}

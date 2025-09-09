@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the happy string. It can only contain the letters 'a', 'b', and 'c', and must not have 'aaa', 'bbb', or 'ccc' as substrings."
+    },
+    {
+      "content": "Consider how many times you can use each letter based on the provided counts (a, b, c). Think about how you can maximize the length of the string while adhering to the limits."
+    },
+    {
+      "content": "A good strategy is to always try to add the letter that has the highest remaining count, but be careful not to create a forbidden substring. How can you keep track of the last two letters added to avoid this?"
+    },
+    {
+      "content": "When constructing the string, if you find that adding the most frequent letter would create a forbidden substring, consider adding the next most frequent letter instead. This will help maintain the 'happy' condition."
+    },
+    {
+      "content": "Think about the order in which you can add letters. For example, if you have a > b > c, you might want to start with 'a' and alternate with 'b' and 'c' as needed."
+    },
+    {
+      "content": "Keep a loop that continues until you can no longer add any letters without violating the happy string rules. Each iteration should check the counts of 'a', 'b', and 'c'."
+    },
+    {
+      "content": "Consider edge cases where one or more of a, b, or c are zero. How would this affect your approach to constructing the string?"
+    },
+    {
+      "content": "As you build the string, maintain a check for the last two characters added. If they are the same and you have enough of that character left, switch to the next character."
+    },
+    {
+      "content": "You may want to use a priority queue or a sorted structure to always have access to the letter with the highest count that can still be added without creating a forbidden substring."
+    },
+    {
+      "content": "Finally, ensure that your solution handles the case where it might not be possible to construct a happy string at all, returning an empty string in such cases."
+    }
+  ],
+  "questionNotes": [
+    "The string must only contain 'a', 'b', and 'c'.",
+    "No substrings 'aaa', 'bbb', or 'ccc' are allowed.",
+    "The counts of 'a', 'b', and 'c' must not exceed the given limits.",
+    "Return the longest happy string or an empty string if not possible.",
+    "If multiple solutions exist, any of them is acceptable."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of the bitwise AND operation. Remember that the AND of two numbers is always less than or equal to the smallest of the two numbers."
+    },
+    {
+      "content": "Consider how the AND operation behaves with respect to zero. If any number in the subarray is zero, the AND of the entire subarray will be zero."
+    },
+    {
+      "content": "Think about the implications of the AND operation being equal to k. For a subarray to have an AND value of k, all elements must have at least the bits set that are set in k."
+    },
+    {
+      "content": "You can iterate through the array and consider every possible starting point for a subarray. For each starting point, calculate the AND value as you extend the subarray."
+    },
+    {
+      "content": "Keep track of the current AND value as you expand your subarray. If the current AND drops below k, you can stop expanding that subarray."
+    },
+    {
+      "content": "When you find a subarray where the AND equals k, note that all subarrays ending at that point with the same starting point will also have the same AND value."
+    },
+    {
+      "content": "Consider using a nested loop where the outer loop selects the starting index and the inner loop expands the subarray, calculating the AND value dynamically."
+    },
+    {
+      "content": "Pay attention to the constraints. The length of the array can be up to 100,000, so a naive O(n^2) solution may not be efficient enough."
+    },
+    {
+      "content": "Think about how you can optimize your approach. Can you break early from the inner loop if the AND value becomes less than k?"
+    },
+    {
+      "content": "Remember that the AND operation is associative and commutative. This means the order of operations does not affect the result."
+    },
+    {
+      "content": "Edge cases to consider: What if k is larger than any element in the array? What if all elements are the same?"
+    },
+    {
+      "content": "You might want to maintain a count of valid subarrays as you find them. How will you keep track of these counts efficiently?"
+    },
+    {
+      "content": "As you iterate through the array, try to use a hashmap or a dictionary to store previously computed AND values and their counts to avoid recalculating."
+    },
+    {
+      "content": "Consider how you can handle the case where multiple subarrays yield the same AND value. How will you ensure you count them all?"
+    },
+    {
+      "content": "Finally, think about edge cases where the array contains only one element or where k is zero. How do these cases affect your solution?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100,000",
+    "0 <= nums[i], k <= 1,000,000,000",
+    "The output should be the total number of subarrays with the AND value equal to k.",
+    "Consider the properties of the AND operation when analyzing subarrays."
+  ]
+}

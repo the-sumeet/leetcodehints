@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node can have a value that represents either a boolean operation or a number. In this problem, the tree nodes represent operations, and you need to evaluate them to reach a desired boolean result."
+    },
+    {
+      "content": "Focus on the leaf nodes of the tree first. They represent the base cases of your boolean expressions. If you can evaluate the leaf nodes correctly, it will help you understand how to evaluate the entire tree."
+    },
+    {
+      "content": "Remember that each internal node can be either an AND, OR, or XOR operation. This will affect how you evaluate the node based on its children. Make sure to define how each operation works in terms of boolean logic."
+    },
+    {
+      "content": "Consider how to evaluate the tree recursively. You can write a function that takes a node and returns the boolean result of that subtree. This function should handle both leaf nodes and internal nodes."
+    },
+    {
+      "content": "When evaluating an internal node, you will need to consider the results of its children. Depending on the operation, you will combine these results to determine the value of the current node."
+    },
+    {
+      "content": "Think about how to track the number of flips needed to achieve the desired result. You might need to keep a count or return a tuple that includes both the result and the number of flips."
+    },
+    {
+      "content": "Make sure to handle the case where the node is already producing the desired result. In such cases, no flips will be needed, so you can return early."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree has only one node. You will need to check if that single node's value matches the desired result, which could simplify your logic."
+    },
+    {
+      "content": "Think about how to propagate the number of flips up the tree. When you evaluate a node, you may need to consider the flips required to change the result of its children to achieve the desired result at the parent node."
+    },
+    {
+      "content": "You might want to use a depth-first search (DFS) approach to traverse the tree. This will allow you to evaluate each node and its children systematically."
+    },
+    {
+      "content": "As you implement the DFS, consider how to handle the two scenarios: when you need to flip a node to get the desired result and when you don't. This will affect how you calculate the total number of flips."
+    },
+    {
+      "content": "Keep in mind that there could be multiple ways to achieve the desired result with different numbers of flips. You should aim to find the minimum number of flips."
+    },
+    {
+      "content": "You may want to use memoization to store results of subproblems. This can help avoid redundant calculations when evaluating the same subtree multiple times."
+    },
+    {
+      "content": "When you reach the root of the tree, you should have the minimum flips needed to achieve the desired boolean result. Make sure your function returns this value correctly."
+    },
+    {
+      "content": "Finally, ensure your solution handles all edge cases, including trees with only one node and trees where all nodes are leaves. Test your solution with various tree structures to validate its correctness."
+    }
+  ],
+  "questionNotes": [
+    "The binary tree is represented as an array, where the index corresponds to the level order traversal.",
+    "Leaf nodes represent boolean values, while internal nodes represent operations (AND, OR, XOR).",
+    "The desired result is a boolean value (true or false).",
+    "You need to return the minimum number of flips to achieve the desired result."
+  ]
+}

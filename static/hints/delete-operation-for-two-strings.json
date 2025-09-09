@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about the problem in terms of common characters between the two strings. What characters do both strings share? Understanding the commonality will help reduce the number of deletions needed."
+    },
+    {
+      "content": "Consider using a two-pointer technique to compare characters from both strings. This can help you identify where the characters differ and where deletions are necessary."
+    },
+    {
+      "content": "Think about the concept of the Longest Common Subsequence (LCS). By finding the LCS of the two strings, you can determine how many characters are not part of this subsequence and thus need to be deleted."
+    },
+    {
+      "content": "Remember that the total number of deletions required will be the sum of the lengths of both strings minus twice the length of the LCS. Can you express this mathematically?"
+    },
+    {
+      "content": "When calculating the LCS, you can use dynamic programming. Create a 2D array where each cell (i, j) represents the length of the LCS of the first i characters of word1 and the first j characters of word2."
+    },
+    {
+      "content": "Make sure to initialize your DP array correctly. The first row and the first column should be initialized to zero, as the LCS of an empty string with any string is zero."
+    },
+    {
+      "content": "As you fill in the DP table, remember to check if the characters from both strings match. If they do, increment the LCS count from the previous diagonal cell. If they don't, take the maximum from the left or above cell."
+    },
+    {
+      "content": "After filling the DP table, the value in the bottom-right cell will give you the length of the LCS. Use this value to calculate the total deletions needed."
+    },
+    {
+      "content": "Consider edge cases where one or both strings are empty. How would your approach handle those situations? Ensure your code can handle strings of varying lengths up to the constraints."
+    },
+    {
+      "content": "Finally, remember to return the calculated number of deletions as the output. The formula you derived earlier will guide you to the final answer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= word1.length, word2.length <= 500",
+    "Both word1 and word2 consist of only lowercase English letters.",
+    "The output should be the minimum number of deletions required to make the two strings identical."
+  ]
+}

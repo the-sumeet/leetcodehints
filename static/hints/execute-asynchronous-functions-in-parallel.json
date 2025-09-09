@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You are given an array of functions, each returning a promise. Your task is to execute these functions in parallel and handle their results."
+    },
+    {
+      "content": "Consider how you will track the results of each promise. You will need an array to store the resolved values in the order the functions were provided."
+    },
+    {
+      "content": "Remember that promises can be resolved or rejected. You need to handle both cases appropriately. Think about how you can catch a rejection and stop further processing."
+    },
+    {
+      "content": "Since you can't use Promise.all, you will need to manually invoke each function and manage their promises. You can use a loop to iterate through the functions and call each one."
+    },
+    {
+      "content": "As you call each function, store the resulting promises in an array. This will allow you to keep track of all the promises that are running in parallel."
+    },
+    {
+      "content": "You will need to use a counter to keep track of how many promises have resolved. Once all promises are resolved, you can resolve your main promise with the collected results."
+    },
+    {
+      "content": "Consider using a flag or a variable to indicate if any promise has rejected. If one does, you should reject your main promise immediately with that error."
+    },
+    {
+      "content": "Pay attention to the timing of your promise resolutions. You need to resolve your main promise with the total time taken for all promises to complete, which is determined by the longest promise."
+    },
+    {
+      "content": "Ensure that you maintain the order of the results. When resolving your main promise, the results array should reflect the order of the input functions, regardless of the order of completion."
+    },
+    {
+      "content": "Finally, think about how you will structure your final promise. It should resolve with an object containing either the resolved values or the error, along with the total time taken."
+    }
+  ],
+  "questionNotes": [
+    "functions is an array of functions that return promises.",
+    "1 <= functions.length <= 10.",
+    "The resolved value should be in the same order as the input functions.",
+    "The promise should resolve only when all promises are resolved or reject with the first error encountered."
+  ]
+}

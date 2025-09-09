@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for one string to divide another. For example, if str1 = 'ABCABC' and str2 = 'ABC', can you express str1 as multiple concatenations of str2?"
+    },
+    {
+      "content": "Consider the lengths of the two strings. If str1 has length m and str2 has length n, what can you infer about the length of the greatest common divisor (GCD) string x? Specifically, x's length must be a divisor of both m and n."
+    },
+    {
+      "content": "Think about how to find the GCD of the lengths of str1 and str2. You can use the Euclidean algorithm for this. Once you have the GCD length, you can use it to extract a potential candidate for x from either string."
+    },
+    {
+      "content": "Once you have a candidate for x (the substring of length equal to the GCD of the two lengths), check if both str1 and str2 can be constructed by repeating x. This means you will need to compare the full strings with the repeated version of x."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when str1 and str2 have no common divisors. What should you return in such cases? Think about the output format and constraints given in the problem."
+    },
+    {
+      "content": "To check if a string can be formed by repeating another string, you can concatenate the smaller string with itself and see if the larger string is a substring of this new string. This is a crucial step in your solution."
+    },
+    {
+      "content": "Make sure to consider the case where either str1 or str2 is empty. What should your function return in such scenarios? Review the constraints to ensure your solution handles all possible inputs."
+    },
+    {
+      "content": "When implementing the check for divisibility, consider using string slicing. For example, if x is your candidate, you can check if str1 == x * (len(str1) // len(x)) and similarly for str2."
+    },
+    {
+      "content": "As you build your solution, think about the efficiency of your approach. The maximum length of str1 and str2 is 1000, so ensure your solution runs in a reasonable time frame, ideally linear with respect to the string lengths."
+    },
+    {
+      "content": "Finally, once you have validated that your candidate x divides both strings, return it. If no valid x is found, return an empty string as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "1 <= str1.length, str2.length <= 1000",
+    "str1 and str2 consist of English uppercase letters.",
+    "Return the largest string x such that x divides both str1 and str2.",
+    "If no such string exists, return an empty string."
+  ]
+}

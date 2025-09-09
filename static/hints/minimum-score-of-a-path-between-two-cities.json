@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have `n` cities and a list of `roads`, where each road connects two cities and has a distance. Make sure you can visualize this as a graph."
+    },
+    {
+      "content": "Consider how to represent the graph. An adjacency list could be a good choice. Each city can be a key, and the value can be a list of tuples representing connected cities and their distances."
+    },
+    {
+      "content": "Think about the definition of the score of a path. The score is determined by the minimum distance of any road in that path. This means you will need to keep track of the minimum distance as you explore paths."
+    },
+    {
+      "content": "Since you can revisit cities and roads, consider using a traversal algorithm that allows for this. Depth-First Search (DFS) or Breadth-First Search (BFS) could be useful here."
+    },
+    {
+      "content": "When traversing, remember to maintain the minimum distance encountered along the path. You might want to initialize this minimum with a very large value and update it as you find smaller distances."
+    },
+    {
+      "content": "Think about the termination condition for your traversal. You want to stop when you reach city `n`, but also ensure that you have correctly calculated the minimum distance along the path taken to get there."
+    },
+    {
+      "content": "Consider edge cases such as when there are only two cities. This will help you ensure your solution handles the simplest scenarios correctly."
+    },
+    {
+      "content": "Remember that the roads are bidirectional. When you explore from one city to another, you should be able to return back through the same road, which might affect the minimum score."
+    },
+    {
+      "content": "As you implement your traversal, think about how you will store the visited cities to avoid infinite loops while still allowing revisits to update the minimum score."
+    },
+    {
+      "content": "Finally, once you reach city `n`, return the minimum score you have tracked. Make sure to test your solution with the provided examples to validate its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5, 1 <= roads.length <= 10^5.",
+    "Each road is represented as [a_i, b_i, distance_i].",
+    "Cities are numbered from 1 to n, and a_i != b_i.",
+    "Each distance is a positive integer (1 <= distance_i <= 10^4).",
+    "There are no repeated edges, and there is at least one path between city 1 and city n."
+  ]
+}

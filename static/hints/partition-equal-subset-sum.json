@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the total sum of the array. If the total sum is odd, it's impossible to split it into two equal subsets. Why? Because two equal integers must sum to an even number."
+    },
+    {
+      "content": "If the total sum is even, divide it by 2. This value represents the target sum for each subset. Your goal is to find a subset of numbers that adds up to this target sum."
+    },
+    {
+      "content": "Consider using a dynamic programming approach. Create a boolean array `dp` where `dp[j]` will be true if a subset with sum `j` can be formed from the elements of `nums`."
+    },
+    {
+      "content": "Initialize the `dp` array with `dp[0] = true`, since a sum of 0 can always be formed with an empty subset. The rest of the values should be initialized to false."
+    },
+    {
+      "content": "Iterate through each number in `nums`. For each number, update the `dp` array from back to front. This ensures that each number is only considered once for each possible sum."
+    },
+    {
+      "content": "When updating the `dp` array, for each number `num` and for each possible sum `j` from the target down to `num`, set `dp[j] = dp[j] || dp[j - num]`. This checks if the current sum can be formed either by including or excluding the current number."
+    },
+    {
+      "content": "After processing all numbers, check the value of `dp[target]`. If it is true, it means you can form a subset with the required sum. If false, you cannot."
+    },
+    {
+      "content": "Consider edge cases, such as when `nums` has only one element or when all elements are the same. How would these cases affect your logic?"
+    },
+    {
+      "content": "Remember that the constraints limit the number of elements to 200 and their values to 100. This means your approach should efficiently handle up to 20,000 as the maximum target sum."
+    },
+    {
+      "content": "Finally, ensure you understand how to handle the input and output format. You need to return a boolean value indicating whether the partition is possible."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 200",
+    "Constraints: 1 <= nums[i] <= 100",
+    "Return format: true or false based on the possibility of partitioning the array."
+  ]
+}

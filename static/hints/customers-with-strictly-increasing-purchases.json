@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of orders, each associated with a customer. Each order has a unique order_id, a customer_id, an order_date, and a price."
+    },
+    {
+      "content": "Consider how to group the orders by customer_id. You will need to aggregate the orders for each customer to analyze their purchase history."
+    },
+    {
+      "content": "Think about how to check if a customer's purchases are strictly increasing. This means that each subsequent purchase must be greater than the previous one."
+    },
+    {
+      "content": "You might want to sort the orders for each customer by order_date first. This ensures that you are checking the prices in the order they were made."
+    },
+    {
+      "content": "As you iterate through the sorted orders for each customer, keep track of the last price seen. This will help you determine if the current price is greater than the last price."
+    },
+    {
+      "content": "Remember to handle cases where a customer may have only one order. A single order should be considered as strictly increasing since there are no other orders to compare against."
+    },
+    {
+      "content": "Consider using a data structure like a dictionary to map customer_ids to their respective orders. This will help you efficiently group and process the orders."
+    },
+    {
+      "content": "When checking for strictly increasing prices, you need to ensure that you compare each price with the previous one. If at any point a price is not greater than the last, that customer should be excluded."
+    },
+    {
+      "content": "Think about how you will store the results. You need to return a list of customer_ids that meet the criteria of strictly increasing purchases."
+    },
+    {
+      "content": "Pay attention to edge cases, such as customers with no orders or customers whose orders have the same price. These should not be included in the final result."
+    },
+    {
+      "content": "After processing all customers, remember to return the list of customer_ids in ascending order. This is often a requirement in such problems."
+    },
+    {
+      "content": "If you find a customer with strictly increasing purchases, you might want to add their customer_id to a results list. Make sure to check all orders before making this decision."
+    },
+    {
+      "content": "Consider using a loop to iterate through the orders of each customer. Use a flag or a variable to track whether the purchases are strictly increasing."
+    },
+    {
+      "content": "As you build your solution, think about the time complexity. You want to ensure that your approach is efficient, especially if the number of orders is large."
+    },
+    {
+      "content": "To summarize, your approach should involve grouping orders by customer, sorting them by date, and then checking for strictly increasing prices. Make sure to handle all edge cases."
+    }
+  ],
+  "questionNotes": [
+    "Orders are grouped by customer_id.",
+    "Prices must be strictly increasing; equal prices do not count.",
+    "Return customer_ids in ascending order.",
+    "Consider edge cases like single orders or no orders.",
+    "Ensure efficient handling of large datasets."
+  ]
+}

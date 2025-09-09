@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a palindromic subsequence is. A palindrome reads the same forwards and backwards, like 'aba' or 'aaa'. For length-3, the first and last characters must be the same."
+    },
+    {
+      "content": "Consider how to identify unique characters in the string. You can use a set to store characters or combinations you've already seen, which will help ensure uniqueness in your results."
+    },
+    {
+      "content": "Think about the structure of a length-3 palindrome. It can be represented as 'x y x', where 'x' is the same character at both ends and 'y' can be any character that appears between them."
+    },
+    {
+      "content": "To find palindromic subsequences, you can iterate through the string and for each character, look for pairs of the same character that can form the outer 'x' of the palindrome. This means you need to keep track of the positions of each character."
+    },
+    {
+      "content": "Use a nested loop approach: for each character at index 'i', find another occurrence of the same character at index 'j' (where j > i) and check for any character in between them to form the palindrome."
+    },
+    {
+      "content": "You can optimize your search by using a dictionary to store the indices of each character as you iterate through the string. This will allow you to quickly find potential pairs of characters."
+    },
+    {
+      "content": "Remember to handle edge cases, such as strings with fewer than three characters or strings where no characters repeat. These cases should return 0 since no palindromic subsequences can be formed."
+    },
+    {
+      "content": "When counting unique subsequences, ensure that you only add a palindrome to your result set if it hasn't been added before. Using a set will help with this, as it automatically handles duplicates."
+    },
+    {
+      "content": "After identifying all potential palindromic subsequences, remember to return the size of your set containing these unique palindromes, as the problem asks for the count."
+    },
+    {
+      "content": "Finally, consider the time complexity of your approach. With the constraints given (up to 100,000 characters), aim for a solution better than O(n^3) to ensure it runs efficiently."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= s.length <= 100000; s consists of only lowercase English letters.",
+    "Return the number of unique palindromic subsequences of length 3.",
+    "A subsequence can be formed by deleting characters without changing the order.",
+    "Even if multiple ways to form the same subsequence exist, count it only once."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an anagram is. An anagram of a string is formed by rearranging its letters. For example, 'abc' and 'cba' are anagrams."
+    },
+    {
+      "content": "Consider how you can check if two strings are anagrams. A common approach is to count the frequency of each character in both strings and compare these counts."
+    },
+    {
+      "content": "Think about how you can efficiently compare substrings of 's' with 'p'. Instead of generating all substrings, you can use a sliding window technique to maintain a window of the same length as 'p'."
+    },
+    {
+      "content": "As you slide the window across 's', update the character counts for the current window. When you move the window, you can add the new character and remove the character that is no longer in the window."
+    },
+    {
+      "content": "You'll need to maintain a count of characters for both 'p' and the current window in 's'. Consider using an array of size 26 (for each letter in the alphabet) to store these counts."
+    },
+    {
+      "content": "When the counts of the current window match the counts of 'p', you have found an anagram. Store the starting index of this window in your result array."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when 'p' is longer than 's'. In such cases, it's impossible to find any anagrams, and you should return an empty array."
+    },
+    {
+      "content": "Remember to reset your character counts when you move the window. This is crucial for ensuring that your comparisons are accurate as you slide through 's'."
+    },
+    {
+      "content": "Think about the time complexity of your solution. A sliding window approach should help you achieve a linear time complexity, which is efficient given the constraints."
+    },
+    {
+      "content": "Finally, implement your solution and test it against the provided examples. Ensure that your output format matches the requirements, which is an array of indices."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length, p.length <= 3 * 10^4",
+    "Both strings s and p consist of lowercase English letters.",
+    "Return an array of all starting indices of p's anagrams in s.",
+    "The output can be in any order."
+  ]
+}

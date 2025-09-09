@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for digits to be monotone increasing. This means that for any two adjacent digits, the left digit must be less than or equal to the right digit."
+    },
+    {
+      "content": "Consider how to check if a number has monotone increasing digits. You can convert the number to a string and compare each digit with the next one. If you find any pair where the left digit is greater than the right, the number is not monotone increasing."
+    },
+    {
+      "content": "Think about how you can generate the largest monotone increasing number that is less than or equal to a given number `n`. You might need to modify the digits of `n` if they are not already in the correct order."
+    },
+    {
+      "content": "When you find a digit that breaks the monotone increasing condition, consider how you might adjust that digit and the ones to its right. You may need to decrease the problematic digit and set all subsequent digits to '9' to maximize the resulting number."
+    },
+    {
+      "content": "It's helpful to work with the digits of `n` as an array or list. This way, you can easily manipulate individual digits. For example, if `n = 332`, you might convert it to the list `[3, 3, 2]`."
+    },
+    {
+      "content": "As you iterate through the digits from left to right, keep track of the first position where the monotone increasing condition fails. This is your cue to make adjustments."
+    },
+    {
+      "content": "Once you identify the digit that needs to be changed, reduce it by one. However, remember to change all subsequent digits to '9' to ensure the number is maximized while still being less than or equal to `n`."
+    },
+    {
+      "content": "Consider edge cases where `n` is already a monotone increasing number, like `1234`. In such cases, the output should simply be `n` itself."
+    },
+    {
+      "content": "Make sure to handle the case where `n` is a single-digit number, as all single-digit numbers are inherently monotone increasing."
+    },
+    {
+      "content": "Finally, after adjusting the digits, you may want to convert the list of digits back into an integer. Ensure that you handle any leading zeros appropriately, although this won't be an issue within the given constraints."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= n <= 10^9",
+    "Return the largest number with monotone increasing digits that is less than or equal to n.",
+    "Consider edge cases like single-digit numbers and already monotone increasing numbers."
+  ]
+}

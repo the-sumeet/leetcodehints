@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the direct Manhattan distance from the starting point to the target. This will give you a baseline cost to compare against when using special roads."
+    },
+    {
+      "content": "Consider how you can represent the problem as a graph where nodes are points in the 2D space and edges are the costs associated with moving between those points. Each special road can be viewed as a directed edge with a specific cost."
+    },
+    {
+      "content": "Don't forget that you can move freely in the 2D space, not just along special roads. This means you should always evaluate the cost of moving directly to a point before opting for a special road."
+    },
+    {
+      "content": "When processing each special road, ensure you only consider it if you can reach its starting point from your current position. Calculate the cost to get to the starting point of the road, then add the special road's cost, and finally the cost to reach the target from the end of the road."
+    },
+    {
+      "content": "Think about how to efficiently track the minimum cost to reach each point in the space. A priority queue (min-heap) could be useful for exploring paths in order of increasing cost."
+    },
+    {
+      "content": "As you explore paths, maintain a record of the minimum cost to reach each point. If you find a cheaper way to reach a point than previously known, update your record and continue exploring from there."
+    },
+    {
+      "content": "Be mindful of edge cases where the starting point is the same as the target point. In such cases, the minimum cost should be zero."
+    },
+    {
+      "content": "Consider the implications of using special roads multiple times. You should check if reusing a special road can lead to a lower overall cost when combined with other paths."
+    },
+    {
+      "content": "When implementing your solution, ensure that you handle special roads that may not be directly usable (e.g., if the starting point is not reachable). This requires careful validation of the coordinates."
+    },
+    {
+      "content": "Finally, think about how to return the result. The output should be the minimum cost to reach the target from the start, considering all possible paths, including special roads."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= startX <= targetX <= 10^5, 1 <= startY <= targetY <= 10^5, 1 <= specialRoads.length <= 200.",
+    "Each special road is directed and can be reused any number of times.",
+    "The cost of moving between points is calculated using the Manhattan distance formula: |x2 - x1| + |y2 - y1|.",
+    "Ensure to handle edge cases where the start is the same as the target, returning a cost of 0."
+  ]
+}

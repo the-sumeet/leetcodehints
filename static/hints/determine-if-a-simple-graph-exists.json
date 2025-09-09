@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a simple graph is. A simple graph consists of vertices connected by edges, where no two edges connect the same pair of vertices and no edge connects a vertex to itself."
+    },
+    {
+      "content": "Consider the input array as representing the degrees of each vertex in the graph. The sum of the degrees must be even, as each edge contributes to the degree of two vertices."
+    },
+    {
+      "content": "Check if the maximum degree in the graph is less than or equal to the number of vertices minus one. This is because a vertex cannot connect to itself and can connect to at most all other vertices."
+    },
+    {
+      "content": "Use the Handshaking Lemma, which states that the sum of the degrees of all vertices in a graph is equal to twice the number of edges. This can help you verify if the degree configuration is possible."
+    },
+    {
+      "content": "To build the graph, you might want to sort the degree array in descending order. This can help you manage the highest degree vertex first, which is often a useful strategy in graph construction problems."
+    },
+    {
+      "content": "After sorting, utilize a greedy approach to connect vertices. Try to connect the vertex with the highest degree to the next highest available vertices until its degree is satisfied or you run out of vertices."
+    },
+    {
+      "content": "Be mindful of cases where the remaining vertices do not have enough degree left to satisfy the connections needed for the vertex you are currently processing."
+    },
+    {
+      "content": "Consider edge cases, such as when the input array is empty or contains only zeros. In these cases, you should determine if a graph can exist based on the definition of a simple graph."
+    },
+    {
+      "content": "If you find that you cannot satisfy the degree requirements for a vertex, you should conclude that a simple graph cannot be formed with the given degree sequence."
+    },
+    {
+      "content": "Finally, ensure that your implementation returns a boolean indicating whether a simple graph can be formed from the given degree sequence. You may want to encapsulate your logic in a function that checks these conditions."
+    }
+  ],
+  "questionNotes": [
+    "The input is an array of integers representing the degrees of vertices.",
+    "The sum of the degrees must be even.",
+    "The maximum degree must not exceed the number of vertices minus one.",
+    "Consider edge cases like empty arrays or arrays with all zeros."
+  ]
+}

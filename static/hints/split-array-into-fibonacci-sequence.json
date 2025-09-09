@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of a Fibonacci-like sequence. Recall that in such a sequence, each number is the sum of the two preceding ones. This means that if you have two numbers, you can derive the next one."
+    },
+    {
+      "content": "Consider how to split the input string into potential numbers. You will need to iterate through the string and create pairs of numbers to check if they can form a Fibonacci-like sequence."
+    },
+    {
+      "content": "Remember to check for leading zeros. A number cannot have leading zeros unless it is '0' itself. For example, '01' is invalid, but '0' is valid."
+    },
+    {
+      "content": "Think about the constraints on the numbers. Each number must be a non-negative integer and should fit within the range of a 32-bit signed integer (0 to 2^31 - 1). This will limit the size of the numbers you can form from the string."
+    },
+    {
+      "content": "You might want to use a nested loop to generate pairs of starting numbers. For each pair, calculate the next number in the sequence and check if it matches the next segment of the string."
+    },
+    {
+      "content": "When checking for the next number in the sequence, ensure you are correctly slicing the string. Use the length of the current numbers to determine where to look next in the string."
+    },
+    {
+      "content": "As you build the sequence, keep track of the numbers you have found. If at any point the sum of the last two numbers does not equal the next segment, you should break out of the loop and try a new pair."
+    },
+    {
+      "content": "Consider edge cases, such as when the string is very short or contains only zeros. These cases might not yield a valid Fibonacci-like sequence."
+    },
+    {
+      "content": "Once you find a valid sequence, ensure that it contains at least three numbers. If you reach the end of the string and have fewer than three numbers, return an empty list."
+    },
+    {
+      "content": "Finally, remember that there may be multiple valid Fibonacci-like sequences for a given input. Your task is to return any one of them, so focus on finding a valid sequence rather than all possible sequences."
+    }
+  ],
+  "questionNotes": [
+    "The input string 'num' contains only digits and has a length between 1 and 200.",
+    "Each number in the sequence must be a non-negative integer less than 2^31.",
+    "Leading zeros are not allowed unless the number is '0'.",
+    "The output must contain at least three numbers to be considered valid."
+  ]
+}

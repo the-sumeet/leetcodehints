@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an interesting subarray is. An interesting subarray is defined by the count of indices where the condition `nums[i] % modulo == k` holds true, and this count must also satisfy `cnt % modulo == k`."
+    },
+    {
+      "content": "Consider how you can efficiently count the number of elements in a subarray that satisfy the condition. A naive approach would involve checking each subarray individually, but that can be inefficient for larger arrays."
+    },
+    {
+      "content": "Think about using a prefix sum or a similar technique to keep track of counts as you iterate through the array. This could help you avoid recalculating counts for overlapping subarrays."
+    },
+    {
+      "content": "You might want to maintain a running count of how many elements meet the condition as you expand your subarray. This way, you can quickly check if the current subarray is interesting."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the entire array is processed. What happens if no elements meet the condition? How should you count those subarrays?"
+    },
+    {
+      "content": "Consider the implications of the modulo operation. Since `cnt % modulo == k`, think about how you can use a hashmap to store counts of previous results to facilitate quick lookups."
+    },
+    {
+      "content": "As you iterate through the array, keep track of how many times each possible count (modulo value) has occurred. This can help you determine how many interesting subarrays end at the current index."
+    },
+    {
+      "content": "You may want to initialize a variable to keep track of the current count of valid elements and another for the total interesting subarrays found so far. Update these as you iterate."
+    },
+    {
+      "content": "When you find a valid count that meets the condition, remember to check how many previous counts match the required modulo condition. This will help you accumulate the total interesting subarrays."
+    },
+    {
+      "content": "Finally, ensure that you return the correct count of interesting subarrays. Double-check your logic to ensure that all edge cases are handled, especially with respect to the boundaries of the array."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 10^5",
+    "1 <= nums[i] <= 10^9",
+    "1 <= modulo <= 10^9",
+    "0 <= k < modulo",
+    "Subarrays are contiguous and non-empty.",
+    "Return the count of interesting subarrays as an integer."
+  ]
+}

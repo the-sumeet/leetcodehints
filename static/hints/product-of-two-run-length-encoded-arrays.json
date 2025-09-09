@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what run-length encoding (RLE) means. In RLE, each element is represented as a pair of values: the value itself and its count. For example, [1, 3] means '1' appears '3' times."
+    },
+    {
+      "content": "Consider how to represent the product of two RLE arrays. The product of two RLE arrays involves multiplying the counts of the same values together. For instance, if you have [1, 3] and [6, 3], the result will involve '1' and '6' both appearing '3' times."
+    },
+    {
+      "content": "Think about how to traverse both RLE arrays simultaneously. You can use two pointers, one for each array, to compare the current elements and their counts."
+    },
+    {
+      "content": "When the values at the current pointers are equal, you can multiply their counts and add the result to the output. Remember to move both pointers forward in this case."
+    },
+    {
+      "content": "What if the values at the current pointers are not equal? You will need to determine which value is smaller and move the pointer for that array forward. This is crucial for maintaining correct order."
+    },
+    {
+      "content": "Consider edge cases where one of the RLE arrays might be empty. What should your function return in that case? Think about how to handle such scenarios gracefully."
+    },
+    {
+      "content": "After processing all pairs, ensure that your output array is also in the correct RLE format. Each entry should still be a pair of value and count."
+    },
+    {
+      "content": "Keep in mind that the resulting RLE array should not contain any entries with a count of zero. You can filter these out before returning the final result."
+    },
+    {
+      "content": "Remember to handle cases where the RLE arrays have overlapping values. You need to ensure that you add the counts together for the same values instead of creating duplicate entries."
+    },
+    {
+      "content": "Finally, think about how you will return the result. The output should be an array of pairs, where each pair represents a value and its total count after multiplication. Make sure to test your solution with various edge cases."
+    }
+  ],
+  "questionNotes": [
+    "Each RLE array is represented as a list of pairs [value, count].",
+    "The output should also be in the form of RLE, with no counts of zero.",
+    "Consider cases where one or both RLE arrays are empty.",
+    "Handle overlapping values correctly by summing their counts."
+  ]
+}

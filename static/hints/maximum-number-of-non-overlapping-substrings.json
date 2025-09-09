@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find non-overlapping substrings that contain all occurrences of any character they include. This means if a substring contains 'a', it must include every 'a' in the string."
+    },
+    {
+      "content": "Consider how you would identify the boundaries of each character's occurrences. For example, in the string 'adefaddaccc', the character 'a' occurs at indices 0, 3, and 6. The substring containing all 'a's would need to span from index 0 to 6."
+    },
+    {
+      "content": "Think about how to track the last occurrence of each character as you iterate through the string. You can use a dictionary to map each character to its last index."
+    },
+    {
+      "content": "Once you have the last occurrences, you can determine potential substrings. For each character, you can define a substring that starts at its first occurrence and ends at its last occurrence."
+    },
+    {
+      "content": "As you identify these substrings, keep in mind the need for them to be non-overlapping. You will need a strategy to select which substrings to include based on their positions."
+    },
+    {
+      "content": "Consider using a greedy approach. After sorting the substrings by their ending index, you can iterate through them and select a substring if it starts after the last selected substring ends."
+    },
+    {
+      "content": "While iterating through the substrings, maintain a variable to track the end of the last added substring. This will help ensure that the next substring you consider does not overlap."
+    },
+    {
+      "content": "Remember to prioritize substrings that minimize total length when there are multiple options with the same number of substrings. This is crucial for meeting the problem's requirements."
+    },
+    {
+      "content": "Think about edge cases, such as strings with all identical characters or strings where each character appears only once. How would your logic handle these scenarios?"
+    },
+    {
+      "content": "You might want to use a list to collect valid substrings as you identify them. This will allow you to easily return the result at the end of your function."
+    },
+    {
+      "content": "When constructing the substrings, ensure you are not including any characters outside the defined boundaries for each substring. This can be easily checked with the last occurrence mapping."
+    },
+    {
+      "content": "Consider how you will return the result. The problem states that you can return the substrings in any order, but they must be non-overlapping and meet the other conditions."
+    },
+    {
+      "content": "Before finalizing your approach, write out some test cases to verify your logic. For instance, test with strings like 'abc', 'aabbcc', and 'abcdefg' to see if your method holds."
+    },
+    {
+      "content": "As you implement the solution, keep an eye on performance, especially since the input string can be as long as 10^5 characters. Aim for an O(n) solution if possible."
+    },
+    {
+      "content": "Finally, ensure you handle the return format correctly. The output should be an array of strings, so make sure your final collection of substrings is formatted accordingly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "The string s contains only lowercase English letters.",
+    "Substrings must contain all occurrences of any character they include.",
+    "Substrings must be non-overlapping.",
+    "If multiple solutions exist with the same number of substrings, return the one with the minimum total length.",
+    "The output can be in any order."
+  ]
+}

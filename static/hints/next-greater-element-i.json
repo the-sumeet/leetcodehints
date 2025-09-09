@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of the 'next greater element'. For any element in an array, it is the first element to the right that is larger. For example, in the array [1, 3, 2], the next greater for 1 is 3, and for 2, it is -1."
+    },
+    {
+      "content": "Remember that nums1 is a subset of nums2. This means every element in nums1 can be found in nums2, but not vice versa. This relationship is crucial for your approach."
+    },
+    {
+      "content": "Think about how you can efficiently find the next greater element for each number in nums1. A naive approach would involve nested loops, which can be inefficient. Instead, consider how you might leverage the order of elements in nums2."
+    },
+    {
+      "content": "You might want to use a stack to help keep track of elements for which you are trying to find the next greater element. As you iterate through nums2, you can push elements onto the stack and pop them when you find a greater element."
+    },
+    {
+      "content": "As you process nums2, maintain a mapping from each element to its next greater element. This will allow you to quickly answer the queries for nums1 after processing nums2."
+    },
+    {
+      "content": "When iterating through nums2, if you encounter an element that is greater than the element at the top of the stack, that means you have found the next greater element for the elements in the stack."
+    },
+    {
+      "content": "Make sure to handle the case where there is no next greater element. In such cases, you should map that element to -1 in your results."
+    },
+    {
+      "content": "After building the map of next greater elements for nums2, you can simply iterate through nums1 and retrieve the next greater element for each number using the map you created."
+    },
+    {
+      "content": "Keep in mind the constraints: nums1 and nums2 can have lengths up to 1000, and all integers are unique. This means you can use a dictionary or hash map for efficient lookups."
+    },
+    {
+      "content": "Finally, ensure your solution runs in O(nums1.length + nums2.length) time. This means you should be careful about how many times you iterate through nums2 and nums1."
+    }
+  ],
+  "questionNotes": [
+    "nums1 is a subset of nums2.",
+    "Each element in nums1 appears exactly once in nums2.",
+    "Return an array of the same length as nums1.",
+    "If there is no next greater element, return -1 for that element."
+  ]
+}

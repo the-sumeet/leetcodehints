@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by defining the `UndergroundSystem` class. This class should maintain two main functionalities: checking in and checking out customers. Think about how you can store the state of each customer when they check in."
+    },
+    {
+      "content": "For the `checkIn` method, you'll need to store the customer's ID, the station name, and the time of check-in. A good way to do this is by using a dictionary (or hash map) where the key is the customer ID."
+    },
+    {
+      "content": "In the `checkOut` method, you will need to retrieve the information from your storage (the dictionary) to calculate the travel time. Make sure to compute the time as `checkout time - checkin time`."
+    },
+    {
+      "content": "Consider how to store the travel times between stations for calculating averages. You might use another dictionary where the key is a tuple of (startStation, endStation) and the value is a list of travel times."
+    },
+    {
+      "content": "When implementing `getAverageTime`, you will need to calculate the average from the list of travel times stored in the previous step. Remember to handle the case where there may be multiple trips between the same stations."
+    },
+    {
+      "content": "Think about edge cases, such as what happens if a customer checks in multiple times without checking out. The problem states that a customer can only be checked into one place at a time, so you should enforce this in your code."
+    },
+    {
+      "content": "Make sure to handle the data types correctly. The travel time should be a double when you return it in `getAverageTime`. Consider using floating-point arithmetic to ensure precision."
+    },
+    {
+      "content": "Remember that the average time should be calculated as the total travel time divided by the number of trips. Ensure that you keep track of both the total time and the number of trips for each route."
+    },
+    {
+      "content": "When implementing the data structure for storing average times, consider using a nested dictionary or a combination of dictionaries to map start and end stations to their respective total travel times and counts."
+    },
+    {
+      "content": "Finally, ensure to test your implementation with various scenarios, including multiple customers, multiple trips between the same stations, and edge cases like checking in and out at the same time."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= id, t <= 10^6; 1 <= stationName.length, startStation.length, endStation.length <= 10.",
+    "All strings consist of uppercase and lowercase English letters and digits.",
+    "There will be at most 2 * 10^4 calls in total to checkIn, checkOut, and getAverageTime.",
+    "Answers within 10^-5 of the actual value will be accepted."
+  ]
+}

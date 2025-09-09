@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the DataFrame. You have a 'product' column and several 'quarter' columns. Each 'quarter' column represents sales data for that quarter."
+    },
+    {
+      "content": "Think about how you can transform the DataFrame from a wide format (multiple quarter columns) to a long format (one column for quarter and one for sales). This is often referred to as 'melting' the DataFrame."
+    },
+    {
+      "content": "Consider using a method that allows you to specify which columns to keep as identifiers (in this case, 'product') and which to unpivot (the quarter columns)."
+    },
+    {
+      "content": "When reshaping, ensure that the resulting DataFrame has three columns: 'product', 'quarter', and 'sales'. Each row should represent a unique combination of product and quarter."
+    },
+    {
+      "content": "Think about the function that can help you achieve this transformation. In pandas, there is a function called `melt()` that can be very useful for this task."
+    },
+    {
+      "content": "Remember that when using `melt()`, you need to specify the 'id_vars' (the columns you want to keep as is) and 'value_vars' (the columns you want to unpivot)."
+    },
+    {
+      "content": "Pay attention to the naming of the resulting columns. You might need to rename the columns after melting to match the desired output format."
+    },
+    {
+      "content": "Consider edge cases, such as what happens if a quarter has no sales data (NaN values). Think about how you would handle those in your final DataFrame."
+    },
+    {
+      "content": "After melting the DataFrame, check the data types of your new columns. Ensure that 'sales' is of an integer type and 'quarter' is formatted correctly."
+    },
+    {
+      "content": "Finally, put together the steps you've learned: start with melting the DataFrame, then rename the columns, and check for any edge cases. This will guide you to the final output."
+    }
+  ],
+  "questionNotes": [
+    "The DataFrame has a 'product' column and four quarter columns.",
+    "The output must have three columns: 'product', 'quarter', and 'sales'.",
+    "Each row in the output should represent sales for a product in a specific quarter.",
+    "Ensure to handle any NaN values appropriately in the sales data."
+  ]
+}

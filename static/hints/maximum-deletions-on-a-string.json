@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operations allowed. You can either delete the entire string or remove the first i letters if they match the next i letters. This means you need to identify repeating patterns in the string."
+    },
+    {
+      "content": "Consider the simplest case where the string has no repeating patterns, like 'abc'. What would happen in this case? How many operations would you need to delete the string?"
+    },
+    {
+      "content": "Think about how to identify the first i letters that can be deleted. You will need to check if the substring from index 0 to i matches the substring from index i to 2i."
+    },
+    {
+      "content": "When checking for deletable prefixes, remember that i can only go up to half the length of the string. This means you should loop from 1 to floor(s.length / 2)."
+    },
+    {
+      "content": "As you identify valid deletions, consider how the string changes after each operation. You will need to keep track of the remaining string and the number of operations performed."
+    },
+    {
+      "content": "Try to visualize the process. For example, with 'abcabcdabc', if you delete 'abc', what does the string look like afterward? How does this affect your next possible deletions?"
+    },
+    {
+      "content": "Think about how to efficiently store the results of your operations. You may want to use a counter to track the number of operations and a loop to process the string."
+    },
+    {
+      "content": "Consider edge cases, such as strings with all identical characters like 'aaaaa'. What would the maximum number of operations be in this case?"
+    },
+    {
+      "content": "Remember that after each deletion, the string may still have valid prefixes that can be deleted. You need to repeat the process until the string is empty."
+    },
+    {
+      "content": "You might want to implement a recursive or iterative approach to handle the deletions. How would you structure your function to keep track of the current state of the string?"
+    },
+    {
+      "content": "Think about using a while loop that continues until the string is empty. Inside the loop, check for the longest prefix that can be deleted and update the string accordingly."
+    },
+    {
+      "content": "When checking for deletable prefixes, you can use a nested loop to compare the substrings. Make sure to handle the string lengths correctly to avoid index errors."
+    },
+    {
+      "content": "Consider using a list or array to store the lengths of the prefixes that can be deleted. This way, you can easily access and manipulate them during your operations."
+    },
+    {
+      "content": "As you build your solution, remember to handle cases where no prefixes can be deleted. In such cases, you should be able to delete the entire string in one operation."
+    },
+    {
+      "content": "Before finalizing your solution, test it against various cases, including edge cases and larger strings. Ensure it performs well within the given constraints."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 4000",
+    "The string consists only of lowercase English letters.",
+    "You can delete the entire string in one operation.",
+    "You can only delete prefixes of length i where 1 <= i <= s.length / 2."
+  ]
+}

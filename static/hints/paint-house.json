@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement. You need to paint houses in such a way that no two adjacent houses have the same color. Each house has a cost associated with each color."
+    },
+    {
+      "content": "Consider how you can represent the costs. You have a 2D array where each row represents a house and each column represents a color. For example, costs[0][0] is the cost to paint the first house red."
+    },
+    {
+      "content": "Think about the base case. If there is only one house, the minimum cost is simply the minimum of the costs for that house. How would you implement this?"
+    },
+    {
+      "content": "When processing each house, remember that the cost to paint the current house depends on the costs of the previous house. Specifically, if you're painting house `i` with color `j`, you cannot use the cost of painting house `i-1` with color `j`."
+    },
+    {
+      "content": "You can use dynamic programming to solve this problem. Create an array (or modify the input array) to keep track of the minimum costs as you iterate through each house."
+    },
+    {
+      "content": "As you iterate through the houses, for each color, compute the minimum cost by considering the costs of the other two colors from the previous house. For example, if you are painting house `i` red, the cost would be the cost of painting house `i` red plus the minimum of the costs of painting house `i-1` green and blue."
+    },
+    {
+      "content": "Make sure to handle edge cases like when the input array is empty or has only one house. What should your function return in those cases?"
+    },
+    {
+      "content": "Think about how to initialize your dynamic programming array. You might want to start with the costs of the first house since they will be your base cases."
+    },
+    {
+      "content": "Once you have processed all houses, the final answer will be the minimum value from the last row of your cost array. How would you extract that value?"
+    },
+    {
+      "content": "Remember to consider the constraints: the number of houses and colors. How does this affect the time complexity of your solution? Aim for O(n) time complexity, where n is the number of houses."
+    }
+  ],
+  "questionNotes": [
+    "Input is a 2D array where costs[i][j] represents the cost of painting house i with color j.",
+    "You cannot paint two adjacent houses the same color.",
+    "Return the minimum cost to paint all houses.",
+    "Consider edge cases like an empty array or a single house.",
+    "The solution should have O(n) time complexity."
+  ]
+}

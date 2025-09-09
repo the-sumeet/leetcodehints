@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to calculate the number of trailing zeroes in a factorial. Recall that trailing zeroes are produced by factors of 10, which are made from pairs of 2 and 5. Since there are generally more factors of 2 than 5, the number of trailing zeroes is determined by the number of times 5 is a factor in the numbers from 1 to x."
+    },
+    {
+      "content": "To compute the number of trailing zeroes, you can use the formula: f(x) = x // 5 + x // 25 + x // 125 + ... until x // 5^n is zero. This counts how many multiples of 5, 25, 125, etc., are in the range from 1 to x."
+    },
+    {
+      "content": "Consider the behavior of f(x) as x increases. Notice that f(x) is a non-decreasing function. This means that if f(x) = k for some x, then f(x) will either stay the same or increase as x increases."
+    },
+    {
+      "content": "Think about the implications of f(x) being non-decreasing. If you find an x where f(x) = k, what can you infer about values of x less than that? What about values greater than that?"
+    },
+    {
+      "content": "For a given k, you need to find the range of x values such that f(x) = k. This suggests that you should look for the first x where f(x) >= k and the first x where f(x) > k."
+    },
+    {
+      "content": "To find the boundaries for x, consider using a binary search approach. You can search for the smallest x such that f(x) >= k and the smallest x such that f(x) > k."
+    },
+    {
+      "content": "When implementing the binary search, remember to define the search space for x. Since k can be as large as 10^9, think about how large x might need to be to ensure you can find all possible trailing zeroes."
+    },
+    {
+      "content": "Consider edge cases, such as when k = 0. What values of x will yield f(x) = 0? Can you enumerate them easily?"
+    },
+    {
+      "content": "When k is greater than the maximum number of trailing zeroes possible for any factorial, what should your function return? Think about the limits of the problem."
+    },
+    {
+      "content": "As you perform the binary search, be careful to correctly handle the cases where f(x) equals k. You need to count how many x values correspond to this condition."
+    },
+    {
+      "content": "Make sure to test your function with various values of k, including edge cases like k = 0 and k = 1, to ensure it handles all scenarios correctly."
+    },
+    {
+      "content": "After finding the two boundaries (low and high) where f(x) equals k, the number of valid x values will simply be high - low. How will you implement this counting?"
+    },
+    {
+      "content": "Remember that the function f(x) can only return non-negative integers. If your binary search does not find any valid x for a given k, ensure your function returns 0."
+    },
+    {
+      "content": "Before finalizing your solution, consider the time complexity of your approach. How efficient is your binary search compared to a naive solution?"
+    },
+    {
+      "content": "Now, put together all your thoughts. You need a function that calculates f(x), a binary search to find the boundaries, and a way to count the valid x values. What will your function signature look like?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= k <= 10^9",
+    "f(x) is non-decreasing.",
+    "Return the count of non-negative integers x such that f(x) = k.",
+    "Consider edge cases, especially for k = 0 and large k."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a special subsequence is. You need to find indices (p, q, r, s) such that p < q < r < s and the conditions on the elements at these indices hold. Think about how to iterate through the array while maintaining these index constraints."
+    },
+    {
+      "content": "Remember that there must be at least one element between each pair of indices. This means you can't have consecutive indices. For example, if p is at index 0, q must be at least index 2."
+    },
+    {
+      "content": "Consider using nested loops to explore potential combinations of indices. The outer loop can iterate over p, and then you can have inner loops for q, r, and s. Ensure that each inner loop respects the index constraints."
+    },
+    {
+      "content": "As you iterate, keep track of the products you need to compare: nums[p] * nums[r] and nums[q] * nums[s]. You can store these products in a temporary variable to avoid repeated calculations."
+    },
+    {
+      "content": "Think about how to efficiently count valid subsequences. Instead of checking every combination of indices, can you use a hashmap or a dictionary to store previously calculated products and their corresponding indices?"
+    },
+    {
+      "content": "Pay attention to the constraints given in the problem. The length of nums can be between 7 and 1000, and each element is a positive integer between 1 and 1000. This means your solution should be efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Consider edge cases, such as when all elements in nums are the same or when nums contains only two distinct values. How would these cases affect the number of special subsequences?"
+    },
+    {
+      "content": "When checking for valid subsequences, ensure that you do not count duplicates. You might want to use a set to store unique (p, q, r, s) tuples to avoid counting the same subsequence multiple times."
+    },
+    {
+      "content": "To optimize your solution, think about how you can reduce the number of checks. For instance, if nums[p] * nums[r] is already larger than any possible nums[q] * nums[s], you can break out of the loop early."
+    },
+    {
+      "content": "Finally, implement a way to return the count of unique special subsequences. You can initialize a counter and increment it whenever you find a valid (p, q, r, s) combination that meets the criteria."
+    }
+  ],
+  "questionNotes": [
+    "A special subsequence is defined by indices (p, q, r, s) where p < q < r < s.",
+    "The conditions must satisfy: nums[p] * nums[r] == nums[q] * nums[s].",
+    "There must be at least one element between each pair of indices: q - p > 1, r - q > 1, s - r > 1.",
+    "The length of nums is between 7 and 1000, and each element is a positive integer between 1 and 1000.",
+    "Ensure to count unique subsequences only."
+  ]
+}

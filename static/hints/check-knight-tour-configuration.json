@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the knight's movement on a chessboard. A knight moves in an 'L' shape: two squares in one direction and then one square perpendicular, or vice versa. Make sure you can visualize all eight possible moves."
+    },
+    {
+      "content": "Consider the dimensions of the board. The input grid is an n x n matrix, where n is between 3 and 7. Ensure that your solution can handle the smallest and largest possible boards."
+    },
+    {
+      "content": "Remember that the knight starts at the top-left corner of the board, which corresponds to the position (0, 0) in the grid. The value at this position should always be 0, indicating the knight's starting point."
+    },
+    {
+      "content": "As you iterate through the grid, keep track of the knight's current position using the values in the grid. Each value should correspond to the order in which the knight visited that cell, from 0 to n*n - 1."
+    },
+    {
+      "content": "To check if the knight's move is valid, calculate the difference in coordinates between two consecutive moves. The valid moves must satisfy the knight's movement rules, which can be expressed as: |dx| + |dy| = 3 and max(|dx|, |dy|) = 2."
+    },
+    {
+      "content": "Create a helper function to verify if a move from one cell to another is valid. This function should take the current position and the next position as input and return true if the move adheres to the knight's movement rules."
+    },
+    {
+      "content": "Ensure that you check for out-of-bounds errors. The knight should not move outside the grid dimensions, so validate that the next position is within the bounds of the grid."
+    },
+    {
+      "content": "You can use a loop to go through each cell in the grid, from the first to the last. For each cell, check if the move to the next cell (based on the value) is valid using the helper function."
+    },
+    {
+      "content": "Consider edge cases where the knight's path might seem valid but actually isn't due to an invalid move. For example, if the knight jumps to a cell that is not reachable by its movement rules, you should return false immediately."
+    },
+    {
+      "content": "Finally, after checking all moves, if all are valid, you can return true. Ensure that your final check confirms that the knight has visited all cells exactly once, which is guaranteed by the unique values in the grid."
+    }
+  ],
+  "questionNotes": [
+    "The grid is n x n with 3 <= n <= 7.",
+    "All integers in the grid are unique and range from 0 to n*n - 1.",
+    "The knight starts at the top-left cell (0, 0) which should have the value 0.",
+    "A valid knight move consists of moving two squares in one direction and one square in a perpendicular direction.",
+    "Return true if the configuration is valid, otherwise return false."
+  ]
+}

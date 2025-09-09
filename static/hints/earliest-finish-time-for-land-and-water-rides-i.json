@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input arrays. You have two lists for land rides and water rides, each containing the start times and durations. Make sure you can access the start time and duration for any ride using its index."
+    },
+    {
+      "content": "Consider the two possible sequences for the rides: land ride first and water ride first. This means you'll need to calculate the finish time for both sequences to find the earliest possible finish time."
+    },
+    {
+      "content": "When calculating the finish time for a ride, remember that a ride can only start at its designated start time or later. This means you may need to compare the current time with the ride's start time before boarding."
+    },
+    {
+      "content": "For each ride, calculate the finish time after boarding. If you board a land ride at time `t`, it will finish at `t + landDuration[i]`. Similarly, do this for water rides."
+    },
+    {
+      "content": "After finishing one ride, you may need to wait for the other ride to open if it hasn't started yet. Make sure to account for this waiting time when calculating the total finish time."
+    },
+    {
+      "content": "Create a loop to iterate through each land ride and each water ride. For each combination, calculate the finish time for both sequences: land first and water first."
+    },
+    {
+      "content": "When calculating the finish time for the second ride, ensure to take the maximum of the finish time of the first ride and the start time of the second ride. This ensures you are not starting the second ride before it's open."
+    },
+    {
+      "content": "Keep track of the minimum finish time across all combinations of rides. You can initialize a variable to a large number and update it whenever you find a smaller finish time."
+    },
+    {
+      "content": "Consider edge cases such as when there is only one ride in each category. Ensure your logic still holds true in these scenarios."
+    },
+    {
+      "content": "Finally, ensure your implementation adheres to the constraints: 1 <= n, m <= 100 and the start times and durations being between 1 and 1000. This will help you avoid any out-of-bounds errors."
+    }
+  ],
+  "questionNotes": [
+    "You must experience exactly one ride from each category.",
+    "A ride can only be started at its opening time or later.",
+    "Return the earliest possible time at which the tourist can finish both rides.",
+    "Constraints: 1 <= n, m <= 100; 1 <= landStartTime[i], landDuration[i], waterStartTime[j], waterDuration[j] <= 1000."
+  ]
+}

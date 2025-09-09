@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation allowed on string `s`. You can move a suffix of `s` to the front. For example, if `s = 'abcd'` and you take the suffix 'cd', the new string becomes 'cdab'."
+    },
+    {
+      "content": "Notice that the operation effectively rotates the string. Think about how many unique rotations of `s` can be generated and how they relate to `t`."
+    },
+    {
+      "content": "Consider the length of the strings. Since `s` and `t` are of equal length `n`, any transformation must also result in a string of length `n`."
+    },
+    {
+      "content": "Focus on the number of operations `k`. You need to transform `s` into `t` using exactly `k` operations. What happens if `k` is larger than `n`?"
+    },
+    {
+      "content": "If `k` is greater than `n`, you can think of the effective operations as `k % n`. This is because performing `n` operations will return `s` to its original form."
+    },
+    {
+      "content": "Identify the unique rotations of `s`. You can generate all possible rotations and check how many of these match `t`."
+    },
+    {
+      "content": "When generating rotations, remember that the suffix can be of any length from 1 to `n-1`. This means you have `n-1` possible suffixes to consider for each operation."
+    },
+    {
+      "content": "After identifying valid rotations of `s` that match `t`, think about how many ways you can reach each of these rotations in exactly `k` operations."
+    },
+    {
+      "content": "You can represent the number of ways to reach a specific rotation using a dynamic programming approach, where you keep track of the number of ways to reach each rotation after each operation."
+    },
+    {
+      "content": "Consider edge cases, such as when `s` is already equal to `t`. How many ways can you perform operations in this case?"
+    },
+    {
+      "content": "Remember to take into account the modulo `10^9 + 7` for your final answer, as the number of ways can grow large."
+    },
+    {
+      "content": "Think about how you can optimize the counting of ways to reach each rotation. You might want to use combinatorial mathematics or matrix exponentiation for large `k`."
+    },
+    {
+      "content": "When counting valid transformations, ensure you account for the distinct rotations and the number of operations that lead to each rotation."
+    },
+    {
+      "content": "As you approach the solution, consider writing a helper function to generate all rotations of `s` and check against `t`."
+    },
+    {
+      "content": "Finally, ensure that your solution efficiently handles the constraints, particularly with `k` being as large as `10^15`. Think about how to avoid simulating all operations."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= s.length <= 5 * 10^5",
+    "1 <= k <= 10^15",
+    "s.length == t.length",
+    "s and t consist of only lowercase English alphabets.",
+    "Return the answer modulo 10^9 + 7."
+  ]
+}

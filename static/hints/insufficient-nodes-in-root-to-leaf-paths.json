@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node can have up to two children, and a leaf node is defined as a node with no children."
+    },
+    {
+      "content": "Consider how to traverse the tree. A depth-first search (DFS) approach might be useful for exploring all root-to-leaf paths and calculating their sums."
+    },
+    {
+      "content": "Remember that a node is insufficient if all paths through it have a sum less than the given limit. You need to check the sums of all paths leading to leaf nodes."
+    },
+    {
+      "content": "Think about how to keep track of the cumulative sum as you traverse the tree. You might want to pass the current sum down to child nodes."
+    },
+    {
+      "content": "When you reach a leaf node, compare the accumulated sum to the limit. If the sum is less than the limit, that leaf node is insufficient."
+    },
+    {
+      "content": "As you backtrack in your DFS, you need to determine whether to keep or delete the current node based on its children's sufficiency. If both children are insufficient, the current node should also be deleted."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree consists of only one node or when all paths have sums that are less than the limit."
+    },
+    {
+      "content": "You may need a helper function that returns whether a node is sufficient based on its children's sufficiency and their path sums."
+    },
+    {
+      "content": "While implementing the solution, ensure that you correctly handle the return of the modified tree structure. You should return the new root after deletions."
+    },
+    {
+      "content": "Finally, think about how to structure your recursive function. It should return the modified node (or null if it should be deleted) and also consider the parent node's decision about its own sufficiency."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The number of nodes in the tree is in the range [1, 5000].",
+    "Node values range from -100,000 to 100,000.",
+    "Limit can be between -1,000,000,000 and 1,000,000,000.",
+    "A leaf is defined as a node with no children.",
+    "Return format should be the root of the modified binary tree."
+  ]
+}

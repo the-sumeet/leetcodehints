@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. You have an m x n grid, and all values are initialized to 0. Think about how you can represent this grid in your code."
+    },
+    {
+      "content": "Consider how you will keep track of the indices that are still available for flipping. You need to ensure that every index (i, j) where matrix[i][j] == 0 can be chosen equally."
+    },
+    {
+      "content": "When implementing the `flip` method, think about how you can randomly select an index from the available indices. What data structure might help you efficiently store and retrieve these indices?"
+    },
+    {
+      "content": "Remember that you need to flip the selected index to 1 after it is chosen. Make sure your data structure allows you to easily update the state of the matrix."
+    },
+    {
+      "content": "The `reset` method needs to set all values back to 0. Consider how this will affect your data structure for tracking available indices. You might need to reinitialize it."
+    },
+    {
+      "content": "Think about the random selection process. You can use a random number generator to pick an index from your list of available indices. Ensure that the selection is uniform."
+    },
+    {
+      "content": "Consider edge cases, such as when all indices have been flipped. Your `flip` method should handle this gracefully, ensuring that it only returns valid indices."
+    },
+    {
+      "content": "You might want to use a mapping of available indices to their positions in the matrix. This way, you can easily access and modify the matrix while keeping track of available indices."
+    },
+    {
+      "content": "To optimize the number of calls to the random function, consider shuffling the available indices once and then selecting from that shuffled list. This can reduce randomness calls during multiple flips."
+    },
+    {
+      "content": "Finally, think about the overall time and space complexity of your solution. Aim for O(1) time complexity for both `flip` and `reset` methods if possible, and ensure your space complexity is manageable."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 10^4",
+    "At least one free cell is guaranteed for each call to flip.",
+    "At most 1000 calls will be made to flip and reset.",
+    "Return format for flip is an array [i, j].",
+    "Ensure all returned indices are equally likely."
+  ]
+}

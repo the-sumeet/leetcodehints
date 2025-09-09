@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic operations of the iterator you need to implement: `next()`, `hasNext()`, and `peek()`. Each of these methods will interact with the underlying iterator, so familiarize yourself with how it operates."
+    },
+    {
+      "content": "Remember that the `peek()` method should return the next element without advancing the iterator. Think about how you can store the next element temporarily so that you can return it later when `peek()` is called."
+    },
+    {
+      "content": "Consider how you will manage the internal state of your `PeekingIterator`. You will need to keep track of whether you have already peeked at the next element and what that element is."
+    },
+    {
+      "content": "When implementing `next()`, you need to check if there is a stored value from `peek()`. If there is, return that value and clear the stored value. If not, just call the underlying iterator's `next()` method."
+    },
+    {
+      "content": "In the `hasNext()` method, ensure that you are checking both the internal state (whether you have a stored value) and the underlying iterator's `hasNext()` method. This will help you determine if there are more elements to iterate over."
+    },
+    {
+      "content": "Think about edge cases, such as what happens when the iterator is empty. Ensure that your implementation handles these cases gracefully, especially in terms of returning `false` for `hasNext()`."
+    },
+    {
+      "content": "When implementing the `peek()` method, if you have already peeked and stored a value, just return that value. If not, call the underlying iterator's `next()` method to fetch the next value and store it for future calls."
+    },
+    {
+      "content": "Consider how you will initialize your `PeekingIterator`. You need to set up the internal state correctly, including any variables that will hold the next element and a flag to indicate whether you've peeked."
+    },
+    {
+      "content": "Make sure to test your implementation with various scenarios, including cases where `next()` and `peek()` are called in different orders. This will help ensure that your iterator behaves as expected."
+    },
+    {
+      "content": "Your final implementation should look something like this: Store the next element when `peek()` is called, and in `next()`, return the stored element if it exists, or call the underlying iterator's `next()`. Don't forget to update the internal state accordingly."
+    }
+  ],
+  "questionNotes": [
+    "Each call to `next` and `peek` is guaranteed to be valid, meaning you won't call them when there are no elements left.",
+    "The constraints specify that the length of `nums` will be between 1 and 1000, and the values will also be within the same range.",
+    "Think about how to make your design generic to handle different types, not just integers, as a follow-up consideration."
+  ]
+}

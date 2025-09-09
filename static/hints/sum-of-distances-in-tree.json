@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a tree. A tree is a connected graph with no cycles, which means there is exactly one path between any two nodes."
+    },
+    {
+      "content": "Consider how distances between nodes are defined. The distance between two nodes is the number of edges in the unique path connecting them."
+    },
+    {
+      "content": "For a given node, you can calculate the distance to all other nodes by performing a Depth-First Search (DFS) or Breadth-First Search (BFS) from that node."
+    },
+    {
+      "content": "Think about how you might store the tree structure. You can use an adjacency list representation, where each node points to a list of its connected nodes."
+    },
+    {
+      "content": "When calculating distances for the first node, keep track of the total number of nodes and the distance sum as you traverse the tree."
+    },
+    {
+      "content": "After calculating the distance sum for one node, consider how you can derive the distance sums for other nodes without recalculating everything from scratch."
+    },
+    {
+      "content": "Notice that if you move from a parent node to a child node, the distances to all other nodes change in a predictable way. Think about how this affects the distance sum."
+    },
+    {
+      "content": "When moving from a parent to a child, the distance to all nodes that are not in the subtree of the child decreases by 1, while the distance to all nodes in the subtree increases by 1."
+    },
+    {
+      "content": "You can maintain two values during your traversal: the number of nodes in the subtree rooted at each node and the cumulative distance sum for that subtree."
+    },
+    {
+      "content": "Use a DFS to first calculate the size of each subtree and the initial distance sum for the root node. Store these values in separate arrays."
+    },
+    {
+      "content": "After calculating the initial distance sum for the root, perform another DFS to propagate this information to all other nodes, adjusting the distance sums based on the subtree sizes."
+    },
+    {
+      "content": "Keep in mind edge cases, such as when n is 1 (the tree has only one node) or when n is 2 (the tree has one edge). What should the output be in these cases?"
+    },
+    {
+      "content": "Remember that the output should be an array of length n, where each index corresponds to the node label. Ensure your implementation respects this format."
+    },
+    {
+      "content": "As you implement your solution, consider the time complexity. Aim for a solution that runs in O(n) time, since you will be processing each node a limited number of times."
+    },
+    {
+      "content": "Finally, think about how to handle the input edges array. You'll need to construct the adjacency list from this input before starting your DFS."
+    }
+  ],
+  "questionNotes": [
+    "The input tree is undirected and connected.",
+    "The number of nodes n can be as large as 30,000.",
+    "The edges array contains n - 1 pairs, representing the edges of the tree.",
+    "Node labels range from 0 to n - 1, and each pair in edges is unique."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the game mechanics. Alice and Bob take turns picking stones from the piles, and the number of piles they can take increases as the game progresses. Initially, Alice can only take from 1 pile."
+    },
+    {
+      "content": "Remember that Alice goes first, and both players play optimally. Think about how Alice's first move impacts Bob's subsequent choices. What strategies might Bob use to minimize Alice's total stones?"
+    },
+    {
+      "content": "Consider the implications of the variable M, which starts at 1 and can increase based on how many piles a player takes. How does this change the dynamics of the game as the rounds progress?"
+    },
+    {
+      "content": "To solve this problem, think about using dynamic programming. You can maintain a DP table where each entry represents the maximum stones Alice can collect from a certain state of the game."
+    },
+    {
+      "content": "Define your DP state clearly. For instance, let dp[i][m] represent the maximum stones Alice can collect starting from the ith pile with the current M value being m."
+    },
+    {
+      "content": "When updating your DP table, consider all possible moves Alice can make. For each possible X (from 1 to 2M), calculate the stones Alice would collect and how Bob would respond."
+    },
+    {
+      "content": "Don't forget to account for the remaining piles after Alice's turn. Bob will also play optimally, so you need to subtract the maximum stones he can collect from the remaining piles."
+    },
+    {
+      "content": "Think about base cases for your DP. If there are no piles left, what should the value be? Also, how do you handle cases where Alice can take all remaining piles?"
+    },
+    {
+      "content": "As you build your DP solution, ensure you consider edge cases, such as when there is only one pile or when the number of piles is less than 2M. How does this affect the game?"
+    },
+    {
+      "content": "Finally, implement your solution and test it against the provided examples. Ensure your DP transitions correctly reflect the optimal choices for both players. What will your final return statement look like?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= piles.length <= 100",
+    "Each pile has a positive integer number of stones: 1 <= piles[i] <= 10^4",
+    "Alice starts first, and both players play optimally.",
+    "M starts at 1 and can increase based on the number of piles taken.",
+    "Return the maximum number of stones Alice can collect."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of beauty for each element in the array. The beauty of nums[i] is determined based on its relationship with nums[j] (before it) and nums[k] (after it)."
+    },
+    {
+      "content": "Focus on the conditions for beauty. For beauty to equal 2, nums[i] must be strictly greater than all nums[j] before it and strictly less than all nums[k] after it. Think about how you can efficiently check these conditions."
+    },
+    {
+      "content": "Consider how to efficiently find the maximum value in the left segment (0 to i-1) and the minimum value in the right segment (i+1 to end). This will help you determine if nums[i] meets the criteria for beauty 2."
+    },
+    {
+      "content": "If nums[i] does not satisfy the conditions for beauty 2, check the conditions for beauty 1. For this, you only need to compare nums[i] with its immediate neighbors, nums[i-1] and nums[i+1]."
+    },
+    {
+      "content": "Remember to handle edge cases, especially when the array is strictly increasing or decreasing. What will the beauty values be in such cases?"
+    },
+    {
+      "content": "You can use a loop to iterate through the array from index 1 to nums.length - 2. For each index, calculate the beauty based on the conditions discussed."
+    },
+    {
+      "content": "To efficiently find the maximum and minimum values for the left and right segments, consider using prefix and suffix arrays. This will allow you to avoid recalculating these values repeatedly."
+    },
+    {
+      "content": "As you implement the solution, keep track of the total beauty value. Initialize a variable to accumulate the beauty scores as you evaluate each nums[i]."
+    },
+    {
+      "content": "Think about the time complexity of your approach. You want to ensure that your solution runs efficiently, ideally in linear time, given the constraints of the problem."
+    },
+    {
+      "content": "Finally, once you have the total beauty calculated, remember to return it. Ensure that your function adheres to the expected return format, which is simply the sum of beauty values."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= nums.length <= 10^5",
+    "Values: 1 <= nums[i] <= 10^5",
+    "Beauty is calculated for indices 1 to nums.length - 2 only.",
+    "Beauty can be 2, 1, or 0 based on specific conditions."
+  ]
+}

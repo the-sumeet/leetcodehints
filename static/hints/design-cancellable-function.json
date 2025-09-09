@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how generator functions work in JavaScript. They allow you to pause execution and yield values, which can be resumed later. Familiarize yourself with the syntax: `function* generator() { yield value; }`."
+    },
+    {
+      "content": "Remember that the `cancellable` function needs to return two things: a cancel function and a promise. Think about how you can create a cancel function that can be called to interrupt the generator's execution."
+    },
+    {
+      "content": "When the generator yields a promise, your function must wait for that promise to resolve or reject. Use `await` or `.then()` to handle the promise returned by the generator."
+    },
+    {
+      "content": "Consider how to handle the resolved value from the promise. You will need to pass this value back to the generator using the `next()` method. This is crucial for ensuring the generator continues executing correctly."
+    },
+    {
+      "content": "Think about error handling. If a promise rejects, you need to throw that error back to the generator. Use the `throw` method on the generator to handle this case."
+    },
+    {
+      "content": "You must also account for the cancellation case. If the cancel function is called, you should throw a specific error message ('Cancelled') back to the generator. This means you'll need to keep track of whether the cancel function has been invoked."
+    },
+    {
+      "content": "When throwing the cancellation error back to the generator, ensure that you are catching it properly. If the generator catches the error, it should continue executing; otherwise, the returned promise should reject."
+    },
+    {
+      "content": "Make sure to handle the case where the generator finishes execution before the cancel function is called. If the generator completes, the promise should resolve with the value returned by the generator."
+    },
+    {
+      "content": "Consider edge cases, such as when the generator immediately returns a value or throws an error without yielding any promises. How will your function handle these scenarios?"
+    },
+    {
+      "content": "Think about how to structure your promise chain. The promise returned by the `cancellable` function should resolve or reject based on the outcome of the generator's execution."
+    },
+    {
+      "content": "You can use a variable to track whether the cancel function has been called. This can be a simple boolean flag that you check before yielding a promise or after catching an error."
+    },
+    {
+      "content": "When the generator yields a promise, ensure that you are not just resolving it but also checking if the cancel function was called before proceeding with the next steps."
+    },
+    {
+      "content": "If the generator throws an error, ensure that your promise rejects with that error. This means you should have a catch block that handles this situation appropriately."
+    },
+    {
+      "content": "As you implement the cancel function, remember that it should not affect the generator if it has already completed. You can check the state of the generator to determine if it is still active."
+    },
+    {
+      "content": "Finally, put everything together. Your `cancellable` function should manage the generator's lifecycle, handle promises, and implement cancellation logic effectively. Focus on the flow of control between the generator and the promise."
+    }
+  ],
+  "questionNotes": [
+    "The generator function will only yield promises.",
+    "The cancel function should throw the string 'Cancelled'.",
+    "If the generator throws an error, the promise should reject with that error.",
+    "The promise should resolve with the value returned by the generator if completed successfully."
+  ]
+}

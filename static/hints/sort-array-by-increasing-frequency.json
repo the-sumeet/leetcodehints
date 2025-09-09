@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to sort the array based on the frequency of each integer. Make sure you can count how many times each integer appears in the array."
+    },
+    {
+      "content": "Consider using a dictionary (or hashmap) to store the frequency of each integer. For example, for the array [1,1,2,2,2,3], the frequency dictionary would look like: {1: 2, 2: 3, 3: 1}."
+    },
+    {
+      "content": "Once you have the frequency counts, think about how to sort the numbers. You need to sort first by frequency (increasing order) and then by the number itself (decreasing order) in case of ties."
+    },
+    {
+      "content": "To facilitate the sorting, consider creating a list of tuples where each tuple contains an integer and its frequency. For example: [(1, 2), (2, 3), (3, 1)]."
+    },
+    {
+      "content": "Remember that Python's sorting can take a key function. You can use a lambda function to specify that you want to sort by frequency first and then by the integer value in reverse order."
+    },
+    {
+      "content": "When sorting, the key for the sort function can be a tuple: (frequency, -value). This way, Python will sort primarily by frequency and secondarily by the negative value to achieve the desired order."
+    },
+    {
+      "content": "After sorting the tuples, you will need to flatten the list back into the original format. This means you will expand the tuples back into the original integers based on their frequency."
+    },
+    {
+      "content": "Consider edge cases such as when all elements are the same or when all elements are unique. How will your frequency counting handle these scenarios?"
+    },
+    {
+      "content": "Make sure to test your solution with the provided examples and any additional edge cases you can think of. This will help ensure that your sorting logic is robust."
+    },
+    {
+      "content": "Finally, implement the sorting and flattening logic. You should end up with a single list that is sorted according to the specified rules, ready to be returned as the output."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100",
+    "-100 <= nums[i] <= 100",
+    "Return format: A single sorted array based on frequency and value.",
+    "Tie-breaking: If two numbers have the same frequency, sort them in decreasing order."
+  ]
+}

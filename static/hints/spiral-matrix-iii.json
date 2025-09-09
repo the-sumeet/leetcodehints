@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement directions in a spiral: right, down, left, and up. You can represent these movements as coordinate changes: right (0,1), down (1,0), left (0,-1), and up (-1,0)."
+    },
+    {
+      "content": "Consider using a loop to control the movement through the grid. You will need to keep track of your current position and direction. A simple way to change direction is to use an array of direction vectors."
+    },
+    {
+      "content": "Before moving to the next cell, check if the new position is valid. A position is valid if it is within the grid bounds or if you are outside the grid but still need to visit all cells."
+    },
+    {
+      "content": "You need to keep track of the visited cells to avoid revisiting them. Use a set or a list to store the coordinates you have already visited."
+    },
+    {
+      "content": "Think about the stopping condition for your loop. You should continue until you have visited all cells in the grid, which is equal to `rows * cols`."
+    },
+    {
+      "content": "When you reach the edge of the grid and need to change direction, ensure that you update your direction appropriately. You can use a variable to track the current direction index and increment it when changing direction."
+    },
+    {
+      "content": "Remember to handle the case where you start at a corner or edge of the grid. The algorithm should still work correctly regardless of the starting position."
+    },
+    {
+      "content": "As you move, append each visited coordinate to a result list. Make sure to format the coordinates as specified in the problem statement: a list of lists."
+    },
+    {
+      "content": "Consider edge cases, such as very small grids (1x1, 1xN, Nx1). Ensure that your algorithm handles these gracefully without errors."
+    },
+    {
+      "content": "Finally, structure your code to separate concerns: one part for moving in the spiral, another for checking boundaries, and another for tracking visited cells. This will make your code cleaner and easier to debug."
+    }
+  ],
+  "questionNotes": [
+    "1 <= rows, cols <= 100",
+    "0 <= rStart < rows",
+    "0 <= cStart < cols",
+    "Return format: array of coordinates in the order visited.",
+    "You may move outside the grid but must eventually visit all cells."
+  ]
+}

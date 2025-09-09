@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of products. A product is positive if it contains an even number of negative numbers, or if it contains only positive numbers. Think about how you can track the count of negative numbers in a subarray."
+    },
+    {
+      "content": "Consider how to handle zeros in the array. A zero will break a subarray, so whenever you encounter a zero, you should reset your counts and start looking for a new subarray."
+    },
+    {
+      "content": "You can maintain two variables: one for the length of the longest subarray with a positive product and another for the current length of the subarray being evaluated. Remember to update these lengths appropriately as you iterate through the array."
+    },
+    {
+      "content": "Think about how to track the first negative number's index in the current subarray. This will help you determine the length of the subarray when you encounter an odd number of negative numbers."
+    },
+    {
+      "content": "When you find a negative number, check if this is the first negative number in your current subarray. If it is, store its index; if you encounter another negative number, you can calculate the length of the subarray by excluding the first negative number."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the array contains only negative numbers or when all elements are zero. These cases can affect the maximum length of a subarray with a positive product."
+    },
+    {
+      "content": "As you iterate through the array, you should reset your counters when you hit a zero and start counting again. This will ensure you are only considering valid subarrays."
+    },
+    {
+      "content": "If you are tracking the length of the subarray and the index of the first negative number, remember to update the maximum length found so far every time you find a positive product."
+    },
+    {
+      "content": "Consider edge cases where the entire array is a valid subarray. For example, if all numbers are positive or if the product of the negatives results in a positive number."
+    },
+    {
+      "content": "Finally, think about how to return the result. You should return the maximum length of all the valid subarrays you have found during your iteration through the array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Each element in nums can range from -10^9 to 10^9.",
+    "A subarray is defined as a contiguous part of the array.",
+    "Zeroes cannot be included in a subarray with a positive product."
+  ]
+}

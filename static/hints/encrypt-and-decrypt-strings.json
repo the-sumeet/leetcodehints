@@ -1,0 +1,60 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the mapping between characters and their encrypted values. Create a dictionary (or a hash map) to store this mapping for quick look-up during encryption."
+    },
+    {
+      "content": "Remember that the `keys` array contains unique characters, which means each character will map to exactly one string in the `values` array. This uniqueness will simplify your encryption process."
+    },
+    {
+      "content": "When encrypting, iterate through each character in the input string. For each character, check if it exists in the `keys` array. If it doesn't, return an empty string immediately."
+    },
+    {
+      "content": "To handle the decryption, note that the input string will always have an even length. This means you can safely process it in pairs of two characters."
+    },
+    {
+      "content": "For decryption, create a reverse mapping from the `values` back to the `keys`. This will allow you to quickly find which character corresponds to each substring of length 2."
+    },
+    {
+      "content": "While decrypting, if you find multiple mappings for a substring, remember that you can choose any one of them. This introduces a level of combinatorial possibilities in your results."
+    },
+    {
+      "content": "When counting the number of valid decrypted strings, make sure to check each combination against the provided `dictionary`. Use a set for the dictionary to allow O(1) lookups."
+    },
+    {
+      "content": "Consider edge cases where the input string for encryption contains characters not in the `keys`. This should trigger an immediate return of an empty string."
+    },
+    {
+      "content": "In your decryption method, after forming potential strings from the pairs, ensure to only count those that are present in the `dictionary`."
+    },
+    {
+      "content": "Think about how to handle the case where a substring in the encrypted string maps to multiple characters. You might want to use recursion or backtracking to explore all possible combinations."
+    },
+    {
+      "content": "When implementing the encrypt function, make sure to build the encrypted string efficiently. Using a StringBuilder (or a similar structure) can help with performance."
+    },
+    {
+      "content": "For the decrypt function, you might want to use a breadth-first search (BFS) or depth-first search (DFS) approach to explore all possible strings formed from the encrypted input."
+    },
+    {
+      "content": "Remember to validate the lengths of the inputs. For example, the `values` array must have a length equal to the `keys` array, and the length of `word2` must always be even."
+    },
+    {
+      "content": "As you implement your solution, keep testing with edge cases, such as the smallest and largest possible inputs, to ensure your logic holds under all scenarios."
+    },
+    {
+      "content": "Finally, ensure that your class is structured correctly with the appropriate methods for initialization, encryption, and decryption. Pay attention to the return types and formats."
+    }
+  ],
+  "questionNotes": [
+    "1 <= keys.length == values.length <= 26",
+    "values[i].length == 2",
+    "1 <= dictionary.length <= 100",
+    "1 <= dictionary[i].length <= 100",
+    "All keys[i] and dictionary[i] are unique.",
+    "1 <= word1.length <= 2000",
+    "2 <= word2.length <= 200 (and is always even)",
+    "All word1[i] appear in keys.",
+    "At most 200 calls will be made to encrypt and decrypt in total."
+  ]
+}

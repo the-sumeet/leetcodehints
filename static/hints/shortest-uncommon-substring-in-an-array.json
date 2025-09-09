@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to find a substring for each string in the array that does not appear in any other strings. Consider how many substrings each string can have."
+    },
+    {
+      "content": "Think about the constraints. Each string can be at most 20 characters long, and there can be up to 100 strings. This means that the total number of substrings you might need to check could be quite large, but manageable with efficient searching."
+    },
+    {
+      "content": "Remember that substrings can be of varying lengths. You should consider checking for substrings starting from length 1 up to the length of the string itself. How will you generate these substrings?"
+    },
+    {
+      "content": "As you generate substrings, consider storing them in a set for quick lookup. This will help you determine if a substring exists in any other string efficiently."
+    },
+    {
+      "content": "When checking for substrings, ensure that you exclude the string itself from the comparison. This means you'll need to keep track of which string you are currently evaluating."
+    },
+    {
+      "content": "If you find multiple valid substrings for a string, you need to select the shortest one. If there are ties in length, choose the lexicographically smallest one. How will you implement this selection process?"
+    },
+    {
+      "content": "Consider edge cases where a string might not have any unique substrings. In such cases, your answer should be an empty string. Make sure to handle this scenario in your implementation."
+    },
+    {
+      "content": "You might want to create a helper function to generate all substrings of a given string. This will help keep your code organized and reusable."
+    },
+    {
+      "content": "As you build your solution, think about how to efficiently check if a substring exists in the other strings. A nested loop might be necessary, but consider the implications on performance."
+    },
+    {
+      "content": "Finally, put together the logic to build the answer array. For each string, find the shortest uncommon substring and store it in the corresponding index of the answer array. Make sure to return this array at the end of your function."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == arr.length, 2 <= n <= 100, 1 <= arr[i].length <= 20.",
+    "Strings consist only of lowercase English letters.",
+    "If no uncommon substring exists, answer[i] should be an empty string.",
+    "If multiple shortest substrings exist, return the lexicographically smallest one."
+  ]
+}

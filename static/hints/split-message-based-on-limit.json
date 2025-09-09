@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to split the message into parts, each having a suffix that indicates its order and total count. The length of each part, including the suffix, must not exceed the given limit."
+    },
+    {
+      "content": "Consider how the suffix format `<a/b>` affects the available length for the message content. The suffix length increases with the number of parts, so you'll need to account for that when determining how much of the message can fit into each part."
+    },
+    {
+      "content": "Calculate the maximum number of parts possible based on the limit. The suffix length changes with the number of parts, so you may want to express the total length of each part as `limit - length_of_suffix`."
+    },
+    {
+      "content": "Remember that the last part can be shorter than the limit. This means you can adjust the lengths of the earlier parts to ensure that the total message is preserved."
+    },
+    {
+      "content": "Think about how to iterate through the message while keeping track of the current index and the number of parts created. You might want to use a loop that continues until you've processed the entire message."
+    },
+    {
+      "content": "As you create each part, ensure that you are correctly calculating the suffix length based on the current part index and total parts. For example, if you have 14 parts, the suffix for the first part will be `<1/14>`."
+    },
+    {
+      "content": "Consider edge cases, such as when the message is shorter than the limit. In such cases, you can simply return the message with the appropriate suffix."
+    },
+    {
+      "content": "You may need to adjust the lengths of the parts dynamically based on how much of the message remains. For example, if you are nearing the end of the message, the last part may need to be shorter."
+    },
+    {
+      "content": "When calculating the length of the suffix, remember that it can vary significantly depending on the number of parts. Make sure to recalculate this length as you determine the number of parts."
+    },
+    {
+      "content": "If you find that the message cannot be split into the required number of parts without exceeding the limit, you should return an empty array. This is an important condition to check before finalizing your result."
+    },
+    {
+      "content": "While constructing each part, ensure that the characters taken from the message do not exceed the allowed length after accounting for the suffix. You can use string slicing to manage this effectively."
+    },
+    {
+      "content": "Keep track of the total length of the message and the current position in the message as you build each part. This will help you ensure you don't miss any characters."
+    },
+    {
+      "content": "Consider using a list to store the parts as you create them. This will allow you to easily return the final result as an array of strings."
+    },
+    {
+      "content": "Before finalizing your implementation, write out some test cases, especially edge cases, to ensure your logic holds under different scenarios. This will help you catch any potential bugs."
+    },
+    {
+      "content": "You might want to create a helper function to calculate the suffix length based on the number of parts. This can help keep your main logic cleaner and more focused."
+    }
+  ],
+  "questionNotes": [
+    "The suffix format is crucial: <a/b>, where 'a' is the part index and 'b' is the total number of parts.",
+    "The last part can be shorter than the limit, but all other parts must be exactly limit characters long.",
+    "If it's impossible to split the message as required, return an empty array.",
+    "Consider the length of the suffix when calculating how much of the message can fit in each part."
+  ]
+}

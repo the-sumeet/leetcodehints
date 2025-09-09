@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid structure. Each cell has a value from 1 to 6, which indicates the type of street and its connections to neighboring cells. For example, a value of 1 connects left and right cells."
+    },
+    {
+      "content": "Consider how to represent the connections between cells. You can think of each cell as having potential paths to its neighbors based on the street type. Make a list of which street types connect to which directions."
+    },
+    {
+      "content": "Think about how to traverse the grid. A depth-first search (DFS) or breadth-first search (BFS) could be useful for exploring paths. You will need to keep track of visited cells to avoid cycles."
+    },
+    {
+      "content": "When moving from one cell to another, check if the connection is valid based on the current cell's street type and the next cell's street type. For instance, moving down from (i, j) to (i + 1, j) requires checking if the street in (i, j) allows downward movement."
+    },
+    {
+      "content": "Remember to handle the grid boundaries. Ensure that when you check neighboring cells, you do not go out of bounds. For example, when checking (i + 1, j), ensure that i + 1 < m."
+    },
+    {
+      "content": "Consider edge cases where the grid has only one cell or where all cells are isolated. For a 1x1 grid, the answer should be true since you start and end at the same cell."
+    },
+    {
+      "content": "As you implement your pathfinding, keep track of the starting point (0, 0) and the endpoint (m - 1, n - 1). Your goal is to find a way to reach this endpoint using valid connections."
+    },
+    {
+      "content": "Make sure to mark cells as visited once you explore them. This prevents infinite loops and ensures that your algorithm runs efficiently. You can use a 2D array or modify the grid temporarily."
+    },
+    {
+      "content": "When you reach the bottom-right cell, return true. If you exhaust all possible paths and do not reach this cell, return false. Think about how to exit your search once the goal is achieved."
+    },
+    {
+      "content": "Finally, consider the time complexity of your solution. With a grid size of up to 300x300, ensure your algorithm can handle the maximum input size efficiently, ideally in O(m * n) time."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 300; 1 <= grid[i][j] <= 6.",
+    "You start at (0, 0) and need to reach (m - 1, n - 1).",
+    "Each cell's value indicates specific connections, which must be respected.",
+    "Visited cells must be tracked to avoid cycles."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you can store key-value pairs. A common approach is to use an array or a list of lists, where each inner list can hold pairs. This will help you manage collisions when multiple keys hash to the same index."
+    },
+    {
+      "content": "Consider how to hash the keys to determine their index in your storage. A simple way is to use the modulo operator with the size of your array: `index = key % array_size`."
+    },
+    {
+      "content": "Remember to handle collisions. If two keys hash to the same index, you can store them in a linked list or another structure at that index. This way, you can still access all values associated with that index."
+    },
+    {
+      "content": "When implementing the `put` method, check if the key already exists. If it does, update the value; if not, add the new key-value pair. This requires searching through the list at the hashed index."
+    },
+    {
+      "content": "In the `get` method, if the key is not found, you should return -1. Make sure to traverse the list at the hashed index to check for the key's existence."
+    },
+    {
+      "content": "For the `remove` method, you need to find the key in the list at the hashed index and remove it. Be careful to update the list properly to avoid leaving any dangling references."
+    },
+    {
+      "content": "Consider edge cases, such as inserting the same key multiple times, or trying to get or remove a key that does not exist. Your implementation should handle these gracefully."
+    },
+    {
+      "content": "Think about the initial size of your array. A common strategy is to start with a small size and resize it when the load factor (number of elements / size of the array) exceeds a certain threshold."
+    },
+    {
+      "content": "When resizing, remember to rehash all existing keys to their new indices in the larger array. This is crucial to maintain the efficiency of your HashMap."
+    },
+    {
+      "content": "Finally, ensure your class adheres to the required interface. Implement the methods `put`, `get`, and `remove` correctly, and test them against the provided sample cases to verify your implementation."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= key, value <= 10^6",
+    "At most 10^4 calls will be made to put, get, and remove.",
+    "Return -1 if the key is not found in the get method.",
+    "Ensure that duplicate keys update the existing value rather than adding a new entry."
+  ]
+}

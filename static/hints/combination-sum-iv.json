@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding that you need to find all possible combinations that sum up to the target. Remember, combinations are counted as different if they have different orders. For example, (1, 2) and (2, 1) are considered different combinations."
+    },
+    {
+      "content": "Consider how you can use recursion to explore all possible combinations. You can think of each number in `nums` as an option to include in a combination, and you can keep adding numbers until you reach or exceed the target."
+    },
+    {
+      "content": "Think about using a dynamic programming approach to store results of subproblems. You can create an array `dp` where `dp[i]` represents the number of combinations that sum up to `i`."
+    },
+    {
+      "content": "Initialize your `dp` array with `dp[0] = 1`, since there is one way to reach the target of 0 (by using no numbers). What do you think should be the values of the rest of the `dp` array initially?"
+    },
+    {
+      "content": "Iterate through each number in `nums` and for each number, iterate through all possible targets from that number up to the target. Update the `dp` array accordingly. How would you update `dp[j]` when using `num`?"
+    },
+    {
+      "content": "When updating `dp[j]`, you should add the value from `dp[j - num]` to `dp[j]`. This represents the number of ways to form the sum `j` by including the current number `num`."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the target is less than the smallest number in `nums`. What should your function return in that case?"
+    },
+    {
+      "content": "Consider the constraints: `1 <= nums.length <= 200` and `1 <= target <= 1000`. Ensure your solution is efficient enough to handle the upper limits of these constraints."
+    },
+    {
+      "content": "If negative numbers are allowed in `nums`, the problem changes significantly. You would need to consider how negative numbers can lead to infinite combinations. What constraints would you add to avoid this?"
+    },
+    {
+      "content": "Finally, after filling the `dp` array, your answer will be stored in `dp[target]`. Make sure to return this value. What is the final step in your function?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 200",
+    "1 <= nums[i] <= 1000 (all elements are unique)",
+    "1 <= target <= 1000",
+    "Different sequences are counted as different combinations."
+  ]
+}

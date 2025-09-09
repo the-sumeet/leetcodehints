@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a 'good caption'. A good caption requires that every character appears in groups of at least 3 consecutive occurrences. For example, 'aaa' is good, but 'aa' is not."
+    },
+    {
+      "content": "Consider how you can change characters in the string. You can change a character to its previous or next character in the alphabet, except for 'a' and 'z'. Think about how this affects the groups of characters."
+    },
+    {
+      "content": "Identify the groups of consecutive characters in the input string. For example, in 'aaabbb', you have two groups: 'aaa' and 'bbb'. This will help you determine where changes are needed."
+    },
+    {
+      "content": "Count the length of each group of characters. If a group has fewer than 3 characters, you'll need to perform operations to increase its size. How will you do that?"
+    },
+    {
+      "content": "When a group has only 1 character, it can be transformed into a group of 3 by changing it to the same character twice. For example, 'a' can become 'aaa'."
+    },
+    {
+      "content": "If a group has 2 characters, you can change one of them to match the other, thus forming a group of 3. For instance, 'aa' can become 'aaa' by changing the next character."
+    },
+    {
+      "content": "Think about the order of operations. If you have multiple groups to modify, how will you decide which characters to change first to minimize the number of operations?"
+    },
+    {
+      "content": "Consider edge cases where the string might be too short to form any good caption. For example, 'bc' cannot be transformed into a good caption because there aren't enough characters."
+    },
+    {
+      "content": "When transforming characters, always aim for the lexicographically smallest result. This means you should prefer changing characters to 'a' over 'b', 'b' over 'c', and so on."
+    },
+    {
+      "content": "As you make changes, keep track of the total number of operations. You want to ensure that you are performing the minimum number of operations necessary to achieve a good caption."
+    },
+    {
+      "content": "After processing all groups, check if you have successfully formed a good caption. If any group still has fewer than 3 characters, it means it's impossible to create a good caption."
+    },
+    {
+      "content": "If you find that a good caption is possible, construct the final string in a way that maintains the lexicographical order. Consider how you can append or modify characters accordingly."
+    },
+    {
+      "content": "Remember to handle the case where the input string is already a good caption. In this case, you should return the string as is without any modifications."
+    },
+    {
+      "content": "Think about how you can implement your solution efficiently. Given the constraints (up to 50,000 characters), consider the time complexity of your approach."
+    },
+    {
+      "content": "Before finalizing your solution, review the edge cases and ensure your implementation handles them correctly. This includes strings with all identical characters or strings that are already good captions."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= caption.length <= 5 * 10^4",
+    "Characters in 'caption' are only lowercase English letters.",
+    "Return the lexicographically smallest good caption if multiple exist.",
+    "Return an empty string if it's impossible to create a good caption."
+  ]
+}

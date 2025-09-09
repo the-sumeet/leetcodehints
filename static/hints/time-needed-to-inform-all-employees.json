@@ -1,0 +1,45 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the tree structure formed by the employees and their managers. Each employee has exactly one direct manager except for the head of the company, who has no manager (manager[headID] = -1)."
+    },
+    {
+      "content": "Consider how the information spreads in a tree. When the head informs his direct subordinates, they will each take some time to inform their own subordinates. This creates a cascading effect."
+    },
+    {
+      "content": "Think about how you can represent the relationships between employees. You might want to create a mapping of each employee to their direct subordinates using the manager array."
+    },
+    {
+      "content": "You can use a depth-first search (DFS) or breadth-first search (BFS) to traverse the tree. This will allow you to calculate the total time taken to inform all employees starting from the head."
+    },
+    {
+      "content": "When traversing the tree, keep track of the maximum time taken for each employee to inform their subordinates. This means you need to consider the informTime of each employee and add it to the time taken by their subordinates."
+    },
+    {
+      "content": "Make sure to handle the case where an employee has no subordinates. If informTime[i] is 0, that means they cannot inform anyone else, and you should not add any time for them."
+    },
+    {
+      "content": "Consider edge cases such as when there is only one employee (the head) or when all employees report directly to the head. What would the expected output be in these cases?"
+    },
+    {
+      "content": "As you implement your solution, ensure that you are correctly accumulating the time taken to inform all employees. You might want to create a recursive function that returns the total inform time for each employee."
+    },
+    {
+      "content": "Remember to initialize your result variable to zero and update it accordingly as you traverse through the tree. The final result should reflect the total time needed to inform all employees."
+    },
+    {
+      "content": "Your final implementation should return the total time needed to inform all employees starting from the head. Make sure to test your solution with various inputs to confirm its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5",
+    "0 <= headID < n",
+    "manager.length == n",
+    "0 <= manager[i] < n",
+    "manager[headID] == -1",
+    "informTime.length == n",
+    "0 <= informTime[i] <= 1000",
+    "informTime[i] == 0 if employee i has no subordinates.",
+    "Return the total minutes needed to inform all employees."
+  ]
+}

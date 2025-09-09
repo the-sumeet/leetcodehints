@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the pattern of money deposits. Hercy deposits $1 on the first day (Monday), then $2 on Tuesday, $3 on Wednesday, and so on until Sunday. Each week, the deposit amount increases by $1 on Monday."
+    },
+    {
+      "content": "Notice that each week consists of 7 days. After the first week, the deposits reset to a new starting point based on the previous week's Monday deposit. This means you need to track both the day of the week and the week number."
+    },
+    {
+      "content": "You can calculate how many complete weeks fit into the given number of days `n`. Use integer division to find the number of complete weeks: `weeks = n // 7`."
+    },
+    {
+      "content": "After determining the number of complete weeks, calculate the total deposits for these complete weeks. The deposits for each week can be summed up using the formula for the sum of an arithmetic series."
+    },
+    {
+      "content": "For the deposits of complete weeks, remember that the first week has deposits from 1 to 7, the second week from 2 to 8, and so on. The sum for complete weeks can be calculated using the formula: `sum = weeks * (7 * (weeks + 1) / 2) + (1 + 2 + ... + weeks)`."
+    },
+    {
+      "content": "Now, consider any remaining days after the complete weeks. Calculate how many days are left: `remaining_days = n % 7`. These days will continue the pattern from the last completed week."
+    },
+    {
+      "content": "For the remaining days, you will start from the deposit amount of the next Monday. If you have `remaining_days`, you can add deposits starting from `weeks + 1` to `weeks + remaining_days`."
+    },
+    {
+      "content": "Make sure to account for the deposits from the remaining days by summing them up. You can use a loop or a simple arithmetic formula for the sum of the remaining days."
+    },
+    {
+      "content": "Combine the total from the complete weeks and the total from the remaining days to get the final amount Hercy has saved by the end of day `n`."
+    },
+    {
+      "content": "Finally, ensure your code handles edge cases, such as when `n` is less than 7. In this case, the deposits will simply be the sum from 1 to `n`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 1000",
+    "Deposits increase weekly, starting from the previous week's Monday deposit.",
+    "The total amount must be calculated based on both complete weeks and any remaining days."
+  ]
+}

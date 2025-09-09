@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the positions of the character `c` in the string `s`. You can loop through the string and store the indices where `s[i] == c`. This will help you focus on the relevant parts of the string."
+    },
+    {
+      "content": "Once you have the indices of `c`, think about how many substrings can be formed between any two occurrences of `c`. For each pair of indices, you can form a substring that starts at the first index and ends at the second index."
+    },
+    {
+      "content": "Consider the case where the character `c` appears multiple times in the string. If there are `n` occurrences of `c`, how many pairs of start and end positions can you form? This is a combinatorial problem."
+    },
+    {
+      "content": "Remember that each occurrence of `c` can also be a substring by itself. So, if you have `n` occurrences, you can count `n` single-character substrings in addition to the pairs."
+    },
+    {
+      "content": "To count the total number of substrings that start and end with `c`, you can use the formula for combinations. Specifically, if you have `n` indices, the number of ways to choose 2 indices is `n * (n - 1) / 2`, plus `n` for the single-character substrings."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the character `c` does not appear in the string at all. In such cases, the result should be 0."
+    },
+    {
+      "content": "If the string `s` has a length of 1, consider what happens if that single character is `c`. This is a simple case that should return 1."
+    },
+    {
+      "content": "Think about the efficiency of your solution. Since the string can be quite long (up to 100,000 characters), ensure that your approach runs in linear time, O(n), where n is the length of the string."
+    },
+    {
+      "content": "As you implement your solution, keep track of the count of substrings using a variable. Update this variable as you find valid start and end indices."
+    },
+    {
+      "content": "Finally, review your logic to ensure you are correctly counting all possible substrings that start and end with `c`. You may want to write a few test cases to validate your implementation before finalizing."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "Both s and c consist only of lowercase English letters.",
+    "Ensure to handle cases where c does not appear in s.",
+    "Consider single-character substrings as valid."
+  ]
+}

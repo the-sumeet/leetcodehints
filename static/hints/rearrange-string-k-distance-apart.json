@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to rearrange the characters of the string such that no two adjacent characters are the same, and the same character must be at least 'k' distance apart."
+    },
+    {
+      "content": "Consider how you can count the frequency of each character in the string. This will help you determine how to distribute the characters effectively."
+    },
+    {
+      "content": "Think about using a max-heap (priority queue) to keep track of the characters based on their frequencies. This will allow you to always place the most frequent character first."
+    },
+    {
+      "content": "When using the max-heap, remember to extract the character with the highest frequency first. After placing a character, you will need to keep track of when it can be placed again."
+    },
+    {
+      "content": "You will need a way to store characters that have been used in the current 'k' distance window. Consider using a temporary list to hold these characters."
+    },
+    {
+      "content": "After placing a character from the heap, decrease its frequency. If its frequency is still greater than zero, store it in a temporary list until you can add it back to the heap."
+    },
+    {
+      "content": "Think about what happens if you cannot place all characters while adhering to the 'k' distance requirement. What should you return in such a case?"
+    },
+    {
+      "content": "Pay attention to edge cases, such as when the input string is empty or when 'k' is greater than the length of the string. How should your solution handle these cases?"
+    },
+    {
+      "content": "Consider how to efficiently manage the characters that are temporarily held until they can be reinserted into the heap. You may need to use a queue structure for this purpose."
+    },
+    {
+      "content": "As you build the result string, ensure that you are checking the conditions for adding characters back to the heap correctly. This is crucial to maintain the 'k' distance."
+    },
+    {
+      "content": "Make sure to handle characters with the same frequency correctly. If two characters have the same frequency, you may need to decide on a tie-breaking strategy."
+    },
+    {
+      "content": "Remember to check if the max-heap is empty before trying to place a character. If it is empty but you still have characters left that need to be placed, it indicates failure to rearrange."
+    },
+    {
+      "content": "Once you have built the result string, verify that it meets the 'k' distance requirement. You can do this by iterating through the result and checking distances."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Using a max-heap and managing character frequencies should ideally keep your solution efficient."
+    },
+    {
+      "content": "Finally, think about how you will return the result. If you cannot rearrange the string as required, you might need to return an empty string or some indication of failure."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: The input string may contain uppercase and lowercase letters, and 'k' is a non-negative integer.",
+    "If 'k' is 0, the string can remain unchanged.",
+    "If it's impossible to rearrange the string to meet the 'k' distance requirement, return an empty string.",
+    "The output should be a single string, or an empty string if rearrangement is not possible."
+  ]
+}

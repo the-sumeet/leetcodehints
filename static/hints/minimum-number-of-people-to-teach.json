@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationships between users. Each friendship indicates a direct connection where both users need to communicate. Visualizing this as a graph can help clarify how users are connected."
+    },
+    {
+      "content": "Consider how many languages each user knows. If a user knows a language that their friend does not, they will need to learn a common language for effective communication. Think about how to represent this in your solution."
+    },
+    {
+      "content": "Focus on the friendships array. Each friendship connects two users. You should examine each friendship to see if the two users can communicate based on the languages they currently know."
+    },
+    {
+      "content": "Remember that friendships are not transitive. Just because user A knows a language that user B knows, it doesn't mean user C (a friend of B) can communicate with A unless they also share a common language."
+    },
+    {
+      "content": "Create a mapping of users to the languages they know. This will help you quickly check which languages are available to each user and how many users need to be taught a new language."
+    },
+    {
+      "content": "Think about the problem in terms of sets. For each friendship, determine the union of languages known by both users. This will help you identify the languages that can potentially bridge the communication gap."
+    },
+    {
+      "content": "Consider edge cases where users may not know any languages at all. In such cases, you may need to teach them a language from scratch, which could increase the number of users you need to teach."
+    },
+    {
+      "content": "When deciding which language to teach, evaluate the impact of teaching each language on the total number of users needing instruction. A language that connects the most friends may minimize the number of users taught."
+    },
+    {
+      "content": "Implement a loop to check each language from 1 to n. For each language, count how many users would need to learn it to ensure all friendships can communicate effectively."
+    },
+    {
+      "content": "Finally, after calculating the number of users needed for each language, return the minimum count. Make sure to handle cases where some users already know the language you are considering teaching."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 500, languages.length == m, 1 <= m <= 500.",
+    "Each languages[i] contains unique values.",
+    "Friendships are not transitive; direct communication is required.",
+    "Return the minimum number of users that need to be taught a language."
+  ]
+}

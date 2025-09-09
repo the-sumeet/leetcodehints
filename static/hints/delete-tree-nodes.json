@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the tree structure represented by the parent array. Each index corresponds to a node, and the value at that index indicates its parent. For example, if `parent[1] = 0`, then node 1 is a child of node 0."
+    },
+    {
+      "content": "Consider how to build the tree from the parent array. You can create a mapping of each node to its children. This will help you traverse the tree later. Use a dictionary where the key is the parent node and the value is a list of its children."
+    },
+    {
+      "content": "Next, think about how to handle the values associated with each node. The value array indicates the 'weight' of each node, which will be crucial in deciding whether to keep or delete a subtree."
+    },
+    {
+      "content": "When a node is deleted, all of its children should also be deleted. Therefore, you need to calculate the total number of nodes that will be removed when you delete a node. This involves a depth-first search (DFS) approach."
+    },
+    {
+      "content": "Implement a recursive function that, given a node, checks its value. If the value is less than or equal to zero, return zero (indicating that this node and its subtree should be deleted). Otherwise, count the node itself and recursively count its children."
+    },
+    {
+      "content": "As you traverse the tree, keep track of the total count of nodes that remain after deletions. You can do this by summing the counts returned from the recursive calls for each child."
+    },
+    {
+      "content": "Be mindful of edge cases, such as when all nodes have negative values. In such cases, you should return zero since all nodes will be deleted."
+    },
+    {
+      "content": "Consider how to handle the root node specifically. Since it has no parent, you may need to start your DFS from this node separately after constructing the tree."
+    },
+    {
+      "content": "Once you've implemented the counting logic, make sure to test your function with various inputs, including edge cases like a single node or all nodes having negative values."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct count of remaining nodes after all deletions are processed. This should be the final output of your algorithm."
+    }
+  ],
+  "questionNotes": [
+    "The parent array is indexed from 0 to n-1, where n is the number of nodes.",
+    "The value array corresponds to the values of the nodes indexed in the same way as the parent array.",
+    "A node with a value less than or equal to zero should be deleted along with its subtree.",
+    "The output should be the count of nodes remaining after all deletions."
+  ]
+}

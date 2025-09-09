@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'good pair' is. A pair (i, j) is good if nums[i] == nums[j] and i < j. Think about how you can identify these pairs in the array."
+    },
+    {
+      "content": "Consider using a nested loop to check each possible pair of indices. This means for each index i, you will look at every index j that comes after it. What will be the time complexity of this approach?"
+    },
+    {
+      "content": "Instead of checking all pairs, think about how you can count occurrences of each number in the array. If a number appears 'k' times, how many good pairs can you form from those occurrences?"
+    },
+    {
+      "content": "Recall the combinatorial formula for choosing 2 items from k items: C(k, 2) = k * (k - 1) / 2. This will help you calculate the number of good pairs from the count of each number."
+    },
+    {
+      "content": "You can use a dictionary to keep track of how many times each number appears as you iterate through the array. How would you update this dictionary as you go?"
+    },
+    {
+      "content": "As you count occurrences, you can simultaneously calculate the number of good pairs. Every time you find a number that has been seen before, you can add the number of times it has been seen to your total good pairs count."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as an array with only one element or an array where all elements are unique. What should your function return in these cases?"
+    },
+    {
+      "content": "Think about the constraints given: 1 <= nums.length <= 100 and 1 <= nums[i] <= 100. How does this influence your choice of algorithm in terms of efficiency?"
+    },
+    {
+      "content": "To summarize your approach: Use a dictionary to count occurrences, and for each number, calculate the number of good pairs using the combinatorial formula. How would you structure your final return statement?"
+    },
+    {
+      "content": "Finally, ensure that your function returns the total count of good pairs. Remember to initialize your count variable and update it correctly as you process each element in the array."
+    }
+  ],
+  "questionNotes": [
+    "A good pair (i, j) requires nums[i] == nums[j] and i < j.",
+    "Constraints: 1 <= nums.length <= 100, 1 <= nums[i] <= 100.",
+    "Consider the efficiency of your solution given the constraints.",
+    "Return the total number of good pairs as an integer."
+  ]
+}

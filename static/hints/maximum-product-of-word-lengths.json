@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how you can represent each word. One useful approach is to consider the unique letters in each word. This will help you determine if two words share any common letters."
+    },
+    {
+      "content": "You can use a bitmask to represent the letters in each word. For example, if a word contains the letters 'a', 'b', and 'c', you could represent it as a bitmask where the bits corresponding to 'a', 'b', and 'c' are set to 1."
+    },
+    {
+      "content": "To create the bitmask, iterate through each character in the word and set the corresponding bit in an integer. This will allow you to efficiently compare two words for shared letters using a bitwise AND operation."
+    },
+    {
+      "content": "Remember to calculate the length of each word as you create the bitmask. You will need both the bitmask and the length to compute the maximum product later."
+    },
+    {
+      "content": "Once you have the bitmasks and lengths for all words, you can compare each pair of words. Use a nested loop to check each unique pair of words to see if their bitmasks share any bits."
+    },
+    {
+      "content": "When checking if two words share common letters, use the bitwise AND operation. If the result is zero, it means the words do not share any letters and you can calculate the product of their lengths."
+    },
+    {
+      "content": "Keep track of the maximum product found during your comparisons. Initialize a variable to store this maximum product and update it whenever you find a larger product."
+    },
+    {
+      "content": "Consider edge cases where all words share at least one letter. In such cases, the maximum product should be 0. Ensure that your solution handles this scenario correctly."
+    },
+    {
+      "content": "After iterating through all pairs of words, return the maximum product found. If no valid pairs were found, ensure you return 0 as specified in the problem statement."
+    },
+    {
+      "content": "Finally, make sure to test your solution with various test cases, including edge cases where words have the same letters or are of different lengths, to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= words.length <= 1000",
+    "1 <= words[i].length <= 1000",
+    "words[i] consists only of lowercase English letters.",
+    "Return 0 if no two words exist that do not share common letters."
+  ]
+}

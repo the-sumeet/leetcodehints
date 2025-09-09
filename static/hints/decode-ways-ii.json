@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Consider the basic mapping of letters to numbers. Each letter from 'A' to 'Z' corresponds to numbers from '1' to '26'. This is the foundation for decoding the message."
+    },
+    {
+      "content": "Note the special character '*'. It can represent any digit from '1' to '9'. This means that every '*' in the string can significantly increase the number of possible decodings."
+    },
+    {
+      "content": "Think about how to handle the '*' character. For example, if you encounter a '*', you will need to consider all the digits it can represent in your calculations."
+    },
+    {
+      "content": "When decoding, remember that the grouping of digits matters. For instance, '06' is invalid, but '6' is valid. Ensure that your logic checks for valid groupings."
+    },
+    {
+      "content": "Identify how you would represent the number of ways to decode a substring. You might want to use dynamic programming to keep track of these counts."
+    },
+    {
+      "content": "Define a DP array where each index represents the number of ways to decode the substring up to that index. For example, dp[i] could represent the number of ways to decode s[0:i]."
+    },
+    {
+      "content": "Consider the base cases for your DP array. For instance, dp[0] can be initialized to 1, as there is one way to decode an empty string."
+    },
+    {
+      "content": "When iterating through the string, check each character. If it's a digit, update the DP array based on the previous character's value."
+    },
+    {
+      "content": "For a '*' character, remember to add the counts for all possible digits it can represent. This will involve multiple updates to your DP array."
+    },
+    {
+      "content": "Don't forget to handle cases where two characters can form a valid letter. For example, if you have '1' followed by '*', consider both '11' and '12'."
+    },
+    {
+      "content": "Make sure to apply the modulo operation (10^9 + 7) to your results to prevent overflow and meet the problem's requirements."
+    },
+    {
+      "content": "Think about edge cases, such as strings that start with '*' or contain consecutive '*' characters. How will these affect your DP calculations?"
+    },
+    {
+      "content": "Consider the maximum length of the input string (up to 100,000). Your solution should be efficient enough to handle this within a reasonable time frame."
+    },
+    {
+      "content": "As you build your solution, test it against various inputs, especially edge cases like '0', '1*', and strings with multiple '*' characters."
+    },
+    {
+      "content": "Finally, ensure that your implementation correctly returns the number of ways to decode the entire string, which will be found in the last index of your DP array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "s[i] is a digit or '*'",
+    "Return the result modulo 10^9 + 7.",
+    "Invalid groupings like '06' should be handled correctly."
+  ]
+}

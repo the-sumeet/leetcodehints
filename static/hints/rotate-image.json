@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "To rotate the image by 90 degrees clockwise, think about how the positions of the elements change. For example, the element at position (i, j) moves to (j, n-1-i) after a 90-degree rotation."
+    },
+    {
+      "content": "Since you need to rotate the image in-place, consider how you can achieve this without using additional space. You might want to think about swapping elements directly in the matrix."
+    },
+    {
+      "content": "A good approach is to first transpose the matrix. Transposing means converting rows to columns. For example, the element at (i, j) becomes (j, i)."
+    },
+    {
+      "content": "After transposing the matrix, the next step is to reverse each row. This will help in achieving the final rotated position of the elements."
+    },
+    {
+      "content": "When reversing a row, you can use a two-pointer technique: one pointer starts at the beginning of the row and the other at the end. Swap the elements at these pointers and move them towards the center."
+    },
+    {
+      "content": "Consider edge cases such as when the matrix is 1x1 or when all elements are the same. Ensure your solution handles these cases without any errors."
+    },
+    {
+      "content": "Remember that the matrix is square (n x n). This property can simplify your logic since the number of rows and columns is the same."
+    },
+    {
+      "content": "Keep in mind the constraints: n can be as small as 1 and as large as 20. This means your solution should be efficient but does not need to handle very large inputs."
+    },
+    {
+      "content": "To summarize the steps: first, transpose the matrix, then reverse each row. Think about how you would implement these steps in a loop."
+    },
+    {
+      "content": "Here’s a partial pseudocode to guide you: \n1. For i from 0 to n-1: \n   - For j from i to n-1: \n     - Swap matrix[i][j] with matrix[j][i] (transpose step).\n2. For each row, reverse it (you can use two pointers)."
+    }
+  ],
+  "questionNotes": [
+    "You must rotate the image in-place, modifying the input matrix directly.",
+    "The matrix is guaranteed to be square (n x n).",
+    "Constraints: 1 <= n <= 20; -1000 <= matrix[i][j] <= 1000."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement of the ants. Each ant moves at a speed of 1 unit per second. Consider how the direction of movement affects when and where they will fall off the plank."
+    },
+    {
+      "content": "When two ants meet, they simply change directions. This means that for the purpose of calculating when they fall off, you can treat them as if they pass through each other. Think about how this simplifies your calculations."
+    },
+    {
+      "content": "Focus on the ants moving to the left. For each ant in the `left` array, calculate how long it will take to fall off the plank. This can be done using the formula: time = position."
+    },
+    {
+      "content": "Now, consider the ants moving to the right. For each ant in the `right` array, calculate how long it will take to fall off the plank using the formula: time = n - position."
+    },
+    {
+      "content": "You will have two sets of times: one for the ants moving left and one for those moving right. The last ant to fall off will be the one with the maximum time from both sets."
+    },
+    {
+      "content": "Make sure to handle edge cases where either the `left` or `right` array could be empty. What happens in those scenarios? Think about the implications on your calculations."
+    },
+    {
+      "content": "Remember that the positions in the `left` and `right` arrays are unique and do not overlap. This means you can safely calculate the maximum time without worrying about duplicate positions."
+    },
+    {
+      "content": "After calculating the times for both left and right moving ants, you can find the maximum time using a simple function. Consider using Python's built-in `max()` function for this purpose."
+    },
+    {
+      "content": "As a final step, ensure that your function returns the maximum time correctly. The return format should be a single integer representing the last moment when any ant is still on the plank."
+    },
+    {
+      "content": "Write a function that encapsulates this logic. Start by calculating the fall-off times for both arrays, then return the maximum of those times. Keep in mind to test your function with different scenarios."
+    }
+  ],
+  "questionNotes": [
+    "1 <= n <= 10^4",
+    "0 <= left.length <= n + 1",
+    "0 <= right.length <= n + 1",
+    "0 <= left[i], right[i] <= n",
+    "left and right arrays contain unique values",
+    "Each value can appear only in one of the two arrays",
+    "Return the maximum time when the last ant falls off the plank"
+  ]
+}

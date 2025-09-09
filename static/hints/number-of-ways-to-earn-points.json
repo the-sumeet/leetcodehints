@@ -1,0 +1,58 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a target score and a list of question types, each defined by how many questions of that type exist and how many points each question is worth."
+    },
+    {
+      "content": "Consider how you can represent the problem. You might want to think about using dynamic programming to keep track of the number of ways to achieve different scores up to the target."
+    },
+    {
+      "content": "Think about the base case for your dynamic programming approach. For a target of 0, there is exactly one way to achieve that: by not answering any questions."
+    },
+    {
+      "content": "When iterating through the question types, you will need to consider how many questions of each type you can use without exceeding the target score."
+    },
+    {
+      "content": "Remember that the questions of the same type are indistinguishable. This means that the order in which you select questions of the same type does not matter."
+    },
+    {
+      "content": "For each type of question, you can use a loop to check how many questions of that type you can include in your current score calculation, from 0 up to the count of that type."
+    },
+    {
+      "content": "While iterating through the types, you may want to maintain a temporary array to store the number of ways to achieve each score up to the target. This will help you avoid overwriting values that you still need to use."
+    },
+    {
+      "content": "Consider using a nested loop: the outer loop iterates over the types of questions, and the inner loop iterates over possible scores from the target down to the marks of the current type."
+    },
+    {
+      "content": "When updating your ways to achieve a score, remember to add the ways from previous scores that could be achieved by including the current type of question."
+    },
+    {
+      "content": "Make sure to apply the modulo operation (10^9 + 7) to your results to prevent overflow and adhere to the problem's requirements."
+    },
+    {
+      "content": "Think about edge cases, such as when the target is less than the smallest marks value in the types array. What should your function return in such cases?"
+    },
+    {
+      "content": "You may also want to consider how to handle cases where the total points possible from all questions is less than the target. What should happen then?"
+    },
+    {
+      "content": "As you build your solution, test it with the provided examples to ensure that it behaves as expected. Pay attention to how many ways you can reach the target."
+    },
+    {
+      "content": "Keep in mind that the constraints are manageable, with a maximum target of 1000 and up to 50 types of questions. This suggests that a dynamic programming approach should be feasible."
+    },
+    {
+      "content": "Finally, ensure that your final result is returned as the number of ways to earn exactly the target points, modulo 10^9 + 7. This is crucial for passing the test cases."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= target <= 1000",
+    "n == types.length",
+    "1 <= n <= 50",
+    "types[i].length == 2",
+    "1 <= count_i, marks_i <= 50",
+    "Questions of the same type are indistinguishable.",
+    "Return the result modulo 10^9 + 7."
+  ]
+}

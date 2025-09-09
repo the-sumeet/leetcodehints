@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the cake and how the cuts divide it. Each cut can be either horizontal or vertical, and the costs associated with these cuts are provided in the arrays `horizontalCut` and `verticalCut`."
+    },
+    {
+      "content": "Consider how many pieces of cake you will have after making each cut. Each horizontal cut increases the number of horizontal pieces, and each vertical cut increases the number of vertical pieces."
+    },
+    {
+      "content": "Think about the order of cuts. The cost of making a cut depends not only on the cut itself but also on how many pieces of cake it will affect. A cut that affects more pieces should be made earlier to minimize total cost."
+    },
+    {
+      "content": "Sort both `horizontalCut` and `verticalCut` arrays in descending order. This way, you can always prioritize the most expensive cuts first, which will maximize the number of pieces affected by each cut."
+    },
+    {
+      "content": "Use two pointers to iterate through the sorted `horizontalCut` and `verticalCut` arrays. Keep track of how many horizontal and vertical pieces you currently have as you make cuts."
+    },
+    {
+      "content": "When making a cut, calculate the total cost based on the current number of pieces. For example, if you make a horizontal cut, the cost should be multiplied by the number of vertical pieces at that moment."
+    },
+    {
+      "content": "Remember to initialize your piece counts correctly. After the first horizontal cut, you will have 1 horizontal piece and after the first vertical cut, you will have 1 vertical piece."
+    },
+    {
+      "content": "As you make cuts, update the total cost and the counts of horizontal and vertical pieces. Each time you make a cut, the number of pieces increases by one."
+    },
+    {
+      "content": "Handle edge cases such as when there are no horizontal or vertical cuts. If `horizontalCut` or `verticalCut` is empty, the total cost will simply be the sum of the respective cuts."
+    },
+    {
+      "content": "Finally, ensure that you return the total minimum cost correctly. The result should be the accumulated cost after all necessary cuts have been made."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 20",
+    "horizontalCut.length == m - 1",
+    "verticalCut.length == n - 1",
+    "1 <= horizontalCut[i], verticalCut[i] <= 10^3",
+    "The cost of cuts does not change after being made."
+  ]
+}

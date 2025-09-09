@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what perfect squares are. A perfect square is an integer that can be expressed as the square of another integer. For example, 1 (1^2), 4 (2^2), and 9 (3^2) are perfect squares."
+    },
+    {
+      "content": "Consider how you can represent the number `n` as a sum of perfect squares. For instance, if `n = 12`, think about how you can combine perfect squares like 1, 4, and 9 to reach 12."
+    },
+    {
+      "content": "Think about the maximum perfect square you can use that is less than or equal to `n`. For example, for `n = 12`, the largest perfect square is 9 (3^2)."
+    },
+    {
+      "content": "You can use a dynamic programming approach to solve this problem. Create an array `dp` where `dp[i]` will represent the least number of perfect squares that sum to `i`."
+    },
+    {
+      "content": "Initialize your `dp` array with a size of `n + 1` and set `dp[0] = 0` since zero can be formed with zero perfect squares. All other values can initially be set to a large number (like infinity)."
+    },
+    {
+      "content": "Iterate through each number from 1 to `n`, and for each number, iterate through all perfect squares less than or equal to that number. Update the `dp` array based on previously computed values."
+    },
+    {
+      "content": "When updating `dp[i]`, you can use the relation: `dp[i] = min(dp[i], dp[i - square] + 1)` for each perfect square `square` that you can subtract from `i`."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when `n` is a perfect square itself. In that case, the answer should be 1 since it can be represented by itself."
+    },
+    {
+      "content": "After filling up the `dp` array, the answer for the least number of perfect squares that sum to `n` will be found at `dp[n]`. Ensure you return this value."
+    },
+    {
+      "content": "Consider testing your implementation with edge cases, such as the smallest values of `n` (like 1) and the largest values (like 10,000) to ensure your solution is efficient."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^4",
+    "A perfect square is defined as an integer that is the square of another integer.",
+    "The output should be the least number of perfect square numbers that sum to `n`."
+  ]
+}

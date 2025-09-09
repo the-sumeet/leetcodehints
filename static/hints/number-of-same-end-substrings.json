@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'substring' is. A substring is a contiguous sequence of characters within a string. For example, in the string 'abcaab', 'abc' and 'aab' are both substrings."
+    },
+    {
+      "content": "Consider how to extract substrings from the given string based on the provided index pairs. For example, the pair [0, 0] refers to the substring 'a', while [1, 4] refers to 'bcaab'."
+    },
+    {
+      "content": "Think about how to compare the first and last characters of each substring. You need to check if they are the same to count them as 'same-end' substrings."
+    },
+    {
+      "content": "When you extract a substring using the indices, remember that the end index is inclusive. This means you need to adjust your substring extraction accordingly."
+    },
+    {
+      "content": "Consider edge cases where the indices are the same, such as [0, 0]. These should always count as a valid same-end substring since a single character is the same at both ends."
+    },
+    {
+      "content": "You should also think about how to handle cases where the substring length is zero. For example, if the start index is greater than the end index, what should you return?"
+    },
+    {
+      "content": "As you iterate through the list of index pairs, keep a count of how many substrings have the same starting and ending characters. Use a simple counter variable for this."
+    },
+    {
+      "content": "Make sure to handle overlapping substrings correctly. For example, the substring from indices [1, 4] overlaps with the substring from [2, 5]. Ensure your logic accounts for this."
+    },
+    {
+      "content": "Consider using a loop to go through each index pair and extract the substring, then check the first and last characters. Pseudocode could look like this: 'for each pair in indexPairs: substring = string[pair[0]:pair[1]+1]'."
+    },
+    {
+      "content": "Finally, ensure you return the count of same-end substrings in the format expected by the problem statement. You might need to return a list of counts corresponding to each input pair."
+    }
+  ],
+  "questionNotes": [
+    "The input string can contain any characters, including duplicates.",
+    "Indexing is zero-based, meaning the first character is at index 0.",
+    "The end index in the pairs is inclusive when extracting substrings.",
+    "Consider edge cases, such as empty substrings or equal start and end indices.",
+    "Return a list of counts corresponding to each index pair in the input."
+  ]
+}

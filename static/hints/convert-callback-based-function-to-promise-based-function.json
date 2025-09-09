@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the callback function. It takes a callback and three parameters. Your goal is to convert this callback-based approach into a promise-based one."
+    },
+    {
+      "content": "Remember that a promise represents a value that may be available now, or in the future, or never. You will need to create a new Promise object and resolve or reject it based on the callback's behavior."
+    },
+    {
+      "content": "Look at how the callback is invoked. If the callback is called with a single value, you will resolve the promise with that value. If it is called with an error message or a second argument, you should reject the promise."
+    },
+    {
+      "content": "Consider how you will handle the parameters. You can use the spread operator to pass the parameters to the callback function dynamically, ensuring flexibility in the number of arguments."
+    },
+    {
+      "content": "When creating the promise, you should define the executor function that will handle the logic of calling the callback and resolving or rejecting the promise based on its output."
+    },
+    {
+      "content": "Think about edge cases. What happens if the callback is never called? You may want to handle timeouts or other scenarios where the promise may not resolve or reject as expected."
+    },
+    {
+      "content": "Make sure to test your implementation with various inputs, including cases where the callback might produce an error message or unexpected results."
+    },
+    {
+      "content": "You can use the `Promise.resolve()` method to resolve the promise with the value returned from the callback. For rejection, use `Promise.reject()` with the error message."
+    },
+    {
+      "content": "Consider how you will return the promise from your function. The function should return the new promise so that it can be used with `.then()` and `.catch()` methods."
+    },
+    {
+      "content": "Finally, implement the logic to call the callback within the promise executor. Make sure to handle both the resolution and rejection paths clearly."
+    }
+  ],
+  "questionNotes": [
+    "The callback function can be called with varying numbers of arguments.",
+    "Ensure to handle both success and error cases based on the callback's output.",
+    "The function should return a promise that resolves or rejects based on the callback's behavior."
+  ]
+}

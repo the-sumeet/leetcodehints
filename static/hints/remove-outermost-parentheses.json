@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the valid parentheses string. Each valid string can be broken down into smaller parts, called primitive strings, which cannot be split further into valid non-empty strings."
+    },
+    {
+      "content": "To identify the primitive strings, you need to track the balance of parentheses. Each time you encounter a '(', increment a counter, and for each ')', decrement it. When the counter returns to zero, you have found a complete primitive string."
+    },
+    {
+      "content": "Consider how you can build the result string. As you identify each primitive string, you will need to remove the outermost parentheses. This means you will not include the first '(' and the last ')'."
+    },
+    {
+      "content": "Think about how to iterate through the string. You can use a loop to traverse each character, adjusting your balance counter as you go. When the balance is zero, you can extract the primitive string."
+    },
+    {
+      "content": "Remember to handle edge cases where the input string is very short, such as '()'. What happens when you remove the outer parentheses in this case?"
+    },
+    {
+      "content": "As you extract the inner parts of each primitive string, you can concatenate them to build your final result. Consider using a list to collect these parts before joining them into the final string."
+    },
+    {
+      "content": "Make sure to account for the case where the input string has multiple primitive strings in a single traversal. You should be able to handle transitions between these strings seamlessly."
+    },
+    {
+      "content": "When implementing your solution, think about the performance. Aim for a linear time complexity O(n) since you will be processing each character of the string exactly once."
+    },
+    {
+      "content": "Consider how you will return the final result. The problem specifies that you should return the modified string after removing outer parentheses, so ensure your final output matches this requirement."
+    },
+    {
+      "content": "You are very close to the solution now! Try writing out the logic for collecting the inner parts of each primitive string and ensure you are correctly skipping the outer parentheses."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "s[i] is either '(' or ')'.",
+    "s is guaranteed to be a valid parentheses string.",
+    "Return format: A string after removing the outermost parentheses of every primitive string."
+  ]
+}

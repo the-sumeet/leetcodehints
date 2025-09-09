@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. The data is organized into sessions, each with a user ID, start and end timestamps, a session ID, and a session type. Familiarize yourself with how to parse this data."
+    },
+    {
+      "content": "Consider how you will store the sessions for each user. A dictionary or a hash map could be a good choice, where the key is the user ID and the value is a list of their sessions."
+    },
+    {
+      "content": "Think about how to convert the session start and end times from string format to a datetime object. This will allow you to perform time comparisons easily."
+    },
+    {
+      "content": "When comparing sessions, remember to check if the sessions overlap. Two sessions overlap if the start time of one is before the end time of the other and vice versa."
+    },
+    {
+      "content": "You might want to sort the sessions by their start time for each user. This will help you efficiently check for overlaps as you can process them in order."
+    },
+    {
+      "content": "Consider edge cases where a user has no sessions or where all sessions are non-overlapping. How will your code handle these scenarios?"
+    },
+    {
+      "content": "As you process each user's sessions, keep track of the total time spent in sessions. You might want to maintain a cumulative time variable."
+    },
+    {
+      "content": "Think about how to handle different session types. Are you only interested in certain types, or do you need to account for all types in your calculations?"
+    },
+    {
+      "content": "You may need to define how to handle sessions that start and end at the same time. Should they be counted as overlapping or not?"
+    },
+    {
+      "content": "Consider how you will format the output. Will you return a list of users and their total time spent in sessions, or do you need to return more detailed information?"
+    },
+    {
+      "content": "Check if there are any constraints on the number of sessions or the time range. This could impact the efficiency of your solution."
+    },
+    {
+      "content": "You might want to implement a helper function to determine if two sessions overlap. This will keep your code clean and modular."
+    },
+    {
+      "content": "As you iterate through sessions, if you find an overlap, decide how you will merge the overlapping sessions to calculate the total time correctly."
+    },
+    {
+      "content": "Consider using a priority queue if you need to frequently access the session with the earliest start time. This could optimize your overlap checks."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases such as sessions that are exactly one minute apart or sessions that span multiple days."
+    }
+  ],
+  "questionNotes": [
+    "The input consists of a list of sessions with user_id, session_start, session_end, session_id, and session_type.",
+    "Sessions may overlap, and you need to calculate the total time spent by each user, accounting for overlaps.",
+    "Be mindful of time formats; you will need to convert them to datetime objects for comparisons.",
+    "Consider edge cases like no sessions for a user or all sessions being non-overlapping.",
+    "Output format is important; ensure you return the results as specified in the problem statement."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, consider the basic movement on the number line. You can move left or right from your current position. Think about how many total steps you need to take to reach the end position from the start position."
+    },
+    {
+      "content": "Calculate the distance you need to cover: `distance = endPos - startPos`. This distance will help you understand how many steps you need to take in one direction versus the other."
+    },
+    {
+      "content": "Next, note that to reach `endPos` in exactly `k` steps, the parity (even or odd nature) of `distance` and `k` must match. If one is even and the other is odd, it's impossible to reach the target."
+    },
+    {
+      "content": "If you can reach the target, think about how you can represent your movements. You can denote moving right as +1 and moving left as -1. How can you express your total movements in terms of right and left steps?"
+    },
+    {
+      "content": "Define `r` as the number of right steps and `l` as the number of left steps. You know that `r + l = k` and that `r - l = distance`. Can you derive a formula to express `r` and `l` in terms of `k` and `distance`?"
+    },
+    {
+      "content": "From the equations `r + l = k` and `r - l = distance`, derive the values of `r` and `l`. You should find that `r = (k + distance) / 2` and `l = (k - distance) / 2`. What conditions must hold for `r` and `l` to be valid?"
+    },
+    {
+      "content": "Ensure that both `r` and `l` are non-negative integers. This means that `k + distance` and `k - distance` must both be even and non-negative. How can you check these conditions?"
+    },
+    {
+      "content": "Once you have valid values for `r` and `l`, think about how to calculate the number of unique ways to arrange these steps. This can be done using combinations. How can you express this mathematically?"
+    },
+    {
+      "content": "The number of ways to choose `r` steps from `k` total steps can be calculated using the binomial coefficient: `C(k, r)`. Remember to compute this modulo `10^9 + 7` as specified in the problem."
+    },
+    {
+      "content": "Finally, implement the calculation of the binomial coefficient efficiently. You may need to use modular arithmetic and precompute factorials and their inverses to handle large values of `k`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= startPos, endPos, k <= 1000",
+    "The answer must be returned modulo 10^9 + 7.",
+    "Two ways are considered different if the order of steps is different.",
+    "Check for parity between distance and k to determine if reaching endPos is possible."
+  ]
+}

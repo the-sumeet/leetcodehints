@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the sequence of letters in 'croak'. Each valid croak consists of the characters 'c', 'r', 'o', 'a', and 'k' in that exact order. This means that for every 'c' you encounter, there should eventually be a corresponding 'k'."
+    },
+    {
+      "content": "Consider using a counter for each character in 'croak'. You can maintain a count for 'c', 'r', 'o', 'a', and 'k' as you iterate through the input string. This will help you track how many frogs are currently croaking."
+    },
+    {
+      "content": "Think about how to handle the counts of each character. For example, when you encounter 'r', you should ensure there's at least one 'c' before it. If not, the string is invalid."
+    },
+    {
+      "content": "As you process the string, you can maintain a variable to track the maximum number of active croaks (frogs croaking simultaneously). Update this variable whenever you encounter a new 'c'."
+    },
+    {
+      "content": "Don't forget to check if the counts of 'c', 'r', 'o', 'a', and 'k' are balanced at the end of your iteration. If they aren't, return -1 because it means some croaks have not been completed."
+    },
+    {
+      "content": "Consider edge cases where the input string might be too short to contain a complete croak. For instance, if the length of the string is not a multiple of 5, it can't possibly represent valid croaks."
+    },
+    {
+      "content": "Remember to check the order of the characters as you iterate. If you find 'k' without having seen all previous characters in the correct order, it indicates an invalid sequence."
+    },
+    {
+      "content": "You may want to use a loop to iterate through the string and update your counters accordingly. For example, you could use a switch-case or if-else statements to handle each character."
+    },
+    {
+      "content": "At the end of your iteration, ensure that all counts are zero. If any count is greater than zero, it indicates that some frogs are still croaking, which is also invalid."
+    },
+    {
+      "content": "Finally, implement a way to return the maximum number of frogs needed based on the counts you've maintained. This will be your answer if the string is valid."
+    }
+  ],
+  "questionNotes": [
+    "Each valid 'croak' consists of the letters 'c', 'r', 'o', 'a', 'k' in that order.",
+    "The input string can only contain the characters 'c', 'r', 'o', 'a', and 'k'.",
+    "If the string is not a valid combination of 'croak', return -1.",
+    "The length of the string should be between 1 and 100,000."
+  ]
+}

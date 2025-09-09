@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the total time required to travel all roads without any skips. Remember to account for the required rest periods after each road except the last one."
+    },
+    {
+      "content": "To compute the time taken for each road, use the formula: `time = distance / speed`. Ensure you round up to the nearest hour when adding rest times."
+    },
+    {
+      "content": "Consider how the total time changes when you skip a rest. Skipping a rest means you can immediately start the next road without waiting for the next hour."
+    },
+    {
+      "content": "Think about how to keep track of the number of skips. You might want to use a variable to count how many rests you have skipped so far."
+    },
+    {
+      "content": "You should also consider the cumulative effect of skipping rests. Skipping one rest can potentially allow you to skip subsequent rests due to timing adjustments."
+    },
+    {
+      "content": "Use a dynamic programming approach to keep track of the minimum time required to reach each road with a certain number of skips. This will help you explore different scenarios."
+    },
+    {
+      "content": "Define a 2D array `dp[i][j]` where `i` is the index of the road and `j` is the number of skips used. The value at `dp[i][j]` should represent the minimum time to reach road `i` using `j` skips."
+    },
+    {
+      "content": "Initialize your `dp` array with a large value (like infinity) for all entries, except `dp[0][0]`, which should be the time taken to travel the first road without any skips."
+    },
+    {
+      "content": "When calculating the time for `dp[i][j]`, consider both scenarios: one where you skip the rest after the previous road and one where you do not."
+    },
+    {
+      "content": "Remember to check if the time calculated exceeds `hoursBefore`. If it does, you can skip that configuration."
+    },
+    {
+      "content": "After filling out your `dp` table, the answer will be the minimum number of skips that allows you to reach the final road within `hoursBefore`. Consider all values of skips used."
+    },
+    {
+      "content": "Don’t forget to handle edge cases, such as when it's impossible to arrive on time even if you skip all rests. Make sure to return -1 in such cases."
+    },
+    {
+      "content": "You might want to implement a binary search or a greedy approach to optimize the number of skips if the DP solution seems too slow."
+    },
+    {
+      "content": "Consider the constraints carefully. The maximum number of roads is 1000, and the maximum distance can be very large, so ensure your solution is efficient."
+    },
+    {
+      "content": "Finally, think about how you will return your result. You need to return the minimum number of skips required or -1 if it’s impossible. Make sure your final implementation reflects this."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == dist.length, 1 <= n <= 1000, 1 <= dist[i] <= 10^5, 1 <= speed <= 10^6, 1 <= hoursBefore <= 10^7.",
+    "You do not need to rest after the last road.",
+    "Skipping a rest means you can start the next road immediately without waiting for the next hour.",
+    "The result should be the minimum number of skips required or -1 if it's impossible."
+  ]
+}

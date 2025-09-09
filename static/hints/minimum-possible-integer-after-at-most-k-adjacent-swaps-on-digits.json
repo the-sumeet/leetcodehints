@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how adjacent swaps work. You can only swap two digits if they are next to each other, and each swap reduces your remaining k by 1."
+    },
+    {
+      "content": "Think about how to approach the problem: you want to make the smallest number possible. Consider how moving smaller digits to the front can help achieve this."
+    },
+    {
+      "content": "Notice that you can only move a digit a limited number of places to the left based on the remaining k. For example, if you want to move a digit at index i to index j, you need at least (i - j) swaps."
+    },
+    {
+      "content": "Consider using a greedy approach: for each position in the number, find the smallest digit that can be placed there within the allowed swaps."
+    },
+    {
+      "content": "When looking for the smallest digit to move, keep track of the range you can explore based on your remaining k. This range is limited to the next k positions."
+    },
+    {
+      "content": "As you iterate through the digits, if you find a smaller digit within your current k range, calculate how many swaps it would take to bring it to the current position."
+    },
+    {
+      "content": "If moving a digit requires more swaps than you have left, you need to skip that digit and continue searching for a smaller one."
+    },
+    {
+      "content": "Remember that once you decide to move a digit, you should update your k accordingly. This means decreasing k by the number of swaps used."
+    },
+    {
+      "content": "If you encounter leading zeros after your swaps, it's acceptable as per the problem statement. However, ensure that you do not start with leading zeros in the original number."
+    },
+    {
+      "content": "Consider edge cases where k is very large compared to the length of the number. In such cases, you might be able to sort the number completely."
+    },
+    {
+      "content": "Think about how to implement the solution efficiently. A brute force approach might be too slow, so consider using a priority queue or a similar structure to manage the smallest digits."
+    },
+    {
+      "content": "You can use a list to represent the digits and perform swaps in place. This can help you manipulate the number easily as you find the smallest digits."
+    },
+    {
+      "content": "After making swaps, ensure that you keep track of the current state of the number and the remaining k after each operation."
+    },
+    {
+      "content": "Once you've processed all digits or exhausted your swaps, convert the list back to a string to return the final result."
+    },
+    {
+      "content": "As a final step, ensure that your function handles the edge cases properly, such as when k is 0 or when the number is already the smallest possible."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= num.length <= 3 * 10^4",
+    "num consists of only digits and does not contain leading zeros.",
+    "1 <= k <= 10^9",
+    "Output should be a string representation of the minimum integer.",
+    "The input guarantees no leading zeros."
+  ]
+}

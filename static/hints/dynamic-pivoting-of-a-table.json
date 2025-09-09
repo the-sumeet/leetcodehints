@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a table with headers and rows, where each row represents a product's details. Familiarize yourself with how to access these elements in your code."
+    },
+    {
+      "content": "Consider how you will represent the pivoted table. Think about what the new headers will be based on the unique values in the 'store' column. You might need to create a list of these unique store names."
+    },
+    {
+      "content": "When pivoting the data, ensure that you maintain the relationship between 'product_id', 'store', and 'price'. Each product should have its prices listed under the corresponding store header in the new table."
+    },
+    {
+      "content": "You might want to use a dictionary to build your pivoted structure. The keys can be the product IDs, and the values can be lists or dictionaries that hold prices for each store."
+    },
+    {
+      "content": "As you iterate through the rows, check if a product ID already exists in your pivot dictionary. If it does, update the corresponding store price; if not, create a new entry."
+    },
+    {
+      "content": "Think about how to handle cases where a product is not available in every store. You may want to fill in missing values with a placeholder (like `null` or `0`) to maintain the table's structure."
+    },
+    {
+      "content": "Pay attention to the order of the stores in the final output. You might want to sort the store names alphabetically to ensure consistency in your pivoted table."
+    },
+    {
+      "content": "Consider edge cases where there are no products or stores. How will your code handle empty inputs? Make sure to return an appropriate structure even in these scenarios."
+    },
+    {
+      "content": "Remember to convert your pivot dictionary back into the desired output format. You will need to create a list of headers and a list of rows that reflect the new structure."
+    },
+    {
+      "content": "When constructing the final output, ensure that the headers list includes all unique store names. The rows should be formatted according to the new headers, maintaining the correct alignment with product IDs."
+    },
+    {
+      "content": "Think about performance considerations. If the input data is large, how will your algorithm perform? Aim for a solution that efficiently processes the rows without excessive nested loops."
+    },
+    {
+      "content": "Don't forget to handle potential duplicates in the original data. If a product appears multiple times in the same store, decide how you will aggregate those prices (e.g., take the minimum, maximum, or average)."
+    },
+    {
+      "content": "As you finalize your pivoted table, ensure that the output format matches the expected structure. This includes the correct types for product IDs, store names, and prices."
+    },
+    {
+      "content": "Before completing your solution, test it with various cases, including edge cases like having all products sold in one store or none at all. This will help ensure robustness."
+    },
+    {
+      "content": "Finally, structure your code clearly with functions that handle specific tasks, such as building the pivot dictionary, formatting the output, and handling edge cases. This will make your solution easier to read and maintain."
+    }
+  ],
+  "questionNotes": [
+    "Input is a JSON object with 'headers' and 'rows'.",
+    "Each product_id should be unique per store.",
+    "Handle missing store prices appropriately.",
+    "Output should maintain a consistent format with headers and rows.",
+    "Consider performance for large datasets."
+  ]
+}

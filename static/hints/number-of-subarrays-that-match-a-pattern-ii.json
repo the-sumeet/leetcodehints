@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the subarrays you need to check. Each subarray must be of size `m + 1`, where `m` is the length of the `pattern`. This means you will be checking segments of the `nums` array that have a length of `m + 1`."
+    },
+    {
+      "content": "Consider how to iterate through the `nums` array. You will need to check subarrays starting from each index `i` such that `i + m < n`. This ensures you do not go out of bounds."
+    },
+    {
+      "content": "Remember that the `pattern` can contain three values: -1, 0, and 1. Each value corresponds to a specific comparison between consecutive elements in the `nums` array. Make sure you understand what each value signifies."
+    },
+    {
+      "content": "For the pattern value `1`, you need to check if `nums[i + k + 1] > nums[i + k]`. For `0`, check if they are equal, and for `-1`, check if the next element is less than the current one. Think about how you can implement these checks in a loop."
+    },
+    {
+      "content": "As you iterate through the `nums` array, you will need to maintain a count of how many subarrays match the `pattern`. Initialize a counter at the start of your function to keep track of valid matches."
+    },
+    {
+      "content": "When checking a subarray, you can use a nested loop where the outer loop iterates through possible starting indices and the inner loop checks the conditions specified by the `pattern`. Make sure to break out of the inner loop if any condition fails."
+    },
+    {
+      "content": "Think about edge cases, such as when `nums` contains repeated elements. The pattern `[0]` would require you to handle equality checks carefully."
+    },
+    {
+      "content": "Consider how to optimize your solution. Instead of checking all elements for every subarray, you might be able to keep track of the last valid index or use a sliding window approach."
+    },
+    {
+      "content": "Make sure to handle the case where `m` is at its minimum value, which is 1. This means you will be looking for pairs of elements in `nums`, which simplifies your checks."
+    },
+    {
+      "content": "If `nums` is sorted, think about how the pattern might affect your checks. For example, a pattern of all `1`s would always yield valid subarrays if `nums` is strictly increasing."
+    },
+    {
+      "content": "When implementing your solution, consider the time complexity. A naive solution might lead to O(n * m) complexity, which could be inefficient for large inputs."
+    },
+    {
+      "content": "You can also use helper functions to encapsulate the logic for checking if a subarray matches the pattern. This can make your code cleaner and easier to understand."
+    },
+    {
+      "content": "As you finalize your implementation, test it with various edge cases, such as the smallest and largest possible inputs, to ensure robustness."
+    },
+    {
+      "content": "Before returning your count, double-check that your logic correctly accounts for all valid subarrays and that you are not missing any potential matches."
+    },
+    {
+      "content": "Finally, ensure your function returns the count as an integer, as specified in the problem statement. Review the return format to avoid common pitfalls."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n == nums.length <= 10^6",
+    "1 <= nums[i] <= 10^9",
+    "1 <= m == pattern.length < n",
+    "-1 <= pattern[i] <= 1",
+    "Subarrays must be of size m + 1.",
+    "Ensure to handle out-of-bounds indices when checking subarrays."
+  ]
+}

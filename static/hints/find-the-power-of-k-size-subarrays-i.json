@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of the 'power' of an array. The power is the maximum element only if the elements are consecutive integers in sorted order. If they are not, the power is -1."
+    },
+    {
+      "content": "Consider how to extract subarrays of size k from the nums array. You can use a sliding window approach to efficiently move through the array and check each subarray."
+    },
+    {
+      "content": "When checking if the elements of a subarray are consecutive and sorted, think about the properties of consecutive integers. If the minimum element is `min` and the maximum is `max`, then they should satisfy the condition: `max - min + 1 == k`."
+    },
+    {
+      "content": "Remember to check if the elements in the subarray are unique. If any number repeats, the elements cannot be consecutive. You can use a set to track the unique elements."
+    },
+    {
+      "content": "As you iterate through the array, maintain a sliding window of size k. For each window, calculate the minimum and maximum values and check the uniqueness of the elements."
+    },
+    {
+      "content": "To determine the power of each subarray, you might want to create an output array initialized with -1. Only update the value when you find a valid subarray."
+    },
+    {
+      "content": "Be cautious with edge cases, such as when k equals 1. In this case, each element is its own subarray, and the power will be the element itself."
+    },
+    {
+      "content": "Consider the time complexity of your solution. A naive approach might lead to O(n*k) complexity, but with a sliding window and efficient checks, you can aim for O(n)."
+    },
+    {
+      "content": "When implementing the sliding window, ensure that when you move the window, you correctly update the minimum and maximum values. You might need to recalculate these values from scratch for each new window."
+    },
+    {
+      "content": "Finally, remember to return the results in the specified format. The output should be an integer array where each entry corresponds to the power of the respective subarray."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n == nums.length <= 500",
+    "1 <= nums[i] <= 10^5",
+    "1 <= k <= n",
+    "The output array size will be n - k + 1.",
+    "Power is -1 if elements are not consecutive and sorted."
+  ]
+}

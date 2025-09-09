@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input matrix `isWater`. It consists of land (0) and water (1) cells. Remember that water cells must have a height of 0."
+    },
+    {
+      "content": "Consider how the heights of land cells relate to their adjacent water cells. The height of a land cell must be at least 1 greater than its adjacent water cell, which has a height of 0."
+    },
+    {
+      "content": "Think about how to propagate heights from water cells to land cells. You can use a breadth-first search (BFS) or a depth-first search (DFS) approach to explore the cells."
+    },
+    {
+      "content": "When assigning heights to land cells, ensure that the height difference between adjacent cells is at most 1. This will help maintain the problem's constraints."
+    },
+    {
+      "content": "Consider starting your BFS/DFS from all water cells simultaneously. This way, you can ensure that the heights are assigned correctly as you expand outwards."
+    },
+    {
+      "content": "As you explore the land cells, keep track of the maximum height assigned. This will help you determine the final answer for the maximum height in the matrix."
+    },
+    {
+      "content": "Think about edge cases where land cells are surrounded by water cells. How will this affect the height assignment? Ensure that you handle these scenarios correctly."
+    },
+    {
+      "content": "You can use a queue to manage the BFS. Start by enqueueing all the water cells and then process each cell by checking its adjacent land cells."
+    },
+    {
+      "content": "When processing a land cell, if it has not been assigned a height yet, assign it the height of the current cell plus one. Then enqueue this land cell for further processing."
+    },
+    {
+      "content": "Finally, ensure that your output matrix is correctly formatted as an integer matrix. After processing all cells, return the height matrix as the result."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 1000; there is at least one water cell.",
+    "The height of water cells must be 0.",
+    "The height difference between adjacent cells must be at most 1.",
+    "Multiple valid height assignments may exist; any of them is acceptable.",
+    "Return format: an integer matrix of the same size as isWater."
+  ]
+}

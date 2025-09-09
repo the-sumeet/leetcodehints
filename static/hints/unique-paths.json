@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "To start, think about the robot's movements. The robot can only move either down or right. How many total moves will the robot need to make to reach the bottom-right corner from the top-left corner?"
+    },
+    {
+      "content": "Consider the dimensions of the grid. If the grid is m x n, how many moves down and how many moves right does the robot need to make? Specifically, it will need to move down (m-1) times and right (n-1) times."
+    },
+    {
+      "content": "Now, think about how you can represent the unique paths. Each unique path can be represented as a sequence of moves. For example, a path could be represented as 'RRDD' for moving right twice and down twice."
+    },
+    {
+      "content": "The total number of moves required is (m-1) + (n-1). If you think about combinations, how many ways can you arrange these moves? You need to choose (m-1) down moves out of the total moves."
+    },
+    {
+      "content": "This leads to the concept of combinations. The number of unique paths can be calculated using the binomial coefficient formula: C(total_moves, down_moves). What is the formula for calculating combinations?"
+    },
+    {
+      "content": "Remember the formula for combinations: C(n, k) = n! / (k! * (n - k)!). In your case, n is the total number of moves, and k is the number of down moves (or right moves)."
+    },
+    {
+      "content": "To avoid calculating large factorials directly, consider using a dynamic programming approach. You can create a 2D array where each cell represents the number of unique paths to that cell."
+    },
+    {
+      "content": "In the dynamic programming approach, how would you initialize your base cases? Think about the first row and first column of your grid. How many ways can you get to those cells?"
+    },
+    {
+      "content": "As you fill in the DP table, each cell (i, j) can be filled by summing the paths from the cell directly above it and the cell directly to the left of it. What would the recurrence relation look like?"
+    },
+    {
+      "content": "Finally, remember to return the value in the bottom-right corner of your DP table. This value will represent the total number of unique paths from the top-left to the bottom-right of the grid."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 100",
+    "The robot can only move down or right.",
+    "The grid is indexed starting from (0, 0) at the top-left corner.",
+    "The answer will always be less than or equal to 2 * 10^9."
+  ]
+}

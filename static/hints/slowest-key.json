@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to calculate the duration of each keypress. The first keypress duration is simply the first release time, while subsequent keypress durations are calculated as the difference between the current release time and the previous one."
+    },
+    {
+      "content": "Remember to initialize a variable to keep track of the maximum duration found so far. You will also need to store the corresponding key for that duration."
+    },
+    {
+      "content": "As you iterate through the keysPressed and releaseTimes, calculate the duration for each keypress. Use a loop to go through the indices of the keysPressed string."
+    },
+    {
+      "content": "When calculating the duration for the ith keypress, use: `duration = releaseTimes[i] - releaseTimes[i - 1]` for i > 0, and `duration = releaseTimes[0]` for the first key."
+    },
+    {
+      "content": "Don't forget to handle the case where multiple keypresses have the same maximum duration. You need to compare the keys lexicographically to determine which one to keep."
+    },
+    {
+      "content": "Use a condition to check if the current duration is greater than the maximum found so far. If it is, update both the maximum duration and the corresponding key."
+    },
+    {
+      "content": "If the current duration is equal to the maximum duration, compare the current key with the stored key. Update the stored key if the current key is lexicographically larger."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when there are only two keys pressed. The logic should still hold as you compare the durations and keys."
+    },
+    {
+      "content": "At the end of your loop, you should have the key with the longest duration stored. Ensure you return this key as the final output."
+    },
+    {
+      "content": "Double-check your indexing to avoid off-by-one errors, especially when calculating durations and comparing keys. Remember that releaseTimes is 0-indexed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: releaseTimes.length == n, keysPressed.length == n",
+    "2 <= n <= 1000",
+    "1 <= releaseTimes[i] <= 10^9",
+    "releaseTimes[i] < releaseTimes[i+1]",
+    "keysPressed contains only lowercase English letters.",
+    "If multiple keys have the same maximum duration, return the lexicographically largest key."
+  ]
+}

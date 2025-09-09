@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definitions of `leftSum` and `rightSum`. For any index `i`, `leftSum[i]` is the sum of all elements before `i`, while `rightSum[i]` is the sum of all elements after `i`."
+    },
+    {
+      "content": "Consider how you can calculate `leftSum` and `rightSum` using a single loop. You might want to maintain a running total as you iterate through the array."
+    },
+    {
+      "content": "Remember that for the first element (index 0), `leftSum[0]` should be 0 because there are no elements to the left. Similarly, for the last element, `rightSum[n-1]` should also be 0."
+    },
+    {
+      "content": "Think about how you can use two separate loops to calculate `leftSum` and `rightSum` if you find it easier to visualize. The first loop can build `leftSum`, and the second can build `rightSum`."
+    },
+    {
+      "content": "When calculating `leftSum`, you can initialize a variable to keep track of the cumulative sum as you iterate through the array. Update this variable at each step."
+    },
+    {
+      "content": "For `rightSum`, you can iterate from the end of the array towards the start. This way, you can also maintain a cumulative sum for the right side."
+    },
+    {
+      "content": "Once you have both `leftSum` and `rightSum`, you need to create the `answer` array. Each element in `answer` is the absolute difference between the corresponding elements in `leftSum` and `rightSum`."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when `nums` has only one element. In this case, both `leftSum` and `rightSum` will be 0."
+    },
+    {
+      "content": "When calculating the absolute difference, remember to use the absolute value function. In many programming languages, this is often denoted as `abs()`. For example: `answer[i] = abs(leftSum[i] - rightSum[i])`."
+    },
+    {
+      "content": "Finally, ensure your function returns the `answer` array in the specified format. It should be an integer array of size `n`, where `n` is the length of `nums`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "Values: 1 <= nums[i] <= 10^5",
+    "Indexing: 0-indexed array",
+    "Return format: Integer array of size n"
+  ]
+}

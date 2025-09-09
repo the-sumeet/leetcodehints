@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to make two strings equal by deleting characters. The goal is to minimize the sum of the ASCII values of the deleted characters."
+    },
+    {
+      "content": "Consider the characters in both strings. If a character appears in both strings, you don't need to delete it. Focus on characters that are unique to each string."
+    },
+    {
+      "content": "Think about using dynamic programming to solve this problem. You can create a 2D array where the cell at (i, j) represents the minimum ASCII delete sum for the substrings s1[0...i] and s2[0...j]."
+    },
+    {
+      "content": "Initialize your 2D array. The first row and first column should represent the cost of deleting all characters from one string to match an empty string. For example, for s1 of length m, dp[0][j] = sum of ASCII values of s1[0...j]."
+    },
+    {
+      "content": "Fill in the DP table. If the characters s1[i-1] and s2[j-1] are the same, then dp[i][j] = dp[i-1][j-1]. If they are different, consider the cost of deleting either character."
+    },
+    {
+      "content": "When filling the DP table, remember to calculate the cost of deleting a character. If s1[i-1] != s2[j-1], then dp[i][j] = min(dp[i-1][j] + ASCII(s1[i-1]), dp[i][j-1] + ASCII(s2[j-1]))."
+    },
+    {
+      "content": "Consider edge cases where one string is empty. The minimum ASCII delete sum in such cases will simply be the sum of the ASCII values of the characters in the non-empty string."
+    },
+    {
+      "content": "After filling out the DP table, the answer will be found in the bottom-right cell of the table, dp[m][n], where m and n are the lengths of s1 and s2 respectively."
+    },
+    {
+      "content": "Make sure to handle the constraints given in the problem. Both strings can be up to 1000 characters long, so your solution should be efficient enough to handle the maximum input size."
+    },
+    {
+      "content": "As a final step, ensure that your implementation correctly returns the minimum ASCII delete sum as an integer, as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s1.length, s2.length <= 1000",
+    "s1 and s2 consist of lowercase English letters.",
+    "Return the minimum ASCII sum of deleted characters to make both strings equal."
+  ]
+}

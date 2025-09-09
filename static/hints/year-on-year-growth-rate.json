@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have a list of transactions, each with a transaction date and spend amount. Familiarize yourself with how to parse this data."
+    },
+    {
+      "content": "Consider how you will extract the year from the transaction date. You can use date manipulation functions to convert the string date into a date object and then retrieve the year."
+    },
+    {
+      "content": "Group the transactions by year. You might want to create a dictionary where the keys are years and the values are lists of spend amounts for that year."
+    },
+    {
+      "content": "Once you have grouped the transactions, calculate the total spend for each year. You can sum the spend amounts for the transactions that belong to each year."
+    },
+    {
+      "content": "Think about how to calculate the Year on Year Growth Rate (YoY). The formula is: \\( YoY = \\frac{Current Year Spend - Previous Year Spend}{Previous Year Spend} \\times 100 \\)."
+    },
+    {
+      "content": "Be careful with the first year in your dataset. Since there is no previous year to compare against, you may want to handle this case separately."
+    },
+    {
+      "content": "Ensure you account for cases where there might be no transactions in a given year. You may want to initialize the spend for that year to zero."
+    },
+    {
+      "content": "When calculating the growth rate, consider how you will format the output. You might want to return the results as a list of dictionaries with year and growth rate."
+    },
+    {
+      "content": "Check for edge cases, such as all spend amounts being zero or negative. How will these affect your growth rate calculations?"
+    },
+    {
+      "content": "Remember to handle years that have no transactions. You may want to include these years in your output with a growth rate of zero."
+    },
+    {
+      "content": "Think about the data types you are using. Ensure that your calculations for growth rates are done using floating-point arithmetic to avoid integer division issues."
+    },
+    {
+      "content": "As you implement the growth rate calculation, consider using a loop to iterate through the years in your dictionary. This will help you easily access both the current and previous year's spend."
+    },
+    {
+      "content": "Make sure to round the growth rate to a reasonable number of decimal places for clarity in your output."
+    },
+    {
+      "content": "Once you have your growth rates calculated, consider how you will return or print the results. Will you format them as a JSON object or a simple list?"
+    },
+    {
+      "content": "Finally, ensure your function handles cases where there are multiple years but no growth (e.g., same spend across years). What should the output look like in this case?"
+    }
+  ],
+  "questionNotes": [
+    "Input consists of a list of transactions with a transaction date and spend amount.",
+    "The transaction date is in the format 'YYYY-MM-DD HH:MM:SS'.",
+    "You must calculate the Year on Year Growth Rate for each year after the first.",
+    "Handle cases where there are no transactions for a year by including it in the output with a growth rate of zero.",
+    "Return format should clearly indicate the year and its corresponding growth rate."
+  ]
+}

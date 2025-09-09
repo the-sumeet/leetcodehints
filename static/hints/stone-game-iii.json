@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the game mechanics. Alice and Bob take turns picking 1 to 3 stones from the front of the row. The goal is to maximize their score while minimizing the opponent's potential score."
+    },
+    {
+      "content": "Consider how the value of the stones influences the strategy. Positive values are beneficial, while negative values can be detrimental. Think about how taking a stone might affect the opponent's options."
+    },
+    {
+      "content": "Remember that both players play optimally. This means they will always choose the option that maximizes their score or minimizes the opponent's score. Think about the consequences of each move."
+    },
+    {
+      "content": "You can use dynamic programming to solve this problem. Define a DP array where `dp[i]` represents the maximum score difference Alice can achieve starting from the `i`-th stone."
+    },
+    {
+      "content": "Initialize your DP array with a size equal to the length of `stoneValue`. The base case will be when there are no stones left, which should return a score of 0."
+    },
+    {
+      "content": "For each position `i`, consider the three possible moves: taking 1 stone, 2 stones, or 3 stones. Calculate the score for each move and update the DP array accordingly."
+    },
+    {
+      "content": "When calculating the score for taking stones, remember to subtract the opponent's potential score from the current player's score. This will help you determine the optimal choice."
+    },
+    {
+      "content": "Think about edge cases, such as when there are fewer than 3 stones left. Ensure your logic handles these cases without causing index errors."
+    },
+    {
+      "content": "After filling the DP array, the final score difference can be found at `dp[0]`. This value will help you determine whether Alice wins, Bob wins, or if it's a tie."
+    },
+    {
+      "content": "Remember to interpret the score difference correctly. If `dp[0] > 0`, Alice wins; if `dp[0] < 0`, Bob wins; and if `dp[0] == 0`, it's a tie."
+    },
+    {
+      "content": "Consider the time complexity of your approach. Since you are iterating through the stones and considering three options at each step, the complexity should be manageable for the input limits."
+    },
+    {
+      "content": "Make sure to test your solution against edge cases, such as all negative values or all positive values, to ensure that your logic holds in all scenarios."
+    },
+    {
+      "content": "As you implement your solution, keep track of the indices carefully. Off-by-one errors can occur easily when dealing with arrays."
+    },
+    {
+      "content": "Before finalizing your solution, review the constraints provided in the problem statement. This can help you optimize your code further."
+    },
+    {
+      "content": "Finally, think about how you would structure your function. You will need to handle the input and return the output in the specified format, which is either 'Alice', 'Bob', or 'Tie'."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= stoneValue.length <= 5 * 10^4",
+    "-1000 <= stoneValue[i] <= 1000",
+    "Players take turns, and Alice goes first.",
+    "Players can take 1, 2, or 3 stones.",
+    "Return 'Alice' if Alice wins, 'Bob' if Bob wins, or 'Tie' if scores are equal."
+  ]
+}

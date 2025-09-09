@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of Manhattan distance. The Manhattan distance between two points (x1, y1) and (x2, y2) is calculated as |x1 - x2| + |y1 - y2|. This distance will be crucial for determining how to select points."
+    },
+    {
+      "content": "Consider the constraints carefully. The points are guaranteed to lie on the boundary of the square defined by the given 'side'. This means they can only have specific x and y coordinates."
+    },
+    {
+      "content": "Remember that you need to select exactly 'k' points from the provided list. Think about how you can evaluate different combinations of points to find the optimal selection."
+    },
+    {
+      "content": "To maximize the minimum Manhattan distance, you might want to think about a binary search approach. This can help you efficiently find the largest minimum distance that can be maintained between the selected points."
+    },
+    {
+      "content": "Define a function that checks if it is possible to select 'k' points such that the minimum Manhattan distance between any two of them is at least a certain value 'd'. This will be useful for your binary search."
+    },
+    {
+      "content": "When checking if a certain distance 'd' is feasible, consider using a greedy approach. Start by selecting the first point and then iteratively select the next point that is at least 'd' away from the last selected point."
+    },
+    {
+      "content": "Make sure to account for all the points when checking combinations. Since the number of points can be at most 1500, a combination approach could be computationally expensive, so focus on optimizing your checks."
+    },
+    {
+      "content": "You might want to sort the points based on their coordinates before starting your selection process. This can help streamline the greedy selection process and make it easier to evaluate distances."
+    },
+    {
+      "content": "Consider edge cases where 'k' is equal to the total number of points. In this scenario, you must include all points, and the minimum distance will be determined by the furthest apart points."
+    },
+    {
+      "content": "Think about how to handle cases where points are clustered closely together. The minimum distance will be influenced by the arrangement of these points, so your selection strategy must account for this."
+    },
+    {
+      "content": "When implementing the binary search, remember to adjust your search space based on whether the current distance 'd' is feasible. If it is, try a larger distance; if not, reduce the distance."
+    },
+    {
+      "content": "You may need to implement a helper function to calculate the Manhattan distance between two points. This will simplify your code and make it easier to read."
+    },
+    {
+      "content": "As you implement the greedy selection, be mindful of the order in which points are selected. The first point you choose can significantly affect the feasibility of selecting subsequent points."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases, such as points that are very close together or very far apart. This will ensure your solution is robust and handles all scenarios."
+    },
+    {
+      "content": "Finally, ensure that your binary search converges correctly. The maximum possible minimum distance should be returned as the output after your search completes."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= side <= 10^9, 4 <= points.length <= min(4 * side, 15 * 10^3)",
+    "All points are unique and lie on the boundary of the square.",
+    "Return the maximum possible minimum Manhattan distance between the selected k points.",
+    "4 <= k <= min(25, points.length)"
+  ]
+}

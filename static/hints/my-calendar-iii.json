@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of k-booking. A k-booking occurs when k events overlap at some point in time. Think about how you can track the number of overlapping events as new events are added."
+    },
+    {
+      "content": "Consider how you can represent the events. Each event has a start time and an end time. You might want to store these events in a way that allows you to efficiently check for overlaps."
+    },
+    {
+      "content": "One effective way to track the number of active events at any given time is by using a timeline approach. You can mark the start and end of each event on a timeline."
+    },
+    {
+      "content": "Use a data structure that allows you to increment and decrement counts at specific points. A dictionary (or hashmap) can be useful for this purpose, where the keys are the times and the values are the changes in the number of active events."
+    },
+    {
+      "content": "When you book an event, you should increment the count at the start time and decrement it at the end time. This will help you keep track of how many events are active at any given time."
+    },
+    {
+      "content": "After updating the counts for the new booking, you need to calculate the maximum number of overlapping events. This can be done by iterating through the sorted times and maintaining a running total of active events."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when events start and end at the same time. Ensure that the end time is exclusive in your calculations."
+    },
+    {
+      "content": "Remember that the maximum k-booking can change with each new event. You need to update your maximum count every time you add a new event."
+    },
+    {
+      "content": "To efficiently find the maximum overlap, you might want to use a variable to keep track of the current number of overlapping events and another variable for the maximum found so far."
+    },
+    {
+      "content": "Make sure to test your implementation with various scenarios, including back-to-back events, completely overlapping events, and events that do not overlap at all."
+    },
+    {
+      "content": "Consider the performance of your solution. Since there can be at most 400 calls to book, aim for a solution that runs efficiently within those constraints."
+    },
+    {
+      "content": "Think about the time complexity of your approach. If you are using a sorted list of times, how will you ensure that adding a new event remains efficient?"
+    },
+    {
+      "content": "You might want to sort the times before processing them to ensure that you handle them in the correct order. This will help in maintaining the running total of active events."
+    },
+    {
+      "content": "As you implement your solution, keep in mind the need to return the maximum k-booking after each event is added. This will be your output for each call to the book method."
+    },
+    {
+      "content": "Finally, ensure that your data structure can handle the upper limits of the constraints, particularly with respect to the time values, which can be as large as 10^9."
+    }
+  ],
+  "questionNotes": [
+    "0 <= startTime < endTime <= 10^9",
+    "At most 400 calls will be made to book.",
+    "The end time is exclusive.",
+    "Return the maximum k-booking after each call to book."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have a 2D array of pairs, where each pair indicates two adjacent elements in the original array. Think about how these pairs can help you reconstruct the original array."
+    },
+    {
+      "content": "Notice that each element in the original array will appear in exactly two pairs, except for the elements at the ends of the array. These end elements will only appear in one pair. Identifying these can help you start building the array."
+    },
+    {
+      "content": "Consider using a dictionary (or hash map) to store the adjacency relationships. For each pair [u, v], you can add v to the list of adjacent elements for u and vice versa. This will help you visualize the connections."
+    },
+    {
+      "content": "Once you have built the adjacency list, find the elements that appear only once in this list. These will be your starting points for reconstructing the original array."
+    },
+    {
+      "content": "To reconstruct the array, you can start from one of the end elements and follow the adjacency relationships. Keep track of the elements you have already added to avoid cycles."
+    },
+    {
+      "content": "As you build the array, ensure that you maintain the order of elements as they appear in the original array. This means you should follow the adjacency pairs in a way that respects their connections."
+    },
+    {
+      "content": "Consider edge cases where the input pairs might include negative numbers or very large integers. Your solution should handle these without any issues."
+    },
+    {
+      "content": "Remember that the problem guarantees that there exists a valid original array for the given pairs. You don't need to handle cases where no solution exists."
+    },
+    {
+      "content": "Think about the efficiency of your approach. Since you need to process n-1 pairs to reconstruct an array of size n, aim for a solution that operates in linear time, O(n)."
+    },
+    {
+      "content": "After constructing the adjacency list and starting from an end element, you can use a loop to build the final array. Make sure to check both adjacent elements while traversing to ensure you cover all elements."
+    }
+  ],
+  "questionNotes": [
+    "Each adjacent pair in adjacentPairs can be in any order.",
+    "The original array nums contains unique elements.",
+    "The array nums will have a length of n, where adjacentPairs has a length of n-1.",
+    "Constraints specify that 2 <= n <= 10^5 and element values range from -10^5 to 10^5."
+  ]
+}

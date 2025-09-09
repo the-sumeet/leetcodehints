@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by splitting the input path string using the '/' character. This will give you an array of directory names and special symbols (like '.' and '..'). Remember to handle cases where there are multiple consecutive slashes."
+    },
+    {
+      "content": "After splitting, you will need to filter out empty strings from the resulting array. These empty strings represent redundant slashes in the original path."
+    },
+    {
+      "content": "Next, iterate through the filtered array. You will need to handle the special cases of '.' and '..'. A single '.' means to stay in the current directory, while '..' means to go up one level."
+    },
+    {
+      "content": "Use a stack to keep track of the valid directory names as you process each element. When you encounter '..', pop the last directory from the stack if it's not empty."
+    },
+    {
+      "content": "If you encounter a valid directory name, push it onto the stack. Make sure to ignore '.' and handle '..' appropriately as mentioned before."
+    },
+    {
+      "content": "Remember, if the stack is empty after processing all elements, it means you're at the root directory. In that case, your final path should simply be '/'."
+    },
+    {
+      "content": "Once you have processed all elements, construct the simplified path by joining the elements in the stack with a '/' separator. Don't forget to add a leading '/' at the start."
+    },
+    {
+      "content": "Be careful with edge cases, such as when the input path is already simplified or when it consists only of '.' and '..'. Make sure your solution handles these gracefully."
+    },
+    {
+      "content": "Consider what happens if the input path is just the root directory '/'. Your final output should still be '/' in this case, even if there are no other directories."
+    },
+    {
+      "content": "Finally, ensure that your output path does not end with a '/' unless it is the root directory. This is crucial for meeting the problem's requirements."
+    }
+  ],
+  "questionNotes": [
+    "The input path is guaranteed to be a valid absolute Unix path.",
+    "The path will always start with a '/' character.",
+    "The output must start with a single '/' and should not end with a '/' unless it is the root directory.",
+    "Handle edge cases such as multiple consecutive slashes and sequences of '.' and '..'."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a non-decreasing array is. An array is non-decreasing if for every index i, nums[i] <= nums[i + 1]. This means that each element is less than or equal to the next one."
+    },
+    {
+      "content": "Consider the operation allowed: replacing a subarray with its maximum value. Think about how this operation can help you eliminate smaller numbers that disrupt the non-decreasing order."
+    },
+    {
+      "content": "Identify the longest non-decreasing subsequence in the array. This subsequence will give you a baseline for how many elements can remain unchanged."
+    },
+    {
+      "content": "Remember that you can perform multiple operations. Each operation can potentially increase the size of the array by merging elements into their maximum value, so think about how to maximize this effect."
+    },
+    {
+      "content": "You can traverse the array while keeping track of the last maximum value you have seen. This will help you determine when you can safely replace a subarray without breaking the non-decreasing condition."
+    },
+    {
+      "content": "As you iterate through the array, maintain a count of how many elements can be part of the final non-decreasing array. This involves comparing each element with the last maximum value you have recorded."
+    },
+    {
+      "content": "Consider edge cases, such as when the array is already non-decreasing or when it contains all identical elements. What would the output be in these scenarios?"
+    },
+    {
+      "content": "Think about how to efficiently find the maximum value in any subarray you might consider replacing. This could involve pre-computing maximum values or using a sliding window approach."
+    },
+    {
+      "content": "You may want to use a greedy approach: always replace the smallest disruptive elements first. This will help in keeping the array as large as possible while ensuring it remains non-decreasing."
+    },
+    {
+      "content": "Finally, consider edge cases where the array length is 1 or where all elements are the same. What would your function return in these cases? How does this influence your overall logic?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 2 * 10^5",
+    "Constraints: 1 <= nums[i] <= 2 * 10^5",
+    "Return the maximum possible size of the array after operations.",
+    "You can perform zero or more operations."
+  ]
+}

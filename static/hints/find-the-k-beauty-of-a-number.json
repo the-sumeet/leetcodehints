@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by converting the number `num` into a string. This will allow you to easily extract substrings of length `k`. Remember that substrings are contiguous sequences of characters."
+    },
+    {
+      "content": "Think about how to generate all possible substrings of length `k`. You can use a loop that goes from the start of the string to the end, making sure to only consider indices that allow for a full substring of length `k`."
+    },
+    {
+      "content": "When you extract a substring, convert it back to an integer. Be cautious with substrings that may represent numbers with leading zeros, as they are valid but will affect how you check for divisibility."
+    },
+    {
+      "content": "Remember that `0` is not a valid divisor. If a substring evaluates to `0`, you should skip it when counting the k-beauty."
+    },
+    {
+      "content": "For each valid substring, check if it is a divisor of `num`. You can do this by using the modulo operator: if `num % substring == 0`, then it is a divisor."
+    },
+    {
+      "content": "Keep a counter to track how many valid substrings meet the conditions for being a divisor of `num`. Initialize this counter to zero and increment it whenever you find a valid substring."
+    },
+    {
+      "content": "Consider edge cases such as when `k` is equal to the length of `num`. In this case, you will only have one substring to check, which is the number itself."
+    },
+    {
+      "content": "Make sure to handle large numbers correctly. Since `num` can be as large as 10^9, ensure that your approach can handle the maximum constraints without performance issues."
+    },
+    {
+      "content": "After checking all possible substrings, return the count of valid divisors you found. This will be your final answer for the k-beauty of the number."
+    },
+    {
+      "content": "As a final step, remember to test your solution with different inputs, including edge cases like leading zeros and the maximum value of `num`."
+    }
+  ],
+  "questionNotes": [
+    "1 <= num <= 10^9",
+    "1 <= k <= num.length (taking num as a string)",
+    "Leading zeros are allowed in substrings.",
+    "0 is not a divisor of any number."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "First, identify the key components of the problem. You need to find the shortest distance to a target string in a circular array. Make sure you understand how circular indexing works."
+    },
+    {
+      "content": "Consider how you will traverse the circular array. You can move either to the next index or the previous index. Think about how you would calculate the distance in both directions."
+    },
+    {
+      "content": "Before you start coding, check if the target string exists in the array. If it doesn't, you should return -1 immediately. This will help you avoid unnecessary calculations."
+    },
+    {
+      "content": "To find the indices of the target string, you might want to loop through the array. Store all the indices where the target appears in a list. This will help you compare distances later."
+    },
+    {
+      "content": "When calculating the distance to the target from your starting index, consider both the clockwise and counterclockwise distances. You can use the modulo operator to handle the circular nature of the array."
+    },
+    {
+      "content": "For any index `i`, the distance to another index `j` can be calculated as: \n- Clockwise distance: `(j - i + n) % n` \n- Counterclockwise distance: `(i - j + n) % n` \nThis will ensure you always get a positive distance."
+    },
+    {
+      "content": "As you calculate distances, keep track of the minimum distance found. You can initialize a variable to a large number and update it whenever you find a smaller distance."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when the target string appears multiple times. You need to find the shortest distance to any of those occurrences."
+    },
+    {
+      "content": "Make sure you are returning the shortest distance correctly. If you find multiple occurrences of the target, compare distances and return the smallest one."
+    },
+    {
+      "content": "Finally, ensure that your function returns -1 if the target is not found after checking all indices. This should be the last step before your return statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= words.length <= 100, 1 <= words[i].length <= 100.",
+    "The array is circular; use modulo for indexing.",
+    "Return -1 if the target does not exist in words.",
+    "Consider multiple occurrences of the target string in the array."
+  ]
+}

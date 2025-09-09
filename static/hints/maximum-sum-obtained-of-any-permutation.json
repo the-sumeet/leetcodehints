@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the requests are structured. Each request specifies a range in the `nums` array, and you need to sum the elements within that range. Think about how you can efficiently calculate these sums for different permutations of `nums`."
+    },
+    {
+      "content": "Consider how the frequency of each index in `nums` across all requests affects the total sum. You can maintain a count of how many times each index is included in any request. This will help you determine which numbers should be placed in higher-value positions in the permutation."
+    },
+    {
+      "content": "To calculate the frequency of each index, iterate through the `requests` array and for each request, increment the count for the indices from `start` to `end`. This will give you an array that tells you how many times each index is referenced."
+    },
+    {
+      "content": "Once you have the frequency counts, sort the `nums` array in descending order. This way, you can maximize the sum by placing the largest numbers in the most frequently requested indices."
+    },
+    {
+      "content": "After sorting, create a new array where each index's value is determined by multiplying the sorted `nums` value by its corresponding frequency count. This will give you the total contribution of each index to the final sum."
+    },
+    {
+      "content": "Don't forget to apply the modulo operation as specified in the problem statement. Since the result can be very large, ensure that you take the result modulo 10^9 + 7 at each step to prevent overflow."
+    },
+    {
+      "content": "Consider edge cases, such as when `nums` has only one element or when all requests are for the same range. How does your approach handle these situations? Make sure your solution is robust for all possible inputs."
+    },
+    {
+      "content": "Think about the time complexity of your approach. You should aim for a solution that is efficient enough to handle the upper constraints of the problem, particularly since both `nums` and `requests` can be as large as 100,000."
+    },
+    {
+      "content": "Once you have the contributions calculated, sum them up to get the final result. Remember to keep the sum within the bounds of the modulo operation to ensure correctness."
+    },
+    {
+      "content": "Finally, remember to test your solution with the provided examples as well as some edge cases you come up with. This will help ensure that your implementation is correct and efficient."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == nums.length, 1 <= n <= 10^5, 0 <= nums[i] <= 10^5, 1 <= requests.length <= 10^5",
+    "Requests are 0-indexed and each request is of the form [start_i, end_i].",
+    "The answer should be returned modulo 10^9 + 7.",
+    "Ensure to handle cases with overlapping requests and varying ranges."
+  ]
+}

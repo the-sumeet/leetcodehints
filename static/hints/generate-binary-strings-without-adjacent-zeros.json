@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirement for a valid binary string. A valid string must not contain '00' as a substring. This means that every pair of adjacent characters must include at least one '1'."
+    },
+    {
+      "content": "Consider the implications of the string length. For n = 1, the valid strings are simply '0' and '1'. This is a good base case to keep in mind as you build your solution for larger n."
+    },
+    {
+      "content": "Think about how you can build valid strings incrementally. You can start with an empty string and add either '0' or '1' to it, but you need to check if adding '0' would violate the rule of no adjacent zeros."
+    },
+    {
+      "content": "You might want to use recursion or backtracking to generate the strings. Each time you add a character, check the last character to ensure you don't create an invalid substring."
+    },
+    {
+      "content": "When constructing valid strings, maintain a list to store the results. Each time you reach a string of length n, add it to the list if it is valid."
+    },
+    {
+      "content": "Consider the base cases for your recursive function. You can return when the length of the current string equals n. Make sure to handle the strings correctly before returning."
+    },
+    {
+      "content": "Think about how to optimize your search. If you know the last character added, you can decide whether to add '0' or '1' based on that. For example, if the last character is '0', you can only add '1'."
+    },
+    {
+      "content": "Remember to explore both branches of your decision tree: adding '0' and adding '1'. However, make sure to skip adding '0' if it would create a '00' substring."
+    },
+    {
+      "content": "After generating all possible strings, ensure that you return them in the correct format. You should return a list of strings, so make sure your final output matches this requirement."
+    },
+    {
+      "content": "As a final step, review your code to ensure that it handles edge cases, such as when n is at its minimum (1) or maximum (18). Test your solution with these edge cases to verify its correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 18",
+    "Valid strings must not contain '00' as a substring.",
+    "The output should be a list of valid binary strings of length n.",
+    "The order of the strings in the output does not matter."
+  ]
+}

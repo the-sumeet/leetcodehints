@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subarray is. A subarray is a contiguous portion of an array. For this problem, you need to focus on subarrays of length 2."
+    },
+    {
+      "content": "Consider how you can calculate the sum of each subarray of length 2. For an array `nums`, the sum of the subarray starting at index `i` can be calculated as `nums[i] + nums[i+1]`."
+    },
+    {
+      "content": "Think about the constraints of the problem. You need to check if there are two subarrays of length 2 that have the same sum, and they must start at different indices."
+    },
+    {
+      "content": "You can use a loop to iterate through the array and calculate the sum for each subarray of length 2. Remember that you can only go up to `len(nums) - 2` to avoid going out of bounds."
+    },
+    {
+      "content": "As you calculate the sums, consider storing them in a data structure. A set is a good choice because it allows for quick lookups and can help you identify duplicates easily."
+    },
+    {
+      "content": "When you calculate the sum of a subarray, check if that sum already exists in your set. If it does, you have found two subarrays with the same sum."
+    },
+    {
+      "content": "Make sure to handle edge cases where the array has the minimum length of 2. In this case, there can only be one subarray, so the answer would be false."
+    },
+    {
+      "content": "Remember that the sums must be from different starting indices. So, if you find a sum that exists in your set, ensure that the indices of the subarrays are indeed different."
+    },
+    {
+      "content": "Consider the case where the elements in the array are negative or zero. The logic remains the same, but ensure your sum calculations handle all integer values correctly."
+    },
+    {
+      "content": "Finally, if you reach the end of your loop without finding any duplicate sums, return false. Otherwise, return true as soon as you find a match."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 1000",
+    "-10^9 <= nums[i] <= 10^9",
+    "Subarrays must be of length 2.",
+    "Subarrays must start at different indices.",
+    "Return true if such subarrays exist, otherwise return false."
+  ]
+}

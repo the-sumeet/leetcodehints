@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input format. You have a sequence and a list of pairs that represent the order constraints between elements in the sequence. Make sure you can visualize how these pairs dictate the order."
+    },
+    {
+      "content": "Consider how you can represent the constraints. Using a graph can be helpful. Each number can be a node, and each pair can represent a directed edge from one number to another."
+    },
+    {
+      "content": "Think about how to build the graph. For each pair [a, b], you can add a directed edge from a to b. This means a must come before b in the final sequence."
+    },
+    {
+      "content": "After building the graph, consider how to determine the in-degrees of each node. The in-degree of a node is the number of edges directed towards it. This will help you identify which nodes can be processed first."
+    },
+    {
+      "content": "You will likely need to perform a topological sort to find a valid sequence. Remember that a valid topological sort must respect the order constraints defined by your edges."
+    },
+    {
+      "content": "Pay attention to the uniqueness of the sequence. If there are multiple valid topological sorts, you need to ensure that the one you return matches the given sequence exactly."
+    },
+    {
+      "content": "Consider edge cases such as when the sequence is empty or when there are no constraints. How should your function behave in these scenarios?"
+    },
+    {
+      "content": "When implementing the topological sort, you can use a queue to process nodes with an in-degree of zero. As you process each node, remember to decrease the in-degree of its neighbors."
+    },
+    {
+      "content": "After constructing the topological order, compare it with the original sequence. Ensure that they match in length and order. If they do, you can return true; otherwise, return false."
+    },
+    {
+      "content": "Finally, make sure to handle cases where the constraints are insufficient to reconstruct the sequence. This can happen if the graph has cycles or if there are missing edges."
+    }
+  ],
+  "questionNotes": [
+    "The sequence is a list of integers that you need to reconstruct.",
+    "The pairs are directed edges indicating the order of elements.",
+    "You must ensure that the reconstructed sequence matches the given sequence exactly.",
+    "Consider edge cases like empty sequences or no constraints.",
+    "The output should be a boolean indicating whether the sequence can be uniquely reconstructed."
+  ]
+}

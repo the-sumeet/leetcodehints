@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "The chessboard is an 8x8 grid with alternating colors. The columns are labeled 'a' to 'h' and the rows are labeled '1' to '8'. Start by understanding how the coordinates map to this grid."
+    },
+    {
+      "content": "Each square can be identified by its column (letter) and row (number). The column 'a' corresponds to 1, 'b' to 2, and so on until 'h', which corresponds to 8. How can you convert these letters into numerical values?"
+    },
+    {
+      "content": "Remember that the first square 'a1' is black. This means that the color of the square alternates with each step in both the row and column. Consider how you can use the sum of the column and row values to determine the color."
+    },
+    {
+      "content": "If you convert the column letter to a number (e.g., 'a' = 1, 'b' = 2), and the row number is already a number, what can you conclude about the color of the square based on whether the sum of these two values is even or odd?"
+    },
+    {
+      "content": "To check if a square is white, you can use the condition: (columnValue + rowValue) % 2 == 0. If this condition is true, the square is white; otherwise, it is black. How will you implement this check?"
+    },
+    {
+      "content": "Make sure to handle the conversion of the column character to its corresponding numerical value correctly. You can use ASCII values for this. For example, 'a' can be converted using: columnValue = ord(coordinate[0]) - ord('a') + 1."
+    },
+    {
+      "content": "Don't forget to convert the row character from a string to an integer. You can use int(coordinate[1]) to achieve this. How will you combine these two conversions to compute the final condition?"
+    },
+    {
+      "content": "Consider edge cases, such as the corners of the chessboard like 'a1', 'h8', and how their colors are determined. Are there any patterns that emerge from these corners?"
+    },
+    {
+      "content": "Make sure to validate that the input coordinates always follow the constraints given in the problem statement. This means that the first character should always be between 'a' and 'h', and the second character should always be between '1' and '8'."
+    },
+    {
+      "content": "Finally, remember that the output should be a boolean value. You need to return true for white squares and false for black squares based on the condition you derived earlier."
+    }
+  ],
+  "questionNotes": [
+    "The coordinates will always represent a valid chessboard square.",
+    "Coordinates are in the format of a letter followed by a number.",
+    "'a' <= coordinates[0] <= 'h' and '1' <= coordinates[1] <= '8'.",
+    "Return true if the square is white, and false if it is black."
+  ]
+}

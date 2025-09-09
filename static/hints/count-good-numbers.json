@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what makes a digit string 'good'. Remember that digits at even indices must be even (0, 2, 4, 6, 8) and digits at odd indices must be prime (2, 3, 5, 7)."
+    },
+    {
+      "content": "Consider the implications of the string length `n`. For each character in the string, depending on whether its index is even or odd, you will have different choices of digits."
+    },
+    {
+      "content": "For even indices (0, 2, 4, ...), you have 5 choices: 0, 2, 4, 6, 8. For odd indices (1, 3, 5, ...), you have 4 choices: 2, 3, 5, 7."
+    },
+    {
+      "content": "Think about how to calculate the total number of good digit strings based on the length `n`. If `n` is even, how many even and odd indices will there be? What about if `n` is odd?"
+    },
+    {
+      "content": "You can break down the problem into two cases based on the parity of `n`: one for even `n` and one for odd `n`. This will help in determining the number of valid digits at each index."
+    },
+    {
+      "content": "Use the formula: If `n` is even, the total good strings = (choices for even indices)^(n/2) * (choices for odd indices)^(n/2). If `n` is odd, it will be similar but account for one extra even index."
+    },
+    {
+      "content": "Remember to handle large numbers carefully, as `n` can be as large as 10^15. You will need to compute results modulo 10^9 + 7 to avoid overflow."
+    },
+    {
+      "content": "Consider using fast exponentiation to compute powers efficiently. This will help you manage the large values of `n` without running into performance issues."
+    },
+    {
+      "content": "Before implementing, outline your approach clearly. You should have a clear plan for how to handle both even and odd cases and how to apply modular arithmetic."
+    },
+    {
+      "content": "Finally, implement your solution, ensuring to test edge cases like `n = 1` and `n = 2` to verify that your logic holds for small inputs."
+    }
+  ],
+  "questionNotes": [
+    "A digit string is good if digits at even indices are even and those at odd indices are prime.",
+    "Even indices can be 0, 2, 4, 6, 8 (5 choices). Odd indices can be 2, 3, 5, 7 (4 choices).",
+    "The length of the string `n` can be very large (up to 10^15).",
+    "Return the result modulo 10^9 + 7."
+  ]
+}

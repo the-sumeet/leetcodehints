@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem: you need to find the smallest number whose digits multiply to a given product. Consider how digits work: the digits can only be from 1 to 9, as 0 will not help in forming a valid number."
+    },
+    {
+      "content": "Think about the factors of the given product. For example, if the product is 12, the factors could be 3 and 4, or 2, 2, and 3. Your goal is to break down the product into factors that are valid digits."
+    },
+    {
+      "content": "Remember that the digits must be arranged in ascending order to form the smallest number. For instance, if you determine the digits are 3, 4, and 1, the smallest arrangement would be 134."
+    },
+    {
+      "content": "Consider edge cases: what happens if the product is 0 or 1? For a product of 0, the smallest number is 10 (as it requires at least one non-zero digit). For a product of 1, the smallest number is simply 1."
+    },
+    {
+      "content": "When breaking down the product into digits, prioritize using larger digits first. This is because using larger digits will reduce the number of digits needed, which helps in forming a smaller overall number."
+    },
+    {
+      "content": "You can use a loop to factor the product starting from 9 down to 2. For each factor, if the product is divisible, divide the product and store the digit. This will help in constructing the number."
+    },
+    {
+      "content": "After collecting the digits, sort them in ascending order. This step is crucial because it ensures that the final number is the smallest possible combination of those digits."
+    },
+    {
+      "content": "Be cautious about cases where the product cannot be factored into the digits 1-9. For example, if the product is 11, it cannot be formed using valid digits, so you should return -1 in such cases."
+    },
+    {
+      "content": "Make sure to handle the case where the product is greater than 1 but cannot be expressed as a product of digits from 2 to 9. In such cases, you'll need to return -1 as well."
+    },
+    {
+      "content": "Once you have the sorted digits, convert them to a single number. This can be done by joining the digits together. Remember to check for any edge cases before finalizing your output."
+    }
+  ],
+  "questionNotes": [
+    "The product must be expressed as a combination of digits from 1 to 9.",
+    "0 cannot be used as a digit unless the product is 0, in which case the answer is 10.",
+    "If the product is 1, the answer is 1.",
+    "If the product cannot be formed from digits 1-9, return -1."
+  ]
+}

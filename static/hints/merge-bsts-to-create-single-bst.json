@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. Each tree is represented as an array, where the first element is the root and subsequent elements represent the children in level order."
+    },
+    {
+      "content": "Remember that each BST can have at most 3 nodes, which simplifies the merging process. You only need to consider the root and its children when merging."
+    },
+    {
+      "content": "Focus on the merging condition: you can merge trees[i] into trees[j] if a leaf of trees[i] matches the root of trees[j]. What does it mean for a node to be a leaf?"
+    },
+    {
+      "content": "Identify the leaf nodes in each tree. A leaf node is one that has no children. You can find these by checking if a node has left and right children."
+    },
+    {
+      "content": "Since the trees are BSTs, remember the properties of BSTs when merging. The value of the merged tree's root must still satisfy the BST conditions after the merge."
+    },
+    {
+      "content": "Consider how to represent the BST after merging. You might want to create a helper function to build a tree from an array representation."
+    },
+    {
+      "content": "Think about the order of operations. You need to perform n - 1 merges to end up with a single tree. How will you keep track of which trees are still available for merging?"
+    },
+    {
+      "content": "When merging, ensure that the resulting tree remains a valid BST. After merging trees[i] into trees[j], validate the new structure."
+    },
+    {
+      "content": "If you cannot find any valid pairs of trees to merge, you should return null. What conditions might lead to this situation?"
+    },
+    {
+      "content": "Consider edge cases where there are only two trees. What must be true for one tree's leaf to match the other's root?"
+    },
+    {
+      "content": "You should also think about the uniqueness of values in the trees. Since no two roots have the same value, how does this affect your merging strategy?"
+    },
+    {
+      "content": "As you merge trees, keep track of the leaves that are still available for future merges. You might want to use a list to store these leaves."
+    },
+    {
+      "content": "After merging, check if the resulting tree is a valid BST. You can do this by performing an in-order traversal and ensuring the values are in sorted order."
+    },
+    {
+      "content": "Make sure to handle the case where merging results in a tree that violates BST properties. What checks will you implement to ensure validity?"
+    },
+    {
+      "content": "Finally, outline your merging algorithm. How will you iterate through the trees and decide which ones to merge based on the leaf-root matching condition?"
+    }
+  ],
+  "questionNotes": [
+    "Each tree has at most 3 nodes.",
+    "No two roots have the same value.",
+    "You can only merge trees if a leaf of one matches the root of another.",
+    "Return null if it's impossible to create a valid BST.",
+    "You need to perform exactly n - 1 operations."
+  ]
+}

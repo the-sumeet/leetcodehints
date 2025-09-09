@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the hidden sequence is constructed from the differences array. Remember that each element in the hidden sequence can be derived by adding the corresponding difference to the previous element."
+    },
+    {
+      "content": "Consider the first element of the hidden sequence as an unknown variable, let's call it 'x'. The subsequent elements can be expressed in terms of 'x' and the differences array."
+    },
+    {
+      "content": "For example, if you set the first element as 'x', then the second element would be 'x + differences[0]', the third would be 'x + differences[0] + differences[1]', and so on."
+    },
+    {
+      "content": "As you derive the hidden sequence, keep track of the minimum and maximum possible values for each element based on the differences. This will help you ensure that all elements fall within the specified range [lower, upper]."
+    },
+    {
+      "content": "You can maintain two variables, say 'current_min' and 'current_max', which will represent the minimum and maximum values of the hidden sequence as you iterate through the differences."
+    },
+    {
+      "content": "After processing each difference, update 'current_min' and 'current_max' accordingly. For example: \n`current_min += differences[i]` and `current_max += differences[i]`."
+    },
+    {
+      "content": "After processing all differences, you need to check the range of the first element 'x' that keeps all elements of the hidden sequence within [lower, upper]."
+    },
+    {
+      "content": "Calculate the valid range for 'x' based on 'current_min' and 'current_max'. Specifically, you should find the intersection of the range [lower - current_min, upper - current_max]."
+    },
+    {
+      "content": "Make sure to handle cases where the calculated range for 'x' might be invalid, such as when the lower bound is greater than the upper bound."
+    },
+    {
+      "content": "Finally, the number of valid hidden sequences is determined by the size of the range for 'x'. If the range is valid, return the count of integers in that range as the result."
+    }
+  ],
+  "questionNotes": [
+    "The hidden sequence has a length of n + 1.",
+    "The differences array is 0-indexed.",
+    "The values of the hidden sequence must be within the inclusive range [lower, upper].",
+    "Constraints: 1 <= n <= 10^5 and -10^5 <= differences[i] <= 10^5.",
+    "If there are no valid hidden sequences, return 0."
+  ]
+}

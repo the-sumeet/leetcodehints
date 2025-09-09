@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operations of a stack. Remember that a stack follows the Last In First Out (LIFO) principle, meaning the last element pushed onto the stack is the first one to be popped off."
+    },
+    {
+      "content": "Consider using a pointer for the `popped` array to track which element you are currently trying to pop. This will help you determine if the sequence of operations is valid."
+    },
+    {
+      "content": "As you iterate through the `pushed` array, simulate the push operation by adding elements to a stack. After each push, check if the top of the stack matches the current element in the `popped` array."
+    },
+    {
+      "content": "Implement a loop that continues until either the stack is empty or all elements in the `popped` array have been processed. This will help you manage the flow of push and pop operations."
+    },
+    {
+      "content": "Remember to pop elements from the stack only when the top of the stack matches the current element in the `popped` array. If they match, pop the stack and move to the next element in `popped`."
+    },
+    {
+      "content": "Think about edge cases, such as when `pushed` and `popped` are both empty. In this case, the output should be true since there are no operations to perform."
+    },
+    {
+      "content": "Pay attention to the constraints: both `pushed` and `popped` contain distinct values and `popped` is a permutation of `pushed`. This means every value in `pushed` will appear exactly once in `popped`."
+    },
+    {
+      "content": "If you reach the end of the `pushed` array but still have elements left in the `popped` array that cannot be matched with the stack, you should return false."
+    },
+    {
+      "content": "Consider what happens if you try to pop an element from the stack when it is empty or if the top of the stack does not match the current element in `popped`. What should you do in this case?"
+    },
+    {
+      "content": "Finally, after processing all elements, check if the stack is empty. If it is, return true; otherwise, return false. This will confirm that all operations were valid."
+    }
+  ],
+  "questionNotes": [
+    "1 <= pushed.length <= 1000",
+    "0 <= pushed[i] <= 1000",
+    "All elements in pushed are unique.",
+    "popped.length == pushed.length",
+    "popped is a permutation of pushed."
+  ]
+}

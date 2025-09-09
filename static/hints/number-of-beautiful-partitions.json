@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the prime and non-prime digits in the string. Remember, the prime digits are '2', '3', '5', and '7', while the non-prime digits are '1', '4', '6', '8', '9'. This classification will help you determine valid starting and ending points for your substrings."
+    },
+    {
+      "content": "Consider how to iterate over the string to find potential starting points for your substrings. A valid starting point must be a prime digit, so you can loop through the string and check each character."
+    },
+    {
+      "content": "For each starting point, you need to find valid ending points. The ending point of a substring must be a non-prime digit. Think about how you can track these positions as you iterate through the string."
+    },
+    {
+      "content": "Remember that each substring must have a minimum length of `minLength`. This means that if you find a starting point at index `i`, the earliest valid ending point must be at least `i + minLength - 1`."
+    },
+    {
+      "content": "When you find a valid substring from index `i` to `j`, you need to recursively check for the next substring starting from `j + 1`. This suggests a recursive or dynamic programming approach."
+    },
+    {
+      "content": "Keep track of how many substrings you have formed so far. You need to ensure that you only create `k` substrings in total, so consider passing the current count of substrings as a parameter in your recursive function."
+    },
+    {
+      "content": "Think about using memoization to store results of subproblems. This can significantly reduce the time complexity by avoiding recalculating the number of partitions for the same indices multiple times."
+    },
+    {
+      "content": "Be careful with the base cases in your recursion. For instance, if you reach the end of the string and have formed exactly `k` substrings, that is a valid partition."
+    },
+    {
+      "content": "When you reach a point where you have formed more than `k` substrings, you should return 0 for that path. This will help prune your search space."
+    },
+    {
+      "content": "Consider edge cases where the string length is less than `k * minLength`. In such cases, it is impossible to form the required number of substrings, and you should return 0 immediately."
+    },
+    {
+      "content": "Make sure to apply the modulo operation (10^9 + 7) to your results to prevent overflow and meet the problem's requirements."
+    },
+    {
+      "content": "As you implement the recursive function, ensure that you are correctly counting all possible partitions. You might want to log or print intermediate results to verify your logic."
+    },
+    {
+      "content": "Think about how to structure your function to accept the current index, the number of substrings formed, and any other necessary parameters. This will help keep your function organized."
+    },
+    {
+      "content": "Before finalizing your solution, test it against various edge cases, such as strings consisting entirely of prime digits or non-prime digits, and varying values of `k` and `minLength`."
+    },
+    {
+      "content": "Finally, ensure that your solution is efficient enough to handle the upper limits of the constraints, especially since the string can be up to 1000 characters long."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= k, minLength <= s.length <= 1000",
+    "s consists of the digits '1' to '9'.",
+    "A substring must start with a prime digit and end with a non-prime digit.",
+    "Each substring must have a length of at least minLength.",
+    "Return the number of beautiful partitions modulo 10^9 + 7."
+  ]
+}

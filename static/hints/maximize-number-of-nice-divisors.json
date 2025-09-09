@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what 'nice divisors' are. A divisor is nice if it is divisible by every prime factor of n. For example, if n = 12 (with prime factors [2, 2, 3]), the nice divisors are those that can be formed from these factors."
+    },
+    {
+      "content": "Consider how to construct the number n using the given prime factors. You have at most 'primeFactors' prime factors to work with, and you want to maximize the nice divisors."
+    },
+    {
+      "content": "Recall that the number of divisors of a number can be calculated if you know its prime factorization. If n = p1^e1 * p2^e2 * ... * pk^ek, the number of divisors is (e1 + 1)(e2 + 1)...(ek + 1)."
+    },
+    {
+      "content": "Think about how to distribute the prime factors among different primes. The more evenly you distribute the prime factors, the more nice divisors you can create."
+    },
+    {
+      "content": "If you have a limited number of prime factors, consider the case where you use them to form a product of powers. For example, with 5 prime factors, you might consider forms like 2^2 * 5^1."
+    },
+    {
+      "content": "When distributing the prime factors, try to keep the exponent values as close to each other as possible. This is because the number of divisors grows when the exponents are balanced."
+    },
+    {
+      "content": "You can use a greedy approach to maximize the number of nice divisors. Start with the smallest prime and try to assign as many factors as possible to it, then move to the next."
+    },
+    {
+      "content": "Consider edge cases, such as when primeFactors = 1. In this case, n would just be a prime number, and it would have exactly 1 nice divisor (itself)."
+    },
+    {
+      "content": "For larger values of primeFactors, think about how the distribution of factors can change. For example, with 8 factors, you might have combinations like 2^3 * 3^1."
+    },
+    {
+      "content": "Remember that the result should be returned modulo 10^9 + 7. This is important for handling large numbers, especially since primeFactors can be as large as 10^9."
+    },
+    {
+      "content": "You might want to implement a function to calculate the number of divisors based on the prime factorization you come up with. This function will help you test different distributions."
+    },
+    {
+      "content": "As you test different distributions of prime factors, keep track of the maximum number of nice divisors you can achieve. This will guide you toward the optimal solution."
+    },
+    {
+      "content": "Consider using a loop to iterate through possible distributions of prime factors. You can check how many nice divisors each distribution yields."
+    },
+    {
+      "content": "You might want to create a helper function to calculate the divisor count based on the current distribution of prime factors. This will simplify your main logic."
+    },
+    {
+      "content": "Finally, ensure that your solution handles the upper limits of the constraints efficiently. Think about the time complexity of your approach, especially when primeFactors is large."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= primeFactors <= 10^9",
+    "Return the number of nice divisors modulo 10^9 + 7.",
+    "A divisor is nice if it is divisible by every prime factor of n.",
+    "The prime factors of n can be repeated."
+  ]
+}

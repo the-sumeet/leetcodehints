@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a 'fixed point' is. A fixed point in an array is an index 'i' such that the value at that index is equal to 'i'. For example, in the array [0, 2, 5, 8, 17], the index 0 has the value 0, making it a fixed point."
+    },
+    {
+      "content": "Consider the properties of the input array. It is sorted in non-decreasing order. This can help you decide on an efficient searching method, such as binary search, rather than a linear search."
+    },
+    {
+      "content": "Think about how the values in the array relate to their indices. If the value at an index is less than the index, it suggests that any fixed point must be to the right of this index."
+    },
+    {
+      "content": "Conversely, if the value at an index is greater than the index, then any potential fixed point must be to the left. This insight can help you narrow down your search space."
+    },
+    {
+      "content": "Implement a binary search approach. Start with two pointers: one at the beginning of the array and one at the end. Calculate the middle index and check if it is a fixed point."
+    },
+    {
+      "content": "If the middle index is not a fixed point, decide which half of the array to search next based on the comparison of the middle value and the middle index. Adjust your pointers accordingly."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the array is empty. An empty array should return an indication that no fixed point exists."
+    },
+    {
+      "content": "Consider the case where there are multiple fixed points. Your function should ideally return the first fixed point found, but think about how you could modify it to return all fixed points if needed."
+    },
+    {
+      "content": "When implementing your solution, remember to check the boundaries of the array to avoid index out-of-bounds errors. Ensure your binary search does not go beyond the limits of the array."
+    },
+    {
+      "content": "Finally, think about how you will return the result. Should you return the index of the fixed point, the value, or perhaps -1 if no fixed point exists? Plan your return statement accordingly."
+    }
+  ],
+  "questionNotes": [
+    "Input: A sorted array of integers.",
+    "Output: The index of a fixed point or -1 if none exists.",
+    "Constraints: The array may contain negative numbers and zero.",
+    "Uniqueness: There can be multiple fixed points, but you only need to find one.",
+    "Consider edge cases like empty arrays or arrays without fixed points."
+  ]
+}

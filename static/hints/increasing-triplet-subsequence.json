@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirement for the indices: you need to find three indices (i, j, k) such that i < j < k. This means you will be looking for a strictly increasing sequence in the array."
+    },
+    {
+      "content": "Consider how you might iterate through the array. You could use a nested loop to check every triplet, but that would be inefficient. Think about how you could reduce the number of comparisons needed."
+    },
+    {
+      "content": "Notice that if you find two numbers that can form the first two parts of the triplet, you only need to check if there exists a third number that is larger than the second. This can help you avoid checking every possible triplet."
+    },
+    {
+      "content": "To keep track of potential candidates for the first two numbers in the triplet, you might want to maintain two variables. Think about what conditions these variables should satisfy as you iterate through the array."
+    },
+    {
+      "content": "When iterating through the array, update your two variables based on the current number. If the current number is greater than the second variable, you have found a valid triplet."
+    },
+    {
+      "content": "Remember that you need to handle edge cases, such as arrays that are too short to contain a triplet. What should your function return if the length of the array is less than 3?"
+    },
+    {
+      "content": "Think about the time complexity of your approach. You want to achieve O(n) time complexity. This means you should only pass through the array once, updating your variables as you go."
+    },
+    {
+      "content": "As you implement your solution, ensure that you are correctly updating your two variables based on the conditions you have established. Be careful with the comparisons to maintain the strictly increasing order."
+    },
+    {
+      "content": "You should also consider edge cases where the array contains duplicate numbers. How would duplicates affect your search for a strictly increasing triplet?"
+    },
+    {
+      "content": "Finally, ensure that your function returns a boolean value as specified. If you find a valid triplet during your traversal, return true immediately; otherwise, return false at the end."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 5 * 10^5",
+    "Value range: -2^31 <= nums[i] <= 2^31 - 1",
+    "Return format: boolean value (true or false)",
+    "Indices must satisfy: i < j < k",
+    "Strictly increasing condition: nums[i] < nums[j] < nums[k]"
+  ]
+}

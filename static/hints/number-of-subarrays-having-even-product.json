@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider what it means for a product of numbers to be even. Recall that a product is even if at least one of the numbers in the product is even."
+    },
+    {
+      "content": "Think about how you can identify subarrays. A subarray is a contiguous part of an array. How would you generate all possible subarrays from the given array?"
+    },
+    {
+      "content": "You can use two nested loops to generate subarrays. The outer loop can fix the starting index, while the inner loop can extend the subarray to the end of the array. For example:\n\n```\nfor start in range(len(arr)):\n    for end in range(start, len(arr)):\n        subarray = arr[start:end + 1]\n```\n"
+    },
+    {
+      "content": "As you generate each subarray, consider how you can check if the product of its elements is even. You might want to keep track of the product as you iterate through the subarray elements."
+    },
+    {
+      "content": "Instead of calculating the product for every subarray, think about the properties of even and odd numbers. If you encounter an even number in the subarray, you can immediately conclude that the product is even."
+    },
+    {
+      "content": "What happens if the array contains only odd numbers? How would that affect the count of subarrays with an even product? Make sure to consider this edge case."
+    },
+    {
+      "content": "You can optimize your approach by counting the number of even numbers in the array first. If you know the positions of even numbers, you can determine the ranges of subarrays that contain at least one even number."
+    },
+    {
+      "content": "Consider maintaining a count of subarrays with even products as you iterate through the array. Every time you find an even number, you can calculate how many subarrays end at that index."
+    },
+    {
+      "content": "Remember that the total number of subarrays that can be formed from an array of length n is n * (n + 1) / 2. This can help you understand the maximum number of subarrays you might need to consider."
+    },
+    {
+      "content": "You are very close! To finalize your approach, think about how you can efficiently count subarrays that include an even number without explicitly generating all subarrays. You might want to maintain a running count of valid subarrays as you traverse the array."
+    }
+  ],
+  "questionNotes": [
+    "The product of the subarray must be even.",
+    "Subarrays are contiguous segments of the original array.",
+    "Consider edge cases like arrays with all odd numbers.",
+    "Return the count of subarrays, not the subarrays themselves."
+  ]
+}

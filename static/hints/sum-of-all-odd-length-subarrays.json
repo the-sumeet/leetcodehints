@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an odd-length subarray is. An odd-length subarray is any contiguous segment of the array that has a length of 1, 3, 5, etc. For example, in the array [1, 2, 3], the odd-length subarrays are [1], [2], [3], and [1, 2, 3]."
+    },
+    {
+      "content": "Consider how you can generate all possible subarrays of the given array. You can do this by using two nested loops: the outer loop to select the starting index and the inner loop to select the ending index."
+    },
+    {
+      "content": "When generating subarrays, keep track of their lengths. You can check if the length of the current subarray is odd by using the modulo operator. For example, if the length is `end - start + 1`, check if `(end - start + 1) % 2 != 0`."
+    },
+    {
+      "content": "Instead of generating all subarrays explicitly, think about how to calculate the contribution of each element in the array to the sum of odd-length subarrays. Each element can be part of multiple subarrays."
+    },
+    {
+      "content": "To find how many odd-length subarrays an element at index `i` contributes to, consider the number of ways to choose start and end indices. You can count how many subarrays start before `i` and end after `i`."
+    },
+    {
+      "content": "For an element at index `i`, if there are `left` ways to choose a start index and `right` ways to choose an end index, the total subarrays containing `arr[i]` is `left * right`. You need to determine how many of these are odd-length."
+    },
+    {
+      "content": "You can derive the count of odd-length subarrays that include `arr[i]` by checking the parity of `left` and `right`. If both are odd or both are even, the product is even, otherwise it's odd."
+    },
+    {
+      "content": "Consider the contribution of each element to the total sum. If an element contributes to `k` odd-length subarrays, its total contribution to the sum is `arr[i] * k`."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the array has only one element. In this case, the only subarray is the element itself, which is also odd-length."
+    },
+    {
+      "content": "Finally, implement your logic in a single pass through the array to achieve O(n) time complexity. Keep a running total of the contributions as you iterate through the array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr.length <= 100",
+    "Constraints: 1 <= arr[i] <= 1000",
+    "Remember that subarrays are contiguous segments of the array.",
+    "Ensure that you only count subarrays of odd length."
+  ]
+}

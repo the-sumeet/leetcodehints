@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Consider the fact that you can only take cards from either the beginning or the end of the array. This means you need to think about how to combine cards from both ends to maximize your score."
+    },
+    {
+      "content": "Since you have to take exactly `k` cards, think about how many cards you might take from the left side versus the right side. For example, you could take `0` from the left and `k` from the right, or `1` from the left and `k-1` from the right, and so on."
+    },
+    {
+      "content": "Try to visualize the problem. If you take `i` cards from the left, you will take `k - i` cards from the right. This gives you a way to calculate the score based on how many cards you take from each side."
+    },
+    {
+      "content": "To calculate the score based on the number of cards taken from each side, you can use a sliding window approach. For instance, if you take `i` cards from the left, the score can be computed as the sum of the first `i` elements from the left plus the sum of the last `k - i` elements from the right."
+    },
+    {
+      "content": "Remember to keep track of the maximum score you can obtain as you iterate through the possible values of `i` from `0` to `k`. You can initialize a variable to store this maximum score."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when `k` equals the length of `cardPoints`. In this case, your score will simply be the sum of all the points in the array."
+    },
+    {
+      "content": "Consider using a prefix sum array to efficiently calculate the sum of points from the left and right sides. This can help you avoid recalculating sums multiple times."
+    },
+    {
+      "content": "As you iterate through the possible splits of cards taken from the left and right, update your maximum score accordingly. For example, if you take `i` cards from the left, calculate the score and compare it with the current maximum."
+    },
+    {
+      "content": "Think about the time complexity of your approach. A naive method might be inefficient for larger arrays, so aim for an optimal solution that runs in linear time, O(n)."
+    },
+    {
+      "content": "Finally, ensure that your implementation correctly returns the maximum score after considering all possible combinations of cards taken from both ends. You should have a clear loop that evaluates each combination."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= cardPoints.length <= 10^5",
+    "Constraints: 1 <= cardPoints[i] <= 10^4",
+    "Constraints: 1 <= k <= cardPoints.length",
+    "You must take exactly k cards.",
+    "The score is the sum of the points of the cards taken."
+  ]
+}

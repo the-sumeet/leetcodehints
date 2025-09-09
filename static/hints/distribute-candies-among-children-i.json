@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to represent the distribution of candies among the three children. You can think of it as a tuple (a, b, c) where a, b, and c are the number of candies each child receives."
+    },
+    {
+      "content": "Consider the constraints given in the problem. Each child can receive at most 'limit' candies, which means a, b, and c must all satisfy the condition: 0 <= a, b, c <= limit."
+    },
+    {
+      "content": "You need to ensure that the total number of candies distributed equals 'n'. This gives you the equation: a + b + c = n. Think about how you can generate combinations of (a, b, c) that satisfy this equation."
+    },
+    {
+      "content": "One approach to solve this is to use a nested loop structure. You can iterate over possible values for 'a' and 'b', and then calculate 'c' as c = n - a - b. Make sure to check that c is also within the limit."
+    },
+    {
+      "content": "When iterating, remember to account for the order of distribution. For example, (1, 2, 2) is different from (2, 1, 2). Think about how you can count unique distributions without duplicates."
+    },
+    {
+      "content": "Consider edge cases where 'n' is less than or equal to 'limit'. What happens when 'n' is small? How does this affect the number of valid distributions?"
+    },
+    {
+      "content": "To avoid counting the same distribution multiple times, you can use sets to store unique tuples of (a, b, c) or simply ensure that a <= b <= c while generating combinations."
+    },
+    {
+      "content": "You can also use combinatorial mathematics. Think about the problem as distributing 'n' indistinguishable candies into 3 distinguishable boxes with the restriction on the maximum number of candies per box."
+    },
+    {
+      "content": "Implement a way to count valid distributions. For instance, you can initialize a counter and increment it every time you find a valid (a, b, c) combination."
+    },
+    {
+      "content": "Finally, ensure your solution runs efficiently within the constraints. Given that n and limit can both be at most 50, a brute-force approach with nested loops might be feasible, but always consider optimizing your solution."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 50, 1 <= limit <= 50.",
+    "The distribution must satisfy a + b + c = n.",
+    "Each child can receive between 0 and 'limit' candies.",
+    "Order matters in the distribution, so (1, 2, 2) is different from (2, 1, 2).",
+    "Consider using sets or sorted tuples to avoid counting duplicates."
+  ]
+}

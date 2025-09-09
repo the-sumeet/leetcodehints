@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a fair pair. A pair (i, j) is fair if the indices satisfy 0 <= i < j < n, and the sum of the elements at these indices falls within the given range [lower, upper]."
+    },
+    {
+      "content": "Consider how you would iterate through the array to find pairs. A nested loop could be a straightforward approach, but think about the time complexity, especially since n can be as large as 100,000."
+    },
+    {
+      "content": "When checking pairs, remember that you need to ensure that you only count pairs where i < j. This means you should start your inner loop from i + 1."
+    },
+    {
+      "content": "Think about edge cases. What happens if all elements in nums are negative? Or if lower and upper are both negative? How would that affect the number of fair pairs?"
+    },
+    {
+      "content": "You can optimize your approach using sorting. If you sort the array first, you can use two pointers or binary search to find valid pairs more efficiently."
+    },
+    {
+      "content": "After sorting, for each element nums[i], determine the range of indices j such that the sum nums[i] + nums[j] falls within [lower, upper]. This can be done using binary search."
+    },
+    {
+      "content": "Use the `bisect` module in Python to find the lower and upper bounds for valid j indices quickly. This will significantly reduce the number of comparisons you need to make."
+    },
+    {
+      "content": "Remember to account for the number of valid pairs found for each i. If you find a valid range of j indices, the number of fair pairs contributed by that i is the count of indices in that range."
+    },
+    {
+      "content": "Make sure to handle the case where lower and upper are the same. This means you are looking for pairs that sum to a specific value, which can be treated as a special case."
+    },
+    {
+      "content": "Finally, ensure you return the count of fair pairs as an integer. You might want to initialize a counter at the start of your function and increment it every time you find a valid pair."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Indices must satisfy: 0 <= i < j < n",
+    "The sum must be within the range: lower <= nums[i] + nums[j] <= upper",
+    "Return the total count of fair pairs as an integer."
+  ]
+}

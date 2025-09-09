@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the data provided. You have three tables: Drivers, Vehicles, and Trips. Each table has a unique identifier that links them together, such as driver_id in both Drivers and Vehicles."
+    },
+    {
+      "content": "Focus on the Trips table, as it contains the ratings that will help determine the top-performing driver. Each trip is associated with a vehicle, which in turn is linked to a driver. Consider how you can aggregate the ratings for each driver based on their trips."
+    },
+    {
+      "content": "To aggregate the ratings, you will need to join the Trips table with the Vehicles table using vehicle_id, and then join the result with the Drivers table using driver_id. Think about how you can perform these joins effectively."
+    },
+    {
+      "content": "As you aggregate the ratings, consider how to handle multiple trips for each driver. You might want to calculate the average rating or the total rating across all trips for each driver. Which method do you think would be more suitable for determining the top performer?"
+    },
+    {
+      "content": "Don't forget to account for drivers with no trips. If a driver has no trips, how should their performance be represented? You might need to set a default value or exclude them from the final results."
+    },
+    {
+      "content": "Once you have the aggregated ratings, you will need to identify the driver with the highest rating. Think about how you can efficiently find the maximum value from your aggregated results, especially if there are ties."
+    },
+    {
+      "content": "In the case of a tie, decide how you want to handle it. Should you return all drivers with the highest rating, or just one? If returning one, consider using other metrics like experience or age to break the tie."
+    },
+    {
+      "content": "Make sure to return the results in the specified format. You should include the driver's ID, name, and any other relevant information. What would be the best way to structure this output?"
+    },
+    {
+      "content": "As you implement your solution, pay attention to the efficiency of your joins and aggregations. Consider the size of the data and how your approach might scale with larger datasets."
+    },
+    {
+      "content": "Finally, implement your solution step by step, starting with the joins, then the aggregation, and finally the identification of the top driver. Ensure that you test your implementation with various input scenarios, including edge cases."
+    }
+  ],
+  "questionNotes": [
+    "Ensure to join Trips with Vehicles and then with Drivers using their respective IDs.",
+    "Consider how to aggregate ratings (average vs total) and handle drivers with no trips.",
+    "Decide on tie-breaking criteria if multiple drivers have the same top rating.",
+    "Return the driver's ID, name, and any other specified information in the output."
+  ]
+}

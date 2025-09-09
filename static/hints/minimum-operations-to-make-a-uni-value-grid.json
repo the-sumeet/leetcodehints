@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "First, consider the concept of a uni-value grid. What does it mean for all elements in the grid to be equal? Think about how you can manipulate the values in the grid using the allowed operations."
+    },
+    {
+      "content": "Notice that you can only add or subtract a fixed value `x` from any element. This means that the difference between any two elements in the grid must be a multiple of `x` for them to be made equal. Can you express this mathematically?"
+    },
+    {
+      "content": "To determine if it's possible to make the grid uni-value, check the differences between all pairs of elements. If any difference is not divisible by `x`, you should return -1 immediately."
+    },
+    {
+      "content": "Once you confirm that it's possible to make the grid uni-value, think about which value to convert all elements to. A good candidate could be the median of the grid's elements, as it minimizes the total distance."
+    },
+    {
+      "content": "Calculate the median of the grid elements. Remember, if the number of elements is even, you can choose either of the two middle values. How would you implement this in code?"
+    },
+    {
+      "content": "Next, for each element in the grid, compute the number of operations needed to convert it to the median value. Use the formula: `operations = abs(element - median) / x`."
+    },
+    {
+      "content": "As you compute the operations for each element, keep a running total. Make sure to handle the integer division correctly, as you need whole operations."
+    },
+    {
+      "content": "Consider edge cases where the grid has only one element or where all elements are already equal. How would these cases affect your implementation?"
+    },
+    {
+      "content": "Think about the efficiency of your solution. Given the constraints, how can you ensure that your approach runs in a reasonable time? Consider using a single pass to gather necessary statistics instead of multiple passes."
+    },
+    {
+      "content": "Finally, put everything together. After verifying the divisibility condition and computing the total operations, ensure you return the correct result. What should you return if all conditions are met?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 10^5 and 1 <= m * n <= 10^5",
+    "Elements in grid are within the range 1 <= grid[i][j] <= 10^4",
+    "You can only add or subtract x from any element.",
+    "Return -1 if it's not possible to make the grid uni-value.",
+    "Consider the median for minimizing operations."
+  ]
+}

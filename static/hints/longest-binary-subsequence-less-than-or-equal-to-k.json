@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a subsequence is. A subsequence can be formed by deleting some characters from the string without changing the order of the remaining characters. For example, from '1001010', you can form '101' or '00010'."
+    },
+    {
+      "content": "Consider the binary representation of numbers. The binary string's value is determined by the position of '1's. For example, in '1001010', the rightmost bit represents 2^0, the next 2^1, and so on. Think about how this affects the value of subsequences."
+    },
+    {
+      "content": "Remember that leading zeros do not affect the value of a binary number. For instance, '00010' is equal to '10' in binary, which is 2 in decimal. This means you can include many leading zeros in your subsequence."
+    },
+    {
+      "content": "Focus on the constraint that the binary number must be less than or equal to k. This means you need to keep track of the decimal value of the subsequence you are forming and compare it with k."
+    },
+    {
+      "content": "You might want to start by counting the number of '0's in the string. Since they can be included freely without affecting the value, they can help maximize the length of your valid subsequence."
+    },
+    {
+      "content": "Next, consider how to include '1's in your subsequence. Each '1' you include increases the value of the binary number significantly, especially if it's not at the end of the string. Think about how many '1's you can afford to include without exceeding k."
+    },
+    {
+      "content": "To determine the maximum number of '1's you can include, you may want to convert k into binary and analyze its structure. This will help you understand how many '1's can be added without exceeding the limit."
+    },
+    {
+      "content": "As you construct your subsequence, keep a running total of its decimal value. If adding another '1' would exceed k, consider stopping the inclusion of more '1's and focus on maximizing '0's."
+    },
+    {
+      "content": "Think about edge cases where k is very small (like 1) or when the binary string consists mainly of '0's. How do these cases affect the length of the longest valid subsequence you can form?"
+    },
+    {
+      "content": "Finally, combine your counts of '0's and '1's to compute the length of the longest valid subsequence. Ensure that you account for any constraints imposed by k while doing this. A potential formula might look like: length = count_of_zeros + count_of_valid_ones."
+    }
+  ],
+  "questionNotes": [
+    "The subsequence can contain leading zeroes.",
+    "The empty string is considered to be equal to 0.",
+    "Constraints: 1 <= s.length <= 1000, s[i] is either '0' or '1'.",
+    "1 <= k <= 10^9."
+  ]
+}

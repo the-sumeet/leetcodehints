@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a valid parentheses string. A string is valid if every opening parenthesis has a corresponding closing parenthesis and they are properly nested."
+    },
+    {
+      "content": "Consider how the `locked` string affects the characters in `s`. If `locked[i]` is '1', you cannot change `s[i]`. Think about how this limits your ability to balance the parentheses."
+    },
+    {
+      "content": "Count the number of `(` and `)` in the string `s`. This will help you determine if the string can potentially be balanced, especially when you can change some characters."
+    },
+    {
+      "content": "You can only change characters at indices where `locked[i]` is '0'. Make a note of these indices, as they will be crucial for your solution."
+    },
+    {
+      "content": "Think about a two-pass approach. In the first pass, traverse the string from left to right, keeping track of the balance of parentheses. Increment for `(` and decrement for `)`. If at any point the balance goes negative, you may need to adjust."
+    },
+    {
+      "content": "In the second pass, traverse the string from right to left. This time, check if you can balance the parentheses by treating `)` as `(` and vice versa. This helps to ensure that you can close all opened parentheses."
+    },
+    {
+      "content": "While traversing, keep track of how many `0`s (modifiable positions) you have encountered. This will help you determine if you have enough flexibility to adjust the balance."
+    },
+    {
+      "content": "Consider edge cases where the length of the string is very small, such as 1 or 2. What are the valid combinations of parentheses in these cases?"
+    },
+    {
+      "content": "Remember that at the end of your traversal, the total balance should be zero for the string to be valid. If you have used your modifiable positions (`0`s`) wisely, you should be able to achieve this."
+    },
+    {
+      "content": "Finally, ensure that your logic accounts for the total number of `(` and `)` after considering the locked positions. If you can balance them using the available changes, return true; otherwise, return false."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: n == s.length == locked.length",
+    "1 <= n <= 10^5",
+    "s[i] is either '(' or ')'.",
+    "locked[i] is either '0' or '1'.",
+    "You can only change s[i] where locked[i] is '0'."
+  ]
+}

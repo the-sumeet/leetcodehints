@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the MKAverage definition. The MKAverage is calculated from the last `m` elements in the stream after removing the smallest `k` and largest `k` elements. Make sure to keep track of the order of elements as they are added."
+    },
+    {
+      "content": "Consider how you will store the elements in the stream. A simple list can work, but think about how you will efficiently access the last `m` elements when calculating the MKAverage."
+    },
+    {
+      "content": "Remember that if the number of elements in the stream is less than `m`, the MKAverage should return -1. Make sure to handle this case early in your `calculateMKAverage` method."
+    },
+    {
+      "content": "When you have enough elements, you'll need to copy the last `m` elements into a new container. Think about how to do this efficiently without affecting the original stream."
+    },
+    {
+      "content": "After copying the last `m` elements, you need to sort this new container to easily remove the smallest and largest `k` elements. Consider using a sorting algorithm or a data structure that maintains order."
+    },
+    {
+      "content": "Once you have the sorted elements, removing the smallest and largest `k` elements is straightforward. Make sure to handle cases where there are not enough elements left after removal."
+    },
+    {
+      "content": "Calculate the average of the remaining elements by summing them up and dividing by the count of those elements. Remember to round down the result to the nearest integer."
+    },
+    {
+      "content": "Think about edge cases, such as when all elements in the last `m` are the same. Ensure your logic correctly handles this scenario when calculating the average."
+    },
+    {
+      "content": "Consider the constraints provided in the problem. For instance, `1 < k*2 < m` ensures that there will always be elements left after removing `k` smallest and `k` largest."
+    },
+    {
+      "content": "You may want to implement a sliding window approach to keep track of the last `m` elements efficiently. This can help avoid unnecessary copying and sorting."
+    },
+    {
+      "content": "Make sure to test your implementation with various inputs, including edge cases like adding the same number multiple times or adding numbers in a sorted order."
+    },
+    {
+      "content": "Think about how to optimize the performance of your `addElement` and `calculateMKAverage` methods, especially since you may have up to 100,000 calls."
+    },
+    {
+      "content": "You might want to use a data structure like a deque or a circular buffer to efficiently manage the stream of elements as they are added."
+    },
+    {
+      "content": "When implementing the `calculateMKAverage` method, ensure that you are correctly maintaining the state of the last `m` elements after each addition."
+    },
+    {
+      "content": "Finally, remember to handle the output format correctly. The MKAverage should be returned as an integer, rounded down, so be careful with your division."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= m <= 10^5, 1 < k*2 < m, 1 <= num <= 10^5.",
+    "Return -1 if the number of elements is less than m.",
+    "Make sure to round down the average to the nearest integer.",
+    "Keep track of the order of elements in the stream."
+  ]
+}

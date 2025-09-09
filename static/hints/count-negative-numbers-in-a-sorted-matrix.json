@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the matrix. Each row and each column is sorted in non-increasing order, meaning the numbers decrease as you move right or down. This property can be leveraged to efficiently count negative numbers."
+    },
+    {
+      "content": "Consider how you might traverse the matrix. A brute force approach would involve checking every element, but think about how the sorted nature of the matrix can help you skip certain elements."
+    },
+    {
+      "content": "Think about starting your search from the top-right corner of the matrix. If the current number is negative, all numbers below it in that column will also be negative due to the sorting. This can help you quickly count negatives."
+    },
+    {
+      "content": "If you find a negative number, you can move left to find other negative numbers in the same row. If the number is non-negative, you should move down to the next row since all numbers to the right will also be non-negative."
+    },
+    {
+      "content": "Consider how you can keep track of the count of negative numbers as you traverse the matrix. You can use a simple counter that increments when you find a negative number."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the matrix contains all non-negative numbers or when it is filled entirely with negative numbers. What should your function return in these cases?"
+    },
+    {
+      "content": "Think about the time complexity of your approach. The follow-up asks for an O(n + m) solution. How can you ensure that you only traverse the matrix a limited number of times?"
+    },
+    {
+      "content": "As you implement your function, remember to check the boundaries of the matrix to avoid index errors. Ensure your loop conditions are set correctly to prevent accessing elements outside the matrix."
+    },
+    {
+      "content": "You might want to write a small pseudocode snippet to outline your approach. For example, start at the top-right corner and use a while loop to traverse until you go out of bounds."
+    },
+    {
+      "content": "Finally, you are very close to a solution! Your pseudocode might look something like this: Initialize a counter, set your position at (0, n-1), and loop while you are within the bounds of the matrix, adjusting your position based on the value you encounter."
+    }
+  ],
+  "questionNotes": [
+    "The matrix is m x n, where 1 <= m, n <= 100.",
+    "Each element in the matrix is between -100 and 100.",
+    "The matrix is sorted in non-increasing order both row-wise and column-wise.",
+    "Return the total count of negative numbers."
+  ]
+}

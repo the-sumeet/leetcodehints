@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a 'weak' character. A character is weak if there exists another character with both a strictly higher attack and a strictly higher defense. Think about how you can compare each character against every other character."
+    },
+    {
+      "content": "Consider how you will iterate through the list of characters. You might want to use a nested loop where for each character, you check every other character to see if it qualifies as a 'weak' character."
+    },
+    {
+      "content": "As you compare characters, pay attention to the conditions for being 'weak'. Specifically, you need to check both attack and defense values. Make sure to handle the comparisons carefully."
+    },
+    {
+      "content": "Think about the efficiency of your solution. A naive approach would involve checking every character against every other character, leading to O(n^2) complexity. Can you think of a way to reduce the number of comparisons?"
+    },
+    {
+      "content": "To optimize your solution, consider sorting the characters. If you sort by attack first, and then by defense, you can potentially reduce the number of comparisons needed to determine if a character is weak."
+    },
+    {
+      "content": "When sorting, remember that if two characters have the same attack, you should sort them by defense in descending order. This way, when you iterate, you can skip characters that cannot be weak due to having the same attack."
+    },
+    {
+      "content": "Once sorted, you can maintain a variable to keep track of the maximum defense seen so far as you iterate through the characters. If the current character's defense is less than this maximum, it is weak."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when all characters have unique properties or when some have the same attack but different defenses. How will these cases affect your counting of weak characters?"
+    },
+    {
+      "content": "Remember to initialize your count of weak characters to zero before starting the comparisons. Each time you identify a weak character, increment this count appropriately."
+    },
+    {
+      "content": "Finally, ensure you return the count of weak characters at the end of your function. Make sure that your return statement is correctly formatted and that you are not missing any characters in your final count."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= properties.length <= 10^5, properties[i].length == 2, 1 <= attack[i], defense[i] <= 10^5.",
+    "Characters are represented as 2D arrays with attack and defense values.",
+    "A character is 'weak' if another character has both strictly greater attack and defense.",
+    "Consider sorting strategies to optimize the solution.",
+    "Pay attention to edge cases such as characters with equal attack values."
+  ]
+}

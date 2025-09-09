@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the process IDs and their parent process IDs. Each process can have a parent, and this relationship is crucial for determining which processes need to be killed."
+    },
+    {
+      "content": "Consider how you can represent the processes and their hierarchy. A common approach is to use a dictionary to map each process ID to its children, which can help you traverse the tree structure."
+    },
+    {
+      "content": "Think about how to build this mapping: for each process ID in the `pid` list, check its corresponding parent in the `ppid` list and create a child list for each parent. This will help you visualize the process tree."
+    },
+    {
+      "content": "When you have the mapping, consider how to perform a depth-first search (DFS) or breadth-first search (BFS) starting from the process that needs to be killed. This will allow you to find all descendant processes."
+    },
+    {
+      "content": "Pay attention to the case where the process to be killed is not in the list of processes. How will your function handle this scenario? Make sure to account for it."
+    },
+    {
+      "content": "Remember that the output should be a list of process IDs that need to be killed. Ensure that you are collecting these IDs correctly during your traversal of the process tree."
+    },
+    {
+      "content": "Consider edge cases such as when the `pid` list has only one process or when the process to be killed is a root process with multiple children. How will your logic handle these situations?"
+    },
+    {
+      "content": "Think about the efficiency of your solution. If you are using DFS or BFS, ensure that you are not revisiting nodes unnecessarily, which could lead to performance issues."
+    },
+    {
+      "content": "As you implement your solution, remember to test with different scenarios, including cases where multiple processes share the same parent or where the process to be killed has no children."
+    },
+    {
+      "content": "Finally, structure your solution to return the list of killed processes in any order, as the problem statement does not specify a particular order for the output."
+    }
+  ],
+  "questionNotes": [
+    "The `pid` list contains unique process IDs.",
+    "The `ppid` list corresponds to the parent process IDs; the indices match the `pid` list.",
+    "The process to be killed is guaranteed to be in the `pid` list.",
+    "The output should be a list of all process IDs that are killed, including the target process."
+  ]
+}

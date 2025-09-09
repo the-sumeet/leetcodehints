@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input matrix. It's a 2D array filled with '0's and '1's. Each '1' represents a part of a potential square, while '0's represent areas that cannot be included."
+    },
+    {
+      "content": "Consider how you would identify squares in a matrix. A square is defined by its top-left corner and its size. Think about how you can determine the size of the largest square ending at any given cell."
+    },
+    {
+      "content": "To solve this problem efficiently, consider using dynamic programming. You can create a DP array where each entry at (i, j) represents the size of the largest square whose bottom-right corner is at (i, j)."
+    },
+    {
+      "content": "Remember to handle the edges of the matrix carefully. For cells in the first row or first column, the size of the square can only be 1 if the cell is '1', or 0 if it is '0'."
+    },
+    {
+      "content": "When filling in your DP table, for each cell (i, j) that is '1', look at the three neighboring cells: directly above (i-1, j), directly to the left (i, j-1), and diagonally above-left (i-1, j-1). The size of the square at (i, j) can be determined by the minimum of these three values plus one."
+    },
+    {
+      "content": "As you fill out the DP table, keep track of the maximum size of the square found so far. You can initialize a variable to store this maximum size and update it whenever you find a larger square."
+    },
+    {
+      "content": "Once you have completed filling the DP table, the area of the largest square can be calculated as the square of the maximum size you tracked. Remember to return the area, not the size."
+    },
+    {
+      "content": "Consider edge cases such as when the matrix contains all '0's or is very small (like 1x1). What should your function return in these scenarios?"
+    },
+    {
+      "content": "Make sure to test your function with different configurations of the matrix. For example, matrices that are filled entirely with '1's or '0's, or have a mix that creates a large square."
+    },
+    {
+      "content": "Finally, as a hint towards the implementation, your final DP update step might look like this: `dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1` if `matrix[i][j] == '1'`. Don't forget to handle the initialization of the DP array."
+    }
+  ],
+  "questionNotes": [
+    "The input matrix is m x n, where 1 <= m, n <= 300.",
+    "Each element in the matrix is either '0' or '1'.",
+    "You need to return the area of the largest square containing only '1's.",
+    "If no '1's are present, the output should be 0."
+  ]
+}

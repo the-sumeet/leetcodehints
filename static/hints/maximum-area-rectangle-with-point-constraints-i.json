@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of a rectangle. A rectangle is defined by its four corners, which must be chosen from the given points. Make sure to visualize how these corners relate to the area of the rectangle."
+    },
+    {
+      "content": "Remember that the edges of the rectangle must be parallel to the axes. This means that if you select two points for the left and right sides of the rectangle, they must have the same y-coordinate, and similarly for the top and bottom sides."
+    },
+    {
+      "content": "Consider how to efficiently check if a rectangle formed by four points contains any other points inside or on its border. You might want to utilize a set for quick lookups of points."
+    },
+    {
+      "content": "To calculate the area of a rectangle, use the formula: Area = (width) * (height). The width is the difference between the x-coordinates of the left and right points, and the height is the difference between the y-coordinates of the top and bottom points."
+    },
+    {
+      "content": "You need to iterate over pairs of points to define potential rectangles. For each pair, check if the other two corners needed to complete the rectangle exist in the set of points."
+    },
+    {
+      "content": "While checking for the existence of the other two corners, also ensure that no other points are inside or on the border of the rectangle. This could involve checking all points against the rectangle's bounds."
+    },
+    {
+      "content": "Think about edge cases where the number of points is minimal. For example, if there are fewer than four points, you cannot form any rectangle, so you should return -1 immediately."
+    },
+    {
+      "content": "If you find a valid rectangle, calculate its area and keep track of the maximum area found. Make sure to consider all pairs of points to ensure you don't miss any potential rectangles."
+    },
+    {
+      "content": "When returning the result, remember that if no valid rectangle is found, you should return -1. Ensure your logic accounts for this condition properly."
+    },
+    {
+      "content": "As a final step, ensure your solution handles all the constraints given in the problem, such as the uniqueness of points and the bounds on coordinates. This will help prevent any unexpected errors."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= points.length <= 10",
+    "Each point is unique.",
+    "Return -1 if no valid rectangle can be formed.",
+    "Edges of the rectangle must be parallel to the axes."
+  ]
+}

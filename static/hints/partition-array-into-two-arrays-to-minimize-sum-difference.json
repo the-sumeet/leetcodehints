@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to split an array of size 2n into two equal parts, each of size n. The goal is to minimize the absolute difference between the sums of these two parts."
+    },
+    {
+      "content": "Consider the total sum of the array. If you denote the total sum as S, then the ideal scenario would be to have both partitions sum to S/2. Think about how you can approach this using subsets."
+    },
+    {
+      "content": "Since n can be at most 15, the total number of elements (2n) can be at most 30. This allows for a combinatorial approach, as the number of ways to choose n elements from 2n is manageable."
+    },
+    {
+      "content": "Remember that the sum of the two partitions will always equal S. Therefore, minimizing the absolute difference can be framed as minimizing |sum1 - (S - sum1)|, which simplifies to |2 * sum1 - S|."
+    },
+    {
+      "content": "You can use a bitmask to represent subsets of the array. Each bit in the mask can indicate whether an element is included in the first subset or not."
+    },
+    {
+      "content": "When generating subsets, ensure that you only consider subsets of size n. This is crucial because the problem specifically requires both partitions to have the same length."
+    },
+    {
+      "content": "As you explore subsets, keep track of their sums. You can calculate the sum for each valid subset of size n and then compute the absolute difference from S/2."
+    },
+    {
+      "content": "Consider edge cases, such as when all elements are the same or when there are large negative and positive numbers. How would these affect your partitioning strategy?"
+    },
+    {
+      "content": "Think about optimizing your approach. Instead of checking all possible combinations, can you use dynamic programming or memoization to store results of previously computed sums?"
+    },
+    {
+      "content": "When iterating through combinations, you might want to use libraries or built-in functions that can help generate combinations efficiently. For example, in Python, you can use itertools.combinations."
+    },
+    {
+      "content": "If you're implementing a recursive solution, consider the base case carefully. What should happen when you've selected n elements or exhausted all options?"
+    },
+    {
+      "content": "Keep track of the minimum difference found so far as you explore different partitions. You can initialize this to a large number, like infinity."
+    },
+    {
+      "content": "As you compute differences, ensure you are correctly calculating the absolute value. This is crucial for getting the right result."
+    },
+    {
+      "content": "After generating all possible partitions, you should have a clear way to compare their sums. What data structure will you use to store the sums and differences?"
+    },
+    {
+      "content": "Finally, remember to return the minimum absolute difference you found. Make sure your return statement is correctly formatted."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 15, nums.length == 2 * n",
+    "Range of nums[i]: -10^7 <= nums[i] <= 10^7",
+    "Each partition must have exactly n elements.",
+    "Return the minimum possible absolute difference."
+  ]
+}

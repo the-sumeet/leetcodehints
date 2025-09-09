@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the initial connectivity of the matrix. You can use a depth-first search (DFS) or breadth-first search (BFS) to determine if there is a path from the top-left corner (0, 0) to the bottom-right corner (m - 1, n - 1)."
+    },
+    {
+      "content": "Consider what it means for the matrix to be 'disconnected'. A matrix is disconnected if there is no valid path from (0, 0) to (m - 1, n - 1). Think about how flipping a cell can affect connectivity."
+    },
+    {
+      "content": "Identify the cells that are critical for maintaining the path. If you can find a cell that, when flipped, would block all paths from (0, 0) to (m - 1, n - 1), you may achieve disconnection."
+    },
+    {
+      "content": "Remember that you can only flip one cell, and it cannot be (0, 0) or (m - 1, n - 1). Focus on flipping cells that are adjacent to the path you found earlier."
+    },
+    {
+      "content": "Think about edge cases where the path is very close to the corners of the matrix or where the path is surrounded by zeros. How would flipping a cell in these scenarios affect connectivity?"
+    },
+    {
+      "content": "When you perform a flip, ensure that you re-check the connectivity of the matrix. You may need to run your DFS/BFS again after each flip to confirm disconnection."
+    },
+    {
+      "content": "Consider special configurations of the matrix, such as all cells being 1 except for one isolated 0. How does this influence your ability to disconnect the matrix?"
+    },
+    {
+      "content": "If you find that after flipping a cell, there still exists a path from (0, 0) to (m - 1, n - 1), then that flip does not help in achieving disconnection. Think about alternative flips."
+    },
+    {
+      "content": "You might want to keep track of the number of paths available after each flip. If you can reduce the number of paths to zero with one flip, then the answer is true."
+    },
+    {
+      "content": "Finally, consider implementing a systematic way to test each cell that could be flipped. For each candidate cell, flip it, check connectivity, and then flip it back."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 1000; 1 <= m * n <= 10^5.",
+    "grid[i][j] is either 0 or 1, and grid[0][0] == grid[m - 1][n - 1] == 1.",
+    "You can flip at most one cell, and the start and end cells cannot be flipped."
+  ]
+}

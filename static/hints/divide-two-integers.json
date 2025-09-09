@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You cannot use multiplication, division, or modulus operators. Think about how you can achieve division using only subtraction and addition."
+    },
+    {
+      "content": "Consider how you might repeatedly subtract the divisor from the dividend until what remains is less than the divisor. Each subtraction can represent a unit of the quotient."
+    },
+    {
+      "content": "Think about the signs of the dividend and divisor. The result should be negative if one of them is negative, and positive if both are negative or both are positive."
+    },
+    {
+      "content": "Before diving into the main logic, handle the edge cases. What happens if the dividend is 0? Or if the divisor is 1 or -1? These cases can simplify your logic."
+    },
+    {
+      "content": "Remember to consider the limits of 32-bit signed integers. If the result exceeds these limits, you need to return the maximum or minimum value accordingly."
+    },
+    {
+      "content": "To optimize your approach, think about how you can use bit manipulation. For example, you can double the divisor (using left shifts) until it exceeds the dividend, allowing you to subtract larger chunks at once."
+    },
+    {
+      "content": "When implementing the subtraction, keep track of how many times you have subtracted the divisor. This count will contribute to your final quotient."
+    },
+    {
+      "content": "As you implement your solution, ensure that you handle the case where the dividend is the minimum integer (-2^31) and the divisor is -1, as this would exceed the positive limit of 32-bit integers."
+    },
+    {
+      "content": "Make sure to adjust your final quotient based on the sign determined earlier. If the signs of the dividend and divisor were different, the quotient should be negative."
+    },
+    {
+      "content": "Finally, ensure that your function returns the correct value based on the computed quotient. If it exceeds the 32-bit limits, return the appropriate boundary value."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: -2^31 <= dividend, divisor <= 2^31 - 1, divisor != 0.",
+    "Return format: Truncate towards zero, return the quotient.",
+    "Edge cases: Handle dividend = 0, divisor = 1 or -1, and the specific case of dividend = -2^31 and divisor = -1."
+  ]
+}

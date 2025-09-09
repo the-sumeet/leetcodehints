@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding that each letter in the string must appear in only one partition. This means if a letter appears multiple times, the partition must include all occurrences of that letter."
+    },
+    {
+      "content": "Consider how you can track the last occurrence of each character in the string. You can use a dictionary or an array to store the index of the last appearance of each character."
+    },
+    {
+      "content": "As you iterate through the string, maintain a variable to track the end of the current partition. This should be initialized to the last occurrence of the character you are currently processing."
+    },
+    {
+      "content": "When you reach the end of a partition (i.e., when your current index equals the end of the partition), you should record the size of that partition. This size is the difference between the current index and the start of the partition."
+    },
+    {
+      "content": "Make sure to reset the start of the partition to the next character after the current partition ends. This will allow you to start forming the next partition correctly."
+    },
+    {
+      "content": "Think about edge cases, such as when the string has all unique characters or when all characters are the same. How would these cases affect your partitioning logic?"
+    },
+    {
+      "content": "Remember that the result should be a list of integers representing the sizes of each partition. Ensure that you are collecting these sizes correctly as you process the string."
+    },
+    {
+      "content": "When implementing your solution, consider how you will handle the iteration through the string. You might want to use a single loop to both determine the last occurrences and to create the partitions."
+    },
+    {
+      "content": "As a final step, ensure that your solution runs efficiently. The time complexity should ideally be O(n), where n is the length of the string, since you want to process each character a limited number of times."
+    },
+    {
+      "content": "To summarize, you will need to track the last occurrence of each character, determine the partition boundaries, and collect the sizes of those partitions. Think about how you can implement this in a clean and efficient manner."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 500",
+    "s consists of lowercase English letters.",
+    "Each letter must appear in at most one part.",
+    "Return a list of integers representing the size of the parts."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a binary tree. Each node has a value and can have up to two children (left and right). Consider how you would represent this tree in code."
+    },
+    {
+      "content": "Think about how to traverse the tree. A depth-first search (DFS) approach could be useful here. You might want to explore both pre-order and post-order traversals."
+    },
+    {
+      "content": "As you traverse the tree, consider how you can uniquely identify each subtree. One way to do this is by creating a string representation of each subtree using its structure and values."
+    },
+    {
+      "content": "Use a hash map (or dictionary) to store the string representations of the subtrees. The key can be the string representation, and the value can be the count of how many times that subtree has been encountered."
+    },
+    {
+      "content": "Remember to only store the root node of the duplicate subtrees. You can check the count in your hash map: if it goes from 1 to 2, that means you found a duplicate."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree has only one node or when all nodes are unique. How will your approach handle these cases?"
+    },
+    {
+      "content": "You need to ensure that the output format is correct. The result should be a list of lists, where each inner list represents a duplicate subtree's root node in the same format as the input."
+    },
+    {
+      "content": "When constructing the string representation of a subtree, include both the node value and the structure of its children. For example, a subtree with root value 2 and two children (3 and 4) could be represented as '2(3)(4)'."
+    },
+    {
+      "content": "As you implement your solution, consider how to handle null values. You might want to represent them in your string format to maintain the structure."
+    },
+    {
+      "content": "Finally, ensure that your function returns only one instance of each duplicate subtree. You can achieve this by checking your hash map before adding a subtree's root to the result list."
+    }
+  ],
+  "questionNotes": [
+    "The number of nodes in the tree will be in the range [1, 5000].",
+    "Node values can range from -200 to 200.",
+    "Return format: a list of lists, where each inner list represents the root of a duplicate subtree.",
+    "Two trees are considered duplicate if they have the same structure and node values."
+  ]
+}

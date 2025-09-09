@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "First, understand what a prime number is. A prime number is a natural number greater than 1 that cannot be formed by multiplying two smaller natural numbers. The first few prime numbers are 2, 3, 5, 7, etc."
+    },
+    {
+      "content": "Consider the edge cases: What happens when n = 0 or n = 1? Both cases should return 0 because there are no prime numbers less than these values."
+    },
+    {
+      "content": "Think about how you can efficiently check for prime numbers. A naive approach would be to check each number individually, but this can be slow for large n. Look for a more efficient algorithm."
+    },
+    {
+      "content": "One efficient algorithm for finding all prime numbers up to a certain number is the Sieve of Eratosthenes. This algorithm allows you to find all prime numbers less than n in a time complexity of O(n log log n)."
+    },
+    {
+      "content": "In the Sieve of Eratosthenes, you create a boolean array where each index represents whether the number is prime. Initially, set all entries to true, except for indices 0 and 1."
+    },
+    {
+      "content": "Next, iterate through the array starting from the first prime number, which is 2. For each prime number found, mark all of its multiples as non-prime (set to false)."
+    },
+    {
+      "content": "After marking the non-prime numbers, you can count the number of true values in your boolean array to get the number of primes less than n."
+    },
+    {
+      "content": "Remember to handle the case where n is less than 2 separately. You should return 0 immediately for n = 0 or n = 1, as discussed earlier."
+    },
+    {
+      "content": "Make sure to consider the constraints given in the problem. The maximum value for n is 5 * 10^6, so your algorithm must be efficient enough to handle this upper limit."
+    },
+    {
+      "content": "Finally, implement the counting of primes after executing the sieve. You can loop through your boolean array and count how many entries are still true, which will give you the desired result."
+    }
+  ],
+  "questionNotes": [
+    "Return the number of prime numbers strictly less than n.",
+    "Constraints: 0 <= n <= 5 * 10^6.",
+    "Edge cases: n = 0 and n = 1 should return 0."
+  ]
+}

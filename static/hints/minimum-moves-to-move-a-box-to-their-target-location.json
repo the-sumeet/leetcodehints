@@ -1,0 +1,54 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid layout. Identify the positions of the player 'S', the box 'B', and the target 'T'. This will help you visualize the problem."
+    },
+    {
+      "content": "Consider the movement rules. The player can only push the box if they are adjacent to it, and they can only move to free cells ('.') or the target ('T')."
+    },
+    {
+      "content": "Think about how to represent the state of the game. You need to track the positions of 'S' and 'B' as you push the box around the grid."
+    },
+    {
+      "content": "Use a breadth-first search (BFS) approach to explore possible box movements. BFS is suitable here because it explores all possible moves level by level, ensuring the shortest path."
+    },
+    {
+      "content": "When pushing the box, remember to update the player's position as well. The player must move to the position next to the box before it can be pushed."
+    },
+    {
+      "content": "Keep track of visited states to avoid cycles. A state can be represented by the positions of 'S' and 'B'. Use a set to store visited states."
+    },
+    {
+      "content": "You may need to implement a helper function to check if a move is valid. This function should ensure that the new position for 'B' is within bounds and not a wall ('#')."
+    },
+    {
+      "content": "Consider edge cases, such as when the box is already at the target position or when there are walls blocking the path to the target."
+    },
+    {
+      "content": "Think about how to prioritize moves. You might want to push the box in a direction that brings it closer to the target, but ensure that the player can still reach the box afterward."
+    },
+    {
+      "content": "Remember that the box can only be pushed into adjacent cells. If the target is not directly reachable from the box's position, you may need to move the player first."
+    },
+    {
+      "content": "As you implement the BFS, consider using a queue to manage the state exploration. Each entry in the queue should include the current positions of 'S' and 'B' along with the number of pushes made."
+    },
+    {
+      "content": "When you reach the target position 'T', return the number of pushes made. If you exhaust all possibilities without reaching 'T', return -1."
+    },
+    {
+      "content": "Make sure to handle the grid boundaries correctly. The player and box should not be able to move outside the grid dimensions."
+    },
+    {
+      "content": "Consider the order of pushes. If there are multiple ways to push the box, explore all options but ensure you are counting the pushes accurately."
+    },
+    {
+      "content": "Finally, review your code for any off-by-one errors, especially when checking adjacent cells or updating positions."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= m, n <= 20",
+    "There is only one 'S', 'B', and 'T' in the grid.",
+    "Return the minimum number of pushes to move the box to the target, or -1 if impossible."
+  ]
+}

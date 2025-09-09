@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by comparing the characters of 'name' and 'typed'. You need to ensure that every character in 'name' appears in 'typed' in the same order. Consider using two pointers: one for 'name' and one for 'typed'."
+    },
+    {
+      "content": "Remember that characters in 'typed' can appear multiple times due to long pressing. When you encounter a character in 'typed', check if it matches the current character in 'name'. If it does, move the pointer for 'name'."
+    },
+    {
+      "content": "If the current character in 'typed' does not match the current character in 'name', check if it's the same character as the previous one in 'typed'. This will help you identify long presses."
+    },
+    {
+      "content": "Make sure to handle cases where 'typed' has extra characters after all characters in 'name' have been processed. If there are still characters left in 'typed', they must all be the last character of 'name'."
+    },
+    {
+      "content": "Consider edge cases where 'name' is longer than 'typed'. In such scenarios, it's impossible for 'typed' to be a valid representation of 'name', so you can return false immediately."
+    },
+    {
+      "content": "Think about how you will exit your loop. You should stop when either pointer reaches the end of its respective string. After exiting, check if both pointers have reached the end."
+    },
+    {
+      "content": "When checking for long presses, ensure that you keep track of how many times a character appears consecutively in 'typed' and compare it with the required count from 'name'."
+    },
+    {
+      "content": "If you find that you have matched all characters in 'name' but still have unmatched characters in 'typed', ensure that these characters are the same as the last character in 'name'."
+    },
+    {
+      "content": "Consider using a while loop to iterate through both strings. This will allow you to handle the matching logic more flexibly as you can control the increments of both pointers based on the characters being compared."
+    },
+    {
+      "content": "Finally, ensure that your function returns true only if both pointers have reached the end of their respective strings. This confirms that all characters in 'name' were matched correctly with 'typed'."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= name.length, typed.length <= 1000",
+    "name and typed consist of only lowercase English letters.",
+    "The order of characters in 'typed' must match the order in 'name'.",
+    "Long presses can only occur on characters that are present in 'name'."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Consider how you would define the cost to connect two points. The problem specifies using the Manhattan distance, which is calculated as |x1 - x2| + |y1 - y2|. Make sure you understand how to compute this distance between any two points."
+    },
+    {
+      "content": "Think about how you can represent the points and the connections between them. You might want to visualize the points on a 2D plane and how they can be connected with edges that have weights (the costs)."
+    },
+    {
+      "content": "Since you need to connect all points with the minimum cost, consider using a graph-based approach. Each point can be a node, and the edges between them can represent the costs based on the Manhattan distance."
+    },
+    {
+      "content": "You might want to explore algorithms that are suitable for finding the minimum spanning tree (MST) of a graph, such as Prim's or Kruskal's algorithm. These algorithms are designed to connect all nodes with the minimum total edge weight."
+    },
+    {
+      "content": "When implementing Prim's algorithm, you can use a priority queue to efficiently get the next point with the smallest edge cost. Remember to keep track of which points have already been connected to avoid cycles."
+    },
+    {
+      "content": "If you choose to use Kruskal's algorithm, you will need to sort all possible edges by their weights and then use a union-find structure to manage the connections. This requires careful handling of edge cases."
+    },
+    {
+      "content": "Pay attention to the constraints of the problem. You are given a maximum of 1000 points, and the coordinates can range from -10^6 to 10^6. This means your algorithm needs to be efficient to handle the upper limits."
+    },
+    {
+      "content": "Consider edge cases such as when there is only one point. In this case, the cost to connect points is zero since no connections are needed. Make sure your solution handles this scenario gracefully."
+    },
+    {
+      "content": "When calculating the total cost, ensure that you are accumulating the costs correctly as you connect each point. This will involve maintaining a running total as you build the MST."
+    },
+    {
+      "content": "Finally, think about how you will return the result. The problem asks for the minimum cost to connect all points, so ensure that your final output reflects this total cost accurately."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= points.length <= 1000",
+    "-10^6 <= x_i, y_i <= 10^6",
+    "All pairs (x_i, y_i) are distinct.",
+    "Return the minimum cost to connect all points."
+  ]
+}

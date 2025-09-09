@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the graph. You have 'n' vertices and an array of edges that define the connections and weights between these vertices. Visualizing the graph can help you grasp how the vertices are connected."
+    },
+    {
+      "content": "Remember that the graph is undirected, meaning that if there is an edge from u to v, you can also traverse from v to u. This property can be useful when exploring paths."
+    },
+    {
+      "content": "The cost of a walk is defined as the bitwise AND of the weights of the edges traversed. This means that if you traverse edges with weights that have a low bitwise AND value, you may end up with a lower cost."
+    },
+    {
+      "content": "Consider how the bitwise AND operation works. For example, if you AND two numbers, the result will only have a bit set if both numbers have that bit set. This means that as you traverse edges, the cost can only decrease or stay the same."
+    },
+    {
+      "content": "When processing queries, you need to determine if a walk exists between the specified vertices. If no edges connect them, the answer is -1. Think about how to efficiently check connectivity."
+    },
+    {
+      "content": "Use a graph traversal technique like Depth-First Search (DFS) or Breadth-First Search (BFS) to explore paths between the vertices in the queries. Keep track of the minimum cost found during the traversal."
+    },
+    {
+      "content": "As you traverse the graph, maintain the current cost of the walk using the bitwise AND operation. Update the cost each time you traverse an edge, and only continue if the new cost is less than or equal to the minimum cost found so far."
+    },
+    {
+      "content": "Consider using a priority queue to help manage the exploration of paths. By always expanding the path with the current lowest cost, you can efficiently find the minimum cost walk."
+    },
+    {
+      "content": "Be mindful of cycles in the graph. Since the walk can revisit vertices and edges, ensure that your algorithm can handle cycles without getting stuck in an infinite loop."
+    },
+    {
+      "content": "Think about edge cases, such as when there are no edges at all or when the graph is disconnected. These scenarios should return -1 for any queries that cannot be satisfied."
+    },
+    {
+      "content": "Remember to handle the input constraints carefully. With up to 100,000 vertices and edges, your solution needs to be efficient in both time and space complexity. Aim for a solution that runs in O(n log n) or O(n) time."
+    },
+    {
+      "content": "When implementing your solution, ensure that you correctly format the output as an array of results corresponding to each query. Each result should be the minimum cost found or -1 if no valid walk exists."
+    },
+    {
+      "content": "Consider preprocessing the graph to create an adjacency list or matrix that allows you to quickly access the weights of edges between vertices. This can speed up your traversal."
+    },
+    {
+      "content": "As you implement the graph traversal, remember to check if you've reached the target vertex for each query. If you do reach it, compare the current cost with the minimum cost found so far."
+    },
+    {
+      "content": "Finally, ensure you test your solution with various edge cases, including graphs with multiple edges between nodes, graphs with weights of 0, and completely disconnected graphs."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n <= 10^5, 0 <= edges.length <= 10^5, 0 <= w_i <= 10^5, 1 <= query.length <= 10^5.",
+    "Edges are undirected, meaning if there's an edge from u to v, you can also traverse from v to u.",
+    "The cost is defined as the bitwise AND of the weights of the edges traversed during the walk.",
+    "If no walk exists between the queried vertices, return -1.",
+    "Output should be an array where each element corresponds to the result of a query."
+  ]
+}

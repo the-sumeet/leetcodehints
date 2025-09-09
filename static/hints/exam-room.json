@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to simulate an exam room with `n` seats, where students choose seats based on maximizing their distance from others."
+    },
+    {
+      "content": "Consider how to keep track of occupied seats. A simple list or set can be used to store the indices of the seats that are currently occupied."
+    },
+    {
+      "content": "When a student enters, you need to find the seat that maximizes the distance to the nearest occupied seat. Think about how you can calculate this distance efficiently."
+    },
+    {
+      "content": "To find the optimal seat, you might want to iterate through the occupied seats and calculate the distances between them and the empty seats. Don't forget to check the edges (seat 0 and seat n-1)."
+    },
+    {
+      "content": "Remember to handle the case where no students are in the room. In that case, the first student should always sit in seat 0."
+    },
+    {
+      "content": "When a student leaves, you need to remove their seat from your data structure. Make sure your implementation allows for efficient addition and removal of seats."
+    },
+    {
+      "content": "Think about edge cases, such as when there is only one seat or when students leave in such a way that multiple seats become available. How will this affect future seat selections?"
+    },
+    {
+      "content": "Consider the scenario where multiple seats are equidistant from the nearest occupied seat. You should always choose the seat with the lowest index in such cases."
+    },
+    {
+      "content": "You may want to create a helper function to calculate the maximum distance for a given seat. This function can help you determine the best seat to choose."
+    },
+    {
+      "content": "Finally, focus on implementing the `seat` method. You will need to return the index of the chosen seat and update your data structure accordingly. Make sure to test your implementation with various scenarios."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^9, at most 10^4 calls to seat and leave.",
+    "Indexing: Seats are labeled from 0 to n-1.",
+    "Uniqueness: Each seat is uniquely identified by its index.",
+    "Tie-breaking: If multiple seats are equidistant, choose the one with the lowest index.",
+    "Return format: The seat index for `seat()` and nothing for `leave()`."
+  ]
+}

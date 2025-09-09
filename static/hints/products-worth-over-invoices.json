@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input data. You have two main components: `Product` and `Invoice`. Each product has a unique `product_id`, and each invoice references a `product_id`."
+    },
+    {
+      "content": "Consider how you will access the product names based on their IDs. You might want to create a mapping from `product_id` to `name` for easy lookup."
+    },
+    {
+      "content": "Next, focus on the `Invoice` data. Each invoice contains several fields, but the most relevant for calculating worth are `paid`, `canceled`, and `refunded`. Think about how these fields will contribute to the total worth of each product."
+    },
+    {
+      "content": "Remember that the worth of a product can be calculated using the invoices linked to that product. Specifically, you will need to sum the `paid` amounts while considering the `canceled` and `refunded` amounts as deductions."
+    },
+    {
+      "content": "As you compute the worth, consider how to handle invoices where the `canceled` or `refunded` amounts might affect the `paid` amount. Ensure you are only counting the amounts that contribute positively to the worth."
+    },
+    {
+      "content": "Think about how to initialize a data structure to store the worth of each product. A dictionary or an array could work well, where the keys or indices correspond to `product_id`."
+    },
+    {
+      "content": "Iterate through the `Invoice` rows and for each invoice, check the `product_id`. Update the worth of the corresponding product using the formula: `worth += paid - canceled - refunded`."
+    },
+    {
+      "content": "After processing all invoices, you will have the total worth for each product. Make sure to handle cases where a product might not have any invoices at all."
+    },
+    {
+      "content": "Finally, think about the output format. You may need to return a list of products with their respective worths, ensuring that the order of products matches the original `Product` list."
+    },
+    {
+      "content": "Before finalizing your solution, consider edge cases such as invoices with zero amounts or products that do not appear in any invoices. How will these cases affect your calculations?"
+    }
+  ],
+  "questionNotes": [
+    "Each product has a unique `product_id`.",
+    "Invoices may reference products multiple times.",
+    "The worth is calculated as: worth = paid - canceled - refunded.",
+    "Handle cases where products have no associated invoices.",
+    "Return format should match the order of the `Product` list."
+  ]
+}

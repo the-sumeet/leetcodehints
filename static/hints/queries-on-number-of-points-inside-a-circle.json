@@ -1,0 +1,45 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to determine if a point is inside a circle. A point (x, y) is inside a circle centered at (cx, cy) with radius r if the distance from the point to the center is less than or equal to r. This can be checked using the formula: (x - cx)² + (y - cy)² <= r²."
+    },
+    {
+      "content": "Consider the input format carefully. You have an array of points and an array of queries. Each point is represented as [x, y], and each query as [cx, cy, r]. Make sure you can access these elements correctly in your code."
+    },
+    {
+      "content": "Before diving into the solution, think about how to iterate through the points for each query. A nested loop might be the most straightforward approach where you check each point against each query."
+    },
+    {
+      "content": "While implementing the nested loop, remember that you need to count how many points satisfy the condition for being inside the circle for each query. Initialize a counter for each query to keep track of this count."
+    },
+    {
+      "content": "Consider edge cases where multiple points have the same coordinates. Ensure your counting mechanism can handle this without missing any points."
+    },
+    {
+      "content": "Think about the performance of your current approach. The naive solution will have a time complexity of O(m * n), where m is the number of queries and n is the number of points. Can you reduce this complexity?"
+    },
+    {
+      "content": "To improve efficiency, consider spatial data structures like a grid or a quadtree. This could help you quickly find points that are close to the query circles instead of checking every point."
+    },
+    {
+      "content": "You might also consider preprocessing the points into a structure that allows for faster range queries. For example, you could create a mapping of points based on their coordinates."
+    },
+    {
+      "content": "When implementing the optimized solution, ensure that you still account for points that lie exactly on the border of the circle, as they should be included in the count."
+    },
+    {
+      "content": "Finally, after calculating the counts for each query, make sure to return the results in the correct format as specified in the problem statement: an array of counts corresponding to each query."
+    }
+  ],
+  "questionNotes": [
+    "1 <= points.length <= 500",
+    "points[i].length == 2",
+    "0 <= xi, yi <= 500",
+    "1 <= queries.length <= 500",
+    "queries[j].length == 3",
+    "0 <= xj, yj <= 500",
+    "1 <= rj <= 500",
+    "All coordinates are integers.",
+    "Points on the border of the circle are considered inside."
+  ]
+}

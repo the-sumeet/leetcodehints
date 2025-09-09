@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by defining the `Spreadsheet` class. Remember that it should hold a grid with 26 columns and a specified number of rows. You can use a 2D array or a dictionary to represent the cells."
+    },
+    {
+      "content": "For the `setCell` method, you need to convert the cell reference (like 'A1') into appropriate row and column indices. The column can be derived from the ASCII value of the character, and the row will be the integer part minus one (to account for 0-indexing)."
+    },
+    {
+      "content": "In the `resetCell` method, ensure that you set the specified cell's value back to 0. This means you will need to access the same indices you calculated in `setCell`."
+    },
+    {
+      "content": "When implementing `getValue`, remember that the formula will always be in the format '=X+Y'. You should first parse this string to extract X and Y, which can be either cell references or integers."
+    },
+    {
+      "content": "To handle cell references in `getValue`, create a helper function that checks if the input is a cell reference or a number. If it's a cell reference, convert it to the corresponding value using the same logic as in `setCell`."
+    },
+    {
+      "content": "Be cautious about cells that have not been set. If a cell is referenced but hasn't been assigned a value, its value should default to 0. This applies to both `setCell` and `getValue`."
+    },
+    {
+      "content": "Consider edge cases where the formula might reference cells that are outside the initialized range. Ensure your implementation gracefully handles such cases without throwing errors."
+    },
+    {
+      "content": "In `getValue`, after parsing the formula, you will need to compute the sum of the two parts. If both parts are cell references, make sure to fetch their values correctly."
+    },
+    {
+      "content": "Keep in mind the constraints of the problem, such as the maximum number of rows (up to 1000) and the range of values (0 to 100000). This will help you optimize your data structure if needed."
+    },
+    {
+      "content": "Finally, ensure that your class methods are efficient, especially since you may have to handle up to 10,000 calls in total. Think about how to minimize repeated calculations or lookups."
+    }
+  ],
+  "questionNotes": [
+    "The spreadsheet has 26 columns labeled from 'A' to 'Z'.",
+    "Rows are 1-indexed, meaning 'A1' refers to the first row.",
+    "If a cell has not been set, its value defaults to 0.",
+    "Formulas are always in the format '=X+Y', where X and Y can be cell references or integers.",
+    "Constraints: 1 <= rows <= 1000, 0 <= value <= 100000, and at most 10,000 total method calls."
+  ]
+}

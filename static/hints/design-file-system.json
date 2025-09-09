@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic structure of a file system. A file system typically consists of directories and files, where directories can contain files and other directories."
+    },
+    {
+      "content": "Consider how to represent the file system in memory. A tree structure is a good choice, where each node represents a directory and can have children that represent subdirectories or files."
+    },
+    {
+      "content": "The `createPath` function needs to check if the specified path can be created. This involves verifying that all parent directories exist before creating a new directory."
+    },
+    {
+      "content": "When implementing `createPath`, remember to handle edge cases, such as trying to create a path that does not follow the correct structure (e.g., missing parent directories)."
+    },
+    {
+      "content": "The `get` function should return the content of a file or directory. Think about how you will traverse your tree structure to find the correct node based on the given path."
+    },
+    {
+      "content": "Make sure to handle invalid paths in both `createPath` and `get`. For example, if a user tries to access a path that doesn't exist, your implementation should return an appropriate error or null value."
+    },
+    {
+      "content": "Consider how to store the depth of each directory. This will help you enforce the rule that a new directory can only be created if its parent directory exists and is at least a certain depth."
+    },
+    {
+      "content": "When creating a new directory, you might want to store additional information, such as the depth or whether it is a file or directory. Think about how this information will be structured in your nodes."
+    },
+    {
+      "content": "You may want to implement a helper function to split a path into its components. This will simplify checking if each part of the path exists as you traverse your file system tree."
+    },
+    {
+      "content": "Finally, ensure that your `createPath` method returns a boolean indicating success or failure, and that your `get` method returns the correct value or null if the path is invalid. Consider edge cases like creating a path that already exists."
+    }
+  ],
+  "questionNotes": [
+    "The path must be absolute and start with a '/'.",
+    "The depth of the parent directory must be at least the specified depth for `createPath` to succeed.",
+    "If the path already exists, `createPath` should return false.",
+    "The `get` method should return null for non-existent paths."
+  ]
+}

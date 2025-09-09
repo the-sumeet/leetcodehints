@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem: you need to assign bikes to people such that the total distance traveled is minimized. Think about how you can calculate the distance between each person and each bike."
+    },
+    {
+      "content": "Consider how to represent the distance calculation. You can use the Manhattan distance formula: `distance = |x1 - x2| + |y1 - y2|` for points (x1, y1) and (x2, y2). This will help you compute the distances efficiently."
+    },
+    {
+      "content": "Remember that each bike can only be assigned to one person and vice versa. Think about how you can keep track of which bikes are available as you assign them."
+    },
+    {
+      "content": "Try to visualize the problem with a small example. For instance, with two people and two bikes, what are the possible assignments? How does the distance change with each assignment?"
+    },
+    {
+      "content": "You might want to use a recursive backtracking approach to explore all possible assignments of bikes to people. This will allow you to evaluate the total distance for each configuration."
+    },
+    {
+      "content": "As you implement the backtracking, consider using a variable to keep track of the minimum distance found so far. If at any point the current distance exceeds this minimum, you can prune that path."
+    },
+    {
+      "content": "Think about edge cases, such as when there are more bikes than people or vice versa. How will your algorithm handle these situations? Can you assume that the input will always be valid?"
+    },
+    {
+      "content": "You may also want to consider using memoization to store results of previously computed distances for specific assignments to avoid redundant calculations."
+    },
+    {
+      "content": "To optimize your solution, consider using bit masking to represent the availability of bikes. This can help you efficiently manage which bikes are still available for assignment."
+    },
+    {
+      "content": "Finally, ensure your function returns the minimum distance as an integer. You should also handle cases where no assignments are possible, although the problem guarantees that there will be a valid configuration."
+    }
+  ],
+  "questionNotes": [
+    "The input consists of two lists: one for people and one for bikes, each containing coordinates.",
+    "You must minimize the total distance traveled by all assigned bikes.",
+    "Each bike can only be assigned to one person, and each person can only have one bike.",
+    "Consider edge cases like unequal numbers of bikes and people, and ensure your solution is efficient."
+  ]
+}

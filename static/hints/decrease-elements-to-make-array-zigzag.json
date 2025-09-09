@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a zigzag array. An array is zigzag if it alternates between being greater and less than its neighbors. This means you need to check pairs of elements in the array."
+    },
+    {
+      "content": "Consider the two possible patterns for a zigzag array: one where even-indexed elements are greater than their neighbors and another where odd-indexed elements are greater. You will need to evaluate both patterns."
+    },
+    {
+      "content": "For the first pattern (even-indexed greater), check every even index `i` in the array. For each `i`, ensure that `nums[i]` is greater than its neighbors `nums[i-1]` and `nums[i+1]` (make sure to handle boundary cases)."
+    },
+    {
+      "content": "When checking the conditions for a zigzag pattern, if an element does not satisfy the condition, calculate how much you need to decrease it by. This is the difference between the current element and the required value to satisfy the zigzag condition."
+    },
+    {
+      "content": "Remember to handle edge cases, especially for the first and last elements of the array. For example, `nums[0]` only has one neighbor, and `nums[n-1]` also only has one neighbor."
+    },
+    {
+      "content": "After calculating the required decreases for the first zigzag pattern, repeat the process for the second pattern (odd-indexed greater). This will involve similar checks, but focusing on odd indices."
+    },
+    {
+      "content": "Make sure to sum up the total moves required for both patterns. You will eventually want to return the minimum of these two sums as your result."
+    },
+    {
+      "content": "Consider edge cases such as arrays with only one element or arrays where all elements are the same. How would your logic handle these cases?"
+    },
+    {
+      "content": "As you implement your solution, keep track of the total moves required in a variable. You can initialize it to zero and increment it as you determine how much to decrease each element."
+    },
+    {
+      "content": "Finally, ensure your function returns the minimum number of moves required to transform the input array into a zigzag array. You can do this by comparing the total moves from both patterns."
+    }
+  ],
+  "questionNotes": [
+    "1 <= nums.length <= 1000",
+    "1 <= nums[i] <= 1000",
+    "Consider both zigzag patterns: even-indexed greater and odd-indexed greater.",
+    "Handle edge cases for the first and last elements of the array.",
+    "Return the minimum number of moves required."
+  ]
+}

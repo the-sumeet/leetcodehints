@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the two trees. Remember that trees are acyclic connected graphs, and they have a specific number of edges (n-1 for n nodes). Visualize the trees using the given edges."
+    },
+    {
+      "content": "Consider how to determine if one node is 'target' to another. A node u is target to v if the path between them has an even number of edges. This means you need to think about the depth of nodes in the trees."
+    },
+    {
+      "content": "You need to compute the depth of each node in both trees. This will help you determine the parity (even or odd) of the distance between nodes when you connect them."
+    },
+    {
+      "content": "Use a DFS or BFS approach to compute the depth of each node in both trees. Store the depth information in an array for quick access later."
+    },
+    {
+      "content": "Once you have the depths, categorize the nodes in the second tree based on their depth parity (even or odd). This will help you quickly count how many nodes can be targets based on the depth of a node in the first tree."
+    },
+    {
+      "content": "For each node in the first tree, check its depth. Depending on whether it's even or odd, you will connect it to nodes in the second tree that match the required parity."
+    },
+    {
+      "content": "Count the number of nodes in the second tree that are even and odd. This will allow you to quickly compute the maximum number of target nodes when you connect a node from the first tree."
+    },
+    {
+      "content": "Remember to handle the case where you connect a node from the first tree to itself in the second tree. This will always count as a target node."
+    },
+    {
+      "content": "As you iterate through each node in the first tree, calculate the total number of target nodes based on the parity of its depth and the counts of even and odd nodes in the second tree."
+    },
+    {
+      "content": "Be cautious about the constraints: n and m can be as large as 100,000. Ensure your solution is efficient and avoids excessive computations."
+    },
+    {
+      "content": "Think about edge cases, such as when both trees have only two nodes. How would the target counts differ in this scenario?"
+    },
+    {
+      "content": "When constructing your final answer array, ensure that you are correctly indexing the results based on the node labels from the first tree."
+    },
+    {
+      "content": "Consider the implications of connecting nodes in terms of the maximum possible targets. Each connection should be treated independently."
+    },
+    {
+      "content": "Make sure to test your solution with various configurations of trees to ensure that your logic holds for all edge cases."
+    },
+    {
+      "content": "Finally, review your logic to ensure that you are correctly counting the number of target nodes for each node in the first tree before returning the result."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n, m <= 100000; edges1.length == n - 1; edges2.length == m - 1.",
+    "A node is always target to itself.",
+    "Return an array of n integers, where answer[i] is the maximum possible number of nodes that are target to node i of the first tree.",
+    "Consider the parity of depths when determining target nodes.",
+    "Ensure your solution handles large inputs efficiently."
+  ]
+}

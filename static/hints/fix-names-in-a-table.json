@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirements for transforming the names. You need to ensure that only the first character of each name is uppercase, while the rest are in lowercase. Think about how string manipulation functions can help achieve this."
+    },
+    {
+      "content": "Consider the SQL functions that can change the case of characters in a string. In many SQL dialects, there are functions like `UPPER()` and `LOWER()` that can be used to manipulate string cases."
+    },
+    {
+      "content": "You will need to extract the first character of each name and convert it to uppercase. You can use string slicing or specific functions to achieve this. For example, in many SQL dialects, you can use `SUBSTRING()` or similar functions."
+    },
+    {
+      "content": "After converting the first character to uppercase, remember to convert the rest of the characters in the name to lowercase. This will ensure that names like 'aLice' become 'Alice' correctly."
+    },
+    {
+      "content": "Think about how to combine these string manipulations into a single SQL expression. You might need to concatenate the uppercase first character with the lowercase remainder of the name."
+    },
+    {
+      "content": "Don't forget to order the results by `user_id` as specified in the problem statement. This can be done using the `ORDER BY` clause in your SQL query."
+    },
+    {
+      "content": "Consider edge cases where the name might already be in the correct format or contain special characters. Ensure your solution handles these gracefully."
+    },
+    {
+      "content": "Make sure to check if there are any NULL values in the `name` column. Decide how you want to handle those cases in your output."
+    },
+    {
+      "content": "As you construct your SQL query, remember to select both `user_id` and the transformed `name`. Ensure that the output format matches the expected result exactly."
+    },
+    {
+      "content": "Your final SQL query should look something like this: SELECT user_id, <your_transformed_name_expression> FROM Users ORDER BY user_id. Fill in the transformation logic you have developed in the previous hints."
+    }
+  ],
+  "questionNotes": [
+    "The `user_id` is the primary key, meaning it is unique for each user.",
+    "The output must be ordered by `user_id`.",
+    "The name transformation must ensure only the first character is uppercase and the rest are lowercase.",
+    "Handle potential NULL values in the `name` column appropriately."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation you can perform on the array. You can change any element at index `i` to any value in the range `[nums[i] - k, nums[i] + k]`. This means you can increase or decrease the value significantly depending on `k`."
+    },
+    {
+      "content": "Consider the impact of the operation on the potential subsequences of equal elements. The goal is to maximize the length of the longest subsequence of equal elements after performing the allowed operations."
+    },
+    {
+      "content": "Think about how many numbers can be transformed to a specific target value. For a given number `x`, you can transform any `nums[i]` to `x` if `x` falls within the range `[nums[i] - k, nums[i] + k]`."
+    },
+    {
+      "content": "To find the maximum beauty, you might want to check for each unique number in `nums` how many elements can be transformed to that number. This requires iterating through the array and checking the transformation conditions."
+    },
+    {
+      "content": "Remember that the beauty is defined as the length of the longest subsequence of equal elements. So, for each target number, count how many elements can be transformed to that number and keep track of the maximum count."
+    },
+    {
+      "content": "Consider using a frequency map to count how many times each number appears in the original array. This will help you quickly assess how many numbers can be transformed to each target value."
+    },
+    {
+      "content": "When checking if a number can be transformed to a target value, use the condition: `target - k <= nums[i] <= target + k`. This will help you determine if `nums[i]` can be changed to the target."
+    },
+    {
+      "content": "You might want to iterate through all possible target values from the minimum to the maximum of `nums` adjusted by `k`. This will ensure you consider all potential transformations."
+    },
+    {
+      "content": "As you iterate through each potential target value, maintain a count of how many elements can be transformed to that value. Keep updating your maximum beauty count based on these transformations."
+    },
+    {
+      "content": "Finally, ensure that you are considering edge cases, such as when `k` is 0, where no transformations can be made, and the beauty is simply the length of the longest subsequence of equal elements in the original array."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "0 <= nums[i], k <= 10^5",
+    "The operation can be performed on each index only once.",
+    "A subsequence can be formed by deleting some elements without changing the order.",
+    "Return the maximum possible beauty of the array after applying the operations."
+  ]
+}

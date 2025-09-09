@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the plus sign. A plus sign of order k has a center at grid[r][c] and extends k-1 units in each of the four cardinal directions (up, down, left, right)."
+    },
+    {
+      "content": "Consider how to represent the grid. You can use a 2D list in Python initialized with 1s, and then set the indices from the 'mines' array to 0 to represent the blocked cells."
+    },
+    {
+      "content": "Think about how to check for the arms of the plus sign. For a center at (r, c), you need to count how far you can go in each direction until you hit a 0 or the edge of the grid."
+    },
+    {
+      "content": "You can create four separate arrays to store the maximum length of 1s in each direction (up, down, left, right) for every cell in the grid. This will help in quickly determining the order of the plus sign centered at any cell."
+    },
+    {
+      "content": "Remember to handle edge cases where the grid size is small (like n=1). If the only cell is a mine, the answer should be 0."
+    },
+    {
+      "content": "When calculating the lengths of the arms, ensure you do not go out of bounds of the grid. Use conditions to check if the next cell is within the grid limits."
+    },
+    {
+      "content": "After filling the four direction arrays, the order of the plus sign at each cell can be determined by taking the minimum of the lengths from the four directions."
+    },
+    {
+      "content": "Iterate through the grid to find the maximum order of the plus sign. Keep track of the largest value found during this iteration."
+    },
+    {
+      "content": "Consider the time complexity of your approach. You may need to ensure that your solution is efficient enough to handle the upper limits of n and the number of mines."
+    },
+    {
+      "content": "As a final step, ensure your function returns the maximum order found. If no plus sign can be formed, remember to return 0."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 500, 1 <= mines.length <= 5000, 0 <= x_i, y_i < n",
+    "Indices in 'mines' are unique, meaning no duplicate mines.",
+    "Return 0 if no plus sign can be formed.",
+    "The order of a plus sign is defined by the length of its arms."
+  ]
+}

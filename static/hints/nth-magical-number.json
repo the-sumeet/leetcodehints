@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "First, understand what a magical number is. A number is magical if it is divisible by either `a` or `b`. For example, if `a = 2` and `b = 3`, the magical numbers start from 2, 3, 4, 6, 8, 9, and so on."
+    },
+    {
+      "content": "Consider how to generate magical numbers. You could iterate through numbers and check divisibility, but this will be inefficient for large `n`. Think about a more mathematical approach."
+    },
+    {
+      "content": "Notice that magical numbers can be generated using multiples of `a` and `b`. The `k`-th magical number can be represented as either `k * a` or `k * b` depending on the order."
+    },
+    {
+      "content": "Instead of generating magical numbers directly, think about how to count them. For any integer `x`, how many magical numbers are there less than or equal to `x`?"
+    },
+    {
+      "content": "To count magical numbers less than or equal to `x`, use the formula: `count = (x // a) + (x // b) - (x // lcm(a, b))`. This accounts for overlaps in multiples of `a` and `b`."
+    },
+    {
+      "content": "The least common multiple (LCM) is crucial here. Make sure you know how to compute LCM using the formula: `lcm(a, b) = (a * b) // gcd(a, b)`."
+    },
+    {
+      "content": "Now, think about using binary search to find the `n`-th magical number. The search space can be between `1` and `n * min(a, b)` since the `n`-th magical number cannot exceed this value."
+    },
+    {
+      "content": "Set up your binary search with `low = 1` and `high = n * min(a, b)`. In each iteration, calculate the mid-point and count the magical numbers up to that mid-point."
+    },
+    {
+      "content": "After calculating the count of magical numbers at `mid`, compare it with `n`. If the count is less than `n`, move your search to the right half; otherwise, search the left half."
+    },
+    {
+      "content": "Remember to handle large numbers carefully. Since the result can be very large, ensure you take modulo `10^9 + 7` at the end of your calculations."
+    },
+    {
+      "content": "When you find the `n`-th magical number, make sure to return it in the correct format as specified in the problem statement."
+    },
+    {
+      "content": "Consider edge cases such as when `a` and `b` are equal. In this case, all magical numbers will be multiples of that number."
+    },
+    {
+      "content": "Also, think about the performance of your solution. The binary search approach should give you a logarithmic number of checks, making it efficient even for large `n`."
+    },
+    {
+      "content": "As a final step, ensure that your implementation of the binary search correctly handles the boundaries and correctly calculates the count of magical numbers."
+    },
+    {
+      "content": "You are very close! Remember to implement the final check after your binary search loop to ensure you return the correct magical number modulo `10^9 + 7`."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^9, 2 <= a, b <= 4 * 10^4.",
+    "Return the result modulo 10^9 + 7.",
+    "Magical numbers are defined as numbers divisible by either a or b.",
+    "Ensure to handle large numbers and potential overlaps in multiples."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "To understand trailing zeroes in a number, remember that a trailing zero is produced by the factor 10. Since 10 = 2 * 5, we need to count how many pairs of these factors exist in the factorial."
+    },
+    {
+      "content": "In any factorial, the number of factors of 2 will always be greater than the number of factors of 5. Therefore, the number of trailing zeroes is determined by the number of times 5 is a factor in the numbers from 1 to n."
+    },
+    {
+      "content": "For a given n, to find how many times 5 is a factor, consider the multiples of 5: 5, 10, 15, etc. Each of these contributes at least one factor of 5."
+    },
+    {
+      "content": "However, numbers like 25 contribute an extra factor of 5 (since 25 = 5 * 5). Therefore, you need to account for higher powers of 5 as well."
+    },
+    {
+      "content": "To count the total number of trailing zeroes in n!, you can use the formula: count = n // 5 + n // 25 + n // 125 + ... until n // 5^k is 0."
+    },
+    {
+      "content": "Make sure to use integer division (//) when calculating how many multiples of 5, 25, etc., are present in the range from 1 to n."
+    },
+    {
+      "content": "Consider edge cases. For example, if n = 0, the factorial is 1, which has 0 trailing zeroes. Make sure your function handles this case."
+    },
+    {
+      "content": "The constraints state that 0 <= n <= 10^4. Ensure your solution is efficient enough to handle the upper limit of this range."
+    },
+    {
+      "content": "Think about the time complexity of your approach. The formula you derived will run in logarithmic time relative to n because you are dividing n by increasing powers of 5."
+    },
+    {
+      "content": "Your final implementation should return the total count of trailing zeroes as an integer. Ensure that your function is correctly handling all cases and returning the expected output."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 0 <= n <= 10^4",
+    "Return type: Integer representing the number of trailing zeroes in n!",
+    "Edge case: n = 0 should return 0."
+  ]
+}

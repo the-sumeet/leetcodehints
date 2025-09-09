@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to rotate the cuboids. Each cuboid can be represented in three different orientations by considering all permutations of its dimensions. For example, a cuboid with dimensions [w, l, h] can be represented as [w, l, h], [w, h, l], and [l, h, w]."
+    },
+    {
+      "content": "Next, think about how to determine if one cuboid can be placed on top of another. You need to check if the width, length, and height of the top cuboid are all less than or equal to those of the bottom cuboid."
+    },
+    {
+      "content": "Consider sorting the cuboids. If you sort them by width, length, and height, it may simplify the process of checking which cuboid can be placed on another. Sorting can help in reducing the number of comparisons you need to make."
+    },
+    {
+      "content": "When sorting, remember to sort by all three dimensions. A good approach is to sort by width first, then by length, and finally by height. This way, you can ensure that each cuboid is placed in a valid order."
+    },
+    {
+      "content": "After sorting, you can use dynamic programming to compute the maximum height of the stacked cuboids. Create an array where each index represents the maximum height achievable with the cuboid at that index at the base."
+    },
+    {
+      "content": "Initialize your DP array with the heights of the cuboids themselves. This means that if a cuboid is placed alone, the height of the stack is just its own height."
+    },
+    {
+      "content": "For each cuboid, iterate through all previous cuboids to check if the current cuboid can be placed on any of them. If it can, update the DP array to reflect the maximum height possible."
+    },
+    {
+      "content": "When checking if cuboid i can be placed on cuboid j, ensure to check the dimensions after sorting. This will ensure that you are comparing the correct dimensions."
+    },
+    {
+      "content": "Keep track of the maximum height found in the DP array. After processing all cuboids, the maximum value in the DP array will be your answer."
+    },
+    {
+      "content": "Consider edge cases where all cuboids are of the same dimensions. In this case, the maximum height will be the height of one cuboid multiplied by the number of cuboids."
+    },
+    {
+      "content": "Think about how to handle the input constraints. You can assume that the input will always meet the requirements, but ensure your solution can handle the maximum number of cuboids efficiently."
+    },
+    {
+      "content": "Remember that the dimensions of the cuboids are limited to a maximum of 100. This means that your solution should be efficient enough to handle the worst-case scenario within reasonable time limits."
+    },
+    {
+      "content": "As you implement the solution, consider using a nested loop for the DP updates. The outer loop will iterate through each cuboid, while the inner loop checks all previous cuboids for stacking possibilities."
+    },
+    {
+      "content": "Finally, ensure your return statement correctly outputs the maximum height. This should be the maximum value found in your DP array after processing all cuboids."
+    },
+    {
+      "content": "Your final implementation should clearly define the sorting and dynamic programming steps. Make sure to test with various inputs, including edge cases, to verify correctness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 100, 1 <= width_i, length_i, height_i <= 100.",
+    "Cuboids can be rotated, allowing any dimension to be width, length, or height.",
+    "You must return the maximum height of the stacked cuboids.",
+    "Ensure to handle cases where cuboids have the same dimensions correctly."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input matrix. Each element `isConnected[i][j]` indicates whether city `i` is directly connected to city `j`. Pay attention to the fact that `isConnected[i][i]` is always 1, meaning each city is connected to itself."
+    },
+    {
+      "content": "Think about how you can represent the connections between cities. You can visualize the cities and their connections as a graph where cities are nodes and connections are edges. This can help you identify groups of connected cities."
+    },
+    {
+      "content": "Consider how you might traverse the graph to find all connected components. Depth-first search (DFS) or breadth-first search (BFS) are common techniques for exploring all nodes in a graph. You can start from any unvisited city and mark all reachable cities."
+    },
+    {
+      "content": "When you find a city that has not been visited, this city could represent a new province. After marking all cities connected to it, you can increment your province count. Think about how you will keep track of visited cities."
+    },
+    {
+      "content": "As you implement your traversal, ensure you handle the adjacency correctly. For each city, you need to check all other cities to see if they are connected. This means iterating through the row of the `isConnected` matrix corresponding to the current city."
+    },
+    {
+      "content": "Be mindful of edge cases. For example, if there is only one city, the output should be 1, since that city is its own province. Also, consider scenarios where all cities are connected versus where none are connected."
+    },
+    {
+      "content": "Remember that the matrix is symmetric, meaning if city `i` is connected to city `j`, then city `j` is also connected to city `i`. This property can simplify your checks when traversing the graph."
+    },
+    {
+      "content": "As you implement the DFS or BFS, think about how you will mark cities as visited. You could use a separate boolean array to keep track of which cities have been explored."
+    },
+    {
+      "content": "After implementing the traversal, ensure that you correctly count the number of distinct provinces. Each time you start a new traversal from an unvisited city, that indicates a new province."
+    },
+    {
+      "content": "Finally, review your implementation to ensure it adheres to the constraints provided. The maximum size of `n` is 200, so your solution should efficiently handle the worst-case scenario of a full matrix."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 200",
+    "The matrix is symmetric: isConnected[i][j] == isConnected[j][i]",
+    "Diagonal elements are always 1: isConnected[i][i] == 1",
+    "Output should be the total number of provinces (connected components)."
+  ]
+}

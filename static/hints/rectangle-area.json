@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by calculating the area of each rectangle individually. The area of a rectangle can be computed using the formula: Area = (width) * (height). Remember that width is calculated as (top-right x - bottom-left x) and height as (top-right y - bottom-left y)."
+    },
+    {
+      "content": "Consider how to calculate the width and height for both rectangles. For rectangle A, the width would be `ax2 - ax1` and the height would be `ay2 - ay1`. Similarly, calculate the width and height for rectangle B."
+    },
+    {
+      "content": "After calculating the areas of both rectangles, think about how they might overlap. If the rectangles do not overlap, the total area is simply the sum of the two areas."
+    },
+    {
+      "content": "To determine if the rectangles overlap, you need to find the overlapping region. Check the maximum of the left edges and the minimum of the right edges for both rectangles to find the overlap along the x-axis."
+    },
+    {
+      "content": "When checking for overlap, also consider the y-axis. Use the same approach: find the maximum of the bottom edges and the minimum of the top edges to determine the overlap along the y-axis."
+    },
+    {
+      "content": "If there is an overlap in both x and y dimensions, calculate the width and height of the overlapping area. The width of the overlap can be found as `max(0, overlap_right - overlap_left)` and the height as `max(0, overlap_top - overlap_bottom)`."
+    },
+    {
+      "content": "Remember to handle cases where rectangles are adjacent but do not overlap. In such cases, the overlap width or height will be zero, leading to an area of zero for the overlap."
+    },
+    {
+      "content": "Once you have the area of the overlapping region (if any), subtract it from the total area of the two rectangles. The formula would look something like this: Total Area = AreaA + AreaB - AreaOverlap."
+    },
+    {
+      "content": "Make sure to consider edge cases such as when one rectangle is completely inside the other or when they share a boundary. These cases will affect your calculations for the overlapping area."
+    },
+    {
+      "content": "Finally, ensure that your function returns the total area as an integer, as the problem statement indicates. You may need to cast your final area calculation to an integer if it is not already."
+    }
+  ],
+  "questionNotes": [
+    "The rectangles are defined by their bottom-left and top-right corners.",
+    "The coordinates are guaranteed to be within the range of -10^4 to 10^4.",
+    "Consider cases where rectangles may touch but not overlap.",
+    "Return the total area as an integer."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the grid. You have a 2D matrix, which means you will be working with two indices: one for the rows (i) and one for the columns (j). Make sure to keep track of the dimensions of the grid."
+    },
+    {
+      "content": "Remember that you need to check two conditions for each cell: equality with the cell below and inequality with the cell to the right. Think about how you can iterate through the grid to access these neighboring cells."
+    },
+    {
+      "content": "When checking the cell below (grid[i + 1][j]), ensure that you do not go out of bounds. This means you should only check this condition if i is less than m - 1 (where m is the number of rows)."
+    },
+    {
+      "content": "For the condition checking the cell to the right (grid[i][j + 1]), similarly, ensure that j is less than n - 1 (where n is the number of columns) before accessing that cell."
+    },
+    {
+      "content": "You can use a nested loop to iterate through each cell in the grid. The outer loop can iterate through the rows, while the inner loop can iterate through the columns."
+    },
+    {
+      "content": "As you iterate through the grid, use a flag or a return statement to immediately exit if you find any cell that does not satisfy the conditions. This can help improve efficiency."
+    },
+    {
+      "content": "Consider edge cases, such as grids with only one row or one column. In these cases, you will not have a cell below or to the right to compare against, so you need to handle these scenarios separately."
+    },
+    {
+      "content": "Think about how you will return the final result. You should return true if all cells satisfy the conditions, and false if any cell fails the checks. Make sure your return statements are correctly placed."
+    },
+    {
+      "content": "Before you finalize your solution, test it with the provided example cases to ensure it behaves as expected. You might also want to create additional test cases, especially for edge scenarios."
+    },
+    {
+      "content": "You are almost there! To implement the checks, you can use a structure like this: for each cell grid[i][j], check if grid[i][j] == grid[i + 1][j] (if valid) and grid[i][j] != grid[i][j + 1] (if valid). If both conditions hold for all cells, return true."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n, m <= 10",
+    "Values: 0 <= grid[i][j] <= 9",
+    "Ensure to handle the edges of the grid to avoid index errors.",
+    "Return true if all conditions are satisfied, otherwise return false."
+  ]
+}

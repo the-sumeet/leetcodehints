@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying the vowels in the string. Remember, you need to track the counts of 'a', 'e', 'i', 'o', and 'u'. You can use a dictionary or an array to maintain these counts as you iterate through the string."
+    },
+    {
+      "content": "Think about how you can represent the state of the vowel counts. One effective way is to use a bitmask. Each vowel can correspond to a bit in an integer, where 0 means even and 1 means odd counts."
+    },
+    {
+      "content": "As you traverse the string, update your bitmask based on the current character. For example, if you encounter an 'a', toggle the corresponding bit in your bitmask."
+    },
+    {
+      "content": "To find the longest substring with even counts of vowels, you need to check if the current bitmask has been seen before. If it has, the substring between the previous index and the current index has even counts of all vowels."
+    },
+    {
+      "content": "Consider how to efficiently store the first occurrence of each bitmask. A dictionary can be useful here, where the key is the bitmask and the value is the index of its first occurrence."
+    },
+    {
+      "content": "Don't forget to handle the case where no vowels are present. A substring with zero vowels is valid and should be considered when calculating the maximum length."
+    },
+    {
+      "content": "Make sure to initialize your data structures properly. For instance, you might want to initialize your dictionary with the bitmask 0 at index -1 to handle cases where the substring starts from the beginning."
+    },
+    {
+      "content": "As you iterate through the string, keep track of the maximum length of valid substrings found. Update this length whenever you find a previously seen bitmask."
+    },
+    {
+      "content": "Think about edge cases, such as strings that consist entirely of vowels or strings that contain no vowels at all. How will your solution handle these scenarios?"
+    },
+    {
+      "content": "Finally, ensure that your solution runs efficiently. Aim for a time complexity of O(n) to handle the upper limit of the string length, which can be up to 500,000 characters."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 5 x 10^5",
+    "The string contains only lowercase English letters.",
+    "Return the size of the longest substring with even counts of vowels.",
+    "Vowels to consider: 'a', 'e', 'i', 'o', 'u'."
+  ]
+}

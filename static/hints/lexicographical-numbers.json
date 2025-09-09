@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what lexicographical order means. It's similar to how words are ordered in a dictionary. For example, '10' comes before '2' because '1' is less than '2'."
+    },
+    {
+      "content": "Consider how you would generate numbers from 1 to n. You might think of simply creating a list of numbers and sorting it, but that won't meet the time complexity requirement."
+    },
+    {
+      "content": "Think about how you can traverse the numbers in a way that respects lexicographical order. You might want to explore a tree-like structure where each number can branch into its 'children' (e.g., 1 leads to 10, 11, 12, etc.)."
+    },
+    {
+      "content": "You can use a depth-first search (DFS) approach to explore each number. Starting from 1, you can try to append digits to generate the next numbers in lexicographical order."
+    },
+    {
+      "content": "Remember that you need to account for the maximum limit, n. As you generate numbers, check if the current number exceeds n before adding it to your result."
+    },
+    {
+      "content": "Consider how you can implement the DFS without using extra space for another data structure. You can use the current number as a reference and modify it directly."
+    },
+    {
+      "content": "When you reach a number that has no further children (like 19), backtrack to the previous number and try the next sibling (e.g., go from 1 to 2)."
+    },
+    {
+      "content": "Make sure to handle the case where you reach a number that ends with a 9. For example, after 19, you should go back to 2 instead of trying to go to 20."
+    },
+    {
+      "content": "You can start your DFS from 1 and keep a loop to explore each number until you reach n. This way, you ensure that you cover all numbers in the range."
+    },
+    {
+      "content": "Finally, remember to return the results in the required format. You should return a list of integers sorted in lexicographical order, which you can achieve through your DFS traversal."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 50,000",
+    "Output must be in lexicographical order.",
+    "You must achieve O(n) time complexity.",
+    "You must use O(1) extra space."
+  ]
+}

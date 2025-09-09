@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of an 'x-sum'. The x-sum is calculated by counting the occurrences of elements in a subarray and keeping only the top x most frequent elements."
+    },
+    {
+      "content": "Remember that if two elements have the same frequency, the larger element is considered more frequent. This is crucial for determining which elements to keep in the x-sum."
+    },
+    {
+      "content": "Consider how to efficiently count the occurrences of elements in a subarray. A hash map (or dictionary) can be very useful for this purpose."
+    },
+    {
+      "content": "Think about how you can maintain a sliding window of size k as you iterate through the array. This will allow you to compute the x-sum for each subarray efficiently."
+    },
+    {
+      "content": "When moving the window, you will need to update the counts of the elements that are entering and leaving the window. Make sure to handle these updates carefully."
+    },
+    {
+      "content": "After counting the occurrences in the current window, you need to determine the top x elements. Consider using a priority queue or sorting the counts."
+    },
+    {
+      "content": "Make sure to handle the case where there are fewer than x distinct elements in the subarray. In this case, the x-sum should simply be the sum of all elements in the subarray."
+    },
+    {
+      "content": "As you compute the x-sum, remember to keep track of the indices correctly. The answer array should have a length of n - k + 1."
+    },
+    {
+      "content": "When calculating the final sum for the x-sum, ensure you only include the elements that are in the top x most frequent list."
+    },
+    {
+      "content": "Consider edge cases where k equals n. In this case, you will only have one subarray to evaluate, which simplifies your logic."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Since you need to process each subarray efficiently, aim for a solution that works in linear time with respect to n."
+    },
+    {
+      "content": "You may also want to consider using a data structure that allows for fast updates and queries, such as a balanced tree or a frequency map combined with a max-heap."
+    },
+    {
+      "content": "As a next step, implement the initial part of your algorithm: counting occurrences in the first subarray and determining the x-sum for that subarray."
+    },
+    {
+      "content": "Once you have the first x-sum, focus on how to update your counts as you slide the window. This will be key to solving the problem efficiently."
+    },
+    {
+      "content": "Finally, ensure you are returning the results in the correct format. Your answer should be an integer array of length n - k + 1, containing the x-sums for each subarray."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 10^5, 1 <= nums[i] <= 10^9, 1 <= x <= k <= nums.length.",
+    "Return an integer array of length n - k + 1.",
+    "If there are fewer than x distinct elements, the x-sum is the sum of all elements in the subarray.",
+    "Handle tie-breaking by choosing the larger element if two elements have the same frequency."
+  ]
+}

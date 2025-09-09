@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a Binary Search Tree (BST). A BST has the property that for any node, all values in its left subtree are less than the node's value, and all values in its right subtree are greater."
+    },
+    {
+      "content": "Consider how you can traverse the binary tree. A depth-first search (DFS) approach could be useful here. Think about how you can explore each node and its children."
+    },
+    {
+      "content": "As you traverse, you need to determine if the subtree rooted at each node is a valid BST. Keep in mind the conditions for a valid BST when checking each node."
+    },
+    {
+      "content": "To check if a subtree is a BST, you can maintain a range of valid values. For a node, all values in its left subtree must be less than the node's value, and all values in its right subtree must be greater."
+    },
+    {
+      "content": "Think about how you can calculate the sum of all keys in a subtree. You might want to return both the sum and whether or not the subtree is a valid BST."
+    },
+    {
+      "content": "You can create a helper function that returns multiple values: the sum of the subtree, whether it is a BST, and the minimum and maximum values in the subtree."
+    },
+    {
+      "content": "When you visit a node, check the validity of its left and right subtrees first. If either is not a BST, the current subtree cannot be a BST either."
+    },
+    {
+      "content": "If both left and right subtrees are valid BSTs, check if the current node's value is greater than the maximum value of the left subtree and less than the minimum value of the right subtree."
+    },
+    {
+      "content": "If the current subtree is a valid BST, calculate its sum and update your maximum sum if this sum is greater than the previously recorded maximum."
+    },
+    {
+      "content": "Consider edge cases, such as trees with only negative values. In such cases, you should return 0, as the problem states to return the maximum sum of any valid BST."
+    },
+    {
+      "content": "Remember to handle cases where a node has no children. A single node is a valid BST by itself, and its sum is simply its value."
+    },
+    {
+      "content": "As you implement your solution, ensure that you keep track of the maximum sum found so far across all valid BSTs during your traversal."
+    },
+    {
+      "content": "Think about the base case for your recursive function. What should you return when you reach a leaf node or a null child?"
+    },
+    {
+      "content": "Consider how to structure your return values. You might want to return a tuple containing the sum, a boolean indicating if it's a BST, and the min and max values."
+    },
+    {
+      "content": "Make sure to test your implementation with various tree structures, including balanced trees, skewed trees, and trees with duplicate values."
+    }
+  ],
+  "questionNotes": [
+    "A BST is defined by the left subtree containing only nodes with keys less than the node's key and the right subtree containing only nodes with keys greater.",
+    "The output should be the maximum sum of all keys of any subtree that is a BST.",
+    "If all values are negative, return 0.",
+    "Constraints: Number of nodes is in the range [1, 4 * 10^4]; Node values are between -4 * 10^4 and 4 * 10^4."
+  ]
+}

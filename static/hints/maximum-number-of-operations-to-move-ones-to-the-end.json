@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation: you can only move a '1' to the right if it's directly followed by a '0'. This means you need to identify pairs of '1' and '0' in the string."
+    },
+    {
+      "content": "Consider how many '1's are present in the string. The total number of operations you can perform will be influenced by the number of '1's and their positions relative to '0's."
+    },
+    {
+      "content": "Think about the structure of the string. For example, in '1001101', the first '1' can move to the right until it encounters another '1'. Count how many '0's are available for each '1' to move into."
+    },
+    {
+      "content": "As you analyze the string, keep track of the indices of '1's and '0's. This will help you visualize how many moves are possible for each '1'."
+    },
+    {
+      "content": "Try to create a loop that iterates through the string. For each '1' found, count how many '0's are to its right until you hit another '1'. This will give you the number of operations possible for that '1'."
+    },
+    {
+      "content": "Remember that once a '1' is moved, it cannot be moved again. Thus, the order of operations matters. Each time you move a '1', the available '0's for subsequent '1's may change."
+    },
+    {
+      "content": "Consider edge cases, such as strings with no '1's or strings that are already in the desired format (all '1's at the end). How would your algorithm handle these cases?"
+    },
+    {
+      "content": "To optimize your solution, think about how you can avoid unnecessary iterations. For instance, if you already know the number of '0's available for a '1', you don't need to recount them for every '1'."
+    },
+    {
+      "content": "You might want to maintain a count of total operations as you process each '1'. This will help you return the final result efficiently."
+    },
+    {
+      "content": "Finally, consider how to implement the counting logic succinctly. You could use a single pass through the string to gather the necessary counts, updating your operation count as you go."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5",
+    "s[i] is either '0' or '1'.",
+    "You can only move '1's that are followed by '0's.",
+    "The output should be the maximum number of operations performed."
+  ]
+}

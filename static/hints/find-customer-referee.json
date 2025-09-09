@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Customer table. Each customer has an 'id', a 'name', and a 'referee_id'. The 'referee_id' indicates which customer referred them, and it can be null if they were not referred by anyone."
+    },
+    {
+      "content": "Consider the conditions for selecting customers. You need to find customers who are either not referred by anyone or referred by someone whose id is not 2. Think about how you can filter these conditions in your SQL query."
+    },
+    {
+      "content": "To find customers not referred by anyone, you can check for rows where 'referee_id' is null. This will help you identify customers who have no referrals."
+    },
+    {
+      "content": "For the customers referred by someone, you need to filter out those where 'referee_id' is 2. You can use a WHERE clause to specify this condition."
+    },
+    {
+      "content": "Remember to use the correct logical operators in your SQL query. You will likely need to combine conditions using 'OR' to capture both scenarios for customer selection."
+    },
+    {
+      "content": "You might want to use a subquery or a JOIN to get a clearer picture of the referrals. Think about how you can relate customers based on their 'referee_id' to filter out the ones referred by id 2."
+    },
+    {
+      "content": "As you build your query, remember to select only the 'name' column in your final output. This is important to match the expected result format."
+    },
+    {
+      "content": "Consider edge cases such as when all customers are referred by id 2 or when there are no customers at all. How will your query handle these situations?"
+    },
+    {
+      "content": "You can start building your SQL query with a basic SELECT statement. For example: `SELECT name FROM Customer WHERE ...` and then fill in the conditions based on your previous hints."
+    },
+    {
+      "content": "Finally, ensure that your query does not return duplicates. You might need to use the DISTINCT keyword if there is a possibility of overlapping results from your conditions."
+    }
+  ],
+  "questionNotes": [
+    "The 'id' column is the primary key, ensuring uniqueness.",
+    "The 'referee_id' can be null, indicating no referral.",
+    "Return the result in any order, focusing only on the 'name' column."
+  ]
+}

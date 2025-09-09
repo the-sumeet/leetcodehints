@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of a ramp. A ramp is defined by a pair of indices (i, j) where i < j and nums[i] <= nums[j]. Think about how you can find such pairs in the array."
+    },
+    {
+      "content": "Consider how you might iterate through the array. A brute-force approach would involve checking every possible pair (i, j). What would the time complexity of this approach be?"
+    },
+    {
+      "content": "Instead of checking every pair, think about how you can leverage the properties of the array. For example, if you find a valid ramp, can you use that information to find other ramps efficiently?"
+    },
+    {
+      "content": "Keep in mind that the maximum width is defined as j - i. This means that for a valid ramp, you want to maximize the distance between the two indices. How can you keep track of the largest width found?"
+    },
+    {
+      "content": "Think about how you can preprocess the array to help you find valid pairs more efficiently. For instance, you could maintain a list of indices sorted by their corresponding values in nums."
+    },
+    {
+      "content": "As you consider sorting, remember that sorting will change the indices. You will need to map back to the original indices after sorting. What data structure could help you maintain this mapping?"
+    },
+    {
+      "content": "After sorting, you can iterate through the sorted list and check for valid ramps. How would you determine if nums[i] <= nums[j] for the original indices after sorting?"
+    },
+    {
+      "content": "Consider using a two-pointer technique after sorting. One pointer can start from the beginning of the sorted list, and the other can start from the end. How would you adjust these pointers based on the ramp condition?"
+    },
+    {
+      "content": "While iterating with two pointers, remember to update your maximum width whenever you find a valid pair. How will you ensure that you are always maximizing the width?"
+    },
+    {
+      "content": "Finally, ensure you handle edge cases, such as arrays where all elements are the same or strictly decreasing. What should your function return in these cases?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= nums.length <= 50,000",
+    "Values: 0 <= nums[i] <= 50,000",
+    "Return the maximum width of a ramp, or 0 if none exists.",
+    "Remember that i must be less than j."
+  ]
+}

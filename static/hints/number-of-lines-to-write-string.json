@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the input. You have a string `s` and an array `widths` of length 26, where each index corresponds to a letter in the alphabet. For example, `widths[0]` is the width of 'a', `widths[1]` is for 'b', and so on."
+    },
+    {
+      "content": "Consider how to keep track of the total width as you iterate through the string `s`. You will need a variable to accumulate the width of the letters you are writing on the current line."
+    },
+    {
+      "content": "Remember that each line can only be up to 100 pixels wide. You will need to check if adding the next letter would exceed this limit before actually adding it."
+    },
+    {
+      "content": "Think about how to handle the transition from one line to the next. When you exceed 100 pixels, you should reset your width counter and increment your line count."
+    },
+    {
+      "content": "You will also need to keep track of the width of the last line written. This means you should store the width of the current line each time you finish writing it."
+    },
+    {
+      "content": "When iterating through the string `s`, remember to convert each character to its corresponding index in the `widths` array. You can do this by using `ord(char) - ord('a')` to find the index."
+    },
+    {
+      "content": "Consider edge cases, such as when the string `s` consists of only one character or when all characters have the same width. How will your logic handle these scenarios?"
+    },
+    {
+      "content": "Make sure to return the result in the correct format. The output should be an array of two elements: the total number of lines and the width of the last line."
+    },
+    {
+      "content": "As you write your code, remember to initialize your line count and the width of the last line before starting the loop. This will help avoid any uninitialized variable issues."
+    },
+    {
+      "content": "Finally, ensure that your loop correctly handles the end of the string. After the loop, you should have the final line width stored, which may need to be returned as part of your result."
+    }
+  ],
+  "questionNotes": [
+    "The `widths` array has exactly 26 elements corresponding to each lowercase letter.",
+    "Each width in `widths` is between 2 and 10 inclusive.",
+    "The length of the string `s` can be up to 1000 characters.",
+    "The total width of each line must not exceed 100 pixels.",
+    "Return an array of length 2: [number of lines, width of last line]."
+  ]
+}

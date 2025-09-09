@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an expression tree is. An expression tree is a binary tree where each internal node represents an operator and each leaf node represents an operand. For example, the expression `3 + 4` would have `+` as the root and `3` and `4` as its children."
+    },
+    {
+      "content": "Consider how to represent the expression tree. You might want to create a class for the nodes of the tree. Each node should have a value (which can be an operator or operand) and pointers to its left and right children."
+    },
+    {
+      "content": "Think about how to build the tree from the input list. The input is in postfix notation, meaning that operators follow their operands. You can use a stack to help construct the tree as you parse through the list."
+    },
+    {
+      "content": "As you read each token from the input list, check if it's a number or an operator. If it's a number, create a new tree node and push it onto the stack. If it's an operator, pop the required number of operands from the stack, create a new node for the operator, and set the popped nodes as its children."
+    },
+    {
+      "content": "Remember to handle the order of operations correctly. In a binary tree, the left child typically represents the first operand and the right child represents the second operand for binary operators."
+    },
+    {
+      "content": "Once the tree is built, you need to implement the evaluate function. This function should recursively evaluate the tree. If the node is a number, return its value; if it's an operator, recursively evaluate its children and apply the operator."
+    },
+    {
+      "content": "Pay attention to the types of operators you need to support. You might need to handle basic arithmetic operations like addition, subtraction, multiplication, and division. Ensure that your evaluate function correctly implements these operations."
+    },
+    {
+      "content": "Consider edge cases such as division by zero. You should decide how to handle such cases in your evaluate function. Will you return a specific value, throw an exception, or handle it some other way?"
+    },
+    {
+      "content": "Test your implementation with various inputs, including simple expressions and more complex ones. Make sure to cover edge cases, such as expressions with only one operand or invalid expressions."
+    },
+    {
+      "content": "Finally, think about how you would structure your code. You might want to separate the logic for building the tree from the logic for evaluating it. This can make your code cleaner and easier to debug."
+    }
+  ],
+  "questionNotes": [
+    "The input is given in postfix notation (Reverse Polish Notation).",
+    "Each operator in the expression tree should be a binary operator.",
+    "Handle edge cases like division by zero appropriately.",
+    "Ensure that you correctly implement the evaluate function to return the final result."
+  ]
+}

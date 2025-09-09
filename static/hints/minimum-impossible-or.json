@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what it means for an integer to be expressible from the array. An integer x is expressible if you can find a subsequence of nums such that the bitwise OR of its elements equals x."
+    },
+    {
+      "content": "Think about the properties of the bitwise OR operation. The result of the OR operation tends to accumulate bits, meaning that once a bit is set to 1, it remains 1 in subsequent OR operations."
+    },
+    {
+      "content": "Consider the smallest positive integers. You need to find the smallest positive integer that cannot be formed by the bitwise OR of any subsequence of nums."
+    },
+    {
+      "content": "To find the minimum impossible OR, you might want to start checking from 1 upwards. Keep track of which integers can be formed as you process the array."
+    },
+    {
+      "content": "A useful approach could be to sort the nums array first. This way, you can systematically check which integers can be formed as you iterate through the sorted list."
+    },
+    {
+      "content": "As you iterate through nums, maintain a variable that tracks the smallest number you cannot express yet. Initialize it to 1, since you are looking for the smallest positive integer."
+    },
+    {
+      "content": "For each number in the sorted nums, check if it is greater than the current smallest impossible integer. If it is, you cannot express the current smallest impossible integer, so return it."
+    },
+    {
+      "content": "If the current number can be used to express the smallest impossible integer, update your tracking variable by performing a bitwise OR operation with it."
+    },
+    {
+      "content": "Make sure to consider edge cases, such as when nums contains only one element or when all elements are larger than the current smallest impossible integer."
+    },
+    {
+      "content": "Finally, after processing all elements in nums, if you have not found any number that is less than or equal to the smallest impossible integer, that integer is your answer."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "Constraints: 1 <= nums[i] <= 10^9",
+    "The result must be the minimum positive non-zero integer that is not expressible.",
+    "Consider the uniqueness of expressible integers based on the subsequence chosen."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to compute the hash of a substring. Remember that you need to convert each character to its corresponding value in the alphabet, where 'a' = 1 and 'z' = 26."
+    },
+    {
+      "content": "The hash function is defined as: hash(s, p, m) = (val(s[0]) * p^0 + val(s[1]) * p^1 + ... + val(s[k-1]) * p^(k-1)) mod m. Make sure you can compute this for a small example."
+    },
+    {
+      "content": "Consider how you can efficiently compute the hash for each substring of length k in the string s. A naive approach would involve recalculating the hash from scratch for each substring."
+    },
+    {
+      "content": "Think about how you can use a sliding window technique to maintain the hash value as you move through the string. This way, you can update the hash instead of recalculating it entirely."
+    },
+    {
+      "content": "When using the sliding window, remember to remove the contribution of the character that is sliding out of the window and add the contribution of the new character sliding into the window."
+    },
+    {
+      "content": "Make sure to handle the modulo operation carefully, especially when subtracting the outgoing character's contribution. You might need to ensure the result stays non-negative."
+    },
+    {
+      "content": "As you compute the hash for each substring, compare it to the target hashValue. The first match you find is the answer you should return."
+    },
+    {
+      "content": "Consider edge cases, such as when k is equal to the length of the string s. In this case, you only have one substring to check."
+    },
+    {
+      "content": "Remember that the constraints guarantee that a solution always exists. This means you don't need to handle cases where no valid substring is found."
+    },
+    {
+      "content": "Think about how to efficiently compute powers of p modulo m. You might want to precompute these values for all indices up to k-1."
+    },
+    {
+      "content": "When computing the hash, ensure you are using the correct power for each character based on its position in the substring. The position affects the weight of each character in the hash."
+    },
+    {
+      "content": "Keep in mind that the hash function is sensitive to the order of characters. Two different substrings can have the same characters but yield different hashes if their order differs."
+    },
+    {
+      "content": "Once you find a substring that matches the hashValue, you should stop searching and return that substring immediately, as you only need the first occurrence."
+    },
+    {
+      "content": "Make sure to test your implementation with various strings and parameters to ensure it behaves as expected. Consider edge cases like strings with repeated characters."
+    },
+    {
+      "content": "Finally, ensure your function handles large inputs efficiently, as the length of s can be up to 20,000. Aim for a time complexity close to O(n) using the sliding window approach."
+    }
+  ],
+  "questionNotes": [
+    "The string s consists of lowercase English letters only.",
+    "1 <= k <= s.length <= 20,000.",
+    "1 <= power, modulo <= 1,000,000,000.",
+    "0 <= hashValue < modulo.",
+    "A substring is a contiguous non-empty sequence of characters within a string.",
+    "The test cases are generated such that an answer always exists."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement pattern. The movements alternate between north, west, south, and east. This means that the direction of movement will repeat every four moves."
+    },
+    {
+      "content": "Visualize the movements on a coordinate plane. You can represent each direction with coordinate changes: North (+y), West (-x), South (-y), East (+x)."
+    },
+    {
+      "content": "Consider how to track your position after each movement. You can maintain variables for the current x and y coordinates, updating them after each distance is moved."
+    },
+    {
+      "content": "To check for crossings, you need to keep track of all the points visited. A set or a list can be used to store these points as you move."
+    },
+    {
+      "content": "Remember that a path crosses itself if you visit the same point more than once. This means you need to check if a newly calculated position already exists in your set of visited points."
+    },
+    {
+      "content": "Think about the edge cases. What happens if the distance array has only one or two elements? How would you handle those cases?"
+    },
+    {
+      "content": "When you move in the four directions, the number of steps taken can vary. Make sure your logic accounts for varying distances in each direction."
+    },
+    {
+      "content": "Consider the case where the path crosses itself at the origin (0, 0). This is a valid crossing that should be detected."
+    },
+    {
+      "content": "Keep in mind the constraints of the problem. The distance array can be very large (up to 100,000 elements), so your solution should be efficient in both time and space."
+    },
+    {
+      "content": "You might want to optimize your solution by checking for crossings only when you have completed at least four moves, as fewer moves cannot cross."
+    },
+    {
+      "content": "As you implement your solution, remember to handle the indexing correctly. The direction changes with each move, so ensure you are calculating the correct direction based on the index."
+    },
+    {
+      "content": "When checking for crossings, consider using a hashmap to store the coordinates as keys. This allows for O(1) average time complexity for lookups."
+    },
+    {
+      "content": "To determine if the path crosses, you can check if the new position exists in the set of previously visited positions immediately after each move."
+    },
+    {
+      "content": "You can also consider the geometric properties of the path. If two segments intersect, it might indicate a crossing. Think about how to mathematically determine if two line segments intersect."
+    },
+    {
+      "content": "Before finalizing your solution, test it with edge cases such as maximum distance values, minimum distance values, and very small arrays."
+    }
+  ],
+  "questionNotes": [
+    "1 <= distance.length <= 10^5",
+    "1 <= distance[i] <= 10^5",
+    "The path crosses itself if any point is visited more than once.",
+    "Check for crossings only after at least four moves."
+  ]
+}

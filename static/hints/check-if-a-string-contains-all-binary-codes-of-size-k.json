@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "First, consider what it means for a binary code of length k to be a substring of s. Each binary code of length k consists of all combinations of '0's and '1's. For example, if k = 2, the possible codes are '00', '01', '10', and '11'."
+    },
+    {
+      "content": "Think about the total number of unique binary codes of length k. This is given by the formula 2^k. Make sure to calculate this value based on the input k before proceeding."
+    },
+    {
+      "content": "Next, consider how you can efficiently find all substrings of length k in the string s. You can use a sliding window approach to extract these substrings as you iterate through s."
+    },
+    {
+      "content": "As you extract substrings of length k, store them in a set. Using a set will help you automatically handle duplicates, ensuring that you only keep unique substrings."
+    },
+    {
+      "content": "After collecting all unique substrings of length k in your set, compare the size of the set to the total number of unique binary codes (2^k). If they match, return true; otherwise, return false."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the length of s is less than k. In such cases, it is impossible for all binary codes of length k to be present."
+    },
+    {
+      "content": "Consider the constraints provided: the length of s can be quite large (up to 500,000). Ensure that your solution is efficient and does not exceed time limits."
+    },
+    {
+      "content": "Think about the implications of k being up to 20. This means that the maximum number of unique binary codes you might need to check is 2^20, which is 1,048,576. Ensure your data structures can handle this efficiently."
+    },
+    {
+      "content": "As you implement your solution, keep track of the indices from which you are extracting substrings. This will help you ensure you are correctly implementing the sliding window technique."
+    },
+    {
+      "content": "Finally, once you have your set of substrings, you can use a simple comparison to check if the size of your set equals 2^k. If they are equal, return true; otherwise, return false."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 500,000; s[i] is either '0' or '1'; 1 <= k <= 20.",
+    "Important: Ensure to handle cases where s.length < k, as this will automatically return false.",
+    "Be mindful of the efficiency of your solution due to the potential size of s."
+  ]
+}

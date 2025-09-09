@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input intervals. Each interval consists of a start point, an end point, and a weight. Make sure to keep track of the indices as you will need to return them in the output."
+    },
+    {
+      "content": "Remember that two intervals are considered overlapping if they share any points, including the boundaries. For example, intervals [1, 5] and [5, 6] overlap."
+    },
+    {
+      "content": "Since you can choose at most 4 non-overlapping intervals, think about how you can efficiently explore combinations of intervals. A brute-force approach might involve checking all combinations of up to 4 intervals."
+    },
+    {
+      "content": "Consider sorting the intervals based on their end points. This can help in efficiently checking for overlaps and maximizing the score by allowing you to select intervals that finish earlier."
+    },
+    {
+      "content": "When exploring combinations of intervals, ensure that you maintain a running total of the weights of selected intervals. You want to maximize this total while adhering to the non-overlapping condition."
+    },
+    {
+      "content": "Use a greedy approach to select the next interval. After selecting an interval, skip any intervals that overlap with it. This can help you build a valid set of non-overlapping intervals."
+    },
+    {
+      "content": "Keep track of the indices of the selected intervals as you build your solution. You need to return the indices in a lexicographically smallest order, so consider sorting them before returning."
+    },
+    {
+      "content": "Don't forget to handle edge cases, such as when there are fewer than 4 intervals in total. You should still be able to return the maximum score possible with the available intervals."
+    },
+    {
+      "content": "As you implement your solution, consider using a data structure that allows you to efficiently manage the intervals and their corresponding weights, such as a priority queue or dynamic programming table."
+    },
+    {
+      "content": "If you find that multiple combinations yield the same maximum score, ensure that you select the combination with the lexicographically smallest indices. This might involve comparing the indices of the selected intervals."
+    },
+    {
+      "content": "Think about how you can optimize your approach to avoid unnecessary calculations. For instance, if selecting an interval leads to a lower score than previously calculated, you can skip further checks in that branch."
+    },
+    {
+      "content": "Consider using a backtracking approach to explore all valid combinations of intervals. This will allow you to systematically check each combination while adhering to the non-overlapping condition."
+    },
+    {
+      "content": "You might want to maintain a list of the best score and the corresponding indices found so far. Update this list whenever you find a new maximum score."
+    },
+    {
+      "content": "As a final step, ensure that your solution adheres to the constraints provided in the problem statement. For instance, ensure that the indices returned are within the valid range and that you do not exceed the limit of 4 intervals."
+    },
+    {
+      "content": "To summarize, sort the intervals, explore combinations while ensuring they are non-overlapping, and keep track of the maximum score and corresponding indices. Make sure to return the indices in sorted order."
+    }
+  ],
+  "questionNotes": [
+    "You can choose up to 4 non-overlapping intervals.",
+    "Intervals sharing a left or right boundary are considered overlapping.",
+    "Return the lexicographically smallest array of indices.",
+    "Indices in the output must be based on the original input order.",
+    "Constraints: 1 <= intervals.length <= 5 * 10^4; 1 <= l_i <= r_i <= 10^9; 1 <= weight_i <= 10^9."
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem statement clearly. You need to handle updates to the `nums` array and then determine the maximum count of distinct primes after splitting the array into two parts."
+    },
+    {
+      "content": "Remember that the split point `k` must satisfy `1 <= k < n`. This means you can only split the array into a non-empty prefix and suffix."
+    },
+    {
+      "content": "Focus on how to efficiently count distinct prime numbers in both parts of the split. You might want to consider using sets to help with uniqueness."
+    },
+    {
+      "content": "Before diving into the queries, think about how you can preprocess the `nums` array to quickly find distinct primes. This can save time during each query."
+    },
+    {
+      "content": "Consider using a sieve algorithm to precompute all prime numbers up to the maximum possible value in `nums` (which is 100,000). This will help you check if a number is prime efficiently."
+    },
+    {
+      "content": "For each query, after updating `nums`, you will need to recalculate the distinct primes. Think about how you can do this incrementally instead of recalculating from scratch."
+    },
+    {
+      "content": "When splitting the array, you can maintain two sets: one for the prefix and one for the suffix. As you iterate through potential split points, update these sets accordingly."
+    },
+    {
+      "content": "Keep in mind that the distinct prime counts from the prefix and suffix need to be combined. Make sure to handle cases where there might be overlapping primes in both parts."
+    },
+    {
+      "content": "Consider edge cases where the entire array might consist of non-prime numbers. How will your solution handle such scenarios?"
+    },
+    {
+      "content": "You might also want to think about the efficiency of your approach. With constraints up to 50,000 for both `nums` and `queries`, ensure your solution is optimized for performance."
+    },
+    {
+      "content": "When updating the `nums` array, make sure to only update the relevant parts of your distinct prime counts. This will help maintain efficiency."
+    },
+    {
+      "content": "As you process each query, ensure that the results are stored in the correct order. The output should be an array where each entry corresponds to the result of each query."
+    },
+    {
+      "content": "To maximize the distinct prime counts, consider iterating through all possible split points and calculating the distinct prime counts dynamically as you go."
+    },
+    {
+      "content": "Think about using a sliding window or two-pointer technique to keep track of the distinct primes as you adjust your prefix and suffix sets."
+    },
+    {
+      "content": "Finally, ensure that your solution handles updates efficiently. You might want to explore data structures that allow for quick updates and queries, like balanced trees or hash maps."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= n == nums.length <= 50,000",
+    "1 <= queries.length <= 50,000",
+    "1 <= nums[i] <= 100,000",
+    "0 <= queries[i][0] < nums.length",
+    "1 <= queries[i][1] <= 100,000",
+    "Remember that updates to nums persist across queries.",
+    "The result for each query should be an integer representing the maximum count of distinct primes after the split."
+  ]
+}

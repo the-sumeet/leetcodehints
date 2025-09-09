@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the relationship between the `stores` and `inventory` tables. Each store can have multiple products, and you will need to join these tables based on `store_id` to analyze the inventory for each store."
+    },
+    {
+      "content": "When you join the tables, consider using a `GROUP BY` clause to aggregate the data for each store. This will help you calculate the number of products each store has, which is essential for identifying stores with at least 3 products."
+    },
+    {
+      "content": "To find the most expensive and cheapest products, you can use aggregate functions like `MAX(price)` and `MIN(price)` in your query. Make sure to group by `store_id` to get these values for each store."
+    },
+    {
+      "content": "After identifying the most and least expensive products, you will need to extract their quantities. You can do this by using a `JOIN` on the results of your previous aggregation to get the corresponding quantities for the `MAX` and `MIN` prices."
+    },
+    {
+      "content": "Remember to check for inventory imbalance only for stores that have at least 3 products. You can filter these stores using a `HAVING` clause after your `GROUP BY` operation."
+    },
+    {
+      "content": "The condition for an inventory imbalance is that the quantity of the most expensive product must be less than that of the cheapest product. Make sure to implement this condition in your final selection of stores."
+    },
+    {
+      "content": "You will need to calculate the imbalance ratio as `cheapest_quantity / most_expensive_quantity`. Ensure that you handle cases where the most expensive product's quantity is zero to avoid division by zero errors."
+    },
+    {
+      "content": "Round the imbalance ratio to 2 decimal places using a function like `ROUND()` in SQL. This is crucial for formatting your output correctly."
+    },
+    {
+      "content": "When returning the results, make sure to include the `store_id`, `store_name`, `location`, the names of the most and least expensive products, and the imbalance ratio. Structure your SELECT statement accordingly."
+    },
+    {
+      "content": "Finally, order your results first by the imbalance ratio in descending order and then by `store_name` in ascending order. Use the `ORDER BY` clause to achieve this."
+    }
+  ],
+  "questionNotes": [
+    "Only include stores with at least 3 different products.",
+    "The output must include store_id, store_name, location, most_exp_product, cheapest_product, and imbalance_ratio.",
+    "Round the imbalance ratio to 2 decimal places.",
+    "Order results by imbalance_ratio (DESC) and store_name (ASC)."
+  ]
+}

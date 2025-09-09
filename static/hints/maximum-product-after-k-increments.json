@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the goal: you want to maximize the product of the numbers in the array after performing at most k increments. Think about how the product changes when you increment different elements."
+    },
+    {
+      "content": "Consider how the product of two numbers behaves. If you have two numbers, increasing the smaller number generally has a more significant impact on the product than increasing the larger number. This suggests a strategy for choosing which element to increment."
+    },
+    {
+      "content": "To efficiently find which number to increment, you might want to use a min-heap (or priority queue). This way, you can always increment the smallest number in the array, maximizing the product incrementally."
+    },
+    {
+      "content": "Remember that you can perform at most k increments. Think about how to distribute these increments across the elements of the array. You may not need to use all k increments on a single element."
+    },
+    {
+      "content": "Before implementing your solution, consider edge cases. What happens if all numbers in the array are zero? What if k is zero? These cases can help you identify potential pitfalls in your logic."
+    },
+    {
+      "content": "As you implement your solution, keep track of the product carefully. Since the product can grow very large, remember to apply the modulo operation (10^9 + 7) as specified in the problem statement."
+    },
+    {
+      "content": "When using a min-heap, after incrementing the smallest element, you will need to reinsert it into the heap. This maintains the property of the heap, ensuring you always have access to the smallest element."
+    },
+    {
+      "content": "Think about the time complexity of your approach. Using a heap can help you manage the increments efficiently, but be mindful of the number of operations you perform, especially since k can be as large as 100,000."
+    },
+    {
+      "content": "As you finalize your approach, ensure that your product calculation handles large numbers correctly. You might want to compute the product iteratively while applying the modulo at each step to prevent overflow."
+    },
+    {
+      "content": "You're very close to the solution! After implementing the heap and incrementing the smallest element k times, remember to compute the final product of the array and return it modulo 10^9 + 7."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length, k <= 100000; 0 <= nums[i] <= 1000000",
+    "Return the maximum product modulo 10^9 + 7.",
+    "You can increment any element in the array, and you may not need to use all k increments.",
+    "The product must be calculated after all increments are applied."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the basic requirement for a valid parenthesis string. Each '(' must have a matching ')' and they must be in the correct order. Consider how you would check for matching pairs without the '*' character."
+    },
+    {
+      "content": "Think about how the '*' character can be interpreted in multiple ways. It can represent '(', ')', or an empty string. How can you keep track of these different interpretations while ensuring the overall validity of the string?"
+    },
+    {
+      "content": "A good approach is to use a counter to track the balance of parentheses. For every '(', increment the counter, and for every ')', decrement it. How would you adjust this approach to account for '*'?"
+    },
+    {
+      "content": "Consider using two counters: one for the minimum possible balance and another for the maximum possible balance. This way, you can account for the '*' being either '(' or ')'. How would you update these counters as you iterate through the string?"
+    },
+    {
+      "content": "As you iterate through the string, update your minimum and maximum counters. For every '(', increment both counters; for every ')', decrement both counters. For '*', you can increment the max and decrement the min. What conditions should you check to ensure the string remains valid?"
+    },
+    {
+      "content": "Remember that at any point in your iteration, the minimum balance should not drop below zero. If it does, it means there are more ')' than '(' or '*' can account for. How would you handle this situation?"
+    },
+    {
+      "content": "At the end of your iteration, check if the maximum balance is zero or greater. This means that there are enough '(' to match the ')' and any '*' can be adjusted accordingly. What would you return based on this final check?"
+    },
+    {
+      "content": "Consider edge cases such as strings made entirely of '*' or those that start with a closing parenthesis. How would these cases affect your counters and the final validity check?"
+    },
+    {
+      "content": "Make sure to test your solution against various combinations of '(', ')', and '*' to ensure it handles all possible configurations. What are some test cases you can think of that might challenge your implementation?"
+    },
+    {
+      "content": "Finally, remember to handle the constraints of the problem, such as the maximum length of the string. Ensure your solution is efficient enough to handle the upper limit without performance issues."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 100",
+    "Characters in the string are limited to '(', ')', and '*'.",
+    "The return value should be a boolean indicating if the string is valid."
+  ]
+}

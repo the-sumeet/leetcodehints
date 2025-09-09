@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Weather table. You have three columns: id, recordDate, and temperature. Each recordDate is unique, which means you can directly compare temperatures from one day to the next."
+    },
+    {
+      "content": "Think about how you can compare the temperature of a given day with the temperature of the previous day. You will need to join the table with itself to achieve this. Consider how you can use the recordDate to find the previous day's temperature."
+    },
+    {
+      "content": "When performing the self-join, you can use a condition that matches the recordDate of one table to the recordDate of the other table minus one day. This will help you retrieve the temperature from the previous day."
+    },
+    {
+      "content": "Remember to filter the results to only include days where the temperature is higher than the previous day. This will be your main condition in the WHERE clause of your SQL query."
+    },
+    {
+      "content": "Make sure to select only the id of the dates that meet the condition of having a higher temperature. Your SELECT statement should focus on retrieving the id column."
+    },
+    {
+      "content": "Consider edge cases where there might be no previous day available, such as the first entry in your dataset. Ensure that your query handles this gracefully by only comparing where applicable."
+    },
+    {
+      "content": "You can use the DATE_SUB function or similar to subtract one day from the recordDate when performing your self-join. This will allow you to accurately find the previous day's temperature."
+    },
+    {
+      "content": "Think about how the output should be structured. You need to return a table with just the id column, so format your SELECT statement accordingly to match the expected output."
+    },
+    {
+      "content": "To summarize your SQL query structure: you will perform a self-join on the Weather table, filter based on the temperature comparison, and select the id of the records that meet the criteria."
+    },
+    {
+      "content": "Your final SQL query might look something like this: SELECT w1.id FROM Weather w1 JOIN Weather w2 ON w1.recordDate = DATE_ADD(w2.recordDate, INTERVAL 1 DAY) WHERE w1.temperature > w2.temperature; Make sure to adjust the date function based on your SQL dialect."
+    }
+  ],
+  "questionNotes": [
+    "The id column is unique for each record.",
+    "recordDate is unique; no two records will have the same date.",
+    "Ensure to handle cases where there is no previous date (e.g., the first record).",
+    "Return only the id of the records that satisfy the temperature condition.",
+    "The output can be in any order."
+  ]
+}

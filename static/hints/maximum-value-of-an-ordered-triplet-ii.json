@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the formula for the triplet value: (nums[i] - nums[j]) * nums[k]. Notice how the indices must satisfy i < j < k. This means that for any valid triplet, the first element must be before the second, which must be before the third."
+    },
+    {
+      "content": "Consider how the values of nums[i], nums[j], and nums[k] affect the overall value. Specifically, nums[i] should be as large as possible, nums[j] should be as small as possible, and nums[k] should be as large as possible to maximize the triplet value."
+    },
+    {
+      "content": "Think about iterating through the array. You can fix the middle index j and then explore potential i and k indices. This will help you avoid unnecessary comparisons and keep your solution efficient."
+    },
+    {
+      "content": "As you iterate, maintain the maximum value of nums[i] for all indices less than j. This allows you to quickly compute the value of (nums[i] - nums[j]) for each j without needing to search through the previous elements repeatedly."
+    },
+    {
+      "content": "Similarly, maintain the maximum value of nums[k] for all indices greater than j. This will help you quickly compute the value of the triplet without needing to iterate through the elements after j every time."
+    },
+    {
+      "content": "Be careful with edge cases. If all computed triplet values are negative, you need to return 0. Make sure to keep track of the maximum value and check if it remains negative throughout your calculations."
+    },
+    {
+      "content": "Think about the time complexity of your approach. A naive solution might involve three nested loops, leading to O(n^3) complexity. Instead, aim for a solution that runs in O(n) or O(n^2) by using the maximum tracking hints provided earlier."
+    },
+    {
+      "content": "When implementing your solution, consider using a single loop to iterate through the array while maintaining the maximum values for nums[i] and nums[k] as you go. This will help you compute the triplet values efficiently."
+    },
+    {
+      "content": "You can initialize a variable to store the maximum triplet value found so far. Update this variable whenever you find a new triplet value that is greater than the current maximum."
+    },
+    {
+      "content": "Finally, ensure that your function correctly returns 0 if the maximum triplet value is negative. This is a crucial part of the problem statement that you must handle correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= nums.length <= 10^5",
+    "Values: 1 <= nums[i] <= 10^6",
+    "Return 0 if all triplet values are negative.",
+    "Indices must satisfy i < j < k."
+  ]
+}

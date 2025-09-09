@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the array. The array is defined as `arr[i] = (2 * i) + 1`. For example, if `n = 3`, the array will be `[1, 3, 5]`."
+    },
+    {
+      "content": "Notice that all elements in the array are odd numbers and they increase by 2 for each subsequent index. This means the array is always symmetric around its mean."
+    },
+    {
+      "content": "Calculate the mean of the array. Since the elements can be made equal, the target value for all elements will be the average of the array. For `n = 3`, the mean is `3`."
+    },
+    {
+      "content": "Think about the operations allowed: you can decrease one element and increase another. This means you are redistributing the values in the array."
+    },
+    {
+      "content": "To minimize operations, consider how far each element is from the target mean. For each element, calculate how much it needs to be increased or decreased to reach the mean."
+    },
+    {
+      "content": "Count the total number of increments and decrements needed. Since each operation affects two elements, the total number of operations will be half of the total adjustments needed."
+    },
+    {
+      "content": "When calculating increments and decrements, remember to only count the absolute values of the differences from the mean. This will help you avoid negative counts."
+    },
+    {
+      "content": "Consider edge cases, such as when `n = 1`. In this case, the array is already equal, so no operations are needed."
+    },
+    {
+      "content": "You can also think about the distribution of values: the first half of the array will generally need to increase, while the second half will need to decrease to reach the mean."
+    },
+    {
+      "content": "Finally, implement your logic to compute the total operations needed based on your earlier calculations. Remember to divide by 2 since each operation involves two indices."
+    }
+  ],
+  "questionNotes": [
+    "The array is defined as arr[i] = (2 * i) + 1 for 0 <= i < n.",
+    "All elements are guaranteed to be made equal with some operations.",
+    "The operations involve selecting two indices and redistributing values.",
+    "Return the minimum number of operations needed to equalize the array.",
+    "Constraints: 1 <= n <= 10^4."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have an integer array `nums` and a list of `queries`. Each query specifies a subarray of `nums` and a threshold for how many times an element must appear."
+    },
+    {
+      "content": "For each query, you need to extract the subarray defined by the indices `l` and `r`. Make sure to remember that these indices are inclusive."
+    },
+    {
+      "content": "Think about how to efficiently count the occurrences of each element in the subarray. A frequency map (or dictionary) can be useful here to store counts of each element."
+    },
+    {
+      "content": "Consider how to handle the case where no element meets the threshold requirement. You will need to return -1 in such cases."
+    },
+    {
+      "content": "When multiple elements meet the threshold, you need to select the one with the highest frequency. If there's a tie, choose the smallest element. This means you may need to keep track of both the frequency and the value."
+    },
+    {
+      "content": "To efficiently process multiple queries, consider whether you can preprocess the array `nums` in a way that allows you to quickly access the frequency of elements in any subarray."
+    },
+    {
+      "content": "Think about edge cases, such as when the subarray contains only one element or when all elements are the same. How will your solution handle these scenarios?"
+    },
+    {
+      "content": "Remember that the constraints specify that the length of `nums` can be up to 10^4 and the number of queries can be up to 5 * 10^4. Your solution needs to be efficient enough to handle the upper limits."
+    },
+    {
+      "content": "Consider using a sliding window approach or Mo's algorithm to optimize the query processing if you find that a naive solution is too slow."
+    },
+    {
+      "content": "When implementing your frequency map, ensure that you are correctly updating counts as you process each query. You may want to reset the map for each new query."
+    },
+    {
+      "content": "Think about how to structure your final output. You need to return an array where each element corresponds to the result of each query."
+    },
+    {
+      "content": "As you implement your solution, test it with various inputs, including edge cases like all elements being the same, or the threshold being larger than the number of elements in the subarray."
+    },
+    {
+      "content": "When checking for the highest frequency, consider using a max-heap or a simple linear scan after populating your frequency map to determine the maximum efficiently."
+    },
+    {
+      "content": "Make sure to handle the case where the threshold is greater than the number of elements in the subarray. This should automatically return -1."
+    },
+    {
+      "content": "Before finalizing your solution, review the logic for breaking ties. Ensure that you are correctly comparing values when frequencies are equal."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length == n <= 10^4",
+    "1 <= nums[i] <= 10^9",
+    "1 <= queries.length <= 5 * 10^4",
+    "queries[i] = [l_i, r_i, threshold_i], 0 <= l_i <= r_i < n, 1 <= threshold_i <= r_i - l_i + 1",
+    "Return -1 if no element meets the threshold.",
+    "Select the element with the highest frequency, or the smallest in case of a tie."
+  ]
+}

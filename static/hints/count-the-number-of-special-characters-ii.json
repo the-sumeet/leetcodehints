@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what qualifies as a 'special' character in the context of the problem. A character is special if it appears in both lowercase and uppercase forms in the string."
+    },
+    {
+      "content": "Consider how to track the occurrences of each character in both lowercase and uppercase. You might want to use a data structure that allows you to count these occurrences efficiently, such as a dictionary or a list."
+    },
+    {
+      "content": "Remember to check the order of the occurrences. Specifically, you need to ensure that every lowercase occurrence appears before the first uppercase occurrence of the character. Think about how you can keep track of the first occurrence of each character."
+    },
+    {
+      "content": "As you iterate through the string, you could maintain two separate counts: one for lowercase and one for uppercase letters. This will help you determine if a character meets the special criteria."
+    },
+    {
+      "content": "Pay attention to the constraints given in the problem. The input string can be quite long (up to 200,000 characters), so your solution should be efficient, ideally O(n) in time complexity."
+    },
+    {
+      "content": "Consider using a set to keep track of characters that have been seen in lowercase and another set for those seen in uppercase. This will help you quickly check if a character has appeared in both forms."
+    },
+    {
+      "content": "When you find a lowercase character, add it to the lowercase set. When you encounter an uppercase character, check if its lowercase counterpart is in the lowercase set before adding it to the uppercase set."
+    },
+    {
+      "content": "After processing the string, you will need to count how many characters are in both the lowercase and uppercase sets. This count will give you the number of special characters."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as strings that contain only one case of characters or mixed cases that do not follow the required order. Test your implementation with various inputs to ensure correctness."
+    },
+    {
+      "content": "Finally, remember to return the count of special characters as your output. Ensure that your function handles the return format correctly, as specified in the problem statement."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= word.length <= 2 * 10^5",
+    "The string consists of only lowercase and uppercase English letters.",
+    "A character is special if it appears in both cases and all lowercase occurrences come before the first uppercase occurrence."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by breaking down the input `text` into individual words. You can use the `split` function to achieve this, which will give you an array of words to work with."
+    },
+    {
+      "content": "Once you have the array of words, think about how to iterate through this array. You will need to check for occurrences of the `first` and `second` words in sequence."
+    },
+    {
+      "content": "Remember that you need to check pairs of words as you iterate. Specifically, for each word at index `i`, you should check if `words[i]` equals `first` and `words[i + 1]` equals `second`."
+    },
+    {
+      "content": "When you find a valid pair of `first` and `second`, you will need to access the word that comes immediately after `second`. This will be `words[i + 2]`."
+    },
+    {
+      "content": "Make sure to handle cases where the `first` and `second` words are at the end of the array. You should prevent accessing indices that are out of bounds, which can happen if `i + 2` exceeds the length of the array."
+    },
+    {
+      "content": "Consider using a list to store the results. Each time you find a valid occurrence of `first second`, append the third word (i.e., `words[i + 2]`) to this list."
+    },
+    {
+      "content": "Think about the constraints provided. For instance, the length of `text` can be up to 1000 characters, so your solution should be efficient enough to handle this size."
+    },
+    {
+      "content": "Remember that the `first` and `second` words will always be lowercase letters and that they won't have leading or trailing spaces. This simplifies some of your checks."
+    },
+    {
+      "content": "As you build your result list, ensure that you return it in the correct format, which is an array of strings containing the third words found."
+    },
+    {
+      "content": "Finally, make sure to test your solution with various edge cases, such as when `first` and `second` appear multiple times or when they are at the beginning or end of the text."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= text.length <= 1000.",
+    "text consists of lowercase English letters and spaces.",
+    "All words in text are separated by a single space.",
+    "1 <= first.length, second.length <= 10.",
+    "first and second consist of lowercase English letters.",
+    "text will not have any leading or trailing spaces."
+  ]
+}

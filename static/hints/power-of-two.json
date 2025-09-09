@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "First, consider the definition of a power of two. An integer n is a power of two if it can be expressed as 2 raised to the power of some integer x. For example, 1 (2^0), 2 (2^1), 4 (2^2), and so on."
+    },
+    {
+      "content": "Think about the properties of binary representation. A power of two has a unique characteristic in binary: it has exactly one '1' bit and all other bits are '0'. For instance, 4 in binary is '100'."
+    },
+    {
+      "content": "What happens if n is less than or equal to zero? Remember that powers of two are always positive integers. How would you handle these cases in your solution?"
+    },
+    {
+      "content": "If you want to check if n is a power of two, consider using a mathematical approach. You could use logarithms, but think about how you might avoid using loops or recursion altogether."
+    },
+    {
+      "content": "An interesting bit manipulation trick exists for powers of two. If n is a power of two, then (n & (n - 1)) should equal 0. This means that n has only one bit set in its binary form."
+    },
+    {
+      "content": "Before applying the bit manipulation trick, ensure that n is greater than zero. This is crucial because the trick will not work for non-positive integers."
+    },
+    {
+      "content": "You can combine the checks for n being greater than zero and the bit manipulation trick into a single return statement. Think about how to structure this logically."
+    },
+    {
+      "content": "Consider edge cases such as n = 0 and n = -1. How will your solution handle these inputs? Make sure your solution is robust against these values."
+    },
+    {
+      "content": "If you decide to implement the bit manipulation trick, remember the syntax for bitwise operations in your programming language of choice. For example, in Python, it would look like: `n > 0 and (n & (n - 1)) == 0`."
+    },
+    {
+      "content": "Finally, ensure that your function returns a boolean value as expected. You should return `true` if n is a power of two and `false` otherwise. Test your function with various inputs to confirm it works correctly."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: -2^31 <= n <= 2^31 - 1",
+    "Return type: boolean (true or false)",
+    "Consider edge cases: n <= 0 should return false."
+  ]
+}

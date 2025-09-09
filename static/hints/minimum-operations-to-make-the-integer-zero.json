@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the operation you can perform. You can subtract a value of the form `2^i + num2` from `num1`, where `i` can range from 0 to 60. This means you can adjust `num1` by various powers of two, influenced by `num2`."
+    },
+    {
+      "content": "Consider the implications of `num2`. If `num2` is positive, the subtraction will always reduce `num1`. However, if `num2` is negative, it can potentially increase the value you subtract, which might complicate reaching zero."
+    },
+    {
+      "content": "Think about the base case where `num1` is equal to `num2`. In this scenario, you can directly reach zero in one operation by choosing `i = 0`."
+    },
+    {
+      "content": "Evaluate the scenario where `num2` is greater than `num1`. In this case, it is impossible to reach zero since any operation will only increase `num1`."
+    },
+    {
+      "content": "Consider the maximum value of `num1` (10^9) and how many operations you might need if you are using the largest possible subtraction (when `i = 60`). This will give you an idea of the upper limit for the number of operations."
+    },
+    {
+      "content": "You might want to think about how to represent the number of operations needed. A greedy approach could be useful where you always try to subtract the largest possible value first."
+    },
+    {
+      "content": "Think about the binary representation of `num1`. The powers of two you can subtract will affect how you can reach zero, especially when considering the largest power of two you can use."
+    },
+    {
+      "content": "You should also consider how to track the number of operations. A loop or recursive function could be beneficial to keep reducing `num1` until it reaches zero, while counting the operations."
+    },
+    {
+      "content": "Make sure to handle edge cases where `num1` cannot be reduced to zero. For example, if `num2` is too large or if the operations lead to negative values without reaching zero."
+    },
+    {
+      "content": "Finally, think about how you can implement a way to check if `num1` can ever reach zero. You might want to use a condition that checks if the remaining `num1` can be expressed as a combination of the possible subtractions."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= num1 <= 10^9, -10^9 <= num2 <= 10^9.",
+    "The operation allows choosing `i` in the range [0, 60].",
+    "You must return -1 if it's impossible to make `num1` equal to 0."
+  ]
+}

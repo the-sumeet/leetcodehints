@@ -1,0 +1,39 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about the structure of an IPv4 address. It consists of four decimal numbers separated by periods. For example, in '1.1.1.1', the periods are the key characters you need to replace."
+    },
+    {
+      "content": "Consider how you might traverse the string. You could use a loop to go through each character in the IP address. This will allow you to check each character to see if it is a period."
+    },
+    {
+      "content": "When you find a period, think about how you can construct a new string. You will need to replace the period with '[.]'. This means you will be building a new string rather than modifying the original one."
+    },
+    {
+      "content": "You can use a list to collect parts of the new string. For each character in the original string, if it is a period, append '[.]' to the list; otherwise, append the character itself."
+    },
+    {
+      "content": "Remember to join the list into a single string at the end. In Python, you can use the `join` method to concatenate the list elements into a single string efficiently."
+    },
+    {
+      "content": "Think about edge cases, such as the minimum and maximum possible values for each octet in the IP address. Each octet should be between 0 and 255, but since the problem guarantees a valid IP address, you can focus on the replacement logic."
+    },
+    {
+      "content": "Consider what happens if there are no periods in the input string. Your code should still return the original string in this case, as there would be no replacements needed."
+    },
+    {
+      "content": "When constructing your final string, ensure that it maintains the original order of characters. The replacement should not change the sequence of the other characters in the IP address."
+    },
+    {
+      "content": "You might want to write a simple function that takes the IP address as input and returns the defanged version. Focus on clarity and simplicity in your implementation."
+    },
+    {
+      "content": "Finally, remember to test your function with different valid IP addresses, including edge cases like '0.0.0.0' and '255.255.255.255', to ensure it handles all scenarios correctly."
+    }
+  ],
+  "questionNotes": [
+    "The given address is guaranteed to be a valid IPv4 address.",
+    "The output format must replace every '.' with '[.]'.",
+    "Ensure the order of characters remains unchanged in the output."
+  ]
+}

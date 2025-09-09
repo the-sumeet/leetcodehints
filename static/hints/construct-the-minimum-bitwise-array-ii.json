@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the bitwise OR operation. Recall that for any two integers `a` and `b`, `a OR b` results in a number that has a bit set to 1 wherever either `a` or `b` has a bit set to 1."
+    },
+    {
+      "content": "Notice that the condition `ans[i] OR (ans[i] + 1) == nums[i]` implies that `nums[i]` must have certain bits set. Since `nums[i]` is prime, consider how the binary representation of primes affects the possible values for `ans[i]`."
+    },
+    {
+      "content": "For each `nums[i]`, the value of `ans[i]` must be less than `nums[i]`. This is because `ans[i] + 1` must be greater than `ans[i]` and thus cannot exceed `nums[i]` when OR'd together."
+    },
+    {
+      "content": "Check the binary representation of `nums[i]`. The last bit of `nums[i]` determines if it is odd or even. If `nums[i]` is even, `ans[i]` must be odd, and if `nums[i]` is odd, `ans[i]` can be even or odd."
+    },
+    {
+      "content": "To find the minimum `ans[i]`, consider starting from `0` and incrementing until you find a valid `ans[i]` that satisfies the condition. However, remember to stop if you exceed `nums[i]`."
+    },
+    {
+      "content": "When checking if `ans[i]` works, calculate `ans[i] OR (ans[i] + 1)` and see if it equals `nums[i]`. If you reach `nums[i]` without finding a valid `ans[i]`, set `ans[i] = -1`."
+    },
+    {
+      "content": "Consider edge cases such as the smallest prime number, which is `2`. For `2`, there are no valid `ans[i]` that satisfy the condition, so remember to handle such cases specifically."
+    },
+    {
+      "content": "For primes that are `3` or higher, you can often find valid `ans[i]` values. For instance, `3` can yield `1`, and `5` can yield `4`. Explore the patterns in these results."
+    },
+    {
+      "content": "As you iterate through `nums`, keep track of the results in an array `ans`. Ensure you initialize `ans` with the correct size and fill it according to the conditions discussed."
+    },
+    {
+      "content": "Finally, implement a loop that processes each element in `nums`, applying the conditions to compute `ans[i]`. Remember to return the final array after processing all elements."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 100",
+    "2 <= nums[i] <= 10^9, and nums[i] is a prime number.",
+    "If no valid ans[i] can be found, set ans[i] = -1.",
+    "Return the array ans with the same length as nums."
+  ]
+}

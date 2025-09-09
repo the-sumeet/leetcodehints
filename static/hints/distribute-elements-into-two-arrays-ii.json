@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the problem. You need to maintain two arrays, `arr1` and `arr2`, and distribute elements from the input array `nums` based on specific conditions."
+    },
+    {
+      "content": "Remember that the first two elements of `nums` will always go to `arr1` and `arr2` respectively. Make sure to initialize both arrays before starting the distribution process."
+    },
+    {
+      "content": "The function `greaterCount(arr, val)` is crucial. It counts how many elements in `arr` are greater than `val`. Think about how you can efficiently implement this function."
+    },
+    {
+      "content": "When you append elements from `nums` to either `arr1` or `arr2`, you need to compare the results of `greaterCount` for both arrays. Make sure you understand how to perform these comparisons correctly."
+    },
+    {
+      "content": "Pay attention to the tie-breaking rules. If `greaterCount(arr1, nums[i])` equals `greaterCount(arr2, nums[i])`, you should append the number to the array with fewer elements."
+    },
+    {
+      "content": "If both arrays have the same number of elements, the problem states that you should append to `arr1`. This is a critical detail that affects how you implement the logic."
+    },
+    {
+      "content": "Consider edge cases, such as when all elements in `nums` are the same. How will your logic handle this situation? Test your implementation against such cases."
+    },
+    {
+      "content": "Think about how to maintain the counts of elements in `arr1` and `arr2` efficiently as you append new elements. You might want to use additional variables to keep track of these counts."
+    },
+    {
+      "content": "As you iterate through `nums`, ensure that you are correctly updating the counts after each append operation. This will be vital for the subsequent comparisons."
+    },
+    {
+      "content": "Consider the time complexity of your solution. Since you are potentially iterating through `nums` multiple times, think about how to minimize redundant calculations."
+    },
+    {
+      "content": "You might want to use a list to keep track of the counts of elements greater than each current element in both arrays. This could help streamline your comparisons."
+    },
+    {
+      "content": "As you build your solution, test it with smaller input sizes first to ensure that the logic is sound before scaling up to larger inputs."
+    },
+    {
+      "content": "Make sure to return the final result as a single concatenated array of `arr1` and `arr2`. This is the expected output format."
+    },
+    {
+      "content": "Consider implementing your logic in a loop that goes through each element of `nums`, applying the rules you've established for appending to `arr1` and `arr2`."
+    },
+    {
+      "content": "Finally, remember to handle the constraints of the problem. The length of `nums` will always be at least 3 and can be up to 100,000, so your solution needs to be efficient."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= n <= 10^5, 1 <= nums[i] <= 10^9",
+    "1-indexed array: Be careful with how you access elements in `nums`.",
+    "Tie-breaking rules: If counts are equal, append to the smaller array; if still equal, append to `arr1`.",
+    "Return format: Concatenate `arr1` and `arr2` to form the result."
+  ]
+}

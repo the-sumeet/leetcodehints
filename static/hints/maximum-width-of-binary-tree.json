@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the binary tree. Each level of the tree can have varying numbers of nodes, and the width is defined by the leftmost and rightmost non-null nodes."
+    },
+    {
+      "content": "Consider how you would traverse the tree level by level. A common approach is to use a breadth-first search (BFS) technique, which utilizes a queue to keep track of nodes at each level."
+    },
+    {
+      "content": "When traversing each level, keep track of the indices of the nodes. You can represent the index of each node based on its position in a complete binary tree."
+    },
+    {
+      "content": "Remember that the width of a level is calculated as the difference between the indices of the rightmost and leftmost nodes, plus one. This means you need to capture both indices for each level."
+    },
+    {
+      "content": "Handle null nodes carefully. When counting the width, ensure that you consider the positions of null nodes that would be present in a complete binary tree structure."
+    },
+    {
+      "content": "Think about edge cases, such as a tree that is skewed to one side. In such cases, the width might be smaller than expected if you only consider non-null nodes."
+    },
+    {
+      "content": "As you implement your BFS, you might want to store the current level's width after processing all nodes at that level. This will help you keep track of the maximum width encountered."
+    },
+    {
+      "content": "You can use a queue that stores pairs of nodes and their respective indices. This way, you can easily access the indices for width calculation while traversing the tree."
+    },
+    {
+      "content": "Make sure to update your maximum width variable after processing each level. Compare the current level's width with the maximum width found so far."
+    },
+    {
+      "content": "Finally, consider how to handle the output. You should return the maximum width as an integer, ensuring it fits within the constraints of a 32-bit signed integer."
+    }
+  ],
+  "questionNotes": [
+    "The maximum width is defined as the length between the leftmost and rightmost non-null nodes at each level.",
+    "Null nodes between the end nodes are counted in the width calculation.",
+    "The number of nodes in the tree is between 1 and 3000.",
+    "Node values range from -100 to 100."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the properties of a Binary Search Tree (BST). In a BST, for any given node, values in the left subtree are less than the node's value, and values in the right subtree are greater. This property can help you efficiently search for values."
+    },
+    {
+      "content": "Consider how you can traverse the BST. In-order traversal of a BST gives you the values in sorted order. Think about how you can use this property to find pairs that sum to a given value."
+    },
+    {
+      "content": "You might want to use a set to keep track of the values you have seen so far while traversing the tree. This can help you quickly check if the complement of the current node's value (i.e., k - current_value) exists."
+    },
+    {
+      "content": "Remember that the problem asks for two distinct elements. Ensure that when you check for the complement, it is not the same as the current node's value."
+    },
+    {
+      "content": "Consider edge cases, such as when the tree has only one node. In this case, it's impossible to find two distinct values, so you should return false."
+    },
+    {
+      "content": "Think about the time complexity of your solution. A naive approach might involve checking every pair of nodes, which could be inefficient. Aim for a solution that takes advantage of the BST properties."
+    },
+    {
+      "content": "You can implement a depth-first search (DFS) to traverse the tree and check for pairs. As you traverse, add each node's value to a set and check if the complement exists in the set."
+    },
+    {
+      "content": "When implementing the DFS, consider using recursion or an explicit stack. Both methods can work, but be aware of the stack depth if the tree is unbalanced."
+    },
+    {
+      "content": "Make sure to handle negative values for k and node values correctly. The logic for finding pairs should still hold regardless of whether the numbers are negative or positive."
+    },
+    {
+      "content": "As a final step, ensure your function returns true as soon as you find a valid pair, and false only after you've checked all nodes without finding such a pair."
+    }
+  ],
+  "questionNotes": [
+    "The input is guaranteed to be a valid BST.",
+    "You need to return true if there are two distinct elements that sum to k.",
+    "The number of nodes can range from 1 to 10,000.",
+    "Node values can range from -10,000 to 10,000.",
+    "Consider edge cases like a single-node tree."
+  ]
+}

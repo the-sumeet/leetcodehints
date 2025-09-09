@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what an interval is. An interval [left, right] includes all integers x such that left <= x <= right. Make sure you can visualize this concept."
+    },
+    {
+      "content": "Think about how you will store the intervals. A simple list might work, but consider how you will handle overlapping intervals when adding new ones."
+    },
+    {
+      "content": "When adding an interval, you need to merge it with any existing intervals that overlap. How will you determine if two intervals overlap? Consider the conditions for merging."
+    },
+    {
+      "content": "Remember that merging intervals means you might end up with a single interval that spans a larger range. For example, merging [2, 3] and [3, 5] results in [2, 5]."
+    },
+    {
+      "content": "Think about how you will count the total number of unique integers covered by the intervals. If intervals overlap, counting them naively could lead to double counting."
+    },
+    {
+      "content": "To count the unique integers, you could either maintain a set of all integers or calculate the length of merged intervals. Which approach do you think would be more efficient?"
+    },
+    {
+      "content": "If you decide to merge intervals, consider how to do this efficiently. You might want to sort the intervals first based on their starting points."
+    },
+    {
+      "content": "After sorting, you can iterate through the intervals and merge them if they overlap. Keep track of the total count of integers as you merge."
+    },
+    {
+      "content": "Consider edge cases, such as adding intervals that are completely outside the range of existing intervals. How should your data structure handle these cases?"
+    },
+    {
+      "content": "What happens if you add an interval that is completely within an existing interval? Make sure your merging logic accounts for this."
+    },
+    {
+      "content": "Think about the constraints given in the problem. You need to handle up to 10^5 calls efficiently, so avoid solutions that would take too long."
+    },
+    {
+      "content": "The range of integers can go up to 10^9, so storing each integer explicitly in a data structure is not feasible. Focus on storing intervals instead."
+    },
+    {
+      "content": "When counting, if you have merged intervals, you can simply sum the lengths of these intervals. For example, if you have intervals [1, 3] and [5, 7], the count is (3-1+1) + (7-5+1)."
+    },
+    {
+      "content": "Make sure to test your implementation with various scenarios, including overlapping intervals, completely disjoint intervals, and intervals that touch at the boundaries."
+    },
+    {
+      "content": "Finally, consider how you will implement the add and count methods in your class. What data structures will you use to efficiently manage the intervals?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= left <= right <= 10^9",
+    "At most 10^5 calls in total will be made to add and count.",
+    "At least one call will be made to count.",
+    "Intervals may overlap, and you need to handle merging them correctly."
+  ]
+}

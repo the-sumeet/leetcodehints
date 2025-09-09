@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by converting the loginTime and logoutTime strings into a format that allows you to perform arithmetic operations. Consider converting them into minutes since midnight for easier calculations."
+    },
+    {
+      "content": "Remember that a chess round starts every 15 minutes. Identify the start times of the rounds within the day: 00:00, 00:15, 00:30, ..., 23:45."
+    },
+    {
+      "content": "When calculating the number of full rounds played, focus on the time intervals. You need to determine the first full round you can participate in after logging in."
+    },
+    {
+      "content": "If logoutTime is earlier than loginTime, it implies you played through midnight. You will need to handle this case separately by calculating rounds played before and after midnight."
+    },
+    {
+      "content": "To find the first full round after loginTime, round up to the nearest 15-minute mark. For example, if loginTime is '09:31', the next full round starts at '09:45'."
+    },
+    {
+      "content": "For logoutTime, round down to the nearest 15-minute mark to find the last round you can fully participate in. If logoutTime is '10:14', the last full round is at '10:00'."
+    },
+    {
+      "content": "Count the number of full rounds between the start and end times. If the time spans across midnight, ensure to count the rounds from the beginning of the next day as well."
+    },
+    {
+      "content": "Consider using a loop or a simple arithmetic formula to count the number of 15-minute intervals between the start and end times. This can help simplify your counting logic."
+    },
+    {
+      "content": "Be mindful of edge cases where loginTime is very close to a round start or logoutTime is very close to a round end. These can affect whether a round is counted as full."
+    },
+    {
+      "content": "Finally, ensure your function correctly handles both the cases where loginTime is before midnight and after midnight. You might want to create a helper function to simplify the time conversion and counting."
+    }
+  ],
+  "questionNotes": [
+    "loginTime and logoutTime are in the format hh:mm.",
+    "00 <= hh <= 23 and 00 <= mm <= 59.",
+    "If logoutTime is earlier than loginTime, playtime spans midnight.",
+    "Return the total number of full rounds played during the specified time."
+  ]
+}

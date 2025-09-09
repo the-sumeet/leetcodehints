@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the movement of the robots. Robot #1 can move down, down-left, or down-right, while Robot #2 has similar movement options. This means that both robots can potentially occupy the same cell, which will affect how cherries are counted."
+    },
+    {
+      "content": "Consider how to represent the state of the robots. You can use their current row and column positions as part of your state representation. For Robot #1, you can denote its position as (row, col1), and for Robot #2 as (row, col2)."
+    },
+    {
+      "content": "Think about the base case of your solution. When both robots reach the last row, you need to calculate the total cherries collected. Remember to handle the case where both robots end up on the same cell."
+    },
+    {
+      "content": "Since both robots move simultaneously, consider using dynamic programming to store the maximum cherries collected up to each cell. You can create a 3D DP table where dp[row][col1][col2] represents the maximum cherries collected when Robot #1 is at (row, col1) and Robot #2 is at (row, col2)."
+    },
+    {
+      "content": "When filling in your DP table, remember to account for the cherries collected in the current positions of both robots. If they are in the same cell, only add the cherries once."
+    },
+    {
+      "content": "Pay attention to the bounds of the grid. Ensure that when calculating the next positions for both robots, you do not go out of the grid's boundaries. This is crucial for avoiding index errors."
+    },
+    {
+      "content": "Consider how to iterate through the possible positions for both robots in the next row. You can use nested loops to explore all combinations of the next positions for Robot #1 and Robot #2."
+    },
+    {
+      "content": "As you calculate the maximum cherries for each state, think about how to transition from the previous row to the current row. You will need to check all possible previous positions of both robots."
+    },
+    {
+      "content": "Make sure to initialize your DP table correctly. The starting positions for Robot #1 and Robot #2 should be set based on the cherries available at (0, 0) and (0, cols - 1) respectively."
+    },
+    {
+      "content": "Consider edge cases where the grid might have rows or columns filled with zeros. This will help you ensure that your solution handles all scenarios correctly."
+    },
+    {
+      "content": "When implementing the DP transitions, remember to check all three possible movements for both robots. This means considering the combinations of movements that lead to the next positions."
+    },
+    {
+      "content": "After filling in the DP table, your answer will be found in the last row of your DP table. Specifically, check all possible combinations of the last positions of both robots to find the maximum cherries collected."
+    },
+    {
+      "content": "As a final step, ensure that you are returning the correct value from your DP table. The maximum cherries collected should be returned as a single integer."
+    },
+    {
+      "content": "Before finalizing your solution, test it with various edge cases, such as grids with only one row or one column, to ensure robustness."
+    },
+    {
+      "content": "Your final implementation should efficiently handle the constraints provided, especially with the maximum grid size of 70x70. Optimize your DP approach to ensure it runs within acceptable time limits."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= rows, cols <= 70; 0 <= grid[i][j] <= 100.",
+    "Both robots start at fixed positions: Robot #1 at (0, 0) and Robot #2 at (0, cols - 1).",
+    "When both robots are in the same cell, only one collects cherries.",
+    "The return value should be the maximum number of cherries collected by both robots."
+  ]
+}

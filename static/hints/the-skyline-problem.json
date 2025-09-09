@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of each building. Each building is represented as a triplet: `[left, right, height]`. The left and right values define the horizontal span of the building, while the height defines how tall the building is."
+    },
+    {
+      "content": "Consider how the skyline is formed. The skyline is essentially the outline of the buildings when viewed from a distance. Think about how the heights of overlapping buildings will affect the skyline."
+    },
+    {
+      "content": "You will need to track the heights of buildings as you process them. A good way to do this is to use a max-heap (priority queue) to keep track of the current heights of the buildings as you move through the x-coordinates."
+    },
+    {
+      "content": "Remember that buildings can overlap. When processing a building, you need to check if it starts before the previous building ends. This means you should also consider the heights of buildings that are currently in the heap."
+    },
+    {
+      "content": "As you process each building, keep track of the maximum height at the current x-coordinate. If this height changes (i.e., if a building starts or ends), you have a key point for the skyline."
+    },
+    {
+      "content": "Make sure to handle the end of buildings properly. When a building ends, you should remove it from your height tracking structure and check if the maximum height changes."
+    },
+    {
+      "content": "You should also consider the case where multiple buildings start or end at the same x-coordinate. You need to ensure that you handle these events in the correct order to maintain the correct skyline."
+    },
+    {
+      "content": "When you add key points to your result, ensure that you do not have consecutive points with the same height. If two consecutive points have the same height, only keep the first one."
+    },
+    {
+      "content": "After processing all buildings, you need to ensure that the skyline ends at height 0. This means you should add a final point at the rightmost x-coordinate with a height of 0."
+    },
+    {
+      "content": "Think about how you will sort the events (start and end of buildings). You could create a list of events and sort them by x-coordinate, using the height to break ties."
+    },
+    {
+      "content": "Keep in mind the constraints: the number of buildings can be quite large (up to 10^4), so your solution needs to be efficient. Aim for a time complexity of O(n log n) or better."
+    },
+    {
+      "content": "Consider edge cases, such as when all buildings have the same height or when buildings do not overlap at all. These cases can help you verify the correctness of your solution."
+    },
+    {
+      "content": "As you implement, be cautious with the data types used for heights and coordinates. Python handles large integers well, but other languages may require special attention to avoid overflow."
+    },
+    {
+      "content": "When you are ready to implement, start by defining your event structure. Each event could be a tuple containing the x-coordinate, height, and a type (start or end)."
+    },
+    {
+      "content": "Finally, implement the main loop where you process each event. Use a max-heap to keep track of the current heights and update your result list whenever the maximum height changes."
+    }
+  ],
+  "questionNotes": [
+    "Each building is defined as [left, right, height].",
+    "The output must be a list of key points sorted by x-coordinate.",
+    "Consecutive points with the same height in the output should be merged.",
+    "The last point in the output must always have a y-coordinate of 0.",
+    "Handle edge cases where buildings overlap or have the same height."
+  ]
+}

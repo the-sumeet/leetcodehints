@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the input. You have two lists of intervals: one for existing meetings and one for potential new meetings. Each interval is represented as a pair of integers, indicating the start and end times."
+    },
+    {
+      "content": "Consider how you can represent the time slots of existing meetings. You might want to create a timeline that marks when meetings start and end, which can help you visualize the available time slots."
+    },
+    {
+      "content": "Think about how to merge overlapping intervals. If a new meeting's start time falls within an existing meeting's time, it cannot be scheduled. You may need to sort the existing meetings by start time first."
+    },
+    {
+      "content": "When checking for available time slots, pay attention to the end time of one meeting and the start time of the next. If there's a gap that is equal to or greater than the duration of the new meeting, then it can be scheduled."
+    },
+    {
+      "content": "Make sure to handle edge cases where the new meeting might fit right at the beginning or the end of the day. For example, if the first meeting starts after the new meeting, or if the last meeting ends before the new meeting starts."
+    },
+    {
+      "content": "Consider the scenario where there are no existing meetings. In this case, any new meeting can be scheduled as long as it fits within the allowed time frame, which you should define."
+    },
+    {
+      "content": "Think about how you will return the result. The problem specifies returning the number of new meetings that can be scheduled. Ensure your function has the correct return type and format."
+    },
+    {
+      "content": "When implementing your solution, use a loop to iterate through the existing meetings and check for gaps. You can maintain a variable to track the end of the last scheduled meeting as you go."
+    },
+    {
+      "content": "Remember to account for the case where multiple new meetings are being considered. You may need to check each new meeting against the existing ones independently."
+    },
+    {
+      "content": "Finally, as you approach the solution, think about how to optimize your checks. Instead of checking each new meeting against all existing meetings, consider using binary search or two-pointer techniques for efficiency."
+    }
+  ],
+  "questionNotes": [
+    "Input consists of two lists of intervals: existing meetings and new meetings.",
+    "Each interval is a pair of integers [start, end].",
+    "You need to return the number of new meetings that can be scheduled.",
+    "Consider edge cases such as no existing meetings or meetings that perfectly fit at the start or end."
+  ]
+}

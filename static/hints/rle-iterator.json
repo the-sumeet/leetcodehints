@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the RLE (Run-Length Encoding) works. Each even index in the `encoding` array represents how many times the value at the next index is repeated. For example, `encoding = [3, 8]` means the value `8` appears `3` times."
+    },
+    {
+      "content": "Consider how to manage the current position in the encoded array. You will need to keep track of how many elements you have 'exhausted' so far and which value you are currently on. Think about using a pointer or an index to help with this."
+    },
+    {
+      "content": "When implementing the `next(n)` function, you need to decrement `n` as you 'exhaust' elements. Make sure to check if you have enough elements left to satisfy the request for `n` elements."
+    },
+    {
+      "content": "Pay attention to the edge cases. For instance, what happens if `n` is greater than the total number of remaining elements? You should return `-1` in such cases."
+    },
+    {
+      "content": "Remember that if you exhaust all elements of a particular value, you need to move to the next pair in the `encoding` array. Ensure that you handle the transition correctly when moving from one value to the next."
+    },
+    {
+      "content": "Consider how to efficiently manage large values for `n`. If `n` is very large, you might want to skip directly to the next value instead of decrementing one by one. Think about how to calculate how many full runs of a value you can skip."
+    },
+    {
+      "content": "Make sure to handle the case where you exhaust all elements of the current value. After exhausting, check if there are still elements left in the `encoding` array to process."
+    },
+    {
+      "content": "When returning the last element exhausted, ensure that you are returning the correct value. If you have exhausted all elements, the return value should be `-1`."
+    },
+    {
+      "content": "Think about how to structure your class. You will need an initializer to set up the `encoding` array and possibly a few member variables to keep track of the current position and remaining counts."
+    },
+    {
+      "content": "As a final step, consider the overall complexity of your solution. You want to ensure that each call to `next(n)` is efficient, ideally O(1) for the average case, while handling the edge cases appropriately."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 2 <= encoding.length <= 1000, encoding.length is even.",
+    "0 <= encoding[i] <= 10^9, 1 <= n <= 10^9.",
+    "At most 1000 calls will be made to next.",
+    "Return -1 if there are no more elements to exhaust."
+  ]
+}

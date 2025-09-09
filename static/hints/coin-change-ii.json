@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem. You need to find the number of combinations of coins that can sum up to a given amount. Remember, the order of coins in a combination does not matter."
+    },
+    {
+      "content": "Consider how you might represent the number of ways to make each amount from 0 to the target amount. A common approach is to use a dynamic programming array where each index represents the number of ways to make that amount."
+    },
+    {
+      "content": "Initialize a DP array of size `amount + 1` with all zeros, except for `dp[0]`, which should be set to 1. This represents the one way to make the amount 0 (by using no coins)."
+    },
+    {
+      "content": "Think about how you will iterate through the coins. For each coin, you will need to update the DP array for all amounts from that coin's value up to the target amount."
+    },
+    {
+      "content": "When updating the DP array, use a nested loop: the outer loop for each coin and the inner loop for each amount from the coin's value to the target amount. This ensures you are building combinations correctly."
+    },
+    {
+      "content": "In the inner loop, when you find a valid amount, update the DP array at that index by adding the number of ways to make the amount minus the current coin's value. This captures the combinations that include the current coin."
+    },
+    {
+      "content": "Remember that you can use the same coin multiple times since you have an infinite supply of each coin. This is key to forming combinations."
+    },
+    {
+      "content": "Consider edge cases, such as when the amount is 0. There should be exactly one way to make an amount of 0, which is to use no coins at all."
+    },
+    {
+      "content": "Also, think about cases where the coins cannot sum up to the amount at all. Ensure your implementation correctly returns 0 in such scenarios."
+    },
+    {
+      "content": "Finally, after processing all coins, the value at `dp[amount]` will give you the total number of combinations to make that amount. Ensure your final implementation returns this value."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= coins.length <= 300, 1 <= coins[i] <= 5000, 0 <= amount <= 5000.",
+    "You have an infinite supply of each coin.",
+    "The order of coins in a combination does not matter.",
+    "Return 0 if the amount cannot be made up with the given coins."
+  ]
+}

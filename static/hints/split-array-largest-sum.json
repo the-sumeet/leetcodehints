@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the problem requirements. You need to split the array into 'k' non-empty subarrays. Each subarray must be contiguous, and your goal is to minimize the largest sum of those subarrays."
+    },
+    {
+      "content": "Consider the constraints: The length of 'nums' can be up to 1000, and 'k' can be at most 50. This suggests that a brute-force approach may be inefficient, so think about more optimal methods."
+    },
+    {
+      "content": "Identify the range for the possible values of the largest sum after splitting. The minimum possible largest sum is the maximum element in the array, while the maximum possible sum is the sum of all elements in the array."
+    },
+    {
+      "content": "You can use binary search to find the minimized largest sum. Start with 'low' as the maximum element of the array and 'high' as the sum of all elements."
+    },
+    {
+      "content": "In your binary search, the mid-point will represent a candidate for the largest sum. You need to check if it's possible to split the array into 'k' or fewer subarrays without exceeding this mid-point."
+    },
+    {
+      "content": "To check if a particular largest sum is feasible, iterate through the array while maintaining a running sum of the current subarray. If adding the next element exceeds the candidate largest sum, start a new subarray."
+    },
+    {
+      "content": "Keep a count of how many subarrays you create during the check. If you exceed 'k', then the candidate largest sum is too small, and you need to adjust your binary search range."
+    },
+    {
+      "content": "If you can split the array into 'k' or fewer subarrays with the current mid-point, it means you might be able to minimize the largest sum further. Adjust your binary search to explore smaller sums."
+    },
+    {
+      "content": "If you cannot split into 'k' subarrays, increase your lower bound in the binary search. This way, you can find a larger candidate sum that might allow for a valid split."
+    },
+    {
+      "content": "Consider edge cases such as when 'k' equals the length of 'nums'. In this case, each element would be its own subarray, and the largest sum would simply be the maximum element."
+    },
+    {
+      "content": "Think about what happens when 'k' is 1. The entire array is one subarray, and the largest sum is just the sum of all elements."
+    },
+    {
+      "content": "Make sure to handle cases where all elements are the same. This could simplify your checks significantly since the sums would be predictable."
+    },
+    {
+      "content": "As you implement the binary search, ensure you are correctly updating your 'low' and 'high' pointers based on the feasibility checks."
+    },
+    {
+      "content": "Remember to return the minimized largest sum after your binary search completes. This will be the value of 'low' once the search concludes."
+    },
+    {
+      "content": "Finally, test your solution with various edge cases, including arrays with all zeros, very large numbers, and varying values of 'k' to ensure robustness."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 1000",
+    "0 <= nums[i] <= 10^6",
+    "1 <= k <= min(50, nums.length)",
+    "The output should be the minimized largest sum after splitting the array."
+  ]
+}

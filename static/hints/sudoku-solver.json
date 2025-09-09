@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Sudoku board. It's a 9x9 grid divided into nine 3x3 sub-boxes. Each row, column, and sub-box must contain the digits 1-9 exactly once."
+    },
+    {
+      "content": "Identify how to represent empty cells in your board. The problem states that empty cells are represented by the '.' character. Make sure to handle these cases appropriately in your logic."
+    },
+    {
+      "content": "Consider how to check if placing a number in a specific cell is valid. You need to ensure that the number does not already exist in the same row, column, or 3x3 sub-box."
+    },
+    {
+      "content": "You can use a backtracking approach to solve the Sudoku. This means trying to fill a cell with a number, and if it leads to a solution, you proceed; if not, you backtrack and try the next number."
+    },
+    {
+      "content": "When implementing backtracking, make sure to have a base case. The base case occurs when all cells are filled correctly. You can check this by seeing if there are no more '.' characters on the board."
+    },
+    {
+      "content": "To implement the backtracking, create a function that takes the board as input and returns a boolean indicating whether a solution exists. This function should iterate through each cell."
+    },
+    {
+      "content": "When you find an empty cell ('.'), try placing each number from 1 to 9 in that cell. For each number, check if it is valid using the rules of Sudoku."
+    },
+    {
+      "content": "If a number is valid, place it in the cell and recursively call your backtracking function to attempt to fill the next empty cell."
+    },
+    {
+      "content": "If the recursive call returns true, the board is solved. If not, remove the number (backtrack) and try the next number."
+    },
+    {
+      "content": "Remember to reset the cell back to '.' if you are backtracking. This ensures that the board reflects the correct state for the next iteration."
+    },
+    {
+      "content": "To check if a number is valid in a given cell, you can create three sets: one for rows, one for columns, and one for boxes. This will help you efficiently determine if a number can be placed."
+    },
+    {
+      "content": "You can optimize your checks by maintaining these sets as you fill the board. When you place a number, add it to the corresponding row, column, and box set."
+    },
+    {
+      "content": "Consider edge cases such as boards that are already solved or boards with minimal clues. Ensure your algorithm can handle these scenarios without errors."
+    },
+    {
+      "content": "Finally, ensure your function modifies the board in place as required by the problem statement. The output should be the same board with the solution filled in."
+    },
+    {
+      "content": "Your final implementation should be able to handle the entire board efficiently. Test your function with various scenarios to ensure it works correctly."
+    }
+  ],
+  "questionNotes": [
+    "The board is always a 9x9 grid.",
+    "Empty cells are represented by the '.' character.",
+    "There is guaranteed to be only one solution for the board.",
+    "The solution must modify the input board in place."
+  ]
+}

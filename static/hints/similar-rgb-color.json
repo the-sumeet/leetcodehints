@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the format of the input color string. The input is a hex color code, which is always in the format '#RRGGBB'. Each pair of characters represents the red, green, and blue components of the color."
+    },
+    {
+      "content": "Consider how you can extract the red, green, and blue components from the hex string. You can use string slicing to get the relevant parts: `red = color[1:3]`, `green = color[3:5]`, `blue = color[5:7]`."
+    },
+    {
+      "content": "Think about how to convert these hex values into their decimal equivalents. Each pair of hex digits can be converted using `int(hex_value, 16)` to get the corresponding decimal value."
+    },
+    {
+      "content": "You need to find a similar RGB color. Consider what 'similar' means in this context. It might involve rounding the RGB values to the nearest multiple of 17, since there are 16 possible values for each color component (0-255)."
+    },
+    {
+      "content": "When rounding to the nearest multiple of 17, think about how to compute that. You can use integer division and multiplication: `rounded_value = round(original_value / 17) * 17`."
+    },
+    {
+      "content": "After rounding the RGB values, you need to convert them back to hexadecimal format. Remember to format each component properly to ensure it is always two digits long, using `format(value, '02x')`."
+    },
+    {
+      "content": "Make sure to handle edge cases, such as when the input color is already a valid similar color. Your function should return the same color if it is already in the correct format."
+    },
+    {
+      "content": "Consider how to construct the final output string. You will need to concatenate the '#' character with the new hex values for red, green, and blue that you have computed."
+    },
+    {
+      "content": "Think about the return type of your function. You should return a string that represents the new similar RGB color in the same format as the input."
+    },
+    {
+      "content": "Finally, ensure that your function handles invalid inputs gracefully. You might want to check if the input string is of the correct length and format before processing it."
+    }
+  ],
+  "questionNotes": [
+    "Input is guaranteed to be a valid hex color code in the format '#RRGGBB'.",
+    "Output should also be in the format '#RRGGBB'.",
+    "Rounding should be done to the nearest multiple of 17 for each RGB component.",
+    "Ensure each RGB component is represented as two hexadecimal digits in the output."
+  ]
+}

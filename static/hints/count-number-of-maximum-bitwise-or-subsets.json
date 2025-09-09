@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding what a bitwise OR operation does. For any two numbers, the result of the OR operation will have a bit set if at least one of the numbers has that bit set. This means the maximum bitwise OR of a subset will be influenced by the largest numbers in the array."
+    },
+    {
+      "content": "Consider how subsets are formed. A subset can be formed by including or excluding each element of the array. For an array of length n, there are 2^n possible subsets (including the empty subset). However, we only care about non-empty subsets."
+    },
+    {
+      "content": "To find the maximum bitwise OR, you can initialize a variable to zero and iterate through the array, updating this variable with the OR of itself and each element. This will give you the maximum bitwise OR value for the entire array."
+    },
+    {
+      "content": "Once you have the maximum bitwise OR value, you need to count how many non-empty subsets yield this maximum value. Think about how to build these subsets and how the elements contribute to achieving the maximum OR."
+    },
+    {
+      "content": "Remember that elements can be repeated in the array. For example, in the case of [2,2,2], even though the maximum OR is 2, there are multiple ways to form subsets due to the identical elements. This will affect your counting of valid subsets."
+    },
+    {
+      "content": "You can use a bitmask approach to generate all possible subsets. For each number from 1 to (2^n - 1), use the bits of the number to determine which elements to include in the subset."
+    },
+    {
+      "content": "As you generate each subset, compute its bitwise OR and check if it matches the maximum OR you calculated earlier. If it does, increment your count of valid subsets."
+    },
+    {
+      "content": "Consider edge cases such as when all elements are the same or when there is only one element in the array. How would these cases affect your maximum OR and the number of valid subsets?"
+    },
+    {
+      "content": "Since the constraints are small (1 <= nums.length <= 16), a brute-force approach of generating all subsets is feasible. However, ensure that you handle counting correctly, especially with duplicate elements."
+    },
+    {
+      "content": "Finally, ensure your solution returns the count of subsets as specified in the problem. You might want to create a variable to keep track of this count and return it at the end of your function."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 16, 1 <= nums[i] <= 10^5",
+    "Subsets are formed by including/excluding elements; empty subsets are not counted.",
+    "Two subsets are different if they have different indices, even if they contain the same elements.",
+    "The maximum bitwise OR is computed over all non-empty subsets."
+  ]
+}

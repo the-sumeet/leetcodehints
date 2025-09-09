@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how the rows are generated. The first row is simply '0'. Each subsequent row is built by replacing '0' with '01' and '1' with '10'. For example, the second row is derived from the first row by applying these rules."
+    },
+    {
+      "content": "Notice that the length of the n-th row is given by the formula: length = 2^(n-1). This means that for n=1, the length is 1; for n=2, the length is 2; for n=3, the length is 4, and so on."
+    },
+    {
+      "content": "When you need to find the k-th symbol in the n-th row, remember that k is 1-indexed. This means that if k = 1, you are looking for the first symbol, not the zeroth."
+    },
+    {
+      "content": "Think about how you can avoid constructing the entire n-th row, especially since n can be as large as 30. Instead, can you find a way to determine the k-th symbol based on the properties of the generation rules?"
+    },
+    {
+      "content": "Consider the relationship between the position of k and the previous row's symbols. If you know the k-th symbol in the n-th row, can you trace back to the corresponding symbol in the (n-1)-th row?"
+    },
+    {
+      "content": "When you trace back, keep in mind that if the k-th position is odd, it corresponds directly to the same position in the previous row. If it’s even, you need to adjust your position based on the transformation rules."
+    },
+    {
+      "content": "You can determine whether the k-th symbol is '0' or '1' by recursively checking the previous rows. If you reach the first row, you will know the symbol is '0'."
+    },
+    {
+      "content": "To implement this efficiently, consider using a loop or recursion that reduces n and k until you reach the base case. This will help you avoid constructing large strings."
+    },
+    {
+      "content": "Remember that each time you go to the previous row, you should adjust k based on whether it was an odd or even index. This adjustment is crucial for finding the correct symbol."
+    },
+    {
+      "content": "As a final step, think about how you can implement this logic in code. You might want to use a function that takes n and k, and returns the k-th symbol by applying the rules we've discussed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= n <= 30, 1 <= k <= 2^n - 1",
+    "k is 1-indexed, meaning the first symbol is at position 1.",
+    "Each row is built from the previous row by replacing '0' with '01' and '1' with '10'.",
+    "The length of the n-th row is 2^(n-1)."
+  ]
+}

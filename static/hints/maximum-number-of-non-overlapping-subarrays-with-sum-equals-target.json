@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the concept of a subarray. A subarray is a contiguous part of the array. For example, in the array [1, 2, 3], the subarrays include [1], [1, 2], [1, 2, 3], [2], [2, 3], and [3]."
+    },
+    {
+      "content": "Consider how you can calculate the sum of a subarray. You can use a nested loop to explore all possible subarrays, but this may not be efficient for larger arrays. Think about how to optimize this process."
+    },
+    {
+      "content": "To find non-overlapping subarrays, you need a way to track the indices of the subarrays you have already counted. This will help you avoid counting overlapping subarrays."
+    },
+    {
+      "content": "Using a hashmap (or dictionary) can be helpful. You can store the cumulative sums as you iterate through the array. This allows you to quickly check if a certain sum has been seen before."
+    },
+    {
+      "content": "As you compute the cumulative sum, think about how you can check if the difference between the current cumulative sum and the target has been seen before. This can indicate the start of a valid subarray."
+    },
+    {
+      "content": "Remember to reset your tracking variables when you find a valid subarray. This is crucial for ensuring that the next subarray you find does not overlap with the previous one."
+    },
+    {
+      "content": "Consider edge cases, such as when the target is zero or when the array contains negative numbers. How would these cases affect your cumulative sum calculations?"
+    },
+    {
+      "content": "When you find a valid subarray, increment a counter to keep track of how many valid subarrays you have found. Make sure to update your hashmap accordingly."
+    },
+    {
+      "content": "Think about how you can iterate through the array only once, keeping track of the cumulative sum and the counts of valid subarrays simultaneously. This will help you achieve better time complexity."
+    },
+    {
+      "content": "Finally, ensure your function returns the count of non-overlapping subarrays correctly. You may want to return 0 if no valid subarrays are found, so consider how to handle that case."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 10^5",
+    "-10^4 <= nums[i] <= 10^4",
+    "0 <= target <= 10^6",
+    "Non-empty subarrays must be counted.",
+    "Subarrays must be non-overlapping.",
+    "Return the maximum count of such subarrays."
+  ]
+}

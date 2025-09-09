@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the definition of 'strictly increasing'. An array is strictly increasing if each element is less than the next one. For example, [1, 2, 3] is strictly increasing, but [1, 2, 2] is not."
+    },
+    {
+      "content": "Consider the operations you can perform: replacing an element in `arr1` with an element from `arr2`. Think about how this can help you in making `arr1` strictly increasing."
+    },
+    {
+      "content": "Identify the elements in `arr1` that violate the strictly increasing condition. For example, in [1, 5, 3, 6, 7], the element '5' is greater than '3', which breaks the condition."
+    },
+    {
+      "content": "Notice that if you replace an element in `arr1`, it must still maintain the strictly increasing property with respect to its neighbors. For instance, if you replace '5', the new value must be less than '6' and greater than '1'."
+    },
+    {
+      "content": "Consider sorting `arr2` first. This will help you efficiently find the smallest element that can replace an element in `arr1` while maintaining the strictly increasing order."
+    },
+    {
+      "content": "Think about using a dynamic programming approach. You could maintain a state that represents the minimum number of operations needed to make the first `i` elements of `arr1` strictly increasing."
+    },
+    {
+      "content": "When iterating through `arr1`, for each element, you should check both the current value and possible replacements from `arr2`. This will help you decide the best course of action."
+    },
+    {
+      "content": "Remember to keep track of the last valid element in your strictly increasing sequence. This will guide your choices for replacements from `arr2`."
+    },
+    {
+      "content": "Consider edge cases where `arr2` contains values that are all less than or equal to the last valid element in `arr1`. In such cases, it may not be possible to make `arr1` strictly increasing."
+    },
+    {
+      "content": "You might want to use binary search to quickly find the appropriate element in `arr2` that can replace an element in `arr1`. This can help optimize your solution."
+    },
+    {
+      "content": "As you implement your solution, keep track of the number of operations performed. This will be crucial for returning the minimum number of replacements needed."
+    },
+    {
+      "content": "If you reach the end of `arr1` and haven't managed to make it strictly increasing, make sure to return -1, indicating that it's impossible."
+    },
+    {
+      "content": "Consider the case when `arr1` is already strictly increasing. In this scenario, you should return 0 as no operations are needed."
+    },
+    {
+      "content": "Make sure to handle duplicates in both arrays. If `arr2` has duplicates, they may still provide valid replacements, but you need to ensure they help maintain the strictly increasing condition."
+    },
+    {
+      "content": "Lastly, think about how to structure your final checks and operations. You may want to iterate through `arr1`, checking each element against the last valid element and using `arr2` as needed."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= arr1.length, arr2.length <= 2000",
+    "Values: 0 <= arr1[i], arr2[i] <= 10^9",
+    "Return -1 if it's impossible to make arr1 strictly increasing.",
+    "Consider edge cases where arr1 is already strictly increasing.",
+    "Be aware of duplicates in arr2 that may affect replacements."
+  ]
+}

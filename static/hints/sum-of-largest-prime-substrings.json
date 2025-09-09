@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to generate all possible substrings from the input string. You can use nested loops to iterate through the string, capturing all substrings. For example, for a string `s`, you can use: `for i in range(len(s)): for j in range(i+1, len(s)+1): substring = s[i:j]`."
+    },
+    {
+      "content": "Remember to convert each substring to an integer while ignoring leading zeros. You can achieve this using `int(substring)` which will automatically handle leading zeros."
+    },
+    {
+      "content": "Next, you need a method to check if a number is prime. A simple way is to check divisibility from 2 up to the square root of the number. Consider edge cases like numbers less than 2, which are not prime."
+    },
+    {
+      "content": "As you find prime numbers, store them in a set to ensure they are unique. Using a set will automatically handle duplicates for you."
+    },
+    {
+      "content": "Once you have all unique prime numbers, sort them in descending order. This will help you easily access the largest primes. You can use `sorted(primes, reverse=True)`."
+    },
+    {
+      "content": "After sorting, check how many unique primes you have. If you have fewer than three, you should sum all available primes instead of just the top three."
+    },
+    {
+      "content": "Make sure to handle the case where no prime numbers are found. In this scenario, your function should return 0."
+    },
+    {
+      "content": "When summing the primes, remember to only sum the top three if they exist. You can use slicing on the sorted list to get the top three: `top_primes = sorted_primes[:3]`."
+    },
+    {
+      "content": "Consider edge cases such as strings with only '1's or '0's, which cannot produce any primes. Ensure your prime-checking logic accounts for these cases."
+    },
+    {
+      "content": "Finally, put all the pieces together. Create a function that takes the string, generates substrings, checks for primes, collects them in a set, sorts them, and returns the appropriate sum based on the conditions discussed."
+    }
+  ],
+  "questionNotes": [
+    "1 <= s.length <= 10",
+    "s consists of only digits.",
+    "Each prime number should be counted only once.",
+    "Return the sum of the three largest unique primes or fewer if not available.",
+    "If no primes exist, return 0."
+  ]
+}

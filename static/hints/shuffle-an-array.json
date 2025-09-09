@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirements of the `Solution` class. You need to implement three methods: the constructor to initialize the array, a `reset` method to return the original array, and a `shuffle` method to return a random permutation of the array."
+    },
+    {
+      "content": "Consider how you will store the original array. You can use a member variable to keep a copy of the input array so that you can easily return it in the `reset` method."
+    },
+    {
+      "content": "When implementing the `shuffle` method, remember that all permutations of the array must be equally likely. Think about how you can achieve randomness in shuffling."
+    },
+    {
+      "content": "A common approach to shuffling is the Fisher-Yates algorithm. This algorithm iterates through the array from the last element to the first, swapping each element with a randomly chosen element that comes before it (including itself)."
+    },
+    {
+      "content": "Make sure to handle the random selection carefully. You can use a random number generator to choose an index within the bounds of the array. For example, `randIndex = random(0, i)` where `i` is the current index in the loop."
+    },
+    {
+      "content": "Remember to account for edge cases, such as when the array has only one element. In this case, shuffling should return the same single element since there are no other options."
+    },
+    {
+      "content": "Keep in mind the constraints given in the problem. The array length can be up to 50, and all elements are unique, which simplifies some aspects of your implementation."
+    },
+    {
+      "content": "When implementing the `reset` method, ensure that it returns a new array that is identical to the original. You can achieve this by returning a copy of the member variable that holds the original array."
+    },
+    {
+      "content": "Consider the performance of your methods. The `reset` method should run in O(n) time to copy the array, while the `shuffle` method should also run in O(n) time to ensure efficiency given the constraints."
+    },
+    {
+      "content": "Finally, implement the `shuffle` method using the Fisher-Yates algorithm. Make sure to test your implementation to verify that it produces all permutations with equal likelihood."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= nums.length <= 50",
+    "-10^6 <= nums[i] <= 10^6",
+    "All elements of nums are unique.",
+    "At most 10^4 calls in total will be made to reset and shuffle.",
+    "Return format for methods: reset() returns int[], shuffle() returns int[]."
+  ]
+}

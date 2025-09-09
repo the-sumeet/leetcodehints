@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the tree. A tree is an acyclic connected graph, meaning there are no cycles and it is fully connected. Each node can be reached from the root node (node 0) without revisiting any node."
+    },
+    {
+      "content": "Consider the operations you can perform on the nodes. You can pick any node, add its value to your score, and then set that node's value to zero. Think about how this affects the values of other nodes on the path to the leaf nodes."
+    },
+    {
+      "content": "The tree must remain healthy after your operations. A healthy tree has the property that the sum of values from the root to any leaf node is non-zero. This means you need to be careful about which nodes you choose to set to zero."
+    },
+    {
+      "content": "Identify the leaf nodes in the tree. Leaf nodes are nodes that have no children. Since the health of the tree is determined by the path to these leaf nodes, understanding their values is crucial."
+    },
+    {
+      "content": "Think about the implications of choosing the root node (node 0). If you choose it, you must ensure that the sum of values from the root to any leaf node is still non-zero. What happens if you set the root's value to zero?"
+    },
+    {
+      "content": "You might want to explore a depth-first search (DFS) or breadth-first search (BFS) approach to traverse the tree. This will help you calculate the sum of values along the paths from the root to each leaf node."
+    },
+    {
+      "content": "As you traverse the tree, keep track of the cumulative score you can obtain while ensuring that the path remains healthy. You may need to backtrack if a path becomes unhealthy after certain operations."
+    },
+    {
+      "content": "Consider edge cases where the tree has only two nodes or where all values are the same. How would these cases affect your strategy for maximizing the score while keeping the tree healthy?"
+    },
+    {
+      "content": "When calculating the maximum score, think about the contribution of each node to the overall score. You may want to maintain a running total of the values of nodes that can be safely included in your score."
+    },
+    {
+      "content": "Finally, ensure you have a clear plan for how to implement the logic of choosing nodes. You might want to use a recursive function that explores the tree and checks the health condition at each step, returning the maximum score achievable."
+    }
+  ],
+  "questionNotes": [
+    "The tree is rooted at node 0.",
+    "You can perform operations on nodes any number of times.",
+    "The tree is healthy if the sum of values from the root to any leaf is non-zero.",
+    "Constraints: 2 <= n <= 20,000; 1 <= values[i] <= 10^9.",
+    "Input is guaranteed to represent a valid tree."
+  ]
+}

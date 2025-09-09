@@ -1,0 +1,41 @@
+{
+  "hints": [
+    {
+      "content": "Start by recalling the properties of modular arithmetic. Specifically, you can use the property that (x * y) mod p = [(x mod p) * (y mod p)] mod p. This will help you break down the problem into smaller parts."
+    },
+    {
+      "content": "Consider how to handle the extremely large integer represented by the array `b`. Instead of treating `b` as a single number, think about how you can compute `b mod (p-1)` where `p = 1337`. This is useful because of Fermat's Little Theorem."
+    },
+    {
+      "content": "Remember that for any integer `x`, `x^0 = 1`. This means if `b` is all zeros, the result should be 1 regardless of `a`. Think about how you can check for this condition early."
+    },
+    {
+      "content": "When calculating `b mod (p-1)`, you can process the digits of `b` as you would for converting a number from base 10 to base `p-1`. This means you can iterate through the array and build the modulus step by step."
+    },
+    {
+      "content": "To compute `b mod (p-1)`, you can use the formula: `result = (result * 10 + b[i]) % (p-1)` as you iterate through the array. This will give you the effective exponent you need."
+    },
+    {
+      "content": "After computing `b mod (p-1)`, you will need to compute `a^exponent mod 1337`. You can use the method of exponentiation by squaring for this, which is efficient for large exponents."
+    },
+    {
+      "content": "Make sure to handle edge cases where `b` might contain leading zeros or when `b` is entirely zeros. These can affect your calculations and the final result."
+    },
+    {
+      "content": "Remember that the constraints specify that `a` is between 1 and 2^31 - 1, and `b` can be up to 2000 digits long. This means your solution needs to be efficient in both time and space."
+    },
+    {
+      "content": "When implementing your solution, ensure that you are correctly using the modulo operation at each step to prevent overflow and keep your numbers manageable."
+    },
+    {
+      "content": "Finally, after calculating `a^exponent mod 1337`, ensure you return the result in the expected format. The output should be a single integer representing the result of the computation."
+    }
+  ],
+  "questionNotes": [
+    "1 <= a <= 2^31 - 1",
+    "1 <= b.length <= 2000",
+    "0 <= b[i] <= 9",
+    "b does not contain leading zeros.",
+    "The final output should be a single integer."
+  ]
+}

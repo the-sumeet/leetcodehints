@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the requirement of the problem: you need to partition the string such that each substring contains unique characters. This means that once you use a character in a substring, you cannot use it again in the same substring."
+    },
+    {
+      "content": "Consider how you might iterate through the string. Think about using a loop to examine each character one by one. You will need to keep track of which characters you have already used in the current substring."
+    },
+    {
+      "content": "You can use a data structure to keep track of characters in the current substring. A set is a good choice here, as it allows for O(1) average time complexity for both insertions and lookups."
+    },
+    {
+      "content": "As you iterate through the string, check if the current character is already in the set. If it is, this indicates that you need to start a new substring because you cannot have duplicate characters in a substring."
+    },
+    {
+      "content": "When you encounter a duplicate character, make sure to reset your tracking structure (the set) and increment your substring count. This will help you keep track of how many substrings you have created."
+    },
+    {
+      "content": "Remember to handle the case where the string has only one character. In this case, the answer is simply 1, as a single character is already unique."
+    },
+    {
+      "content": "Think about edge cases, such as strings with all identical characters (like 'ssssss'). How many substrings would you need in this case? This will help you validate your approach."
+    },
+    {
+      "content": "You should also consider the performance of your solution. The constraints specify that the string length can be up to 100,000 characters, so your solution should ideally run in linear time, O(n)."
+    },
+    {
+      "content": "As you finalize your approach, ensure that you are correctly counting the number of substrings. Each time you start a new substring, increment your counter. At the end of your iteration, return this counter."
+    },
+    {
+      "content": "Try to implement your logic in code. Start with a loop that goes through each character in the string, maintaining a set for the current substring and a counter for the number of substrings. Don't forget to handle the last substring after the loop!"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 100000",
+    "s consists of only English lowercase letters.",
+    "Each character should belong to exactly one substring.",
+    "Return the minimum number of substrings."
+  ]
+}

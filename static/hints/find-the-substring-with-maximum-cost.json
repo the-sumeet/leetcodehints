@@ -1,0 +1,42 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to calculate the cost of a single character in the string `s`. If the character is in `chars`, use the corresponding value from `vals`. Otherwise, use its position in the alphabet (1 for 'a', 2 for 'b', ..., 26 for 'z')."
+    },
+    {
+      "content": "Consider how you will iterate through the string `s`. You will want to examine all possible substrings, but think about how you can optimize this to avoid checking every single substring explicitly."
+    },
+    {
+      "content": "Think about how you can maintain a running total of the substring cost as you expand or contract your substring. This could help you avoid recalculating costs from scratch."
+    },
+    {
+      "content": "When calculating the cost of a substring, remember that if the cost becomes negative, it might be beneficial to reset your current substring. What would this mean for your maximum cost?"
+    },
+    {
+      "content": "Consider edge cases where all characters in `s` are in `chars` with negative values. How would this affect your result? You might want to return 0 in such cases."
+    },
+    {
+      "content": "Make sure to handle the case where the maximum cost is achieved by an empty substring. Your final answer should be the maximum of the calculated costs and 0."
+    },
+    {
+      "content": "As you iterate through `s`, keep track of the maximum cost found so far. Use a variable to store this value and update it whenever you find a new maximum."
+    },
+    {
+      "content": "Consider using a dictionary to map characters from `chars` to their corresponding values in `vals`. This will allow for O(1) lookups when calculating costs."
+    },
+    {
+      "content": "When implementing your solution, think about the time complexity. A naive O(n^2) approach might not be efficient enough for the upper limits of the input size. Can you reduce this?"
+    },
+    {
+      "content": "As a final step, ensure your implementation correctly handles all characters in `s`, including those not in `chars`, and that you return the maximum cost correctly, taking into account the possibility of an empty substring."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= s.length <= 10^5, s consists of lowercase English letters.",
+    "chars contains distinct lowercase English letters.",
+    "vals.length == chars.length.",
+    "vals[i] can range from -1000 to 1000.",
+    "The cost of an empty string is 0.",
+    "Return the maximum cost among all substrings of s."
+  ]
+}

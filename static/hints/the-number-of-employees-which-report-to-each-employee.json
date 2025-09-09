@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by identifying which employees are considered managers. Remember, a manager is defined as someone who has at least one employee reporting to them. You can achieve this by looking for employees whose `employee_id` appears in the `reports_to` column."
+    },
+    {
+      "content": "To count how many employees report to each manager, you can use a `GROUP BY` clause on the `reports_to` column. This will allow you to aggregate the data based on each manager's ID."
+    },
+    {
+      "content": "While counting the reports, don't forget to include the `COUNT` function. This will help you find the number of direct reports for each manager. For example: `COUNT(employee_id)` will give you the count of employees for each `reports_to` group."
+    },
+    {
+      "content": "Next, you need to calculate the average age of the employees reporting to each manager. You can use the `AVG` function for this purpose, but remember to group the results by the manager's ID."
+    },
+    {
+      "content": "Since the average age needs to be rounded to the nearest integer, consider using a rounding function in your SQL query. In SQL, you can use `ROUND(AVG(age))` to achieve this."
+    },
+    {
+      "content": "Make sure to join the aggregated data back to the original `Employees` table to retrieve the names of the managers. You can do this using a `JOIN` on the `employee_id` and `reports_to` columns."
+    },
+    {
+      "content": "Pay attention to the `NULL` values in the `reports_to` column. These represent employees who do not report to anyone and should not be included in your final results as managers."
+    },
+    {
+      "content": "Remember to select only the necessary columns for your final output: `employee_id`, `name`, `reports_count`, and `average_age`. This will help keep your result set clean and focused."
+    },
+    {
+      "content": "Your final result should be ordered by `employee_id`. Use the `ORDER BY` clause to ensure the output is sorted correctly."
+    },
+    {
+      "content": "Combine all the parts you've worked on: the counting of reports, the average age calculation, and the joining of tables. Make sure to test your query with different datasets to handle various edge cases, such as managers with no reports."
+    }
+  ],
+  "questionNotes": [
+    "The `employee_id` column is unique for each employee.",
+    "Employees reporting to no one have `reports_to` as NULL and should be excluded from the results.",
+    "The output must include `employee_id`, `name`, `reports_count`, and `average_age`.",
+    "Results should be ordered by `employee_id`."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of a tree. A tree with n nodes has exactly n-1 edges and is connected and acyclic. This means that there is exactly one path between any two nodes."
+    },
+    {
+      "content": "Identify the prime numbers up to n. You can use the Sieve of Eratosthenes to efficiently find all prime numbers in the range. Remember that a prime number is greater than 1 and has no divisors other than 1 and itself."
+    },
+    {
+      "content": "Consider how to represent the tree. An adjacency list is a common way to represent trees and will allow you to easily traverse the tree using depth-first search (DFS) or breadth-first search (BFS)."
+    },
+    {
+      "content": "Think about how you can traverse the tree to find paths. DFS is a good choice here as it can help you explore all paths from a starting node to all other nodes."
+    },
+    {
+      "content": "When traversing, keep track of the prime numbers encountered along the path. You need to count how many primes are present in the path from node a to node b."
+    },
+    {
+      "content": "Remember that paths (a, b) and (b, a) are the same. You should only count each valid path once, which means you can limit your traversal to one direction (e.g., from lower to higher labeled nodes)."
+    },
+    {
+      "content": "Consider edge cases, such as when n = 1. In this case, there are no edges, and thus no valid paths can be formed, so the result should be 0."
+    },
+    {
+      "content": "Think about how to efficiently count valid paths. Instead of checking every pair of nodes, you might want to calculate contributions from each prime node to its reachable nodes."
+    },
+    {
+      "content": "As you traverse the tree, maintain a count of the number of prime nodes encountered. You can use a simple counter that increments when you encounter a prime during the DFS traversal."
+    },
+    {
+      "content": "When you reach a node, check the count of prime nodes. If it is exactly one, then all paths from this node to its descendants are valid paths."
+    },
+    {
+      "content": "You may want to use a recursive function for DFS that takes the current node, the parent node, and the count of primes encountered so far as parameters."
+    },
+    {
+      "content": "Ensure that you do not revisit nodes in your DFS traversal. This can be done by keeping track of visited nodes or by passing the parent node to the recursive function."
+    },
+    {
+      "content": "After traversing from a prime node, consider how to calculate the number of valid pairs. If a prime node has k reachable nodes, the number of valid pairs is k, as each of these nodes forms a valid path with the prime node."
+    },
+    {
+      "content": "Think about how to combine results from different branches of the tree. You may need to aggregate counts from child nodes back to their parent nodes."
+    },
+    {
+      "content": "Finally, ensure that your solution runs efficiently within the constraints. Aim for a time complexity of O(n) to handle the maximum input size of n = 100,000."
+    }
+  ],
+  "questionNotes": [
+    "The tree is undirected and connected with n nodes and n-1 edges.",
+    "A path (a, b) is valid if there is exactly one prime number in the path from a to b.",
+    "Paths (a, b) and (b, a) are considered the same and counted only once.",
+    "Constraints: 1 <= n <= 10^5, edges.length == n - 1, 1 <= u_i, v_i <= n."
+  ]
+}

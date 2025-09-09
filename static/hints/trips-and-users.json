@@ -1,0 +1,56 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the structure of the Trips and Users tables. Identify the key columns you'll need to join these tables effectively. Focus on the client_id and driver_id in the Trips table, which correspond to users_id in the Users table."
+    },
+    {
+      "content": "Remember that you need to filter out trips where either the client or the driver is banned. This means you will need to join the Trips table with the Users table twice: once for clients and once for drivers."
+    },
+    {
+      "content": "Consider how to handle the date range specified in the problem. You will need to filter the results to only include trips that occurred between '2013-10-01' and '2013-10-03'."
+    },
+    {
+      "content": "As you join the tables, think about how you will count the total number of trips and the number of canceled trips. You can use conditional aggregation to achieve this."
+    },
+    {
+      "content": "When calculating the cancellation rate, remember that it is defined as the number of canceled trips divided by the total number of trips. Make sure to handle cases where there are no trips to avoid division by zero."
+    },
+    {
+      "content": "You will need to round the cancellation rate to two decimal points. Familiarize yourself with the SQL functions that can help you achieve this, such as ROUND()."
+    },
+    {
+      "content": "Pay attention to the output format. You need to return a table with two columns: 'Day' and 'Cancellation Rate'. Ensure that the 'Day' column is formatted correctly as a date."
+    },
+    {
+      "content": "Make sure to include only those days that have at least one trip. This means you will need to filter your results accordingly after calculating the cancellation rates."
+    },
+    {
+      "content": "Consider edge cases such as days with no trips or all trips being canceled. Ensure your logic accounts for these scenarios when calculating the cancellation rate."
+    },
+    {
+      "content": "When filtering for unbanned users, remember that you need to check both the client and driver roles. Use a WHERE clause to ensure both users are not banned."
+    },
+    {
+      "content": "Use GROUP BY to aggregate your results by day. This will allow you to calculate the total trips and canceled trips for each day separately."
+    },
+    {
+      "content": "As you build your SQL query, think about how you will structure the JOINs. You might want to alias the Users table for clarity, especially since you will be joining it twice."
+    },
+    {
+      "content": "Remember to use COUNT() for counting trips and canceled trips. You can use CASE statements within COUNT() to differentiate between completed and canceled trips."
+    },
+    {
+      "content": "After calculating the cancellation rate, ensure you format the output correctly. Use an ORDER BY clause if necessary to control the order of the results."
+    },
+    {
+      "content": "Finally, review your SQL syntax for any potential errors. Make sure that all your JOINs, WHERE clauses, and GROUP BY statements are correctly structured to avoid unexpected results."
+    }
+  ],
+  "questionNotes": [
+    "The cancellation rate must be calculated only for unbanned users (both client and driver).",
+    "The date range is strictly from '2013-10-01' to '2013-10-03'.",
+    "Only include days with at least one trip in the final output.",
+    "Round the cancellation rate to two decimal points.",
+    "Ensure the output format matches the specified structure with columns 'Day' and 'Cancellation Rate'."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the constraints of the problem. You need to choose three distinct indices from the arrays `x` and `y`, ensuring that the values in `x` at those indices are also distinct."
+    },
+    {
+      "content": "Consider how you can identify distinct values in the `x` array. You might want to use a data structure that allows you to keep track of unique values and their corresponding maximum `y` values."
+    },
+    {
+      "content": "Think about how to group the values in `x` by their distinct values. You can use a dictionary or a map where the key is the value from `x` and the value is a list of corresponding `y` values."
+    },
+    {
+      "content": "Once you have grouped the values, remember that you need to select the top `y` values for each distinct `x` value. This will help you maximize the sum of `y[i] + y[j] + y[k]`."
+    },
+    {
+      "content": "Ensure you have at least three distinct values in `x`. If not, you should immediately return -1, as it's impossible to form a valid triplet."
+    },
+    {
+      "content": "When selecting the maximum `y` values, consider sorting the lists of `y` values for each distinct `x` value. This will allow you to easily access the largest values."
+    },
+    {
+      "content": "After sorting, you need to pick the top `y` values from three different distinct `x` values. Think about how you can efficiently combine these values to get the maximum sum."
+    },
+    {
+      "content": "As you combine the `y` values, remember to check that they come from distinct `x` values. You can do this by maintaining a list of the distinct `x` values you are currently using."
+    },
+    {
+      "content": "Consider edge cases where there may be ties in the `y` values. You should always prioritize the largest values, but ensure they come from distinct `x` values."
+    },
+    {
+      "content": "Finally, once you have selected your triplet of indices, compute the sum and return it. If you cannot find a valid triplet, ensure your function returns -1."
+    }
+  ],
+  "questionNotes": [
+    "You must choose three distinct indices i, j, and k.",
+    "x[i] != x[j], x[j] != x[k], x[k] != x[i] must hold.",
+    "Return -1 if no valid triplet exists.",
+    "Constraints: n == x.length == y.length, 3 <= n <= 10^5, 1 <= x[i], y[i] <= 10^6."
+  ]
+}

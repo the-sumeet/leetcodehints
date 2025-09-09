@@ -1,0 +1,55 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding the grid layout. Each cell can represent different states: dry land (.), the destination (D), a starting point (S), and water (*). Make sure you can identify these elements in the grid."
+    },
+    {
+      "content": "Consider how water spreads over time. It will be helpful to visualize or simulate how the water expands from its starting points. This will be important for determining safe paths."
+    },
+    {
+      "content": "Think about the movement options. You can move in four directions: up, down, left, and right. Make sure to account for boundaries of the grid to avoid index errors."
+    },
+    {
+      "content": "Implement a breadth-first search (BFS) for exploring the grid. BFS is ideal for finding the shortest path in an unweighted grid like this one."
+    },
+    {
+      "content": "You will need to track two things: the time it takes for water to reach each cell and the time it takes for you to reach the destination. Consider using two separate grids for this."
+    },
+    {
+      "content": "As you simulate the water spread, use a queue to manage the cells that water will reach next. Each time you add a cell to the queue, you should also update the time it takes for water to reach that cell."
+    },
+    {
+      "content": "When performing BFS for your path to the destination, ensure you check if you can step into a cell based on the time water reaches that cell. You cannot step into a cell if water reaches it at the same time or earlier."
+    },
+    {
+      "content": "Remember to handle edge cases, such as when the starting point (S) is already adjacent to the destination (D) or when the entire path is blocked by water."
+    },
+    {
+      "content": "Consider the scenario where there are multiple paths to the destination. You will need to find the minimum time it takes to reach D, so keep track of the earliest time you can arrive."
+    },
+    {
+      "content": "You might want to implement a priority queue to optimize the pathfinding process, especially if you need to prioritize cells based on the time they can be accessed."
+    },
+    {
+      "content": "Make sure to account for cells that are marked with 'X' which are obstacles. Your pathfinding algorithm should skip these cells."
+    },
+    {
+      "content": "When you reach the destination, return the time it took to get there. If it’s not possible to reach the destination, consider how you will indicate that (e.g., returning -1)."
+    },
+    {
+      "content": "After implementing your BFS for both water spread and your own movement, test your solution with the provided test cases to ensure correctness."
+    },
+    {
+      "content": "Think about how you can optimize your algorithm further. Are there any unnecessary calculations or checks that can be avoided?"
+    },
+    {
+      "content": "Finally, ensure your code is clean and well-commented. Explain your thought process and the purpose of each data structure you use."
+    }
+  ],
+  "questionNotes": [
+    "Grid cells can contain: '.', 'D', 'S', '*', 'X'.",
+    "You cannot step into a cell if water reaches it at the same time or earlier.",
+    "Return -1 if the destination cannot be reached.",
+    "Consider the grid boundaries to avoid index errors."
+  ]
+}

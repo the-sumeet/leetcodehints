@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by thinking about how to identify pairs of matching cards. You need to find two cards with the same value in a sequence. What data structure could help you track the indices of the card values?"
+    },
+    {
+      "content": "Consider using a hash map (or dictionary) to store the last seen index of each card value. This way, when you encounter a card value that you've seen before, you can easily calculate the distance between the current index and the last seen index."
+    },
+    {
+      "content": "As you iterate through the `cards` array, update your hash map with the current index of each card. If you find a card that already exists in the map, calculate the length of the segment from the last index to the current index."
+    },
+    {
+      "content": "Keep track of the minimum length of these segments as you go. You can initialize a variable to hold the minimum length, and update it whenever you find a matching card."
+    },
+    {
+      "content": "Remember to handle the case where you never find any matching cards. You should return -1 in that scenario. How will you check if the minimum length variable was ever updated?"
+    },
+    {
+      "content": "Consider edge cases such as when all cards are unique or when there are only two cards. How would your approach handle these situations?"
+    },
+    {
+      "content": "Think about the constraints provided in the problem. With a maximum of 100,000 cards, your solution should ideally have a time complexity of O(n). How can you ensure your solution is efficient?"
+    },
+    {
+      "content": "Make sure to account for the possibility of multiple pairs of matching cards. If you find multiple segments with the same minimum length, you still only need to return the length of the first one you found."
+    },
+    {
+      "content": "As you implement your solution, be careful with the indexing. Remember that the indices in your hash map should correspond to the positions of the cards in the original array."
+    },
+    {
+      "content": "Finally, once you have implemented the logic to find the minimum length, ensure that your return statement correctly handles the case where no pairs were found. What will your final return statement look like?"
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 1 <= cards.length <= 10^5",
+    "Values: 0 <= cards[i] <= 10^6",
+    "Return -1 if no matching pairs are found.",
+    "Consider edge cases like unique cards or very few cards."
+  ]
+}

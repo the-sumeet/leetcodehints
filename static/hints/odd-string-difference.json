@@ -1,0 +1,40 @@
+{
+  "hints": [
+    {
+      "content": "Start by understanding how to compute the difference integer array for a given string. For a string `s`, the difference array can be calculated as: `difference[i][j] = s[j+1] - s[j]`. This means you need to find the difference between the ASCII values of consecutive characters."
+    },
+    {
+      "content": "Remember that the position of 'a' is 0, 'b' is 1, and so on up to 'z' which is 25. You can convert a character to its corresponding position using: `ord(char) - ord('a')`."
+    },
+    {
+      "content": "You will need to iterate through each string in the `words` array and compute its difference integer array. Think about how you can store these arrays for comparison later."
+    },
+    {
+      "content": "Since all strings except one share the same difference array, you can use a dictionary to count occurrences of each difference array. This will help you identify the unique one."
+    },
+    {
+      "content": "When creating the difference array, remember that its length will be `n - 1`, where `n` is the length of the string. Ensure your loop iterates correctly to avoid index errors."
+    },
+    {
+      "content": "Consider edge cases where multiple strings might have the same difference array. Your approach should ensure that you can identify the single unique string among them."
+    },
+    {
+      "content": "As you build the dictionary of difference arrays, make sure to store the string associated with each array. This way, when you find the odd one out, you can easily retrieve the corresponding string."
+    },
+    {
+      "content": "After processing all strings, you should have a dictionary where one of the keys has a count of 1. This indicates the unique difference array. You can then return the string associated with that key."
+    },
+    {
+      "content": "If you find that multiple strings have the same difference array, check your logic to ensure that you're correctly identifying the unique array. It might help to print the contents of your dictionary for debugging."
+    },
+    {
+      "content": "Finally, make sure to return the string that corresponds to the unique difference array. Your return statement should be clear and concise, ensuring that you are returning the correct string from the `words` list."
+    }
+  ],
+  "questionNotes": [
+    "Constraints: 3 <= words.length <= 100, n == words[i].length, 2 <= n <= 20.",
+    "All strings consist of lowercase English letters.",
+    "The difference integer array length is n - 1.",
+    "You need to identify the single string with a unique difference array."
+  ]
+}
